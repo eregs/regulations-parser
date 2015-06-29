@@ -36,3 +36,14 @@ class GrammarCommonTests(TestCase):
             result = marker_comment.parseString(t)
             self.assertEqual("3", result.section)
             self.assertEqual("4", result.c1)
+
+    def test_notice_cfr_p(self):
+        text = '12 CFR Parts 1002, 1024, and 1026'
+        result = notice_cfr_p.parseString(text)
+        self.assertEqual(['1002', '1024', '1026'], list(result))
+        text = '12 CFR Parts 1024, and 1026'
+        result = notice_cfr_p.parseString(text)
+        self.assertEqual(['1024', '1026'], list(result))
+        text = '12 CFR Parts 1024'
+        result = notice_cfr_p.parseString(text)
+        self.assertEqual(['1024'], list(result))
