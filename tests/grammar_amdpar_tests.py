@@ -490,6 +490,15 @@ class GrammarAmdParTests(TestCase):
             tokens.Context([None, 'Subpart:C'], certain=True)
         ])
 
+    def test_example36(self):
+        text = u'In Appendix A to Part 1002 revise [label:1002-A-p1-2-d] to read:'
+        result = parse_text(text)
+        self.assertEqual(result, [
+            tokens.Context(['1002', 'Appendix:A'], certain=True),
+            tokens.Verb(tokens.Verb.PUT, active=True, and_prefix=False),
+            tokens.Paragraph([ '1002', 'Appendix:A', 'p1', '2', 'd' ], field = None )
+        ])
+
     def test_paragraph_of(self):
         text = u"12. Paragraph (c)(1)(iv) of § 4.9 is revised"
         result = parse_text(text)
