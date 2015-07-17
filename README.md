@@ -294,7 +294,7 @@ retrieving a list of final rules (i.e. changes) that apply to this
 regulation. It then writes/saves parsed versions of those notices.
 
 If this all worked well, we save the the parsed regulation and then generate
-an save all of the layers associated with its version. We then generate
+and save all of the layers associated with its version. We then generate
 additional whole regulation trees and their associated layers for each
 final rule (i.e. each alteration to the regulation).
 
@@ -550,7 +550,7 @@ both store and query the regulation data.
  1. `pip install zc.buildout`
  1. `buildout   # pulls in python dependencies`
  1. `./bin/django syncdb --migrate`
- 1. `./bin/django runserver 127.0.0.0:8888 &   # Starts the API`
+ 1. `./bin/django runserver 127.0.0.1:8888 &   # Starts the API`
 
 Then, we can configure the parser to write to this API and run it, here using
 the FEC example above
