@@ -103,8 +103,9 @@ class BuilderTests(TestCase):
             <FRDOC>[FR Doc. 2011-31715 Filed 12-21-11; 8:45 am]</FRDOC>
             <BILCOD>BILLING CODE 4810-AM-P</BILCOD>
         </RULE>"""
+        xml = etree.fromstring(xml_str)
         self.assertEqual(
-            '2011-31715', Builder.determine_doc_number(xml_str, '00', '00'))
+            '2011-31715', Builder.determine_doc_number(xml, '00', '00'))
 
     @patch('regparser.builder.fetch_notice_json')
     def test_determine_doc_number_annual(self, fetch_notice_json):
@@ -123,8 +124,9 @@ class BuilderTests(TestCase):
                 <ORIGINALDATE>2012-01-01</ORIGINALDATE>
             </FDSYS>
         </CFRGRANULE>"""
+        xml = etree.fromstring(xml_str)
         self.assertEqual(
-            '111-111', Builder.determine_doc_number(xml_str, '12', '34'))
+            '111-111', Builder.determine_doc_number(xml, '12', '34'))
         args = fetch_notice_json.call_args
         self.assertEqual(('12', '34'), args[0])     # positional args
         self.assertEqual({'max_effective_date': '2012-01-01',
