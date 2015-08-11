@@ -16,17 +16,17 @@ from regparser.layer import (
     external_citations, formatting, graphics, key_terms, internal_citations,
     interpretations, meta, paragraph_markers, section_by_section,
     table_of_contents, terms)
+from regparser.notice import fake as notice_fake
 from regparser.notice.compiler import compile_regulation
-from regparser.tree import struct
-# from regparser.tree.build import build_whole_regtree
-from regparser.tree.xml_parser import reg_text
+from regparser.tree import struct, xml_parser
 
 
 class Builder(object):
     """Methods used to build all versions of a single regulation, their
     layers, etc. It is largely glue code"""
 
-    def __init__(self, cfr_title, cfr_part, doc_number, checkpointer=None):
+    def __init__(self, cfr_title, cfr_part, doc_number, checkpointer=None,
+                 fake_notice=None):
         self.cfr_title = cfr_title
         self.cfr_part = cfr_part
         self.doc_number = doc_number
@@ -37,6 +37,8 @@ class Builder(object):
             "effective-notices",
             lambda: notices_for_cfr_part(self.cfr_title, self.cfr_part)
         )
+        if fake_notice:
+            self.eff_notices[fake_notice["effective_on"]] = [fake_notice]
         self.notices = []
         for notice_group in self.eff_notices.values():
             self.notices.extend(notice_group)
@@ -44,7 +46,8 @@ class Builder(object):
     def write_notices(self):
         for notice in self.notices:
             #  No need to carry this around
-            del notice['meta']
+            if 'meta' in notice:
+                del notice['meta']
             self.writer.notice(notice['document_number']).write(notice)
 
     def write_regulation(self, reg_tree):
@@ -115,20 +118,9 @@ class Builder(object):
         return changes
 
     @staticmethod
-    def reg_tree(reg_str):
-        if reg_str[:1] == '<':  # XML
-            return reg_text.build_tree(reg_str)
-        else:
-            raise ValueError("Building from text input is no longer "
-                             "supported")
-            # return build_whole_regtree(reg_str)
-
-    @staticmethod
-    def determine_doc_number(reg_str, title, title_part):
+    def determine_doc_number(reg_xml, title, title_part):
         """Instead of requiring the user provide a doc number, we can find it
         within the xml file"""
-        # @todo: remove the double-conversion
-        reg_xml = etree.fromstring(reg_str)
         doc_number = _fr_doc_to_doc_number(reg_xml)
         if not doc_number:
             doc_number = _fdsys_to_doc_number(reg_xml, title, title_part)
@@ -331,6 +323,7 @@ def tree_and_builder(filename, title, checkpoint_path=None, doc_number=None):
     """Reads the regulation file and parses it. Returns the resulting tree as
     well as a Builder object for further manipulation. Looks up the doc_number
     if it's not provided"""
+    make_fake = doc_number is not None
     if checkpoint_path is None:
         checkpointer = NullCheckpointer()
     else:
@@ -340,21 +333,33 @@ def tree_and_builder(filename, title, checkpoint_path=None, doc_number=None):
     with codecs.open(filename, 'r', 'utf-8') as f:
         reg_text = f.read()
     file_digest = hashlib.sha256(reg_text.encode('utf-8')).hexdigest()
+    if reg_text[:1] == '<':
+        reg_xml = etree.fromstring(reg_text)
+    else:
+        raise ValueError("Building from text input is no longer supported")
 
-    reg_tree = checkpointer.checkpoint("init-tree-" + file_digest,
-                                       lambda: Builder.reg_tree(reg_text))
+    reg_tree = checkpointer.checkpoint(
+        "init-tree-" + file_digest,
+        lambda: xml_parser.reg_text.build_tree(reg_xml))
     title_part = reg_tree.label_id()
     if doc_number is None:
         doc_number = checkpointer.checkpoint(
             "doc-number-" + file_digest,
-            lambda: Builder.determine_doc_number(reg_text, title, title_part))
+            lambda: Builder.determine_doc_number(reg_xml, title, title_part))
     if not doc_number:
         raise ValueError("Could not determine document number")
 
     checkpointer.suffix = ":".join(["", title_part, str(title), doc_number])
 
+    if make_fake:
+        fake_notice = notice_fake.build(
+            doc_number, notice_fake.effective_date_for(reg_xml), title,
+            title_part)
+    else:
+        fake_notice = None
     builder = Builder(cfr_title=title,
                       cfr_part=title_part,
                       doc_number=doc_number,
-                      checkpointer=checkpointer)
+                      checkpointer=checkpointer,
+                      fake_notice=fake_notice)
     return reg_tree, builder

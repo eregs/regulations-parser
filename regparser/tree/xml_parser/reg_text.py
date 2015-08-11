@@ -64,15 +64,14 @@ def preprocess_xml(xml):
 
 
 def build_tree(reg_xml):
-    doc = etree.fromstring(reg_xml)
-    preprocess_xml(doc)
+    preprocess_xml(reg_xml)
 
-    reg_part = get_reg_part(doc)
-    title = get_title(doc)
+    reg_part = get_reg_part(reg_xml)
+    title = get_title(reg_xml)
 
     tree = Node("", [], [reg_part], title)
 
-    part = doc.xpath('//PART')[0]
+    part = reg_xml.xpath('//PART')[0]
 
     subpart_xmls = [c for c in part.getchildren() if c.tag == 'SUBPART']
     if len(subpart_xmls) > 0:
@@ -87,7 +86,7 @@ def build_tree(reg_xml):
         empty_part.children = sections
         tree.children = [empty_part]
 
-    non_reg_sections = build_non_reg_text(doc, reg_part)
+    non_reg_sections = build_non_reg_text(reg_xml, reg_part)
     tree.children += non_reg_sections
 
     return tree
