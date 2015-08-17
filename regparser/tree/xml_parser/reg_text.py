@@ -93,9 +93,12 @@ def build_tree(reg_xml):
 
 
 def get_subpart_title(subpart_xml):
+    reserved = subpart_xml.xpath('./RESERVED')
+    if reserved:
+        return [hd.text for hd in reserved][0]
     hds = subpart_xml.xpath('./HD')
-    return [hd.text for hd in hds][0]
-
+    if hds:
+        return [hd.text for hd in hds][0]
 
 def build_subpart(reg_part, subpart_xml):
     subpart_title = get_subpart_title(subpart_xml)
