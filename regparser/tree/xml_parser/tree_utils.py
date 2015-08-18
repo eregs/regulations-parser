@@ -1,4 +1,4 @@
-#vim: set encoding=utf-8
+# vim: set encoding=utf-8
 from copy import deepcopy
 import HTMLParser
 from itertools import chain
@@ -43,6 +43,8 @@ def split_text(text, tokens):
         splice the text along those tokens.
     """
     starts = [text.find(t) for t in tokens]
+    if not starts or starts[0] != 0:
+        starts.insert(0, 0)
     slices = zip(starts, starts[1:])
     texts = [text[i[0]:i[1]] for i in slices] + [text[starts[-1]:]]
     return texts
@@ -152,7 +154,7 @@ def get_node_text_tags_preserved(node):
 
     for c in node:
         if c.tag == 'E':
-            #xlmns non-sense makes me do this.
+            # xlmns non-sense makes me do this.
             e_tag = '<E T="03">%s</E>' % c.text
             node_text += e_tag
         if c.tail is not None:
