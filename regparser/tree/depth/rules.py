@@ -13,64 +13,55 @@ def must_be(value):
 def type_match(marker):
     """The type of the associated variable must match its marker. Lambda
     explanation as in the above rule."""
-    return lambda typ, idx, m=marker: idx < len(typ) and typ[idx] == m
+    return lambda typ, idx: idx < len(typ) and typ[idx] == marker
 
 
-def same_type(typ, idx, depth, *all_prev):
-    """Constraints on sequential markers with the same marker type"""
+def depth_check(prev_typ, prev_idx, prev_depth, typ, idx, depth):
+    """Constrain the depth of sequences of markers."""
+    # decrementing depth is always okay
+    dec = depth < prev_depth
+    # continuing a sequence
+    cont = depth == prev_depth and prev_typ == typ and idx == prev_idx + 1
+    # stars are also allowed if at the same level
+    stars = depth == prev_depth and markers.stars in (typ, prev_typ)
+    # depth can be incremented if starting a new sequence
+    inc = depth == prev_depth + 1 and idx == 0 and typ != prev_typ
+    # stars can also increment the depth
+    next_star = depth == prev_depth + 1 and typ == markers.stars
+    return dec or cont or stars or inc or next_star
+
+
+def stars_check(prev_typ, prev_idx, prev_depth, typ, idx, depth):
+    """Constrain pairs of markers where one is a star."""
+    if prev_typ == typ and typ == markers.stars:
+        # Stars can't be on the same level in sequence
+        dec = depth < prev_depth
+        # and can only increase the depth in the previous was INLINE
+        inc = prev_idx == 1 and depth == prev_depth + 1
+        return dec or inc
+    return True
+
+
+def sequence(typ, idx, depth, *all_prev):
+    """Constrain the current marker based on all markers leading up to it"""
     # Group (type, idx, depth) per marker
     all_prev = [tuple(all_prev[i:i+3]) for i in range(0, len(all_prev), 3)]
+    prev_typ, prev_idx, prev_depth = all_prev[-1]
 
-    if all_prev:
-        prev_typ, prev_idx, prev_depth = all_prev[-1]
-
-    # Rule isn't relevant because it's the first marker ...
-    if not all_prev:
+    if typ == markers.stars:    # Accounted for elsewhere
         return True
-    # ... or the previous marker's type doesn't match (see diff_type)
-    elif typ != prev_typ:
-        return True
-    # Stars can't be on the same level in sequence. Can only start a new
-    # level if the preceding wasn't inline
-    elif typ == markers.stars:
-        return depth < prev_depth or (prev_idx == 1
-                                      and depth == prev_depth + 1)
-    # If this marker matches *any* previous marker, we may be continuing
-    # it's sequence
-    else:
-        for prev_type, prev_idx, prev_depth in _ancestors(all_prev):
-            if (prev_type == typ and prev_depth == depth
-                    and idx == prev_idx + 1):
-                return True
-    return False
-
-
-def diff_type(typ, idx, depth, *all_prev):
-    """Constraints on sequential markers with differing types"""
-    all_prev = [tuple(all_prev[i:i+3]) for i in range(0, len(all_prev), 3)]
-
-    # Rule isn't relevant because it's the first marker ...
-    if not all_prev:
-        return True
-    # ... or the previous marker's type matches (see same_type)
-    elif typ == all_prev[-1][0]:
-        return True
-    # Starting a new type
-    elif idx == 0 and depth == all_prev[-1][2] + 1:
-        return True
-    # Stars can't skip levels forward (e.g. _ *, _ _ _ *)
-    elif typ == markers.stars:
-        return all_prev[-1][2] - depth >= -1
     # If following stars and on the same level, we're good
-    elif all_prev[-1][0] == markers.stars and depth == all_prev[-1][2]:
+    elif (typ != prev_typ and prev_typ == markers.stars and
+            depth == prev_depth):
         return True     # Stars
-    # If this marker matches *any* previous marker, we may be continuing
-    # it's sequence
     else:
-        for prev_type, prev_idx, prev_depth in _ancestors(all_prev):
-            if (prev_type == typ and prev_depth == depth
-                    and idx == prev_idx + 1):
-                return True
+        ancestors = _ancestors(all_prev)
+        # Starting a new sequence
+        if len(ancestors) == depth:
+            return idx == 0 and typ != prev_typ
+        elif len(ancestors) > depth:
+            prev_typ, prev_idx, prev_depth = ancestors[depth]
+            return idx == prev_idx + 1 and prev_typ == typ
     return False
 
 

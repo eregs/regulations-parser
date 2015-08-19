@@ -50,33 +50,43 @@ def derive_depths(marker_list, additional_constraints=[]):
         return []
     problem = Problem()
 
-    # Marker type per marker
-    problem.addVariables(["type" + str(i) for i in range(len(marker_list))],
-                         markers.types)
-    # Index within the marker list
-    problem.addVariables(["idx" + str(i) for i in range(len(marker_list))],
-                         range(51))
     # Depth in the tree, with an arbitrary limit of 10
     problem.addVariables(["depth" + str(i) for i in range(len(marker_list))],
                          range(10))
-    all_vars = []
-    for i in range(len(marker_list)):
-        all_vars.extend(['type' + str(i), 'idx' + str(i), 'depth' + str(i)])
 
     # Always start at depth 0
     problem.addConstraint(rules.must_be(0), ("depth0",))
 
+    all_vars = []
     for idx, marker in enumerate(marker_list):
-        idx_str = str(idx)
-        problem.addConstraint(rules.type_match(marker),
-                              ("type" + idx_str, "idx" + idx_str))
+        type_var = "type{}".format(idx)
+        depth_var = "depth{}".format(idx)
+        # Index within the marker list. Though this variable is redundant, it
+        # makes the code easier to understand and doesn't have a significant
+        # performance penalty
+        idx_var = "idx{}".format(idx)
 
-        prior_params = ['type' + idx_str, 'idx' + idx_str, 'depth' + idx_str]
-        for i in range(idx):
-            prior_params += ['type' + str(i), 'idx' + str(i), 'depth' + str(i)]
+        typ_opts = [t for t in markers.types if marker in t]
+        idx_opts = [i for t in typ_opts for i in range(len(t))
+                    if t[i] == marker]
+        problem.addVariable(type_var, typ_opts)
+        problem.addVariable(idx_var, idx_opts)
 
-        problem.addConstraint(rules.same_type, prior_params)
-        problem.addConstraint(rules.diff_type, prior_params)
+        problem.addConstraint(rules.type_match(marker), [type_var, idx_var])
+        all_vars.extend([type_var, idx_var, depth_var])
+
+        if idx > 0:
+            pairs = all_vars[3*(idx-1):]
+            problem.addConstraint(rules.depth_check, pairs)
+            problem.addConstraint(rules.stars_check, pairs)
+
+    # separate loop so that the simpler checks run first
+    for idx in range(1, len(marker_list)):
+        # start with the current idx
+        params = all_vars[3*idx:3*(idx+1)]
+        # then add on all previous
+        params += all_vars[:3*idx]
+        problem.addConstraint(rules.sequence, params)
 
     # @todo: There's probably efficiency gains to making these rules over
     # prefixes (see above) rather than over the whole collection at once
