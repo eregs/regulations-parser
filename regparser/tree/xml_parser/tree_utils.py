@@ -36,6 +36,13 @@ class NodeStack(PriorityStack):
         children = [prepend_parts(parts_prefix, c[1]) for c in children]
         self.peek_last()[1].children = children
 
+    def collapse(self):
+        """After all of the nodes have been inserted at their proper levels,
+        collapse them into a single root node"""
+        while self.size() > 1:
+            self.unwind()
+        return self.peek_last()[1]
+
 
 def split_text(text, tokens):
     """
