@@ -109,11 +109,17 @@ class BuilderTests(TestCase):
 
     @patch('regparser.builder.fetch_notice_json')
     def test_determine_doc_number_annual(self, fetch_notice_json):
-        """Verify that a document number can be pulled out of an annual
-        edition of the reg"""
+        """The _latest_ document number pre-effective date should be pulled
+        out of an annual edition of the reg"""
         fetch_notice_json.return_value = [
-            {'el': 1, 'document_number': '111-111'},
-            {'el': 2, 'document_number': '222-222'}]
+            {'document_number': '111-111', 'effective_on': '2011-01-01',
+             'publication_date': '2011-01-01'},
+            {'document_number': '222-222', 'effective_on': '2011-10-20',
+             'publication_date': '2011-02-02'},
+            {'document_number': '333-333', 'effective_on': '2011-10-20',
+             'publication_date': '2011-03-03'},
+            {'document_number': '444-444', 'effective_on': '2011-04-04',
+             'publication_date': '2011-04-04'}]
         xml_str = """<?xml version="1.0"?>
         <?xml-stylesheet type="text/xsl" href="cfr.xsl"?>
         <CFRGRANULE xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -126,11 +132,31 @@ class BuilderTests(TestCase):
         </CFRGRANULE>"""
         xml = etree.fromstring(xml_str)
         self.assertEqual(
-            '111-111', Builder.determine_doc_number(xml, '12', '34'))
+            '333-333', Builder.determine_doc_number(xml, '12', '34'))
         args = fetch_notice_json.call_args
         self.assertEqual(('12', '34'), args[0])     # positional args
         self.assertEqual({'max_effective_date': '2012-01-01',
                           'only_final': True}, args[1])   # kw args
+
+    @patch.object(Builder, 'merge_changes')
+    @patch.object(Builder, '__init__')
+    def test_changes_in_sequence_skips(self, init, merge_changes):
+        """Skips over notices which occurred _before_ our starting point"""
+        init.return_value = None
+        b = Builder()   # Don't need parameters as init's been mocked out
+        aaaa = {'document_number': 'aaaa', 'effective_on': '2012-12-12',
+                'publication_date': '2011-11-11', 'changes': []}
+        bbbb = {'document_number': 'bbbb', 'effective_on': '2012-12-12',
+                'publication_date': '2011-11-12', 'changes': []}
+        cccc = {'document_number': 'cccc', 'effective_on': '2013-01-01',
+                'publication_date': '2012-01-01', 'changes': []}
+        b.eff_notices = {'2012-12-12': [aaaa, bbbb], '2013-01-01': [cccc]}
+        b.doc_number = bbbb['document_number']
+        changes = list(b.changes_in_sequence())
+        self.assertEqual(len(changes), 1)
+        self.assertEqual(cccc['document_number'], changes[0][0])
+        self.assertEqual(cccc['document_number'],
+                         merge_changes.call_args[0][0])
 
 
 class LayerCacheAggregatorTests(TestCase):

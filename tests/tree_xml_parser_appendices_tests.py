@@ -85,6 +85,19 @@ class AppendicesTest(TestCase):
         self.assertEqual('A-3 Some header here', a3.title)
         self.assertEqual('A-4 Another header', a4.title)
 
+    def test_process_appendix_fp_dash(self):
+        xml = u"""
+        <APPENDIX>
+            <EAR>Pt. 1111, App. A</EAR>
+            <HD SOURCE="HED">Appendix A to Part 1111—Awesome</HD>
+            <FP SOURCE="FP-DASH">FP-DASH filled out with dashes</FP>
+        </APPENDIX>"""
+        appendix = appendices.process_appendix(etree.fromstring(xml), 1111)
+        self.assertEqual(1, len(appendix.children))
+        fp_dash = appendix.children[0]
+
+        self.assertEqual('FP-DASH filled out with dashes_____', fp_dash.text.strip())
+
     def test_process_appendix_header_depth(self):
         xml = u"""
         <APPENDIX>
@@ -365,24 +378,24 @@ class AppendicesTest(TestCase):
 
     def test_title_label_pair(self):
         title = u'A-1—Model Clauses'
-        self.assertEqual(('1', 2), appendices.title_label_pair(title, 'A'))
+        self.assertEqual(('1', 2), appendices.title_label_pair(title, 'A', '1000'))
 
         title = u'Part III—Construction Period'
-        self.assertEqual(('III', 2), appendices.title_label_pair(title, 'A'))
+        self.assertEqual(('III', 2), appendices.title_label_pair(title, 'A', '1000'))
 
     def test_title_label_pair_parens(self):
         title = u'G-13(A)—Has No parent'
-        self.assertEqual(('13(A)', 2), appendices.title_label_pair(title, 'G'))
+        self.assertEqual(('13(A)', 2), appendices.title_label_pair(title, 'G', '1000'))
 
         title = u'G-13(C)(1) - Some Title'
         self.assertEqual(('13(C)(1)', 2),
-                         appendices.title_label_pair(title, 'G'))
+                         appendices.title_label_pair(title, 'G', '1000'))
 
         title = u'G-13A - Some Title'
-        self.assertEqual(('13A', 2), appendices.title_label_pair(title, 'G'))
+        self.assertEqual(('13A', 2), appendices.title_label_pair(title, 'G', '1000'))
 
         title = u'G-13And Some Smashed Text'
-        self.assertEqual(('13', 2), appendices.title_label_pair(title, 'G'))
+        self.assertEqual(('13', 2), appendices.title_label_pair(title, 'G', '1000'))
 
 
 class AppendixProcessorTest(TestCase):

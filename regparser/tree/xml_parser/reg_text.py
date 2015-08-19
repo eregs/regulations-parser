@@ -97,6 +97,7 @@ def get_subpart_title(subpart_xml):
     if hds:
         return [hd.text for hd in hds][0]
 
+
 def build_subpart(reg_part, subpart_xml):
     subpart_title = get_subpart_title(subpart_xml)
     subpart = reg_text.build_subpart(subpart_title, reg_part)
@@ -136,15 +137,15 @@ def get_markers_and_text(node, markers_list):
     node_text = tree_utils.get_node_text(node, add_spaces=True)
     text_with_tags = tree_utils.get_node_text_tags_preserved(node)
 
-    if len(markers_list) > 1:
-        actual_markers = ['(%s)' % m for m in markers_list]
-        plain_markers = [m.replace('<E T="03">', '').replace('</E>', '')
-                         for m in actual_markers]
-        node_texts = tree_utils.split_text(node_text, plain_markers)
-        tagged_texts = tree_utils.split_text(text_with_tags, actual_markers)
-        node_text_list = zip(node_texts, tagged_texts)
-    elif markers_list:
-        node_text_list = [(node_text, text_with_tags)]
+    actual_markers = ['(%s)' % m for m in markers_list]
+    plain_markers = [m.replace('<E T="03">', '').replace('</E>', '')
+                     for m in actual_markers]
+    node_texts = tree_utils.split_text(node_text, plain_markers)
+    tagged_texts = tree_utils.split_text(text_with_tags, actual_markers)
+    node_text_list = zip(node_texts, tagged_texts)
+
+    if len(node_text_list) > len(markers_list):     # diff can only be 1
+        markers_list.insert(0, mtypes.MARKERLESS)
     return zip(markers_list, node_text_list)
 
 
@@ -184,11 +185,14 @@ def build_from_section(reg_part, section_xml):
             section_texts.append((text, tagged_text))
         else:
             for m, node_text in get_markers_and_text(ch, markers_list):
-                n = Node(node_text[0], [], [m], source_xml=ch)
-                n.tagged_text = unicode(node_text[1])
-                nodes.append(n)
-            if node_text[0].endswith('* * *'):
-                nodes.append(Node(label=[mtypes.INLINE_STARS]))
+                if m == mtypes.MARKERLESS:
+                    section_texts.append(node_text)
+                else:
+                    n = Node(node_text[0], [], [m], source_xml=ch)
+                    n.tagged_text = unicode(node_text[1])
+                    nodes.append(n)
+                if node_text[0].endswith('* * *'):
+                    nodes.append(Node(label=[mtypes.INLINE_STARS]))
 
     # Trailing stars don't matter; slightly more efficient to ignore them
     while nodes and nodes[-1].label[0] in mtypes.stars:
@@ -224,8 +228,11 @@ def build_from_section(reg_part, section_xml):
 
     nodes = []
     section_nums = []
-    for match in re.finditer(r'%s\.(\d+)' % reg_part, section_no):
-        section_nums.append(int(match.group(1)))
+    for match in re.finditer(r'%s\.(\d+[a-z]*)' % reg_part, section_no):
+        secnum_candidate = match.group(1)
+        if secnum_candidate.isdigit():
+            secnum_candidate = int(secnum_candidate)
+        section_nums.append(secnum_candidate)
 
     #  Span of section numbers
     if u'§§' == section_no[:2] and '-' in section_no:

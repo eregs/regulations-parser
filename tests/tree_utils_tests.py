@@ -1,4 +1,4 @@
-#vim: set encoding=utf-8
+# vim: set encoding=utf-8
 import unittest
 
 from lxml import etree
@@ -14,6 +14,16 @@ class TreeUtilsTest(unittest.TestCase):
 
         result = tree_utils.split_text(text, tokens)
         expected = ['(A) Apples ', '(B) Bananas (Z) Zebras']
+        self.assertEqual(expected, result)
+
+    def test_split_text_with_prefix(self):
+        """Don't wipe out the intro text, if present"""
+        text = "Some content here (A) Apples (B) Bananas (Z) Zebras"
+        tokens = ['(A)', '(B)']
+
+        result = tree_utils.split_text(text, tokens)
+        expected = ['Some content here ', '(A) Apples ',
+                    '(B) Bananas (Z) Zebras']
         self.assertEqual(expected, result)
 
     def test_consecutive_markers(self):
@@ -92,6 +102,37 @@ class TreeUtilsTest(unittest.TestCase):
 
         n = m_stack.pop()[0][1]
         self.assertEqual(n.children[0].label, ['272', 'a'])
+
+    def test_collapse_stack(self):
+        """collapse() is a helper method which wraps up all of the node
+        stack's nodes with a bow"""
+        m_stack = tree_utils.NodeStack()
+        m_stack.add(0, Node(label=['272']))
+        m_stack.add(1, Node(label=['11']))
+        m_stack.add(2, Node(label=['a']))
+        m_stack.add(3, Node(label=['1']))
+        m_stack.add(3, Node(label=['2']))
+        m_stack.add(2, Node(label=['b']))
+
+        reg = m_stack.collapse()
+        self.assertEqual(reg.label, ['272'])
+        self.assertEqual(len(reg.children), 1)
+
+        section = reg.children[0]
+        self.assertEqual(section.label, ['272', '11'])
+        self.assertEqual(len(section.children), 2)
+
+        a, b = section.children
+        self.assertEqual(b.label, ['272', '11', 'b'])
+        self.assertEqual(len(b.children), 0)
+        self.assertEqual(a.label, ['272', '11', 'a'])
+        self.assertEqual(len(a.children), 2)
+
+        a1, a2 = a.children
+        self.assertEqual(a1.label, ['272', '11', 'a', '1'])
+        self.assertEqual(len(a1.children), 0)
+        self.assertEqual(a2.label, ['272', '11', 'a', '2'])
+        self.assertEqual(len(a2.children), 0)
 
     def test_get_collapsed_markers(self):
         text = u'(a) <E T="03">Transfer </E>—(1) <E T="03">Notice.</E> follow'
