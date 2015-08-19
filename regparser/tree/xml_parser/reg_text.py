@@ -224,8 +224,11 @@ def build_from_section(reg_part, section_xml):
 
     nodes = []
     section_nums = []
-    for match in re.finditer(r'%s\.(\d+)' % reg_part, section_no):
-        section_nums.append(int(match.group(1)))
+    for match in re.finditer(r'%s\.(\d+[:alpha:]*)' % reg_part, section_no):
+        secnum_candidate = match.group(1)
+        if all([char.isdigit() for char in secnum_candidate]):
+            secnum_candidate = int(secnum_candidate)
+        section_nums.append(secnum_candidate)
 
     #  Span of section numbers
     if u'§§' == section_no[:2] and '-' in section_no:

@@ -230,6 +230,19 @@ class RegTextTest(TestCase):
         nb = node.children[0]
         self.assertEqual(nb.text.strip(), "(b) General. Content Content.")
 
+    def test_build_from_section_section_with_nondigits(self):
+        xml = u"""
+        <SECTION>
+            <SECTNO>§ 8675.309a</SECTNO>
+            <SUBJECT>Definitions.</SUBJECT>
+            <P><E T="03">Transfers </E>—(1) <E T="03">Notice.</E> follow
+            </P>
+        </SECTION>
+        """
+        node = reg_text.build_from_section('8675', etree.fromstring(xml))[0]
+        self.assertEqual(node.label, ['8675', '309a'])
+        self.assertEqual(0, len(node.children))
+
     def test_get_title(self):
         xml = u"""
             <PART>
