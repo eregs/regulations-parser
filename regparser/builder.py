@@ -33,6 +33,7 @@ class Builder(object):
         self.checkpointer = checkpointer or NullCheckpointer()
         self.writer = api_writer.Client()
 
+        # @todo - we probably shouldn't make an API call in the constructor
         self.eff_notices = self.checkpointer.checkpoint(
             "effective-notices",
             lambda: notices_for_cfr_part(self.cfr_title, self.cfr_part)
@@ -96,12 +97,16 @@ class Builder(object):
 
     def changes_in_sequence(self):
         """Generator of version string, changes-object pairs. This can be used
-        to see what changes will be applied going forward."""
+        to see what changes will be applied going forward. It will skip over
+        notices until our starting point (self.doc_number)"""
         relevant_notices = []
+        seen_start = False
         for date in sorted(self.eff_notices.keys()):
-            relevant_notices.extend(
-                n for n in self.eff_notices[date]
-                if 'changes' in n and n['document_number'] != self.doc_number)
+            for notice in self.eff_notices[date]:
+                if 'changes' in notice and seen_start:
+                    relevant_notices.append(notice)
+                elif notice['document_number'] == self.doc_number:
+                    seen_start = True
         for notice in relevant_notices:
             version = notice['document_number']
             yield version, self.merge_changes(version, notice['changes'])
@@ -210,9 +215,11 @@ def _fdsys_to_doc_number(xml, title, title_part):
     original_date_els = xml.xpath('//FDSYS/ORIGINALDATE')
     if len(original_date_els) > 0:
         date = original_date_els[0].text
-        #   Grab oldest document number from Federal register API
+        # Grab closest notice to this effective date from the Federal Register
         notices = fetch_notice_json(title, title_part, only_final=True,
                                     max_effective_date=date)
+        comparer = lambda n: (n['effective_on'], n['publication_date'])
+        notices = sorted(notices, key=comparer, reverse=True)
         if notices:
             return notices[0]['document_number']
 
