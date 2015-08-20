@@ -4,10 +4,10 @@ import re
 from lxml import etree
 
 from regparser import content
-from regparser.tree.depth import heuristics, rules, markers as mtypes
-from regparser.tree.depth.derive import derive_depths
+from regparser.tree.depth import markers as mtypes
 from regparser.tree.struct import Node
 from regparser.tree.paragraph import p_level_of
+from regparser.tree.xml_parser import paragraph_processor
 from regparser.tree.xml_parser.appendices import build_non_reg_text
 from regparser.tree import reg_text
 from regparser.tree.xml_parser import tree_utils
@@ -169,64 +169,12 @@ def next_marker(xml_node, remaining_markers):
 
 
 def build_from_section(reg_part, section_xml):
-    section_texts = []
-    nodes = []
-    # Collect paragraph markers and section text (intro text for the
-    # section)
-    for ch in filter(lambda ch: ch.tag in ('P', 'STARS'),
-                     section_xml.getchildren()):
-        text = tree_utils.get_node_text(ch, add_spaces=True)
-        tagged_text = tree_utils.get_node_text_tags_preserved(ch)
-        markers_list = get_markers(tagged_text.strip())
-
-        if ch.tag == 'STARS':
-            nodes.append(Node(label=[mtypes.STARS_TAG]))
-        elif not markers_list:
-            section_texts.append((text, tagged_text))
-        else:
-            for m, node_text in get_markers_and_text(ch, markers_list):
-                if m == mtypes.MARKERLESS:
-                    section_texts.append(node_text)
-                else:
-                    n = Node(node_text[0], [], [m], source_xml=ch)
-                    n.tagged_text = unicode(node_text[1])
-                    nodes.append(n)
-                if node_text[0].endswith('* * *'):
-                    nodes.append(Node(label=[mtypes.INLINE_STARS]))
-
-    # Trailing stars don't matter; slightly more efficient to ignore them
-    while nodes and nodes[-1].label[0] in mtypes.stars:
-        nodes = nodes[:-1]
-
-    # Use constraint programming to figure out possible depth assignments
-    depths = derive_depths(
-        [node.label[0] for node in nodes],
-        [rules.depth_type_order([mtypes.lower, mtypes.ints, mtypes.roman,
-                                 mtypes.upper, mtypes.em_ints,
-                                 mtypes.em_roman])])
-    m_stack = tree_utils.NodeStack()
-    if depths:
-        # Find the assignment which violates the least of our heuristics
-        depths = heuristics.prefer_multiple_children(depths, 0.5)
-        depths = sorted(depths, key=lambda d: d.weight, reverse=True)
-        depths = depths[0]
-        for node, par in zip(nodes, depths):
-            if par.typ != mtypes.stars:
-                last = m_stack.peek()
-                node.label = [l.replace('<E T="03">', '').replace('</E>', '')
-                              for l in node.label]
-                if len(last) == 0:
-                    m_stack.push_last((1 + par.depth, node))
-                else:
-                    m_stack.add(1 + par.depth, node)
-
     section_no = section_xml.xpath('SECTNO')[0].text
     subject_xml = section_xml.xpath('SUBJECT')
     if not subject_xml:
         subject_xml = section_xml.xpath('RESERVED')
     subject_text = subject_xml[0].text
 
-    nodes = []
     section_nums = []
     for match in re.finditer(r'%s\.(\d+[a-z]*)' % reg_part, section_no):
         secnum_candidate = match.group(1)
@@ -241,13 +189,12 @@ def build_from_section(reg_part, section_xml):
         for i in range(first, last + 1):
             section_nums.append(i)
 
+    section_nodes = []
     for section_number in section_nums:
         section_number = str(section_number)
-        plain_sect_texts = [s[0] for s in section_texts]
-        tagged_sect_texts = [s[1] for s in section_texts]
+        section_text = section_xml.text
+        tagged_section_text = section_xml.text
 
-        section_text = ' '.join([section_xml.text] + plain_sect_texts)
-        tagged_section_text = ' '.join([section_xml.text] + tagged_sect_texts)
         section_title = u"§ " + reg_part + "." + section_number
         if subject_text:
             section_title += " " + subject_text
@@ -257,11 +204,49 @@ def build_from_section(reg_part, section_xml):
             title=section_title)
         sect_node.tagged_text = tagged_section_text
 
-        m_stack.add_to_bottom((1, sect_node))
+        section_nodes.append(
+            RegtextParagraphProcessor().process(section_xml, sect_node)
+        )
+    return section_nodes
 
-        while m_stack.size() > 1:
-            m_stack.unwind()
 
-        nodes.append(m_stack.pop()[0][1])
+class MarkerMatcher(object):
+    """<P> with initial paragraph markers -- (a)(1)(i) etc."""
+    def matches(self, xml):
+        tagged_text = tree_utils.get_node_text_tags_preserved(xml).strip()
+        return xml.tag == 'P' and bool(get_markers(tagged_text))
 
-    return nodes
+    def derive_nodes(self, xml):
+        text = ''
+        tagged_text = tree_utils.get_node_text_tags_preserved(xml).strip()
+        markers_list = get_markers(tagged_text)
+        nodes = []
+        for m, node_text in get_markers_and_text(xml, markers_list):
+            text, tagged_text = node_text
+            node = Node(text=text.strip(), label=[m], source_xml=xml)
+            node.tagged_text = unicode(tagged_text)
+            nodes.append(node)
+        if text.endswith('* * *'):
+            nodes.append(Node(label=[mtypes.INLINE_STARS]))
+        return nodes
+
+
+class NoMarkerMatcher(object):
+    """<P> which has no initial paragraph markers"""
+    def matches(self, xml):
+        tagged_text = tree_utils.get_node_text_tags_preserved(xml).strip()
+        return xml.tag == 'P' and not bool(get_markers(tagged_text))
+
+    def derive_nodes(self, xml):
+        text = tree_utils.get_node_text(xml, add_spaces=True).strip()
+        tagged_text = tree_utils.get_node_text_tags_preserved(xml).strip()
+        node = Node(text=text, label=[mtypes.MARKERLESS])
+        node.tagged_text = unicode(tagged_text.strip())
+        return [node]
+
+
+class RegtextParagraphProcessor(paragraph_processor.ParagraphProcessor):
+    NODE_TYPE = Node.REGTEXT
+    MATCHERS = [paragraph_processor.StarsMatcher(),
+                MarkerMatcher(),
+                NoMarkerMatcher()]
