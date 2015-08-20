@@ -2,7 +2,7 @@ from unittest import TestCase
 
 from regparser.tree.depth import markers, rules
 from regparser.tree.depth.derive import derive_depths
-from regparser.tree.depth.markers import STARS_TAG, INLINE_STARS
+from regparser.tree.depth.markers import INLINE_STARS, MARKERLESS, STARS_TAG
 
 
 class DeriveTests(TestCase):
@@ -11,7 +11,6 @@ class DeriveTests(TestCase):
         depths (in any order)"""
         solutions = derive_depths(markers)
         results = [[a.depth for a in s] for s in solutions]
-        self.assertEqual(len(depths_set), len(results))
         self.assertItemsEqual(results, depths_set)
 
     def test_ints(self):
@@ -106,6 +105,19 @@ class DeriveTests(TestCase):
         self.assert_depth_match(['A', INLINE_STARS, STARS_TAG, 'D'],
                                 [0, 1, 2, 2],
                                 [0, 1, 0, 0])
+
+    def test_markerless_outermost(self):
+        """A pattern often seen in definitions sections"""
+        self.assert_depth_match(
+            [MARKERLESS, MARKERLESS, 'a', 'b', MARKERLESS, 'a', 'b'],
+            [0, 0, 1, 1, 0, 1, 1])
+
+    def test_markerless_repeated(self):
+        """Repeated markerless paragraphs must be on the same level"""
+        self.assert_depth_match(
+            [MARKERLESS, 'a', MARKERLESS, MARKERLESS],
+            [0, 1, 0, 0],
+            [0, 1, 2, 2])
 
     def test_depth_type_order(self):
         extra = rules.depth_type_order([markers.ints, markers.lower])

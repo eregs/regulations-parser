@@ -21,5 +21,6 @@ stars = (STARS_TAG, INLINE_STARS)
 
 # Account for paragraphs without a marker at all
 MARKERLESS = 'MARKERLESS'
+markerless = (MARKERLESS,)
 
-types = [lower, upper, ints, roman, em_ints, em_roman, stars]
+types = [lower, upper, ints, roman, em_ints, em_roman, stars, markerless]

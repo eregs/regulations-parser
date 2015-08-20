@@ -80,6 +80,10 @@ def derive_depths(marker_list, additional_constraints=[]):
             problem.addConstraint(rules.depth_check, pairs)
             problem.addConstraint(rules.stars_check, pairs)
 
+        if idx > 1:
+            pairs = all_vars[3*(idx-2):]
+            problem.addConstraint(rules.markerless_sandwich, pairs)
+
     # separate loop so that the simpler checks run first
     for idx in range(1, len(marker_list)):
         # start with the current idx
