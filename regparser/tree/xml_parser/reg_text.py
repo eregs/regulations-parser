@@ -78,7 +78,8 @@ def build_tree(reg_xml):
         subparts = [build_subpart(reg_part, s) for s in subpart_xmls]
         tree.children = subparts
     else:
-        section_xmls = [c for c in part.getchildren() if c.tag == 'SECTION']
+        section_xmls = [c for c in part.getchildren() if c.tag in
+                        ('SECTION', 'SUBJGRP')]
         sections = []
         for section_xml in section_xmls:
             sections.extend(build_from_section(reg_part, section_xml))
@@ -106,6 +107,10 @@ def build_subpart(reg_part, subpart_xml):
     for ch in subpart_xml.getchildren():
         if ch.tag == 'SECTION':
             sections.extend(build_from_section(reg_part, ch))
+        elif ch.tag == 'SUBJGRP':
+            for group_child in ch.getchildren():
+                if group_child.tag == 'SECTION':
+                    sections.extend(build_from_section(reg_part, group_child))
 
     subpart.children = sections
     return subpart
