@@ -15,19 +15,16 @@ class DeriveTests(TestCase):
         self.assertItemsEqual(results, depths_set)
 
     def test_ints(self):
-        self.assert_depth_match(
-            ['1', '2', '3', '4'],
-            [0, 0, 0, 0])
+        self.assert_depth_match(['1', '2', '3', '4'],
+                                [0, 0, 0, 0])
 
     def test_alpha_ints(self):
-        self.assert_depth_match(
-            ['A', '1', '2', '3'],
-            [0, 1, 1, 1])
+        self.assert_depth_match(['A', '1', '2', '3'],
+                                [0, 1, 1, 1])
 
     def test_alpha_ints_jump_back(self):
-        self.assert_depth_match(
-            ['A', '1', '2', '3', 'B', '1', '2', '3', 'C'],
-            [0, 1, 1, 1, 0, 1, 1, 1, 0])
+        self.assert_depth_match(['A', '1', '2', '3', 'B', '1', '2', '3', 'C'],
+                                [0, 1, 1, 1, 0, 1, 1, 1, 0])
 
     def test_roman_alpha(self):
         self.assert_depth_match(
@@ -42,10 +39,9 @@ class DeriveTests(TestCase):
             [0, 1, 1, 2, 2, 2, 2, 0, 1, 2, 2, 1, 2, 2, 3, 3, 3, 2])
 
     def test_i_ambiguity(self):
-        self.assert_depth_match(
-            ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i'],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 1])
+        self.assert_depth_match(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i'],
+                                [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                                [0, 0, 0, 0, 0, 0, 0, 0, 1])
 
         self.assert_depth_match(
             ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'],
@@ -61,35 +57,30 @@ class DeriveTests(TestCase):
             [0, 1, 2, 3, 3, 4, 4, 4, 2])
 
     def test_simple_stars(self):
-        self.assert_depth_match(
-            ['A', '1', STARS_TAG, 'd'],
-            [0, 1, 2, 2])
+        self.assert_depth_match(['A', '1', STARS_TAG, 'd'],
+                                [0, 1, 2, 2])
 
-        self.assert_depth_match(
-            ['A', '1', 'a', STARS_TAG, 'd'],
-            [0, 1, 2, 2, 2])
+        self.assert_depth_match(['A', '1', 'a', STARS_TAG, 'd'],
+                                [0, 1, 2, 2, 2])
 
     def test_ambiguous_stars(self):
-        self.assert_depth_match(
-            ['A', '1', 'a', STARS_TAG, 'B'],
-            [0, 1, 2, 3, 3],
-            [0, 1, 2, 3, 0],
-            [0, 1, 2, 2, 0],
-            [0, 1, 2, 1, 0])
+        self.assert_depth_match(['A', '1', 'a', STARS_TAG, 'B'],
+                                [0, 1, 2, 3, 3],
+                                [0, 1, 2, 3, 0],
+                                [0, 1, 2, 2, 0],
+                                [0, 1, 2, 1, 0])
 
     def test_double_stars(self):
-        self.assert_depth_match(
-            ['A', '1', 'a', STARS_TAG, STARS_TAG, 'B'],
-            [0, 1, 2, 2, 1, 0],
-            [0, 1, 2, 3, 2, 0],
-            [0, 1, 2, 3, 1, 0])
+        self.assert_depth_match(['A', '1', 'a', STARS_TAG, STARS_TAG, 'B'],
+                                [0, 1, 2, 2, 1, 0],
+                                [0, 1, 2, 3, 2, 0],
+                                [0, 1, 2, 3, 1, 0])
 
     def test_alpha_roman_ambiguous(self):
-        self.assert_depth_match(
-            ['i', 'ii', STARS_TAG, 'v', STARS_TAG, 'vii'],
-            [0, 0, 1, 1, 2, 2],
-            [0, 0, 1, 1, 0, 0],
-            [0, 0, 0, 0, 0, 0])
+        self.assert_depth_match(['i', 'ii', STARS_TAG, 'v', STARS_TAG, 'vii'],
+                                [0, 0, 1, 1, 2, 2],
+                                [0, 0, 1, 1, 0, 0],
+                                [0, 0, 0, 0, 0, 0])
 
     def test_start_star(self):
         self.assert_depth_match(
@@ -101,24 +92,20 @@ class DeriveTests(TestCase):
             [0, 0, 1, 2, 2, 2, 1, 2, 2, 0, 0, 1, 1, 2])
 
     def test_inline_star(self):
-        self.assert_depth_match(
-            ['1', STARS_TAG, '2'],
-            [0, 1, 0])
+        self.assert_depth_match(['1', STARS_TAG, '2'],
+                                [0, 1, 0])
 
-        self.assert_depth_match(
-            ['1', INLINE_STARS, '2'],
-            [0, 0, 0],
-            [0, 1, 0])
+        self.assert_depth_match(['1', INLINE_STARS, '2'],
+                                [0, 0, 0],
+                                [0, 1, 0])
 
     def test_star_star(self):
-        self.assert_depth_match(
-            ['A', STARS_TAG, STARS_TAG, 'D'],
-            [0, 1, 0, 0])
+        self.assert_depth_match(['A', STARS_TAG, STARS_TAG, 'D'],
+                                [0, 1, 0, 0])
 
-        self.assert_depth_match(
-            ['A', INLINE_STARS, STARS_TAG, 'D'],
-            [0, 1, 2, 2],
-            [0, 1, 0, 0])
+        self.assert_depth_match(['A', INLINE_STARS, STARS_TAG, 'D'],
+                                [0, 1, 2, 2],
+                                [0, 1, 0, 0])
 
     def test_depth_type_order(self):
         extra = rules.depth_type_order([markers.ints, markers.lower])
