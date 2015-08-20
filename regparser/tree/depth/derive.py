@@ -40,15 +40,50 @@ class Solution(object):
             print " "*4*par.depth + par.typ[par.idx]
 
 
-def derive_depths(marker_list, additional_constraints=[]):
+def _compress_markerless(marker_list):
+    """Remove repeated MARKERLESS markers. This will speed up depth
+    computations as these paragraphs are redundant for its purposes"""
+    result = []
+    saw_markerless = False
+    for marker in marker_list:
+        if marker != markers.MARKERLESS:
+            saw_markerless = False
+            result.append(marker)
+        elif not saw_markerless:
+            saw_markerless = True
+            result.append(marker)
+    return result
+
+
+def _decompress_markerless(assignment, marker_list):
+    """Now that we have a specific solution, add back in the compressed
+    MARKERLESS markers."""
+    result = {}
+    saw_markerless = False
+    a_idx = -1      # idx in the assignment dict
+    for m_idx, marker in enumerate(marker_list):
+        if marker != markers.MARKERLESS:
+            saw_markerless = False
+            a_idx += 1
+        elif not saw_markerless:
+            saw_markerless = True
+            a_idx += 1
+        result['type{}'.format(m_idx)] = assignment['type{}'.format(a_idx)]
+        result['idx{}'.format(m_idx)] = assignment['idx{}'.format(a_idx)]
+        result['depth{}'.format(m_idx)] = assignment['depth{}'.format(a_idx)]
+    return result
+
+
+def derive_depths(original_markers, additional_constraints=[]):
     """Use constraint programming to derive the paragraph depths associated
     with a list of paragraph markers. Additional constraints (e.g. expected
     marker types, etc.) can also be added. Such constraints are functions of
     two parameters, the constraint function (problem.addConstraint) and a
     list of all variables"""
-    if not marker_list:
+    if not original_markers:
         return []
     problem = Problem()
+    marker_list = _compress_markerless(original_markers)
 
     # Depth in the tree, with an arbitrary limit of 10
     problem.addVariables(["depth" + str(i) for i in range(len(marker_list))],
@@ -100,4 +135,8 @@ def derive_depths(marker_list, additional_constraints=[]):
     for constraint in additional_constraints:
         constraint(problem.addConstraint, all_vars)
 
-    return [Solution(solution) for solution in problem.getSolutions()]
+    solutions = []
+    for assignment in problem.getSolutionIter():
+        assignment = _decompress_markerless(assignment, original_markers)
+        solutions.append(Solution(assignment))
+    return solutions
