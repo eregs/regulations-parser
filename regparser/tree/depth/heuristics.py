@@ -20,24 +20,6 @@ def prefer_multiple_children(solutions, weight=1.0):
     return result
 
 
-def prefer_same_types_same_levels(solutions, weight=1.0):
-    """Dock solutions which have the same type of marker appearing at multiple
-    depths. This _does_ occur, but it's not often."""
-    result = []
-    for solution in solutions:
-        type_depths = defaultdict(set)
-        for par in solution.assignment:
-            type_depths[par.typ].add(par.depth)
-
-        flags, total = 0, 0
-        for depths in type_depths.values():
-            total += len(depths)
-            flags += len(depths) - 1
-
-        result.append(solution.copy_with_penalty(weight * flags / total))
-    return result
-
-
 def prefer_diff_types_diff_levels(solutions, weight=1.0):
     """Dock solutions which have different markers appearing at the same
     level. This also occurs, but not often."""

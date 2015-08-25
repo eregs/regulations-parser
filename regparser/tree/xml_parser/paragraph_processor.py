@@ -37,7 +37,6 @@ class ParagraphProcessor(object):
     def select_depth(self, depths):
         """There might be multiple solutions to our depth processing problem.
         Use heuristics to select one."""
-        depths = heuristics.prefer_same_types_same_levels(depths, 0.8)
         depths = heuristics.prefer_diff_types_diff_levels(depths, 0.8)
         depths = heuristics.prefer_multiple_children(depths, 0.4)
         depths = sorted(depths, key=lambda d: d.weight, reverse=True)
