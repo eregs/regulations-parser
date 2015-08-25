@@ -1,0 +1,129 @@
+# vim: set encoding=utf-8
+from unittest import TestCase
+
+from lxml import etree
+
+from regparser.tree.depth import markers as mtypes
+from regparser.tree.depth.derive import ParAssignment
+from regparser.tree.struct import Node
+from regparser.tree.xml_parser import paragraph_processor
+
+
+class _ExampleProcessor(paragraph_processor.ParagraphProcessor):
+    NODE_TYPE = 'EXAMPLE'
+    MATCHERS = [paragraph_processor.SimpleTagMatcher('TAGA'),
+                paragraph_processor.SimpleTagMatcher('TAGB'),
+                paragraph_processor.StarsMatcher()]
+
+
+class ParagraphProcessorTest(TestCase):
+    def test_parse_nodes_matchers(self):
+        """Verify that matchers are consulted per node"""
+        xml = u"""
+            <ROOT>
+                <TAGA>Some content</TAGA>
+                <TAGB>Some other text</TAGB>
+                <TAGC>Not seen</TAGC>
+            </ROOT>
+        """
+        result = _ExampleProcessor().parse_nodes(etree.fromstring(xml))
+        self.assertEqual(len(result), 2)
+        self.assertEqual(result[0].text, 'Some content')
+        self.assertEqual(result[1].text, 'Some other text')
+        # TAGC content is ignored as there is no matcher
+
+    def test_parse_nodes_training_stars(self):
+        """Trailing stars should be ignored"""
+        xml = u"""
+            <ROOT>
+                <STARS />
+                <TAGA>Some other text</TAGA>
+                <STARS />
+            </ROOT>
+        """
+        result = _ExampleProcessor().parse_nodes(etree.fromstring(xml))
+        self.assertEqual(len(result), 2)
+        self.assertEqual(result[0].label, [mtypes.STARS_TAG])
+        self.assertEqual(result[1].text, 'Some other text')
+
+    def test_parse_nodes_node_type(self):
+        """All created nodes should have the specified type"""
+        xml = u"""
+            <ROOT>
+                <TAGA>Some content</TAGA>
+                <TAGB>Some other text</TAGB>
+            </ROOT>
+        """
+        result = _ExampleProcessor().parse_nodes(etree.fromstring(xml))
+        self.assertEqual([n.node_type for n in result], ['EXAMPLE', 'EXAMPLE'])
+
+    def test_build_hierarchy(self):
+        """Nodes should be returned at the provided depths"""
+        root = Node(label=['root'])
+        nodes = [Node(label=['a']), Node(label=['1']), Node(label=['2']),
+                 Node(label=['i']), Node(label=['b']), Node(label=['c'])]
+        depths = [ParAssignment(mtypes.lower, 0, 0),
+                  ParAssignment(mtypes.ints, 0, 1),
+                  ParAssignment(mtypes.ints, 1, 1),
+                  ParAssignment(mtypes.roman, 0, 2),
+                  ParAssignment(mtypes.lower, 1, 0),
+                  ParAssignment(mtypes.lower, 2, 0)]
+        result = _ExampleProcessor().build_hierarchy(root, nodes, depths)
+        self.assertEqual(result.label, ['root'])
+        self.assertEqual(len(result.children), 3)
+
+        a, b, c = result.children
+        self.assertEqual(a.label, ['root', 'a'])
+        self.assertEqual(len(a.children), 2)
+        self.assertEqual(b.label, ['root', 'b'])
+        self.assertEqual(len(b.children), 0)
+        self.assertEqual(c.label, ['root', 'c'])
+        self.assertEqual(len(c.children), 0)
+
+        a1, a2 = a.children
+        self.assertEqual(a1.label, ['root', 'a', '1'])
+        self.assertEqual(len(a1.children), 0)
+        self.assertEqual(a2.label, ['root', 'a', '2'])
+        self.assertEqual(len(a2.children), 1)
+
+        self.assertEqual(a2.children[0].label, ['root', 'a', '2', 'i'])
+
+    def test_build_hierarchy_markerless(self):
+        """Markerless nodes should receive a unique designation"""
+        root = Node(label=['root'])
+        nodes = [Node(label=[mtypes.MARKERLESS]), Node(label=['a']),
+                 Node(label=[mtypes.MARKERLESS]), Node(label=['b'])]
+        depths = [ParAssignment(mtypes.markerless, 0, 0),
+                  ParAssignment(mtypes.lower, 0, 1),
+                  ParAssignment(mtypes.markerless, 0, 2),
+                  ParAssignment(mtypes.lower, 1, 1)]
+        result = _ExampleProcessor().build_hierarchy(root, nodes, depths)
+        self.assertEqual(len(result.children), 1)
+
+        p1 = result.children[0]
+        self.assertEqual(p1.label, ['root', 'p1'])
+        self.assertEqual(len(p1.children), 2)
+
+        a, b = p1.children
+        self.assertEqual(a.label, ['root', 'p1', 'a'])
+        self.assertEqual(len(a.children), 1)
+        self.assertEqual(a.children[0].label, ['root', 'p1', 'a', 'p2'])
+        self.assertEqual(b.label, ['root', 'p1', 'b'])
+
+    def test_separate_intro_positive(self):
+        """Positive test case for a separate introductory paragraph"""
+        nodes = [Node(label=[mtypes.MARKERLESS]), Node(label=['a']),
+                 Node(label=['b']), Node(label='1')]
+        intro, rest = _ExampleProcessor().separate_intro(nodes)
+        self.assertEqual(nodes[0], intro)
+        self.assertEqual(nodes[1:], rest)
+
+    def test_separate_intro_negative(self):
+        """Negative test case for a separate introductory paragraph"""
+        nodes = [Node(label=[mtypes.MARKERLESS]),
+                 Node(label=[mtypes.MARKERLESS]),
+                 Node(label=[mtypes.MARKERLESS]),
+                 Node(label=[mtypes.MARKERLESS])]
+        intro, rest = _ExampleProcessor().separate_intro(nodes)
+        self.assertIsNone(intro)
+        self.assertEqual(nodes, rest)

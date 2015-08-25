@@ -32,6 +32,9 @@ class ParagraphProcessor(object):
         while nodes and nodes[-1].label[0] in mtypes.stars:
             nodes = nodes[:-1]
 
+        for node in nodes:
+            node.node_type = self.NODE_TYPE
+
         return nodes
 
     def select_depth(self, depths):
@@ -91,7 +94,7 @@ class ParagraphProcessor(object):
             root.tagged_text += " " + intro_node.tagged_text
         if nodes:
             markers = [node.label[0] for node in nodes]
-            depths = derive_depths(markers, self.additional_constraints())
+            depths = derive_depths(markers)
             if not depths:
                 logging.error(
                     "Could not determine paragraph depths:\n%s", markers)
@@ -99,9 +102,6 @@ class ParagraphProcessor(object):
             return self.build_hierarchy(root, nodes, depths)
         else:
             return root
-
-    def additional_constraints(self):
-        return []
 
 
 class StarsMatcher(object):
@@ -111,3 +111,17 @@ class StarsMatcher(object):
 
     def derive_nodes(self, xml):
         return [Node(label=[mtypes.STARS_TAG])]
+
+
+class SimpleTagMatcher(object):
+    """Simple example tag matcher -- it listens for a specific tag and derives
+    a single node with the associated body"""
+    def __init__(self, tag):
+        self.tag = tag
+
+    def matches(self, xml):
+        return xml.tag == self.tag
+
+    def derive_nodes(self, xml):
+        return [Node(text=tree_utils.get_node_text(xml).strip(),
+                     label=[mtypes.MARKERLESS])]
