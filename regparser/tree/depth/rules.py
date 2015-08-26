@@ -28,7 +28,10 @@ def depth_check(prev_typ, prev_idx, prev_depth, typ, idx, depth):
     inc = depth == prev_depth + 1 and idx == 0 and typ != prev_typ
     # stars can also increment the depth
     next_star = depth == prev_depth + 1 and typ == markers.stars
-    return dec or cont or stars or inc or next_star
+    # markerless in sequence must have the same level
+    mless_seq = (prev_typ == typ and prev_depth == depth
+                 and typ == markers.markerless)
+    return dec or cont or stars or inc or next_star or mless_seq
 
 
 def stars_check(prev_typ, prev_idx, prev_depth, typ, idx, depth):
@@ -40,6 +43,19 @@ def stars_check(prev_typ, prev_idx, prev_depth, typ, idx, depth):
         inc = prev_idx == 1 and depth == prev_depth + 1
         return dec or inc
     return True
+
+
+def markerless_sandwich(pprev_typ, pprev_idx, pprev_depth,
+                        prev_typ, prev_idx, prev_depth,
+                        typ, idx, depth):
+    """MARKERLESS shouldn't be used to skip a depth, like:
+        a
+            MARKERLESS
+                a
+    """
+    sandwich = prev_typ == markers.markerless
+    inc_depth = depth == prev_depth + 1 and prev_depth == pprev_depth + 1
+    return not (sandwich and inc_depth)
 
 
 def sequence(typ, idx, depth, *all_prev):
@@ -54,6 +70,11 @@ def sequence(typ, idx, depth, *all_prev):
     elif (typ != prev_typ and prev_typ == markers.stars and
             depth == prev_depth):
         return True     # Stars
+    elif typ == markers.markerless:
+        if typ == prev_typ:
+            return depth == prev_depth
+        else:
+            return depth <= prev_depth + 1
     else:
         ancestors = _ancestors(all_prev)
         # Starting a new sequence
@@ -109,7 +130,7 @@ def stars_occupy_space(*all_vars):
             if typ == markers.stars:
                 if idx == 0:    # STARS_TAG, not INLINE_STARS
                     last_idx += 1
-            elif last_idx >= idx:
+            elif last_idx >= idx and typ != markers.markerless:
                 return False
             else:
                 last_idx = idx
