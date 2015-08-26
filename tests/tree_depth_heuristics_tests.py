@@ -1,27 +1,61 @@
 from unittest import TestCase
 
-from regparser.tree.depth import markers
+from regparser.tree.depth import heuristics, markers
 from regparser.tree.depth.derive import Solution
-from regparser.tree.depth.heuristics import prefer_multiple_children
 
 
 class HeuristicsTests(TestCase):
+    def setUp(self):
+        self.idx_counter = 0
+        self.solution = {}
+
+    def addAssignment(self, typ, char, depth):
+        self.solution['type{}'.format(self.idx_counter)] = typ
+        self.solution['idx{}'.format(self.idx_counter)] = typ.index(char)
+        self.solution['depth{}'.format(self.idx_counter)] = depth
+        self.idx_counter += 1
+
     def test_prefer_multiple_children(self):
-        solution1 = {'type0': markers.lower, 'idx0': 0, 'depth0': 0,    # a
-                     'type1': markers.lower, 'idx1': 1, 'depth1': 0,    # b
-                     'type2': markers.lower, 'idx2': 2, 'depth2': 0,
-                     'type3': markers.lower, 'idx3': 3, 'depth3': 0,
-                     'type4': markers.lower, 'idx4': 4, 'depth4': 0,
-                     'type5': markers.lower, 'idx5': 5, 'depth5': 0,
-                     'type6': markers.lower, 'idx6': 6, 'depth6': 0,
-                     'type7': markers.lower, 'idx7': 7, 'depth7': 0,    # h
-                     'type8': markers.lower, 'idx8': 8, 'depth8': 0}    # i
+        """Should a trailing i be a roman numeral or a lower case?"""
+        self.addAssignment(markers.lower, 'a', 0)
+        self.addAssignment(markers.lower, 'b', 0)
+        self.addAssignment(markers.lower, 'c', 0)
+        self.addAssignment(markers.lower, 'd', 0)
+        self.addAssignment(markers.lower, 'e', 0)
+        self.addAssignment(markers.lower, 'f', 0)
+        self.addAssignment(markers.lower, 'g', 0)
+        self.addAssignment(markers.lower, 'h', 0)
+        self.addAssignment(markers.lower, 'i', 0)
+
+        solution1 = self.solution
         solution2 = solution1.copy()
         solution2['type8'] = markers.roman
         solution2['idx8'] = 0
         solution2['depth8'] = 1
 
         solutions = [Solution(solution1), Solution(solution2)]
-        solutions = prefer_multiple_children(solutions, 0.5)
+        solutions = heuristics.prefer_multiple_children(solutions, 0.5)
+        self.assertEqual(solutions[0].weight, 1.0)
+        self.assertTrue(solutions[1].weight < solutions[0].weight)
+
+    def test_prefer_diff_types_diff_levels(self):
+        """Generally assume that the same depth only contains one type of
+        marker"""
+        self.addAssignment(markers.lower, 'h', 0)
+        self.addAssignment(markers.ints, '1', 1)
+        self.addAssignment(markers.roman, 'i', 2)
+        self.addAssignment(markers.upper, 'A', 3)
+        solution1 = self.solution
+
+        self.setUp()
+
+        self.addAssignment(markers.lower, 'h', 0)
+        self.addAssignment(markers.ints, '1', 1)
+        self.addAssignment(markers.roman, 'i', 0)
+        self.addAssignment(markers.upper, 'A', 1)
+        solution2 = self.solution
+
+        solutions = [Solution(solution1), Solution(solution2)]
+        solutions = heuristics.prefer_diff_types_diff_levels(solutions, 0.5)
         self.assertEqual(solutions[0].weight, 1.0)
         self.assertTrue(solutions[1].weight < solutions[0].weight)

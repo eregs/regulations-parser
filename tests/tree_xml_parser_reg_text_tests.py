@@ -236,8 +236,7 @@ class RegTextTest(TestCase):
         <SECTION>
             <SECTNO>§ 8675.309a</SECTNO>
             <SUBJECT>Definitions.</SUBJECT>
-            <P><E T="03">Transfers </E>—(1) <E T="03">Notice.</E> follow
-            </P>
+            <P>Intro content here</P>
         </SECTION>
         """
         node = reg_text.build_from_section('8675', etree.fromstring(xml))[0]
