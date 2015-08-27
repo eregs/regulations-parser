@@ -237,7 +237,8 @@ class MarkerMatcher(object):
 
 
 class NoMarkerMatcher(object):
-    """<P> or <FP> which has no initial paragraph markers"""
+    """<P> or <FP> which has no initial paragraph markers. FP is a "flush
+    paragraph", a display-oriented distinction which we will ignore"""
     def matches(self, xml):
         tagged_text = tree_utils.get_node_text_tags_preserved(xml).strip()
         return xml.tag in ('P', 'FP') and not bool(get_markers(tagged_text))
