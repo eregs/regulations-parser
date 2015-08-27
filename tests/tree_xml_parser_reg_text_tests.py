@@ -218,6 +218,29 @@ class RegTextTest(TestCase):
         self.assertEqual(node.label, ['8675', '309a'])
         self.assertEqual(0, len(node.children))
 
+    def test_build_from_section_fp(self):
+        with self.tree.builder("SECTION") as root:
+            root.SECTNO(u"§ 8675.309")
+            root.SUBJECT("Definitions.")
+            root.P("(a) aaa")
+            root.P("(b) bbb")
+            root.FP("fpfpfp")
+            root.P("(c) ccc")
+        node = reg_text.build_from_section('8675', self.tree.render_xml())[0]
+        self.assertEqual(3, len(node.children))
+        a, b, c = node.children
+
+        self.assertEqual(['8675', '309', 'a'], a.label)
+        self.assertEqual([], a.children)
+        self.assertEqual(['8675', '309', 'b'], b.label)
+        self.assertEqual(1, len(b.children))
+        self.assertEqual(['8675', '309', 'c'], c.label)
+        self.assertEqual([], c.children)
+
+        fp = b.children[0]
+        self.assertEqual(['8675', '309', 'b', 'p1'], fp.label)
+        self.assertEqual([], fp.children)
+
     def test_get_title(self):
         with self.tree.builder("PART") as root:
             root.HD("regulation title")
