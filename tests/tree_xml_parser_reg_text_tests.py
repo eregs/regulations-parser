@@ -6,13 +6,10 @@ from mock import patch
 
 from regparser.tree.depth import markers as mtypes
 from regparser.tree.xml_parser import reg_text
-from tests.xml_builder import LXMLBuilder
+from tests.xml_builder import XMLBuilderMixin
 
 
-class RegTextTest(TestCase):
-    def setUp(self):
-        self.tree = LXMLBuilder()
-
+class RegTextTest(XMLBuilderMixin, TestCase):
     def test_build_from_section_intro_text(self):
         with self.tree.builder("SECTION") as root:
             root.SECTNO(u"§ 8675.309")

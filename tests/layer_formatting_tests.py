@@ -1,27 +1,24 @@
 from unittest import TestCase
 
-from lxml import etree
-
 from regparser.layer import formatting
 from regparser.tree.struct import Node
+from tests.xml_builder import XMLBuilderMixin
 
 
-class LayerFormattingTests(TestCase):
+class LayerFormattingTests(XMLBuilderMixin, TestCase):
     def test_build_header(self):
-        xml = etree.fromstring("""
-            <BOXHD>
-                <CHED H="1">1-1</CHED>
-                <CHED H="1">1-2</CHED>
-                <CHED H="2">2-1</CHED>
-                <CHED H="3">3-1</CHED>
-                <CHED H="3">3-2</CHED>
-                <CHED H="3">3-3</CHED>
-                <CHED H="2">2-2</CHED>
-                <CHED H="3">3-4</CHED>
-                <CHED H="3">3-5</CHED>
-                <CHED H="3">3-6<LI>Other Content</LI></CHED>
-            </BOXHD>""")
-        root = formatting.build_header(xml.xpath('./CHED'))
+        with self.tree.builder("BOXHD") as root:
+            root.CHED("1-1", H=1)
+            root.CHED("1-2", H=1)
+            root.CHED("2-1", H=2)
+            root.CHED("3-1", H=3)
+            root.CHED("3-2", H=3)
+            root.CHED("3-3", H=3)
+            root.CHED("2-2", H=2)
+            root.CHED("3-4", H=3)
+            root.CHED("3-5", H=3)
+            root.CHED(_xml="3-6<LI>Other Content</LI>", H=3)
+        root = formatting.build_header(self.tree.render_xml().xpath('./CHED'))
 
         n11, n12 = root.children
         self.assertEqual('1-1', n11.text)
@@ -58,24 +55,31 @@ class LayerFormattingTests(TestCase):
             self.assertEqual(1, n.colspan)
             self.assertEqual(1, n.rowspan)
 
-    def test_process(self):
-        xml = etree.fromstring("""
-            <GPOTABLE>
-                <BOXHD>
-                    <CHED H="1">1-1</CHED>
-                    <CHED H="1">1-2</CHED>
-                    <CHED H="2">2-1</CHED>
-                    <CHED H="3">3-1</CHED>
-                    <CHED H="2">2-2</CHED>
-                    <CHED H="3">3-2</CHED>
-                    <CHED H="3">3-3<LI>Content</LI>Here</CHED>
-                </BOXHD>
-                <ROW><ENT>11</ENT><ENT>12</ENT><ENT>13</ENT><ENT>14</ENT></ROW>
-                <ROW><ENT>21</ENT><ENT>22</ENT><ENT>23</ENT></ROW>
-                <ROW>
-                    <ENT /><ENT>32</ENT><ENT>33<E>More</E></ENT><ENT>34</ENT>
-                </ROW>
-            </GPOTABLE>""")
+    def test_process_table(self):
+        with self.tree.builder("GPOTABLE") as root:
+            with root.BOXHD() as hd:
+                hd.CHED("1-1", H=1)
+                hd.CHED("1-2", H=1)
+                hd.CHED("2-1", H=2)
+                hd.CHED("3-1", H=3)
+                hd.CHED("2-2", H=2)
+                hd.CHED("3-2", H=3)
+                hd.CHED(_xml="3-3<LI>Content</LI>Here", H=3)
+            with root.ROW() as row:
+                row.ENT("11")
+                row.ENT("12")
+                row.ENT("13")
+                row.ENT("14")
+            with root.ROW() as row:
+                row.ENT("21")
+                row.ENT("22")
+                row.ENT("23")
+            with root.ROW() as row:
+                row.ENT()
+                row.ENT("32")
+                row.ENT(_xml="33<E>More</E>")
+                row.ENT("34")
+        xml = self.tree.render_xml()
         markdown = formatting.table_xml_to_plaintext(xml)
         self.assertTrue("3-3 Content Here" in markdown)
         self.assertTrue("33 More" in markdown)
@@ -125,12 +129,8 @@ class LayerFormattingTests(TestCase):
         result = formatting.Formatting(None).process(node)
         self.assertEqual(1, len(result))
         result = result[0]
-        print result
 
         self.assertEqual(result['text'], "This is an fp-dash_____")
         self.assertEqual(result['locations'], [0])
         self.assertEqual(result['dash_data'],
                          {'text': 'This is an fp-dash'})
-        
-
-
