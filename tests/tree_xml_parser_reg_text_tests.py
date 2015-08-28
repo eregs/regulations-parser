@@ -6,19 +6,20 @@ from mock import patch
 
 from regparser.tree.depth import markers as mtypes
 from regparser.tree.xml_parser import reg_text
+from tests.xml_builder import LXMLBuilder
 
 
 class RegTextTest(TestCase):
+    def setUp(self):
+        self.tree = LXMLBuilder()
+
     def test_build_from_section_intro_text(self):
-        xml = u"""
-            <SECTION>
-                <SECTNO>§ 8675.309</SECTNO>
-                <SUBJECT>Definitions.</SUBJECT>
-                <P>Some content about this section.</P>
-                <P>(a) something something</P>
-            </SECTION>
-        """
-        node = reg_text.build_from_section('8675', etree.fromstring(xml))[0]
+        with self.tree.builder("SECTION") as root:
+            root.SECTNO(u"§ 8675.309")
+            root.SUBJECT("Definitions.")
+            root.P("Some content about this section.")
+            root.P("(a) something something")
+        node = reg_text.build_from_section('8675', self.tree.render_xml())[0]
         self.assertEqual('Some content about this section.', node.text.strip())
         self.assertEqual(1, len(node.children))
         self.assertEqual(['8675', '309'], node.label)
@@ -29,16 +30,13 @@ class RegTextTest(TestCase):
         self.assertEqual(['8675', '309', 'a'], child.label)
 
     def test_build_from_section_collapsed_level(self):
-        xml = u"""
-        <SECTION>
-            <SECTNO>§ 8675.309</SECTNO>
-            <SUBJECT>Definitions.</SUBJECT>
-            <P>(a) <E T="03">Transfers </E>—(1) <E T="03">Notice.</E> follow
-            </P>
-            <P>(b) <E T="03">Contents</E> (1) Here</P>
-        </SECTION>
-        """
-        node = reg_text.build_from_section('8675', etree.fromstring(xml))[0]
+        with self.tree.builder("SECTION") as root:
+            root.SECTNO(u"§ 8675.309")
+            root.SUBJECT("Definitions.")
+            root.P(_xml=u"""(a) <E T="03">Transfers </E>—(1)
+                           <E T="03">Notice.</E> follow""")
+            root.P(_xml="""(b) <E T="03">Contents</E> (1) Here""")
+        node = reg_text.build_from_section('8675', self.tree.render_xml())[0]
         self.assertEqual(node.label, ['8675', '309'])
         self.assertEqual(2, len(node.children))
         self.assertEqual(node.children[0].label, ['8675', '309', 'a'])
@@ -50,32 +48,26 @@ class RegTextTest(TestCase):
         self.assertEqual(1, len(node.children[1].children))
 
     def test_build_from_section_collapsed_level_emph(self):
-        xml = u"""
-            <SECTION>
-                <SECTNO>§ 8675.309</SECTNO>
-                <SUBJECT>Definitions.</SUBJECT>
-                <P>(a) aaaa</P>
-                <P>(1) 1111</P>
-                <P>(i) iiii</P>
-                <P>(A) AAA—(<E T="03">1</E>) eeee</P>
-            </SECTION>
-        """
-        node = reg_text.build_from_section('8675', etree.fromstring(xml))[0]
+        with self.tree.builder('SECTION') as root:
+            root.SECTNO(u"§ 8675.309")
+            root.SUBJECT("Definitions.")
+            root.P("(a) aaaa")
+            root.P("(1) 1111")
+            root.P("(i) iiii")
+            root.P(_xml=u"""(A) AAA—(<E T="03">1</E>) eeee""")
+        node = reg_text.build_from_section('8675', self.tree.render_xml())[0]
         a1iA = node.children[0].children[0].children[0].children[0]
         self.assertEqual(u"(A) AAA—", a1iA.text)
         self.assertEqual(1, len(a1iA.children))
         self.assertEqual("(1) eeee", a1iA.children[0].text.strip())
 
     def test_build_from_section_double_collapsed(self):
-        xml = u"""
-            <SECTION>
-                <SECTNO>§ 8675.309</SECTNO>
-                <SUBJECT>Definitions.</SUBJECT>
-                <P>(a) <E T="03">Keyterm</E>—(1)(i) Content</P>
-                <P>(ii) Content2</P>
-            </SECTION>
-        """
-        node = reg_text.build_from_section('8675', etree.fromstring(xml))[0]
+        with self.tree.builder('SECTION') as root:
+            root.SECTNO(u'§ 8675.309')
+            root.SUBJECT('Definitions.')
+            root.P(_xml=u"""(a) <E T="03">Keyterm</E>—(1)(i) Content""")
+            root.P("(ii) Content2")
+        node = reg_text.build_from_section('8675', self.tree.render_xml())[0]
         self.assertEqual(['8675', '309'], node.label)
         self.assertEqual(1, len(node.children))
 
@@ -92,24 +84,20 @@ class RegTextTest(TestCase):
         self.assertEqual(['8675', '309', 'a', '1', 'ii'], a1ii.label)
 
     def test_build_from_section_reserved(self):
-        xml = u"""
-            <SECTION>
-                <SECTNO>§ 8675.309</SECTNO>
-                <RESERVED>[Reserved]</RESERVED>
-            </SECTION>"""
-        node = reg_text.build_from_section('8675', etree.fromstring(xml))[0]
+        with self.tree.builder("SECTION") as root:
+            root.SECTNO(u"§ 8675.309")
+            root.RESERVED("[Reserved]")
+        node = reg_text.build_from_section('8675', self.tree.render_xml())[0]
         self.assertEqual(node.label, ['8675', '309'])
         self.assertEqual(u'§ 8675.309 [Reserved]', node.title)
         self.assertEqual([], node.children)
 
     def test_build_from_section_reserved_range(self):
-        xml = u"""
-            <SECTION>
-                <SECTNO>§§ 8675.309-8675.311</SECTNO>
-                <RESERVED>[Reserved]</RESERVED>
-            </SECTION>"""
+        with self.tree.builder("SECTION") as root:
+            root.SECTNO(u"§§ 8675.309-8675.311")
+            root.RESERVED("[Reserved]")
         n309, n310, n311 = reg_text.build_from_section(
-            '8675', etree.fromstring(xml))
+            '8675', self.tree.render_xml())
         self.assertEqual(n309.label, ['8675', '309'])
         self.assertEqual(n310.label, ['8675', '310'])
         self.assertEqual(n311.label, ['8675', '311'])
@@ -117,29 +105,28 @@ class RegTextTest(TestCase):
         self.assertEqual(u'§ 8675.310 [Reserved]', n310.title)
         self.assertEqual(u'§ 8675.311 [Reserved]', n311.title)
 
-    def test_build_from_section_ambiguous(self):
-        xml = u"""
-            <SECTION>
-                <SECTNO>§ 8675.309</SECTNO>
-                <SUBJECT>Definitions.</SUBJECT>
-                <P>(g) Some Content</P>
-                <P>(h) H Starts</P>
-                <P>(1) H-1</P>
-                <P>(2) H-2</P>
-                <P>(i) Is this 8675-309-h-2-i or 8675-309-i</P>
-                <P>%s</P>
-            </SECTION>
-        """
-        n8675_309 = reg_text.build_from_section(
-            '8675', etree.fromstring(xml % '(ii) A'))[0]
+    def _setup_for_ambiguous(self, final_par):
+        with self.tree.builder("SECTION") as root:
+            root.SECTNO(u"§ 8675.309")
+            root.SUBJECT("Definitions.")
+            root.P("(g) Some Content")
+            root.P("(h) H Starts")
+            root.P("(1) H-1")
+            root.P("(2) H-2")
+            root.P("(i) Is this 8675-309-h-2-i or 8675-309-i")
+            root.P(final_par)
+        return reg_text.build_from_section('8675', self.tree.render_xml())[0]
+
+    def test_build_from_section_ambiguous_ii(self):
+        n8675_309 = self._setup_for_ambiguous("(ii) A")
         n8675_309_h = n8675_309.children[1]
         n8675_309_h_2 = n8675_309_h.children[1]
         self.assertEqual(2, len(n8675_309.children))
         self.assertEqual(2, len(n8675_309_h.children))
         self.assertEqual(2, len(n8675_309_h_2.children))
 
-        n8675_309 = reg_text.build_from_section(
-            '8675', etree.fromstring(xml % '(A) B'))[0]
+    def test_build_from_section_ambiguous_A(self):
+        n8675_309 = self._setup_for_ambiguous("(A) B")
         n8675_309_h = n8675_309.children[1]
         n8675_309_h_2 = n8675_309_h.children[1]
         n8675_309_h_2_i = n8675_309_h_2.children[0]
@@ -148,12 +135,12 @@ class RegTextTest(TestCase):
         self.assertEqual(1, len(n8675_309_h_2.children))
         self.assertEqual(1, len(n8675_309_h_2_i.children))
 
-        n8675_309 = reg_text.build_from_section(
-            '8675', etree.fromstring(xml % '(1) C'))[0]
+    def test_build_from_section_ambiguous_1(self):
+        n8675_309 = self._setup_for_ambiguous("(1) C")
         self.assertEqual(3, len(n8675_309.children))
 
-        n8675_309 = reg_text.build_from_section(
-            '8675', etree.fromstring(xml % '(3) D'))[0]
+    def test_build_from_section_ambiguous_3(self):
+        n8675_309 = self._setup_for_ambiguous("(3) D")
         n8675_309_h = n8675_309.children[1]
         n8675_309_h_2 = n8675_309_h.children[1]
         self.assertEqual(2, len(n8675_309.children))
@@ -161,17 +148,14 @@ class RegTextTest(TestCase):
         self.assertEqual(1, len(n8675_309_h_2.children))
 
     def test_build_from_section_collapsed(self):
-        xml = u"""
-            <SECTION>
-                <SECTNO>§ 8675.309</SECTNO>
-                <SUBJECT>Definitions.</SUBJECT>
-                <P>(a) aaa</P>
-                <P>(1) 111</P>
-                <P>(2) 222—(i) iii. (A) AAA</P>
-                <P>(B) BBB</P>
-            </SECTION>
-        """
-        n309 = reg_text.build_from_section('8675', etree.fromstring(xml))[0]
+        with self.tree.builder("SECTION") as root:
+            root.SECTNO(u"§ 8675.309")
+            root.SUBJECT("Definitions.")
+            root.P("(a) aaa")
+            root.P("(1) 111")
+            root.P(_xml=u"""(2) 222—(i) iii. (A) AAA""")
+            root.P("(B) BBB")
+        n309 = reg_text.build_from_section('8675', self.tree.render_xml())[0]
         self.assertEqual(1, len(n309.children))
         n309_a = n309.children[0]
         self.assertEqual(2, len(n309_a.children))
@@ -181,19 +165,16 @@ class RegTextTest(TestCase):
         self.assertEqual(2, len(n309_a_2_i.children))
 
     def test_build_from_section_italic_levels(self):
-        xml = u"""
-            <SECTION>
-                <SECTNO>§ 8675.309</SECTNO>
-                <SUBJECT>Definitions.</SUBJECT>
-                <P>(a) aaa</P>
-                <P>(1) 111</P>
-                <P>(i) iii</P>
-                <P>(A) AAA</P>
-                <P>(<E T="03">1</E>) i1i1i1</P>
-                <P>\n(<E T="03">2</E>) i2i2i2</P>
-            </SECTION>
-        """
-        node = reg_text.build_from_section('8675', etree.fromstring(xml))[0]
+        with self.tree.builder("SECTION") as root:
+            root.SECTNO(u"§ 8675.309")
+            root.SUBJECT("Definitions.")
+            root.P("(a) aaa")
+            root.P("(1) 111")
+            root.P("(i) iii")
+            root.P("(A) AAA")
+            root.P(_xml="""(<E T="03">1</E>) i1i1i1""")
+            root.P(_xml="""\n(<E T="03">2</E>) i2i2i2""")
+        node = reg_text.build_from_section('8675', self.tree.render_xml())[0]
         self.assertEqual(1, len(node.children))
         self.assertEqual(node.label, ['8675', '309'])
 
@@ -218,37 +199,29 @@ class RegTextTest(TestCase):
         self.assertEqual(n2.label, ['8675', '309', 'a', '1', 'i', 'A', '2'])
 
     def test_build_from_section_bad_spaces(self):
-        xml = u"""
-            <SECTION>
-                <SECTNO>§ 8675.16</SECTNO>
-                <SUBJECT>Subby Sub Sub.</SUBJECT>
-                <STARS/>
-                <P>(b)<E T="03">General.</E>Content Content.</P>
-            </SECTION>
-        """
-        node = reg_text.build_from_section('8675', etree.fromstring(xml))[0]
+        with self.tree.builder("SECTION") as root:
+            root.SECTNO(u"§ 8675.16")
+            root.SUBJECT("Subby Sub Sub.")
+            root.STARS()
+            root.P(_xml="""(b)<E T="03">General.</E>Content Content.""")
+        node = reg_text.build_from_section('8675', self.tree.render_xml())[0]
         self.assertEqual(1, len(node.children))
         nb = node.children[0]
         self.assertEqual(nb.text.strip(), "(b) General. Content Content.")
 
     def test_build_from_section_section_with_nondigits(self):
-        xml = u"""
-        <SECTION>
-            <SECTNO>§ 8675.309a</SECTNO>
-            <SUBJECT>Definitions.</SUBJECT>
-            <P>Intro content here</P>
-        </SECTION>
-        """
-        node = reg_text.build_from_section('8675', etree.fromstring(xml))[0]
+        with self.tree.builder("SECTION") as root:
+            root.SECTNO(u"§ 8675.309a")
+            root.SUBJECT("Definitions.")
+            root.P("Intro content here")
+        node = reg_text.build_from_section('8675', self.tree.render_xml())[0]
         self.assertEqual(node.label, ['8675', '309a'])
         self.assertEqual(0, len(node.children))
 
     def test_get_title(self):
-        xml = u"""
-            <PART>
-                <HD>regulation title</HD>
-            </PART>"""
-        title = reg_text.get_title(etree.fromstring(xml))
+        with self.tree.builder("PART") as root:
+            root.HD("regulation title")
+        title = reg_text.get_title(self.tree.render_xml())
         self.assertEqual(u'regulation title', title)
 
     def test_get_reg_part(self):
@@ -263,50 +236,37 @@ class RegTextTest(TestCase):
             self.assertEqual(part, '204')
 
     def test_get_reg_part_fr_notice_style(self):
-        xml = u"""
-            <REGTEXT PART="204">
-            <SECTION>
-            </SECTION>
-            </REGTEXT>
-        """
-        part = reg_text.get_reg_part(etree.fromstring(xml))
+        with self.tree.builder("REGTEXT", PART="204") as root:
+            root.SECTION("\n")
+        part = reg_text.get_reg_part(self.tree.render_xml())
         self.assertEqual(part, '204')
 
     def test_get_subpart_title(self):
-        xml = u"""
-            <SUBPART>
-                <HD>Subpart A—First subpart</HD>
-            </SUBPART>"""
-        subpart_title = reg_text.get_subpart_title(etree.fromstring(xml))
+        with self.tree.builder("SUBPART") as root:
+            root.HD(u"Subpart A—First subpart")
+        subpart_title = reg_text.get_subpart_title(self.tree.render_xml())
         self.assertEqual(subpart_title, u'Subpart A—First subpart')
 
     def test_get_subpart_title_reserved(self):
-        xml = u"""
-            <SUBPART>
-                <RESERVED>Subpart J [Reserved]</RESERVED>
-            </SUBPART>"""
-        subpart_title = reg_text.get_subpart_title(etree.fromstring(xml))
+        with self.tree.builder("SUBPART") as root:
+            root.RESERVED("Subpart J [Reserved]")
+        subpart_title = reg_text.get_subpart_title(self.tree.render_xml())
         self.assertEqual(subpart_title, u'Subpart J [Reserved]')
 
     def test_build_subpart(self):
-        xml = u"""
-            <SUBPART>
-                <HD>Subpart A—First subpart</HD>
-            <SECTION>
-                <SECTNO>§ 8675.309</SECTNO>
-                <SUBJECT>Definitions.</SUBJECT>
-                <P>Some content about this section.</P>
-                <P>(a) something something</P>
-            </SECTION>
-            <SECTION>
-                <SECTNO>§ 8675.310 </SECTNO>
-                <SUBJECT>Definitions.</SUBJECT>
-                <P>Some content about this section.</P>
-                <P>(a) something something</P>
-            </SECTION>
-            </SUBPART>
-        """
-        subpart = reg_text.build_subpart('8675', etree.fromstring(xml))
+        with self.tree.builder("SUBPART") as root:
+            root.HD(u"Subpart A—First subpart")
+            with root.SECTION() as section:
+                section.SECTNO(u"§ 8675.309")
+                section.SUBJECT("Definitions.")
+                section.P("Some content about this section.")
+                section.P("(a) something something")
+            with root.SECTION() as section:
+                section.SECTNO(u"§ 8675.310")
+                section.SUBJECT("Definitions.")
+                section.P("Some content about this section.")
+                section.P("(a) something something")
+        subpart = reg_text.build_subpart('8675', self.tree.render_xml())
         self.assertEqual(subpart.node_type, 'subpart')
         self.assertEqual(len(subpart.children), 2)
         self.assertEqual(subpart.label, ['8675', 'Subpart', 'A'])
@@ -352,13 +312,13 @@ class RegTextTest(TestCase):
     def test_get_markers_and_text_deceptive_single(self):
         """Don't treat a single marker differently than multiple, there might
         be prefix text"""
-        node = etree.fromstring('<P>Some words then (a) a subparagraph</P>')
+        node = etree.fromstring('<P>Words then (a) a subparagraph</P>')
         results = reg_text.get_markers_and_text(node, ['a'])
         self.assertEqual(len(results), 2)
         prefix, subpar = results
 
         self.assertEqual(prefix[0], mtypes.MARKERLESS)
-        self.assertEqual(prefix[1][0], 'Some words then ')
+        self.assertEqual(prefix[1][0], 'Words then ')
         self.assertEqual(subpar[0], 'a')
         self.assertEqual(subpar[1][0], '(a) a subparagraph')
 
@@ -371,45 +331,36 @@ class RegTextTest(TestCase):
 
     @patch('regparser.tree.xml_parser.reg_text.content')
     def test_preprocess_xml(self, content):
-        xml = etree.fromstring("""
-        <CFRGRANULE>
-          <PART>
-            <APPENDIX>
-              <TAG>Other Text</TAG>
-              <GPH DEEP="453" SPAN="2">
-                <GID>ABCD.0123</GID>
-              </GPH>
-            </APPENDIX>
-          </PART>
-        </CFRGRANULE>""")
+        with self.tree.builder("CFRGRANULE") as root:
+            with root.PART() as part:
+                with part.APPENDIX() as appendix:
+                    appendix.TAG("Other Text")
+                    with appendix.GPH(DEEP=453, SPAN=2) as gph:
+                        gph.GID("ABCD.0123")
         content.Macros.return_value = [
-            ("//GID[./text()='ABCD.0123']/..", """
-              <HD SOURCE="HD1">Some Title</HD>
-              <GPH DEEP="453" SPAN="2">
-                <GID>EFGH.0123</GID>
-              </GPH>""")]
-        reg_text.preprocess_xml(xml)
-        should_be = etree.fromstring("""
-        <CFRGRANULE>
-          <PART>
-            <APPENDIX>
-              <TAG>Other Text</TAG>
-              <HD SOURCE="HD1">Some Title</HD>
-              <GPH DEEP="453" SPAN="2">
-                <GID>EFGH.0123</GID>
-              </GPH></APPENDIX>
-          </PART>
-        </CFRGRANULE>""")
+            ("//GID[./text()='ABCD.0123']/..",
+             """<HD SOURCE="HD1">Some Title</HD><GPH DEEP="453" SPAN="2">"""
+             """<GID>EFGH.0123</GID></GPH>""")]
+        orig_xml = self.tree.render_xml()
+        reg_text.preprocess_xml(orig_xml)
 
-        self.assertEqual(etree.tostring(xml), etree.tostring(should_be))
+        self.setUp()
+        with self.tree.builder("CFRGRANULE") as root:
+            with root.PART() as part:
+                with part.APPENDIX() as appendix:
+                    appendix.TAG("Other Text")
+                    appendix.HD("Some Title", SOURCE="HD1")
+                    with appendix.GPH(DEEP=453, SPAN=2) as gph:
+                        gph.GID("EFGH.0123")
+
+        self.assertEqual(etree.tostring(orig_xml), self.tree.render_string())
 
     def test_next_marker_stars(self):
-        xml = etree.fromstring("""
-            <ROOT>
-                <P>(i) Content</P>
-                <STARS />
-                <PRTPAGE />
-                <STARS />
-                <P>(xi) More</P>
-            </ROOT>""")
+        with self.tree.builder("ROOT") as root:
+            root.P("(i) Content")
+            root.STARS()
+            root.PRTPAGE()
+            root.STARS()
+            root.P("(xi) More")
+        xml = self.tree.render_xml()
         self.assertEqual('xi', reg_text.next_marker(xml.getchildren()[0], []))
