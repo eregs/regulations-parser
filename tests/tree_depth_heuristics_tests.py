@@ -59,3 +59,22 @@ class HeuristicsTests(TestCase):
         solutions = heuristics.prefer_diff_types_diff_levels(solutions, 0.5)
         self.assertEqual(solutions[0].weight, 1.0)
         self.assertTrue(solutions[1].weight < solutions[0].weight)
+
+    def test_prefer_shallow_depths(self):
+        """Generate two solutions which vary only in depth. Verify that we
+        prefer the more shallow"""
+        self.addAssignment(markers.markerless, markers.MARKERLESS, 0)
+        self.addAssignment(markers.ints, '1', 1)
+        self.addAssignment(markers.markerless, markers.MARKERLESS, 0)
+        solution1 = self.solution
+
+        self.setUp()
+        self.addAssignment(markers.markerless, markers.MARKERLESS, 0)
+        self.addAssignment(markers.ints, '1', 1)
+        self.addAssignment(markers.markerless, markers.MARKERLESS, 2)
+        solution2 = self.solution
+
+        solutions = [Solution(solution1), Solution(solution2)]
+        solutions = heuristics.prefer_shallow_depths(solutions, 0.5)
+        self.assertEqual(solutions[0].weight, 1.0)
+        self.assertTrue(solutions[1].weight < solutions[0].weight)

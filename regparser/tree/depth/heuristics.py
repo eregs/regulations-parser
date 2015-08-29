@@ -36,3 +36,21 @@ def prefer_diff_types_diff_levels(solutions, weight=1.0):
 
         result.append(solution.copy_with_penalty(weight * flags / total))
     return result
+
+
+def prefer_shallow_depths(solutions, weight=0.1):
+    """Dock solutions which have a higher maximum depth"""
+    # Smallest maximum depth across solutions
+    min_max_depth = min(max(p.depth for p in s.assignment) for s in solutions)
+    max_max_depth = max(p.depth for s in solutions for p in s.assignment)
+    variance = max_max_depth - min_max_depth
+    if variance:
+        result = []
+        for solution in solutions:
+            max_depth = max(p.depth for p in solution.assignment)
+            flags = max_depth - min_max_depth
+            result.append(solution.copy_with_penalty(
+                weight * flags / variance))
+        return result
+    else:
+        return solutions

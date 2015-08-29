@@ -42,6 +42,7 @@ class ParagraphProcessor(object):
         Use heuristics to select one."""
         depths = heuristics.prefer_diff_types_diff_levels(depths, 0.8)
         depths = heuristics.prefer_multiple_children(depths, 0.4)
+        depths = heuristics.prefer_shallow_depths(depths, 0.2)
         depths = sorted(depths, key=lambda d: d.weight, reverse=True)
         return depths[0]
 
