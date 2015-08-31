@@ -1,3 +1,4 @@
+# vim: set encoding=utf-8
 from unittest import TestCase
 
 from regparser.grammar.unified import *
