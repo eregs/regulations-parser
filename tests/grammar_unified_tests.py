@@ -42,7 +42,7 @@ class GrammarCommonTests(TestCase):
         result = notice_cfr_p.parseString(text)
         self.assertEqual(['1024'], list(result))
 
-    def test_marker_comment(self):
+    def xtest_marker_comment(self):
         texts = [u'comment § 1004.3-4-i',
                  u'comment § 1004.3-4.i',
                  u'comment 1004.3-4-i',
