@@ -102,24 +102,28 @@ class LayerTermTest(TestCase):
             u'the next one does']
 
         xml_defs = [
-            (u'(4) Thing means a thing that is defined',
-             u'(4) <E T="03">Thing</E> means a thing that is defined',
-             Ref('thing', 'eee', (4, 9))),
-            (u'(e) Well-meaning lawyers means people who do weird things',
-             u'(e) <E T="03">Well-meaning lawyers</E> means people who do '
-             + 'weird things',
-             Ref('well-meaning lawyers', 'fff', (4, 24))),
-            (u'(e) Words have the same meaning as in a dictionary',
-             u'(e) <E T="03">Words</E> have the same meaning as in a '
-             + 'dictionary',
-             Ref('words', 'ffg', (4, 9))),
-            (u'(e) Banana has the same meaning as bonono',
-             u'(e) <E T="03">Banana</E> has the same meaning as bonono',
-             Ref('banana', 'fgf', (4, 10))),
-            (u'(f) Huge billowy clouds means I want to take a nap',
-             u'(f) <E T="03">Huge billowy clouds</E> means I want to take a '
-             + 'nap',
-             Ref('huge billowy clouds', 'ggg', (4, 23)))]
+                (u'(4) Thing means a thing that is defined',
+                    u'(4) <E T="03">Thing</E> means a thing that is defined',
+                    Ref('thing', 'eee', (4, 9))),
+                (u'(e) Well-meaning lawyers means people who do weird things',
+                    u'(e) <E T="03">Well-meaning lawyers</E> means people who do '
+                    + 'weird things',
+                    Ref('well-meaning lawyers', 'fff', (4, 24))),
+                (u'(e) Words have the same meaning as in a dictionary',
+                    u'(e) <E T="03">Words</E> have the same meaning as in a '
+                    + 'dictionary',
+                    Ref('words', 'ffg', (4, 9))),
+                (u'(e) Banana has the same meaning as bonono',
+                    u'(e) <E T="03">Banana</E> has the same meaning as bonono',
+                    Ref('banana', 'fgf', (4, 10))),
+                (u'(f) Huge billowy clouds means I want to take a nap',
+                    u'(f) <E T="03">Huge billowy clouds</E> means I want to take a '
+                    + 'nap',
+                    Ref('huge billowy clouds', 'ggg', (4, 23))),
+                (u'(v) Lawyers, in relation to coders, means something very different',
+                    u'(v) <E T="03">Lawyers</E>, in relation to coders, means something very different',
+                    Ref(u'lawyers', '', (4, 11))),
+            ]
 
         xml_no_defs = [
             (u'(d) Term1 or term2 means stuff',
@@ -189,10 +193,6 @@ class LayerTermTest(TestCase):
         t = Terms(None)
         stack = ParentStack()
         stack.add(0, Node('Definitions', label=['9999']))
-        node = Node(u'“Act” means some reference to 99 U.S.C. 1234')
-        included, excluded = t.node_definitions(node, stack)
-        self.assertEqual([], included)
-        self.assertEqual(1, len(excluded))
 
         node = Node(u'“Act” means something else entirely')
         included, excluded = t.node_definitions(node, stack)
