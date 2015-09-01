@@ -20,21 +20,20 @@ import settings
 
 
 class Ref(object):
-    def __init__(self, term, label, position):
-        self.term = term
+    def __init__(self, term, label, start):
+        self.term = unicode(term)
         self.label = label
-        self.position = position
+        self.start = start
+        self.end = self.start + len(term)
+        self.position = (self.start, self.end)
 
     def __eq__(self, other):
         """Equality depends on equality of the fields"""
-        return (hasattr(other, 'term') and hasattr(other, 'label')
-                and hasattr(other, 'position') and self.term == other.term
-                and self.label == other.label
-                and self.position == other.position)
+        return isinstance(other, Ref) and repr(self) == repr(other)
 
     def __repr__(self):
-        return 'Ref( term=%s, label=%s, position=%s )' % (
-            repr(self.term), repr(self.label), repr(self.position))
+        return 'Ref( term=%s, label=%s, start=%s )' % (
+            repr(self.term), repr(self.label), repr(self.start))
 
 
 class ParentStack(PriorityStack):
@@ -159,7 +158,7 @@ class Terms(Layer):
                 key = ref.term + ":" + ref.label
                 if (key not in referenced     # New term
                         # Or this term is earlier in the paragraph
-                        or ref.position[0] < referenced[key]['position'][0]):
+                        or ref.start < referenced[key]['position'][0]):
                     referenced[key] = {
                         'term': ref.term,
                         'reference': ref.label,
@@ -208,9 +207,9 @@ class Terms(Layer):
 
         def add_match(n, term, pos):
             if (self.is_exclusion(term, n)):
-                excluded_defs.append(Ref(term, n.label_id(), pos))
+                excluded_defs.append(Ref(term, n.label_id(), pos[0]))
             else:
-                included_defs.append(Ref(term, n.label_id(), pos))
+                included_defs.append(Ref(term, n.label_id(), pos[0]))
 
         try:
             cfr_part = node.label[0]
@@ -268,7 +267,7 @@ class Terms(Layer):
         start = 0
         while start >= 0:
             start = haystack.find(needle, start)
-            if not any(r.position[0] <= start and r.position[1] >= start
+            if not any(r.start <= start and r.end >= start
                        for r in exclusions):
                 return start
             start += 1

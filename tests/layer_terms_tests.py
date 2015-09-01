@@ -68,32 +68,32 @@ class LayerTermTest(TestCase):
         n = Node('ex ex ex', label=['1111', '2'])
         self.assertFalse(t.is_exclusion('ex', n))
 
-        t.scoped_terms = {('1111',): [Ref('abc', '1', (0, 0))]}
+        t.scoped_terms = {('1111',): [Ref('abc', '1', 0)]}
         self.assertFalse(t.is_exclusion('ex', n))
 
-        t.scoped_terms = {('1111',): [Ref('ex', '1', (0, 0))]}
+        t.scoped_terms = {('1111',): [Ref('ex', '1', 0)]}
         self.assertFalse(t.is_exclusion('ex', n))
         n.text = u'Something something the term “ex” does not include potato'
         self.assertTrue(t.is_exclusion('ex', n))
 
-        t.scoped_terms = {('1111',): [Ref('abc', '1', (0, 0))]}
+        t.scoped_terms = {('1111',): [Ref('abc', '1', 0)]}
         self.assertFalse(t.is_exclusion('ex', n))
 
     def test_node_definitions(self):
         t = Terms(None)
         smart_quotes = [
             (u'This has a “worD” and then more',
-             [Ref('word', 'aaa', (12, 16))]),
+             [Ref('word', 'aaa', 12)]),
             (u'I have “anotheR word” term and “moree”',
-             [Ref('another word', 'bbb', (8, 20)),
-              Ref('moree', 'bbb', (32, 37))]),
+             [Ref('another word', 'bbb', 8),
+              Ref('moree', 'bbb', 32)]),
             (u'But the child “DoeS sEe”?',
-             [Ref('does see', 'ccc', (15, 23))]),
-            (u'Start with “this,”', [Ref('this', 'hhh', (12, 16))]),
-            (u'Start with “this;”', [Ref('this', 'iii', (12, 16))]),
-            (u'Start with “this.”', [Ref('this', 'jjj', (12, 16))]),
+             [Ref('does see', 'ccc', 15)]),
+            (u'Start with “this,”', [Ref('this', 'hhh', 12)]),
+            (u'Start with “this;”', [Ref('this', 'iii', 12)]),
+            (u'Start with “this.”', [Ref('this', 'jjj', 12)]),
             (u'As do “subchildren”',
-             [Ref('subchildren', 'ddd', (7, 18))])]
+             [Ref('subchildren', 'ddd', 7)])]
 
         no_defs = [
             u'This has no defs',
@@ -104,25 +104,25 @@ class LayerTermTest(TestCase):
         xml_defs = [
                 (u'(4) Thing means a thing that is defined',
                     u'(4) <E T="03">Thing</E> means a thing that is defined',
-                    Ref('thing', 'eee', (4, 9))),
+                    Ref('thing', 'eee', 4)),
                 (u'(e) Well-meaning lawyers means people who do weird things',
                     u'(e) <E T="03">Well-meaning lawyers</E> means people who do '
                     + 'weird things',
-                    Ref('well-meaning lawyers', 'fff', (4, 24))),
+                    Ref('well-meaning lawyers', 'fff', 4)),
                 (u'(e) Words have the same meaning as in a dictionary',
                     u'(e) <E T="03">Words</E> have the same meaning as in a '
                     + 'dictionary',
-                    Ref('words', 'ffg', (4, 9))),
+                    Ref('words', 'ffg', 4)),
                 (u'(e) Banana has the same meaning as bonono',
                     u'(e) <E T="03">Banana</E> has the same meaning as bonono',
-                    Ref('banana', 'fgf', (4, 10))),
+                    Ref('banana', 'fgf', 4)),
                 (u'(f) Huge billowy clouds means I want to take a nap',
                     u'(f) <E T="03">Huge billowy clouds</E> means I want to take a '
                     + 'nap',
-                    Ref('huge billowy clouds', 'ggg', (4, 23))),
+                    Ref('huge billowy clouds', 'ggg', 4)),
                 (u'(v) Lawyers, in relation to coders, means something very different',
                     u'(v) <E T="03">Lawyers</E>, in relation to coders, means something very different',
-                    Ref(u'lawyers', '', (4, 11))),
+                    Ref(u'lawyers', '', 4)),
             ]
 
         xml_no_defs = [
@@ -131,11 +131,11 @@ class LayerTermTest(TestCase):
 
         scope_term_defs = [
             ('For purposes of this section, the term blue means the color',
-             Ref('blue', '11-11', (39, 43))),
+             Ref('blue', '11-11', 39)),
             ('For purposes of paragraph (a)(1) of this section, the term '
-             + 'cool bro means hip cat', Ref('cool bro', '11-22', (59, 67))),
+             + 'cool bro means hip cat', Ref('cool bro', '11-22', 59)),
             ('For purposes of this paragraph, po jo means "poor Joe"',
-             Ref('po jo', '11-33', (32, 37)))]
+             Ref('po jo', '11-33', 32))]
 
         stack = ParentStack()
         stack.add(0, Node(label=['999']))
@@ -220,13 +220,13 @@ class LayerTermTest(TestCase):
         stack.add(1, Node('Definitions'))
 
         included, excluded = t.node_definitions(n1, stack)
-        self.assertEqual([Ref('bologna', '111-1', (1, 8))], included)
+        self.assertEqual([Ref('bologna', '111-1', 1)], included)
         self.assertEqual([], excluded)
         t.scoped_terms[('111', '1')] = included
 
         included, excluded = t.node_definitions(n2, stack)
         self.assertEqual([], included)
-        self.assertEqual([Ref('bologna', '111-1-a', (33, 40))], excluded)
+        self.assertEqual([Ref('bologna', '111-1-a', 33)], excluded)
 
     def test_node_definitions_multiple_xml(self):
         t = Terms(None)
@@ -240,8 +240,8 @@ class LayerTermTest(TestCase):
         inc, _ = t.node_definitions(winter, stack)
         self.assertEqual(len(inc), 2)
         cold, dreary = inc
-        self.assertEqual(cold, Ref('cold', '9999-4', (4, 8)))
-        self.assertEqual(dreary, Ref('dreary', '9999-4', (13, 19)))
+        self.assertEqual(cold, Ref('cold', '9999-4', 4))
+        self.assertEqual(dreary, Ref('dreary', '9999-4', 13))
 
         summer = Node("(i) Hot, humid, or dry means summer.",
                       label=['9999', '4'])
@@ -251,9 +251,9 @@ class LayerTermTest(TestCase):
         inc, _ = t.node_definitions(summer, stack)
         self.assertEqual(len(inc), 3)
         hot, humid, dry = inc
-        self.assertEqual(hot, Ref('hot', '9999-4', (4, 7)))
-        self.assertEqual(humid, Ref('humid', '9999-4', (9, 14)))
-        self.assertEqual(dry, Ref('dry', '9999-4', (19, 22)))
+        self.assertEqual(hot, Ref('hot', '9999-4', 4))
+        self.assertEqual(humid, Ref('humid', '9999-4', 9))
+        self.assertEqual(dry, Ref('dry', '9999-4', 19))
 
         tamale = Node("(i) Hot tamale or tamale means nom nom",
                       label=['9999', '4'])
@@ -263,8 +263,8 @@ class LayerTermTest(TestCase):
         inc, _ = t.node_definitions(tamale, stack)
         self.assertEqual(len(inc), 2)
         hot, tamale = inc
-        self.assertEqual(hot, Ref('hot tamale', '9999-4', (4, 14)))
-        self.assertEqual(tamale, Ref('tamale', '9999-4', (18, 24)))
+        self.assertEqual(hot, Ref('hot tamale', '9999-4', 4))
+        self.assertEqual(tamale, Ref('tamale', '9999-4', 18))
 
     def test_subpart_scope(self):
         t = Terms(None)
@@ -378,13 +378,13 @@ class LayerTermTest(TestCase):
         t.pre_process()
 
         self.assertTrue(('88',) in t.scoped_terms)
-        self.assertEqual([Ref('abcd', '88-1', (44, 48))],
+        self.assertEqual([Ref('abcd', '88-1', 44)],
                          t.scoped_terms[('88',)])
         self.assertTrue(('88', '2') in t.scoped_terms)
-        self.assertEqual([Ref('axax', '88-2-a-1', (1, 5))],
+        self.assertEqual([Ref('axax', '88-2-a-1', 1)],
                          t.scoped_terms[('88', '2')])
         self.assertTrue(('88', '2', 'b', 'i', 'A') in t.scoped_terms)
-        self.assertEqual([Ref('awesome sauce', '88-2-b-i-A', (13, 26))],
+        self.assertEqual([Ref('awesome sauce', '88-2-b-i-A', 13)],
                          t.scoped_terms[('88', '2', 'b', 'i', 'A')])
 
         #   Check subparts are correct
@@ -447,17 +447,17 @@ class LayerTermTest(TestCase):
     def test_excluded_offsets(self):
         t = Terms(None)
         t.scoped_terms['_'] = [
-            Ref('term', 'lablab', (4, 6)), Ref('other', 'lablab', (8, 9)),
-            Ref('more', 'nonnon', (1, 8))
+            Ref('term', 'lablab', 4), Ref('other', 'lablab', 8),
+            Ref('more', 'nonnon', 1)
         ]
-        self.assertEqual([(4, 6), (8, 9)],
+        self.assertEqual([(4, 8), (8, 13)],
                          t.excluded_offsets('lablab', 'Some text'))
-        self.assertEqual([(1, 8)], t.excluded_offsets('nonnon', 'Other'))
+        self.assertEqual([(1, 5)], t.excluded_offsets('nonnon', 'Other'))
         self.assertEqual([], t.excluded_offsets('ababab', 'Ab ab ab'))
 
     def test_excluded_offsets_blacklist(self):
         t = Terms(None)
-        t.scoped_terms['_'] = [Ref('bourgeois', '12-Q-2', 'Def')]
+        t.scoped_terms['_'] = [Ref('bourgeois', '12-Q-2', 0)]
         settings.IGNORE_DEFINITIONS_IN['ALL'] = ['bourgeois pig']
         excluded = t.excluded_offsets('12-3', 'You are a bourgeois pig!')
         self.assertEqual([(10, 23)], excluded)
@@ -466,8 +466,8 @@ class LayerTermTest(TestCase):
         t = Terms(None)
 
         t.scoped_terms['_'] = [
-            Ref('bourgeois', '12-Q-2', 'Def'),
-            Ref('consumer', '12-Q-3', 'Def')]
+            Ref('bourgeois', '12-Q-2', 0),
+            Ref('consumer', '12-Q-3', 0)]
 
         settings.IGNORE_DEFINITIONS_IN['ALL'] = ['bourgeois pig']
         settings.IGNORE_DEFINITIONS_IN['12'] = ['consumer price index']
@@ -478,7 +478,7 @@ class LayerTermTest(TestCase):
 
     def test_excluded_offsets_blacklist_word_boundaries(self):
         t = Terms(None)
-        t.scoped_terms['_'] = [Ref('act', '28-6-d', 'Def def def')]
+        t.scoped_terms['_'] = [Ref('act', '28-6-d', 0)]
         settings.IGNORE_DEFINITIONS_IN['ALL'] = ['shed act']
         excluded = t.excluded_offsets('28-9', "That's a watershed act")
         self.assertEqual([], excluded)
@@ -578,15 +578,15 @@ class LayerTermTest(TestCase):
         ]))
         t.scoped_terms = {
             ("101", "22", "b", "2", "ii"): [
-                Ref("abc", "ref1", (1, 2)),
-                Ref("aabbcc", "ref2", (2, 3))],
+                Ref("abc", "ref1", 1),
+                Ref("aabbcc", "ref2", 2)],
             ("101", "22", "b"): [
-                Ref("abc", "ref3", (3, 4)),
-                Ref("aaa", "ref4", (4, 5)),
-                Ref("abcabc", "ref5", (5, 6))],
+                Ref("abc", "ref3", 3),
+                Ref("aaa", "ref4", 4),
+                Ref("abcabc", "ref5", 5)],
             ("101", "22", "b", "2", "iii"): [
-                Ref("abc", "ref6", (6, 7)),
-                Ref("zzz", "ref7", (7, 8))]}
+                Ref("abc", "ref6", 6),
+                Ref("zzz", "ref7", 7)]}
         #   Check that the return value is correct
         layer_el = t.process(Node(
             "This has abc, aabbcc, aaa, abcabc, and zzz",
@@ -614,7 +614,7 @@ class LayerTermTest(TestCase):
         ], label=['AB'])
         t = Terms(tree)
         t.scoped_terms = {
-            ('AB',): [Ref("secret phrase", "AB-a", (9, 22))]
+            ('AB',): [Ref("secret phrase", "AB-a", 9)]
         }
         #   Term is defined in the first child
         self.assertEqual([], t.process(tree.children[0]))
