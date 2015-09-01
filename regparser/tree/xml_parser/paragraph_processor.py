@@ -1,5 +1,6 @@
 import logging
 
+from regparser.layer.formatting import table_xml_to_plaintext
 from regparser.tree.depth import heuristics, markers as mtypes
 from regparser.tree.depth.derive import derive_depths
 from regparser.tree.struct import Node
@@ -126,3 +127,13 @@ class SimpleTagMatcher(object):
     def derive_nodes(self, xml):
         return [Node(text=tree_utils.get_node_text(xml).strip(),
                      label=[mtypes.MARKERLESS])]
+
+
+class TableMatcher(object):
+    """Matches the GPOTABLE tag"""
+    def matches(self, xml):
+        return xml.tag == 'GPOTABLE'
+
+    def derive_nodes(self, xml):
+        return [Node(table_xml_to_plaintext(xml), label=[mtypes.MARKERLESS],
+                     source_xml=xml)]
