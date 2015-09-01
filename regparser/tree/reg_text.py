@@ -12,7 +12,7 @@ from regparser.tree.supplement import find_supplement_start
 
 
 def build_subparts_tree(text, part, subpart_builder):
-    """ Build a tree of a subpart, and it's children sections.
+    """ Build a tree of a subpart and its child sections.
     subpart_builder can be a builder that builds a subpart or an
     emptypart. """
 
@@ -83,6 +83,27 @@ def build_subpart(text, part):
     return struct.Node(
         "", [], label, subpart_title, node_type=struct.Node.SUBPART)
 
+def build_subjgrp(text, part):
+    """
+    We're constructing a fake "letter" here by taking the first letter of
+    each word in the subjgrp's title, or using the first two letters of the
+    first word if there's just one—we're avoiding single letters to make sure we
+    don't duplicate an existing subpart, and we're hoping that the initialisms
+    created by this method are unique for this regulation.
+    We can make this more robust by accepting a list of existing initialisms and
+    returning both that list and the Node, and checking against the list as we
+    construct them.
+    """
+    def subjgrp_label(candidate_text):
+        words = candidate_text.split(" ")
+        if len(words) == 1:
+            return words[0][:2]
+        else:
+            return "".join([word[0] for word in words])
+    label = [str(part), 'Subpart', subjgrp_label(text)]
+
+    return struct.Node(
+        "", [], label, text, node_type=struct.Node.SUBPART)
 
 def find_next_subpart_start(text):
     """ Find the start of the next Subpart (e.g. Subpart B)"""
