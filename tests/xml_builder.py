@@ -30,9 +30,16 @@ class LXMLRenderer(Renderer):
     """Outputs lxml tree nodes. Based on the etree renderer"""
     friendly_names = ['lxml']
 
-    def render_verbatim(self, tag, xml_str):
+    def render_verbatim(self, node):
         """It's sometimes easier to describe the node with raw XML"""
-        return etree.fromstring(u'<{0}>{1}</{0}>'.format(tag, xml_str))
+        element = etree.fromstring(u'<{0}>{1}</{0}>'.format(
+            node.__node_name__, node.__attrs__['_xml']))
+
+        for key, value in node.__attrs__.iteritems():
+            if key != '_xml':
+                element.attrib[key] = str(value)
+
+        return element
 
     def render_attributes(self, node):
         """Normal path: attributes are described via __attrs__"""
@@ -47,8 +54,7 @@ class LXMLRenderer(Renderer):
         """Generate the current node, potentially adding it to a parent, then
         recurse on children"""
         if '_xml' in node.__attrs__:
-            element = self.render_verbatim(node.__node_name__,
-                                           node.__attrs__['_xml'])
+            element = self.render_verbatim(node)
         else:
             element = self.render_attributes(node)
 
@@ -63,3 +69,10 @@ class LXMLRenderer(Renderer):
     def render_final(self, rendered, options={}):
         """Part of the Renderer interface"""
         return rendered
+
+
+class XMLBuilderMixin(object):
+    """Mix in to tests to provide access to a builder via self.tree"""
+    def setUp(self):
+        super(XMLBuilderMixin, self).setUp()
+        self.tree = LXMLBuilder()

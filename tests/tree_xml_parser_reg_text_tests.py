@@ -6,13 +6,10 @@ from mock import patch
 
 from regparser.tree.depth import markers as mtypes
 from regparser.tree.xml_parser import reg_text
-from tests.xml_builder import LXMLBuilder
+from tests.xml_builder import XMLBuilderMixin
 
 
-class RegTextTest(TestCase):
-    def setUp(self):
-        self.tree = LXMLBuilder()
-
+class RegTextTest(XMLBuilderMixin, TestCase):
     def test_build_from_section_intro_text(self):
         with self.tree.builder("SECTION") as root:
             root.SECTNO(u"§ 8675.309")
@@ -240,6 +237,29 @@ class RegTextTest(TestCase):
         fp = b.children[0]
         self.assertEqual(['8675', '309', 'b', 'p1'], fp.label)
         self.assertEqual([], fp.children)
+
+    def test_build_from_section_table(self):
+        """Account for regtext with a table"""
+        with self.tree.builder("SECTION") as root:
+            root.SECTNO(u"§ 8675.309")
+            root.SUBJECT("Definitions.")
+            root.P("(a) aaaa")
+            with root.GPOTABLE(CDEF="s25,10", COLS=2, OPTS="L2,i1") as table:
+                with table.BOXHD() as hd:
+                    hd.CHED(H=1)
+                    hd.CHED("Header", H=1)
+                with table.ROW() as row:
+                    row.ENT("Left content", I="01")
+                    row.ENT("Right content")
+        node = reg_text.build_from_section('8675', self.tree.render_xml())[0]
+
+        a = node.children[0]
+        self.assertEqual(1, len(a.children))
+        table = a.children[0]
+        self.assertEqual(['8675', '309', 'a', 'p1'], table.label)
+        self.assertEqual("||Header|\n|---|---|\n|Left content|Right content|",
+                         table.text)
+        self.assertEqual("GPOTABLE", table.source_xml.tag)
 
     def test_get_title(self):
         with self.tree.builder("PART") as root:
