@@ -48,13 +48,13 @@ class SmartQuotes(object):
 
     def find(self, node):
         refs = []
-        if self.stack and self.has_vague_definition_indicator_in_parent():
+        if self.stack and self.has_def_indicator():
             for match, _, _ in grammar.smart_quotes.scanString(node.text):
                 term = match.term.tokens[0].lower().strip(',.;')
                 refs.append(Ref(term, node.label_id(), match.term.pos[0]))
         return refs
 
-    def has_vague_definition_indicator_in_parent(self):
+    def has_def_indicator(self):
         """With smart quotes, we catch some false positives, phrases in quotes
         that are not terms. This extra test lets us know that a parent of the
         node looks like it would contain definitions."""
@@ -94,7 +94,7 @@ class XMLTermMeans(object):
     """Namespace for a matcher for e.g. '<E>XXX</E> means YYY'"""
     def __init__(self, existing_refs):
         """Existing refs will be used to exclude certain matches"""
-        self.exclusions = existing_refs
+        self.exclusions = list(existing_refs)
 
     def find(self, node):
         refs = []
@@ -106,7 +106,9 @@ class XMLTermMeans(object):
                 pos_start = self.pos_start(match.term.tokens[0], node.text)
                 term = node.tagged_text[
                     match.term.pos[0]:match.term.pos[1]].lower()
-                refs.append(Ref(term, node.label_id(), pos_start))
+                ref = Ref(term, node.label_id(), pos_start)
+                refs.append(ref)
+                self.exclusions.append(ref)
         return refs
 
     def pos_start(self, needle, haystack):

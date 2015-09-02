@@ -57,7 +57,7 @@ class Terms(Layer):
                                   struct.Node.EMPTYPART):
                 included, excluded = self.node_definitions(node, stack)
                 if included:
-                    for scope in self.determine_scope(stack):
+                    for scope in self.scope_finder.determine_scope(stack):
                         self.scoped_terms[scope].extend(included)
                 self.scoped_terms['EXCLUDED'].extend(excluded)
 
@@ -109,8 +109,8 @@ class Terms(Layer):
             references.extend(finder.find(node))
 
         return (
-            [r for r in references if self.is_exclusion(r.term, node)],
-            [r for r in references if not self.is_exclusion(r.term, node)])
+            [r for r in references if not self.is_exclusion(r.term, node)],
+            [r for r in references if self.is_exclusion(r.term, node)])
 
     def process(self, node):
         """Determine which (if any) definitions would apply to this node,
@@ -139,7 +139,7 @@ class Terms(Layer):
                 })
         return layer_el
 
-    def _word_matches(self, term, text, lst):
+    def _word_matches(self, term, text):
         return [(match.start(), match.end()) for match in
                 re.finditer(r'\b' + re.escape(term) + r'\b', text)]
 

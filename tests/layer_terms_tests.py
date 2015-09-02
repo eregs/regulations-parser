@@ -1,67 +1,18 @@
 # vim: set fileencoding=utf-8
-from regparser.layer.terms import ParentStack, Ref, Terms
+from regparser.layer.terms import ParentStack, Terms
+from regparser.layer.def_finders import Ref
 from regparser.tree.struct import Node
 import settings
 from unittest import TestCase
 
 
 class LayerTermTest(TestCase):
-
     def setUp(self):
         self.original_ignores = settings.IGNORE_DEFINITIONS_IN
         settings.IGNORE_DEFINITIONS_IN = {'ALL': {}}
 
     def tearDown(self):
         settings.IGNORE_DEFINITIONS_IN = self.original_ignores
-
-    def test_has_parent_definitions_indicator(self):
-        t = Terms(None)
-        stack = ParentStack()
-        stack.add(0, Node("This has no defs"))
-        self.assertFalse(t.has_parent_definitions_indicator(stack))
-        stack.add(1, Node("No Def", title="No def"))
-        self.assertFalse(t.has_parent_definitions_indicator(stack))
-        stack.add(2, Node("Tomatoes do not meet the definition 'vegetable'"))
-        self.assertFalse(t.has_parent_definitions_indicator(stack))
-
-        stack.add(3, Node("Definition. This has a definition."))
-        self.assertTrue(t.has_parent_definitions_indicator(stack))
-        stack.pop()
-        self.assertFalse(t.has_parent_definitions_indicator(stack))
-
-        stack.add(3, Node("Definitions. This has multiple!"))
-        self.assertTrue(t.has_parent_definitions_indicator(stack))
-        stack.pop()
-        self.assertFalse(t.has_parent_definitions_indicator(stack))
-
-        stack.add(3, Node("No body", title="But Definition is in the title"))
-        self.assertTrue(t.has_parent_definitions_indicator(stack))
-
-    def test_has_parent_definitions_indicator_p_marker(self):
-        t = Terms(None)
-        stack = ParentStack()
-        stack.add(0, Node("(a) Definitions. For purposes of this " +
-                          "section except blah"))
-        self.assertTrue(t.has_parent_definitions_indicator(stack))
-
-    def test_has_parent_definitions_indicator_the_term_means(self):
-        t = Terms(None)
-        stack = ParentStack()
-        stack.add(0, Node('Contains no terms or definitions'))
-        self.assertFalse(t.has_parent_definitions_indicator(stack))
-        stack.add(1, Node("(a) The term Bob means awesome"))
-        self.assertTrue(t.has_parent_definitions_indicator(stack))
-        stack.add(2, Node("No defs either"))
-        self.assertTrue(t.has_parent_definitions_indicator(stack))
-
-        stack.pop()
-        stack.pop()
-        stack.add(1, Node(u"(a) “Term” means some stuff"))
-        self.assertTrue(t.has_parent_definitions_indicator(stack))
-
-        stack.pop()
-        stack.add(1, Node("(a) The term Bob refers to"))
-        self.assertTrue(t.has_parent_definitions_indicator(stack))
 
     def test_is_exclusion(self):
         t = Terms(None)
@@ -102,32 +53,35 @@ class LayerTermTest(TestCase):
             u'the next one does']
 
         xml_defs = [
-                (u'(4) Thing means a thing that is defined',
-                    u'(4) <E T="03">Thing</E> means a thing that is defined',
-                    Ref('thing', 'eee', 4)),
-                (u'(e) Well-meaning lawyers means people who do weird things',
-                    u'(e) <E T="03">Well-meaning lawyers</E> means people who do '
-                    + 'weird things',
-                    Ref('well-meaning lawyers', 'fff', 4)),
-                (u'(e) Words have the same meaning as in a dictionary',
-                    u'(e) <E T="03">Words</E> have the same meaning as in a '
-                    + 'dictionary',
-                    Ref('words', 'ffg', 4)),
-                (u'(e) Banana has the same meaning as bonono',
-                    u'(e) <E T="03">Banana</E> has the same meaning as bonono',
-                    Ref('banana', 'fgf', 4)),
-                (u'(f) Huge billowy clouds means I want to take a nap',
-                    u'(f) <E T="03">Huge billowy clouds</E> means I want to take a '
-                    + 'nap',
-                    Ref('huge billowy clouds', 'ggg', 4)),
-                (u'(v) Lawyers, in relation to coders, means something very different',
-                    u'(v) <E T="03">Lawyers</E>, in relation to coders, means something very different',
-                    Ref(u'lawyers', '', 4)),
-            ]
+            (u'(4) Thing means a thing that is defined',
+                u'(4) <E T="03">Thing</E> means a thing that is defined',
+                Ref('thing', 'eee', 4)),
+            (u'(e) Well-meaning lawyers means people who do weird things',
+                u'(e) <E T="03">Well-meaning lawyers</E> means people who do '
+                + 'weird things',
+                Ref('well-meaning lawyers', 'fff', 4)),
+            (u'(e) Words have the same meaning as in a dictionary',
+                u'(e) <E T="03">Words</E> have the same meaning as in a '
+                + 'dictionary',
+                Ref('words', 'ffg', 4)),
+            (u'(e) Banana has the same meaning as bonono',
+                u'(e) <E T="03">Banana</E> has the same meaning as bonono',
+                Ref('banana', 'fgf', 4)),
+            (u'(f) Huge billowy clouds means I want to take a nap',
+                u'(f) <E T="03">Huge billowy clouds</E> means I want to take '
+                + 'a nap',
+                Ref('huge billowy clouds', 'ggg', 4)),
+            (u'(v) Lawyers, in relation to coders, means something very '
+             + 'different',
+                u'(v) <E T="03">Lawyers</E>, in relation to coders, means '
+                + 'something very different',
+                Ref(u'lawyers', '', 4)),
+        ]
 
         xml_no_defs = [
             (u'(d) Term1 or term2 means stuff',
-             u'(d) <E T="03">Term1</E> or <E T="03">term2></E> means stuff'),]
+             u'(d) <E T="03">Term1</E> or <E T="03">term2></E> means stuff'),
+        ]
 
         scope_term_defs = [
             ('For purposes of this section, the term blue means the color',
@@ -266,87 +220,6 @@ class LayerTermTest(TestCase):
         self.assertEqual(hot, Ref('hot tamale', '9999-4', 4))
         self.assertEqual(tamale, Ref('tamale', '9999-4', 18))
 
-    def test_subpart_scope(self):
-        t = Terms(None)
-        t.subpart_map = {
-            None: ['1', '2', '3'],
-            'A': ['7', '5', '0'],
-            'Q': ['99', 'abc', 'q']
-        }
-        self.assertEqual([['111', '1'], ['111', '2'], ['111', '3']],
-                         t.subpart_scope(['111', '3']))
-        self.assertEqual([['115', '7'], ['115', '5'], ['115', '0']],
-                         t.subpart_scope(['115', '5']))
-        self.assertEqual([['62', '99'], ['62', 'abc'], ['62', 'q']],
-                         t.subpart_scope(['62', 'abc']))
-        self.assertEqual([], t.subpart_scope(['71', 'Z']))
-
-    def test_determine_scope(self):
-        stack = ParentStack()
-        t = Terms(None)
-
-        stack.add(0, Node(label=['1000']))
-        stack.add(1, Node(label=['1000', '1']))
-
-        # Defaults to the entire reg
-        self.assertEqual([('1000',)], t.determine_scope(stack))
-
-        stack.add(1, Node('For the purposes of this part, blah blah',
-                          label=['1001', '2']))
-        self.assertEqual([('1001',), ('1001', Node.INTERP_MARK)],
-                         t.determine_scope(stack))
-
-        t.subpart_map = {
-            'SubPart 1': ['A', '3'],
-            'Other': []
-        }
-        stack.add(1, Node(label=['1000', '3']))
-        stack.add(2, Node('For the purposes of this subpart, yada yada',
-                          label=['1000', '3', 'c']))
-        self.assertEqual([('1000', 'A'), ('1000', '3'),
-                          ('1000', 'A', Node.INTERP_MARK),
-                          ('1000', '3', Node.INTERP_MARK)],
-                         t.determine_scope(stack))
-
-        stack.add(2, Node('For the purposes of this section, blah blah',
-                          label=['1000', '3', 'd']))
-        self.assertEqual([('1000', '3'), ('1000', '3', Node.INTERP_MARK)],
-                         t.determine_scope(stack))
-
-        stack.add(3, Node('For the purposes of this paragraph, blah blah',
-                          label=['1000', '3', 'd', '5']))
-        self.assertEqual([('1000', '3', 'd', '5'),
-                          ('1000', '3', 'd', '5', Node.INTERP_MARK)],
-                         t.determine_scope(stack))
-
-        stack.add(3, Node(label=['1002', '3', 'd', '6']))
-        self.assertEqual([('1000', '3'), ('1000', '3', Node.INTERP_MARK)],
-                         t.determine_scope(stack))
-
-        stack.add(3, Node('Blah as used in this paragraph, blah blah',
-                          label=['1000', '3', 'd', '7']))
-        self.assertEqual([('1000', '3', 'd', '7'),
-                          ('1000', '3', 'd', '7', Node.INTERP_MARK)],
-                         t.determine_scope(stack))
-
-        stack.add(4, Node(u'For the purposes of this § 1000.3(d)(6)(i), blah',
-                          label=['1000', '3', 'd', '6', 'i']))
-        self.assertEqual([('1000', '3', 'd', '6', 'i'),
-                          ('1000', '3', 'd', '6', 'i', Node.INTERP_MARK)],
-                         t.determine_scope(stack))
-
-        stack.add(4, Node(u'For the purposes of § 1000.3, blah',
-                          label=['1000', '3', 'd', '6', 'ii']))
-        self.assertEqual([('1000', '3'),
-                          ('1000', '3', Node.INTERP_MARK)],
-                         t.determine_scope(stack))
-
-        stack.add(4, Node('As used in this section, blah blah',
-                          label=['1000', '3', 'd', '6', 'iii']))
-        self.assertEqual(
-            [('1000', '3'), ('1000', '3', Node.INTERP_MARK)],
-            t.determine_scope(stack))
-
     def test_pre_process(self):
         noname_subpart = Node(
             '',
@@ -388,7 +261,8 @@ class LayerTermTest(TestCase):
                          t.scoped_terms[('88', '2', 'b', 'i', 'A')])
 
         #   Check subparts are correct
-        self.assertEqual({None: ['1'], 'XQXQ': ['2']}, dict(t.subpart_map))
+        self.assertEqual({None: ['1'], 'XQXQ': ['2']},
+                         dict(t.scope_finder.subpart_map))
 
         # Finally, make sure the references are added
         referenced = t.layer['referenced']
@@ -421,11 +295,11 @@ class LayerTermTest(TestCase):
                          (10, 13))
 
     def test_pre_process_subpart(self):
-        root = Node("", label=['1212'])
-        subpartA = Node("", label=['1212', 'Subpart', 'A'], title='Subpart A')
-        section2 = Node("", label=['1212', '2'], title='1212.2')
+        root = Node(label=['1212'])
+        subpartA = Node(label=['1212', 'Subpart', 'A'], title='Subpart A')
+        section2 = Node(label=['1212', '2'], title='1212.2')
         def1 = Node(u"“totes” means in total", label=['1212', '2', 'a'])
-        subpartB = Node("", label=['1212', 'Subpart', 'B'], title='Subpart B')
+        subpartB = Node(label=['1212', 'Subpart', 'B'], title='Subpart B')
         section22 = Node("\nFor the purposes of this subpart",
                          label=['1212', '22'], title='1212.22')
         def2 = Node(u"“totes” means in extremely", label=['1212', '22', 'a'])
