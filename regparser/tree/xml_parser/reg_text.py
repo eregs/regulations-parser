@@ -85,11 +85,14 @@ def build_tree(reg_xml):
 
     if len(subpart_and_subjgrp_xmls) > 0:
         subthings = []
+        letter_list = []
         for subthing in subpart_and_subjgrp_xmls:
             if subthing.tag == "SUBPART":
                 subthings.append(build_subpart(reg_part, subthing))
             elif subthing.tag == "SUBJGRP":
-                subthings.append(build_subjgrp(reg_part, subthing))
+                letter_list, built_subjgrp = build_subjgrp(
+                    reg_part, subthing, letter_list)
+                subthings.append(built_subjgrp)
 
         tree.children = subthings
     else:
@@ -129,11 +132,12 @@ def build_subpart(reg_part, subpart_xml):
     subpart.children = sections
     return subpart
 
-def build_subjgrp(reg_part, subjgrp_xml):
+def build_subjgrp(reg_part, subjgrp_xml, letter_list):
     # This handles subjgrps that have been pulled out and injected into the same
     # level as subparts.
     subjgrp_title = get_subjgrp_title(subjgrp_xml)
-    subjgrp = reg_text.build_subjgrp(subjgrp_title, reg_part)
+    letter_list, subjgrp = reg_text.build_subjgrp(subjgrp_title, reg_part,
+                                                  letter_list)
 
     sections = []
     for ch in subjgrp_xml.getchildren():
@@ -141,7 +145,7 @@ def build_subjgrp(reg_part, subjgrp_xml):
             sections.extend(build_from_section(reg_part, ch))
 
     subjgrp.children = sections
-    return subjgrp
+    return (letter_list, subjgrp)
 
 def get_markers(text):
     """ Extract all the paragraph markers from text. Do some checks on the
