@@ -90,8 +90,8 @@ def build_tree(reg_xml):
             if subthing.tag == "SUBPART":
                 subthings.append(build_subpart(reg_part, subthing))
             elif subthing.tag == "SUBJGRP":
-                letter_list, built_subjgrp = build_subjgrp(
-                    reg_part, subthing, letter_list)
+                built_subjgrp = build_subjgrp(reg_part, subthing, letter_list)
+                letter_list.append(built_subjgrp.label[-1])
                 subthings.append(built_subjgrp)
 
         tree.children = subthings
@@ -145,7 +145,7 @@ def build_subjgrp(reg_part, subjgrp_xml, letter_list):
             sections.extend(build_from_section(reg_part, ch))
 
     subjgrp.children = sections
-    return (letter_list, subjgrp)
+    return subjgrp
 
 def get_markers(text):
     """ Extract all the paragraph markers from text. Do some checks on the

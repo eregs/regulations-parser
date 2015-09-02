@@ -250,43 +250,40 @@ class DepthRegTextTest(TestCase):
 
     def test_subjgrp_label(self):
         # Single words:
-        result, newlist = subjgrp_label('Penalties', [])
+        result = subjgrp_label('Penalties', [])
         self.assertEqual('Pe', result)
-        result, newlist = subjgrp_label('Penalties', ['Pe'])
+        result = subjgrp_label('Penalties', ['Pe'])
         self.assertEqual('Pe.', result)
-        result, newlist = subjgrp_label('Penalties', ['Pe', 'Pe.'])
+        result = subjgrp_label('Penalties', ['Pe', 'Pe.'])
         self.assertEqual('Pen', result)
-        result, newlist = subjgrp_label('Penalties', ['Pe', 'Pe.', 'Pen'])
+        result = subjgrp_label('Penalties', ['Pe', 'Pe.', 'Pen'])
         self.assertEqual('Pen.', result)
-        result, newlist = subjgrp_label('Pe', ['Pe', 'Pe.'])
+        result = subjgrp_label('Pe', ['Pe', 'Pe.'])
+        self.assertEqual('Pe-a', result)
+        result = subjgrp_label('Pe', ['Pe', 'Pe.', 'Pe-a'])
+        self.assertEqual('Pe.-a', result)
+        result = subjgrp_label('Pe', ['Pe', 'Pe.', 'Pe-a', 'Pe.-a'])
         self.assertEqual('Pe-b', result)
-        result, newlist = subjgrp_label('Pe', ['Pe', 'Pe.', 'Pe-b'])
-        self.assertEqual('Pe.-b', result)
-        result, newlist = subjgrp_label('Pe', ['Pe', 'Pe.', 'Pe-b', 'Pe.-b'])
-        self.assertEqual('Pe-c', result)
 
         # Multiple words:
-        result, newlist = subjgrp_label('Change of Ownership', [])
+        result = subjgrp_label('Change of Ownership', [])
         self.assertEqual('CoO', result)
-        result, newlist = subjgrp_label('Change of Ownership', ['CoO'])
-        self.assertEqual('C. o. O. ', result)
-        result, newlist = subjgrp_label('Change of Ownership',
-                                        ['CoO', 'C. o. O. '])
-        self.assertEqual('C-o-O', result)
-        result, newlist = subjgrp_label('Change of Ownership',
-                                        ['CoO', 'C. o. O. ', 'C-o-O'])
+        result = subjgrp_label('Change of Ownership', ['CoO'])
+        self.assertEqual('C.o.O.', result)
+        result = subjgrp_label('Change of Ownership',
+                                        ['CoO', 'C.o.O.'])
         self.assertEqual('C_o_O', result)
-        result, newlist = subjgrp_label('Change of Ownership',
-                                        ['CoO', 'C. o. O. ', 'C-o-O', 'C_o_O'])
+        result = subjgrp_label('Change of Ownership',
+                                        ['CoO', 'C.o.O.', 'C-o-O', 'C_o_O'])
         self.assertEqual('ChofOw', result)
-        result, newlist = subjgrp_label('Change of Ownership',
-            ['CoO', 'C. o. O. ', 'C-o-O', 'C_o_O', 'ChofOw'])
-        self.assertEqual('Ch. of. Ow. ', result)
-        result, newlist = subjgrp_label('Change of Ownership',
-            ['CoO', 'C. o. O. ', 'C-o-O', 'C_o_O', 'ChofOw', 'Ch. of. Ow. '])
-        self.assertEqual('Ch-of-Ow', result)
-        result, newlist = subjgrp_label('C o O',
-            ['CoO', 'C. o. O. ', 'C-o-O', 'C_o_O'])
-        self.assertEqual('CoO-b', result)
+        result = subjgrp_label('Change of Ownership',
+            ['CoO', 'C.o.O.', 'C_o_O', 'ChofOw'])
+        self.assertEqual('Ch.of.Ow.', result)
+        result = subjgrp_label('Change of Ownership',
+            ['CoO', 'C.o.O.', 'C_o_O', 'ChofOw', 'Ch.of.Ow.'])
+        self.assertEqual('Ch_of_Ow', result)
+        result = subjgrp_label('C o O',
+            ['CoO', 'C.o.O.', 'C_o_O'])
+        self.assertEqual('CoO-a', result)
 
 
