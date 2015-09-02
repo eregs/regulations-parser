@@ -10,7 +10,7 @@ import settings
 
 class Ref(object):
     def __init__(self, term, label, start):
-        self.term = unicode(term)
+        self.term = unicode(term).lower()
         self.label = label
         self.start = start
         self.end = self.start + len(term)
@@ -34,8 +34,7 @@ class ExplicitIncludes(object):
                 cfr_part, []):
             if context in node.text and included_term in node.text:
                 pos_start = node.text.index(included_term)
-                term = included_term.lower()
-                refs.append(Ref(term, node.label_id(), pos_start))
+                refs.append(Ref(included_term, node.label_id(), pos_start))
         return refs
 
 
@@ -92,8 +91,10 @@ class ScopeMatch(object):
 
 class XMLTermMeans(object):
     """Namespace for a matcher for e.g. '<E>XXX</E> means YYY'"""
-    def __init__(self, existing_refs):
+    def __init__(self, existing_refs=None):
         """Existing refs will be used to exclude certain matches"""
+        if existing_refs is None:
+            existing_refs = []
         self.exclusions = list(existing_refs)
 
     def find(self, node):

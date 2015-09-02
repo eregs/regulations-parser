@@ -30,117 +30,21 @@ class LayerTermTest(TestCase):
         t.scoped_terms = {('1111',): [Ref('abc', '1', 0)]}
         self.assertFalse(t.is_exclusion('ex', n))
 
-    def test_node_definitions(self):
+    def test_node_definitions_no_def(self):
+        """Verify that none of the matchers match certain strings"""
         t = Terms(None)
-        smart_quotes = [
-            (u'This has a “worD” and then more',
-             [Ref('word', 'aaa', 12)]),
-            (u'I have “anotheR word” term and “moree”',
-             [Ref('another word', 'bbb', 8),
-              Ref('moree', 'bbb', 32)]),
-            (u'But the child “DoeS sEe”?',
-             [Ref('does see', 'ccc', 15)]),
-            (u'Start with “this,”', [Ref('this', 'hhh', 12)]),
-            (u'Start with “this;”', [Ref('this', 'iii', 12)]),
-            (u'Start with “this.”', [Ref('this', 'jjj', 12)]),
-            (u'As do “subchildren”',
-             [Ref('subchildren', 'ddd', 7)])]
-
-        no_defs = [
-            u'This has no defs',
-            u'Also has no terms',
-            u'Still no terms, but',
-            u'the next one does']
-
-        xml_defs = [
-            (u'(4) Thing means a thing that is defined',
-                u'(4) <E T="03">Thing</E> means a thing that is defined',
-                Ref('thing', 'eee', 4)),
-            (u'(e) Well-meaning lawyers means people who do weird things',
-                u'(e) <E T="03">Well-meaning lawyers</E> means people who do '
-                + 'weird things',
-                Ref('well-meaning lawyers', 'fff', 4)),
-            (u'(e) Words have the same meaning as in a dictionary',
-                u'(e) <E T="03">Words</E> have the same meaning as in a '
-                + 'dictionary',
-                Ref('words', 'ffg', 4)),
-            (u'(e) Banana has the same meaning as bonono',
-                u'(e) <E T="03">Banana</E> has the same meaning as bonono',
-                Ref('banana', 'fgf', 4)),
-            (u'(f) Huge billowy clouds means I want to take a nap',
-                u'(f) <E T="03">Huge billowy clouds</E> means I want to take '
-                + 'a nap',
-                Ref('huge billowy clouds', 'ggg', 4)),
-            (u'(v) Lawyers, in relation to coders, means something very '
-             + 'different',
-                u'(v) <E T="03">Lawyers</E>, in relation to coders, means '
-                + 'something very different',
-                Ref(u'lawyers', '', 4)),
-        ]
-
-        xml_no_defs = [
-            (u'(d) Term1 or term2 means stuff',
-             u'(d) <E T="03">Term1</E> or <E T="03">term2></E> means stuff'),
-        ]
-
-        scope_term_defs = [
-            ('For purposes of this section, the term blue means the color',
-             Ref('blue', '11-11', 39)),
-            ('For purposes of paragraph (a)(1) of this section, the term '
-             + 'cool bro means hip cat', Ref('cool bro', '11-22', 59)),
-            ('For purposes of this paragraph, po jo means "poor Joe"',
-             Ref('po jo', '11-33', 32))]
-
         stack = ParentStack()
         stack.add(0, Node(label=['999']))
-        for txt in no_defs:
-            defs, exc = t.node_definitions(Node(txt), stack)
-            self.assertEqual([], defs)
-            self.assertEqual([], exc)
-        for txt, refs in smart_quotes:
-            defs, exc = t.node_definitions(Node(txt), stack)
-            self.assertEqual([], defs)
-            self.assertEqual([], exc)
-        for txt, xml in xml_no_defs:
-            node = Node(txt)
-            node.tagged_text = xml
-            defs, exc = t.node_definitions(node, stack)
-            self.assertEqual([], defs)
-            self.assertEqual([], exc)
-        for txt, xml, ref in xml_defs:
-            node = Node(txt, label=[ref.label])
-            node.tagged_text = xml
-            defs, exc = t.node_definitions(node, stack)
-            self.assertEqual([ref], defs)
-            self.assertEqual([], exc)
-        for txt, ref in scope_term_defs:
-            defs, exc = t.node_definitions(
-                Node(txt, label=ref.label.split('-')), stack)
-            self.assertEqual([ref], defs)
-            self.assertEqual([], exc)
-
-        #   smart quotes are affected by the parent
         stack.add(1, Node('Definitions', label=['999', '1']))
+
+        no_defs = ['This has no defs',
+                   'Also has no terms',
+                   'Still no terms, but',
+                   'the next one does']
+
         for txt in no_defs:
             defs, exc = t.node_definitions(Node(txt), stack)
             self.assertEqual([], defs)
-            self.assertEqual([], exc)
-        for txt, refs in smart_quotes:
-            defs, exc = t.node_definitions(Node(txt, label=[refs[0].label]),
-                                           stack)
-            self.assertEqual(refs, defs)
-            self.assertEqual([], exc)
-        for txt, xml in xml_no_defs:
-            node = Node(txt)
-            node.tagged_text = xml
-            defs, exc = t.node_definitions(node, stack)
-            self.assertEqual([], defs)
-            self.assertEqual([], exc)
-        for txt, xml, ref in xml_defs:
-            node = Node(txt, label=[ref.label])
-            node.tagged_text = xml
-            defs, exc = t.node_definitions(node, stack)
-            self.assertEqual([ref], defs)
             self.assertEqual([], exc)
 
     def test_node_defintions_act(self):
