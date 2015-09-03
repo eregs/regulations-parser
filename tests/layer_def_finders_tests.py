@@ -170,3 +170,36 @@ class ScopeMatchTest(TestCase):
         self.assert_finds_result(
             'For purposes of this paragraph, po jo means "poor Joe"',
             'po jo', 32)
+
+
+class DefinitionKeytermTest(TestCase):
+    def assert_finds_result(self, tagged_text, parent_title, *refs):
+        """Given the tags and a title for a parent node, verify that the
+        provided references are found"""
+        parent = Node(label=['1000', '1'], title=parent_title)
+        node = Node(re.sub(r"<[^>]*>", "", tagged_text))  # removes tags
+        node.tagged_text = tagged_text
+        results = def_finders.DefinitionKeyterm(parent).find(node)
+        self.assertEqual(len(results), len(refs))
+        for expected, actual in zip(refs, results):
+            self.assertEqual(expected.term, actual.term)
+            self.assertEqual(expected.start, actual.start)
+
+    def test_titles(self):
+        """Validate various titles for the parent"""
+        tagged_text = '<E T="03">Abc.</E> A paragraph'
+        ref = def_finders.Ref('abc', None, 0)
+        self.assert_finds_result(tagged_text, 'Definition.', ref)
+        self.assert_finds_result(tagged_text, 'Definition', ref)
+        self.assert_finds_result(tagged_text, 'Meaning of terms', ref)
+        self.assert_finds_result(tagged_text, 'Meaning Of Terms?', ref)
+        self.assert_finds_result(tagged_text, 'Some other defs')    # no match
+
+    def test_find_success(self):
+        """Verify that references can be found"""
+        self.assert_finds_result(
+            '(a) <E T="03">Definition</E>. Paragraph text', 'Definition',
+            def_finders.Ref('definition', None, 4))
+        self.assert_finds_result(
+            '<E T="03">Another Phrase.</E>. Paragraph text', 'Definition',
+            def_finders.Ref('another phrase', None, 0))

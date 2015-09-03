@@ -1,7 +1,7 @@
-#vim: set encoding=utf-8
+# vim: set encoding=utf-8
 from pyparsing import (
     LineStart, Literal, OneOrMore, Optional, Regex, SkipTo, srange, Suppress,
-    Word, ZeroOrMore, NotAny)
+    Word, ZeroOrMore)
 
 from regparser.grammar import atomic, unified
 from regparser.grammar.utils import DocLiteral, keep_pos, Marker
@@ -36,6 +36,17 @@ xml_term_parser = (
        | (Marker("refers") + ZeroOrMore(Marker("only")) + Marker("to"))
        | ((Marker("has") | Marker("have")) + Marker("the") + Marker("same")
           + Marker("meaning") + Marker("as")))
+)
+
+key_term_parser = (
+    LineStart()
+    + Optional(Suppress(unified.any_depth_p))
+    + Suppress(Regex(r"<E[^>]*>"))
+    + OneOrMore(
+        Word(srange("[a-zA-Z-]"))
+    ).setParseAction(keep_pos).setResultsName("term")
+    + Optional(Suppress("."))
+    + Suppress(Literal("</E>"))
 )
 
 scope_term_type_parser = (

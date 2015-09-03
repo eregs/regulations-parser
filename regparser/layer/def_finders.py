@@ -5,6 +5,7 @@ import re
 
 from regparser.citations import Label
 from regparser.grammar import terms as grammar
+from regparser.tree.struct import Node
 import settings
 
 
@@ -49,7 +50,7 @@ class SmartQuotes(object):
         refs = []
         if self.stack and self.has_def_indicator():
             for match, _, _ in grammar.smart_quotes.scanString(node.text):
-                term = match.term.tokens[0].lower().strip(',.;')
+                term = match.term.tokens[0].strip(',.;')
                 refs.append(Ref(term, node.label_id(), match.term.pos[0]))
         return refs
 
@@ -105,8 +106,7 @@ class XMLTermMeans(object):
             preference of new values based on node.text."""
             for match in chain([match.head], match.tail):
                 pos_start = self.pos_start(match.term.tokens[0], node.text)
-                term = node.tagged_text[
-                    match.term.pos[0]:match.term.pos[1]].lower()
+                term = node.tagged_text[match.term.pos[0]:match.term.pos[1]]
                 ref = Ref(term, node.label_id(), pos_start)
                 refs.append(ref)
                 self.exclusions.append(ref)
@@ -123,3 +123,27 @@ class XMLTermMeans(object):
                        for r in self.exclusions):
                 return start
             start += 1
+
+
+class DefinitionKeyterm(object):
+    """Matches definitions identified by being a first-level paragraph in a
+    section with a specific title"""
+    def __init__(self, parent):
+        is_regtext = parent and parent.node_type == Node.REGTEXT
+        is_section = is_regtext and len(parent.label) == 2
+        title = parent and self._normalize(parent.title)
+        title_match = title in (self._normalize('Definition'),
+                                self._normalize('Meaning of terms.'))
+        self.title_matches = is_section and title_match
+
+    def _normalize(self, title):
+        title = (title or "").lower()
+        return re.sub(r'[^a-z]+', '', title)
+
+    def find(self, node):
+        if self.title_matches:
+            tagged_text = getattr(node, 'tagged_text', '')
+            for match, _, _ in grammar.key_term_parser.scanString(tagged_text):
+                term = node.tagged_text[match.term.pos[0]:match.term.pos[1]]
+                return [Ref(term, node.label_id(), node.text.find(term))]
+        return []

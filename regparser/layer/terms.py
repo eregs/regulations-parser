@@ -26,6 +26,10 @@ class ParentStack(PriorityStack):
         """No collapsing needs to happen."""
         self.pop()
 
+    def parent_of(self, node):
+        level = self.peek_level(node.depth() - 1)
+        return level[-1] if level else None
+
 
 class Terms(Layer):
     def __init__(self, *args, **kwargs):
@@ -43,16 +47,7 @@ class Terms(Layer):
         stack = ParentStack()
 
         def per_node(node):
-            if len(node.label) > 1 and node.node_type == struct.Node.REGTEXT:
-                #   Add one for the subpart level
-                stack.add(len(node.label) + 1, node)
-            elif node.node_type in (struct.Node.SUBPART,
-                                    struct.Node.EMPTYPART):
-                #   Subparts all on the same level
-                stack.add(2, node)
-            else:
-                stack.add(len(node.label), node)
-
+            stack.add(node.depth(), node)
             if node.node_type in (struct.Node.REGTEXT, struct.Node.SUBPART,
                                   struct.Node.EMPTYPART):
                 included, excluded = self.node_definitions(node, stack)
@@ -100,10 +95,12 @@ class Terms(Layer):
     def node_definitions(self, node, stack=None):
         """Find defined terms in this node's text."""
         references = []
+        stack = stack or ParentStack()
         for finder in (def_finders.ExplicitIncludes(),
                        def_finders.SmartQuotes(stack),
                        def_finders.ScopeMatch(self.scope_finder),
-                       def_finders.XMLTermMeans(references)):
+                       def_finders.XMLTermMeans(references),
+                       def_finders.DefinitionKeyterm(stack.parent_of(node))):
             # Note that `extend` is very important as XMLTermMeans uses the
             # list reference
             references.extend(finder.find(node))
