@@ -43,7 +43,7 @@ key_term_parser = (
     + Optional(Suppress(unified.any_depth_p))
     + Suppress(Regex(r"<E[^>]*>"))
     + OneOrMore(
-        Word(srange("[a-zA-Z-]"))
+        Word(srange("[a-zA-Z-,]"))
     ).setParseAction(keep_pos).setResultsName("term")
     + Optional(Suppress("."))
     + Suppress(Literal("</E>"))

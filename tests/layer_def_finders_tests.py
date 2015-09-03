@@ -203,3 +203,12 @@ class DefinitionKeytermTest(TestCase):
         self.assert_finds_result(
             '<E T="03">Another Phrase.</E>. Paragraph text', 'Definition',
             def_finders.Ref('another phrase', None, 0))
+        self.assert_finds_result(
+            '<E T="03">Officer, office.</E>. Paragraph text', 'Definition',
+            def_finders.Ref('officer, office', None, 0))
+        """ @todo
+        self.assert_finds_result(
+            '<E T="03">Frame or receiver.</E>. Paragraph text', 'Definition',
+            def_finders.Ref('frame', None, 0),
+            def_finders.Ref('receiver', None, 9))
+        """
