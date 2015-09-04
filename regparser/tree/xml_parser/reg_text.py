@@ -73,13 +73,30 @@ def build_tree(reg_xml):
 
     part = reg_xml.xpath('//PART')[0]
 
+    # Build a list of SUBPARTs, then pull SUBJGRPs into that list:
     subpart_xmls = [c for c in part.getchildren() if c.tag == 'SUBPART']
+    subpart_and_subjgrp_xmls = []
     if len(subpart_xmls) > 0:
-        subparts = [build_subpart(reg_part, s) for s in subpart_xmls]
-        tree.children = subparts
+        for subpart in subpart_xmls:
+            subpart_and_subjgrp_xmls.append(subpart)
+            subjgrps = [c for c in subpart.getchildren() if c.tag == 'SUBJGRP']
+            for subjgrp in subjgrps:
+                subpart_and_subjgrp_xmls.append(subjgrp)
+
+    if len(subpart_and_subjgrp_xmls) > 0:
+        subthings = []
+        letter_list = []
+        for subthing in subpart_and_subjgrp_xmls:
+            if subthing.tag == "SUBPART":
+                subthings.append(build_subpart(reg_part, subthing))
+            elif subthing.tag == "SUBJGRP":
+                built_subjgrp = build_subjgrp(reg_part, subthing, letter_list)
+                letter_list.append(built_subjgrp.label[-1])
+                subthings.append(built_subjgrp)
+
+        tree.children = subthings
     else:
-        section_xmls = [c for c in part.getchildren() if c.tag in
-                        ('SECTION', 'SUBJGRP')]
+        section_xmls = [c for c in part.getchildren() if c.tag == 'SECTION']
         sections = []
         for section_xml in section_xmls:
             sections.extend(build_from_section(reg_part, section_xml))
@@ -92,9 +109,13 @@ def build_tree(reg_xml):
 
     return tree
 
-
 def get_subpart_title(subpart_xml):
     hds = subpart_xml.xpath('./RESERVED|./HD')
+    if hds:
+        return [hd.text for hd in hds][0]
+
+def get_subjgrp_title(subjgrp_xml):
+    hds = subjgrp_xml.xpath('./RESERVED|./HD')
     if hds:
         return [hd.text for hd in hds][0]
 
@@ -107,14 +128,24 @@ def build_subpart(reg_part, subpart_xml):
     for ch in subpart_xml.getchildren():
         if ch.tag == 'SECTION':
             sections.extend(build_from_section(reg_part, ch))
-        elif ch.tag == 'SUBJGRP':
-            for group_child in ch.getchildren():
-                if group_child.tag == 'SECTION':
-                    sections.extend(build_from_section(reg_part, group_child))
 
     subpart.children = sections
     return subpart
 
+def build_subjgrp(reg_part, subjgrp_xml, letter_list):
+    # This handles subjgrps that have been pulled out and injected into the same
+    # level as subparts.
+    subjgrp_title = get_subjgrp_title(subjgrp_xml)
+    letter_list, subjgrp = reg_text.build_subjgrp(subjgrp_title, reg_part,
+                                                  letter_list)
+
+    sections = []
+    for ch in subjgrp_xml.getchildren():
+        if ch.tag == 'SECTION':
+            sections.extend(build_from_section(reg_part, ch))
+
+    subjgrp.children = sections
+    return subjgrp
 
 def get_markers(text):
     """ Extract all the paragraph markers from text. Do some checks on the
