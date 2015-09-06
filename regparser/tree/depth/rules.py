@@ -65,6 +65,27 @@ def markerless_sandwich(pprev_typ, pprev_idx, pprev_depth,
     return not (sandwich and inc_depth)
 
 
+def star_sandwich(pprev_typ, pprev_idx, pprev_depth,
+                  prev_typ, prev_idx, prev_depth,
+                  typ, idx, depth):
+    """Symmetry breaking constraint that places STARS tag at specific depth so
+    that the resolution of
+
+                    c
+    ?   ?   ?   ?   ?   ?   <- Potential STARS depths
+    5
+
+    can only be one of
+                                OR
+                    c                               c
+                    STARS           STARS
+    5                               5"""
+    sandwich = (pprev_typ != markers.stars and typ != markers.stars
+                and prev_typ == markers.stars and prev_idx == 0)
+    unwinding = pprev_depth > depth
+    return not (sandwich and unwinding) or (prev_depth in (pprev_depth, depth))
+
+
 def sequence(typ, idx, depth, *all_prev):
     """Constrain the current marker based on all markers leading up to it"""
     # Group (type, idx, depth) per marker

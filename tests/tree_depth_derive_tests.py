@@ -65,9 +65,7 @@ class DeriveTests(TestCase):
     def test_ambiguous_stars(self):
         self.assert_depth_match(['A', '1', 'a', STARS_TAG, 'B'],
                                 [0, 1, 2, 3, 3],
-                                [0, 1, 2, 3, 0],
-                                [0, 1, 2, 2, 0],
-                                [0, 1, 2, 1, 0])
+                                [0, 1, 2, 2, 0])
 
     def test_double_stars(self):
         self.assert_depth_match(['A', '1', 'a', STARS_TAG, STARS_TAG, 'B'],
