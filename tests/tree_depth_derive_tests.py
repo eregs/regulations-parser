@@ -95,16 +95,14 @@ class DeriveTests(TestCase):
                                 [0, 1, 0])
 
         self.assert_depth_match(['1', INLINE_STARS, '2'],
-                                [0, 0, 0],
                                 [0, 1, 0])
 
     def test_star_star(self):
         self.assert_depth_match(['A', STARS_TAG, STARS_TAG, 'D'],
                                 [0, 1, 0, 0])
 
-        self.assert_depth_match(['A', INLINE_STARS, STARS_TAG, 'D'],
-                                [0, 1, 2, 2],
-                                [0, 1, 0, 0])
+        self.assert_depth_match(['A', INLINE_STARS, STARS_TAG, '3'],
+                                [0, 1, 1, 1])
 
     def test_markerless_outermost(self):
         """A pattern often seen in definitions sections"""
