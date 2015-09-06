@@ -7,9 +7,12 @@ from regparser.tree.depth.markers import INLINE_STARS, MARKERLESS, STARS_TAG
 
 class DeriveTests(TestCase):
     def assert_depth_match(self, markers, *depths_set):
+        self.assert_depth_match_extra(markers, [], *depths_set)
+
+    def assert_depth_match_extra(self, markers, extra, *depths_set):
         """Verify that the set of markers resolves to the provided set of
-        depths (in any order)"""
-        solutions = derive_depths(markers)
+        depths (in any order). Allows extra contraints."""
+        solutions = derive_depths(markers, extra)
         results = [[a.depth for a in s] for s in solutions]
         self.assertItemsEqual(results, depths_set)
 
@@ -64,8 +67,8 @@ class DeriveTests(TestCase):
 
     def test_ambiguous_stars(self):
         self.assert_depth_match(['A', '1', 'a', STARS_TAG, 'B'],
-                                [0, 1, 2, 3, 3],
-                                [0, 1, 2, 2, 0])
+                                [0, 1, 2, 2, 0],
+                                [0, 1, 2, 3, 3])
 
     def test_double_stars(self):
         self.assert_depth_match(['A', '1', 'a', STARS_TAG, STARS_TAG, 'B'],
@@ -95,6 +98,9 @@ class DeriveTests(TestCase):
         self.assert_depth_match(['1', INLINE_STARS, '2'],
                                 [0, 1, 0])
 
+        self.assert_depth_match(['1', INLINE_STARS, 'a'],
+                                [0, 1, 1])
+
     def test_star_star(self):
         self.assert_depth_match(['A', STARS_TAG, STARS_TAG, 'D'],
                                 [0, 1, 0, 0])
@@ -115,16 +121,45 @@ class DeriveTests(TestCase):
             [0, 1, 0, 0],
             [0, 1, 2, 2])
 
-    def test_depth_type_order(self):
-        extra = rules.depth_type_order([markers.ints, markers.lower])
-        results = derive_depths(['1', 'a'], [extra])
-        self.assertEqual(1, len(results))
-        results = derive_depths(['i', 'a'], [extra])
-        self.assertEqual(0, len(results))
+    def test_ii_is_not_ambiguous(self):
+        """We've fixed ii to be a roman numeral"""
+        self.assert_depth_match(
+            ['a', STARS_TAG, 'ii'],
+            [0, 1, 1])
 
+    def test_depth_type_order_single(self):
+        """Constrain depths to have certain types."""
+        extra = rules.depth_type_order([markers.ints, markers.lower])
+        self.assert_depth_match_extra(['1', 'a'], [extra], [0, 1])
+        self.assert_depth_match_extra(['i', 'a'], [extra])
+
+    def test_depth_type_order_multiple(self):
+        """Constrain depths to be in a list of types."""
         extra = rules.depth_type_order([(markers.ints, markers.roman),
                                         markers.lower])
-        results = derive_depths(['1', 'a'], [extra])
-        self.assertEqual(1, len(results))
-        results = derive_depths(['i', 'a'], [extra])
-        self.assertEqual(1, len(results))
+        self.assert_depth_match_extra(['1', 'a'], [extra], [0, 1])
+        self.assert_depth_match_extra(['i', 'a'], [extra], [0, 1])
+
+    def test_depth_type_inverses_t2d(self):
+        """Two markers of the same type should have the same depth"""
+        self.assert_depth_match(
+            ['1', STARS_TAG, 'b', STARS_TAG, 'C', STARS_TAG, 'd'],
+            [0, 1, 1, 2, 2, 3, 3],
+            [0, 1, 1, 2, 2, 1, 1])
+
+        self.assert_depth_match_extra(
+            ['1', STARS_TAG, 'b', STARS_TAG, 'C', STARS_TAG, 'd'],
+            [rules.depth_type_inverses],
+            [0, 1, 1, 2, 2, 1, 1])
+
+    def test_depth_type_inverses_d2t(self):
+        """Two markers of the same depth should have the same type"""
+        self.assert_depth_match(
+            ['1', STARS_TAG, 'c', '2', INLINE_STARS, 'i', STARS_TAG, 'iii'],
+            [0, 1, 1, 0, 1, 1, 1, 1],
+            [0, 1, 1, 0, 1, 1, 2, 2])
+
+        self.assert_depth_match_extra(
+            ['1', STARS_TAG, 'c', '2', INLINE_STARS, 'i', STARS_TAG, 'iii'],
+            [rules.depth_type_inverses],
+            [0, 1, 1, 0, 1, 1, 2, 2])

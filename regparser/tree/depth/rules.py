@@ -79,11 +79,15 @@ def star_sandwich(pprev_typ, pprev_idx, pprev_depth,
                                 OR
                     c                               c
                     STARS           STARS
-    5                               5"""
+    5                               5
+    Stars also cannot be used to skip a level (similar to markerless sandwich,
+    above)"""
     sandwich = (pprev_typ != markers.stars and typ != markers.stars
-                and prev_typ == markers.stars and prev_idx == 0)
-    unwinding = pprev_depth > depth
-    return not (sandwich and unwinding) or (prev_depth in (pprev_depth, depth))
+                and prev_typ == markers.stars)
+    unwinding = prev_idx == 0 and pprev_depth > depth
+    bad_unwinding = unwinding and prev_depth not in (pprev_depth, depth)
+    inc_depth = depth == prev_depth + 1 and prev_depth == pprev_depth + 1
+    return not (sandwich and (bad_unwinding or inc_depth))
 
 
 def sequence(typ, idx, depth, *all_prev):
@@ -188,7 +192,7 @@ def depth_type_order(order):
     return inner
 
 
-def global_same_depth_same_type(constrain, all_variables):
+def depth_type_inverses(constrain, all_variables):
     def inner(typ, idx, depth, *all_prev):
         if typ == markers.stars:
             return True

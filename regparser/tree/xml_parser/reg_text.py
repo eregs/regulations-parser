@@ -294,4 +294,4 @@ class RegtextParagraphProcessor(paragraph_processor.ParagraphProcessor):
                 NoMarkerMatcher()]
 
     def additional_constraints(self):
-        return [rules.global_same_depth_same_type]
+        return [rules.depth_type_inverses]
