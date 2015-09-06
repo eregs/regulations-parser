@@ -106,6 +106,7 @@ class ParagraphProcessor(object):
             return root
 
     def additional_constraints(self):
+        """Hook for subtypes to add additional constraints"""
         return []
 
 

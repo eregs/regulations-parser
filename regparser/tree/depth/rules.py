@@ -193,6 +193,8 @@ def depth_type_order(order):
 
 
 def depth_type_inverses(constrain, all_variables):
+    """If paragraphs are at the same depth, they must share the same type. If
+    paragraphs are the same type, they must share the same depth"""
     def inner(typ, idx, depth, *all_prev):
         if typ == markers.stars:
             return True
