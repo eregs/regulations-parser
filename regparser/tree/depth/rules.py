@@ -168,6 +168,8 @@ def global_same_depth_same_type(constrain, all_variables):
             prev_typ, prev_idx, prev_depth = all_prev[i:i+3]
             if prev_depth == depth and prev_typ not in (markers.stars, typ):
                 return False
+            if prev_typ == typ and prev_depth != depth:
+                return False
         return True
 
     for i in range(0, len(all_variables), 3):
