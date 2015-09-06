@@ -86,7 +86,7 @@ def sequence(typ, idx, depth, *all_prev):
     return False
 
 
-def same_depth_same_type(*all_vars):
+def same_parent_same_type(*all_vars):
     """All markers in the same level (with the same parent) should have the
     same marker type"""
     elements = [tuple(all_vars[i:i+3]) for i in range(0, len(all_vars), 3)]
@@ -158,6 +158,20 @@ def depth_type_order(order):
                       ('type' + str(i), 'depth' + str(i)))
 
     return inner
+
+
+def global_same_depth_same_type(constrain, all_variables):
+    def inner(typ, idx, depth, *all_prev):
+        if typ == markers.stars:
+            return True
+        for i in range(0, len(all_prev), 3):
+            prev_typ, prev_idx, prev_depth = all_prev[i:i+3]
+            if prev_depth == depth and prev_typ not in (markers.stars, typ):
+                return False
+        return True
+
+    for i in range(0, len(all_variables), 3):
+        constrain(inner, all_variables[i:i+3] + all_variables[:i])
 
 
 def _ancestors(all_prev):
