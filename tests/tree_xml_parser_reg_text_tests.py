@@ -7,9 +7,10 @@ from mock import patch
 from regparser.tree.depth import markers as mtypes
 from regparser.tree.xml_parser import reg_text
 from tests.xml_builder import XMLBuilderMixin
+from tests.node_accessor import NodeAccessorMixin
 
 
-class RegTextTest(XMLBuilderMixin, TestCase):
+class RegTextTest(XMLBuilderMixin, NodeAccessorMixin, TestCase):
     def test_build_from_section_intro_text(self):
         with self.tree.builder("SECTION") as root:
             root.SECTNO(u"§ 8675.309")
@@ -17,14 +18,12 @@ class RegTextTest(XMLBuilderMixin, TestCase):
             root.P("Some content about this section.")
             root.P("(a) something something")
         node = reg_text.build_from_section('8675', self.tree.render_xml())[0]
+        node = self.node_accessor(node, ['8675', '309'])
         self.assertEqual('Some content about this section.', node.text.strip())
-        self.assertEqual(1, len(node.children))
-        self.assertEqual(['8675', '309'], node.label)
+        self.assertEqual(['a'], node.child_labels)
 
-        child = node.children[0]
-        self.assertEqual('(a) something something', child.text.strip())
-        self.assertEqual([], child.children)
-        self.assertEqual(['8675', '309', 'a'], child.label)
+        self.assertEqual('(a) something something', node['a'].text.strip())
+        self.assertEqual([], node['a'].children)
 
     def test_build_from_section_collapsed_level(self):
         with self.tree.builder("SECTION") as root:
@@ -34,15 +33,10 @@ class RegTextTest(XMLBuilderMixin, TestCase):
                            <E T="03">Notice.</E> follow""")
             root.P(_xml="""(b) <E T="03">Contents</E> (1) Here""")
         node = reg_text.build_from_section('8675', self.tree.render_xml())[0]
-        self.assertEqual(node.label, ['8675', '309'])
-        self.assertEqual(2, len(node.children))
-        self.assertEqual(node.children[0].label, ['8675', '309', 'a'])
-        self.assertEqual(node.children[1].label, ['8675', '309', 'b'])
-
-        a1_label = node.children[0].children[0].label
-        self.assertEqual(['8675', '309', 'a', '1'], a1_label)
-
-        self.assertEqual(1, len(node.children[1].children))
+        node = self.node_accessor(node, ['8675', '309'])
+        self.assertEqual(['a', 'b'], node.child_labels)
+        self.assertEqual(['1'], node['a'].child_labels)
+        self.assertEqual(['1'], node['b'].child_labels)
 
     def test_build_from_section_collapsed_level_emph(self):
         with self.tree.builder('SECTION') as root:
@@ -53,10 +47,11 @@ class RegTextTest(XMLBuilderMixin, TestCase):
             root.P("(i) iiii")
             root.P(_xml=u"""(A) AAA—(<E T="03">1</E>) eeee""")
         node = reg_text.build_from_section('8675', self.tree.render_xml())[0]
-        a1iA = node.children[0].children[0].children[0].children[0]
+        node = self.node_accessor(node, ['8675', '309'])
+        a1iA = node['a']['1']['i']['A']
         self.assertEqual(u"(A) AAA—", a1iA.text)
-        self.assertEqual(1, len(a1iA.children))
-        self.assertEqual("(1) eeee", a1iA.children[0].text.strip())
+        self.assertEqual(['1'], a1iA.child_labels)
+        self.assertEqual("(1) eeee", a1iA['1'].text.strip())
 
     def test_build_from_section_double_collapsed(self):
         with self.tree.builder('SECTION') as root:
@@ -65,20 +60,10 @@ class RegTextTest(XMLBuilderMixin, TestCase):
             root.P(_xml=u"""(a) <E T="03">Keyterm</E>—(1)(i) Content""")
             root.P("(ii) Content2")
         node = reg_text.build_from_section('8675', self.tree.render_xml())[0]
-        self.assertEqual(['8675', '309'], node.label)
-        self.assertEqual(1, len(node.children))
-
-        a = node.children[0]
-        self.assertEqual(['8675', '309', 'a'], a.label)
-        self.assertEqual(1, len(a.children))
-
-        a1 = a.children[0]
-        self.assertEqual(['8675', '309', 'a', '1'], a1.label)
-        self.assertEqual(2, len(a1.children))
-
-        a1i, a1ii = a1.children
-        self.assertEqual(['8675', '309', 'a', '1', 'i'], a1i.label)
-        self.assertEqual(['8675', '309', 'a', '1', 'ii'], a1ii.label)
+        node = self.node_accessor(node, ['8675', '309'])
+        self.assertEqual(['a'], node.child_labels)
+        self.assertEqual(['1'], node['a'].child_labels)
+        self.assertEqual(['i', 'ii'], node['a']['1'].child_labels)
 
     def test_build_from_section_reserved(self):
         with self.tree.builder("SECTION") as root:
@@ -112,37 +97,31 @@ class RegTextTest(XMLBuilderMixin, TestCase):
             root.P("(2) H-2")
             root.P("(i) Is this 8675-309-h-2-i or 8675-309-i")
             root.P(final_par)
-        return reg_text.build_from_section('8675', self.tree.render_xml())[0]
+        node = reg_text.build_from_section('8675', self.tree.render_xml())[0]
+        return self.node_accessor(node, ['8675', '309'])
 
     def test_build_from_section_ambiguous_ii(self):
         n8675_309 = self._setup_for_ambiguous("(ii) A")
-        n8675_309_h = n8675_309.children[1]
-        n8675_309_h_2 = n8675_309_h.children[1]
-        self.assertEqual(2, len(n8675_309.children))
-        self.assertEqual(2, len(n8675_309_h.children))
-        self.assertEqual(2, len(n8675_309_h_2.children))
+        self.assertEqual(['g', 'h'], n8675_309.child_labels)
+        self.assertEqual(['1', '2'], n8675_309['h'].child_labels)
+        self.assertEqual(['i', 'ii'], n8675_309['h']['2'].child_labels)
 
     def test_build_from_section_ambiguous_A(self):
         n8675_309 = self._setup_for_ambiguous("(A) B")
-        n8675_309_h = n8675_309.children[1]
-        n8675_309_h_2 = n8675_309_h.children[1]
-        n8675_309_h_2_i = n8675_309_h_2.children[0]
-        self.assertEqual(2, len(n8675_309.children))
-        self.assertEqual(2, len(n8675_309_h.children))
-        self.assertEqual(1, len(n8675_309_h_2.children))
-        self.assertEqual(1, len(n8675_309_h_2_i.children))
+        self.assertEqual(['g', 'h'], n8675_309.child_labels)
+        self.assertEqual(['1', '2'], n8675_309['h'].child_labels)
+        self.assertEqual(['i'], n8675_309['h']['2'].child_labels)
+        self.assertEqual(['A'], n8675_309['h']['2']['i'].child_labels)
 
     def test_build_from_section_ambiguous_1(self):
         n8675_309 = self._setup_for_ambiguous("(1) C")
-        self.assertEqual(3, len(n8675_309.children))
+        self.assertEqual(['g', 'h', 'i'], n8675_309.child_labels)
 
     def test_build_from_section_ambiguous_3(self):
         n8675_309 = self._setup_for_ambiguous("(3) D")
-        n8675_309_h = n8675_309.children[1]
-        n8675_309_h_2 = n8675_309_h.children[1]
-        self.assertEqual(2, len(n8675_309.children))
-        self.assertEqual(3, len(n8675_309_h.children))
-        self.assertEqual(1, len(n8675_309_h_2.children))
+        self.assertEqual(['g', 'h'], n8675_309.child_labels)
+        self.assertEqual(['1', '2', '3'], n8675_309['h'].child_labels)
+        self.assertEqual(['i'], n8675_309['h']['2'].child_labels)
 
     def test_build_from_section_collapsed(self):
         with self.tree.builder("SECTION") as root:
@@ -153,13 +132,11 @@ class RegTextTest(XMLBuilderMixin, TestCase):
             root.P(_xml=u"""(2) 222—(i) iii. (A) AAA""")
             root.P("(B) BBB")
         n309 = reg_text.build_from_section('8675', self.tree.render_xml())[0]
-        self.assertEqual(1, len(n309.children))
-        n309_a = n309.children[0]
-        self.assertEqual(2, len(n309_a.children))
-        n309_a_2 = n309_a.children[1]
-        self.assertEqual(1, len(n309_a_2.children))
-        n309_a_2_i = n309_a_2.children[0]
-        self.assertEqual(2, len(n309_a_2_i.children))
+        n309 = self.node_accessor(n309, ['8675', '309'])
+        self.assertEqual(['a'], n309.child_labels)
+        self.assertEqual(['1', '2'], n309['a'].child_labels)
+        self.assertEqual(['i'], n309['a']['2'].child_labels)
+        self.assertEqual(['A', 'B'], n309['a']['2']['i'].child_labels)
 
     def test_build_from_section_italic_levels(self):
         with self.tree.builder("SECTION") as root:
@@ -172,28 +149,12 @@ class RegTextTest(XMLBuilderMixin, TestCase):
             root.P(_xml="""(<E T="03">1</E>) i1i1i1""")
             root.P(_xml="""\n(<E T="03">2</E>) i2i2i2""")
         node = reg_text.build_from_section('8675', self.tree.render_xml())[0]
-        self.assertEqual(1, len(node.children))
-        self.assertEqual(node.label, ['8675', '309'])
-
-        node = node.children[0]
-        self.assertEqual(node.label, ['8675', '309', 'a'])
-        self.assertEqual(1, len(node.children))
-
-        node = node.children[0]
-        self.assertEqual(node.label, ['8675', '309', 'a', '1'])
-        self.assertEqual(1, len(node.children))
-
-        node = node.children[0]
-        self.assertEqual(node.label, ['8675', '309', 'a', '1', 'i'])
-        self.assertEqual(1, len(node.children))
-
-        node = node.children[0]
-        self.assertEqual(node.label, ['8675', '309', 'a', '1', 'i', 'A'])
-        self.assertEqual(2, len(node.children))
-
-        n1, n2 = node.children
-        self.assertEqual(n1.label, ['8675', '309', 'a', '1', 'i', 'A', '1'])
-        self.assertEqual(n2.label, ['8675', '309', 'a', '1', 'i', 'A', '2'])
+        node = self.node_accessor(node, ['8675', '309'])
+        self.assertEqual(['a'], node.child_labels)
+        self.assertEqual(['1'], node['a'].child_labels)
+        self.assertEqual(['i'], node['a']['1'].child_labels)
+        self.assertEqual(['A'], node['a']['1']['i'].child_labels)
+        self.assertEqual(['1', '2'], node['a']['1']['i']['A'].child_labels)
 
     def test_build_from_section_bad_spaces(self):
         with self.tree.builder("SECTION") as root:
@@ -202,9 +163,10 @@ class RegTextTest(XMLBuilderMixin, TestCase):
             root.STARS()
             root.P(_xml="""(b)<E T="03">General.</E>Content Content.""")
         node = reg_text.build_from_section('8675', self.tree.render_xml())[0]
-        self.assertEqual(1, len(node.children))
-        nb = node.children[0]
-        self.assertEqual(nb.text.strip(), "(b) General. Content Content.")
+        node = self.node_accessor(node, ['8675', '16'])
+        self.assertEqual(['b'], node.child_labels)
+        self.assertEqual(node['b'].text.strip(),
+                         "(b) General. Content Content.")
 
     def test_build_from_section_section_with_nondigits(self):
         with self.tree.builder("SECTION") as root:
@@ -224,19 +186,12 @@ class RegTextTest(XMLBuilderMixin, TestCase):
             root.FP("fpfpfp")
             root.P("(c) ccc")
         node = reg_text.build_from_section('8675', self.tree.render_xml())[0]
-        self.assertEqual(3, len(node.children))
-        a, b, c = node.children
-
-        self.assertEqual(['8675', '309', 'a'], a.label)
-        self.assertEqual([], a.children)
-        self.assertEqual(['8675', '309', 'b'], b.label)
-        self.assertEqual(1, len(b.children))
-        self.assertEqual(['8675', '309', 'c'], c.label)
-        self.assertEqual([], c.children)
-
-        fp = b.children[0]
-        self.assertEqual(['8675', '309', 'b', 'p1'], fp.label)
-        self.assertEqual([], fp.children)
+        node = self.node_accessor(node, ['8675', '309'])
+        self.assertEqual(['a', 'b', 'c'], node.child_labels)
+        self.assertEqual([], node['a'].child_labels)
+        self.assertEqual(['p1'], node['b'].child_labels)
+        self.assertEqual([], node['b']['p1'].child_labels)
+        self.assertEqual([], node['c'].child_labels)
 
     def test_build_from_section_table(self):
         """Account for regtext with a table"""
@@ -252,14 +207,12 @@ class RegTextTest(XMLBuilderMixin, TestCase):
                     row.ENT("Left content", I="01")
                     row.ENT("Right content")
         node = reg_text.build_from_section('8675', self.tree.render_xml())[0]
-
-        a = node.children[0]
-        self.assertEqual(1, len(a.children))
-        table = a.children[0]
-        self.assertEqual(['8675', '309', 'a', 'p1'], table.label)
+        node = self.node_accessor(node, ['8675', '309'])
+        self.assertEqual(['a'], node.child_labels)
+        self.assertEqual(['p1'], node['a'].child_labels)
         self.assertEqual("||Header|\n|---|---|\n|Left content|Right content|",
-                         table.text)
-        self.assertEqual("GPOTABLE", table.source_xml.tag)
+                         node['a']['p1'].text)
+        self.assertEqual("GPOTABLE", node['a']['p1'].source_xml.tag)
 
     def test_get_title(self):
         with self.tree.builder("PART") as root:
@@ -421,4 +374,3 @@ class RegTextTest(XMLBuilderMixin, TestCase):
         child = node.children[0]
         self.assertEqual('(aa) This is what things mean:', child.text.strip())
         self.assertEqual(['8675', '309', 'aa'], child.label)
-        
