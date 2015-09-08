@@ -31,12 +31,14 @@ class RegTextTest(XMLBuilderMixin, NodeAccessorMixin, TestCase):
             root.SUBJECT("Definitions.")
             root.P(_xml=u"""(a) <E T="03">Transfers </E>—(1)
                            <E T="03">Notice.</E> follow""")
+            root.P("(2) More text")
             root.P(_xml="""(b) <E T="03">Contents</E> (1) Here""")
+            root.P("(2) More text")
         node = reg_text.build_from_section('8675', self.tree.render_xml())[0]
         node = self.node_accessor(node, ['8675', '309'])
         self.assertEqual(['a', 'b'], node.child_labels)
-        self.assertEqual(['1'], node['a'].child_labels)
-        self.assertEqual(['1'], node['b'].child_labels)
+        self.assertEqual(['1', '2'], node['a'].child_labels)
+        self.assertEqual(['1', '2'], node['b'].child_labels)
 
     def test_build_from_section_collapsed_level_emph(self):
         with self.tree.builder('SECTION') as root:
@@ -46,6 +48,7 @@ class RegTextTest(XMLBuilderMixin, NodeAccessorMixin, TestCase):
             root.P("(1) 1111")
             root.P("(i) iiii")
             root.P(_xml=u"""(A) AAA—(<E T="03">1</E>) eeee""")
+            root.STARS()
         node = reg_text.build_from_section('8675', self.tree.render_xml())[0]
         node = self.node_accessor(node, ['8675', '309'])
         a1iA = node['a']['1']['i']['A']
@@ -271,7 +274,7 @@ class RegTextTest(XMLBuilderMixin, NodeAccessorMixin, TestCase):
 
     def test_get_markers(self):
         text = u'(a) <E T="03">Transfer </E>—(1) <E T="03">Notice.</E> follow'
-        markers = reg_text.get_markers(text)
+        markers = reg_text.get_markers(text, mtypes.STARS_TAG)
         self.assertEqual(markers, [u'a', u'1'])
 
     def test_get_markers_and_text(self):
@@ -279,7 +282,7 @@ class RegTextTest(XMLBuilderMixin, NodeAccessorMixin, TestCase):
         wrap = '<P>%s</P>' % text
 
         doc = etree.fromstring(wrap)
-        markers = reg_text.get_markers(text)
+        markers = reg_text.get_markers(text, mtypes.STARS_TAG)
         result = reg_text.get_markers_and_text(doc, markers)
 
         markers = [r[0] for r in result]
@@ -297,7 +300,7 @@ class RegTextTest(XMLBuilderMixin, NodeAccessorMixin, TestCase):
     def test_get_markers_and_text_emph(self):
         text = '(A) aaaa. (<E T="03">1</E>) 1111'
         xml = etree.fromstring('<P>%s</P>' % text)
-        markers = reg_text.get_markers(text)
+        markers = reg_text.get_markers(text, mtypes.STARS_TAG)
         result = reg_text.get_markers_and_text(xml, markers)
 
         a, a1 = result
@@ -325,6 +328,18 @@ class RegTextTest(XMLBuilderMixin, NodeAccessorMixin, TestCase):
         text += 'through (p), (q)(1), and (r) with respect to something.'
         self.assertEqual(['vi'], reg_text.get_markers(text))
 
+    def test_get_markers_collapsed(self):
+        """Only find collapsed markers if they are followed by a marker in
+        sequence"""
+        text = u'(a) <E T="03">aaa</E>—(1) 111. (i) iii'
+        self.assertEqual(reg_text.get_markers(text), ['a'])
+        self.assertEqual(reg_text.get_markers(text, 'b'), ['a'])
+        self.assertEqual(reg_text.get_markers(text, 'A'), ['a', '1', 'i'])
+        self.assertEqual(reg_text.get_markers(text, 'ii'), ['a', '1', 'i'])
+        self.assertEqual(reg_text.get_markers(text, mtypes.STARS_TAG),
+                         ['a', '1', 'i'])
+        self.assertEqual(reg_text.get_markers(text, '2'), ['a', '1'])
+
     @patch('regparser.tree.xml_parser.reg_text.content')
     def test_preprocess_xml(self, content):
         with self.tree.builder("CFRGRANULE") as root:
@@ -351,26 +366,45 @@ class RegTextTest(XMLBuilderMixin, NodeAccessorMixin, TestCase):
 
         self.assertEqual(etree.tostring(orig_xml), self.tree.render_string())
 
-    def test_next_marker_stars(self):
-        with self.tree.builder("ROOT") as root:
-            root.P("(i) Content")
-            root.STARS()
-            root.PRTPAGE()
-            root.STARS()
-            root.P("(xi) More")
-        xml = self.tree.render_xml()
-        self.assertEqual('xi', reg_text.next_marker(xml.getchildren()[0], []))
-
     def test_build_from_section_double_alpha(self):
         # Ensure we match a hierarchy like (x), (y), (z), (aa), (bb)…
-        xml = u"""
-            <SECTION>
-                <SECTNO>§ 8675.309</SECTNO>
-                <SUBJECT>Definitions.</SUBJECT>
-                <P>(aa) This is what things mean:</P>
-            </SECTION>
-        """
-        node = reg_text.build_from_section('8675', etree.fromstring(xml))[0]
+        with self.tree.builder("SECTION") as root:
+            root.SECTNO(u"§ 8675.309")
+            root.SUBJECT("Definitions.")
+            root.P("(aa) This is what things mean:")
+        node = reg_text.build_from_section('8675', self.tree.render_xml())[0]
         child = node.children[0]
         self.assertEqual('(aa) This is what things mean:', child.text.strip())
         self.assertEqual(['8675', '309', 'aa'], child.label)
+
+
+class MarkerMatcherTests(XMLBuilderMixin, TestCase):
+    def test_next_marker_found(self):
+        """Find the first paragraph marker following a paragraph"""
+        with self.tree.builder("ROOT") as root:
+            root.P("(A) AAA")
+            root.P("ABCD")
+            root.P("(d) ddd")
+            root.P("(1) 111")
+        xml = self.tree.render_xml()[1]
+        self.assertEqual(reg_text.MarkerMatcher().next_marker(xml), 'd')
+
+    def test_next_marker_stars(self):
+        """STARS tag has special significance."""
+        with self.tree.builder("ROOT") as root:
+            root.P("(A) AAA")
+            root.P("ABCD")
+            root.STARS()
+            root.P("(d) ddd")
+            root.P("(1) 111")
+        xml = self.tree.render_xml()[1]
+        self.assertEqual(reg_text.MarkerMatcher().next_marker(xml),
+                         mtypes.STARS_TAG)
+
+    def test_next_marker_none(self):
+        """If no marker is present, return None"""
+        with self.tree.builder("ROOT") as root:
+            root.P("(1) 111")
+            root.P("Content")
+        xml = self.tree.render_xml()[0]
+        self.assertIsNone(reg_text.MarkerMatcher().next_marker(xml))
