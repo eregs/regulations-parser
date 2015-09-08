@@ -137,3 +137,22 @@ class TableMatcher(object):
     def derive_nodes(self, xml):
         return [Node(table_xml_to_plaintext(xml), label=[mtypes.MARKERLESS],
                      source_xml=xml)]
+
+
+class FencedMatcher(object):
+    """Use github-like fencing to indicate this is a note/code"""
+    def matches(self, xml):
+        return xml.tag in ('NOTE', 'NOTES', 'CODE', 'EXTRACT')
+
+    def derive_nodes(self, xml):
+        texts = ["```" + self.fence_type(xml)]
+        for child in xml:
+            texts.append(tree_utils.get_node_text(child).strip())
+        texts.append("```")
+        return [Node("\n".join(texts), label=[mtypes.MARKERLESS])]
+
+    def fence_type(self, xml):
+        if xml.tag == 'CODE':
+            return xml.get('LANGUAGE', 'code')
+        else:
+            return xml.tag.lower().rstrip("s")
