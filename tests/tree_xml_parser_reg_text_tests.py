@@ -316,6 +316,25 @@ class RegTextTest(XMLBuilderMixin, TestCase):
         child_labels = [c.label for c in subpart.children]
         self.assertEqual([['8675', '309'], ['8675', '310']], child_labels)
 
+    def test_build_subjgrp(self):
+        with self.tree.builder("SUBJGRP") as root:
+            root.HD(u"Changes of Ownership")
+            with root.SECTION() as section:
+                section.SECTNO(u"§ 479.42")
+                section.SUBJECT("Changes through death of owner.")
+                section.P(u"Whenever any person who has paid […] conditions.")
+            with root.SECTION() as section:
+                section.SECTNO(u"§ 479.43")
+                section.SUBJECT("Changes through bankruptcy of owner.")
+                section.P(u"A receiver or referee in bankruptcy may […] paid.")
+                section.P("(a) something something")
+        subpart = reg_text.build_subjgrp('479', self.tree.render_xml(), [])
+        self.assertEqual(subpart.node_type, 'subpart')
+        self.assertEqual(len(subpart.children), 2)
+        self.assertEqual(subpart.label, ['479', 'Subjgrp', 'CoO'])
+        child_labels = [c.label for c in subpart.children]
+        self.assertEqual([['479', '42'], ['479', '43']], child_labels)
+
     def test_get_markers(self):
         text = u'(a) <E T="03">Transfer </E>—(1) <E T="03">Notice.</E> follow'
         markers = reg_text.get_markers(text)

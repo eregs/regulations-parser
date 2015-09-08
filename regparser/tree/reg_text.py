@@ -170,7 +170,7 @@ def build_subjgrp(title, part, letter_list):
     letter_title = subjgrp_label(title, letter_list)
     letter_list.append(letter_title)
 
-    label = [str(part), 'Subpart', letter_title]
+    label = [str(part), 'Subjgrp', letter_title]
 
     return (letter_list, struct.Node(label=label, title=title,
                                      node_type=struct.Node.SUBPART))
