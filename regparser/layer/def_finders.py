@@ -9,6 +9,8 @@ import settings
 
 
 class Ref(object):
+    """A reference to a defined term. Keeps track of the term, where it was
+    found and the term's position in that node's text"""
     def __init__(self, term, label, start):
         self.term = unicode(term).lower()
         self.label = label
@@ -26,7 +28,10 @@ class Ref(object):
 
 
 class ExplicitIncludes(object):
-    """Definitions can be explicitly included in the settings"""
+    """Definitions can be explicitly included in the settings. For example,
+    say that a paragraph doesn't indicate that a certain phrase is a
+    definition; we can define INCLUDE_DEFINITIONS_IN in our settings file,
+    which will be checked here."""
     def find(self, node):
         refs = []
         cfr_part = node.label[0] if node.label else None
