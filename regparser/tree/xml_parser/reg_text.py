@@ -286,5 +286,6 @@ class RegtextParagraphProcessor(paragraph_processor.ParagraphProcessor):
     NODE_TYPE = Node.REGTEXT
     MATCHERS = [paragraph_processor.StarsMatcher(),
                 paragraph_processor.TableMatcher(),
+                paragraph_processor.FencedMatcher(),
                 MarkerMatcher(),
                 NoMarkerMatcher()]
