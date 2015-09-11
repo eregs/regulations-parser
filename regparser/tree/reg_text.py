@@ -1,5 +1,6 @@
 # vim: set encoding=utf-8
 import re
+import string
 
 from regparser import utils
 from regparser.citations import internal_citations, Label
@@ -12,7 +13,7 @@ from regparser.tree.supplement import find_supplement_start
 
 
 def build_subparts_tree(text, part, subpart_builder):
-    """ Build a tree of a subpart, and it's children sections.
+    """ Build a tree of a subpart and its child sections.
     subpart_builder can be a builder that builds a subpart or an
     emptypart. """
 
@@ -83,6 +84,96 @@ def build_subpart(text, part):
     return struct.Node(
         "", [], label, subpart_title, node_type=struct.Node.SUBPART)
 
+
+def subjgrp_label(starting_title, letter_list):
+    words = starting_title.split()
+    candidate_title = ""
+    suffixes = [""] + list(string.lowercase)
+    if len(words) == 1:
+        """
+        E.g. if the word is "Penalties" the progression is:
+
+        Pe
+        Pe.
+        Pen
+        Pen.
+        Pena
+        Pena.
+        <etc.>
+        Penalties.
+        Penalties-b.
+        Penalties-c.
+        <etc.>
+        """
+        word = words[0]
+        terminator = ""
+        suffix_pos = 0
+        pos = min([2, len(word)])
+        while candidate_title == "" or candidate_title in letter_list:
+            suffix = '-%s' % suffixes[suffix_pos] if suffix_pos else ''
+            candidate_title = '%s%s%s' % (word[:pos], terminator, suffix)
+
+            if terminator:
+                terminator = ""
+                if pos < len(word):
+                    pos = pos + 1
+                else:
+                    suffix_pos = suffix_pos + 1
+            else:
+                terminator = "."
+
+        return candidate_title
+    else:
+        """
+        E.g. if the title is "Change of Ownership" the progression is:
+
+        CoO
+        C.o.O.
+        C_o_O
+        ChofOw
+        Ch.of.Ow.
+        <etc.>
+        ChangeofOwnership-a
+        """
+        separators = ("", ".", "_")
+        separator_pos, suffix_pos = 0, 0
+        num_letters = 1
+        longest = max([len(word) for word in words])
+        while candidate_title == "" or candidate_title in letter_list:
+            sep = separators[separator_pos]
+            suffix = suffixes[suffix_pos]
+            suffix = "-%s" % suffix if suffix else ""
+            suffix = "%s%s" % (sep, suffix) if sep == "." else suffix
+            candidate_title = "%s%s" % (sep.join(
+                word[:num_letters] for word in words), suffix)
+            if separator_pos + 1 < len(separators):
+                separator_pos = separator_pos + 1
+            elif num_letters == longest:
+                separator_pos = 0
+                suffix_pos = suffix_pos + 1
+            else:
+                separator_pos = 0
+                num_letters = num_letters + 1
+        return candidate_title
+
+def build_subjgrp(title, part, letter_list):
+    """
+    We're constructing a fake "letter" here by taking the first letter of
+    each word in the subjgrp's title, or using the first two letters of the
+    first word if there's just one—we're avoiding single letters to make sure we
+    don't duplicate an existing subpart, and we're hoping that the initialisms
+    created by this method are unique for this regulation.
+    We can make this more robust by accepting a list of existing initialisms and
+    returning both that list and the Node, and checking against the list as we
+    construct them.
+    """
+    letter_title = subjgrp_label(title, letter_list)
+    letter_list.append(letter_title)
+
+    label = [str(part), 'Subjgrp', letter_title]
+
+    return (letter_list, struct.Node(label=label, title=title,
+                                     node_type=struct.Node.SUBPART))
 
 def find_next_subpart_start(text):
     """ Find the start of the next Subpart (e.g. Subpart B)"""
