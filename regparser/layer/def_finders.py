@@ -1,5 +1,6 @@
 # vim: set fileencoding=utf-8
 """Parsers for finding a term that's being defined within a node"""
+import abc
 from itertools import chain
 import re
 
@@ -10,6 +11,8 @@ import settings
 
 
 class Ref(object):
+    """A reference to a defined term. Keeps track of the term, where it was
+    found and the term's position in that node's text"""
     def __init__(self, term, label, start):
         self.term = unicode(term).lower()
         self.label = label
@@ -26,8 +29,23 @@ class Ref(object):
             repr(self.term), repr(self.label), repr(self.start))
 
 
-class ExplicitIncludes(object):
-    """Definitions can be explicitly included in the settings"""
+class FinderBase(object):
+    """Base class for all of the definition finder classes. Defines the
+    interface they must implement"""
+    __metaclass__ = abc.ABCMeta
+
+    @abc.abstractmethod
+    def find(self, node):
+        """Given a Node, pull out any definitions it may contain as a list of
+        Refs"""
+        raise NotImplementedError()
+
+
+class ExplicitIncludes(FinderBase):
+    """Definitions can be explicitly included in the settings. For example,
+    say that a paragraph doesn't indicate that a certain phrase is a
+    definition; we can define INCLUDE_DEFINITIONS_IN in our settings file,
+    which will be checked here."""
     def find(self, node):
         refs = []
         cfr_part = node.label[0] if node.label else None
@@ -39,7 +57,7 @@ class ExplicitIncludes(object):
         return refs
 
 
-class SmartQuotes(object):
+class SmartQuotes(FinderBase):
     """Definitions indicated via smart quotes"""
     def __init__(self, stack):
         """Stack (which references ancestors of a node) is used to determine
@@ -69,7 +87,7 @@ class SmartQuotes(object):
         return False
 
 
-class ScopeMatch(object):
+class ScopeMatch(FinderBase):
     """We know these will be definitions because the scope of the definition
     is spelled out. E.g. 'for the purposes of XXX, the term YYY means'"""
     def __init__(self, finder):
@@ -90,7 +108,7 @@ class ScopeMatch(object):
         return refs
 
 
-class XMLTermMeans(object):
+class XMLTermMeans(FinderBase):
     """Namespace for a matcher for e.g. '<E>XXX</E> means YYY'"""
     def __init__(self, existing_refs=None):
         """Existing refs will be used to exclude certain matches"""

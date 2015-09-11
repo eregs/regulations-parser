@@ -137,6 +137,8 @@ class Terms(Layer):
         return layer_el
 
     def _word_matches(self, term, text):
+        """Return the start and end indexes of the term within the text,
+        accounting for word boundaries"""
         return [(match.start(), match.end()) for match in
                 re.finditer(r'\b' + re.escape(term) + r'\b', text)]
 
