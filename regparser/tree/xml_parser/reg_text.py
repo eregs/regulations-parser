@@ -4,7 +4,7 @@ import re
 from lxml import etree
 
 from regparser import content
-from regparser.tree.depth import markers as mtypes
+from regparser.tree.depth import markers as mtypes, rules
 from regparser.tree.struct import Node
 from regparser.tree.paragraph import p_level_of
 from regparser.tree.xml_parser import paragraph_processor
@@ -109,10 +109,12 @@ def build_tree(reg_xml):
 
     return tree
 
+
 def get_subpart_title(subpart_xml):
     hds = subpart_xml.xpath('./RESERVED|./HD')
     if hds:
         return [hd.text for hd in hds][0]
+
 
 def get_subjgrp_title(subjgrp_xml):
     hds = subjgrp_xml.xpath('./RESERVED|./HD')
@@ -132,9 +134,10 @@ def build_subpart(reg_part, subpart_xml):
     subpart.children = sections
     return subpart
 
+
 def build_subjgrp(reg_part, subjgrp_xml, letter_list):
-    # This handles subjgrps that have been pulled out and injected into the same
-    # level as subparts.
+    # This handles subjgrps that have been pulled out and injected into the
+    # same level as subparts.
     subjgrp_title = get_subjgrp_title(subjgrp_xml)
     letter_list, subjgrp = reg_text.build_subjgrp(subjgrp_title, reg_part,
                                                   letter_list)
@@ -146,6 +149,7 @@ def build_subjgrp(reg_part, subjgrp_xml, letter_list):
 
     subjgrp.children = sections
     return subjgrp
+
 
 def get_markers(text):
     """ Extract all the paragraph markers from text. Do some checks on the
@@ -289,3 +293,6 @@ class RegtextParagraphProcessor(paragraph_processor.ParagraphProcessor):
                 paragraph_processor.FencedMatcher(),
                 MarkerMatcher(),
                 NoMarkerMatcher()]
+
+    def additional_constraints(self):
+        return [rules.depth_type_inverses]

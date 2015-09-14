@@ -96,7 +96,7 @@ class ParagraphProcessor(object):
             root.tagged_text += " " + intro_node.tagged_text
         if nodes:
             markers = [node.label[0] for node in nodes]
-            depths = derive_depths(markers)
+            depths = derive_depths(markers, self.additional_constraints())
             if not depths:
                 logging.error(
                     "Could not determine paragraph depths:\n%s", markers)
@@ -104,6 +104,10 @@ class ParagraphProcessor(object):
             return self.build_hierarchy(root, nodes, depths)
         else:
             return root
+
+    def additional_constraints(self):
+        """Hook for subtypes to add additional constraints"""
+        return []
 
 
 class StarsMatcher(object):
