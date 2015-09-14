@@ -113,11 +113,11 @@ def derive_depths(original_markers, additional_constraints=[]):
         if idx > 0:
             pairs = all_vars[3*(idx-1):]
             problem.addConstraint(rules.depth_check, pairs)
-            problem.addConstraint(rules.stars_check, pairs)
 
         if idx > 1:
             pairs = all_vars[3*(idx-2):]
             problem.addConstraint(rules.markerless_sandwich, pairs)
+            problem.addConstraint(rules.star_sandwich, pairs)
 
     # separate loop so that the simpler checks run first
     for idx in range(1, len(marker_list)):
@@ -129,7 +129,7 @@ def derive_depths(original_markers, additional_constraints=[]):
 
     # @todo: There's probably efficiency gains to making these rules over
     # prefixes (see above) rather than over the whole collection at once
-    problem.addConstraint(rules.same_depth_same_type, all_vars)
+    problem.addConstraint(rules.same_parent_same_type, all_vars)
     problem.addConstraint(rules.stars_occupy_space, all_vars)
 
     for constraint in additional_constraints:

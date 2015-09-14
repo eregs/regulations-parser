@@ -18,31 +18,38 @@ def type_match(marker):
 
 def depth_check(prev_typ, prev_idx, prev_depth, typ, idx, depth):
     """Constrain the depth of sequences of markers."""
-    # decrementing depth is always okay
-    dec = depth < prev_depth
+    # decrementing depth is okay unless inline stars
+    dec = depth < prev_depth and not (typ == markers.stars and idx == 1)
     # continuing a sequence
     cont = depth == prev_depth and prev_typ == typ and idx == prev_idx + 1
-    # stars are also allowed if at the same level
-    stars = depth == prev_depth and markers.stars in (typ, prev_typ)
+    stars = _stars_check(prev_typ, prev_idx, prev_depth, typ, idx, depth)
     # depth can be incremented if starting a new sequence
     inc = depth == prev_depth + 1 and idx == 0 and typ != prev_typ
-    # stars can also increment the depth
-    next_star = depth == prev_depth + 1 and typ == markers.stars
     # markerless in sequence must have the same level
     mless_seq = (prev_typ == typ and prev_depth == depth
                  and typ == markers.markerless)
-    return dec or cont or stars or inc or next_star or mless_seq
+    return dec or cont or stars or inc or mless_seq
 
 
-def stars_check(prev_typ, prev_idx, prev_depth, typ, idx, depth):
+def _stars_check(prev_typ, prev_idx, prev_depth, typ, idx, depth):
     """Constrain pairs of markers where one is a star."""
-    if prev_typ == typ and typ == markers.stars:
-        # Stars can't be on the same level in sequence
+    # Seq of stars
+    if prev_typ == markers.stars and typ == prev_typ:
+        # Decreasing depth is always okay
         dec = depth < prev_depth
-        # and can only increase the depth in the previous was INLINE
-        inc = prev_idx == 1 and depth == prev_depth + 1
-        return dec or inc
-    return True
+        # Can only be on the same level if prev is inline
+        same = depth == prev_depth and prev_idx == 1
+        return dec or same
+    # Marker following stars
+    elif prev_typ == markers.stars:
+        return depth == prev_depth
+    # Inline Stars following marker
+    elif typ == markers.stars and idx == 1:
+        return depth == prev_depth + 1
+    elif typ == markers.stars:
+        return depth in (prev_depth, prev_depth + 1)
+    else:
+        return False
 
 
 def markerless_sandwich(pprev_typ, pprev_idx, pprev_depth,
@@ -56,6 +63,31 @@ def markerless_sandwich(pprev_typ, pprev_idx, pprev_depth,
     sandwich = prev_typ == markers.markerless
     inc_depth = depth == prev_depth + 1 and prev_depth == pprev_depth + 1
     return not (sandwich and inc_depth)
+
+
+def star_sandwich(pprev_typ, pprev_idx, pprev_depth,
+                  prev_typ, prev_idx, prev_depth,
+                  typ, idx, depth):
+    """Symmetry breaking constraint that places STARS tag at specific depth so
+    that the resolution of
+
+                    c
+    ?   ?   ?   ?   ?   ?   <- Potential STARS depths
+    5
+
+    can only be one of
+                                OR
+                    c                               c
+                    STARS           STARS
+    5                               5
+    Stars also cannot be used to skip a level (similar to markerless sandwich,
+    above)"""
+    sandwich = (pprev_typ != markers.stars and typ != markers.stars
+                and prev_typ == markers.stars)
+    unwinding = prev_idx == 0 and pprev_depth > depth
+    bad_unwinding = unwinding and prev_depth not in (pprev_depth, depth)
+    inc_depth = depth == prev_depth + 1 and prev_depth == pprev_depth + 1
+    return not (sandwich and (bad_unwinding or inc_depth))
 
 
 def sequence(typ, idx, depth, *all_prev):
@@ -86,7 +118,7 @@ def sequence(typ, idx, depth, *all_prev):
     return False
 
 
-def same_depth_same_type(*all_vars):
+def same_parent_same_type(*all_vars):
     """All markers in the same level (with the same parent) should have the
     same marker type"""
     elements = [tuple(all_vars[i:i+3]) for i in range(0, len(all_vars), 3)]
@@ -158,6 +190,24 @@ def depth_type_order(order):
                       ('type' + str(i), 'depth' + str(i)))
 
     return inner
+
+
+def depth_type_inverses(constrain, all_variables):
+    """If paragraphs are at the same depth, they must share the same type. If
+    paragraphs are the same type, they must share the same depth"""
+    def inner(typ, idx, depth, *all_prev):
+        if typ == markers.stars:
+            return True
+        for i in range(0, len(all_prev), 3):
+            prev_typ, prev_idx, prev_depth = all_prev[i:i+3]
+            if prev_depth == depth and prev_typ not in (markers.stars, typ):
+                return False
+            if prev_typ == typ and prev_depth != depth:
+                return False
+        return True
+
+    for i in range(0, len(all_variables), 3):
+        constrain(inner, all_variables[i:i+3] + all_variables[:i])
 
 
 def _ancestors(all_prev):
