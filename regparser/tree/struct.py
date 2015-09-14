@@ -37,6 +37,17 @@ class Node(object):
     def label_id(self):
         return '-'.join(self.label)
 
+    def depth(self):
+        """Inspect the label and type to determine the node's depth"""
+        if len(self.label) > 1 and self.node_type == self.REGTEXT:
+            #   Add one for the subpart level
+            return len(self.label) + 1
+        elif self.node_type in (self.SUBPART, self.EMPTYPART):
+            #   Subparts all on the same level
+            return 2
+        else:
+            return len(self.label)
+
 
 class NodeEncoder(JSONEncoder):
     """Custom JSON encoder to handle Node objects"""
