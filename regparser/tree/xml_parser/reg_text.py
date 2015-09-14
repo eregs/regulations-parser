@@ -6,7 +6,7 @@ from lxml import etree
 from regparser import content
 from regparser.tree.depth import markers as mtypes, rules
 from regparser.tree.struct import Node
-from regparser.tree.paragraph import p_level_of
+from regparser.tree.paragraph import p_level_of, p_levels
 from regparser.tree.xml_parser import paragraph_processor
 from regparser.tree.xml_parser.appendices import build_non_reg_text
 from regparser.tree import reg_text
@@ -151,26 +151,52 @@ def build_subjgrp(reg_part, subjgrp_xml, letter_list):
     return subjgrp
 
 
-def get_markers(text):
+def _deeper_level(first, second):
+    """Is the second marker deeper than the first"""
+    for level1 in p_level_of(first):
+        for level2 in p_level_of(second):
+            if level1 < level2:
+                return True
+    return False
+
+
+def _continues_collapsed(first, second):
+    """Does the second marker continue a sequence started by the first?"""
+    if second == mtypes.STARS_TAG:  # Missing data - proceed optimistically
+        return True
+    for level1, markers1 in enumerate(p_levels):
+        for level2, markers2 in enumerate(p_levels):
+            if first not in markers1 or second not in markers2:
+                continue
+            idx1, idx2 = markers1.index(first), markers2.index(second)
+            extending = level1 == level2 and idx2 == idx1 + 1
+            new_level = level2 == level1 + 1 and idx2 == 0
+            if extending or new_level:
+                return True
+    return False
+
+
+def get_markers(text, next_marker=None):
     """ Extract all the paragraph markers from text. Do some checks on the
     collapsed markers."""
-    markers = tree_utils.get_paragraph_markers(text)
-    collapsed_markers = tree_utils.get_collapsed_markers(text)
+    initial = tree_utils.get_paragraph_markers(text)
+    if next_marker is None:
+        collapsed = []
+    else:
+        collapsed = tree_utils.get_collapsed_markers(text)
 
-    #   Check that the collapsed markers make sense (i.e. are at least one
-    #   level below the initial marker)
-    if markers and collapsed_markers:
-        initial_marker_levels = p_level_of(markers[-1])
-        final_collapsed_markers = []
-        for collapsed_marker in collapsed_markers:
-            collapsed_marker_levels = p_level_of(collapsed_marker)
-            if any(c > f for f in initial_marker_levels
-                    for c in collapsed_marker_levels):
-                final_collapsed_markers.append(collapsed_marker)
-        collapsed_markers = final_collapsed_markers
-    markers_list = [m for m in markers] + [m for m in collapsed_markers]
+    #   Check that the collapsed markers make sense:
+    #   * at least one level below the initial marker
+    #   * followed by a marker in sequence
+    if initial and collapsed:
+        collapsed = [c for c in collapsed if _deeper_level(initial[-1], c)]
+        for marker in reversed(collapsed):
+            if _continues_collapsed(marker, next_marker):
+                break
+            else:
+                collapsed.pop()
 
-    return markers_list
+    return initial + collapsed
 
 
 def get_markers_and_text(node, markers_list):
@@ -187,25 +213,6 @@ def get_markers_and_text(node, markers_list):
     if len(node_text_list) > len(markers_list):     # diff can only be 1
         markers_list.insert(0, mtypes.MARKERLESS)
     return zip(markers_list, node_text_list)
-
-
-def next_marker(xml_node, remaining_markers):
-    """Try to determine the marker following the current xml_node. Remaining
-    markers is a list of other marks *within* the xml_node. May return
-    None"""
-    #   More markers in this xml node
-    if remaining_markers:
-        return remaining_markers[0][0]
-
-    #   Check the next xml node; skip over stars
-    sib = xml_node.getnext()
-    while sib is not None and sib.tag in ('STARS', 'PRTPAGE'):
-        sib = sib.getnext()
-    if sib is not None:
-        next_text = tree_utils.get_node_text(sib)
-        next_markers = get_markers(next_text)
-        if next_markers:
-            return next_markers[0]
 
 
 def build_from_section(reg_part, section_xml):
@@ -259,7 +266,7 @@ class MarkerMatcher(object):
     def derive_nodes(self, xml):
         text = ''
         tagged_text = tree_utils.get_node_text_tags_preserved(xml).strip()
-        markers_list = get_markers(tagged_text)
+        markers_list = get_markers(tagged_text, self.next_marker(xml))
         nodes = []
         for m, node_text in get_markers_and_text(xml, markers_list):
             text, tagged_text = node_text
@@ -269,6 +276,19 @@ class MarkerMatcher(object):
         if text.endswith('* * *'):
             nodes.append(Node(label=[mtypes.INLINE_STARS]))
         return nodes
+
+    def next_marker(self, xml):
+        """Find the first marker in a paragraph that follows this xml node.
+        May return None"""
+        node = xml.getnext()
+        while node is not None:
+            tagged_text = tree_utils.get_node_text_tags_preserved(node)
+            markers = get_markers(tagged_text.strip())
+            if node.tag == mtypes.STARS_TAG:
+                return node.tag
+            elif markers:
+                return markers[0]
+            node = node.getnext()
 
 
 class NoMarkerMatcher(object):
