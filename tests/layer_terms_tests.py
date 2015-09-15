@@ -125,6 +125,20 @@ class LayerTermTest(TestCase):
         self.assertEqual(hot, Ref('hot tamale', '9999-4', 4))
         self.assertEqual(tamale, Ref('tamale', '9999-4', 18))
 
+    def test_node_definitions_too_long(self):
+        """Don't find definitions which are too long"""
+        stack = ParentStack().add(0, Node('Definitions', label=['9999']))
+
+        text = u"""“I declare under the penalties of perjury that this—(insert
+        type of document, such as, statement, application, request,
+        certificate), including the documents submitted in support thereof,
+        has been examined by me and, to the best of my knowledge and belief,
+        is true, correct, and complete.”"""
+        node = Node(u'```extract\n{}\n```'.format(text))
+        included, excluded = Terms(None).node_definitions(node, stack)
+        self.assertEqual([], included)
+        self.assertEqual([], excluded)
+
     def test_pre_process(self):
         noname_subpart = Node(
             '',

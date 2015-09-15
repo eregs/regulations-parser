@@ -18,6 +18,9 @@ from regparser.tree.priority_stack import PriorityStack
 import settings
 
 
+MAX_TERM_LENGTH = 100
+
+
 class ParentStack(PriorityStack):
     """Used to keep track of the parents while processing nodes to find
     terms. This is needed as the definition may need to find its scope in
@@ -104,6 +107,8 @@ class Terms(Layer):
             # Note that `extend` is very important as XMLTermMeans uses the
             # list reference
             references.extend(finder.find(node))
+
+        references = [r for r in references if len(r.term) <= MAX_TERM_LENGTH]
 
         return (
             [r for r in references if not self.is_exclusion(r.term, node)],
