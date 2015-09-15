@@ -59,7 +59,7 @@ class PriorityStack(object):
 
     def add(self, node_level, node):
         """ Add a new node with level node_level to the stack. Unwind the stack
-        when necessary. """
+        when necessary. Returns `self` for chaining """
         last = self.peek()
         element = (node_level, node)
 
@@ -72,3 +72,5 @@ class PriorityStack(object):
             self.push_last(element)
         else:
             self.push_last(element)
+
+        return self
