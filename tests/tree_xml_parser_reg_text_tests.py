@@ -415,6 +415,29 @@ class RegTextTest(XMLBuilderMixin, NodeAccessorMixin, TestCase):
         self.assertEqual('(aa) This is what things mean:', child.text.strip())
         self.assertEqual(['8675', '309', 'aa'], child.label)
 
+    def test_build_tree_with_subjgrp(self):
+        """XML with SUBJGRPs where SUBPARTs are shouldn't cause a problem"""
+        with self.tree.builder("ROOT") as root:
+            with root.PART() as part:
+                part.EAR("Pt. 123")
+                part.HD(u"PART 123—SOME STUFF", SOURCE="HED")
+                with part.SUBPART() as subpart:
+                    subpart.HD(u"Subpart A—First subpart")
+                with part.SUBJGRP() as subjgrp:
+                    subjgrp.HD(u"Changes of Ownership")
+                with part.SUBPART() as subpart:
+                    subpart.HD(u"Subpart B—First subpart")
+                with part.SUBJGRP() as subjgrp:
+                    subjgrp.HD(u"Another Top Level")
+        node = reg_text.build_tree(self.tree.render_xml())
+        self.assertEqual(node.label, ['123'])
+        self.assertEqual(4, len(node.children))
+        subpart_a, subjgrp_1, subpart_b, subjgrp_2 = node.children
+        self.assertEqual(subpart_a.label, ['123', 'Subpart', 'A'])
+        self.assertEqual(subpart_b.label, ['123', 'Subpart', 'B'])
+        self.assertEqual(subjgrp_1.label, ['123', 'Subjgrp', 'CoO'])
+        self.assertEqual(subjgrp_2.label, ['123', 'Subjgrp', 'ATL'])
+
 
 class MarkerMatcherTests(XMLBuilderMixin, TestCase):
     def test_next_marker_found(self):
