@@ -87,42 +87,57 @@ class LayerTermTest(TestCase):
         self.assertEqual([Ref('bologna', '111-1-a', 33)], excluded)
 
     def test_node_definitions_multiple_xml(self):
-        t = Terms(None)
-        stack = ParentStack()
-        stack.add(0, Node(label=['9999']))
-
+        """Find xml definitions which are separated by `and`"""
+        stack = ParentStack().add(0, Node(label=['9999']))
         winter = Node("(4) Cold and dreary mean winter.", label=['9999', '4'])
-        tagged = '(4) <E T="03">Cold</E> and <E T="03">dreary</E> mean '
-        tagged += 'winter.'
-        winter.tagged_text = tagged
-        inc, _ = t.node_definitions(winter, stack)
+        winter.tagged_text = ('(4) <E T="03">Cold</E> and '
+                              '<E T="03">dreary</E> mean winter.')
+        inc, _ = Terms(None).node_definitions(winter, stack)
         self.assertEqual(len(inc), 2)
         cold, dreary = inc
         self.assertEqual(cold, Ref('cold', '9999-4', 4))
         self.assertEqual(dreary, Ref('dreary', '9999-4', 13))
 
+    def test_node_definitions_xml_commas(self):
+        """Find xml definitions which have commas separating them"""
+        stack = ParentStack().add(0, Node(label=['9999']))
         summer = Node("(i) Hot, humid, or dry means summer.",
                       label=['9999', '4'])
-        tagged = '(i) <E T="03">Hot</E>, <E T="03">humid</E>, or '
-        tagged += '<E T="03">dry</E> means summer.'
-        summer.tagged_text = tagged
-        inc, _ = t.node_definitions(summer, stack)
+        summer.tagged_text = ('(i) <E T="03">Hot</E>, <E T="03">humid</E>, '
+                              'or <E T="03">dry</E> means summer.')
+        inc, _ = Terms(None).node_definitions(summer, stack)
         self.assertEqual(len(inc), 3)
         hot, humid, dry = inc
         self.assertEqual(hot, Ref('hot', '9999-4', 4))
         self.assertEqual(humid, Ref('humid', '9999-4', 9))
         self.assertEqual(dry, Ref('dry', '9999-4', 19))
 
+    def test_node_definitions_xml_or(self):
+        """Find xml definitions which are separated by `or`"""
+        stack = ParentStack().add(0, Node(label=['9999']))
         tamale = Node("(i) Hot tamale or tamale means nom nom",
                       label=['9999', '4'])
-        tagged = '(i) <E T="03">Hot tamale</E> or <E T="03"> tamale</E> '
-        tagged += 'means nom nom '
-        tamale.tagged_text = tagged
-        inc, _ = t.node_definitions(tamale, stack)
+        tamale.tagged_text = ('(i) <E T="03">Hot tamale</E> or <E T="03"> '
+                              'tamale</E> means nom nom ')
+        inc, _ = Terms(None).node_definitions(tamale, stack)
         self.assertEqual(len(inc), 2)
         hot, tamale = inc
         self.assertEqual(hot, Ref('hot tamale', '9999-4', 4))
         self.assertEqual(tamale, Ref('tamale', '9999-4', 18))
+
+    def test_node_definitions_too_long(self):
+        """Don't find definitions which are too long"""
+        stack = ParentStack().add(0, Node('Definitions', label=['9999']))
+
+        text = u"""“I declare under the penalties of perjury that this—(insert
+        type of document, such as, statement, application, request,
+        certificate), including the documents submitted in support thereof,
+        has been examined by me and, to the best of my knowledge and belief,
+        is true, correct, and complete.”"""
+        node = Node(u'```extract\n{}\n```'.format(text))
+        included, excluded = Terms(None).node_definitions(node, stack)
+        self.assertEqual([], included)
+        self.assertEqual([], excluded)
 
     def test_pre_process(self):
         noname_subpart = Node(
