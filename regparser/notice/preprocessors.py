@@ -18,61 +18,67 @@ class PreProcessorBase(object):
 class MoveLastAMDPar(PreProcessorBase):
     """If the last element in a section is an AMDPAR, odds are the authors
     intended it to be associated with the following section"""
+    AMDPAR_WITHOUT_FOLLOWING = "//AMDPAR[not(following-sibling::*)]"
+
     def transform(self, xml):
-        for amdpar in xml.xpath("//AMDPAR"):
-            if amdpar.getnext() is None:
-                parent = amdpar.getparent()
-                next_parent = parent.getnext()
-                if (next_parent is not None
-                        and parent.get('PART') == next_parent.get('PART')):
-                    parent.remove(amdpar)
-                    next_parent.insert(0, amdpar)
+        # AMDPAR with no following node
+        for amdpar in xml.xpath(self.AMDPAR_WITHOUT_FOLLOWING):
+            parent = amdpar.getparent()
+            aunt = parent.getnext()
+            if aunt is not None and parent.get('PART') == aunt.get('PART'):
+                parent.remove(amdpar)
+                aunt.insert(0, amdpar)
 
 
-class SupplementIAMDPar(PreProcessorBase):
+class SupplementAMDPar(PreProcessorBase):
     """Supplement I AMDPARs are often incorrect (labelled as Ps)"""
+    CONTAINS_SUPPLEMENT = "contains(., 'Supplement I')"
+    SUPPLEMENT_HD = "//REGTEXT//HD[@SOURCE='HD1' and {}]".format(
+        CONTAINS_SUPPLEMENT)
+    SUPPLEMENT_AMD_OR_P = "./AMDPAR[{0}]|./P[{0}]".format(
+        CONTAINS_SUPPLEMENT)
+
     def transform(self, xml):
-        xpath_contains_supp = "contains(., 'Supplement I')"
-        xpath = "//REGTEXT//HD[@SOURCE='HD1' and %s]" % xpath_contains_supp
-        for supp_header in xml.xpath(xpath):
+        for supp_header in xml.xpath(self.SUPPLEMENT_HD):
             parent = supp_header.getparent()
-            if (parent.xpath("./AMDPAR[%s]" % xpath_contains_supp)
-                    or parent.xpath("./P[%s]" % xpath_contains_supp)):
-                pred = supp_header.getprevious()
-                while pred is not None:
-                    if pred.tag not in ('P', 'AMDPAR'):
-                        pred = pred.getprevious()
-                    else:
-                        pred.tag = 'AMDPAR'
-                        if 'supplement i' in pred.text.lower():
-                            pred = None
-                        else:
-                            pred = pred.getprevious()
+            if parent.xpath(self.SUPPLEMENT_AMD_OR_P):
+                self.set_prev_to_amdpar(supp_header.getprevious())
+
+    def set_prev_to_amdpar(self, xml_node):
+        """Set the tag to AMDPAR on all previous siblings until we hit the
+        Supplement I header"""
+        if xml_node is not None and xml_node.tag in ('P', 'AMDPAR'):
+            xml_node.tag = 'AMDPAR'
+            if 'supplement i' not in xml_node.text.lower():     # not done
+                self.set_prev_to_amdpar(xml_node.getprevious())
+        elif xml_node is not None:
+            self.set_prev_to_amdpar(xml_node.getprevious())
 
 
-class EmphasizedParagraphCleanup(PreProcessorBase):
-    """Clean up emphasized paragraph tags"""
+class ParenthesesCleanup(PreProcessorBase):
+    """Clean up where parentheses exist between paragraph an emphasis tags"""
     def transform(self, xml):
+        # We want to treat None's as blank strings
+        _str = lambda x: x or ""
         for par in xml.xpath("//P/*[position()=1 and name()='E']/.."):
-            em = par.getchildren()[0]   # must be an E from the xpath
+            em = par.getchildren()[0]   # must be an E due to the xpath
 
-            #   wrap in a thunk to delay execution
-            par_text = lambda: par.text or ""
-            em_text, em_tail = lambda: em.text or "", lambda: em.tail or ""
+            outside_open = _str(par.text).endswith("(")
+            inside_open = _str(em.text).startswith("(")
+            has_open = outside_open or inside_open
 
-            par_open = par_text()[-1:] == "("
-            em_open = em_text()[:1] == "("
-            em_txt_closed = em_text()[-1:] == ")"
-            em_tail_closed = em_tail()[:1] == ")"
+            inside_close = _str(em.text).endswith(")")
+            outside_close = _str(em.tail).startswith(")")
+            has_close = inside_close or outside_close
 
-            if (par_open or em_open) and (em_txt_closed or em_tail_closed):
-                if not par_open and em_open:                # Move '(' out
-                    par.text = par_text() + "("
-                    em.text = em_text()[1:]
+            if has_open and has_close:
+                if not outside_open and inside_open:    # Move '(' out
+                    par.text = _str(par.text) + "("
+                    em.text = em.text[1:]
 
-                if not em_tail_closed and em_txt_closed:    # Move ')' out
-                    em.text = em_text()[:-1]
-                    em.tail = ")" + em_tail()
+                if not outside_close and inside_close:  # Move ')' out
+                    em.text = em.text[:-1]
+                    em.tail = ")" + _str(em.tail)
 
 
 # Surface all of the PreProcessorBase classes
