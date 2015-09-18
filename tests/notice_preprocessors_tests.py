@@ -105,9 +105,9 @@ class ParenthesesCleanupTests(XMLBuilderMixin, TestCase):
 
 
 class ApprovalsFPTests(XMLBuilderMixin, TestCase):
-    def control_number(self, number):
-        return ("(Approved by the Office of Management and Budget under "
-                "control number {})".format(number))
+    def control_number(self, number, prefix="Approved"):
+        return ("({} by the Office of Management and Budget under "
+                "control number {})".format(prefix, number))
 
     def test_transform(self):
         """Verify that FP tags get transformed, but only if they match a
@@ -117,8 +117,13 @@ class ApprovalsFPTests(XMLBuilderMixin, TestCase):
             part.FP("Something else")
             part.FP(self.control_number('2222-4444'))
             part.P(self.control_number('3333-6666'))
+            with part.EXTRACT() as extract:
+                extract.FP(self.control_number(
+                    "4444-8888", "Paragraph (b)(2) approved"))
+            part.P(self.control_number('4444-8888'))
         xml = self.tree.render_xml()
         preprocessors.ApprovalsFP().transform(xml)
-        appros = [appro.text for appro in xml.xpath("//APPRO")]
-        self.assertEqual(appros, [self.control_number('1111-2222'),
-                                  self.control_number('2222-4444')])
+        appros = [appro.text for appro in xml.xpath("./APPRO")]
+        self.assertEqual(appros, [
+            self.control_number('1111-2222'), self.control_number('2222-4444'),
+            self.control_number('4444-8888', 'Paragraph (b)(2) approved')])

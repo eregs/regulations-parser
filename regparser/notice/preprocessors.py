@@ -1,6 +1,7 @@
 """Set of transforms we run on notice XML to account for common inaccuracies
 in the XML"""
 import abc
+import re
 
 
 class PreProcessorBase(object):
@@ -83,13 +84,30 @@ class ParenthesesCleanup(PreProcessorBase):
 
 class ApprovalsFP(PreProcessorBase):
     """We expect certain text to an APPRO tag, but it is often mistakenly
-    found inside FP tags. We use PREFIX to determine which nodes need to be
+    found inside FP tags. We use REGEX to determine which nodes need to be
     fixed."""
-    PREFIX = "(Approved by the Office of Management and Budget under"
+    REGEX = re.compile(
+        r"\(.*approved by the office of management and budget under control "
+        r"number .*\)", re.IGNORECASE)
 
     def transform(self, xml):
-        for fp in xml.xpath('//FP[starts-with(., "{}")]'.format(self.PREFIX)):
-            fp.tag = 'APPRO'
+        for fp in xml.xpath(".//FP"):
+            if self.REGEX.match(fp.text or ""):
+                fp.tag = 'APPRO'
+        self.strip_extracts(xml)
+
+    def strip_extracts(self, xml):
+        """APPROs should not be alone in an EXTRACT"""
+        for appro in xml.xpath(".//APPRO"):
+            parent = appro.getparent()
+            inside_extract = parent.tag == 'EXTRACT'
+            no_prev = appro.getprevious() is None
+            no_next = appro.getnext() is None
+            if inside_extract and no_prev and no_next:
+                grandparent = parent.getparent()
+                idx = grandparent.index(parent)
+                grandparent.remove(parent)
+                grandparent.insert(idx, appro)
 
 
 # Surface all of the PreProcessorBase classes
