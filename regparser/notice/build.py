@@ -3,11 +3,12 @@ from collections import defaultdict
 import os
 from urlparse import urlparse
 
-import logging 
+import logging
 
 from lxml import etree
 import requests
 
+from regparser.notice import preprocessors
 from regparser.notice.address import fetch_addresses
 from regparser.notice.build_appendix import parse_appendix_changes
 from regparser.notice.build_interp import parse_interp_changes
@@ -58,10 +59,11 @@ def build_notice(cfr_title, cfr_part, fr_notice, do_process_xml=True):
             fr_notice['full_text_xml_url'])
 
         if len(local_notices) > 0:
-            logging.warning("using local xml for %s", fr_notice['full_text_xml_url'])
+            logging.info("using local xml for %s",
+                         fr_notice['full_text_xml_url'])
             return process_local_notices(local_notices, notice)
         else:
-            logging.warning("fetching notice %s", fr_notice['full_text_xml_url'])
+            logging.info("fetching notice %s", fr_notice['full_text_xml_url'])
             notice_str = requests.get(fr_notice['full_text_xml_url']).content
             return [process_notice(notice, notice_str)]
     return [notice]
@@ -219,56 +221,8 @@ def preprocess_notice_xml(notice_xml):
     tend to instead use the files in settings.LOCAL_XML_PATHS"""
     notice_xml = deepcopy(notice_xml)   # We will be destructive
 
-    # Last amdpar in a section; probably meant to add the amdpar to the
-    # next section
-    for amdpar in notice_xml.xpath("//AMDPAR"):
-        if amdpar.getnext() is None:
-            parent = amdpar.getparent()
-            next_parent = parent.getnext()
-            if (next_parent is not None
-                    and parent.get('PART') == next_parent.get('PART')):
-                parent.remove(amdpar)
-                next_parent.insert(0, amdpar)
-
-    # Supplement I AMDPARs are often incorrect (labelled as Ps)
-    xpath_contains_supp = "contains(., 'Supplement I')"
-    xpath = "//REGTEXT//HD[@SOURCE='HD1' and %s]" % xpath_contains_supp
-    for supp_header in notice_xml.xpath(xpath):
-        parent = supp_header.getparent()
-        if (parent.xpath("./AMDPAR[%s]" % xpath_contains_supp)
-                or parent.xpath("./P[%s]" % xpath_contains_supp)):
-            pred = supp_header.getprevious()
-            while pred is not None:
-                if pred.tag not in ('P', 'AMDPAR'):
-                    pred = pred.getprevious()
-                else:
-                    pred.tag = 'AMDPAR'
-                    if 'supplement i' in pred.text.lower():
-                        pred = None
-                    else:
-                        pred = pred.getprevious()
-
-    # Clean up emphasized paragraph tags
-    for par in notice_xml.xpath("//P/*[position()=1 and name()='E']/.."):
-        em = par.getchildren()[0]   # must be an E from the xpath
-
-        #   wrap in a thunk to delay execution
-        par_text = lambda: par.text or ""
-        em_text, em_tail = lambda: em.text or "", lambda: em.tail or ""
-
-        par_open = par_text()[-1:] == "("
-        em_open = em_text()[:1] == "("
-        em_txt_closed = em_text()[-1:] == ")"
-        em_tail_closed = em_tail()[:1] == ")"
-
-        if (par_open or em_open) and (em_txt_closed or em_tail_closed):
-            if not par_open and em_open:                # Move '(' out
-                par.text = par_text() + "("
-                em.text = em_text()[1:]
-
-            if not em_tail_closed and em_txt_closed:    # Move ')' out
-                em.text = em_text()[:-1]
-                em.tail = ")" + em_tail()
+    for preprocessor in preprocessors.ALL:
+        preprocessor().transform(notice_xml)
 
     return notice_xml
 
@@ -358,6 +312,7 @@ def fetch_cfr_parts(notice_xml):
     results = notice_cfr_p.parseString(cfr_elm.text)
     return list(results)
 
+
 def process_xml(notice, notice_xml):
     """Pull out relevant fields from the xml and add them to the notice"""
 
@@ -399,5 +354,6 @@ def add_footnotes(notice, notice_xml):
             content = child.text
             for cc in child:
                 content += etree.tostring(cc)
-            content += child.tail
+            if child.tail:
+                content += child.tail
             notice['footnotes'][ref[0].text] = content.strip()

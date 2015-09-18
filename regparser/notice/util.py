@@ -50,4 +50,4 @@ def body_to_string(xml_node):
     the outer tag)"""
     return (xml_node.text.lstrip()
             + ''.join(etree.tostring(c) for c in xml_node)
-            + xml_node.tail.rstrip())
+            + (xml_node.tail or '').rstrip())
