@@ -81,5 +81,16 @@ class ParenthesesCleanup(PreProcessorBase):
                     em.tail = ")" + _str(em.tail)
 
 
+class ApprovalsFP(PreProcessorBase):
+    """We expect certain text to an APPRO tag, but it is often mistakenly
+    found inside FP tags. We use PREFIX to determine which nodes need to be
+    fixed."""
+    PREFIX = "(Approved by the Office of Management and Budget under"
+
+    def transform(self, xml):
+        for fp in xml.xpath('//FP[starts-with(., "{}")]'.format(self.PREFIX)):
+            fp.tag = 'APPRO'
+
+
 # Surface all of the PreProcessorBase classes
 ALL = PreProcessorBase.__subclasses__()

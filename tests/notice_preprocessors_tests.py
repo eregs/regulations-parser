@@ -102,3 +102,23 @@ class ParenthesesCleanupTests(XMLBuilderMixin, TestCase):
         self.assert_transformed('<E T="03">(a)</E> Content', expected)
         self.assert_transformed('<E T="03">Paragraph 22(a)(5)</E> Content',
                                 '<E T="03">Paragraph 22(a)(5)</E> Content')
+
+
+class ApprovalsFPTests(XMLBuilderMixin, TestCase):
+    def control_number(self, number):
+        return ("(Approved by the Office of Management and Budget under "
+                "control number {})".format(number))
+
+    def test_transform(self):
+        """Verify that FP tags get transformed, but only if they match a
+        certain string"""
+        with self.tree.builder("PART") as part:
+            part.APPRO(self.control_number('1111-2222'))
+            part.FP("Something else")
+            part.FP(self.control_number('2222-4444'))
+            part.P(self.control_number('3333-6666'))
+        xml = self.tree.render_xml()
+        preprocessors.ApprovalsFP().transform(xml)
+        appros = [appro.text for appro in xml.xpath("//APPRO")]
+        self.assertEqual(appros, [self.control_number('1111-2222'),
+                                  self.control_number('2222-4444')])
