@@ -269,7 +269,7 @@ class MarkerMatcher(object):
         for m, node_text in get_markers_and_text(xml, markers_list):
             text, tagged_text = node_text
             node = Node(text=text.strip(), label=[m], source_xml=xml)
-            node.tagged_text = unicode(tagged_text)
+            node.tagged_text = unicode(tagged_text.strip())
             nodes.append(node)
         if text.endswith('* * *'):
             nodes.append(Node(label=[mtypes.INLINE_STARS]))
@@ -289,19 +289,12 @@ class MarkerMatcher(object):
             node = node.getnext()
 
 
-class NoMarkerMatcher(object):
+class NoMarkerMatcher(MarkerMatcher):
     """<P> or <FP> which has no initial paragraph markers. FP is a "flush
     paragraph", a display-oriented distinction which we will ignore"""
     def matches(self, xml):
         tagged_text = tree_utils.get_node_text_tags_preserved(xml).strip()
         return xml.tag in ('P', 'FP') and not bool(get_markers(tagged_text))
-
-    def derive_nodes(self, xml):
-        text = tree_utils.get_node_text(xml, add_spaces=True).strip()
-        tagged_text = tree_utils.get_node_text_tags_preserved(xml).strip()
-        node = Node(text=text, label=[mtypes.MARKERLESS])
-        node.tagged_text = unicode(tagged_text.strip())
-        return [node]
 
 
 class RegtextParagraphProcessor(paragraph_processor.ParagraphProcessor):

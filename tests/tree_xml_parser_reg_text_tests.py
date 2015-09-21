@@ -6,6 +6,7 @@ from lxml import etree
 from mock import patch
 
 from regparser.tree.depth import markers as mtypes
+from regparser.tree.struct import Node
 from regparser.tree.xml_parser import reg_text
 from tests.xml_builder import XMLBuilderMixin
 from tests.node_accessor import NodeAccessorMixin
@@ -469,3 +470,21 @@ class MarkerMatcherTests(XMLBuilderMixin, TestCase):
             root.P("Content")
         xml = self.tree.render_xml()[0]
         self.assertIsNone(reg_text.MarkerMatcher().next_marker(xml))
+
+
+class RegtextParagraphProcessorTests(XMLBuilderMixin, NodeAccessorMixin,
+                                     TestCase):
+    def test_process_markerless_collapsed(self):
+        """Should be able to find collapsed markers in a markerless
+        paragraph"""
+        with self.tree.builder("ROOT") as root:
+            root.P("Intro text")
+            root.P(_xml='<E T="03">Some term.</E> (a) First definition')
+            root.P("(b) Second definition")
+        xml = self.tree.render_xml()
+        root = Node(label=['111', '22'])
+        root = reg_text.RegtextParagraphProcessor().process(xml, root)
+        root = self.node_accessor(root, ['111', '22'])
+
+        self.assertEqual(['p1', 'p2'], root.child_labels)
+        self.assertEqual(['a', 'b'], root['p2'].child_labels)
