@@ -440,7 +440,7 @@ class RegTextTest(XMLBuilderMixin, NodeAccessorMixin, TestCase):
         self.assertEqual(subjgrp_2.label, ['123', 'Subjgrp', 'ATL'])
 
 
-class MarkerMatcherTests(XMLBuilderMixin, TestCase):
+class ParagraphMatcherTests(XMLBuilderMixin, TestCase):
     def test_next_marker_found(self):
         """Find the first paragraph marker following a paragraph"""
         with self.tree.builder("ROOT") as root:
@@ -449,7 +449,7 @@ class MarkerMatcherTests(XMLBuilderMixin, TestCase):
             root.P("(d) ddd")
             root.P("(1) 111")
         xml = self.tree.render_xml()[1]
-        self.assertEqual(reg_text.MarkerMatcher().next_marker(xml), 'd')
+        self.assertEqual(reg_text.ParagraphMatcher().next_marker(xml), 'd')
 
     def test_next_marker_stars(self):
         """STARS tag has special significance."""
@@ -460,7 +460,7 @@ class MarkerMatcherTests(XMLBuilderMixin, TestCase):
             root.P("(d) ddd")
             root.P("(1) 111")
         xml = self.tree.render_xml()[1]
-        self.assertEqual(reg_text.MarkerMatcher().next_marker(xml),
+        self.assertEqual(reg_text.ParagraphMatcher().next_marker(xml),
                          mtypes.STARS_TAG)
 
     def test_next_marker_none(self):
@@ -469,7 +469,7 @@ class MarkerMatcherTests(XMLBuilderMixin, TestCase):
             root.P("(1) 111")
             root.P("Content")
         xml = self.tree.render_xml()[0]
-        self.assertIsNone(reg_text.MarkerMatcher().next_marker(xml))
+        self.assertIsNone(reg_text.ParagraphMatcher().next_marker(xml))
 
 
 class RegtextParagraphProcessorTests(XMLBuilderMixin, NodeAccessorMixin,
