@@ -93,7 +93,14 @@ class ParagraphProcessor(object):
         intro_node, nodes = self.separate_intro(nodes)
         if intro_node:
             root.text += " " + intro_node.text
-            root.tagged_text += " " + intro_node.tagged_text
+            # @todo - this is ugly. Make tagged_text a legitimate field on Node
+            tagged_text_list = []
+            if hasattr(root, 'tagged_text'):
+                tagged_text_list.append(root.tagged_text)
+            if hasattr(intro_node, 'tagged_text'):
+                tagged_text_list.append(intro_node.tagged_text)
+            if tagged_text_list:
+                root.tagged_text = ' '.join(tagged_text_list)
         if nodes:
             markers = [node.label[0] for node in nodes]
             depths = derive_depths(markers, self.additional_constraints())

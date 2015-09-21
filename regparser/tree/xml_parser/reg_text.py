@@ -255,11 +255,10 @@ def build_from_section(reg_part, section_xml):
     return section_nodes
 
 
-class MarkerMatcher(object):
-    """<P> with initial paragraph markers -- (a)(1)(i) etc."""
+class ParagraphMatcher(object):
+    """<P>/<FP> with or without initial paragraph markers -- (a)(1)(i) etc."""
     def matches(self, xml):
-        tagged_text = tree_utils.get_node_text_tags_preserved(xml).strip()
-        return xml.tag == 'P' and bool(get_markers(tagged_text))
+        return xml.tag in ('P', 'FP')
 
     def derive_nodes(self, xml):
         text = ''
@@ -269,7 +268,7 @@ class MarkerMatcher(object):
         for m, node_text in get_markers_and_text(xml, markers_list):
             text, tagged_text = node_text
             node = Node(text=text.strip(), label=[m], source_xml=xml)
-            node.tagged_text = unicode(tagged_text)
+            node.tagged_text = unicode(tagged_text.strip())
             nodes.append(node)
         if text.endswith('* * *'):
             nodes.append(Node(label=[mtypes.INLINE_STARS]))
@@ -289,28 +288,12 @@ class MarkerMatcher(object):
             node = node.getnext()
 
 
-class NoMarkerMatcher(object):
-    """<P> or <FP> which has no initial paragraph markers. FP is a "flush
-    paragraph", a display-oriented distinction which we will ignore"""
-    def matches(self, xml):
-        tagged_text = tree_utils.get_node_text_tags_preserved(xml).strip()
-        return xml.tag in ('P', 'FP') and not bool(get_markers(tagged_text))
-
-    def derive_nodes(self, xml):
-        text = tree_utils.get_node_text(xml, add_spaces=True).strip()
-        tagged_text = tree_utils.get_node_text_tags_preserved(xml).strip()
-        node = Node(text=text, label=[mtypes.MARKERLESS])
-        node.tagged_text = unicode(tagged_text.strip())
-        return [node]
-
-
 class RegtextParagraphProcessor(paragraph_processor.ParagraphProcessor):
     NODE_TYPE = Node.REGTEXT
     MATCHERS = [paragraph_processor.StarsMatcher(),
                 paragraph_processor.TableMatcher(),
                 paragraph_processor.FencedMatcher(),
-                MarkerMatcher(),
-                NoMarkerMatcher()]
+                ParagraphMatcher()]
 
     def additional_constraints(self):
         return [rules.depth_type_inverses]

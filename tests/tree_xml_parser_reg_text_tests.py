@@ -6,6 +6,7 @@ from lxml import etree
 from mock import patch
 
 from regparser.tree.depth import markers as mtypes
+from regparser.tree.struct import Node
 from regparser.tree.xml_parser import reg_text
 from tests.xml_builder import XMLBuilderMixin
 from tests.node_accessor import NodeAccessorMixin
@@ -439,7 +440,7 @@ class RegTextTest(XMLBuilderMixin, NodeAccessorMixin, TestCase):
         self.assertEqual(subjgrp_2.label, ['123', 'Subjgrp', 'ATL'])
 
 
-class MarkerMatcherTests(XMLBuilderMixin, TestCase):
+class ParagraphMatcherTests(XMLBuilderMixin, TestCase):
     def test_next_marker_found(self):
         """Find the first paragraph marker following a paragraph"""
         with self.tree.builder("ROOT") as root:
@@ -448,7 +449,7 @@ class MarkerMatcherTests(XMLBuilderMixin, TestCase):
             root.P("(d) ddd")
             root.P("(1) 111")
         xml = self.tree.render_xml()[1]
-        self.assertEqual(reg_text.MarkerMatcher().next_marker(xml), 'd')
+        self.assertEqual(reg_text.ParagraphMatcher().next_marker(xml), 'd')
 
     def test_next_marker_stars(self):
         """STARS tag has special significance."""
@@ -459,7 +460,7 @@ class MarkerMatcherTests(XMLBuilderMixin, TestCase):
             root.P("(d) ddd")
             root.P("(1) 111")
         xml = self.tree.render_xml()[1]
-        self.assertEqual(reg_text.MarkerMatcher().next_marker(xml),
+        self.assertEqual(reg_text.ParagraphMatcher().next_marker(xml),
                          mtypes.STARS_TAG)
 
     def test_next_marker_none(self):
@@ -468,4 +469,22 @@ class MarkerMatcherTests(XMLBuilderMixin, TestCase):
             root.P("(1) 111")
             root.P("Content")
         xml = self.tree.render_xml()[0]
-        self.assertIsNone(reg_text.MarkerMatcher().next_marker(xml))
+        self.assertIsNone(reg_text.ParagraphMatcher().next_marker(xml))
+
+
+class RegtextParagraphProcessorTests(XMLBuilderMixin, NodeAccessorMixin,
+                                     TestCase):
+    def test_process_markerless_collapsed(self):
+        """Should be able to find collapsed markers in a markerless
+        paragraph"""
+        with self.tree.builder("ROOT") as root:
+            root.P("Intro text")
+            root.P(_xml='<E T="03">Some term.</E> (a) First definition')
+            root.P("(b) Second definition")
+        xml = self.tree.render_xml()
+        root = Node(label=['111', '22'])
+        root = reg_text.RegtextParagraphProcessor().process(xml, root)
+        root = self.node_accessor(root, ['111', '22'])
+
+        self.assertEqual(['p1', 'p2'], root.child_labels)
+        self.assertEqual(['a', 'b'], root['p2'].child_labels)
