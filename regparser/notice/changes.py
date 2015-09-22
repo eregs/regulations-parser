@@ -6,23 +6,12 @@ import logging
 import copy
 from collections import defaultdict
 
+from lxml import etree
+
 from regparser.grammar.tokens import Verb
 from regparser.layer.paragraph_markers import marker_of
 from regparser.tree import struct
 from regparser.tree.paragraph import p_levels
-
-
-def node_to_dict(node):
-    """ Convert a node to a dictionary representation. We skip the
-    children, turning them instead into a list of labels instead. """
-    if not hasattr(node, 'child_labels'):
-        node.child_labels = [c.label_id() for c in node.children]
-
-    node_dict = {}
-    for k, v in node.__dict__.items():
-        if k not in ('children', 'source_xml'):
-            node_dict[k] = v
-    return node_dict
 
 
 def bad_label(node):
@@ -145,9 +134,20 @@ def match_labels_and_changes(amendments, section_node):
 
 
 def format_node(node, amendment):
-    """ Format a node into a dict, and add in amendment information. """
+    """ Format a node and add in amendment information. """
+
+    # Copy the node, remove it's children, and dump its XML to string
+    node_no_kids = copy.deepcopy(node)
+    node_no_kids.children = []
+
+    try:
+        node_no_kids.source_xml = etree.tostring(node_no_kids.source_xml)
+    except TypeError:
+        # source_xml wasn't serializable
+        pass
+
     node_as_dict = {
-        'node': node_to_dict(node),
+        'node': node_no_kids,
         'action': amendment['action'],
     }
 

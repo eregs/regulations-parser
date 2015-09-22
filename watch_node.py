@@ -11,7 +11,7 @@ except ImportError:
     pass
 
 from regparser.builder import tree_and_builder
-from regparser.notice.changes import node_to_dict, pretty_change
+from regparser.notice.changes import pretty_change
 from regparser.tree.struct import find
 
 
@@ -29,8 +29,7 @@ if __name__ == "__main__":
     initial_node = find(initial_tree, args.node_label)
     if initial_node:
         print("> " + builder.doc_number)
-        print("\t" + pretty_change(
-            {'action': 'POST', 'node': node_to_dict(initial_node)}))
+        print("\t" + pretty_change({'action': 'POST', 'node': initial_node}))
 
     # search for label
     for version, changes in builder.changes_in_sequence():
