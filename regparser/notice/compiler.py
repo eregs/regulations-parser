@@ -8,7 +8,7 @@ import itertools
 import logging
 
 from regparser.grammar.tokens import Verb
-from regparser.tree.struct import Node, find
+from regparser.tree.struct import Node, find, find_parent
 from regparser.tree.xml_parser import interpretations
 from regparser.tree.xml_parser import tree_utils
 from regparser.utils import roman_nums
@@ -154,8 +154,11 @@ class RegulationTree(object):
 
     def get_parent(self, node):
         """ Get the parent of a node. Returns None if parent not found. """
-        parent_label_id = get_parent_label(node)
-        return find(self.tree, parent_label_id)
+        parent = find_parent(self.tree, node)
+        if not parent:  # e.g. because the node doesn't exist in the tree yet
+            parent_label_id = get_parent_label(node)
+            parent = find(self.tree, parent_label_id)
+        return parent
 
     def add_to_root(self, node):
         """ Add a child to the root of the tree. """
@@ -241,23 +244,10 @@ class RegulationTree(object):
         origin.label = destination
         self.add_node(origin)
 
-    def get_section_parent(self, node):
-        """ If we're trying to get the parent of an existing section, it
-        might be part of a subpart. So, let's find the correct subpart. """
-
-        subpart = self.get_subpart_for_node(node.label_id())
-        if subpart is not None:
-            return subpart
-        else:
-            return self.get_parent(node)
-
     def replace_node_and_subtree(self, node):
         """ Replace an existing node in the tree with node. """
 
-        if len(node.label) == 2 and node.node_type == Node.REGTEXT:
-            parent = self.get_section_parent(node)
-        else:
-            parent = self.get_parent(node)
+        parent = self.get_parent(node)
 
         prev_idx = [idx for idx, c in enumerate(parent.children)
                     if c.label == node.label]
@@ -382,15 +372,6 @@ class RegulationTree(object):
             node.tagged_text = replace_first_sentence(
                 node.tagged_text, change['node']['tagged_text'])
 
-    def get_subparts(self):
-        """ Get all the subparts and empty parts in the tree.  """
-
-        def subpart_type(c):
-            """ Return True if a subpart or an empty part. """
-            return c.node_type in (Node.EMPTYPART, Node.SUBPART)
-
-        return [c for c in self.tree.children if subpart_type(c)]
-
     def create_new_subpart(self, subpart_label):
         """ Create a whole new subpart. """
 
@@ -399,27 +380,21 @@ class RegulationTree(object):
         self.add_to_root(subpart_node)
         return subpart_node
 
-    def get_subpart_for_node(self, label_id):
-        """ Return the subpart a node resides in. Note that this can't be
-        determined by simply looking at a node's label. """
-
-        subparts = self.get_subparts()
-        subparts_with_label = [s for s in subparts
-                               if find(s, label_id) is not None]
-
-        if len(subparts_with_label) > 0:
-            return subparts_with_label[0]
-
     def move_to_subpart(self, label, subpart_label):
         """ Move an existing node to another subpart. If the new subpart
         doesn't exist, create it. """
+        if len(label.split('-')) != 2:
+            logging.error(
+                "Trying to move a non-section into a subpart: %s -> %s",
+                label, subpart_label)
+            return
 
         destination = find(self.tree, '-'.join(subpart_label))
 
         if destination is None:
             destination = self.create_new_subpart(subpart_label)
 
-        subpart_with_node = self.get_subpart_for_node(label)
+        subpart_with_node = find_parent(self.tree, label)
 
         if destination and subpart_with_node:
             node = find(subpart_with_node, label)
