@@ -676,6 +676,16 @@ class CompilerTests(TestCase):
         # Verify this doesn't cause an error
         reg_tree.delete('205-2-a')
 
+    def test_delete_section_in_subpart(self):
+        """Verify that we can delete a section within a subpart"""
+        root = self.tree_with_subparts()
+        root.children[0].children = [Node(label=['205', '12'])]
+        reg_tree = compiler.RegulationTree(root)
+
+        self.assertNotEqual(None, find(reg_tree.tree, '205-12'))
+        reg_tree.delete('205-12')
+        self.assertEqual(None, find(reg_tree.tree, '205-12'))
+
     def test_get_parent(self):
         root = self.tree_with_paragraphs()
         reg_tree = compiler.RegulationTree(root)

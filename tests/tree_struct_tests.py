@@ -43,6 +43,21 @@ class DepthTreeTest(TestCase):
         self.assertEqual(None, struct.find(n2, 'n1'))
         self.assertEqual(n2, struct.find(n2, 'n2'))
 
+    def test_find_parent(self):
+        root = struct.Node(label=['root'], children=[
+            struct.Node(label=['root', '1'], children=[
+                struct.Node(label=['root', '1', 'a']),
+                struct.Node(label=['root', '1', 'b'])]),
+            struct.Node(label=['root', '2'])])
+
+        self.assertEqual(None, struct.find_parent(root, 'root'))
+        # Doesn't find the _expected_ parent
+        self.assertEqual(None, struct.find_parent(root, 'root-1-c'))
+        self.assertEqual(root, struct.find_parent(root, 'root-1'))
+        self.assertEqual(root, struct.find_parent(root, root.children[1]))
+        self.assertEqual(root.children[0],
+                         struct.find_parent(root, 'root-1-b'))
+
     def test_join_text(self):
         n1 = struct.Node("1")
         n2 = struct.Node("2")
