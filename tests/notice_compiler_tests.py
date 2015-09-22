@@ -6,37 +6,6 @@ from regparser.tree.struct import Node, find
 
 
 class CompilerTests(TestCase):
-    def test_dict_to_node(self):
-        dict_node = {
-            'text': 'node text',
-            'label': ['205', 'A'],
-            'node_type': 'appendix'}
-
-        node = compiler.dict_to_node(dict_node)
-
-        self.assertEqual(
-            node,
-            Node('node text', [], ['205', 'A'], None, 'appendix'))
-
-        dict_node['tagged_text'] = '<E> Tagged </E> text.'
-
-        node = compiler.dict_to_node(dict_node)
-
-        actual_node = Node('node text', [], ['205', 'A'], None, 'appendix')
-        actual_node.tagged_text = '<E> Tagged </E> text.'
-
-        created_node = compiler.dict_to_node(dict_node)
-
-        self.assertEqual(actual_node, created_node)
-        self.assertEqual(actual_node.tagged_text, created_node.tagged_text)
-
-        dict_node = {
-            'text': 'node text'
-        }
-
-        node = compiler.dict_to_node(dict_node)
-        self.assertEqual(node, dict_node)
-
     def test_sort_labels(self):
         labels = [
             ['205', '2', 'a', 'i'], ['205', 'Subpart', 'A'], ['205', '2']]
@@ -582,10 +551,10 @@ class CompilerTests(TestCase):
         root = self.tree_with_paragraphs()
         change2 = {'action': 'KEEP',
                    'node': Node(text='* * *', label=['205', '2'],
-                            node_type=Node.REGTEXT)}
+                                node_type=Node.REGTEXT)}
         change2a = {'action': 'PUT',
                     'node': Node(text='(a) A Test', label=['205', '2', 'a'],
-                             node_type=Node.REGTEXT)}
+                                 node_type=Node.REGTEXT)}
 
         notice_changes = {'205-2': [change2], '205-2-a': [change2a]}
         reg = compiler.compile_regulation(root, notice_changes)
@@ -604,13 +573,13 @@ class CompilerTests(TestCase):
         root = self.tree_with_paragraphs()
         change2 = {'action': 'PUT',
                    'node': Node(text='n2n2', label=['205', '2'],
-                            node_type=Node.REGTEXT)}
+                                node_type=Node.REGTEXT)}
         change2a = {'action': 'KEEP',
                     'node': Node(text='(a) * * *', label=['205', '2', 'a'],
-                             node_type=Node.REGTEXT)}
+                                 node_type=Node.REGTEXT)}
         change2b = {'action': 'PUT',
                     'node': Node(text='(b) A Test', label=['205', '2', 'b'],
-                             node_type=Node.REGTEXT)}
+                                 node_type=Node.REGTEXT)}
 
         notice_changes = {'205-2': [change2], '205-2-a': [change2a],
                           '205-2-b': [change2b]}
@@ -885,8 +854,8 @@ class CompilerTests(TestCase):
             '205-2-a': [
                 {'action': 'MOVE', 'destination': ['205', '2', 'b']},
                 {'action': 'POST', 'node': Node(text='aaa',
-                                            label=['205', '2', 'a'],
-                                            node_type=Node.REGTEXT)}],
+                                                label=['205', '2', 'a'],
+                                                node_type=Node.REGTEXT)}],
             '205-2-b': [{'action': 'DELETE'}]}
 
         class SortedKeysDict(object):

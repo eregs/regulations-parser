@@ -380,7 +380,8 @@ class RegulationTree(object):
         node = find(self.tree, label)
         node.text = replace_first_sentence(node.text, change['node'].text)
 
-        if hasattr(node, 'tagged_text') and change['node'].tagged_text is not None:
+        if (hasattr(node, 'tagged_text')
+                and change['node'].tagged_text is not None):
             node.tagged_text = replace_first_sentence(
                 node.tagged_text, change['node'].tagged_text)
 
@@ -434,24 +435,6 @@ class RegulationTree(object):
                 self.delete('-'.join(subpart_with_node.label))
 
 
-def dict_to_node(node_dict):
-    """ Convert a dictionary representation of a node into a Node object if
-    it contains the minimum required fields. Otherwise, pass it through
-    unchanged. """
-    minimum_fields = set(('text', 'label', 'node_type'))
-    if minimum_fields.issubset(node_dict.keys()):
-        node = Node(
-            node_dict['text'], [], node_dict['label'],
-            node_dict.get('title', None), node_dict['node_type'])
-        if 'tagged_text' in node_dict:
-            node.tagged_text = node_dict['tagged_text']
-        if 'child_labels' in node_dict:
-            node.child_labels = node_dict['child_labels']
-        return node
-    else:
-        return node_dict
-
-
 def sort_labels(labels):
     """ Deal with higher up elements first. """
     sorted_labels = sorted(labels, key=lambda x: len(x))
@@ -485,7 +468,7 @@ def one_change(reg, label, change):
     if 'node' in change:
         try:
             change['node'].source_xml = etree.fromstring(
-                    change['node'].source_xml)
+                change['node'].source_xml)
         except ValueError:
             pass
 
