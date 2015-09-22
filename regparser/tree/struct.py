@@ -90,14 +90,28 @@ def walk(node, fn):
     return results
 
 
-def find(root, label):
-    """Search through the tree to find the node with this label."""
-    def check(node):
-        if node.label_id() == label:
-            return node
+def find_first(root, predicate):
+    """Walk the tree and find the first node which matches the predicate"""
+    check = lambda n: n if predicate(n) else None
     response = walk(root, check)
     if response:
         return response[0]
+
+
+def find(root, label):
+    """Search through the tree to find the node with this label."""
+    if isinstance(label, Node):
+        label = label.label_id()
+    return find_first(root, lambda n: n.label_id() == label)
+
+
+def find_parent(root, label):
+    """Search through the tree to find the _parent_ or a node with this
+    label."""
+    if isinstance(label, Node):
+        label = label.label_id()
+    has_child = lambda n: any(c.label_id() == label for c in n.children)
+    return find_first(root, has_child)
 
 
 def join_text(node):

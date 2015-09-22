@@ -431,28 +431,6 @@ class CompilerTests(TestCase):
         changed_node = find(reg_tree.tree, '205-2-a')
         self.assertEqual(changed_node.text, 'Replaced. Remainder.')
 
-    def test_get_subparts(self):
-        nsa = Node(
-            'nsa',
-            label=['205', 'Subpart', 'A'], node_type=Node.SUBPART)
-
-        nsb = Node('nsb',
-                   label=['205', 'Subpart', 'B'],
-                   node_type=Node.SUBPART)
-
-        nappa = Node('nappa',
-                     label=['205', 'Appendix', 'C'],
-                     node_type=Node.APPENDIX)
-
-        root = Node('', label=['205'])
-        root.children = [nsa, nsb, nappa]
-
-        reg_tree = compiler.RegulationTree(root)
-        subparts = reg_tree.get_subparts()
-        labels = [s.label_id() for s in subparts]
-
-        self.assertEqual(labels, ['205-Subpart-A', '205-Subpart-B'])
-
     def tree_with_subparts(self):
         nsa = Node('nsa',
                    label=['205', 'Subpart', 'A'],
@@ -491,21 +469,21 @@ class CompilerTests(TestCase):
         subpart_a = find(reg_tree.tree, '205-Subpart-A')
         self.assertEqual(len(subpart_a.children), 0)
 
-    def test_get_section_parent(self):
+    def test_get_parent_in_subpart(self):
         root = self.tree_with_subparts()
         section = Node('section', label=['205', '3'], node_type=Node.REGTEXT)
         subpart = find(root, '205-Subpart-B')
         subpart.children = [section]
 
         reg_tree = compiler.RegulationTree(root)
-        parent = reg_tree.get_section_parent(section)
+        parent = reg_tree.get_parent(section)
         self.assertEqual(parent.label_id(), '205-Subpart-B')
 
-    def test_get_section_parent_no_subpart(self):
+    def test_get_parent_no_subpart(self):
         root = self.tree_with_paragraphs()
         reg_tree = compiler.RegulationTree(root)
 
-        parent = reg_tree.get_section_parent(
+        parent = reg_tree.get_parent(
             Node('', label=['205', '1'], node_type=Node.REGTEXT))
         self.assertEqual(parent.label_id(), '205')
 
@@ -515,22 +493,11 @@ class CompilerTests(TestCase):
         reg_tree = compiler.RegulationTree(root)
         reg_tree.create_new_subpart(['205', 'Subpart', 'C'])
 
-        subparts = reg_tree.get_subparts()
-        labels = [s.label_id() for s in subparts]
+        labels = [c.label_id() for c in reg_tree.tree.children
+                  if c.node_type == Node.SUBPART]
 
         self.assertEqual(
             labels, ['205-Subpart-A', '205-Subpart-B', '205-Subpart-C'])
-
-    def test_get_subpart_for_node(self):
-        root = self.tree_with_subparts()
-        n1 = Node('n1', label=['205', '1'])
-        nsb = find(root, '205-Subpart-B')
-        nsb.children = [n1]
-
-        reg_tree = compiler.RegulationTree(root)
-        subpart = reg_tree.get_subpart_for_node('205-1')
-
-        self.assertEqual(subpart.label_id(), '205-Subpart-B')
 
     def test_compile_reg_put_replace_whole_tree(self):
         root = self.tree_with_paragraphs()
@@ -708,6 +675,16 @@ class CompilerTests(TestCase):
 
         # Verify this doesn't cause an error
         reg_tree.delete('205-2-a')
+
+    def test_delete_section_in_subpart(self):
+        """Verify that we can delete a section within a subpart"""
+        root = self.tree_with_subparts()
+        root.children[0].children = [Node(label=['205', '12'])]
+        reg_tree = compiler.RegulationTree(root)
+
+        self.assertNotEqual(None, find(reg_tree.tree, '205-12'))
+        reg_tree.delete('205-12')
+        self.assertEqual(None, find(reg_tree.tree, '205-12'))
 
     def test_get_parent(self):
         root = self.tree_with_paragraphs()
