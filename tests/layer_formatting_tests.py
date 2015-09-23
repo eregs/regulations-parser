@@ -105,6 +105,91 @@ class LayerFormattingTests(XMLBuilderMixin, TestCase):
              ['21', '22', '23'],
              ['', '32', '33 More', '34']])
 
+
+    def test_awkward_table(self):
+        """
+
+        |R1C1     |R1C2               |
+        |R2C1|R2C2|R2C3     |R2C4     |
+        |    |    |R3C1|R3C2|R3C3|R3C4|
+
+        """
+        with self.tree.builder("GPOTABLE", COLS="2") as root:
+            with root.BOXHD() as hd:
+                hd.CHED(u"R1C1", H=1)
+                hd.CHED(u"R2C1", H=2)
+                hd.CHED(u"R2C2", H=2)
+                hd.CHED(u"R1C2", H=1)
+                hd.CHED(u"R2C3", H=2)
+                hd.CHED(u"R3C1", H=3)
+                hd.CHED(u"R3C2", H=3)
+                hd.CHED(u"R2C4", H=2)
+                hd.CHED(u"R3C3", H=3)
+                hd.CHED(u"R3C4", H=3)
+
+        xml = self.tree.render_xml()
+        markdown = formatting.table_xml_to_plaintext(xml)
+        self.assertTrue("R1C1" in markdown)
+        self.assertTrue("R2C2" in markdown)
+
+        node = Node(markdown, source_xml=xml)
+        result = formatting.Formatting(None).process(node)
+        self.assertEqual(1, len(result))
+        result = result[0]
+
+        self.assertEqual(markdown, result['text'])
+        self.assertEqual([0], result['locations'])
+        data = result['table_data']
+        self.assertTrue("header" in data)
+        # There are three rows in the header:
+        self.assertEqual(len(data["header"]), 3)
+        # Verify length of each row:
+        self.assertEqual(len(data["header"][0]), 2)
+        self.assertEqual(len(data["header"][1]), 4)
+        self.assertEqual(len(data["header"][2]), 4)
+
+        # Check rowspans and colspans:
+        cell = data["header"][0][0]
+        self.assertEqual(cell["text"], 'R1C1')
+        self.assertEqual(cell["rowspan"], 1)
+        self.assertEqual(cell["colspan"], 2)
+        cell = data["header"][0][1]
+        self.assertEqual(cell["text"], 'R1C2')
+        self.assertEqual(cell["rowspan"], 1)
+        self.assertEqual(cell["colspan"], 4)
+        cell = data["header"][1][0]
+        self.assertEqual(cell["text"], 'R2C1')
+        self.assertEqual(cell["rowspan"], 2)
+        self.assertEqual(cell["colspan"], 1)
+        cell = data["header"][1][1]
+        self.assertEqual(cell["text"], 'R2C2')
+        self.assertEqual(cell["rowspan"], 2)
+        self.assertEqual(cell["colspan"], 1)
+        cell = data["header"][1][2]
+        self.assertEqual(cell["text"], 'R2C3')
+        self.assertEqual(cell["rowspan"], 1)
+        self.assertEqual(cell["colspan"], 2)
+        cell = data["header"][1][3]
+        self.assertEqual(cell["text"], 'R2C4')
+        self.assertEqual(cell["rowspan"], 1)
+        self.assertEqual(cell["colspan"], 2)
+        cell = data["header"][2][0]
+        self.assertEqual(cell["text"], 'R3C1')
+        self.assertEqual(cell["rowspan"], 1)
+        self.assertEqual(cell["colspan"], 1)
+        cell = data["header"][2][1]
+        self.assertEqual(cell["text"], 'R3C2')
+        self.assertEqual(cell["rowspan"], 1)
+        self.assertEqual(cell["colspan"], 1)
+        cell = data["header"][2][2]
+        self.assertEqual(cell["text"], 'R3C3')
+        self.assertEqual(cell["rowspan"], 1)
+        self.assertEqual(cell["colspan"], 1)
+        cell = data["header"][2][3]
+        self.assertEqual(cell["text"], 'R3C4')
+        self.assertEqual(cell["rowspan"], 1)
+        self.assertEqual(cell["colspan"], 1)
+
     def test_process_fenced(self):
         node = Node("Content content\n```abc def\nLine 1\nLine 2\n```")
         result = formatting.Formatting(None).process(node)
