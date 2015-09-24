@@ -47,16 +47,57 @@ def build_header(xml_nodes):
 
     max_height = root.height()
 
-    def set_rowspan(n):
-        n.rowspan = max_height - n.height() - n.level + 1
-    struct.walk(root, set_rowspan)
-
     def set_colspan(n):
         n.colspan = n.width()
     struct.walk(root, set_colspan)
 
+    root = build_header_rowspans(root, max_height)
+
     return root
 
+def build_header_rowspans(tree_root, max_height):
+    """
+    The following table is an example of why we need a relatively complicated
+    approach to setting rowspan:
+
+    |R1C1     |R1C2               |
+    |R2C1|R2C2|R2C3     |R2C4     |
+    |    |    |R3C1|R3C2|R3C3|R3C4|
+
+    If we set the rowspan of each node to::
+
+        max_height - node.height() - node.level + 1
+
+    R1C1 will end up with a rowspan of 2 instead of 1, because of difficulties
+    handling the implicit rowspans for R2C1 and R2C2.
+
+    Instead, we generate a list of the paths to each leaf and then set
+    rowspan based on that.
+
+    Rowspan for leaves is ``max_height - node.height() - node.level + 1``, and
+    for root is simply 1. Other nodes' rowspans are set to the level of the node
+    after them minus their own level.
+    """
+
+    paths = []
+    def collect_paths(node, path):
+        if node.children:
+            for child in node.children:
+                collect_paths(child, path + [node])
+        else:
+            paths.append(path + [node])
+    collect_paths(tree_root, [])
+
+    for path in paths:
+        for i, node in enumerate(path):
+            if i == 0: # root
+                node.rowspan = 1
+            elif i + 1 == len(path): #leaves
+                node.rowspan = max_height - node.height() - node.level + 1
+            else: # intermediate nodes
+                node.rowspan = path[i + 1].level - node.level
+
+    return tree_root
 
 def table_xml_to_plaintext(xml_node):
     """Markdown representation of a table. Note that this doesn't account
