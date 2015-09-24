@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 from unittest import TestCase
 
+from lxml import etree
 from regparser.layer import formatting
 from regparser.tree.struct import Node
 from tests.xml_builder import XMLBuilderMixin
@@ -119,11 +120,9 @@ class LayerFormattingTests(XMLBuilderMixin, TestCase):
 
     def test_awkward_table(self):
         """
-
         |R1C1     |R1C2               |
         |R2C1|R2C2|R2C3     |R2C4     |
         |    |    |R3C1|R3C2|R3C3|R3C4|
-
         """
         with self.tree.builder("GPOTABLE", COLS="6") as root:
             with root.BOXHD() as hd:
@@ -152,58 +151,21 @@ class LayerFormattingTests(XMLBuilderMixin, TestCase):
         self.assertEqual([0], result['locations'])
         data = result['table_data']
         self.assertTrue("header" in data)
-        # There are three rows in the header:
-        self.assertEqual(len(data["header"]), 3)
-        # Verify length of each row:
-        self.assertEqual(len(data["header"][0]), 2)
-        self.assertEqual(len(data["header"][1]), 4)
-        self.assertEqual(len(data["header"][2]), 4)
-
-        # Check rowspans and colspans:
-        cell = data["header"][0][0]
-        self.assertEqual(cell["text"], 'R1C1')
-        self.assertEqual(cell["rowspan"], 1)
-        self.assertEqual(cell["colspan"], 2)
-        cell = data["header"][0][1]
-        self.assertEqual(cell["text"], 'R1C2')
-        self.assertEqual(cell["rowspan"], 1)
-        self.assertEqual(cell["colspan"], 4)
-        cell = data["header"][1][0]
-        self.assertEqual(cell["text"], 'R2C1')
-        self.assertEqual(cell["rowspan"], 2)
-        self.assertEqual(cell["colspan"], 1)
-        cell = data["header"][1][1]
-        self.assertEqual(cell["text"], 'R2C2')
-        self.assertEqual(cell["rowspan"], 2)
-        self.assertEqual(cell["colspan"], 1)
-        cell = data["header"][1][2]
-        self.assertEqual(cell["text"], 'R2C3')
-        self.assertEqual(cell["rowspan"], 1)
-        self.assertEqual(cell["colspan"], 2)
-        cell = data["header"][1][3]
-        self.assertEqual(cell["text"], 'R2C4')
-        self.assertEqual(cell["rowspan"], 1)
-        self.assertEqual(cell["colspan"], 2)
-        cell = data["header"][2][0]
-        self.assertEqual(cell["text"], 'R3C1')
-        self.assertEqual(cell["rowspan"], 1)
-        self.assertEqual(cell["colspan"], 1)
-        cell = data["header"][2][1]
-        self.assertEqual(cell["text"], 'R3C2')
-        self.assertEqual(cell["rowspan"], 1)
-        self.assertEqual(cell["colspan"], 1)
-        cell = data["header"][2][2]
-        self.assertEqual(cell["text"], 'R3C3')
-        self.assertEqual(cell["rowspan"], 1)
-        self.assertEqual(cell["colspan"], 1)
-        cell = data["header"][2][3]
-        self.assertEqual(cell["text"], 'R3C4')
-        self.assertEqual(cell["rowspan"], 1)
-        self.assertEqual(cell["colspan"], 1)
+        # Verify header matches:
+        mkhd = lambda t, c, r: {'text': t, 'colspan': c, 'rowspan': r}
+        self.assertEqual(
+            data["header"],
+            [
+                [mkhd("R1C1", 2, 1), mkhd("R1C2", 4, 1)],
+                [mkhd("R2C1", 1, 2), mkhd("R2C2", 1, 2), mkhd("R2C3", 2, 1),
+                    mkhd("R2C4", 2, 1)],
+                [mkhd("R3C1", 1, 1), mkhd("R3C2", 1, 1), mkhd("R3C3", 1, 1),
+                    mkhd("R3C4", 1, 1)]
+            ])
 
     def test_atf_555_218_table(self):
         """
-        Adding tests inspired by the more complicated headers from ATF 27 555.
+        Inspired by the more complicated table headers from ATF 27 555.
 
         This is a difficult table, 555.218; it should look something like this:
 
@@ -213,73 +175,40 @@ class LayerFormattingTests(XMLBuilderMixin, TestCase):
         |-----|-----|----|-----|------|-------|------|-------|-------|--------|
         |1    |2    |3   |4    |5     |6      |7     |8      |9      |10      |
 
-        This is the original XML (with just the first row):
-
-        <GPOTABLE CDEF="7,7,5,5,5,5,6,6,5,5" COLS="10" OPTS="L2">
-          <BOXHD>
-            <CHED H="1">Quantity of explosives</CHED>
-            <CHED H="2">Pounds over</CHED>
-            <CHED H="2">Pounds not over</CHED>
-            <CHED H="1">Distances in feet</CHED>
-            <CHED H="2">Inhabited buildings</CHED>
-            <CHED H="3">Barri-caded</CHED>
-            <CHED H="3">Unbarri-caded</CHED>
-            <CHED H="2">Public highways with traffic volume of 3000 or fewer vehicles/day</CHED>
-            <CHED H="3">Barri-caded</CHED>
-            <CHED H="3">Unbarri-caded</CHED>
-            <CHED H="2">Passenger railways—public highways with traffic volume of more than 3,000 vehicles/day</CHED>
-            <CHED H="3">Barri-caded</CHED>
-            <CHED H="3">Unbarri-caded</CHED>
-            <CHED H="2">Separation of magazines</CHED>
-            <CHED H="3">Barri-caded</CHED>
-            <CHED H="3">Unbarri-caded</CHED>
-          </BOXHD>
-          <ROW>
-            <ENT I="01">0</ENT>
-            <ENT>5</ENT>
-            <ENT>70</ENT>
-            <ENT>140</ENT>
-            <ENT>30</ENT>
-            <ENT>60</ENT>
-            <ENT>51</ENT>
-            <ENT>102</ENT>
-            <ENT>6</ENT>
-            <ENT>12</ENT>
-          </ROW>
-        </GPOTABLE>
-
         """
-        with self.tree.builder("GPOTABLE", CDEF="7,7,5,5,5,5,6,6,5,5",
-                               COLS="10", OPTS="L2") as root:
-            with root.BOXHD() as hd:
-                hd.CHED(u"Quantity of explosives", H=1)
-                hd.CHED(u"Pounds over", H=2)
-                hd.CHED(u"Pounds not over", H=2)
-                hd.CHED(u"Distances in feet", H=1)
-                hd.CHED(u"Inhabited buildings", H=2)
-                hd.CHED(u"Barri-caded", H=3)
-                hd.CHED(u"Unbarri-caded", H=3)
-                hd.CHED(u"Public highways with traffic volume of 3000 or fewer vehicles/day", H=2)
-                hd.CHED(u"Barri-caded", H=3)
-                hd.CHED(u"Unbarri-caded", H=3)
-                hd.CHED(u"Passenger railways—public highways with traffic volume of more than 3,000 vehicles/day", H=2)
-                hd.CHED(u"Barri-caded", H=3)
-                hd.CHED(u"Unbarri-caded", H=3)
-                hd.CHED(u"Separation of magazines", H=2)
-                hd.CHED(u"Barri-caded", H=3)
-                hd.CHED(u"Unbarri-caded", H=3)
-            with root.ROW() as row:
-                row.ENT(u"0", I="01")
-                row.ENT(u"5")
-                row.ENT(u"70")
-                row.ENT(u"140")
-                row.ENT(u"30")
-                row.ENT(u"60")
-                row.ENT(u"51")
-                row.ENT(u"102")
-                row.ENT(u"6")
-                row.ENT(u"12")
-        xml = self.tree.render_xml()
+        xml = etree.fromstring("""
+            <GPOTABLE CDEF="7,7,5,5,5,5,6,6,5,5" COLS="10" OPTS="L2">
+              <BOXHD>
+                <CHED H="1">Quantity of explosives</CHED>
+                <CHED H="2">Pounds over</CHED>
+                <CHED H="2">Pounds not over</CHED>
+                <CHED H="1">Distances in feet</CHED>
+                <CHED H="2">Inhabited buildings</CHED>
+                <CHED H="3">Barri-caded</CHED>
+                <CHED H="3">Unbarri-caded</CHED>
+                <CHED H="2">Public highways with traffic volume of 3000 or fewer vehicles/day</CHED>
+                <CHED H="3">Barri-caded</CHED>
+                <CHED H="3">Unbarri-caded</CHED>
+                <CHED H="2">Passenger railways—public highways with traffic volume of more than 3,000 vehicles/day</CHED>
+                <CHED H="3">Barri-caded</CHED>
+                <CHED H="3">Unbarri-caded</CHED>
+                <CHED H="2">Separation of magazines</CHED>
+                <CHED H="3">Barri-caded</CHED>
+                <CHED H="3">Unbarri-caded</CHED>
+              </BOXHD>
+              <ROW>
+                <ENT I="01">0</ENT>
+                <ENT>5</ENT>
+                <ENT>70</ENT>
+                <ENT>140</ENT>
+                <ENT>30</ENT>
+                <ENT>60</ENT>
+                <ENT>51</ENT>
+                <ENT>102</ENT>
+                <ENT>6</ENT>
+                <ENT>12</ENT>
+              </ROW>
+            </GPOTABLE>""")
         markdown = formatting.table_xml_to_plaintext(xml)
         self.assertTrue("Quantity of explosives" in markdown)
         self.assertTrue("public highways" in markdown)
@@ -293,29 +222,27 @@ class LayerFormattingTests(XMLBuilderMixin, TestCase):
         self.assertEqual([0], result['locations'])
         data = result['table_data']
         self.assertTrue("header" in data)
-        # There are three rows in the header:
-        self.assertEqual(len(data["header"]), 3)
-        # Check the row element counts are correct:
-        self.assertEqual(len(data["header"][0]), 2)
-        self.assertEqual(len(data["header"][1]), 6)
-        self.assertEqual(len(data["header"][2]), 8)
-        # Check the rowspans and content:
-        cell = data["header"][0][0]
-        self.assertEqual(cell["text"], 'Quantity of explosives')
-        self.assertEqual(cell["rowspan"], 1)
-        self.assertEqual(cell["colspan"], 2)
-        cell = data["header"][0][1]
-        self.assertEqual(cell["text"], 'Distances in feet')
-        self.assertEqual(cell["rowspan"], 1)
-        self.assertEqual(cell["colspan"], 8)
-        cell = data["header"][1][0]
-        self.assertEqual(cell["text"], 'Pounds over')
-        self.assertEqual(cell["rowspan"], 2)
-        self.assertEqual(cell["colspan"], 1)
-        cell = data["header"][2][0]
-        self.assertEqual(cell["text"], 'Barri-caded')
-        self.assertEqual(cell["rowspan"], 1)
-        self.assertEqual(cell["colspan"], 1)
+        # Verify header matches:
+        mkhd = lambda t, c, r: {'text': t, 'colspan': c, 'rowspan': r}
+        hwys_header = mkhd("".join(["Public highways with traffic volume of ",
+                           "3000 or fewer vehicles/day"]), 2, 1)
+        rail_header = mkhd(u"".join([u"Passenger railways—public highways ",
+                                     u"with traffic volume of more than ",
+                                     u"3,000 vehicles/day"]),
+                           2, 1)
+        barr_header = mkhd(u"Barri-caded", 1, 1)
+        unbr_header = mkhd(u"Unbarri-caded", 1, 1)
+        self.assertEqual(
+            data["header"],
+            [
+                [mkhd("Quantity of explosives", 2, 1),
+                 mkhd("Distances in feet", 8, 1)],
+                [mkhd("Pounds over", 1, 2), mkhd("Pounds not over", 1, 2),
+                 mkhd("Inhabited buildings", 2, 1), hwys_header, rail_header,
+                 mkhd("Separation of magazines", 2, 1)],
+                [barr_header, unbr_header, barr_header, unbr_header,
+                 barr_header, unbr_header, barr_header, unbr_header]
+            ])
 
     def test_process_fenced(self):
         node = Node("Content content\n```abc def\nLine 1\nLine 2\n```")

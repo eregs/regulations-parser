@@ -47,54 +47,57 @@ def build_header(xml_nodes):
 
     max_height = root.height()
 
-    def set_rowspan(n):
-        n.rowspan = max_height - n.height() - n.level + 1
-    struct.walk(root, set_rowspan)
-
     def set_colspan(n):
         n.colspan = n.width()
     struct.walk(root, set_colspan)
 
+    root = build_header_rowspans(root, max_height)
+
+    return root
+
+def build_header_rowspans(tree_root, max_height):
     """
-    The above code does not correctly handle rowspans that are implicit; this
-    table is an example:
+    The following table is an example of why we need a relatively complicated
+    approach to setting rowspan:
 
     |R1C1     |R1C2               |
     |R2C1|R2C2|R2C3     |R2C4     |
     |    |    |R3C1|R3C2|R3C3|R3C4|
 
+    If we set the rowspan of each node to::
+
+        max_height - node.height() - node.level + 1
+
     R1C1 will end up with a rowspan of 2 instead of 1, because of difficulties
     handling the implicit rowspans for R2C1 and R2C2.
 
-    We identify the problematic paths in the tree by finding those whose
-    rowspans sum to greater than max_height:
+    Instead, we generate a list of the paths to each leaf and then set
+    rowspan based on that.
+
+    Rowspan for leaves is ``max_height - node.height() - node.level + 1``, and
+    for root is simply 1. Other nodes' rowspans are set to the level of the node
+    after them minus their own level.
     """
 
-    problem_paths = []
-    def collect_problem_paths(node, path, score):
+    paths = []
+    def collect_paths(node, path):
         if node.children:
             for child in node.children:
-                collect_problem_paths(child, path + [node], score + node.rowspan)
+                collect_paths(child, path + [node])
         else:
-            total = score + node.rowspan
-            if total > max_height:
-                problem_paths.append(path + [node])
-    collect_problem_paths(root, [], 0)
+            paths.append(path + [node])
+    collect_paths(tree_root, [])
 
-    """
-    Now that we have the paths, we set non-root, non-leaf node rowspans to be
-    equal to the level property of the next node in the path minus the level
-    property of the current node--if they're separated by n, the rowspan of the
-    higher level should be n.
-    """
-    for path in problem_paths:
+    for path in paths:
         for i, node in enumerate(path):
-            if i > 0: #first node is root, which is irrelevant.
-                if i + 1 < len(path): # We don't change the leaves.
-                    node.rowspan = path[i + 1].level - node.level
+            if i == 0: # root
+                node.rowspan = 1
+            elif i + 1 == len(path): #leaves
+                node.rowspan = max_height - node.height() - node.level + 1
+            else: # intermediate nodes
+                node.rowspan = path[i + 1].level - node.level
 
-    return root
-
+    return tree_root
 
 def table_xml_to_plaintext(xml_node):
     """Markdown representation of a table. Note that this doesn't account
