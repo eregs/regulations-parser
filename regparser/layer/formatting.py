@@ -55,6 +55,44 @@ def build_header(xml_nodes):
         n.colspan = n.width()
     struct.walk(root, set_colspan)
 
+    """
+    The above code does not correctly handle rowspans that are implicit; this
+    table is an example:
+
+    |R1C1     |R1C2               |
+    |R2C1|R2C2|R2C3     |R2C4     |
+    |    |    |R3C1|R3C2|R3C3|R3C4|
+
+    R1C1 will end up with a rowspan of 2 instead of 1, because of difficulties
+    handling the implicit rowspans for R2C1 and R2C2.
+
+    We identify the problematic paths in the tree by finding those whose
+    rowspans sum to greater than max_height:
+    """
+
+    problem_paths = []
+    def collect_problem_paths(node, path, score):
+        if node.children:
+            for child in node.children:
+                collect_problem_paths(child, path + [node], score + node.rowspan)
+        else:
+            total = score + node.rowspan
+            if total > max_height:
+                problem_paths.append(path + [node])
+    collect_problem_paths(root, [], 0)
+
+    """
+    Now that we have the paths, we set non-root, non-leaf node rowspans to be
+    equal to the level property of the next node in the path minus the level
+    property of the current node--if they're separated by n, the rowspan of the
+    higher level should be n.
+    """
+    for path in problem_paths:
+        for i, node in enumerate(path):
+            if i > 0: #first node is root, which is irrelevant.
+                if i + 1 < len(path): # We don't change the leaves.
+                    node.rowspan = path[i + 1].level - node.level
+
     return root
 
 
