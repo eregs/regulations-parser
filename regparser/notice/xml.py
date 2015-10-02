@@ -1,8 +1,14 @@
 """Functions for processing the xml associated with the Federal Register's
 notices"""
+from copy import deepcopy
+import logging
 import os
 from urlparse import urlparse
 
+from lxml import etree
+import requests
+
+from regparser.notice import preprocessors
 import settings
 
 
@@ -26,3 +32,33 @@ def local_copies(url):
             if relevant_notices:
                 return relevant_notices
     return []
+
+
+def preprocess(notice_xml):
+    """Unfortunately, the notice xml is often inaccurate. This function
+    attempts to fix some of those (general) flaws. For specific issues, we
+    tend to instead use the files in settings.LOCAL_XML_PATHS"""
+    notice_xml = deepcopy(notice_xml)   # We will be destructive
+
+    for preprocessor in preprocessors.ALL:
+        preprocessor().transform(notice_xml)
+
+    return notice_xml
+
+
+def xmls_for_url(notice_url):
+    """Find, preprocess, and return the XML(s) associated with a particular FR
+    notice url"""
+    notice_strs = []
+    local_notices = local_copies(notice_url)
+    if local_notices:
+        logging.info("using local xml for %s", notice_url)
+        for local_notice_file in local_notices:
+            with open(local_notice_file, 'r') as f:
+                notice_strs.append(f.read())
+    else:
+        logging.info("fetching notice xml for %s", notice_url)
+        notice_strs.append(requests.get(notice_url).content)
+
+    process = lambda xml_str: preprocess(etree.fromstring(xml_str))
+    return [process(xml_str) for xml_str in notice_strs]

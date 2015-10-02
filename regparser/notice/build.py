@@ -1,12 +1,8 @@
-from copy import deepcopy
 from collections import defaultdict
 
-import logging
-
 from lxml import etree
-import requests
 
-from regparser.notice import changes, preprocessors
+from regparser.notice import changes
 from regparser.notice.address import fetch_addresses
 from regparser.notice.build_appendix import parse_appendix_changes
 from regparser.notice.build_interp import parse_interp_changes
@@ -17,7 +13,7 @@ from regparser.notice.dates import fetch_dates
 from regparser.notice.sxs import find_section_by_section
 from regparser.notice.sxs import build_section_by_section
 from regparser.notice.util import spaces_then_remove, swap_emphasis_tags
-from regparser.notice.xml import local_copies
+from regparser.notice.xml import xmls_for_url
 from regparser.tree import struct
 from regparser.tree.xml_parser import reg_text
 from regparser.grammar.unified import notice_cfr_p
@@ -51,16 +47,10 @@ def build_notice(cfr_title, cfr_part, fr_notice, do_process_xml=True):
         notice['meta'][key] = fr_notice[key]
 
     if fr_notice['full_text_xml_url'] and do_process_xml:
-        local_notices = local_copies(fr_notice['full_text_xml_url'])
-
-        if len(local_notices) > 0:
-            logging.info("using local xml for %s",
-                         fr_notice['full_text_xml_url'])
-            return process_local_notices(local_notices, notice)
-        else:
-            logging.info("fetching notice %s", fr_notice['full_text_xml_url'])
-            notice_str = requests.get(fr_notice['full_text_xml_url']).content
-            return [process_notice(notice, notice_str)]
+        xmls = xmls_for_url(fr_notice['full_text_xml_url'])
+        notices = [process_xml(notice, xml) for xml in xmls]
+        set_document_numbers(notices)
+        return notices
     return [notice]
 
 
@@ -71,45 +61,15 @@ def split_doc_num(doc_num, effective_date):
     return '%s_%s' % (doc_num, effective_date)
 
 
-def process_local_notices(local_notices, partial_notice):
-    """ If we have any local notices, process them. Note that this takes into
-    account split notices (a single notice split into two because of different
-    effective dates"""
-
-    notices = []
-
-    if len(local_notices) > 1:
-        # If the notice is split, pick up the effective date and the
-        # CFR parts from the XML
-        partial_notice['effective_on'] = None
-        partial_notice['cfr_parts'] = None
-
-    for local_notice_file in local_notices:
-        with open(local_notice_file, 'r') as f:
-            notice = process_notice(partial_notice, f.read())
-            notices.append(notice)
-
-    notices = set_document_numbers(notices)
-    return notices
-
-
 def set_document_numbers(notices):
-    """ If we have multiple notices, we need to fix their document
-    numbers. """
+    """If we have multiple notices (due to being split across multiple
+    effective dates,) we need to fix their document numbers."""
 
     if len(notices) > 1:
         for notice in notices:
             notice['document_number'] = split_doc_num(
                 notice['document_number'], notice['effective_on'])
     return notices
-
-
-def process_notice(partial_notice, notice_str):
-    notice_xml = etree.fromstring(notice_str)
-    notice = dict(partial_notice)
-    notice_xml = preprocess_notice_xml(notice_xml)
-    process_xml(notice, notice_xml)
-    return notice
 
 
 def process_designate_subpart(amendment):
@@ -189,18 +149,6 @@ class AmdparByParent(object):
 
     def append(self, next_amdpar):
         self.amdpars.append(next_amdpar)
-
-
-def preprocess_notice_xml(notice_xml):
-    """Unfortunately, the notice xml is often inaccurate. This function
-    attempts to fix some of those (general) flaws. For specific issues, we
-    tend to instead use the files in settings.LOCAL_XML_PATHS"""
-    notice_xml = deepcopy(notice_xml)   # We will be destructive
-
-    for preprocessor in preprocessors.ALL:
-        preprocessor().transform(notice_xml)
-
-    return notice_xml
 
 
 def process_amendments(notice, notice_xml):
@@ -291,6 +239,7 @@ def fetch_cfr_parts(notice_xml):
 
 def process_xml(notice, notice_xml):
     """Pull out relevant fields from the xml and add them to the notice"""
+    notice = dict(notice)   # defensive copy
 
     xml_chunk = notice_xml.xpath('//FURINF/P')
     if xml_chunk:
