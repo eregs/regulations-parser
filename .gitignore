@@ -7,3 +7,5 @@ regulations
 regcontent
 
 docs/_build
+
+regparser.egg-info/
