@@ -1,7 +1,4 @@
 # vim: set encoding=utf-8
-import os
-import shutil
-import tempfile
 from unittest import TestCase
 
 from lxml import etree
@@ -9,23 +6,10 @@ from lxml import etree
 from regparser.notice import build, changes
 from regparser.notice.diff import DesignateAmendment, Amendment
 from regparser.tree.struct import Node
-import settings
 from tests.xml_builder import XMLBuilderMixin
 
 
 class NoticeBuildTest(XMLBuilderMixin, TestCase):
-    def setUp(self):
-        super(NoticeBuildTest, self).setUp()
-        self.original_local_xml_paths = settings.LOCAL_XML_PATHS
-        settings.LOCAL_XML_PATHS = []
-        self.dir1 = tempfile.mkdtemp()
-        self.dir2 = tempfile.mkdtemp()
-
-    def tearDown(self):
-        settings.LOCAL_XML_PATHS = self.original_local_xml_paths
-        shutil.rmtree(self.dir1)
-        shutil.rmtree(self.dir2)
-
     def test_build_notice(self):
         fr = {
             'abstract': 'sum sum sum',
@@ -515,45 +499,6 @@ class NoticeBuildTest(XMLBuilderMixin, TestCase):
         change = notice_changes.changes['200-2-a'][0]
         self.assertEqual('PUT', change['action'])
         self.assertEqual('[text]', change.get('field'))
-
-    def test_local_version_list(self):
-        url = 'http://example.com/some/url'
-
-        settings.LOCAL_XML_PATHS = [self.dir1, self.dir2]
-        os.mkdir(self.dir2 + '/some')
-        f = open(self.dir2 + '/some/url', 'w')
-        f.write('aaaaa')
-        f.close()
-
-        local_file = self.dir2 + '/some/url'
-        self.assertEqual([local_file], build._check_local_version_list(url))
-
-        os.mkdir(self.dir1 + '/some')
-        f = open(self.dir1 + '/some/url', 'w')
-        f.write('bbbbb')
-        f.close()
-        local_file_2 = self.dir1 + '/some/url'
-        self.assertEqual([local_file_2], build._check_local_version_list(url))
-
-    def test_local_version_list_split(self):
-        settings.LOCAL_XML_PATHS = [self.dir1, self.dir2]
-
-        os.mkdir(self.dir2 + '/xml/')
-        f = open(self.dir2 + '/xml/503-1.xml', 'w')
-        f.write('first_file')
-        f.close()
-
-        f = open(self.dir2 + '/xml/503-2.xml', 'w')
-        f.write('second_file')
-
-        url = 'http://example.com/xml/503.xml'
-
-        first = self.dir2 + '/xml/503-1.xml'
-        second = self.dir2 + '/xml/503-2.xml'
-
-        local_versions = build._check_local_version_list(url)
-        local_versions.sort()
-        self.assertEqual([first, second], local_versions)
 
     def test_split_doc_num(self):
         doc_num = '2013-2222'
