@@ -1,6 +1,8 @@
 from datetime import datetime
 import re
 
+from lxml import etree
+
 from regparser.tree.xml_parser.tree_utils import get_node_text
 
 
@@ -20,11 +22,11 @@ def parse_date_sentence(sentence):
         return ('other', date.strftime('%Y-%m-%d'))
 
 
-def fetch_dates(xml_tree):
+def fetch_dates(xml):
     """Pull out any dates (and their types) from the XML. Not all notices
     have all types of dates, some notices have multiple dates of the same
     type."""
-    dates_field = xml_tree.xpath('//EFFDATE/P') or xml_tree.xpath('//DATES/P')
+    dates_field = xml.xpath('//EFFDATE/P') or xml.xpath('//DATES/P')
     dates = {}
     for par in dates_field:
         for sentence in get_node_text(par).split('.'):
@@ -34,3 +36,23 @@ def fetch_dates(xml_tree):
                 dates[date_type] = dates.get(date_type, []) + [date]
     if dates:
         return dates
+
+
+def set_effective_date(xml, date_str=None):
+    """Modify the XML tree so that it contains an explicit effective date.
+    Uses the `date_str` if provided; if not, attempts to derive it from the
+    DATES tags"""
+    if date_str is None:
+        dates = fetch_dates(xml) or {}
+        if 'effective' not in dates:
+            raise Exception("Could not derive effective date for notice")
+        date_str = dates['effective'][0]
+
+    effdate = xml.xpath('//EFFDATE')
+    if effdate:
+        effdate = effdate[0]
+    else:     # Tag wasn't present; create it
+        effdate = etree.Element("EFFDATE")
+        xml.insert(0, effdate)
+    effdate.attrib["eregs-effective-date"] = date_str
+    return date_str
