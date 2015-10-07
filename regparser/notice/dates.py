@@ -56,3 +56,9 @@ def set_effective_date(xml, date_str=None):
         xml.insert(0, effdate)
     effdate.attrib["eregs-effective-date"] = date_str
     return date_str
+
+
+def fetch_effective_date(xml):
+    """Pulls out the date set in `set_effective_date`. If not present, returns
+    None"""
+    return xml.xpath("EFFDATE")[0].get('eregs-effective-date')
