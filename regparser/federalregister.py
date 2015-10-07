@@ -37,3 +37,15 @@ def fetch_notices(cfr_title, cfr_part, only_final=False):
     for result in fetch_notice_json(cfr_title, cfr_part, only_final):
         notices.extend(build_notice(cfr_title, cfr_part, result))
     return notices
+
+
+def meta_data(document_number, fields=None):
+    """Return the requested meta data for a specific Federal Register
+    document. Accounts for a bad document number by throwing an exception"""
+    url = "{}articles/{}".format(API_BASE, document_number)
+    params = {}     # default fields are generally good
+    if fields:
+        params["fields[]"] = fields
+    response = requests.get(url, params=params)
+    response.raise_for_status()
+    return response.json()
