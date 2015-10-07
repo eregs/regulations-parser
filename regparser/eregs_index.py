@@ -32,7 +32,5 @@ class Path(object):
 
     def __len__(self):
         self._create()
-        print self.path
-        print os.listdir(self.path)
         return sum(1 for name in os.listdir(self.path)
                    if os.path.isfile(os.path.join(self.path, name)))
