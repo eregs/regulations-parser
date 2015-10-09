@@ -55,6 +55,7 @@ def build_header(xml_nodes):
 
     return root
 
+
 def build_header_rowspans(tree_root, max_height):
     """
     The following table is an example of why we need a relatively complicated
@@ -75,11 +76,12 @@ def build_header_rowspans(tree_root, max_height):
     rowspan based on that.
 
     Rowspan for leaves is ``max_height - node.height() - node.level + 1``, and
-    for root is simply 1. Other nodes' rowspans are set to the level of the node
-    after them minus their own level.
+    for root is simply 1. Other nodes' rowspans are set to the level of the
+    node after them minus their own level.
     """
 
     paths = []
+
     def collect_paths(node, path):
         if node.children:
             for child in node.children:
@@ -90,14 +92,15 @@ def build_header_rowspans(tree_root, max_height):
 
     for path in paths:
         for i, node in enumerate(path):
-            if i == 0: # root
+            if i == 0:  # root
                 node.rowspan = 1
-            elif i + 1 == len(path): #leaves
+            elif i + 1 == len(path):    # leaves
                 node.rowspan = max_height - node.height() - node.level + 1
-            else: # intermediate nodes
+            else:   # intermediate nodes
                 node.rowspan = path[i + 1].level - node.level
 
     return tree_root
+
 
 def table_xml_to_plaintext(xml_node):
     """Markdown representation of a table. Note that this doesn't account
@@ -187,6 +190,6 @@ class Formatting(Layer):
                     'text': node.text[:match.start()],
                 },
             })
-        
+
         if layer_el:
             return layer_el
