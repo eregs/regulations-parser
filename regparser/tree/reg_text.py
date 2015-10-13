@@ -156,16 +156,17 @@ def subjgrp_label(starting_title, letter_list):
                 num_letters = num_letters + 1
         return candidate_title
 
+
 def build_subjgrp(title, part, letter_list):
     """
-    We're constructing a fake "letter" here by taking the first letter of
-    each word in the subjgrp's title, or using the first two letters of the
-    first word if there's just one—we're avoiding single letters to make sure we
+    We're constructing a fake "letter" here by taking the first letter of each
+    word in the subjgrp's title, or using the first two letters of the first
+    word if there's just one—we're avoiding single letters to make sure we
     don't duplicate an existing subpart, and we're hoping that the initialisms
     created by this method are unique for this regulation.
-    We can make this more robust by accepting a list of existing initialisms and
-    returning both that list and the Node, and checking against the list as we
-    construct them.
+    We can make this more robust by accepting a list of existing initialisms
+    and returning both that list and the Node, and checking against the list
+    as we construct them.
     """
     letter_title = subjgrp_label(title, letter_list)
     letter_list.append(letter_title)
@@ -174,6 +175,7 @@ def build_subjgrp(title, part, letter_list):
 
     return (letter_list, struct.Node(label=label, title=title,
                                      node_type=struct.Node.SUBPART))
+
 
 def find_next_subpart_start(text):
     """ Find the start of the next Subpart (e.g. Subpart B)"""

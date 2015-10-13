@@ -1,7 +1,6 @@
-#vim: set encoding=utf-8
+# vim: set encoding=utf-8
 from unittest import TestCase
 from lxml import etree
-from lxml import html
 
 from regparser.tree.struct import Node
 from regparser.tree.xml_parser import appendices, tree_utils
@@ -96,7 +95,8 @@ class AppendicesTest(TestCase):
         self.assertEqual(1, len(appendix.children))
         fp_dash = appendix.children[0]
 
-        self.assertEqual('FP-DASH filled out with dashes_____', fp_dash.text.strip())
+        self.assertEqual('FP-DASH filled out with dashes_____',
+                         fp_dash.text.strip())
 
     def test_process_appendix_header_depth(self):
         xml = u"""
@@ -378,24 +378,29 @@ class AppendicesTest(TestCase):
 
     def test_title_label_pair(self):
         title = u'A-1—Model Clauses'
-        self.assertEqual(('1', 2), appendices.title_label_pair(title, 'A', '1000'))
+        self.assertEqual(('1', 2),
+                         appendices.title_label_pair(title, 'A', '1000'))
 
         title = u'Part III—Construction Period'
-        self.assertEqual(('III', 2), appendices.title_label_pair(title, 'A', '1000'))
+        self.assertEqual(('III', 2),
+                         appendices.title_label_pair(title, 'A', '1000'))
 
     def test_title_label_pair_parens(self):
         title = u'G-13(A)—Has No parent'
-        self.assertEqual(('13(A)', 2), appendices.title_label_pair(title, 'G', '1000'))
+        self.assertEqual(('13(A)', 2),
+                         appendices.title_label_pair(title, 'G', '1000'))
 
         title = u'G-13(C)(1) - Some Title'
         self.assertEqual(('13(C)(1)', 2),
                          appendices.title_label_pair(title, 'G', '1000'))
 
         title = u'G-13A - Some Title'
-        self.assertEqual(('13A', 2), appendices.title_label_pair(title, 'G', '1000'))
+        self.assertEqual(('13A', 2),
+                         appendices.title_label_pair(title, 'G', '1000'))
 
         title = u'G-13And Some Smashed Text'
-        self.assertEqual(('13', 2), appendices.title_label_pair(title, 'G', '1000'))
+        self.assertEqual(('13', 2),
+                         appendices.title_label_pair(title, 'G', '1000'))
 
 
 class AppendixProcessorTest(TestCase):
@@ -507,7 +512,7 @@ class AppendixProcessorTest(TestCase):
 
     def test_paragraph_double_depth(self):
         for text in ("(a) A paragraph", "(1) A paragraph", "(i) A paragraph",
-                "(A) A paragraph", "(a) A paragraph"):
+                     "(A) A paragraph", "(a) A paragraph"):
             self.ap.paragraph_with_marker(text, text)
         self.ap.end_group()
 
