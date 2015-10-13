@@ -1,12 +1,11 @@
 # vim: set encoding=utf-8
 from unittest import TestCase
 
-from lxml import etree
-
 from regparser.notice import dates
+from tests.xml_builder import XMLBuilderMixin
 
 
-class NoticeDatesTests(TestCase):
+class NoticeDatesTests(XMLBuilderMixin, TestCase):
     def test_parse_date_sentence(self):
         self.assertEqual(('comments', '2009-01-08'),
                          dates.parse_date_sentence(
@@ -27,60 +26,46 @@ class NoticeDatesTests(TestCase):
                                                    'make sense'))
 
     def test_fetch_dates_no_xml_el(self):
-        xml = """
-        <ROOT>
-            <CHILD />
-            <PREAMB />
-        </ROOT>"""
-        self.assertEqual(None, dates.fetch_dates(etree.fromstring(xml)))
+        with self.tree.builder("ROOT") as root:
+            root.CHILD()
+            root.PREAMB()
+        self.assertEqual(None, dates.fetch_dates(self.tree.render_xml()))
 
     def test_fetch_dates_no_date_text(self):
-        xml = """
-        <ROOT>
-            <CHILD />
-            <PREAMB>
-                <EFFDATE>
-                    <HD>DATES: </HD>
-                    <P>There are no dates for this.</P>
-                </EFFDATE>
-            </PREAMB>
-        </ROOT>"""
-        self.assertEqual(None, dates.fetch_dates(etree.fromstring(xml)))
+        with self.tree.builder("ROOT") as root:
+            root.CHILD()
+            with root.PREAMB() as preamb:
+                with preamb.EFFDATE() as effdate:
+                    effdate.HD("DATES: ")
+                    effdate.P("There are no dates for this.")
+        self.assertEqual(None, dates.fetch_dates(self.tree.render_xml()))
 
     def test_fetch_dates_emphasis(self):
-        xml = """
-        <ROOT>
-            <DATES>
-                <HD SOURCE="HED">DATES:</HD>
-                <P>
-                    <E T="03">Effective date:</E>
-                    The rule is effective June 1, 2077.
-                </P>
-                <P>
-                    <E T="03">Applicability date:</E>
-                    Its requirements apply to things after that date.
-                </P>
-            </DATES>
-        </ROOT>"""
-        self.assertEqual(dates.fetch_dates(etree.fromstring(xml)), {
-            'effective': ['2077-06-01']})
+        with self.tree.builder("ROOT") as root:
+            with root.DATES() as dates_xml:
+                dates_xml.HD("DATES:", SOURCE="HED")
+                dates_xml.P(_xml=("<E T='03'>Effective date:</E>"
+                                  "The rule is effective June 1, 2077"))
+                dates_xml.P(_xml=(
+                    "<E T='03'>Applicability date:</E>"
+                    "Its requirements apply to things after that date."))
+        self.assertEqual(dates.fetch_dates(self.tree.render_xml()),
+                         {'effective': ['2077-06-01']})
 
     def test_fetch_dates(self):
-        xml = """
-        <ROOT>
-            <CHILD />
-            <PREAMB>
-                <EFFDATE>
-                    <HD>DATES: </HD>
-                    <P>We said stuff that's effective on May 9, 2005. If
-                    you'd like to add comments, please do so by June 3, 1987.
-                    Wait, that doesn't make sense. I mean, the comment
-                    period ends on July 9, 2004. Whew. It would have been
-                    more confusing if I said August 15, 2005. Right?</P>
-                </EFFDATE>
-            </PREAMB>
-        </ROOT>"""
-        self.assertEqual(dates.fetch_dates(etree.fromstring(xml)), {
+        with self.tree.builder("ROOT") as root:
+            root.CHILD()
+            with root.PREAMB() as preamb:
+                with preamb.EFFDATE() as effdate:
+                    effdate.HD("DATES: ")
+                    effdate.P("We said stuff that's effective on May 9, "
+                              "2005. If you'd like to add comments, please "
+                              "do so by June 3, 1987.  Wait, that doesn't "
+                              "make sense. I mean, the comment period ends "
+                              "on July 9, 2004. Whew. It would have been "
+                              "more confusing if I said August 15, 2005. "
+                              "Right?")
+        self.assertEqual(dates.fetch_dates(self.tree.render_xml()), {
             'effective': ['2005-05-09'],
             'comments': ['1987-06-03', '2004-07-09'],
             'other': ['2005-08-15']

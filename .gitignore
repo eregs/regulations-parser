@@ -9,3 +9,5 @@ regcontent
 docs/_build
 
 regparser.egg-info/
+
+.eregs_index/
