@@ -71,7 +71,8 @@ class NoticeXMLTests(XMLBuilderMixin, TestCase):
         with self.tree.builder("ROOT") as root:
             with root.DATES() as dates:
                 dates.P("Some content")
-        xml = notice_xml.NoticeXML('N/A', self.tree.render_xml())
+            root.PRTPAGE(P="455")
+        xml = notice_xml.NoticeXML(self.tree.render_xml())
 
         xml.effective = '2005-05-05'
         xml.published = '2004-04-04'
@@ -81,20 +82,18 @@ class NoticeXMLTests(XMLBuilderMixin, TestCase):
         self.assertEqual(xml.published, '2004-04-04')
         self.assertEqual(xml.fr_volume, 22)
 
-        xml = notice_xml.NoticeXML(
-            'N/A', etree.fromstring(etree.tostring(xml._xml)))
+        xml = notice_xml.NoticeXML(etree.fromstring(etree.tostring(xml._xml)))
         self.assertEqual(xml.effective, '2005-05-05')
         self.assertEqual(xml.published, '2004-04-04')
         self.assertEqual(xml.fr_volume, 22)
 
     def test_set_effective_date_create(self):
         """The DATES tag should get created if not present in the XML"""
-        xml = notice_xml.NoticeXML('N/A', self.empty_xml())
+        xml = notice_xml.NoticeXML(self.empty_xml())
 
         xml.effective = '2005-05-05'
         self.assertEqual(xml.effective, '2005-05-05')
-        xml = notice_xml.NoticeXML(
-            'N/A', etree.fromstring(etree.tostring(xml._xml)))
+        xml = notice_xml.NoticeXML(etree.fromstring(etree.tostring(xml._xml)))
         self.assertEqual(xml.effective, '2005-05-05')
 
     def test_derive_effective_date(self):
@@ -103,7 +102,7 @@ class NoticeXMLTests(XMLBuilderMixin, TestCase):
         with self.tree.builder("ROOT") as root:
             with root.DATES() as dates:
                 dates.P("Effective on May 4, 2004")
-        xml = notice_xml.NoticeXML('N/A', self.tree.render_xml())
+        xml = notice_xml.NoticeXML(self.tree.render_xml())
 
         xml.effective = '2002-02-02'
         self.assertEqual(xml.derive_effective_date(), '2004-05-04')

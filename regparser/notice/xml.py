@@ -16,13 +16,13 @@ import settings
 class NoticeXML(object):
     """Wrapper around a notice XML which provides quick access to the XML's
     encoded data fields"""
-    def __init__(self, version_id, xml):
+    def __init__(self, xml):
         """Includes automatic conversion from string and a deep copy for
         safety"""
         if isinstance(xml, basestring):
-            xml = etree.fromstring(xml)
-        self.version_id = version_id
-        self._xml = deepcopy(xml)
+            self._xml = etree.fromstring(xml)
+        else:
+            self._xml = deepcopy(xml)
 
     def preprocess(self):
         """Unfortunately, the notice xml is often inaccurate. This function
@@ -89,11 +89,12 @@ class NoticeXML(object):
 
     @property
     def fr_volume(self):
-        return int(self._xml.attrib['eregs-fr-volume'])
+        return int(self._xml.xpath(".//PRTPAGE")[0].attrib['eregs-fr-volume'])
 
     @fr_volume.setter
     def fr_volume(self, value):
-        self._xml.attrib['eregs-fr-volume'] = str(value)
+        for prtpage in self._xml.xpath(".//PRTPAGE"):
+            prtpage.attrib['eregs-fr-volume'] = str(value)
 
     @property
     def start_page(self):
@@ -102,6 +103,14 @@ class NoticeXML(object):
     @property
     def end_page(self):
         return int(self._xml.xpath(".//PRTPAGE")[-1].attrib["P"])
+
+    @property
+    def version_id(self):
+        return self._xml.attrib.get('eregs-version-id')
+
+    @version_id.setter
+    def version_id(self, value):
+        self._xml.attrib['eregs-version-id'] = str(value)
 
 
 def local_copies(url):

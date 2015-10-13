@@ -19,7 +19,7 @@ class CommandsPreprocessNoticeTests(HttpMixin, XMLBuilderMixin, TestCase):
             root.P()
             with root.EFFDATE() as effdate:
                 effdate.P(effdate_str)
-        return NoticeXML('N/A', self.tree.render_xml())
+        return NoticeXML(self.tree.render_xml())
 
     def expect_common_json(self):
         """Expect an HTTP call and return a common json respond"""
@@ -40,7 +40,7 @@ class CommandsPreprocessNoticeTests(HttpMixin, XMLBuilderMixin, TestCase):
             self.assertEqual(1, len(eregs_index.Path("notice_xml")))
 
             written = NoticeXML(
-                'N/A', eregs_index.Path("notice_xml").read_xml("1234-5678"))
+                eregs_index.Path("notice_xml").read_xml("1234-5678"))
             self.assertEqual(written.effective, '2008-08-08')
 
     @patch('regparser.commands.preprocess_notice.notice_xmls_for_url')
@@ -59,9 +59,9 @@ class CommandsPreprocessNoticeTests(HttpMixin, XMLBuilderMixin, TestCase):
             path = eregs_index.Path("notice_xml")
             self.assertEqual(3, len(path))
 
-            jan = NoticeXML('N/A', path.read_xml("1234-5678_20010101"))
-            feb = NoticeXML('N/A', path.read_xml("1234-5678_20020202"))
-            mar = NoticeXML('N/A', path.read_xml("1234-5678_20030303"))
+            jan = NoticeXML(path.read_xml("1234-5678_20010101"))
+            feb = NoticeXML(path.read_xml("1234-5678_20020202"))
+            mar = NoticeXML(path.read_xml("1234-5678_20030303"))
 
             self.assertEqual(jan.effective, '2001-01-01')
             self.assertEqual(feb.effective, '2002-02-02')
