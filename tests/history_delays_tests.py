@@ -1,6 +1,7 @@
+from datetime import date
 from unittest import TestCase
 
-from regparser.history.delays import *
+from regparser.history import delays
 
 
 class HistoryDelaysTests(TestCase):
@@ -42,33 +43,35 @@ class HistoryDelaysTests(TestCase):
                             'dates': 'The effective date of 12 FR 501 has ' +
                                      'been delayed until March 3, 2003'}}
 
-        modify_effective_dates([outdated, unaltered, proposal, changer])
+        delays.modify_effective_dates([outdated, unaltered, proposal, changer])
 
         self.assertEqual('2003-03-03', outdated['effective_on'])
         self.assertEqual('2001-01-01', unaltered['effective_on'])
         self.assertFalse('effective_on' in proposal)
         self.assertEqual('2000-12-31', changer['effective_on'])
 
-    def test_overlaps_with(self):
-        fr = Notice(10, 225)
+    def test_modifies_notice(self):
+        fr = delays.FRDelay(10, 225, None)
         meta = lambda v, s, e: {'fr_volume': v, 'meta': {'start_page': s,
                                                          'end_page': e}}
-        self.assertTrue(overlaps_with(fr, meta(10, 220, 230)))
-        self.assertTrue(overlaps_with(fr, meta(10, 225, 230)))
-        self.assertTrue(overlaps_with(fr, meta(10, 220, 225)))
-        self.assertFalse(overlaps_with(fr, meta(11, 220, 230)))
-        self.assertFalse(overlaps_with(fr, meta(10, 226, 230)))
-        self.assertFalse(overlaps_with(fr, meta(10, 220, 224)))
+        self.assertTrue(fr.modifies_notice(meta(10, 220, 230)))
+        self.assertTrue(fr.modifies_notice(meta(10, 225, 230)))
+        self.assertTrue(fr.modifies_notice(meta(10, 220, 225)))
+        self.assertFalse(fr.modifies_notice(meta(11, 220, 230)))
+        self.assertFalse(fr.modifies_notice(meta(10, 226, 230)))
+        self.assertFalse(fr.modifies_notice(meta(10, 220, 224)))
 
-    def test_altered_frs(self):
+    def test_delays_in_sentence(self):
         sent = "The effective date of 12 FR 501, 13 FR 999, and (13 FR 764) "
         sent += "has been delayed."
-        self.assertEqual(altered_frs(sent),
-                         ([Notice(12, 501), Notice(13, 999), Notice(13, 764)],
-                          None))
+        self.assertEqual(
+            delays.delays_in_sentence(sent),
+            [delays.FRDelay(12, 501, None), delays.FRDelay(13, 999, None),
+             delays.FRDelay(13, 764, None)])
         sent = "In 11 FR 123 we delayed the effective date"
-        self.assertEqual(altered_frs(sent), ([], None))
+        self.assertEqual(delays.delays_in_sentence(sent), [])
         sent = "The effective date of 9 FR 765 has been delayed until "
         sent += "January 7, 2008; rather I mean March 4 2008"
-        self.assertEqual(altered_frs(sent),
-                         ([Notice(9, 765)], date(2008, 3, 4)))
+        self.assertEqual(
+            delays.delays_in_sentence(sent),
+            [delays.FRDelay(9, 765, date(2008, 3, 4))])

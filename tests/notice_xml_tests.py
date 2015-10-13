@@ -6,6 +6,7 @@ from unittest import TestCase
 
 from lxml import etree
 
+from regparser.history.delays import FRDelay
 from regparser.notice import xml as notice_xml
 import settings
 from tests.xml_builder import XMLBuilderMixin
@@ -108,3 +109,17 @@ class NoticeXMLTests(XMLBuilderMixin, TestCase):
         xml.effective = '2002-02-02'
         self.assertEqual(xml.derive_effective_date(), date(2004, 5, 4))
         self.assertEqual(xml.effective, date(2004, 5, 4))
+
+    def test_delays(self):
+        """The XML should be search for any delaying text"""
+        with self.tree.builder("ROOT") as root:
+            with root.EFFDATE() as effdate:
+                effdate.P("The effective date of 11 FR 100 has been delayed "
+                          "until April 1, 2010. The effective date of 11 FR "
+                          "200 has also been delayed until October 10, 2010")
+        xml = notice_xml.NoticeXML(self.tree.render_xml())
+
+        self.assertEqual(
+            xml.delays(),
+            [FRDelay(11, 100, date(2010, 4, 1)),
+             FRDelay(11, 200, date(2010, 10, 10))])

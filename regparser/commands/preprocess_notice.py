@@ -20,7 +20,7 @@ def preprocess_notice(document_number):
     for notice_xml in notice_xmls:
         file_name = document_number
         notice_xml.published = meta['publication_date']
-        notice_xml.volume = meta['volume']
+        notice_xml.fr_volume = meta['volume']
 
         if len(notice_xmls) > 1:
             effective_date = notice_xml.derive_effective_date()

@@ -9,6 +9,7 @@ from urlparse import urlparse
 from lxml import etree
 import requests
 
+from regparser.history.delays import delays_in_sentence
 from regparser.notice import preprocessors
 from regparser.notice.dates import fetch_dates
 import settings
@@ -37,6 +38,13 @@ class NoticeXML(object):
 
     def xml_str(self):
         return etree.tostring(self._xml, pretty_print=True)
+
+    def delays(self):
+        """Pull out FRDelays found in the DATES tag"""
+        dates_str = "".join(p.text for p in self._xml.xpath(
+            "(//DATES/P)|(//EFFDATE/P)"))
+        return [delay for sent in dates_str.split('.')
+                for delay in delays_in_sentence(sent)]
 
     def _set_date_attr(self, date_type, value):
         """Modify the XML tree so that it contains meta data for a date
