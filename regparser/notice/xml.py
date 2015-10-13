@@ -1,6 +1,7 @@
 """Functions for processing the xml associated with the Federal Register's
 notices"""
 from copy import deepcopy
+from datetime import date, datetime
 import logging
 import os
 from urlparse import urlparse
@@ -37,35 +38,37 @@ class NoticeXML(object):
     def xml_str(self):
         return etree.tostring(self._xml, pretty_print=True)
 
-    def _set_date_attr(self, date_type, date_str):
+    def _set_date_attr(self, date_type, value):
         """Modify the XML tree so that it contains meta data for a date
-        field."""
+        field. Accepts both strings and dates"""
         dates_tag = self._xml.xpath('//DATES')
         if dates_tag:
             dates_tag = dates_tag[0]
         else:   # Tag wasn't present; create it
             dates_tag = etree.Element("DATES")
             self._xml.insert(0, dates_tag)
-        dates_tag.attrib["eregs-{}-date".format(date_type)] = date_str
-        return date_str
+        if isinstance(value, date):
+            value = value.isoformat()
+        dates_tag.attrib["eregs-{}-date".format(date_type)] = value
 
     def derive_effective_date(self):
         """Attempt to parse effective date from DATES tags. Raises exception
-        if it cannot. Also sets the field"""
+        if it cannot. Also sets the field. Returns a datetime.date"""
         dates = fetch_dates(self._xml) or {}
         if 'effective' not in dates:
             raise Exception(
                 "Could not derive effective date for notice {}".format(
                     self.version_id))
-        effective = dates['effective'][0]
+        effective = datetime.strptime(dates['effective'][0], "%Y-%m-%d").date()
         self.effective = effective
         return effective
 
     def _get_date_attr(self, date_type):
-        """Pulls out the date set in `set_date_attr`. If not present, returns
-        None"""
-        return self._xml.xpath(".//DATES")[0].get('eregs-{}-date'.format(
+        """Pulls out the date set in `set_date_attr`, as a datetime.date. If
+        not present, returns None"""
+        value = self._xml.xpath(".//DATES")[0].get('eregs-{}-date'.format(
             date_type))
+        return datetime.strptime(value, "%Y-%m-%d").date()
 
     # --- Setters/Getters for specific fields. ---
     # We encode relevant information within the XML, but wish to provide easy
@@ -149,8 +152,7 @@ def notice_xmls_for_url(doc_num, notice_url):
         logging.info("fetching notice xml for %s", notice_url)
         notice_strs.append(requests.get(notice_url).content)
 
-    return [NoticeXML(doc_num, xml_str).preprocess()
-            for xml_str in notice_strs]
+    return [NoticeXML(xml_str).preprocess() for xml_str in notice_strs]
 
 
 def xmls_for_url(notice_url):
