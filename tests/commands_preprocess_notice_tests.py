@@ -5,7 +5,7 @@ from mock import patch
 
 from regparser import eregs_index
 from regparser.commands.preprocess_notice import preprocess_notice
-from regparser.notice.dates import fetch_effective_date
+from regparser.notice.xml import NoticeXML
 from tests.http_mixin import HttpMixin
 from tests.xml_builder import LXMLBuilder, XMLBuilderMixin
 
@@ -19,32 +19,38 @@ class CommandsPreprocessNoticeTests(HttpMixin, XMLBuilderMixin, TestCase):
             root.P()
             with root.EFFDATE() as effdate:
                 effdate.P(effdate_str)
-        return self.tree.render_xml()
+        return NoticeXML('N/A', self.tree.render_xml())
 
-    @patch('regparser.commands.preprocess_notice.xmls_for_url')
-    def test_single_notice(self, xmls_for_url):
+    def expect_common_json(self):
+        """Expect an HTTP call and return a common json respond"""
+        self.expect_json_http({'effective_on': '2008-08-08',
+                               'full_text_xml_url': 'some://url',
+                               'publication_date': '2007-07-07',
+                               'volume': 45})
+
+    @patch('regparser.commands.preprocess_notice.notice_xmls_for_url')
+    def test_single_notice(self, notice_xmls_for_url):
         """Integration test, verifying that if a document number is associated
         with only a single XML file, a single, modified result is written"""
         cli = CliRunner()
-        self.expect_json_http({'full_text_xml_url': 'some://url',
-                               'effective_on': '2008-08-08'})
-        xmls_for_url.return_value = [self.example_xml()]
+        self.expect_common_json()
+        notice_xmls_for_url.return_value = [self.example_xml()]
         with cli.isolated_filesystem():
             cli.invoke(preprocess_notice, ['1234-5678'])
             self.assertEqual(1, len(eregs_index.Path("notice_xml")))
 
-            written = eregs_index.Path("notice_xml").read_xml("1234-5678")
-            self.assertEqual(fetch_effective_date(written), '2008-08-08')
+            written = NoticeXML(
+                'N/A', eregs_index.Path("notice_xml").read_xml("1234-5678"))
+            self.assertEqual(written.effective, '2008-08-08')
 
-    @patch('regparser.commands.preprocess_notice.xmls_for_url')
-    def test_split_notice(self, xmls_for_url):
+    @patch('regparser.commands.preprocess_notice.notice_xmls_for_url')
+    def test_split_notice(self, notice_xmls_for_url):
         """Integration test, testing whether a notice which has been split
         (due to having multiple effective dates) is written as multiple
         files"""
         cli = CliRunner()
-        self.expect_json_http({'full_text_xml_url': 'some://url',
-                               'effective_on': '2008-08-08'})
-        xmls_for_url.return_value = [
+        self.expect_common_json()
+        notice_xmls_for_url.return_value = [
             self.example_xml("Effective January 1, 2001"),
             self.example_xml("Effective February 2, 2002"),
             self.example_xml("Effective March 3, 2003")]
@@ -53,10 +59,10 @@ class CommandsPreprocessNoticeTests(HttpMixin, XMLBuilderMixin, TestCase):
             path = eregs_index.Path("notice_xml")
             self.assertEqual(3, len(path))
 
-            jan_xml = path.read_xml("1234-5678_20010101")
-            feb_xml = path.read_xml("1234-5678_20020202")
-            mar_xml = path.read_xml("1234-5678_20030303")
+            jan = NoticeXML('N/A', path.read_xml("1234-5678_20010101"))
+            feb = NoticeXML('N/A', path.read_xml("1234-5678_20020202"))
+            mar = NoticeXML('N/A', path.read_xml("1234-5678_20030303"))
 
-            self.assertEqual(fetch_effective_date(jan_xml), '2001-01-01')
-            self.assertEqual(fetch_effective_date(feb_xml), '2002-02-02')
-            self.assertEqual(fetch_effective_date(mar_xml), '2003-03-03')
+            self.assertEqual(jan.effective, '2001-01-01')
+            self.assertEqual(feb.effective, '2002-02-02')
+            self.assertEqual(mar.effective, '2003-03-03')

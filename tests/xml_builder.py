@@ -76,3 +76,9 @@ class XMLBuilderMixin(object):
     def setUp(self):
         super(XMLBuilderMixin, self).setUp()
         self.tree = LXMLBuilder()
+
+    def empty_xml(self):
+        builder = LXMLBuilder()
+        with builder.builder('ROOT'):
+            pass
+        return builder.render_xml()

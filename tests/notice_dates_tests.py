@@ -70,31 +70,3 @@ class NoticeDatesTests(XMLBuilderMixin, TestCase):
             'comments': ['1987-06-03', '2004-07-09'],
             'other': ['2005-08-15']
         })
-
-    def test_set_effective_date(self):
-        """Effective date attribute should be set within the XML. If one isn't
-        provided, we should attempt to derive it"""
-        with self.tree.builder("ROOT") as root:
-            with root.EFFDATE() as effdate:
-                effdate.P("Effective on May 4, 2004")
-        xml = self.tree.render_xml()
-
-        self.assertEqual("2005-05-05",
-                         dates.set_effective_date(xml, "2005-05-05"))
-        self.assertEqual(xml.xpath("//EFFDATE")[0].get("eregs-effective-date"),
-                         "2005-05-05")
-
-        self.assertEqual("2004-05-04", dates.set_effective_date(xml))
-        self.assertEqual(xml.xpath("//EFFDATE")[0].get("eregs-effective-date"),
-                         "2004-05-04")
-
-    def test_set_effective_date_create(self):
-        """The EFFDATE tag should get created if not present in the XML"""
-        with self.tree.builder("ROOT") as root:
-            with root.DATES() as effdate:
-                effdate.P("Effective on May 4, 2004")
-        xml = self.tree.render_xml()
-
-        self.assertEqual("2004-05-04", dates.set_effective_date(xml))
-        self.assertEqual(xml.xpath("//EFFDATE")[0].get("eregs-effective-date"),
-                         "2004-05-04")

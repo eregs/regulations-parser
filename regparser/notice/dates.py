@@ -1,8 +1,6 @@
 from datetime import datetime
 import re
 
-from lxml import etree
-
 from regparser.tree.xml_parser.tree_utils import get_node_text
 
 
@@ -36,29 +34,3 @@ def fetch_dates(xml):
                 dates[date_type] = dates.get(date_type, []) + [date]
     if dates:
         return dates
-
-
-def set_effective_date(xml, date_str=None):
-    """Modify the XML tree so that it contains an explicit effective date.
-    Uses the `date_str` if provided; if not, attempts to derive it from the
-    DATES tags"""
-    if date_str is None:
-        dates = fetch_dates(xml) or {}
-        if 'effective' not in dates:
-            raise Exception("Could not derive effective date for notice")
-        date_str = dates['effective'][0]
-
-    effdate = xml.xpath('//EFFDATE')
-    if effdate:
-        effdate = effdate[0]
-    else:     # Tag wasn't present; create it
-        effdate = etree.Element("EFFDATE")
-        xml.insert(0, effdate)
-    effdate.attrib["eregs-effective-date"] = date_str
-    return date_str
-
-
-def fetch_effective_date(xml):
-    """Pulls out the date set in `set_effective_date`. If not present, returns
-    None"""
-    return xml.xpath("EFFDATE")[0].get('eregs-effective-date')

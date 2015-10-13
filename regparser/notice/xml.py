@@ -9,7 +9,99 @@ from lxml import etree
 import requests
 
 from regparser.notice import preprocessors
+from regparser.notice.dates import fetch_dates
 import settings
+
+
+class NoticeXML(object):
+    """Wrapper around a notice XML which provides quick access to the XML's
+    encoded data fields"""
+    def __init__(self, version_id, xml):
+        """Includes automatic conversion from string and a deep copy for
+        safety"""
+        if isinstance(xml, basestring):
+            xml = etree.fromstring(xml)
+        self.version_id = version_id
+        self._xml = deepcopy(xml)
+
+    def preprocess(self):
+        """Unfortunately, the notice xml is often inaccurate. This function
+        attempts to fix some of those (general) flaws. For specific issues, we
+        tend to instead use the files in settings.LOCAL_XML_PATHS"""
+
+        for preprocessor in preprocessors.ALL:
+            preprocessor().transform(self._xml)
+
+        return self
+
+    def xml_str(self):
+        return etree.tostring(self._xml, pretty_print=True)
+
+    def _set_date_attr(self, date_type, date_str):
+        """Modify the XML tree so that it contains meta data for a date
+        field."""
+        dates_tag = self._xml.xpath('//DATES')
+        if dates_tag:
+            dates_tag = dates_tag[0]
+        else:   # Tag wasn't present; create it
+            dates_tag = etree.Element("DATES")
+            self._xml.insert(0, dates_tag)
+        dates_tag.attrib["eregs-{}-date".format(date_type)] = date_str
+        return date_str
+
+    def derive_effective_date(self):
+        """Attempt to parse effective date from DATES tags. Raises exception
+        if it cannot. Also sets the field"""
+        dates = fetch_dates(self._xml) or {}
+        if 'effective' not in dates:
+            raise Exception(
+                "Could not derive effective date for notice {}".format(
+                    self.version_id))
+        effective = dates['effective'][0]
+        self.effective = effective
+        return effective
+
+    def _get_date_attr(self, date_type):
+        """Pulls out the date set in `set_date_attr`. If not present, returns
+        None"""
+        return self._xml.xpath(".//DATES")[0].get('eregs-{}-date'.format(
+            date_type))
+
+    # --- Setters/Getters for specific fields. ---
+    # We encode relevant information within the XML, but wish to provide easy
+    # access
+
+    @property
+    def effective(self):
+        return self._get_date_attr('effective')
+
+    @effective.setter
+    def effective(self, value):
+        self._set_date_attr('effective', value)
+
+    @property
+    def published(self):
+        return self._get_date_attr('published')
+
+    @published.setter
+    def published(self, value):
+        self._set_date_attr('published', value)
+
+    @property
+    def fr_volume(self):
+        return int(self._xml.attrib['eregs-fr-volume'])
+
+    @fr_volume.setter
+    def fr_volume(self, value):
+        self._xml.attrib['eregs-fr-volume'] = str(value)
+
+    @property
+    def start_page(self):
+        return int(self._xml.xpath(".//PRTPAGE")[0].attrib["P"]) - 1
+
+    @property
+    def end_page(self):
+        return int(self._xml.xpath(".//PRTPAGE")[-1].attrib["P"])
 
 
 def local_copies(url):
@@ -34,19 +126,7 @@ def local_copies(url):
     return []
 
 
-def preprocess(notice_xml):
-    """Unfortunately, the notice xml is often inaccurate. This function
-    attempts to fix some of those (general) flaws. For specific issues, we
-    tend to instead use the files in settings.LOCAL_XML_PATHS"""
-    notice_xml = deepcopy(notice_xml)   # We will be destructive
-
-    for preprocessor in preprocessors.ALL:
-        preprocessor().transform(notice_xml)
-
-    return notice_xml
-
-
-def xmls_for_url(notice_url):
+def notice_xmls_for_url(doc_num, notice_url):
     """Find, preprocess, and return the XML(s) associated with a particular FR
     notice url"""
     notice_strs = []
@@ -60,5 +140,11 @@ def xmls_for_url(notice_url):
         logging.info("fetching notice xml for %s", notice_url)
         notice_strs.append(requests.get(notice_url).content)
 
-    process = lambda xml_str: preprocess(etree.fromstring(xml_str))
-    return [process(xml_str) for xml_str in notice_strs]
+    return [NoticeXML(doc_num, xml_str).preprocess()
+            for xml_str in notice_strs]
+
+
+def xmls_for_url(notice_url):
+    # @todo: remove the need for this function
+    return [notice_xml._xml
+            for notice_xml in notice_xmls_for_url('N/A', notice_url)]
