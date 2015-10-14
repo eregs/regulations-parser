@@ -80,6 +80,9 @@ def write_if_needed(cfr_title, cfr_part, version_ids, xmls, delays):
 @click.argument('cfr_title', type=int)
 @click.argument('cfr_part', type=int)
 def versions(cfr_title, cfr_part):
+    """Find all Versions for a regulation. Accounts for locally modified
+    notice XML and rules modifying the effective date of versions of a
+    regulation"""
     cfr_title, cfr_part = str(cfr_title), str(cfr_part)
     notice_path = eregs_index.Path("notice_xml")
 
