@@ -1,3 +1,5 @@
+from collections import namedtuple
+from datetime import date, datetime
 import logging
 import re
 
@@ -16,11 +18,9 @@ CFR_PART_URL = ("http://www.gpo.gov/fdsys/pkg/"
                 + "CFR-{year}-title{title}-vol{volume}-part{part}.xml")
 
 
-class Volume(object):
+class Volume(namedtuple('Volume', ['year', 'title', 'vol_num'])):
     def __init__(self, year, title, vol_num):
-        self.year = year
-        self.title = title
-        self.vol_num = vol_num
+        super(Volume, self).__init__(year, title, vol_num)
         self.url = CFR_BULK_URL.format(year=year, title=title, volume=vol_num)
         self._response = requests.get(self.url, stream=True)
         self.exists = self._response.status_code == 200
@@ -58,20 +58,29 @@ class Volume(object):
 def annual_edition_for(title, notice):
     """Annual editions are published for different titles at different
     points throughout the year. Find the 'next' annual edition"""
-    if title <= 16:
-        month = '01'
-    elif title <= 27:
-        month = '04'
-    elif title <= 41:
-        month = '07'
-    else:
-        month = '10'
+    eff_date = datetime.strptime(notice['effective_on'], '%Y-%m-%d').date()
+    return date_of_annual_after(title, eff_date).year
 
-    notice_year = int(notice['effective_on'][:4])
-    if notice['effective_on'] <= '%d-%s-01' % (notice_year, month):
-        return notice_year
+
+def date_of_annual_after(title, eff_date):
+    """Annual editions are published for different titles at different points
+    throughout the year. Return the date of the _first_ annual edition which
+    should contain any changes on `eff_date`. This date may well be in the
+    future"""
+    if title <= 16:
+        month_published = 1
+    elif title <= 27:
+        month_published = 4
+    elif title <= 41:
+        month_published = 7
     else:
-        return notice_year + 1
+        month_published = 10
+
+    publication_date = date(eff_date.year, month_published, 1)
+    if eff_date <= publication_date:
+        return publication_date
+    else:
+        return publication_date.replace(year=eff_date.year + 1)
 
 
 def find_volume(year, title, part):
