@@ -15,7 +15,7 @@ ROOT = ".eregs_index"
 class Path(object):
     """Encapsulates access to a particular directory within the index"""
     def __init__(self, *dirs):
-        self.path = os.path.join(ROOT, *dirs)
+        self.path = os.path.join(ROOT, *[str(d) for d in dirs])
 
     def _create(self):
         if not os.path.exists(self.path):
@@ -23,14 +23,14 @@ class Path(object):
 
     def write(self, label, content):
         self._create()
-        path_str = os.path.join(self.path, label)
+        path_str = os.path.join(self.path, str(label))
         with open(path_str, "w") as f:
             f.write(content)
             logging.info("Wrote {} to eregs_index".format(path_str))
 
     def read(self, label):
         self._create()
-        with open(os.path.join(self.path, label)) as f:
+        with open(os.path.join(self.path, str(label))) as f:
             return f.read()
 
     def read_xml(self, label):
@@ -71,7 +71,7 @@ class DependencyGraph(object):
             self.dag.add(key, dependencies)
 
     def path_str(self, *file_path):
-        return str(os.path.join(ROOT, *file_path))
+        return str(os.path.join(ROOT, *[str(path) for path in file_path]))
 
     def add(self, output_tuple, input_tuple):
         """Add a dependency where output tuple relies on input_tuple"""
