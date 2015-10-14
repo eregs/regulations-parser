@@ -1,5 +1,6 @@
 """The eregs_index directory contains the output for many of the shell
 commands. This module provides a quick interface to this index"""
+import json
 import logging
 import os
 import shelve
@@ -34,6 +35,9 @@ class Path(object):
 
     def read_xml(self, label):
         return etree.fromstring(self.read(label))
+
+    def read_json(self, label):
+        return json.loads(self.read(label))
 
     def __len__(self):
         return len(list(self.__iter__()))
