@@ -1,4 +1,4 @@
-#vim: set encoding=utf-8
+# vim: set encoding=utf-8
 import itertools
 import logging
 import re
@@ -152,7 +152,7 @@ def process_inner_children(inner_stack, xml_node):
 
     # Use constraint programming to figure out possible depth assignments
     depths = derive_depths(
-        [n.label[0] for n in nodes],
+        [node.label[0] for node in nodes],
         [rules.depth_type_order([(mtypes.ints, mtypes.em_ints),
                                  (mtypes.roman, mtypes.upper),
                                  mtypes.upper, mtypes.em_ints,

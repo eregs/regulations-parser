@@ -32,7 +32,6 @@ class LayerFormattingTests(XMLBuilderMixin, TestCase):
             root.CHED(_xml="3-6<LI>Other Content</LI>", H=3)
         root = formatting.build_header(self.tree.render_xml().xpath('./CHED'))
 
-
         n11, n12 = root.children
         self.assertEqual('1-1', n11.text)
         self.assertEqual(1, n11.colspan)
@@ -186,10 +185,10 @@ class LayerFormattingTests(XMLBuilderMixin, TestCase):
                 <CHED H="2">Inhabited buildings</CHED>
                 <CHED H="3">Barri-caded</CHED>
                 <CHED H="3">Unbarri-caded</CHED>
-                <CHED H="2">Public highways with traffic volume of 3000 or fewer vehicles/day</CHED>
+                <CHED H="2">Public highways with traffic volume of 3000</CHED>
                 <CHED H="3">Barri-caded</CHED>
                 <CHED H="3">Unbarri-caded</CHED>
-                <CHED H="2">Passenger railways—public highways with traffic volume of more than 3,000 vehicles/day</CHED>
+                <CHED H="2">Passenger railways—public highways</CHED>
                 <CHED H="3">Barri-caded</CHED>
                 <CHED H="3">Unbarri-caded</CHED>
                 <CHED H="2">Separation of magazines</CHED>
@@ -224,11 +223,9 @@ class LayerFormattingTests(XMLBuilderMixin, TestCase):
         self.assertTrue("header" in data)
         # Verify header matches:
         mkhd = lambda t, c, r: {'text': t, 'colspan': c, 'rowspan': r}
-        hwys_header = mkhd("".join(["Public highways with traffic volume of ",
-                           "3000 or fewer vehicles/day"]), 2, 1)
-        rail_header = mkhd(u"".join([u"Passenger railways—public highways ",
-                                     u"with traffic volume of more than ",
-                                     u"3,000 vehicles/day"]),
+        hwys_header = mkhd("Public highways with traffic volume of 3000",
+                           2, 1)
+        rail_header = mkhd(u"Passenger railways—public highways",
                            2, 1)
         barr_header = mkhd(u"Barri-caded", 1, 1)
         unbr_header = mkhd(u"Unbarri-caded", 1, 1)

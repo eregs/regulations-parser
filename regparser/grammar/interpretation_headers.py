@@ -1,5 +1,3 @@
-import string
-
 from pyparsing import LineEnd, LineStart, SkipTo
 
 from regparser.grammar import atomic, unified

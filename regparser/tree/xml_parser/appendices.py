@@ -1,4 +1,4 @@
-#vim: set encoding=utf-8
+# vim: set encoding=utf-8
 import logging
 from itertools import takewhile
 import re
@@ -21,6 +21,7 @@ from regparser.tree.xml_parser.interpretations import build_supplement_tree
 from regparser.tree.xml_parser.interpretations import get_app_title
 
 from settings import APPENDIX_IGNORE_SUBHEADER_LABEL
+
 
 def remove_toc(appendix, letter):
     """The TOC at the top of certain appendices gives us trouble since it
@@ -94,8 +95,8 @@ class AppendixProcessor(object):
             far"""
             lvl, parent = pair
             return (not parent.title
-                    or not title_label_pair(parent.title,
-                                self.appendix_letter, self.part))
+                    or not title_label_pair(
+                        parent.title, self.appendix_letter, self.part))
 
         #   Check if this SOURCE level matches a previous
         for lvl, parent in takewhile(not_known_depth_header,
@@ -107,8 +108,8 @@ class AppendixProcessor(object):
         #   Second pass, search for any header; place self one lower
         for lvl, parent in self.m_stack.lineage_with_level():
             if parent.title:
-                pair = title_label_pair(parent.title,
-                        self.appendix_letter, self.part)
+                pair = title_label_pair(
+                    parent.title, self.appendix_letter, self.part)
                 if pair:
                     return pair[1]
                 else:
@@ -141,8 +142,8 @@ class AppendixProcessor(object):
         self.m_stack.add(self.depth, n)
 
     def insert_dashes(self, xml_node, text):
-        """ If paragraph has a SOURCE attribute with a value of FP-DASH 
-            it fills out with dashes, like Foo_____. """
+        """ If paragraph has a SOURCE attribute with a value of
+            FP-DASH it fills out with dashes, like Foo_____. """
         mtext = text
         if xml_node.get('SOURCE') == 'FP-DASH':
             mtext = mtext + '_____'
@@ -266,9 +267,9 @@ class AppendixProcessor(object):
         def is_subhead(tag, text):
             initial = initial_marker(text)
             return ((tag == 'HD' and (not initial or '.' in initial[1]))
-                    or (tag in ('P', 'FP') 
+                    or (tag in ('P', 'FP')
                         and title_label_pair(text, self.appendix_letter,
-                            self.part)))
+                                             self.part)))
 
         for child in appendix.getchildren():
             text = tree_utils.get_node_text(child, add_spaces=True).strip()
@@ -354,7 +355,7 @@ def title_label_pair(text, appendix_letter, reg_part):
         has_parens = (match.paren_upper or match.paren_lower
                       or match.paren_digit or match.markerless_upper)
         if has_parens:
-            pair =(''.join(match), 2)
+            pair = (''.join(match), 2)
         elif match.a1:
             pair = (match.a1, 2)
         elif match.aI:
@@ -362,12 +363,14 @@ def title_label_pair(text, appendix_letter, reg_part):
 
         if pair is not None and \
                 reg_part in APPENDIX_IGNORE_SUBHEADER_LABEL and \
-                pair[0] in APPENDIX_IGNORE_SUBHEADER_LABEL[reg_part][appendix_letter]:
+                pair[0] in APPENDIX_IGNORE_SUBHEADER_LABEL[reg_part][
+                    appendix_letter]:
             logging.warning("Ignoring subheader label %s of appendix %s",
                             pair[0], appendix_letter)
             pair = None
 
     return pair
+
 
 def initial_marker(text):
     parser = (grammar.paren_upper | grammar.paren_lower | grammar.paren_digit
