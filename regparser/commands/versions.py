@@ -55,12 +55,12 @@ def generate_dependencies(cfr_title, cfr_part, version_ids, delays):
     return deps
 
 
-def write_to_disk(xml, path, delay=None):
+def write_to_disk(xml, version_path, delay=None):
     """Serialize a Version instance to disk"""
     effective = xml.effective if delay is None else delay.until
     version = Version(identifier=xml.version_id, effective=effective,
                       published=xml.published)
-    path.write(xml.version_id, version.json())
+    version_path.write(version)
 
 
 def write_if_needed(cfr_title, cfr_part, version_ids, xmls, delays):
@@ -68,7 +68,7 @@ def write_if_needed(cfr_title, cfr_part, version_ids, xmls, delays):
     because their dependency has been updated) are written to disk. If any
     dependency is missing, an exception is raised"""
     deps = generate_dependencies(cfr_title, cfr_part, version_ids, delays)
-    version_path = eregs_index.Path("version", cfr_title, cfr_part)
+    version_path = eregs_index.VersionPath(cfr_title, cfr_part)
     for version_id in version_ids:
         deps.validate_for("version", cfr_title, cfr_part, version_id)
         if deps.is_stale("version", cfr_title, cfr_part, version_id):

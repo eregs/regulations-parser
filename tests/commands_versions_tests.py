@@ -84,7 +84,7 @@ class CommandsVersionsTests(TestCase):
         """If a version has been delayed, its effective date should be part of
         the serialized json"""
         xml = Mock()
-        path = eregs_index.Path('path')
+        path = eregs_index.VersionPath('12', '1000')
         with self.cli.isolated_filesystem():
             xml.configure_mock(effective=date(2002, 2, 2), version_id='111',
                                published=date(2002, 1, 1))
@@ -94,8 +94,8 @@ class CommandsVersionsTests(TestCase):
             versions.write_to_disk(
                 xml, path, versions.Delay(by='333', until=date(2004, 4, 4)))
 
-            self.assertEqual(path.read_json('111')['effective'], '2002-02-02')
-            self.assertEqual(path.read_json('222')['effective'], '2004-04-04')
+            self.assertEqual(path.read('111').effective, date(2002, 2, 2))
+            self.assertEqual(path.read('222').effective, date(2004, 4, 4))
 
     @patch('regparser.commands.versions.write_to_disk')
     def test_write_if_needed_raises_exception(self, write_to_disk):

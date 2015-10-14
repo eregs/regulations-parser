@@ -8,43 +8,78 @@ import shelve
 from dagger import dagger
 from lxml import etree
 
+from regparser.history.versions import Version
+
 
 ROOT = ".eregs_index"
 
 
-class Path(object):
+class _PathBase(object):
+    """Shared base class for accessing objects within a directory of the
+    index"""
     """Encapsulates access to a particular directory within the index"""
-    def __init__(self, *dirs):
+    def _set_path(self, *dirs):
         self.path = os.path.join(ROOT, *[str(d) for d in dirs])
 
     def _create(self):
         if not os.path.exists(self.path):
             os.makedirs(self.path)
 
-    def write(self, label, content):
+    def _write(self, label, content):
         self._create()
         path_str = os.path.join(self.path, str(label))
         with open(path_str, "w") as f:
             f.write(content)
             logging.info("Wrote {} to eregs_index".format(path_str))
 
-    def read(self, label):
+    def _read(self, label):
         self._create()
         with open(os.path.join(self.path, str(label))) as f:
             return f.read()
 
-    def read_xml(self, label):
-        return etree.fromstring(self.read(label))
-
-    def read_json(self, label):
-        return json.loads(self.read(label))
-
-    def __len__(self):
-        return len(list(self.__iter__()))
-
-    def __iter__(self):
+    def _paths(self):
         self._create()
         return (name for name in os.listdir(self.path))
+
+
+class Path(_PathBase):
+    """Encapsulates access to a particular directory within the index"""
+    def __init__(self, *dirs):
+        self._set_path(*dirs)
+
+    def write(self, label, content):
+        self._write(label, content)
+
+    def read_xml(self, label):
+        return etree.fromstring(self._read(label))
+
+    def read_json(self, label):
+        return json.loads(self._read(label))
+
+    def __len__(self):
+        return len(list(self._paths()))
+
+    def __iter__(self):
+        return self._paths()
+
+
+class VersionPath(_PathBase):
+    """Similar to Path, except that it reads and writes Version objects"""
+    def __init__(self, cfr_title, cfr_part):
+        self._set_path('version', cfr_title, cfr_part)
+
+    def write(self, version):
+        self._write(version.identifier, version.json())
+
+    def read(self, label):
+        return Version.from_json(self._read(label))
+
+    def __iter__(self):
+        """Deserialize all Version objects we're aware of."""
+        versions = [self.read(path) for path in self._paths()]
+        key = lambda version: (version.effective, version.published)
+        for version in sorted(versions, key=key):
+            yield version
 
 
 class DependencyException(Exception):
