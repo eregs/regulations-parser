@@ -1,4 +1,6 @@
 from datetime import date
+import os
+from time import time
 from unittest import TestCase
 
 import click
@@ -53,7 +55,7 @@ class CommandsAnnualEditions(TestCase):
     @patch("regparser.commands.annual_editions.process")
     def test_process_if_needed_missing_writes(self, process):
         """If output isn't already present, we should process. If it is
-        present, we don't need to"""
+        present, we don't need to, unless a dependency has changed."""
         with self.cli.isolated_filesystem():
             last_versions = [annual_editions.LastVersionInYear('1111', 2000)]
             eregs_index.VersionPath('12', '1000').write(
@@ -67,3 +69,10 @@ class CommandsAnnualEditions(TestCase):
             eregs_index.Path('tree', '12', '1000').write('1111', 'tree-here')
             annual_editions.process_if_needed('12', '1000', last_versions)
             self.assertFalse(process.called)
+
+            # Simulate a change to an input file
+            os.utime(
+                os.path.join(eregs_index.ROOT, 'annual', '12', '1000', '2000'),
+                (time() + 1000, time() + 1000))
+            annual_editions.process_if_needed('12', '1000', last_versions)
+            self.assertTrue(process.called)

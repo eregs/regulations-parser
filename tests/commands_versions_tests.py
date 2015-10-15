@@ -1,4 +1,6 @@
 from datetime import date
+import os
+from time import time
 from unittest import TestCase
 
 from click.testing import CliRunner
@@ -137,7 +139,10 @@ class CommandsVersionsTests(TestCase):
                 {'111': versions.Delay('222', 'until-date')})
             self.assertFalse(write_to_disk.called)
 
-            eregs_index.Path('notice_xml').write('222', 'changed')
+            # Simulate a change to an input file
+            os.utime(
+                os.path.join(eregs_index.ROOT, 'notice_xml', '222'),
+                (time() + 1000, time() + 1000))
             versions.write_if_needed(
                 'title', 'part', ['111'], {'111': 'xml111'},
                 {'111': versions.Delay('222', 'until-date')})
