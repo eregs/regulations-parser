@@ -4,14 +4,8 @@ from datetime import date
 import click
 
 from regparser import eregs_index
-from regparser.api_writer import AmendmentNodeEncoder
 from regparser.history import annual
 from regparser.tree import xml_parser
-
-# @todo - review this encoder -- we're using it now as it is what was used by
-# build_from
-json_encoder = AmendmentNodeEncoder(sort_keys=True, indent=4,
-                                    separators=(', ', ': '))
 
 
 LastVersionInYear = namedtuple('LastVersionInYear', ['version_id', 'year'])
@@ -32,18 +26,18 @@ def last_versions(cfr_title, cfr_part):
         yield LastVersionInYear(have_annual_edition[year], year)
 
 
-def process(last_version, input_path, output_path):
+def process(last_version, input_path, tree_path):
     """Parse the XML into a JSON tree; write it to disk"""
     xml = input_path.read_xml(last_version.year)
     tree = xml_parser.reg_text.build_tree(xml)
-    output_path.write(last_version.version_id, json_encoder.encode(tree))
+    tree_path.write(last_version.version_id, tree)
 
 
 def process_if_needed(cfr_title, cfr_part, last_versions):
     """Calculate dependencies between input and output files for these annual
     editions. If an output is missing or out of date, process it"""
     annual_path = eregs_index.Path("annual", cfr_title, cfr_part)
-    tree_path = eregs_index.Path("tree", cfr_title, cfr_part)
+    tree_path = eregs_index.TreePath(cfr_title, cfr_part)
     deps = eregs_index.DependencyGraph()
 
     for last_version in last_versions:
