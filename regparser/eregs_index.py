@@ -74,6 +74,9 @@ class VersionPath(_PathBase):
     def read(self, label):
         return Version.from_json(self._read(label))
 
+    def __len__(self):
+        return len(list(self._paths()))
+
     def __iter__(self):
         """Deserialize all Version objects we're aware of."""
         versions = [self.read(path) for path in self._paths()]
