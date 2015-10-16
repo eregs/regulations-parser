@@ -12,10 +12,7 @@ from regparser.federalregister import fetch_notice_json, fetch_notices
 from regparser.history.notices import (
     applicable as applicable_notices, group_by_eff_date)
 from regparser.history.delays import modify_effective_dates
-from regparser.layer import (
-    external_citations, formatting, graphics, key_terms, internal_citations,
-    interpretations, meta, paragraph_markers, section_by_section,
-    table_of_contents, terms)
+from regparser.layer import ALL_LAYERS
 from regparser.notice import fake as notice_fake
 from regparser.notice.compiler import compile_regulation
 from regparser.tree import struct, xml_parser
@@ -57,20 +54,7 @@ class Builder(object):
     def gen_and_write_layers(self, reg_tree, act_info, cache, notices=None):
         if notices is None:
             notices = applicable_notices(self.notices, self.doc_number)
-        for ident, layer_class in (
-                ('external-citations',
-                    external_citations.ExternalCitationParser),
-                ('meta', meta.Meta),
-                ('analyses', section_by_section.SectionBySection),
-                ('internal-citations',
-                    internal_citations.InternalCitationParser),
-                ('toc', table_of_contents.TableOfContentsLayer),
-                ('interpretations', interpretations.Interpretations),
-                ('terms', terms.Terms),
-                ('paragraph-markers', paragraph_markers.ParagraphMarkers),
-                ('keyterms', key_terms.KeyTerms),
-                ('formatting', formatting.Formatting),
-                ('graphics', graphics.Graphics)):
+        for ident, layer_class in ALL_LAYERS.items():
             layer = self.checkpointer.checkpoint(
                 ident + "-" + self.doc_number,
                 lambda: layer_class(
