@@ -2,6 +2,8 @@ from collections import defaultdict
 from json import JSONEncoder
 import hashlib
 
+from lxml import etree
+
 
 class Node(object):
     APPENDIX = u'appendix'
@@ -63,6 +65,21 @@ class NodeEncoder(JSONEncoder):
         return super(NodeEncoder, self).default(obj)
 
 
+class FullNodeEncoder(JSONEncoder):
+    """Encodes Nodes into JSON, not losing any of the fields"""
+    FIELDS = set(['text', 'children', 'label', 'title', 'node_type',
+                  'source_xml', 'tagged_text'])
+
+    def default(self, obj):
+        if isinstance(obj, Node):
+            result = {field: getattr(obj, field, None)
+                      for field in self.FIELDS}
+            if obj.source_xml is not None:
+                result['source_xml'] = etree.tostring(obj.source_xml)
+            return result
+        return super(FullNodeEncoder, self).default(obj)
+
+
 def node_decode_hook(d):
     """Convert a JSON object into a Node"""
     if set(
@@ -74,6 +91,20 @@ def node_decode_hook(d):
             d.get('title', None), d['node_type'])
     else:
         return d
+
+
+def full_node_decode_hook(d):
+    """Convert a JSON object into a full Node"""
+    if set(d.keys()) == FullNodeEncoder.FIELDS:
+        params = dict(d)
+        del(params['tagged_text'])  # Ugly, but this field is set separately
+        node = Node(**params)
+        if d['tagged_text']:
+            node.tagged_text = d['tagged_text']
+        if node.source_xml:
+            node.source_xml = etree.fromstring(node.source_xml)
+        return node
+    return d
 
 
 def walk(node, fn):
