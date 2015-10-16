@@ -1,8 +1,24 @@
+from collections import namedtuple
 from datetime import date
 from itertools import dropwhile, takewhile
 
 from regparser.grammar.delays import tokenizer as delay_tokenizer
 from regparser.grammar.delays import Delayed, EffectiveDate, Notice
+
+
+class FRDelay(namedtuple('FRDelay', ['volume', 'page', 'delayed_until'])):
+    def modifies_notice(self, notice):
+        """Calculate whether the fr citation is within the provided notice"""
+        return (notice['fr_volume'] == self.volume
+                and notice['meta']['start_page'] <= self.page
+                and notice['meta']['end_page'] >= self.page)
+
+    def modifies_notice_xml(self, notice_xml):
+        """Calculates whether the fr citation is within the provided
+        NoticeXML"""
+        return (notice_xml.fr_volume == self.volume
+                and notice_xml.start_page <= self.page
+                and notice_xml.end_page >= self.page)
 
 
 def modify_effective_dates(notices):
@@ -18,23 +34,13 @@ def modify_effective_dates(notices):
             continue
         if not notice['meta']['dates']:
             continue
-        for sent in notice['meta']['dates'].split('.'):
-            to_change, changed_to = altered_frs(sent)
-
-            #   notices that have changed
-            for n in (n for fr in to_change
-                      for n in notices if overlaps_with(fr, n)):
-                n['effective_on'] = unicode(changed_to)
+        for delay in (delay for sent in notice['meta']['dates'].split('.')
+                      for delay in delays_in_sentence(sent)):
+            for delayed in filter(delay.modifies_notice, notices):
+                delayed['effective_on'] = unicode(delay.delayed_until)
 
 
-def overlaps_with(fr, notice):
-    """Calculate whether the fr citation is within the provided notice"""
-    return (notice['fr_volume'] == fr.volume
-            and notice['meta']['start_page'] <= fr.page
-            and notice['meta']['end_page'] >= fr.page)
-
-
-def altered_frs(sent):
+def delays_in_sentence(sent):
     """Tokenize the provided sentence and check if it is a format that
     indicates that some notices have changed. This format is:
     ... "effective date" ... FRNotices ... "delayed" ... (UntilDate)"""
@@ -42,7 +48,7 @@ def altered_frs(sent):
     tokens = list(dropwhile(lambda t: not isinstance(t, EffectiveDate),
                   tokens))
     if not tokens:
-        return [], None
+        return []
     #   Remove the "effective date"
     tokens = tokens[1:]
 
@@ -51,7 +57,7 @@ def altered_frs(sent):
     frs = [t for t in frs if isinstance(t, Notice)]
 
     if not frs or not tokens:
-        return [], None
+        return []
     #   Remove the "delayed"
     tokens = tokens[1:]
 
@@ -59,4 +65,4 @@ def altered_frs(sent):
     changed_to = None
     if tokens:
         changed_to = tokens[-1]
-    return frs, changed_to
+    return [FRDelay(fr.volume, fr.page, changed_to) for fr in frs]
