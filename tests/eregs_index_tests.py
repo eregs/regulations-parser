@@ -1,3 +1,4 @@
+from datetime import date
 import os
 import shutil
 import tempfile
@@ -5,19 +6,42 @@ from time import time
 from unittest import TestCase
 
 from regparser import eregs_index
+from regparser.history.versions import Version
 
 
-class DependencyGraphTests(TestCase):
+class SetupMixin(object):
+    """Change the eregs_index.ROOT to a tempdir"""
     def setUp(self):
         self._original_root = eregs_index.ROOT
         eregs_index.ROOT = tempfile.mkdtemp()
 
-        self.dgraph = eregs_index.DependencyGraph()
-        self.path = eregs_index.Path("path")
-
     def tearDown(self):
         shutil.rmtree(eregs_index.ROOT)
         eregs_index.ROOT = self._original_root
+
+
+class VersionPathTests(SetupMixin, TestCase):
+    def test_iterator(self):
+        """Versions should be correctly linearized"""
+        path = eregs_index.VersionPath("12", "1000")
+        v1 = Version('1111', effective=date(2004, 4, 4),
+                     published=date(2004, 4, 4))
+        v2 = Version('2222', effective=date(2002, 2, 2),
+                     published=date(2004, 4, 4))
+        v3 = Version('3333', effective=date(2004, 4, 4),
+                     published=date(2003, 3, 3))
+        path.write(v1)
+        path.write(v2)
+        path.write(v3)
+
+        self.assertEqual([v2, v3, v1], [v for v in path])
+
+
+class DependencyGraphTests(SetupMixin, TestCase):
+    def setUp(self):
+        super(DependencyGraphTests, self).setUp()
+        self.dgraph = eregs_index.DependencyGraph()
+        self.path = eregs_index.Path("path")
 
     def test_nonexistent_files_are_stale(self):
         """By definition, if a file is not present, it needs to be rebuilt"""

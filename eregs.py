@@ -1,3 +1,4 @@
+import logging
 from importlib import import_module
 import pkgutil
 
@@ -16,7 +17,7 @@ except ImportError:
 
 @click.group()
 def cli():
-    pass
+    logging.basicConfig(level=logging.INFO)
 
 
 for _, command_name, _ in pkgutil.iter_modules(commands.__path__):
