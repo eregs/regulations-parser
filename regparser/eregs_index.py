@@ -135,6 +135,22 @@ class RuleChangesEntry(Entry):
         return json.loads(content)
 
 
+class SxSEntry(RuleChangesEntry):
+    """Processes Section-by-Section analyses, keyed by sxs"""
+    PREFIX = (ROOT, 'sxs')
+
+
+class LayerEntry(Entry):
+    """Processes layers, keyed by layer"""
+    PREFIX = (ROOT, 'layer')
+
+    def serialize(self, content):
+        return json.dumps(content)
+
+    def deserialize(self, content):
+        return json.loads(content)
+
+
 class DependencyException(Exception):
     def __init__(self, key, dependency):
         super(DependencyException, self).__init__(
