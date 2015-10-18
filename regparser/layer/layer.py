@@ -6,13 +6,16 @@ class Layer(object):
     must implement"""
     __metaclass__ = abc.ABCMeta
 
-    def __init__(self, tree, cfr_title=None, version=None, notices=None,
-                 act_citation=None):
+    def __init__(self, tree, cfr_title=None, version_id=None, notices=None,
+                 act_citation=None, version=None):
         self.tree = tree
         self.notices = notices or []
         self.act_citation = act_citation or []
         self.cfr_title = cfr_title
+        self.version_id = version_id
         self.version = version
+        if version:
+            self.version_id = version.identifier
         self.layer = {}
 
     def pre_process(self):

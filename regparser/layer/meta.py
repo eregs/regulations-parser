@@ -26,8 +26,16 @@ class Meta(Layer):
             if match:
                 layer['reg_letter'] = match.group(1)
 
-        last_notice = filter(lambda n: n['document_number'] == self.version,
+        effective_date = self.effective_date()
+        if effective_date:
+            layer['effective_date'] = effective_date
+
+        return [dict(layer.items() + settings.META.items())]
+
+    def effective_date(self):
+        if self.version:
+            return self.version.effective.isoformat()
+        last_notice = filter(lambda n: n['document_number'] == self.version_id,
                              self.notices)
         if last_notice and 'effective_on' in last_notice[0]:
-            layer['effective_date'] = last_notice[0]['effective_on']
-        return [dict(layer.items() + settings.META.items())]
+            return last_notice[0]['effective_on']
