@@ -8,102 +8,131 @@ import shelve
 from dagger import dagger
 from lxml import etree
 
-from regparser.tree.struct import full_node_decode_hook, FullNodeEncoder
 from regparser.history.versions import Version
+from regparser.notice.encoder import AmendmentEncoder
+from regparser.notice.xml import NoticeXML
+from regparser.tree.struct import full_node_decode_hook, FullNodeEncoder
 
 
 ROOT = ".eregs_index"
 
 
-class _PathBase(object):
-    """Shared base class for accessing objects within a directory of the
-    index"""
-    """Encapsulates access to a particular directory within the index"""
-    def _set_path(self, *dirs):
-        self.path = os.path.join(ROOT, *[str(d) for d in dirs])
+class Entry(object):
+    """Encapsulates an entry within the index. This could be a directory or a
+    file"""
+    PREFIX = (ROOT,)
 
-    def _create(self):
-        if not os.path.exists(self.path):
-            os.makedirs(self.path)
+    def __init__(self, *args):
+        self._path = tuple(str(arg) for arg in args)
 
-    def _write(self, label, content):
-        self._create()
-        path_str = os.path.join(self.path, str(label))
-        with open(path_str, "w") as f:
-            f.write(content)
-            logging.info("Wrote {} to eregs_index".format(path_str))
+    def __div__(self, other):
+        """Embellishment in the form of a DSL.
+        Entry(1, 2, 3) / 4 / 5 == Entry(1, 2, 3, 4, 5)"""
+        args = self._path + (other,)
+        return self.__class__(*args)
 
-    def _read(self, label):
-        self._create()
-        with open(os.path.join(self.path, str(label))) as f:
-            return f.read()
+    def __str__(self):
+        return os.path.join(*(self.PREFIX + self._path))
 
-    def _paths(self):
-        self._create()
-        return (name for name in os.listdir(self.path))
+    def _create_parent_dir(self):
+        """Create the requisite directories if needed"""
+        path = os.path.join(*(self.PREFIX + self._path[:-1]))
+        if not os.path.exists(path):
+            os.makedirs(path)
 
+    def write(self, content):
+        self._create_parent_dir()
+        with open(str(self), "w") as f:
+            f.write(self.serialize(content))
+            logging.info("Wrote {}".format(str(self)))
 
-class Path(_PathBase):
-    """Encapsulates access to a particular directory within the index"""
-    def __init__(self, *dirs):
-        self._set_path(*dirs)
+    def serialize(self, content):
+        """Default implementation; treat content as a string"""
+        return content
 
-    def write(self, label, content):
-        self._write(label, content)
+    def read(self):
+        self._create_parent_dir()
+        with open(str(self)) as f:
+            return self.deserialize(f.read())
 
-    def read_xml(self, label):
-        return etree.fromstring(self._read(label))
-
-    def read_json(self, label):
-        return json.loads(self._read(label))
-
-    def __len__(self):
-        return len(list(self._paths()))
+    def deserialize(self, content):
+        """Default implementation; treat the content as a string"""
+        return content
 
     def __iter__(self):
-        return self._paths()
-
-
-class VersionPath(_PathBase):
-    """Similar to Path, except that it reads and writes Version objects"""
-    def __init__(self, cfr_title, cfr_part):
-        self._set_path('version', cfr_title, cfr_part)
-
-    def write(self, version):
-        self._write(version.identifier, version.json())
-
-    def read(self, label):
-        return Version.from_json(self._read(label))
+        """All sub-entries, i.e. the directory contents, as strings"""
+        if not os.path.exists(str(self)):
+            return iter([])
+        else:
+            return (name for name in os.listdir(str(self)))
 
     def __len__(self):
-        return len(list(self._paths()))
+        return len(list(self.__iter__()))
+
+
+class NoticeEntry(Entry):
+    """Processes NoticeXMLs, keyed by notice_xml"""
+    PREFIX = (ROOT, 'notice_xml')
+
+    def serialize(self, content):
+        return content.xml_str()
+
+    def deserialize(self, content):
+        return NoticeXML(etree.fromstring(content))
+
+
+class AnnualEntry(Entry):
+    """Processes XML, keyed by annual"""
+    PREFIX = (ROOT, 'annual')
+
+    def serialize(self, content):
+        return etree.tostring(content)
+
+    def deserialize(self, content):
+        return etree.fromstring(content)
+
+
+class VersionEntry(Entry):
+    """Processes Versions, keyed by version"""
+    PREFIX = (ROOT, 'version')
+
+    def serialize(self, content):
+        return content.json()
+
+    def deserialize(self, content):
+        return Version.from_json(content)
 
     def __iter__(self):
         """Deserialize all Version objects we're aware of."""
-        versions = [self.read(path) for path in self._paths()]
+        versions = [(self / path).read()
+                    for path in super(VersionEntry, self).__iter__()]
         key = lambda version: (version.effective, version.published)
         for version in sorted(versions, key=key):
-            yield version
+            yield version.identifier
 
 
-class TreePath(_PathBase):
-    """Similar to Path, except that it reads and writes Node trees"""
-    def __init__(self, cfr_title, cfr_part):
-        self._set_path('tree', cfr_title, cfr_part)
-        self.encoder = FullNodeEncoder(sort_keys=True, indent=4,
-                                       separators=(', ', ': '))
+class TreeEntry(Entry):
+    """Processes Nodes, keyed by tree"""
+    PREFIX = (ROOT, 'tree')
 
-    def write(self, label, tree):
-        self._write(label, self.encoder.encode(tree))
+    def serialize(self, content):
+        return FullNodeEncoder(sort_keys=True, indent=4,
+                               separators=(', ', ': ')).encode(content)
 
-    def read(self, label):
-        return json.loads(self._read(label), object_hook=full_node_decode_hook)
+    def deserialize(self, content):
+        return json.loads(content, object_hook=full_node_decode_hook)
 
-    def __len__(self):
-        return len(list(self._paths()))
 
-    def __iter__(self):
-        return self._paths()
+class RuleChangesEntry(Entry):
+    """Processes notices, keyed by rule_changes"""
+    PREFIX = (ROOT, 'rule_changes')
+
+    def serialize(self, content):
+        return AmendmentEncoder(sort_keys=True, indent=4,
+                                separators=(', ', ': ')).encode(content)
+
+    def deserialize(self, content):
+        return json.loads(content)
 
 
 class DependencyException(Exception):
@@ -129,14 +158,10 @@ class DependencyGraph(object):
         for key, dependencies in self.graph.items():
             self.dag.add(key, dependencies)
 
-    def path_str(self, *file_path):
-        return str(os.path.join(ROOT, *[str(path) for path in file_path]))
-
-    def add(self, output_tuple, input_tuple):
+    def add(self, output_entry, input_entry):
         """Add a dependency where output tuple relies on input_tuple"""
         self._ran = False
-        from_str = self.path_str(*output_tuple)
-        to_str = self.path_str(*input_tuple)
+        from_str, to_str = str(output_entry), str(input_entry)
 
         deps = self.graph.get(from_str, set())
         deps.add(to_str)
@@ -148,16 +173,15 @@ class DependencyGraph(object):
             self.dag.run()
             self._ran = True
 
-    def validate_for(self, *file_path):
+    def validate_for(self, entry):
         """Raise an exception if a particular output has stale dependencies"""
         self._run_if_needed()
-        key = self.path_str(*file_path)
+        key = str(entry)
         for dependency in self.graph[key]:
             if self.dag.get(dependency).stale:
                 raise DependencyException(key, dependency)
 
-    def is_stale(self, *file_path):
+    def is_stale(self, entry):
         """Determine if a file needs to be rebuilt"""
         self._run_if_needed()
-        key = self.path_str(*file_path)
-        return bool(self.dag.get(key).stale)
+        return bool(self.dag.get(str(entry)).stale)

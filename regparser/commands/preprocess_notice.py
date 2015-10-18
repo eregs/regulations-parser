@@ -32,4 +32,4 @@ def preprocess_notice(document_number):
             notice_xml.derive_effective_date()
 
         notice_xml.version_id = file_name
-        eregs_index.Path("notice_xml").write(file_name, notice_xml.xml_str())
+        eregs_index.NoticeEntry(file_name).write(notice_xml)

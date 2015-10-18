@@ -17,21 +17,21 @@ def dependencies(tree_path, version_ids, cfr_title, cfr_part):
 
     deps = eregs_index.DependencyGraph()
     for prev, curr in gaps:
-        curr_tuple = ('tree', cfr_title, cfr_part, curr)
-        deps.add(curr_tuple, ('tree', cfr_title, cfr_part, prev))
-        deps.add(curr_tuple, ('rule_changes', curr))
-        deps.add(curr_tuple, ('version', cfr_title, cfr_part, curr))
+        deps.add(tree_path / curr, tree_path / prev)
+        deps.add(tree_path / curr, eregs_index.RuleChangesEntry(curr))
+        deps.add(tree_path / curr,
+                 eregs_index.VersionEntry(cfr_title, cfr_part, curr))
     return deps
 
 
-def derived_from_rules(version_ids, deps, cfr_title, cfr_part):
+def derived_from_rules(version_ids, deps, tree_path):
     """We only want to process trees which are created by parsing rules. To do
     that, we'll filter by those trees which have a dependency on a parsed
     rule"""
     rule_versions = []
     for version_id in version_ids:
-        path = deps.path_str('tree', cfr_title, cfr_part, version_id)
-        rule_change = deps.path_str('rule_changes', version_id)
+        path = str(tree_path / version_id)
+        rule_change = str(eregs_index.RuleChangesEntry(version_id))
         if rule_change in deps.graph.get(path, []):
             rule_versions.append(version_id)
     return rule_versions
@@ -40,11 +40,11 @@ def derived_from_rules(version_ids, deps, cfr_title, cfr_part):
 def process(tree_path, previous, version_id):
     """Build and write a tree by combining the preceding tree with changes
     present in the associated rule"""
-    prev_tree = tree_path.read(previous)
-    notice = eregs_index.Path('rule_changes').read_json(version_id)
+    prev_tree = (tree_path / previous).read()
+    notice = eregs_index.RuleChangesEntry(version_id).read()
     changes = merge_changes(version_id, notice.get('changes', {}))
     new_tree = compile_regulation(prev_tree, changes)
-    tree_path.write(version_id, new_tree)
+    (tree_path / version_id).write(new_tree)
 
 
 @click.command()
@@ -54,14 +54,13 @@ def fill_with_rules(cfr_title, cfr_part):
     """Fill in missing trees using data from rules. When a regulation tree
     cannot be derived through annual editions, it must be built by parsing the
     changes in final rules. This command builds those missing trees"""
-    tree_path = eregs_index.TreePath(cfr_title, cfr_part)
-    version_ids = [v.identifier
-                   for v in eregs_index.VersionPath(cfr_title, cfr_part)]
+    tree_path = eregs_index.TreeEntry(cfr_title, cfr_part)
+    version_ids = list(eregs_index.VersionEntry(cfr_title, cfr_part))
     deps = dependencies(tree_path, version_ids, cfr_title, cfr_part)
 
     preceeded_by = dict(zip(version_ids[1:], version_ids))
-    derived = derived_from_rules(version_ids, deps, cfr_title, cfr_part)
+    derived = derived_from_rules(version_ids, deps, tree_path)
     for version_id in derived:
-        deps.validate_for('tree', cfr_title, cfr_part, version_id)
-        if deps.is_stale('tree', cfr_title, cfr_part, version_id):
+        deps.validate_for(tree_path / version_id)
+        if deps.is_stale(tree_path / version_id):
             process(tree_path, preceeded_by[version_id], version_id)

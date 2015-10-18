@@ -26,11 +26,11 @@ class CommandsClearTests(TestCase):
 
     def test_deletes_index(self):
         with self.cli.isolated_filesystem():
-            eregs_index.Path('aaa').write('bbb', 'ccc')
-            eregs_index.Path('bbb').write('ccc', 'ddd')
-            self.assertEqual(1, len(eregs_index.Path("aaa")))
-            self.assertEqual(1, len(eregs_index.Path("bbb")))
+            eregs_index.Entry('aaa', 'bbb').write('ccc')
+            eregs_index.Entry('bbb', 'ccc').write('ddd')
+            self.assertEqual(1, len(eregs_index.Entry("aaa")))
+            self.assertEqual(1, len(eregs_index.Entry("bbb")))
 
             self.cli.invoke(clear)
-            self.assertEqual(0, len(eregs_index.Path("aaa")))
-            self.assertEqual(0, len(eregs_index.Path("bbb")))
+            self.assertEqual(0, len(eregs_index.Entry("aaa")))
+            self.assertEqual(0, len(eregs_index.Entry("bbb")))
