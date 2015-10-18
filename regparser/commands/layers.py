@@ -15,23 +15,26 @@ def dependencies(tree_dir, layer_dir, version_dir):
                      tree_dir / version_id)
         # Meta layer also depends on the version info
         deps.add(layer_dir / version_id / 'meta', version_dir / version_id)
-        for document_number in sxs_source_names(version_dir):
-            deps.add(layer_dir / version_id / 'sxs', sxs_dir / document_number)
+        for document_number in sxs_source_names(version_dir, version_id):
+            deps.add(layer_dir / version_id / 'analyses',
+                     sxs_dir / document_number)
     return deps
 
 
-def sxs_source_names(version_dir):
+def sxs_source_names(version_dir, stop_version):
     """The SxS layer relies on all of notices that came before a particular
     version"""
-    for document_number in version_dir:
-        if document_number in eregs_index.NoticeEntry():
-            yield document_number
+    for version_id in version_dir:
+        if version_id in eregs_index.NoticeEntry():
+            yield version_id
+        if version_id == stop_version:
+            break
 
 
-def sxs_sources(version_dir):
+def sxs_sources(version_dir, version_id):
     """Wrapper reading JSON for the sxs_source_names"""
     return [(eregs_index.SxSEntry() / doc_num).read()
-            for doc_num in sxs_source_names(version_dir)]
+            for doc_num in sxs_source_names(version_dir, version_id)]
 
 
 def stale_layers(deps, layer_dir):
@@ -52,7 +55,9 @@ def process_layers(stale, cfr_title, cfr_part, version, act_citation):
     version_dir = eregs_index.VersionEntry(cfr_title, cfr_part)
     layer_dir = eregs_index.LayerEntry(cfr_title, cfr_part)
     for layer_name in stale:
-        notices = sxs_sources(version_dir) if layer_name == 'sxs' else []
+        notices = []
+        if layer_name == 'analyses':
+            notices = sxs_sources(version_dir, version.identifier)
         layer_json = ALL_LAYERS[layer_name](
             tree, cfr_title, notices=notices, act_citation=act_citation,
             version=version).build()

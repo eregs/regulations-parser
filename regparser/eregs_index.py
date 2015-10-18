@@ -64,7 +64,7 @@ class Entry(object):
         if not os.path.exists(str(self)):
             return iter([])
         else:
-            return (name for name in os.listdir(str(self)))
+            return iter(sorted(os.listdir(str(self))))
 
     def __len__(self):
         return len(list(self.__iter__()))

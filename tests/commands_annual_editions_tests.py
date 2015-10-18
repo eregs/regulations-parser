@@ -13,7 +13,7 @@ from regparser.history.versions import Version
 from regparser.tree.struct import Node
 
 
-class CommandsAnnualEditions(TestCase):
+class CommandsAnnualEditionsTests(TestCase):
     def setUp(self):
         self.cli = CliRunner()
 
