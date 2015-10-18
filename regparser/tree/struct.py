@@ -107,6 +107,18 @@ def full_node_decode_hook(d):
     return d
 
 
+def frozen_node_decode_hook(d):
+    """Convert a JSON object into a FrozenNode"""
+    if set(d.keys()) == FullNodeEncoder.FIELDS:
+        params = dict(d)
+        del(params['source_xml'])
+        fresh = FrozenNode(**params)
+        for el in FrozenNode._pool[fresh.hash]:
+            if el == fresh:
+                return el   # note we are _not_ returning fresh
+    return d
+
+
 def walk(node, fn):
     """Perform fn for every node in the tree. Pre-order traversal. fn must
     be a function that accepts a root node."""
