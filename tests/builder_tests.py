@@ -11,7 +11,7 @@ from regparser.tree.struct import Node
 
 
 class BuilderTests(TestCase):
-    @patch.object(Builder, 'merge_changes')
+    @patch('regparser.builder.merge_changes')
     @patch.object(Builder, '__init__')
     def test_revision_generator_notices(self, init, merge_changes):
         init.return_value = None
@@ -138,7 +138,7 @@ class BuilderTests(TestCase):
         self.assertEqual({'max_effective_date': '2012-01-01',
                           'only_final': True}, args[1])   # kw args
 
-    @patch.object(Builder, 'merge_changes')
+    @patch('regparser.builder.merge_changes')
     @patch.object(Builder, '__init__')
     def test_changes_in_sequence_skips(self, init, merge_changes):
         """Skips over notices which occurred _before_ our starting point"""

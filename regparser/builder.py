@@ -109,18 +109,7 @@ class Builder(object):
                     seen_start = True
         for notice in relevant_notices:
             version = notice['document_number']
-            yield version, self.merge_changes(version, notice['changes'])
-
-    def merge_changes(self, document_number, changes):
-        patches = content.RegPatches().get(document_number)
-        if patches:
-            changes = copy.copy(changes)
-            for key in patches:
-                if key in changes:
-                    changes[key].extend(patches[key])
-                else:
-                    changes[key] = patches[key]
-        return changes
+            yield version, merge_changes(version, notice['changes'])
 
     @staticmethod
     def determine_doc_number(reg_xml, title, title_part):
@@ -130,6 +119,21 @@ class Builder(object):
         if not doc_number:
             doc_number = _fdsys_to_doc_number(reg_xml, title, title_part)
         return doc_number
+
+
+def merge_changes(document_number, changes):
+    """Changes can be present in the notice or in an external set inside the
+    `content` module. If any are present in the latter, they extend the
+    former"""
+    patches = content.RegPatches().get(document_number)
+    if patches:
+        changes = copy.copy(changes)
+        for key in patches:
+            if key in changes:
+                changes[key].extend(patches[key])
+            else:
+                changes[key] = patches[key]
+    return changes
 
 
 class LayerCacheAggregator(object):

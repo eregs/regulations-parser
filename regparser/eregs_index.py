@@ -8,6 +8,7 @@ import shelve
 from dagger import dagger
 from lxml import etree
 
+from regparser.tree.struct import node_decode_hook, NodeEncoder
 from regparser.history.versions import Version
 
 
@@ -83,6 +84,26 @@ class VersionPath(_PathBase):
         key = lambda version: (version.effective, version.published)
         for version in sorted(versions, key=key):
             yield version
+
+
+class TreePath(_PathBase):
+    """Similar to Path, except that it reads and writes Node trees"""
+    def __init__(self, cfr_title, cfr_part):
+        self._set_path('tree', cfr_title, cfr_part)
+        self.encoder = NodeEncoder(sort_keys=True, indent=4,
+                                   separators=(', ', ': '))
+
+    def write(self, label, tree):
+        self._write(label, self.encoder.encode(tree))
+
+    def read(self, label):
+        return json.loads(self._read(label), object_hook=node_decode_hook)
+
+    def __len__(self):
+        return len(list(self._paths()))
+
+    def __iter__(self):
+        return self._paths()
 
 
 class DependencyException(Exception):

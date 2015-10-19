@@ -78,6 +78,16 @@ class NoticeXML(object):
             date_type))
         return datetime.strptime(value, "%Y-%m-%d").date()
 
+    def to_notice_dict(self):
+        """@todo Stop gap method -- converts NoticeXML into a dict which is
+        the assumed standard for other parts of the application. Try to only
+        add fields as needed"""
+        return {
+            'meta': {
+                'start_page': self.start_page
+            }
+        }
+
     # --- Setters/Getters for specific fields. ---
     # We encode relevant information within the XML, but wish to provide easy
     # access
