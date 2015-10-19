@@ -10,9 +10,10 @@ from mock import patch
 from regparser import eregs_index
 from regparser.commands import annual_editions
 from regparser.history.versions import Version
+from regparser.tree.struct import Node
 
 
-class CommandsAnnualEditions(TestCase):
+class CommandsAnnualEditionsTests(TestCase):
     def setUp(self):
         self.cli = CliRunner()
 
@@ -27,10 +28,13 @@ class CommandsAnnualEditions(TestCase):
         """If multiple versions affect the same annual edition, we should only
         receive the last"""
         with self.cli.isolated_filesystem():
-            path = eregs_index.VersionPath('12', '1000')
-            path.write(Version('1111', date(2000, 12, 1), date(2000, 12, 1)))
-            path.write(Version('2222', date(2000, 12, 2), date(2000, 12, 2)))
-            path.write(Version('3333', date(2001, 12, 1), date(2001, 12, 1)))
+            path = eregs_index.VersionEntry('12', '1000')
+            (path / '1111').write(Version('1111', date(2000, 12, 1),
+                                          date(2000, 12, 1)))
+            (path / '2222').write(Version('2222', date(2000, 12, 2),
+                                          date(2000, 12, 2)))
+            (path / '3333').write(Version('3333', date(2001, 12, 1),
+                                          date(2001, 12, 1)))
 
             results = list(annual_editions.last_versions(12, 1000))
             self.assertEqual(results, [
@@ -46,33 +50,36 @@ class CommandsAnnualEditions(TestCase):
             with self.assertRaises(eregs_index.DependencyException):
                 annual_editions.process_if_needed('12', '1000', last_versions)
 
-            eregs_index.VersionPath('12', '1000').write(
+            eregs_index.VersionEntry('12', '1000', '1111').write(
                 Version('1111', date(2000, 1, 1), date(2000, 1, 1)))
 
             with self.assertRaises(eregs_index.DependencyException):
                 annual_editions.process_if_needed('12', '1000', last_versions)
 
-    @patch("regparser.commands.annual_editions.process")
-    def test_process_if_needed_missing_writes(self, process):
+    @patch("regparser.commands.annual_editions.xml_parser")
+    def test_process_if_needed_missing_writes(self, xml_parser):
         """If output isn't already present, we should process. If it is
         present, we don't need to, unless a dependency has changed."""
         with self.cli.isolated_filesystem():
+            build_tree = xml_parser.reg_text.build_tree
+            build_tree.return_value = Node()
             last_versions = [annual_editions.LastVersionInYear('1111', 2000)]
-            eregs_index.VersionPath('12', '1000').write(
+            eregs_index.VersionEntry('12', '1000', '1111').write(
                 Version('1111', date(2000, 1, 1), date(2000, 1, 1)))
-            eregs_index.Path('annual', '12', '1000').write('2000', 'Annual')
+            eregs_index.Entry('annual', '12', '1000', 2000).write(
+                '<ROOT></ROOT>')
 
             annual_editions.process_if_needed('12', '1000', last_versions)
-            self.assertTrue(process.called)
+            self.assertTrue(build_tree.called)
 
-            process.reset_mock()
-            eregs_index.Path('tree', '12', '1000').write('1111', 'tree-here')
+            build_tree.reset_mock()
+            eregs_index.Entry('tree', '12', '1000', '1111').write('tree-here')
             annual_editions.process_if_needed('12', '1000', last_versions)
-            self.assertFalse(process.called)
+            self.assertFalse(build_tree.called)
 
             # Simulate a change to an input file
             os.utime(
-                os.path.join(eregs_index.ROOT, 'annual', '12', '1000', '2000'),
+                str(eregs_index.AnnualEntry('12', '1000', '2000')),
                 (time() + 1000, time() + 1000))
             annual_editions.process_if_needed('12', '1000', last_versions)
-            self.assertTrue(process.called)
+            self.assertTrue(build_tree.called)

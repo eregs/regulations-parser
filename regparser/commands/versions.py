@@ -6,10 +6,9 @@ import click
 from regparser import eregs_index
 from regparser.federalregister import fetch_notice_json
 from regparser.history.versions import Version
-from regparser.notice.xml import NoticeXML
 
 
-def fetch_version_ids(cfr_title, cfr_part, notice_path):
+def fetch_version_ids(cfr_title, cfr_part, notice_dir):
     """Returns a list of version ids after looking them up between the federal
     register and the local filesystem"""
     version_ids = []
@@ -19,7 +18,7 @@ def fetch_version_ids(cfr_title, cfr_part, notice_path):
         # Document number followed by a date
         regex = re.compile(re.escape(document_number) + r"_\d{8}")
         version_ids.extend(
-            [name for name in notice_path if regex.match(name)]
+            [name for name in notice_dir if regex.match(name)]
             or [document_number])
 
     return version_ids
@@ -42,37 +41,37 @@ def delays(xmls):
     return delays
 
 
-def generate_dependencies(cfr_title, cfr_part, version_ids, delays):
+def generate_dependencies(version_dir, version_ids, delays):
     """Creates a dependency graph and adds all dependencies for input xml and
     delays between notices"""
+    notice_dir = eregs_index.NoticeEntry()
     deps = eregs_index.DependencyGraph()
     for version_id in version_ids:
-        deps.add(("version", cfr_title, cfr_part, version_id),
-                 ("notice_xml", version_id))
+        deps.add(version_dir / version_id, notice_dir / version_id)
     for delayed, delay in delays.iteritems():
-        deps.add(("version", cfr_title, cfr_part, delayed),
-                 ("notice_xml", delay.by))
+        deps.add(version_dir / delayed, notice_dir / delay.by)
     return deps
 
 
-def write_to_disk(xml, version_path, delay=None):
+def write_to_disk(xml, version_entry, delay=None):
     """Serialize a Version instance to disk"""
     effective = xml.effective if delay is None else delay.until
     version = Version(identifier=xml.version_id, effective=effective,
                       published=xml.published)
-    version_path.write(version)
+    version_entry.write(version)
 
 
 def write_if_needed(cfr_title, cfr_part, version_ids, xmls, delays):
     """All versions which are stale (either because they were never create or
     because their dependency has been updated) are written to disk. If any
     dependency is missing, an exception is raised"""
-    deps = generate_dependencies(cfr_title, cfr_part, version_ids, delays)
-    version_path = eregs_index.VersionPath(cfr_title, cfr_part)
+    version_dir = eregs_index.VersionEntry(cfr_title, cfr_part)
+    deps = generate_dependencies(version_dir, version_ids, delays)
     for version_id in version_ids:
-        deps.validate_for("version", cfr_title, cfr_part, version_id)
-        if deps.is_stale("version", cfr_title, cfr_part, version_id):
-            write_to_disk(xmls[version_id], version_path,
+        version_entry = version_dir / version_id
+        deps.validate_for(version_entry)
+        if deps.is_stale(version_entry):
+            write_to_disk(xmls[version_id], version_entry,
                           delays.get(version_id))
 
 
@@ -84,10 +83,10 @@ def versions(cfr_title, cfr_part):
     notice XML and rules modifying the effective date of versions of a
     regulation"""
     cfr_title, cfr_part = str(cfr_title), str(cfr_part)
-    notice_path = eregs_index.Path("notice_xml")
+    notice_dir = eregs_index.NoticeEntry()
 
-    version_ids = fetch_version_ids(cfr_title, cfr_part, notice_path)
-    xmls = {version_id: NoticeXML(notice_path.read_xml(version_id))
-            for version_id in version_ids if version_id in notice_path}
+    version_ids = fetch_version_ids(cfr_title, cfr_part, notice_dir)
+    xmls = {version_id: (notice_dir / version_id).read()
+            for version_id in version_ids if version_id in notice_dir}
     delays_by_version = delays(xmls.values())
     write_if_needed(cfr_title, cfr_part, version_ids, xmls, delays_by_version)

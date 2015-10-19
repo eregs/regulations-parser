@@ -22,7 +22,7 @@ class CommandsVersionsTests(TestCase):
         fetch_notice_json.return_value = [{'document_number': '1'},
                                           {'document_number': '22'}]
         with self.cli.isolated_filesystem():
-            path = eregs_index.Path("path")
+            path = eregs_index.Entry("path")
             self.assertEqual(['1', '22'],
                              versions.fetch_version_ids('title', 'part', path))
 
@@ -33,11 +33,11 @@ class CommandsVersionsTests(TestCase):
         fetch_notice_json.return_value = [{'document_number': '1'},
                                           {'document_number': '22'}]
         with self.cli.isolated_filesystem():
-            path = eregs_index.Path("path")
-            path.write('1_20010101', 'v1')
-            path.write('1_20020202', 'v2')
-            path.write('22', 'second')
-            path.write('22-3344', 'unrelated file')
+            path = eregs_index.Entry("path")
+            (path / '1_20010101').write('v1')
+            (path / '1_20020202').write('v2')
+            (path / '22').write('second')
+            (path / '22-3344').write('unrelated file')
             self.assertEqual(['1_20010101', '1_20020202', '22'],
                              versions.fetch_version_ids('title', 'part', path))
 
@@ -86,18 +86,19 @@ class CommandsVersionsTests(TestCase):
         """If a version has been delayed, its effective date should be part of
         the serialized json"""
         xml = Mock()
-        path = eregs_index.VersionPath('12', '1000')
+        path = eregs_index.VersionEntry('12', '1000')
         with self.cli.isolated_filesystem():
             xml.configure_mock(effective=date(2002, 2, 2), version_id='111',
                                published=date(2002, 1, 1))
-            versions.write_to_disk(xml, path)
+            versions.write_to_disk(xml, path / '111')
 
             xml.configure_mock(version_id='222')
             versions.write_to_disk(
-                xml, path, versions.Delay(by='333', until=date(2004, 4, 4)))
+                xml, path / '222',
+                versions.Delay(by='333', until=date(2004, 4, 4)))
 
-            self.assertEqual(path.read('111').effective, date(2002, 2, 2))
-            self.assertEqual(path.read('222').effective, date(2004, 4, 4))
+            self.assertEqual((path / '111').read().effective, date(2002, 2, 2))
+            self.assertEqual((path / '222').read().effective, date(2004, 4, 4))
 
     @patch('regparser.commands.versions.write_to_disk')
     def test_write_if_needed_raises_exception(self, write_to_disk):
@@ -111,7 +112,7 @@ class CommandsVersionsTests(TestCase):
     def test_write_if_needed_output_missing(self, write_to_disk):
         """If the output file is missing, we'll always write"""
         with self.cli.isolated_filesystem():
-            eregs_index.Path('notice_xml').write('111', 'content')
+            eregs_index.Entry('notice_xml', '111').write('content')
             versions.write_if_needed('title', 'part', ['111'],
                                      {'111': 'xml111'}, {})
             self.assertTrue(write_to_disk.called)
@@ -121,8 +122,8 @@ class CommandsVersionsTests(TestCase):
         """If all dependencies are up to date and the output is present,
         there's no need to write anything"""
         with self.cli.isolated_filesystem():
-            eregs_index.Path('notice_xml').write('111', 'content')
-            eregs_index.Path('version', 'title', 'part').write('111', 'out')
+            eregs_index.Entry('notice_xml', '111').write('content')
+            eregs_index.Entry('version', 'title', 'part', '111').write('out')
             versions.write_if_needed('title', 'part', ['111'],
                                      {'111': 'xml111'}, {})
             self.assertFalse(write_to_disk.called)
@@ -131,9 +132,9 @@ class CommandsVersionsTests(TestCase):
     def test_write_if_needed_delays(self, write_to_disk):
         """Delays introduce dependencies."""
         with self.cli.isolated_filesystem():
-            eregs_index.Path('notice_xml').write('111', 'content')
-            eregs_index.Path('notice_xml').write('222', 'content')
-            eregs_index.Path('version', 'title', 'part').write('111', 'out')
+            eregs_index.Entry('notice_xml', '111').write('content')
+            eregs_index.Entry('notice_xml', '222').write('content')
+            eregs_index.Entry('version', 'title', 'part', '111').write('out')
             versions.write_if_needed(
                 'title', 'part', ['111'], {'111': 'xml111'},
                 {'111': versions.Delay('222', 'until-date')})
@@ -141,7 +142,7 @@ class CommandsVersionsTests(TestCase):
 
             # Simulate a change to an input file
             os.utime(
-                os.path.join(eregs_index.ROOT, 'notice_xml', '222'),
+                str(eregs_index.NoticeEntry('222')),
                 (time() + 1000, time() + 1000))
             versions.write_if_needed(
                 'title', 'part', ['111'], {'111': 'xml111'},

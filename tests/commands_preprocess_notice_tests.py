@@ -38,10 +38,9 @@ class CommandsPreprocessNoticeTests(HttpMixin, XMLBuilderMixin, TestCase):
         notice_xmls_for_url.return_value = [self.example_xml()]
         with cli.isolated_filesystem():
             cli.invoke(preprocess_notice, ['1234-5678'])
-            self.assertEqual(1, len(eregs_index.Path("notice_xml")))
+            self.assertEqual(1, len(eregs_index.NoticeEntry()))
 
-            written = NoticeXML(
-                eregs_index.Path("notice_xml").read_xml("1234-5678"))
+            written = eregs_index.NoticeEntry('1234-5678').read()
             self.assertEqual(written.effective, date(2008, 8, 8))
 
     @patch('regparser.commands.preprocess_notice.notice_xmls_for_url')
@@ -57,12 +56,12 @@ class CommandsPreprocessNoticeTests(HttpMixin, XMLBuilderMixin, TestCase):
             self.example_xml("Effective March 3, 2003")]
         with cli.isolated_filesystem():
             cli.invoke(preprocess_notice, ['1234-5678'])
-            path = eregs_index.Path("notice_xml")
-            self.assertEqual(3, len(path))
+            notice_path = eregs_index.NoticeEntry()
+            self.assertEqual(3, len(notice_path))
 
-            jan = NoticeXML(path.read_xml("1234-5678_20010101"))
-            feb = NoticeXML(path.read_xml("1234-5678_20020202"))
-            mar = NoticeXML(path.read_xml("1234-5678_20030303"))
+            jan = (notice_path / '1234-5678_20010101').read()
+            feb = (notice_path / '1234-5678_20020202').read()
+            mar = (notice_path / '1234-5678_20030303').read()
 
             self.assertEqual(jan.effective, date(2001, 1, 1))
             self.assertEqual(feb.effective, date(2002, 2, 2))
