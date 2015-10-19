@@ -11,7 +11,8 @@ from lxml import etree
 from regparser.history.versions import Version
 from regparser.notice.encoder import AmendmentEncoder
 from regparser.notice.xml import NoticeXML
-from regparser.tree.struct import full_node_decode_hook, FullNodeEncoder
+from regparser.tree.struct import (
+    frozen_node_decode_hook, full_node_decode_hook, FullNodeEncoder)
 
 
 ROOT = ".eregs_index"
@@ -111,44 +112,51 @@ class VersionEntry(Entry):
             yield version.identifier
 
 
-class TreeEntry(Entry):
+class _JSONEntry(Entry):
+    """Base class for importing/exporting JSON"""
+    JSON_ENCODER = json.JSONEncoder
+    JSON_DECODER = None
+
+    def serialize(self, content):
+        return self.JSON_ENCODER(
+            sort_keys=True, indent=4, separators=(', ', ': ')).encode(content)
+
+    def deserialize(self, content):
+        return json.loads(content, object_hook=self.JSON_DECODER)
+
+
+class TreeEntry(_JSONEntry):
     """Processes Nodes, keyed by tree"""
     PREFIX = (ROOT, 'tree')
-
-    def serialize(self, content):
-        return FullNodeEncoder(sort_keys=True, indent=4,
-                               separators=(', ', ': ')).encode(content)
-
-    def deserialize(self, content):
-        return json.loads(content, object_hook=full_node_decode_hook)
+    JSON_ENCODER = FullNodeEncoder
+    JSON_DECODER = staticmethod(full_node_decode_hook)
 
 
-class RuleChangesEntry(Entry):
+class FrozenTreeEntry(TreeEntry):
+    """Like TreeEntry, but decodes as FrozenNodes"""
+    JSON_DECODER = staticmethod(frozen_node_decode_hook)
+
+
+class RuleChangesEntry(_JSONEntry):
     """Processes notices, keyed by rule_changes"""
     PREFIX = (ROOT, 'rule_changes')
-
-    def serialize(self, content):
-        return AmendmentEncoder(sort_keys=True, indent=4,
-                                separators=(', ', ': ')).encode(content)
-
-    def deserialize(self, content):
-        return json.loads(content)
+    JSON_ENCODER = AmendmentEncoder
 
 
-class SxSEntry(RuleChangesEntry):
+class SxSEntry(_JSONEntry):
     """Processes Section-by-Section analyses, keyed by sxs"""
     PREFIX = (ROOT, 'sxs')
+    JSON_ENCODER = AmendmentEncoder
 
 
-class LayerEntry(Entry):
+class LayerEntry(_JSONEntry):
     """Processes layers, keyed by layer"""
     PREFIX = (ROOT, 'layer')
 
-    def serialize(self, content):
-        return json.dumps(content)
 
-    def deserialize(self, content):
-        return json.loads(content)
+class DiffEntry(_JSONEntry):
+    """Processes diffs, keyed by diff"""
+    PREFIX = (ROOT, 'diff')
 
 
 class DependencyException(Exception):
