@@ -1,6 +1,7 @@
 import click
 
 from regparser import eregs_index
+from regparser.commands.dependency_resolver import DependencyResolver
 from regparser.notice.build import process_xml
 
 
@@ -26,3 +27,12 @@ def parse_rule_changes(document_number):
     notice_xml = notice_entry.read()
     notice = process_xml(notice_xml.to_notice_dict(), notice_xml._xml)
     rule_entry.write(notice)
+
+
+class RuleChangesResolver(DependencyResolver):
+    PATH_PARTS = eregs_index.RuleChangesEntry.PREFIX + (
+        '(?P<doc_number>[a-zA-Z0-9-_]+)',)
+
+    def resolution(self):
+        args = [self.match.group('doc_number')]
+        return parse_rule_changes.main(args, standalone_mode=False)
