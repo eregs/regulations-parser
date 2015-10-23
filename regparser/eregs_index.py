@@ -210,4 +210,3 @@ class DependencyGraph(object):
         """Determine if a file needs to be rebuilt"""
         self._run_if_needed()
         return bool(self.dag.get(str(entry)).stale)
-
