@@ -203,6 +203,7 @@ class DependencyGraph(object):
         key = str(entry)
         for dependency in self.graph[key]:
             if self.dag.get(dependency).stale:
+                self.graph.close()
                 raise DependencyException(key, dependency)
 
     def is_stale(self, entry):
