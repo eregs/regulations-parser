@@ -79,12 +79,14 @@ class DependencyGraphTests(TestCase):
         with self.dependency_graph() as dgraph:
             dgraph.add(self.depender, self.dependency / '1')
             dgraph.add(self.depender, self.dependency / '2')
+            with dgraph.dependency_db() as db:
+                dependencies = db[str(self.depender)]
             self.assertEqual(
-                dgraph.graph[str(self.depender)],
+                dependencies,
                 set([str(self.dependency / 1), str(self.dependency / 2)]))
 
-            del dgraph     # implicitly closing the database
-            dgraph = eregs_index.DependencyGraph()
+            with eregs_index.DependencyGraph().dependency_db() as db:
+                dependencies = db[str(self.depender)]
             self.assertEqual(
-                dgraph.graph[str(self.depender)],
+                dependencies,
                 set([str(self.dependency / 1), str(self.dependency / 2)]))

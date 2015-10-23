@@ -26,28 +26,30 @@ class CommandsFillWithRulesTests(TestCase):
 
             deps = fill_with_rules.dependencies(
                 tree_dir, version_ids, '12', '1000')
+            with deps.dependency_db() as db:
+                graph = dict(db)    # copy
 
             # First is skipped, as we can't build it from a rule
-            self.assertNotIn(str(tree_dir / '111'), deps.graph)
+            self.assertNotIn(str(tree_dir / '111'), graph)
             # Second can also be skipped as a tree already exists
-            self.assertNotIn(str(tree_dir / '222'), deps.graph)
+            self.assertNotIn(str(tree_dir / '222'), graph)
             # Third relies on the associated versions and the second tree
             self.assertEqual(
-                deps.graph[str(tree_dir / '333')],
+                graph[str(tree_dir / '333')],
                 set([str(tree_dir / '222'),
                      str(rule_dir / '333'),
                      str(vers_dir / '333')]))
             # Fourth relies on the third, even though it's not been built
             self.assertEqual(
-                deps.graph[str(tree_dir / '444')],
+                graph[str(tree_dir / '444')],
                 set([str(tree_dir / '333'),
                      str(rule_dir / '444'),
                      str(vers_dir / '444')]))
             # Fifth can be skipped as the tree already exists
-            self.assertNotIn(str(tree_dir / '555'), deps.graph)
+            self.assertNotIn(str(tree_dir / '555'), graph)
             # Six relies on the fifth
             self.assertEqual(
-                deps.graph[str(tree_dir / '666')],
+                graph[str(tree_dir / '666')],
                 set([str(tree_dir / '555'),
                      str(rule_dir / '666'),
                      str(vers_dir / '666')]))
