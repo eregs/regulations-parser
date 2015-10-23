@@ -37,23 +37,26 @@ class CommandsLayersTests(TestCase):
                 'external-citations', 'internal-citations', 'toc',
                 'interpretations', 'terms', 'paragraph-markers', 'keyterms',
                 'formatting', 'graphics']
+
+            with deps.dependency_db() as db:
+                graph = dict(db)    # copy
             for version_id in ('1111', '2222', '3333'):
                 for layer_name in simple_layers:
                     self.assertEqual(
-                        deps.graph[str(layer_dir / version_id / layer_name)],
+                        graph[str(layer_dir / version_id / layer_name)],
                         set([str(tree_dir / version_id)]))
                 self.assertEqual(
-                    deps.graph[str(layer_dir / version_id / 'meta')],
+                    graph[str(layer_dir / version_id / 'meta')],
                     set([str(tree_dir / version_id),
                          str(version_dir / version_id)]))
             self.assertEqual(
-                deps.graph[str(layer_dir / '1111' / 'analyses')],
+                graph[str(layer_dir / '1111' / 'analyses')],
                 set([str(tree_dir / '1111'), str(sxs_dir / '1111')]))
             self.assertEqual(
-                deps.graph[str(layer_dir / '2222' / 'analyses')],
+                graph[str(layer_dir / '2222' / 'analyses')],
                 set([str(tree_dir / '2222'), str(sxs_dir / '1111')]))
             self.assertEqual(
-                deps.graph[str(layer_dir / '3333' / 'analyses')],
+                graph[str(layer_dir / '3333' / 'analyses')],
                 set([str(tree_dir / '3333'), str(sxs_dir / '1111')]))
 
     def test_sxs_sources(self):

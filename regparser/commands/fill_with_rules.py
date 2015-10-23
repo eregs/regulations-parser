@@ -29,10 +29,12 @@ def derived_from_rules(version_ids, deps, tree_path):
     that, we'll filter by those trees which have a dependency on a parsed
     rule"""
     rule_versions = []
+    with deps.dependency_db() as db:
+        graph = dict(db)    # copy
     for version_id in version_ids:
         path = str(tree_path / version_id)
         rule_change = str(eregs_index.RuleChangesEntry(version_id))
-        if rule_change in deps.graph.get(path, []):
+        if rule_change in graph.get(path, []):
             rule_versions.append(version_id)
     return rule_versions
 
