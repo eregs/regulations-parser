@@ -4,6 +4,9 @@ from regparser import eregs_index
 from regparser.api_writer import Client
 
 
+# The write process is split into a set of functions, each responsible for
+# writing a particular type of entity
+
 def write_trees(client, cfr_title, cfr_part):
     tree_dir = eregs_index.TreeEntry(cfr_title, cfr_part)
     for version_id in eregs_index.VersionEntry(cfr_title, cfr_part):
@@ -48,7 +51,13 @@ def write_diffs(client, cfr_title, cfr_part):
 @click.argument('cfr_part', type=int)
 @click.argument('output')
 def write_to(cfr_title, cfr_part, output):
-    """TODO"""
+    """Export data. Sends all data in the index to an external source.
+
+    OUTPUT can be a
+    * directory (if it does not exist, it will be created)
+    * uri (the base url of an instance of regulations-core)
+    * a directory prefixed with "git://". This will export to a git
+      repository"""
     client = Client(output)
     cfr_part = str(cfr_part)
     write_trees(client, cfr_title, cfr_part)
