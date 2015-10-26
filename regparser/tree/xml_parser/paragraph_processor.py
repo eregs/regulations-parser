@@ -83,7 +83,12 @@ class ParagraphProcessor(object):
             and labels[0] == mtypes.MARKERLESS
             and labels[1] != mtypes.MARKERLESS)
 
-        if only_one or switches_after_first:
+        def table_first(nodes):
+            if nodes and getattr(nodes[0].source_xml, "tag", "") == "GPOTABLE":
+                return True
+            return False
+
+        if not table_first(nodes) and any([only_one, switches_after_first]):
             return nodes[0], nodes[1:]
         else:
             return None, nodes
