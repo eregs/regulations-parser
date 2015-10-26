@@ -110,8 +110,16 @@ class ParagraphProcessorTest(TestCase):
         self.assertEqual(a.children[0].label, ['root', 'p1', 'a', 'p2'])
         self.assertEqual(b.label, ['root', 'p1', 'b'])
 
+    def test_separate_intro_empty_nodes(self):
+        """ Make sure separate_intro can handle an empty node list. """
+        nodes = []
+        intro, rest = _ExampleProcessor().separate_intro(nodes)
+        self.assertEqual(None, intro)
+        self.assertEqual(nodes[1:], rest)
+
     def test_separate_intro_positive(self):
-        """Positive test case for a separate introductory paragraph"""
+        """Positive test cases for a separate introductory paragraph"""
+        # The typical case:
         nodes = [Node(label=[mtypes.MARKERLESS]), Node(label=['a']),
                  Node(label=['b']), Node(label='1')]
         intro, rest = _ExampleProcessor().separate_intro(nodes)
@@ -119,11 +127,40 @@ class ParagraphProcessorTest(TestCase):
         self.assertEqual(nodes[1:], rest)
 
     def test_separate_intro_negative(self):
-        """Negative test case for a separate introductory paragraph"""
+        """Negative test cases for a separate introductory paragraph"""
+        # Multiple MARKERLESS nodes:
         nodes = [Node(label=[mtypes.MARKERLESS]),
                  Node(label=[mtypes.MARKERLESS]),
                  Node(label=[mtypes.MARKERLESS]),
                  Node(label=[mtypes.MARKERLESS])]
+        intro, rest = _ExampleProcessor().separate_intro(nodes)
+        self.assertIsNone(intro)
+        self.assertEqual(nodes, rest)
+
+    def test_separate_intro_with_table(self):
+        """ We don't want tables to be turned into intro paragraphs. """
+        # A MARKERLESS node followed by a table node:
+        xml_table = etree.fromstring('<GPOTABLE>stuff</GPOTABLE>')
+        table_node = Node(label=[mtypes.MARKERLESS], source_xml=xml_table)
+        nodes = [Node(label=[mtypes.MARKERLESS, table_node])]
+        intro, rest = _ExampleProcessor().separate_intro(nodes)
+        self.assertEqual(nodes[0], intro)
+        self.assertEqual(nodes[1:], rest)
+
+        # A node containing only a table:
+        xml_table = etree.fromstring('<GPOTABLE>stuff</GPOTABLE>')
+        table_node = Node(label=[mtypes.MARKERLESS], source_xml=xml_table)
+        nodes = [table_node]
+        intro, rest = _ExampleProcessor().separate_intro(nodes)
+        self.assertIsNone(intro)
+        self.assertEqual(nodes, rest)
+
+        # A table node and another node:
+        nodes = [table_node, Node(label=['a'])]
+        intro, rest = _ExampleProcessor().separate_intro(nodes)
+        self.assertIsNone(intro)
+        self.assertEqual(nodes, rest)
+        nodes = [table_node, Node(label=[mtypes.MARKERLESS])]
         intro, rest = _ExampleProcessor().separate_intro(nodes)
         self.assertIsNone(intro)
         self.assertEqual(nodes, rest)
