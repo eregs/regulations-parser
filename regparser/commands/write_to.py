@@ -53,6 +53,7 @@ def write_diffs(client, cfr_title, cfr_part):
 def write_to(cfr_title, cfr_part, output):
     """Export data. Sends all data in the index to an external source.
 
+    \b
     OUTPUT can be a
     * directory (if it does not exist, it will be created)
     * uri (the base url of an instance of regulations-core)
