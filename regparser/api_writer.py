@@ -18,19 +18,16 @@ class AmendmentNodeEncoder(AmendmentEncoder, NodeEncoder):
 class FSWriteContent:
     """This writer places the contents in the file system """
 
-    def __init__(self, path):
-        self.path = path
+    def __init__(self, *path_parts):
+        self.path = os.path.join(*path_parts)
 
     def write(self, python_obj):
         """Write the object as json to disk"""
-        path_parts = self.path.split('/')
-        dir_path = settings.OUTPUT_DIR + os.path.join(*path_parts[:-1])
-
+        dir_path = os.path.split(self.path)[0]
         if not os.path.exists(dir_path):
             os.makedirs(dir_path)
 
-        full_path = settings.OUTPUT_DIR + os.path.join(*path_parts)
-        with open(full_path, 'w') as out:
+        with open(self.path, 'w') as out:
             text = AmendmentNodeEncoder(
                 sort_keys=True, indent=4,
                 separators=(', ', ': ')).encode(python_obj)
@@ -39,21 +36,21 @@ class FSWriteContent:
 
 class APIWriteContent:
     """This writer writes the contents to the specified API"""
-    def __init__(self, path):
-        self.path = path
+    def __init__(self, *path_parts):
+        self.path = "/".join(path_parts)
 
     def write(self, python_obj):
         """Write the object (as json) to the API"""
         requests.post(
-            settings.API_BASE + self.path,
+            self.path,
             data=AmendmentNodeEncoder().encode(python_obj),
             headers={'content-type': 'application/json'})
 
 
 class GitWriteContent:
     """This writer places the content in a git repo on the file system"""
-    def __init__(self, path):
-        self.path = path
+    def __init__(self, *path_parts):
+        self.path = os.path.join(*path_parts)
 
     def folder_name(self, node):
         """Directories are generally just the last element a node's label,
@@ -92,9 +89,8 @@ class GitWriteContent:
 
     def write(self, python_object):
         if "regulation" in self.path:
-            path_parts = self.path.split('/')
-            dir_path = settings.GIT_OUTPUT_DIR + os.path.join(*path_parts[:-1])
-
+            dir_path, version_id = os.path.split(self.path)
+            cfr_part = os.path.split(dir_path)[1]
             if not os.path.exists(dir_path):
                 os.makedirs(dir_path)
 
@@ -102,7 +98,7 @@ class GitWriteContent:
                 repo = Repo(dir_path)
             except InvalidGitRepositoryError:
                 repo = Repo.init(dir_path)
-                repo.index.commit("Initial commit for " + path_parts[-2])
+                repo.index.commit("Initial commit for " + cfr_part)
 
             # Write all files (and delete any old ones)
             self.write_tree(dir_path, python_object)
@@ -120,30 +116,42 @@ class GitWriteContent:
             if deleted:
                 repo.index.remove(deleted)
             # Commit with the notice id as the commit message
-            repo.index.commit(path_parts[-1])
+            repo.index.commit(version_id)
 
 
 class Client:
     """A Client for writing regulation(s) and meta data."""
 
-    def __init__(self):
-        if settings.API_BASE:
+    def __init__(self, base=None):
+        if base is None and settings.API_BASE:
+            base = settings.API_BASE
+        elif base is None and getattr(settings, 'GIT_OUTPUT_DIR', ''):
+            base = 'git://' + settings.GIT_OUTPUT_DIR
+        elif base is None:
+            base = settings.OUTPUT_DIR
+        elif base.startswith('file://'):
+            base = base[len('file://'):]
+
+        if base.startswith('http://') or base.startswith('https://'):
             self.writer_class = APIWriteContent
-        elif getattr(settings, 'GIT_OUTPUT_DIR', ''):
+            self.base = base    # keep the protocol, etc.
+        elif base.startswith('git://'):
             self.writer_class = GitWriteContent
+            self.base = base[len('git://'):]
         else:
             self.writer_class = FSWriteContent
+            self.base = base
 
     def regulation(self, label, doc_number):
-        return self.writer_class("regulation/%s/%s" % (label, doc_number))
+        return self.writer_class(self.base, "regulation", label, doc_number)
 
     def layer(self, layer_name, label, doc_number):
-        return self.writer_class(
-            "layer/%s/%s/%s" % (layer_name, label, doc_number))
+        return self.writer_class(self.base, "layer", layer_name, label,
+                                 doc_number)
 
     def notice(self, doc_number):
-        return self.writer_class("notice/%s" % doc_number)
+        return self.writer_class(self.base, "notice", doc_number)
 
     def diff(self, label, old_version, new_version):
-        return self.writer_class("diff/%s/%s/%s" % (label, old_version,
-                                                    new_version))
+        return self.writer_class(self.base, "diff", label, old_version,
+                                 new_version)
