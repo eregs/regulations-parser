@@ -3,22 +3,16 @@ from importlib import import_module
 import pkgutil
 
 import click
+import requests_cache   # @todo - replace with cache control
 
 from regparser import commands, eregs_index
 from regparser.commands.dependency_resolver import DependencyResolver
-
-try:
-    import requests_cache   # @todo - replace with cache control
-    requests_cache.install_cache('fr_cache')
-except ImportError:
-    # If the cache library isn't present, do nothing -- we'll just make full
-    # HTTP requests rather than looking it up from the cache
-    pass
 
 
 @click.group()
 def cli():
     logging.basicConfig(level=logging.INFO)
+    requests_cache.install_cache('fr_cache')
 
 
 for _, command_name, _ in pkgutil.iter_modules(commands.__path__):
