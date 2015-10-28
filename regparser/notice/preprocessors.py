@@ -3,6 +3,8 @@ in the XML"""
 import abc
 import re
 
+from lxml import etree
+
 
 class PreProcessorBase(object):
     """Base class for all the preprocessors. Defines the interface they must
@@ -108,6 +110,68 @@ class ApprovalsFP(PreProcessorBase):
                 idx = grandparent.index(parent)
                 grandparent.remove(parent)
                 grandparent.insert(idx, appro)
+
+
+class ExtractTags(PreProcessorBase):
+    """Often, what should be a single EXTRACT tag is broken up by incorrectly
+    positioned subtags. Try to find any such EXTRACT sandwiches and merge."""
+    def extract_pair(self, extract):
+        """Checks for and merges two EXTRACT tags in sequence"""
+        next_el = extract.getnext()
+        if next_el is not None and next_el.tag == 'EXTRACT':
+            self.combine_with_following(extract, include_tag=False)
+            return True
+        return False
+
+    def sandwich(self, extract):
+        """Checks for this pattern: EXTRACT (FTNT|GPOTABLE) EXTRACT, and, if
+        present, combines the first two tags. The two EXTRACTs would get
+        merged in a later pass"""
+        next_el = extract.getnext()
+        next_next_el = next_el is not None and next_el.getnext()
+        if next_el is not None and next_next_el is not None:
+            has_filling = next_el.tag in ('FTNT', 'GPOTABLE')
+            has_bread = next_next_el.tag == 'EXTRACT'
+            if has_filling and has_bread:   # -> is sandwich
+                self.combine_with_following(extract, include_tag=True)
+                return True
+        return False
+
+    def strip_root_tag(self, string):
+        first_tag_ends_at = string.find('>')
+        last_tag_starts_at = string.rfind('<')
+        return string[first_tag_ends_at+1:last_tag_starts_at]
+
+    def combine_with_following(self, extract, include_tag):
+        """We need to merge an extract with the following tag. Rather than
+        iterating over the node, text, tail text, etc. we're taking a more
+        naive solution: convert to a string, reparse"""
+        next_el = extract.getnext()
+        if next_el is not None:
+            xml_str = self.strip_root_tag(etree.tostring(extract))
+            next_str = etree.tostring(next_el)
+
+            if include_tag:
+                xml_str += '\n' + next_str
+            else:
+                xml_str += '\n' + self.strip_root_tag(next_str)
+
+            new_el = etree.fromstring('<EXTRACT>{}</EXTRACT>'.format(xml_str))
+
+            parent = extract.getparent()
+            parent.replace(extract, new_el)
+            parent.remove(next_el)
+
+    def transform(self, xml):
+        # we're going to be mutating the tree while searching it, so we'll
+        # reset after every find
+        should_continue = True
+        while should_continue:
+            should_continue = False
+            for extract in xml.xpath(".//EXTRACT"):
+                if self.extract_pair(extract) or self.sandwich(extract):
+                    should_continue = True
+                    break
 
 
 # Surface all of the PreProcessorBase classes

@@ -13,7 +13,7 @@ from regparser.history.notices import (
     applicable as applicable_notices, group_by_eff_date)
 from regparser.history.delays import modify_effective_dates
 from regparser.layer import ALL_LAYERS
-from regparser.notice import fake as notice_fake
+from regparser.notice import fake as notice_fake, preprocessors
 from regparser.notice.compiler import compile_regulation
 from regparser.tree import struct, xml_parser
 
@@ -332,6 +332,9 @@ def tree_and_builder(filename, title, checkpoint_path=None, doc_number=None):
         reg_xml = etree.fromstring(reg_text)
     else:
         raise ValueError("Building from text input is no longer supported")
+
+    for preprocessor in preprocessors.ALL:
+        preprocessor().transform(reg_xml)
 
     reg_tree = checkpointer.checkpoint(
         "init-tree-" + file_digest,
