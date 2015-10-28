@@ -17,5 +17,5 @@ setup(
         "python-constraint",
         "requests"
     ],
-    entry_points={"console_scripts": ["eregs=eregs:cli"]}
+    entry_points={"console_scripts": ["eregs=eregs:main"]}
 )
