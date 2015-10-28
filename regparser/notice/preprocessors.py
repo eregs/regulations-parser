@@ -115,6 +115,8 @@ class ApprovalsFP(PreProcessorBase):
 class ExtractTags(PreProcessorBase):
     """Often, what should be a single EXTRACT tag is broken up by incorrectly
     positioned subtags. Try to find any such EXTRACT sandwiches and merge."""
+    FILLING = ('FTNT', 'GPOTABLE')  # tags which shouldn't be between EXTRACTs
+
     def extract_pair(self, extract):
         """Checks for and merges two EXTRACT tags in sequence"""
         next_el = extract.getnext()
@@ -124,13 +126,13 @@ class ExtractTags(PreProcessorBase):
         return False
 
     def sandwich(self, extract):
-        """Checks for this pattern: EXTRACT (FTNT|GPOTABLE) EXTRACT, and, if
-        present, combines the first two tags. The two EXTRACTs would get
-        merged in a later pass"""
+        """Checks for this pattern: EXTRACT FILLING EXTRACT, and, if present,
+        combines the first two tags. The two EXTRACTs would get merged in a
+        later pass"""
         next_el = extract.getnext()
         next_next_el = next_el is not None and next_el.getnext()
         if next_el is not None and next_next_el is not None:
-            has_filling = next_el.tag in ('FTNT', 'GPOTABLE')
+            has_filling = next_el.tag in self.FILLING
             has_bread = next_next_el.tag == 'EXTRACT'
             if has_filling and has_bread:   # -> is sandwich
                 self.combine_with_following(extract, include_tag=True)
