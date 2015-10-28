@@ -127,3 +127,114 @@ class ApprovalsFPTests(XMLBuilderMixin, TestCase):
         self.assertEqual(appros, [
             self.control_number('1111-2222'), self.control_number('2222-4444'),
             self.control_number('4444-8888', 'Paragraph (b)(2) approved')])
+
+
+class ExtractTagsTests(XMLBuilderMixin, TestCase):
+    def setUp(self):
+        super(ExtractTagsTests, self).setUp()
+        self.et = preprocessors.ExtractTags()
+
+    def test_extract_pair_not_pair(self):
+        """XML shouldn't be modified and should get a negative response if
+        this pattern isn't present"""
+        with self.tree.builder("ROOT") as root:
+            root.EXTRACT("contents")
+            root.TAG1()
+
+        with self.assert_xml_transformed() as original_xml:
+            self.assertFalse(self.et.extract_pair(original_xml[0]))
+            # No tree change
+
+    def test_extract_pair_last_node(self):
+        """XML shouldn't be modified when the EXTRACT is the last element"""
+        with self.tree.builder("ROOT") as root:
+            root.TAG1()
+            root.EXTRACT("contents")
+
+        with self.assert_xml_transformed() as original_xml:
+            self.assertFalse(self.et.extract_pair(original_xml[1]))
+            # No tree change
+
+    def test_extract_pair(self):
+        """Sequences of EXTRACT nodes should get joined"""
+        with self.tree.builder("ROOT") as root:
+            root.TAG1()
+            root.EXTRACT("contents1")
+            with root.EXTRACT("contents2") as extract:
+                extract.TAG2()
+                extract.TAG3()
+            root.EXTRACT("contents3")
+            root.TAG4()
+            root.EXTRACT("contents4")
+
+        contents = "contents1\ncontents2<TAG2/><TAG3/>"
+        with self.assert_xml_transformed() as original_xml:
+            self.assertTrue(self.et.extract_pair(original_xml[1]))
+            with self.tree.builder("ROOT") as root:
+                root.TAG1()
+                root.EXTRACT(_xml=contents)
+                root.EXTRACT("contents3")  # First pass will only merge one
+                root.TAG4()
+                root.EXTRACT("contents4")
+
+        with self.assert_xml_transformed() as original_xml:
+            self.assertTrue(self.et.extract_pair(original_xml[1]))
+            contents += "\ncontents3"
+            with self.tree.builder("ROOT") as root:
+                root.TAG1()
+                root.EXTRACT(_xml=contents)
+                root.TAG4()
+                root.EXTRACT("contents4")
+
+    def test_sandwich_no_bread(self):
+        """For sandwich to be triggered, EXTRACT tags need to be separated by
+        only one tag"""
+        with self.tree.builder("ROOT") as root:
+            root.EXTRACT()
+            root.GPOTABLE()
+            root.GPOTABLE()
+            root.EXTRACT()
+
+        with self.assert_xml_transformed() as original_xml:
+            self.assertFalse(self.et.sandwich(original_xml[0]))
+            # No tree change
+
+    def test_sandwich_last_tag(self):
+        """For sandwich to be triggered, EXTRACT tag can't be the last tag"""
+        with self.tree.builder("ROOT") as root:
+            root.GPOTABLE()
+            root.EXTRACT()
+
+        with self.assert_xml_transformed() as original_xml:
+            self.assertFalse(self.et.sandwich(original_xml[1]))
+            # No tree change
+
+    def test_sandwich_bad_filling(self):
+        """For sandwich to be triggered, EXTRACT tags need to surround one of
+        a handful of specific tags"""
+        with self.tree.builder("ROOT") as root:
+            root.EXTRACT()
+            root.P()
+            root.EXTRACT()
+
+        with self.assert_xml_transformed() as original_xml:
+            self.assertFalse(self.et.sandwich(original_xml[0]))
+            # No tree change
+
+    def test_sandwich(self):
+        """When the correct tags are separated by EXTRACTs, they should get
+        merged"""
+        with self.tree.builder("ROOT") as root:
+            root.TAG1()
+            root.EXTRACT("extract contents")
+            root.GPOTABLE("table contents")
+            root.EXTRACT()
+
+        with self.assert_xml_transformed() as original_xml:
+            self.assertTrue(self.et.sandwich(original_xml[1]))
+            with self.tree.builder("ROOT") as root:
+                root.TAG1()
+                contents = ("extract contents\n<GPOTABLE>table contents"
+                            "</GPOTABLE>")
+                root.EXTRACT(_xml=contents)
+                root.EXTRACT()
