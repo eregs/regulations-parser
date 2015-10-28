@@ -4,6 +4,7 @@
 import click
 
 from regparser import eregs_index
+from regparser.commands.dependency_resolver import DependencyResolver
 from regparser.notice.build import process_xml
 
 
@@ -29,3 +30,12 @@ def fetch_sxs(document_number):
     notice_xml = notice_entry.read()
     notice = process_xml(notice_xml.to_notice_dict(), notice_xml._xml)
     sxs_entry.write(notice)
+
+
+class RuleChangesResolver(DependencyResolver):
+    PATH_PARTS = eregs_index.SxSEntry.PREFIX + (
+        '(?P<doc_number>[a-zA-Z0-9-_]+)',)
+
+    def resolution(self):
+        args = [self.match.group('doc_number')]
+        return fetch_sxs.main(args, standalone_mode=False)
