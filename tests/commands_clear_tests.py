@@ -21,7 +21,11 @@ class CommandsClearTests(TestCase):
             open('fr_cache.sqlite', 'w').close()
             self.assertTrue(os.path.exists('fr_cache.sqlite'))
 
+            # flag must be present
             self.cli.invoke(clear)
+            self.assertTrue(os.path.exists('fr_cache.sqlite'))
+
+            self.cli.invoke(clear, ['--http-cache'])
             self.assertFalse(os.path.exists('fr_cache.sqlite'))
 
     def test_deletes_index(self):
@@ -34,3 +38,23 @@ class CommandsClearTests(TestCase):
             self.cli.invoke(clear)
             self.assertEqual(0, len(eregs_index.Entry("aaa")))
             self.assertEqual(0, len(eregs_index.Entry("bbb")))
+
+    def test_deletes_can_be_focused(self):
+        """If params are provided to delete certain directories, only those
+        directories should get removed"""
+        with self.cli.isolated_filesystem():
+            to_delete = ['delroot/aaa/bbb', 'delroot/aaa/ccc',
+                         'root/delsub/aaa', 'root/delsub/bbb']
+            to_keep = ['root/othersub/aaa', 'root/aaa',
+                       'top-level-file', 'other-root/aaa']
+
+            for path in to_delete + to_keep:
+                eregs_index.Entry(*path.split('/')).write('')
+
+            self.cli.invoke(clear, ['delroot', 'root/delsub'])
+            self.assertItemsEqual(['top-level-file', 'root', 'other-root'],
+                                  list(eregs_index.Entry()))
+            self.assertItemsEqual(['othersub', 'aaa'],
+                                  list(eregs_index.Entry('root')))
+            self.assertItemsEqual(['aaa'],
+                                  list(eregs_index.Entry('other-root')))
