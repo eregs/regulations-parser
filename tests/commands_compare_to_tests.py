@@ -95,8 +95,8 @@ class CommandsCompareToTests(HttpMixin, TestCase):
         say yes, we should see a diff"""
         local_path = os.path.join(self.tmpdir, 'file.json')
         with open(local_path, 'w') as f:
-            json.dump({'key1': 1, 'key2': 'a'}, f)
-        self.expect_json_http({'key1': 1, 'key2': 'b'})
+            json.dump({'key1': 1, 'key2': 'b'}, f)
+        self.expect_json_http({'key1': 1, 'key2': 'a'})
 
         # No, I do not want to see diffs
         result = self.run_compare(local_path, 'http://example.com/file.json',
