@@ -237,7 +237,7 @@ def build_from_section(reg_part, section_xml):
     section_nodes = []
     for section_number in section_nums:
         section_number = str(section_number)
-        section_text = section_xml.text
+        section_text = section_xml.text.strip()
         tagged_section_text = section_xml.text
 
         section_title = u"§ " + reg_part + "." + section_number
