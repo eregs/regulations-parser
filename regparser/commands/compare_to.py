@@ -40,7 +40,8 @@ def compare(local_path, remote_url):
         if remote != local:
             click.echo("Content differs: {} {}".format(local_path, remote_url))
             if click.confirm("Show diff?"):
-                map(click.echo, udiff(remote, local))
+                diffs_str = '\n'.join(udiff(remote, local))
+                click.echo_via_pager(diffs_str)
 
 
 @click.command()
