@@ -94,7 +94,7 @@ class ParagraphProcessor(object):
         nodes = self.parse_nodes(xml)
         intro_node, nodes = self.separate_intro(nodes)
         if intro_node:
-            root.text += " " + intro_node.text
+            root.text = " ".join([root.text, intro_node.text]).strip()
             # @todo - this is ugly. Make tagged_text a legitimate field on Node
             tagged_text_list = []
             if hasattr(root, 'tagged_text'):
