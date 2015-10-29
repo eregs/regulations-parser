@@ -1,4 +1,5 @@
 # vim: set encoding=utf-8
+from functools import partial as mk_partial_fn
 import unittest
 
 from lxml import etree
@@ -43,49 +44,60 @@ class TreeUtilsTest(unittest.TestCase):
         result = [m for m in tree_utils.get_paragraph_markers(text)]
         self.assertEqual(['i', 'A'], result)
 
+    def assert_transform_equality(self, input_val, expected_output, *fns):
+        """Verify that the result of chaining (more specifically, composing)
+        the fns on the input_val with result in the expected output value."""
+        for fn in fns:
+            input_val = fn(input_val)
+        self.assertEqual(input_val, expected_output)
+
     def test_get_node_text_tags(self):
-        text = '<P>(a)<E T="03">Fruit.</E>Apples,<PRTPAGE P="102"/> and '
-        text += 'Pineapples</P>'
-        doc = etree.fromstring(text)
-        result = tree_utils.get_node_text_tags_preserved(doc)
-
-        self.assertEquals(
-            '(a)<E T="03">Fruit.</E>Apples, and Pineapples', result)
-
-    def test_no_tags(self):
-        text = '<P>(a) Fruit. Apples, and Pineapples</P>'
-        doc = etree.fromstring(text)
-        result = tree_utils.get_node_text_tags_preserved(doc)
-        self.assertEqual('(a) Fruit. Apples, and Pineapples', result)
+        """Verify that the irrelevant appropriate tags are stripped for a
+        handful of examples"""
+        transforms = [etree.fromstring,
+                      tree_utils.get_node_text_tags_preserved]
+        self.assert_transform_equality(
+            ('<P>(a)<E T="03">Fruit.</E>Apples,<PRTPAGE P="102"/> and '
+             'Pineapples</P>'),
+            '(a)<E T="03">Fruit.</E>Apples, and Pineapples', *transforms)
+        self.assert_transform_equality(
+            '<P>(a) Fruit. Apples, and Pineapples</P>',
+            '(a) Fruit. Apples, and Pineapples', *transforms)
 
     def test_get_node_text(self):
-        text = '<P>(a)<E T="03">Fruit.</E>Apps,<PRTPAGE P="102"/> and pins</P>'
-        doc = etree.fromstring(text)
-        result = tree_utils.get_node_text(doc)
+        """Verify that the appropriate tags are removed, and, if requested,
+        spaces are added for a handful of examples"""
+        no_space = [etree.fromstring, tree_utils.get_node_text]
+        with_space = [etree.fromstring,
+                      mk_partial_fn(tree_utils.get_node_text, add_spaces=True)]
 
-        self.assertEquals('(a)Fruit.Apps, and pins', result)
-
-        text = '<P>(a)<E T="03">Fruit.</E>Apps,<PRTPAGE P="102"/> and pins</P>'
-        doc = etree.fromstring(text)
-        result = tree_utils.get_node_text(doc, add_spaces=True)
-
-        self.assertEquals('(a) Fruit. Apps, and pins', result)
-
-        text = '<P>(a) <E T="03">Fruit.</E> Apps, and pins</P>'
-        doc = etree.fromstring(text)
-        result = tree_utils.get_node_text(doc, add_spaces=True)
-
-        self.assertEquals('(a) Fruit. Apps, and pins', result)
-
-        text = '<P>(a) ABC<E T="52">123</E>= 5</P>'
-        doc = etree.fromstring(text)
-        result = tree_utils.get_node_text(doc, add_spaces=True)
-        self.assertEquals('(a) ABC_{123} = 5', result)
-
-        text = '<P>(a) <E>Keyterm.</E> ABC<E T="52">123</E>= 5</P>'
-        doc = etree.fromstring(text)
-        result = tree_utils.get_node_text(doc, add_spaces=True)
-        self.assertEquals('(a) Keyterm. ABC_{123} = 5', result)
+        self.assert_transform_equality(
+            '<P>(a)<E T="03">Fruit.</E>Apps,<PRTPAGE P="102"/> and pins</P>',
+            '(a)Fruit.Apps, and pins', *no_space)
+        self.assert_transform_equality(
+            '<P>(a)<E T="03">Fruit.</E>Apps,<PRTPAGE P="102"/> and pins</P>',
+            '(a) Fruit. Apps, and pins', *with_space)
+        self.assert_transform_equality(
+            '<P>(a) <E T="03">Fruit.</E> Apps, and pins</P>',
+            '(a) Fruit. Apps, and pins', *with_space)
+        self.assert_transform_equality(
+            '<P>(a) ABC<E T="52">123</E>= 5</P>',
+            '(a) ABC_{123} = 5', *with_space)
+        self.assert_transform_equality(
+            '<P>(a) <E>Keyterm.</E> ABC<E T="52">123</E>= 5</P>',
+            '(a) Keyterm. ABC_{123} = 5', *with_space)
+        self.assert_transform_equality(
+            '<P>(d) <E T="03">Text text</E>-more stuffs</P>',
+            '(d) Text text-more stuffs', *with_space)
+        self.assert_transform_equality(
+            '<P>(d) <E T="03">Text text-</E>more stuffs</P>',
+            '(d) Text text-more stuffs', *with_space)
+        self.assert_transform_equality(
+            u'<P>(d) <E T="03">Text text—</E>more stuffs</P>',
+            u'(d) Text text—more stuffs', *with_space)
+        self.assert_transform_equality(
+            u'<P>(d) <E T="03">Text text</E>—more stuffs</P>',
+            u'(d) Text text—more stuffs', *with_space)
 
     def test_unwind_stack(self):
         level_one_n = Node(label=['272'])
