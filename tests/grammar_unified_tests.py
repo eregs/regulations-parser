@@ -37,19 +37,19 @@ class GrammarCommonTests(TestCase):
             self.assertEqual("3", result.section)
             self.assertEqual("4", result.c1)
 
+    def assert_notice_cfr_p_match(self, text, title, parts):
+        result = unified.notice_cfr_p.parseString(text)
+        self.assertEqual(str(title), result.cfr_title)
+        self.assertEqual([str(part) for part in parts], list(result.cfr_parts))
+
     def test_notice_cfr_p(self):
-        text = '12 CFR Parts 1002, 1024, and 1026'
-        result = unified.notice_cfr_p.parseString(text)
-        self.assertEqual(['1002', '1024', '1026'], list(result))
-        text = '12 CFR Parts 1024, and 1026'
-        result = unified.notice_cfr_p.parseString(text)
-        self.assertEqual(['1024', '1026'], list(result))
-        text = '12 CFR Parts 1024'
-        result = unified.notice_cfr_p.parseString(text)
-        self.assertEqual(['1024'], list(result))
-        text = '12 CFR 1024'
-        result = unified.notice_cfr_p.parseString(text)
-        self.assertEqual(['1024'], list(result))
+        self.assert_notice_cfr_p_match('12 CFR Parts 1002, 1024, and 1026',
+                                       title=12, parts=[1002, 1024, 1026])
+        self.assert_notice_cfr_p_match('12 CFR Parts 1024, and 1026',
+                                       title=12, parts=[1024, 1026])
+        self.assert_notice_cfr_p_match('12 CFR Parts 1024',
+                                       title=12, parts=[1024])
+        self.assert_notice_cfr_p_match('12 CFR 1024', title=12, parts=[1024])
 
     def test_marker_comment2(self):
         texts = [u'comment § 1004.3-4-i',

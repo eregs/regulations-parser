@@ -9,6 +9,7 @@ from urlparse import urlparse
 from lxml import etree
 import requests
 
+from regparser.grammar.unified import notice_cfr_p
 from regparser.history.delays import delays_in_sentence
 from regparser.notice import preprocessors
 from regparser.notice.dates import fetch_dates
@@ -78,16 +79,6 @@ class NoticeXML(object):
             date_type))
         return datetime.strptime(value, "%Y-%m-%d").date()
 
-    def to_notice_dict(self):
-        """@todo Stop gap method -- converts NoticeXML into a dict which is
-        the assumed standard for other parts of the application. Try to only
-        add fields as needed"""
-        return {
-            'meta': {
-                'start_page': self.start_page
-            }
-        }
-
     # --- Setters/Getters for specific fields. ---
     # We encode relevant information within the XML, but wish to provide easy
     # access
@@ -132,6 +123,27 @@ class NoticeXML(object):
     @version_id.setter
     def version_id(self, value):
         self._xml.attrib['eregs-version-id'] = str(value)
+
+    @property
+    def cfr_parts(self):
+        return [int(p) for p in fetch_cfr_parts(self._xml)]
+
+    @property
+    def cfr_titles(self):
+        return list(sorted(set(
+            int(notice_cfr_p.parseString(cfr_elm.text).cfr_title)
+            for cfr_elm in self._xml.xpath('//CFR'))))
+
+
+def fetch_cfr_parts(notice_xml):
+    """ Sometimes we need to read the CFR part numbers from the notice
+        XML itself. This would need to happen when we've broken up a
+        multiple-effective-date notice that has multiple CFR parts that
+        may not be included in each date. """
+    parts = []
+    for cfr_elm in notice_xml.xpath('//CFR'):
+        parts.extend(notice_cfr_p.parseString(cfr_elm.text).cfr_parts)
+    return list(sorted(set(parts)))
 
 
 def local_copies(url):

@@ -194,11 +194,11 @@ multiple_cfr_p = (
                "tail", listAllMatches=True)))
 
 notice_cfr_p = (
-    Suppress(atomic.title)
+    atomic.title
     + Suppress("CFR")
     + Optional(Suppress(atomic.part_marker | atomic.parts_marker))
     + OneOrMore(
-        atomic.part
+        atomic.part.copy().setResultsName('cfr_parts', listAllMatches=True)
         + Optional(Suppress(','))
         + Optional(Suppress('and'))
     )
