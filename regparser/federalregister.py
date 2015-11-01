@@ -4,6 +4,11 @@ from regparser.notice.build import build_notice
 
 FR_BASE = "https://www.federalregister.gov"
 API_BASE = FR_BASE + "/api/v1/"
+FULL_NOTICE_FIELDS = [
+    "abstract", "action", "agency_names", "cfr_references", "citation",
+    "comments_close_on", "dates", "document_number", "effective_on",
+    "end_page", "full_text_xml_url", "html_url", "publication_date",
+    "regulation_id_numbers", "start_page", "type", "volume"]
 
 
 def fetch_notice_json(cfr_title, cfr_part, only_final=False,
@@ -15,11 +20,7 @@ def fetch_notice_json(cfr_title, cfr_part, only_final=False,
         "conditions[cfr][part]": cfr_part,
         "per_page": 1000,
         "order": "oldest",
-        "fields[]": [
-            "abstract", "action", "agency_names", "cfr_references", "citation",
-            "comments_close_on", "dates", "document_number", "effective_on",
-            "end_page", "full_text_xml_url", "html_url", "publication_date",
-            "regulation_id_numbers", "start_page", "type", "volume"]}
+        "fields[]": FULL_NOTICE_FIELDS}
     if only_final:
         params["conditions[type][]"] = 'RULE'
     if max_effective_date:

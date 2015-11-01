@@ -13,16 +13,17 @@ from regparser.notice.dates import fetch_dates
 from regparser.notice.sxs import find_section_by_section
 from regparser.notice.sxs import build_section_by_section
 from regparser.notice.util import spaces_then_remove, swap_emphasis_tags
-from regparser.notice.xml import xmls_for_url
+from regparser.notice.xml import fetch_cfr_parts, xmls_for_url
 from regparser.tree import struct
 from regparser.tree.xml_parser import reg_text
-from regparser.grammar.unified import notice_cfr_p
 
 
-def build_notice(cfr_title, cfr_part, fr_notice, do_process_xml=True):
+def build_notice(cfr_title, cfr_part, fr_notice, fetch_xml=True,
+                 xml_to_process=None):
     """Given JSON from the federal register, create our notice structure"""
     cfr_parts = set(str(ref['part']) for ref in fr_notice['cfr_references'])
-    cfr_parts.add(cfr_part)
+    if cfr_part:
+        cfr_parts.add(cfr_part)
     notice = {'cfr_title': cfr_title, 'cfr_parts': list(cfr_parts)}
     #   Copy over most fields
     for field in ['abstract', 'action', 'agency_names', 'comments_close_on',
@@ -46,7 +47,9 @@ def build_notice(cfr_title, cfr_part, fr_notice, do_process_xml=True):
     for key in ('dates', 'end_page', 'start_page', 'type'):
         notice['meta'][key] = fr_notice[key]
 
-    if fr_notice['full_text_xml_url'] and do_process_xml:
+    if xml_to_process is not None:
+        return [process_xml(notice, xml_to_process)]
+    elif fr_notice['full_text_xml_url'] and fetch_xml:
         xmls = xmls_for_url(fr_notice['full_text_xml_url'])
         notices = [process_xml(notice, xml) for xml in xmls]
         set_document_numbers(notices)
@@ -216,6 +219,8 @@ def process_amendments(notice, notice_xml):
         notice['amendments'] = amends
         notice['changes'] = notice_changes.changes
 
+    return notice
+
 
 def process_sxs(notice, notice_xml):
     """ Find and build SXS from the notice_xml. """
@@ -225,16 +230,6 @@ def process_sxs(notice, notice_xml):
     sxs = build_section_by_section(sxs, notice['meta']['start_page'],
                                    notice['cfr_parts'][0])
     notice['section_by_section'] = sxs
-
-
-def fetch_cfr_parts(notice_xml):
-    """ Sometimes we need to read the CFR part numbers from the notice
-        XML itself. This would need to happen when we've broken up a
-        multiple-effective-date notice that has multiple CFR parts that
-        may not be included in each date. """
-    cfr_elm = notice_xml.xpath('//CFR')[0]
-    results = notice_cfr_p.parseString(cfr_elm.text)
-    return list(results)
 
 
 def process_xml(notice, notice_xml):

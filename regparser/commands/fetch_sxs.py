@@ -5,7 +5,8 @@ import click
 
 from regparser import eregs_index
 from regparser.commands.dependency_resolver import DependencyResolver
-from regparser.notice.build import process_xml
+from regparser.federalregister import meta_data, FULL_NOTICE_FIELDS
+from regparser.notice.build import build_notice
 
 
 @click.command()
@@ -28,7 +29,9 @@ def fetch_sxs(document_number):
     # @todo - break apart processing of SxS. We don't need all of the other
     # fields
     notice_xml = notice_entry.read()
-    notice = process_xml(notice_xml.to_notice_dict(), notice_xml._xml)
+    notice_meta = meta_data(document_number, FULL_NOTICE_FIELDS)
+    notice = build_notice(notice_xml.cfr_titles[0], None, notice_meta,
+                          xml_to_process=notice_xml._xml)[0]
     sxs_entry.write(notice)
 
 
