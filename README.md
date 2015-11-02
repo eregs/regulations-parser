@@ -41,6 +41,13 @@ tweaked to pass the parser.
 If you review the history of the `fec_docs` repo, you'll see some of the types
 of changes that need to be made.
 
+## Concepts
+
+- **Diff**: a structure representing the changes between two regulation trees, describing which nodes were modified, deleted, or added.
+- **Layer**: a grouping of extra information about the regulation, generally tied to specific text. For example, citations are a layer which refers to the text in a specific paragraph. There are also layers which apply to the entire tree, for example, the regulation letter. These are more or less a catch all for information which doesn't directly fit in the tree.
+- **Rule** or **Notice**: a representation of the same concept as issued by the Federal Register. Rules change regulations, but have a great deal of meta data. Rules contain the contents of those changes, the effective dates of those changes, the authors of those changes, and even (potentially) detailed analyses of each of the sections that changed.
+- **Tree**: a representation of the regulation content. It's a recursive structure, where each component (part, subpart, section, paragraph, sub-sub-sub paragraph, etc.) is also a tree
+
 ## Features
 
 * Split regulation into paragraph-level chunks
