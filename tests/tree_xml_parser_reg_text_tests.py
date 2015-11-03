@@ -205,7 +205,7 @@ class RegTextTest(XMLBuilderMixin, NodeAccessorMixin, TestCase):
                          node['a']['p1'].text)
         self.assertEqual("GPOTABLE", node['a']['p1'].source_xml.tag)
 
-    def test_build_form_section_extract(self):
+    def test_build_from_section_extract(self):
         """Account for paragraphs within an EXTRACT tag"""
         with self.section() as root:
             root.P("(a) aaaa")
@@ -221,7 +221,7 @@ class RegTextTest(XMLBuilderMixin, NodeAccessorMixin, TestCase):
         content = ["```extract", "1. Some content", "2. Other content", "```"]
         self.assertEqual("\n".join(content), extract.text)
 
-    def test_build_form_section_notes(self):
+    def test_build_from_section_notes(self):
         """Account for paragraphs within a NOTES tag"""
         with self.section() as root:
             root.P("(a) aaaa")
@@ -236,6 +236,19 @@ class RegTextTest(XMLBuilderMixin, NodeAccessorMixin, TestCase):
         self.assertEqual(['8675', '309', 'a', 'p1'], extract.label)
         content = ["```note", "1. Some content", "2. Other content", "```"]
         self.assertEqual("\n".join(content), extract.text)
+
+    def test_build_from_section_whitespace(self):
+        """The whitespace in the section text (and intro paragraph) should get
+        removed"""
+        with self.tree.builder("SECTION", node_value="\n\n") as root:
+            root.SECTNO(u"§ 8675.309")
+            root.SUBJECT("subsubsub")
+            root.P("   Some \n content\n")
+            root.P("(a) aaa")
+            root.P("(b) bbb")
+
+        node = reg_text.build_from_section('8675', self.tree.render_xml())[0]
+        self.assertEqual(node.text, "Some \n content")
 
     def test_get_title(self):
         with self.tree.builder("PART") as root:
