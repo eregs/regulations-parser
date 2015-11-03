@@ -19,6 +19,7 @@ class CommandsFetchSxSTests(XMLBuilderMixin, TestCase):
         self.cli = CliRunner()
         with self.tree.builder("ROOT") as root:
             root.PRTPAGE(P="1234")
+            root.CFR('12 CFR 1000')
         self.notice_xml = NoticeXML(self.tree.render_xml())
 
     def test_missing_notice(self):
@@ -29,19 +30,22 @@ class CommandsFetchSxSTests(XMLBuilderMixin, TestCase):
             self.assertTrue(isinstance(result.exception,
                                        eregs_index.DependencyException))
 
-    @patch('regparser.commands.fetch_sxs.process_xml')
-    def test_writes(self, process_xml):
+    @patch('regparser.commands.fetch_sxs.build_notice')
+    @patch('regparser.commands.fetch_sxs.meta_data')
+    def test_writes(self, meta_data, build_notice):
         """If the notice XML is present, we write the parsed version to disk,
         even if that version's already present"""
         with self.cli.isolated_filesystem():
             eregs_index.NoticeEntry('1111').write(self.notice_xml)
             self.cli.invoke(fetch_sxs, ['1111'])
-            self.assertTrue(process_xml.called)
-            args = process_xml.call_args[0]
-            self.assertTrue(isinstance(args[0], dict))
-            self.assertTrue(isinstance(args[1], etree._Element))
+            meta_data.return_value = {'example': 1}
+            self.assertTrue(build_notice.called)
+            args, kwargs = build_notice.call_args
+            self.assertTrue(args[2], {'example': 1})
+            self.assertTrue(
+                isinstance(kwargs['xml_to_process'], etree._Element))
 
-            process_xml.reset_mock()
+            build_notice.reset_mock()
             eregs_index.Entry('rule_changes', '1111').write('content')
             self.cli.invoke(fetch_sxs, ['1111'])
-            self.assertTrue(process_xml.called)
+            self.assertTrue(build_notice.called)

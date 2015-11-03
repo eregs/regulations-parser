@@ -98,7 +98,7 @@ def find_volume(year, title, part):
 
 def first_notice_and_xml(title, part):
     """Find the first annual xml and its associated notice"""
-    notices = [build_notice(title, part, n, do_process_xml=False)
+    notices = [build_notice(title, part, n, fetch_xml=False)
                for n in fetch_notice_json(title, part, only_final=True)
                if n['full_text_xml_url'] and n['effective_on']]
     modify_effective_dates(notices)

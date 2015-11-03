@@ -2,7 +2,7 @@ import click
 
 from regparser import eregs_index
 from regparser.commands.dependency_resolver import DependencyResolver
-from regparser.notice.build import process_xml
+from regparser.notice.build import process_amendments
 
 
 @click.command()
@@ -22,10 +22,9 @@ def parse_rule_changes(document_number):
     # We don't check for staleness as we want to always execute when given a
     # specific file to process
 
-    # @todo - break apart processing of amendments/changes. We don't need
-    # all of the other fields
     notice_xml = notice_entry.read()
-    notice = process_xml(notice_xml.to_notice_dict(), notice_xml._xml)
+    notice = process_amendments({'cfr_parts': notice_xml.cfr_parts},
+                                notice_xml._xml)
     rule_entry.write(notice)
 
 

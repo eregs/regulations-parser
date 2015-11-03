@@ -26,19 +26,20 @@ class CommandsParseRuleChangesTests(XMLBuilderMixin, TestCase):
             self.assertTrue(isinstance(result.exception,
                                        eregs_index.DependencyException))
 
-    @patch('regparser.commands.parse_rule_changes.process_xml')
-    def test_writes(self, process_xml):
+    @patch('regparser.commands.parse_rule_changes.process_amendments')
+    def test_writes(self, process_amendments):
         """If the notice XML is present, we write the parsed version to disk,
         even if that version's already present"""
+        process_amendments.return_value = {'filled': 'values'}
         with self.cli.isolated_filesystem():
             eregs_index.NoticeEntry('1111').write(self.notice_xml)
             self.cli.invoke(parse_rule_changes, ['1111'])
-            self.assertTrue(process_xml.called)
-            args = process_xml.call_args[0]
+            self.assertTrue(process_amendments.called)
+            args = process_amendments.call_args[0]
             self.assertTrue(isinstance(args[0], dict))
             self.assertTrue(isinstance(args[1], etree._Element))
 
-            process_xml.reset_mock()
+            process_amendments.reset_mock()
             eregs_index.Entry('rule_changes', '1111').write('content')
             self.cli.invoke(parse_rule_changes, ['1111'])
-            self.assertTrue(process_xml.called)
+            self.assertTrue(process_amendments.called)
