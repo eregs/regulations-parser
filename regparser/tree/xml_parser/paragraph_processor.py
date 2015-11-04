@@ -15,7 +15,6 @@ class ParagraphProcessor(object):
     where needed"""
 
     # Subclasses should override the following interface
-    NODE_TYPE = None
     MATCHERS = []
 
     def parse_nodes(self, xml):
@@ -25,16 +24,14 @@ class ParagraphProcessor(object):
 
         for child in xml.getchildren():
             matching = (m for m in self.MATCHERS if m.matches(child))
+
             tag_matcher = next(matching, None)
             if tag_matcher:
-                nodes.extend(tag_matcher.derive_nodes(child))
+                nodes.extend(tag_matcher.derive_nodes(child, processor=self))
 
         # Trailing stars don't matter; slightly more efficient to ignore them
         while nodes and nodes[-1].label[0] in mtypes.stars:
             nodes = nodes[:-1]
-
-        for node in nodes:
-            node.node_type = self.NODE_TYPE
 
         return nodes
 
@@ -75,6 +72,7 @@ class ParagraphProcessor(object):
     def separate_intro(self, nodes):
         """In many situations the first unlabeled paragraph is the "intro"
         text for a section. We separate that out here"""
+
         labels = [n.label[0] for n in nodes]    # label is only one part long
 
         only_one = labels == [mtypes.MARKERLESS]
@@ -124,7 +122,7 @@ class StarsMatcher(object):
     def matches(self, xml):
         return xml.tag == 'STARS'
 
-    def derive_nodes(self, xml):
+    def derive_nodes(self, xml, processor=None):
         return [Node(label=[mtypes.STARS_TAG])]
 
 
@@ -137,7 +135,7 @@ class SimpleTagMatcher(object):
     def matches(self, xml):
         return xml.tag == self.tag
 
-    def derive_nodes(self, xml):
+    def derive_nodes(self, xml, processor=None):
         return [Node(text=tree_utils.get_node_text(xml).strip(),
                      label=[mtypes.MARKERLESS])]
 
@@ -147,21 +145,37 @@ class TableMatcher(object):
     def matches(self, xml):
         return xml.tag == 'GPOTABLE'
 
-    def derive_nodes(self, xml):
+    def derive_nodes(self, xml, processor=None):
         return [Node(table_xml_to_plaintext(xml), label=[mtypes.MARKERLESS],
                      source_xml=xml)]
 
+class ExtractMatcher(object):
+    def matches(self, xml):
+        return xml.tag in ('EXTRACT')
+
+    def derive_nodes(self, xml, processor=None):
+        child_nodes = processor.parse_nodes(xml)
+        for child_node in child_nodes:
+            child_node.node_type = "extract"
+
+        # Some EXTRACTs have HD elements to provide their titles:
+        extract_hd = xml.xpath("//HD")
+        if len(extract_hd) == 1 and len(child_nodes):
+            child_nodes[0].title = extract_hd[0].text
+
+        return child_nodes
 
 class FencedMatcher(object):
     """Use github-like fencing to indicate this is a note/code"""
     def matches(self, xml):
-        return xml.tag in ('NOTE', 'NOTES', 'CODE', 'EXTRACT')
+        return xml.tag in ('NOTE', 'NOTES', 'CODE')
 
-    def derive_nodes(self, xml):
+    def derive_nodes(self, xml, processor=None):
         texts = ["```" + self.fence_type(xml)]
         for child in xml:
             texts.append(tree_utils.get_node_text(child).strip())
         texts.append("```")
+
         return [Node("\n".join(texts), label=[mtypes.MARKERLESS])]
 
     def fence_type(self, xml):
