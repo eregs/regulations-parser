@@ -19,3 +19,10 @@ class GrammarAtomicTests(TestCase):
         for text in ['(ii)', '(iv)', '(vi)']:
             with self.assertRaises(ParseException):
                 atomic.lower_p.parseString(text)
+
+    def test_section(self):
+        result = atomic.section.parseString('345a')
+        self.assertEqual('345a', result.section)
+
+        result = atomic.section.parseString('9873')
+        self.assertEqual('9873', result.section)
