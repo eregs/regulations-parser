@@ -149,33 +149,7 @@ $ eregs build_from CFR-2012-title12-vol8-part1004.xml 12
 
 Here ```12``` is the CFR title number (in our case, for "Banks and Banking").
 
-
-#### Using `pipeline`
-```bash
-$ eregs pipeline title part an/output/directory
-```
-or
-```bash
-$ eregs pipeline title part https://yourserver/
-```
-
-Example:
-```bash
-$ eregs pipeline 27 447 /path/to/reg
-```
-
-`pipeline` pulls annual editions of regulations from the [Government Printing Office](http://www.gpo.gov/fdsys/browse/collectionCfr.action) and final rules from the [Federal Register](https://www.federalregister.gov/) based on the part that you give it.
-
-When you run `pipeline`, it:
-
-1. gets rules that exist for the regulation from the Federal Register API
-2. builds trees from annual editions of the regulation
-3. fills in any missing versions between annual versions by parsing final rules
-4. builds the layers for all these trees
-5. builds the diffs for all these trees, and
-6. writes the results to your output location
-
-Running either `pipeline` or `build_from` will generate four folders, ```regulation```,
+Running the command will generate four folders, ```regulation```,
 ```notice```, ``layer`` and possibly ``diff`` in the ```OUTPUT_DIR```
 (current directory by default).
 
@@ -194,6 +168,38 @@ There are also some advanced flags which can be set when running the parser
   the regulation issued before federalregister.gov has records (~2000), you
   may need to explicitly provide a version number. This will just be an
   identifier for the version; you may use "1997-annual", for example.
+
+#### Using `pipeline`
+
+```bash
+$ eregs pipeline title part an/output/directory
+```
+or
+```bash
+$ eregs pipeline title part https://yourserver/
+```
+
+Example:
+```bash
+$ eregs pipeline 27 447 /output/path
+```
+
+`pipeline` pulls annual editions of regulations from the [Government Printing Office](http://www.gpo.gov/fdsys/browse/collectionCfr.action) and final rules from the [Federal Register](https://www.federalregister.gov/) based on the part that you give it.
+
+When you run `pipeline`, it:
+
+1. Gets rules that exist for the regulation from the Federal Register API
+2. Builds trees from annual editions of the regulation
+3. Fills in any missing versions between annual versions by parsing final rules
+4. Builds the layers for all these trees
+5. Builds the diffs for all these trees, and
+6. Writes the results to your output location
+
+If the final parameter begins with `http://` or `https://`, output will be
+sent to that API. If it begins with `git://`, the output will be written as a
+git repository to that path. All other values will be treated as a file path;
+JSON files will be written in that directory. See [Output](#output) for more.
+
 
 ### Settings
 
