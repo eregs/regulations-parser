@@ -205,6 +205,135 @@ class RegTextTest(XMLBuilderMixin, NodeAccessorMixin, TestCase):
                          node['a']['p1'].text)
         self.assertEqual("GPOTABLE", node['a']['p1'].source_xml.tag)
 
+    def test_build_from_section_extract_with_table(self):
+        """Account for regtext with a table in an extract"""
+        subject = "Table of distances for storage of low explosives."
+        railroad = "From public railroad and highway distance (feet)"
+        xml = etree.fromstring("""
+          <SECTION>
+            <SECTNO>§ 555.219</SECTNO>
+            <SUBJECT>%s</SUBJECT>
+            <EXTRACT>
+                <GPOTABLE CDEF="6.1,6.1,5.2,5.2,5.2" COLS="5" OPTS="L2">
+                  <BOXHD>
+                    <CHED H="1">Pounds</CHED>
+                    <CHED H="2">Over</CHED>
+                    <CHED H="2">Not over</CHED>
+                    <CHED H="1">From inhabited building distance (feet)</CHED>
+                    <CHED H="1">%s</CHED>
+                    <CHED H="1">From above ground magazine (feet)</CHED>
+                  </BOXHD>
+                  <ROW>
+                    <ENT I="01">0</ENT>
+                    <ENT>1,000</ENT>
+                    <ENT>75</ENT>
+                    <ENT>75</ENT>
+                    <ENT>50</ENT>
+                  </ROW>
+                  <ROW>
+                    <ENT I="01">1,000</ENT>
+                    <ENT>5,000</ENT>
+                    <ENT>115</ENT>
+                    <ENT>115</ENT>
+                    <ENT>75</ENT>
+                  </ROW>
+                </GPOTABLE>
+            </EXTRACT>
+          </SECTION>
+        """ % (subject, railroad))
+
+        nodes = reg_text.build_from_section('555', xml)
+        node = nodes[0]
+        self.assertEqual(u'§ 555.219 %s' % subject, node.title)
+        self.assertEqual('regtext', node.node_type)
+        self.assertEqual(['555', '219'], node.label)
+        self.assertEqual(1, len(node.children))
+
+        extract_node = node.children[0]
+        self.assertEqual('extract', extract_node.node_type)
+        self.assertEqual(1, len(extract_node.children))
+
+        table_node = extract_node.children[0]
+        self.assertEqual('regtext', table_node.node_type)
+        self.assertEqual('GPOTABLE', table_node.source_xml.tag)
+
+    def test_build_from_section_extract_with_table_and_headers(self):
+        """Account for regtext with a header and a table in an extract"""
+        subject = u'Table of distances for storage of low explosives.'
+        table_first_header_text = ''.join([
+            'Table: Department of Defense Ammunition and ',
+            'Explosives Standards, Table 5-4.1 Extract; ',
+            '4145.27 M, March 1969'])
+        table_second_header_text = ''.join(['Table: National Fire Protection ',
+                                            'Association (NFPA) Official ',
+                                            'Standard No. 492, 1968'])
+        xml = etree.fromstring(u"""
+          <SECTION>
+            <SECTNO>§ 555.219</SECTNO>
+            <SUBJECT>%s</SUBJECT>
+            <EXTRACT>
+                <HD SOURCE="HD1">%s</HD>
+                <GPOTABLE CDEF="6.1,6.1,5.2,5.2,5.2" COLS="5" OPTS="L2">
+                  <BOXHD>
+                    <CHED H="1">Pounds</CHED>
+                    <CHED H="2">Over</CHED>
+                    <CHED H="2">Not over</CHED>
+                    <CHED H="1">From inhabited building distance (feet)</CHED>
+                    <CHED H="1">From public railroad and highway distance
+                        (feet)</CHED>
+                    <CHED H="1">From above ground magazine (feet)</CHED>
+                  </BOXHD>
+                  <ROW>
+                    <ENT I="01">0</ENT>
+                    <ENT>1,000</ENT>
+                    <ENT>75</ENT>
+                    <ENT>75</ENT>
+                    <ENT>50</ENT>
+                  </ROW>
+                  <ROW>
+                    <ENT I="01">1,000</ENT>
+                    <ENT>5,000</ENT>
+                    <ENT>115</ENT>
+                    <ENT>115</ENT>
+                    <ENT>75</ENT>
+                  </ROW>
+                </GPOTABLE>
+                <HD SOURCE="HD1">%s</HD>
+            </EXTRACT>
+          </SECTION>
+        """ % (subject, table_first_header_text, table_second_header_text))
+        nodes = reg_text.build_from_section('555', xml)
+        node = nodes[0]
+        self.assertEqual(u'§ 555.219 %s' % subject, node.title)
+        self.assertEqual('regtext', node.node_type)
+        self.assertEqual(['555', '219'], node.label)
+        self.assertEqual(1, len(node.children))
+
+        extract_node = node.children[0]
+        self.assertEqual('extract', extract_node.node_type)
+        self.assertEqual(['555', '219', 'p1'], extract_node.label)
+        self.assertEqual(3, len(extract_node.children))
+
+        first_header_node = extract_node.children[0]
+        self.assertEqual('regtext', first_header_node.node_type)
+        self.assertEqual('', first_header_node.text)
+        self.assertEqual(table_first_header_text, first_header_node.title)
+        self.assertEqual(['555', '219', 'p1', 'p1'], first_header_node.label)
+        self.assertEqual(0, len(first_header_node.children))
+
+        table_node = extract_node.children[1]
+        self.assertEqual('regtext', table_node.node_type)
+        self.assertEqual('GPOTABLE', table_node.source_xml.tag)
+        self.assertEqual(['555', '219', 'p1', 'p2'], table_node.label)
+        self.assertEqual(0, len(table_node.children))
+
+        second_header_node = extract_node.children[2]
+        self.assertEqual('regtext', second_header_node.node_type)
+        self.assertEqual('', second_header_node.text)
+        self.assertEqual(table_second_header_text, second_header_node.title)
+        self.assertEqual(['555', '219', 'p1', 'p3'], second_header_node.label)
+        self.assertEqual(0, len(second_header_node.children))
+
     def test_build_from_section_extract(self):
         """Account for paragraphs within an EXTRACT tag"""
         with self.section() as root:
@@ -212,14 +341,33 @@ class RegTextTest(XMLBuilderMixin, NodeAccessorMixin, TestCase):
             with root.EXTRACT() as extract:
                 extract.P("1. Some content")
                 extract.P("2. Other content")
-        node = reg_text.build_from_section('8675', self.tree.render_xml())[0]
+        nodes = reg_text.build_from_section('8675', self.tree.render_xml())
 
-        a = node.children[0]
-        self.assertEqual(1, len(a.children))
-        extract = a.children[0]
-        self.assertEqual(['8675', '309', 'a', 'p1'], extract.label)
-        content = ["```extract", "1. Some content", "2. Other content", "```"]
-        self.assertEqual("\n".join(content), extract.text)
+        root_node = nodes[0]
+        self.assertEqual(['8675', '309'], root_node.label)
+        self.assertEqual(1, len(root_node.children))
+        self.assertEqual('', root_node.text)
+        self.assertEqual("regtext", root_node.node_type)
+
+        outer_p_node = root_node.children[0]
+        self.assertEqual(['8675', '309', 'a'], outer_p_node.label)
+        self.assertEqual(1, len(outer_p_node.children))
+        self.assertEqual('(a) aaaa', outer_p_node.text)
+        self.assertEqual("regtext", outer_p_node.node_type)
+
+        extract_node = outer_p_node.children[0]
+        self.assertEqual(['8675', '309', 'a', 'p1'], extract_node.label)
+        self.assertEqual(2, len(extract_node.children))
+        self.assertEqual('', extract_node.text)
+        self.assertEqual("extract", extract_node.node_type)
+
+        first_p_node, second_p_node = extract_node.children
+        self.assertEqual(['8675', '309', 'a', 'p1', 'p1'], first_p_node.label)
+        self.assertEqual(['8675', '309', 'a', 'p1', 'p2'], second_p_node.label)
+        self.assertEqual("regtext", first_p_node.node_type,
+                         second_p_node.node_type)
+        self.assertEqual('1. Some content', first_p_node.text)
+        self.assertEqual('2. Other content', second_p_node.text)
 
     def test_build_from_section_notes(self):
         """Account for paragraphs within a NOTES tag"""

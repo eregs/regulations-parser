@@ -218,7 +218,7 @@ def build_from_section(reg_part, section_xml):
     subject_xml = section_xml.xpath('SUBJECT')
     if not subject_xml:
         subject_xml = section_xml.xpath('RESERVED')
-    subject_text = subject_xml[0].text
+    subject_text = (subject_xml[0].text or '').strip()
 
     section_nums = []
     for match in re.finditer(r'%s\.(\d+[a-z]*)' % reg_part, section_no):
@@ -260,7 +260,7 @@ class ParagraphMatcher(object):
     def matches(self, xml):
         return xml.tag in ('P', 'FP')
 
-    def derive_nodes(self, xml):
+    def derive_nodes(self, xml, processor=None):
         text = ''
         tagged_text = tree_utils.get_node_text_tags_preserved(xml).strip()
         markers_list = get_markers(tagged_text, self.next_marker(xml))
@@ -293,6 +293,8 @@ class RegtextParagraphProcessor(paragraph_processor.ParagraphProcessor):
     MATCHERS = [paragraph_processor.StarsMatcher(),
                 paragraph_processor.TableMatcher(),
                 paragraph_processor.FencedMatcher(),
+                paragraph_processor.ExtractMatcher(),
+                paragraph_processor.HeaderMatcher(),
                 ParagraphMatcher()]
 
     def additional_constraints(self):

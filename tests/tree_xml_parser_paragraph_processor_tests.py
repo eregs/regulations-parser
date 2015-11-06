@@ -10,7 +10,6 @@ from regparser.tree.xml_parser import paragraph_processor
 
 
 class _ExampleProcessor(paragraph_processor.ParagraphProcessor):
-    NODE_TYPE = 'EXAMPLE'
     MATCHERS = [paragraph_processor.SimpleTagMatcher('TAGA'),
                 paragraph_processor.SimpleTagMatcher('TAGB'),
                 paragraph_processor.StarsMatcher()]
@@ -47,7 +46,9 @@ class ParagraphProcessorTest(TestCase):
         self.assertEqual(result[1].text, 'Some other text')
 
     def test_parse_nodes_node_type(self):
-        """All created nodes should have the specified type"""
+        """ All created nodes should have the default type, regtext, except for
+        specific elements. The NODE_TYPE of the processor object is no longer
+        used. """
         xml = u"""
             <ROOT>
                 <TAGA>Some content</TAGA>
@@ -55,7 +56,7 @@ class ParagraphProcessorTest(TestCase):
             </ROOT>
         """
         result = _ExampleProcessor().parse_nodes(etree.fromstring(xml))
-        self.assertEqual([n.node_type for n in result], ['EXAMPLE', 'EXAMPLE'])
+        self.assertEqual([n.node_type for n in result], ['regtext', 'regtext'])
 
     def test_build_hierarchy(self):
         """Nodes should be returned at the provided depths"""
