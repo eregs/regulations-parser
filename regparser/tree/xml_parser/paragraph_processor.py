@@ -178,7 +178,7 @@ class HeaderMatcher(object):
 
 class ExtractMatcher(object):
     def matches(self, xml):
-        return xml.tag in ('EXTRACT')
+        return xml.tag in ('EXTRACT',)
 
     def derive_nodes(self, xml, processor=None):
         extract_node = Node(text=(xml.text or '').strip(),
