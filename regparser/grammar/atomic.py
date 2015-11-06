@@ -58,7 +58,7 @@ digit_a = "." + Word(string.digits).setResultsName('a3').leaveWhitespace()
 
 part = Word(string.digits).setResultsName("part")
 
-section = Word(string.digits).setResultsName("section")
+section = Regex(r"[0-9]+[a-z]*").setResultsName("section")
 
 appendix = Regex(r"[A-Z]+[0-9]*\b").setResultsName("appendix")
 appendix_digit = Word(string.digits).setResultsName("appendix_digit")
