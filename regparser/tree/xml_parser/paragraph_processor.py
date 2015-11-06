@@ -85,7 +85,6 @@ class ParagraphProcessor(object):
     def separate_intro(self, nodes):
         """In many situations the first unlabeled paragraph is the "intro"
         text for a section. We separate that out here"""
-
         labels = [n.label[0] for n in nodes]    # label is only one part long
 
         only_one = labels == [mtypes.MARKERLESS]
