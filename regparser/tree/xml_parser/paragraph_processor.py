@@ -181,22 +181,9 @@ class ExtractMatcher(object):
         return xml.tag in ('EXTRACT')
 
     def derive_nodes(self, xml, processor=None):
-        extract_node = Node(text=xml.text, node_type=u"extract",
-                            label=[mtypes.MARKERLESS])
-        child_nodes = processor.parse_nodes(xml)
-
-        if child_nodes:
-            markers = [node.label[0] for node in child_nodes]
-            depths = derive_depths(markers, processor.additional_constraints())
-            if not depths:
-                logging.error(
-                    "Could not determine paragraph depths:\n%s", markers)
-            depths = processor.select_depth(depths)
-            hierarchy = processor.build_hierarchy(extract_node,
-                                                  child_nodes, depths)
-            extract_node = hierarchy
-
-        return [extract_node]
+        extract_node = Node(text=(xml.text or '').strip(),
+                            node_type=u"extract", label=[mtypes.MARKERLESS])
+        return [processor.process(xml, extract_node)]
 
 
 class FencedMatcher(object):
