@@ -218,7 +218,7 @@ def build_from_section(reg_part, section_xml):
     subject_xml = section_xml.xpath('SUBJECT')
     if not subject_xml:
         subject_xml = section_xml.xpath('RESERVED')
-    subject_text = subject_xml[0].text
+    subject_text = (subject_xml[0].text or '').strip()
 
     section_nums = []
     for match in re.finditer(r'%s\.(\d+[a-z]*)' % reg_part, section_no):
@@ -294,6 +294,7 @@ class RegtextParagraphProcessor(paragraph_processor.ParagraphProcessor):
                 paragraph_processor.TableMatcher(),
                 paragraph_processor.FencedMatcher(),
                 paragraph_processor.ExtractMatcher(),
+                paragraph_processor.HeaderMatcher(),
                 ParagraphMatcher()]
 
     def additional_constraints(self):

@@ -8,6 +8,7 @@ from regparser.tree.depth.derive import ParAssignment
 from regparser.tree.struct import Node
 from regparser.tree.xml_parser import paragraph_processor
 
+
 class _ExampleProcessor(paragraph_processor.ParagraphProcessor):
     MATCHERS = [paragraph_processor.SimpleTagMatcher('TAGA'),
                 paragraph_processor.SimpleTagMatcher('TAGB'),
