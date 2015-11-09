@@ -6,6 +6,7 @@ Subpackages
 
 .. toctree::
 
+    regparser.commands
     regparser.diff
     regparser.grammar
     regparser.history
@@ -52,6 +53,14 @@ regparser.content module
 ------------------------
 
 .. automodule:: regparser.content
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+regparser.eregs_index module
+----------------------------
+
+.. automodule:: regparser.eregs_index
     :members:
     :undoc-members:
     :show-inheritance:
