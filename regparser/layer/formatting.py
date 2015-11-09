@@ -179,6 +179,12 @@ class PlaintextFormatData(object):
 
 
 class FencedData(PlaintextFormatData):
+    """E.g.
+        ```note
+        Line 1
+        Line 2
+        ```
+    """
     REGEX = re.compile(r"```(?P<type>[a-zA-Z0-9 ]+)\w*\n"
                        r"(?P<lines>([^\n]*\n)+)"
                        r"```")
@@ -191,6 +197,7 @@ class FencedData(PlaintextFormatData):
 
 
 class Subscript(PlaintextFormatData):
+    """E.g.     a_{0}"""
     REGEX = re.compile(r"(?P<variable>[a-zA-Z0-9]+)_\{(?P<subscript>\w+)\}")
 
     def match_data(self, match):
@@ -199,10 +206,24 @@ class Subscript(PlaintextFormatData):
 
 
 class Dashes(PlaintextFormatData):
+    """E.g.     Some text some text_____"""
     REGEX = re.compile(r"(?P<text>.*)(?P<dashes>_{5,})$")
 
     def match_data(self, match):
         return {'dash_data': {'text': match.group('text')}}
+
+
+class Footnotes(PlaintextFormatData):
+    """E.g.     [^4](Contents of footnote with escaped parens: \(\)s)"""
+    _ref_regex = r"\[\^(?P<ref>[^\]]*)\]"   # [^\]]* = take until hitting a ]
+    _begin_note_regex = r"\((?P<note>.*?)"
+    _close_paren = r"(?<!\\)\)"     # neg lookbehind for skipping escaped \)
+    REGEX = re.compile(_ref_regex + _begin_note_regex + _close_paren)
+
+    def match_data(self, match):
+        # Un-escape parens
+        note = match.group('note').replace(r'\(', '(').replace(r'\)', ')')
+        return {'footnote': {'ref': match.group('ref'), 'note': note}}
 
 
 class Formatting(Layer):

@@ -276,3 +276,23 @@ class DashesTests(TestCase):
         self.assertEqual(result['locations'], [0])
         self.assertEqual(result['dash_data'],
                          {'text': 'This is an fp-dash'})
+
+
+class FootnotesTests(TestCase):
+    def test_process_simple(self):
+        text = "Something like[^1](where 'like' is not defined) this"
+        result = list(formatting.Footnotes().process(text))
+        self.assertEqual(result, [{
+            'text': text[len("Something like"):-len(" this")],
+            'locations': [0],
+            'footnote': {'ref': '1',
+                         'note': "where 'like' is not defined"}}])
+
+    def test_process_has_escape(self):
+        text = r"Parens[^parens](they look like \(\))"
+        result = list(formatting.Footnotes().process(text))
+        self.assertEqual(result, [{
+            'text': text[len("Parens"):],
+            'locations': [0],
+            'footnote': {'ref': 'parens',
+                         'note': "they look like ()"}}])
