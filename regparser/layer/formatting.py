@@ -1,3 +1,7 @@
+"""Find and abstracts formatting information from the regulation tree. In many
+ways, this is like a markdown parser."""
+import abc
+from collections import defaultdict
 import re
 
 from regparser.layer.layer import Layer
@@ -142,12 +146,68 @@ def table_xml_to_data(xml_node):
     return {'header': header, 'rows': rows}
 
 
+class PlaintextFormatData(object):
+    """Base class for formatting information which can be derived from the
+    plaintext of a regulation node"""
+    __metaclass__ = abc.ABCMeta
+
+    @abc.abstractproperty
+    def REGEX(self):
+        """Regular expression used to find matches in the plain text"""
+        raise NotImplementedError()
+
+    @abc.abstractmethod
+    def match_data(self, match):
+        """Derive data structure (as a dict) from the regex match"""
+        raise NotImplementedError()
+
+    def process(self, text):
+        """Find all matches of self.REGEX, transform them into the appropriate
+        data structure, return these as a list"""
+        # [string] -> (match object, count)
+        match_text_counter = defaultdict(lambda: (None, 0))
+        for match in self.REGEX.finditer(text):
+            match_text = match.group(0)
+            _, count = match_text_counter[match_text]
+            match_text_counter[match_text] = (match, count + 1)
+
+        for match, count in match_text_counter.values():
+            data = {'text': match.group(0),
+                    'locations': list(range(count))}
+            data.update(self.match_data(match))
+            yield data
+
+
+class FencedData(PlaintextFormatData):
+    REGEX = re.compile(r"```(?P<type>[a-zA-Z0-9 ]+)\w*\n"
+                       r"(?P<lines>([^\n]*\n)+)"
+                       r"```")
+
+    def match_data(self, match):
+        return {'fence_data': {
+            'type': match.group('type'),
+            'lines': filter(bool, match.group('lines').split("\n"))
+        }}
+
+
+class Subscript(PlaintextFormatData):
+    REGEX = re.compile(r"(?P<variable>[a-zA-Z0-9]+)_\{(?P<subscript>\w+)\}")
+
+    def match_data(self, match):
+        return {'subscript_data': {'variable': match.group('variable'),
+                                   'subscript': match.group('subscript')}}
+
+
+class Dashes(PlaintextFormatData):
+    REGEX = re.compile(r"(?P<text>.*)(?P<dashes>_{5,})$")
+
+    def match_data(self, match):
+        return {'dash_data': {'text': match.group('text')}}
+
+
 class Formatting(Layer):
-    fenced_re = re.compile(r"```(?P<type>[a-zA-Z0-9 ]+)\w*\n"
-                           + r"(?P<lines>([^\n]*\n)+)"
-                           + r"```")
-    subscript_re = re.compile(r"([a-zA-Z0-9]+)_\{(\w+)\}")
-    dashes_re = re.compile(r"_{5,}$")
+    """Layer responsible for tables, subscripts, and other formatting-related
+    information"""
 
     def process(self, node):
         layer_el = []
@@ -162,34 +222,8 @@ class Formatting(Layer):
                                  'locations': [0],
                                  'table_data': table_xml_to_data(table)})
 
-        for match in Formatting.fenced_re.finditer(node.text):
-            layer_el.append({
-                'text': node.text[match.start():match.end()],
-                'locations': [0],
-                'fence_data': {
-                    'type': match.group('type'),
-                    'lines': filter(bool, match.group('lines').split("\n"))}})
-
-        subscripts = {}
-        for match in Formatting.subscript_re.finditer(node.text):
-            key = (match.group(1), match.group(2))
-            subscripts[key] = subscripts.get(key, 0) + 1
-        for key, count in subscripts.iteritems():
-            variable, subscript = key
-            layer_el.append({
-                'text': variable + '_{' + subscript + '}',
-                'locations': list(range(count)),
-                'subscript_data': {'variable': variable,
-                                   'subscript': subscript}})
-
-        for match in Formatting.dashes_re.finditer(node.text):
-            layer_el.append({
-                'text': node.text,
-                'locations': [0],
-                'dash_data': {
-                    'text': node.text[:match.start()],
-                },
-            })
+        for finder_class in PlaintextFormatData.__subclasses__():
+            layer_el.extend(finder_class().process(node.text))
 
         if layer_el:
             return layer_el
