@@ -1,5 +1,5 @@
-regparser package
-=================
+regparser API docs
+==================
 
 Subpackages
 -----------
