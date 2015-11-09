@@ -241,18 +241,22 @@ class LayerFormattingTests(XMLBuilderMixin, TestCase):
                  barr_header, unbr_header, barr_header, unbr_header]
             ])
 
-    def test_process_fenced(self):
-        node = Node("Content content\n```abc def\nLine 1\nLine 2\n```")
-        result = formatting.Formatting(None).process(node)
+
+class FencedTests(TestCase):
+    def test_process(self):
+        text = "Content content\n```abc def\nLine 1\nLine 2\n```"
+        result = list(formatting.FencedData().process(text))
         self.assertEqual(1, len(result))
         result = result[0]
-        self.assertEqual(result['text'], node.text[16:])
+        self.assertEqual(result['text'], text[16:])
         self.assertEqual(result['fence_data'],
                          {'type': 'abc def', 'lines': ['Line 1', 'Line 2']})
 
-    def test_process_subscript(self):
-        node = Node("This is a_{subscript}. And then a_{subscript} again")
-        result = formatting.Formatting(None).process(node)
+
+class SubscriptTests(TestCase):
+    def test_process(self):
+        text = "This is a_{subscript}. And then a_{subscript} again"
+        result = list(formatting.Subscript().process(text))
         self.assertEqual(1, len(result))
         result = result[0]
         self.assertEqual(result['text'], "a_{subscript}")
@@ -260,9 +264,11 @@ class LayerFormattingTests(XMLBuilderMixin, TestCase):
         self.assertEqual(result['subscript_data'],
                          {'variable': 'a', 'subscript': 'subscript'})
 
-    def test_process_dashes(self):
-        node = Node("This is an fp-dash_____")
-        result = formatting.Formatting(None).process(node)
+
+class DashesTests(TestCase):
+    def test_process(self):
+        text = "This is an fp-dash_____"
+        result = list(formatting.Dashes().process(text))
         self.assertEqual(1, len(result))
         result = result[0]
 
