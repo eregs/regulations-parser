@@ -35,9 +35,12 @@ class Solution(object):
     def __iter__(self):
         return iter(self.assignment)
 
+    def pretty_str(self):
+        return "\n".join(" "*4*par.depth + par.typ[par.idx]
+                         for par in self.assignment)
+
     def pretty_print(self):
-        for par in self.assignment:
-            print " "*4*par.depth + par.typ[par.idx]
+        print self.pretty_str()
 
 
 def _compress_markerless(marker_list):
@@ -140,3 +143,19 @@ def derive_depths(original_markers, additional_constraints=[]):
         assignment = _decompress_markerless(assignment, original_markers)
         solutions.append(Solution(assignment))
     return solutions
+
+
+def debug_idx(markers, constraints=[]):
+    """Binary search through the markers to find the point at which
+    derive_depths no longer works"""
+    working, not_working = -1, len(markers)
+
+    while working != not_working - 1:
+        midpoint = (working + not_working) / 2
+        solutions = derive_depths(markers[:midpoint + 1], constraints)
+        if solutions:
+            working = midpoint
+        else:
+            not_working = midpoint
+
+    return not_working

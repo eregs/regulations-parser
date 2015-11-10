@@ -1,7 +1,7 @@
 from unittest import TestCase
 
 from regparser.tree.depth import markers, rules
-from regparser.tree.depth.derive import derive_depths
+from regparser.tree.depth.derive import debug_idx, derive_depths
 from regparser.tree.depth.markers import INLINE_STARS, MARKERLESS, STARS_TAG
 
 
@@ -170,3 +170,12 @@ class DeriveTests(TestCase):
             ['1', MARKERLESS, '2', 'a'],
             [rules.depth_type_inverses],
             [0, 1, 0, 1])
+
+    def test_debug_idx(self):
+        """Find the index of the first error when attempting to derive
+        depths"""
+        self.assertEqual(debug_idx(['1', '2', '3']), 3)
+        self.assertEqual(debug_idx(['1', '4']), 1)
+        self.assertEqual(debug_idx(['1', '2', '4']), 2)
+        self.assertEqual(
+            debug_idx(['1', 'a', '2', 'A'], [rules.depth_type_inverses]), 3)
