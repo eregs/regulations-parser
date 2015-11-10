@@ -223,7 +223,7 @@ class Footnotes(PlaintextFormatData):
     def match_data(self, match):
         # Un-escape parens
         note = match.group('note').replace(r'\(', '(').replace(r'\)', ')')
-        return {'footnote': {'ref': match.group('ref'), 'note': note}}
+        return {'footnote_data': {'ref': match.group('ref'), 'note': note}}
 
 
 class Formatting(Layer):
