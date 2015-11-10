@@ -22,12 +22,14 @@ class CommandsPreprocessNoticeTests(HttpMixin, XMLBuilderMixin, TestCase):
                 effdate.P(effdate_str)
         return NoticeXML(self.tree.render_xml())
 
-    def expect_common_json(self):
+    def expect_common_json(self, **kwargs):
         """Expect an HTTP call and return a common json respond"""
-        self.expect_json_http({'effective_on': '2008-08-08',
-                               'full_text_xml_url': 'some://url',
-                               'publication_date': '2007-07-07',
-                               'volume': 45})
+        params = {'effective_on': '2008-08-08',
+                  'publication_date': '2007-07-07',
+                  'full_text_xml_url': 'some://url',
+                  'volume': 45}
+        params.update(kwargs)
+        self.expect_json_http(params)
 
     @patch('regparser.commands.preprocess_notice.notice_xmls_for_url')
     def test_single_notice(self, notice_xmls_for_url):
@@ -42,6 +44,19 @@ class CommandsPreprocessNoticeTests(HttpMixin, XMLBuilderMixin, TestCase):
 
             written = eregs_index.NoticeEntry('1234-5678').read()
             self.assertEqual(written.effective, date(2008, 8, 8))
+
+    @patch('regparser.commands.preprocess_notice.notice_xmls_for_url')
+    def test_missing_effective_date(self, notice_xmls_for_url):
+        """We should not explode if no effective date is present. Instead, we
+        should parse the effective date from the XML"""
+        cli = CliRunner()
+        self.expect_common_json(effective_on=None)
+        notice_xmls_for_url.return_value = [
+            self.example_xml("Effective January 1, 2001")]
+        with cli.isolated_filesystem():
+            cli.invoke(preprocess_notice, ['1234-5678'])
+            written = eregs_index.NoticeEntry('1234-5678').read()
+            self.assertEqual(written.effective, date(2001, 1, 1))
 
     @patch('regparser.commands.preprocess_notice.notice_xmls_for_url')
     def test_split_notice(self, notice_xmls_for_url):
