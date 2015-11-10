@@ -163,3 +163,10 @@ class DeriveTests(TestCase):
             ['1', STARS_TAG, 'c', '2', INLINE_STARS, 'i', STARS_TAG, 'iii'],
             [rules.depth_type_inverses],
             [0, 1, 1, 0, 1, 1, 2, 2])
+
+    def test_depth_type_inverses_markerless(self):
+        """Markerless paragraphs should not trigger an incompatibility"""
+        self.assert_depth_match_extra(
+            ['1', MARKERLESS, '2', 'a'],
+            [rules.depth_type_inverses],
+            [0, 1, 0, 1])
