@@ -285,8 +285,8 @@ class FootnotesTests(TestCase):
         self.assertEqual(result, [{
             'text': text[len("Something like"):-len(" this")],
             'locations': [0],
-            'footnote': {'ref': '1',
-                         'note': "where 'like' is not defined"}}])
+            'footnote_data': {'ref': '1',
+                              'note': "where 'like' is not defined"}}])
 
     def test_process_has_escape(self):
         text = r"Parens[^parens](they look like \(\))"
@@ -294,5 +294,5 @@ class FootnotesTests(TestCase):
         self.assertEqual(result, [{
             'text': text[len("Parens"):],
             'locations': [0],
-            'footnote': {'ref': 'parens',
-                         'note': "they look like ()"}}])
+            'footnote_data': {'ref': 'parens',
+                              'note': "they look like ()"}}])
