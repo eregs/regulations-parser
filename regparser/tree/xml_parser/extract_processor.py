@@ -12,7 +12,7 @@ class ExtractParagraphProcessor(paragraph_processor.ParagraphProcessor):
                 paragraph_processor.SimpleTagMatcher('P', 'FP')]
 
 
-class ExtractMatcher(object):
+class ExtractMatcher(paragraph_processor.BaseMatcher):
     def matches(self, xml):
         return xml.tag in ('EXTRACT',)
 

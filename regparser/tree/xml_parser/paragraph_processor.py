@@ -1,3 +1,4 @@
+import abc
 import logging
 
 from regparser.layer.formatting import table_xml_to_plaintext
@@ -141,7 +142,25 @@ class ParagraphProcessor(object):
         return []
 
 
-class StarsMatcher(object):
+class BaseMatcher(object):
+    """Base class defining the interface of various XML node matchers"""
+    __metaclass__ = abc.ABCMeta
+
+    @abc.abstractmethod
+    def matches(self, xml):
+        """Test the xml element -- does this matcher apply?"""
+        raise NotImplementedError()
+
+    @abc.abstractmethod
+    def derive_nodes(self, xml, processor=None):
+        """Given an xml node which this matcher applies against, convert it
+        into a list of Node structures. `processor` is the paragraph processor
+        which we are being executed in. May be useful when determining how to
+        create the Nodes"""
+        raise NotImplementedError()
+
+
+class StarsMatcher(BaseMatcher):
     """<STARS> indicates a chunk of text which is being skipped over"""
     def matches(self, xml):
         return xml.tag == 'STARS'
@@ -150,7 +169,7 @@ class StarsMatcher(object):
         return [Node(label=[mtypes.STARS_TAG])]
 
 
-class SimpleTagMatcher(object):
+class SimpleTagMatcher(BaseMatcher):
     """Simple example tag matcher -- it listens for specific tags and derives
     a single node with the associated body"""
     def __init__(self, *tags):
@@ -164,7 +183,7 @@ class SimpleTagMatcher(object):
                      label=[mtypes.MARKERLESS])]
 
 
-class TableMatcher(object):
+class TableMatcher(BaseMatcher):
     """Matches the GPOTABLE tag"""
     def matches(self, xml):
         return xml.tag == 'GPOTABLE'
@@ -174,7 +193,7 @@ class TableMatcher(object):
                      source_xml=xml)]
 
 
-class HeaderMatcher(object):
+class HeaderMatcher(BaseMatcher):
     def matches(self, xml):
         return xml.tag == "HD"
 
@@ -185,7 +204,7 @@ class HeaderMatcher(object):
                      label=[mtypes.MARKERLESS])]
 
 
-class FencedMatcher(object):
+class FencedMatcher(BaseMatcher):
     """Use github-like fencing to indicate this is a note/code"""
     def matches(self, xml):
         return xml.tag in ('NOTE', 'NOTES', 'CODE')

@@ -255,7 +255,7 @@ def build_from_section(reg_part, section_xml):
     return section_nodes
 
 
-class ParagraphMatcher(object):
+class ParagraphMatcher(paragraph_processor.BaseMatcher):
     """<P>/<FP> with or without initial paragraph markers -- (a)(1)(i) etc."""
     def matches(self, xml):
         return xml.tag in ('P', 'FP')
