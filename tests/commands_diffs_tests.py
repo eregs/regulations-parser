@@ -4,8 +4,8 @@ import os
 from unittest import TestCase
 
 from click.testing import CliRunner
-from regparser import eregs_index
 from regparser.commands.diffs import diffs
+from regparser.index import entry
 from regparser.tree.struct import Node
 
 
@@ -14,8 +14,8 @@ class CommandsDiffsTests(TestCase):
     def integration_setup(self):
         self.cli = CliRunner()
         with self.cli.isolated_filesystem():
-            self.tree_dir = eregs_index.TreeEntry('12', '1000')
-            self.diff_dir = eregs_index.DiffEntry('12', '1000')
+            self.tree_dir = entry.Tree('12', '1000')
+            self.diff_dir = entry.Diff('12', '1000')
             (self.tree_dir / 'v1').write(Node(text='V1V1V1', label=['1000']))
             (self.tree_dir / 'v2').write(Node(text='V2V2V2', label=['1000']))
             yield

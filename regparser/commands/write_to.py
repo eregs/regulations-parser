@@ -1,15 +1,15 @@
 import click
 
-from regparser import eregs_index
 from regparser.api_writer import Client
+from regparser.index import entry
 
 
 # The write process is split into a set of functions, each responsible for
 # writing a particular type of entity
 
 def write_trees(client, cfr_title, cfr_part):
-    tree_dir = eregs_index.TreeEntry(cfr_title, cfr_part)
-    for version_id in eregs_index.VersionEntry(cfr_title, cfr_part):
+    tree_dir = entry.Tree(cfr_title, cfr_part)
+    for version_id in entry.Version(cfr_title, cfr_part):
         if version_id in tree_dir:
             click.echo("Writing tree " + version_id)
             tree = (tree_dir / version_id).read()
@@ -17,8 +17,8 @@ def write_trees(client, cfr_title, cfr_part):
 
 
 def write_layers(client, cfr_title, cfr_part):
-    for version_id in eregs_index.VersionEntry(cfr_title, cfr_part):
-        layer_dir = eregs_index.LayerEntry(cfr_title, cfr_part, version_id)
+    for version_id in entry.Version(cfr_title, cfr_part):
+        layer_dir = entry.Layer(cfr_title, cfr_part, version_id)
         for layer_name in layer_dir:
             click.echo("Writing layer {}@{}".format(layer_name, version_id))
             layer = (layer_dir / layer_name).read()
@@ -26,8 +26,8 @@ def write_layers(client, cfr_title, cfr_part):
 
 
 def write_notices(client, cfr_title, cfr_part):
-    sxs_dir = eregs_index.SxSEntry()
-    for version_id in eregs_index.VersionEntry(cfr_title, cfr_part):
+    sxs_dir = entry.SxS()
+    for version_id in entry.Version(cfr_title, cfr_part):
         if version_id in sxs_dir:
             click.echo("Writing notice " + version_id)
             tree = (sxs_dir / version_id).read()
@@ -35,8 +35,8 @@ def write_notices(client, cfr_title, cfr_part):
 
 
 def write_diffs(client, cfr_title, cfr_part):
-    diff_dir = eregs_index.DiffEntry(cfr_title, cfr_part)
-    version_ids = list(eregs_index.VersionEntry(cfr_title, cfr_part))
+    diff_dir = entry.Diff(cfr_title, cfr_part)
+    version_ids = list(entry.Version(cfr_title, cfr_part))
     for lhs_id in version_ids:
         container = diff_dir / lhs_id
         for rhs_id in version_ids:

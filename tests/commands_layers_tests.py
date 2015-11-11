@@ -4,9 +4,9 @@ from unittest import TestCase
 from click.testing import CliRunner
 from mock import Mock, patch
 
-from regparser import eregs_index
 from regparser.commands import layers
 from regparser.history.versions import Version
+from regparser.index import entry
 from regparser.tree.struct import Node
 
 
@@ -21,10 +21,10 @@ class CommandsLayersTests(TestCase):
         version info, and between the SxS layer and all of the preceding sxs
         inputs"""
         with self.cli.isolated_filesystem():
-            tree_dir = eregs_index.Entry('tree')
-            layer_dir = eregs_index.Entry('layer')
-            version_dir = eregs_index.Entry('version')
-            sxs_dir = eregs_index.Entry('sxs')
+            tree_dir = entry.Entry('tree')
+            layer_dir = entry.Entry('layer')
+            version_dir = entry.Entry('version')
+            sxs_dir = entry.Entry('sxs')
 
             # Trees
             (tree_dir / '1111').write('tree1')
@@ -63,9 +63,9 @@ class CommandsLayersTests(TestCase):
         """We should read back serialized notices, but only those which are
         relevant"""
         with self.cli.isolated_filesystem():
-            notice_dir = eregs_index.Entry('notice_xml')
-            version_dir = eregs_index.Entry('version')
-            sxs_dir = eregs_index.SxSEntry()
+            notice_dir = entry.Entry('notice_xml')
+            version_dir = entry.Entry('version')
+            sxs_dir = entry.SxS()
             # 4 won't be picked up as there's no associated version
             for i in (1, 3, 4):
                 (notice_dir / i).write(str(i))
@@ -89,7 +89,7 @@ class CommandsLayersTests(TestCase):
             analyses.return_value.build.return_value = {'2': 2}
 
             version = Version('1234', date(2000, 1, 1), date(2000, 1, 1))
-            eregs_index.TreeEntry('12', '1000', '1234').write(Node())
+            entry.Tree('12', '1000', '1234').write(Node())
 
             with patch.dict(layers.ALL_LAYERS,
                             {'meta': meta, 'analyses': analyses}):

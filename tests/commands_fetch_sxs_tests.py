@@ -7,8 +7,8 @@ from click.testing import CliRunner
 from lxml import etree
 from mock import patch
 
-from regparser import eregs_index
 from regparser.commands.fetch_sxs import fetch_sxs
+from regparser.index import dependency, entry
 from regparser.notice.xml import NoticeXML
 from tests.xml_builder import XMLBuilderMixin
 
@@ -27,8 +27,7 @@ class CommandsFetchSxSTests(XMLBuilderMixin, TestCase):
         dependency error"""
         with self.cli.isolated_filesystem():
             result = self.cli.invoke(fetch_sxs, ['1111'])
-            self.assertTrue(isinstance(result.exception,
-                                       eregs_index.DependencyException))
+            self.assertTrue(isinstance(result.exception, dependency.Missing))
 
     @patch('regparser.commands.fetch_sxs.build_notice')
     @patch('regparser.commands.fetch_sxs.meta_data')
@@ -36,7 +35,7 @@ class CommandsFetchSxSTests(XMLBuilderMixin, TestCase):
         """If the notice XML is present, we write the parsed version to disk,
         even if that version's already present"""
         with self.cli.isolated_filesystem():
-            eregs_index.NoticeEntry('1111').write(self.notice_xml)
+            entry.Notice('1111').write(self.notice_xml)
             self.cli.invoke(fetch_sxs, ['1111'])
             meta_data.return_value = {'example': 1}
             self.assertTrue(build_notice.called)
@@ -46,6 +45,6 @@ class CommandsFetchSxSTests(XMLBuilderMixin, TestCase):
                 isinstance(kwargs['xml_to_process'], etree._Element))
 
             build_notice.reset_mock()
-            eregs_index.Entry('rule_changes', '1111').write('content')
+            entry.Entry('rule_changes', '1111').write('content')
             self.cli.invoke(fetch_sxs, ['1111'])
             self.assertTrue(build_notice.called)

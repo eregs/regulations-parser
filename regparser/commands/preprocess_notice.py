@@ -1,7 +1,8 @@
 import click
 
-from regparser import eregs_index, federalregister
+from regparser import federalregister
 from regparser.commands.dependency_resolver import DependencyResolver
+from regparser.index import entry
 from regparser.notice.build import split_doc_num
 from regparser.notice.xml import notice_xmls_for_url
 
@@ -33,11 +34,11 @@ def preprocess_notice(document_number):
             notice_xml.derive_effective_date()
 
         notice_xml.version_id = file_name
-        eregs_index.NoticeEntry(file_name).write(notice_xml)
+        entry.Notice(file_name).write(notice_xml)
 
 
 class NoticeResolver(DependencyResolver):
-    PATH_PARTS = eregs_index.NoticeEntry.PREFIX + (
+    PATH_PARTS = entry.Notice.PREFIX + (
         '(?P<doc_number>[a-zA-Z0-9-_]+)',)
 
     def resolution(self):

@@ -1,13 +1,13 @@
 import click
 
-from regparser import eregs_index
+from regparser.index import dependency, entry
 from regparser.layer import ALL_LAYERS
 
 
 def dependencies(tree_dir, layer_dir, version_dir):
     """Modify and return the dependency graph pertaining to layers"""
-    deps = eregs_index.DependencyGraph()
-    sxs_dir = eregs_index.SxSEntry()
+    deps = dependency.Graph()
+    sxs_dir = entry.SxS()
     for version_id in tree_dir:
         for layer_name in ALL_LAYERS:
             # Layers depend on their associated tree
@@ -25,7 +25,7 @@ def sxs_source_names(version_dir, stop_version):
     """The SxS layer relies on all of notices that came before a particular
     version"""
     for version_id in version_dir:
-        if version_id in eregs_index.NoticeEntry():
+        if version_id in entry.Notice():
             yield version_id
         if version_id == stop_version:
             break
@@ -33,7 +33,7 @@ def sxs_source_names(version_dir, stop_version):
 
 def sxs_sources(version_dir, version_id):
     """Wrapper reading JSON for the sxs_source_names"""
-    return [(eregs_index.SxSEntry() / doc_num).read()
+    return [(entry.SxS() / doc_num).read()
             for doc_num in sxs_source_names(version_dir, version_id)]
 
 
@@ -50,10 +50,10 @@ def stale_layers(deps, layer_dir):
 def process_layers(stale, cfr_title, cfr_part, version, act_citation):
     """Build all of the stale layers for this version, writing them into the
     index. Assumes all dependencies have already been checked"""
-    tree = eregs_index.TreeEntry(
+    tree = entry.Tree(
         cfr_title, cfr_part, version.identifier).read()
-    version_dir = eregs_index.VersionEntry(cfr_title, cfr_part)
-    layer_dir = eregs_index.LayerEntry(cfr_title, cfr_part)
+    version_dir = entry.Version(cfr_title, cfr_part)
+    layer_dir = entry.Layer(cfr_title, cfr_part)
     for layer_name in stale:
         notices = []
         if layer_name == 'analyses':
@@ -76,9 +76,9 @@ def process_layers(stale, cfr_title, cfr_part, version, act_citation):
 # @todo - allow layers to be passed as a parameter
 def layers(cfr_title, cfr_part, act_title, act_section):
     """Build all layers for all known versions."""
-    tree_dir = eregs_index.TreeEntry(cfr_title, cfr_part)
-    layer_dir = eregs_index.LayerEntry(cfr_title, cfr_part)
-    version_dir = eregs_index.VersionEntry(cfr_title, cfr_part)
+    tree_dir = entry.Tree(cfr_title, cfr_part)
+    layer_dir = entry.Layer(cfr_title, cfr_part)
+    version_dir = entry.Version(cfr_title, cfr_part)
     deps = dependencies(tree_dir, layer_dir, version_dir)
 
     for version_id in tree_dir:

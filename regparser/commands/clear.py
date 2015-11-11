@@ -3,7 +3,7 @@ import shutil
 
 import click
 
-from regparser import eregs_index
+from regparser.index import entry
 
 
 SQLITE_CACHE = 'fr_cache.sqlite'
@@ -24,7 +24,7 @@ def clear(path, http_cache):
     """
     if not path:
         path = ['']
-    paths = [os.path.join(eregs_index.ROOT, p) for p in path]
+    paths = [os.path.join(entry.ROOT, p) for p in path]
     for path in paths:
         if os.path.exists(path):
             shutil.rmtree(path)

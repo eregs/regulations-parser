@@ -2,8 +2,8 @@ from unittest import TestCase
 
 from click.testing import CliRunner
 
-from regparser import eregs_index
 from regparser.commands import fill_with_rules
+from regparser.index import dependency, entry
 from regparser.tree.struct import Node
 
 
@@ -17,9 +17,9 @@ class CommandsFillWithRulesTests(TestCase):
         first version, if missing"""
         with self.cli.isolated_filesystem():
             version_ids = ['111', '222', '333', '444', '555', '666']
-            tree_dir = eregs_index.TreeEntry('12', '1000')
-            rule_dir = eregs_index.RuleChangesEntry()
-            vers_dir = eregs_index.VersionEntry('12', '1000')
+            tree_dir = entry.Tree('12', '1000')
+            rule_dir = entry.RuleChanges()
+            vers_dir = entry.Version('12', '1000')
             # Existing trees
             (tree_dir / '222').write(Node())
             (tree_dir / '555').write(Node())
@@ -58,13 +58,13 @@ class CommandsFillWithRulesTests(TestCase):
         """Should filter a set of version ids to only those with a dependency
         on changes derived from a rule"""
         with self.cli.isolated_filesystem():
-            tree_dir = eregs_index.TreeEntry('12', '1000')
+            tree_dir = entry.Tree('12', '1000')
 
-            deps = eregs_index.DependencyGraph()
-            deps.add(tree_dir / 111, eregs_index.AnnualEntry(12, 1000, 2001))
-            deps.add(tree_dir / 222, eregs_index.RuleChangesEntry(222))
-            deps.add(tree_dir / 333, eregs_index.RuleChangesEntry(333))
-            deps.add(tree_dir / 333, eregs_index.VersionEntry(333))
+            deps = dependency.Graph()
+            deps.add(tree_dir / 111, entry.Annual(12, 1000, 2001))
+            deps.add(tree_dir / 222, entry.RuleChanges(222))
+            deps.add(tree_dir / 333, entry.RuleChanges(333))
+            deps.add(tree_dir / 333, entry.Version(333))
             derived = fill_with_rules.derived_from_rules(
                 ['111', '222', '333', '444'], deps, tree_dir)
             self.assertEqual(derived, ['222', '333'])

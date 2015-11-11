@@ -3,8 +3,8 @@ from unittest import TestCase
 
 from click.testing import CliRunner
 
-from regparser import eregs_index
 from regparser.commands.clear import clear
+from regparser.index import entry
 
 
 class CommandsClearTests(TestCase):
@@ -30,14 +30,14 @@ class CommandsClearTests(TestCase):
 
     def test_deletes_index(self):
         with self.cli.isolated_filesystem():
-            eregs_index.Entry('aaa', 'bbb').write('ccc')
-            eregs_index.Entry('bbb', 'ccc').write('ddd')
-            self.assertEqual(1, len(eregs_index.Entry("aaa")))
-            self.assertEqual(1, len(eregs_index.Entry("bbb")))
+            entry.Entry('aaa', 'bbb').write('ccc')
+            entry.Entry('bbb', 'ccc').write('ddd')
+            self.assertEqual(1, len(entry.Entry("aaa")))
+            self.assertEqual(1, len(entry.Entry("bbb")))
 
             self.cli.invoke(clear)
-            self.assertEqual(0, len(eregs_index.Entry("aaa")))
-            self.assertEqual(0, len(eregs_index.Entry("bbb")))
+            self.assertEqual(0, len(entry.Entry("aaa")))
+            self.assertEqual(0, len(entry.Entry("bbb")))
 
     def test_deletes_can_be_focused(self):
         """If params are provided to delete certain directories, only those
@@ -49,12 +49,12 @@ class CommandsClearTests(TestCase):
                        'top-level-file', 'other-root/aaa']
 
             for path in to_delete + to_keep:
-                eregs_index.Entry(*path.split('/')).write('')
+                entry.Entry(*path.split('/')).write('')
 
             self.cli.invoke(clear, ['delroot', 'root/delsub'])
             self.assertItemsEqual(['top-level-file', 'root', 'other-root'],
-                                  list(eregs_index.Entry()))
+                                  list(entry.Entry()))
             self.assertItemsEqual(['othersub', 'aaa'],
-                                  list(eregs_index.Entry('root')))
+                                  list(entry.Entry('root')))
             self.assertItemsEqual(['aaa'],
-                                  list(eregs_index.Entry('other-root')))
+                                  list(entry.Entry('other-root')))
