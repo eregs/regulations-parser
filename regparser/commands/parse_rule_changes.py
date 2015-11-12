@@ -24,7 +24,7 @@ def parse_rule_changes(document_number):
 
     notice_xml = notice_entry.read()
     notice = process_amendments({'cfr_parts': notice_xml.cfr_parts},
-                                notice_xml._xml)
+                                notice_xml.xml)
     rule_entry.write(notice)
 
 

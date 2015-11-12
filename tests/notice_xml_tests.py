@@ -4,8 +4,6 @@ import shutil
 import tempfile
 from unittest import TestCase
 
-from lxml import etree
-
 from regparser.history.delays import FRDelay
 from regparser.notice import xml as notice_xml
 import settings
@@ -84,7 +82,7 @@ class NoticeXMLTests(XMLBuilderMixin, TestCase):
         self.assertEqual(xml.published, date(2004, 4, 4))
         self.assertEqual(xml.fr_volume, 22)
 
-        xml = notice_xml.NoticeXML(etree.fromstring(etree.tostring(xml._xml)))
+        xml = notice_xml.NoticeXML(xml.xml_str())
         self.assertEqual(xml.effective, date(2005, 5, 5))
         self.assertEqual(xml.published, date(2004, 4, 4))
         self.assertEqual(xml.fr_volume, 22)
@@ -95,7 +93,7 @@ class NoticeXMLTests(XMLBuilderMixin, TestCase):
 
         xml.effective = '2005-05-05'
         self.assertEqual(xml.effective, date(2005, 5, 5))
-        xml = notice_xml.NoticeXML(etree.fromstring(etree.tostring(xml._xml)))
+        xml = notice_xml.NoticeXML(xml.xml_str())
         self.assertEqual(xml.effective, date(2005, 5, 5))
 
     def test_derive_effective_date(self):

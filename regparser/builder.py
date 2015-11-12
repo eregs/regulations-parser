@@ -13,9 +13,10 @@ from regparser.history.notices import (
     applicable as applicable_notices, group_by_eff_date)
 from regparser.history.delays import modify_effective_dates
 from regparser.layer import ALL_LAYERS
-from regparser.notice import fake as notice_fake, preprocessors
+from regparser.notice import fake as notice_fake
 from regparser.notice.compiler import compile_regulation
 from regparser.tree import struct, xml_parser
+from regparser.tree.xml_parser import preprocessors
 
 
 class Builder(object):

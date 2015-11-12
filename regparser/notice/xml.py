@@ -1,6 +1,5 @@
 """Functions for processing the xml associated with the Federal Register's
 notices"""
-from copy import deepcopy
 from datetime import date, datetime
 import logging
 import os
@@ -12,46 +11,17 @@ import requests
 from regparser.grammar.unified import notice_cfr_p
 from regparser.history.delays import delays_in_sentence
 from regparser.index import xml_sync
-from regparser.notice import preprocessors
 from regparser.notice.dates import fetch_dates
+from regparser.tree.xml_parser.xml_wrapper import XMLWrapper
 import settings
 
 
-class NoticeXML(object):
+class NoticeXML(XMLWrapper):
     """Wrapper around a notice XML which provides quick access to the XML's
     encoded data fields"""
-    def __init__(self, xml, source=None):
-        """Includes automatic conversion from string and a deep copy for
-        safety. `source` represents the providence of this xml. It is _not_
-        serialized and hence does not follow the xml through the index"""
-        if isinstance(xml, basestring):
-            self._xml = etree.fromstring(xml)
-        else:
-            self._xml = deepcopy(xml)
-        self.source = source
-
-    @property
-    def source_is_local(self):
-        """Determine whether or not `self.source` refers to a local file"""
-        protocol = (self.source or '').split('://')[0]
-        return protocol not in ('http', 'https')
-
-    def preprocess(self):
-        """Unfortunately, the notice xml is often inaccurate. This function
-        attempts to fix some of those (general) flaws. For specific issues, we
-        tend to instead use the files in settings.LOCAL_XML_PATHS"""
-
-        for preprocessor in preprocessors.ALL:
-            preprocessor().transform(self._xml)
-
-        return self
-
-    def xml_str(self):
-        return etree.tostring(self._xml, pretty_print=True)
-
     def delays(self):
         """Pull out FRDelays found in the DATES tag"""
-        dates_str = "".join(p.text for p in self._xml.xpath(
+        dates_str = "".join(p.text for p in self.xpath(
             "(//DATES/P)|(//EFFDATE/P)"))
         return [delay for sent in dates_str.split('.')
                 for delay in delays_in_sentence(sent)]
@@ -59,12 +29,12 @@ class NoticeXML(object):
     def _set_date_attr(self, date_type, value):
         """Modify the XML tree so that it contains meta data for a date
         field. Accepts both strings and dates"""
-        dates_tag = self._xml.xpath('//DATES')
+        dates_tag = self.xpath('//DATES')
         if dates_tag:
             dates_tag = dates_tag[0]
         else:   # Tag wasn't present; create it
             dates_tag = etree.Element("DATES")
-            self._xml.insert(0, dates_tag)
+            self.xml.insert(0, dates_tag)
         if isinstance(value, date):
             value = value.isoformat()
         dates_tag.attrib["eregs-{}-date".format(date_type)] = value
@@ -72,7 +42,7 @@ class NoticeXML(object):
     def derive_effective_date(self):
         """Attempt to parse effective date from DATES tags. Raises exception
         if it cannot. Also sets the field. Returns a datetime.date"""
-        dates = fetch_dates(self._xml) or {}
+        dates = fetch_dates(self.xml) or {}
         if 'effective' not in dates:
             raise Exception(
                 "Could not derive effective date for notice {}".format(
@@ -84,7 +54,7 @@ class NoticeXML(object):
     def _get_date_attr(self, date_type):
         """Pulls out the date set in `set_date_attr`, as a datetime.date. If
         not present, returns None"""
-        value = self._xml.xpath(".//DATES")[0].get('eregs-{}-date'.format(
+        value = self.xpath(".//DATES")[0].get('eregs-{}-date'.format(
             date_type))
         return datetime.strptime(value, "%Y-%m-%d").date()
 
@@ -110,38 +80,38 @@ class NoticeXML(object):
 
     @property
     def fr_volume(self):
-        return int(self._xml.xpath(".//PRTPAGE")[0].attrib['eregs-fr-volume'])
+        return int(self.xpath(".//PRTPAGE")[0].attrib['eregs-fr-volume'])
 
     @fr_volume.setter
     def fr_volume(self, value):
-        for prtpage in self._xml.xpath(".//PRTPAGE"):
+        for prtpage in self.xpath(".//PRTPAGE"):
             prtpage.attrib['eregs-fr-volume'] = str(value)
 
     @property
     def start_page(self):
-        return int(self._xml.xpath(".//PRTPAGE")[0].attrib["P"]) - 1
+        return int(self.xpath(".//PRTPAGE")[0].attrib["P"]) - 1
 
     @property
     def end_page(self):
-        return int(self._xml.xpath(".//PRTPAGE")[-1].attrib["P"])
+        return int(self.xpath(".//PRTPAGE")[-1].attrib["P"])
 
     @property
     def version_id(self):
-        return self._xml.attrib.get('eregs-version-id')
+        return self.xml.attrib.get('eregs-version-id')
 
     @version_id.setter
     def version_id(self, value):
-        self._xml.attrib['eregs-version-id'] = str(value)
+        self.xml.attrib['eregs-version-id'] = str(value)
 
     @property
     def cfr_parts(self):
-        return [int(p) for p in fetch_cfr_parts(self._xml)]
+        return [int(p) for p in fetch_cfr_parts(self.xml)]
 
     @property
     def cfr_titles(self):
         return list(sorted(set(
             int(notice_cfr_p.parseString(cfr_elm.text).cfr_title)
-            for cfr_elm in self._xml.xpath('//CFR'))))
+            for cfr_elm in self.xpath('//CFR'))))
 
 
 def fetch_cfr_parts(notice_xml):
