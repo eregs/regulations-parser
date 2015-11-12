@@ -6,6 +6,7 @@ from regparser.commands.fill_with_rules import fill_with_rules
 from regparser.commands.layers import layers
 from regparser.commands.diffs import diffs
 from regparser.commands.write_to import write_to
+from regparser.commands.sync_xml import sync_xml
 
 
 @click.command()
@@ -25,6 +26,7 @@ def pipeline(ctx, cfr_title, cfr_part, output):
     * a directory prefixed with "git://". This will export to a git
       repository"""
     params = {'cfr_title': cfr_title, 'cfr_part': cfr_part}
+    ctx.invoke(sync_xml)
     ctx.invoke(versions, **params)
     ctx.invoke(annual_editions, **params)
     ctx.invoke(fill_with_rules, **params)
