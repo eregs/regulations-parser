@@ -107,45 +107,57 @@ def get_paragraph_markers(text):
     return []
 
 
-def _should_add_space(prev_text, next_text):
+def _combine_with_space(prev_text, next_text, add_space_if_needed):
     """Logic to determine where to add spaces to XML. Generally this is just
     as matter of checking for space characters, but there are some
     outliers"""
-    prev_text, next_text = prev_text[-1:], next_text[:1]
-    return (not prev_text.isspace() and not next_text.isspace()
-            and next_text
-            and prev_text not in u'([/<—-'
-            and next_text not in u').;,]>/—-')
+    prev_text, next_text = prev_text or "", next_text or ""
+    prev_char, next_char = prev_text[-1:], next_text[:1]
+    needs_space = (not prev_char.isspace() and not next_char.isspace()
+                   and next_char
+                   and prev_char not in u'([/<—-'
+                   and next_char not in u').;,]>/—-')
+    if add_space_if_needed and needs_space:
+        return prev_text + " " + next_text
+    else:
+        return prev_text + next_text
+
+
+def _replace_xml_node_with_text(node, text):
+    """There are some complications w/ lxml when determining where to add the
+    replacement text. Account for all of that here."""
+    parent, prev = node.getparent(), node.getprevious()
+    if prev is not None:
+        prev.tail = (prev.tail or '') + text
+    else:
+        parent.text = (parent.text or '') + text
+    parent.remove(node)
 
 
 def get_node_text(node, add_spaces=False):
-    """ Extract all the text from an XML node (including the
-    text of it's children). """
+    """ Extract all the text from an XML node (including the text of it's
+    children). """
     node = deepcopy(node)
     # subscripts
     for e in node.xpath(".//E[@T='52']"):
-        parent = e.getparent()
-        prev_sib = e.getprevious()
-        appending = "_{" + e.text + "} " + (e.tail or "")
-        if prev_sib is not None:
-            prev_sib.tail = (prev_sib.tail or '') + appending
-        else:
-            parent.text = (parent.text or '') + appending
-        parent.remove(e)
+        text = _combine_with_space("_{" + e.text + "}", e.tail, add_spaces)
+        _replace_xml_node_with_text(e, text)
+    # footnotes
+    for su in node.xpath(".//SU[@footnote]"):
+        footnote = su.attrib['footnote']
+        footnote = footnote.replace('(', r'\(').replace(')', r'\)')
+        text = u"[^{}]({})".format(su.text, footnote)
+        text = _combine_with_space(text, su.tail, add_spaces)
+        _replace_xml_node_with_text(su, text)
 
     parts = [node.text] +\
         list(chain(*([c.text, c.tail] for c in node.getchildren()))) +\
         [node.tail]
-    if add_spaces:
-        final_text = ''
-        for part in filter(bool, parts):
-            if _should_add_space(final_text, part):
-                final_text += " " + part
-            else:
-                final_text += part
-        return final_text.strip()
-    else:
-        return ''.join(filter(None, parts))
+
+    final_text = ''
+    for part in filter(bool, parts):
+        final_text = _combine_with_space(final_text, part, add_spaces)
+    return final_text.strip()
 
 
 def get_node_text_tags_preserved(node):
