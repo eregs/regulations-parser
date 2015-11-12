@@ -73,7 +73,7 @@ class Notice(Entry):
         return content.xml_str()
 
     def deserialize(self, content):
-        return NoticeXML(etree.fromstring(content))
+        return NoticeXML(etree.fromstring(content), str(self))
 
 
 class Annual(Entry):
