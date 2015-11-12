@@ -1,8 +1,9 @@
+import abc
 import logging
 
 from regparser.layer.formatting import table_xml_to_plaintext
 from regparser.tree.depth import heuristics, markers as mtypes
-from regparser.tree.depth.derive import derive_depths
+from regparser.tree.depth.derive import debug_idx, derive_depths
 from regparser.tree.struct import Node
 from regparser.tree.xml_parser import tree_utils
 
@@ -118,10 +119,19 @@ class ParagraphProcessor(object):
                 root.tagged_text = ' '.join(tagged_text_list)
         if nodes:
             markers = [node.label[0] for node in nodes]
-            depths = derive_depths(markers, self.additional_constraints())
+            constraints = self.additional_constraints()
+            depths = derive_depths(markers, constraints)
             if not depths:
+                fails_at = debug_idx(markers, constraints)
                 logging.error(
-                    "Could not determine paragraph depths:\n%s", markers)
+                    "Could not determine paragraph depths (<%s /> %s):\n"
+                    "%s\n"
+                    "?? %s\n"
+                    "Remaining markers: %s",
+                    xml.tag, root.label_id(),
+                    derive_depths(markers[:fails_at],
+                                  constraints)[0].pretty_str(),
+                    markers[fails_at], markers[fails_at + 1:])
             depths = self.select_depth(depths)
             return self.build_hierarchy(root, nodes, depths)
         else:
@@ -132,7 +142,25 @@ class ParagraphProcessor(object):
         return []
 
 
-class StarsMatcher(object):
+class BaseMatcher(object):
+    """Base class defining the interface of various XML node matchers"""
+    __metaclass__ = abc.ABCMeta
+
+    @abc.abstractmethod
+    def matches(self, xml):
+        """Test the xml element -- does this matcher apply?"""
+        raise NotImplementedError()
+
+    @abc.abstractmethod
+    def derive_nodes(self, xml, processor=None):
+        """Given an xml node which this matcher applies against, convert it
+        into a list of Node structures. `processor` is the paragraph processor
+        which we are being executed in. May be useful when determining how to
+        create the Nodes"""
+        raise NotImplementedError()
+
+
+class StarsMatcher(BaseMatcher):
     """<STARS> indicates a chunk of text which is being skipped over"""
     def matches(self, xml):
         return xml.tag == 'STARS'
@@ -141,21 +169,21 @@ class StarsMatcher(object):
         return [Node(label=[mtypes.STARS_TAG])]
 
 
-class SimpleTagMatcher(object):
-    """Simple example tag matcher -- it listens for a specific tag and derives
+class SimpleTagMatcher(BaseMatcher):
+    """Simple example tag matcher -- it listens for specific tags and derives
     a single node with the associated body"""
-    def __init__(self, tag):
-        self.tag = tag
+    def __init__(self, *tags):
+        self.tags = list(tags)
 
     def matches(self, xml):
-        return xml.tag == self.tag
+        return xml.tag in self.tags
 
     def derive_nodes(self, xml, processor=None):
         return [Node(text=tree_utils.get_node_text(xml).strip(),
                      label=[mtypes.MARKERLESS])]
 
 
-class TableMatcher(object):
+class TableMatcher(BaseMatcher):
     """Matches the GPOTABLE tag"""
     def matches(self, xml):
         return xml.tag == 'GPOTABLE'
@@ -165,7 +193,7 @@ class TableMatcher(object):
                      source_xml=xml)]
 
 
-class HeaderMatcher(object):
+class HeaderMatcher(BaseMatcher):
     def matches(self, xml):
         return xml.tag == "HD"
 
@@ -176,17 +204,7 @@ class HeaderMatcher(object):
                      label=[mtypes.MARKERLESS])]
 
 
-class ExtractMatcher(object):
-    def matches(self, xml):
-        return xml.tag in ('EXTRACT',)
-
-    def derive_nodes(self, xml, processor=None):
-        extract_node = Node(text=(xml.text or '').strip(),
-                            node_type=u"extract", label=[mtypes.MARKERLESS])
-        return [processor.process(xml, extract_node)]
-
-
-class FencedMatcher(object):
+class FencedMatcher(BaseMatcher):
     """Use github-like fencing to indicate this is a note/code"""
     def matches(self, xml):
         return xml.tag in ('NOTE', 'NOTES', 'CODE')

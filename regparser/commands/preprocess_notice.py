@@ -28,7 +28,7 @@ def preprocess_notice(document_number):
             effective_date = notice_xml.derive_effective_date()
             file_name = split_doc_num(document_number,
                                       effective_date.isoformat())
-        elif 'effective_on' in meta:
+        elif meta.get('effective_on'):
             notice_xml.effective = meta['effective_on']
         else:
             notice_xml.derive_effective_date()

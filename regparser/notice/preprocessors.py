@@ -1,9 +1,13 @@
 """Set of transforms we run on notice XML to account for common inaccuracies
 in the XML"""
 import abc
+from copy import deepcopy
+import logging
 import re
 
 from lxml import etree
+
+from regparser.tree.xml_parser.tree_utils import get_node_text
 
 
 class PreProcessorBase(object):
@@ -174,6 +178,74 @@ class ExtractTags(PreProcessorBase):
                 if self.extract_pair(extract) or self.sandwich(extract):
                     should_continue = True
                     break
+
+
+class Footnotes(PreProcessorBase):
+    """The XML separates the content of footnotes and where they are
+    referenced. To make it more semantic (and easier to process), we find the
+    relevant footnote and attach its text to the references. We also need to
+    split references apart if multiple footnotes apply to the same <SU>"""
+    # SU indicates both the reference and the content of the footnote;
+    # distinguish by looking at ancestors
+    IS_REF_PREDICATE = 'not(ancestor::TNOTE) and not(ancestor::FTNT)'
+    XPATH_IS_REF = './/SU[{}]'.format(IS_REF_PREDICATE)
+    # Find the content of a footnote to associate with a reference
+    XPATH_FIND_NOTE_TPL = \
+        "./following::SU[(ancestor::TNOTE or ancestor::FTNT) and text()='{}']"
+
+    def transform(self, xml):
+        self.split_comma_footnotes(xml)
+        self.add_ref_attributes(xml)
+
+    def split_comma_footnotes(self, xml):
+        """Convert XML such as <SU>1, 2, 3</SU> into distinct SU elements:
+        <SU>1</SU>, <SU>2</SU>, <SU>3</SU> for easier reference"""
+        for ref_xml in xml.xpath(self.XPATH_IS_REF):
+            parent = ref_xml.getparent()
+            idx_in_parent = parent.index(ref_xml)
+            parent.remove(ref_xml)  # we will be replacing this shortly
+
+            refs = [txt.strip() for txt in re.split(r'[,|\s]+', ref_xml.text)]
+            tail_texts = self._tails_corresponding_to(ref_xml, refs)
+
+            for idx, (ref, tail) in enumerate(zip(refs, tail_texts)):
+                node = etree.Element("SU")
+                node.text = ref
+                node.tail = tail
+                parent.insert(idx_in_parent + idx, node)
+
+    def _tails_corresponding_to(self, su, refs):
+        """Given an <SU> element and a list of texts it should be broken into,
+        return a list of the "tail" texts, that is, the text which will be
+        between <SU>s"""
+        to_process = su.text
+
+        tail_texts = []
+        for ref in reversed(refs):
+            idx = to_process.rfind(ref)
+            tail_texts.append(to_process[idx+len(ref):])
+            to_process = to_process[:idx]
+        # The last (reversed first) tail should contain the su.tail
+        tail_texts[0] += su.tail or ''
+
+        return list(reversed(tail_texts))
+
+    def add_ref_attributes(self, xml):
+        """Modify each footnote reference so that it has an attribute
+        containing its footnote content"""
+        for ref in xml.xpath(self.XPATH_IS_REF):
+            sus = ref.xpath(self.XPATH_FIND_NOTE_TPL.format(ref.text))
+            if not sus:
+                logging.warning(
+                    "Could not find corresponding footnote ({}): {}".format(
+                        ref.text, etree.tostring(ref.getparent())))
+            else:
+                # copy as we need to modify
+                note = deepcopy(sus[0].getparent())
+                # Modify note to remove the reference text; it's superfluous
+                for su in note.xpath('./SU'):
+                    su.text = ''
+                ref.attrib['footnote'] = get_node_text(note).strip()
 
 
 # Surface all of the PreProcessorBase classes

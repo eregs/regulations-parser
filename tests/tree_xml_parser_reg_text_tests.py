@@ -341,6 +341,7 @@ class RegTextTest(XMLBuilderMixin, NodeAccessorMixin, TestCase):
             with root.EXTRACT() as extract:
                 extract.P("1. Some content")
                 extract.P("2. Other content")
+                extract.P("(3) This paragraph has parens for some reason")
         nodes = reg_text.build_from_section('8675', self.tree.render_xml())
 
         root_node = nodes[0]
@@ -357,17 +358,20 @@ class RegTextTest(XMLBuilderMixin, NodeAccessorMixin, TestCase):
 
         extract_node = outer_p_node.children[0]
         self.assertEqual(['8675', '309', 'a', 'p1'], extract_node.label)
-        self.assertEqual(2, len(extract_node.children))
+        self.assertEqual(3, len(extract_node.children))
         self.assertEqual('', extract_node.text)
         self.assertEqual("extract", extract_node.node_type)
 
-        first_p_node, second_p_node = extract_node.children
+        first_p_node, second_p_node, third_p_node = extract_node.children
         self.assertEqual(['8675', '309', 'a', 'p1', 'p1'], first_p_node.label)
         self.assertEqual(['8675', '309', 'a', 'p1', 'p2'], second_p_node.label)
+        self.assertEqual(['8675', '309', 'a', 'p1', 'p3'], third_p_node.label)
         self.assertEqual("regtext", first_p_node.node_type,
                          second_p_node.node_type)
         self.assertEqual('1. Some content', first_p_node.text)
         self.assertEqual('2. Other content', second_p_node.text)
+        self.assertEqual('(3) This paragraph has parens for some reason',
+                         third_p_node.text)
 
     def test_build_from_section_notes(self):
         """Account for paragraphs within a NOTES tag"""

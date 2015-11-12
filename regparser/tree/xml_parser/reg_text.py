@@ -7,7 +7,7 @@ from regparser import content
 from regparser.tree.depth import markers as mtypes, rules
 from regparser.tree.struct import Node
 from regparser.tree.paragraph import p_level_of, p_levels
-from regparser.tree.xml_parser import paragraph_processor
+from regparser.tree.xml_parser import extract_processor, paragraph_processor
 from regparser.tree.xml_parser.appendices import build_non_reg_text
 from regparser.tree import reg_text
 from regparser.tree.xml_parser import tree_utils
@@ -255,7 +255,7 @@ def build_from_section(reg_part, section_xml):
     return section_nodes
 
 
-class ParagraphMatcher(object):
+class ParagraphMatcher(paragraph_processor.BaseMatcher):
     """<P>/<FP> with or without initial paragraph markers -- (a)(1)(i) etc."""
     def matches(self, xml):
         return xml.tag in ('P', 'FP')
@@ -289,11 +289,10 @@ class ParagraphMatcher(object):
 
 
 class RegtextParagraphProcessor(paragraph_processor.ParagraphProcessor):
-    NODE_TYPE = Node.REGTEXT
     MATCHERS = [paragraph_processor.StarsMatcher(),
                 paragraph_processor.TableMatcher(),
                 paragraph_processor.FencedMatcher(),
-                paragraph_processor.ExtractMatcher(),
+                extract_processor.ExtractMatcher(),
                 paragraph_processor.HeaderMatcher(),
                 ParagraphMatcher()]
 

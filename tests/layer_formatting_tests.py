@@ -241,18 +241,22 @@ class LayerFormattingTests(XMLBuilderMixin, TestCase):
                  barr_header, unbr_header, barr_header, unbr_header]
             ])
 
-    def test_process_fenced(self):
-        node = Node("Content content\n```abc def\nLine 1\nLine 2\n```")
-        result = formatting.Formatting(None).process(node)
+
+class FencedTests(TestCase):
+    def test_process(self):
+        text = "Content content\n```abc def\nLine 1\nLine 2\n```"
+        result = list(formatting.FencedData().process(text))
         self.assertEqual(1, len(result))
         result = result[0]
-        self.assertEqual(result['text'], node.text[16:])
+        self.assertEqual(result['text'], text[16:])
         self.assertEqual(result['fence_data'],
                          {'type': 'abc def', 'lines': ['Line 1', 'Line 2']})
 
-    def test_process_subscript(self):
-        node = Node("This is a_{subscript}. And then a_{subscript} again")
-        result = formatting.Formatting(None).process(node)
+
+class SubscriptTests(TestCase):
+    def test_process(self):
+        text = "This is a_{subscript}. And then a_{subscript} again"
+        result = list(formatting.Subscript().process(text))
         self.assertEqual(1, len(result))
         result = result[0]
         self.assertEqual(result['text'], "a_{subscript}")
@@ -260,9 +264,11 @@ class LayerFormattingTests(XMLBuilderMixin, TestCase):
         self.assertEqual(result['subscript_data'],
                          {'variable': 'a', 'subscript': 'subscript'})
 
-    def test_process_dashes(self):
-        node = Node("This is an fp-dash_____")
-        result = formatting.Formatting(None).process(node)
+
+class DashesTests(TestCase):
+    def test_process(self):
+        text = "This is an fp-dash_____"
+        result = list(formatting.Dashes().process(text))
         self.assertEqual(1, len(result))
         result = result[0]
 
@@ -270,3 +276,23 @@ class LayerFormattingTests(XMLBuilderMixin, TestCase):
         self.assertEqual(result['locations'], [0])
         self.assertEqual(result['dash_data'],
                          {'text': 'This is an fp-dash'})
+
+
+class FootnotesTests(TestCase):
+    def test_process_simple(self):
+        text = "Something like[^1](where 'like' is not defined) this"
+        result = list(formatting.Footnotes().process(text))
+        self.assertEqual(result, [{
+            'text': text[len("Something like"):-len(" this")],
+            'locations': [0],
+            'footnote_data': {'ref': '1',
+                              'note': "where 'like' is not defined"}}])
+
+    def test_process_has_escape(self):
+        text = r"Parens[^parens](they look like \(\))"
+        result = list(formatting.Footnotes().process(text))
+        self.assertEqual(result, [{
+            'text': text[len("Parens"):],
+            'locations': [0],
+            'footnote_data': {'ref': 'parens',
+                              'note': "they look like ()"}}])
