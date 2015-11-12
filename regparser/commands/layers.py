@@ -50,8 +50,7 @@ def stale_layers(deps, layer_dir):
 def process_layers(stale, cfr_title, cfr_part, version, act_citation):
     """Build all of the stale layers for this version, writing them into the
     index. Assumes all dependencies have already been checked"""
-    tree = entry.Tree(
-        cfr_title, cfr_part, version.identifier).read()
+    tree = entry.Tree(cfr_title, cfr_part, version.identifier).read()
     version_dir = entry.Version(cfr_title, cfr_part)
     layer_dir = entry.Layer(cfr_title, cfr_part)
     for layer_name in stale:
