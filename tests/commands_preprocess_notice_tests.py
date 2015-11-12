@@ -55,7 +55,7 @@ class CommandsPreprocessNoticeTests(HttpMixin, XMLBuilderMixin, TestCase):
             self.example_xml("Effective January 1, 2001")]
         with cli.isolated_filesystem():
             cli.invoke(preprocess_notice, ['1234-5678'])
-            written = eregs_index.NoticeEntry('1234-5678').read()
+            written = entry.Notice('1234-5678').read()
             self.assertEqual(written.effective, date(2001, 1, 1))
 
     @patch('regparser.commands.preprocess_notice.notice_xmls_for_url')
