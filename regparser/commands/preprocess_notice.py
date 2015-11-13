@@ -40,7 +40,6 @@ def preprocess_notice(document_number):
         notice_entry.write(notice_xml)
         if notice_xml.source_is_local:
             deps.add(str(notice_entry), notice_xml.source)
-        entry.Notice(file_name).write(notice_xml)
 
 
 class NoticeResolver(DependencyResolver):
