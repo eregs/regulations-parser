@@ -1,14 +1,17 @@
 from collections import namedtuple
 from datetime import date, datetime
 import logging
+import os
 import re
 
-from lxml import etree
 import requests
 
 from regparser.federalregister import fetch_notice_json
 from regparser.history.delays import modify_effective_dates
+from regparser.index import xml_sync
 from regparser.notice.build import build_notice
+from regparser.tree.xml_parser.xml_wrapper import XMLWrapper
+import settings
 
 
 CFR_BULK_URL = ("http://www.gpo.gov/fdsys/bulkdata/CFR/{year}/title-{title}/"
@@ -48,11 +51,18 @@ class Volume(namedtuple('Volume', ['year', 'title', 'vol_num'])):
             return False
 
     def find_part_xml(self, part):
+        """Pull the XML for an annual edition, first checking locally"""
         url = CFR_PART_URL.format(year=self.year, title=self.title,
                                   volume=self.vol_num, part=part)
+        filename = url.split('/')[-1]
+        for xml_path in settings.LOCAL_XML_PATHS + [xml_sync.GIT_DIR]:
+            xml_path = os.path.join(xml_path, 'annual', filename)
+            if os.path.isfile(xml_path):
+                with open(xml_path) as f:
+                    return XMLWrapper(f.read(), xml_path)
         response = requests.get(url)
         if response.status_code == 200:
-            return etree.fromstring(response.content)
+            return XMLWrapper(response.content, url)
 
 
 def annual_edition_for(title, notice):
