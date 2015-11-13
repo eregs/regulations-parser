@@ -2,13 +2,12 @@ import json
 import logging
 import os
 
-from lxml import etree
-
 from regparser.history.versions import Version as VersionStruct
 from regparser.notice.encoder import AmendmentEncoder
 from regparser.notice.xml import NoticeXML
 from regparser.tree.struct import (
     frozen_node_decode_hook, full_node_decode_hook, FullNodeEncoder)
+from regparser.tree.xml_parser.xml_wrapper import XMLWrapper
 from . import ROOT
 
 
@@ -73,7 +72,7 @@ class Notice(Entry):
         return content.xml_str()
 
     def deserialize(self, content):
-        return NoticeXML(etree.fromstring(content), str(self))
+        return NoticeXML(content, str(self))
 
 
 class Annual(Entry):
@@ -81,10 +80,10 @@ class Annual(Entry):
     PREFIX = (ROOT, 'annual')
 
     def serialize(self, content):
-        return etree.tostring(content)
+        return content.xml_str()
 
     def deserialize(self, content):
-        return etree.fromstring(content)
+        return XMLWrapper(content, str(self))
 
 
 class Version(Entry):
