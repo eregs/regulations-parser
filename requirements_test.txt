@@ -1,8 +1,8 @@
-cov-core==1.7
-coverage==3.6
-datatree
-flake8==2.4.0
+cov-core==1.15.0
+coverage==4.0.2
+datatree==0.1.8.1
+flake8==2.5.0
 httpretty==0.8.10
-mock==1.0.1
-nose==1.2.1
+mock==1.3.0
+nose==1.3.7
 nose-cov==1.6

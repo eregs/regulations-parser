@@ -10,12 +10,15 @@ setup(
     ],
     install_requires=[
         "click",
+        "dagger",
         "GitPython",
         "inflection",
+        "json-delta",
         "lxml",
         "pyparsing",
         "python-constraint",
-        "requests"
+        "requests",
+        "requests-cache"
     ],
     entry_points={"console_scripts": ["eregs=eregs:main"]}
 )
