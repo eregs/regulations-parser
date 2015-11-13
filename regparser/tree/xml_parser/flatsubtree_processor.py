@@ -17,7 +17,7 @@ class FlatsubtreeMatcher(paragraph_processor.BaseMatcher):
     Detects tags passed to it on init and processes them with the
     FlatParagraphProcessor. Also optionally sets node_type.
     """
-    def __init__(self, tags=[], node_type="regtext"):
+    def __init__(self, tags=[], node_type=Node.REGTEXT):
         self.tags = list(tags)
         self.node_type = node_type
 
@@ -27,6 +27,6 @@ class FlatsubtreeMatcher(paragraph_processor.BaseMatcher):
     def derive_nodes(self, xml, processor=None):
         processor = FlatParagraphProcessor()
         text = (xml.text or '').strip()
-        extract_node = Node(text=text, node_type=self.node_type,
-                            label=[mtypes.MARKERLESS])
-        return [processor.process(xml, extract_node)]
+        node = Node(text=text, node_type=self.node_type,
+                    label=[mtypes.MARKERLESS])
+        return [processor.process(xml, node)]

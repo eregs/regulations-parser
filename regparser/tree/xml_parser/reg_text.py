@@ -293,8 +293,8 @@ class RegtextParagraphProcessor(paragraph_processor.ParagraphProcessor):
     MATCHERS = [paragraph_processor.StarsMatcher(),
                 paragraph_processor.TableMatcher(),
                 paragraph_processor.FencedMatcher(),
-                flatsubtree_processor.FlatsubtreeMatcher(tags=['EXTRACT'],
-                                                         node_type="extract"),
+                flatsubtree_processor.FlatsubtreeMatcher(
+                    tags=['EXTRACT'], node_type=Node.EXTRACT),
                 flatsubtree_processor.FlatsubtreeMatcher(tags=['EXAMPLE']),
                 paragraph_processor.HeaderMatcher(),
                 ParagraphMatcher()]
