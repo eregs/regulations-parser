@@ -373,6 +373,51 @@ class RegTextTest(XMLBuilderMixin, NodeAccessorMixin, TestCase):
         self.assertEqual('(3) This paragraph has parens for some reason',
                          third_p_node.text)
 
+    def test_build_from_section_example(self):
+        """Account for paragraphs within an EXAMPLE tag"""
+        with self.section() as root:
+            root.P("(a) aaaa")
+            with root.EXAMPLE() as example:
+                example.P("You need a form if:")
+                example.P("1. Some content")
+                example.P("2. Other content")
+            with root.EXAMPLE() as example:
+                example.P("You do not need a form if:")
+                example.P("1. Some content")
+                example.P("2. Other content")
+        node = reg_text.build_from_section('8675', self.tree.render_xml())[0]
+
+        a = node.children[0]
+        self.assertEqual(u'(a) aaaa', a.text)
+        self.assertEqual(2, len(a.children))
+        self.assertEqual(['8675', '309', 'a'], a.label)
+
+        example_one = a.children[0]
+        self.assertEqual(u'', example_one.text)
+        self.assertEqual(3, len(example_one.children))
+        self.assertEqual(['8675', '309', 'a', 'p1'], example_one.label)
+
+        children = example_one.children
+        self.assertEqual(u'You need a form if:', children[0].text)
+        self.assertEqual(['8675', '309', 'a', 'p1', 'p1'], children[0].label)
+        self.assertEqual(u'1. Some content', children[1].text)
+        self.assertEqual(['8675', '309', 'a', 'p1', 'p2'], children[1].label)
+        self.assertEqual(u'2. Other content', children[2].text)
+        self.assertEqual(['8675', '309', 'a', 'p1', 'p3'], children[2].label)
+
+        example_two = a.children[1]
+        self.assertEqual(u'', example_two.text)
+        self.assertEqual(3, len(example_two.children))
+        self.assertEqual(['8675', '309', 'a', 'p2'], example_two.label)
+
+        children = example_two.children
+        self.assertEqual(u'You do not need a form if:', children[0].text)
+        self.assertEqual(['8675', '309', 'a', 'p2', 'p1'], children[0].label)
+        self.assertEqual(u'1. Some content', children[1].text)
+        self.assertEqual(['8675', '309', 'a', 'p2', 'p2'], children[1].label)
+        self.assertEqual(u'2. Other content', children[2].text)
+        self.assertEqual(['8675', '309', 'a', 'p2', 'p3'], children[2].label)
+
     def test_build_from_section_notes(self):
         """Account for paragraphs within a NOTES tag"""
         with self.section() as root:

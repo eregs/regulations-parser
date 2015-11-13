@@ -7,7 +7,8 @@ from regparser import content
 from regparser.tree.depth import markers as mtypes, rules
 from regparser.tree.struct import Node
 from regparser.tree.paragraph import p_level_of, p_levels
-from regparser.tree.xml_parser import extract_processor, paragraph_processor
+from regparser.tree.xml_parser import (flatsubtree_processor,
+                                       paragraph_processor)
 from regparser.tree.xml_parser.appendices import build_non_reg_text
 from regparser.tree import reg_text
 from regparser.tree.xml_parser import tree_utils
@@ -292,7 +293,9 @@ class RegtextParagraphProcessor(paragraph_processor.ParagraphProcessor):
     MATCHERS = [paragraph_processor.StarsMatcher(),
                 paragraph_processor.TableMatcher(),
                 paragraph_processor.FencedMatcher(),
-                extract_processor.ExtractMatcher(),
+                flatsubtree_processor.FlatsubtreeMatcher(
+                    tags=['EXTRACT'], node_type=Node.EXTRACT),
+                flatsubtree_processor.FlatsubtreeMatcher(tags=['EXAMPLE']),
                 paragraph_processor.HeaderMatcher(),
                 ParagraphMatcher()]
 
