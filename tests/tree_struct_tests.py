@@ -3,6 +3,7 @@ from unittest import TestCase
 
 from regparser.tree import struct
 
+
 class NodeTest(TestCase):
 
     def test_depth(self):
