@@ -108,9 +108,9 @@ def find_misparsed_node(section_node, label, change, amended_labels):
     candidate for a mis-parsed node and creates an appropriate change. """
 
     is_markerless = Node.is_markerless_label(label)
-    markerless_paragraphs = struct.walk(
+    markerless_paragraphs = struct.filter_walk(
         section_node,
-        lambda node: node if node.is_markerless_label(node.label) else None)
+        Node.is_markerless_label)
     if is_markerless and len(markerless_paragraphs) == 1:
         change['node'] = markerless_paragraphs[0]
         change['candidate'] = True
