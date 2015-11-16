@@ -1,39 +1,29 @@
+import re
 from unittest import TestCase
 
 from mock import Mock, patch
-from requests import Response
 
 from regparser.history import annual
+from tests.http_mixin import HttpMixin
 
 
-class HistoryAnnualVolumeTests(TestCase):
-    @patch('regparser.history.annual.requests')
-    def test_init(self, requests):
-        response = Response()
-        response.status_code = 200
-        requests.get.return_value = response
+class HistoryAnnualVolumeTests(HttpMixin, TestCase):
+    def test_init(self):
+        uri = re.compile(r'.*gpo.gov.*1010.*12.*4.*xml')
+        self.expect_xml_http(uri=uri)
         volume = annual.Volume(1010, 12, 4)
         self.assertEqual(True, volume.exists)
 
-        response.status_code = 404
+        self.expect_xml_http(status=404, uri=uri)
         volume = annual.Volume(1010, 12, 4)
         self.assertEqual(False, volume.exists)
 
-        self.assertTrue('1010' in requests.get.call_args[0][0])
-        self.assertTrue('12' in requests.get.call_args[0][0])
-        self.assertTrue('4' in requests.get.call_args[0][0])
-
-    @patch('regparser.history.annual.requests')
-    def test_should_contain1(self, requests):
-        response = Response()
-        response.status_code = 200
-        response._content = """
+    def test_should_contain1(self):
+        self.expect_xml_http("""
         <CFRDOC>
             <AMDDATE>Jan 1, 2001</AMDDATE>
             <PARTS>Part 111 to 222</PARTS>
-        </CFRDOC>"""
-        response._content_consumed = True
-        requests.get.return_value = response
+        </CFRDOC>""")
 
         volume = annual.Volume(2001, 12, 2)
         self.assertFalse(volume.should_contain(1))
@@ -44,12 +34,11 @@ class HistoryAnnualVolumeTests(TestCase):
         self.assertTrue(volume.should_contain(211))
         self.assertTrue(volume.should_contain(222))
 
-        response._content = """
+        self.expect_xml_http("""
         <CFRDOC>
             <AMDDATE>Jan 1, 2001</AMDDATE>
             <PARTS>Parts 587 to End</PARTS>
-        </CFRDOC>"""
-        response._content_consumed = True
+        </CFRDOC>""")
 
         volume = annual.Volume(2001, 12, 2)
         self.assertFalse(volume.should_contain(111))
@@ -58,43 +47,29 @@ class HistoryAnnualVolumeTests(TestCase):
         self.assertTrue(volume.should_contain(600))
         self.assertTrue(volume.should_contain(999999))
 
-    @patch('regparser.history.annual.requests')
-    def test_should_contain2(self, requests):
+    def test_should_contain2(self):
         pt111 = """
-                    <PART>
-                        <EAR>Pt. 111</EAR>
-                        <HD SOURCE="HED">PART 111-Something</HD>
-                        <FIELD>111 Content</FIELD>
-                    </PART>
-                """
+        <PART>
+            <EAR>Pt. 111</EAR>
+            <HD SOURCE="HED">PART 111-Something</HD>
+            <FIELD>111 Content</FIELD>
+        </PART>"""
         pt112 = """
-                    <PART>
-                        <EAR>Pt. 112</EAR>
-                        <HD SOURCE="HED">PART 112-Something</HD>
-                        <FIELD>112 Content</FIELD>
-                    </PART>
-                """
+        <PART>
+            <EAR>Pt. 112</EAR>
+            <HD SOURCE="HED">PART 112-Something</HD>
+            <FIELD>112 Content</FIELD>
+        </PART>"""
 
-        def side_effect(url, stream=False):
-            response = Response()
-            response.status_code = 200
-            response._content_consumed = True
-            if 'bulkdata' in url:
-                response._content = """
-                <CFRDOC>
-                    <AMDDATE>Jan 1, 2001</AMDDATE>
-                    <PARTS>Part 111 to 222</PARTS>
-                    %s
-                    %s
-                </CFRDOC>""" % (pt111, pt112)
-            elif url.endswith('part111.xml'):
-                response._content = pt111
-            elif url.endswith('part112.xml'):
-                response._content = pt112
-            else:
-                response.status_code = 404
-            return response
-        requests.get.side_effect = side_effect
+        self.expect_xml_http(pt111, uri=re.compile(r".*part111\.xml"))
+        self.expect_xml_http(pt112, uri=re.compile(r".*part112\.xml"))
+        self.expect_xml_http("""
+        <CFRDOC>
+            <AMDDATE>Jan 1, 2001</AMDDATE>
+            <PARTS>Part 111 to 222</PARTS>
+            %s
+            %s
+        </CFRDOC>""" % (pt111, pt112), uri=re.compile(r".*bulkdata.*"))
 
         volume = annual.Volume(2001, 12, 2)
 
@@ -113,7 +88,7 @@ class HistoryAnnualVolumeTests(TestCase):
         self.assertEqual(volume.find_part_xml(113), None)
 
 
-class HistoryAnnua(TestCase):
+class HistoryAnnualTests(TestCase):
     def test_annual_edition_for(self):
         for title in range(1, 17):
             notice = {'effective_on': '2000-01-01'}

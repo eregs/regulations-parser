@@ -27,27 +27,45 @@ class Volume(namedtuple('Volume', ['year', 'title', 'vol_num'])):
         self.url = CFR_BULK_URL.format(year=year, title=title, volume=vol_num)
         self._response = requests.get(self.url, stream=True)
         self.exists = self._response.status_code == 200
+        self._part_span = None
+
+    @property
+    def part_span(self):
+        """Calculate and memoize the range of parts this volume covers"""
+        if self._part_span is None:
+            self._part_span = False
+
+            lines = self._response.iter_lines()
+            line = next(lines)
+            while '<PARTS>' not in line:
+                line = next(lines)
+            if not line:
+                logging.warning('No <PARTS> in ' + self.url)
+            else:
+                match = re.match(r'.*parts? (\d+) to (\d+|end).*',
+                                 line.lower())
+                if match:
+                    start = int(match.group(1))
+                    if match.group(2) == 'end':
+                        end = None
+                    else:
+                        end = int(match.group(2))
+                    self._part_span = (start, end)
+                else:
+                    logging.warning("Can't parse: " + line)
+        return self._part_span
 
     def should_contain(self, part):
-        lines = self._response.iter_lines()
-        line = next(lines)
-        while '<PARTS>' not in line:
-            line = next(lines)
-        if not line:
-            logging.warning('No <PARTS> in ' + self.url)
-            return False
-
-        match = re.match(r'.*parts? (\d+) to (\d+|end).*', line.lower())
-        if match:
-            start = int(match.group(1))
+        """Does this volume contain the part number requested?"""
+        if self.part_span:
+            (start, end) = self.part_span
             if start > part:
                 return False
-            if match.group(2) == 'end':
+            elif end is None:
                 return True
-            end = int(match.group(2))
-            return end >= part
+            else:
+                return end >= part
         else:
-            logging.warning("Can't parse: " + line)
             return False
 
     def find_part_xml(self, part):
