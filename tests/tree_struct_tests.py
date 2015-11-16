@@ -25,6 +25,17 @@ class DepthTreeTest(TestCase):
         self.assertEqual([n1, n2, n4, n3], order)
         self.assertEqual(["1", "4", "3"], ret_val)
 
+    def test_filter_walk(self):
+        node = struct.Node(label="1", children=[struct.Node(label="3"),
+                                               struct.Node(label="5")])
+        
+        def get_first(label):
+            if label == ["3"]:
+                return True
+
+        match = struct.filter_walk(node, get_first)
+        self.assertEqual(["3"], match[0].label)
+
     def test_find(self):
         n1 = struct.Node('n1', label=['n1'])
         n2 = struct.Node('n2', label=['n2'])
