@@ -5,8 +5,6 @@ from regparser.tree import struct
 
 
 class DepthTreeTest(TestCase):
-
-
     def test_walk(self):
         n1 = struct.Node("1")
         n2 = struct.Node("2")
@@ -28,12 +26,11 @@ class DepthTreeTest(TestCase):
 
     def test_filter_walk(self):
         node = struct.Node(label="1", children=[struct.Node(label="3"),
-                                               struct.Node(label="5")])
-        
+                                                struct.Node(label="5")])
+
         def get_first(label):
             if label == ["3"]:
                 return True
-
         match = struct.filter_walk(node, get_first)
         self.assertEqual(["3"], match[0].label)
 
