@@ -138,10 +138,12 @@ def walk(node, fn):
         results += walk(child, fn)
     return results
 
+
 def filter_walk(node, fn):
     """Perform fn for every node in the tree and return a list of nodes
     on which the function returns truthy."""
     return walk(node, lambda n: n if fn(n.label) else None)
+
 
 def find_first(root, predicate):
     """Walk the tree and find the first node which matches the predicate"""
