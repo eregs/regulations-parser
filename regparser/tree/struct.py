@@ -56,6 +56,7 @@ class Node(object):
     def is_markerless_label(label):
         return re.match(r'p\d+', label[-1])
 
+
 class NodeEncoder(JSONEncoder):
     """Custom JSON encoder to handle Node objects"""
     def default(self, obj):
