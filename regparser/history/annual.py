@@ -25,9 +25,17 @@ class Volume(namedtuple('Volume', ['year', 'title', 'vol_num'])):
     def __init__(self, year, title, vol_num):
         super(Volume, self).__init__(year, title, vol_num)
         self.url = CFR_BULK_URL.format(year=year, title=title, volume=vol_num)
-        self._response = requests.get(self.url, stream=True)
-        self.exists = self._response.status_code == 200
-        self._part_span = None
+        self._response, self._exists, self._part_span = None, None, None
+
+    @property
+    def response(self):
+        if self._response is None:
+            self._response = requests.get(self.url, stream=True)
+        return self._response
+
+    @property
+    def exists(self):
+        return self.response.status_code == 200
 
     @property
     def part_span(self):
@@ -35,7 +43,7 @@ class Volume(namedtuple('Volume', ['year', 'title', 'vol_num'])):
         if self._part_span is None:
             self._part_span = False
 
-            lines = self._response.iter_lines()
+            lines = self.response.iter_lines()
             line = next(lines)
             while '<PARTS>' not in line:
                 line = next(lines)

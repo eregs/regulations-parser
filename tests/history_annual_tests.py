@@ -1,8 +1,11 @@
+import os
 import re
 from unittest import TestCase
 
+from click.testing import CliRunner
 from mock import Mock, patch
 
+from regparser.index import xml_sync
 from regparser.history import annual
 from tests.http_mixin import HttpMixin
 
@@ -86,6 +89,20 @@ class HistoryAnnualVolumeTests(HttpMixin, TestCase):
         self.assertEqual(xml.xpath('./FIELD')[0].text, '112 Content')
 
         self.assertEqual(volume.find_part_xml(113), None)
+
+    def test_find_part_local(self):
+        """Verify that a local copy of the annual edition content is
+        checked"""
+        with CliRunner().isolated_filesystem():
+            path = os.path.join(xml_sync.GIT_DIR, 'annual')
+            os.makedirs(path)
+            path = os.path.join(path, 'CFR-2020-title11-vol12-part13.xml')
+            with open(path, 'w') as f:
+                f.write('<ROOT><CHILD>content</CHILD></ROOT>')
+
+            xml = annual.Volume(2020, 11, 12).find_part_xml(13)
+            self.assertEqual(xml.xpath('./CHILD')[0].text,
+                             'content')
 
 
 class HistoryAnnualTests(TestCase):
