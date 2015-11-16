@@ -3,6 +3,35 @@ from unittest import TestCase
 
 from regparser.tree import struct
 
+class NodeTest(TestCase):
+
+    def test_depth(self):
+        label = ["111", "1", "a", "p1"]
+        self.assertEqual(1, struct.Node("x", label=label[:1]).depth())
+        self.assertEqual(3, struct.Node("x", label=label[:2]).depth())
+        self.assertEqual(4, struct.Node("x", label=label[:3]).depth())
+        self.assertEqual(5, struct.Node("x", label=label).depth())
+        self.assertEqual(4, struct.Node("x", label=label,
+                                        node_type=struct.Node.INTERP).depth())
+        self.assertEqual(5, struct.Node("x", label=label,
+                                        node_type=struct.Node.EXTRACT).depth())
+        self.assertEqual(2, struct.Node("x", label=label[:1],
+                                        node_type=struct.Node.SUBPART).depth())
+        self.assertEqual(2, struct.Node("x", label=label[:2],
+                                        node_type=struct.Node.SUBPART).depth())
+        self.assertEqual(2, struct.Node("x", label=label[:3],
+                                        node_type=struct.Node.SUBPART).depth())
+        self.assertEqual(2,
+                         struct.Node("x", label=label[:1],
+                                     node_type=struct.Node.EMPTYPART).depth())
+        self.assertEqual(2,
+                         struct.Node("x", label=label[:2],
+                                     node_type=struct.Node.EMPTYPART).depth())
+        self.assertEqual(2,
+                         struct.Node("x", label=label[:3],
+                                     node_type=struct.Node.EMPTYPART).depth())
+
+
 
 class DepthTreeTest(TestCase):
 

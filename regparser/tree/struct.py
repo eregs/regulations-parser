@@ -42,7 +42,8 @@ class Node(object):
 
     def depth(self):
         """Inspect the label and type to determine the node's depth"""
-        if len(self.label) > 1 and self.node_type == self.REGTEXT:
+        if len(self.label) > 1 and self.node_type in (self.REGTEXT,
+                                                      self.EXTRACT):
             #   Add one for the subpart level
             return len(self.label) + 1
         elif self.node_type in (self.SUBPART, self.EMPTYPART):
@@ -50,7 +51,6 @@ class Node(object):
             return 2
         else:
             return len(self.label)
-
 
 class NodeEncoder(JSONEncoder):
     """Custom JSON encoder to handle Node objects"""
