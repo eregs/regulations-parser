@@ -1,3 +1,4 @@
+import re
 from collections import defaultdict
 from json import JSONEncoder
 import hashlib
@@ -50,6 +51,9 @@ class Node(object):
         else:
             return len(self.label)
 
+    @staticmethod
+    def is_markerless_label(label):
+        return re.match(r'p\d+', label[-1])
 
 class NodeEncoder(JSONEncoder):
     """Custom JSON encoder to handle Node objects"""
