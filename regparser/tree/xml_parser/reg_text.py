@@ -7,7 +7,8 @@ from regparser import content
 from regparser.tree.depth import markers as mtypes, rules
 from regparser.tree.struct import Node
 from regparser.tree.paragraph import p_level_of, p_levels
-from regparser.tree.xml_parser import paragraph_processor
+from regparser.tree.xml_parser import (flatsubtree_processor,
+                                       paragraph_processor)
 from regparser.tree.xml_parser.appendices import build_non_reg_text
 from regparser.tree import reg_text
 from regparser.tree.xml_parser import tree_utils
@@ -218,7 +219,7 @@ def build_from_section(reg_part, section_xml):
     subject_xml = section_xml.xpath('SUBJECT')
     if not subject_xml:
         subject_xml = section_xml.xpath('RESERVED')
-    subject_text = subject_xml[0].text
+    subject_text = (subject_xml[0].text or '').strip()
 
     section_nums = []
     for match in re.finditer(r'%s\.(\d+[a-z]*)' % reg_part, section_no):
@@ -255,12 +256,12 @@ def build_from_section(reg_part, section_xml):
     return section_nodes
 
 
-class ParagraphMatcher(object):
+class ParagraphMatcher(paragraph_processor.BaseMatcher):
     """<P>/<FP> with or without initial paragraph markers -- (a)(1)(i) etc."""
     def matches(self, xml):
         return xml.tag in ('P', 'FP')
 
-    def derive_nodes(self, xml):
+    def derive_nodes(self, xml, processor=None):
         text = ''
         tagged_text = tree_utils.get_node_text_tags_preserved(xml).strip()
         markers_list = get_markers(tagged_text, self.next_marker(xml))
@@ -289,10 +290,13 @@ class ParagraphMatcher(object):
 
 
 class RegtextParagraphProcessor(paragraph_processor.ParagraphProcessor):
-    NODE_TYPE = Node.REGTEXT
     MATCHERS = [paragraph_processor.StarsMatcher(),
                 paragraph_processor.TableMatcher(),
                 paragraph_processor.FencedMatcher(),
+                flatsubtree_processor.FlatsubtreeMatcher(
+                    tags=['EXTRACT'], node_type=Node.EXTRACT),
+                flatsubtree_processor.FlatsubtreeMatcher(tags=['EXAMPLE']),
+                paragraph_processor.HeaderMatcher(),
                 ParagraphMatcher()]
 
     def additional_constraints(self):

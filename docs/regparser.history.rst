@@ -28,6 +28,14 @@ regparser.history.notices module
     :undoc-members:
     :show-inheritance:
 
+regparser.history.versions module
+---------------------------------
+
+.. automodule:: regparser.history.versions
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 
 Module contents
 ---------------

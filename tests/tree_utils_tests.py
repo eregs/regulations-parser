@@ -98,6 +98,16 @@ class TreeUtilsTest(unittest.TestCase):
         self.assert_transform_equality(
             u'<P>(d) <E T="03">Text text</E>—more stuffs</P>',
             u'(d) Text text—more stuffs', *with_space)
+        self.assert_transform_equality(
+            '<P>F<E T="52">n</E> = F<E T="52">n-1</E> + '
+            'F<E T="52">n-2</E></P>',
+            'F_{n} = F_{n-1} + F_{n-2}', *no_space)
+        self.assert_transform_equality(
+            '<P>There was an error<SU footnote="but not mine!">5</SU></P>',
+            'There was an error[^5](but not mine!)', *no_space)
+        self.assert_transform_equality(
+            '<P>Note<SU footnote="(parens), see">note</SU> that</P>',
+            r'Note[^note](\(parens\), see) that', *no_space)
 
     def test_unwind_stack(self):
         level_one_n = Node(label=['272'])

@@ -1,8 +1,9 @@
+import abc
 import logging
 
 from regparser.layer.formatting import table_xml_to_plaintext
 from regparser.tree.depth import heuristics, markers as mtypes
-from regparser.tree.depth.derive import derive_depths
+from regparser.tree.depth.derive import debug_idx, derive_depths
 from regparser.tree.struct import Node
 from regparser.tree.xml_parser import tree_utils
 
@@ -15,7 +16,6 @@ class ParagraphProcessor(object):
     where needed"""
 
     # Subclasses should override the following interface
-    NODE_TYPE = None
     MATCHERS = []
 
     def parse_nodes(self, xml):
@@ -25,16 +25,14 @@ class ParagraphProcessor(object):
 
         for child in xml.getchildren():
             matching = (m for m in self.MATCHERS if m.matches(child))
+
             tag_matcher = next(matching, None)
             if tag_matcher:
-                nodes.extend(tag_matcher.derive_nodes(child))
+                nodes.extend(tag_matcher.derive_nodes(child, processor=self))
 
         # Trailing stars don't matter; slightly more efficient to ignore them
         while nodes and nodes[-1].label[0] in mtypes.stars:
             nodes = nodes[:-1]
-
-        for node in nodes:
-            node.node_type = self.NODE_TYPE
 
         return nodes
 
@@ -58,9 +56,22 @@ class ParagraphProcessor(object):
                 # Note that nodes still only have the one label part
                 label, cnt = self.clean_label(node.label[0], cnt)
                 node.label = [label]
+                # Children should also have labels applied to them:
+                if len(node.children):
+                    node = self.label_child_nodes(node)
                 stack.add(1 + par.depth, node)
 
         return stack.collapse()
+
+    def label_child_nodes(self, node):
+        """
+        Takes a node and recursively processes its children to add the
+        appropriate labels to them.
+        """
+        for idx, child in enumerate(node.children):
+            child.label = node.label + ["p%s" % str(idx + 1)]
+            child = self.label_child_nodes(child)
+        return node
 
     def clean_label(self, label, unlabeled_counter):
         """There are some artifacts from parsing and deriving the depth that
@@ -85,7 +96,10 @@ class ParagraphProcessor(object):
 
         first_xml = nodes[0].source_xml if len(nodes) else None
         table_first = first_xml is not None and first_xml.tag == "GPOTABLE"
-        if not table_first and any([only_one, switches_after_first]):
+        extract_first = nodes[0].node_type == "extract" if len(nodes) else None
+        if not any(
+            [table_first, extract_first]) and any(
+                [only_one, switches_after_first]):
             return nodes[0], nodes[1:]
         else:
             return None, nodes
@@ -105,10 +119,19 @@ class ParagraphProcessor(object):
                 root.tagged_text = ' '.join(tagged_text_list)
         if nodes:
             markers = [node.label[0] for node in nodes]
-            depths = derive_depths(markers, self.additional_constraints())
+            constraints = self.additional_constraints()
+            depths = derive_depths(markers, constraints)
             if not depths:
+                fails_at = debug_idx(markers, constraints)
                 logging.error(
-                    "Could not determine paragraph depths:\n%s", markers)
+                    "Could not determine paragraph depths (<%s /> %s):\n"
+                    "%s\n"
+                    "?? %s\n"
+                    "Remaining markers: %s",
+                    xml.tag, root.label_id(),
+                    derive_depths(markers[:fails_at],
+                                  constraints)[0].pretty_str(),
+                    markers[fails_at], markers[fails_at + 1:])
             depths = self.select_depth(depths)
             return self.build_hierarchy(root, nodes, depths)
         else:
@@ -119,49 +142,79 @@ class ParagraphProcessor(object):
         return []
 
 
-class StarsMatcher(object):
+class BaseMatcher(object):
+    """Base class defining the interface of various XML node matchers"""
+    __metaclass__ = abc.ABCMeta
+
+    @abc.abstractmethod
+    def matches(self, xml):
+        """Test the xml element -- does this matcher apply?"""
+        raise NotImplementedError()
+
+    @abc.abstractmethod
+    def derive_nodes(self, xml, processor=None):
+        """Given an xml node which this matcher applies against, convert it
+        into a list of Node structures. `processor` is the paragraph processor
+        which we are being executed in. May be useful when determining how to
+        create the Nodes"""
+        raise NotImplementedError()
+
+
+class StarsMatcher(BaseMatcher):
     """<STARS> indicates a chunk of text which is being skipped over"""
     def matches(self, xml):
         return xml.tag == 'STARS'
 
-    def derive_nodes(self, xml):
+    def derive_nodes(self, xml, processor=None):
         return [Node(label=[mtypes.STARS_TAG])]
 
 
-class SimpleTagMatcher(object):
-    """Simple example tag matcher -- it listens for a specific tag and derives
+class SimpleTagMatcher(BaseMatcher):
+    """Simple example tag matcher -- it listens for specific tags and derives
     a single node with the associated body"""
-    def __init__(self, tag):
-        self.tag = tag
+    def __init__(self, *tags):
+        self.tags = list(tags)
 
     def matches(self, xml):
-        return xml.tag == self.tag
+        return xml.tag in self.tags
 
-    def derive_nodes(self, xml):
+    def derive_nodes(self, xml, processor=None):
         return [Node(text=tree_utils.get_node_text(xml).strip(),
                      label=[mtypes.MARKERLESS])]
 
 
-class TableMatcher(object):
+class TableMatcher(BaseMatcher):
     """Matches the GPOTABLE tag"""
     def matches(self, xml):
         return xml.tag == 'GPOTABLE'
 
-    def derive_nodes(self, xml):
+    def derive_nodes(self, xml, processor=None):
         return [Node(table_xml_to_plaintext(xml), label=[mtypes.MARKERLESS],
                      source_xml=xml)]
 
 
-class FencedMatcher(object):
+class HeaderMatcher(BaseMatcher):
+    def matches(self, xml):
+        return xml.tag == "HD"
+
+    def derive_nodes(self, xml, processor=None):
+        # This should match HD elements only at lower levels, and for now we'll
+        # just put them into the titles
+        return [Node(text='', title=tree_utils.get_node_text(xml).strip(),
+                     label=[mtypes.MARKERLESS])]
+
+
+class FencedMatcher(BaseMatcher):
     """Use github-like fencing to indicate this is a note/code"""
     def matches(self, xml):
-        return xml.tag in ('NOTE', 'NOTES', 'CODE', 'EXTRACT')
+        return xml.tag in ('NOTE', 'NOTES', 'CODE')
 
-    def derive_nodes(self, xml):
+    def derive_nodes(self, xml, processor=None):
         texts = ["```" + self.fence_type(xml)]
         for child in xml:
             texts.append(tree_utils.get_node_text(child).strip())
         texts.append("```")
+
         return [Node("\n".join(texts), label=[mtypes.MARKERLESS])]
 
     def fence_type(self, xml):

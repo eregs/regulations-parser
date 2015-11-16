@@ -12,6 +12,7 @@ class Node(object):
     REGTEXT = u'regtext'
     SUBPART = u'subpart'
     EMPTYPART = u'emptypart'
+    EXTRACT = u'extract'
 
     INTERP_MARK = 'Interp'
 

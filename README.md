@@ -41,6 +41,13 @@ tweaked to pass the parser.
 If you review the history of the `fec_docs` repo, you'll see some of the types
 of changes that need to be made.
 
+## Concepts
+
+- **Diff**: a structure representing the changes between two regulation trees, describing which nodes were modified, deleted, or added.
+- **Layer**: a grouping of extra information about the regulation, generally tied to specific text. For example, citations are a layer which refers to the text in a specific paragraph. There are also layers which apply to the entire tree, for example, the regulation letter. These are more or less a catch all for information which doesn't directly fit in the tree.
+- **Rule**: a representation of the [same concept as issued by the Federal Register](https://www.federalregister.gov/articles/search?conditions%5Bpublication_date%5D%5Bis%5D=11%2F02%2F2015&conditions%5Btype%5D=RULE). Sometimes called a **notice**. Rules change regulations, and have a great deal of meta data. Rules contain the contents, effective dates, and the authors of those changes. They can also potentially contain detailed analyses of each of the sections that changed.
+- **Tree**: a representation of the regulation content. It's a recursive structure, where each component (part, subpart, section, paragraph, sub-sub-sub paragraph, etc.) is also a tree
+
 ## Features
 
 * Split regulation into paragraph-level chunks
@@ -133,7 +140,8 @@ reissuance of the whole regulation (e.g. CFPB
 regulation E).
 
 
-### Run the parser (`build_from`)
+### Run the parser 
+#### Using `build_from`
 
 The syntax is 
 
@@ -167,6 +175,38 @@ There are also some advanced flags which can be set when running the parser
   the regulation issued before federalregister.gov has records (~2000), you
   may need to explicitly provide a version number. This will just be an
   identifier for the version; you may use "1997-annual", for example.
+
+#### Using `pipeline`
+
+```bash
+$ eregs pipeline title part an/output/directory
+```
+or
+```bash
+$ eregs pipeline title part https://yourserver/
+```
+
+Example:
+```bash
+$ eregs pipeline 27 447 /output/path
+```
+
+`pipeline` pulls annual editions of regulations from the [Government Printing Office](http://www.gpo.gov/fdsys/browse/collectionCfr.action) and final rules from the [Federal Register](https://www.federalregister.gov/) based on the part that you give it.
+
+When you run `pipeline`, it:
+
+1. Gets rules that exist for the regulation from the Federal Register API
+2. Builds trees from annual editions of the regulation
+3. Fills in any missing versions between annual versions by parsing final rules
+4. Builds the layers for all these trees
+5. Builds the diffs for all these trees, and
+6. Writes the results to your output location
+
+If the final parameter begins with `http://` or `https://`, output will be
+sent to that API. If it begins with `git://`, the output will be written as a
+git repository to that path. All other values will be treated as a file path;
+JSON files will be written in that directory. See [Output](#output) for more.
+
 
 ### Settings
 

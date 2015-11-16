@@ -12,10 +12,18 @@ regparser.diff.api_reader module
     :undoc-members:
     :show-inheritance:
 
-regparser.diff.treediff module
-------------------------------
+regparser.diff.text module
+--------------------------
 
-.. automodule:: regparser.diff.treediff
+.. automodule:: regparser.diff.text
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+regparser.diff.tree module
+--------------------------
+
+.. automodule:: regparser.diff.tree
     :members:
     :undoc-members:
     :show-inheritance:
