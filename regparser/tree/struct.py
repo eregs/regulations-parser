@@ -54,6 +54,8 @@ class Node(object):
 
     @staticmethod
     def is_markerless_label(label):
+        if not label:
+            return None
         return re.match(r'p\d+', label[-1])
 
 

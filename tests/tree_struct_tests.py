@@ -6,6 +6,7 @@ from regparser.tree import struct
 
 class DepthTreeTest(TestCase):
 
+
     def test_walk(self):
         n1 = struct.Node("1")
         n2 = struct.Node("2")
@@ -240,3 +241,11 @@ class FrozenNodeTests(TestCase):
         self.assertNotEqual(id(same2), id(diff))
         self.assertEqual(same1.hash, same2.hash)
         self.assertNotEqual(same1.hash, diff.hash)
+
+
+class NodeTests(TestCase):
+    def test_is_markerless_label(self):
+        self.assertIsNone(struct.Node.is_markerless_label(''))
+        self.assertIsNone(struct.Node.is_markerless_label(None))
+        self.assertTrue(struct.Node.is_markerless_label(['134', 'p33']))
+        self.assertIsNone(struct.Node.is_markerless_label(['245', '23']))
