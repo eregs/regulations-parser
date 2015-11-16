@@ -52,6 +52,7 @@ class Node(object):
         else:
             return len(self.label)
 
+
 class NodeEncoder(JSONEncoder):
     """Custom JSON encoder to handle Node objects"""
     def default(self, obj):

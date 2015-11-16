@@ -32,7 +32,6 @@ class NodeTest(TestCase):
                                      node_type=struct.Node.EMPTYPART).depth())
 
 
-
 class DepthTreeTest(TestCase):
 
     def test_walk(self):
