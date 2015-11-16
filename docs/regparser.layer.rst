@@ -4,6 +4,14 @@ regparser.layer package
 Submodules
 ----------
 
+regparser.layer.def_finders module
+----------------------------------
+
+.. automodule:: regparser.layer.def_finders
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 regparser.layer.external_citations module
 -----------------------------------------
 
@@ -80,6 +88,14 @@ regparser.layer.paragraph_markers module
 ----------------------------------------
 
 .. automodule:: regparser.layer.paragraph_markers
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+regparser.layer.scope_finder module
+-----------------------------------
+
+.. automodule:: regparser.layer.scope_finder
     :members:
     :undoc-members:
     :show-inheritance:
