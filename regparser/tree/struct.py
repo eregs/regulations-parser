@@ -16,6 +16,8 @@ class Node(object):
 
     INTERP_MARK = 'Interp'
 
+    MARKERLESS_REGEX = re.compile(r'p\d+')
+
     def __init__(self, text='', children=[], label=[], title=None,
                  node_type=REGTEXT, source_xml=None):
 
@@ -56,7 +58,7 @@ class Node(object):
     def is_markerless_label(label):
         if not label:
             return None
-        return re.match(r'p\d+', label[-1])
+        return re.match(Node.MARKERLESS_REGEX, label[-1])
 
 
 class NodeEncoder(JSONEncoder):
