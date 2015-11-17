@@ -100,8 +100,21 @@ def resolve_candidates(amend_map, warn=True):
 
 def find_misparsed_node(section_node, label, change, amended_labels):
     """ Nodes can get misparsed in the sense that we don't always know where
-    they are in the tree. This uses label to find a candidate for a mis-parsed
-    node and creates an appropriate change. """
+    they are in the tree or have their correct label. The first part
+    corrects markerless labeled nodes by updating the node's label if
+    the source text has been changed to include the markerless paragraph
+    (ex. 123-44-p6 for paragraph 6). we know this because `label` here
+    is parsed from that change. The second part uses label to find a
+    candidate for a mis-parsed node and creates an appropriate change. """
+
+    is_markerless = struct.Node.is_markerless_label(label)
+    markerless_paragraphs = struct.filter_walk(
+        section_node,
+        struct.Node.is_markerless_label)
+    if is_markerless and len(markerless_paragraphs) == 1:
+        change['node'] = markerless_paragraphs[0]
+        change['candidate'] = True
+        return change
 
     candidates = find_candidate(section_node, label[-1], amended_labels)
     if len(candidates) == 1:

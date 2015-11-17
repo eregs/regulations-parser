@@ -34,7 +34,6 @@ class NodeTest(TestCase):
 
 
 class DepthTreeTest(TestCase):
-
     def test_walk(self):
         n1 = struct.Node("1")
         n2 = struct.Node("2")
@@ -53,6 +52,16 @@ class DepthTreeTest(TestCase):
         ret_val = struct.walk(n1, add_node)
         self.assertEqual([n1, n2, n4, n3], order)
         self.assertEqual(["1", "4", "3"], ret_val)
+
+    def test_filter_walk(self):
+        node = struct.Node(label="1", children=[struct.Node(label="3"),
+                                                struct.Node(label="5")])
+
+        def get_first(label):
+            if label == ["3"]:
+                return True
+        match = struct.filter_walk(node, get_first)
+        self.assertEqual(["3"], match[0].label)
 
     def test_find(self):
         n1 = struct.Node('n1', label=['n1'])
@@ -258,3 +267,11 @@ class FrozenNodeTests(TestCase):
         self.assertNotEqual(id(same2), id(diff))
         self.assertEqual(same1.hash, same2.hash)
         self.assertNotEqual(same1.hash, diff.hash)
+
+
+class NodeTests(TestCase):
+    def test_is_markerless_label(self):
+        self.assertIsNone(struct.Node.is_markerless_label(''))
+        self.assertIsNone(struct.Node.is_markerless_label(None))
+        self.assertTrue(struct.Node.is_markerless_label(['134', 'p33']))
+        self.assertIsNone(struct.Node.is_markerless_label(['245', '23']))
