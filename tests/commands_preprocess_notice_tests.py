@@ -4,15 +4,15 @@ from unittest import TestCase
 from click.testing import CliRunner
 from mock import patch
 
-from regparser import eregs_index
 from regparser.commands.preprocess_notice import preprocess_notice
+from regparser.index import dependency, entry
 from regparser.notice.xml import NoticeXML
 from tests.http_mixin import HttpMixin
 from tests.xml_builder import LXMLBuilder, XMLBuilderMixin
 
 
 class CommandsPreprocessNoticeTests(HttpMixin, XMLBuilderMixin, TestCase):
-    def example_xml(self, effdate_str=""):
+    def example_xml(self, effdate_str="", source=None):
         """Returns a simple notice-like XML structure"""
         self.tree = LXMLBuilder()
         with self.tree.builder("ROOT") as root:
@@ -20,7 +20,7 @@ class CommandsPreprocessNoticeTests(HttpMixin, XMLBuilderMixin, TestCase):
             root.P()
             with root.EFFDATE() as effdate:
                 effdate.P(effdate_str)
-        return NoticeXML(self.tree.render_xml())
+        return NoticeXML(self.tree.render_xml(), source)
 
     def expect_common_json(self, **kwargs):
         """Expect an HTTP call and return a common json respond"""
@@ -40,9 +40,9 @@ class CommandsPreprocessNoticeTests(HttpMixin, XMLBuilderMixin, TestCase):
         notice_xmls_for_url.return_value = [self.example_xml()]
         with cli.isolated_filesystem():
             cli.invoke(preprocess_notice, ['1234-5678'])
-            self.assertEqual(1, len(eregs_index.NoticeEntry()))
+            self.assertEqual(1, len(entry.Notice()))
 
-            written = eregs_index.NoticeEntry('1234-5678').read()
+            written = entry.Notice('1234-5678').read()
             self.assertEqual(written.effective, date(2008, 8, 8))
 
     @patch('regparser.commands.preprocess_notice.notice_xmls_for_url')
@@ -55,7 +55,7 @@ class CommandsPreprocessNoticeTests(HttpMixin, XMLBuilderMixin, TestCase):
             self.example_xml("Effective January 1, 2001")]
         with cli.isolated_filesystem():
             cli.invoke(preprocess_notice, ['1234-5678'])
-            written = eregs_index.NoticeEntry('1234-5678').read()
+            written = entry.Notice('1234-5678').read()
             self.assertEqual(written.effective, date(2001, 1, 1))
 
     @patch('regparser.commands.preprocess_notice.notice_xmls_for_url')
@@ -71,7 +71,7 @@ class CommandsPreprocessNoticeTests(HttpMixin, XMLBuilderMixin, TestCase):
             self.example_xml("Effective March 3, 2003")]
         with cli.isolated_filesystem():
             cli.invoke(preprocess_notice, ['1234-5678'])
-            notice_path = eregs_index.NoticeEntry()
+            notice_path = entry.Notice()
             self.assertEqual(3, len(notice_path))
 
             jan = (notice_path / '1234-5678_20010101').read()
@@ -81,3 +81,23 @@ class CommandsPreprocessNoticeTests(HttpMixin, XMLBuilderMixin, TestCase):
             self.assertEqual(jan.effective, date(2001, 1, 1))
             self.assertEqual(feb.effective, date(2002, 2, 2))
             self.assertEqual(mar.effective, date(2003, 3, 3))
+
+    @patch('regparser.commands.preprocess_notice.notice_xmls_for_url')
+    def test_dependencies(self, notice_xmls_for_url):
+        """If the xml comes from a local source, we should expect a dependency
+        be present. Otherwise, we should expect no dependency"""
+        cli = CliRunner()
+        self.expect_common_json()
+        notice_xmls_for_url.return_value = [self.example_xml(source='./here')]
+        with cli.isolated_filesystem():
+            cli.invoke(preprocess_notice, ['1234-5678'])
+            entry_str = str(entry.Notice() / '1234-5678')
+            with dependency.Graph().dependency_db() as db:
+                self.assertTrue(entry_str in db)
+
+        notice_xmls_for_url.return_value[0].source = 'http://example.com'
+        with cli.isolated_filesystem():
+            cli.invoke(preprocess_notice, ['1234-5678'])
+            entry_str = str(entry.Notice() / '1234-5678')
+            with dependency.Graph().dependency_db() as db:
+                self.assertFalse(entry_str in db)

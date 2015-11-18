@@ -5,8 +5,9 @@ import pkgutil
 import click
 import requests_cache   # @todo - replace with cache control
 
-from regparser import commands, eregs_index
+from regparser import commands
 from regparser.commands.dependency_resolver import DependencyResolver
+from regparser.index import dependency
 
 
 @click.group()
@@ -30,7 +31,7 @@ def main(prev_dependency=None):
     to the dependency changing"""
     try:
         cli()
-    except eregs_index.DependencyException, e:
+    except dependency.Missing, e:
         resolvers = [resolver(e.dependency)
                      for resolver in DependencyResolver.__subclasses__()]
         resolvers = [r for r in resolvers if r.has_resolution()]

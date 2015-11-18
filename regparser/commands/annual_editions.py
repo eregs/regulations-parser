@@ -3,8 +3,8 @@ from datetime import date
 
 import click
 
-from regparser import eregs_index
 from regparser.history import annual
+from regparser.index import dependency, entry
 from regparser.tree import xml_parser
 
 
@@ -15,7 +15,7 @@ def last_versions(cfr_title, cfr_part):
     """Run through all known versions of this regulation and pull out versions
     which are the last to be included before an annual edition"""
     have_annual_edition = {}
-    path = eregs_index.VersionEntry(cfr_title, cfr_part)
+    path = entry.Version(cfr_title, cfr_part)
     if len(path) == 0:
         raise click.UsageError("No versions found. Run `versions`?")
     for version_id in path:
@@ -30,10 +30,10 @@ def last_versions(cfr_title, cfr_part):
 def process_if_needed(cfr_title, cfr_part, last_versions):
     """Calculate dependencies between input and output files for these annual
     editions. If an output is missing or out of date, process it"""
-    annual_path = eregs_index.AnnualEntry(cfr_title, cfr_part)
-    tree_path = eregs_index.TreeEntry(cfr_title, cfr_part)
-    version_path = eregs_index.VersionEntry(cfr_title, cfr_part)
-    deps = eregs_index.DependencyGraph()
+    annual_path = entry.Annual(cfr_title, cfr_part)
+    tree_path = entry.Tree(cfr_title, cfr_part)
+    version_path = entry.Version(cfr_title, cfr_part)
+    deps = dependency.Graph()
 
     for last_version in last_versions:
         deps.add(tree_path / last_version.version_id,

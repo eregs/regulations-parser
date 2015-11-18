@@ -7,9 +7,9 @@ import click
 from click.testing import CliRunner
 from mock import patch
 
-from regparser import eregs_index
 from regparser.commands import annual_editions
 from regparser.history.versions import Version
+from regparser.index import dependency, entry
 from regparser.tree.struct import Node
 
 
@@ -28,7 +28,7 @@ class CommandsAnnualEditionsTests(TestCase):
         """If multiple versions affect the same annual edition, we should only
         receive the last"""
         with self.cli.isolated_filesystem():
-            path = eregs_index.VersionEntry('12', '1000')
+            path = entry.Version('12', '1000')
             (path / '1111').write(Version('1111', date(2000, 12, 1),
                                           date(2000, 12, 1)))
             (path / '2222').write(Version('2222', date(2000, 12, 2),
@@ -47,13 +47,13 @@ class CommandsAnnualEditionsTests(TestCase):
         with self.cli.isolated_filesystem():
             last_versions = [annual_editions.LastVersionInYear('1111', 2000)]
 
-            with self.assertRaises(eregs_index.DependencyException):
+            with self.assertRaises(dependency.Missing):
                 annual_editions.process_if_needed('12', '1000', last_versions)
 
-            eregs_index.VersionEntry('12', '1000', '1111').write(
+            entry.Version('12', '1000', '1111').write(
                 Version('1111', date(2000, 1, 1), date(2000, 1, 1)))
 
-            with self.assertRaises(eregs_index.DependencyException):
+            with self.assertRaises(dependency.Missing):
                 annual_editions.process_if_needed('12', '1000', last_versions)
 
     @patch("regparser.commands.annual_editions.xml_parser")
@@ -64,22 +64,21 @@ class CommandsAnnualEditionsTests(TestCase):
             build_tree = xml_parser.reg_text.build_tree
             build_tree.return_value = Node()
             last_versions = [annual_editions.LastVersionInYear('1111', 2000)]
-            eregs_index.VersionEntry('12', '1000', '1111').write(
+            entry.Version('12', '1000', '1111').write(
                 Version('1111', date(2000, 1, 1), date(2000, 1, 1)))
-            eregs_index.Entry('annual', '12', '1000', 2000).write(
+            entry.Entry('annual', '12', '1000', 2000).write(
                 '<ROOT></ROOT>')
 
             annual_editions.process_if_needed('12', '1000', last_versions)
             self.assertTrue(build_tree.called)
 
             build_tree.reset_mock()
-            eregs_index.Entry('tree', '12', '1000', '1111').write('tree-here')
+            entry.Entry('tree', '12', '1000', '1111').write('tree-here')
             annual_editions.process_if_needed('12', '1000', last_versions)
             self.assertFalse(build_tree.called)
 
             # Simulate a change to an input file
-            os.utime(
-                str(eregs_index.AnnualEntry('12', '1000', '2000')),
-                (time() + 1000, time() + 1000))
+            os.utime(str(entry.Annual('12', '1000', '2000')),
+                     (time() + 1000, time() + 1000))
             annual_editions.process_if_needed('12', '1000', last_versions)
             self.assertTrue(build_tree.called)

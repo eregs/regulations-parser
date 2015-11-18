@@ -1,8 +1,8 @@
 import click
 
-from regparser import eregs_index
 from regparser.commands.dependency_resolver import DependencyResolver
 from regparser.history import annual
+from regparser.index import entry
 from regparser.notice import preprocessors
 
 
@@ -16,11 +16,11 @@ def fetch_annual_edition(cfr_title, cfr_part, year):
     xml = volume.find_part_xml(cfr_part)
     for preprocessor in preprocessors.ALL:
         preprocessor().transform(xml)
-    eregs_index.AnnualEntry(cfr_title, cfr_part, year).write(xml)
+    entry.Annual(cfr_title, cfr_part, year).write(xml)
 
 
 class AnnualEditionResolver(DependencyResolver):
-    PATH_PARTS = eregs_index.AnnualEntry.PREFIX + (
+    PATH_PARTS = entry.Annual.PREFIX + (
         '(?P<cfr_title>\d+)',
         '(?P<cfr_part>\d+)',
         '(?P<year>\d{4})')

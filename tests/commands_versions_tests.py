@@ -6,9 +6,9 @@ from unittest import TestCase
 from click.testing import CliRunner
 from mock import Mock, patch
 
-from regparser import eregs_index
 from regparser.commands import versions
 from regparser.history.delays import FRDelay
+from regparser.index import dependency, entry
 
 
 class CommandsVersionsTests(TestCase):
@@ -22,7 +22,7 @@ class CommandsVersionsTests(TestCase):
         fetch_notice_json.return_value = [{'document_number': '1'},
                                           {'document_number': '22'}]
         with self.cli.isolated_filesystem():
-            path = eregs_index.Entry("path")
+            path = entry.Entry("path")
             self.assertEqual(['1', '22'],
                              versions.fetch_version_ids('title', 'part', path))
 
@@ -33,7 +33,7 @@ class CommandsVersionsTests(TestCase):
         fetch_notice_json.return_value = [{'document_number': '1'},
                                           {'document_number': '22'}]
         with self.cli.isolated_filesystem():
-            path = eregs_index.Entry("path")
+            path = entry.Entry("path")
             (path / '1_20010101').write('v1')
             (path / '1_20020202').write('v2')
             (path / '22').write('second')
@@ -86,7 +86,7 @@ class CommandsVersionsTests(TestCase):
         """If a version has been delayed, its effective date should be part of
         the serialized json"""
         xml = Mock()
-        path = eregs_index.VersionEntry('12', '1000')
+        path = entry.Version('12', '1000')
         with self.cli.isolated_filesystem():
             xml.configure_mock(effective=date(2002, 2, 2), version_id='111',
                                published=date(2002, 1, 1))
@@ -104,7 +104,7 @@ class CommandsVersionsTests(TestCase):
     def test_write_if_needed_raises_exception(self, write_to_disk):
         """If an input file is missing, this raises an exception"""
         with self.cli.isolated_filesystem():
-            with self.assertRaises(eregs_index.DependencyException):
+            with self.assertRaises(dependency.Missing):
                 versions.write_if_needed('title', 'part', ['111'],
                                          {'111': 'xml111'}, {})
 
@@ -112,7 +112,7 @@ class CommandsVersionsTests(TestCase):
     def test_write_if_needed_output_missing(self, write_to_disk):
         """If the output file is missing, we'll always write"""
         with self.cli.isolated_filesystem():
-            eregs_index.Entry('notice_xml', '111').write('content')
+            entry.Entry('notice_xml', '111').write('content')
             versions.write_if_needed('title', 'part', ['111'],
                                      {'111': 'xml111'}, {})
             self.assertTrue(write_to_disk.called)
@@ -122,8 +122,8 @@ class CommandsVersionsTests(TestCase):
         """If all dependencies are up to date and the output is present,
         there's no need to write anything"""
         with self.cli.isolated_filesystem():
-            eregs_index.Entry('notice_xml', '111').write('content')
-            eregs_index.Entry('version', 'title', 'part', '111').write('out')
+            entry.Entry('notice_xml', '111').write('content')
+            entry.Entry('version', 'title', 'part', '111').write('out')
             versions.write_if_needed('title', 'part', ['111'],
                                      {'111': 'xml111'}, {})
             self.assertFalse(write_to_disk.called)
@@ -132,18 +132,17 @@ class CommandsVersionsTests(TestCase):
     def test_write_if_needed_delays(self, write_to_disk):
         """Delays introduce dependencies."""
         with self.cli.isolated_filesystem():
-            eregs_index.Entry('notice_xml', '111').write('content')
-            eregs_index.Entry('notice_xml', '222').write('content')
-            eregs_index.Entry('version', 'title', 'part', '111').write('out')
+            entry.Entry('notice_xml', '111').write('content')
+            entry.Entry('notice_xml', '222').write('content')
+            entry.Entry('version', 'title', 'part', '111').write('out')
             versions.write_if_needed(
                 'title', 'part', ['111'], {'111': 'xml111'},
                 {'111': versions.Delay('222', 'until-date')})
             self.assertFalse(write_to_disk.called)
 
             # Simulate a change to an input file
-            os.utime(
-                str(eregs_index.NoticeEntry('222')),
-                (time() + 1000, time() + 1000))
+            os.utime(str(entry.Notice('222')),
+                     (time() + 1000, time() + 1000))
             versions.write_if_needed(
                 'title', 'part', ['111'], {'111': 'xml111'},
                 {'111': versions.Delay('222', 'until-date')})

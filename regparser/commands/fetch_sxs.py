@@ -3,9 +3,9 @@
 # SxS are split, the two programs will diverge
 import click
 
-from regparser import eregs_index
 from regparser.commands.dependency_resolver import DependencyResolver
 from regparser.federalregister import meta_data, FULL_NOTICE_FIELDS
+from regparser.index import dependency, entry
 from regparser.notice.build import build_notice
 
 
@@ -16,10 +16,10 @@ def fetch_sxs(document_number):
 
     DOCUMENT_NUMBER is the identifier associated with a final rule. If a rule
     has been split, use the split identifiers, a.k.a. version ids"""
-    sxs_entry = eregs_index.SxSEntry(document_number)
-    notice_entry = eregs_index.NoticeEntry(document_number)
+    sxs_entry = entry.SxS(document_number)
+    notice_entry = entry.Notice(document_number)
 
-    deps = eregs_index.DependencyGraph()
+    deps = dependency.Graph()
     deps.add(sxs_entry, notice_entry)
 
     deps.validate_for(sxs_entry)
@@ -36,7 +36,7 @@ def fetch_sxs(document_number):
 
 
 class RuleChangesResolver(DependencyResolver):
-    PATH_PARTS = eregs_index.SxSEntry.PREFIX + (
+    PATH_PARTS = entry.SxS.PREFIX + (
         '(?P<doc_number>[a-zA-Z0-9-_]+)',)
 
     def resolution(self):

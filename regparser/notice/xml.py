@@ -11,6 +11,7 @@ import requests
 
 from regparser.grammar.unified import notice_cfr_p
 from regparser.history.delays import delays_in_sentence
+from regparser.index import xml_sync
 from regparser.notice import preprocessors
 from regparser.notice.dates import fetch_dates
 import settings
@@ -19,13 +20,21 @@ import settings
 class NoticeXML(object):
     """Wrapper around a notice XML which provides quick access to the XML's
     encoded data fields"""
-    def __init__(self, xml):
+    def __init__(self, xml, source=None):
         """Includes automatic conversion from string and a deep copy for
-        safety"""
+        safety. `source` represents the providence of this xml. It is _not_
+        serialized and hence does not follow the xml through the index"""
         if isinstance(xml, basestring):
             self._xml = etree.fromstring(xml)
         else:
             self._xml = deepcopy(xml)
+        self.source = source
+
+    @property
+    def source_is_local(self):
+        """Determine whether or not `self.source` refers to a local file"""
+        protocol = (self.source or '').split('://')[0]
+        return protocol not in ('http', 'https')
 
     def preprocess(self):
         """Unfortunately, the notice xml is often inaccurate. This function
@@ -151,7 +160,7 @@ def local_copies(url):
     parsed_url = urlparse(url)
     path = parsed_url.path.replace('/', os.sep)
     notice_dir_suffix, file_name = os.path.split(path)
-    for xml_path in settings.LOCAL_XML_PATHS:
+    for xml_path in settings.LOCAL_XML_PATHS + [xml_sync.GIT_DIR]:
         if os.path.isfile(xml_path + path):
             return [xml_path + path]
         else:
@@ -171,18 +180,16 @@ def local_copies(url):
 def notice_xmls_for_url(doc_num, notice_url):
     """Find, preprocess, and return the XML(s) associated with a particular FR
     notice url"""
-    notice_strs = []
     local_notices = local_copies(notice_url)
     if local_notices:
         logging.info("using local xml for %s", notice_url)
         for local_notice_file in local_notices:
             with open(local_notice_file, 'r') as f:
-                notice_strs.append(f.read())
+                yield NoticeXML(f.read(), local_notice_file).preprocess()
     else:
         logging.info("fetching notice xml for %s", notice_url)
-        notice_strs.append(requests.get(notice_url).content)
-
-    return [NoticeXML(xml_str).preprocess() for xml_str in notice_strs]
+        content = requests.get(notice_url).content
+        yield NoticeXML(content, notice_url).preprocess()
 
 
 def xmls_for_url(notice_url):
