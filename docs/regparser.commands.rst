@@ -1,0 +1,150 @@
+regparser.commands package
+==========================
+
+Submodules
+----------
+
+regparser.commands.annual_editions module
+-----------------------------------------
+
+.. automodule:: regparser.commands.annual_editions
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+regparser.commands.build_from module
+------------------------------------
+
+.. automodule:: regparser.commands.build_from
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+regparser.commands.clear module
+-------------------------------
+
+.. automodule:: regparser.commands.clear
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+regparser.commands.compare_to module
+------------------------------------
+
+.. automodule:: regparser.commands.compare_to
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+regparser.commands.dependency_resolver module
+---------------------------------------------
+
+.. automodule:: regparser.commands.dependency_resolver
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+regparser.commands.diffs module
+-------------------------------
+
+.. automodule:: regparser.commands.diffs
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+regparser.commands.fetch_annual_edition module
+----------------------------------------------
+
+.. automodule:: regparser.commands.fetch_annual_edition
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+regparser.commands.fetch_sxs module
+-----------------------------------
+
+.. automodule:: regparser.commands.fetch_sxs
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+regparser.commands.fill_with_rules module
+-----------------------------------------
+
+.. automodule:: regparser.commands.fill_with_rules
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+regparser.commands.layers module
+--------------------------------
+
+.. automodule:: regparser.commands.layers
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+regparser.commands.notice_order module
+--------------------------------------
+
+.. automodule:: regparser.commands.notice_order
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+regparser.commands.parse_rule_changes module
+--------------------------------------------
+
+.. automodule:: regparser.commands.parse_rule_changes
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+regparser.commands.pipeline module
+----------------------------------
+
+.. automodule:: regparser.commands.pipeline
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+regparser.commands.preprocess_notice module
+-------------------------------------------
+
+.. automodule:: regparser.commands.preprocess_notice
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+regparser.commands.versions module
+----------------------------------
+
+.. automodule:: regparser.commands.versions
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+regparser.commands.watch_node module
+------------------------------------
+
+.. automodule:: regparser.commands.watch_node
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+regparser.commands.write_to module
+----------------------------------
+
+.. automodule:: regparser.commands.write_to
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: regparser.commands
+    :members:
+    :undoc-members:
+    :show-inheritance:

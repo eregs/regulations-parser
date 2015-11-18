@@ -1,3 +1,4 @@
+import re
 from collections import defaultdict
 from json import JSONEncoder
 import hashlib
@@ -14,6 +15,8 @@ class Node(object):
     EXTRACT = u'extract'
 
     INTERP_MARK = 'Interp'
+
+    MARKERLESS_REGEX = re.compile(r'p\d+')
 
     def __init__(self, text='', children=[], label=[], title=None,
                  node_type=REGTEXT, source_xml=None):
@@ -42,7 +45,8 @@ class Node(object):
 
     def depth(self):
         """Inspect the label and type to determine the node's depth"""
-        if len(self.label) > 1 and self.node_type == self.REGTEXT:
+        if len(self.label) > 1 and self.node_type in (self.REGTEXT,
+                                                      self.EXTRACT):
             #   Add one for the subpart level
             return len(self.label) + 1
         elif self.node_type in (self.SUBPART, self.EMPTYPART):
@@ -50,6 +54,12 @@ class Node(object):
             return 2
         else:
             return len(self.label)
+
+    @staticmethod
+    def is_markerless_label(label):
+        if not label:
+            return None
+        return re.match(Node.MARKERLESS_REGEX, label[-1])
 
 
 class NodeEncoder(JSONEncoder):
@@ -132,6 +142,12 @@ def walk(node, fn):
     for child in node.children:
         results += walk(child, fn)
     return results
+
+
+def filter_walk(node, fn):
+    """Perform fn on the label for every node in the tree and return a
+    list of nodes on which the function returns truthy."""
+    return walk(node, lambda n: n if fn(n.label) else None)
 
 
 def find_first(root, predicate):

@@ -20,6 +20,14 @@ regparser.tree.xml_parser.interpretations module
     :undoc-members:
     :show-inheritance:
 
+regparser.tree.xml_parser.paragraph_processor module
+----------------------------------------------------
+
+.. automodule:: regparser.tree.xml_parser.paragraph_processor
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 regparser.tree.xml_parser.reg_text module
 -----------------------------------------
 

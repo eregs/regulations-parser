@@ -76,6 +76,22 @@ regparser.notice.encoder module
     :undoc-members:
     :show-inheritance:
 
+regparser.notice.fake module
+----------------------------
+
+.. automodule:: regparser.notice.fake
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+regparser.notice.preprocessors module
+-------------------------------------
+
+.. automodule:: regparser.notice.preprocessors
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 regparser.notice.sxs module
 ---------------------------
 
@@ -88,6 +104,14 @@ regparser.notice.util module
 ----------------------------
 
 .. automodule:: regparser.notice.util
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+regparser.notice.xml module
+---------------------------
+
+.. automodule:: regparser.notice.xml
     :members:
     :undoc-members:
     :show-inheritance:

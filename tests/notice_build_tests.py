@@ -267,6 +267,22 @@ class NoticeBuildTest(XMLBuilderMixin, TestCase):
         self.assertEqual(delete.action, 'DELETE')
         self.assertEqual(delete.label, ['104', '13', 'b'])
 
+    def test_process_amendments_markerless(self):
+        with self.tree.builder("REGTEXT", PART="105", TITLE="12") as regtext:
+            regtext.AMDPAR(u"1. Revise [label:105-11-p5] as blah")
+            with regtext.SECTION() as section:
+                section.SECTNO(u"§ 105.11")
+                section.SUBJECT("Purpose.")
+                section.STARS()
+                section.P("Some text here")
+
+        notice = {'cfr_parts': ['105']}
+        build.process_amendments(notice, self.tree.render_xml())
+        self.assertEqual(notice['changes'].keys(), ['105-11-p5'])
+
+        changes = notice['changes']['105-11-p5'][0]
+        self.assertEqual(changes['action'], 'PUT')
+
     def new_subpart_xml(self):
         with self.tree.builder("RULE") as rule:
             with rule.REGTEXT(PART="105", TITLE="12") as regtext:
