@@ -4,7 +4,7 @@ from unittest import TestCase
 from lxml import etree
 from mock import patch
 
-from regparser.notice import preprocessors
+from regparser.tree.xml_parser import preprocessors
 from tests.xml_builder import XMLBuilderMixin
 
 
@@ -291,6 +291,7 @@ class FootnotesTests(XMLBuilderMixin, TestCase):
 
         with self.assert_xml_transformed() as original_xml:
             # @todo self.assertLogs has been added in Python 3.4
-            with patch('regparser.notice.preprocessors.logging') as logging:
+            logging = 'regparser.tree.xml_parser.preprocessors.logging'
+            with patch(logging) as logging:
                 self.fn.add_ref_attributes(original_xml)
                 self.assertTrue(logging.warning.called)

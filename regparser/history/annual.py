@@ -1,14 +1,17 @@
 from collections import namedtuple
 from datetime import date, datetime
 import logging
+import os
 import re
 
-from lxml import etree
 import requests
 
 from regparser.federalregister import fetch_notice_json
 from regparser.history.delays import modify_effective_dates
+from regparser.index import xml_sync
 from regparser.notice.build import build_notice
+from regparser.tree.xml_parser.xml_wrapper import XMLWrapper
+import settings
 
 
 CFR_BULK_URL = ("http://www.gpo.gov/fdsys/bulkdata/CFR/{year}/title-{title}/"
@@ -22,37 +25,70 @@ class Volume(namedtuple('Volume', ['year', 'title', 'vol_num'])):
     def __init__(self, year, title, vol_num):
         super(Volume, self).__init__(year, title, vol_num)
         self.url = CFR_BULK_URL.format(year=year, title=title, volume=vol_num)
-        self._response = requests.get(self.url, stream=True)
-        self.exists = self._response.status_code == 200
+        self._response, self._exists, self._part_span = None, None, None
+
+    @property
+    def response(self):
+        if self._response is None:
+            self._response = requests.get(self.url, stream=True)
+        return self._response
+
+    @property
+    def exists(self):
+        return self.response.status_code == 200
+
+    @property
+    def part_span(self):
+        """Calculate and memoize the range of parts this volume covers"""
+        if self._part_span is None:
+            self._part_span = False
+
+            lines = self.response.iter_lines()
+            line = next(lines)
+            while '<PARTS>' not in line:
+                line = next(lines)
+            if not line:
+                logging.warning('No <PARTS> in ' + self.url)
+            else:
+                match = re.match(r'.*parts? (\d+) to (\d+|end).*',
+                                 line.lower())
+                if match:
+                    start = int(match.group(1))
+                    if match.group(2) == 'end':
+                        end = None
+                    else:
+                        end = int(match.group(2))
+                    self._part_span = (start, end)
+                else:
+                    logging.warning("Can't parse: " + line)
+        return self._part_span
 
     def should_contain(self, part):
-        lines = self._response.iter_lines()
-        line = next(lines)
-        while '<PARTS>' not in line:
-            line = next(lines)
-        if not line:
-            logging.warning('No <PARTS> in ' + self.url)
-            return False
-
-        match = re.match(r'.*parts? (\d+) to (\d+|end).*', line.lower())
-        if match:
-            start = int(match.group(1))
+        """Does this volume contain the part number requested?"""
+        if self.part_span:
+            (start, end) = self.part_span
             if start > part:
                 return False
-            if match.group(2) == 'end':
+            elif end is None:
                 return True
-            end = int(match.group(2))
-            return end >= part
+            else:
+                return end >= part
         else:
-            logging.warning("Can't parse: " + line)
             return False
 
     def find_part_xml(self, part):
+        """Pull the XML for an annual edition, first checking locally"""
         url = CFR_PART_URL.format(year=self.year, title=self.title,
                                   volume=self.vol_num, part=part)
+        filename = url.split('/')[-1]
+        for xml_path in settings.LOCAL_XML_PATHS + [xml_sync.GIT_DIR]:
+            xml_path = os.path.join(xml_path, 'annual', filename)
+            if os.path.isfile(xml_path):
+                with open(xml_path) as f:
+                    return XMLWrapper(f.read(), xml_path)
         response = requests.get(url)
         if response.status_code == 200:
-            return etree.fromstring(response.content)
+            return XMLWrapper(response.content, url)
 
 
 def annual_edition_for(title, notice):

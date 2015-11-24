@@ -31,7 +31,7 @@ def fetch_sxs(document_number):
     notice_xml = notice_entry.read()
     notice_meta = meta_data(document_number, FULL_NOTICE_FIELDS)
     notice = build_notice(notice_xml.cfr_titles[0], None, notice_meta,
-                          xml_to_process=notice_xml._xml)[0]
+                          xml_to_process=notice_xml.xml)[0]
     sxs_entry.write(notice)
 
 
