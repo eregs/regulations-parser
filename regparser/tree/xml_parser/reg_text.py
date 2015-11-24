@@ -278,15 +278,19 @@ class ParagraphMatcher(paragraph_processor.BaseMatcher):
     def next_marker(self, xml):
         """Find the first marker in a paragraph that follows this xml node.
         May return None"""
+        good_tags = ('P', 'FP', mtypes.STARS_TAG)
+
         node = xml.getnext()
-        while node is not None:
+        while node is not None and node.tag not in good_tags:
+            node = node.getnext()
+
+        if getattr(node, 'tag', None) == mtypes.STARS_TAG:
+            return mtypes.STARS_TAG
+        elif node is not None:
             tagged_text = tree_utils.get_node_text_tags_preserved(node)
             markers = get_markers(tagged_text.strip())
-            if node.tag == mtypes.STARS_TAG:
-                return node.tag
-            elif markers:
+            if markers:
                 return markers[0]
-            node = node.getnext()
 
 
 class RegtextParagraphProcessor(paragraph_processor.ParagraphProcessor):
