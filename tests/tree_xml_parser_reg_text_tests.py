@@ -655,21 +655,21 @@ class ParagraphMatcherTests(XMLBuilderMixin, TestCase):
         """Find the first paragraph marker following a paragraph"""
         with self.tree.builder("ROOT") as root:
             root.P("(A) AAA")
-            root.P("ABCD")
+            root.PRTPART()
             root.P("(d) ddd")
             root.P("(1) 111")
-        xml = self.tree.render_xml()[1]
+        xml = self.tree.render_xml()[0]
         self.assertEqual(reg_text.ParagraphMatcher().next_marker(xml), 'd')
 
     def test_next_marker_stars(self):
         """STARS tag has special significance."""
         with self.tree.builder("ROOT") as root:
             root.P("(A) AAA")
-            root.P("ABCD")
+            root.PRTPART()
             root.STARS()
             root.P("(d) ddd")
             root.P("(1) 111")
-        xml = self.tree.render_xml()[1]
+        xml = self.tree.render_xml()[0]
         self.assertEqual(reg_text.ParagraphMatcher().next_marker(xml),
                          mtypes.STARS_TAG)
 
@@ -678,6 +678,7 @@ class ParagraphMatcherTests(XMLBuilderMixin, TestCase):
         with self.tree.builder("ROOT") as root:
             root.P("(1) 111")
             root.P("Content")
+            root.P("(i) iii")
         xml = self.tree.render_xml()[0]
         self.assertIsNone(reg_text.ParagraphMatcher().next_marker(xml))
 
