@@ -38,18 +38,30 @@ class TableHeaderNode(object):
 def build_header(xml_nodes):
     """Builds a TableHeaderNode tree, with an empty root. Each node in the tree
     includes its colspan/rowspan"""
-    stack = HeaderStack()
-    stack.add(0, TableHeaderNode(None, 0))  # Root
-    ttitle_bump = 0
-    if len([_ for _ in xml_nodes if _.tag == "TTITLE"]):
-        ttitle_bump = 1
-    for xml_node in xml_nodes:
-        if xml_node.tag == "TTITLE":
-            level = 1
-        else:
-            level = int(xml_node.attrib['H']) + ttitle_bump
+    def add_element(stack, xml_node, level=None):
         text = tree_utils.get_node_text(xml_node, add_spaces=True).strip()
         stack.add(level, TableHeaderNode(text, level))
+
+    stack = HeaderStack()
+    stack.add(0, TableHeaderNode(None, 0))  # Root
+
+    ttitle_nodes, other_nodes = [], []
+
+    for node in xml_nodes:
+        if node.tag == "TTITLE":
+            ttitle_nodes.append(node)
+        else:
+            other_nodes.append(node)
+    # We're assuming that there will only be one TTITLE element, and that it
+    # will be the first element, but those assumptions may prove invalid later.
+    ttitle_bump = 1 if len(ttitle_nodes) else 0
+
+    if ttitle_bump:
+        add_element(stack, ttitle_nodes[0], level=1)
+
+    for xml_node in other_nodes:
+        level = int(xml_node.attrib['H']) + ttitle_bump
+        add_element(stack, xml_node, level=level)
 
     while stack.size() > 1:
         stack.unwind()
