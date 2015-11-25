@@ -40,8 +40,14 @@ def build_header(xml_nodes):
     includes its colspan/rowspan"""
     stack = HeaderStack()
     stack.add(0, TableHeaderNode(None, 0))  # Root
+    ttitle_bump = 0
+    if len([_ for _ in xml_nodes if _.tag == "TTITLE"]):
+        ttitle_bump = 1
     for xml_node in xml_nodes:
-        level = int(xml_node.attrib['H'])
+        if xml_node.tag == "TTITLE":
+            level = 1
+        else:
+            level = int(xml_node.attrib['H']) + ttitle_bump
         text = tree_utils.get_node_text(xml_node, add_spaces=True).strip()
         stack.add(level, TableHeaderNode(text, level))
 
@@ -111,7 +117,7 @@ def table_xml_to_plaintext(xml_node):
     for all the options needed to display the table properly, but works fine
     for simple tables. This gets included in the reg plain text"""
     header = [tree_utils.get_node_text(hd, add_spaces=True).strip()
-              for hd in xml_node.xpath('./BOXHD/CHED')]
+              for hd in xml_node.xpath('./BOXHD/CHED|./TTITLE')]
     divider = ['---']*len(header)
     rows = []
     for tr in xml_node.xpath('./ROW'):
@@ -128,7 +134,7 @@ def table_xml_to_data(xml_node):
     structure than the native XML as the XML encodes too much logic. This
     structure can be used to generate semi-complex tables which could not be
     generated from the markdown above"""
-    header_root = build_header(xml_node.xpath('./BOXHD/CHED'))
+    header_root = build_header(xml_node.xpath('./BOXHD/CHED|./TTITLE'))
     header = [[] for _ in range(header_root.height())]
 
     def per_node(node):
@@ -143,7 +149,9 @@ def table_xml_to_data(xml_node):
         rows.append([tree_utils.get_node_text(td, add_spaces=True).strip()
                      for td in row.xpath('./ENT')])
 
-    return {'header': header, 'rows': rows}
+    table_data = {'header': header, 'rows': rows}
+
+    return table_data
 
 
 class PlaintextFormatData(object):

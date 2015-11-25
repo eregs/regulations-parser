@@ -6,6 +6,7 @@ from lxml import etree
 from regparser.layer import formatting
 from regparser.tree.struct import Node
 from tests.xml_builder import XMLBuilderMixin
+from regparser.notice import preprocessors
 
 
 class LayerFormattingTests(XMLBuilderMixin, TestCase):
@@ -116,6 +117,142 @@ class LayerFormattingTests(XMLBuilderMixin, TestCase):
             [['11', '12', '13', '14'],
              ['21', '22', '23'],
              ['', '32', '33 More', '34']])
+
+    def test_table_with_caption_as_boxhd(self):
+        """
+        |Caption  |
+        |R1C1     |
+        |R2C1|R2C2|
+        """
+        with self.tree.builder("GPOTABLE", COLS="6") as root:
+            root.TTITLE("Caption")
+            with root.BOXHD() as hd:
+                hd.CHED(u"R1C1", H=1)
+                hd.CHED(u"R2C1", H=2)
+                hd.CHED(u"R2C2", H=2)
+
+        xml = self.tree.render_xml()
+        markdown = formatting.table_xml_to_plaintext(xml)
+        self.assertTrue("R1C1" in markdown)
+        self.assertTrue("R2C2" in markdown)
+
+        node = Node(markdown, source_xml=xml)
+        result = formatting.Formatting(None).process(node)
+        self.assertEqual(1, len(result))
+        result = result[0]
+
+        self.assertEqual(markdown, result['text'])
+        self.assertEqual([0], result['locations'])
+        data = result['table_data']
+        self.assertTrue("header" in data)
+        # Verify header matches:
+        mkhd = lambda t, c, r: {'text': t, 'colspan': c, 'rowspan': r}
+        self.assertEqual(
+            [
+                [mkhd("Caption",
+                      2, 1)],
+                [mkhd("R1C1", 2, 1)],
+                [mkhd("R2C1", 1, 1), mkhd("R2C2", 1, 1)]
+            ],
+            data["header"])
+
+    def test_table_with_header_with_footnotes(self):
+        """
+
+        |R1C1[^1] |
+        |R2C1|R2C2|
+        """
+        with self.tree.builder("GPOTABLE", COLS="6") as root:
+            with root.BOXHD() as hd:
+                hd.CHED(_xml=u"R1C1<SU>1</SU>", H=1)
+                hd.CHED(u"R2C1", H=2)
+                hd.CHED(u"R2C2", H=2)
+            root.TNOTE(
+                _xml="<SU>1</SU> No work of any kind shall be conducted")
+
+        preprocessor = preprocessors.Footnotes()
+        xml = self.tree.render_xml()
+        preprocessor.transform(xml)
+        markdown = formatting.table_xml_to_plaintext(xml)
+        self.assertTrue("R1C1" in markdown)
+        self.assertTrue("R2C2" in markdown)
+
+        node = Node(markdown, source_xml=xml)
+        result = formatting.Formatting(None).process(node)
+        self.assertEqual(2, len(result))
+        table, footnote = result
+
+        self.assertEqual(markdown, table['text'])
+        self.assertEqual([0], table['locations'])
+        data = table['table_data']
+        self.assertTrue("header" in data)
+        # Verify header matches:
+        mkhd = lambda t, c, r: {'text': t, 'colspan': c, 'rowspan': r}
+        self.assertEqual(
+            [
+                [mkhd("R1C1[^1](No work of any kind shall be conducted)",
+                      2, 1)],
+                [mkhd("R2C1", 1, 1), mkhd("R2C2", 1, 1)]
+            ],
+            data["header"])
+        self.assertEqual(u'[^1](No work of any kind shall be conducted)',
+                         footnote['text'])
+        self.assertEqual(u'1', footnote['footnote_data']['ref'])
+        self.assertEqual(u'No work of any kind shall be conducted',
+                         footnote['footnote_data']['note'])
+        self.assertEqual([0], footnote['locations'])
+
+    def test_table_with_caption_with_footnoteas_boxhd(self):
+        """
+        Caption[^1](No work of any kind shall be conducted)
+        |Caption[^1]|
+        |R1C1       |
+        |R2C1 |R2C2 |
+
+        This is testing the implementation of the TTITLE as a row in table
+        header, rather than as table caption.
+        """
+        with self.tree.builder("GPOTABLE", COLS="6") as root:
+            root.TTITLE(_xml="Caption<SU>1</SU>")
+            with root.BOXHD() as hd:
+                hd.CHED(u"R1C1", H=1)
+                hd.CHED(u"R2C1", H=2)
+                hd.CHED(u"R2C2", H=2)
+            root.TNOTE(
+                _xml="<SU>1</SU> No work of any kind shall be conducted")
+
+        preprocessor = preprocessors.Footnotes()
+        xml = self.tree.render_xml()
+        preprocessor.transform(xml)
+        markdown = formatting.table_xml_to_plaintext(xml)
+        self.assertTrue("R1C1" in markdown)
+        self.assertTrue("R2C2" in markdown)
+
+        node = Node(markdown, source_xml=xml)
+        result = formatting.Formatting(None).process(node)
+        self.assertEqual(2, len(result))
+        table, footnote = result
+
+        self.assertEqual(markdown, table['text'])
+        self.assertEqual([0], table['locations'])
+        data = table['table_data']
+        self.assertTrue("header" in data)
+        # Verify header matches:
+        mkhd = lambda t, c, r: {'text': t, 'colspan': c, 'rowspan': r}
+        self.assertEqual(
+            [
+                [mkhd(u"Caption[^1](No work of any kind shall be conducted)",
+                      2, 1)],
+                [mkhd("R1C1", 2, 1)],
+                [mkhd("R2C1", 1, 1), mkhd("R2C2", 1, 1)]
+            ],
+            data["header"])
+        self.assertEqual(u'[^1](No work of any kind shall be conducted)',
+                         footnote['text'])
+        self.assertEqual(u'1', footnote['footnote_data']['ref'])
+        self.assertEqual(u'No work of any kind shall be conducted',
+                         footnote['footnote_data']['note'])
+        self.assertEqual([0], footnote['locations'])
 
     def test_awkward_table(self):
         """
