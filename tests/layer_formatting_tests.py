@@ -6,7 +6,7 @@ from lxml import etree
 from regparser.layer import formatting
 from regparser.tree.struct import Node
 from tests.xml_builder import XMLBuilderMixin
-from regparser.notice import preprocessors
+from regparser.tree.xml_parser import preprocessors
 
 
 class LayerFormattingTests(XMLBuilderMixin, TestCase):
