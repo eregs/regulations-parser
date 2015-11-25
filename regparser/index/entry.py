@@ -100,8 +100,7 @@ class Version(Entry):
         """Deserialize all Version objects we're aware of."""
         versions = [(self / path).read()
                     for path in super(Version, self).__iter__()]
-        key = lambda version: (version.effective, version.published)
-        for version in sorted(versions, key=key):
+        for version in sorted(versions):
             yield version.identifier
 
 
