@@ -38,12 +38,30 @@ class TableHeaderNode(object):
 def build_header(xml_nodes):
     """Builds a TableHeaderNode tree, with an empty root. Each node in the tree
     includes its colspan/rowspan"""
-    stack = HeaderStack()
-    stack.add(0, TableHeaderNode(None, 0))  # Root
-    for xml_node in xml_nodes:
-        level = int(xml_node.attrib['H'])
+    def add_element(stack, xml_node, level=None):
         text = tree_utils.get_node_text(xml_node, add_spaces=True).strip()
         stack.add(level, TableHeaderNode(text, level))
+
+    stack = HeaderStack()
+    stack.add(0, TableHeaderNode(None, 0))  # Root
+
+    ttitle_nodes, other_nodes = [], []
+
+    for node in xml_nodes:
+        if node.tag == "TTITLE":
+            ttitle_nodes.append(node)
+        else:
+            other_nodes.append(node)
+    # We're assuming that there will only be one TTITLE element, and that it
+    # will be the first element, but those assumptions may prove invalid later.
+    ttitle_bump = 1 if len(ttitle_nodes) else 0
+
+    if ttitle_bump:
+        add_element(stack, ttitle_nodes[0], level=1)
+
+    for xml_node in other_nodes:
+        level = int(xml_node.attrib['H']) + ttitle_bump
+        add_element(stack, xml_node, level=level)
 
     while stack.size() > 1:
         stack.unwind()
@@ -111,7 +129,7 @@ def table_xml_to_plaintext(xml_node):
     for all the options needed to display the table properly, but works fine
     for simple tables. This gets included in the reg plain text"""
     header = [tree_utils.get_node_text(hd, add_spaces=True).strip()
-              for hd in xml_node.xpath('./BOXHD/CHED')]
+              for hd in xml_node.xpath('./BOXHD/CHED|./TTITLE')]
     divider = ['---']*len(header)
     rows = []
     for tr in xml_node.xpath('./ROW'):
@@ -128,7 +146,7 @@ def table_xml_to_data(xml_node):
     structure than the native XML as the XML encodes too much logic. This
     structure can be used to generate semi-complex tables which could not be
     generated from the markdown above"""
-    header_root = build_header(xml_node.xpath('./BOXHD/CHED'))
+    header_root = build_header(xml_node.xpath('./BOXHD/CHED|./TTITLE'))
     header = [[] for _ in range(header_root.height())]
 
     def per_node(node):
@@ -143,7 +161,9 @@ def table_xml_to_data(xml_node):
         rows.append([tree_utils.get_node_text(td, add_spaces=True).strip()
                      for td in row.xpath('./ENT')])
 
-    return {'header': header, 'rows': rows}
+    table_data = {'header': header, 'rows': rows}
+
+    return table_data
 
 
 class PlaintextFormatData(object):
