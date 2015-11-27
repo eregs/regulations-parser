@@ -108,7 +108,7 @@ class ParagraphProcessorTest(TestCase):
         a, b = p1.children
         self.assertEqual(a.label, ['root', 'p1', 'a'])
         self.assertEqual(len(a.children), 1)
-        self.assertEqual(a.children[0].label, ['root', 'p1', 'a', 'p2'])
+        self.assertEqual(a.children[0].label, ['root', 'p1', 'a', 'p1'])
         self.assertEqual(b.label, ['root', 'p1', 'b'])
 
     def test_separate_intro_empty_nodes(self):

@@ -48,40 +48,35 @@ class ParagraphProcessor(object):
     def build_hierarchy(self, root, nodes, depths):
         """Given a root node, a flat list of child nodes, and a list of
         depths, build a node hierarchy around the root"""
-        cnt = 0   # number of nodes we've seen without a marker
         stack = tree_utils.NodeStack()
         stack.add(0, root)
-        for node, par in zip(nodes, depths):
-            if par.typ != mtypes.stars:
-                # Note that nodes still only have the one label part
-                label, cnt = self.clean_label(node.label[0], cnt)
-                node.label = [label]
-                # Children should also have labels applied to them:
-                if len(node.children):
-                    node = self.label_child_nodes(node)
-                stack.add(1 + par.depth, node)
-
+        for node, depth_info in zip(nodes, depths):
+            self.replace_emphasis(node)
+            self.replace_markerless(stack, node, depth_info.depth + 1)
+            self.carry_label_to_children(node)
+            if depth_info.typ != mtypes.stars:
+                stack.add(1 + depth_info.depth, node)
         return stack.collapse()
 
-    def label_child_nodes(self, node):
-        """
-        Takes a node and recursively processes its children to add the
-        appropriate labels to them.
-        """
+    def carry_label_to_children(self, node):
+        """Takes a node and recursively processes its children to add the
+        appropriate label prefix to them."""
         for idx, child in enumerate(node.children):
-            child.label = node.label + ["p%s" % str(idx + 1)]
-            child = self.label_child_nodes(child)
-        return node
+            child.label = node.label + child.label[-1:]
+            self.carry_label_to_children(child)
 
-    def clean_label(self, label, unlabeled_counter):
-        """There are some artifacts from parsing and deriving the depth that
-        we remove here"""
-        if label == mtypes.MARKERLESS:
-            unlabeled_counter += 1
-            label = 'p{0}'.format(unlabeled_counter)
+    def replace_emphasis(self, node):
+        """Emphasis tags are helpful for deriving depth, but we don't want
+        them in our output, so remove here"""
+        node.label = [l.replace('<E T="03">', '').replace('</E>', '')
+                      for l in node.label]
 
-        label = label.replace('<E T="03">', '').replace('</E>', '')
-        return label, unlabeled_counter
+    def replace_markerless(self, stack, node, depth):
+        """Assign a unique index to all of the MARKERLESS paragraphs"""
+        if node.label[-1] == mtypes.MARKERLESS:
+            num_markerless = sum(n.is_markerless()
+                                 for n in stack.peek_level(depth))
+            node.label[-1] = 'p{}'.format(num_markerless + 1)
 
     def separate_intro(self, nodes):
         """In many situations the first unlabeled paragraph is the "intro"

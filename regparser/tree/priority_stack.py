@@ -22,6 +22,7 @@ class PriorityStack(object):
         for layer in self.m_stack:
             if layer and layer[0][0] == level:
                 return [node for _, node in layer]
+        return []
 
     def peek_level_last(self, level):
         """Get the last from a level of nodes in the stack"""
