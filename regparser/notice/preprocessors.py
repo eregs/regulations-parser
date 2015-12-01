@@ -90,7 +90,7 @@ class ParenthesesCleanup(PreProcessorBase):
 
 
 class MoveAdjoiningChars(PreProcessorBase):
-    ORPHAN_REGEX = re.compile(r"(\.|—)")
+    ORPHAN_REGEX = re.compile(ur"(\.|—)")
 
     def transform(self, xml):
         # if an e tag has an emdash or period after it, put the
@@ -100,7 +100,6 @@ class MoveAdjoiningChars(PreProcessorBase):
 
             if orphan:
                 match_groups = orphan.groups()
-
                 if len(match_groups) > 0:
                     e.text = e.text + match_groups[0]
                 e.tail = self.ORPHAN_REGEX.sub('', e.tail)

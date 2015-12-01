@@ -108,20 +108,22 @@ class ParenthesesCleanupTests(XMLBuilderMixin, TestCase):
 class MoveAdjoiningCharsTests(XMLBuilderMixin, TestCase):
     def assert_transformed(self, input_xml, expected_xml):
         self.setUp()
+        input_xml = input_xml.decode('utf-8')
         with self.tree.builder("SECTION") as section:
             section.P(_xml=input_xml)
         xml = self.tree.render_xml()
         preprocessors.MoveAdjoiningChars().transform(xml)
-        self.assertEqual(etree.tostring(xml.xpath('/SECTION/P/E')[0]),
+        self.assertEqual(etree.tostring(
+                         xml.xpath('/SECTION/P/E')[0], encoding='UTF-8'),
                          expected_xml)
 
     def test_transform(self):
+        self.assert_transformed('<E T="03">Things</E>— more things',
+                                '<E T="03">Things—</E> more things')
         self.assert_transformed('<E T="03">Things</E>.',
                                 '<E T="03">Things.</E>')
         self.assert_transformed('<E T="03">Things</E>. more things',
                                 '<E T="03">Things.</E> more things')
-        self.assert_transformed(u"""<E T="03">Things</E>— more things""",
-                                u"""<E T="03">Things—</E> more things""")
 
 
 class ApprovalsFPTests(XMLBuilderMixin, TestCase):
