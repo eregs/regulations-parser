@@ -1,3 +1,4 @@
+# vim: set encoding=utf-8
 """Set of transforms we run on notice XML to account for common inaccuracies
 in the XML"""
 import abc
@@ -86,6 +87,20 @@ class ParenthesesCleanup(PreProcessorBase):
                 if not outside_close and inside_close:  # Move ')' out
                     em.text = em.text[:-1]
                     em.tail = ")" + _str(em.tail)
+
+
+class MoveAdjoiningChars(PreProcessorBase):
+    ORPHAN_REGEX = re.compile(ur"(\.|—)")
+
+    def transform(self, xml):
+        # if an e tag has an emdash or period after it, put the
+        # char inside the e tag
+        for e in xml.xpath("//P/E"):
+            orphan = self.ORPHAN_REGEX.match(e.tail)
+
+            if orphan:
+                e.text = e.text + orphan.group(1)
+                e.tail = self.ORPHAN_REGEX.sub('', e.tail, 1)
 
 
 class ApprovalsFP(PreProcessorBase):
