@@ -4,7 +4,7 @@ from unittest import TestCase
 from lxml import etree
 from mock import patch
 
-from regparser.notice import preprocessors
+from regparser.tree.xml_parser import preprocessors
 from tests.xml_builder import XMLBuilderMixin
 
 
@@ -270,17 +270,26 @@ class FootnotesTests(XMLBuilderMixin, TestCase):
     def test_split_comma_footnotes(self):
         """The XML will sometimes merge multiple references to footnotes into
         a single tag. Verify that they get split"""
-        with self.tree.builder("ROOT") as root:
-            root.P(_xml="Some content<SU>1</SU>")
-            root.P(_xml="More content<SU>2, 3, 4</SU>")
-            root.P(_xml="Last content<SU>5 6</SU>")
-
-        with self.assert_xml_transformed() as original_xml:
-            self.fn.split_comma_footnotes(original_xml)
+        def ftnt_compare(original, expected):
             with self.tree.builder("ROOT") as root:
-                root.P(_xml="Some content<SU>1</SU>")
-                root.P(_xml="More content<SU>2</SU>, <SU>3</SU>, <SU>4</SU>")
-                root.P(_xml="Last content<SU>5</SU> <SU>6</SU>")
+                root.P(_xml=original)
+
+            with self.assert_xml_transformed() as original_xml:
+                self.fn.split_comma_footnotes(original_xml)
+                with self.tree.builder("ROOT") as root:
+                    root.P(_xml=expected)
+
+        ftnt_compare("Some content<SU>1</SU>", "Some content<SU>1</SU>")
+        ftnt_compare("More content<SU>2, 3, 4</SU>",
+                     "More content<SU>2</SU> <SU>3</SU> <SU>4</SU>")
+        ftnt_compare("Even more content<SU>2,3,4</SU>",
+                     "Even more content<SU>2</SU> <SU>3</SU> <SU>4</SU>")
+        ftnt_compare("Yet more <SU>2</SU>, whatever<SU>3, 4</SU>",
+                     "Yet more <SU>2</SU>, whatever<SU>3</SU> <SU>4</SU>")
+        ftnt_compare("Penultimate content<SU>5 6</SU>",
+                     "Penultimate content<SU>5</SU> <SU>6</SU>")
+        ftnt_compare("Last content<SU>7</SU>, <SU>8</SU>",
+                     "Last content<SU>7</SU> <SU>8</SU>")
 
     def test_add_ref_attributes(self):
         """The XML elements which reference footnotes should be modified to
@@ -312,6 +321,7 @@ class FootnotesTests(XMLBuilderMixin, TestCase):
 
         with self.assert_xml_transformed() as original_xml:
             # @todo self.assertLogs has been added in Python 3.4
-            with patch('regparser.notice.preprocessors.logging') as logging:
+            logging = 'regparser.tree.xml_parser.preprocessors.logging'
+            with patch(logging) as logging:
                 self.fn.add_ref_attributes(original_xml)
                 self.assertTrue(logging.warning.called)

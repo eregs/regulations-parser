@@ -46,7 +46,7 @@ def process_if_needed(cfr_title, cfr_part, last_versions):
         deps.validate_for(tree_entry)
         if deps.is_stale(tree_entry):
             input_entry = annual_path / last_version.year
-            tree = xml_parser.reg_text.build_tree(input_entry.read())
+            tree = xml_parser.reg_text.build_tree(input_entry.read().xml)
             tree_entry.write(tree)
 
 

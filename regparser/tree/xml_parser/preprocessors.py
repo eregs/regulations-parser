@@ -216,7 +216,7 @@ class Footnotes(PreProcessorBase):
 
     def split_comma_footnotes(self, xml):
         """Convert XML such as <SU>1, 2, 3</SU> into distinct SU elements:
-        <SU>1</SU>, <SU>2</SU>, <SU>3</SU> for easier reference"""
+        <SU>1</SU> <SU>2</SU> <SU>3</SU> for easier reference"""
         for ref_xml in xml.xpath(self.XPATH_IS_REF):
             parent = ref_xml.getparent()
             idx_in_parent = parent.index(ref_xml)
@@ -224,6 +224,12 @@ class Footnotes(PreProcessorBase):
 
             refs = [txt.strip() for txt in re.split(r'[,|\s]+', ref_xml.text)]
             tail_texts = self._tails_corresponding_to(ref_xml, refs)
+
+            # Strip commas in the tails, but replace "," with " ".
+            def strip_comma(s):
+                return " " if s in (",", ", ") else s
+
+            tail_texts = [strip_comma(tail) for tail in tail_texts]
 
             for idx, (ref, tail) in enumerate(zip(refs, tail_texts)):
                 node = etree.Element("SU")

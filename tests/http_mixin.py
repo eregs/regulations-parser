@@ -16,11 +16,23 @@ class HttpMixin(object):
         httpretty.reset()
 
     def expect_json_http(self, json_dict=None, **kwargs):
-        """Wraps httpretty.register_uri with some defaults"""
+        """Wraps httpretty.register_uri with some defaults for JSON"""
         if json_dict is None:
             json_dict = {"key": "value"}
         kwargs['body'] = json.dumps(json_dict)
         kwargs['content_type'] = 'text/json'
+        self._expect_http(**kwargs)
+
+    def expect_xml_http(self, xml_str=None, **kwargs):
+        """Wraps httpretty.register_uri with some defaults for XML"""
+        if xml_str is None:
+            xml_str = '<ROOT></ROOT>'
+        kwargs['body'] = xml_str
+        kwargs['content_type'] = 'text/xml'
+        self._expect_http(**kwargs)
+
+    def _expect_http(self, **kwargs):
+        """Wraps httpretty.register_uri with some defaults"""
         kwargs['method'] = kwargs.get('method', httpretty.GET)
         # Default to catching all requests
         kwargs['uri'] = kwargs.get('uri', re.compile(".*"))

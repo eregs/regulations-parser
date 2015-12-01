@@ -2,8 +2,7 @@ import click
 
 from regparser.commands.dependency_resolver import DependencyResolver
 from regparser.history import annual
-from regparser.index import entry
-from regparser.notice import preprocessors
+from regparser.index import dependency, entry
 
 
 @click.command()
@@ -13,10 +12,11 @@ from regparser.notice import preprocessors
 def fetch_annual_edition(cfr_title, cfr_part, year):
     """Download an annual edition of a regulation"""
     volume = annual.find_volume(year, cfr_title, cfr_part)
-    xml = volume.find_part_xml(cfr_part)
-    for preprocessor in preprocessors.ALL:
-        preprocessor().transform(xml)
-    entry.Annual(cfr_title, cfr_part, year).write(xml)
+    xml = volume.find_part_xml(cfr_part).preprocess()
+    annual_entry = entry.Annual(cfr_title, cfr_part, year)
+    annual_entry.write(xml)
+    if xml.source_is_local:
+        dependency.Graph().add(str(annual_entry), xml.source)
 
 
 class AnnualEditionResolver(DependencyResolver):
