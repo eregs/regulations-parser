@@ -207,7 +207,7 @@ class DefinitionKeytermTest(TestCase):
         self.assert_finds_result(
             '<E T="03">Officer, office.</E>. Paragraph text', 'Definition',
             def_finders.Ref('officer, office', None, 0))
-        # "Or" should split the definition if the terms of simple
+        # "Or" should split the definition if the terms are simple
         self.assert_finds_result(
             '<E T="03">Frame or receiver.</E>. Paragraph text', 'Definition',
             def_finders.Ref('frame', None, 0),
