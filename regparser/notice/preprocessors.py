@@ -88,6 +88,12 @@ class ParenthesesCleanup(PreProcessorBase):
                     em.tail = ")" + _str(em.tail)
 
 
+class MoveAdjoiningChars(PreProcessorBase):
+    def transform(self, xml):
+        ## if an e tag has an emdash or period after it, put the
+        ## char inside the e tag?
+        pass
+
 class ApprovalsFP(PreProcessorBase):
     """We expect certain text to an APPRO tag, but it is often mistakenly
     found inside FP tags. We use REGEX to determine which nodes need to be

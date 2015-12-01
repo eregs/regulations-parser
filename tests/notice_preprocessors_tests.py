@@ -104,6 +104,15 @@ class ParenthesesCleanupTests(XMLBuilderMixin, TestCase):
         self.assert_transformed('<E T="03">Paragraph 22(a)(5)</E> Content',
                                 '<E T="03">Paragraph 22(a)(5)</E> Content')
 
+class MoveAdjoiningCharsTests(XMLBuilderMixin, TestCase):
+    def test_transform(self):
+        self.setUp()
+        with self.tree.builder("SECTION") as section:
+            section.P(_xml=u"""<E T="03">Things</E>.""")
+        xml = self.tree.render_xml()
+        preprocessors.MoveAdjoiningChars().transform(xml)
+        self.assertEqual(etree.tostring(xml.xpath('/SECTION/P/E')[0]),
+                        '<E T="03">Things.</E>')
 
 class ApprovalsFPTests(XMLBuilderMixin, TestCase):
     def control_number(self, number, prefix="Approved"):
