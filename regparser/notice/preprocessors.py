@@ -90,17 +90,20 @@ class ParenthesesCleanup(PreProcessorBase):
 
 
 class MoveAdjoiningChars(PreProcessorBase):
-    def transform(self, xml):
-        ## if an e tag has an emdash or period after it, put the
-        ## char inside the e tag
-        for e in xml.xpath("//P/E"):
-            estr = etree.tostring(e)
-            has_orphan = estr.endswith(".") or estr.endswith("–")
+    ORPHAN_REGEX = re.compile(r"(\.|—)")
 
-            if has_orphan:
-                orphan = estr[-1:]
-                e.text = e.text + orphan
-                e.tail = ''
+    def transform(self, xml):
+        # if an e tag has an emdash or period after it, put the
+        # char inside the e tag
+        for e in xml.xpath("//P/E"):
+            orphan = self.ORPHAN_REGEX.match(e.tail)
+
+            if orphan:
+                match_groups = orphan.groups()
+
+                if len(match_groups) > 0:
+                    e.text = e.text + match_groups[0]
+                e.tail = self.ORPHAN_REGEX.sub('', e.tail)
 
 
 class ApprovalsFP(PreProcessorBase):
