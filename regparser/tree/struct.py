@@ -1,5 +1,4 @@
 import re
-from collections import defaultdict
 from json import JSONEncoder
 import hashlib
 
@@ -124,9 +123,7 @@ def frozen_node_decode_hook(d):
         params = dict(d)
         del(params['source_xml'])
         fresh = FrozenNode(**params)
-        for el in FrozenNode._pool[fresh.hash]:
-            if el == fresh:
-                return el   # note we are _not_ returning fresh
+        return fresh.prototype()
     return d
 
 
@@ -229,7 +226,7 @@ def treeify(nodes):
 
 class FrozenNode(object):
     """Immutable interface for nodes. No guarantees about internal state."""
-    _pool = defaultdict(set)    # collection of all FrozenNodes, keyed by hash
+    _pool = {}    # collection of all FrozenNodes, keyed by hash
 
     def __init__(self, text='', children=(), label=(), title='',
                  node_type=Node.REGTEXT, tagged_text=''):
@@ -239,8 +236,11 @@ class FrozenNode(object):
         self._title = title or ''
         self._node_type = node_type
         self._tagged_text = tagged_text or ''
+        self._child_labels = tuple(c.label_id for c in self.children)
+        self._label_id = '-'.join(self.label)
         self._hash = self._generate_hash()
-        FrozenNode._pool[self.hash].add(self)
+        if self.hash not in FrozenNode._pool:
+            FrozenNode._pool[self.hash] = self
 
     @property
     def text(self):
@@ -269,6 +269,14 @@ class FrozenNode(object):
     @property
     def hash(self):
         return self._hash
+
+    @property
+    def label_id(self):
+        return self._label_id
+
+    @property
+    def child_labels(self):
+        return self._child_labels
 
     def _generate_hash(self):
         """Called during instantiation. Digests all fields"""
@@ -311,13 +319,21 @@ class FrozenNode(object):
         fresh = FrozenNode(text=node.text, children=children, label=node.label,
                            title=node.title or '', node_type=node.node_type,
                            tagged_text=getattr(node, 'tagged_text', '') or '')
-        for el in FrozenNode._pool[fresh.hash]:
-            if el == fresh:
-                return el   # note we are _not_ returning fresh
+        return fresh.prototype()
 
-    @property
-    def label_id(self):
-        """Convert label into a string"""
-        if not hasattr(self, '_label_id'):
-            self._label_id = '-'.join(self.label)
-        return self._label_id
+    # @todo - seems like something we could implement via __new__?
+    def prototype(self):
+        """When we instantiate a FrozenNode, we add it to _pool if we've not
+        seen an identical FrozenNode before. If we have, we want to work with
+        that previously seen version instead. This method returns the _first_
+        FrozenNode with identical fields"""
+        return FrozenNode._pool[self.hash]  # note this may not be self
+
+    def clone(self, **kwargs):
+        """Implement a namedtuple `_replace` style functionality, copying all
+        fields that aren't explicitly replaced."""
+        for field in ('text', 'children', 'label', 'title', 'node_type',
+                      'tagged_text'):
+            kwargs[field] = kwargs.get(field, getattr(self, field))
+        fresh = FrozenNode(**kwargs)
+        return fresh.prototype()

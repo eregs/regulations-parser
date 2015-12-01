@@ -57,3 +57,44 @@ class DiffTreeTest(TestCase):
         self.assertEqual(
             result['1111'],
             {'title': [('delete', 0, 10)], 'op': 'modified'})
+
+    def test_child_order(self):
+        """We should include child_ops if the order of children changed"""
+        lhs = FrozenNode("Root", label=['1111'], children=[
+            FrozenNode("Child1", label=['1111', 'a']),
+            FrozenNode("Child2", label=['1111', 'b'])])
+        rhs = lhs.clone(children=list(reversed(lhs.children)))
+        result = dict(difftree.changes_between(lhs, rhs))
+        self.assertEqual(
+            result['1111'],
+            # Note that these ops could change in other versions of difflib.
+            {'op': 'modified', 'child_ops': [('insert', 0, ('1111-b',)),
+                                             ('equal', 0, 1),  # 1111-a
+                                             ('delete', 1, 2)]})
+
+    def test_child_added(self):
+        """We should include child_ops if children were added"""
+        lhs = FrozenNode("Root", label=['1111'], children=[
+            FrozenNode("Child1", label=['1111', 'a'])])
+        new_child = FrozenNode("Child2", label=['1111', 'b'])
+        rhs = lhs.clone(children=lhs.children + (new_child,))
+        result = dict(difftree.changes_between(lhs, rhs))
+        self.assertEqual(
+            result['1111'],
+            {'op': 'modified', 'child_ops': [('equal', 0, 1),   # 1111-a
+                                             ('insert', 1, ('1111-b',))]})
+
+    def test_child_removed_with_edit(self):
+        """We should include child_ops if children were modified and the
+        parent's text was modified"""
+        lhs = FrozenNode("Root", label=['1111'], children=[
+            FrozenNode("Child1", label=['1111', 'a']),
+            FrozenNode("Child2", label=['1111', 'b'])])
+        rhs = lhs.clone(children=lhs.children[:1], text="Root modified")
+        result = dict(difftree.changes_between(lhs, rhs))
+        self.assertEqual(
+            result['1111'],
+            {'op': 'modified',
+             'text': [('insert', len("Root"), " modified")],
+             'child_ops': [('equal', 0, 1),   # 1111-a
+                           ('delete', 1, 2)]})
