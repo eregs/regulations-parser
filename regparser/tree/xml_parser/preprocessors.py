@@ -99,10 +99,8 @@ class MoveAdjoiningChars(PreProcessorBase):
             orphan = self.ORPHAN_REGEX.match(e.tail)
 
             if orphan:
-                match_groups = orphan.groups()
-                if len(match_groups) > 0:
-                    e.text = e.text + match_groups[0]
-                e.tail = self.ORPHAN_REGEX.sub('', e.tail)
+                e.text = e.text + orphan.group(1)
+                e.tail = self.ORPHAN_REGEX.sub('', e.tail, 1)
 
 
 class ApprovalsFP(PreProcessorBase):
