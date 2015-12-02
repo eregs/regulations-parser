@@ -96,7 +96,7 @@ class MoveAdjoiningChars(PreProcessorBase):
         # if an e tag has an emdash or period after it, put the
         # char inside the e tag
         for e in xml.xpath("//P/E"):
-            orphan = self.ORPHAN_REGEX.match(e.tail)
+            orphan = self.ORPHAN_REGEX.match(e.tail or '')
 
             if orphan:
                 e.text = e.text + orphan.group(1)

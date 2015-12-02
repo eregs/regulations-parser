@@ -126,6 +126,8 @@ class MoveAdjoiningCharsTests(XMLBuilderMixin, TestCase):
                                 '<E T="03">Things.</E> more things')
         self.assert_transformed('<E T="03">Things</E>. more things.',
                                 '<E T="03">Things.</E> more things.')
+        self.assert_transformed('<E T="03">Things</E>',
+                                '<E T="03">Things</E>')
 
 
 class ApprovalsFPTests(XMLBuilderMixin, TestCase):
