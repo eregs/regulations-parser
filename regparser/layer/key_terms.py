@@ -17,6 +17,8 @@ def eliminate_extras(keyterm):
 
 
 class KeyTerms(Layer):
+    PATTERN = re.compile(ur'.*?<E T="03">([^<]*?)</E>.*?', re.UNICODE)
+
     @staticmethod
     def process_node_text(node):
         """Take a paragraph, remove the marker, and extraneous whitespaces."""
@@ -36,15 +38,23 @@ class KeyTerms(Layer):
         return start == tag_length
 
     @staticmethod
-    def get_keyterm(node):
-        pattern = re.compile(ur'.*?<E T="03">([^<]*?)</E>.*?', re.UNICODE)
-        matches = pattern.match(node.tagged_text)
-        if matches and KeyTerms.keyterm_is_first(node, matches.groups()[0]):
-            included, excluded = Terms(None).node_definitions(node)
-            terms = included + excluded
-            keyterm_as_term = matches.groups()[0].lower()
-            if not any(ref.term == keyterm_as_term for ref in terms):
-                return matches.groups()[0]
+    def get_keyterm(node, ignore_definitions=True):
+        match = KeyTerms.PATTERN.match(getattr(node, 'tagged_text', ''))
+        keyterm = match.groups()[0] if match else None
+        if keyterm and KeyTerms.keyterm_is_first(node, keyterm):
+            if ignore_definitions:
+                return KeyTerms.remove_definition_keyterm(node, keyterm)
+            return keyterm
+
+    @staticmethod
+    def remove_definition_keyterm(node, keyterm):
+        """A definition might be masquerading as a keyterm. Do not allow
+        this"""
+        included, excluded = Terms(None).node_definitions(node)
+        terms = included + excluded
+        keyterm_as_term = keyterm.lower()
+        if not any(ref.term == keyterm_as_term for ref in terms):
+            return keyterm
 
     def process(self, node):
         """ Get keyterms if we have text in the node that preserves the

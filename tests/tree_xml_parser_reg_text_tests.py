@@ -697,5 +697,8 @@ class RegtextParagraphProcessorTests(XMLBuilderMixin, NodeAccessorMixin,
         root = reg_text.RegtextParagraphProcessor().process(xml, root)
         root = self.node_accessor(root, ['111', '22'])
 
-        self.assertEqual(['p1', 'p2'], root.child_labels)
-        self.assertEqual(['a', 'b'], root['p2'].child_labels)
+        self.assertEqual(2, len(root.child_labels))
+        self.assertTrue(all(c.is_markerless for c in root.children))
+        keyterm_label = root.child_labels[1]
+        self.assertTrue(len(keyterm_label) > 5)
+        self.assertEqual(['a', 'b'], root[keyterm_label].child_labels)
