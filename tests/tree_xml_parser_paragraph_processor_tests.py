@@ -108,8 +108,14 @@ class ParagraphProcessorTest(TestCase):
         a, b = p1.children
         self.assertEqual(a.label, ['root', 'p1', 'a'])
         self.assertEqual(len(a.children), 1)
-        self.assertEqual(a.children[0].label, ['root', 'p1', 'a', 'p2'])
+        self.assertEqual(a.children[0].label, ['root', 'p1', 'a', 'p1'])
         self.assertEqual(b.label, ['root', 'p1', 'b'])
+
+    def test_keyterm_to_int(self):
+        """keyterm_to_int should standardize the keyterm"""
+        to_int = paragraph_processor.ParagraphProcessor.keyterm_to_int
+        self.assertEqual(to_int('Abc 123 More.'), to_int(' abc123 mOrE'))
+        self.assertTrue(to_int('a term') > 10000)
 
     def test_separate_intro_empty_nodes(self):
         """ Make sure separate_intro can handle an empty node list. """

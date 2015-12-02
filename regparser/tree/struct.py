@@ -60,6 +60,9 @@ class Node(object):
             return None
         return re.match(Node.MARKERLESS_REGEX, label[-1])
 
+    def is_markerless(self):
+        return bool(self.is_markerless_label(self.label))
+
 
 class NodeEncoder(JSONEncoder):
     """Custom JSON encoder to handle Node objects"""
