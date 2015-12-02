@@ -203,12 +203,16 @@ class DefinitionKeytermTest(TestCase):
         self.assert_finds_result(
             '<E T="03">Another Phrase.</E>. Paragraph text', 'Definition',
             def_finders.Ref('another phrase', None, 0))
+        # Comma isn't enough to split the definition
         self.assert_finds_result(
             '<E T="03">Officer, office.</E>. Paragraph text', 'Definition',
             def_finders.Ref('officer, office', None, 0))
-        """ @todo
+        # "Or" should split the definition if the terms are simple
         self.assert_finds_result(
             '<E T="03">Frame or receiver.</E>. Paragraph text', 'Definition',
             def_finders.Ref('frame', None, 0),
             def_finders.Ref('receiver', None, 9))
-        """
+        # "Or" should *not* split the definition if the terms are complex
+        self.assert_finds_result(
+            '<E T="03">Common or contract carrier</E>.', 'Definition',
+            def_finders.Ref('common or contract carrier', None, 0))

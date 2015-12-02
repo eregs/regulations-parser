@@ -4,6 +4,8 @@ import abc
 from itertools import chain
 import re
 
+from pyparsing import ParseException
+
 from regparser.citations import Label
 from regparser.grammar import terms as grammar
 from regparser.tree.struct import Node
@@ -158,10 +160,26 @@ class DefinitionKeyterm(object):
         title = (title or "").lower()
         return re.sub(r'[^a-z]+', '', title)
 
+    def _split_phrase(self, phrase):
+        """A single phrase might contain multiple terms. Attempt to split it
+        into subphrases. Using a heuristic, we declare that if all subphrases
+        are a single word long, those subphrases are each terms. In this way,
+        we treat "apple or banana or pear" as three different terms, but see
+        only one term in "fruit salad or mix" (the whole phrase)"""
+        potential_terms = phrase.split(" or ")
+        if any(" " in term for term in potential_terms):
+            return [phrase]
+        else:
+            return potential_terms
+
     def find(self, node):
         if self.title_matches:
             tagged_text = getattr(node, 'tagged_text', '')
-            for match, _, _ in grammar.key_term_parser.scanString(tagged_text):
-                term = node.tagged_text[match.term.pos[0]:match.term.pos[1]]
-                return [Ref(term, node.label_id(), node.text.find(term))]
+            try:
+                match = grammar.key_term_parser.parseString(tagged_text)
+                phrase = node.tagged_text[match.term.pos[0]:match.term.pos[1]]
+                return [Ref(term, node.label_id(), node.text.find(term))
+                        for term in self._split_phrase(phrase)]
+            except ParseException:
+                return []
         return []
