@@ -1,3 +1,4 @@
+# vim: set encoding=utf-8
 """Set of transforms we run on notice XML to account for common inaccuracies
 in the XML"""
 import abc
@@ -86,6 +87,20 @@ class ParenthesesCleanup(PreProcessorBase):
                 if not outside_close and inside_close:  # Move ')' out
                     em.text = em.text[:-1]
                     em.tail = ")" + _str(em.tail)
+
+
+class MoveAdjoiningChars(PreProcessorBase):
+    ORPHAN_REGEX = re.compile(ur"(\.|—)")
+
+    def transform(self, xml):
+        # if an e tag has an emdash or period after it, put the
+        # char inside the e tag
+        for e in xml.xpath("//P/E"):
+            orphan = self.ORPHAN_REGEX.match(e.tail)
+
+            if orphan:
+                e.text = e.text + orphan.group(1)
+                e.tail = self.ORPHAN_REGEX.sub('', e.tail, 1)
 
 
 class ApprovalsFP(PreProcessorBase):
@@ -199,7 +214,7 @@ class Footnotes(PreProcessorBase):
 
     def split_comma_footnotes(self, xml):
         """Convert XML such as <SU>1, 2, 3</SU> into distinct SU elements:
-        <SU>1</SU>, <SU>2</SU>, <SU>3</SU> for easier reference"""
+        <SU>1</SU> <SU>2</SU> <SU>3</SU> for easier reference"""
         for ref_xml in xml.xpath(self.XPATH_IS_REF):
             parent = ref_xml.getparent()
             idx_in_parent = parent.index(ref_xml)
@@ -207,6 +222,12 @@ class Footnotes(PreProcessorBase):
 
             refs = [txt.strip() for txt in re.split(r'[,|\s]+', ref_xml.text)]
             tail_texts = self._tails_corresponding_to(ref_xml, refs)
+
+            # Strip commas in the tails, but replace "," with " ".
+            def strip_comma(s):
+                return " " if s in (",", ", ") else s
+
+            tail_texts = [strip_comma(tail) for tail in tail_texts]
 
             for idx, (ref, tail) in enumerate(zip(refs, tail_texts)):
                 node = etree.Element("SU")

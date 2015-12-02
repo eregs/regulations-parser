@@ -16,3 +16,9 @@ class Version(namedtuple('Version', ['identifier', 'published', 'effective'])):
             json_dict[key] = datetime.strptime(json_dict[key],
                                                '%Y-%m-%d').date()
         return Version(**json_dict)
+
+    def __lt__(self, other):
+        """We'd like to sort in a slightly different field order"""
+        left = (self.effective, self.published, self.identifier)
+        right = (other.effective, other.published, other.identifier)
+        return left < right
