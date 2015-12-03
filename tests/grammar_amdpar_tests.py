@@ -511,3 +511,14 @@ class GrammarAmdParTests(TestCase):
             tokens.Paragraph(['1002', 'Appendix:A', 'p1', '2', 'd'],
                              field=None)
         ])
+
+    def test_insert_in_order(self):
+        text = ('11. [label:1234-123-p123456789] is removed. '
+                '[insert-in-order] [label:1234-123-p987654321]')
+        result = parse_text(text)
+        self.assertEqual(result, [
+            tokens.Paragraph(['1234', '123', 'p123456789'], field=None),
+            tokens.Verb(tokens.Verb.DELETE, active=False, and_prefix=False),
+            tokens.Verb(tokens.Verb.INSERT, active=True, and_prefix=False),
+            tokens.Paragraph(['1234', '123', 'p987654321'], field=None)
+        ])

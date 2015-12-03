@@ -3,7 +3,7 @@
 import logging
 import string
 
-from pyparsing import CaselessLiteral, FollowedBy, OneOrMore, Optional
+from pyparsing import CaselessLiteral, FollowedBy, Literal, OneOrMore, Optional
 from pyparsing import Suppress, Word, LineEnd, ZeroOrMore
 
 from regparser.grammar import atomic, tokens, unified
@@ -56,7 +56,6 @@ delete_passive = generate_verb(['removed'], tokens.Verb.DELETE, active=False)
 
 move_active = generate_verb(
     ['redesignating', 'redesignate'], tokens.Verb.MOVE, active=True)
-
 move_passive = generate_verb(['redesignated'], tokens.Verb.MOVE, active=False)
 
 designate_active = generate_verb(
@@ -65,6 +64,9 @@ designate_active = generate_verb(
 
 reserve_active = generate_verb(['reserve', 'reserving'],
                                tokens.Verb.RESERVE, active=True)
+
+insert_in_order = Literal("[insert-in-order]").setParseAction(
+    lambda m: tokens.Verb(tokens.Verb.INSERT, active=True))
 
 
 #   Context
@@ -429,12 +431,12 @@ override_label = (
     + Suppress("]")
     ).setParseAction(tokenize_override_ps)
 
-
 #   grammar which captures all of these possibilities
 token_patterns = (
     put_active | put_passive | post_active | post_passive
     | delete_active | delete_passive | move_active | move_passive
     | designate_active | reserve_active
+    | insert_in_order
 
     | interp | marker_subpart | appendix
     | comment_context_with_section | comment_context_without_section
