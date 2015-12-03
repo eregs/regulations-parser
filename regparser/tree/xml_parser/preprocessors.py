@@ -223,11 +223,16 @@ class Footnotes(PreProcessorBase):
             refs = [txt.strip() for txt in re.split(r'[,|\s]+', ref_xml.text)]
             tail_texts = self._tails_corresponding_to(ref_xml, refs)
 
-            # Strip commas in the tails, but replace "," with " ".
-            def strip_comma(s):
-                return " " if s in (",", ", ") else s
+            def strip_tail(s):
+                """ We want any whitespace, or any comma surrounded by
+                whitespace, to become an empty string; otherwise strip() and
+                return the original. """
+                if s.strip() == ",":
+                    return ""
+                else:
+                    return s.strip()
 
-            tail_texts = [strip_comma(tail) for tail in tail_texts]
+            tail_texts = [strip_tail(tail) for tail in tail_texts]
 
             for idx, (ref, tail) in enumerate(zip(refs, tail_texts)):
                 node = etree.Element("SU")
