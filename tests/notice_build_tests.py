@@ -377,6 +377,24 @@ class NoticeBuildTest(XMLBuilderMixin, TestCase):
         self.assertEqual(['106', '1', 'a'], amd1.label)
         self.assertEqual(['106', 'C'], amd2.label)
 
+    def test_process_amendments_insert_in_order(self):
+        with self.tree.builder("ROOT") as root:
+            with root.REGTEXT(TITLE="10") as regtext:
+                regtext.AMDPAR('[insert-in-order] [label:123-45-p6]')
+                with regtext.SECTION() as section:
+                    section.SECTNO(u"§ 123.45")
+                    section.SUBJECT("Some Subject.")
+                    section.STARS()
+                    section.P("This is the sixth paragraph")
+                    section.STARS()
+        notice = {'cfr_parts': ['123']}
+        build.process_amendments(notice, self.tree.render_xml())
+
+        self.assertEqual(1, len(notice['amendments']))
+        amendment = notice['amendments'][0]
+        self.assertEqual(['123', '45', 'p6'], amendment.label)
+        self.assertEqual('INSERT', amendment.action)
+
     def test_introductory_text(self):
         """ Sometimes notices change just the introductory text of a paragraph
         (instead of changing the entire paragraph tree).  """
