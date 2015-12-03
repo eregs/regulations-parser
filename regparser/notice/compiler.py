@@ -344,6 +344,14 @@ class RegulationTree(object):
                     parent.children, node, getattr(parent, 'child_labels',
                                                    []))
 
+    def insert_in_order(self, node):
+        """Add a new node, but determine its position in its parent by looking
+        at the siblings' texts"""
+        parent = self.get_parent(node)
+        texts = [child.text for child in parent.children]
+        insert_idx = bisect(texts, node.text)
+        parent.children.insert(insert_idx, node)
+
     def add_section(self, node, subpart_label):
         """ Add a new section to a subpart. """
 
@@ -475,8 +483,12 @@ def one_change(reg, label, change):
     elif change['action'] == 'RESERVE':
         node = dict_to_node(change['node'])
         reg.reserve(label, node)
+    elif change['action'] == 'INSERT':
+        node = dict_to_node(change['node'])
+        reg.insert_in_order(node)
     else:
-        print "%s: %s" % (change['action'], label)
+        logging.warning("Unsure how to compile with this action: %s @ %s",
+                        change['action'], label)
 
 
 def _needs_delay(reg, change):
