@@ -1,4 +1,14 @@
-"""Namespace for constraints on paragraph depth discovery"""
+"""Namespace for constraints on paragraph depth discovery.
+
+For the purposes of this module a "symmetry" refers to two perfectly valid
+solutions to a problem whose differences are irrelevant. For example, if the
+distinctions between
+a           vs.     a
+STARS                   STARS
+may not matter if we're planning to ignore the final STARS anyway. To "break"
+this symmetry, we explicitly reject one solution; this reduces the number of
+permutations we care about dramatically.
+"""
 
 from regparser.tree.depth import markers
 
@@ -65,9 +75,45 @@ def markerless_sandwich(pprev_typ, pprev_idx, pprev_depth,
     return not (sandwich and inc_depth)
 
 
-def star_sandwich(pprev_typ, pprev_idx, pprev_depth,
-                  prev_typ, prev_idx, prev_depth,
-                  typ, idx, depth):
+def marker_stars_markerless_symmetry(pprev_typ, pprev_idx, pprev_depth,
+                                     prev_typ, prev_idx, prev_depth,
+                                     typ, idx, depth):
+    """
+    When we have the following symmetry:
+        a                       a                       a
+    STARS           vs.         STARS       vs.             STARS
+    MARKERLESS              MARKERLESS              MARKERLESS
+
+    Prefer the middle
+    """
+    situation = (
+        pprev_typ not in (markers.markerless, markers.stars)
+        and prev_typ == markers.stars and typ == markers.markerless
+        and pprev_depth > depth)
+    preferred_solution = prev_depth == pprev_depth
+    return not situation or preferred_solution
+
+
+def markerless_stars_symmetry(pprev_typ, pprev_idx, pprev_depth,
+                              prev_typ, prev_idx, prev_depth,
+                              typ, idx, depth):
+    """Given MARKERLESS, STARS, MARKERLESS want to break these symmetries:
+
+        MARKERLESS                  MARKERLESS
+        STARS               vs.         STARS
+        MARKERLESS                  MARKERLESS
+
+        Here, we don't really care about the distinction, so we'll opt for the
+        former."""
+    sandwich = (pprev_typ == typ == markers.markerless
+                and prev_typ == markers.stars)
+    preferred_solution = prev_depth <= depth
+    return not sandwich or preferred_solution
+
+
+def star_sandwich_symmetry(pprev_typ, pprev_idx, pprev_depth,
+                           prev_typ, prev_idx, prev_depth,
+                           typ, idx, depth):
     """Symmetry breaking constraint that places STARS tag at specific depth so
     that the resolution of
 
@@ -88,6 +134,17 @@ def star_sandwich(pprev_typ, pprev_idx, pprev_depth,
     bad_unwinding = unwinding and prev_depth not in (pprev_depth, depth)
     inc_depth = depth == prev_depth + 1 and prev_depth == pprev_depth + 1
     return not (sandwich and (bad_unwinding or inc_depth))
+
+
+def triplet_tests(*triplet_seq):
+    """Run propositions around a sequence of three markers. We combine them
+    here so that they act as a single constraint"""
+    return (
+        markerless_sandwich(*triplet_seq)
+        and star_sandwich_symmetry(*triplet_seq)
+        and marker_stars_markerless_symmetry(*triplet_seq)
+        and markerless_stars_symmetry(*triplet_seq)
+    )
 
 
 def sequence(typ, idx, depth, *all_prev):

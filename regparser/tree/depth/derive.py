@@ -119,8 +119,7 @@ def derive_depths(original_markers, additional_constraints=[]):
 
         if idx > 1:
             pairs = all_vars[3*(idx-2):]
-            problem.addConstraint(rules.markerless_sandwich, pairs)
-            problem.addConstraint(rules.star_sandwich, pairs)
+            problem.addConstraint(rules.triplet_tests, pairs)
 
     # separate loop so that the simpler checks run first
     for idx in range(1, len(marker_list)):

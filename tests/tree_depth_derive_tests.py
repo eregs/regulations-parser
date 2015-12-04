@@ -185,6 +185,19 @@ class DeriveTests(TestCase):
             [0, 0, 0]
         )
 
+    def test_marker_stars_markerless_symmetry(self):
+        self.assert_depth_match(
+            [MARKERLESS, 'a', STARS_TAG, MARKERLESS],
+            [0, 1, 1, 0],
+            [0, 1, 2, 2],
+            [0, 1, 1, 2]
+        )
+
+    def test_markerless_stars_symmetry(self):
+        self.assert_depth_match(
+            [MARKERLESS, STARS_TAG, MARKERLESS],
+            [0, 0, 0])
+
     def test_debug_idx(self):
         """Find the index of the first error when attempting to derive
         depths"""
