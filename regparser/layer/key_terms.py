@@ -1,7 +1,9 @@
+import hashlib
+import re
+
 from layer import Layer
 from regparser.layer.paragraph_markers import marker_of
 from regparser.layer.terms import Terms
-import re
 
 
 def eliminate_extras(keyterm):
@@ -14,6 +16,20 @@ def eliminate_extras(keyterm):
         if keyterm.endswith(extra):
             keyterm = keyterm[:-len(extra)]
     return keyterm
+
+
+_NONWORDS = re.compile(r'\W+')
+
+
+def keyterm_to_int(keyterm):
+    """Hash a keyterm's text and convert it into an integer. We'll trim to
+    just 8 hex characters for legibility. We don't need to fear hash
+    collisions as we'll have 16**8 ~ 4 billion possibilities. The birthday
+    paradox tells us we'd only expect collisions after ~ 60 thousand entries.
+    We're expecting at most a few hundred"""
+    phrase = _NONWORDS.sub('', keyterm.lower())
+    hashed = hashlib.sha1(phrase).hexdigest()[:8]
+    return int(hashed, 16)
 
 
 class KeyTerms(Layer):

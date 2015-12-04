@@ -1,7 +1,7 @@
 # vim: set fileencoding=utf-8
 from unittest import TestCase
 
-from regparser.layer.key_terms import KeyTerms
+from regparser.layer.key_terms import KeyTerms, keyterm_to_int
 from regparser.tree.struct import Node
 
 
@@ -124,3 +124,9 @@ class LayerKeyTermTest(TestCase):
         kt = KeyTerms(None)
         results = kt.process(node)
         self.assertEqual('Apples.', results[0]['key_term'])
+
+    def test_keyterm_to_int(self):
+        """keyterm_to_int should standardize the keyterm"""
+        self.assertEqual(keyterm_to_int('Abc 123 More.'),
+                         keyterm_to_int(' abc123 mOrE'))
+        self.assertTrue(keyterm_to_int('a term') > 10000)

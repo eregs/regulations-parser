@@ -1,9 +1,7 @@
 import abc
-import hashlib
 import logging
-import re
 
-from regparser.layer.key_terms import KeyTerms
+from regparser.layer.key_terms import KeyTerms, keyterm_to_int
 from regparser.layer.formatting import table_xml_to_plaintext
 from regparser.tree.depth import heuristics, markers as mtypes
 from regparser.tree.depth.derive import debug_idx, derive_depths
@@ -17,7 +15,6 @@ class ParagraphProcessor(object):
     compartmentalize processing with various tags. This is an abstract class;
     regtext, interpretations, appendices, etc. should inherit and override
     where needed"""
-    _NONWORDS = re.compile(r'\W+')
 
     # Subclasses should override the following interface
     MATCHERS = []
@@ -75,23 +72,12 @@ class ParagraphProcessor(object):
         node.label = [l.replace('<E T="03">', '').replace('</E>', '')
                       for l in node.label]
 
-    @staticmethod
-    def keyterm_to_int(keyterm):
-        """Hash a keyterm's text and convert it into an integer. We'll trim to
-        just 8 hex characters for legibility. We don't need to fear hash
-        collisions as we'll have 16**8 ~ 4 billion possibilities. The birthday
-        paradox tells us we'd only expect collisions after ~ 60 thousand
-        entries. We're expecting at most a few hundred"""
-        phrase = ParagraphProcessor._NONWORDS.sub('', keyterm.lower())
-        hashed = hashlib.sha1(phrase).hexdigest()[:8]
-        return int(hashed, 16)
-
     def replace_markerless(self, stack, node, depth):
         """Assign a unique index to all of the MARKERLESS paragraphs"""
         if node.label[-1] == mtypes.MARKERLESS:
             keyterm = KeyTerms.get_keyterm(node, ignore_definitions=False)
             if keyterm:
-                p_num = self.keyterm_to_int(keyterm)
+                p_num = keyterm_to_int(keyterm)
             else:
                 # len(n.label[-1]) < 6 filters out keyterm nodes
                 p_num = sum(n.is_markerless() and len(n.label[-1]) < 6
