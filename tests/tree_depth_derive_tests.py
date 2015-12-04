@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from regparser.tree.depth import markers, rules
+from regparser.tree.depth import markers, optional_rules, rules
 from regparser.tree.depth.derive import debug_idx, derive_depths
 from regparser.tree.depth.markers import INLINE_STARS, MARKERLESS, STARS_TAG
 
@@ -149,7 +149,7 @@ class DeriveTests(TestCase):
 
         self.assert_depth_match_extra(
             ['1', STARS_TAG, 'b', STARS_TAG, 'C', STARS_TAG, 'd'],
-            [rules.depth_type_inverses],
+            [optional_rules.depth_type_inverses],
             [0, 1, 1, 2, 2, 1, 1])
 
     def test_depth_type_inverses_d2t(self):
@@ -161,15 +161,29 @@ class DeriveTests(TestCase):
 
         self.assert_depth_match_extra(
             ['1', STARS_TAG, 'c', '2', INLINE_STARS, 'i', STARS_TAG, 'iii'],
-            [rules.depth_type_inverses],
+            [optional_rules.depth_type_inverses],
             [0, 1, 1, 0, 1, 1, 2, 2])
 
     def test_depth_type_inverses_markerless(self):
         """Markerless paragraphs should not trigger an incompatibility"""
         self.assert_depth_match_extra(
             ['1', MARKERLESS, '2', 'a'],
-            [rules.depth_type_inverses],
+            [optional_rules.depth_type_inverses],
             [0, 1, 0, 1])
+
+    def test_star_new_level(self):
+        """STARS shouldn't have subparagraphs"""
+        self.assert_depth_match(
+            ['a', STARS_TAG, 'i'],
+            [0, 0, 0],
+            [0, 0, 1]
+        )
+
+        self.assert_depth_match_extra(
+            ['a', STARS_TAG, 'i'],
+            [optional_rules.star_new_level],
+            [0, 0, 0]
+        )
 
     def test_debug_idx(self):
         """Find the index of the first error when attempting to derive
@@ -178,4 +192,6 @@ class DeriveTests(TestCase):
         self.assertEqual(debug_idx(['1', '4']), 1)
         self.assertEqual(debug_idx(['1', '2', '4']), 2)
         self.assertEqual(
-            debug_idx(['1', 'a', '2', 'A'], [rules.depth_type_inverses]), 3)
+            debug_idx(['1', 'a', '2', 'A'],
+                      [optional_rules.depth_type_inverses]),
+            3)

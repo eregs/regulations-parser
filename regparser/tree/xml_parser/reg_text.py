@@ -4,7 +4,7 @@ import re
 from lxml import etree
 
 from regparser import content
-from regparser.tree.depth import markers as mtypes, rules
+from regparser.tree.depth import markers as mtypes, optional_rules
 from regparser.tree.struct import Node
 from regparser.tree.paragraph import p_level_of, p_levels
 from regparser.tree.xml_parser import (flatsubtree_processor,
@@ -304,4 +304,5 @@ class RegtextParagraphProcessor(paragraph_processor.ParagraphProcessor):
                 ParagraphMatcher()]
 
     def additional_constraints(self):
-        return [rules.depth_type_inverses]
+        return [optional_rules.depth_type_inverses,
+                optional_rules.star_new_level]

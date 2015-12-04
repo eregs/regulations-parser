@@ -192,25 +192,6 @@ def depth_type_order(order):
     return inner
 
 
-def depth_type_inverses(constrain, all_variables):
-    """If paragraphs are at the same depth, they must share the same type. If
-    paragraphs are the same type, they must share the same depth"""
-    def inner(typ, idx, depth, *all_prev):
-        if typ == markers.stars or typ == markers.markerless:
-            return True
-        for i in range(0, len(all_prev), 3):
-            prev_typ, prev_idx, prev_depth = all_prev[i:i+3]
-            if prev_depth == depth and prev_typ not in (markers.stars, typ,
-                                                        markers.markerless):
-                return False
-            if prev_typ == typ and prev_depth != depth:
-                return False
-        return True
-
-    for i in range(0, len(all_variables), 3):
-        constrain(inner, all_variables[i:i+3] + all_variables[:i])
-
-
 def _ancestors(all_prev):
     """Given an assignment of values, construct a list of the relevant
     parents, e.g. 1, i, a, ii, A gives us 1, ii, A"""
