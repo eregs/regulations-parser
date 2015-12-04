@@ -3,12 +3,14 @@
 import logging
 import string
 
-from pyparsing import CaselessLiteral, FollowedBy, Literal, OneOrMore, Optional
-from pyparsing import Suppress, Word, LineEnd, ZeroOrMore
+from pyparsing import (
+    CaselessLiteral, FollowedBy, LineEnd, Literal, OneOrMore, Optional,
+    QuotedString, Suppress, Word, ZeroOrMore)
 
 from regparser.grammar import atomic, tokens, unified
 from regparser.grammar.utils import Marker, WordBoundaries
 from regparser.tree.paragraph import p_levels
+from regparser.tree.xml_parser.paragraph_processor import ParagraphProcessor
 
 
 intro_text_marker = (
@@ -421,13 +423,22 @@ def tokenize_override_ps(match):
     return [par]
 
 
+_keyterm_label_part = (
+    Suppress(Marker("keyterm"))
+    + QuotedString(quoteChar='(', endQuoteChar=')')
+).setParseAction(
+    lambda m: "p{}".format(ParagraphProcessor.keyterm_to_int(m[0])))
+_simple_label_part = Word(string.ascii_lowercase + string.ascii_uppercase
+                          + string.digits)
+_label_part = _keyterm_label_part | _simple_label_part
+
 override_label = (
     Suppress("[")
     + Marker("label") + Suppress(":")
     + atomic.part
     + Suppress("-")
     + (atomic.section | atomic.appendix)
-    + ZeroOrMore(Suppress("-") + Word(string.ascii_lowercase + string.digits))
+    + ZeroOrMore(Suppress("-") + _label_part)
     + Suppress("]")
     ).setParseAction(tokenize_override_ps)
 

@@ -1,4 +1,5 @@
 # vim: set encoding=utf-8
+import re
 from unittest import TestCase
 
 from regparser.grammar import amdpar, tokens
@@ -522,3 +523,16 @@ class GrammarAmdParTests(TestCase):
             tokens.Verb(tokens.Verb.INSERT, active=True, and_prefix=False),
             tokens.Paragraph(['1234', '123', 'p987654321'], field=None)
         ])
+
+    def test_keyterm_label(self):
+        """Explicit labels can be defined by their keyterms"""
+        text = '1. [label:123-45-p6] [label:111-22-a-keyterm(some term)]'
+        result = parse_text(text)
+        self.assertEqual(len(result), 2)
+        self.assertEqual(tokens.Paragraph(['123', '45', 'p6']), result[0])
+        self.assertTrue(isinstance(result[1], tokens.Paragraph))
+        self.assertEqual(4, len(result[1].label))
+        self.assertEqual(['111', '22', 'a'], result[1].label[:3])
+        label = result[1].label[-1]
+        self.assertTrue(re.match(r'p\d+', label))
+        self.assertTrue(len(label) > 5)
