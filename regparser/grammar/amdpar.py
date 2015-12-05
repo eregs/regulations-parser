@@ -3,11 +3,13 @@
 import logging
 import string
 
-from pyparsing import CaselessLiteral, FollowedBy, OneOrMore, Optional
-from pyparsing import Suppress, Word, LineEnd, ZeroOrMore
+from pyparsing import (
+    CaselessLiteral, FollowedBy, LineEnd, Literal, OneOrMore, Optional,
+    QuotedString, Suppress, Word, ZeroOrMore)
 
 from regparser.grammar import atomic, tokens, unified
 from regparser.grammar.utils import Marker, WordBoundaries
+from regparser.layer.key_terms import keyterm_to_int
 from regparser.tree.paragraph import p_levels
 
 
@@ -56,7 +58,6 @@ delete_passive = generate_verb(['removed'], tokens.Verb.DELETE, active=False)
 
 move_active = generate_verb(
     ['redesignating', 'redesignate'], tokens.Verb.MOVE, active=True)
-
 move_passive = generate_verb(['redesignated'], tokens.Verb.MOVE, active=False)
 
 designate_active = generate_verb(
@@ -65,6 +66,9 @@ designate_active = generate_verb(
 
 reserve_active = generate_verb(['reserve', 'reserving'],
                                tokens.Verb.RESERVE, active=True)
+
+insert_in_order = Literal("[insert-in-order]").setParseAction(
+    lambda m: tokens.Verb(tokens.Verb.INSERT, active=True))
 
 
 #   Context
@@ -419,22 +423,30 @@ def tokenize_override_ps(match):
     return [par]
 
 
+_keyterm_label_part = (
+    Suppress(Marker("keyterm"))
+    + QuotedString(quoteChar='(', endQuoteChar=')')
+).setParseAction(lambda m: "p{}".format(keyterm_to_int(m[0])))
+_simple_label_part = Word(string.ascii_lowercase + string.ascii_uppercase
+                          + string.digits)
+_label_part = _keyterm_label_part | _simple_label_part
+
 override_label = (
     Suppress("[")
     + Marker("label") + Suppress(":")
     + atomic.part
     + Suppress("-")
     + (atomic.section | atomic.appendix)
-    + ZeroOrMore(Suppress("-") + Word(string.ascii_lowercase + string.digits))
+    + ZeroOrMore(Suppress("-") + _label_part)
     + Suppress("]")
     ).setParseAction(tokenize_override_ps)
-
 
 #   grammar which captures all of these possibilities
 token_patterns = (
     put_active | put_passive | post_active | post_passive
     | delete_active | delete_passive | move_active | move_passive
     | designate_active | reserve_active
+    | insert_in_order
 
     | interp | marker_subpart | appendix
     | comment_context_with_section | comment_context_without_section

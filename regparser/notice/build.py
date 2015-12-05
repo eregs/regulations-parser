@@ -1,4 +1,5 @@
 from collections import defaultdict
+import logging
 
 from lxml import etree
 
@@ -112,8 +113,9 @@ def create_xmlless_changes(amended_labels, notice_changes):
                 destination = [d for d in amendment['destination'] if d != '?']
                 change['destination'] = destination
                 notice_changes.update({label: change})
-            elif amendment['action'] not in ('POST', 'PUT', 'RESERVE'):
-                print 'NOT HANDLED: %s' % amendment['action']
+            elif amendment['action'] not in ('POST', 'PUT', 'RESERVE',
+                                             'INSERT'):
+                logging.warning("Unknown action: %s", amendment['action'])
 
 
 def create_xml_changes(amended_labels, section, notice_changes):
@@ -128,7 +130,7 @@ def create_xml_changes(amended_labels, section, notice_changes):
 
     for label, amendments in amend_map.iteritems():
         for amendment in amendments:
-            if amendment['action'] in ('POST', 'PUT'):
+            if amendment['action'] in ('POST', 'PUT', 'INSERT'):
                 if 'field' in amendment:
                     nodes = changes.create_field_amendment(label, amendment)
                 else:
@@ -139,7 +141,7 @@ def create_xml_changes(amended_labels, section, notice_changes):
                 change = changes.create_reserve_amendment(amendment)
                 notice_changes.update(change)
             elif amendment['action'] not in ('DELETE', 'MOVE'):
-                print 'NOT HANDLED: %s' % amendment['action']
+                logging.warning("Unknown action: %s", amendment['action'])
 
 
 class AmdparByParent(object):

@@ -1,4 +1,5 @@
 # vim: set encoding=utf-8
+from random import randint
 from unittest import TestCase
 
 from regparser.notice import compiler
@@ -157,6 +158,27 @@ class CompilerTests(TestCase):
         children = [n1, n2]
         children = reg_tree.add_child(children, n4, order)
         self.assertEqual(children, [n1, n2, n4])
+
+    def test_insert_in_order(self):
+        """Verify that nodes are added in their alphabetic position. We should
+        be accommodating for some fuzziness"""
+        root = Node(label=['111'],
+                    children=[Node(char, label=['111', str(randint(0, 999))])
+                              for char in "abcdefghi"])
+        root.children.insert(7, Node('diff', label=['111', 'diff']))
+        reg_tree = compiler.RegulationTree(root)
+        self.assertEqual(
+            [child.text for child in reg_tree.tree.children],
+            ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'diff', 'h', 'i'])
+
+        reg_tree.insert_in_order(Node('bb', label=['111', 'bb']))
+        self.assertEqual(
+            [child.text for child in reg_tree.tree.children],
+            ['a', 'b', 'bb', 'c', 'd', 'e', 'f', 'g', 'diff', 'h', 'i'])
+        reg_tree.insert_in_order(Node('ii', label=['111', 'ii']))
+        self.assertEqual(
+            [child.text for child in reg_tree.tree.children],
+            ['a', 'b', 'bb', 'c', 'd', 'e', 'f', 'g', 'diff', 'h', 'i', 'ii'])
 
     def tree_with_paragraphs(self):
         n1 = Node('n1', label=['205', '1'])
