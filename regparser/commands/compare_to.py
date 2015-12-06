@@ -1,28 +1,32 @@
 import json
 import os
-import shutil
-import tempfile
 
 import click
 from json_delta import udiff
 import requests
 import requests_cache
 
-from regparser.commands.write_to import write_to
 
-
-def files_to_compare(tmppath, relevant_paths=None):
-    """List of all file names we should care about comparing. Filters out any
-    paths which do not begin with a string in relevant_paths"""
-    relevant_paths = relevant_paths or ['']
-    file_names = [os.path.join(dir_path, file_name)
-                  for dir_path, _, file_names in os.walk(tmppath)
-                  for file_name in file_names]
-    # strip the tempdir info
-    file_names = [file_name[len(tmppath)+1:] for file_name in file_names]
-    matches_a_path = lambda f: any(f.startswith(p) for p in relevant_paths)
-
-    return filter(matches_a_path, file_names)
+def local_and_remote_generator(api_base, paths):
+    """Find all local files in `paths` and pair them with the appropriate
+    remote file (prefixing with api_base). As the local files could be at any
+    position in the file system, we back out directories until we hit one of
+    the four root resource types (diff, layer, notice, regulation)"""
+    local_names = [path for path in paths if os.path.isfile(path)]
+    # this won't duplicate the previous line as it'll only add files in dirs
+    local_names.extend(os.path.join(dirpath, filename)
+                       for path in paths
+                       for dirpath, _, filenames in os.walk(path)
+                       for filename in filenames)
+    for local_name in local_names:
+        dirname, basename = os.path.split(local_name)
+        reversed_suffix = [basename]
+        # these are the four root resource types
+        while basename not in ('diff', 'layer', 'notice', 'regulation'):
+            dirname, basename = os.path.split(dirname)
+            reversed_suffix.append(basename)
+        remote_name = api_base + '/'.join(reversed(reversed_suffix))
+        yield (local_name, remote_name)
 
 
 def compare(local_path, remote_url):
@@ -45,35 +49,26 @@ def compare(local_path, remote_url):
 
 
 @click.command()
-@click.argument('cfr_title', type=int)
-@click.argument('cfr_part', type=int)
 @click.argument('api_base')
-@click.argument('path', nargs=-1)
+@click.argument('paths', nargs=-1, required=True,
+                type=click.Path(exists=True, resolve_path=True))
 @click.pass_context
-def compare_to(ctx, cfr_title, cfr_part, api_base, path):
+def compare_to(ctx, api_base, paths):
     """Compare local JSON to a remote server. This is useful for verifying
     changes to the parser.
 
     API_BASE is the uri of the root of the API. Use what would be the last
     parameter in the `write_to` command.
 
-    PATH parameters will filter the files we're trying to compare. For
-    example, if we only want to see the difference between trees, one of the
-    PATH parameters should be "regulation".
-    """
+    PATH parameters indicate specific files or directories to use when
+    comparing. For example, use `/some/path/to/regulation/555` to compare all
+    versions of 555. Glob syntax works if your shell supports it"""
     if not api_base.endswith("/"):
         api_base += "/"
-
-    tmppath = tempfile.mkdtemp()
-    ctx.invoke(write_to, cfr_title=cfr_title, cfr_part=cfr_part,
-               output=tmppath)
 
     # @todo: ugly to uninstall the cache after installing it in eregs.py.
     # Remove the globalness
     requests_cache.uninstall_cache()
 
-    for file_name in files_to_compare(tmppath, path or ['']):
-        local_name = os.path.join(tmppath, file_name)
-        remote_name = api_base + file_name.replace(os.path.sep, "/")
-        compare(local_name, remote_name)
-    shutil.rmtree(tmppath)
+    for local, remote in local_and_remote_generator(api_base, paths):
+        compare(local, remote)
