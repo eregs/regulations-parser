@@ -75,6 +75,7 @@ of changes that need to be made.
 
 ## Requirements
 
+* Python (2.7)
 * lxml (3.2.0) - Used to parse out information XML from the federal register
 * pyparsing (1.5.7) - Used to do generic parsing on the plain text
 * inflection (0.1.2) - Helps determine pluralization (for terms layer)
