@@ -1,8 +1,8 @@
 Regulations Parser
 ==================
 
-[![Build Status](https://travis-ci.org/cfpb/regulations-parser.png)](https://travis-ci.org/cfpb/regulations-parser)
-[![Coverage Status](https://coveralls.io/repos/cfpb/regulations-parser/badge.png)](https://coveralls.io/r/cfpb/regulations-parser)
+[![Build Status](https://travis-ci.org/18F/regulations-parser.png)](https://travis-ci.org/18F/regulations-parser)
+[![Coverage Status](https://coveralls.io/repos/18F/regulations-parser/badge.svg?branch=master&service=github)](https://coveralls.io/github/18F/regulations-parser?branch=master)
 
 This library/tool parses federal regulations (either plain text or XML) and
 much of their associated content. It can write the results to JSON files, an
