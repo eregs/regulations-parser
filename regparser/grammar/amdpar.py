@@ -202,10 +202,12 @@ comment_heading = (
                                 _paren_join([m.p1, m.p2, m.p3, m.p4, m.p5])],
                                field=tokens.Paragraph.HEADING_FIELD))
 
+# e.g. "introductory text of paragraph (a)(5)(ii)"
 intro_text_of = (
     intro_text_marker + of_connective
-    + unified.marker_paragraph.copy()
-    ).setParseAction(
+    + atomic.paragraph_marker
+    + unified.depth1_p
+).setParseAction(
     lambda m: tokens.Paragraph([None, None, None, m.p1, m.p2, m.p3, m.p4,
                                 m.plaintext_p5, m.plaintext_p6],
                                field=tokens.Paragraph.TEXT_FIELD))
@@ -313,7 +315,7 @@ def _through_paragraph(prev_lab, next_lab):
             for i in range(start, end)]
 
 
-def make_par_list(listify):
+def make_par_list(listify, force_text_field=False):
     """Shorthand for turning a pyparsing match into a tokens.Paragraph"""
     def curried(match=None):
         pars = []
@@ -322,7 +324,7 @@ def make_par_list(listify):
             match_as_list = listify(match)
             next_par = tokens.Paragraph(match_as_list)
             next_lab = next_par.label
-            if match[-1] == 'text':
+            if match[-1] == 'text' or force_text_field:
                 next_par.field = tokens.Paragraph.TEXT_FIELD
             if match.through:
                 #   Iterate through, creating paragraph tokens
@@ -404,6 +406,17 @@ multiple_paragraphs = (
         m.plaintext_p6]))
 
 
+# e.g. "introductory text of paragraphs (a)(5)(ii) and (d)(5)(ii)"
+multiple_intro_text_of = (
+    intro_text_marker + of_connective
+    + atomic.paragraphs_marker
+    + make_multiple(unified.any_depth_p)
+).setParseAction(make_par_list(
+    lambda m: [None, None, m.p1, m.p2, m.p3, m.p4, m.plaintext_p5,
+               m.plaintext_p6],
+    force_text_field=True))
+
+
 def tokenize_override_ps(match):
     """ Create token.Paragraphs for the given override match """
     # Part, Section or Appendix, p1, p2, p3, p4, p5, p6
@@ -451,7 +464,8 @@ token_patterns = (
     | interp | marker_subpart | appendix
     | comment_context_with_section | comment_context_without_section
     | comment_context_under_with_section
-    | paragraph_heading_of | section_heading_of | intro_text_of
+    | paragraph_heading_of | section_heading_of
+    | multiple_intro_text_of | intro_text_of
     | appendix_section_heading_of
     | intro_text_of_interp
     | comment_heading | appendix_subheading | section_paragraph_heading_of
