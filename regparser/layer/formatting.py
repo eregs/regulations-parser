@@ -224,6 +224,15 @@ class Subscript(PlaintextFormatData):
         return {'subscript_data': {'subscript': match.group('subscript')}}
 
 
+class Superscript(PlaintextFormatData):
+    """E.g.     x^{2}"""
+    REGEX = re.compile(r"(?<=[a-zA-Z0-0)])\^\{(?P<superscript>\w+)\}")
+
+    def match_data(self, match):
+        return {
+            'superscript_data': {'superscript': match.group('superscript')}}
+
+
 class Dashes(PlaintextFormatData):
     """E.g.     Some text some text_____"""
     REGEX = re.compile(r"(?P<text>.*)(?P<dashes>_{5,})$")
