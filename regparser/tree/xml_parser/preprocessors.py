@@ -8,7 +8,8 @@ import re
 
 from lxml import etree
 
-from regparser.tree.xml_parser.tree_utils import get_node_text
+from regparser.tree.xml_parser.tree_utils import (
+    get_node_text, replace_xml_node_with_text)
 
 
 class PreProcessorBase(object):
@@ -270,7 +271,7 @@ class Footnotes(PreProcessorBase):
                 note = deepcopy(sus[0].getparent())
                 # Modify note to remove the reference text; it's superfluous
                 for su in note.xpath('./SU'):
-                    su.text = ''
+                    replace_xml_node_with_text(su, su.tail or '')
                 ref.attrib['footnote'] = get_node_text(note).strip()
 
 
