@@ -3,7 +3,6 @@
 in the XML"""
 import abc
 from copy import deepcopy
-import logging
 import re
 
 from lxml import etree
@@ -262,17 +261,27 @@ class Footnotes(PreProcessorBase):
         containing its footnote content"""
         for ref in xml.xpath(self.XPATH_IS_REF):
             sus = ref.xpath(self.XPATH_FIND_NOTE_TPL.format(ref.text))
-            if not sus:
-                logging.warning(
-                    "Could not find corresponding footnote ({}): {}".format(
-                        ref.text, etree.tostring(ref.getparent())))
-            else:
+            if sus and self.is_reasonably_close(ref, sus[0]):
                 # copy as we need to modify
                 note = deepcopy(sus[0].getparent())
+
                 # Modify note to remove the reference text; it's superfluous
                 for su in note.xpath('./SU'):
                     replace_xml_node_with_text(su, su.tail or '')
                 ref.attrib['footnote'] = get_node_text(note).strip()
+
+    @staticmethod
+    def is_reasonably_close(referencing, referenced):
+        """We want to make sure that _potential_ footnotes are truly related,
+        as SU might also indicate generic superscript. To match a footnote
+        with its content, we'll try to find a common SECTION ancestor. We'll
+        also consider the two SUs related if neither has a SECTION ancestor,
+        though we might want to restrict this further in the future."""
+        while referencing is not None and referencing.tag != 'SECTION':
+            referencing = referencing.getparent()
+        while referenced is not None and referenced.tag != 'SECTION':
+            referenced = referenced.getparent()
+        return referencing == referenced
 
 
 # Surface all of the PreProcessorBase classes

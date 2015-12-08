@@ -328,15 +328,21 @@ class FootnotesTests(XMLBuilderMixin, TestCase):
                     ftnt.P(_xml="<SU>2</SU> note for two")
 
     def test_add_ref_attributes_missing(self):
-        """We should log a message when a footnote cannot be found"""
+        """SUs in different sections aren't related"""
         with self.tree.builder("ROOT") as root:
-            root.SU("1")
-            with root.FTNT() as ftnt:
-                ftnt.P(_xml="<SU>2</SU> note for two")
+            with root.SECTION() as section:
+                root.SU("1")
+            with root.SECTION() as section:
+                root.SU("1")
+                with root.FTNT() as ftnt:
+                    ftnt.P(_xml="<SU>2</SU> note for two")
 
         with self.assert_xml_transformed() as original_xml:
-            # @todo self.assertLogs has been added in Python 3.4
-            logging = 'regparser.tree.xml_parser.preprocessors.logging'
-            with patch(logging) as logging:
-                self.fn.add_ref_attributes(original_xml)
-                self.assertTrue(logging.warning.called)
+            self.fn.add_ref_attributes(original_xml)
+            with self.tree.builder("ROOT") as root:
+                with root.SECTION() as section:
+                    section.SU("1")
+                with root.SECTION() as section:
+                    section.SU("1", footnote="note for 1")
+                    with section.FTNT() as ftnt:
+                        ftnt.P(_xml="<SU>1</SU> note for one")
