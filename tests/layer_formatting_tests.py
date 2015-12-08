@@ -396,10 +396,25 @@ class SubscriptTests(TestCase):
         result = list(formatting.Subscript().process(text))
         self.assertEqual(1, len(result))
         result = result[0]
-        self.assertEqual(result['text'], "a_{subscript}")
-        self.assertEqual(result['locations'], [0, 1])
-        self.assertEqual(result['subscript_data'],
-                         {'variable': 'a', 'subscript': 'subscript'})
+        self.assertEqual(
+            result, {'text': '_{subscript}', 'locations': [0, 1],
+                     'subscript_data': {'subscript': 'subscript'}})
+
+    def test_process_parens(self):
+        """Example from 27 CFR 555.180(d)(3)(ii)"""
+        text = ("(ii) 2,3-Dimethyl-2,3-dinitrobutane (DMNB), C_{6} H_{12} "
+                "(NO_{2})_{2}, molecular weight 176, when the minimum "
+                "concentration in the finished explosive is 0.1 percent by "
+                "mass;")
+        result = list(formatting.Subscript().process(text))
+        self.assertEqual(3, len(result))
+        twelve, two, six = sorted(result, key=lambda d: d['text'])
+        self.assertEqual(six, {'text': '_{6}', 'locations': [0],
+                               'subscript_data': {'subscript': '6'}})
+        self.assertEqual(twelve, {'text': '_{12}', 'locations': [0],
+                                  'subscript_data': {'subscript': '12'}})
+        self.assertEqual(two, {'text': '_{2}', 'locations': [0, 1],
+                               'subscript_data': {'subscript': '2'}})
 
 
 class DashesTests(TestCase):
