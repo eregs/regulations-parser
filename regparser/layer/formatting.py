@@ -218,11 +218,10 @@ class FencedData(PlaintextFormatData):
 
 class Subscript(PlaintextFormatData):
     """E.g.     a_{0}"""
-    REGEX = re.compile(r"(?P<variable>[a-zA-Z0-9]+)_\{(?P<subscript>\w+)\}")
+    REGEX = re.compile(r"(?<=[a-zA-Z0-9)])_\{(?P<subscript>\w+)\}")
 
     def match_data(self, match):
-        return {'subscript_data': {'variable': match.group('variable'),
-                                   'subscript': match.group('subscript')}}
+        return {'subscript_data': {'subscript': match.group('subscript')}}
 
 
 class Dashes(PlaintextFormatData):
