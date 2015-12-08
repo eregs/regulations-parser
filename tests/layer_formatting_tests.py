@@ -427,6 +427,15 @@ class SuperscriptTests(TestCase):
             result, {'text': '^{superscript}', 'locations': [0, 1],
                      'superscript_data': {'superscript': 'superscript'}})
 
+    def test_process_emdash(self):
+        text = u"This is an^{−emdash}"
+        result = list(formatting.Superscript().process(text))
+        self.assertEqual(1, len(result))
+        result = result[0]
+        self.assertEqual(
+            result, {'text': u'^{−emdash}', 'locations': [0],
+                     'superscript_data': {'superscript': u'−emdash'}})
+
 
 class DashesTests(TestCase):
     def test_process(self):

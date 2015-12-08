@@ -218,7 +218,7 @@ class FencedData(PlaintextFormatData):
 
 class Subscript(PlaintextFormatData):
     """E.g.     a_{0}"""
-    REGEX = re.compile(r"(?<=[a-zA-Z0-9)])_\{(?P<subscript>\w+)\}")
+    REGEX = re.compile(r"_\{(?P<subscript>[^\}]+)\}")
 
     def match_data(self, match):
         return {'subscript_data': {'subscript': match.group('subscript')}}
@@ -226,7 +226,7 @@ class Subscript(PlaintextFormatData):
 
 class Superscript(PlaintextFormatData):
     """E.g.     x^{2}"""
-    REGEX = re.compile(r"(?<=[a-zA-Z0-0)])\^\{(?P<superscript>\w+)\}")
+    REGEX = re.compile(r"\^\{(?P<superscript>[^\}]+)\}")
 
     def match_data(self, match):
         return {
