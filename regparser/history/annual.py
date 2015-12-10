@@ -14,11 +14,11 @@ from regparser.tree.xml_parser.xml_wrapper import XMLWrapper
 import settings
 
 
-CFR_BULK_URL = ("http://www.gpo.gov/fdsys/bulkdata/CFR/{year}/title-{title}/"
-                + "CFR-{year}-title{title}-vol{volume}.xml")
-CFR_PART_URL = ("http://www.gpo.gov/fdsys/pkg/"
-                + "CFR-{year}-title{title}-vol{volume}/xml/"
-                + "CFR-{year}-title{title}-vol{volume}-part{part}.xml")
+CFR_BULK_URL = ("https://www.gpo.gov/fdsys/bulkdata/CFR/{year}/title-{title}/"
+                "CFR-{year}-title{title}-vol{volume}.xml")
+CFR_PART_URL = ("https://www.gpo.gov/fdsys/pkg/"
+                "CFR-{year}-title{title}-vol{volume}/xml/"
+                "CFR-{year}-title{title}-vol{volume}-part{part}.xml")
 
 
 class Volume(namedtuple('Volume', ['year', 'title', 'vol_num'])):
@@ -42,16 +42,15 @@ class Volume(namedtuple('Volume', ['year', 'title', 'vol_num'])):
         """Calculate and memoize the range of parts this volume covers"""
         if self._part_span is None:
             self._part_span = False
+            part_string = ''
 
-            lines = self.response.iter_lines()
-            line = next(lines)
-            while '<PARTS>' not in line:
-                line = next(lines)
-            if not line:
-                logging.warning('No <PARTS> in ' + self.url)
-            else:
+            for line in self.response.iter_lines():
+                if '<PARTS>' in line:
+                    part_string = line
+                    break
+            if part_string:
                 match = re.match(r'.*parts? (\d+) to (\d+|end).*',
-                                 line.lower())
+                                 part_string.lower())
                 if match:
                     start = int(match.group(1))
                     if match.group(2) == 'end':
@@ -60,7 +59,11 @@ class Volume(namedtuple('Volume', ['year', 'title', 'vol_num'])):
                         end = int(match.group(2))
                     self._part_span = (start, end)
                 else:
-                    logging.warning("Can't parse: " + line)
+                    logging.warning("Can't parse: " + part_string)
+            else:
+                logging.warning('No <PARTS> in %s. Assuming this volume '
+                                'contains all of the regs', self.url)
+                self._part_span = (1, None)
         return self._part_span
 
     def should_contain(self, part):
