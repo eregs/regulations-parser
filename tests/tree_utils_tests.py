@@ -108,6 +108,12 @@ class TreeUtilsTest(unittest.TestCase):
         self.assert_transform_equality(
             '<P>Note<SU footnote="(parens), see">note</SU> that</P>',
             r'Note[^note](\(parens\), see) that', *no_space)
+        self.assert_transform_equality(
+            '<P>y = x<E T="52">0</E> + mx<E T="51">2</E></P>',
+            'y = x_{0} + mx^{2}', *no_space)
+        self.assert_transform_equality(
+            '<P>y = x<E T="52">0</E> + mx<SU>2</SU></P>',
+            'y = x_{0} + mx^{2}', *no_space)
 
     def test_unwind_stack(self):
         level_one_n = Node(label=['272'])

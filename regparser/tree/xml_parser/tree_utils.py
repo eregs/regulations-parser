@@ -123,7 +123,7 @@ def _combine_with_space(prev_text, next_text, add_space_if_needed):
         return prev_text + next_text
 
 
-def _replace_xml_node_with_text(node, text):
+def replace_xml_node_with_text(node, text):
     """There are some complications w/ lxml when determining where to add the
     replacement text. Account for all of that here."""
     parent, prev = node.getparent(), node.getprevious()
@@ -134,21 +134,34 @@ def _replace_xml_node_with_text(node, text):
     parent.remove(node)
 
 
-def get_node_text(node, add_spaces=False):
-    """ Extract all the text from an XML node (including the text of it's
-    children). """
-    node = deepcopy(node)
-    # subscripts
+def _subscript_to_text(node, add_spaces):
     for e in node.xpath(".//E[@T='52']"):
         text = _combine_with_space("_{" + e.text + "}", e.tail, add_spaces)
-        _replace_xml_node_with_text(e, text)
-    # footnotes
+        replace_xml_node_with_text(e, text)
+
+
+def _superscript_to_text(node, add_spaces):
+    for e in node.xpath(".//E[@T='51']|.//SU[not(@footnote)]"):
+        text = _combine_with_space("^{" + e.text + "}", e.tail, add_spaces)
+        replace_xml_node_with_text(e, text)
+
+
+def _footnotes_to_text(node, add_spaces):
     for su in node.xpath(".//SU[@footnote]"):
         footnote = su.attrib['footnote']
         footnote = footnote.replace('(', r'\(').replace(')', r'\)')
         text = u"[^{}]({})".format(su.text, footnote)
         text = _combine_with_space(text, su.tail, add_spaces)
-        _replace_xml_node_with_text(su, text)
+        replace_xml_node_with_text(su, text)
+
+
+def get_node_text(node, add_spaces=False):
+    """ Extract all the text from an XML node (including the text of it's
+    children). """
+    node = deepcopy(node)
+    _subscript_to_text(node, add_spaces)
+    _superscript_to_text(node, add_spaces)
+    _footnotes_to_text(node, add_spaces)
 
     parts = [node.text] +\
         list(chain(*([c.text, c.tail] for c in node.getchildren()))) +\
