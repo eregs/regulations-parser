@@ -536,3 +536,13 @@ class GrammarAmdParTests(TestCase):
         label = result[1].label[-1]
         self.assertTrue(re.match(r'p\d+', label))
         self.assertTrue(len(label) > 5)
+
+    def test_multiple_intro_texts(self):
+        text = ('the introductory text of paragraphs (a)(5)(ii) and '
+                '(d)(5)(ii)')
+        self.assertEqual(
+            parse_text(text),
+            [tokens.TokenList([
+                tokens.Paragraph([None, None, 'a', '5', 'ii'], field='text'),
+                tokens.Paragraph([None, None, 'd', '5', 'ii'], field='text')
+            ])])
