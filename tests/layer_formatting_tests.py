@@ -118,9 +118,9 @@ class LayerFormattingTests(XMLBuilderMixin, TestCase):
              ['21', '22', '23'],
              ['', '32', '33 More', '34']])
 
-    def test_table_with_caption_as_boxhd(self):
+    def test_table_with_caption_as_caption(self):
         """
-        |Caption  |
+         Caption
         |R1C1     |
         |R2C1|R2C2|
         """
@@ -149,12 +149,12 @@ class LayerFormattingTests(XMLBuilderMixin, TestCase):
         mkhd = lambda t, c, r: {'text': t, 'colspan': c, 'rowspan': r}
         self.assertEqual(
             [
-                [mkhd("Caption",
-                      2, 1)],
                 [mkhd("R1C1", 2, 1)],
                 [mkhd("R2C1", 1, 1), mkhd("R2C2", 1, 1)]
             ],
             data["header"])
+        self.assertTrue("caption" in data)
+        self.assertEqual("Caption", data["caption"])
 
     def test_table_with_header_with_footnotes(self):
         """
@@ -202,15 +202,14 @@ class LayerFormattingTests(XMLBuilderMixin, TestCase):
                          footnote['footnote_data']['note'])
         self.assertEqual([0], footnote['locations'])
 
-    def test_table_with_caption_with_footnoteas_boxhd(self):
+    def test_table_with_caption_with_footnote_as_caption(self):
         """
         Caption[^1](No work of any kind shall be conducted)
-        |Caption[^1]|
+         Caption[^1]
         |R1C1       |
         |R2C1 |R2C2 |
 
-        This is testing the implementation of the TTITLE as a row in table
-        header, rather than as table caption.
+        This is testing the implementation of the TTITLE as a caption element.
         """
         with self.tree.builder("GPOTABLE", COLS="6") as root:
             root.TTITLE(_xml="Caption<SU>1</SU>")
@@ -241,12 +240,13 @@ class LayerFormattingTests(XMLBuilderMixin, TestCase):
         mkhd = lambda t, c, r: {'text': t, 'colspan': c, 'rowspan': r}
         self.assertEqual(
             [
-                [mkhd(u"Caption[^1](No work of any kind shall be conducted)",
-                      2, 1)],
                 [mkhd("R1C1", 2, 1)],
                 [mkhd("R2C1", 1, 1), mkhd("R2C2", 1, 1)]
             ],
             data["header"])
+        self.assertTrue("caption" in data)
+        self.assertEqual("Caption[^1](No work of any kind shall be conducted)",
+                         data["caption"])
         self.assertEqual(u'[^1](No work of any kind shall be conducted)',
                          footnote['text'])
         self.assertEqual(u'1', footnote['footnote_data']['ref'])

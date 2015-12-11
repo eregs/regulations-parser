@@ -45,22 +45,8 @@ def build_header(xml_nodes):
     stack = HeaderStack()
     stack.add(0, TableHeaderNode(None, 0))  # Root
 
-    ttitle_nodes, other_nodes = [], []
-
-    for node in xml_nodes:
-        if node.tag == "TTITLE":
-            ttitle_nodes.append(node)
-        else:
-            other_nodes.append(node)
-    # We're assuming that there will only be one TTITLE element, and that it
-    # will be the first element, but those assumptions may prove invalid later.
-    ttitle_bump = 1 if len(ttitle_nodes) else 0
-
-    if ttitle_bump:
-        add_element(stack, ttitle_nodes[0], level=1)
-
-    for xml_node in other_nodes:
-        level = int(xml_node.attrib['H']) + ttitle_bump
+    for xml_node in xml_nodes:
+        level = int(xml_node.attrib['H'])
         add_element(stack, xml_node, level=level)
 
     while stack.size() > 1:
@@ -146,7 +132,7 @@ def table_xml_to_data(xml_node):
     structure than the native XML as the XML encodes too much logic. This
     structure can be used to generate semi-complex tables which could not be
     generated from the markdown above"""
-    header_root = build_header(xml_node.xpath('./BOXHD/CHED|./TTITLE'))
+    header_root = build_header(xml_node.xpath('./BOXHD/CHED'))
     header = [[] for _ in range(header_root.height())]
 
     def per_node(node):
@@ -162,6 +148,11 @@ def table_xml_to_data(xml_node):
                      for td in row.xpath('./ENT')])
 
     table_data = {'header': header, 'rows': rows}
+
+    caption_nodes = xml_node.xpath('./TTITLE')
+    if len(caption_nodes):
+        text = tree_utils.get_node_text(caption_nodes[0]).strip()
+        table_data["caption"] = text
 
     return table_data
 
