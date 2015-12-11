@@ -66,6 +66,7 @@ class HistoryAnnualVolumeTests(HttpMixin, TestCase):
 
         self.expect_xml_http(pt111, uri=re.compile(r".*part111\.xml"))
         self.expect_xml_http(pt112, uri=re.compile(r".*part112\.xml"))
+        self.expect_xml_http(status=404, uri=re.compile(r".*part113\.xml"))
         self.expect_xml_http("""
         <CFRDOC>
             <AMDDATE>Jan 1, 2001</AMDDATE>
@@ -89,6 +90,21 @@ class HistoryAnnualVolumeTests(HttpMixin, TestCase):
         self.assertEqual(xml.xpath('./FIELD')[0].text, '112 Content')
 
         self.assertEqual(volume.find_part_xml(113), None)
+
+    def test_should_contain__empty_volume(self):
+        """If the first volume does not contain a PARTS tag, we should assume
+        that it covers all of the regs in this title"""
+        self.expect_xml_http("""
+        <CFRDOC>
+            <SOMETHINGELSE>Here</SOMETHINGELSE>
+        </CFRDOC>
+        """, uri=re.compile(r".*bulkdata.*"))
+
+        volume = annual.Volume(2001, 12, 1)
+        self.assertTrue(volume.should_contain(1))
+        self.assertTrue(volume.should_contain(10))
+        self.assertTrue(volume.should_contain(100))
+        self.assertTrue(volume.should_contain(1000))
 
     def test_find_part_local(self):
         """Verify that a local copy of the annual edition content is
