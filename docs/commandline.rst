@@ -152,11 +152,10 @@ Tools
 * ``clear`` - Removes content from the index. Useful if you have tweaked the
   parser's workings. Additional parameters can describe specific directories
   you would like to remove.
-* ``compare_to`` - Once the index has been populated, this command can be used
-  to compare what your local output would be to a known copy, as stored in an
-  instance of ``regulations-core`` (the API). This command will compare the
-  requested JSON files and provide an interface for seeing the differences, if
-  present.
+* ``compare_to`` - This command compares a set of local JSON files with a
+  known copy, as stored in an instance of ``regulations-core`` (the API). The
+  command will compare the requested JSON files and provide an interface for
+  seeing the differences, if present.
 
 Legacy Commands
 ---------------

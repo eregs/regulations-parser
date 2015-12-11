@@ -31,36 +31,27 @@ class CommandsCompareToTests(HttpMixin, TestCase):
                 f.write('content')
         return [os.path.join(*parts) for parts in files]
 
-    def test_files_to_compare_lists(self):
+    def test_local_and_remote_generator(self):
         """Files to compare should find all of the files present in the temp
         directory"""
-        file_names = self.populate([
-            ('dir1', 'sub1', 'a'), ('dir1', 'sub1', 'b'),
-            ('dir1', 'sub2', 'c'),
-            ('dir2', 'd'), ('dir2', 'e'),
-            ('f',)])
-        os.mkdir(os.path.join(self.tmpdir, 'empty-dir'))
+        root = os.path.join(self.tmpdir, 'diff')
+        os.makedirs(os.path.join(root, 'dir1', 'sub1'))
+        os.makedirs(os.path.join(root, 'dir1', 'sub2'))
+        os.makedirs(os.path.join(root, 'dir2'))
+        for parts in (('dir1', 'sub1', 'a'), ('dir1', 'sub1', 'b'),
+                      ('dir1', 'sub2', 'c'),
+                      ('dir2', 'd'), ('dir2', 'e'),
+                      ('f',)):
+            with open(os.path.join(root, *parts), 'w') as f:
+                f.write('content')
 
-        self.assertItemsEqual(
-            compare_to.files_to_compare(self.tmpdir),
-            # note that file_names do not include the tmpdir
-            file_names)
-
-    def test_file_to_compare_filter(self):
-        """If the `relevant_paths` param is provided, only files which match
-        it should be returned"""
-        self.populate([
-            ('dir1', 'sub1', 'a'), ('dir1', 'sub2', 'b'),
-            ('dir2', 'c'),
-            ('dir3', 'd'),
-            ('dir22', 'e')])
-        results = compare_to.files_to_compare(
-            self.tmpdir, [os.path.join('dir1', 'sub1'), 'dir2'])
-        self.assertItemsEqual(
-            results,
-            [os.path.join('dir1', 'sub1', 'a'),
-             os.path.join('dir2', 'c'),
-             os.path.join('dir22', 'e')])
+        gen = compare_to.local_and_remote_generator
+        self.assertEqual(2, len(list(gen('', [os.path.join(root, 'dir2')]))))
+        self.assertEqual(
+            4, len(list(gen('', [os.path.join(root, 'dir1', 'sub1'),
+                                 os.path.join(root, 'dir2')]))))
+        self.assertEqual(1, len(list(gen('', [os.path.join(root, 'f')]))))
+        self.assertEqual(6, len(list(gen('', [root]))))
 
     def run_compare(self, local_path, remote_url, input=None):
         """Our CLI library, Click, is easier to test via click.commands. So we
