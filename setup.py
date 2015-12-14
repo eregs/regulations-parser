@@ -13,6 +13,7 @@ setup(
         "dagger",
         "GitPython",
         "inflection",
+        "ipdb",
         "json-delta",
         "lxml",
         "pyparsing",
