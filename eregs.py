@@ -3,6 +3,7 @@ from importlib import import_module
 import pkgutil
 import sys
 
+import coloredlogs
 import click
 import ipdb
 import requests_cache   # @todo - replace with cache control
@@ -15,7 +16,7 @@ from regparser.index import dependency
 @click.group()
 @click.option('--debug/--no-debug', default=False)
 def cli(debug):
-    logging.basicConfig(level=logging.INFO)
+    coloredlogs.install(level=logging.INFO, fmt="%(levelname)s %(message)s")
     requests_cache.install_cache('fr_cache')
     if debug:
         sys.excepthook = lambda t, v, tb: ipdb.post_mortem(tb)

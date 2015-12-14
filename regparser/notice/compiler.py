@@ -158,6 +158,9 @@ class RegulationTree(object):
         if not parent:  # e.g. because the node doesn't exist in the tree yet
             parent_label_id = get_parent_label(node)
             parent = find(self.tree, parent_label_id)
+        if not parent:
+            logging.error("Could not find parent of %s. Misparsed amendment?",
+                          node.label_id())
         return parent
 
     def add_to_root(self, node):
