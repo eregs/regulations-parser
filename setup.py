@@ -10,9 +10,11 @@ setup(
     ],
     install_requires=[
         "click",
+        "coloredLogs",
         "dagger",
         "GitPython",
         "inflection",
+        "ipdb",
         "json-delta",
         "lxml",
         "pyparsing",

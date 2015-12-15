@@ -1,8 +1,11 @@
 import logging
 from importlib import import_module
 import pkgutil
+import sys
 
+import coloredlogs
 import click
+import ipdb
 import requests_cache   # @todo - replace with cache control
 
 from regparser import commands
@@ -11,9 +14,12 @@ from regparser.index import dependency
 
 
 @click.group()
-def cli():
-    logging.basicConfig(level=logging.INFO)
+@click.option('--debug/--no-debug', default=False)
+def cli(debug):
+    coloredlogs.install(level=logging.INFO, fmt="%(levelname)s %(message)s")
     requests_cache.install_cache('fr_cache')
+    if debug:
+        sys.excepthook = lambda t, v, tb: ipdb.post_mortem(tb)
 
 
 for _, command_name, _ in pkgutil.iter_modules(commands.__path__):
@@ -41,6 +47,7 @@ def main(prev_dependency=None):
             click.echo("Attempting to resolve dependency: " + e.dependency)
             resolvers[0].resolution()
             main(e.dependency)
+
 
 if __name__ == '__main__':
     main()
