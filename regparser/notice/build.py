@@ -144,81 +144,51 @@ def create_xml_changes(amended_labels, section, notice_changes):
                 logging.warning("Unknown action: %s", amendment['action'])
 
 
-class AmdparByParent(object):
-    """Not all AMDPARs have a single REGTEXT/etc. section associated with them,
-    particularly for interpretations/appendices. This simple class wraps those
-    fields"""
-    def __init__(self, parent, first_amdpar):
-        self.parent = parent
-        self.amdpars = [first_amdpar]
-
-    def append(self, next_amdpar):
-        self.amdpars.append(next_amdpar)
-
-
 def process_amendments(notice, notice_xml):
     """ Process the changes to the regulation that are expressed in the notice.
     """
-    amends = []
+    all_amends = []
+    cfr_part = notice['cfr_parts'][0]
     notice_changes = changes.NoticeChanges()
 
-    amdpars_by_parent = []
-    for par in notice_xml.xpath('//AMDPAR'):
-        parent = par.getparent()
-        exists = filter(lambda aXp: aXp.parent == parent, amdpars_by_parent)
-        if exists:
-            exists[0].append(par)
-        else:
-            amdpars_by_parent.append(AmdparByParent(parent, par))
+    for amdparent in notice_xml.xpath('//AMDPAR/..'):
+        context = [amdparent.get('PART') or cfr_part]
+        amendments_by_section = defaultdict(list)
+        normal_amends = []
+        for amdpar in amdparent.xpath('.//AMDPAR'):
+            amendments, context = parse_amdpar(amdpar, context)
+            section_xml = find_section(amdpar)
+            for amendment in amendments:
+                all_amends.append(amendment)
+                if isinstance(amendment, DesignateAmendment):
+                    subpart_changes = process_designate_subpart(amendment)
+                    if subpart_changes:
+                        notice_changes.update(subpart_changes)
+                elif new_subpart_added(amendment):
+                    notice_changes.update(process_new_subpart(
+                        notice, amendment, amdpar))
+                elif section_xml is None:
+                    normal_amends.append(amendment)
+                else:
+                    normal_amends.append(amendment)
+                    amendments_by_section[section_xml].append(amendment)
 
-    default_cfr_part = notice['cfr_parts'][0]
-    for aXp in amdpars_by_parent:
-        amended_labels = []
-        designate_labels, other_labels = [], []
-        context = [aXp.parent.get('PART') or default_cfr_part]
-        for par in aXp.amdpars:
-            als, context = parse_amdpar(par, context)
-            amended_labels.extend(als)
+        cfr_part = context[0]
+        create_xmlless_changes(normal_amends, notice_changes)
+        for section_xml, related_amends in amendments_by_section.items():
+            for section in reg_text.build_from_section(cfr_part, section_xml):
+                create_xml_changes(related_amends, section, notice_changes)
 
-        labels_by_part = defaultdict(list)
-        for al in amended_labels:
-            if isinstance(al, DesignateAmendment):
-                subpart_changes = process_designate_subpart(al)
-                if subpart_changes:
-                    notice_changes.update(subpart_changes)
-                designate_labels.append(al)
-            elif new_subpart_added(al):
-                notice_changes.update(process_new_subpart(notice, al, par))
-                designate_labels.append(al)
-            else:
-                other_labels.append(al)
-                labels_by_part[al.label[0]].append(al)
+        for appendix in parse_appendix_changes(normal_amends, cfr_part,
+                                               amdparent):
+            create_xml_changes(normal_amends, appendix, notice_changes)
 
-        create_xmlless_changes(other_labels, notice_changes)
+        interp = parse_interp_changes(normal_amends, cfr_part, amdparent)
+        if interp:
+            create_xml_changes(normal_amends, interp, notice_changes)
 
-        for cfr_part, rel_labels in labels_by_part.iteritems():
-            section_xml = find_section(par)
-            if section_xml is not None:
-                for section in reg_text.build_from_section(cfr_part,
-                                                           section_xml):
-                    create_xml_changes(rel_labels, section, notice_changes)
-
-            for appendix in parse_appendix_changes(rel_labels, cfr_part,
-                                                   aXp.parent):
-                create_xml_changes(rel_labels, appendix, notice_changes)
-
-            interp = parse_interp_changes(rel_labels, cfr_part, aXp.parent)
-            if interp:
-                create_xml_changes(rel_labels, interp, notice_changes)
-
-        amends.extend(designate_labels)
-        amends.extend(other_labels)
-
-        if other_labels:    # Carry cfr_part through amendments
-            default_cfr_part = other_labels[-1].label[0]
-
-    if amends:
-        notice['amendments'] = amends
+    if all_amends:
+        notice['amendments'] = all_amends
         notice['changes'] = notice_changes.changes
 
     return notice
