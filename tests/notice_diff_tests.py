@@ -5,9 +5,10 @@ from lxml import etree
 
 from regparser.grammar import tokens
 from regparser.notice import diff
+from tests.xml_builder import XMLBuilderMixin
 
 
-class NoticeDiffTests(TestCase):
+class NoticeDiffTests(XMLBuilderMixin, TestCase):
 
     def test_clear_between(self):
         xml = u"""
@@ -237,27 +238,19 @@ class NoticeDiffTests(TestCase):
         ])
 
     def test_find_section(self):
-        xml = u"""
-        <REGTEXT>
-        <AMDPAR>
-            In 200.1 revise paragraph (b) as follows:
-        </AMDPAR>
-        <SECTION>
-            <SECTNO>200.1</SECTNO>
-            <SUBJECT>Authority and Purpose.</SUBJECT>
-            <P> (b) This part is very important. </P>
-        </SECTION>
-        <AMDPAR>
-            In 200.3 revise paragraph (b)(1) as follows:
-        </AMDPAR>
-        <SECTION>
-            <SECTNO>200.3</SECTNO>
-            <SUBJECT>Definitions</SUBJECT>
-            <P> (b)(1) Define a term here. </P>
-        </SECTION>
-        </REGTEXT>"""
+        with self.tree.builder('REGTEXT') as regtext:
+            regtext.AMDPAR("In 200.1 revise paragraph (b) as follows:")
+            with regtext.SECTION() as section:
+                section.SECTNO("200.1")
+                section.SUBJECT("Authority and Purpose.")
+                section.P(" (b) This part is very important. ")
+            regtext.AMDPAR("In 200.3 revise paragraph (b)(1) as follows:")
+            with regtext.SECTION() as section:
+                section.SECTNO("200.3")
+                section.SUBJECT("Definitions")
+                section.P(" (b)(1) Define a term here. ")
 
-        notice_xml = etree.fromstring(xml)
+        notice_xml = self.tree.render_xml()
         amdpar_xml = notice_xml.xpath('//AMDPAR')[0]
         section = diff.find_section(amdpar_xml)
         self.assertEqual(section.tag, 'SECTION')
@@ -266,23 +259,18 @@ class NoticeDiffTests(TestCase):
         self.assertEqual(sectno_xml.text, '200.1')
 
     def test_find_subpart(self):
-        xml = u"""
-           <REGTEXT PART="105" TITLE="12">
-            <AMDPAR>
-                6. Add subpart B to read as follows:
-            </AMDPAR>
-            <SUBPART>
-                <HD SOURCE="HED">Subpart B—Requirements</HD>
-                <SECTION>
-                    <SECTNO>105.30</SECTNO>
-                    <SUBJECT>First In New Subpart</SUBJECT>
-                    <P>For purposes of this subpart, the follow apply:</P>
-                    <P>(a) "Agent" means agent.</P>
-                </SECTION>
-            </SUBPART>
-           </REGTEXT>"""
+        with self.tree.builder('REGTEXT', PART='105', TITLE='12') as regtext:
+            regtext.AMDPAR("6. Add subpart B to read as follows:")
+            with regtext.SUBPART() as subpart:
+                subpart.HD(u"Subpart B—Requirements", SOURCE="HED")
+                with subpart.SECTION() as section:
+                    section.SECTNO("105.30")
+                    section.SUBJECT("First In New Subpart")
+                    section.P("For purposes of this subpart, the follow "
+                              "apply:")
+                    section.P('(a) "Agent" means agent.')
 
-        notice_xml = etree.fromstring(xml)
+        notice_xml = self.tree.render_xml()
         amdpar_xml = notice_xml.xpath('//AMDPAR')[0]
         subpart = diff.find_subpart(amdpar_xml)
         self.assertTrue(subpart is not None)
@@ -449,28 +437,18 @@ class NoticeDiffTests(TestCase):
             diff.switch_context(tokenized, initial_context), initial_context)
 
     def test_fix_section_node(self):
-        xml = u"""
-            <REGTEXT>
-            <P>paragraph 1</P>
-            <P>paragraph 2</P>
-            </REGTEXT>
-        """
-        reg_paragraphs = etree.fromstring(xml)
-        paragraphs = [p for p in reg_paragraphs if p.tag == 'P']
+        with self.tree.builder("REGTEXT") as regtext:
+            regtext.P("paragraph 1")
+            regtext.P("paragraph 2")
+        paragraphs = [p for p in self.tree.render_xml() if p.tag == 'P']
 
-        amdpar_xml = u"""
-            <REGTEXT>
-                <SECTION>
-                    <SECTNO> 205.4 </SECTNO>
-                    <SUBJECT>[Corrected]</SUBJECT>
-                </SECTION>
-                <AMDPAR>
-                    3. In § 105.1, revise paragraph (b) to read as follows:
-                </AMDPAR>
-            </REGTEXT>
-        """
-        amdpar = etree.fromstring(amdpar_xml)
-        par = amdpar.xpath('//AMDPAR')[0]
+        with self.tree.builder("REGTEXT") as regtext:
+            with regtext.SECTION() as section:
+                section.SECTNO(" 205.4 ")
+                section.SUBJECT("[Corrected]")
+            regtext.AMDPAR(u"3. In § 105.1, revise paragraph (b) to read as "
+                           "follows:")
+        par = self.tree.render_xml().xpath('//AMDPAR')[0]
         section = diff.fix_section_node(paragraphs, par)
         self.assertNotEqual(None, section)
         section_paragraphs = [p for p in section if p.tag == 'P']
@@ -480,57 +458,43 @@ class NoticeDiffTests(TestCase):
         self.assertEqual(section_paragraphs[1].text, 'paragraph 2')
 
     def test_find_section_paragraphs(self):
-        amdpar_xml = u"""
-            <REGTEXT>
-                <SECTION>
-                    <SECTNO> 205.4 </SECTNO>
-                    <SUBJECT>[Corrected]</SUBJECT>
-                </SECTION>
-                <AMDPAR>
-                    3. In § 105.1, revise paragraph (b) to read as follows:
-                </AMDPAR>
-                <P>(b) paragraph 1</P>
-            </REGTEXT>"""
+        with self.tree.builder('REGTEXT') as regtext:
+            with regtext.SECTION() as section:
+                section.SECTNO(" 205.4 ")
+                section.SUBJECT("[Corrected]")
+            regtext.AMDPAR(u"3. In § 105.1, revise paragraph (b) to read as "
+                           "follows:")
+            regtext.P("(b) paragraph 1")
 
-        amdpar = etree.fromstring(amdpar_xml).xpath('//AMDPAR')[0]
+        amdpar = self.tree.render_xml().xpath('//AMDPAR')[0]
         section = diff.find_section(amdpar)
         self.assertNotEqual(None, section)
         paragraphs = [p for p in section if p.tag == 'P']
         self.assertEqual(paragraphs[0].text, '(b) paragraph 1')
 
     def test_find_lost_section(self):
-        amdpar_xml = u"""
-            <PART>
-            <REGTEXT>
-                <AMDPAR>
-                    3. In § 105.1, revise paragraph (b) to read as follows:
-                </AMDPAR>
-            </REGTEXT>
-            <REGTEXT>
-                <SECTION>
-                    <SECTNO> 205.4 </SECTNO>
-                    <SUBJECT>[Corrected]</SUBJECT>
-                </SECTION>
-            </REGTEXT></PART>"""
-        amdpar = etree.fromstring(amdpar_xml).xpath('//AMDPAR')[0]
+        with self.tree.builder("PART") as part:
+            with part.REGTEXT() as regtext:
+                regtext.AMDPAR(u"3. In § 105.1, revise paragraph (b) to read "
+                               "as follows:")
+            with part.REGTEXT() as regtext:
+                with regtext.SECTION() as section:
+                    section.SECTNO(" 205.4 ")
+                    section.SUBJECT("[Corrected]")
+        amdpar = self.tree.render_xml().xpath('//AMDPAR')[0]
         section = diff.find_lost_section(amdpar)
         self.assertNotEqual(None, section)
 
     def test_find_section_lost(self):
-        amdpar_xml = u"""
-            <PART>
-            <REGTEXT>
-                <AMDPAR>
-                    3. In § 105.1, revise paragraph (b) to read as follows:
-                </AMDPAR>
-            </REGTEXT>
-            <REGTEXT>
-                <SECTION>
-                    <SECTNO> 205.4 </SECTNO>
-                    <SUBJECT>[Corrected]</SUBJECT>
-                </SECTION>
-            </REGTEXT></PART>"""
-        amdpar = etree.fromstring(amdpar_xml).xpath('//AMDPAR')[0]
+        with self.tree.builder("PART") as part:
+            with part.REGTEXT() as regtext:
+                regtext.AMDPAR(u"3. In § 105.1, revise paragraph (b) to read "
+                               "as follows:")
+            with part.REGTEXT() as regtext:
+                with regtext.SECTION() as section:
+                    section.SECTNO(" 205.4 ")
+                    section.SUBJECT("[Corrected]")
+        amdpar = self.tree.render_xml().xpath('//AMDPAR')[0]
         section = diff.find_section(amdpar)
         self.assertNotEqual(None, section)
 
