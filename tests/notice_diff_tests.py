@@ -9,32 +9,6 @@ from tests.xml_builder import XMLBuilderMixin
 
 
 class NoticeDiffTests(XMLBuilderMixin, TestCase):
-
-    def test_clear_between(self):
-        xml = u"""
-        <ROOT>Some content[ removed]
-            <CHILD>Split[ it
-                <SUB>across children</SUB>
-                ]
-            </CHILD>
-        </ROOT>
-        """.strip()
-        result = diff.clear_between(etree.fromstring(xml), '[', ']')
-        cleaned = u"""
-        <ROOT>Some content
-            <CHILD>Split
-            </CHILD>
-        </ROOT>
-        """.strip()
-        self.assertEqual(cleaned, etree.tostring(result))
-
-    def test_remove_char(self):
-        xml = u"""<ROOT> Some stuff▸, then a bit more◂.</ROOT>"""
-        result = diff.remove_char(diff.remove_char(
-            etree.fromstring(xml), u'▸'), u'◂')
-        cleaned = u"""<ROOT> Some stuff, then a bit more.</ROOT>"""
-        self.assertEqual(cleaned, etree.tostring(result))
-
     def test_make_amendments(self):
         tokenized = [
             tokens.Paragraph(['111']),
