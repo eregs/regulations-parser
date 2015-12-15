@@ -145,16 +145,16 @@ def create_xml_changes(amended_labels, section, notice_changes):
 
 
 def process_amendments(notice, notice_xml):
-    """ Process the changes to the regulation that are expressed in the notice.
-    """
-    all_amends = []
+    """Process changes to the regulation that are expressed in the notice."""
+    all_amends = []     # will be added to the notice
     cfr_part = notice['cfr_parts'][0]
     notice_changes = changes.NoticeChanges()
 
+    # process amendments in batches, based on their parent XML
     for amdparent in notice_xml.xpath('//AMDPAR/..'):
         context = [amdparent.get('PART') or cfr_part]
         amendments_by_section = defaultdict(list)
-        normal_amends = []
+        normal_amends = []  # amendments not moving or adding a subpart
         for amdpar in amdparent.xpath('.//AMDPAR'):
             amendments, context = parse_amdpar(amdpar, context)
             section_xml = find_section(amdpar)
@@ -173,8 +173,9 @@ def process_amendments(notice, notice_xml):
                     normal_amends.append(amendment)
                     amendments_by_section[section_xml].append(amendment)
 
-        cfr_part = context[0]
+        cfr_part = context[0]   # carry the part through to the next amdparent
         create_xmlless_changes(normal_amends, notice_changes)
+        # Process amendments relating to a specific section in batches, too
         for section_xml, related_amends in amendments_by_section.items():
             for section in reg_text.build_from_section(cfr_part, section_xml):
                 create_xml_changes(related_amends, section, notice_changes)
