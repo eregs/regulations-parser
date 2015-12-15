@@ -36,16 +36,16 @@ class NoticeDiffTests(TestCase):
 
     def test_make_amendments(self):
         tokenized = [
-            tokens.Paragraph(['111']),
+            tokens.Paragraph(part='111'),
             tokens.Verb(tokens.Verb.PUT, active=True),
-            tokens.Paragraph(['222']),
-            tokens.Paragraph(['333']),
-            tokens.Paragraph(['444']),
+            tokens.Paragraph(part='222'),
+            tokens.Paragraph(part='333'),
+            tokens.Paragraph(part='444'),
             tokens.Verb(tokens.Verb.DELETE, active=True),
-            tokens.Paragraph(['555']),
+            tokens.Paragraph(part='555'),
             tokens.Verb(tokens.Verb.MOVE, active=True),
-            tokens.Paragraph(['666']),
-            tokens.Paragraph(['777'])
+            tokens.Paragraph(part='666'),
+            tokens.Paragraph(part='777')
         ]
         amends = diff.make_amendments(tokenized)
         self.assertEqual(amends,
@@ -63,63 +63,69 @@ class NoticeDiffTests(TestCase):
             #  section 12
             tokens.Context([None, None, '12']),
             #  12(f)(4)
-            tokens.Paragraph([None, None, None, 'f', '4']),
+            tokens.Paragraph(paragraphs=['f', '4']),
             #  12(f)
             tokens.Context([None, None, None, 'g']),
             #  12(g)(1)
-            tokens.Paragraph([None, None, None, None, '1']),
+            tokens.Paragraph(paragraphs=[None, '1']),
         ]
         converted, final_ctx = diff.compress_context(tokenized, [])
         self.assertEqual(converted, [
             tokens.Verb(tokens.Verb.PUT, active=True),
-            tokens.Paragraph(['9876', 'Subpart:A', '12', 'f', '4']),
-            tokens.Paragraph(['9876', 'Subpart:A', '12', 'g', '1'])
+            tokens.Paragraph(part='9876', subpart='A', section='12',
+                             paragraphs=['f', '4']),
+            tokens.Paragraph(part='9876', subpart='A', section='12',
+                             paragraphs=['g', '1']),
         ])
         self.assertEqual(['9876', 'Subpart:A', '12', 'g', '1'], final_ctx)
 
     def test_compress_context_initial_context(self):
-        tokenized = [tokens.Paragraph([None, None, None, 'q'])]
+        tokenized = [tokens.Paragraph(paragraph='q')]
         converted, _ = diff.compress_context(tokenized, ['111', None, '12'])
-        self.assertEqual(converted,
-                         [tokens.Paragraph(['111', None, '12', 'q'])])
+        self.assertEqual(
+            converted,
+            [tokens.Paragraph(part='111', section='12', paragraph='q')])
 
     def test_compress_context_interpretations(self):
         tokenized = [
             tokens.Context(['123', 'Interpretations']),
-            tokens.Paragraph([None, None, '12', 'a', '2', 'iii']),
-            tokens.Paragraph([None, 'Interpretations', None, None, '3', 'v']),
+            tokens.Paragraph(section='12', paragraphs=['a', '2', 'iii']),
+            tokens.Paragraph(is_interp=True, paragraphs=[None, '3', 'v']),
             tokens.Context([None, 'Appendix:R']),
-            tokens.Paragraph([None, 'Interpretations', None, None, '5'])
+            tokens.Paragraph(is_interp=True, paragraphs=[None, '5'])
         ]
         converted, _ = diff.compress_context(tokenized, [])
         self.assertEqual(converted, [
-            tokens.Paragraph(['123', 'Interpretations', '12', '(a)(2)(iii)',
-                              '3', 'v']),
+            tokens.Paragraph(part='123', is_interp=True, section='12',
+                             paragraphs=['(a)(2)(iii)', '3', 'v']),
             #   None because we are missing a layer
-            tokens.Paragraph(['123', 'Interpretations', 'Appendix:R', None,
-                              '5'])
+            tokens.Paragraph(part='123', is_interp=True, section='Appendix:R',
+                             paragraphs=[None, '5'])
         ])
 
     def test_compress_context_in_tokenlists(self):
         tokenized = [
             tokens.Context(['123', 'Interpretations']),
-            tokens.Paragraph(['123', None, '23', 'a']),
+            tokens.Paragraph(part='123', section='23', paragraph='a'),
             tokens.Verb(tokens.Verb.PUT, True),
             tokens.TokenList([
                 tokens.Verb(tokens.Verb.POST, True),
-                tokens.Paragraph(['123', None, '23', 'a', '1']),
-                tokens.Paragraph([None, None, None, None, None, 'i']),
-                tokens.Paragraph([None, None, '23', 'b'])])]
+                tokens.Paragraph(part='123', section='23',
+                                 paragraphs=['a', '1']),
+                tokens.Paragraph(paragraphs=[None, None, 'i']),
+                tokens.Paragraph(section='23', paragraph='b')])]
         converted = diff.compress_context_in_tokenlists(tokenized)
         self.assertEqual(converted, [
             tokens.Context(['123', 'Interpretations']),
-            tokens.Paragraph(['123', None, '23', 'a']),
+            tokens.Paragraph(part='123', section='23', paragraph='a'),
             tokens.Verb(tokens.Verb.PUT, True),
             tokens.TokenList([
                 tokens.Verb(tokens.Verb.POST, True),
-                tokens.Paragraph(['123', None, '23', 'a', '1']),
-                tokens.Paragraph(['123', None, '23', 'a', '1', 'i']),
-                tokens.Paragraph(['123', None, '23', 'b'])])])
+                tokens.Paragraph(part='123', section='23',
+                                 paragraphs=['a', '1']),
+                tokens.Paragraph(part='123', section='23',
+                                 paragraphs=['a', '1', 'i']),
+                tokens.Paragraph(part='123', section='23', paragraph='b')])])
 
     def test_resolve_confused_context(self):
         tokenized = [tokens.Context([None, None, '12', 'a', '2', 'iii'])]
@@ -150,16 +156,16 @@ class NoticeDiffTests(TestCase):
                 tokens.Verb(tokens.Verb.MOVE, active=True),
                 tokens.Context([None, '2'])
             ]),
-            tokens.Paragraph([None, '3']),
-            tokens.TokenList([tokens.Paragraph([None, None, 'b'])])
+            tokens.Paragraph(sub='3'),
+            tokens.TokenList([tokens.Paragraph(section='b')])
         ]
         converted = diff.separate_tokenlist(tokenized)
         self.assertEqual(converted, [
             tokens.Context(['1']),
             tokens.Verb(tokens.Verb.MOVE, active=True),
             tokens.Context([None, '2']),
-            tokens.Paragraph([None, '3']),
-            tokens.Paragraph([None, None, 'b'])
+            tokens.Paragraph(sub='3'),
+            tokens.Paragraph(section='b')
         ])
 
     def test_context_to_paragraph(self):
@@ -174,16 +180,16 @@ class NoticeDiffTests(TestCase):
         self.assertEqual(converted, [
             tokens.Context(['1']),
             tokens.Verb(tokens.Verb.PUT, active=True),
-            tokens.Paragraph(['2']),
+            tokens.Paragraph(part='2'),
             tokens.Context(['3'], certain=True),
-            tokens.Paragraph(['4'])
+            tokens.Paragraph(part='4')
         ])
 
     def test_context_to_paragraph_exceptions(self):
         tokenized = [
             tokens.Verb(tokens.Verb.PUT, active=True),
             tokens.Context(['2']),
-            tokens.Paragraph(['3'])
+            tokens.Paragraph(part='3')
         ]
         converted = diff.context_to_paragraph(tokenized)
         self.assertEqual(tokenized, converted)
@@ -191,7 +197,7 @@ class NoticeDiffTests(TestCase):
         tokenized = [
             tokens.Verb(tokens.Verb.PUT, active=True),
             tokens.Context(['2']),
-            tokens.TokenList([tokens.Paragraph(['3'])])
+            tokens.TokenList([tokens.Paragraph(part='3')])
         ]
         converted = diff.context_to_paragraph(tokenized)
         self.assertEqual(tokenized, converted)
@@ -343,8 +349,8 @@ class NoticeDiffTests(TestCase):
 
     def paragraph_token_list(self):
         paragraph_tokens = [
-            tokens.Paragraph(['200', '1', 'a']),
-            tokens.Paragraph(['200', '1', 'b'])]
+            tokens.Paragraph(part='200', sub='1', section='a'),
+            tokens.Paragraph(part='200', sub='1', section='b')]
         return tokens.TokenList(paragraph_tokens)
 
     def test_deal_with_subpart_adds(self):
@@ -378,22 +384,22 @@ class NoticeDiffTests(TestCase):
         self.assertFalse(subpart_added)
 
     def test_get_destination_normal(self):
-        subpart_token = tokens.Paragraph(['205', 'Subpart', 'A'])
+        subpart_token = tokens.Paragraph(part='205', subpart='A')
         tokenized = [subpart_token]
 
         self.assertEqual(diff.get_destination(tokenized, '205'),
-                         '205-Subpart-A')
+                         '205-Subpart:A')
 
     def test_get_destination_no_reg_part(self):
-        subpart_token = tokens.Paragraph([None, 'Subpart', 'J'])
+        subpart_token = tokens.Paragraph(subpart='J')
         tokenized = [subpart_token]
 
         self.assertEqual(diff.get_destination(tokenized, '205'),
-                         '205-Subpart-J')
+                         '205-Subpart:J')
 
     def test_handle_subpart_designate(self):
         token_list = self.paragraph_token_list()
-        subpart_token = tokens.Paragraph([None, 'Subpart', 'J'])
+        subpart_token = tokens.Paragraph(subpart='J')
         tokenized = [token_list, subpart_token]
 
         amendment = diff.handle_subpart_amendment(tokenized)
@@ -405,7 +411,7 @@ class NoticeDiffTests(TestCase):
 
     def test_make_amendments_subpart(self):
         token_list = self.paragraph_token_list()
-        subpart_token = tokens.Paragraph([None, 'Subpart', 'J'])
+        subpart_token = tokens.Paragraph(subpart='J')
         tokenized = [token_list, subpart_token]
         amends = diff.make_amendments(tokenized, subpart=True)
 
@@ -429,13 +435,13 @@ class NoticeDiffTests(TestCase):
         initial_context = ['105', '2']
 
         tokenized = [
-            tokens.Paragraph(['203', '2', 'x']),
+            tokens.Paragraph(part='203', sub='2', section='x'),
             tokens.Verb(tokens.Verb.DESIGNATE, True)]
 
         self.assertEqual(diff.switch_context(tokenized, initial_context), [])
 
         tokenized = [
-            tokens.Paragraph(['105', '4', 'j', 'iv']),
+            tokens.Paragraph(part='105', sub='4', section='j', paragraph='iv'),
             tokens.Verb(tokens.Verb.DESIGNATE, True)]
 
         self.assertEqual(
@@ -536,7 +542,7 @@ class NoticeDiffTests(TestCase):
 
     def test_remove_false_deletes(self):
         tokenized = [
-            tokens.Paragraph(['444']),
+            tokens.Paragraph(part='444'),
             tokens.Verb(tokens.Verb.DELETE, active=True)]
 
         text = "Remove the semi-colong at the end of paragraph 444"
@@ -545,32 +551,32 @@ class NoticeDiffTests(TestCase):
 
     def test_multiple_moves(self):
         tokenized = [
-            tokens.TokenList([tokens.Paragraph(['444', '1']),
-                              tokens.Paragraph(['444', '2'])]),
+            tokens.TokenList([tokens.Paragraph(part='444', sub='1'),
+                              tokens.Paragraph(part='444', sub='2')]),
             tokens.Verb(tokens.Verb.MOVE, active=False),
-            tokens.TokenList([tokens.Paragraph(['444', '3']),
-                              tokens.Paragraph(['444', '4'])])]
+            tokens.TokenList([tokens.Paragraph(part='444', sub='3'),
+                              tokens.Paragraph(part='444', sub='4')])]
         tokenized = diff.multiple_moves(tokenized)
         self.assertEqual(
             tokenized, [tokens.Verb(tokens.Verb.MOVE, active=True),
-                        tokens.Paragraph(['444', '1']),
-                        tokens.Paragraph(['444', '3']),
+                        tokens.Paragraph(part='444', sub='1'),
+                        tokens.Paragraph(part='444', sub='3'),
                         tokens.Verb(tokens.Verb.MOVE, active=True),
-                        tokens.Paragraph(['444', '2']),
-                        tokens.Paragraph(['444', '4'])])
+                        tokens.Paragraph(part='444', sub='2'),
+                        tokens.Paragraph(part='444', sub='4')])
 
         # Not even number of elements on either side
         tokenized = [
-            tokens.TokenList([tokens.Paragraph(['444', '1']),
-                              tokens.Paragraph(['444', '2'])]),
+            tokens.TokenList([tokens.Paragraph(part='444', sub='1'),
+                              tokens.Paragraph(part='444', sub='2')]),
             tokens.Verb(tokens.Verb.MOVE, active=False),
-            tokens.TokenList([tokens.Paragraph(['444', '3'])])]
+            tokens.TokenList([tokens.Paragraph(part='444', sub='3')])]
         self.assertEqual(tokenized, diff.multiple_moves(tokenized))
 
         # Paragraphs on either side of a move
-        tokenized = [tokens.Paragraph(['444', '1']),
+        tokenized = [tokens.Paragraph(part='444', sub='1'),
                      tokens.Verb(tokens.Verb.MOVE, active=False),
-                     tokens.Paragraph(['444', '3'])]
+                     tokens.Paragraph(part='444', sub='3')]
         self.assertEqual(tokenized, diff.multiple_moves(tokenized))
 
     def test_parse_amdpar_newly_redesignated(self):
