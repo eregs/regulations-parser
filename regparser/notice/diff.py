@@ -67,16 +67,13 @@ def find_section(amdpar_xml):
     if len(siblings) == 0:
         return find_lost_section(amdpar_xml)
 
-    section = None
-    for sibling in amdpar_xml.itersiblings():
+    for sibling in siblings:
         if sibling.tag == 'SECTION':
-            section = sibling
+            return sibling
 
-    if section is None:
-        paragraphs = [s for s in amdpar_xml.itersiblings() if s.tag == 'P']
-        if len(paragraphs) > 0:
-            return fix_section_node(paragraphs, amdpar_xml)
-    return section
+    paragraphs = [s for s in siblings if s.tag == 'P']
+    if len(paragraphs) > 0:
+        return fix_section_node(paragraphs, amdpar_xml)
 
 
 def find_subpart(amdpar_tag):

@@ -255,7 +255,7 @@ class NoticeDiffTests(XMLBuilderMixin, TestCase):
         section = diff.find_section(amdpar_xml)
         self.assertEqual(section.tag, 'SECTION')
 
-        sectno_xml = section.xpath('//SECTNO')[0]
+        sectno_xml = section.xpath('./SECTNO')[0]
         self.assertEqual(sectno_xml.text, '200.1')
 
     def test_find_subpart(self):
