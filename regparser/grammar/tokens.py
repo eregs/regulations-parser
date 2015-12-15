@@ -91,7 +91,24 @@ class Paragraph(Token):
     HEADING_FIELD = 'title'
     KEYTERM_FIELD = 'heading'
 
-    def __init__(self, label, field=None):
+    def __init__(self, label=None, field=None, part=None, sub=None,
+                 section=None, paragraphs=None, paragraph=None,
+                 subpart=None, is_interp=None, appendix=None):
+        """label and field are the only "materialized" fields. Everything
+        other field becomes part of the label, offering a more legible API"""
+        if sub is None and subpart:
+            if isinstance(subpart, basestring):
+                sub = 'Subpart:{}'.format(subpart)
+            else:
+                sub = 'Subpart'
+        if sub is None and is_interp:
+            sub = 'Interpretations'
+        if sub is None and appendix:
+            sub = 'Appendix:' + appendix
+        if paragraph:
+            paragraphs = [paragraph]
+        if label is None:
+            label = [part, sub, section] + (paragraphs or [])
         # replace with Nones
         self.label = [p or None for p in label]
         # Trim the right side of the list
