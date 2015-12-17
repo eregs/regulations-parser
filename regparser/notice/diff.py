@@ -1,29 +1,10 @@
 # vim: set encoding=utf-8
 from itertools import takewhile
-import re
 from copy import copy
-
-from lxml import etree
 
 from regparser.grammar import amdpar, tokens
 from regparser.tree.struct import Node
-from regparser.tree.xml_parser.reg_text import build_from_section
 from regparser.tree.xml_parser.tree_utils import get_node_text
-
-
-def clear_between(xml_node, start_char, end_char):
-    """Gets rid of any content (including xml nodes) between chars"""
-    as_str = etree.tostring(xml_node, encoding=unicode)
-    start_char, end_char = re.escape(start_char), re.escape(end_char)
-    pattern = re.compile(
-        start_char + '[^' + end_char + ']*' + end_char, re.M + re.S + re.U)
-    return etree.fromstring(pattern.sub('', as_str))
-
-
-def remove_char(xml_node, char):
-    """Remove from this node and all its children"""
-    as_str = etree.tostring(xml_node, encoding=unicode)
-    return etree.fromstring(as_str.replace(char, ''))
 
 
 def fix_section_node(paragraphs, amdpar_xml):
@@ -60,23 +41,19 @@ def find_lost_section(amdpar_xml):
 
 
 def find_section(amdpar_xml):
-    """ With an AMDPAR xml, return the first section
-    sibling """
+    """ With an AMDPAR xml, return the first section sibling """
     siblings = [s for s in amdpar_xml.itersiblings()]
 
     if len(siblings) == 0:
         return find_lost_section(amdpar_xml)
 
-    section = None
-    for sibling in amdpar_xml.itersiblings():
+    for sibling in siblings:
         if sibling.tag == 'SECTION':
-            section = sibling
+            return sibling
 
-    if section is None:
-        paragraphs = [s for s in amdpar_xml.itersiblings() if s.tag == 'P']
-        if len(paragraphs) > 0:
-            return fix_section_node(paragraphs, amdpar_xml)
-    return section
+    paragraphs = [s for s in siblings if s.tag == 'P']
+    if len(paragraphs) > 0:
+        return fix_section_node(paragraphs, amdpar_xml)
 
 
 def find_subpart(amdpar_tag):
@@ -84,27 +61,6 @@ def find_subpart(amdpar_tag):
     for sibling in amdpar_tag.itersiblings():
         if sibling.tag == 'SUBPART':
             return sibling
-
-
-def find_diffs(xml_tree, cfr_part):
-    """Find the XML nodes that are needed to determine diffs"""
-    #   Only final notices have this format
-    for section in xml_tree.xpath('//REGTEXT//SECTION'):
-        section = clear_between(section, '[', ']')
-        section = remove_char(remove_char(section, u'▸'), u'◂')
-        for node in build_from_section(cfr_part, section):
-            def per_node(node):
-                if node_is_empty(node):
-                    for c in node.children:
-                        per_node(c)
-                else:
-                    print node.label, node.text
-            per_node(node)
-
-
-def node_is_empty(node):
-    """Handle different ways the regulation represents no content"""
-    return node.text.strip() == ''
 
 
 def switch_context(token_list, carried_context):

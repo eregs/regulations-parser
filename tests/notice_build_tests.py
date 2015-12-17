@@ -283,6 +283,27 @@ class NoticeBuildTest(XMLBuilderMixin, TestCase):
         changes = notice['changes']['105-11-p5'][0]
         self.assertEqual(changes['action'], 'PUT')
 
+    def test_process_amendments_multiple_sections(self):
+        """Regression test verifying multiple SECTIONs in the same REGTEXT"""
+        with self.tree.builder("REGTEXT", PART="111") as regtext:
+            regtext.AMDPAR(u"1. Modify § 111.22 by revising paragraph (b)")
+            with regtext.SECTION() as section:
+                section.SECTNO(u"§ 111.22")
+                section.SUBJECT("Subject Here.")
+                section.STARS()
+                section.P("(b) Revised second paragraph")
+            regtext.AMDPAR(u"2. Modify § 111.33 by revising paragraph (c)")
+            with regtext.SECTION() as section:
+                section.SECTNO(u"§ 111.33")
+                section.SUBJECT("Another Subject")
+                section.STARS()
+                section.P("(c) Revised third paragraph")
+
+        notice = {'cfr_parts': ['111']}
+        build.process_amendments(notice, self.tree.render_xml())
+        self.assertItemsEqual(notice['changes'].keys(),
+                              ['111-22-b', '111-33-c'])
+
     def new_subpart_xml(self):
         with self.tree.builder("RULE") as rule:
             with rule.REGTEXT(PART="105", TITLE="12") as regtext:
