@@ -174,7 +174,7 @@ multiple_comments = (
         + Optional(Suppress(')'))))
 
 # e.g. 12 CFR 1005.10
-internal_cfr_p = (
+cfr_p = (
     atomic.title
     + Suppress("CFR")
     + atomic.part
@@ -184,7 +184,7 @@ internal_cfr_p = (
 
 # e.g. 12 CFR 1005.10, 1006.21, and 1010.10
 multiple_cfr_p = (
-    internal_cfr_p.copy().setParseAction(keep_pos).setResultsName("head")
+    cfr_p.copy().setParseAction(keep_pos).setResultsName("head")
     + OneOrMore(
         atomic.conj_phrases
         + (atomic.part

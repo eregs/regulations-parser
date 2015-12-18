@@ -1,7 +1,7 @@
 # vim: set encoding=utf-8
 from unittest import TestCase
 
-from regparser.citations import internal_citations, Label
+from regparser.citations import cfr_citations, internal_citations, Label
 from regparser.tree.struct import Node
 
 
@@ -332,7 +332,7 @@ class CitationsLabelTest(TestCase):
                          Label.determine_schema({'appendix_section': '1'}))
         self.assertEqual(Label.app_schema,
                          Label.determine_schema({'appendix': 'A'}))
-        self.assertEqual(Label.sect_schema,
+        self.assertEqual(Label.regtext_schema,
                          Label.determine_schema({'section': '12'}))
         self.assertEqual(None, Label.determine_schema({}))
 
@@ -384,4 +384,35 @@ class CitationsLabelTest(TestCase):
 
     def test_label_representation(self):
         l = Label(part='105', section='3')
-        self.assertEqual(repr(l), "['105', '3']")
+        self.assertEqual(
+            repr(l),
+            "Label(cfr_title=None, part='105', section='3', p1=None, "
+            "p2=None, p3=None, p4=None, p5=None, p6=None)")
+
+    def test_cfr_citations_single(self):
+        text = 'See 11 CFR 222.3(e)(3)(ii) for more'
+        citations = cfr_citations(text)
+        self.assertEqual(1, len(citations))
+        self.assertEqual('11 CFR 222.3(e)(3)(ii)', to_text(citations[0], text))
+        self.assertEqual(
+            citations[0].label.settings,
+            dict(cfr_title='11', part='222', section='3', p1='e', p2='3',
+                 p3='ii'))
+
+    def test_cfr_citations_multiple(self):
+        text = 'Go look at 2 CFR 111.22, 333.45, and 444.55(e)'
+        citations = cfr_citations(text)
+        self.assertEqual(3, len(citations))
+
+        self.assertEqual('2 CFR 111.22', to_text(citations[0], text))
+        self.assertEqual(citations[0].label.settings,
+                         dict(cfr_title='2', part='111', section='22'))
+
+        self.assertEqual('333.45', to_text(citations[1], text))
+        self.assertEqual(citations[1].label.settings,
+                         dict(cfr_title='2', part='333', section='45'))
+
+        self.assertEqual('444.55(e)', to_text(citations[2], text))
+        self.assertEqual(
+            citations[2].label.settings,
+            dict(cfr_title='2', part='444', section='55', p1='e'))
