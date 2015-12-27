@@ -60,4 +60,5 @@ date_parser = (
 ).setParseAction(lambda m: date(int(m[2]), m[0], int(m[1])))
 
 
-tokenizer = (effective_date | notice_citation | delayed | date_parser)
+tokenizer = utils.QuickSearchable(
+    effective_date | notice_citation | delayed | date_parser)
