@@ -1,6 +1,8 @@
 from itertools import chain
+import logging
 
 from regparser.grammar import unified as grammar
+from regparser.tree.paragraph import p_levels
 from regparser.tree.struct import Node
 
 
@@ -92,10 +94,15 @@ class Label(object):
                 new_settings[field] = self.settings.get(field)
         return Label(**new_settings)
 
-    def to_list(self):
+    def to_list(self, for_node=True):
         """Convert a Label into a struct.Node style label list. Node labels
         don't contain CFR titles"""
-        lst = [self.settings.get(f) for f in self.schema if f != 'cfr_title']
+        if for_node:
+            lst = [self.settings.get(f) for f in self.schema
+                   if f != 'cfr_title']
+        else:
+            lst = [self.settings.get(f) for f in self.schema]
+
         if self.comment:
             lst.append(Node.INTERP_MARK)
             lst.append(self.settings.get('c1'))
@@ -116,6 +123,33 @@ class Label(object):
                 and self.settings == other.settings
                 and self.schema == other.schema
                 and self.comment == other.comment)
+
+    def __hash__(self):
+        return hash(repr(self))
+
+    def __lt__(self, other):
+        self_list = tuple(self.to_list(for_node=False))
+        other_list = tuple(other.to_list(for_node=False))
+        return self_list < other_list
+
+    def labels_until(self, other):
+        """Given `self` as a starting point and `other` as an end point, yield
+        a `Label` for paragraphs in between. For example, if `self` is
+        something like 123.45(a)(2) and end is 123.45(a)(6), this should emit
+        123.45(a)(3), (4), and (5)"""
+        self_list = self.to_list(for_node=False)
+        other_list = other.to_list(for_node=False)
+        field = self.schema[len(self_list)-1]
+        start, end = self_list[-1], other_list[-1]
+        level = [lvl for lvl in p_levels if start in lvl and end in lvl]
+        if (self.schema != other.schema or len(self_list) != len(other_list)
+                or self_list[:-1] != other_list[:-1] or not level):
+            logging.warning("Bad use of 'through': %s - %s", self, other)
+        else:
+            level = level[0]
+            start_idx, end_idx = level.index(start), level.index(end)
+            for marker in level[start_idx+1:end_idx]:
+                yield self.copy(**{field: marker})
 
 
 class ParagraphCitation(object):
@@ -165,8 +199,7 @@ def single_citations(matches, initial_label, comment=False):
             #   Remove the marker from the beginning of the string
             start = match.marker.pos[1]
         yield ParagraphCitation(
-            start, end, match_to_label(match, initial_label,
-                                       comment=comment),
+            start, end, match_to_label(match, initial_label, comment),
             full_start=full_start)
 
 
