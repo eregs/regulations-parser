@@ -203,22 +203,26 @@ def single_citations(matches, initial_label, comment=False):
             full_start=full_start)
 
 
-def multiple_citations(matches, initial_label, comment=False):
+def multiple_citations(matches, initial_label, comment=False,
+                       include_fill=False):
     """Similar to single_citations save that we have a compound citation, such
     as "paragraphs (b), (d), and (f). Yield a ParagraphCitation for each
     sub-citation. We refer to the first match as "head" and all following as
     "tail" """
-    for match, start, end in matches:
+    for outer_match, outer_start, outer_end in matches:
         label = initial_label   # Share context in between sub-citations
-        for submatch in chain([match.head], match.tail):
-            cit = ParagraphCitation(
-                submatch.pos[0], submatch.pos[1],
-                match_to_label(submatch.tokens, label, comment=comment),
-                full_start=start,
-                full_end=end,
+        for submatch in chain([outer_match.head], outer_match.tail):
+            match = submatch.match or submatch     # might be wrapped
+            new_label = match_to_label(match.tokens, label, comment)
+            if include_fill and submatch.through:
+                for fill_label in label.labels_until(new_label):
+                    yield ParagraphCitation(
+                        outer_start, outer_end, fill_label, in_clause=True)
+            yield ParagraphCitation(
+                match.pos.start, match.pos.end, new_label,
+                full_start=outer_start, full_end=outer_end,
                 in_clause=True)
-            label = cit.label   # update the label to keep context
-            yield cit
+            label = new_label   # update the label to keep context
 
 
 def internal_citations(text, initial_label=None,
@@ -301,13 +305,14 @@ def remove_citation_overlaps(text, possible_markers):
                        for e in internal_citations(text))]
 
 
-def cfr_citations(text):
+def cfr_citations(text, include_fill=False):
     """Find all citations which include CFR title and part"""
     citations = []
     initial_label = Label()
     citations.extend(single_citations(grammar.cfr_p.scanString(text),
                                       initial_label))
     citations.extend(multiple_citations(
-        grammar.multiple_cfr_p.scanString(text), initial_label))
+        grammar.multiple_cfr_p.scanString(text), initial_label,
+        include_fill=include_fill))
 
     return select_encompassing_citations(citations)

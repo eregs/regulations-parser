@@ -119,9 +119,11 @@ def make_multiple(head, tail=None, wrap_tail=False):
     # Use `Empty` over `copy` as `head`/`tail` may be single-element grammars,
     # in which case we don't want to completely rename the results
     head = (head + Empty()).setParseAction(keep_pos).setResultsName("head")
-    tail = (tail + Empty()).setParseAction(keep_pos).setResultsName(
+    # We need to address just the matching text separately from the
+    # conjunctive phrase
+    tail = (tail + Empty()).setParseAction(keep_pos).setResultsName("match")
+    tail = (atomic.conj_phrases + tail).setResultsName(
         "tail", listAllMatches=True)
-    tail = atomic.conj_phrases + tail
     if wrap_tail:
         tail = Optional(Suppress('(')) + tail + Optional(Suppress(')'))
     return head + OneOrMore(tail)

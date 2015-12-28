@@ -338,6 +338,28 @@ class CitationsTest(TestCase):
             citations[2].label.settings,
             dict(cfr_title='2', part='444', section='55', p1='e'))
 
+    def test_cfr_citations_through(self):
+        text = u'See 27 CFR 479.112, 479.114 – 479.119'
+        citations = cfr_citations(text)
+        self.assertEqual(3, len(citations))
+        twelve, fourteen, nineteen = citations
+
+        self.assertEqual('27 CFR 479.112', to_text(twelve, text))
+        self.assertEqual(twelve.label.settings,
+                         dict(cfr_title='27', part='479', section='112'))
+        self.assertEqual('479.114', to_text(fourteen, text))
+        self.assertEqual(fourteen.label.settings,
+                         dict(cfr_title='27', part='479', section='114'))
+        self.assertEqual('479.119', to_text(nineteen, text))
+        self.assertEqual(nineteen.label.settings,
+                         dict(cfr_title='27', part='479', section='119'))
+
+        citations = cfr_citations(text, include_fill=True)
+        self.assertEqual(
+            [citation.label.settings for citation in citations],
+            [dict(cfr_title='27', part='479', section=str(i))
+             for i in (112, 114, 115, 116, 117, 118, 119)])
+
 
 class CitationsLabelTest(TestCase):
     def test_using_default_schema(self):
