@@ -423,6 +423,7 @@ class RegTextTest(XMLBuilderMixin, NodeAccessorMixin, TestCase):
         with self.section() as root:
             root.P("(a) aaaa")
             with root.NOTES() as extract:
+                extract.PRTPAGE(P="8")
                 extract.P("1. Some content")
                 extract.P("2. Other content")
         node = reg_text.build_from_section('8675', self.tree.render_xml())[0]

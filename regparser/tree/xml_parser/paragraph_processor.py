@@ -213,7 +213,9 @@ class FencedMatcher(BaseMatcher):
     def derive_nodes(self, xml, processor=None):
         texts = ["```" + self.fence_type(xml)]
         for child in xml:
-            texts.append(tree_utils.get_node_text(child).strip())
+            text = tree_utils.get_node_text(child).strip()
+            if text:
+                texts.append(text)
         texts.append("```")
 
         return [Node("\n".join(texts), label=[mtypes.MARKERLESS])]
