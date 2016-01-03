@@ -1,6 +1,7 @@
-import re
+from contextlib import contextmanager
 from json import JSONEncoder
 import hashlib
+import re
 
 from lxml import etree
 
@@ -12,6 +13,7 @@ class Node(object):
     SUBPART = u'subpart'
     EMPTYPART = u'emptypart'
     EXTRACT = u'extract'
+    ALL_TYPES = (APPENDIX, INTERP, REGTEXT, SUBPART, EMPTYPART, EXTRACT)
 
     INTERP_MARK = 'Interp'
 
@@ -44,15 +46,25 @@ class Node(object):
 
     def depth(self):
         """Inspect the label and type to determine the node's depth"""
-        if len(self.label) > 1 and self.node_type in (self.REGTEXT,
-                                                      self.EXTRACT):
-            #   Add one for the subpart level
-            return len(self.label) + 1
-        elif self.node_type in (self.SUBPART, self.EMPTYPART):
-            #   Subparts all on the same level
-            return 2
-        else:
-            return len(self.label)
+        with node_type_cases(self.node_type) as cases:
+            def default():
+                return len(self.label)
+            cases.appendix = cases.interp = default
+
+            @cases.node_types
+            def regtext_or_extract():
+                if len(self.label) > 1:
+                    #   Add one for the subpart level
+                    return len(self.label) + 1
+                else:
+                    return default()
+
+            @cases.node_types
+            def subpart_or_emptypart():
+                #   Subparts all on the same level
+                return 2
+
+        return cases.return_value
 
     @staticmethod
     def is_markerless_label(label):
@@ -62,6 +74,43 @@ class Node(object):
 
     def is_markerless(self):
         return bool(self.is_markerless_label(self.label))
+
+    def walk(self, per_node):
+        walk(self, per_node)
+
+
+class NodeTypeCases(object):
+    def __init__(self, node_or_type):
+        self.node_type = getattr(node_or_type, 'node_type', node_or_type)
+        for node_type in Node.ALL_TYPES:
+            setattr(self, node_type, None)
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, e_type, e_value, e_traceback):
+        missing = self.missing_types()
+        if missing:
+            raise Exception("Missing types: %s", tuple(missing))
+        else:
+            self.return_value = getattr(self, self.node_type)()
+
+    def missing_types(self):
+        return [node_type for node_type in Node.ALL_TYPES
+                if not callable(getattr(self, node_type))]
+
+    def node_types(self, fn):
+        for node_type in fn.func_name.split('_or_'):
+            setattr(self, node_type, fn)
+
+    def noop(self):
+        pass
+
+
+@contextmanager
+def node_type_cases(node_or_type):
+    with NodeTypeCases(node_or_type) as cases:
+        yield cases
 
 
 class NodeEncoder(JSONEncoder):
