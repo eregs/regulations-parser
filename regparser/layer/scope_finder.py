@@ -27,15 +27,17 @@ class ScopeFinder(object):
         struct.walk(root, self._subpart_per_node)
 
     def _subpart_per_node(self, node):
-        if node.node_type == struct.Node.SUBPART:
-            self.__current_subpart = node.label[2]
-        elif node.node_type == struct.Node.EMPTYPART:
-            self.__current_subpart = None
-        if (node.node_type in (struct.Node.REGTEXT, struct.Node.APPENDIX)
-                and len(node.label) == 2):
-            # Subparts
-            section = node.label[-1]
-            self.subpart_map[self.__current_subpart].append(section)
+        with struct.node_type_cases(node.node_type) as case:
+            if case.match(struct.Node.SUBPART):
+                self.__current_subpart = node.label[2]
+            if case.match(struct.Node.EMPTYPART):
+                self.__current_subpart = None
+            if case.match(struct.Node.REGTEXT, struct.Node.APPENDIX):
+                if len(node.label) == 2:
+                    # Subparts
+                    section = node.label[-1]
+                    self.subpart_map[self.__current_subpart].append(section)
+            case.ignore(struct.Node.INTERP, struct.Node.EXTRACT)
 
     def scope_of_text(self, text, label_struct, verify_prefix=True):
         """Given specific text, try to determine the definition scope it
