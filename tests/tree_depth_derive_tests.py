@@ -13,8 +13,8 @@ class DeriveTests(TestCase):
         """Verify that the set of markers resolves to the provided set of
         depths (in any order). Allows extra contraints."""
         solutions = derive_depths(markers, extra)
-        results = [[a.depth for a in s] for s in solutions]
-        self.assertItemsEqual(results, depths_set)
+        results = {tuple(a.depth for a in s) for s in solutions}
+        self.assertItemsEqual(results, {tuple(s) for s in depths_set})
 
     def test_ints(self):
         self.assert_depth_match(['1', '2', '3', '4'],
@@ -197,6 +197,25 @@ class DeriveTests(TestCase):
         self.assert_depth_match(
             [MARKERLESS, STARS_TAG, MARKERLESS],
             [0, 0, 0])
+
+    def test_cap_roman(self):
+        """Capitalized roman numerals can be paragraphs"""
+        self.assert_depth_match(
+            ['x', '1', 'A', 'i', 'I'],
+            [0, 1, 2, 3, 4])
+
+    def test_limit_paragraph_types(self):
+        """Limiting paragraph types limits how the markers are interpreted"""
+        self.assert_depth_match(
+            ['G', 'H', 'I'],
+            [0, 0, 0],
+            [0, 0, 1]
+        )
+        self.assert_depth_match_extra(
+            ['G', 'H', 'I'],
+            [optional_rules.limit_paragraph_types(markers.upper)],
+            [0, 0, 0]
+        )
 
     def test_debug_idx(self):
         """Find the index of the first error when attempting to derive
