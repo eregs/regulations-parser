@@ -366,6 +366,10 @@ class CitationsLabelTest(TestCase):
     def test_from_node(self):
         for lst, typ in [(['111'], Node.REGTEXT),
                          (['111', '31', 'a', '3'], Node.REGTEXT),
+                         # _Very_ deeply nested, ignoring the recommended
+                         # 6-level paragraph limit
+                         (['111', '2', 'c', '4', 'v', 'F', '7', 'viii',
+                           'p1', 'p1', 'p1'], Node.REGTEXT),
                          (['111', 'A', 'b'], Node.APPENDIX),
                          (['111', 'A', '4', 'a'], Node.APPENDIX),
                          (['111', '21', 'Interp'], Node.INTERP),
