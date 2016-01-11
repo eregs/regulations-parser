@@ -5,7 +5,7 @@ from regparser.layer.key_terms import KeyTerms, keyterm_to_int
 from regparser.layer.formatting import table_xml_to_plaintext
 from regparser.tree.depth import heuristics, markers as mtypes
 from regparser.tree.depth.derive import debug_idx, derive_depths
-from regparser.tree.struct import Node
+from regparser.tree.struct import Node, node_type_cases
 from regparser.tree.xml_parser import tree_utils
 
 
@@ -96,11 +96,15 @@ class ParagraphProcessor(object):
             and labels[1] != mtypes.MARKERLESS)
 
         first_xml = nodes[0].source_xml if len(nodes) else None
-        table_first = first_xml is not None and first_xml.tag == "GPOTABLE"
-        extract_first = nodes[0].node_type == "extract" if len(nodes) else None
-        if not any(
-            [table_first, extract_first]) and any(
-                [only_one, switches_after_first]):
+        first_is_complex = (first_xml is not None
+                            and first_xml.tag == 'GPOTABLE')
+        if len(nodes):
+            with node_type_cases(nodes[0].node_type) as case:
+                if case.match(Node.SUBPART, Node.EMPTYPART, Node.EXTRACT):
+                    first_is_complex = True
+                case.ignore(Node.APPENDIX, Node.INTERP, Node.REGTEXT)
+
+        if not first_is_complex and any([only_one, switches_after_first]):
             return nodes[0], nodes[1:]
         else:
             return None, nodes

@@ -77,7 +77,10 @@ class NodeTypeCases(object):
     def __enter__(self):
         return self
 
-    def __exit__(self, e_type, e_Value, e_traceback):
+    def __exit__(self, e_type, e_value, e_traceback):
+        if e_value:
+            raise e_value
+
         missing = [nt for nt in Node.ALL_TYPES if not(self.matched.get(nt))]
         if missing:
             raise Exception("Missing types: %s", tuple(missing))
@@ -128,10 +131,8 @@ class FullNodeEncoder(JSONEncoder):
 
 def node_decode_hook(d):
     """Convert a JSON object into a Node"""
-    if set(
-            ('text', 'children',
-                'label', 'node_type')) - set(d.keys()) == set():
-
+    expected_fields = set(['text', 'children', 'label', 'node_type'])
+    if not (expected_fields - set(d.keys())):
         return Node(
             d['text'], d['children'], d['label'],
             d.get('title', None), d['node_type'])

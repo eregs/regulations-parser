@@ -8,7 +8,7 @@ from pyparsing import ParseException
 
 from regparser.citations import Label
 from regparser.grammar import terms as grammar
-from regparser.tree.struct import Node
+from regparser.tree.struct import Node, node_type_cases
 import settings
 
 
@@ -145,20 +145,30 @@ class XMLTermMeans(FinderBase):
             start += 1
 
 
+_NORMALIZE_RE = re.compile(r'[^a-z]+')
+
+
+def _normalize(title):
+    title = (title or "").lower()
+    return _NORMALIZE_RE.sub('', title)
+
+
 class DefinitionKeyterm(object):
     """Matches definitions identified by being a first-level paragraph in a
     section with a specific title"""
-    def __init__(self, parent):
-        is_regtext = parent and parent.node_type == Node.REGTEXT
-        is_section = is_regtext and len(parent.label) == 2
-        title = parent and self._normalize(parent.title)
-        title_match = title in (self._normalize('Definition'),
-                                self._normalize('Meaning of terms.'))
-        self.title_matches = is_section and title_match
+    _section_titles = ['Definition', 'Meaning of terms.']
+    _section_titles = [_normalize(phrase) for phrase in _section_titles]
 
-    def _normalize(self, title):
-        title = (title or "").lower()
-        return re.sub(r'[^a-z]+', '', title)
+    def __init__(self, parent):
+        self.title_matches = False
+        if parent:
+            with node_type_cases(parent.node_type) as case:
+                case.ignore(Node.APPENDIX, Node.INTERP, Node.SUBPART,
+                            Node.EMPTYPART, Node.EXTRACT)
+                if case.match(Node.REGTEXT) and len(parent.label) == 2:
+                    title = _normalize(parent.title)
+                    self.title_matches = any(
+                        title == marker for marker in self._section_titles)
 
     def _split_phrase(self, phrase):
         """A single phrase might contain multiple terms. Attempt to split it

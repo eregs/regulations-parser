@@ -1,7 +1,7 @@
 from itertools import chain
 
 from regparser.grammar import unified as grammar
-from regparser.tree.struct import Node
+from regparser.tree.struct import Node, node_type_cases
 
 
 class Label(object):
@@ -14,22 +14,30 @@ class Label(object):
 
     comment_schema = ('comment', 'c1', 'c2', 'c3', 'c4')
 
-    @staticmethod
-    def from_node(node):
+    @classmethod
+    def from_node(cls, node):
         """Best guess for schema based on the provided
            regparser.tree.struct.Node"""
-        if (node.node_type == Node.APPENDIX
-            or (node.node_type == Node.INTERP
-                and len(node.label) > 2
-                and node.label[1].isalpha())):
-            if len(node.label) > 2 and node.label[2].isdigit():
-                schema = Label.app_sect_schema
-            else:
-                schema = Label.app_schema
-        else:
-            schema = Label.sect_schema
+        settings = {'comment': False}
+        with node_type_cases(node.node_type) as case:
+            if case.match(Node.APPENDIX):
+                if len(node.label) > 2 and node.label[2].isdigit():
+                    schema = cls.app_sect_schema
+                else:
+                    schema = cls.app_schema
+            if case.match(Node.INTERP):
+                settings['comment'] = True
+                if len(node.label) > 2 and node.label[1].isalpha():
+                    if node.label[2].isdigit():
+                        schema = cls.app_sect_schema
+                    else:
+                        schema = cls.app_schema
+                else:
+                    schema = cls.sect_schema
+            if case.match(Node.REGTEXT, Node.SUBPART, Node.EMPTYPART,
+                          Node.EXTRACT):
+                schema = cls.sect_schema
 
-        settings = {'comment': node.node_type == Node.INTERP}
         for idx, value in enumerate(node.label):
             if value == 'Interp':
                 #   Add remaining bits as comment fields

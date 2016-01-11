@@ -17,8 +17,14 @@ class Interpretations(Layer):
     def pre_process(self):
         """Create a lookup table for each interpretation"""
         def per_node(node):
-            if (node.node_type != struct.Node.INTERP
-                    or node.label[-1] != struct.Node.INTERP_MARK):
+            with struct.node_type_cases(node.node_type) as case:
+                if case.match(struct.Node.INTERP):
+                    exit_early = node.label[-1] != struct.Node.INTERP_MARK
+                if case.match(struct.Node.APPENDIX, struct.Node.REGTEXT,
+                              struct.Node.SUBPART, struct.Node.EMPTYPART,
+                              struct.Node.EXTRACT):
+                    exit_early = True
+            if exit_early:
                 return
 
             #   Always add a connection based on the interp's label
