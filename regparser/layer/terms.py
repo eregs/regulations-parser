@@ -51,13 +51,16 @@ class Terms(Layer):
 
         def per_node(node):
             stack.add(node.depth(), node)
-            if node.node_type in (struct.Node.REGTEXT, struct.Node.SUBPART,
-                                  struct.Node.EMPTYPART):
-                included, excluded = self.node_definitions(node, stack)
-                if included:
-                    for scope in self.scope_finder.determine_scope(stack):
-                        self.scoped_terms[scope].extend(included)
-                self.scoped_terms['EXCLUDED'].extend(excluded)
+            with struct.node_type_cases(node.node_type) as case:
+                if case.match(struct.Node.REGTEXT, struct.Node.SUBPART,
+                              struct.Node.EMPTYPART):
+                    included, excluded = self.node_definitions(node, stack)
+                    if included:
+                        for scope in self.scope_finder.determine_scope(stack):
+                            self.scoped_terms[scope].extend(included)
+                    self.scoped_terms['EXCLUDED'].extend(excluded)
+                case.ignore(struct.Node.APPENDIX, struct.Node.INTERP,
+                            struct.Node.EXTRACT)
 
         struct.walk(self.tree, per_node)
 

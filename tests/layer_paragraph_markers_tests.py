@@ -16,10 +16,6 @@ class ParagraphMarkersTest(TestCase):
         self.assertEqual(None, pm.process(
             Node("Later (a)", label=["a"])
         ))
-        self.assertEqual(None, pm.process(
-            Node("(a) Interpretation", label=["a", Node.INTERP_MARK],
-                 node_type=Node.INTERP)
-        ))
         self.assertEqual(None, pm.process(Node("References (a)",
                                                label=["111", "A", "a"],
                                                node_type=Node.APPENDIX)))

@@ -30,14 +30,18 @@ def bad_label(node):
     label. We can do this because we know what type of character should up at
     what point in the label. """
 
-    if node.node_type == struct.Node.REGTEXT:
-        for i, l in enumerate(node.label):
-            if i == 0 and not l.isdigit():
-                return True
-            elif i == 1 and not l.isdigit():
-                return True
-            elif i > 1 and l not in p_levels[i-2]:
-                return True
+    with struct.node_type_cases(node.node_type) as case:
+        case.ignore(struct.Node.APPENDIX, struct.Node.INTERP,
+                    struct.Node.SUBPART, struct.Node.EMPTYPART,
+                    struct.Node.EXTRACT)
+        if case.match(struct.Node.REGTEXT):
+            for i, l in enumerate(node.label):
+                if i == 0 and not l.isdigit():
+                    return True
+                elif i == 1 and not l.isdigit():
+                    return True
+                elif i > 1 and l not in p_levels[i-2]:
+                    return True
     return False
 
 
@@ -200,7 +204,7 @@ def create_add_amendment(amendment):
         label = change.keys()[0]
         node = struct.find(amendment['node'], label)
         text = node.text.strip()
-        marker = marker_of(node)
+        marker = marker_of(node) or ''
         text = text[len(marker):].strip()
         # Text is stars, but this is not the root. Explicitly try to keep
         # this node

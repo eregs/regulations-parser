@@ -6,7 +6,7 @@ from git import Repo
 from git.exc import InvalidGitRepositoryError
 import requests
 
-from regparser.tree.struct import Node, NodeEncoder
+from regparser.tree.struct import Node, NodeEncoder, node_type_cases
 from regparser.notice.encoder import AmendmentEncoder
 import settings
 
@@ -55,12 +55,15 @@ class GitWriteContent:
     def folder_name(self, node):
         """Directories are generally just the last element a node's label,
         but subparts and interpretations are a little special."""
-        if node.node_type == Node.SUBPART:
-            return '-'.join(node.label[-2:])
-        elif len(node.label) > 2 and node.label[-1] == Node.INTERP_MARK:
-            return '-'.join(node.label[-2:])
-        else:
-            return node.label[-1]
+        with node_type_cases(node.node_type) as case:
+            case.ignore(Node.APPENDIX, Node.INTERP, Node.REGTEXT,
+                        Node.EMPTYPART, Node.EXTRACT)
+            if case.match(Node.SUBPART):
+                return '-'.join(node.label[-2:])
+            elif len(node.label) > 2 and node.label[-1] == Node.INTERP_MARK:
+                return '-'.join(node.label[-2:])
+            else:
+                return node.label[-1]
 
     def write_tree(self, root_path, node):
         """Given a file system path and a node, write the node's contents and

@@ -1,6 +1,7 @@
-import re
-from json import JSONEncoder
+from contextlib import contextmanager
 import hashlib
+from json import JSONEncoder
+import re
 
 from lxml import etree
 
@@ -12,6 +13,7 @@ class Node(object):
     SUBPART = u'subpart'
     EMPTYPART = u'emptypart'
     EXTRACT = u'extract'
+    ALL_TYPES = (APPENDIX, INTERP, REGTEXT, SUBPART, EMPTYPART, EXTRACT)
 
     INTERP_MARK = 'Interp'
 
@@ -44,15 +46,18 @@ class Node(object):
 
     def depth(self):
         """Inspect the label and type to determine the node's depth"""
-        if len(self.label) > 1 and self.node_type in (self.REGTEXT,
-                                                      self.EXTRACT):
-            #   Add one for the subpart level
-            return len(self.label) + 1
-        elif self.node_type in (self.SUBPART, self.EMPTYPART):
-            #   Subparts all on the same level
-            return 2
-        else:
-            return len(self.label)
+        with node_type_cases(self.node_type) as case:
+            if case.match(self.REGTEXT, self.EXTRACT):
+                if len(self.label) > 1:
+                    #   Add one for the subpart level
+                    result = len(self.label) + 1
+                else:
+                    result = len(self.label)
+            if case.match(self.SUBPART, self.EMPTYPART):
+                result = 2
+            if case.match(self.APPENDIX, self.INTERP):
+                result = len(self.label)
+        return result
 
     @staticmethod
     def is_markerless_label(label):
@@ -62,6 +67,37 @@ class Node(object):
 
     def is_markerless(self):
         return bool(self.is_markerless_label(self.label))
+
+
+class NodeTypeCases(object):
+    def __init__(self, node_or_type):
+        self.node_type = getattr(node_or_type, 'node_type', node_or_type)
+        self.matched = {node_type: False for node_type in Node.ALL_TYPES}
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, e_type, e_value, e_traceback):
+        if e_value:
+            raise e_value
+
+        missing = [nt for nt in Node.ALL_TYPES if not(self.matched.get(nt))]
+        if missing:
+            raise Exception("Missing types: %s", tuple(missing))
+
+    def match(self, *node_types):
+        self.ignore(*node_types)
+        return any(self.node_type == node_type for node_type in node_types)
+
+    def ignore(self, *node_types):
+        for node_type in node_types:
+            self.matched[node_type] = True
+
+
+@contextmanager
+def node_type_cases(node_or_type):
+    with NodeTypeCases(node_or_type) as cases:
+        yield cases
 
 
 class NodeEncoder(JSONEncoder):
@@ -95,10 +131,8 @@ class FullNodeEncoder(JSONEncoder):
 
 def node_decode_hook(d):
     """Convert a JSON object into a Node"""
-    if set(
-            ('text', 'children',
-                'label', 'node_type')) - set(d.keys()) == set():
-
+    expected_fields = set(['text', 'children', 'label', 'node_type'])
+    if not (expected_fields - set(d.keys())):
         return Node(
             d['text'], d['children'], d['label'],
             d.get('title', None), d['node_type'])

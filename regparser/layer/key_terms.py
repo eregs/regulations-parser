@@ -38,7 +38,7 @@ class KeyTerms(Layer):
     @staticmethod
     def process_node_text(node):
         """Take a paragraph, remove the marker, and extraneous whitespaces."""
-        marker = marker_of(node)
+        marker = marker_of(node) or ''
         text = node.tagged_text
 
         text = text.replace(marker, '', 1).strip()
