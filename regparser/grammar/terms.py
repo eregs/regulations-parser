@@ -4,10 +4,11 @@ from pyparsing import (
     Word, ZeroOrMore)
 
 from regparser.grammar import atomic, unified
-from regparser.grammar.utils import DocLiteral, keep_pos, Marker
+from regparser.grammar.utils import (
+    DocLiteral, keep_pos, Marker, QuickSearchable)
 
 
-smart_quotes = (
+smart_quotes = QuickSearchable(
     Suppress(DocLiteral(u'“', "left-smart-quote"))
     + SkipTo(
         DocLiteral(u'”', "right-smart-quote")
@@ -22,7 +23,7 @@ e_tag = (
     + Suppress(Literal("</E>"))
 )
 
-xml_term_parser = (
+xml_term_parser = QuickSearchable(
     LineStart()
     + Optional(Suppress(unified.any_depth_p))
     + e_tag.setResultsName("head")
@@ -38,7 +39,7 @@ xml_term_parser = (
           + Marker("meaning") + Marker("as")))
 )
 
-key_term_parser = (
+key_term_parser = QuickSearchable(
     LineStart()
     + Optional(Suppress(unified.any_depth_p))
     + Suppress(Regex(r"<E[^>]*>"))
@@ -49,7 +50,7 @@ key_term_parser = (
     + Suppress(Literal("</E>"))
 )
 
-scope_term_type_parser = (
+scope_term_type_parser = QuickSearchable(
     Marker("purposes") + Marker("of") + Optional(Marker("this"))
     + SkipTo(",").setResultsName("scope") + Literal(",")
     + Optional(Marker("the") + Marker("term"))

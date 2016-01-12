@@ -4,7 +4,7 @@ from pyparsing import Empty, FollowedBy, LineEnd, Literal, OneOrMore, Optional
 from pyparsing import Suppress, SkipTo, ZeroOrMore
 
 from regparser.grammar import atomic
-from regparser.grammar.utils import keep_pos, Marker
+from regparser.grammar.utils import keep_pos, Marker, QuickSearchable
 
 period_section = Suppress(".") + atomic.section
 part_section = atomic.part + period_section
@@ -21,7 +21,8 @@ depth4_p = atomic.upper_p + Optional(depth5_p)
 depth3_p = atomic.roman_p + Optional(depth4_p)
 depth2_p = atomic.digit_p + Optional(depth3_p)
 depth1_p = atomic.lower_p + ~FollowedBy(atomic.upper_p) + Optional(depth2_p)
-any_depth_p = depth1_p | depth2_p | depth3_p | depth4_p | depth5_p | depth6_p
+any_depth_p = QuickSearchable(
+    depth1_p | depth2_p | depth3_p | depth4_p | depth5_p | depth6_p)
 
 depth3_c = atomic.upper_c + Optional(atomic.em_digit_c)
 depth2_c = atomic.roman_c + Optional(depth3_c)
@@ -30,23 +31,23 @@ any_a = atomic.upper_a | atomic.digit_a
 
 section_comment = atomic.section + depth1_c
 
-section_paragraph = atomic.section + depth1_p
+section_paragraph = QuickSearchable(atomic.section + depth1_p)
 
-mps_paragraph = marker_part_section + Optional(depth1_p)
+mps_paragraph = QuickSearchable(marker_part_section + Optional(depth1_p))
 ps_paragraph = part_section + Optional(depth1_p)
-part_section_paragraph = (
+part_section_paragraph = QuickSearchable(
     atomic.part + Suppress(".") + atomic.section + depth1_p)
 
 
 part_section + Optional(depth1_p)
 
-m_section_paragraph = (
+m_section_paragraph = QuickSearchable(
     atomic.paragraph_marker.copy().setParseAction(
         keep_pos).setResultsName("marker")
     + atomic.section
     + depth1_p)
 
-marker_paragraph = (
+marker_paragraph = QuickSearchable(
     (atomic.paragraph_marker | atomic.paragraphs_marker).setParseAction(
         keep_pos).setResultsName("marker")
     + depth1_p)
@@ -64,7 +65,7 @@ def appendix_section(match):
     else:
         return None
 
-appendix_with_section = (
+appendix_with_section = QuickSearchable(
     atomic.appendix
     + '-'
     + (atomic.appendix_digit
@@ -72,7 +73,7 @@ appendix_with_section = (
                     | atomic.upper_p)
        ).setParseAction(appendix_section).setResultsName("appendix_section"))
 
-appendix_with_part = (
+appendix_with_part = QuickSearchable(
     atomic.appendix_marker.copy().setParseAction(keep_pos).setResultsName(
         "marker")
     + atomic.appendix
@@ -80,7 +81,7 @@ appendix_with_part = (
     + atomic.upper_roman_a
     + Optional(any_a) + Optional(any_a) + Optional(any_a))
 
-marker_appendix = (
+marker_appendix = QuickSearchable(
     atomic.appendix_marker.copy().setParseAction(keep_pos).setResultsName(
         "marker")
     + (appendix_with_section | atomic.appendix))
@@ -102,7 +103,7 @@ marker_subpart_title = (
     + SkipTo(LineEnd()).setResultsName("subpart_title")
 )
 
-marker_comment = (
+marker_comment = QuickSearchable(
     atomic.comment_marker.copy().setParseAction(keep_pos).setResultsName(
         "marker")
     + (section_comment | section_paragraph | ps_paragraph | mps_paragraph)
@@ -126,7 +127,7 @@ def make_multiple(head, tail=None, wrap_tail=False):
         "tail", listAllMatches=True)
     if wrap_tail:
         tail = Optional(Suppress('(')) + tail + Optional(Suppress(')'))
-    return head + OneOrMore(tail)
+    return QuickSearchable(head + OneOrMore(tail))
 
 _inner_non_comment = (
     any_depth_p
@@ -134,7 +135,8 @@ _inner_non_comment = (
     | (atomic.section + depth1_p)
     | appendix_with_section | marker_appendix)
 
-multiple_non_comments = (
+
+multiple_non_comments = QuickSearchable(
     (atomic.paragraphs_marker | atomic.paragraph_marker
         | atomic.sections_marker | atomic.section_marker)
     + make_multiple(_inner_non_comment, wrap_tail=True))
@@ -142,7 +144,7 @@ multiple_non_comments = (
 multiple_section_paragraphs = make_multiple(
     head=section_paragraph, tail=_inner_non_comment)
 
-multiple_period_sections = (
+multiple_period_sections = QuickSearchable(
     atomic.sections_marker
     + make_multiple(head=part_section, tail=period_section))
 
@@ -150,11 +152,11 @@ multiple_appendix_section = make_multiple(
     head=appendix_with_section,
     tail=_inner_non_comment, wrap_tail=True)
 
-multiple_appendices = (
+multiple_appendices = QuickSearchable(
     atomic.appendices_marker
     + make_multiple(atomic.appendix))
 
-multiple_comments = (
+multiple_comments = QuickSearchable(
     (atomic.comments_marker | atomic.comment_marker)
     + make_multiple(
         head=(Optional(atomic.section_marker) + _inner_non_comment
@@ -163,7 +165,7 @@ multiple_comments = (
         wrap_tail=True))
 
 # e.g. 12 CFR 1005.10
-cfr_p = (
+cfr_p = QuickSearchable(
     atomic.title
     + Suppress("CFR")
     + atomic.part

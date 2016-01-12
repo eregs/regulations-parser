@@ -1,6 +1,6 @@
 from pyparsing import LineEnd, LineStart, SkipTo
 
-from regparser.grammar import atomic, unified
+from regparser.grammar import atomic, unified, utils
 
 
 section = (
@@ -31,4 +31,5 @@ appendix = (
 )
 
 
-parser = LineStart() + (section | marker_par | par | appendix)
+parser = utils.QuickSearchable(
+    LineStart() + (section | marker_par | par | appendix))
