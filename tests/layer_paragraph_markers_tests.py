@@ -7,54 +7,26 @@ from regparser.tree.struct import Node
 class ParagraphMarkersTest(TestCase):
     def test_process_no_results(self):
         pm = ParagraphMarkers(None)
-        self.assertEqual(None, pm.process(
-            Node("This has no paragraph", label=["a"])
-        ))
-        self.assertEqual(None, pm.process(
-            Node("(b) Different paragraph", label=["a"])
-        ))
-        self.assertEqual(None, pm.process(
-            Node("Later (a)", label=["a"])
-        ))
-        self.assertEqual(None, pm.process(
-            Node("(a) Interpretation", label=["a", Node.INTERP_MARK],
-                 node_type=Node.INTERP)
-        ))
-        self.assertEqual(None, pm.process(Node("References (a)",
-                                               label=["111", "A", "a"],
-                                               node_type=Node.APPENDIX)))
-        self.assertEqual(None, pm.process(Node("References a.",
-                                               label=["111", "A", "a"],
-                                               node_type=Node.APPENDIX)))
+        for text, node_type, label in (
+                ('This has no paragraph', Node.REGTEXT, ['a']),
+                ('(b) Different paragraph', Node.REGTEXT, ['a']),
+                ('Later (a)', Node.REGTEXT, ['a']),
+                ('References (a)', Node.APPENDIX, ['111', 'A', 'a']),
+                ('References a.', Node.APPENDIX, ['111', 'A', 'a'])):
+            node = Node(text, label=label, node_type=node_type)
+            self.assertEqual(None, pm.process(node))
 
     def test_process_with_results(self):
         pm = ParagraphMarkers(None)
-        self.assertEqual(pm.process(Node("(c) Paragraph", label=['c'])),
-                         [{"text": "(c)", "locations": [0]}])
-        self.assertEqual(
-            pm.process(Node("\n(vi) Paragraph", label=['c', 'vi'])), [{
-                "text": "(vi)", "locations": [0]
-            }]
-        )
-        self.assertEqual(
-            pm.process(Node("ii. Paragraph",
-                            label=['ii', Node.INTERP_MARK],
-                            node_type=Node.INTERP)),
-            [{"text": "ii.", "locations": [0]}]
-        )
-        self.assertEqual(
-            pm.process(Node("A. Paragraph",
-                            label=['ii', 'A', Node.INTERP_MARK],
-                            node_type=Node.INTERP)),
-            [{"text": "A.", "locations": [0]}]
-        )
-        self.assertEqual(
-            pm.process(Node("(a) Paragraph",
-                            label=['111', 'A', 'a'],
-                            node_type=Node.APPENDIX)),
-            [{'text': '(a)', 'locations': [0]}])
-        self.assertEqual(
-            pm.process(Node("a. Paragraph",
-                            label=['111', 'A', 'a'],
-                            node_type=Node.APPENDIX)),
-            [{'text': 'a.', 'locations': [0]}])
+        for m, nt, l in (('(c)', Node.REGTEXT, ['c']),
+                         ('(vi)', Node.REGTEXT, ['c', 'vi']),
+                         ('ii.', Node.INTERP, ['ii', Node.INTERP_MARK]),
+                         ('A.', Node.INTERP, ['ii', 'A', Node.INTERP_MARK]),
+                         ('(a)', Node.APPENDIX, ['111', 'A', 'a']),
+                         ('a.', Node.APPENDIX, ['111', 'A', 'a'])):
+            expected_result = [{"text": m, "locations": [0]}]
+            node = Node(m + " Paragraph", label=l, node_type=nt)
+            self.assertEqual(pm.process(node), expected_result)
+            # whitespace is ignored
+            node.text = "\n" + node.text
+            self.assertEqual(pm.process(node), expected_result)
