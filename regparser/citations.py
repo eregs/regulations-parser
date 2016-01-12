@@ -9,15 +9,19 @@ class Label(object):
     app_sect_schema = ('part', 'appendix', 'appendix_section', 'p1', 'p2',
                        'p3', 'p4', 'p5', 'p6')
     app_schema = ('part', 'appendix', 'p1', 'p2', 'p3', 'p4', 'p5', 'p6')
-    sect_schema = ('part', 'section', 'p1', 'p2', 'p3', 'p4', 'p5', 'p6')
-    default_schema = sect_schema
+    regtext_schema = ('cfr_title', 'part', 'section',
+                      'p1', 'p2', 'p3', 'p4', 'p5', 'p6')
+    default_schema = regtext_schema
 
     comment_schema = ('comment', 'c1', 'c2', 'c3', 'c4')
+    SCHEMA_FIELDS = set(app_sect_schema + app_schema + regtext_schema +
+                        comment_schema)
 
     @staticmethod
     def from_node(node):
-        """Best guess for schema based on the provided
-           regparser.tree.struct.Node"""
+        """Convert between a struct.Node and a Label; use heuristics to
+        determine which schema to follow. Node labels aren't as expressive as
+        Label objects"""
         if (node.node_type == Node.APPENDIX
             or (node.node_type == Node.INTERP
                 and len(node.label) > 2
@@ -27,7 +31,7 @@ class Label(object):
             else:
                 schema = Label.app_schema
         else:
-            schema = Label.sect_schema
+            schema = Label.regtext_schema[1:]   # Nodes don't track CFR title
 
         settings = {'comment': node.node_type == Node.INTERP}
         for idx, value in enumerate(node.label):
@@ -47,8 +51,8 @@ class Label(object):
             return Label.app_sect_schema
         elif 'appendix' in settings:
             return Label.app_schema
-        elif 'section' in settings:
-            return Label.sect_schema
+        elif 'section' in settings or 'cfr_title' in settings:
+            return Label.regtext_schema
 
     def __init__(self, schema=None, **kwargs):
         self.using_default_schema = False
@@ -89,17 +93,21 @@ class Label(object):
         return Label(**new_settings)
 
     def to_list(self):
-        lst = list(map(lambda f: self.settings.get(f), self.schema))
+        """Convert a Label into a struct.Node style label list. Node labels
+        don't contain CFR titles"""
+        lst = [self.settings.get(f) for f in self.schema if f != 'cfr_title']
         if self.comment:
             lst.append(Node.INTERP_MARK)
             lst.append(self.settings.get('c1'))
             lst.append(self.settings.get('c2'))
             lst.append(self.settings.get('c3'))
-
         return filter(bool, lst)
 
     def __repr__(self):
-        return repr(self.to_list())
+        fields = ', '.join(
+            '{}={}'.format(field, repr(self.settings.get(field)))
+            for field in self.schema)
+        return 'Label({})'.format(fields)
 
     def __eq__(self, other):
         """Equality if types match and fields match"""
@@ -140,14 +148,44 @@ def match_to_label(match, initial_label, comment=False):
         field_map = {'comment': True}
     else:
         field_map = {}
-    for field in ('part', 'section', 'appendix', 'appendix_section', 'p1',
-                  'p2', 'p3', 'p4', 'p5', 'p6', 'c1', 'c2', 'c3'):
+    for field in Label.SCHEMA_FIELDS:
         value = getattr(match, field) or getattr(match, 'plaintext_' + field)
         if value:
             field_map[field] = value
 
     label = initial_label.copy(**field_map)
     return label
+
+
+def single_citations(matches, initial_label, comment=False):
+    """For each pyparsing match, yield the corresponding ParagraphCitation"""
+    for match, start, end in matches:
+        full_start = start
+        if match.marker is not '':
+            #   Remove the marker from the beginning of the string
+            start = match.marker.pos[1]
+        yield ParagraphCitation(
+            start, end, match_to_label(match, initial_label,
+                                       comment=comment),
+            full_start=full_start)
+
+
+def multiple_citations(matches, initial_label, comment=False):
+    """Similar to single_citations save that we have a compound citation, such
+    as "paragraphs (b), (d), and (f). Yield a ParagraphCitation for each
+    sub-citation. We refer to the first match as "head" and all following as
+    "tail" """
+    for match, start, end in matches:
+        label = initial_label   # Share context in between sub-citations
+        for submatch in chain([match.head], match.tail):
+            cit = ParagraphCitation(
+                submatch.pos[0], submatch.pos[1],
+                match_to_label(submatch.tokens, label, comment=comment),
+                full_start=start,
+                full_end=end,
+                in_clause=True)
+            label = cit.label   # update the label to keep context
+            yield cit
 
 
 def internal_citations(text, initial_label=None,
@@ -161,52 +199,31 @@ def internal_citations(text, initial_label=None,
         initial_label = Label()
     citations = []
 
-    def multiple_citations(matches, comment):
-        """i.e. head :: tail"""
-        for match, start, end in matches:
-            label = initial_label
-            for submatch in chain([match.head], match.tail):
-                cit = ParagraphCitation(
-                    submatch.pos[0], submatch.pos[1],
-                    match_to_label(submatch.tokens, label, comment=comment),
-                    full_start=start,
-                    full_end=end,
-                    in_clause=True)
-                label = cit.label   # update the label to keep context
-                citations.append(cit)
+    def single(gram, comment):
+        citations.extend(single_citations(gram.scanString(text),
+                                          initial_label, comment))
 
-    def single_citations(matches, comment):
-        for match, start, end in matches:
-            full_start = start
-            if match.marker is not '':
-                #   Remove the marker from the beginning of the string
-                start = match.marker.pos[1]
-            citations.append(ParagraphCitation(
-                start, end, match_to_label(match, initial_label,
-                                           comment=comment),
-                full_start=full_start))
+    def multiple(gram, comment):
+        citations.extend(multiple_citations(gram.scanString(text),
+                                            initial_label, comment))
 
-    single_citations(grammar.marker_comment.scanString(text), True)
+    single(grammar.marker_comment, True)
 
-    multiple_citations(grammar.multiple_non_comments.scanString(text), False)
-    multiple_citations(grammar.multiple_appendix_section.scanString(text),
-                       False)
-    multiple_citations(grammar.multiple_comments.scanString(text), True)
-    multiple_citations(grammar.multiple_appendices.scanString(text), False)
-    multiple_citations(grammar.multiple_period_sections.scanString(text),
-                       False)
+    multiple(grammar.multiple_non_comments, False)
+    multiple(grammar.multiple_appendix_section, False)
+    multiple(grammar.multiple_comments, True)
+    multiple(grammar.multiple_appendices, False)
+    multiple(grammar.multiple_period_sections, False)
 
-    single_citations(grammar.marker_appendix.scanString(text), False)
-    single_citations(grammar.appendix_with_section.scanString(text), False)
-    single_citations(grammar.marker_paragraph.scanString(text), False)
-    single_citations(grammar.mps_paragraph.scanString(text), False)
-    single_citations(grammar.m_section_paragraph.scanString(text), False)
+    single(grammar.marker_appendix, False)
+    single(grammar.appendix_with_section, False)
+    single(grammar.marker_paragraph, False)
+    single(grammar.mps_paragraph, False)
+    single(grammar.m_section_paragraph, False)
     if not require_marker:
-        single_citations(grammar.section_paragraph.scanString(text), False)
-        single_citations(grammar.part_section_paragraph.scanString(text),
-                         False)
-        multiple_citations(
-            grammar.multiple_section_paragraphs.scanString(text), False)
+        single(grammar.section_paragraph, False)
+        single(grammar.part_section_paragraph, False)
+        multiple(grammar.multiple_section_paragraphs, False)
 
     # Some appendix citations are... complex
     for match, start, end in grammar.appendix_with_part.scanString(text):
@@ -221,43 +238,25 @@ def internal_citations(text, initial_label=None,
                 **label), full_start=full_start))
 
     # Internal citations can sometimes be in the form XX CFR YY.ZZ
-    for match, start, end in grammar.internal_cfr_p.scanString(text):
-        # Check if this is a reference to the CFR title and part we are parsing
-        if match.cfr_title == title and match[1] == initial_label.to_list()[0]:
-            full_start = start
-            if match.marker is not '':
-                #   Remove the marker from the beginning of the string
-                start = match.marker.pos[1]
-            citations.append(ParagraphCitation(
-                start, end, match_to_label(match, initial_label),
-                full_start=full_start))
-        else:
-            continue
+    # Check if this is a reference to the CFR title and part we are parsing
+    for cit in cfr_citations(text):
+        cit_title = cit.label.settings.get('cfr_title')
+        cit_part = cit.label.settings.get('part')
+        initial_part = initial_label.settings.get('part')
+        if cit_title == title and cit_part == initial_part:
+            citations.append(cit)
 
-    # And sometimes there are several of them
-    for match, start, end in grammar.multiple_cfr_p.scanString(text):
-        label = initial_label
-        if match.head.cfr_title == title:
-            for submatch in chain([match.head], match.tail):
-                if submatch.part == initial_label.to_list()[0]:
-                    cit = ParagraphCitation(
-                        submatch.pos[0], submatch.pos[1],
-                        match_to_label(submatch.tokens, label),
-                        full_start=start,
-                        full_end=end,
-                        in_clause=True)
-                    label = cit.label   # update the label to keep context
-                    citations.append(cit)
-        else:
-            continue
+    return select_encompassing_citations(citations)
 
-    # Remove any sub-citations
-    final_citations = []
+
+def select_encompassing_citations(citations):
+    """The same citation might be found by multiple grammars; we take the
+    most-encompassing of any overlaps"""
+    encompassing = []
     for cit in citations:
         if not any(cit in other for other in citations):
-            final_citations.append(cit)
-
-    return final_citations
+            encompassing.append(cit)
+    return encompassing
 
 
 def remove_citation_overlaps(text, possible_markers):
@@ -267,3 +266,15 @@ def remove_citation_overlaps(text, possible_markers):
                        or (e.start <= end and e.end >= end)
                        or (start <= e.start and end >= e.end)
                        for e in internal_citations(text))]
+
+
+def cfr_citations(text):
+    """Find all citations which include CFR title and part"""
+    citations = []
+    initial_label = Label()
+    citations.extend(single_citations(grammar.cfr_p.scanString(text),
+                                      initial_label))
+    citations.extend(multiple_citations(
+        grammar.multiple_cfr_p.scanString(text), initial_label))
+
+    return select_encompassing_citations(citations)
