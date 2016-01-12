@@ -2,7 +2,7 @@
 """Atomic components; probably shouldn't use these directly"""
 import string
 
-from pyparsing import CaselessLiteral, Optional, Regex, Suppress, Word
+from pyparsing import Optional, Regex, Suppress, Word
 
 from regparser.grammar.utils import Marker, SuffixMarker, WordBoundaries
 
@@ -95,7 +95,9 @@ conj_phrases = (
     | Marker("and")
     | Marker("or")
     | (Marker("except") + Marker("for"))
-    | Suppress("-")
-    | WordBoundaries(CaselessLiteral("through")).setResultsName("through"))
+    | Suppress(
+        Marker("through") | "-" | u"–"
+        ).setParseAction(lambda: True).setResultsName("through")
+)
 
 title = Word(string.digits).setResultsName("cfr_title")

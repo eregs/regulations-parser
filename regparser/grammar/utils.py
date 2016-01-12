@@ -1,3 +1,4 @@
+from collections import namedtuple
 import re
 
 import pyparsing
@@ -9,12 +10,15 @@ def keep_pos(source, location, tokens):
     return (WrappedResult(tokens, location, pyparsing.getTokensEndLoc()),)
 
 
+Position = namedtuple('Position', ['start', 'end'])
+
+
 class WrappedResult():
     """Keep track of matches along with their position. This is a bit of a
     hack to get around PyParsing's tendency to drop that info."""
     def __init__(self, tokens, start, end):
         self.tokens = tokens
-        self.pos = (start, end)
+        self.pos = Position(start, end)
 
     def __getattr__(self, attr):
         return getattr(self.tokens, attr)

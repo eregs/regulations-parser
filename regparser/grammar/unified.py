@@ -110,69 +110,59 @@ marker_comment = QuickSearchable(
     + Optional(depth1_c)
 )
 
+
+def make_multiple(head, tail=None, wrap_tail=False):
+    """We have a recurring need to parse citations which have a string of
+    terms, e.g. section 11(a), (b)(4), and (5). This function is a shorthand
+    for setting these elements up"""
+    if tail is None:
+        tail = head
+    # Use `Empty` over `copy` as `head`/`tail` may be single-element grammars,
+    # in which case we don't want to completely rename the results
+    head = (head + Empty()).setParseAction(keep_pos).setResultsName("head")
+    # We need to address just the matching text separately from the
+    # conjunctive phrase
+    tail = (tail + Empty()).setParseAction(keep_pos).setResultsName("match")
+    tail = (atomic.conj_phrases + tail).setResultsName(
+        "tail", listAllMatches=True)
+    if wrap_tail:
+        tail = Optional(Suppress('(')) + tail + Optional(Suppress(')'))
+    return QuickSearchable(head + OneOrMore(tail))
+
 _inner_non_comment = (
     any_depth_p
     | (part_section + Optional(depth1_p))
     | (atomic.section + depth1_p)
     | appendix_with_section | marker_appendix)
 
-_inner_non_comment_tail = OneOrMore(
-    Optional(Suppress('('))
-    + atomic.conj_phrases
-    + _inner_non_comment.copy().setParseAction(keep_pos).setResultsName(
-        "tail", listAllMatches=True)
-    + Optional(Suppress(')')))
 
 multiple_non_comments = QuickSearchable(
     (atomic.paragraphs_marker | atomic.paragraph_marker
         | atomic.sections_marker | atomic.section_marker)
-    + _inner_non_comment.copy().setParseAction(keep_pos).setResultsName("head")
-    + _inner_non_comment_tail)
+    + make_multiple(_inner_non_comment, wrap_tail=True))
 
-multiple_section_paragraphs = QuickSearchable(
-    section_paragraph.copy().setParseAction(keep_pos).setResultsName("head")
-    + _inner_non_comment_tail)
+multiple_section_paragraphs = make_multiple(
+    head=section_paragraph, tail=_inner_non_comment)
 
 multiple_period_sections = QuickSearchable(
     atomic.sections_marker
-    + part_section.copy().setParseAction(keep_pos).setResultsName("head")
-    + OneOrMore(
-        atomic.conj_phrases
-        + period_section.copy().setParseAction(keep_pos).setResultsName(
-            "tail", listAllMatches=True)))
+    + make_multiple(head=part_section, tail=period_section))
 
-multiple_appendix_section = QuickSearchable(
-    appendix_with_section.copy().setParseAction(keep_pos).setResultsName(
-        "head")
-    + OneOrMore(
-        Optional(Suppress('('))
-        + atomic.conj_phrases
-        + _inner_non_comment.copy().setParseAction(keep_pos).setResultsName(
-            "tail", listAllMatches=True)
-        + Optional(Suppress(')'))))
+multiple_appendix_section = make_multiple(
+    head=appendix_with_section,
+    tail=_inner_non_comment, wrap_tail=True)
 
-#   Use "Empty" so we don't rename atomic.appendix
 multiple_appendices = QuickSearchable(
     atomic.appendices_marker
-    + (atomic.appendix + Empty()).setParseAction(keep_pos).setResultsName(
-        "head")
-    + OneOrMore(
-        atomic.conj_phrases
-        + (atomic.appendix + Empty()).setParseAction(keep_pos).setResultsName(
-            "tail", listAllMatches=True)))
+    + make_multiple(atomic.appendix))
 
 multiple_comments = QuickSearchable(
     (atomic.comments_marker | atomic.comment_marker)
-    + (Optional(atomic.section_marker)
-        + _inner_non_comment
-        + Optional(depth1_c)).setParseAction(keep_pos).setResultsName("head")
-    + OneOrMore(
-        Optional(Suppress('('))
-        + atomic.conj_phrases
-        + ((_inner_non_comment + Optional(depth1_c))
-            | depth1_c).setParseAction(keep_pos).setResultsName(
-            "tail", listAllMatches=True)
-        + Optional(Suppress(')'))))
+    + make_multiple(
+        head=(Optional(atomic.section_marker) + _inner_non_comment
+              + Optional(depth1_c)),
+        tail=(_inner_non_comment + Optional(depth1_c)) | depth1_c,
+        wrap_tail=True))
 
 # e.g. 12 CFR 1005.10
 cfr_p = QuickSearchable(
@@ -184,15 +174,9 @@ cfr_p = QuickSearchable(
     + Optional(depth1_p))
 
 # e.g. 12 CFR 1005.10, 1006.21, and 1010.10
-multiple_cfr_p = QuickSearchable(
-    cfr_p.copy().setParseAction(keep_pos).setResultsName("head")
-    + OneOrMore(
-        atomic.conj_phrases
-        + (atomic.part
-           + Suppress('.')
-           + atomic.section
-           + Optional(depth1_p)).setParseAction(keep_pos).setResultsName(
-               "tail", listAllMatches=True)))
+multiple_cfr_p = make_multiple(
+    head=cfr_p,
+    tail=atomic.part + Suppress('.') + atomic.section + Optional(depth1_p))
 
 notice_cfr_p = (
     atomic.title

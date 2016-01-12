@@ -1,6 +1,8 @@
 from itertools import chain
+import logging
 
 from regparser.grammar import unified as grammar
+from regparser.tree.paragraph import p_levels
 from regparser.tree.struct import Node
 
 
@@ -92,10 +94,15 @@ class Label(object):
                 new_settings[field] = self.settings.get(field)
         return Label(**new_settings)
 
-    def to_list(self):
+    def to_list(self, for_node=True):
         """Convert a Label into a struct.Node style label list. Node labels
         don't contain CFR titles"""
-        lst = [self.settings.get(f) for f in self.schema if f != 'cfr_title']
+        if for_node:
+            lst = [self.settings.get(f) for f in self.schema
+                   if f != 'cfr_title']
+        else:
+            lst = [self.settings.get(f) for f in self.schema]
+
         if self.comment:
             lst.append(Node.INTERP_MARK)
             lst.append(self.settings.get('c1'))
@@ -116,6 +123,33 @@ class Label(object):
                 and self.settings == other.settings
                 and self.schema == other.schema
                 and self.comment == other.comment)
+
+    def __hash__(self):
+        return hash(repr(self))
+
+    def __lt__(self, other):
+        self_list = tuple(self.to_list(for_node=False))
+        other_list = tuple(other.to_list(for_node=False))
+        return self_list < other_list
+
+    def labels_until(self, other):
+        """Given `self` as a starting point and `other` as an end point, yield
+        a `Label` for paragraphs in between. For example, if `self` is
+        something like 123.45(a)(2) and end is 123.45(a)(6), this should emit
+        123.45(a)(3), (4), and (5)"""
+        self_list = self.to_list(for_node=False)
+        other_list = other.to_list(for_node=False)
+        field = self.schema[len(self_list)-1]
+        start, end = self_list[-1], other_list[-1]
+        level = [lvl for lvl in p_levels if start in lvl and end in lvl]
+        if (self.schema != other.schema or len(self_list) != len(other_list)
+                or self_list[:-1] != other_list[:-1] or not level):
+            logging.warning("Bad use of 'through': %s - %s", self, other)
+        else:
+            level = level[0]
+            start_idx, end_idx = level.index(start), level.index(end)
+            for marker in level[start_idx+1:end_idx]:
+                yield self.copy(**{field: marker})
 
 
 class ParagraphCitation(object):
@@ -165,27 +199,30 @@ def single_citations(matches, initial_label, comment=False):
             #   Remove the marker from the beginning of the string
             start = match.marker.pos[1]
         yield ParagraphCitation(
-            start, end, match_to_label(match, initial_label,
-                                       comment=comment),
+            start, end, match_to_label(match, initial_label, comment),
             full_start=full_start)
 
 
-def multiple_citations(matches, initial_label, comment=False):
+def multiple_citations(matches, initial_label, comment=False,
+                       include_fill=False):
     """Similar to single_citations save that we have a compound citation, such
     as "paragraphs (b), (d), and (f). Yield a ParagraphCitation for each
     sub-citation. We refer to the first match as "head" and all following as
     "tail" """
-    for match, start, end in matches:
+    for outer_match, outer_start, outer_end in matches:
         label = initial_label   # Share context in between sub-citations
-        for submatch in chain([match.head], match.tail):
-            cit = ParagraphCitation(
-                submatch.pos[0], submatch.pos[1],
-                match_to_label(submatch.tokens, label, comment=comment),
-                full_start=start,
-                full_end=end,
+        for submatch in chain([outer_match.head], outer_match.tail):
+            match = submatch.match or submatch     # might be wrapped
+            new_label = match_to_label(match.tokens, label, comment)
+            if include_fill and submatch.through:
+                for fill_label in label.labels_until(new_label):
+                    yield ParagraphCitation(
+                        outer_start, outer_end, fill_label, in_clause=True)
+            yield ParagraphCitation(
+                match.pos.start, match.pos.end, new_label,
+                full_start=outer_start, full_end=outer_end,
                 in_clause=True)
-            label = cit.label   # update the label to keep context
-            yield cit
+            label = new_label   # update the label to keep context
 
 
 def internal_citations(text, initial_label=None,
@@ -268,13 +305,14 @@ def remove_citation_overlaps(text, possible_markers):
                        for e in internal_citations(text))]
 
 
-def cfr_citations(text):
+def cfr_citations(text, include_fill=False):
     """Find all citations which include CFR title and part"""
     citations = []
     initial_label = Label()
     citations.extend(single_citations(grammar.cfr_p.scanString(text),
                                       initial_label))
     citations.extend(multiple_citations(
-        grammar.multiple_cfr_p.scanString(text), initial_label))
+        grammar.multiple_cfr_p.scanString(text), initial_label,
+        include_fill=include_fill))
 
     return select_encompassing_citations(citations)
