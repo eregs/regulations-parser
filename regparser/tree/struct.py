@@ -95,13 +95,9 @@ class FullNodeEncoder(JSONEncoder):
 
 def node_decode_hook(d):
     """Convert a JSON object into a Node"""
-    if set(
-            ('text', 'children',
-                'label', 'node_type')) - set(d.keys()) == set():
-
-        return Node(
-            d['text'], d['children'], d['label'],
-            d.get('title', None), d['node_type'])
+    if all(field in d for field in ('text', 'children', 'label', 'node_type')):
+        return Node(d['text'], d['children'], d['label'], d.get('title'),
+                    d['node_type'])
     else:
         return d
 
