@@ -148,17 +148,20 @@ class XMLTermMeans(FinderBase):
 class DefinitionKeyterm(object):
     """Matches definitions identified by being a first-level paragraph in a
     section with a specific title"""
+    _NORMALIZE_RE = re.compile(r'[^a-z]+')
+    _section_titles = ['definition', 'meaningofterms']  # already normalized
+
     def __init__(self, parent):
         is_regtext = parent and parent.node_type == Node.REGTEXT
         is_section = is_regtext and len(parent.label) == 2
         title = parent and self._normalize(parent.title)
-        title_match = title in (self._normalize('Definition'),
-                                self._normalize('Meaning of terms.'))
+        title_match = title in self._section_titles
         self.title_matches = is_section and title_match
 
-    def _normalize(self, title):
-        title = (title or "").lower()
-        return re.sub(r'[^a-z]+', '', title)
+    @classmethod
+    def _normalize(cls, title):
+        """Makes a title comparable with cls._section_titles"""
+        return cls._NORMALIZE_RE.sub('', (title or "").lower())
 
     def _split_phrase(self, phrase):
         """A single phrase might contain multiple terms. Attempt to split it
