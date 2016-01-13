@@ -4,6 +4,8 @@ latter is a list of all variables in the system; the former is a function
 which can be used to constrain the variables. This allows us to define rules
 over subsets of the variables rather than all of them, should that make our
 constraints more useful"""
+from constraint import InSetConstraint
+
 from regparser.tree.depth import markers
 
 
@@ -38,3 +40,13 @@ def star_new_level(constrain, all_variables):
         prev_typ, prev_depth = all_variables[i - 3], all_variables[i - 1]
         typ, depth = all_variables[i], all_variables[i + 2]
         constrain(inner, [prev_typ, prev_depth, typ, depth])
+
+
+def limit_paragraph_types(*p_types):
+    """Constraint paragraphs to a limited set of paragraph types. This can
+    reduce the search space if we know (for example) that the text comes from
+    regulations and hence does not have capitalized roman numerals"""
+    def constrainer(constrain, all_variables):
+        types = [all_variables[i] for i in range(0, len(all_variables), 3)]
+        constrain(InSetConstraint(p_types), types)
+    return constrainer
