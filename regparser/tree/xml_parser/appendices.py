@@ -9,7 +9,7 @@ from pyparsing import LineStart, Optional, Suppress
 from regparser.citations import internal_citations
 from regparser.grammar import appendix as grammar
 from regparser.grammar.interpretation_headers import parser as headers
-from regparser.grammar.utils import Marker
+from regparser.grammar.utils import Marker, QuickSearchable
 from regparser.layer.formatting import table_xml_to_plaintext
 from regparser.layer.key_terms import KeyTerms
 from regparser.tree.depth import markers
@@ -340,7 +340,8 @@ def parsed_title(text, appendix_letter):
                         + Optional(grammar.paren_upper | grammar.paren_lower)
                         + Optional(grammar.paren_digit))
     part_roman_parser = Marker("part") + grammar.aI
-    parser = LineStart() + (digit_str_parser | part_roman_parser)
+    parser = QuickSearchable(
+        LineStart() + (digit_str_parser | part_roman_parser))
 
     for match, _, _ in parser.scanString(text):
         return match
@@ -372,11 +373,13 @@ def title_label_pair(text, appendix_letter, reg_part):
     return pair
 
 
+_parser = QuickSearchable(
+    grammar.paren_upper | grammar.paren_lower | grammar.paren_digit |
+    grammar.period_upper | grammar.period_digit | grammar.period_lower)
+
+
 def initial_marker(text):
-    parser = (grammar.paren_upper | grammar.paren_lower | grammar.paren_digit
-              | grammar.period_upper | grammar.period_digit
-              | grammar.period_lower)
-    for match, start, end in parser.scanString(text):
+    for match, start, end in _parser.scanString(text):
         if start != 0:
             continue
         marker = (match.paren_upper or match.paren_lower or match.paren_digit

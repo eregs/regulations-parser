@@ -79,9 +79,9 @@ def text_to_labels(text, initial_label, warn=True, force_start=False):
         citations = [c for c in citations if c.full_start == 0]
 
     #   Under certain situations, we need to infer from context
-    initial_pars = list(match for match, start, _
-                        in unified.any_depth_p.scanString(text)
-                        if start == 0)
+    initial_pars = [match
+                    for match, start, _ in unified.any_depth_p.scanString(text)
+                    if start == 0]
 
     if citations:
         if citations[0].in_clause:
