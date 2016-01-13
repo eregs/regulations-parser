@@ -6,24 +6,6 @@ from regparser.tree.struct import Node
 
 
 class ParseTest(TestCase):
-
-    def test_section_act(self):
-        """
-            Test an external reference that looks like this: "section 918 of
-            the Act"
-        """
-        node = Node('section 918 of the Act', label=['1005', '2'])
-        parser = external_citations.ExternalCitationParser(
-            None, act_citation=['1234', '5678'])
-        citations = parser.process(node)
-
-        self.assertEqual(len(citations), 1)
-
-        citation = citations[0]
-        self.assertEqual(citation['citation'], ['1234', '5678'])
-        self.assertEqual(citation['citation_type'], 'USC')
-        self.assertEqual(citation['offsets'][0][0], 15)
-
     def test_public_law(self):
         """
             Ensure that we successfully parse Public Law citations that look
@@ -33,7 +15,12 @@ class ParseTest(TestCase):
         parser = external_citations.ExternalCitationParser(None)
         citations = parser.process(node)
         self.assertEqual(len(citations), 1)
+        self.assertEqual(citations[0]['text'], node.text)
         self.assertEqual(citations[0]['citation_type'], 'PUBLIC_LAW')
+        self.assertEqual(citations[0]['components'],
+                         {'congress': '111', 'lawnum': '203'})
+        self.assertEqual(citations[0]['locations'], [0])
+        self.assertTrue('url' in citations[0])
 
     def test_statues_at_large(self):
         """
@@ -44,17 +31,35 @@ class ParseTest(TestCase):
         parser = external_citations.ExternalCitationParser(None)
         citations = parser.process(node)
         self.assertEqual(len(citations), 1)
+        self.assertEqual(citations[0]['text'], node.text)
         self.assertEqual(citations[0]['citation_type'], 'STATUTES_AT_LARGE')
+        self.assertEqual(citations[0]['components'],
+                         {'volume': '122', 'page': '1375'})
+        self.assertEqual(citations[0]['locations'], [0])
+        self.assertTrue('url' in citations[0])
 
     def test_cfr(self):
         """Ensure that we successfully parse CFR references."""
-        node = Node("Ref 1: 12 CFR part 1026. "
-                    + "Ref 2: 12 CFR 1026.13.")
+        node = Node("Ref 1: 12 CFR part 1026. Ref 2: 12 CFR 1026.13.",
+                    label=['1003'])
         parser = external_citations.ExternalCitationParser(None)
         citations = parser.process(node)
         self.assertEqual(2, len(citations))
-        self.assertEqual("CFR", citations[0]['citation_type'])
-        self.assertEqual("CFR", citations[1]['citation_type'])
+        first, second = citations
+
+        self.assertEqual(first['text'], '12 CFR part 1026')
+        self.assertEqual(first['citation_type'], 'CFR')
+        self.assertEqual(first['components'],
+                         {'cfr_title': '12', 'part': '1026'})
+        self.assertEqual(first['locations'], [0])
+        self.assertTrue('url' in first)
+
+        self.assertEqual(second['text'], '12 CFR 1026.13')
+        self.assertEqual(second['citation_type'], 'CFR')
+        self.assertEqual(second['components'],
+                         {'cfr_title': '12', 'part': '1026', 'section': '13'})
+        self.assertEqual(second['locations'], [0])
+        self.assertTrue('url' in second)
 
     def test_drop_self_referential_cfr(self):
         """
