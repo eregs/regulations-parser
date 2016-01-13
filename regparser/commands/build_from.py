@@ -12,7 +12,7 @@ logger.setLevel(logging.INFO)
 logger.addHandler(logging.StreamHandler())
 
 
-def gen_diffs(reg_tree, act_title_and_section, builder, layer_cache):
+def gen_diffs(reg_tree, builder, layer_cache):
     """ Generate all the diffs for the given regulation. Broken out into
         separate function to assist with profiling so it's easier to determine
         which parts of the parser take the most time """
@@ -27,8 +27,7 @@ def gen_diffs(reg_tree, act_title_and_section, builder, layer_cache):
         builder.doc_number = version
         builder.write_regulation(new_tree)
         layer_cache.invalidate_by_notice(last_notice)
-        builder.gen_and_write_layers(new_tree, act_title_and_section,
-                                     layer_cache, notices)
+        builder.gen_and_write_layers(new_tree, layer_cache, notices)
         layer_cache.replace_using(new_tree)
         del last_notice, old, new_tree, notices     # free some memory
 
@@ -51,12 +50,6 @@ def gen_diffs(reg_tree, act_title_and_section, builder, layer_cache):
 @click.argument('filename',
                 type=click.Path(exists=True, dir_okay=False, readable=True))
 @click.argument('title', type=int)
-@click.option('--act_title', type=int, default=0,
-              help=('Title of the act of congress providing authority for '
-                    'this regulation'))
-@click.option('--act_section', type=int, default=0,
-              help=('Section of the act of congress providing authority for '
-                    'this regulation'))
 @click.option('--generate-diffs/--no-generate-diffs', default=True)
 @click.option('--checkpoint', help='Directory to save checkpoint data',
               type=click.Path(file_okay=False, readable=True, writable=True))
@@ -66,8 +59,8 @@ def gen_diffs(reg_tree, act_title_and_section, builder, layer_cache):
                     'federalregister.gov, i.e. has not changed since before '
                     '~2000)'))
 # @profile
-def build_from(filename, title, act_title, act_section, generate_diffs,
-               checkpoint, version_identifier):
+def build_from(filename, title, generate_diffs, checkpoint,
+               version_identifier):
     """Build all data from provided xml. Reads the provided file and builds
     all versions of the regulation, its layers, etc. that follow.
 
@@ -75,7 +68,6 @@ def build_from(filename, title, act_title, act_section, generate_diffs,
     FILENAME: XML file containing the regulation
     TITLE: CFR title
     """
-    act_title_and_section = [act_title, act_section]
     #   First, the regulation tree
     reg_tree, builder = tree_and_builder(filename, title, checkpoint,
                                          version_identifier)
@@ -86,8 +78,8 @@ def build_from(filename, title, act_title, act_section, generate_diffs,
     builder.write_regulation(reg_tree)
     layer_cache = LayerCacheAggregator()
 
-    builder.gen_and_write_layers(reg_tree, act_title_and_section, layer_cache)
+    builder.gen_and_write_layers(reg_tree, layer_cache)
     layer_cache.replace_using(reg_tree)
 
     if generate_diffs:
-        gen_diffs(reg_tree, act_title_and_section, builder, layer_cache)
+        gen_diffs(reg_tree, builder, layer_cache)

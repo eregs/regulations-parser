@@ -47,7 +47,7 @@ def stale_layers(deps, layer_dir):
             yield layer_name
 
 
-def process_layers(stale, cfr_title, cfr_part, version, act_citation):
+def process_layers(stale, cfr_title, cfr_part, version):
     """Build all of the stale layers for this version, writing them into the
     index. Assumes all dependencies have already been checked"""
     tree = entry.Tree(cfr_title, cfr_part, version.identifier).read()
@@ -58,22 +58,15 @@ def process_layers(stale, cfr_title, cfr_part, version, act_citation):
         if layer_name == 'analyses':
             notices = sxs_sources(version_dir, version.identifier)
         layer_json = ALL_LAYERS[layer_name](
-            tree, cfr_title, notices=notices, act_citation=act_citation,
-            version=version).build()
+            tree, cfr_title, notices=notices, version=version).build()
         (layer_dir / version.identifier / layer_name).write(layer_json)
 
 
 @click.command()
 @click.argument('cfr_title', type=int)
 @click.argument('cfr_part', type=int)
-@click.option('--act_title', type=int, default=0,
-              help=('Title of the act of congress providing authority for '
-                    'this regulation'))
-@click.option('--act_section', type=int, default=0,
-              help=('Section of the act of congress providing authority for '
-                    'this regulation'))
 # @todo - allow layers to be passed as a parameter
-def layers(cfr_title, cfr_part, act_title, act_section):
+def layers(cfr_title, cfr_part):
     """Build all layers for all known versions."""
     tree_dir = entry.Tree(cfr_title, cfr_part)
     layer_dir = entry.Layer(cfr_title, cfr_part)
@@ -85,6 +78,5 @@ def layers(cfr_title, cfr_part, act_title, act_section):
         if stale:
             process_layers(
                 stale, cfr_title, cfr_part,
-                version=(version_dir / version_id).read(),
-                act_citation=(act_title, act_section)
+                version=(version_dir / version_id).read()
             )
