@@ -2,6 +2,7 @@
 citation layer"""
 import abc
 from collections import namedtuple
+import re
 import string
 import urllib
 
@@ -9,6 +10,7 @@ from pyparsing import Suppress, Word
 
 from regparser.citations import cfr_citations
 from regparser.grammar.utils import Marker, QuickSearchable
+import settings
 
 
 Cite = namedtuple('Cite', ['cite_type', 'start', 'end', 'components', 'url'])
@@ -100,6 +102,22 @@ class StatutesFinder(FinderBase):
             statcit = match.volume + ' stat ' + match.page
             yield Cite(self.CITE_TYPE, start, end, components,
                        fdsys_url(collection='plaw', statutecitation=statcit))
+
+
+class CustomFinder(FinderBase):
+    """Explicitly configured citations; part of settings"""
+    CITE_TYPE = 'OTHER'
+    _cached_regexes = {}
+
+    def find(self, node):
+        for needle, url in settings.CUSTOM_CITATIONS.items():
+            if needle not in self._cached_regexes:
+                self._cached_regexes[needle] = re.compile(
+                    r'\b' + re.escape(needle) + r'\b')
+
+            for match in self._cached_regexes[needle].finditer(node.text):
+                yield Cite(self.CITE_TYPE, match.start(), match.end(), {},
+                           url)
 
 
 # Surface all of the external citation finder classes

@@ -87,7 +87,8 @@ REGPATCHES_SOURCES = [
 
 # In some cases, it is beneficial to tweak the XML the Federal Register
 # provides. This setting specifies file paths to look through for local
-# versions of their XML
+# versions of their XML. See also XML_REPO below, which is effectively tacked
+# on to the end of this list
 LOCAL_XML_PATHS = []
 
 
@@ -97,7 +98,13 @@ LOCAL_XML_PATHS = []
 # number, appendix, and label.
 APPENDIX_IGNORE_SUBHEADER_LABEL = {}
 
+# The `pipeline` command pulls in the latest edits to FR notices. This URL
+# defines where it should find those edits
 XML_REPO = 'https://github.com/18F/fr-notices.git'
+
+# A dictionary of agency-specific external citations
+CUSTOM_CITATIONS = {}
+
 
 try:
     from local_settings import *
