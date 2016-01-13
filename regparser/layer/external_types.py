@@ -36,8 +36,7 @@ class FinderBase(object):
 def fdsys_url(**params):
     """Generate a URL to an FDSYS redirect"""
     params['year'] = params.get('year', 'mostrecent')
-    params['link-type'] = params.get('link-type', 'html')
-    return 'http://api.fdsys/link?{}'.format(urllib.urlencode(params))
+    return 'http://api.fdsys.gov/link?{}'.format(urllib.urlencode(params))
 
 
 class CFRFinder(FinderBase):
@@ -99,9 +98,8 @@ class StatutesFinder(FinderBase):
     def find(self, node):
         for match, start, end in self.GRAMMAR.scanString(node.text):
             components = {'volume': match.volume, 'page': match.page}
-            statcit = match.volume + ' stat ' + match.page
             yield Cite(self.CITE_TYPE, start, end, components,
-                       fdsys_url(collection='plaw', statutecitation=statcit))
+                       fdsys_url(collection='statute', **components))
 
 
 class CustomFinder(FinderBase):
