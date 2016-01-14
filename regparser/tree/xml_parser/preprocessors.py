@@ -284,5 +284,68 @@ class Footnotes(PreProcessorBase):
         return referencing == referenced
 
 
+class AtfI50032(PreProcessorBase):
+    """478.103 contains a chunk of text which is meant to appear in a poster
+    and be easily copy-paste-able. Unfortunately, the XML post 2003 isn't
+    structured to contain all of the appropriate elements within the EXTRACT
+    associated with the poster. This PreProcessor moves these additional
+    elements back into the appropriate EXTRACT."""
+    MARKER = ("//SECTNO[contains(., '478.103')]/.."     # In 478.103
+              # Look for a P with the appropriate key words
+              "/P[contains(., 'ATF I 5300.2') and contains(., 'shall state')]")
+
+    def transform(self, xml):
+        for p in xml.xpath(self.MARKER):
+            next_el = p.getnext()
+            to_move = []
+            while next_el is not None and next_el.tag != 'EXTRACT':
+                to_move.append(next_el)
+                next_el = next_el.getnext()
+            if next_el is not None:
+                extract = next_el
+                # reversed as we're inserting into the beginning
+                for xml_el in reversed(to_move):
+                    extract.insert(0, xml_el)
+
+
+class AtfI50031(PreProcessorBase):
+    """478.103 also contains a shorter form, which appears in a smaller
+    poster. Unfortunately, the XML didn't include the appropriate NOTE inside
+    the corresponding EXTRACT"""
+    MARKER = ("//SECTNO[contains(., '478.103')]/.."     # In 478.103
+              # Look for a P with the appropriate key words
+              "/P[contains(., 'ATF I 5300.1') and contains(., 'shall state')]"
+              "/following-sibling::EXTRACT[1]")     # First following EXTRACT
+
+    def transform(self, xml):
+        for extract in xml.xpath(self.MARKER):
+            next_el = extract.getnext()
+            while next_el is not None and next_el.tag != 'P':
+                extract.append(next_el)
+                next_el = extract.getnext()
+
+
+class Uscode(PreProcessorBase):
+    """478.103 contains a chunk of the US Code, but does not delineate it
+    clearly from the rest of the text of the containing poster. We've created
+    `USCODE` tags to clear up this confusion, but we need to modify the XML to
+    insert them in the appropriate spot"""
+    MARKER = ("//SECTNO[contains(., '478.103')]/.."     # In 478.103
+              "//HD[contains(., '18 U.S.C.')]")  # US Code header
+
+    def transform(self, xml):
+        for hd in xml.xpath(self.MARKER):
+            print hd
+            uscode = etree.Element("USCODE")
+            next_el = hd.getnext()
+            while next_el is not None and next_el.tag != 'HD':
+                uscode.append(next_el)
+                next_el = hd.getnext()
+
+            hd_parent = hd.getparent()
+            hd_idx = hd_parent.index(hd)
+            hd_parent.insert(hd_idx + 1, uscode)
+
+
 # Surface all of the PreProcessorBase classes
 ALL = PreProcessorBase.__subclasses__()

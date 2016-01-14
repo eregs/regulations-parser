@@ -8,11 +8,11 @@ from regparser.tree.struct import Node
 
 class Label(object):
     #   @TODO: subparts
-    app_sect_schema = ('part', 'appendix', 'appendix_section', 'p1', 'p2',
-                       'p3', 'p4', 'p5', 'p6')
-    app_schema = ('part', 'appendix', 'p1', 'p2', 'p3', 'p4', 'p5', 'p6')
-    regtext_schema = ('cfr_title', 'part', 'section',
-                      'p1', 'p2', 'p3', 'p4', 'p5', 'p6')
+    _p_markers = tuple('p{}'.format(i) for i in range(1, 10))
+
+    app_sect_schema = ('part', 'appendix', 'appendix_section') + _p_markers
+    app_schema = ('part', 'appendix') + _p_markers
+    regtext_schema = ('cfr_title', 'part', 'section') + _p_markers
     default_schema = regtext_schema
 
     comment_schema = ('comment', 'c1', 'c2', 'c3', 'c4')

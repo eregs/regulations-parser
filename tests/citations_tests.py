@@ -427,6 +427,10 @@ class CitationsLabelTest(TestCase):
     def test_from_node(self):
         for lst, typ in [(['111'], Node.REGTEXT),
                          (['111', '31', 'a', '3'], Node.REGTEXT),
+                         # _Very_ deeply nested, ignoring the recommended
+                         # 6-level paragraph limit
+                         (['111', '2', 'c', '4', 'v', 'F', '7', 'viii',
+                           'p1', 'p1', 'p1'], Node.REGTEXT),
                          (['111', 'A', 'b'], Node.APPENDIX),
                          (['111', 'A', '4', 'a'], Node.APPENDIX),
                          (['111', '21', 'Interp'], Node.INTERP),
@@ -448,7 +452,8 @@ class CitationsLabelTest(TestCase):
         self.assertEqual(
             repr(l),
             "Label(cfr_title=None, part='105', section='3', p1=None, "
-            "p2=None, p3=None, p4=None, p5=None, p6=None)")
+            "p2=None, p3=None, p4=None, p5=None, p6=None, p7=None, p8=None, "
+            "p9=None)")
 
     def test_lt(self):
         """Comparisons between labels"""

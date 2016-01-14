@@ -100,7 +100,7 @@ APPENDIX_IGNORE_SUBHEADER_LABEL = {}
 
 # The `pipeline` command pulls in the latest edits to FR notices. This URL
 # defines where it should find those edits
-XML_REPO = 'https://github.com/18F/fr-notices.git'
+XML_REPO = 'https://github.com/eregs/fr-notices.git'
 
 # A dictionary of agency-specific external citations
 CUSTOM_CITATIONS = {}

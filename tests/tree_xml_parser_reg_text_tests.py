@@ -703,3 +703,27 @@ class RegtextParagraphProcessorTests(XMLBuilderMixin, NodeAccessorMixin,
         keyterm_label = root.child_labels[1]
         self.assertTrue(len(keyterm_label) > 5)
         self.assertEqual(['a', 'b'], root[keyterm_label].child_labels)
+
+    def test_process_nested_uscode(self):
+        with self.tree.builder("ROOT") as root:
+            root.P("Some intro")
+            with root.EXTRACT() as extract:
+                extract.HD("The U.S. Code!")
+                with extract.USCODE() as uscode:
+                    uscode.P("(x)(1) Some content")
+                    uscode.P("(A) Sub-sub-paragraph")
+                    uscode.P("(i)(I) Even more nested")
+        xml = self.tree.render_xml()
+        root = reg_text.RegtextParagraphProcessor().process(xml, Node())
+        root = self.node_accessor(root, [])
+
+        self.assertEqual(root['p1'].text, "Some intro")
+        self.assertEqual(root['p2']['p1'].title, 'The U.S. Code!')
+        code = root['p2']['p2']
+        self.assertEqual(code.source_xml.tag, 'USCODE')
+        self.assertEqual(code['x'].text, '(x)')
+        self.assertEqual(code['x']['1'].text, '(1) Some content')
+        self.assertEqual(code['x']['1']['A'].text, '(A) Sub-sub-paragraph')
+        self.assertEqual(code['x']['1']['A']['i'].text, '(i)')
+        self.assertEqual(code['x']['1']['A']['i']['I'].text,
+                         '(I) Even more nested')
