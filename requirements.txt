@@ -1,13 +1,13 @@
-click==5.1
+click==6.2
 coloredlogs==5.0
 dagger==1.3.0
 GitPython==1.0.1
 inflection==0.3.1
 ipdb==0.8.1
-json-delta==1.1.3
+json-delta==2.0
 lxml==3.5.0
-pyparsing==2.0.5
+pyparsing==2.0.5  # 2.0.6 has a unicode bug, fixed in current trunk: http://sourceforge.net/p/pyparsing/code/HEAD/tree/tags/pyparsing_2.0.6/src/pyparsing.py#l2354
 python-constraint==1.2
-requests==2.8.1
+requests==2.9.1
 requests-cache==0.4.10
 -e .
