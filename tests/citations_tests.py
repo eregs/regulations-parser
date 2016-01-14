@@ -1,7 +1,7 @@
 # vim: set encoding=utf-8
 from unittest import TestCase
 
-from regparser.citations import internal_citations, Label
+from regparser.citations import cfr_citations, internal_citations, Label
 from regparser.tree.struct import Node
 
 
@@ -310,6 +310,56 @@ class CitationsTest(TestCase):
         citations = internal_citations(text, Label(part='100', section='4'))
         self.assertEqual(0, len(citations))
 
+    def test_cfr_citations_single(self):
+        text = 'See 11 CFR 222.3(e)(3)(ii) for more'
+        citations = cfr_citations(text)
+        self.assertEqual(1, len(citations))
+        self.assertEqual('11 CFR 222.3(e)(3)(ii)', to_text(citations[0], text))
+        self.assertEqual(
+            citations[0].label.settings,
+            dict(cfr_title='11', part='222', section='3', p1='e', p2='3',
+                 p3='ii'))
+
+    def test_cfr_citations_multiple(self):
+        text = 'Go look at 2 CFR 111.22, 333.45, and 444.55(e)'
+        citations = cfr_citations(text)
+        self.assertEqual(3, len(citations))
+
+        self.assertEqual('2 CFR 111.22', to_text(citations[0], text))
+        self.assertEqual(citations[0].label.settings,
+                         dict(cfr_title='2', part='111', section='22'))
+
+        self.assertEqual('333.45', to_text(citations[1], text))
+        self.assertEqual(citations[1].label.settings,
+                         dict(cfr_title='2', part='333', section='45'))
+
+        self.assertEqual('444.55(e)', to_text(citations[2], text))
+        self.assertEqual(
+            citations[2].label.settings,
+            dict(cfr_title='2', part='444', section='55', p1='e'))
+
+    def test_cfr_citations_through(self):
+        text = u'See 27 CFR 479.112, 479.114 – 479.119'
+        citations = cfr_citations(text)
+        self.assertEqual(3, len(citations))
+        twelve, fourteen, nineteen = citations
+
+        self.assertEqual('27 CFR 479.112', to_text(twelve, text))
+        self.assertEqual(twelve.label.settings,
+                         dict(cfr_title='27', part='479', section='112'))
+        self.assertEqual('479.114', to_text(fourteen, text))
+        self.assertEqual(fourteen.label.settings,
+                         dict(cfr_title='27', part='479', section='114'))
+        self.assertEqual('479.119', to_text(nineteen, text))
+        self.assertEqual(nineteen.label.settings,
+                         dict(cfr_title='27', part='479', section='119'))
+
+        citations = cfr_citations(text, include_fill=True)
+        self.assertEqual(
+            [citation.label.settings for citation in citations],
+            [dict(cfr_title='27', part='479', section=str(i))
+             for i in (112, 114, 115, 116, 117, 118, 119)])
+
 
 class CitationsLabelTest(TestCase):
     def test_using_default_schema(self):
@@ -332,7 +382,7 @@ class CitationsLabelTest(TestCase):
                          Label.determine_schema({'appendix_section': '1'}))
         self.assertEqual(Label.app_schema,
                          Label.determine_schema({'appendix': 'A'}))
-        self.assertEqual(Label.sect_schema,
+        self.assertEqual(Label.regtext_schema,
                          Label.determine_schema({'section': '12'}))
         self.assertEqual(None, Label.determine_schema({}))
 
@@ -366,6 +416,10 @@ class CitationsLabelTest(TestCase):
     def test_from_node(self):
         for lst, typ in [(['111'], Node.REGTEXT),
                          (['111', '31', 'a', '3'], Node.REGTEXT),
+                         # _Very_ deeply nested, ignoring the recommended
+                         # 6-level paragraph limit
+                         (['111', '2', 'c', '4', 'v', 'F', '7', 'viii',
+                           'p1', 'p1', 'p1'], Node.REGTEXT),
                          (['111', 'A', 'b'], Node.APPENDIX),
                          (['111', 'A', '4', 'a'], Node.APPENDIX),
                          (['111', '21', 'Interp'], Node.INTERP),
@@ -384,4 +438,46 @@ class CitationsLabelTest(TestCase):
 
     def test_label_representation(self):
         l = Label(part='105', section='3')
-        self.assertEqual(repr(l), "['105', '3']")
+        self.assertEqual(
+            repr(l),
+            "Label(cfr_title=None, part='105', section='3', p1=None, "
+            "p2=None, p3=None, p4=None, p5=None, p6=None, p7=None, p8=None, "
+            "p9=None)")
+
+    def test_lt(self):
+        """Comparisons between labels"""
+        self.assertTrue(Label(part='105', section='3')
+                        < Label(part='105', section='4'))
+        self.assertTrue(Label(part='105', section='3')
+                        < Label(part='105', section='3', p1='a'))
+        self.assertTrue(Label(part='105', section='3', p1='a')
+                        < Label(part='222'))
+
+    def test_labels_until_paragraphs(self):
+        """We can fill in paragraphs"""
+        start = Label(cfr_title='11', part='222', section='33', p1='a', p2='2')
+        end = Label(cfr_title='11', part='222', section='33', p1='a', p2='6')
+        self.assertEqual(
+            list(start.labels_until(end)),
+            [Label(cfr_title='11', part='222', section='33', p1='a', p2='3'),
+             Label(cfr_title='11', part='222', section='33', p1='a', p2='4'),
+             Label(cfr_title='11', part='222', section='33', p1='a', p2='5')])
+
+    def test_labels_until_sections(self):
+        """We can fill in sections"""
+        start = Label(cfr_title='11', part='222', section='33')
+        end = Label(cfr_title='11', part='222', section='36')
+        self.assertEqual(list(start.labels_until(end)),
+                         [Label(cfr_title='11', part='222', section='34'),
+                          Label(cfr_title='11', part='222', section='35')])
+
+    def assert_empty_until(self, start, end):
+        """Shorthand method"""
+        self.assertEqual([], list(start.labels_until(end)))
+
+    def test_labels_until_fail(self):
+        """We can't always fill in labels"""
+        start = Label(part='111', section='22', p1='c')
+        self.assert_empty_until(start, Label(part='111', section='23'))
+        self.assert_empty_until(start, Label(part='111', section='22', p1='4'))
+        self.assert_empty_until(start, Label(part='111', appendix='A', p1='3'))

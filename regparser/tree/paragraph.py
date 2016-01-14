@@ -8,7 +8,7 @@ from regparser.utils import roman_nums
 
 p_levels = [
     list(string.ascii_lowercase),
-    [str(i) for i in range(1, 51)],
+    [str(i) for i in range(1, 999)],
     list(itertools.islice(roman_nums(), 0, 50)),
     list(string.ascii_uppercase),
     ['<E T="03">' + str(i) + '</E>' for i in range(1, 51)],
