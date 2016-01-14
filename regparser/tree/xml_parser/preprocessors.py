@@ -335,7 +335,6 @@ class Uscode(PreProcessorBase):
 
     def transform(self, xml):
         for hd in xml.xpath(self.MARKER):
-            print hd
             uscode = etree.Element("USCODE")
             next_el = hd.getnext()
             while next_el is not None and next_el.tag != 'HD':
