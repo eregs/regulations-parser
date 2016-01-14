@@ -321,7 +321,7 @@ class CitationsTest(TestCase):
                  p3='ii'))
 
     def test_cfr_citations_single_no_section(self):
-        """The "part" token can also be present, and sections don't"""
+        """The "part" token can also be present; "section"s don't need to be"""
         text = 'See 11 CFR part 222 or 33 CFR 44'
         citations = cfr_citations(text)
         self.assertEqual(2, len(citations))
