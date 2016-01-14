@@ -320,6 +320,17 @@ class CitationsTest(TestCase):
             dict(cfr_title='11', part='222', section='3', p1='e', p2='3',
                  p3='ii'))
 
+    def test_cfr_citations_single_no_section(self):
+        """The "part" token can also be present; "section"s don't need to be"""
+        text = 'See 11 CFR part 222 or 33 CFR 44'
+        citations = cfr_citations(text)
+        self.assertEqual(2, len(citations))
+        c11, c33 = citations
+        self.assertEqual('11 CFR part 222', to_text(c11, text))
+        self.assertEqual('33 CFR 44', to_text(c33, text))
+        self.assertEqual(c11.label.settings, dict(cfr_title='11', part='222'))
+        self.assertEqual(c33.label.settings, dict(cfr_title='33', part='44'))
+
     def test_cfr_citations_multiple(self):
         text = 'Go look at 2 CFR 111.22, 333.45, and 444.55(e)'
         citations = cfr_citations(text)

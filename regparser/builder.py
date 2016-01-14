@@ -52,15 +52,15 @@ class Builder(object):
     def write_regulation(self, reg_tree):
         self.writer.regulation(self.cfr_part, self.doc_number).write(reg_tree)
 
-    def gen_and_write_layers(self, reg_tree, act_info, cache, notices=None):
+    def gen_and_write_layers(self, reg_tree, cache, notices=None):
         if notices is None:
             notices = applicable_notices(self.notices, self.doc_number)
         for ident, layer_class in ALL_LAYERS.items():
             layer = self.checkpointer.checkpoint(
                 ident + "-" + self.doc_number,
                 lambda: layer_class(
-                    reg_tree, self.cfr_title, self.doc_number, notices,
-                    act_info).build(cache.cache_for(ident)))
+                    reg_tree, self.cfr_title, self.doc_number, notices
+                    ).build(cache.cache_for(ident)))
             self.writer.layer(ident, self.cfr_part, self.doc_number).write(
                 layer)
 

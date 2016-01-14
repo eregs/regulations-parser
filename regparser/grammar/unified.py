@@ -164,11 +164,13 @@ multiple_comments = QuickSearchable(
         tail=(_inner_non_comment + Optional(depth1_c)) | depth1_c,
         wrap_tail=True))
 
+# e.g. 12 CFR 1005
+cfr = QuickSearchable(
+    atomic.title + Suppress("CFR") + Optional(Marker("part")) + atomic.part
+)
 # e.g. 12 CFR 1005.10
 cfr_p = QuickSearchable(
-    atomic.title
-    + Suppress("CFR")
-    + atomic.part
+    cfr
     + Suppress('.')
     + atomic.section
     + Optional(depth1_p))

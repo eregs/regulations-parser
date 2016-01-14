@@ -94,8 +94,7 @@ class CommandsLayersTests(TestCase):
             with patch.dict(layers.ALL_LAYERS,
                             {'meta': meta, 'analyses': analyses}):
                 layers.process_layers(
-                    ['meta', 'analyses'], '12', '1000', version, [1, 2])
+                    ['meta', 'analyses'], '12', '1000', version)
             self.assertEqual(meta.call_args[1].get('notices'), [])
-            self.assertEqual(meta.call_args[1].get('act_citation'), [1, 2])
             self.assertEqual(analyses.call_args[1].get('notices'),
                              "Fake Notices")

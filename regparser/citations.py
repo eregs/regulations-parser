@@ -309,6 +309,8 @@ def cfr_citations(text, include_fill=False):
     """Find all citations which include CFR title and part"""
     citations = []
     initial_label = Label()
+    citations.extend(single_citations(grammar.cfr.scanString(text),
+                                      initial_label))
     citations.extend(single_citations(grammar.cfr_p.scanString(text),
                                       initial_label))
     citations.extend(multiple_citations(
