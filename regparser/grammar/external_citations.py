@@ -2,6 +2,8 @@
 import string
 from pyparsing import Word, Literal
 
+from regparser.grammar.utils import QuickSearchable
+
 """ Contruct a grammar that parses references/citations to the United States
 Code, the Code of Federal Regulations, Public Law and Statues at Large. """
 
@@ -22,5 +24,6 @@ public_law_exp = Literal("Public") + Literal("Law") +\
 stat_at_large_exp = Word(string.digits) +\
     Literal("Stat.") + Word(string.digits)
 
-regtext_external_citation = uscode_exp.setResultsName('USC') |\
-    cfr_exp | the_act_exp | public_law_exp | stat_at_large_exp
+regtext_external_citation = QuickSearchable(
+    uscode_exp.setResultsName('USC')
+    | cfr_exp | the_act_exp | public_law_exp | stat_at_large_exp)

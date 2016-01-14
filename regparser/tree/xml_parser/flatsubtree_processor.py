@@ -1,6 +1,6 @@
 from regparser.tree.depth import markers as mtypes
 from regparser.tree.struct import Node
-from regparser.tree.xml_parser import paragraph_processor
+from regparser.tree.xml_parser import paragraph_processor, us_code
 
 
 class FlatParagraphProcessor(paragraph_processor.ParagraphProcessor):
@@ -9,7 +9,8 @@ class FlatParagraphProcessor(paragraph_processor.ParagraphProcessor):
                 paragraph_processor.TableMatcher(),
                 paragraph_processor.FencedMatcher(),
                 paragraph_processor.HeaderMatcher(),
-                paragraph_processor.SimpleTagMatcher('P', 'FP')]
+                paragraph_processor.SimpleTagMatcher('P', 'FP'),
+                us_code.USCodeMatcher()]
 
 
 class FlatsubtreeMatcher(paragraph_processor.BaseMatcher):

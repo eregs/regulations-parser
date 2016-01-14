@@ -8,7 +8,7 @@ from pyparsing import (
     QuotedString, Suppress, Word, ZeroOrMore)
 
 from regparser.grammar import atomic, tokens, unified
-from regparser.grammar.utils import Marker, WordBoundaries
+from regparser.grammar.utils import Marker, QuickSearchable, WordBoundaries
 from regparser.layer.key_terms import keyterm_to_int
 from regparser.tree.paragraph import p_levels
 
@@ -466,7 +466,7 @@ override_label = (
 ).setParseAction(tokenize_override_ps)
 
 #   grammar which captures all of these possibilities
-token_patterns = (
+token_patterns = QuickSearchable(
     put_active | put_passive | post_active | post_passive
     | delete_active | delete_passive | move_active | move_passive
     | designate_active | reserve_active
@@ -505,7 +505,8 @@ token_patterns = (
     | and_token
 )
 
-subpart_label = (atomic.part + Suppress('-')
-                 + atomic.subpart_marker + Suppress(':')
-                 + Word(string.ascii_uppercase, max=1)
-                 + LineEnd())
+subpart_label = QuickSearchable(
+    atomic.part + Suppress('-')
+    + atomic.subpart_marker + Suppress(':')
+    + Word(string.ascii_uppercase, max=1)
+    + LineEnd())

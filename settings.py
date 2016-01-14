@@ -97,7 +97,7 @@ LOCAL_XML_PATHS = []
 # number, appendix, and label.
 APPENDIX_IGNORE_SUBHEADER_LABEL = {}
 
-XML_REPO = 'https://github.com/18F/fr-notices.git'
+XML_REPO = 'https://github.com/eregs/fr-notices.git'
 
 try:
     from local_settings import *

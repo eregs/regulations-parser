@@ -7,6 +7,7 @@ from pyparsing import Literal, Optional, Regex, Suppress
 
 from regparser.citations import remove_citation_overlaps
 from regparser.grammar.unified import any_depth_p
+from regparser.grammar.utils import QuickSearchable
 from regparser.tree.paragraph import p_levels
 from regparser.tree.priority_stack import PriorityStack
 
@@ -68,7 +69,7 @@ for idx, level in enumerate(p_levels):
         marker += Optional(Suppress('(')
                            + Literal(inner_level[0])
                            + Suppress(')'))
-    _first_markers.append(marker)
+    _first_markers.append(QuickSearchable(marker))
 
 
 def get_collapsed_markers(text):
