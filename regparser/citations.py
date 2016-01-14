@@ -19,8 +19,8 @@ class Label(object):
     SCHEMA_FIELDS = set(app_sect_schema + app_schema + regtext_schema +
                         comment_schema)
 
-    @staticmethod
-    def from_node(node):
+    @classmethod
+    def from_node(cls, node):
         """Convert between a struct.Node and a Label; use heuristics to
         determine which schema to follow. Node labels aren't as expressive as
         Label objects"""
@@ -29,23 +29,23 @@ class Label(object):
                 and len(node.label) > 2
                 and node.label[1].isalpha())):
             if len(node.label) > 2 and node.label[2].isdigit():
-                schema = Label.app_sect_schema
+                schema = cls.app_sect_schema
             else:
-                schema = Label.app_schema
+                schema = cls.app_schema
         else:
-            schema = Label.regtext_schema[1:]   # Nodes don't track CFR title
+            schema = cls.regtext_schema[1:]   # Nodes don't track CFR title
 
         settings = {'comment': node.node_type == Node.INTERP}
         for idx, value in enumerate(node.label):
             if value == 'Interp':
                 #   Add remaining bits as comment fields
                 for cidx in range(idx+1, len(node.label)):
-                    comment_field = Label.comment_schema[cidx - idx]
+                    comment_field = cls.comment_schema[cidx - idx]
                     settings[comment_field] = node.label[cidx]
                 #   Stop processing the prefix fields
                 break
             settings[schema[idx]] = value
-        return Label(**settings)
+        return cls(**settings)
 
     @staticmethod
     def determine_schema(settings):

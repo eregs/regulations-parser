@@ -3,25 +3,23 @@ from regparser.tree.struct import Node
 
 
 def marker_of(node):
-    """Paragraphs have different markers -- regtext has parentheses,
-    interpretations have periods. Appendices, in all of their flexibility,
-    can have either"""
-    m = [l for l in node.label if l != Node.INTERP_MARK][-1]
-
-    if node.node_type == Node.INTERP:
-        return m + '.'
-    elif node.node_type == Node.APPENDIX and node.text.startswith(m + '.'):
-        return m + '.'
+    """Try multiple potential marker formats. See if any apply to this
+    node."""
+    if node.label[-1] == Node.INTERP_MARK:
+        marker = node.label[-2]
     else:
-        return '(%s)' % m
+        marker = node.label[-1]
+
+    for fmt in ('({})', '{}.'):
+        potential_marker = fmt.format(marker)
+        if node.text.strip().startswith(potential_marker):
+            return potential_marker
+    return ''
 
 
 class ParagraphMarkers(Layer):
     def process(self, node):
         """Look for any leading paragraph markers."""
         marker = marker_of(node)
-        if node.text.strip().startswith(marker):
-            return [{
-                "text": marker,
-                "locations": [0]
-            }]
+        if marker:
+            return [{"text": marker, "locations": [0]}]
