@@ -208,7 +208,8 @@ def _fdsys_to_doc_number(xml, title, title_part):
         notices = fetch_notice_json(title, title_part, only_final=True,
                                     max_effective_date=date)
 
-        def comparer(n): return (n['effective_on'], n['publication_date'])
+        def comparer(n):
+            return (n['effective_on'], n['publication_date'])
 
         notices = sorted(notices, key=comparer, reverse=True)
         if notices:

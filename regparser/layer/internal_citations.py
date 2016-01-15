@@ -42,8 +42,9 @@ class InternalCitationParser(Layer):
         """ Parse the provided text, pulling out all the internal
         (self-referential) citations. """
 
-        def to_layer(pc): return {'offsets': [(pc.start, pc.end)],
-                                  'citation': pc.label.to_list()}
+        def to_layer(pc):
+            return {'offsets': [(pc.start, pc.end)],
+                    'citation': pc.label.to_list()}
 
         citations = internal_citations(text, label, require_marker=True,
                                        title=title)

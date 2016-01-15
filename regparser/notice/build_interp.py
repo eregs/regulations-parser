@@ -47,7 +47,8 @@ def process_with_headers(cfr_part, parent_xml):
     seen_header = False
     xml_nodes = []
 
-    def contains_supp(n): return 'supplement i' in (n.text.lower() or '')
+    def contains_supp(n):
+        return 'supplement i' in (n.text.lower() or '')
 
     for child in parent_xml:
         # SECTION shouldn't be in this part of the XML, but often is. Expand

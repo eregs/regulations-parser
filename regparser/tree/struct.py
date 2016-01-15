@@ -166,7 +166,8 @@ def find_parent(root, label):
     if isinstance(label, Node):
         label = label.label_id()
 
-    def has_child(n): return any(c.label_id() == label for c in n.children)
+    def has_child(n):
+        return any(c.label_id() == label for c in n.children)
 
     return find_first(root, has_child)
 
@@ -218,7 +219,8 @@ def treeify(nodes):
         if root.label[-1] == Node.INTERP_MARK:
             label = root.label[:-1]
 
-        def is_child(node): return node.label[:len(label)] == label
+        def is_child(node):
+            return node.label[:len(label)] == label
         children = [n for n in nodes if n.label != root.label and is_child(n)]
         root.children = root.children + treeify(children)
         roots.append(root)

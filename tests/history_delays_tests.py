@@ -53,8 +53,8 @@ class HistoryDelaysTests(TestCase):
     def test_modifies_notice(self):
         fr = delays.FRDelay(10, 225, None)
 
-        def meta(v, s, e): return {'fr_volume': v,
-                                   'meta': {'start_page': s, 'end_page': e}}
+        def meta(v, s, e):
+            return {'fr_volume': v, 'meta': {'start_page': s, 'end_page': e}}
 
         self.assertTrue(fr.modifies_notice(meta(10, 220, 230)))
         self.assertTrue(fr.modifies_notice(meta(10, 225, 230)))
