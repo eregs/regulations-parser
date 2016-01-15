@@ -42,8 +42,8 @@ class CitationsTest(TestCase):
              'paragraphs (a)(6)', ['102', '6', 'a', '6']),
             (u"date in § 1005.20(h)(1) must disclose", u'§ 1005.20(h)(1)',
              ['1005', '20', 'h', '1']),
-            ('(a) Solicited issuance. Except as provided in paragraph (b) '
-             + 'of this section', 'paragraph (b)', ['102', '6', 'b']),
+            ('(a) Solicited issuance. Except as provided in paragraph (b) ' +
+             'of this section', 'paragraph (b)', ['102', '6', 'b']),
             ("And Section 222.87(d)(2)(i) says something",
              'Section 222.87(d)(2)(i)', ['222', '87', 'd', '2', 'i']),
             ("More in paragraph 22(a)(4).", "paragraph 22(a)(4)",
@@ -457,12 +457,12 @@ class CitationsLabelTest(TestCase):
 
     def test_lt(self):
         """Comparisons between labels"""
-        self.assertTrue(Label(part='105', section='3')
-                        < Label(part='105', section='4'))
-        self.assertTrue(Label(part='105', section='3')
-                        < Label(part='105', section='3', p1='a'))
-        self.assertTrue(Label(part='105', section='3', p1='a')
-                        < Label(part='222'))
+        self.assertTrue(Label(part='105', section='3') <
+                        Label(part='105', section='4'))
+        self.assertTrue(Label(part='105', section='3') <
+                        Label(part='105', section='3', p1='a'))
+        self.assertTrue(Label(part='105', section='3', p1='a') <
+                        Label(part='222'))
 
     def test_labels_until_paragraphs(self):
         """We can fill in paragraphs"""

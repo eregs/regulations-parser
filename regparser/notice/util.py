@@ -18,8 +18,8 @@ def prepost_pend_spaces(el):
         parent.text = parent.text + ' '
         space_added = True
 
-    if (el.tail and el.tail[0] not in not_prepend_space
-       and (el.text or el.getchildren() or not space_added)):
+    if (el.tail and el.tail[0] not in not_prepend_space and
+            (el.text or el.getchildren() or not space_added)):
         el.tail = ' ' + el.tail
 
 
@@ -48,6 +48,6 @@ def spaces_then_remove(el, tag_str):
 def body_to_string(xml_node):
     """Create a string from the text of this node and its children (without
     the outer tag)"""
-    return (xml_node.text.lstrip()
-            + ''.join(etree.tostring(c) for c in xml_node)
-            + (xml_node.tail or '').rstrip())
+    return (xml_node.text.lstrip() +
+            ''.join(etree.tostring(c) for c in xml_node) +
+            (xml_node.tail or '').rstrip())

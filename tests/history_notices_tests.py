@@ -31,9 +31,9 @@ class HistoryNoticesTests(TestCase):
         self.assertEqual([head], notes)
 
     def test_group_by_eff_date(self):
-        n = lambda pub, eff, num: {'publication_date': pub,
-                                   'effective_on': eff,
-                                   'document_number': num}
+        def n(pub, eff, num): return {'publication_date': pub,
+                                      'effective_on': eff,
+                                      'document_number': num}
         n1 = n('2001-01-01', '2002-02-02', '1')
         n2 = n('2001-03-01', '2002-02-02', '2')
         n3 = n('2002-02-01', '2003-02-02', '3')

@@ -10,8 +10,8 @@ from regparser.tree.xml_parser import interpretations
 
 
 def _is_interp_amend(al):
-    return (not isinstance(al, DesignateAmendment)
-            and Node.INTERP_MARK in al.label)
+    return (not isinstance(al, DesignateAmendment) and
+            Node.INTERP_MARK in al.label)
 
 
 def parse_interp_changes(amended_labels, cfr_part, parent_xml):
@@ -46,7 +46,9 @@ def process_with_headers(cfr_part, parent_xml):
     # Skip over everything until 'Supplement I' in a header
     seen_header = False
     xml_nodes = []
-    contains_supp = lambda n: 'supplement i' in (n.text.lower() or '')
+
+    def contains_supp(n): return 'supplement i' in (n.text.lower() or '')
+
     for child in parent_xml:
         # SECTION shouldn't be in this part of the XML, but often is. Expand
         # it to proceed

@@ -27,9 +27,9 @@ def find_section_by_section(xml_tree):
     """Find the section-by-section analysis of this notice"""
     xml_children = remove_extract(xml_tree).xpath('//SUPLINF/*')
     sxs = dropwhile(lambda el: (
-        el.tag != 'HD'
-        or el.get('SOURCE') != 'HD1'
-        or 'section-by-section' not in el.text.lower()), xml_children)
+        el.tag != 'HD' or
+        el.get('SOURCE') != 'HD1' or
+        'section-by-section' not in el.text.lower()), xml_children)
 
     try:
         # Ignore Header
@@ -104,11 +104,11 @@ def build_section_by_section(sxs, fr_start_page, previous_label):
             'footnote_refs': footnotes
             }
 
-        if (labels   # No label => subheader
+        if (labels and  # No label => subheader
                 # Concatenate if repeat label or backtrack
-                and not all(label == previous_label
-                            or is_backtrack(previous_label, label)
-                            for label in labels)):
+                not all(label == previous_label or
+                        is_backtrack(previous_label, label)
+                        for label in labels)):
             previous_label = labels[-1]
             next_structure['labels'] = labels
         structures.append(next_structure)
@@ -135,8 +135,8 @@ def is_backtrack(previous_label, next_label):
     previous_label = previous_label or []
     next_label = next_label or []
     trimmed = previous_label[:len(next_label)]
-    return (next_label and len(previous_label) > len(next_label)
-            and trimmed == next_label)
+    return (next_label and len(previous_label) > len(next_label) and
+            trimmed == next_label)
 
 
 def is_child_of(child_xml, header_xml, cfr_part, header_citations=None):
@@ -149,10 +149,10 @@ def is_child_of(child_xml, header_xml, cfr_part, header_citations=None):
         if header_citations is None:
             header_citations = parse_into_labels(header_xml.text, cfr_part)
         child_citations = parse_into_labels(child_xml.text, cfr_part)
-        if (child_xml.get('SOURCE') > header_xml.get('SOURCE')
-                or (header_citations and not child_citations)
-                or (header_citations
-                    and header_citations[-1] == child_citations[0])):
+        if (child_xml.get('SOURCE') > header_xml.get('SOURCE') or
+            (header_citations and not child_citations) or
+            (header_citations and
+             header_citations[-1] == child_citations[0])):
             return True
         elif header_citations and child_citations:
             return is_backtrack(header_citations[-1].split('-'),

@@ -209,8 +209,8 @@ def create_add_amendment(amendment):
 
         # If text ends with a colon and is followed by stars, assume we are
         # only modifying the intro text
-        if (text[-1:] == ':' and node.label == amendment['node'].label
-                and node.source_xml is not None):
+        if (text[-1:] == ':' and node.label == amendment['node'].label and
+                node.source_xml is not None):
             following = node.source_xml.getnext()
             if following is not None and following.tag == 'STARS':
                 change[label]['field'] = '[text]'

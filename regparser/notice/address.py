@@ -50,13 +50,13 @@ def fetch_addresses(xml_tree):
 
             if content.strip() and not (label.endswith('http') or
                                         label.endswith('https')):
-                addresses['methods'] = (addresses.get('methods', [])
-                                        + [(label.strip(), content.strip())])
+                addresses['methods'] = (addresses.get('methods', []) +
+                                        [(label.strip(), content.strip())])
                 continue
         if not addresses:
             addresses['intro'] = p
         else:
-            addresses['instructions'] = (addresses.get('instructions', [])
-                                         + [p])
+            addresses['instructions'] = (addresses.get('instructions', []) +
+                                         [p])
     if addresses:
         return addresses

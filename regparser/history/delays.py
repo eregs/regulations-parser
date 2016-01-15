@@ -9,16 +9,16 @@ from regparser.grammar.delays import Delayed, EffectiveDate, Notice
 class FRDelay(namedtuple('FRDelay', ['volume', 'page', 'delayed_until'])):
     def modifies_notice(self, notice):
         """Calculate whether the fr citation is within the provided notice"""
-        return (notice['fr_volume'] == self.volume
-                and notice['meta']['start_page'] <= self.page
-                and notice['meta']['end_page'] >= self.page)
+        return (notice['fr_volume'] == self.volume and
+                notice['meta']['start_page'] <= self.page and
+                notice['meta']['end_page'] >= self.page)
 
     def modifies_notice_xml(self, notice_xml):
         """Calculates whether the fr citation is within the provided
         NoticeXML"""
-        return (notice_xml.fr_volume == self.volume
-                and notice_xml.start_page <= self.page
-                and notice_xml.end_page >= self.page)
+        return (notice_xml.fr_volume == self.volume and
+                notice_xml.start_page <= self.page and
+                notice_xml.end_page >= self.page)
 
 
 def modify_effective_dates(notices):

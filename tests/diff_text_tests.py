@@ -54,8 +54,8 @@ class DiffTextTests(TestCase):
         words = difftext.deconstruct_text("This is a sentence.")
         self.assertEqual(['This', ' ', 'is', ' ', 'a', ' ', 'sentence.'],
                          words)
-        words = difftext.deconstruct_text("An image: "
-                                          + "![Appendix A9](ER27DE11.000)")
+        words = difftext.deconstruct_text("An image: " +
+                                          "![Appendix A9](ER27DE11.000)")
         self.assertEqual(['An', ' ', 'image:', ' ',
                           '![Appendix A9](ER27DE11.000)'], words)
         words = difftext.deconstruct_text("This\nis\t\ta test\n\tpattern")

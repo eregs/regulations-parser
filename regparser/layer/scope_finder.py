@@ -31,8 +31,8 @@ class ScopeFinder(object):
             self.__current_subpart = node.label[2]
         elif node.node_type == struct.Node.EMPTYPART:
             self.__current_subpart = None
-        if (node.node_type in (struct.Node.REGTEXT, struct.Node.APPENDIX)
-                and len(node.label) == 2):
+        if (node.node_type in (struct.Node.REGTEXT, struct.Node.APPENDIX) and
+                len(node.label) == 2):
             # Subparts
             section = node.label[-1]
             self.subpart_map[self.__current_subpart].append(section)

@@ -25,20 +25,20 @@ class LayerGraphicsTest(TestCase):
         self.assertEqual(3, len(result))
         found = [False, False, False]
         for res in result:
-            if (res['text'] == '![ex](ABCD)'
-                    and 'ABCD' in res['url']
-                    and res['alt'] == 'ex'
-                    and res['locations'] == [0, 1]):
+            if (res['text'] == '![ex](ABCD)' and
+                'ABCD' in res['url'] and
+                res['alt'] == 'ex' and
+                    res['locations'] == [0, 1]):
                 found[0] = True
-            elif (res['text'] == '![222](XXX)'
-                  and 'XXX' in res['url']
-                  and res['alt'] == '222'
-                  and res['locations'] == [0]):
+            elif (res['text'] == '![222](XXX)' and
+                  'XXX' in res['url'] and
+                  res['alt'] == '222' and
+                  res['locations'] == [0]):
                 found[1] = True
-            elif (res['text'] == '![](NOTEXT)'
-                  and 'NOTEXT' in res['url']
-                  and res['alt'] == ''
-                  and res['locations'] == [0]):
+            elif (res['text'] == '![](NOTEXT)' and
+                  'NOTEXT' in res['url'] and
+                  res['alt'] == '' and
+                  res['locations'] == [0]):
                 found[2] = True
 
         self.assertEqual([True, True, True], found)

@@ -8,44 +8,44 @@ from regparser.grammar.utils import Marker, SuffixMarker, WordBoundaries
 
 
 lower_p = (
-    Suppress("(")
-    + Regex(r"[ivx]{1}|[a-hj-uwyz]{1,2}").setResultsName("p1")
-    + Suppress(")"))
+    Suppress("(") +
+    Regex(r"[ivx]{1}|[a-hj-uwyz]{1,2}").setResultsName("p1") +
+    Suppress(")"))
 digit_p = (
-    Suppress("(")
-    + Word(string.digits).setResultsName("p2")
-    + Suppress(")"))
+    Suppress("(") +
+    Word(string.digits).setResultsName("p2") +
+    Suppress(")"))
 roman_p = (
-    Suppress("(")
-    + Word("ivxlcdm").setResultsName("p3") +
+    Suppress("(") +
+    Word("ivxlcdm").setResultsName("p3") +
     Suppress(")"))
 upper_p = (
-    Suppress("(")
-    + Word(string.ascii_uppercase).setResultsName("p4")
-    + Suppress(")"))
+    Suppress("(") +
+    Word(string.ascii_uppercase).setResultsName("p4") +
+    Suppress(")"))
 
 em_digit_p = (
-    Suppress(Regex(r"\(<E[^>]*>"))
-    + Word(string.digits).setResultsName("p5")
-    + Suppress("</E>)"))
+    Suppress(Regex(r"\(<E[^>]*>")) +
+    Word(string.digits).setResultsName("p5") +
+    Suppress("</E>)"))
 em_roman_p = (
-    Suppress(Regex(r"\(<E[^>]*>"))
-    + Word("ivxlcdm").setResultsName("p5")
-    + Suppress("</E>)"))
+    Suppress(Regex(r"\(<E[^>]*>")) +
+    Word("ivxlcdm").setResultsName("p5") +
+    Suppress("</E>)"))
 
 # Allow a plaintext version of italic paragraph markers
 plaintext_level5_p = (
-    Suppress("(")
-    + Word(string.digits).setResultsName("plaintext_p5")
-    + Suppress(")"))
+    Suppress("(") +
+    Word(string.digits).setResultsName("plaintext_p5") +
+    Suppress(")"))
 plaintext_level6_p = (
-    Suppress("(")
-    + Word("ivxlcdm").setResultsName("plaintext_p6")
-    + Suppress(")"))
+    Suppress("(") +
+    Word("ivxlcdm").setResultsName("plaintext_p6") +
+    Suppress(")"))
 
 # Leave whitespace; if there's a space we assume the comment is broken
-em_digit_c = ("." + Regex(r"<E[^>]*>")
-              + Word(string.digits).setResultsName("c4").leaveWhitespace())
+em_digit_c = ("." + Regex(r"<E[^>]*>") +
+              Word(string.digits).setResultsName("c4").leaveWhitespace())
 upper_c = "." + Word(string.ascii_uppercase).setResultsName(
     'c3').leaveWhitespace()
 roman_c = "." + Word("ivxlcdm").setResultsName('c2').leaveWhitespace()
@@ -80,22 +80,22 @@ parts_marker = Marker("parts")
 subpart_marker = Marker("subpart")
 
 comment_marker = (
-    (Marker("comment")
-     | Marker("commentary")
-     | (Marker("official") + Marker("interpretations"))
-     | (Marker("supplement") + Suppress(WordBoundaries("I"))))
-    + Optional(Marker("of") | Marker("to")))
+    (Marker("comment") |
+     Marker("commentary") |
+     (Marker("official") + Marker("interpretations")) |
+     (Marker("supplement") + Suppress(WordBoundaries("I")))) +
+    Optional(Marker("of") | Marker("to")))
 comments_marker = Marker("comments")
 
 appendix_marker = Marker("appendix")
 appendices_marker = Marker("appendices")
 
 conj_phrases = (
-    (Suppress(",") + Optional(Marker("and") | Marker("or")))
-    | Marker("and")
-    | Marker("or")
-    | (Marker("except") + Marker("for"))
-    | Suppress(
+    (Suppress(",") + Optional(Marker("and") | Marker("or"))) |
+    Marker("and") |
+    Marker("or") |
+    (Marker("except") + Marker("for")) |
+    Suppress(
         Marker("through") | "-" | u"–"
         ).setParseAction(lambda: True).setResultsName("through")
 )

@@ -65,9 +65,9 @@ class Terms(Layer):
         for scope in self.scoped_terms:
             for ref in self.scoped_terms[scope]:
                 key = ref.term + ":" + ref.label
-                if (key not in referenced     # New term
+                if (key not in referenced or  # New term
                         # Or this term is earlier in the paragraph
-                        or ref.start < referenced[key]['position'][0]):
+                        ref.start < referenced[key]['position'][0]):
                     referenced[key] = {
                         'term': ref.term,
                         'reference': ref.label,

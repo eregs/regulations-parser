@@ -67,7 +67,7 @@ class ParenthesesCleanup(PreProcessorBase):
     """Clean up where parentheses exist between paragraph an emphasis tags"""
     def transform(self, xml):
         # We want to treat None's as blank strings
-        _str = lambda x: x or ""
+        def _str(x): return x or ""
         for par in xml.xpath("//P/*[position()=1 and name()='E']/.."):
             em = par.getchildren()[0]   # must be an E due to the xpath
 

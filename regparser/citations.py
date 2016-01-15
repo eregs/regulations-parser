@@ -24,10 +24,10 @@ class Label(object):
         """Convert between a struct.Node and a Label; use heuristics to
         determine which schema to follow. Node labels aren't as expressive as
         Label objects"""
-        if (node.node_type == Node.APPENDIX
-            or (node.node_type == Node.INTERP
-                and len(node.label) > 2
-                and node.label[1].isalpha())):
+        if (node.node_type == Node.APPENDIX or
+            (node.node_type == Node.INTERP and
+                len(node.label) > 2 and
+                node.label[1].isalpha())):
             if len(node.label) > 2 and node.label[2].isdigit():
                 schema = cls.app_sect_schema
             else:
@@ -71,8 +71,8 @@ class Label(object):
     def copy(self, schema=None, **kwargs):
         """Keep any relevant prefix when copying"""
         kwschema = Label.determine_schema(kwargs)
-        set_schema = bool(schema or kwschema
-                          or not self.using_default_schema)
+        set_schema = bool(schema or kwschema or
+                          not self.using_default_schema)
 
         if schema is None:
             if kwschema:
@@ -118,11 +118,11 @@ class Label(object):
 
     def __eq__(self, other):
         """Equality if types match and fields match"""
-        return (type(other) == type(self)
-                and self.using_default_schema == other.using_default_schema
-                and self.settings == other.settings
-                and self.schema == other.schema
-                and self.comment == other.comment)
+        return (type(other) == type(self) and
+                self.using_default_schema == other.using_default_schema and
+                self.settings == other.settings and
+                self.schema == other.schema and
+                self.comment == other.comment)
 
     def __hash__(self):
         return hash(repr(self))
@@ -142,8 +142,8 @@ class Label(object):
         field = self.schema[len(self_list)-1]
         start, end = self_list[-1], other_list[-1]
         level = [lvl for lvl in p_levels if start in lvl and end in lvl]
-        if (self.schema != other.schema or len(self_list) != len(other_list)
-                or self_list[:-1] != other_list[:-1] or not level):
+        if (self.schema != other.schema or len(self_list) != len(other_list) or
+                self_list[:-1] != other_list[:-1] or not level):
             logging.warning("Bad use of 'through': %s - %s", self, other)
         else:
             level = level[0]
@@ -166,10 +166,10 @@ class ParagraphCitation(object):
 
     def __contains__(self, other):
         """Proper inclusion"""
-        return (other.full_start >= self.full_start
-                and other.full_end <= self.full_end
-                and (other.full_end != self.full_end
-                     or other.full_start != self.full_start))
+        return (other.full_start >= self.full_start and
+                other.full_end <= self.full_end and
+                (other.full_end != self.full_end or
+                 other.full_start != self.full_start))
 
     def __repr__(self):
         return "ParagraphCitation( start=%s, end=%s, label=%s )" % (
@@ -299,9 +299,9 @@ def select_encompassing_citations(citations):
 def remove_citation_overlaps(text, possible_markers):
     """Given a list of markers, remove any that overlap with citations"""
     return [(m, start, end) for m, start, end in possible_markers
-            if not any((e.start <= start and e.end >= start)
-                       or (e.start <= end and e.end >= end)
-                       or (start <= e.start and end >= e.end)
+            if not any((e.start <= start and e.end >= start) or
+                       (e.start <= end and e.end >= end) or
+                       (start <= e.start and end >= e.end)
                        for e in internal_citations(text))]
 
 

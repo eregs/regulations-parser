@@ -36,8 +36,8 @@ def depth_check(prev_typ, prev_idx, prev_depth, typ, idx, depth):
     # depth can be incremented if starting a new sequence
     inc = depth == prev_depth + 1 and idx == 0 and typ != prev_typ
     # markerless in sequence must have the same level
-    mless_seq = (prev_typ == typ and prev_depth == depth
-                 and typ == markers.markerless)
+    mless_seq = (prev_typ == typ and prev_depth == depth and
+                 typ == markers.markerless)
     return dec or cont or stars or inc or mless_seq
 
 
@@ -87,9 +87,9 @@ def marker_stars_markerless_symmetry(pprev_typ, pprev_idx, pprev_depth,
     Prefer the middle
     """
     situation = (
-        pprev_typ not in (markers.markerless, markers.stars)
-        and prev_typ == markers.stars and typ == markers.markerless
-        and pprev_depth > depth)
+        pprev_typ not in (markers.markerless, markers.stars) and
+        prev_typ == markers.stars and typ == markers.markerless and
+        pprev_depth > depth)
     preferred_solution = prev_depth == pprev_depth
     return not situation or preferred_solution
 
@@ -105,8 +105,8 @@ def markerless_stars_symmetry(pprev_typ, pprev_idx, pprev_depth,
 
         Here, we don't really care about the distinction, so we'll opt for the
         former."""
-    sandwich = (pprev_typ == typ == markers.markerless
-                and prev_typ == markers.stars)
+    sandwich = (pprev_typ == typ == markers.markerless and
+                prev_typ == markers.stars)
     preferred_solution = prev_depth <= depth
     return not sandwich or preferred_solution
 
@@ -128,8 +128,8 @@ def star_sandwich_symmetry(pprev_typ, pprev_idx, pprev_depth,
     5                               5
     Stars also cannot be used to skip a level (similar to markerless sandwich,
     above)"""
-    sandwich = (pprev_typ != markers.stars and typ != markers.stars
-                and prev_typ == markers.stars)
+    sandwich = (pprev_typ != markers.stars and typ != markers.stars and
+                prev_typ == markers.stars)
     unwinding = prev_idx == 0 and pprev_depth > depth
     bad_unwinding = unwinding and prev_depth not in (pprev_depth, depth)
     inc_depth = depth == prev_depth + 1 and prev_depth == pprev_depth + 1
@@ -140,10 +140,10 @@ def triplet_tests(*triplet_seq):
     """Run propositions around a sequence of three markers. We combine them
     here so that they act as a single constraint"""
     return (
-        markerless_sandwich(*triplet_seq)
-        and star_sandwich_symmetry(*triplet_seq)
-        and marker_stars_markerless_symmetry(*triplet_seq)
-        and markerless_stars_symmetry(*triplet_seq)
+        markerless_sandwich(*triplet_seq) and
+        star_sandwich_symmetry(*triplet_seq) and
+        marker_stars_markerless_symmetry(*triplet_seq) and
+        markerless_stars_symmetry(*triplet_seq)
     )
 
 
@@ -241,9 +241,9 @@ def depth_type_order(order):
 
     def inner(constrain, all_variables):
         for i in range(0, len(all_variables) / 3):
-            constrain(lambda t, d: (d < len(order)
-                                    and (t in (markers.stars, order[d])
-                                         or t in order[d])),
+            constrain(lambda t, d: (d < len(order) and
+                                    (t in (markers.stars, order[d]) or
+                                     t in order[d])),
                       ('type' + str(i), 'depth' + str(i)))
 
     return inner

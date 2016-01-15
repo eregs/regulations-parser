@@ -8,8 +8,8 @@ def parenthesize(characters, name):
 
 
 def decimalize(characters, name):
-    return (Word(characters).setResultsName(name)
-            + Literal(".").leaveWhitespace())
+    return (Word(characters).setResultsName(name) +
+            Literal(".").leaveWhitespace())
 
 
 #   Only used as the top of the appendix hierarchy

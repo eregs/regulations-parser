@@ -91,9 +91,9 @@ class ParagraphProcessor(object):
 
         only_one = labels == [mtypes.MARKERLESS]
         switches_after_first = (
-            len(nodes) > 1
-            and labels[0] == mtypes.MARKERLESS
-            and labels[1] != mtypes.MARKERLESS)
+            len(nodes) > 1 and
+            labels[0] == mtypes.MARKERLESS and
+            labels[1] != mtypes.MARKERLESS)
 
         first_xml = nodes[0].source_xml if len(nodes) else None
         table_first = first_xml is not None and first_xml.tag == "GPOTABLE"

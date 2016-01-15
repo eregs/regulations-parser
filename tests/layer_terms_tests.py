@@ -61,10 +61,10 @@ class LayerTermTest(TestCase):
         t = Terms(None)
         stack = ParentStack()
         stack.add(0, Node('Definitions', label=['9999']))
-        node = Node(u"However, for purposes of rescission under §§ 1111.15 "
-                    + u"and 1111.13, and for purposes of §§ 1111.12(a)(1), "
-                    + u"and 1111.46(d)(4), the term means all calendar "
-                    + u"days...")
+        node = Node(u"However, for purposes of rescission under §§ 1111.15 " +
+                    u"and 1111.13, and for purposes of §§ 1111.12(a)(1), " +
+                    u"and 1111.46(d)(4), the term means all calendar " +
+                    u"days...")
         self.assertEqual(([], []), t.node_definitions(node, stack))
 
     def test_node_definitions_exclusion(self):
@@ -145,8 +145,8 @@ class LayerTermTest(TestCase):
             label=['88', 'Subpart'],
             node_type=Node.EMPTYPART,
             children=[
-                Node(u"Definition. For the purposes of this part, "
-                     + u"“abcd” is an alphabet", label=['88', '1'])])
+                Node(u"Definition. For the purposes of this part, " +
+                     u"“abcd” is an alphabet", label=['88', '1'])])
         xqxq_subpart = Node(
             '',
             title='Subpart XQXQ: The unreadable',
@@ -154,17 +154,17 @@ class LayerTermTest(TestCase):
             children=[
                 Node(label=['88', '2'], children=[
                     Node(label=['88', '2', 'a'],
-                         text="Definitions come later for the purposes of "
-                              + "this section ",
+                         text="Definitions come later for the purposes of " +
+                              "this section ",
                          children=[
                              Node(u"“AXAX” means axe-cop",
                                   label=['88', '2', 'a', '1'])]),
                     Node(label=['88', '2', 'b'], children=[
                         Node(label=['88', '2', 'b', 'i'], children=[
                             Node(label=['88', '2', 'b', 'i', 'A'],
-                                 text=u"Definition. “Awesome sauce” means "
-                                      + "great for the purposes of this "
-                                      + "paragraph",)])])])])
+                                 text=u"Definition. “Awesome sauce” means " +
+                                 "great for the purposes of this " +
+                                 "paragraph",)])])])])
         tree = Node(label=['88'], children=[noname_subpart, xqxq_subpart])
         t = Terms(tree)
         t.pre_process()
@@ -204,8 +204,8 @@ class LayerTermTest(TestCase):
                          referenced['awesome sauce:88-2-b-i-A']['position'])
 
     def test_pre_process_defined_twice(self):
-        tree = Node(u"The term “lol” means laugh out loud. "
-                    + u"How do you pronounce “lol”, though?",
+        tree = Node(u"The term “lol” means laugh out loud. " +
+                    u"How do you pronounce “lol”, though?",
                     label=['1212', '5'])
         t = Terms(tree)
         t.pre_process()
