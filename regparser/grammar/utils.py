@@ -33,9 +33,9 @@ class DocLiteral(pyparsing.Literal):
 
 
 def WordBoundaries(grammar):
-    return (pyparsing.WordStart(pyparsing.alphanums)
-            + grammar
-            + pyparsing.WordEnd(pyparsing.alphanums))
+    return (pyparsing.WordStart(pyparsing.alphanums) +
+            grammar +
+            pyparsing.WordEnd(pyparsing.alphanums))
 
 
 def Marker(txt):
@@ -43,8 +43,8 @@ def Marker(txt):
 
 
 def SuffixMarker(txt):
-    return pyparsing.Suppress(pyparsing.CaselessLiteral(txt)
-                              + pyparsing.WordEnd(pyparsing.alphanums))
+    return pyparsing.Suppress(pyparsing.CaselessLiteral(txt) +
+                              pyparsing.WordEnd(pyparsing.alphanums))
 
 
 class QuickSearchable(pyparsing.ParseElementEnhance):
@@ -107,15 +107,15 @@ class QuickSearchable(pyparsing.ParseElementEnhance):
         # Optimization: WordStart is generally followed by a more specific
         # identifier. Rather than searching for the start of a word alone,
         # search for that identifier as well
-        if (isinstance(grammar, pyparsing.And)
-                and isinstance(grammar.exprs[0], pyparsing.WordStart)):
+        if (isinstance(grammar, pyparsing.And) and
+                isinstance(grammar.exprs[0], pyparsing.WordStart)):
             boundry, next_expr = grammar.exprs[:2]
             word_chars = ''.join(re.escape(char)
                                  for char in boundry.wordChars)
             return set('(?<![{}])'.format(word_chars) + regex_str
                        for regex_str in recurse(next_expr))
-        if (isinstance(grammar, pyparsing.And)
-                and isinstance(grammar.exprs[0], pyparsing.Optional)):
+        if (isinstance(grammar, pyparsing.And) and
+                isinstance(grammar.exprs[0], pyparsing.Optional)):
             return recurse(grammar.exprs[0].expr) | recurse(grammar.exprs[1])
         elif isinstance(grammar, pyparsing.And):
             return recurse(grammar.exprs[0])

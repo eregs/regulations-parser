@@ -120,13 +120,14 @@ def paragraph_in_context_moved(tokenized, initial_context):
     idx = 0
     while idx < len(tokenized) - 4:
         par1, cont1, verb, par2, cont2 = tokenized[idx:idx + 5]
-        if (par1.match(tokens.Paragraph) and cont1.match(tokens.Context)
-                and verb.match(tokens.Verb, verb=tokens.Verb.MOVE,
-                               active=False)
-                and par2.match(tokens.Paragraph)
-                and cont2.match(tokens.Context)
-                and all(tok.label[1:2] == ['Interpretations']
-                        for tok in (par1, cont1, par2, cont2))):
+        if (par1.match(tokens.Paragraph) and
+            cont1.match(tokens.Context) and
+            verb.match(tokens.Verb,
+                       verb=tokens.Verb.MOVE, active=False) and
+            par2.match(tokens.Paragraph) and
+            cont2.match(tokens.Context) and
+            all(tok.label[1:2] == ['Interpretations']
+                for tok in (par1, cont1, par2, cont2))):
             batch, initial_context = compress_context(
                 [cont1, par1, verb, cont2, par2], initial_context)
             final_tokens.extend(batch)
@@ -146,11 +147,11 @@ def move_then_modify(tokenized):
     idx = 0
     while idx < len(tokenized) - 3:
         move, p1, p2, edit = tokenized[idx:idx + 4]
-        if (move.match(tokens.Verb, verb=tokens.Verb.MOVE, active=True)
-                and p1.match(tokens.Paragraph)
-                and p2.match(tokens.Paragraph)
-                and edit.match(tokens.Verb, verb=tokens.Verb.PUT,
-                               active=True, and_prefix=True)):
+        if (move.match(tokens.Verb, verb=tokens.Verb.MOVE, active=True) and
+            p1.match(tokens.Paragraph) and
+            p2.match(tokens.Paragraph) and
+            edit.match(tokens.Verb, verb=tokens.Verb.PUT, active=True,
+                       and_prefix=True)):
             final_tokens.append(tokens.Verb(tokens.Verb.DELETE, active=True))
             final_tokens.append(p1)
             final_tokens.append(tokens.Verb(tokens.Verb.POST, active=True))
@@ -202,10 +203,10 @@ def multiple_moves(tokenized):
             skip -= 1
         elif idx < len(tokenized) - 2:
             el1, el2 = tokenized[idx+1:idx+3]
-            if (el0.match(tokens.TokenList) and el2.match(tokens.TokenList)
-                    and el1.match(tokens.Verb, verb=tokens.Verb.MOVE,
-                                  active=False)
-                    and len(el0.tokens) == len(el2.tokens)):
+            if (el0.match(tokens.TokenList) and el2.match(tokens.TokenList) and
+                el1.match(tokens.Verb, verb=tokens.Verb.MOVE,
+                          active=False) and
+                    len(el0.tokens) == len(el2.tokens)):
                 skip = 2
                 for tidx in range(len(el0.tokens)):
                     converted.append(el1.copy(active=True))
@@ -236,8 +237,8 @@ def switch_passive(tokenized):
                 to_add = to_add[-1:] + to_add[:-1]
                 verb.active = True
                 #   may need to grab one more if the verb is move
-                if (verb.verb == tokens.Verb.MOVE
-                        and len(to_add) < len(remaining)):
+                if (verb.verb == tokens.Verb.MOVE and
+                        len(to_add) < len(remaining)):
                     to_add.append(remaining[len(to_add)])
         converted.extend(to_add)
         remaining = remaining[len(to_add):]
@@ -250,20 +251,20 @@ def resolve_confused_context(tokenized, initial_context):
     if initial_context[1:2] == ['Interpretations']:
         final_tokens = []
         for token in tokenized:
-            if (token.match(tokens.Context, tokens.Paragraph)
-                    and len(token.label) > 1 and token.label[1] is None):
+            if (token.match(tokens.Context, tokens.Paragraph) and
+                    len(token.label) > 1 and token.label[1] is None):
                 final_tokens.append(token.copy(
                     label=[token.label[0], 'Interpretations', token.label[2],
-                           '(' + ')('.join(l for l in token.label[3:] if l)
-                           + ')']))
-            elif (token.match(tokens.Context, tokens.Paragraph)
-                    and len(token.label) > 1 and
+                           '(' + ')('.join(l for l in token.label[3:] if l) +
+                           ')']))
+            elif (token.match(tokens.Context, tokens.Paragraph) and
+                  len(token.label) > 1 and
                     token.label[1].startswith('Appendix:')):
                 final_tokens.append(token.copy(
                     label=[token.label[0], 'Interpretations',
                            token.label[1][len('Appendix:'):],
-                           '(' + ')('.join(l for l in token.label[2:] if l)
-                           + ')']))
+                           '(' + ')('.join(l for l in token.label[2:] if l) +
+                           ')']))
             elif token.match(tokens.TokenList):
                 sub_tokens = resolve_confused_context(token.tokens,
                                                       initial_context)
@@ -291,17 +292,17 @@ def and_token_resolution(tokenized):
     tokenized = list(reversed(tokenized))
     tokenized = zip(tokenized, tokenized[1:] + [None])
     tokenized = list(reversed([l for l, r in tokenized
-                               if not l.match(tokens.AndToken) or not r
-                               or not r.match(tokens.Verb)]))
+                               if not l.match(tokens.AndToken) or not r or
+                               not r.match(tokens.Verb)]))
 
     # check for the pattern in question
     final_tokens = []
     idx = 0
     while idx < len(tokenized) - 3:
         t1, t2, t3, t4 = tokenized[idx:idx + 4]
-        if (t1.match(tokens.Verb) and t2.match(tokens.Context)
-                and t3.match(tokens.AndToken)
-                and t4.match(tokens.Paragraph, tokens.TokenList)):
+        if (t1.match(tokens.Verb) and t2.match(tokens.Context) and
+            t3.match(tokens.AndToken) and
+                t4.match(tokens.Paragraph, tokens.TokenList)):
             final_tokens.append(t1)
             final_tokens.append(tokens.Paragraph(t2.label))
             final_tokens.append(t4)
@@ -439,9 +440,9 @@ def compress_context(tokenized, initial_context):
     for token in tokenized:
         if isinstance(token, tokens.Context):
             # Interpretations of appendices
-            if (len(context) > 1 and len(token.label) > 1
-                    and context[1] == 'Interpretations'
-                    and (token.label[1] or '').startswith('Appendix')):
+            if (len(context) > 1 and len(token.label) > 1 and
+                context[1] == 'Interpretations' and
+                    (token.label[1] or '').startswith('Appendix')):
                 context = compress(
                     context,
                     [token.label[0], None, token.label[1]] + token.label[2:])
@@ -449,10 +450,9 @@ def compress_context(tokenized, initial_context):
                 context = compress(context, token.label)
             continue
         #   Another corner case: a "paragraph" is indicates interp context
-        elif (
-            isinstance(token, tokens.Paragraph) and len(context) > 1
-            and len(token.label) > 3 and context[1] == 'Interpretations'
-                and token.label[1] != 'Interpretations'):
+        elif (isinstance(token, tokens.Paragraph) and len(context) > 1 and
+              len(token.label) > 3 and context[1] == 'Interpretations' and
+              token.label[1] != 'Interpretations'):
             context = compress(
                 context,
                 [token.label[0], None, token.label[2], '(' + ')('.join(
@@ -578,8 +578,8 @@ class Amendment(object):
             return '(%s, %s)' % (self.action, self.label)
 
     def __eq__(self, other):
-        return (isinstance(other, self.__class__)
-                and self.__dict__ == other.__dict__)
+        return (isinstance(other, self.__class__) and
+                self.__dict__ == other.__dict__)
 
     def __ne__(self, other):
         return not self.__eq__(other)
@@ -631,9 +631,9 @@ def make_amendments(tokenized, subpart=False):
                     amends.append(Amendment(verb, token.label_text()))
     # Edits to intro text should always be PUTs
     for amend in amends:
-        if (not isinstance(amend, DesignateAmendment)
-                and amend.field == "[text]"
-                and amend.action == tokens.Verb.POST):
+        if (not isinstance(amend, DesignateAmendment) and
+            amend.field == "[text]" and
+                amend.action == tokens.Verb.POST):
             amend.action = tokens.Verb.PUT
     return amends
 

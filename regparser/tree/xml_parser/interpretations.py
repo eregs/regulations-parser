@@ -13,21 +13,21 @@ from regparser.tree.xml_parser import tree_utils
 
 
 _marker_regex = re.compile(
-    r'^\s*('                   # line start
-    + '([0-9]+)'               # digits
-    + '|([ivxlcdm]+)'          # roman
-    + '|([A-Z]+)'              # upper
-    + '|(<E[^>]*>[0-9]+)'      # emphasized digit
-    + r')\s*\..*', re.DOTALL)  # followed by a period and then anything
+    r'^\s*(' +                 # line start
+    '([0-9]+)' +               # digits
+    '|([ivxlcdm]+)' +          # roman
+    '|([A-Z]+)' +              # upper
+    '|(<E[^>]*>[0-9]+)' +      # emphasized digit
+    r')\s*\..*', re.DOTALL)    # followed by a period and then anything
 
 
 _marker_stars_regex = re.compile(
-    r'^\s*('                   # line start
-    + '([0-9]+)'               # digits
-    + '|([ivxlcdm]+)'          # roman
-    + '|([A-Z]+)'              # upper
-    + '|(<E[^>]*>[0-9]+)'      # emphasized digit
-    + r')\s+\* \* \*\s*$', re.DOTALL)  # followed by stars
+    r'^\s*(' +                 # line start
+    '([0-9]+)' +               # digits
+    '|([ivxlcdm]+)' +          # roman
+    '|([A-Z]+)' +              # upper
+    '|(<E[^>]*>[0-9]+)' +      # emphasized digit
+    r')\s+\* \* \*\s*$', re.DOTALL)  # followed by stars
 
 
 def get_first_interp_marker(text):
@@ -86,17 +86,21 @@ def is_title(xml_node):
     else:
         child = None
     return bool(
-        (xml_node.tag.upper() == 'HD' and xml_node.attrib['SOURCE'] != 'HED')
-        or (xml_node.tag.upper() == 'P'
-            and (xml_node.text is None or not xml_node.text.strip())
-            and len(xml_node.getchildren()) == 1
-            and (child.tail is None or not child.tail.strip(" \n\t."))
-            and text_to_labels(child.text, Label(), warn=False))
-        or (xml_node.tag.upper() == 'P'
-            and len(xml_node.getchildren()) == 0
-            and xml_node.text and not get_first_interp_marker(xml_node.text)
-            and text_to_labels(xml_node.text, Label(), warn=False,
-                               force_start=True)))
+        (
+            xml_node.tag.upper() == 'HD' and
+            xml_node.attrib['SOURCE'] != 'HED') or
+        (
+            xml_node.tag.upper() == 'P' and
+            (xml_node.text is None or not xml_node.text.strip()) and
+            len(xml_node.getchildren()) == 1 and
+            (child.tail is None or not child.tail.strip(" \n\t.")) and
+            text_to_labels(child.text, Label(), warn=False)) or
+        (
+            xml_node.tag.upper() == 'P' and
+            len(xml_node.getchildren()) == 0 and
+            xml_node.text and not get_first_interp_marker(xml_node.text) and
+            text_to_labels(xml_node.text, Label(), warn=False,
+                           force_start=True)))
 
 
 def process_inner_children(inner_stack, xml_node):

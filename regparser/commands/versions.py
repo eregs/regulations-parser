@@ -18,8 +18,8 @@ def fetch_version_ids(cfr_title, cfr_part, notice_dir):
         # Document number followed by a date
         regex = re.compile(re.escape(document_number) + r"_\d{8}")
         version_ids.extend(
-            [name for name in notice_dir if regex.match(name)]
-            or [document_number])
+            [name for name in notice_dir if regex.match(name)] or
+            [document_number])
 
     return version_ids
 

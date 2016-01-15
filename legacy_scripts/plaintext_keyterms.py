@@ -22,8 +22,8 @@ real_key_terms_layer = generate_key_terms_layer(xml_based_reg)
 layer = {}
 part_end = '1005.'
 exclude_parser = (
-    regtext_external_citation
-    | Literal("U.S.")
+    regtext_external_citation |
+    Literal("U.S.")
 )
 period = re.compile(r'\.(?!,)')  # Not followed by a comma
 

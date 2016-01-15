@@ -13,8 +13,8 @@ class HistoryDelaysTests(TestCase):
                     'meta': {'start_page': 500,
                              'end_page': 600,
                              'type': 'Rule',
-                             'dates': 'Has an effective date of January 1, '
-                                      + '2001'}}
+                             'dates': 'Has an effective date of January 1, ' +
+                                      '2001'}}
         unaltered = {'document_number': 'unaltered',
                      'effective_on': '2001-01-01',
                      'publication_date': '2000-12-20',
@@ -30,9 +30,9 @@ class HistoryDelaysTests(TestCase):
                         'start_page': 1100,
                         'end_page': 1200,
                         'type': 'Proposed Rule',
-                        'dates': 'We are thinking about delaying the '
-                                 + 'effective date of 12 FR 501 to March 3, '
-                                 + '2003'}}
+                        'dates': 'We are thinking about delaying the ' +
+                                 'effective date of 12 FR 501 to March 3, ' +
+                                 '2003'}}
         changer = {'document_number': 'changer',
                    'publication_date': '2000-12-31',
                    'effective_on': '2000-12-31',
@@ -52,8 +52,10 @@ class HistoryDelaysTests(TestCase):
 
     def test_modifies_notice(self):
         fr = delays.FRDelay(10, 225, None)
-        meta = lambda v, s, e: {'fr_volume': v, 'meta': {'start_page': s,
-                                                         'end_page': e}}
+
+        def meta(v, s, e):
+            return {'fr_volume': v, 'meta': {'start_page': s, 'end_page': e}}
+
         self.assertTrue(fr.modifies_notice(meta(10, 220, 230)))
         self.assertTrue(fr.modifies_notice(meta(10, 225, 230)))
         self.assertTrue(fr.modifies_notice(meta(10, 220, 225)))

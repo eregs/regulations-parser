@@ -9,51 +9,53 @@ from regparser.grammar.utils import (
 
 
 smart_quotes = QuickSearchable(
-    Suppress(DocLiteral(u'“', "left-smart-quote"))
-    + SkipTo(
-        DocLiteral(u'”', "right-smart-quote")
-    ).setParseAction(keep_pos).setResultsName("term")
+    Suppress(DocLiteral(u'“', "left-smart-quote")) +
+    SkipTo(
+        DocLiteral(
+            u'”',
+            "right-smart-quote")).setParseAction(
+                keep_pos).setResultsName("term")
 )
 
 e_tag = (
-    Suppress(Regex(r"<E[^>]*>"))
-    + OneOrMore(
+    Suppress(Regex(r"<E[^>]*>")) +
+    OneOrMore(
         Word(srange("[a-zA-Z-]"))
-    ).setParseAction(keep_pos).setResultsName("term")
-    + Suppress(Literal("</E>"))
+    ).setParseAction(keep_pos).setResultsName("term") +
+    Suppress(Literal("</E>"))
 )
 
 xml_term_parser = QuickSearchable(
-    LineStart()
-    + Optional(Suppress(unified.any_depth_p))
-    + e_tag.setResultsName("head")
-    + ZeroOrMore(
+    LineStart() +
+    Optional(Suppress(unified.any_depth_p)) +
+    e_tag.setResultsName("head") +
+    ZeroOrMore(
         (atomic.conj_phrases + e_tag).setResultsName(
-            "tail", listAllMatches=True))
-    + Suppress(ZeroOrMore(Regex(r",[a-zA-Z ]+,")))
-    + Suppress(ZeroOrMore(
-        (Marker("this") | Marker("the")) + Marker("term")))
-    + ((Marker("mean") | Marker("means"))
-       | (Marker("refers") + ZeroOrMore(Marker("only")) + Marker("to"))
-       | ((Marker("has") | Marker("have")) + Marker("the") + Marker("same")
-          + Marker("meaning") + Marker("as")))
+            "tail", listAllMatches=True)) +
+    Suppress(ZeroOrMore(Regex(r",[a-zA-Z ]+,"))) +
+    Suppress(ZeroOrMore(
+        (Marker("this") | Marker("the")) + Marker("term"))) +
+    ((Marker("mean") | Marker("means")) |
+     (Marker("refers") + ZeroOrMore(Marker("only")) + Marker("to")) |
+     ((Marker("has") | Marker("have")) + Marker("the") + Marker("same") +
+      Marker("meaning") + Marker("as")))
 )
 
 key_term_parser = QuickSearchable(
-    LineStart()
-    + Optional(Suppress(unified.any_depth_p))
-    + Suppress(Regex(r"<E[^>]*>"))
-    + OneOrMore(
+    LineStart() +
+    Optional(Suppress(unified.any_depth_p)) +
+    Suppress(Regex(r"<E[^>]*>")) +
+    OneOrMore(
         Word(srange("[a-zA-Z-,]"))
-    ).setParseAction(keep_pos).setResultsName("term")
-    + Optional(Suppress("."))
-    + Suppress(Literal("</E>"))
+    ).setParseAction(keep_pos).setResultsName("term") +
+    Optional(Suppress(".")) +
+    Suppress(Literal("</E>"))
 )
 
 scope_term_type_parser = QuickSearchable(
-    Marker("purposes") + Marker("of") + Optional(Marker("this"))
-    + SkipTo(",").setResultsName("scope") + Literal(",")
-    + Optional(Marker("the") + Marker("term"))
-    + SkipTo(Marker("means")
-             | (Marker("refers") + Marker("to"))
-             ).setParseAction(keep_pos).setResultsName("term"))
+    Marker("purposes") + Marker("of") + Optional(Marker("this")) +
+    SkipTo(",").setResultsName("scope") + Literal(",") +
+    Optional(Marker("the") + Marker("term")) +
+    SkipTo(Marker("means") |
+           (Marker("refers") +
+            Marker("to"))).setParseAction(keep_pos).setResultsName("term"))

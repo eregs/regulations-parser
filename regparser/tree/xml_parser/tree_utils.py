@@ -60,15 +60,15 @@ def split_text(text, tokens):
 
 _first_markers = []
 for idx, level in enumerate(p_levels):
-    marker = (Suppress(Regex(u',|\.|-|—|>'))
-              + Suppress('(')
-              + Literal(level[0])
-              + Suppress(')'))
+    marker = (Suppress(Regex(u',|\.|-|—|>')) +
+              Suppress('(') +
+              Literal(level[0]) +
+              Suppress(')'))
     for inner_idx in range(idx + 1, len(p_levels)):
         inner_level = p_levels[inner_idx]
-        marker += Optional(Suppress('(')
-                           + Literal(inner_level[0])
-                           + Suppress(')'))
+        marker += Optional(Suppress('(') +
+                           Literal(inner_level[0]) +
+                           Suppress(')'))
     _first_markers.append(QuickSearchable(marker))
 
 
@@ -114,10 +114,11 @@ def _combine_with_space(prev_text, next_text, add_space_if_needed):
     outliers"""
     prev_text, next_text = prev_text or "", next_text or ""
     prev_char, next_char = prev_text[-1:], next_text[:1]
-    needs_space = (not prev_char.isspace() and not next_char.isspace()
-                   and next_char
-                   and prev_char not in u'([/<—-'
-                   and next_char not in u').;,]>/—-')
+    needs_space = (not prev_char.isspace() and
+                   not next_char.isspace() and
+                   next_char and
+                   prev_char not in u'([/<—-' and
+                   next_char not in u').;,]>/—-')
     if add_space_if_needed and needs_space:
         return prev_text + " " + next_text
     else:

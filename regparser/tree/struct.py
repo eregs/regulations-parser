@@ -32,8 +32,8 @@ class Node(object):
         self.source_xml = source_xml
 
     def __repr__(self):
-        return (("Node( text = %s, children = %s, label = %s, title = %s, "
-                + "node_type = %s)") % (repr(self.text), repr(self.children),
+        return (("Node( text = %s, children = %s, label = %s, title = %s, " +
+                 "node_type = %s)") % (repr(self.text), repr(self.children),
                 repr(self.label), repr(self.title), repr(self.node_type)))
 
     def __cmp__(self, other):
@@ -148,8 +148,7 @@ def filter_walk(node, fn):
 
 def find_first(root, predicate):
     """Walk the tree and find the first node which matches the predicate"""
-    check = lambda n: n if predicate(n) else None
-    response = walk(root, check)
+    response = walk(root, lambda n: n if predicate(n) else None)
     if response:
         return response[0]
 
@@ -166,7 +165,10 @@ def find_parent(root, label):
     label."""
     if isinstance(label, Node):
         label = label.label_id()
-    has_child = lambda n: any(c.label_id() == label for c in n.children)
+
+    def has_child(n):
+        return any(c.label_id() == label for c in n.children)
+
     return find_first(root, has_child)
 
 
@@ -213,10 +215,12 @@ def treeify(nodes):
 
     roots = []
     for root in with_min:
+        label = root.label
         if root.label[-1] == Node.INTERP_MARK:
-            is_child = lambda n: n.label[:len(root.label)-1] == root.label[:-1]
-        else:
-            is_child = lambda n: n.label[:len(root.label)] == root.label
+            label = root.label[:-1]
+
+        def is_child(node):
+            return node.label[:len(label)] == label
         children = [n for n in nodes if n.label != root.label and is_child(n)]
         root.children = root.children + treeify(children)
         roots.append(root)
@@ -297,16 +301,16 @@ class FrozenNode(object):
         """We define equality as having the same fields except for children.
         Instead of recursively inspecting them, we compare only their hash
         (this is a Merkle tree)"""
-        return (other.__class__ == self.__class__
-                and self.hash == other.hash
+        return (other.__class__ == self.__class__ and
+                self.hash == other.hash and
                 # Compare the fields to limit the effect of hash collisions
-                and self.text == other.text
-                and self.title == other.title
-                and self.node_type == other.node_type
-                and self.tagged_text == other.tagged_text
-                and self.label_id == other.label_id
-                and [c.hash for c in self.children] ==
-                    [c.hash for c in other.children])
+                self.text == other.text and
+                self.title == other.title and
+                self.node_type == other.node_type and
+                self.tagged_text == other.tagged_text and
+                self.label_id == other.label_id and
+                [c.hash for c in self.children] ==
+                [c.hash for c in other.children])
 
     @staticmethod
     def from_node(node):

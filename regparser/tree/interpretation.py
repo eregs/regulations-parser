@@ -91,12 +91,12 @@ def text_to_labels(text, initial_label, warn=True, force_start=False):
 
         return [citation.label.to_list() + [Node.INTERP_MARK]
                 for citation in citations]
-    elif (initial_label.comment and initial_pars
-          and initial_label.settings.get('appendix')):
+    elif (initial_label.comment and initial_pars and
+          initial_label.settings.get('appendix')):
         return [[initial_label.settings['part'],
-                 initial_label.settings['appendix']]
-                + list(initial_pars[0])
-                + [Node.INTERP_MARK]]
+                 initial_label.settings['appendix']] +
+                list(initial_pars[0]) +
+                [Node.INTERP_MARK]]
     elif warn:
         logging.warning("Couldn't turn into label: " + text)
     return []

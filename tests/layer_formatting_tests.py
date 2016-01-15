@@ -104,7 +104,8 @@ class LayerFormattingTests(XMLBuilderMixin, TestCase):
         self.assertEqual(markdown, result['text'])
         self.assertEqual([0], result['locations'])
 
-        mkhd = lambda t, c, r: {'text': t, 'colspan': c, 'rowspan': r}
+        def mkhd(t, c, r):
+            return {'text': t, 'colspan': c, 'rowspan': r}
         data = result['table_data']
         self.assertEqual(
             data['header'],
@@ -145,8 +146,10 @@ class LayerFormattingTests(XMLBuilderMixin, TestCase):
         self.assertEqual([0], result['locations'])
         data = result['table_data']
         self.assertTrue("header" in data)
+
         # Verify header matches:
-        mkhd = lambda t, c, r: {'text': t, 'colspan': c, 'rowspan': r}
+        def mkhd(t, c, r):
+            return {'text': t, 'colspan': c, 'rowspan': r}
         self.assertEqual(
             [
                 [mkhd("R1C1", 2, 1)],
@@ -186,8 +189,10 @@ class LayerFormattingTests(XMLBuilderMixin, TestCase):
         self.assertEqual([0], table['locations'])
         data = table['table_data']
         self.assertTrue("header" in data)
+
         # Verify header matches:
-        mkhd = lambda t, c, r: {'text': t, 'colspan': c, 'rowspan': r}
+        def mkhd(t, c, r):
+            return {'text': t, 'colspan': c, 'rowspan': r}
         self.assertEqual(
             [
                 [mkhd("R1C1[^1](No work of any kind shall be conducted)",
@@ -236,8 +241,10 @@ class LayerFormattingTests(XMLBuilderMixin, TestCase):
         self.assertEqual([0], table['locations'])
         data = table['table_data']
         self.assertTrue("header" in data)
+
         # Verify header matches:
-        mkhd = lambda t, c, r: {'text': t, 'colspan': c, 'rowspan': r}
+        def mkhd(t, c, r):
+            return {'text': t, 'colspan': c, 'rowspan': r}
         self.assertEqual(
             [
                 [mkhd("R1C1", 2, 1)],
@@ -287,8 +294,10 @@ class LayerFormattingTests(XMLBuilderMixin, TestCase):
         self.assertEqual([0], result['locations'])
         data = result['table_data']
         self.assertTrue("header" in data)
+
         # Verify header matches:
-        mkhd = lambda t, c, r: {'text': t, 'colspan': c, 'rowspan': r}
+        def mkhd(t, c, r):
+            return {'text': t, 'colspan': c, 'rowspan': r}
         self.assertEqual(
             data["header"],
             [
@@ -358,8 +367,10 @@ class LayerFormattingTests(XMLBuilderMixin, TestCase):
         self.assertEqual([0], result['locations'])
         data = result['table_data']
         self.assertTrue("header" in data)
+
         # Verify header matches:
-        mkhd = lambda t, c, r: {'text': t, 'colspan': c, 'rowspan': r}
+        def mkhd(t, c, r):
+            return {'text': t, 'colspan': c, 'rowspan': r}
         hwys_header = mkhd("Public highways with traffic volume of 3000",
                            2, 1)
         rail_header = mkhd(u"Passenger railways—public highways",

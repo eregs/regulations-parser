@@ -249,8 +249,8 @@ class InterpretationsTest(TestCase):
         self.assertEqual(['737', 'G', 'Interp'], g.label)
 
         self.assertEqual(len(h1.children), 1)
-        self.assertEqual('1. Some content. (a) Badly named\n\n'
-                         + '(b) Badly named', h1.children[0].text.strip())
+        self.assertEqual('1. Some content. (a) Badly named\n\n' +
+                         '(b) Badly named', h1.children[0].text.strip())
         self.assertEqual(len(h1.children[0].children), 0)
 
         self.assertEqual(1, len(s13.children))

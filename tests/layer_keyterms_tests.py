@@ -91,8 +91,8 @@ class LayerKeyTermTest(TestCase):
         self.assertEquals(results, None)
 
     def test_keyterm_and_emphasis(self):
-        node = Node('(a) Apples. Apples are grown in '
-                    + 'New Zealand.', label=['101', '22', 'a'])
+        node = Node('(a) Apples. Apples are grown in ' +
+                    'New Zealand.', label=['101', '22', 'a'])
         node.tagged_text = '(a) <E T="03">Apples.</E> Apples are grown in ' +\
             'New <E T="03">Zealand.</E>'
         kt = KeyTerms(None)

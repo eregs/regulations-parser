@@ -33,9 +33,9 @@ effective_date = (
 
 
 notice_citation = (
+    Word(string.digits) +
+    utils.Marker('FR') +
     Word(string.digits)
-    + utils.Marker('FR')
-    + Word(string.digits)
 ).setParseAction(lambda m: Notice(int(m[0]), int(m[1])))
 
 
@@ -53,10 +53,10 @@ months = reduce(lambda l, r: l | r, map(int2Month, range(2, 13)))
 
 
 date_parser = (
-    months
-    + Word(string.digits)
-    + Suppress(Optional(","))
-    + Word(string.digits)
+    months +
+    Word(string.digits) +
+    Suppress(Optional(",")) +
+    Word(string.digits)
 ).setParseAction(lambda m: date(int(m[2]), m[0], int(m[1])))
 
 

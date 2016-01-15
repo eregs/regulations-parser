@@ -47,8 +47,8 @@ def remove_toc(appendix, letter):
 
 
 def is_appendix_header(node):
-    return (node.tag == 'RESERVED'
-            or (node.tag == 'HD' and node.attrib['SOURCE'] == 'HED'))
+    return (node.tag == 'RESERVED' or
+            (node.tag == 'HD' and node.attrib['SOURCE'] == 'HED'))
 
 
 _first_markers = [re.compile(ur'[\)\.|,|;|-|—]\s*\(' + lvl[0] + '\)')
@@ -94,15 +94,15 @@ class AppendixProcessor(object):
             """Hitting a know-depth header (see above) means we've gone too
             far"""
             lvl, parent = pair
-            return (not parent.title
-                    or not title_label_pair(
+            return (not parent.title or
+                    not title_label_pair(
                         parent.title, self.appendix_letter, self.part))
 
         #   Check if this SOURCE level matches a previous
         for lvl, parent in takewhile(not_known_depth_header,
                                      self.m_stack.lineage_with_level()):
-            if (parent.source_xml is not None
-                    and parent.source_xml.attrib.get('SOURCE') == source_attr):
+            if (parent.source_xml is not None and
+                    parent.source_xml.attrib.get('SOURCE') == source_attr):
                 return lvl
 
         #   Second pass, search for any header; place self one lower
@@ -266,15 +266,14 @@ class AppendixProcessor(object):
 
         def is_subhead(tag, text):
             initial = initial_marker(text)
-            return ((tag == 'HD' and (not initial or '.' in initial[1]))
-                    or (tag in ('P', 'FP')
-                        and title_label_pair(text, self.appendix_letter,
-                                             self.part)))
+            return ((tag == 'HD' and (not initial or '.' in initial[1])) or
+                    (tag in ('P', 'FP') and
+                     title_label_pair(text, self.appendix_letter, self.part)))
 
         for child in appendix.getchildren():
             text = tree_utils.get_node_text(child, add_spaces=True).strip()
-            if ((child.tag == 'HD' and child.attrib['SOURCE'] == 'HED')
-                    or child.tag == 'RESERVED'):
+            if ((child.tag == 'HD' and child.attrib['SOURCE'] == 'HED') or
+                    child.tag == 'RESERVED'):
                 self.end_group()
                 self.hed(part, text)
             elif is_subhead(child.tag, text):
@@ -333,12 +332,12 @@ def process_appendix(appendix, part):
 
 
 def parsed_title(text, appendix_letter):
-    digit_str_parser = (Marker(appendix_letter)
-                        + Suppress('-')
-                        + grammar.a1.copy().leaveWhitespace()
-                        + Optional(grammar.markerless_upper)
-                        + Optional(grammar.paren_upper | grammar.paren_lower)
-                        + Optional(grammar.paren_digit))
+    digit_str_parser = (Marker(appendix_letter) +
+                        Suppress('-') +
+                        grammar.a1.copy().leaveWhitespace() +
+                        Optional(grammar.markerless_upper) +
+                        Optional(grammar.paren_upper | grammar.paren_lower) +
+                        Optional(grammar.paren_digit))
     part_roman_parser = Marker("part") + grammar.aI
     parser = QuickSearchable(
         LineStart() + (digit_str_parser | part_roman_parser))
@@ -353,8 +352,8 @@ def title_label_pair(text, appendix_letter, reg_part):
     match = parsed_title(text, appendix_letter)
     if match:
         #   May need to include the parenthesized letter(s)
-        has_parens = (match.paren_upper or match.paren_lower
-                      or match.paren_digit or match.markerless_upper)
+        has_parens = (match.paren_upper or match.paren_lower or
+                      match.paren_digit or match.markerless_upper)
         if has_parens:
             pair = (''.join(match), 2)
         elif match.a1:
@@ -382,9 +381,9 @@ def initial_marker(text):
     for match, start, end in _parser.scanString(text):
         if start != 0:
             continue
-        marker = (match.paren_upper or match.paren_lower or match.paren_digit
-                  or match.period_upper or match.period_lower
-                  or match.period_digit)
+        marker = (match.paren_upper or match.paren_lower or
+                  match.paren_digit or match.period_upper or
+                  match.period_lower or match.period_digit)
         if len(marker) < 3 or all(char in 'ivxlcdm' for char in marker):
             return marker, text[:end]
 

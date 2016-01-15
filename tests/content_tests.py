@@ -19,8 +19,8 @@ class MacrosTests(TestCase):
         self._original_macros = getattr(settings, 'MACROS_SOURCES', None)
 
     def tearDown(self):
-        if (self._original_macros is None
-                and hasattr(settings, 'MACROS_SOURCES')):
+        if (self._original_macros is None and
+                hasattr(settings, 'MACROS_SOURCES')):
             del settings.MACROS_SOURCES
         else:
             settings.MACROS_SOURCES = self._original_macros
@@ -54,8 +54,7 @@ class GetterBase(object):
         raise NotImplemented
 
     def tearDown(self):
-        if (self._original is None
-                and hasattr(settings, self.settings_key)):
+        if (self._original is None and hasattr(settings, self.settings_key)):
             delattr(settings, self.settings_key)
         else:
             setattr(settings, self.settings_key, self._original)

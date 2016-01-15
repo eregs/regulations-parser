@@ -14,15 +14,15 @@ from regparser.tree.paragraph import p_levels
 
 
 intro_text_marker = (
-    (Marker("introductory") + WordBoundaries(CaselessLiteral("text")))
-    | (Marker("subject") + Marker("heading")).setParseAction(lambda _: "text")
+    (Marker("introductory") + WordBoundaries(CaselessLiteral("text"))) |
+    (Marker("subject") + Marker("heading")).setParseAction(lambda _: "text")
 )
 
 of_connective = (Marker("of") | Marker("for") | Marker("to"))
 
 passive_marker = (
-    Marker("is") | Marker("are") | Marker("was") | Marker("were")
-    | Marker("and").setResultsName("and_prefix").setParseAction(
+    Marker("is") | Marker("are") | Marker("was") | Marker("were") |
+    Marker("and").setResultsName("and_prefix").setParseAction(
         lambda _: True))
 
 
@@ -85,9 +85,9 @@ interp = (
 
 # This may be a regtext paragraph or it may be an interpretation
 paragraph_context = (
-    atomic.section
-    + unified.depth1_p
-    + ~FollowedBy("-")
+    atomic.section +
+    unified.depth1_p + ~
+    FollowedBy("-")
 ).setParseAction(
     lambda m: tokens.Context([None, None, m.section, m.p1, m.p2, m.p3, m.p4,
                               m.plaintext_p5, m.plaintext_p6]))
@@ -98,17 +98,17 @@ def _paren_join(elements):
 
 
 marker_subpart = (
-    context_certainty
-    + unified.marker_subpart
+    context_certainty +
+    unified.marker_subpart
 ).setParseAction(
     lambda m: tokens.Context([None, 'Subpart:' + m.subpart], bool(m.certain)))
 comment_context_with_section = (
-    context_certainty
+    context_certainty +
     #   Confusingly, these are sometimes "comments", sometimes "paragraphs"
-    + (Marker("comment") | Marker("paragraph"))
-    + atomic.section
-    + unified.depth1_p
-    + ~FollowedBy("-")
+    (Marker("comment") | Marker("paragraph")) +
+    atomic.section +
+    unified.depth1_p + ~
+    FollowedBy("-")
 ).setParseAction(
     lambda m: tokens.Context(
         [None, 'Interpretations', m.section,
@@ -116,34 +116,34 @@ comment_context_with_section = (
          ], bool(m.certain)))
 # Mild modification of the above; catches "under 2(b)"
 comment_context_under_with_section = (
-    Marker("under")
-    + atomic.section
-    + unified.depth1_p
+    Marker("under") +
+    atomic.section +
+    unified.depth1_p
 ).setParseAction(
     lambda m: tokens.Context(
         [None, 'Interpretations', m.section,
          _paren_join([m.p1, m.p2, m.p3, m.p4, m.plaintext_p5, m.plaintext_p6])
          ], True))
 comment_context_without_section = (
-    context_certainty
-    + atomic.paragraph_marker
-    + unified.depth2_p
+    context_certainty +
+    atomic.paragraph_marker +
+    unified.depth2_p
 ).setParseAction(
     lambda m: tokens.Context(
         [None, 'Interpretations', None,
          _paren_join([m.p2, m.p3, m.p4, m.plaintext_p5, m.plaintext_p6])
          ], bool(m.certain)))
 appendix = (
-    context_certainty
-    + unified.marker_appendix
-    + Optional(Marker("to") + unified.marker_part)
+    context_certainty +
+    unified.marker_appendix +
+    Optional(Marker("to") + unified.marker_part)
 ).setParseAction(
     lambda m: tokens.Context([m.part, 'Appendix:' + m.appendix],
                              bool(m.certain)))
 section = (
-    context_certainty
-    + atomic.section_marker
-    + unified.part_section
+    context_certainty +
+    atomic.section_marker +
+    unified.part_section
 ).setParseAction(
     lambda m: tokens.Context([m.part, None, m.section], bool(m.certain)))
 
@@ -157,25 +157,25 @@ intro_text = intro_text_marker.copy().setParseAction(
 
 #   Paragraphs
 comment_p = (
-    Word(string.digits).setResultsName("level2")
-    + Optional(
-        Suppress(".") + Word("ivxlcdm").setResultsName('level3')
-        + Optional(
-            Suppress(".")
-            + Word(string.ascii_uppercase).setResultsName("level4"))))
+    Word(string.digits).setResultsName("level2") +
+    Optional(
+        Suppress(".") + Word("ivxlcdm").setResultsName('level3') +
+        Optional(
+            Suppress(".") +
+            Word(string.ascii_uppercase).setResultsName("level4"))))
 
 section_heading_of = (
-    Marker("heading") + of_connective
-    + unified.marker_part_section
+    Marker("heading") + of_connective +
+    unified.marker_part_section
 ).setParseAction(
     lambda m: tokens.Paragraph(part=m.part, section=m.section,
                                field=tokens.Paragraph.HEADING_FIELD))
 
 section_paragraph_heading_of = (
-    Marker("heading") + of_connective
-    + (atomic.paragraph_marker | Marker("comment"))
-    + atomic.section
-    + unified.depth1_p
+    Marker("heading") + of_connective +
+    (atomic.paragraph_marker | Marker("comment")) +
+    atomic.section +
+    unified.depth1_p
 ).setParseAction(
     lambda m: tokens.Paragraph(
         is_interp=True, section=m.section,
@@ -183,8 +183,8 @@ section_paragraph_heading_of = (
         field=tokens.Paragraph.HEADING_FIELD))
 
 appendix_subheading = (
-    Marker("subheading")
-    + unified.marker_appendix
+    Marker("subheading") +
+    unified.marker_appendix
 ).setParseAction(
     # Use '()' to pad the label out to what's expected of interpretations
     lambda m: tokens.Paragraph(
@@ -193,18 +193,18 @@ appendix_subheading = (
 
 
 paragraph_heading_of = (
-    Marker("heading") + of_connective
-    + unified.marker_paragraph.copy()
+    Marker("heading") + of_connective +
+    unified.marker_paragraph.copy()
 ).setParseAction(
     lambda m: tokens.Paragraph(
         paragraphs=[m.p1, m.p2, m.p3, m.p4, m.plaintext_p5, m.plaintext_p6],
         field=tokens.Paragraph.KEYTERM_FIELD))
 
 comment_heading = (
-    Marker("heading")
-    + Optional(of_connective)
-    + atomic.section
-    + unified.depth1_p
+    Marker("heading") +
+    Optional(of_connective) +
+    atomic.section +
+    unified.depth1_p
 ).setParseAction(
     lambda m: tokens.Paragraph(
         is_interp=True, section=m.section,
@@ -213,34 +213,34 @@ comment_heading = (
 
 # e.g. "introductory text of paragraph (a)(5)(ii)"
 intro_text_of = (
-    intro_text_marker + of_connective
-    + atomic.paragraph_marker
-    + unified.depth1_p
+    intro_text_marker + of_connective +
+    atomic.paragraph_marker +
+    unified.depth1_p
 ).setParseAction(
     lambda m: tokens.Paragraph(
         paragraphs=[m.p1, m.p2, m.p3, m.p4, m.plaintext_p5, m.plaintext_p6],
         field=tokens.Paragraph.TEXT_FIELD))
 
 intro_text_of_interp = (
-    intro_text_marker + of_connective
-    + atomic.paragraph_marker
-    + comment_p
+    intro_text_marker + of_connective +
+    atomic.paragraph_marker +
+    comment_p
 ).setParseAction(
     lambda m: tokens.Paragraph(
         is_interp=True, paragraphs=[None, m.level2, m.level3, m.level4],
         field=tokens.Paragraph.TEXT_FIELD))
 
 single_par = (
-    unified.marker_paragraph
-    + Optional(intro_text_marker)
+    unified.marker_paragraph +
+    Optional(intro_text_marker)
 ).setParseAction(
     lambda m: tokens.Paragraph(
         paragraphs=[m.p1, m.p2, m.p3, m.p4, m.plaintext_p5, m.plaintext_p6],
         field=(tokens.Paragraph.TEXT_FIELD if m[-1] == 'text' else None)))
 section_single_par = (
-    unified.marker_part_section
-    + unified.depth1_p
-    + Optional(intro_text_marker)
+    unified.marker_part_section +
+    unified.depth1_p +
+    Optional(intro_text_marker)
 ).setParseAction(
     lambda m: tokens.Paragraph(
         part=m.part, section=m.section,
@@ -248,21 +248,21 @@ section_single_par = (
         field=(tokens.Paragraph.TEXT_FIELD if m[-1] == 'text' else None)))
 # Matches "paragraph (a)(1)(i) of § 12.44"
 single_par_section = (
-    Optional(atomic.paragraph_marker)
-    + unified.depth1_p
-    + of_connective
-    + unified.marker_part_section
+    Optional(atomic.paragraph_marker) +
+    unified.depth1_p +
+    of_connective +
+    unified.marker_part_section
 ).setParseAction(
     lambda m: tokens.Paragraph(
         part=m.part, section=m.section,
         paragraphs=[m.p1, m.p2, m.p3, m.p4, m.plaintext_p5, m.plaintext_p6]))
 
 single_comment_with_section = (
-    (Marker("comment") | Marker("paragraph"))
-    + atomic.section
-    + unified.depth1_p
-    + "-"
-    + Optional("(") + comment_p + Optional(")")
+    (Marker("comment") | Marker("paragraph")) +
+    atomic.section +
+    unified.depth1_p +
+    "-" +
+    Optional("(") + comment_p + Optional(")")
 ).setParseAction(
     lambda m: tokens.Paragraph(
         is_interp=True, section=m.section,
@@ -270,8 +270,8 @@ single_comment_with_section = (
             _paren_join([m.p1, m.p2, m.p3, m.p4, m.plaintext_p5,
                          m.plaintext_p6]), m.level2, m.level3, m.level4]))
 single_comment_par = (
-    atomic.paragraph_marker
-    + comment_p
+    atomic.paragraph_marker +
+    comment_p
 ).setParseAction(
     lambda m: tokens.Paragraph(
         is_interp=True, paragraphs=[None, m.level2, m.level3, m.level4]))
@@ -281,11 +281,11 @@ single_comment_par = (
 def make_multiple(to_repeat):
     """Shorthand for handling repeated tokens ('and', ',', 'through')"""
     return (
-        (to_repeat + Optional(intro_text_marker)).setResultsName("head")
-        + OneOrMore((
-            atomic.conj_phrases
-            + to_repeat
-            + Optional(intro_text_marker)
+        (to_repeat + Optional(intro_text_marker)).setResultsName("head") +
+        OneOrMore((
+            atomic.conj_phrases +
+            to_repeat +
+            Optional(intro_text_marker)
         ).setResultsName("tail", listAllMatches=True))
     )
 
@@ -307,8 +307,8 @@ def _through_paren(prev_lab, next_lab):
             if lhs in level and rhs in level:
                 lidx, ridx = level.index(lhs), level.index(rhs)
                 if lidx < ridx:
-                    return [tokens.Paragraph(prev_lab[:-1]
-                                             + [prefix + level[i] + ')'])
+                    return [tokens.Paragraph(prev_lab[:-1] +
+                                             [prefix + level[i] + ')'])
                             for i in range(lidx + 1, ridx)]
         logging.warning("Error with 'through': %s %s", prev_lab, next_lab)
         return []
@@ -354,14 +354,14 @@ def make_par_list(listify, force_text_field=False):
     return curried
 
 multiple_sections = (
-    atomic.sections_marker
-    + make_multiple(unified.part_section)
+    atomic.sections_marker +
+    make_multiple(unified.part_section)
 ).setParseAction(make_par_list(lambda m: [m.part, None, m.section]))
 
 
 multiple_paragraph_sections = (
-    atomic.section_marker
-    + make_multiple(Optional(unified.part_section) + unified.any_depth_p)
+    atomic.section_marker +
+    make_multiple(Optional(unified.part_section) + unified.any_depth_p)
 ).setParseAction(make_par_list(lambda m: [
     m.part, None, m.section, m.p1, m.p2, m.p3, m.p4, m.plaintext_p5,
     m.plaintext_p6]))
@@ -372,8 +372,8 @@ appendix_section = unified.appendix_with_section.copy().setParseAction(
                                section=m.appendix_section))
 
 appendix_section_heading_of = (
-    Marker("heading") + of_connective
-    + unified.appendix_with_section
+    Marker("heading") + of_connective +
+    unified.appendix_with_section
 ).copy().setParseAction(
     lambda m: tokens.Paragraph(
         appendix=m.appendix, section=m.appendix_section,
@@ -385,33 +385,33 @@ multiple_appendices = make_multiple(
     lambda m: [None, 'Appendix:' + m.appendix, m.appendix_section]))
 
 multiple_comment_pars = (
-    atomic.paragraphs_marker
-    + make_multiple(comment_p)
+    atomic.paragraphs_marker +
+    make_multiple(comment_p)
 ).setParseAction(make_par_list(lambda m: [
     None, 'Interpretations', None, None, m.level2, m.level3, m.level4]))
 
 #   Not a context as one wouldn't list these for contextual purposes
 multiple_comments = (
-    Marker("comments")
-    + make_multiple(atomic.section + unified.depth1_p)
+    Marker("comments") +
+    make_multiple(atomic.section + unified.depth1_p)
 ).setParseAction(make_par_list(lambda m: [
     None, 'Interpretations', m.section,
     _paren_join([m.p1, m.p2, m.p3, m.p4, m.plaintext_p5, m.plaintext_p6])]))
 
 multiple_interp_entries = (
-    Marker("entries") + Marker("for")
-    + (atomic.section + unified.depth1_p).setResultsName("head")
-    + OneOrMore((
-        atomic.conj_phrases
-        + unified.any_depth_p
+    Marker("entries") + Marker("for") +
+    (atomic.section + unified.depth1_p).setResultsName("head") +
+    OneOrMore((
+        atomic.conj_phrases +
+        unified.any_depth_p
     ).setResultsName("tail", listAllMatches=True))
 ).setParseAction(make_par_list(
     lambda m: [None, None, m.section, m.p1, m.p2, m.p3, m.p4,
                m.plaintext_p5, m.plaintext_p6]))
 
 multiple_paragraphs = (
-    (atomic.paragraphs_marker | atomic.paragraph_marker)
-    + make_multiple(unified.any_depth_p)
+    (atomic.paragraphs_marker | atomic.paragraph_marker) +
+    make_multiple(unified.any_depth_p)
 ).setParseAction(make_par_list(lambda m: [
     m.part, None, m.section, m.p1, m.p2, m.p3, m.p4, m.plaintext_p5,
     m.plaintext_p6]))
@@ -419,9 +419,9 @@ multiple_paragraphs = (
 
 # e.g. "introductory text of paragraphs (a)(5)(ii) and (d)(5)(ii)"
 multiple_intro_text_of = (
-    intro_text_marker + of_connective
-    + atomic.paragraphs_marker
-    + make_multiple(unified.any_depth_p)
+    intro_text_marker + of_connective +
+    atomic.paragraphs_marker +
+    make_multiple(unified.any_depth_p)
 ).setParseAction(make_par_list(
     lambda m: [None, None, None, m.p1, m.p2, m.p3, m.p4, m.plaintext_p5,
                m.plaintext_p6],
@@ -448,65 +448,65 @@ def tokenize_override_ps(match):
 
 
 _keyterm_label_part = (
-    Suppress(Marker("keyterm"))
-    + QuotedString(quoteChar='(', endQuoteChar=')')
+    Suppress(Marker("keyterm")) +
+    QuotedString(quoteChar='(', endQuoteChar=')')
 ).setParseAction(lambda m: "p{}".format(keyterm_to_int(m[0])))
-_simple_label_part = Word(string.ascii_lowercase + string.ascii_uppercase
-                          + string.digits)
+_simple_label_part = Word(string.ascii_lowercase + string.ascii_uppercase +
+                          string.digits)
 _label_part = _keyterm_label_part | _simple_label_part
 
 override_label = (
-    Suppress("[")
-    + Marker("label") + Suppress(":")
-    + atomic.part
-    + Suppress("-")
-    + (atomic.section | atomic.appendix)
-    + ZeroOrMore(Suppress("-") + _label_part)
-    + Suppress("]")
+    Suppress("[") +
+    Marker("label") + Suppress(":") +
+    atomic.part +
+    Suppress("-") +
+    (atomic.section | atomic.appendix) +
+    ZeroOrMore(Suppress("-") + _label_part) +
+    Suppress("]")
 ).setParseAction(tokenize_override_ps)
 
 #   grammar which captures all of these possibilities
 token_patterns = QuickSearchable(
-    put_active | put_passive | post_active | post_passive
-    | delete_active | delete_passive | move_active | move_passive
-    | designate_active | reserve_active
-    | insert_in_order
+    put_active | put_passive | post_active | post_passive |
+    delete_active | delete_passive | move_active | move_passive |
+    designate_active | reserve_active |
+    insert_in_order |
 
-    | interp | marker_subpart | appendix
-    | comment_context_with_section | comment_context_without_section
-    | comment_context_under_with_section
-    | paragraph_heading_of | section_heading_of
-    | multiple_intro_text_of | intro_text_of
-    | appendix_section_heading_of
-    | intro_text_of_interp
-    | comment_heading | appendix_subheading | section_paragraph_heading_of
+    interp | marker_subpart | appendix |
+    comment_context_with_section | comment_context_without_section |
+    comment_context_under_with_section |
+    paragraph_heading_of | section_heading_of |
+    multiple_intro_text_of | intro_text_of |
+    appendix_section_heading_of |
+    intro_text_of_interp |
+    comment_heading | appendix_subheading | section_paragraph_heading_of |
     # Must come after other headings as it is a catch-all
-    | section_heading
-    | multiple_paragraph_sections | section_single_par
-    | multiple_interp_entries
+    section_heading |
+    multiple_paragraph_sections | section_single_par |
+    multiple_interp_entries |
 
-    | multiple_sections | multiple_paragraphs | multiple_appendices
-    | multiple_comment_pars | multiple_comments
+    multiple_sections | multiple_paragraphs | multiple_appendices |
+    multiple_comment_pars | multiple_comments |
     #   Must come after multiple_appendices
-    | appendix_section
-    #   Must come after multiple_pars
-    | single_par_section | single_par
+    appendix_section |
+    #   Must come after multiple_pars |
+    single_par_section | single_par |
     #   Must come after multiple_comment_pars
-    | single_comment_with_section | single_comment_par
+    single_comment_with_section | single_comment_par |
     #   Must come after section_single_par
-    | section
+    section |
     #   Must come after intro_text_of
-    | intro_text
+    intro_text |
 
     # Finally allow for an explicit override label
-    | override_label
+    override_label |
 
-    | paragraph_context
-    | and_token
+    paragraph_context |
+    and_token
 )
 
 subpart_label = QuickSearchable(
-    atomic.part + Suppress('-')
-    + atomic.subpart_marker + Suppress(':')
-    + Word(string.ascii_uppercase, max=1)
-    + LineEnd())
+    atomic.part + Suppress('-') +
+    atomic.subpart_marker + Suppress(':') +
+    Word(string.ascii_uppercase, max=1) +
+    LineEnd())

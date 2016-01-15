@@ -17,8 +17,8 @@ class Interpretations(Layer):
     def pre_process(self):
         """Create a lookup table for each interpretation"""
         def per_node(node):
-            if (node.node_type != struct.Node.INTERP
-                    or node.label[-1] != struct.Node.INTERP_MARK):
+            if (node.node_type != struct.Node.INTERP or
+                    node.label[-1] != struct.Node.INTERP_MARK):
                 return
 
             #   Always add a connection based on the interp's label
@@ -52,6 +52,6 @@ class Interpretations(Layer):
         location of the 'Interp' delimiter."""
         if interp.text.strip():
             return False
-        return all(not child.label
-                   or child.label[-1] == struct.Node.INTERP_MARK
+        return all(not child.label or
+                   child.label[-1] == struct.Node.INTERP_MARK
                    for child in interp.children)

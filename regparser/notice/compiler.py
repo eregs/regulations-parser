@@ -130,8 +130,8 @@ def is_interp_placeholder(node):
     """Interpretations may have nodes that exist purely to enforce
     structure. Knowing if a node is such a placeholder makes it easier to
     know if a POST should really just modify the existing placeholder."""
-    return (Node.INTERP_MARK in node.label
-            and not node.text and not node.title)
+    return (Node.INTERP_MARK in node.label and not node.text and
+            not node.title)
 
 
 class RegulationTree(object):
@@ -315,10 +315,10 @@ class RegulationTree(object):
                 existing.tagged_text = node.tagged_text
         # Unfortunately, the same nodes (particularly headers) might be
         # added by multiple notices...
-        elif (existing and existing.text == node.text
-                and existing.title == node.title
-                and getattr(existing, 'tagged_text', '') == getattr(
-                    node, 'tagged_text', '')):
+        elif (existing and existing.text == node.text and
+              existing.title == node.title and
+              getattr(existing, 'tagged_text', '') == getattr(
+                  node, 'tagged_text', '')):
             pass
         else:
             if existing:
@@ -327,8 +327,8 @@ class RegulationTree(object):
                 print '%s %s' % (existing.text, node.label)
                 print '----'
 
-            if ((node.node_type == Node.APPENDIX and len(node.label) == 2)
-                    or node.node_type == Node.SUBPART):
+            if ((node.node_type == Node.APPENDIX and len(node.label) == 2) or
+                    node.node_type == Node.SUBPART):
                 return self.add_to_root(node)
             else:
                 parent = self.get_parent(node)
@@ -340,8 +340,8 @@ class RegulationTree(object):
                     parent = self.create_empty_node(get_parent_label(node))
                 # Fix the case where the node with label "<PART>-Subpart" is
                 # the correct parent.
-                if (parent.children
-                        and parent.children[0].node_type == Node.EMPTYPART):
+                if (parent.children and
+                        parent.children[0].node_type == Node.EMPTYPART):
                     parent = parent.children[0]
                 parent.children = self.add_child(
                     parent.children, node, getattr(parent, 'child_labels',

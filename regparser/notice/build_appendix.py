@@ -10,10 +10,10 @@ from regparser.tree.xml_parser.appendices import process_appendix
 def _is_appendix_amend(al):
     """Serves as a guard/filter to distinguish appendix amendments from
     amendments to other parts of the reg"""
-    return (not isinstance(al, DesignateAmendment)
-            and Node.INTERP_MARK not in al.label
-            and len(al.label) > 1
-            and not al.label[1].isdigit())
+    return (not isinstance(al, DesignateAmendment) and
+            Node.INTERP_MARK not in al.label and
+            len(al.label) > 1 and
+            not al.label[1].isdigit())
 
 
 def parse_appendix_changes(amended_labels, cfr_part, parent_xml):
