@@ -5,32 +5,27 @@ from regparser.tree import struct
 
 
 class NodeTest(TestCase):
+    def assert_depth(self, depth, label, node_type=struct.Node.REGTEXT):
+        node = struct.Node("x", label=label, node_type=node_type)
+        self.assertEqual(depth, node.depth())
 
     def test_depth(self):
-        label = ["111", "1", "a", "p1"]
-        self.assertEqual(1, struct.Node("x", label=label[:1]).depth())
-        self.assertEqual(3, struct.Node("x", label=label[:2]).depth())
-        self.assertEqual(4, struct.Node("x", label=label[:3]).depth())
-        self.assertEqual(5, struct.Node("x", label=label).depth())
-        self.assertEqual(4, struct.Node("x", label=label,
-                                        node_type=struct.Node.INTERP).depth())
-        self.assertEqual(5, struct.Node("x", label=label,
-                                        node_type=struct.Node.EXTRACT).depth())
-        self.assertEqual(2, struct.Node("x", label=label[:1],
-                                        node_type=struct.Node.SUBPART).depth())
-        self.assertEqual(2, struct.Node("x", label=label[:2],
-                                        node_type=struct.Node.SUBPART).depth())
-        self.assertEqual(2, struct.Node("x", label=label[:3],
-                                        node_type=struct.Node.SUBPART).depth())
-        self.assertEqual(2,
-                         struct.Node("x", label=label[:1],
-                                     node_type=struct.Node.EMPTYPART).depth())
-        self.assertEqual(2,
-                         struct.Node("x", label=label[:2],
-                                     node_type=struct.Node.EMPTYPART).depth())
-        self.assertEqual(2,
-                         struct.Node("x", label=label[:3],
-                                     node_type=struct.Node.EMPTYPART).depth())
+        self.assert_depth(1, ["111"])
+
+        self.assert_depth(3, ["111", "1"])
+        self.assert_depth(4, ["111", "1", "a"])
+        self.assert_depth(5, ["111", "1", "a", "p1"])
+        self.assert_depth(5, ["111", "1", "a", "p1"], struct.Node.EXTRACT)
+        self.assert_depth(5, ["111", "1", "a", "p1"], struct.Node.NOTE)
+
+        self.assert_depth(3, ["111", "1", "Interp"], struct.Node.INTERP)
+        self.assert_depth(4, ["111", "1", "Interp", "a"], struct.Node.INTERP)
+        self.assert_depth(4, ["111", "A", "3", "a"], struct.Node.APPENDIX)
+        self.assert_depth(4, ["111", "A", "3", "a"], struct.Node.EXTRACT)
+        self.assert_depth(4, ["111", "A", "3", "a"], struct.Node.NOTE)
+
+        self.assert_depth(2, ["111", "Subpart", "A"], struct.Node.SUBPART)
+        self.assert_depth(2, ["111", "Subpart"], struct.Node.EMPTYPART)
 
 
 class DepthTreeTest(TestCase):

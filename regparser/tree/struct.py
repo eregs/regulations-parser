@@ -12,6 +12,7 @@ class Node(object):
     SUBPART = u'subpart'
     EMPTYPART = u'emptypart'
     EXTRACT = u'extract'
+    NOTE = u'note'
 
     INTERP_MARK = 'Interp'
 
@@ -44,15 +45,18 @@ class Node(object):
 
     def depth(self):
         """Inspect the label and type to determine the node's depth"""
-        if len(self.label) > 1 and self.node_type in (self.REGTEXT,
-                                                      self.EXTRACT):
-            #   Add one for the subpart level
-            return len(self.label) + 1
-        elif self.node_type in (self.SUBPART, self.EMPTYPART):
+        second = (self.label[1:2] or [""])[0]
+        second_is_digit = second[:1].isdigit()
+        is_interp = self.INTERP_MARK in self.label
+        is_root = len(self.label) <= 1
+        if self.node_type in (self.SUBPART, self.EMPTYPART):
             #   Subparts all on the same level
             return 2
-        else:
+        elif not second_is_digit or is_root or is_interp:
             return len(self.label)
+        else:
+            #   Add one for the subpart level
+            return len(self.label) + 1
 
     @staticmethod
     def is_markerless_label(label):
