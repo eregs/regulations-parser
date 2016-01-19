@@ -4,14 +4,14 @@ import re
 from lxml import etree
 
 from regparser import content
+from regparser.tree import reg_text
 from regparser.tree.depth import markers as mtypes, optional_rules
 from regparser.tree.struct import Node
 from regparser.tree.paragraph import p_level_of, p_levels
-from regparser.tree.xml_parser import (flatsubtree_processor,
-                                       paragraph_processor)
+from regparser.tree.xml_parser import (
+    flatsubtree_processor, paragraph_processor, simple_hierarchy_processor,
+    tree_utils)
 from regparser.tree.xml_parser.appendices import build_non_reg_text
-from regparser.tree import reg_text
-from regparser.tree.xml_parser import tree_utils
 
 
 def get_reg_part(reg_doc):
@@ -301,7 +301,9 @@ class RegtextParagraphProcessor(paragraph_processor.ParagraphProcessor):
                     tags=['EXTRACT'], node_type=Node.EXTRACT),
                 flatsubtree_processor.FlatsubtreeMatcher(tags=['EXAMPLE']),
                 paragraph_processor.HeaderMatcher(),
-                ParagraphMatcher()]
+                ParagraphMatcher(),
+                simple_hierarchy_processor.SimpleHierarchyMatcher(
+                    tags=['NOTE', 'NOTES'], node_type=Node.NOTE)]
 
     def additional_constraints(self):
         return [optional_rules.depth_type_inverses,

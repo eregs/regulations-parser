@@ -206,12 +206,12 @@ class HeaderMatcher(BaseMatcher):
 
 
 class FencedMatcher(BaseMatcher):
-    """Use github-like fencing to indicate this is a note/code"""
+    """Use github-like fencing to indicate this is code"""
     def matches(self, xml):
-        return xml.tag in ('NOTE', 'NOTES', 'CODE')
+        return xml.tag == 'CODE'
 
     def derive_nodes(self, xml, processor=None):
-        texts = ["```" + self.fence_type(xml)]
+        texts = ["```" + xml.get('LANGUAGE', 'code')]
         for child in xml:
             text = tree_utils.get_node_text(child).strip()
             if text:
@@ -219,9 +219,3 @@ class FencedMatcher(BaseMatcher):
         texts.append("```")
 
         return [Node("\n".join(texts), label=[mtypes.MARKERLESS])]
-
-    def fence_type(self, xml):
-        if xml.tag == 'CODE':
-            return xml.get('LANGUAGE', 'code')
-        else:
-            return xml.tag.lower().rstrip("s")
