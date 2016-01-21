@@ -14,7 +14,3 @@ regparser.egg-info/
 
 # eregs output
 /fr_cache.sqlite
-/diff/
-/layer/
-/notice/
-/regulation/
