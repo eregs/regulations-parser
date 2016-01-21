@@ -164,5 +164,5 @@ def notice_xmls_for_url(doc_num, notice_url):
 
 def xmls_for_url(notice_url):
     # @todo: remove the need for this function
-    return [notice_xml._xml
+    return [notice_xml.xml
             for notice_xml in notice_xmls_for_url('N/A', notice_url)]
