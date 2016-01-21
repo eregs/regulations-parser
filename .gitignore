@@ -1,6 +1,6 @@
 *.swp
 *.pyc
-
+.coverage
 local_settings.py
 
 regulations
@@ -11,3 +11,6 @@ docs/_build
 regparser.egg-info/
 
 .eregs_index/
+
+# eregs output
+/fr_cache.sqlite
