@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from HTMLParser import HTMLParser
 from unittest import TestCase
 
 from regparser.grammar import unified
@@ -61,3 +62,15 @@ class GrammarCommonTests(TestCase):
             result = unified.marker_comment.parseString(t)
             self.assertEqual("3", result.section)
             self.assertEqual("4", result.c1)
+
+    def _decode(self, txt):
+        """Convert from HTML entities"""
+        return HTMLParser().unescape(txt)
+
+    def test_whitespace(self):
+        """Verify that various types of whitespace are ignored"""
+        for whitespace in (" ", "\n", "\t", self._decode(u'&#8201;')):
+            text = u'§{}478.39a'.format(whitespace)
+            result = unified.marker_part_section.parseString(text)
+            self.assertEqual("478", result.part)
+            self.assertEqual("39a", result.section)

@@ -553,7 +553,7 @@ class NoticeSxsTests(TestCase):
         self.assertEqual(['1111-39', '1111-39-d'],
                          sxs.parse_into_labels(text, '101'))
 
-        text = "Appendix H—Closed-End Model Forms and Clauses-7(i)"
+        text = u"Appendix H—Closed-End Model Forms and Clauses-7(i)"
         self.assertEqual(['101-H'], sxs.parse_into_labels(text, '101'))
 
     def test_is_child_of(self):
