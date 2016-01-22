@@ -16,10 +16,12 @@ from regparser.index import dependency
 @click.group()
 @click.option('--debug/--no-debug', default=False)
 def cli(debug):
-    coloredlogs.install(level=logging.INFO, fmt="%(levelname)s %(message)s")
+    log_level = logging.INFO
     requests_cache.install_cache('fr_cache')
     if debug:
+        log_level = logging.DEBUG
         sys.excepthook = lambda t, v, tb: ipdb.post_mortem(tb)
+    coloredlogs.install(level=log_level, fmt="%(levelname)s %(message)s")
 
 
 for _, command_name, _ in pkgutil.iter_modules(commands.__path__):
