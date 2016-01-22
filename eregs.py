@@ -17,7 +17,7 @@ from regparser.index import dependency
 @click.option('--debug/--no-debug', default=False)
 def cli(debug):
     log_level = logging.INFO
-    requests_cache.install_cache('fr_cache')
+    requests_cache.install_cache('fr_cache', expire_after=60*60*24*3)  # 3 days
     if debug:
         log_level = logging.DEBUG
         sys.excepthook = lambda t, v, tb: ipdb.post_mortem(tb)
