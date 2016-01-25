@@ -15,7 +15,7 @@ class ExternalCitationParser(Layer):
         for text, locations, representative in self.convert_to_search_replace(
                 citations, node.text, lambda c: c.start, lambda c: c.end):
             layer_elements.append(dict(
-                text=text, locations=locations, url=representative.url,
+                text=text.strip(), locations=locations, url=representative.url,
                 components=representative.components,
                 citation_type=representative.cite_type))
 
