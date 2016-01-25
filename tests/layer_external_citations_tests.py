@@ -7,6 +7,16 @@ from regparser.layer.external_citations import ExternalCitationParser
 from regparser.tree.struct import Node
 
 
+def get_citation(citations, text):
+    """
+        Return the 1st citation whose text matches the given text
+    """
+    matched = filter(lambda x: x['text'] == text, citations)
+    if matched:
+        return matched[0]
+    return None
+
+
 class ParseTest(TestCase):
     def test_public_law(self):
         """
@@ -43,21 +53,40 @@ class ParseTest(TestCase):
         node = Node("Ref 1: 12 CFR part 1026. Ref 2: 12 CFR 1026.13.",
                     label=['1003'])
         citations = ExternalCitationParser(None).process(node)
-        first, second = citations
 
-        self.assertEqual(first['text'], '12 CFR part 1026')
-        self.assertEqual(first['citation_type'], 'CFR')
-        self.assertEqual(first['components'],
+        cit_1026 = get_citation(citations, '12 CFR part 1026')
+        self.assertEqual(cit_1026['citation_type'], 'CFR')
+        self.assertEqual(cit_1026['components'],
                          {'cfr_title': '12', 'part': '1026'})
-        self.assertEqual(first['locations'], [0])
-        self.assertTrue('url' in first)
+        self.assertEqual(cit_1026['locations'], [0])
+        self.assertTrue('url' in cit_1026)
 
-        self.assertEqual(second['text'], '12 CFR 1026.13')
-        self.assertEqual(second['citation_type'], 'CFR')
-        self.assertEqual(second['components'],
+        cit_1026_13 = get_citation(citations, '12 CFR 1026.13')
+        self.assertEqual(cit_1026_13['citation_type'], 'CFR')
+        self.assertEqual(cit_1026_13['components'],
                          {'cfr_title': '12', 'part': '1026', 'section': '13'})
-        self.assertEqual(second['locations'], [0])
-        self.assertTrue('url' in second)
+        self.assertEqual(cit_1026_13['locations'], [0])
+        self.assertTrue('url' in cit_1026_13)
+
+    def test_cfr_multiple(self):
+        """Ensure that we successfully parse multiple CFR references."""
+        node = Node("Some text 26 CFR 601.121 through 601.125 some more text",
+                    label=['1003'])
+        citations = ExternalCitationParser(None).process(node)
+
+        cit_601_121 = get_citation(citations, '26 CFR 601.121')
+        self.assertEqual(cit_601_121['citation_type'], 'CFR')
+        self.assertEqual(cit_601_121['components'],
+                         {'cfr_title': '26', 'part': '601', 'section': '121'})
+        self.assertEqual(cit_601_121['locations'], [0])
+        self.assertTrue('url' in cit_601_121)
+
+        cit_601_125 = get_citation(citations, '601.125')
+        self.assertEqual(cit_601_125['citation_type'], 'CFR')
+        self.assertEqual(cit_601_125['components'],
+                         {'cfr_title': '26', 'part': '601', 'section': '125'})
+        self.assertEqual(cit_601_125['locations'], [0])
+        self.assertTrue('url' in cit_601_125)
 
     def test_drop_self_referential_cfr(self):
         """
