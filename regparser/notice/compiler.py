@@ -178,15 +178,17 @@ class RegulationTree(object):
     def add_child(self, children, node, order=None):
         """ Add a child to the children, and sort appropriately. This is used
         for non-root nodes. """
+        if order is None:
+            order = []
 
         children = children + [node]    # non-destructive
+        child_labels = set(c.label_id() for c in children)
 
-        if order and set(order) == set(c.label_id() for c in children):
-            lookup = {}
-            for c in children:
-                lookup[c.label_id()] = c
-            return [lookup[label_id] for label_id in order]
-        else:
+        if child_labels.issubset(set(order)):
+            lookup = {c.label_id(): c for c in children}
+            return [lookup[label_id] for label_id in order
+                    if label_id in child_labels]
+        else:   # Must guess at the appropriate order
             sort_order = []
             for c in children:
                 if c.label[-1] == Node.INTERP_MARK:

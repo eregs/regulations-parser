@@ -426,14 +426,14 @@ class RegTextTest(XMLBuilderMixin, NodeAccessorMixin, TestCase):
                 extract.PRTPAGE(P="8")
                 extract.P("1. Some content")
                 extract.P("2. Other content")
-        node = reg_text.build_from_section('8675', self.tree.render_xml())[0]
+        node = self.node_accessor(
+            reg_text.build_from_section('8675', self.tree.render_xml())[0],
+            ['8675', '309'])
 
-        a = node.children[0]
-        self.assertEqual(1, len(a.children))
-        extract = a.children[0]
-        self.assertEqual(['8675', '309', 'a', 'p1'], extract.label)
-        content = ["```note", "1. Some content", "2. Other content", "```"]
-        self.assertEqual("\n".join(content), extract.text)
+        self.assertEqual(['a'], node.child_labels)
+        self.assertEqual(['p1'], node['a'].child_labels)
+        self.assertEqual(Node.NOTE, node['a']['p1'].node_type)
+        self.assertEqual(['1', '2'], node['a']['p1'].child_labels)
 
     def test_build_from_section_whitespace(self):
         """The whitespace in the section text (and intro paragraph) should get

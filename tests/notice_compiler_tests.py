@@ -136,19 +136,40 @@ class CompilerTests(TestCase):
         children = reg_tree.add_child(children, n1)
         self.assertEqual(children, [n1, n5])
 
-    def test_add_child_order(self):
+    def test_add_child_no_order(self):
+        """If no order is provided, the notice compiler will make a best guess
+        as to where the node should be inserted"""
         reg_tree = compiler.RegulationTree(None)
-        n1 = Node('n1', label=['205', 'A', '1'])
-        n2 = Node('n2', label=['205', 'A', '2'])
-        n3 = Node('n3', label=['205', 'A', '3'])
-        n4 = Node('n4', label=['205', 'A', '4'])
+        n1, n2, n3, n4 = (Node(label=['1', 'A', str(i)]) for i in range(1, 5))
 
         children = []
-        order = ['205-A-3', '205-A-2', '205-A-1']
+        children = reg_tree.add_child(children, n2)
+        self.assertEqual(children, [n2])
+        children = reg_tree.add_child(children, n1)
+        self.assertEqual(children, [n1, n2])
+        children = reg_tree.add_child(children, n3)
+        self.assertEqual(children, [n1, n2, n3])
+        children = reg_tree.add_child(children, n4)
+        self.assertEqual(children, [n1, n2, n3, n4])
+
+        children = [n1, n2]
+        children = reg_tree.add_child(children, n4)
+        self.assertEqual(children, [n1, n2, n4])
+
+    def test_add_child_order(self):
+        """If an order is provides, the notice compiler will follow that order
+        even when nodes are missing. Further, when adding a new node that is
+        not part of the order, we should expect minimal changes to the other
+        nodes"""
+        reg_tree = compiler.RegulationTree(None)
+        n1, n2, n3, n4 = (Node(label=['1', 'A', str(i)]) for i in range(1, 5))
+        order = ['1-A-3', '1-A-2', '1-A-1']
+
+        children = []
         children = reg_tree.add_child(children, n2, order)
         self.assertEqual(children, [n2])
         children = reg_tree.add_child(children, n1, order)
-        self.assertEqual(children, [n1, n2])
+        self.assertEqual(children, [n2, n1])
         children = reg_tree.add_child(children, n3, order)
         self.assertEqual(children, [n3, n2, n1])
         children = reg_tree.add_child(children, n4, order)

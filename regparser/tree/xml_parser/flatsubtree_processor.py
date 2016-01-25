@@ -1,13 +1,15 @@
 from regparser.tree.depth import markers as mtypes
 from regparser.tree.struct import Node
-from regparser.tree.xml_parser import paragraph_processor, us_code
+from regparser.tree.xml_parser import (
+    paragraph_processor, simple_hierarchy_processor, us_code)
 
 
 class FlatParagraphProcessor(paragraph_processor.ParagraphProcessor):
     """Paragraph Processor which does not try to derive paragraph markers"""
     MATCHERS = [paragraph_processor.StarsMatcher(),
                 paragraph_processor.TableMatcher(),
-                paragraph_processor.FencedMatcher(),
+                simple_hierarchy_processor.SimpleHierarchyMatcher(
+                    ['NOTE', 'NOTES'], Node.NOTE),
                 paragraph_processor.HeaderMatcher(),
                 paragraph_processor.SimpleTagMatcher('P', 'FP'),
                 us_code.USCodeMatcher()]
@@ -18,7 +20,7 @@ class FlatsubtreeMatcher(paragraph_processor.BaseMatcher):
     Detects tags passed to it on init and processes them with the
     FlatParagraphProcessor. Also optionally sets node_type.
     """
-    def __init__(self, tags=[], node_type=Node.REGTEXT):
+    def __init__(self, tags, node_type=Node.REGTEXT):
         self.tags = list(tags)
         self.node_type = node_type
 
