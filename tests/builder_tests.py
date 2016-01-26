@@ -3,10 +3,10 @@ import tempfile
 from unittest import TestCase
 
 from lxml import etree
-from mock import Mock, patch
+from mock import patch
 
 from regparser.builder import (
-    Builder, Checkpointer, LayerCacheAggregator, NullCheckpointer)
+    Builder, Checkpointer, NullCheckpointer)
 from regparser.tree.struct import Node
 
 
@@ -43,58 +43,6 @@ class BuilderTests(TestCase):
         self.assertTrue(aaaa in notice_lists[1])
         self.assertTrue(bbbb in notice_lists[1])
         self.assertTrue(cccc in notice_lists[1])
-
-    @patch.object(Builder, '__init__')
-    def test_layer_cache(self, init):
-        """Integration test for layer caching"""
-        init.return_value = None
-        cache = LayerCacheAggregator()
-        b = Builder()   # Don't need parameters as init's been mocked out
-        b.cfr_title, b.cfr_part, b.doc_number = 15, '111', '111-222'
-        b.writer = Mock()
-        b.checkpointer = NullCheckpointer()
-        write = b.writer.layer.return_value.write
-        tree = Node(label=["1234"], children=[
-            Node(label=["1234", "1"], children=[
-                Node("See paragraph (b)", label=["1234", "1", "a"]),
-                Node("This is b", label=["1234", "1", "b"])])])
-        b.gen_and_write_layers(tree, cache, [])
-        arg = write.call_args_list[3][0][0]
-        self.assertEqual(['1234-1-a'], arg.keys())
-        cache.replace_using(tree)
-
-        write.reset_mock()
-        tree.children[0].children[1].text = "References paragraph (a)"
-        b.gen_and_write_layers(tree, cache, [])
-        arg = write.call_args_list[3][0][0]
-        self.assertEqual(['1234-1-a'], arg.keys())
-
-        write.reset_mock()
-        tree.children[0].children[0].text = "Contains no references"
-        b.gen_and_write_layers(tree, cache, [])
-        arg = write.call_args_list[3][0][0]
-        self.assertEqual(['1234-1-a'], arg.keys())
-
-        write.reset_mock()
-        notice = {'document_number': '111-222'}
-        cache.invalidate_by_notice(notice)
-        b.gen_and_write_layers(tree, cache, [])
-        arg = write.call_args_list[3][0][0]
-        self.assertEqual(['1234-1-a'], arg.keys())
-
-        write.reset_mock()
-        notice['changes'] = {'1234-1-b': 'some change'}
-        cache.invalidate_by_notice(notice)
-        b.gen_and_write_layers(tree, cache, [])
-        arg = write.call_args_list[3][0][0]
-        self.assertEqual(['1234-1-a', '1234-1-b'], list(sorted(arg.keys())))
-
-        write.reset_mock()
-        notice['changes'] = {'1234-Subpart-A': 'some change'}
-        cache.invalidate_by_notice(notice)
-        b.gen_and_write_layers(tree, cache, [])
-        arg = write.call_args_list[3][0][0]
-        self.assertEqual(['1234-1-b'], list(sorted(arg.keys())))
 
     def test_determine_doc_number_fr(self):
         """Verify that a document number can be pulled out of an FR notice"""
@@ -157,19 +105,6 @@ class BuilderTests(TestCase):
         self.assertEqual(cccc['document_number'], changes[0][0])
         self.assertEqual(cccc['document_number'],
                          merge_changes.call_args[0][0])
-
-
-class LayerCacheAggregatorTests(TestCase):
-    def test_invalidate(self):
-        cache = LayerCacheAggregator()
-        cache._known_labels = set(['123', '123-1', '123-1-a',
-                                   '123-1-a-Interp'])
-        cache.invalidate(['123-2'])
-        self.assertEqual(cache._known_labels,
-                         set(['123', '123-1', '123-1-a', '123-1-a-Interp']))
-
-        cache.invalidate(['123-2', '123-1-Interp'])
-        self.assertEqual(cache._known_labels, set(['123']))
 
 
 class CheckpointerTests(TestCase):

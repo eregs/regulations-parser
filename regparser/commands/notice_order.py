@@ -1,4 +1,3 @@
-# @todo - this should be combined with build_from.py
 import click
 
 from regparser.builder import notices_for_cfr_part
