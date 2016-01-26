@@ -472,7 +472,7 @@ def one_change(reg, label, change):
         replace_node_field(reg, label, change)
     elif change['action'] == 'POST':
         node = dict_to_node(change['node'])
-        reg.add_node(node, change.get('subpart'))
+        reg.add_node(node, change.get('parent_label'))
     elif change['action'] == 'DESIGNATE':
         if 'Subpart' in change['destination']:
             reg.move_to_subpart(label, change['destination'])

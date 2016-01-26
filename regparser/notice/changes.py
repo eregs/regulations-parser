@@ -231,7 +231,7 @@ def create_subpart_amendment(subpart_node):
     amendment = {
         'node': subpart_node,
         'action': 'POST',
-        'extras': {'subpart': subpart_node.label}
+        'extras': {'parent_label': subpart_node.label}
     }
     return create_add_amendment(amendment)
 

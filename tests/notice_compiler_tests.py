@@ -423,7 +423,7 @@ class CompilerTests(TestCase):
     def test_add_section(self):
         root = self._tree_with_subparts()
 
-        change = {'action': 'POST', 'subpart': ['205', 'Subpart', 'A'],
+        change = {'action': 'POST', 'parent_label': ['205', 'Subpart', 'A'],
                   'node': {'text': '', 'node_type': Node.REGTEXT,
                            'label': ['205', '1'], 'children': []}}
 
@@ -657,7 +657,7 @@ class CompilerTests(TestCase):
 
         change = {
             'action': 'POST',
-            'subpart': ['205', 'Subpart', 'B'],
+            'parent_label': ['205', 'Subpart', 'B'],
             'node': {
                 'text': '2 text',
                 'label': ['205', '2'],
@@ -673,7 +673,7 @@ class CompilerTests(TestCase):
         root = self._tree_with_subparts()
         change = {
             'action': 'POST',
-            'subpart': ['205', 'Subpart', 'B'],
+            'parent_label': ['205', 'Subpart', 'B'],
             'node': {
                 'text': '2 text',
                 'label': ['205', '2'],
