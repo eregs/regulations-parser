@@ -7,7 +7,7 @@ Regulations Parser
 This library/tool parses federal regulations (either plain text or XML) and
 much of their associated content. It can write the results to JSON files, an
 API, or even a git repository. The parser works hand-in-hand with
-regulations-core, and API for hosting the parsed regulations and
+regulations-core, an API for hosting the parsed regulations and
 regulation-site, a front-end for the data structures generated.
 
 This repository is part of a larger project. To read about it, please see 
