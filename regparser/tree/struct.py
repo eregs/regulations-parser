@@ -67,6 +67,11 @@ class Node(object):
     def is_markerless(self):
         return bool(self.is_markerless_label(self.label))
 
+    def is_section(self):
+        """Sections are contained within subparts/subject groups. They are not
+        part of the appendix"""
+        return len(self.label) == 2 and self.label[1][:1].isdigit()
+
 
 class NodeEncoder(JSONEncoder):
     """Custom JSON encoder to handle Node objects"""

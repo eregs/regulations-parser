@@ -700,6 +700,17 @@ class AmendmentTests(TestCase):
         self.assertEqual(amendment.label, ['100', '2', 'a'])
         self.assertEqual(amendment.field, '[heading]')
 
+    def test_tree_format_level2(self):
+        for label, expected in (
+                ('100', None),
+                ('100-Interpretations', None),
+                ('100-Subpart:A-105', ['100', 'Subpart', 'A']),
+                ('100-Subjgrp:AbCdE', ['100', 'Subjgrp', 'AbCdE']),
+                ('100-Appendix:R', ['100', 'R'])):
+            self.assertEqual(
+                diff.Amendment('VERB', label).tree_format_level2(),
+                expected)
+
 
 class DesignateAmendmentTests(TestCase):
     def test_fix_interp_format(self):

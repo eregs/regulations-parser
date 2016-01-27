@@ -27,6 +27,20 @@ class NodeTest(TestCase):
         self.assert_depth(2, ["111", "Subpart", "A"], struct.Node.SUBPART)
         self.assert_depth(2, ["111", "Subpart"], struct.Node.EMPTYPART)
 
+    def test_is_section(self):
+        for label, typ in ((['111'], struct.Node.REGTEXT),
+                           (['111', 'Subpart'], struct.Node.REGTEXT),
+                           (['111', 'Subpart'], struct.Node.EMPTYPART),
+                           (['111', 'Subpart', 'A'], struct.Node.SUBPART),
+                           (['111', 'A'], struct.Node.REGTEXT),
+                           (['111', 'A'], struct.Node.APPENDIX),
+                           (['111', '12', 'c'], struct.Node.REGTEXT)):
+            node = struct.Node("", label=label, node_type=typ)
+            self.assertFalse(node.is_section())
+
+        self.assertTrue(struct.Node("", label=['111', '22']).is_section())
+        self.assertTrue(struct.Node("", label=['111', '22a']).is_section())
+
 
 class DepthTreeTest(TestCase):
     def test_walk(self):

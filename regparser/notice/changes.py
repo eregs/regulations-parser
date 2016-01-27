@@ -151,6 +151,9 @@ def match_labels_and_changes(amendments, section_node):
             else:
                 change['node'] = node
                 change['candidate'] = False
+                level2 = amend.tree_format_level2()
+                if level2 and node.is_section():
+                    change['parent_label'] = level2
                 amend_map[amend.label_id()].append(change)
 
     resolve_candidates(amend_map)
@@ -167,8 +170,9 @@ def format_node(node, amendment):
     if 'extras' in amendment:
         node_as_dict.update(amendment['extras'])
 
-    if 'field' in amendment:
-        node_as_dict['field'] = amendment['field']
+    for field in ('field', 'parent_label'):
+        if field in amendment:
+            node_as_dict[field] = amendment[field]
     return {node.label_id(): node_as_dict}
 
 

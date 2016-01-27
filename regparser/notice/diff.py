@@ -584,6 +584,21 @@ class Amendment(object):
     def __ne__(self, other):
         return not self.__eq__(other)
 
+    def tree_format_level2(self):
+        """The label we use in amendments contains more information than is
+        present in regtree Nodes (see also regparser.citations.Label). This
+        converts the second level (i.e. one below the root) to a format usable
+        in Nodes."""
+        parts = self.original_label.split('-')
+        if len(parts) >= 2:
+            if 'Subpart' in parts[1]:
+                return [parts[0], 'Subpart', parts[1][len('Subpart:'):]]
+            elif 'Subjgrp' in parts[1]:
+                return [parts[0], 'Subjgrp', parts[1][len('Subjgrp:'):]]
+            elif 'Appendix' in parts[1]:
+                return [parts[0], parts[1][len('Appendix:'):]]
+            # this does not account for interpretations
+
 
 class DesignateAmendment(Amendment):
     """ A designate Amendment manages it's information a little differently
