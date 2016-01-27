@@ -1,4 +1,3 @@
-# @todo - this should be combined with build_from.py
 import click
 
 from regparser.builder import tree_and_builder

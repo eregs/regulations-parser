@@ -12,14 +12,6 @@ regparser.commands.annual_editions module
     :undoc-members:
     :show-inheritance:
 
-regparser.commands.build_from module
-------------------------------------
-
-.. automodule:: regparser.commands.build_from
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
 regparser.commands.clear module
 -------------------------------
 
