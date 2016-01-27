@@ -17,26 +17,26 @@ This repository is part of a larger project. To read about it, please see
 
 Here's an example, using CFPB's regulation H.
 
-1. `git clone https://github.com/cfpb/regulations-parser.git`
+1. `git clone https://github.com/18F/regulations-parser.git`
 1. `cd regulations-parser`
 1. `pip install -r requirements.txt`
-1. `wget http://www.gpo.gov/fdsys/pkg/CFR-2012-title12-vol8/xml/CFR-2012-title12-vol8-part1004.xml`
-1. `eregs build_from CFR-2012-title12-vol8-part1004.xml 12`
+1. `eregs pipeline 12 1008 output_dir`
 
-At the end, you will have new directories for `regulation`, `layer`,
-`diff`, and `notice` which would mirror the JSON files sent to the API.
+At the end, you will have subdirectories `regulation`, `layer`, `diff`, and `notice`
+created under the directory named `output_dir`. These will mirror the JSON
+files sent to the API.
 
 ## Quick Start with Modified Documents
 
 Here's an example using FEC's regulation 110, showing how documents can be
 tweaked to pass the parser.
 
-1. `git clone https://github.com/cfpb/regulations-parser.git`
+1. `git clone https://github.com/18F/regulations-parser.git`
 1. `cd regulations-parser`
 1. `git clone https://github.com/micahsaul/fec_docs`
 1. `pip install -r requirements.txt`
 1. `echo "LOCAL_XML_PATHS = ['fec_docs']" >> local_settings.py`
-1. `eregs build_from fec_docs/1997CFR/CFR-1997-title11-vol1-part110.xml 11`
+1. `eregs pipeline 11 110 output_dir`
 
 If you review the history of the `fec_docs` repo, you'll see some of the types
 of changes that need to be made.
@@ -141,42 +141,7 @@ reissuance of the whole regulation (e.g. CFPB
 regulation E).
 
 
-### Run the parser 
-#### Using `build_from`
-
-The syntax is 
-
-```bash
-$ eregs build_from regulation.xml title
-```
-
-For example, to match regulation H in the quick start above:
-```bash
-$ eregs build_from CFR-2012-title12-vol8-part1004.xml 12
-```
-
-Here ```12``` is the CFR title number (in our case, for "Banks and Banking").
-
-Running the command will generate four folders, ```regulation```,
-```notice```, ``layer`` and possibly ``diff`` in the ```OUTPUT_DIR```
-(current directory by default).
-
-If you'd like to write the data to an api instead (most likely, one running
-regulations-core), you can set the ```API_BASE``` setting (described below).
-
-There are also some advanced flags which can be set when running the parser
-
-* `--no-generate-diffs` Avoids the default behavior of generating additional
-  versions of the regulation based on federal register rules. If this flag is
-  set, the parser will produce a single tree and set of layers
-* `--checkpoint CHECKPOINT_DIR` Defines a directory to store checkpoint
-  information. It's always safe to not provide this, though you may improve
-  performance when you do. See [Runtime](#runtime), below.
-* `--version-identifier DOC_NUMBER` If you are trying to parse a version of
-  the regulation issued before federalregister.gov has records (~2000), you
-  may need to explicitly provide a version number. This will just be an
-  identifier for the version; you may use "1997-annual", for example.
-
+### Run the parser
 #### Using `pipeline`
 
 ```bash
@@ -488,18 +453,7 @@ requires several hours.
 There are a few methods to speed up this process. Installing `requests-cache`
 will cache API-read calls (such as those made when calling the Federal
 Register). The cache lives in an sqlite database (`fr_cache.sqlite`), which
-can be safely removed without error. The `build_from` pipeline can also
-include checkpoints -- that is, saving the state of the process up until some
-point in time. To activate this feature, pass in a directory name to the
-`--checkpoint` flag, e.g.
-
-```bash
-$ eregs build_from CFR-2012-title12-vol8-part1004.xml 12 --checkpoint my-checkpoint-dir
-```
-
-Inspecting the `my-checkpoint-dir`, you will see a list of steps in the
-pipeline. Deleting one of these steps will cause the `build_from` script to
-effectively skip to that point when parsing.
+can be safely removed without error.
 
 ### Parsing Error Example
 
@@ -601,7 +555,7 @@ configuration detail.
 Let's set up `regulations-core` first. This is an API which will be used to
 both store and query the regulation data.
 
- 1. `git clone https://github.com/cfpb/regulations-core.git`
+ 1. `git clone https://github.com/18F/regulations-core.git`
  1. `cd regulations-core`
  1. `pip install -r requirements.txt  # pulls in python dependencies`
  1. `./bin/django syncdb --migrate`
