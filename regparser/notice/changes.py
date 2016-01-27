@@ -160,7 +160,7 @@ def match_labels_and_changes(amendments, section_node):
     return amend_map
 
 
-def format_node(node, amendment):
+def format_node(node, amendment, parent_label=None):
     """ Format a node into a dict, and add in amendment information. """
     node_as_dict = {
         'node': node_to_dict(node),
@@ -170,9 +170,10 @@ def format_node(node, amendment):
     if 'extras' in amendment:
         node_as_dict.update(amendment['extras'])
 
-    for field in ('field', 'parent_label'):
-        if field in amendment:
-            node_as_dict[field] = amendment[field]
+    if 'field' in amendment:
+        node_as_dict['field'] = amendment['field']
+    if parent_label:
+        node_as_dict['parent_label'] = parent_label
     return {node.label_id(): node_as_dict}
 
 
@@ -198,7 +199,13 @@ def create_add_amendment(amendment):
 
     nodes_list = []
     flatten_tree(nodes_list, amendment['node'])
-    changes = [format_node(n, amendment) for n in nodes_list]
+    changes = []
+    for node in nodes_list:
+        if node.label == amendment['node'].label:   # is root
+            parent_label = amendment.get('parent_label')
+        else:
+            parent_label = None
+        changes.append(format_node(node, amendment, parent_label))
 
     for change in filter(lambda c: c.values()[0]['action'] == 'PUT', changes):
         label = change.keys()[0]

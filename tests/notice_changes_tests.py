@@ -82,6 +82,25 @@ class ChangesTests(TestCase):
             self.assertEqual(node['action'], 'POST')
             self.assertFalse('children' in node['node'])
 
+    def test_create_add_amendment_parent_label(self):
+        """If an amendment has an explicit parent_label, it should only be
+        applied to the root of the tree"""
+        root = self.build_tree()
+        amendment = {'node': root, 'action': 'POST',
+                     'parent_label': ['arbitrary']}
+        amendments = changes.create_add_amendment(amendment)
+        self.assertEqual(6, len(amendments))
+        amends = {}
+        for a in amendments:
+            amends.update(a)
+
+        self.assertEqual(amends['200'].get('parent_label'), ['arbitrary'])
+        for label, change in amends.items():
+            if label == '200':
+                self.assertEqual(change['parent_label'], ['arbitrary'])
+            else:
+                self.assertFalse('parent_label' in change)
+
     def test_flatten_tree(self):
         tree = self.build_tree()
 
