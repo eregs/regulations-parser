@@ -1,6 +1,7 @@
 # vim: set encoding=utf-8
-from itertools import takewhile
 from copy import copy
+from itertools import takewhile
+import logging
 
 from regparser.grammar import amdpar, tokens
 from regparser.tree.struct import Node
@@ -63,7 +64,7 @@ def find_subpart(amdpar_tag):
             return sibling
 
 
-def switch_context(token_list, carried_context):
+def switch_part_context(token_list, carried_context):
     """ Notices can refer to multiple regulations (CFR parts). If the
     CFR part changes, empty out the context that we carry forward. """
 
@@ -78,6 +79,24 @@ def switch_context(token_list, carried_context):
             reg_part = reg_parts[0]
             if reg_part != carried_context[0]:
                 return []
+    return carried_context
+
+
+def switch_level2_context(token_list, carried_context):
+    """If an amendment mentions a subpart/subject group/appendix and we're
+    sure that that mention is contextual, the fact that we're working in that
+    subpart/etc. should apply to the whole AMDPAR"""
+    level2_markers = ('Subpart', 'Subjgrp', 'Appendix')
+    level2s = [token.label[1] for token in token_list
+               if token.match(tokens.Context, certain=True) and
+               any(marker in str(token.label) for marker in level2_markers)]
+    if len(level2s) == 1 and carried_context:
+        return carried_context[:1] + level2s + carried_context[2:]
+    elif len(level2s) == 1:
+        return [None] + level2s
+    elif len(level2s) > 1:
+        logging.warning("Multiple subpart contexts in amendment: %s",
+                        token_list)
     return carried_context
 
 
@@ -186,7 +205,8 @@ def parse_amdpar(par, initial_context):
     tokenized = move_then_modify(tokenized)
     if not subpart:
         tokenized = separate_tokenlist(tokenized)
-    initial_context = switch_context(tokenized, initial_context)
+    initial_context = switch_part_context(tokenized, initial_context)
+    initial_context = switch_level2_context(tokenized, initial_context)
     tokenized, final_context = compress_context(tokenized, initial_context)
     amends = make_amendments(tokenized, subpart)
     return amends, final_context

@@ -393,28 +393,50 @@ class NoticeDiffTests(XMLBuilderMixin, TestCase):
         amended_label = diff.Amendment('POST', '200-Subpart:B-a-3')
         self.assertFalse(diff.new_subpart_added(amended_label))
 
-    def test_switch_context(self):
+    def test_switch_part_context(self):
         initial_context = ['105', '2']
 
         tokenized = [
             tokens.Paragraph(part='203', sub='2', section='x'),
             tokens.Verb(tokens.Verb.DESIGNATE, True)]
 
-        self.assertEqual(diff.switch_context(tokenized, initial_context), [])
+        self.assertEqual(diff.switch_part_context(tokenized, initial_context),
+                         [])
 
         tokenized = [
             tokens.Paragraph(part='105', sub='4', section='j', paragraph='iv'),
             tokens.Verb(tokens.Verb.DESIGNATE, True)]
 
-        self.assertEqual(
-            diff.switch_context(tokenized, initial_context), initial_context)
+        self.assertEqual(diff.switch_part_context(tokenized, initial_context),
+                         initial_context)
 
         tokenized = [
             tokens.Context(['', '4', 'j', 'iv']),
             tokens.Verb(tokens.Verb.DESIGNATE, True)]
 
-        self.assertEqual(
-            diff.switch_context(tokenized, initial_context), initial_context)
+        self.assertEqual(diff.switch_part_context(tokenized, initial_context),
+                         initial_context)
+
+    def test_switch_level2_context(self):
+        """The presence of certain types of context should apply throughout
+        the amendment"""
+        initial = ['105', None, '2']
+        tokenized = [tokens.Paragraph(), tokens.Verb('verb', True)]
+        transform = diff.switch_level2_context  # shorthand
+
+        self.assertEqual(transform(tokenized, initial), initial)
+
+        context = tokens.Context(['105', 'Subpart:G'], certain=False)
+        tokenized.append(context)
+        self.assertEqual(transform(tokenized, initial), initial)
+
+        context.certain = True
+        self.assertEqual(transform(tokenized, initial),
+                         ['105', 'Subpart:G', '2'])
+
+        # Don't try to proceed if multiple contexts are present
+        tokenized.append(tokens.Context(['105', 'Appendix:Q'], certain=True))
+        self.assertEqual(transform(tokenized, initial), initial)
 
     def test_fix_section_node(self):
         with self.tree.builder("REGTEXT") as regtext:
