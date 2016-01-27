@@ -691,6 +691,17 @@ class NoticeDiffTests(XMLBuilderMixin, TestCase):
         self.assertEqual(a2add.action, tokens.Verb.POST)
         self.assertEqual(a2add.label, ['1111', '22', 'a', 'Interp', '2'])
 
+    def test_parse_amdpar_subject_group(self):
+        xml = etree.fromstring(
+            '<AMDPAR>8. Section 479.90a is added to '
+            '[subject-group(Exemptions Relating to Transfers of Firearms)] '
+            'to read as follows.</AMDPAR>')
+        amends, _ = diff.parse_amdpar(xml, [])
+        self.assertEqual(1, len(amends))
+        self.assertEqual(amends[0].action, tokens.Verb.POST)
+        self.assertEqual(amends[0].label, ['479', '90a'])
+        self.assertEqual(amends[0].original_label, '479-Subjgrp:ERtToF-90a')
+
 
 class AmendmentTests(TestCase):
     def test_fix_label(self):

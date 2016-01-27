@@ -11,6 +11,7 @@ from regparser.grammar import atomic, tokens, unified
 from regparser.grammar.utils import Marker, QuickSearchable, WordBoundaries
 from regparser.layer.key_terms import keyterm_to_int
 from regparser.tree.paragraph import p_levels
+from regparser.tree.reg_text import subjgrp_label
 
 
 intro_text_marker = (
@@ -73,7 +74,7 @@ insert_in_order = Literal("[insert-in-order]").setParseAction(
 
 #   Context
 context_certainty = Optional(
-    Marker("in") | Marker("to") | (
+    Marker("in") | Marker("to") | Marker("of") | (
         Marker("under") + Optional(
             Marker("subheading")))).setResultsName("certain")
 
@@ -465,6 +466,16 @@ override_label = (
     Suppress("]")
 ).setParseAction(tokenize_override_ps)
 
+# Looks like: [subject-group(Some text Goes Here)]
+subject_group = (
+    context_certainty +
+    Suppress("[subject-group") +
+    QuotedString(quoteChar='(', endQuoteChar=')').setResultsName("subgroup") +
+    Suppress("]")
+).setParseAction(lambda m: tokens.Context(
+    [None, 'Subjgrp:' + subjgrp_label(m.subgroup, [])], bool(m.certain)))
+
+
 #   grammar which captures all of these possibilities
 token_patterns = QuickSearchable(
     put_active | put_passive | post_active | post_passive |
@@ -499,7 +510,7 @@ token_patterns = QuickSearchable(
     intro_text |
 
     # Finally allow for an explicit override label
-    override_label |
+    override_label | subject_group |
 
     paragraph_context |
     and_token
