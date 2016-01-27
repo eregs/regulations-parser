@@ -540,7 +540,8 @@ class Amendment(object):
         the two here (removing question markers, converting to interp
         format, etc.)"""
         def wanted(l):
-            return l != '?' and 'Subpart' not in l
+            bad_markers = ('?', 'Subpart', 'Subjgrp')
+            return not any(marker in l for marker in bad_markers)
 
         components = label.split('-')
         components = [self.remove_intro(l) for l in components if wanted(l)]

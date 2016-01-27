@@ -672,27 +672,28 @@ class NoticeDiffTests(XMLBuilderMixin, TestCase):
 
 class AmendmentTests(TestCase):
     def test_fix_label(self):
-        amd = diff.Amendment('action', '1005-Interpretations')
-        self.assertEqual(amd.label, ['1005', 'Interp'])
+        """Fix label converts between the AMDPAR label format and the Node
+        label format"""
+        tests = {
+            '1005-Interpretations': ['1005', 'Interp'],
+            '1005-Interpretations-31-(b)(1)-3':
+                ['1005', '31', 'b', '1', 'Interp', '3'],
+            '1005-Interpretations-31-(b)(1)-3[title]':
+                ['1005', '31', 'b', '1', 'Interp', '3'],
+            '1005-Interpretations-31-(c)-2-xi':
+                ['1005', '31', 'c', 'Interp', '2', 'xi'],
+            '1005-Interpretations-31-()-2-xi':
+                ['1005', '31', 'Interp', '2', 'xi'],
+            '1005-Interpretations-Appendix:A-2':
+                ['1005', 'A', '2', 'Interp'],
+            '1005-Appendix:A-2': ['1005', 'A', '2'],
+            '1005-Subpart:A-2': ['1005', '2'],
+            '1005-Subjgrp:AbCd-2': ['1005', '2']
+        }
 
-        amd = diff.Amendment('action', '1005-Interpretations-31-(b)(1)-3')
-        self.assertEqual(amd.label, ['1005', '31', 'b', '1', 'Interp', '3'])
-
-        amd = diff.Amendment('action',
-                             '1005-Interpretations-31-(b)(1)-3[title]')
-        self.assertEqual(amd.label, ['1005', '31', 'b', '1', 'Interp', '3'])
-
-        amd = diff.Amendment('action', '1005-Interpretations-31-(c)-2-xi')
-        self.assertEqual(amd.label, ['1005', '31', 'c', 'Interp', '2', 'xi'])
-
-        amd = diff.Amendment('action', '1005-Interpretations-31-()-2-xi')
-        self.assertEqual(amd.label, ['1005', '31', 'Interp', '2', 'xi'])
-
-        amd = diff.Amendment('action', '1005-Interpretations-Appendix:A-2')
-        self.assertEqual(amd.label, ['1005', 'A', '2', 'Interp'])
-
-        amd = diff.Amendment('action', '1005-Appendix:A-2')
-        self.assertEqual(amd.label, ['1005', 'A', '2'])
+        for in_label, out_label in tests.items():
+            amd = diff.Amendment('action', in_label)
+            self.assertEqual(amd.label, out_label)
 
     def test_amendment_heading(self):
         amendment = diff.Amendment('PUT', '100-2-a[heading]')
