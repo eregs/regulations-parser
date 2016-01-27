@@ -289,13 +289,13 @@ $ pip install -r requirements_test.txt
 Then, run nose on all of the available unit tests:
 
 ```bash
-$ nosetests tests/*.py
+$ nosetests
 ```
 
 If you'd like a report of test coverage, use the [nose-cov](https://pypi.python.org/pypi/nose-cov) plugin:
 
 ```bash
-$ nosetests --with-cov --cov-report term-missing --cov regparser tests/*.py
+$ nosetests --with-cov --cov-report term-missing --cov regparser
 ```
 
 Note also that this library is continuously tested via Travis. Pull requests
