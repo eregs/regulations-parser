@@ -54,8 +54,9 @@ class Terms(Layer):
                 for scope in self.scope_finder.determine_scope(stack):
                     self.scoped_terms[scope].extend(included)
             self.scoped_terms['EXCLUDED'].extend(excluded)
-        for child in node.children:
-            self.look_for_defs(child, stack)
+
+            for child in node.children:
+                self.look_for_defs(child, stack)
 
     def pre_process(self):
         """Step through every node in the tree, finding definitions. Also keep
