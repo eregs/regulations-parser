@@ -151,13 +151,16 @@ def match_labels_and_changes(amendments, section_node):
             else:
                 change['node'] = node
                 change['candidate'] = False
+                level2 = amend.tree_format_level2()
+                if level2 and node.is_section():
+                    change['parent_label'] = level2
                 amend_map[amend.label_id()].append(change)
 
     resolve_candidates(amend_map)
     return amend_map
 
 
-def format_node(node, amendment):
+def format_node(node, amendment, parent_label=None):
     """ Format a node into a dict, and add in amendment information. """
     node_as_dict = {
         'node': node_to_dict(node),
@@ -169,6 +172,8 @@ def format_node(node, amendment):
 
     if 'field' in amendment:
         node_as_dict['field'] = amendment['field']
+    if parent_label:
+        node_as_dict['parent_label'] = parent_label
     return {node.label_id(): node_as_dict}
 
 
@@ -194,7 +199,13 @@ def create_add_amendment(amendment):
 
     nodes_list = []
     flatten_tree(nodes_list, amendment['node'])
-    changes = [format_node(n, amendment) for n in nodes_list]
+    changes = []
+    for node in nodes_list:
+        if node.label == amendment['node'].label:   # is root
+            parent_label = amendment.get('parent_label')
+        else:
+            parent_label = None
+        changes.append(format_node(node, amendment, parent_label))
 
     for change in filter(lambda c: c.values()[0]['action'] == 'PUT', changes):
         label = change.keys()[0]
@@ -231,7 +242,7 @@ def create_subpart_amendment(subpart_node):
     amendment = {
         'node': subpart_node,
         'action': 'POST',
-        'extras': {'subpart': subpart_node.label}
+        'extras': {'parent_label': subpart_node.label}
     }
     return create_add_amendment(amendment)
 

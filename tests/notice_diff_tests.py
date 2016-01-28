@@ -394,28 +394,50 @@ class NoticeDiffTests(XMLBuilderMixin, TestCase):
         amended_label = diff.Amendment('POST', '200-Subpart:B-a-3')
         self.assertFalse(diff.new_subpart_added(amended_label))
 
-    def test_switch_context(self):
+    def test_switch_part_context(self):
         initial_context = ['105', '2']
 
         tokenized = [
             tokens.Paragraph(part='203', sub='2', section='x'),
             tokens.Verb(tokens.Verb.DESIGNATE, True)]
 
-        self.assertEqual(diff.switch_context(tokenized, initial_context), [])
+        self.assertEqual(diff.switch_part_context(tokenized, initial_context),
+                         [])
 
         tokenized = [
             tokens.Paragraph(part='105', sub='4', section='j', paragraph='iv'),
             tokens.Verb(tokens.Verb.DESIGNATE, True)]
 
-        self.assertEqual(
-            diff.switch_context(tokenized, initial_context), initial_context)
+        self.assertEqual(diff.switch_part_context(tokenized, initial_context),
+                         initial_context)
 
         tokenized = [
             tokens.Context(['', '4', 'j', 'iv']),
             tokens.Verb(tokens.Verb.DESIGNATE, True)]
 
-        self.assertEqual(
-            diff.switch_context(tokenized, initial_context), initial_context)
+        self.assertEqual(diff.switch_part_context(tokenized, initial_context),
+                         initial_context)
+
+    def test_switch_level2_context(self):
+        """The presence of certain types of context should apply throughout
+        the amendment"""
+        initial = ['105', None, '2']
+        tokenized = [tokens.Paragraph(), tokens.Verb('verb', True)]
+        transform = diff.switch_level2_context  # shorthand
+
+        self.assertEqual(transform(tokenized, initial), initial)
+
+        context = tokens.Context(['105', 'Subpart:G'], certain=False)
+        tokenized.append(context)
+        self.assertEqual(transform(tokenized, initial), initial)
+
+        context.certain = True
+        self.assertEqual(transform(tokenized, initial),
+                         ['105', 'Subpart:G', '2'])
+
+        # Don't try to proceed if multiple contexts are present
+        tokenized.append(tokens.Context(['105', 'Appendix:Q'], certain=True))
+        self.assertEqual(transform(tokenized, initial), initial)
 
     def test_fix_section_node(self):
         with self.tree.builder("REGTEXT") as regtext:
@@ -670,6 +692,17 @@ class NoticeDiffTests(XMLBuilderMixin, TestCase):
         self.assertEqual(a2add.action, tokens.Verb.POST)
         self.assertEqual(a2add.label, ['1111', '22', 'a', 'Interp', '2'])
 
+    def test_parse_amdpar_subject_group(self):
+        xml = etree.fromstring(
+            '<AMDPAR>8. Section 479.90a is added to '
+            '[subject-group(Exemptions Relating to Transfers of Firearms)] '
+            'to read as follows.</AMDPAR>')
+        amends, _ = diff.parse_amdpar(xml, [])
+        self.assertEqual(1, len(amends))
+        self.assertEqual(amends[0].action, tokens.Verb.POST)
+        self.assertEqual(amends[0].label, ['479', '90a'])
+        self.assertEqual(amends[0].original_label, '479-Subjgrp:ERtToF-90a')
+
     def test_parse_amdpar_definition(self):
         """We should correctly deduce which paragraphs are being updated, even
         when they are identified by definition alone"""
@@ -688,33 +721,45 @@ class NoticeDiffTests(XMLBuilderMixin, TestCase):
 
 class AmendmentTests(TestCase):
     def test_fix_label(self):
-        amd = diff.Amendment('action', '1005-Interpretations')
-        self.assertEqual(amd.label, ['1005', 'Interp'])
+        """Fix label converts between the AMDPAR label format and the Node
+        label format"""
+        tests = {
+            '1005-Interpretations': ['1005', 'Interp'],
+            '1005-Interpretations-31-(b)(1)-3':
+                ['1005', '31', 'b', '1', 'Interp', '3'],
+            '1005-Interpretations-31-(b)(1)-3[title]':
+                ['1005', '31', 'b', '1', 'Interp', '3'],
+            '1005-Interpretations-31-(c)-2-xi':
+                ['1005', '31', 'c', 'Interp', '2', 'xi'],
+            '1005-Interpretations-31-()-2-xi':
+                ['1005', '31', 'Interp', '2', 'xi'],
+            '1005-Interpretations-Appendix:A-2':
+                ['1005', 'A', '2', 'Interp'],
+            '1005-Appendix:A-2': ['1005', 'A', '2'],
+            '1005-Subpart:A-2': ['1005', '2'],
+            '1005-Subjgrp:AbCd-2': ['1005', '2']
+        }
 
-        amd = diff.Amendment('action', '1005-Interpretations-31-(b)(1)-3')
-        self.assertEqual(amd.label, ['1005', '31', 'b', '1', 'Interp', '3'])
-
-        amd = diff.Amendment('action',
-                             '1005-Interpretations-31-(b)(1)-3[title]')
-        self.assertEqual(amd.label, ['1005', '31', 'b', '1', 'Interp', '3'])
-
-        amd = diff.Amendment('action', '1005-Interpretations-31-(c)-2-xi')
-        self.assertEqual(amd.label, ['1005', '31', 'c', 'Interp', '2', 'xi'])
-
-        amd = diff.Amendment('action', '1005-Interpretations-31-()-2-xi')
-        self.assertEqual(amd.label, ['1005', '31', 'Interp', '2', 'xi'])
-
-        amd = diff.Amendment('action', '1005-Interpretations-Appendix:A-2')
-        self.assertEqual(amd.label, ['1005', 'A', '2', 'Interp'])
-
-        amd = diff.Amendment('action', '1005-Appendix:A-2')
-        self.assertEqual(amd.label, ['1005', 'A', '2'])
+        for in_label, out_label in tests.items():
+            amd = diff.Amendment('action', in_label)
+            self.assertEqual(amd.label, out_label)
 
     def test_amendment_heading(self):
         amendment = diff.Amendment('PUT', '100-2-a[heading]')
         self.assertEqual(amendment.action, 'PUT')
         self.assertEqual(amendment.label, ['100', '2', 'a'])
         self.assertEqual(amendment.field, '[heading]')
+
+    def test_tree_format_level2(self):
+        for label, expected in (
+                ('100', None),
+                ('100-Interpretations', None),
+                ('100-Subpart:A-105', ['100', 'Subpart', 'A']),
+                ('100-Subjgrp:AbCdE', ['100', 'Subjgrp', 'AbCdE']),
+                ('100-Appendix:R', ['100', 'R'])):
+            self.assertEqual(
+                diff.Amendment('VERB', label).tree_format_level2(),
+                expected)
 
 
 class DesignateAmendmentTests(TestCase):

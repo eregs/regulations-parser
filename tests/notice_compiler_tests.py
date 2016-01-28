@@ -421,26 +421,19 @@ class CompilerTests(TestCase):
         self.assertEqual(reg_tree.tree, root)
 
     def test_add_section(self):
-        nsa = Node(
-            'nsa',
-            label=['205', 'Subpart', 'A'],
-            node_type=Node.SUBPART)
+        root = self._tree_with_subparts()
 
-        nappa = Node(
-            'nappa',
-            label=['205', 'Appendix', 'C'],
-            node_type=Node.APPENDIX)
-
-        root = Node('', label=['205'])
-        root.children = [nsa, nappa]
-
-        n1 = Node('', label=['205', '1'])
+        change = {'action': 'POST', 'parent_label': ['205', 'Subpart', 'A'],
+                  'node': {'text': '', 'node_type': Node.REGTEXT,
+                           'label': ['205', '1'], 'children': []}}
 
         reg_tree = compiler.RegulationTree(root)
-        reg_tree.add_section(n1, ['205', 'Subpart', 'A'])
+        compiler.one_change(reg_tree, ['205', '1'], change)
 
-        nsa.children = [n1]
-        self.assertEqual(reg_tree.tree, root)
+        subpart_a = reg_tree.tree.children[0]
+        self.assertEqual(subpart_a.label_id(), '205-Subpart-A')
+        self.assertEqual(1, len(subpart_a.children))
+        self.assertEqual(subpart_a.children[0].label_id(), '205-1')
 
     def test_replace_node_text(self):
         root = self.tree_with_paragraphs()
@@ -474,7 +467,7 @@ class CompilerTests(TestCase):
         changed_node = find(reg_tree.tree, '205-2-a')
         self.assertEqual(changed_node.text, 'Replaced. Remainder.')
 
-    def tree_with_subparts(self):
+    def _tree_with_subparts(self):
         nsa = Node('nsa',
                    label=['205', 'Subpart', 'A'],
                    node_type=Node.SUBPART)
@@ -494,7 +487,7 @@ class CompilerTests(TestCase):
     def test_replace_subpart_section(self):
         """ Replace a section that already exists in a subpart. """
 
-        root = self.tree_with_subparts()
+        root = self._tree_with_subparts()
         section = Node('section', label=['205', '3'], node_type=Node.REGTEXT)
         subpart = find(root, '205-Subpart-B')
         subpart.children = [section]
@@ -513,7 +506,7 @@ class CompilerTests(TestCase):
         self.assertEqual(len(subpart_a.children), 0)
 
     def test_get_parent_in_subpart(self):
-        root = self.tree_with_subparts()
+        root = self._tree_with_subparts()
         section = Node('section', label=['205', '3'], node_type=Node.REGTEXT)
         subpart = find(root, '205-Subpart-B')
         subpart.children = [section]
@@ -531,7 +524,7 @@ class CompilerTests(TestCase):
         self.assertEqual(parent.label_id(), '205')
 
     def test_create_new_subpart(self):
-        root = self.tree_with_subparts()
+        root = self._tree_with_subparts()
 
         reg_tree = compiler.RegulationTree(root)
         reg_tree.create_new_subpart(['205', 'Subpart', 'C'])
@@ -660,11 +653,11 @@ class CompilerTests(TestCase):
         self.assertEqual(find(reg, '2055-2-b'), None)
 
     def test_compile_add_to_subpart(self):
-        root = self.tree_with_subparts()
+        root = self._tree_with_subparts()
 
         change = {
             'action': 'POST',
-            'subpart': ['205', 'Subpart', 'B'],
+            'parent_label': ['205', 'Subpart', 'B'],
             'node': {
                 'text': '2 text',
                 'label': ['205', '2'],
@@ -677,10 +670,10 @@ class CompilerTests(TestCase):
         self.assertEqual(added_node.text, '2 text')
 
     def test_compile_designate(self):
-        root = self.tree_with_subparts()
+        root = self._tree_with_subparts()
         change = {
             'action': 'POST',
-            'subpart': ['205', 'Subpart', 'B'],
+            'parent_label': ['205', 'Subpart', 'B'],
             'node': {
                 'text': '2 text',
                 'label': ['205', '2'],
@@ -721,7 +714,7 @@ class CompilerTests(TestCase):
 
     def test_delete_section_in_subpart(self):
         """Verify that we can delete a section within a subpart"""
-        root = self.tree_with_subparts()
+        root = self._tree_with_subparts()
         root.children[0].children = [Node(label=['205', '12'])]
         reg_tree = compiler.RegulationTree(root)
 

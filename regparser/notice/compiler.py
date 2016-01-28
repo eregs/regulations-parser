@@ -304,7 +304,7 @@ class RegulationTree(object):
             label = '-'.join(label)
         return find(self.tree, label)
 
-    def add_node(self, node):
+    def add_node(self, node, parent_label=None):
         """ Add an entirely new node to the regulation tree. """
         existing = find(self.tree, node.label_id())
         if existing and is_reserved_node(existing):
@@ -333,7 +333,11 @@ class RegulationTree(object):
                     node.node_type == Node.SUBPART):
                 return self.add_to_root(node)
             else:
-                parent = self.get_parent(node)
+                if parent_label:
+                    parent = self.find_node(parent_label)
+                else:
+                    parent = self.get_parent(node)
+
                 if parent is None:
                     # This is a corner case, where we're trying to add a child
                     # to a parent that should exist.
@@ -356,12 +360,6 @@ class RegulationTree(object):
         texts = [child.text for child in parent.children]
         insert_idx = bisect(texts, node.text)
         parent.children.insert(insert_idx, node)
-
-    def add_section(self, node, subpart_label):
-        """ Add a new section to a subpart. """
-
-        subpart = find(self.tree, '-'.join(subpart_label))
-        subpart.children = self.add_child(subpart.children, node)
 
     def replace_node_text(self, label, change):
         """ Replace just a node's text. """
@@ -474,10 +472,7 @@ def one_change(reg, label, change):
         replace_node_field(reg, label, change)
     elif change['action'] == 'POST':
         node = dict_to_node(change['node'])
-        if 'subpart' in change and len(node.label) == 2:
-            reg.add_section(node, change['subpart'])
-        else:
-            reg.add_node(node)
+        reg.add_node(node, change.get('parent_label'))
     elif change['action'] == 'DESIGNATE':
         if 'Subpart' in change['destination']:
             reg.move_to_subpart(label, change['destination'])
