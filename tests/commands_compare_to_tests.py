@@ -6,6 +6,7 @@ from unittest import TestCase
 
 import click
 from click.testing import CliRunner
+from mock import patch
 
 from regparser.commands import compare_to
 from tests.http_mixin import HttpMixin
@@ -67,9 +68,10 @@ class CommandsCompareToTests(HttpMixin, TestCase):
     def test_compare_404(self):
         """If the remote file doesn't exist, we should be notified"""
         self.expect_json_http(status=404)
-        result = self.run_compare('local_file', 'http://example.com/remote')
-        self.assertEqual('Nonexistent: http://example.com/remote\n',
-                         result.output)
+        with patch('regparser.commands.compare_to.logging') as logging:
+            self.run_compare('local_file', 'http://example.com/remote')
+        self.assertEqual(logging.warn.call_args[0],
+                         ('Nonexistent: %s', 'http://example.com/remote'))
 
     def test_compare_no_diff(self):
         """We shouldn't get any notification if the files are the same"""
