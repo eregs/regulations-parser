@@ -1,4 +1,5 @@
 import json
+import logging
 import os
 
 import click
@@ -35,7 +36,7 @@ def compare(local_path, remote_url):
     diff"""
     remote_response = requests.get(remote_url)
     if remote_response.status_code == 404:
-        click.echo("Nonexistent: " + remote_url)
+        logging.warn("Nonexistent: %s", remote_url)
     else:
         remote = remote_response.json()
         with open(local_path) as f:

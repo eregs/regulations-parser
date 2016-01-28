@@ -475,6 +475,18 @@ subject_group = (
 ).setParseAction(lambda m: tokens.Context(
     [None, 'Subjgrp:' + subjgrp_label(m.subgroup, [])], bool(m.certain)))
 
+# Phrases like '“Nonimmigrant visa”' become 'p12345678'
+_double_quote_label = QuotedString(
+        quoteChar=u'“', endQuoteChar=u'”'
+).setParseAction(lambda m: "p{}".format(keyterm_to_int(m[0])))
+# Phrases like "definition for the term “Nonimmigrant visa”" become a
+# paragraph token with the appropriate paragraph label set
+definition = (
+    Marker("definition") +
+    (Marker("of") | Marker("for")) +
+    Optional(Marker("the") + Marker("term")) +
+    _double_quote_label.copy().setResultsName("paragraph")
+).setParseAction(lambda m: tokens.Paragraph(paragraphs=[m.paragraph]))
 
 #   grammar which captures all of these possibilities
 token_patterns = QuickSearchable(
@@ -508,6 +520,8 @@ token_patterns = QuickSearchable(
     section |
     #   Must come after intro_text_of
     intro_text |
+
+    definition |
 
     # Finally allow for an explicit override label
     override_label | subject_group |

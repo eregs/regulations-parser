@@ -160,9 +160,6 @@ Tools
 Legacy Commands
 ---------------
 
-* ``build_from`` - This is very similar to the ``pipeline`` command save that
-  it does not make use of the index and does not use annual editions. This
-  command will likely be removed in future versions.
 * ``notice_order`` - This uses a system similar to ``versions`` to determine
   and order the final rules associated with a regulation. It will likely be
   removed in favor of better output in the ``versions`` command.

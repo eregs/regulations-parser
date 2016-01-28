@@ -1,9 +1,12 @@
 # vim: set fileencoding=utf-8
+from unittest import TestCase
+
+from mock import patch
+
 from regparser.layer.terms import ParentStack, Terms
 from regparser.layer.def_finders import Ref
 from regparser.tree.struct import Node
 import settings
-from unittest import TestCase
 
 
 class LayerTermTest(TestCase):
@@ -236,6 +239,33 @@ class LayerTermTest(TestCase):
         self.assertTrue(('1212', '22') in t.scoped_terms)
         self.assertEqual(len(t.scoped_terms[('1212', '22')]), 1)
         self.assertEqual('1212-22-a', t.scoped_terms[('1212', '22')][0].label)
+
+    @patch.object(Terms, 'node_definitions')
+    def test_look_for_defs(self, node_definitions):
+        """We should be walking through the tree to find terms. Test this by
+        documenting which nodes are touched. We should be _ignoring_ certain
+        subtrees (notable, any which aren't associated w/ regtext)"""
+        node_definitions.side_effect = lambda n, _: ([], [n.label_id()])
+        t = Terms(None)
+
+        root = Node(label=['111'], children=[
+            Node(label=['111', 'Subpart'], node_type=Node.EMPTYPART, children=[
+                Node(label=['111', '1'], children=[
+                    Node(label=['111', '1', 'a']),
+                    Node(label=['111', '1', 'b']),
+                    Node(label=['111', '1', 'c'])]),
+                Node(label=['111', '2'], children=[
+                    Node(label=['111', '2', 'p1'], node_type=Node.EXTRACT,
+                         children=[Node(label=['111', '2', 'p1', 'p1'])])
+                ])]),
+            Node(label=['111', 'A'], node_type=Node.APPENDIX, children=[
+                Node(label=['111', 'A', '1'], node_type=Node.APPENDIX)])])
+        t.look_for_defs(root)
+        self.assertItemsEqual(
+            t.scoped_terms['EXCLUDED'],
+            # note the absence of APPENDIX, and anything below an EXTRACT
+            ['111', '111-Subpart', '111-1', '111-1-a', '111-1-b', '111-1-c',
+             '111-2'])
 
     def test_excluded_offsets(self):
         t = Terms(None)

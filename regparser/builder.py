@@ -12,7 +12,6 @@ from regparser.federalregister import fetch_notice_json, fetch_notices
 from regparser.history.notices import (
     applicable as applicable_notices, group_by_eff_date)
 from regparser.history.delays import modify_effective_dates
-from regparser.layer import ALL_LAYERS
 from regparser.notice import fake as notice_fake
 from regparser.notice.compiler import compile_regulation
 from regparser.tree import struct, xml_parser
@@ -48,21 +47,6 @@ class Builder(object):
             if 'meta' in notice:
                 del notice['meta']
             self.writer.notice(notice['document_number']).write(notice)
-
-    def write_regulation(self, reg_tree):
-        self.writer.regulation(self.cfr_part, self.doc_number).write(reg_tree)
-
-    def gen_and_write_layers(self, reg_tree, cache, notices=None):
-        if notices is None:
-            notices = applicable_notices(self.notices, self.doc_number)
-        for ident, layer_class in ALL_LAYERS.items():
-            layer = self.checkpointer.checkpoint(
-                ident + "-" + self.doc_number,
-                lambda: layer_class(
-                    reg_tree, self.cfr_title, self.doc_number, notices
-                    ).build(cache.cache_for(ident)))
-            self.writer.layer(ident, self.cfr_part, self.doc_number).write(
-                layer)
 
     def revision_generator(self, reg_tree):
         """Given an initial regulation tree, this will emit (and checkpoint)
@@ -121,66 +105,6 @@ def merge_changes(document_number, changes):
     return changes
 
 
-class LayerCacheAggregator(object):
-    """A lot of the reg tree remains the same between versions; we don't
-    want to recompute layers every time. This object keeps track of what
-    labels are seen/valid."""
-    def __init__(self):
-        self._known_labels = set()
-        self._caches = {}
-
-    def invalidate(self, labels):
-        """Given a list of labels, clear out any known labels that would be
-        affected. For subpart changes, we just wipe out the whole cache. If
-        removing an interpretation, make the logic easier by removing
-        related regtext as well."""
-        if any('Subpart' in label for label in labels):
-            self._known_labels = set()
-        else:
-            stripped = []
-            for label in labels:
-                if struct.Node.INTERP_MARK in label:
-                    idx = label.find(struct.Node.INTERP_MARK) - 1
-                    stripped.append(label[:idx])
-                else:
-                    stripped.append(label)
-            self._known_labels = set(
-                known for known in self._known_labels
-                if not any(known.startswith(l) for l in stripped))
-
-    def invalidate_by_notice(self, notice):
-        """Using the notice structure, invalidate based on the 'changes'
-        field"""
-        self.invalidate([key for key in notice.get('changes', {})])
-        patches = content.RegPatches().get(notice['document_number'], {})
-        self.invalidate(patches.keys())
-
-    def is_known(self, label):
-        return label in self._known_labels
-
-    def replace_using(self, tree):
-        """Clear out the known labels; replace them using the provided node
-        tree."""
-        self._known_labels = set()
-
-        def per_node(node):
-            self._known_labels.add(node.label_id())
-        struct.walk(tree, per_node)
-
-    def cache_for(self, layer_name):
-        """Get a LayerCache object for a given layer name. Not all layers
-        have caches, as caches are currently only used for layers that
-        depend on the node's text"""
-        if layer_name in ('external-citations', 'internal-citations',
-                          'interpretations', 'paragraph-markers', 'keyterms',
-                          'formatting', 'graphics'):
-            if layer_name not in self._caches:
-                self._caches[layer_name] = LayerCache(self)
-            return self._caches[layer_name]
-        else:
-            return EmptyCache()
-
-
 def notices_for_cfr_part(title, part):
     """Retrieves all final notices for a title-part pair, orders them, and
     returns them as a dict[effective_date_str] -> list(notices)"""
@@ -214,30 +138,6 @@ def _fdsys_to_doc_number(xml, title, title_part):
         notices = sorted(notices, key=comparer, reverse=True)
         if notices:
             return notices[0]['document_number']
-
-
-class LayerCache(object):
-    """Keeps a cache of a single layer. Used in combination with a
-    LayerCacheAggregator to determine when something needs to be recomputed."""
-    def __init__(self, parent):
-        self.parent = parent
-        self._cache = {}
-
-    def fetch_or_process(self, layer, node):
-        """Retrieve the value of a layer if known. Otherwise, compute the
-        value and cache the result"""
-        label = node.label_id()
-        if not self.parent.is_known(label):
-            self._cache[label] = layer.process(node)
-        return self._cache.get(label)
-
-
-class EmptyCache(object):
-    """Dummy cache used to represent layers that should not be cached. For
-    example, the toc layer depends on more than the text of its associated
-    node, so it should not be cached."""
-    def fetch_or_process(self, layer, node):
-        return layer.process(node)
 
 
 def _serialize_xml_fields(node):

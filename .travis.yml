@@ -7,7 +7,7 @@ install:
     - pip install -r requirements_test.txt
     - pip install coveralls
 script:
-    - nosetests --with-cov --cov-report term-missing --cov regparser tests/*.py
+    - nosetests --with-cov --cov-report term-missing --cov regparser
     - flake8 .
 after_success:
     coveralls
