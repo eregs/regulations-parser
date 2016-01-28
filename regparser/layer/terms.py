@@ -42,24 +42,27 @@ class Terms(Layer):
         self.scoped_terms = defaultdict(list)
         self.scope_finder = ScopeFinder()
 
+    def look_for_defs(self, node, stack=None):
+        """Check a node and recursively check its children for terms which are
+        being defined. Add these definitions to self.scoped_terms."""
+        stack = stack or ParentStack()
+        stack.add(node.depth(), node)
+        if node.node_type in (struct.Node.REGTEXT, struct.Node.SUBPART,
+                              struct.Node.EMPTYPART):
+            included, excluded = self.node_definitions(node, stack)
+            if included:
+                for scope in self.scope_finder.determine_scope(stack):
+                    self.scoped_terms[scope].extend(included)
+            self.scoped_terms['EXCLUDED'].extend(excluded)
+        for child in node.children:
+            self.look_for_defs(child, stack)
+
     def pre_process(self):
-        """Step through every node in the tree, finding definitions. Add
-        these definition to self.scoped_terms. Also keep track of which
-        subpart we are in. Finally, document all defined terms. """
+        """Step through every node in the tree, finding definitions. Also keep
+        track of which subpart we are in. Finally, document all defined terms.
+        """
         self.scope_finder.add_subparts(self.tree)
-        stack = ParentStack()
-
-        def per_node(node):
-            stack.add(node.depth(), node)
-            if node.node_type in (struct.Node.REGTEXT, struct.Node.SUBPART,
-                                  struct.Node.EMPTYPART):
-                included, excluded = self.node_definitions(node, stack)
-                if included:
-                    for scope in self.scope_finder.determine_scope(stack):
-                        self.scoped_terms[scope].extend(included)
-                self.scoped_terms['EXCLUDED'].extend(excluded)
-
-        struct.walk(self.tree, per_node)
+        self.look_for_defs(self.tree)
 
         referenced = self.layer['referenced']
         for scope in self.scoped_terms:
