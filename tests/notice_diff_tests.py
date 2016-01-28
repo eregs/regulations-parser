@@ -1,4 +1,5 @@
 # vim: set encoding=utf-8
+import re
 from unittest import TestCase
 
 from lxml import etree
@@ -668,6 +669,21 @@ class NoticeDiffTests(XMLBuilderMixin, TestCase):
         self.assertEqual(a3.label, ['1111', '22', 'a', 'Interp', '3'])
         self.assertEqual(a2add.action, tokens.Verb.POST)
         self.assertEqual(a2add.label, ['1111', '22', 'a', 'Interp', '2'])
+
+    def test_parse_amdpar_definition(self):
+        """We should correctly deduce which paragraphs are being updated, even
+        when they are identified by definition alone"""
+        text = ("Section 478.11 is amended by adding a definition for the "
+                u"term “Nonimmigrant visa” in alphabetical order to read as "
+                "follows:")
+        xml = etree.fromstring('<AMDPAR>%s</AMDPAR>' % text)
+        amends, _ = diff.parse_amdpar(xml, [])
+        self.assertEqual(1, len(amends))
+        self.assertEqual(amends[0].action, tokens.Verb.POST)
+        self.assertEqual(3, len(amends[0].label))
+        self.assertEqual(['478', '11'], amends[0].label[:2])
+        # Paragraph has a hash
+        self.assertTrue(re.match(r'p\d{4}\d+', amends[0].label[2]))
 
 
 class AmendmentTests(TestCase):
