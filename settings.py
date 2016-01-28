@@ -103,7 +103,10 @@ APPENDIX_IGNORE_SUBHEADER_LABEL = {}
 XML_REPO = 'https://github.com/eregs/fr-notices.git'
 
 # A dictionary of agency-specific external citations
-CUSTOM_CITATIONS = {}
+# @todo - move ATF citations to an extension
+CUSTOM_CITATIONS = {
+    "ATF I 5300.1": "https://atf-eregs.apps.cloud.gov/static/atf_eregs/5300_1.pdf",
+    "ATF I 5300.2": "https://www.atf.gov/file/58806/download"}
 
 
 try:
