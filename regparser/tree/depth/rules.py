@@ -10,6 +10,7 @@ this symmetry, we explicitly reject one solution; this reduces the number of
 permutations we care about dramatically.
 """
 from regparser.tree.depth import markers
+from regparser.tree.depth.pair_rules import pair_rules
 
 
 def must_be(value):
@@ -120,13 +121,7 @@ def continue_previous_seq(typ, idx, depth, *all_prev):
     if depth < len(ancestors) - 1:
         # Find the previous marker at this depth
         prev_typ, prev_idx, prev_depth = ancestors[depth]
-        types = set([prev_typ, typ])
-        if markers.stars in types:          # Special cases around STARS...
-            return len(types) == 2
-        elif markers.markerless in types:   # ... and MARKERLESS
-            return len(types) == 1
-        else:
-            return idx == prev_idx + 1 and prev_typ == typ
+        return pair_rules(prev_typ, prev_idx, prev_depth, typ, idx, depth)
     else:
         return True
 
