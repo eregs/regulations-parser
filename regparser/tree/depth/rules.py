@@ -113,14 +113,11 @@ def triplet_tests(*triplet_seq):
 
 def continue_previous_seq(typ, idx, depth, *all_prev):
     """Constrain the current marker based on all markers leading up to it"""
-    # Group (type, idx, depth) per marker
-    all_prev = [tuple(all_prev[i:i+3]) for i in range(0, len(all_prev), 3)]
-
-    ancestors = _ancestors(all_prev)
+    ancestor_markers = ancestors(all_prev)
     # Becoming more shallow
-    if depth < len(ancestors) - 1:
+    if depth < len(ancestor_markers) - 1:
         # Find the previous marker at this depth
-        prev_typ, prev_idx, prev_depth = ancestors[depth]
+        prev_typ, prev_idx, prev_depth = ancestor_markers[depth]
         return pair_rules(prev_typ, prev_idx, prev_depth, typ, idx, depth)
     else:
         return True
@@ -200,9 +197,12 @@ def depth_type_order(order):
     return inner
 
 
-def _ancestors(all_prev):
+def ancestors(all_prev):
     """Given an assignment of values, construct a list of the relevant
     parents, e.g. 1, i, a, ii, A gives us 1, ii, A"""
+    # Group (type, idx, depth) per marker
+    all_prev = [tuple(all_prev[i:i+3]) for i in range(0, len(all_prev), 3)]
+
     result = [None]*10
     for prev_type, prev_idx, prev_depth in all_prev:
         result[prev_depth] = (prev_type, prev_idx, prev_depth)

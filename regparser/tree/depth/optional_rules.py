@@ -7,6 +7,7 @@ constraints more useful"""
 from constraint import InSetConstraint
 
 from regparser.tree.depth import markers
+from regparser.tree.depth.rules import ancestors
 
 
 def depth_type_inverses(constrain, all_variables):
@@ -50,3 +51,23 @@ def limit_paragraph_types(*p_types):
         types = [all_variables[i] for i in range(0, len(all_variables), 3)]
         constrain(InSetConstraint(p_types), types)
     return constrainer
+
+
+def gapless_sequence(constrain, all_variables):
+    """We've loosened the rules around sequences of paragraphs so that
+    paragraphs can be skipped. This rule tightens that again, requiring all
+    normal paragraphs to progress in an unbroken sequence"""
+    def inner(typ, idx, depth, *all_prev):
+        ancestor_markers = ancestors(all_prev)
+        # Continuing a sequence or becoming more shallow
+        if depth < len(ancestor_markers):
+            # Find the previous marker at this depth
+            prev_typ, prev_idx, prev_depth = ancestor_markers[depth]
+            types = set([prev_typ, typ])
+            special_types = set([markers.stars, markers.markerless])
+            if not special_types & types and prev_typ == typ:
+                return idx == prev_idx + 1
+        return True
+
+    for i in range(0, len(all_variables), 3):
+        constrain(inner, all_variables[i:i+3] + all_variables[:i])

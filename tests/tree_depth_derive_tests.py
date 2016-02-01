@@ -47,7 +47,8 @@ class DeriveTests(TestCase):
 
         self.assert_depth_match(
             ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 1, 0])
 
         self.assert_depth_match(
             ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'ii'],
@@ -62,8 +63,9 @@ class DeriveTests(TestCase):
         self.assert_depth_match(['A', '1', STARS_TAG, 'd'],
                                 [0, 1, 2, 2])
 
-        self.assert_depth_match(['A', '1', 'a', STARS_TAG, 'd'],
-                                [0, 1, 2, 2, 2])
+        self.assert_depth_match_extra(['A', '1', 'a', STARS_TAG, 'd'],
+                                      [optional_rules.gapless_sequence],
+                                      [0, 1, 2, 2, 2])
 
     def test_ambiguous_stars(self):
         self.assert_depth_match(['A', '1', 'a', STARS_TAG, 'B'],
@@ -77,15 +79,18 @@ class DeriveTests(TestCase):
                                 [0, 1, 2, 3, 1, 0])
 
     def test_alpha_roman_ambiguous(self):
-        self.assert_depth_match(['i', 'ii', STARS_TAG, 'v', STARS_TAG, 'vii'],
-                                [0, 0, 1, 1, 2, 2],
-                                [0, 0, 1, 1, 0, 0],
-                                [0, 0, 0, 0, 0, 0])
+        self.assert_depth_match_extra(
+            ['i', 'ii', STARS_TAG, 'v', STARS_TAG, 'vii'],
+            [optional_rules.gapless_sequence],
+            [0, 0, 1, 1, 2, 2],
+            [0, 0, 1, 1, 0, 0],
+            [0, 0, 0, 0, 0, 0])
 
     def test_start_star(self):
-        self.assert_depth_match(
+        self.assert_depth_match_extra(
             [STARS_TAG, 'c', '1', STARS_TAG, 'ii', 'iii', '2', 'i', 'ii',
              STARS_TAG, 'v', STARS_TAG, 'vii', 'A'],
+            [optional_rules.gapless_sequence],
             [0, 0, 1, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 3],
             [0, 0, 1, 2, 2, 2, 1, 2, 2, 3, 3, 2, 2, 3],
             [0, 0, 1, 2, 2, 2, 1, 2, 2, 3, 3, 4, 4, 5],
@@ -142,26 +147,30 @@ class DeriveTests(TestCase):
 
     def test_depth_type_inverses_t2d(self):
         """Two markers of the same type should have the same depth"""
-        self.assert_depth_match(
+        self.assert_depth_match_extra(
             ['1', STARS_TAG, 'b', STARS_TAG, 'C', STARS_TAG, 'd'],
+            [optional_rules.gapless_sequence],
             [0, 1, 1, 2, 2, 3, 3],
             [0, 1, 1, 2, 2, 1, 1])
 
         self.assert_depth_match_extra(
             ['1', STARS_TAG, 'b', STARS_TAG, 'C', STARS_TAG, 'd'],
-            [optional_rules.depth_type_inverses],
+            [optional_rules.gapless_sequence,
+             optional_rules.depth_type_inverses],
             [0, 1, 1, 2, 2, 1, 1])
 
     def test_depth_type_inverses_d2t(self):
         """Two markers of the same depth should have the same type"""
-        self.assert_depth_match(
+        self.assert_depth_match_extra(
             ['1', STARS_TAG, 'c', '2', INLINE_STARS, 'i', STARS_TAG, 'iii'],
+            [optional_rules.gapless_sequence],
             [0, 1, 1, 0, 1, 1, 1, 1],
             [0, 1, 1, 0, 1, 1, 2, 2])
 
         self.assert_depth_match_extra(
             ['1', STARS_TAG, 'c', '2', INLINE_STARS, 'i', STARS_TAG, 'iii'],
-            [optional_rules.depth_type_inverses],
+            [optional_rules.gapless_sequence,
+             optional_rules.depth_type_inverses],
             [0, 1, 1, 0, 1, 1, 2, 2])
 
     def test_depth_type_inverses_markerless(self):
@@ -217,12 +226,23 @@ class DeriveTests(TestCase):
             [0, 0, 0]
         )
 
+    def test_gapless_sequence(self):
+        """The gapless_sequence rule should limit our ability to derive depths
+        with gaps between adjacent paragraphs"""
+        self.assert_depth_match(['a', 'b', 'c', 'd', 'e', '1', 'i'],
+                                [0, 0, 0, 0, 0, 1, 2],
+                                [0, 0, 0, 0, 0, 1, 0])
+
+        self.assert_depth_match_extra(['a', 'b', 'c', 'd', 'e', '1', 'i'],
+                                      [optional_rules.gapless_sequence],
+                                      [0, 0, 0, 0, 0, 1, 2])
+
     def test_debug_idx(self):
         """Find the index of the first error when attempting to derive
         depths"""
         self.assertEqual(debug_idx(['1', '2', '3']), 3)
-        self.assertEqual(debug_idx(['1', '4']), 1)
-        self.assertEqual(debug_idx(['1', '2', '4']), 2)
+        self.assertEqual(debug_idx(['1', 'c']), 1)
+        self.assertEqual(debug_idx(['1', '2', 'c']), 2)
         self.assertEqual(
             debug_idx(['1', 'a', '2', 'A'],
                       [optional_rules.depth_type_inverses]),
