@@ -1,6 +1,7 @@
 from constraint import Problem
 
 from regparser.tree.depth import markers, rules
+from regparser.tree.depth.pair_rules import pair_rules
 
 
 class ParAssignment(object):
@@ -115,7 +116,7 @@ def derive_depths(original_markers, additional_constraints=[]):
 
         if idx > 0:
             pairs = all_vars[3*(idx-1):]
-            problem.addConstraint(rules.depth_check, pairs)
+            problem.addConstraint(pair_rules, pairs)
 
         if idx > 1:
             pairs = all_vars[3*(idx-2):]

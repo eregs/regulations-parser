@@ -9,7 +9,6 @@ may not matter if we're planning to ignore the final STARS anyway. To "break"
 this symmetry, we explicitly reject one solution; this reduces the number of
 permutations we care about dramatically.
 """
-
 from regparser.tree.depth import markers
 
 
@@ -24,42 +23,6 @@ def type_match(marker):
     """The type of the associated variable must match its marker. Lambda
     explanation as in the above rule."""
     return lambda typ, idx: idx < len(typ) and typ[idx] == marker
-
-
-def depth_check(prev_typ, prev_idx, prev_depth, typ, idx, depth):
-    """Constrain the depth of sequences of markers."""
-    # decrementing depth is okay unless inline stars
-    dec = depth < prev_depth and not (typ == markers.stars and idx == 1)
-    # continuing a sequence
-    cont = depth == prev_depth and prev_typ == typ and idx == prev_idx + 1
-    stars = _stars_check(prev_typ, prev_idx, prev_depth, typ, idx, depth)
-    # depth can be incremented if starting a new sequence
-    inc = depth == prev_depth + 1 and idx == 0 and typ != prev_typ
-    # markerless in sequence must have the same level
-    mless_seq = (prev_typ == typ and prev_depth == depth and
-                 typ == markers.markerless)
-    return dec or cont or stars or inc or mless_seq
-
-
-def _stars_check(prev_typ, prev_idx, prev_depth, typ, idx, depth):
-    """Constrain pairs of markers where one is a star."""
-    # Seq of stars
-    if prev_typ == markers.stars and typ == prev_typ:
-        # Decreasing depth is always okay
-        dec = depth < prev_depth
-        # Can only be on the same level if prev is inline
-        same = depth == prev_depth and prev_idx == 1
-        return dec or same
-    # Marker following stars
-    elif prev_typ == markers.stars:
-        return depth == prev_depth
-    # Inline Stars following marker
-    elif typ == markers.stars and idx == 1:
-        return depth == prev_depth + 1
-    elif typ == markers.stars:
-        return depth in (prev_depth, prev_depth + 1)
-    else:
-        return False
 
 
 def markerless_sandwich(pprev_typ, pprev_idx, pprev_depth,
