@@ -64,7 +64,7 @@ class DeriveTests(TestCase):
                                 [0, 1, 2, 2])
 
         self.assert_depth_match_extra(['A', '1', 'a', STARS_TAG, 'd'],
-                                      [optional_rules.gapless_sequence],
+                                      [optional_rules.limit_sequence_gap()],
                                       [0, 1, 2, 2, 2])
 
     def test_ambiguous_stars(self):
@@ -81,7 +81,7 @@ class DeriveTests(TestCase):
     def test_alpha_roman_ambiguous(self):
         self.assert_depth_match_extra(
             ['i', 'ii', STARS_TAG, 'v', STARS_TAG, 'vii'],
-            [optional_rules.gapless_sequence],
+            [optional_rules.limit_sequence_gap()],
             [0, 0, 1, 1, 2, 2],
             [0, 0, 1, 1, 0, 0],
             [0, 0, 0, 0, 0, 0])
@@ -90,7 +90,7 @@ class DeriveTests(TestCase):
         self.assert_depth_match_extra(
             [STARS_TAG, 'c', '1', STARS_TAG, 'ii', 'iii', '2', 'i', 'ii',
              STARS_TAG, 'v', STARS_TAG, 'vii', 'A'],
-            [optional_rules.gapless_sequence],
+            [optional_rules.limit_sequence_gap()],
             [0, 0, 1, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 3],
             [0, 0, 1, 2, 2, 2, 1, 2, 2, 3, 3, 2, 2, 3],
             [0, 0, 1, 2, 2, 2, 1, 2, 2, 3, 3, 4, 4, 5],
@@ -149,13 +149,13 @@ class DeriveTests(TestCase):
         """Two markers of the same type should have the same depth"""
         self.assert_depth_match_extra(
             ['1', STARS_TAG, 'b', STARS_TAG, 'C', STARS_TAG, 'd'],
-            [optional_rules.gapless_sequence],
+            [optional_rules.limit_sequence_gap()],
             [0, 1, 1, 2, 2, 3, 3],
             [0, 1, 1, 2, 2, 1, 1])
 
         self.assert_depth_match_extra(
             ['1', STARS_TAG, 'b', STARS_TAG, 'C', STARS_TAG, 'd'],
-            [optional_rules.gapless_sequence,
+            [optional_rules.limit_sequence_gap(),
              optional_rules.depth_type_inverses],
             [0, 1, 1, 2, 2, 1, 1])
 
@@ -163,13 +163,13 @@ class DeriveTests(TestCase):
         """Two markers of the same depth should have the same type"""
         self.assert_depth_match_extra(
             ['1', STARS_TAG, 'c', '2', INLINE_STARS, 'i', STARS_TAG, 'iii'],
-            [optional_rules.gapless_sequence],
+            [optional_rules.limit_sequence_gap()],
             [0, 1, 1, 0, 1, 1, 1, 1],
             [0, 1, 1, 0, 1, 1, 2, 2])
 
         self.assert_depth_match_extra(
             ['1', STARS_TAG, 'c', '2', INLINE_STARS, 'i', STARS_TAG, 'iii'],
-            [optional_rules.gapless_sequence,
+            [optional_rules.limit_sequence_gap(),
              optional_rules.depth_type_inverses],
             [0, 1, 1, 0, 1, 1, 2, 2])
 
@@ -185,13 +185,15 @@ class DeriveTests(TestCase):
         self.assert_depth_match(
             ['a', STARS_TAG, 'i'],
             [0, 0, 0],
-            [0, 0, 1]
+            [0, 0, 1],
+            [0, 1, 0]
         )
 
         self.assert_depth_match_extra(
             ['a', STARS_TAG, 'i'],
             [optional_rules.star_new_level],
-            [0, 0, 0]
+            [0, 0, 0],
+            [0, 1, 0]
         )
 
     def test_marker_stars_markerless_symmetry(self):
@@ -211,7 +213,8 @@ class DeriveTests(TestCase):
         """Capitalized roman numerals can be paragraphs"""
         self.assert_depth_match(
             ['x', '1', 'A', 'i', 'I'],
-            [0, 1, 2, 3, 4])
+            [0, 1, 2, 3, 4],
+            [0, 1, 2, 3, 2])
 
     def test_limit_paragraph_types(self):
         """Limiting paragraph types limits how the markers are interpreted"""
@@ -226,16 +229,22 @@ class DeriveTests(TestCase):
             [0, 0, 0]
         )
 
-    def test_gapless_sequence(self):
-        """The gapless_sequence rule should limit our ability to derive depths
-        with gaps between adjacent paragraphs"""
-        self.assert_depth_match(['a', 'b', 'c', 'd', 'e', '1', 'i'],
-                                [0, 0, 0, 0, 0, 1, 2],
-                                [0, 0, 0, 0, 0, 1, 0])
+    def test_limit_sequence_gap(self):
+        """The limit_sequence_gap rule should limit our ability to derive
+        depths with gaps between adjacent paragraphs. It should be
+        configurable to allow any value"""
+        self.assert_depth_match(['a', '1', 'i'],
+                                [0, 1, 2],
+                                [0, 1, 0])
 
-        self.assert_depth_match_extra(['a', 'b', 'c', 'd', 'e', '1', 'i'],
-                                      [optional_rules.gapless_sequence],
-                                      [0, 0, 0, 0, 0, 1, 2])
+        self.assert_depth_match_extra(['a', '1', 'i'],
+                                      [optional_rules.limit_sequence_gap()],
+                                      [0, 1, 2])
+
+        self.assert_depth_match_extra(['a', '1', 'i'],
+                                      [optional_rules.limit_sequence_gap(10)],
+                                      [0, 1, 2],
+                                      [0, 1, 0])
 
     def test_debug_idx(self):
         """Find the index of the first error when attempting to derive

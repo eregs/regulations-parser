@@ -33,12 +33,10 @@ def decrement_depth(prev, curr):
 
 def continuing_seq(prev, curr):
     """E.g. "d, e" is good, but "e, d" is not. We also want to allow some
-    paragraphs to be skipped, e.g. "d, g", but we put a cap of 5 characters to
-    limit complexity introduced w/ roman numerals i, v, and x"""
+    paragraphs to be skipped, e.g. "d, g" """
     return (curr.depth == prev.depth and
             curr.typ == prev.typ and
-            curr.idx >= prev.idx + 1 and
-            curr.idx <= prev.idx + 5)
+            curr.idx >= prev.idx + 1)
 
 
 def decreasing_stars(prev, curr):

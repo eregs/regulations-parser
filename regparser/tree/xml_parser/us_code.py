@@ -49,7 +49,7 @@ class USCodeProcessor(paragraph_processor.ParagraphProcessor):
     MATCHERS = [USCodeParagraphMatcher()]
 
     def additional_constraints(self):
-        return [optional_rules.gapless_sequence,
+        return [optional_rules.limit_sequence_gap(),
                 optional_rules.limit_paragraph_types(
                     mtypes.lower, mtypes.ints, mtypes.upper, mtypes.roman,
                     mtypes.upper_roman)]
