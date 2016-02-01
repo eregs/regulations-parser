@@ -128,7 +128,7 @@ def derive_depths(original_markers, additional_constraints=[]):
         params = all_vars[3*idx:3*(idx+1)]
         # then add on all previous
         params += all_vars[:3*idx]
-        problem.addConstraint(rules.sequence, params)
+        problem.addConstraint(rules.continue_previous_seq, params)
 
     # @todo: There's probably efficiency gains to making these rules over
     # prefixes (see above) rather than over the whole collection at once

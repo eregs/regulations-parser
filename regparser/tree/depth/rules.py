@@ -110,32 +110,25 @@ def triplet_tests(*triplet_seq):
     )
 
 
-def sequence(typ, idx, depth, *all_prev):
+def continue_previous_seq(typ, idx, depth, *all_prev):
     """Constrain the current marker based on all markers leading up to it"""
     # Group (type, idx, depth) per marker
     all_prev = [tuple(all_prev[i:i+3]) for i in range(0, len(all_prev), 3)]
-    prev_typ, prev_idx, prev_depth = all_prev[-1]
 
-    if typ == markers.stars:    # Accounted for elsewhere
-        return True
-    # If following stars and on the same level, we're good
-    elif (typ != prev_typ and prev_typ == markers.stars and
-            depth == prev_depth):
-        return True     # Stars
-    elif typ == markers.markerless:
-        if typ == prev_typ:
-            return depth == prev_depth
+    ancestors = _ancestors(all_prev)
+    # Becoming more shallow
+    if depth < len(ancestors) - 1:
+        # Find the previous marker at this depth
+        prev_typ, prev_idx, prev_depth = ancestors[depth]
+        types = set([prev_typ, typ])
+        if markers.stars in types:          # Special cases around STARS...
+            return len(types) == 2
+        elif markers.markerless in types:   # ... and MARKERLESS
+            return len(types) == 1
         else:
-            return depth <= prev_depth + 1
-    else:
-        ancestors = _ancestors(all_prev)
-        # Starting a new sequence
-        if len(ancestors) == depth:
-            return idx == 0 and typ != prev_typ
-        elif len(ancestors) > depth:
-            prev_typ, prev_idx, prev_depth = ancestors[depth]
             return idx == prev_idx + 1 and prev_typ == typ
-    return False
+    else:
+        return True
 
 
 def same_parent_same_type(*all_vars):

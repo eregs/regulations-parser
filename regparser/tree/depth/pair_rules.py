@@ -81,11 +81,18 @@ def markerless_same_level(prev, curr):
             prev.depth == curr.depth)
 
 
+def paragraph_markerless(prev, curr):
+    """A non-markerless paragraph followed by a markerless paragraph can be
+    one level deeper"""
+    return (not prev.is_markerless() and curr.is_markerless() and
+            curr.depth == prev.depth + 1)
+
+
 def pair_rules(prev_typ, prev_idx, prev_depth, typ, idx, depth):
     """Combine all of the above rules"""
     prev = MarkerAssignment(prev_typ, prev_idx, prev_depth)
     curr = MarkerAssignment(typ, idx, depth)
     fns = (decrement_depth, continuing_seq, decreasing_stars,
            same_level_stars, star_marker_level, marker_star_level,
-           new_sequence)
+           new_sequence, markerless_same_level, paragraph_markerless)
     return any(fn(prev, curr) for fn in fns)
