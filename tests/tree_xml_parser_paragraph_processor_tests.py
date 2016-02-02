@@ -138,6 +138,14 @@ class ParagraphProcessorTest(TestCase):
         self.assertIsNone(intro)
         self.assertEqual(nodes, rest)
 
+    def test_separate_intro_with_title(self):
+        """Paragraphs with a title shouldn't be considered intro paragraphs"""
+        nodes = [Node(label=[mtypes.MARKERLESS], title='Some awesome title'),
+                 Node(label=['a']), Node(label=['b']), Node(label='1')]
+        intro, rest = _ExampleProcessor().separate_intro(nodes)
+        self.assertIsNone(intro)
+        self.assertEqual(nodes, rest)
+
     def test_separate_intro_with_table(self):
         """ We don't want tables to be turned into intro paragraphs. """
         # A MARKERLESS node followed by a table node:
