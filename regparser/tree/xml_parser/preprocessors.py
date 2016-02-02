@@ -326,7 +326,7 @@ class AtfI50031(PreProcessorBase):
                 next_el = extract.getnext()
 
 
-class Uscode(PreProcessorBase):
+class USCode(PreProcessorBase):
     """478.103 contains a chunk of the US Code, but does not delineate it
     clearly from the rest of the text of the containing poster. We've created
     `USCODE` tags to clear up this confusion, but we need to modify the XML to
@@ -345,6 +345,51 @@ class Uscode(PreProcessorBase):
             hd_parent = hd.getparent()
             hd_idx = hd_parent.index(hd)
             hd_parent.insert(hd_idx + 1, uscode)
+
+
+class ImportCategories(PreProcessorBase):
+    """447.21 contains an import list, but the XML doesn't delineate the
+    various categories well. We've created `IMPORTCATEGORY` tags to handle the
+    hierarchy correctly, but we need to modify the XML to insert them in
+    appropriate locations"""
+    SECTION_HD = "//SECTNO[contains(., '447.21')]"
+    CATEGORY_HD = ".//HD[contains(., 'categor')]"   # categor(y|ies)
+
+    def transform(self, xml):
+        for hd in xml.xpath(self.SECTION_HD):
+            section = hd.getparent()
+            self.remove_extract(section)
+            category_headers = section.xpath(self.CATEGORY_HD)
+            self.split_categories(category_headers)
+
+    def remove_extract(self, section):
+        """The XML currently (though this may change) contains a semantically
+        meaningless EXTRACT. Remove it"""
+        for extract in section.xpath('./EXTRACT'):
+            parent = extract.getparent()
+            idx = parent.index(extract)
+            # reversed as we're inserting into the beginning
+            for child in reversed(extract):
+                parent.insert(idx, child)
+            parent.remove(extract)
+
+    def split_categories(self, category_headers):
+        """We now have a big chunk of flat XML with headers and paragraphs.
+        We'll make it semantic by converting these into bundles and wrapping
+        them in IMPORTCATEGORY tags"""
+        while category_headers:
+            hd = category_headers[0]
+            category_headers = category_headers[1:]
+
+            category_el = etree.Element("IMPORTCATEGORY")
+            parent = hd.getparent()
+            parent.insert(parent.index(hd), category_el)
+
+            iterator = hd
+            while iterator is not None and iterator not in category_headers:
+                next_el = iterator.getnext()
+                category_el.append(iterator)
+                iterator = next_el
 
 
 # Surface all of the PreProcessorBase classes
