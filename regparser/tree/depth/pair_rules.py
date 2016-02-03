@@ -1,6 +1,6 @@
 """Rules relating to two paragraph markers in sequence. The rules are
 "positive" in the sense that each allows for a particular scenario (rather
-than denying all other scenarios). They combined in the eponymous function,
+than denying all other scenarios). They combine in the eponymous function,
 where, if any of the rules return True, we pass. Otherwise, we fail."""
 from collections import namedtuple
 
