@@ -9,8 +9,8 @@ may not matter if we're planning to ignore the final STARS anyway. To "break"
 this symmetry, we explicitly reject one solution; this reduces the number of
 permutations we care about dramatically.
 """
-
 from regparser.tree.depth import markers
+from regparser.tree.depth.pair_rules import pair_rules
 
 
 def must_be(value):
@@ -24,42 +24,6 @@ def type_match(marker):
     """The type of the associated variable must match its marker. Lambda
     explanation as in the above rule."""
     return lambda typ, idx: idx < len(typ) and typ[idx] == marker
-
-
-def depth_check(prev_typ, prev_idx, prev_depth, typ, idx, depth):
-    """Constrain the depth of sequences of markers."""
-    # decrementing depth is okay unless inline stars
-    dec = depth < prev_depth and not (typ == markers.stars and idx == 1)
-    # continuing a sequence
-    cont = depth == prev_depth and prev_typ == typ and idx == prev_idx + 1
-    stars = _stars_check(prev_typ, prev_idx, prev_depth, typ, idx, depth)
-    # depth can be incremented if starting a new sequence
-    inc = depth == prev_depth + 1 and idx == 0 and typ != prev_typ
-    # markerless in sequence must have the same level
-    mless_seq = (prev_typ == typ and prev_depth == depth and
-                 typ == markers.markerless)
-    return dec or cont or stars or inc or mless_seq
-
-
-def _stars_check(prev_typ, prev_idx, prev_depth, typ, idx, depth):
-    """Constrain pairs of markers where one is a star."""
-    # Seq of stars
-    if prev_typ == markers.stars and typ == prev_typ:
-        # Decreasing depth is always okay
-        dec = depth < prev_depth
-        # Can only be on the same level if prev is inline
-        same = depth == prev_depth and prev_idx == 1
-        return dec or same
-    # Marker following stars
-    elif prev_typ == markers.stars:
-        return depth == prev_depth
-    # Inline Stars following marker
-    elif typ == markers.stars and idx == 1:
-        return depth == prev_depth + 1
-    elif typ == markers.stars:
-        return depth in (prev_depth, prev_depth + 1)
-    else:
-        return False
 
 
 def markerless_sandwich(pprev_typ, pprev_idx, pprev_depth,
@@ -147,32 +111,19 @@ def triplet_tests(*triplet_seq):
     )
 
 
-def sequence(typ, idx, depth, *all_prev):
+def continue_previous_seq(typ, idx, depth, *all_prev):
     """Constrain the current marker based on all markers leading up to it"""
     # Group (type, idx, depth) per marker
     all_prev = [tuple(all_prev[i:i+3]) for i in range(0, len(all_prev), 3)]
-    prev_typ, prev_idx, prev_depth = all_prev[-1]
 
-    if typ == markers.stars:    # Accounted for elsewhere
-        return True
-    # If following stars and on the same level, we're good
-    elif (typ != prev_typ and prev_typ == markers.stars and
-            depth == prev_depth):
-        return True     # Stars
-    elif typ == markers.markerless:
-        if typ == prev_typ:
-            return depth == prev_depth
-        else:
-            return depth <= prev_depth + 1
+    ancestors = _ancestors(all_prev)
+    # Becoming more shallow
+    if depth < len(ancestors) - 1:
+        # Find the previous marker at this depth
+        prev_typ, prev_idx, prev_depth = ancestors[depth]
+        return pair_rules(prev_typ, prev_idx, prev_depth, typ, idx, depth)
     else:
-        ancestors = _ancestors(all_prev)
-        # Starting a new sequence
-        if len(ancestors) == depth:
-            return idx == 0 and typ != prev_typ
-        elif len(ancestors) > depth:
-            prev_typ, prev_idx, prev_depth = ancestors[depth]
-            return idx == prev_idx + 1 and prev_typ == typ
-    return False
+        return True
 
 
 def same_parent_same_type(*all_vars):
