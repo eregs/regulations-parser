@@ -650,6 +650,17 @@ class RegTextTest(XMLBuilderMixin, NodeAccessorMixin, TestCase):
         self.assertEqual(subjgrp_1.label, ['123', 'Subjgrp', 'CoO'])
         self.assertEqual(subjgrp_2.label, ['123', 'Subjgrp', 'ATL'])
 
+    def test_initial_markers(self):
+        """Should not find any collapsed markers and should find all of the
+        markers at the beginning of the text"""
+        text = '(k)(2)(iii) abc (j)'
+        result = [m for m in reg_text.initial_markers(text)]
+        self.assertEqual(['k', '2', 'iii'], result)
+
+        text = '(i)(A) The minimum period payment'
+        result = [m for m in reg_text.initial_markers(text)]
+        self.assertEqual(['i', 'A'], result)
+
 
 class ParagraphMatcherTests(XMLBuilderMixin, TestCase):
     def test_next_marker_found(self):

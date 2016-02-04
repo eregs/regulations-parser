@@ -4,6 +4,7 @@ import re
 from lxml import etree
 
 from regparser import content
+from regparser.grammar.unified import any_depth_p
 from regparser.tree import reg_text
 from regparser.tree.depth import markers as mtypes, optional_rules
 from regparser.tree.struct import Node
@@ -178,7 +179,7 @@ def _continues_collapsed(first, second):
 def get_markers(text, next_marker=None):
     """ Extract all the paragraph markers from text. Do some checks on the
     collapsed markers."""
-    initial = tree_utils.get_paragraph_markers(text)
+    initial = initial_markers(text)
     if next_marker is None:
         collapsed = []
     else:
@@ -196,6 +197,21 @@ def get_markers(text, next_marker=None):
                 collapsed.pop()
 
     return initial + collapsed
+
+
+def initial_markers(text):
+    """Pull out a list of the first paragraph markers, i.e. markers before any
+    text"""
+    for citation, start, end in any_depth_p.scanString(text):
+        if start == 0:
+            markers = [citation.p1, citation.p2, citation.p3, citation.p4,
+                       citation.p5, citation.p6]
+            if markers[4]:
+                markers[4] = '<E T="03">' + markers[4] + '</E>'
+            if markers[5]:
+                markers[5] = '<E T="03">' + markers[5] + '</E>'
+            return list(filter(bool, markers))
+    return []
 
 
 def get_markers_and_text(node, markers_list):

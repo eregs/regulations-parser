@@ -9,8 +9,7 @@ import logging
 
 from regparser.grammar.tokens import Verb
 from regparser.tree.struct import Node, find, find_parent
-from regparser.tree.xml_parser import interpretations
-from regparser.tree.xml_parser import tree_utils
+from regparser.tree.xml_parser import interpretations, reg_text
 from regparser.utils import roman_nums
 
 
@@ -105,7 +104,7 @@ def overwrite_marker(origin, new_label):
     new one (new_label). This is necessary during node moves.  """
 
     if origin.node_type == Node.REGTEXT:
-        marker_list = tree_utils.get_paragraph_markers(origin.text)
+        marker_list = reg_text.initial_markers(origin.text)
         if len(marker_list) > 0:
             marker = '(%s)' % marker_list[0]
             new_marker = '(%s)' % new_label

@@ -35,15 +35,6 @@ class TreeUtilsTest(unittest.TestCase):
         expected = ['(A)', '(2) Bananas']
         self.assertEqual(expected, result)
 
-    def test_get_paragraph_marker(self):
-        text = '(k)(2)(iii) abc (j)'
-        result = [m for m in tree_utils.get_paragraph_markers(text)]
-        self.assertEqual(['k', '2', 'iii'], result)
-
-        text = '(i)(A) The minimum period payment'
-        result = [m for m in tree_utils.get_paragraph_markers(text)]
-        self.assertEqual(['i', 'A'], result)
-
     def assert_transform_equality(self, input_val, expected_output, *fns):
         """Verify that the result of chaining (more specifically, composing)
         the fns on the input_val with result in the expected output value."""
