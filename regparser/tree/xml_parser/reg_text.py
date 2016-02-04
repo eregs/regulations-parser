@@ -2,9 +2,12 @@
 import re
 
 from lxml import etree
+import pyparsing
 
 from regparser import content
+from regparser.citations import remove_citation_overlaps
 from regparser.grammar.unified import any_depth_p
+from regparser.grammar.utils import QuickSearchable
 from regparser.tree import reg_text
 from regparser.tree.depth import markers as mtypes, optional_rules
 from regparser.tree.struct import Node
@@ -183,7 +186,7 @@ def get_markers(text, next_marker=None):
     if next_marker is None:
         collapsed = []
     else:
-        collapsed = tree_utils.get_collapsed_markers(text)
+        collapsed = collapsed_markers(text)
 
     #   Check that the collapsed markers make sense:
     #   * at least one level below the initial marker
@@ -212,6 +215,40 @@ def initial_markers(text):
                 markers[5] = '<E T="03">' + markers[5] + '</E>'
             return list(filter(bool, markers))
     return []
+
+
+_first_markers = []
+for idx, level in enumerate(p_levels):
+    marker = (pyparsing.Suppress(pyparsing.Regex(u',|\.|-|—|>')) +
+              pyparsing.Suppress('(') +
+              pyparsing.Literal(level[0]) +
+              pyparsing.Suppress(')'))
+    for inner_idx in range(idx + 1, len(p_levels)):
+        inner_level = p_levels[inner_idx]
+        marker += pyparsing.Optional(pyparsing.Suppress('(') +
+                                     pyparsing.Literal(inner_level[0]) +
+                                     pyparsing.Suppress(')'))
+    _first_markers.append(QuickSearchable(marker))
+
+
+def collapsed_markers(text):
+    """Not all paragraph markers are at the beginning of of the text. This
+    grabs inner markers like (1) and (i) here:
+    (c) cContent —(1) 1Content (i) iContent"""
+
+    matches = []
+    for parser in _first_markers:
+        matches.extend(parser.scanString(text))
+
+    #   remove matches at the beginning
+    if matches and matches[0][1] == 0:
+        matches = matches[1:]
+
+    #   remove any that overlap with citations
+    matches = [m for m, _, _ in remove_citation_overlaps(text, matches)]
+
+    #   get the letters; poor man's flatten
+    return reduce(lambda lhs, rhs: list(lhs) + list(rhs), matches, [])
 
 
 def get_markers_and_text(node, markers_list):

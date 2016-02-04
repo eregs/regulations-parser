@@ -3,11 +3,6 @@ from copy import deepcopy
 import HTMLParser
 from itertools import chain
 
-from pyparsing import Literal, Optional, Regex, Suppress
-
-from regparser.citations import remove_citation_overlaps
-from regparser.grammar.utils import QuickSearchable
-from regparser.tree.paragraph import p_levels
 from regparser.tree.priority_stack import PriorityStack
 
 
@@ -55,40 +50,6 @@ def split_text(text, tokens):
     slices = zip(starts, starts[1:])
     texts = [text[i[0]:i[1]] for i in slices] + [text[starts[-1]:]]
     return texts
-
-
-_first_markers = []
-for idx, level in enumerate(p_levels):
-    marker = (Suppress(Regex(u',|\.|-|—|>')) +
-              Suppress('(') +
-              Literal(level[0]) +
-              Suppress(')'))
-    for inner_idx in range(idx + 1, len(p_levels)):
-        inner_level = p_levels[inner_idx]
-        marker += Optional(Suppress('(') +
-                           Literal(inner_level[0]) +
-                           Suppress(')'))
-    _first_markers.append(QuickSearchable(marker))
-
-
-def get_collapsed_markers(text):
-    """Not all paragraph markers are at the beginning of of the text. This
-    grabs inner markers like (1) and (i) here:
-    (c) cContent —(1) 1Content (i) iContent"""
-
-    matches = []
-    for parser in _first_markers:
-        matches.extend(parser.scanString(text))
-
-    #   remove matches at the beginning
-    if matches and matches[0][1] == 0:
-        matches = matches[1:]
-
-    #   remove any that overlap with citations
-    matches = [m for m, _, _ in remove_citation_overlaps(text, matches)]
-
-    #   get the letters; poor man's flatten
-    return reduce(lambda lhs, rhs: list(lhs) + list(rhs), matches, [])
 
 
 def _combine_with_space(prev_text, next_text, add_space_if_needed):

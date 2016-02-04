@@ -661,6 +661,30 @@ class RegTextTest(XMLBuilderMixin, NodeAccessorMixin, TestCase):
         result = [m for m in reg_text.initial_markers(text)]
         self.assertEqual(['i', 'A'], result)
 
+    def test_collapsed_markers(self):
+        """We're expecting to find collapsed markers when they have certain
+        prefixes, but not when they are part of a citation or do not have the
+        appropriate prefix"""
+        text = u'(a) <E T="03">Transfer </E>—(1) <E T="03">Notice.</E> follow'
+        markers = reg_text.collapsed_markers(text)
+        self.assertEqual(markers, [u'1'])
+
+        text = '(1) See paragraph (a) for more'
+        self.assertEqual([], reg_text.collapsed_markers(text))
+
+        text = '(a) (1) More content'
+        self.assertEqual([], reg_text.collapsed_markers(text))
+
+        text = u'(a) <E T="03">Transfer—</E>(1) <E T="03">Notice.</E> follow'
+        self.assertEqual([u'1'], reg_text.collapsed_markers(text))
+
+        text = u'(a) <E T="03">Keyterm</E>—(1)(i) Content'
+        self.assertEqual(['1', 'i'], reg_text.collapsed_markers(text))
+
+        text = "(C) The information required by paragraphs (a)(2), "
+        text += "(a)(4)(iii), (a)(5), (b) through (d), (i), (l) through (p)"
+        self.assertEqual([], reg_text.collapsed_markers(text))
+
 
 class ParagraphMatcherTests(XMLBuilderMixin, TestCase):
     def test_next_marker_found(self):
