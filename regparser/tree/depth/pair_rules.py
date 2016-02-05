@@ -1,6 +1,6 @@
 """Rules relating to two paragraph markers in sequence. The rules are
 "positive" in the sense that each allows for a particular scenario (rather
-than denying all other scenarios). They combined in the eponymous function,
+than denying all other scenarios). They combine in the eponymous function,
 where, if any of the rules return True, we pass. Otherwise, we fail."""
 from collections import namedtuple
 
@@ -32,10 +32,11 @@ def decrement_depth(prev, curr):
 
 
 def continuing_seq(prev, curr):
-    """E.g. "d, e" is good, but "e, d" is not."""
+    """E.g. "d, e" is good, but "e, d" is not. We also want to allow some
+    paragraphs to be skipped, e.g. "d, g" """
     return (curr.depth == prev.depth and
             curr.typ == prev.typ and
-            curr.idx == prev.idx + 1)
+            curr.idx >= prev.idx + 1)
 
 
 def decreasing_stars(prev, curr):
