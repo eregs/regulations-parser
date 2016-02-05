@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from regparser.layer.paragraph_markers import ParagraphMarkers
+from regparser.layer.paragraph_markers import marker_of, ParagraphMarkers
 from regparser.tree.struct import Node
 
 
@@ -9,7 +9,6 @@ class ParagraphMarkersTest(TestCase):
         pm = ParagraphMarkers(None)
         for text, node_type, label in (
                 ('This has no paragraph', Node.REGTEXT, ['a']),
-                ('(b) Different paragraph', Node.REGTEXT, ['a']),
                 ('Later (a)', Node.REGTEXT, ['a']),
                 ('References (a)', Node.APPENDIX, ['111', 'A', 'a']),
                 ('References a.', Node.APPENDIX, ['111', 'A', 'a'])):
@@ -30,3 +29,12 @@ class ParagraphMarkersTest(TestCase):
             # whitespace is ignored
             node.text = "\n" + node.text
             self.assertEqual(pm.process(node), expected_result)
+
+    def test_marker_of_through(self):
+        """In addition to single paragraph markers, we should account for
+        multiple, reserved paragraphs"""
+        self.assertEqual('(b) - (d)', marker_of(Node('(b) - (d) Reserved')))
+        self.assertEqual('(b)-(d)', marker_of(Node('(b)-(d) Reserved')))
+        self.assertEqual('b. - d.', marker_of(Node('b. - d. Reserved')))
+        self.assertEqual('b.-d.', marker_of(Node('b.-d. Reserved')))
+        self.assertEqual('(b)', marker_of(Node('(b) -1.0 is negative')))

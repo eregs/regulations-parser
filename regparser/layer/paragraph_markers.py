@@ -1,19 +1,30 @@
-from layer import Layer
-from regparser.tree.struct import Node
+import string
+
+import pyparsing
+
+from regparser.grammar import atomic
+from regparser.grammar.utils import QuickSearchable
+from regparser.layer.layer import Layer
+
+
+_parens = (atomic.lower_p | atomic.digit_p | atomic.roman_p | atomic.upper_p)
+_parens_through = _parens + "-" + _parens
+_periods = (
+    (pyparsing.Word(string.digits) | pyparsing.Word(string.ascii_letters)) +
+    pyparsing.Literal(".").leaveWhitespace())
+_periods_through = _periods + "-" + _periods
+all_markers = QuickSearchable(
+    # Use "^" so we collect the longest match
+    _parens ^ _parens_through ^ _periods ^ _periods_through)
 
 
 def marker_of(node):
     """Try multiple potential marker formats. See if any apply to this
     node."""
-    if node.label[-1] == Node.INTERP_MARK:
-        marker = node.label[-2]
-    else:
-        marker = node.label[-1]
-
-    for fmt in ('({})', '{}.'):
-        potential_marker = fmt.format(marker)
-        if node.text.strip().startswith(potential_marker):
-            return potential_marker
+    text = node.text.strip()
+    for _, start, end in all_markers.scanString(text):
+        if start == 0:
+            return text[:end]
     return ''
 
 
