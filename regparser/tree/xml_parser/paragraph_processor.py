@@ -1,10 +1,11 @@
 import abc
 import logging
 
-from regparser.layer.key_terms import KeyTerms, keyterm_to_int
+from regparser.layer.key_terms import KeyTerms
 from regparser.layer.formatting import table_xml_to_plaintext
 from regparser.tree.depth import heuristics, markers as mtypes
 from regparser.tree.depth.derive import debug_idx, derive_depths
+from regparser.tree.paragraph import hash_for_paragraph
 from regparser.tree.struct import Node
 from regparser.tree.xml_parser import tree_utils
 
@@ -77,7 +78,7 @@ class ParagraphProcessor(object):
         if node.label[-1] == mtypes.MARKERLESS:
             keyterm = KeyTerms.get_keyterm(node, ignore_definitions=False)
             if keyterm:
-                p_num = keyterm_to_int(keyterm)
+                p_num = hash_for_paragraph(keyterm)
             else:
                 # len(n.label[-1]) < 6 filters out keyterm nodes
                 p_num = sum(n.is_markerless() and len(n.label[-1]) < 6

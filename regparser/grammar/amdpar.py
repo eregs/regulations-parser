@@ -9,8 +9,7 @@ from pyparsing import (
 
 from regparser.grammar import atomic, tokens, unified
 from regparser.grammar.utils import Marker, QuickSearchable, WordBoundaries
-from regparser.layer.key_terms import keyterm_to_int
-from regparser.tree.paragraph import p_levels
+from regparser.tree.paragraph import p_levels, hash_for_paragraph
 from regparser.tree.reg_text import subjgrp_label
 
 
@@ -451,7 +450,7 @@ def tokenize_override_ps(match):
 _keyterm_label_part = (
     Suppress(Marker("keyterm")) +
     QuotedString(quoteChar='(', endQuoteChar=')')
-).setParseAction(lambda m: "p{}".format(keyterm_to_int(m[0])))
+).setParseAction(lambda m: "p{}".format(hash_for_paragraph(m[0])))
 _simple_label_part = Word(string.ascii_lowercase + string.ascii_uppercase +
                           string.digits)
 _label_part = _keyterm_label_part | _simple_label_part
@@ -478,7 +477,7 @@ subject_group = (
 # Phrases like '“Nonimmigrant visa”' become 'p12345678'
 _double_quote_label = QuotedString(
         quoteChar=u'“', endQuoteChar=u'”'
-).setParseAction(lambda m: "p{}".format(keyterm_to_int(m[0])))
+).setParseAction(lambda m: "p{}".format(hash_for_paragraph(m[0])))
 # Phrases like "definition for the term “Nonimmigrant visa”" become a
 # paragraph token with the appropriate paragraph label set
 definition = (
