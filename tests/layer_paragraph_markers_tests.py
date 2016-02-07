@@ -11,7 +11,9 @@ class ParagraphMarkersTest(TestCase):
                 ('This has no paragraph', Node.REGTEXT, ['a']),
                 ('Later (a)', Node.REGTEXT, ['a']),
                 ('References (a)', Node.APPENDIX, ['111', 'A', 'a']),
-                ('References a.', Node.APPENDIX, ['111', 'A', 'a'])):
+                ('References a.', Node.APPENDIX, ['111', 'A', 'a']),
+                ('CFR. definition', Node.REGTEXT, ['111', '12', 'p123']),
+                ('Word. definition', Node.REGTEXT, ['111', '12', 'p123'])):
             node = Node(text, label=label, node_type=node_type)
             self.assertEqual(None, pm.process(node))
 
@@ -33,8 +35,9 @@ class ParagraphMarkersTest(TestCase):
     def test_marker_of_through(self):
         """In addition to single paragraph markers, we should account for
         multiple, reserved paragraphs"""
-        self.assertEqual('(b) - (d)', marker_of(Node('(b) - (d) Reserved')))
-        self.assertEqual('(b)-(d)', marker_of(Node('(b)-(d) Reserved')))
-        self.assertEqual('b. - d.', marker_of(Node('b. - d. Reserved')))
-        self.assertEqual('b.-d.', marker_of(Node('b.-d. Reserved')))
-        self.assertEqual('(b)', marker_of(Node('(b) -1.0 is negative')))
+        for marker, text in (('(b) - (d)', '(b) - (d) Reserved'),
+                             ('(b)-(d)', '(b)-(d) Reserved'),
+                             ('b. - d.', 'b. - d. Reserved'),
+                             ('b.-d.', 'b.-d. Reserved'),
+                             ('(b)', '(b) -1.0 is negative')):
+            self.assertEqual(marker, marker_of(Node(text=text, label=['b'])))
