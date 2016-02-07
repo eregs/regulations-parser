@@ -98,8 +98,8 @@ class ParagraphProcessor(object):
         first_xml = nodes[0].source_xml if len(nodes) else None
         table_first = first_xml is not None and first_xml.tag == "GPOTABLE"
         extract_first = nodes[0].node_type == "extract" if len(nodes) else None
-        if not any(
-            [table_first, extract_first]) and any(
+        has_title = nodes[0].title if len(nodes) else None
+        if not any([table_first, extract_first, has_title]) and any(
                 [only_one, switches_after_first]):
             return nodes[0], nodes[1:]
         else:
