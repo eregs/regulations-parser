@@ -4,6 +4,8 @@ import hashlib
 
 from lxml import etree
 
+from regparser.tree.depth.markers import MARKERLESS
+
 
 class Node(object):
     APPENDIX = u'appendix'
@@ -58,11 +60,12 @@ class Node(object):
             #   Add one for the subpart level
             return len(self.label) + 1
 
-    @staticmethod
-    def is_markerless_label(label):
+    @classmethod
+    def is_markerless_label(cls, label):
         if not label:
             return None
-        return re.match(Node.MARKERLESS_REGEX, label[-1])
+        return (cls.MARKERLESS_REGEX.match(label[-1]) or
+                label[-1] == MARKERLESS)
 
     def is_markerless(self):
         return bool(self.is_markerless_label(self.label))
