@@ -16,7 +16,7 @@ class TocTest(TestCase):
         parser = table_of_contents.TableOfContentsLayer(None)
         toc = parser.process(n)
         self.assertEqual(len(toc), 3)
-        self.assertEqual(toc[0].keys(), ['index', 'title'])
+        self.assertItemsEqual(toc[0].keys(), ['index', 'title'])
         self.assertEqual(toc[0]['index'], ['1005', '2'])
         self.assertEqual(toc[1]['index'], ['1005', '3'])
         self.assertEqual(toc[2]['index'], ['1005', '4'])
@@ -39,7 +39,7 @@ class TocTest(TestCase):
 
         parser = table_of_contents.TableOfContentsLayer(tree)
         toc_layer = parser.build()
-        self.assertEquals(toc_layer.keys(), ['1005-A'])
+        self.assertItemsEqual(toc_layer.keys(), ['1005-A'])
         self.assertEqual(len(toc_layer['1005-A']), 3)
         self.assertEqual(toc_layer['1005-A'][0]['index'], ['1005', 'A', '2'])
 

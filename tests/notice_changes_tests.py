@@ -177,7 +177,7 @@ class ChangesTests(TestCase):
         labels_amended = [Amendment('RESERVE', '200-2-a')]
         amend_map = changes.match_labels_and_changes(
             labels_amended, self.section_node())
-        self.assertEqual(['200-2-a'], amend_map.keys())
+        self.assertItemsEqual(['200-2-a'], amend_map.keys())
 
         amendments = amend_map['200-2-a']
         self.assertEqual(amendments[0]['action'], 'RESERVE')
