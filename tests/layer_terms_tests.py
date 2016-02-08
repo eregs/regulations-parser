@@ -312,16 +312,10 @@ class LayerTermTest(TestCase):
         text = "I am in a rock band. That's a band with a drum, a rock drum."
         t = Terms(None)
         matches = t.calculate_offsets(text, applicable_terms)
-        self.assertEqual(3, len(matches))
-        found = [False, False, False]
-        for _, ref, offsets in matches:
-            if ref == 'a' and offsets == [(10, 19)]:
-                found[0] = True
-            if ref == 'b' and offsets == [(30, 34)]:
-                found[1] = True
-            if ref == 'c' and offsets == [(42, 46), (55, 59)]:
-                found[2] = True
-        self.assertEqual([True, True, True], found)
+        self.assertItemsEqual(matches, [
+            ('rock band', 'a', [(10, 19)]),
+            ('band', 'b', [(30, 34)]),
+            ('drum', 'c', [(42, 46), (55, 59)])])
 
     def test_calculate_offsets_pluralized1(self):
         applicable_terms = [('rock band', 'a'), ('band', 'b'), ('drum', 'c'),
@@ -330,18 +324,11 @@ class LayerTermTest(TestCase):
         text += " Many bands. "
         t = Terms(None)
         matches = t.calculate_offsets(text, applicable_terms)
-        self.assertEqual(4, len(matches))
-        found = [False, False, False, False]
-        for _, ref, offsets in matches:
-            if ref == 'a' and offsets == [(10, 19)]:
-                found[0] = True
-            if ref == 'b' and offsets == [(66, 71)]:
-                found[1] = True
-            if ref == 'b' and offsets == [(30, 34)]:
-                found[2] = True
-            if ref == 'c' and offsets == [(42, 46), (55, 59)]:
-                found[3] = True
-        self.assertEqual([True, True, True, True], found)
+        self.assertItemsEqual(matches, [
+            ('rock band', 'a', [(10, 19)]),
+            ('band', 'b', [(30, 34)]),
+            ('bands', 'b', [(66, 71)]),
+            ('drum', 'c', [(42, 46), (55, 59)])])
 
     def test_calculate_offsets_pluralized2(self):
         applicable_terms = [('activity', 'a'), ('other thing', 'd')]
