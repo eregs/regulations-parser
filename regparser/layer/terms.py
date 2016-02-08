@@ -197,15 +197,15 @@ class Terms(Layer):
         inclusions = list(inclusions)
 
         # add plurals to applicable terms
-        pluralized = [(inflection.pluralize(t[0]), t[1])
+        search_terms = [(inflection.pluralize(t[0]), t[1])
                       for t in applicable_terms]
-        applicable_terms += pluralized
+        search_terms += applicable_terms
 
         #   longer terms first
-        applicable_terms.sort(key=lambda x: len(x[0]), reverse=True)
+        search_terms.sort(key=lambda x: len(x[0]), reverse=True)
 
         matches = []
-        for term, ref in applicable_terms:
+        for term, ref in search_terms:
             re_term = ur'\b' + re.escape(term) + ur'\b'
             offsets = [
                 (m.start(), m.end())
