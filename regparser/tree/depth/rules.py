@@ -104,7 +104,6 @@ def triplet_tests(*triplet_seq):
     """Run propositions around a sequence of three markers. We combine them
     here so that they act as a single constraint"""
     return (
-        markerless_sandwich(*triplet_seq) and
         star_sandwich_symmetry(*triplet_seq) and
         marker_stars_markerless_symmetry(*triplet_seq) and
         markerless_stars_symmetry(*triplet_seq)
