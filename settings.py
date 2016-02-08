@@ -126,7 +126,7 @@ PREPROCESSORS = [
 try:
     stevedore_mgr = extension.ExtensionManager(
         namespace="eregs_ns.parser.preprocessors", invoke_on_load=False)
-    stevedore_mgr.map(lambda ext: PREPROCESSORS.extend(ext.plugin))
+    stevedore_mgr.map(lambda ext: PREPROCESSORS.append(ext.entry_point_target))
 except NoMatches:
     pass
 
