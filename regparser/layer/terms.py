@@ -189,20 +189,23 @@ class Terms(Layer):
 
     def calculate_offsets(self, text, applicable_terms, exclusions=[],
                           inclusions=[]):
-        """Search for defined terms in this text, with a preference for all
-        larger (i.e. containing) terms."""
+        """Search for defined terms in this text, including singular and
+        plural forms of these terms, with a preference for all larger
+        (i.e. containing) terms."""
 
         # don't modify the original
         exclusions = list(exclusions)
         inclusions = list(inclusions)
 
-        # add plurals to applicable terms
-        search_terms = [(inflection.pluralize(t[0]), t[1])
-                      for t in applicable_terms]
-        search_terms += applicable_terms
+        # add singulars and plurals to search terms
+        search_terms = set((inflection.singularize(t[0]), t[1])
+                           for t in applicable_terms)
+        search_terms |= set((inflection.pluralize(t[0]), t[1])
+                            for t in applicable_terms)
 
-        #   longer terms first
-        search_terms.sort(key=lambda x: len(x[0]), reverse=True)
+        # longer terms first
+        search_terms = sorted(search_terms, key=lambda x: len(x[0]),
+                              reverse=True)
 
         matches = []
         for term, ref in search_terms:
