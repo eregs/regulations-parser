@@ -31,7 +31,9 @@ class NoticeBuildTest(XMLBuilderMixin, TestCase):
             'type': 'Rule',
             'volume': 66,
         }
-        actual_notice = build.build_notice('5', '9292', fr)[0]
+        notices = build.build_notice('5', '9292', fr)
+        self.assertEqual(1, len(notices))
+        actual_notice = notices[0]
         for key in ['agency_names', 'cfr_parts']:
             actual_notice[key] = sorted(actual_notice[key])
         self.assertEqual(actual_notice, {
