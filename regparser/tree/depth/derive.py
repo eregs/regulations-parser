@@ -147,23 +147,33 @@ def derive_depths(original_markers, additional_constraints=[]):
         solutions.append(Solution(assignment))
     return solutions
 
+
 def derive_depths_relaxed(original_markers):
+    """Derive paragraph depth with reduced constraints,
+    including removal of emphasis and disabling of the
+    depth_type_inverses optional rule.
+    """
+
     deemphasized_markers = []
-    logging.warning("Could not derive paragraph depths. Retrying with relaxed constraints.")
+    logging.warning("""Could not derive paragraph depths. Retrying
+        with relaxed constraints.""")
     for marker in original_markers:
         emphasized = re.match(r"<E .*>(.*)</E>", marker)
         if emphasized:
             deemphasized_markers.append(emphasized.groups()[0])
         else:
             deemphasized_markers.append(marker)
-   
-    solutions = derive_depths(deemphasized_markers, [optional_rules.star_new_level,
-        optional_rules.limit_paragraph_types(
-            markers.lower, markers.upper, markers.ints, markers.roman,
-            markers.em_ints, markers.em_roman, markers.stars,
-            markers.markerless)])
+
+    solutions = derive_depths(deemphasized_markers,
+                              [optional_rules.star_new_level,
+                               optional_rules.limit_paragraph_types(
+                                markers.lower, markers.upper, markers.ints,
+                                markers.roman, markers.em_ints,
+                                markers.em_roman, markers.stars,
+                                markers.markerless)])
 
     return solutions
+
 
 def debug_idx(markers, constraints=[]):
     """Binary search through the markers to find the point at which
