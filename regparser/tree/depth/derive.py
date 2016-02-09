@@ -3,8 +3,8 @@ from constraint import Problem
 from regparser.tree.depth import markers, rules, optional_rules
 from regparser.tree.depth.pair_rules import pair_rules
 
-import re
 import logging
+import re
 
 
 class ParAssignment(object):
@@ -81,7 +81,7 @@ def _decompress_markerless(assignment, marker_list):
     return result
 
 
-def derive_depths(original_markers, additional_constraints=[], relaxed_constraints=False):
+def derive_depths(original_markers, additional_constraints=[]):
     """Use constraint programming to derive the paragraph depths associated
     with a list of paragraph markers. Additional constraints (e.g. expected
     marker types, etc.) can also be added. Such constraints are functions of
@@ -124,8 +124,6 @@ def derive_depths(original_markers, additional_constraints=[], relaxed_constrain
         if idx > 1:
             pairs = all_vars[3*(idx-2):]
             problem.addConstraint(rules.triplet_tests, pairs)
-            if not relaxed_constraints:
-                problem.addConstraint(rules.markerless_sandwich, pairs)
 
     # separate loop so that the simpler checks run first
     for idx in range(1, len(marker_list)):
@@ -147,25 +145,25 @@ def derive_depths(original_markers, additional_constraints=[], relaxed_constrain
     for assignment in problem.getSolutionIter():
         assignment = _decompress_markerless(assignment, original_markers)
         solutions.append(Solution(assignment))
-
-    if not solutions and not relaxed_constraints:
-        deemphasized_markers = []
-        logging.warning("Could not derive paragraph depths. Retrying with relaxed constraints.")
-        for marker in original_markers:
-            emphasized = re.match(r"<E .*>(.*)</E>", marker)
-            if emphasized:
-                deemphasized_markers.append(emphasized.groups()[0])
-            else:
-                deemphasized_markers.append(marker)
-       
-        solutions = derive_depths(deemphasized_markers, [optional_rules.star_new_level,
-            optional_rules.limit_paragraph_types(
-                markers.lower, markers.upper, markers.ints, markers.roman,
-                markers.em_ints, markers.em_roman, markers.stars,
-                markers.markerless)], relaxed_constraints=True)
-        
     return solutions
 
+def derive_depths_relaxed(original_markers):
+    deemphasized_markers = []
+    logging.warning("Could not derive paragraph depths. Retrying with relaxed constraints.")
+    for marker in original_markers:
+        emphasized = re.match(r"<E .*>(.*)</E>", marker)
+        if emphasized:
+            deemphasized_markers.append(emphasized.groups()[0])
+        else:
+            deemphasized_markers.append(marker)
+   
+    solutions = derive_depths(deemphasized_markers, [optional_rules.star_new_level,
+        optional_rules.limit_paragraph_types(
+            markers.lower, markers.upper, markers.ints, markers.roman,
+            markers.em_ints, markers.em_roman, markers.stars,
+            markers.markerless)])
+
+    return solutions
 
 def debug_idx(markers, constraints=[]):
     """Binary search through the markers to find the point at which

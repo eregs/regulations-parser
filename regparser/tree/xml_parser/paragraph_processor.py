@@ -3,10 +3,12 @@ import logging
 
 from regparser.layer.key_terms import KeyTerms, keyterm_to_int
 from regparser.layer.formatting import table_xml_to_plaintext
-from regparser.tree.depth import heuristics, markers as mtypes
-from regparser.tree.depth.derive import debug_idx, derive_depths
+from regparser.tree.depth import heuristics, markers as mtypes, optional_rules
+from regparser.tree.depth.derive import debug_idx, derive_depths, derive_depths_relaxed
 from regparser.tree.struct import Node
 from regparser.tree.xml_parser import tree_utils
+
+import re
 
 
 class ParagraphProcessor(object):
@@ -43,6 +45,7 @@ class ParagraphProcessor(object):
         depths = heuristics.prefer_diff_types_diff_levels(depths, 0.8)
         depths = heuristics.prefer_multiple_children(depths, 0.4)
         depths = heuristics.prefer_shallow_depths(depths, 0.2)
+        depths = heuristics.prefer_no_markerless_sandwich(depths, 0.2)
         depths = sorted(depths, key=lambda d: d.weight, reverse=True)
         return depths[0]
 
@@ -122,6 +125,10 @@ class ParagraphProcessor(object):
             markers = [node.label[0] for node in nodes]
             constraints = self.additional_constraints()
             depths = derive_depths(markers, constraints)
+
+            if not depths:
+                depths = derive_depths_relaxed(markers)
+            
             if not depths:
                 fails_at = debug_idx(markers, constraints)
                 logging.error(

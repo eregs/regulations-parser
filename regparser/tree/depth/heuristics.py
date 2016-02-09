@@ -3,6 +3,7 @@ works by penalizing a solution; it's then up to the caller to grab the
 solution with the least penalties."""
 from collections import defaultdict
 from itertools import takewhile
+from regparser.tree.depth import markers
 
 
 def prefer_multiple_children(solutions, weight=1.0):
@@ -54,3 +55,32 @@ def prefer_shallow_depths(solutions, weight=0.1):
         return result
     else:
         return solutions
+
+def prefer_no_markerless_sandwich(solutions, weight=1.0):
+    """Prefer solutions which don't use MARKERLESS to switch depth, like 
+            a
+            MARKERLESS
+                a
+    """
+    result = []
+    for solution in solutions:
+        flags = 0
+        for idx in range(2, len(solution.assignment)):
+            pprev_typ = solution.assignment[idx - 2].typ
+            pprev_idx = idx - 2
+            pprev_depth = solution.assignment[idx - 2].depth
+            prev_typ = solution.assignment[idx - 1].typ
+            prev_idx = idx - 1
+            prev_depth = solution.assignment[idx - 1].depth
+            typ = solution.assignment[idx].typ
+            depth = solution.assignment[idx].depth
+
+            sandwich = prev_typ == markers.markerless
+            inc_depth = depth == prev_depth + 1 and prev_depth == pprev_depth + 1
+            if sandwich and inc_depth:
+                flags += 1
+
+        total = len(solution.assignment)
+        result.append(solution.copy_with_penalty(weight * flags / float(total)))
+
+    return result
