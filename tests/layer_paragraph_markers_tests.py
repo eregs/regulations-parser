@@ -32,12 +32,13 @@ class ParagraphMarkersTest(TestCase):
             node.text = "\n" + node.text
             self.assertEqual(pm.process(node), expected_result)
 
-    def test_marker_of_through(self):
+    def test_marker_of_range(self):
         """In addition to single paragraph markers, we should account for
-        multiple, reserved paragraphs"""
+        cases of multiple markers being present. We've encountered this for
+        "Reserved" paragraphs, but there are likely other scenarios"""
         for marker, text in (('(b) - (d)', '(b) - (d) Reserved'),
-                             ('(b)-(d)', '(b)-(d) Reserved'),
-                             ('b. - d.', 'b. - d. Reserved'),
-                             ('b.-d.', 'b.-d. Reserved'),
+                             ('(b)-(d)', '(b)-(d) Some Words'),
+                             ('b. - d.', 'b. - d. Can be ignored'),
+                             ('b.-d.', 'b.-d. Has no negative numbers'),
                              ('(b)', '(b) -1.0 is negative')):
             self.assertEqual(marker, marker_of(Node(text=text, label=['b'])))
