@@ -1,6 +1,8 @@
+import uuid
+from unittest import TestCase
+
 from regparser.tree.paragraph import hash_for_paragraph, ParagraphParser
 from regparser.tree.struct import Node
-from unittest import TestCase
 
 
 class DepthParagraphTest(TestCase):
@@ -173,7 +175,11 @@ class DepthParagraphTest(TestCase):
         self.assertEqual(["205", "14", "b"], child_b.label)
 
     def test_hash_for_paragraph(self):
-        """hash_for_paragraph should standardize the given parametwr"""
+        """hash_for_paragraph should standardize the given parameter. It
+        should also use numbers in a large range -- an arbitrary hash should
+        result in a relatively large number"""
         self.assertEqual(hash_for_paragraph('Abc 123 More.'),
                          hash_for_paragraph(' abc123 mOrE'))
-        self.assertTrue(hash_for_paragraph('a term') > 10000)
+        random_term = uuid.uuid4().hex
+        self.assertTrue(hash_for_paragraph(random_term) > 10000,
+                        msg="Hashed too small: {}".format(random_term))
