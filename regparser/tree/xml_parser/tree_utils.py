@@ -3,6 +3,7 @@ from copy import deepcopy
 import HTMLParser
 from itertools import chain
 
+from regparser.tree.depth import markers as mtypes
 from regparser.tree.priority_stack import PriorityStack
 
 
@@ -133,8 +134,7 @@ def get_node_text_tags_preserved(node):
     for c in node:
         if c.tag == 'E':
             # xlmns non-sense makes me do this.
-            e_tag = '<E T="03">%s</E>' % c.text
-            node_text += e_tag
+            node_text += mtypes.emphasize(c.text)
         if c.tail is not None:
             node_text += c.tail
 

@@ -207,7 +207,7 @@ def _any_depth_parse(match):
     markers = [match.p1, match.p2, match.p3, match.p4, match.p5, match.p6]
     for idx in (4, 5):
         if markers[idx]:
-            markers[idx] = '<E T="03">{}</E>'.format(markers[idx])
+            markers[idx] = mtypes.emphasize(markers[idx])
     return [m for m in markers if m]
 
 
@@ -314,9 +314,8 @@ def split_by_markers(xml):
     tagged_text = tree_utils.get_node_text_tags_preserved(xml).strip()
     markers_list = get_markers(tagged_text, next_marker(xml))
 
-    plain_markers = [
-        '({})'.format(m).replace('<E T="03">', '').replace('</E>', '')
-        for m in markers_list]
+    plain_markers = ['({})'.format(mtypes.deemphasize(m))
+                     for m in markers_list]
     node_texts = tree_utils.split_text(plain_text, plain_markers)
     tagged_texts = tree_utils.split_text(
         tagged_text, ['({})'.format(m) for m in markers_list])

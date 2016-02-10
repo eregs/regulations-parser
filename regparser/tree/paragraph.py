@@ -1,20 +1,12 @@
-import itertools
 import re
-import string
 
 from regparser.tree import struct
+from regparser.tree.depth import markers as mtypes
 from regparser.search import segments
-from regparser.utils import roman_nums
 
-p_levels = [
-    list(string.ascii_lowercase),
-    [str(i) for i in range(1, 999)],
-    list(itertools.islice(roman_nums(), 0, 50)),
-    list(string.ascii_uppercase),
-    ['<E T="03">' + str(i) + '</E>' for i in range(1, 51)],
-    ['<E T="03">' + i + '</E>'
-     for i in itertools.islice(roman_nums(), 0, 50)]
-]
+
+p_levels = [list(mtypes.lower), list(mtypes.ints), list(mtypes.roman),
+            list(mtypes.upper), list(mtypes.em_ints), list(mtypes.em_roman)]
 
 
 def p_level_of(marker):
