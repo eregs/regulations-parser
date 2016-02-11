@@ -3,8 +3,7 @@ import logging
 
 from regparser.layer.key_terms import KeyTerms
 from regparser.layer.formatting import table_xml_to_plaintext
-from regparser.tree.depth import heuristics, markers as mtypes, \
-  optional_rules
+from regparser.tree.depth import heuristics, markers as mtypes
 from regparser.tree.depth.markers import deemphasize
 from regparser.tree.depth.derive import debug_idx, derive_depths
 from regparser.tree.paragraph import hash_for_paragraph
@@ -123,16 +122,10 @@ class ParagraphProcessor(object):
 
             if not depths:
                 logging.warning("Could not derive paragraph depths."
-                                "Retrying with relaxed constraints.")
+                                " Retrying with relaxed constraints.")
                 deemphasized_markers = [deemphasize(m) for m in markers]
-                additional_constraints = [optional_rules.star_new_level,
-                                          optional_rules.limit_paragraph_types(
-                                           mtypes.lower, mtypes.upper,
-                                           mtypes.ints, mtypes.roman,
-                                           mtypes.em_ints, mtypes.em_roman,
-                                           mtypes.stars, mtypes.markerless)]
-                depths = derive_depths(deemphasized_markers,
-                                       additional_constraints)
+                constraints = self.relaxed_constraints()
+                depths = derive_depths(deemphasized_markers, constraints)
 
             if not depths:
                 fails_at = debug_idx(markers, constraints)
@@ -152,6 +145,11 @@ class ParagraphProcessor(object):
 
     def additional_constraints(self):
         """Hook for subtypes to add additional constraints"""
+        return []
+
+    def relaxed_constraints(self):
+        """Hook for subtypes to add relaxed constraints for retry
+           logic"""
         return []
 
 
