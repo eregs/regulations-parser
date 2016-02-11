@@ -30,7 +30,7 @@ def local_and_remote_generator(api_base, paths):
         yield (local_name, remote_name)
 
 
-def compare(local_path, remote_url, prompt):
+def compare(local_path, remote_url, prompt=True):
     """Downloads and compares a local JSON file with a remote one. If there is
     a difference, notifies the user and prompts them if they want to see the
     diff"""
@@ -45,10 +45,9 @@ def compare(local_path, remote_url, prompt):
         if remote != local:
             click.echo("Content differs: {} {}".format(local_path, remote_url))
             if not prompt or click.confirm("Show diff?"):
-                diff = udiff(remote, local)
-                diffs_str = '\n'.join(diff)
+                diffs_str = '\n'.join(udiff(remote, local))
                 (click.echo_via_pager if prompt else click.echo)(diffs_str)
-                return diff
+                return diffs_str
 
 
 @click.command()
@@ -75,4 +74,4 @@ def compare_to(ctx, api_base, paths, prompt):
     requests_cache.uninstall_cache()
 
     pairs = local_and_remote_generator(api_base, paths)
-    return any(compare(local, remote, prompt) for local, remote in pairs)
+    return any([compare(local, remote, prompt) for local, remote in pairs])
