@@ -225,7 +225,7 @@ def initial_markers(text):
 
 _collapsed_grammar = QuickSearchable(
     # A guard to reduce false positives
-    pyparsing.Suppress(pyparsing.Regex(u',|\.|-|—|>')) +
+    pyparsing.Suppress(pyparsing.Regex(u',|\.|-|—|>|means ')) +
     any_depth_p)
 
 
