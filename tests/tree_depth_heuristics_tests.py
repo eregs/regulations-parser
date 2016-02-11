@@ -81,7 +81,7 @@ class HeuristicsTests(TestCase):
 
     def test_prefer_no_markerless_sandwich(self):
         """Generate two solutions, one in which a markerless sandwich
-        is used to skip depth, and another where it is not used to 
+        is used to skip depth, and another where it is not used to
         skip depth."""
         self.addAssignment(markers.ints, '1', 0)
         self.addAssignment(markers.markerless, markers.MARKERLESS, 1)
