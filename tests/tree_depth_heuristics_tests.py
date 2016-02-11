@@ -78,3 +78,22 @@ class HeuristicsTests(TestCase):
         solutions = heuristics.prefer_shallow_depths(solutions, 0.5)
         self.assertEqual(solutions[0].weight, 1.0)
         self.assertTrue(solutions[1].weight < solutions[0].weight)
+
+    def test_prefer_no_markeless_sandwich(self):
+        self.addAssignment(markers.ints, '1', 0)
+        self.addAssignment(markers.markerless, markers.MARKERLESS, 1)
+        self.addAssignment(markers.roman, 'i', 1)
+        solution1 = self.solution
+
+        self.setUp()
+        self.addAssignment(markers.ints, '1', 0)
+        self.addAssignment(markers.markerless, markers.MARKERLESS, 1)
+        self.addAssignment(markers.roman, 'i', 2)
+        solution2 = self.solution
+
+        solutions = [Solution(solution1), Solution(solution2)]
+        solutions = heuristics.prefer_no_markerless_sandwich(solutions, 0.5)
+        self.assertEqual(solutions[0].weight, 1.0)
+        print solutions[0].weight
+        print solutions[1].weight
+        self.assertTrue(solutions[1].weight < solutions[0].weight)

@@ -76,10 +76,17 @@ def prefer_no_markerless_sandwich(solutions, weight=1.0):
             incremented = depth == prev_depth + 1
             incrementing = prev_depth == pprev_depth + 1
 
+            print "ptype: %s" % str(prev_typ)
+            print "s %s" % sandwich
+            print "ind %s" % incremented
+            print "ing %s" % incrementing
+
+
             if sandwich and incremented and incrementing:
                 flags += 1
 
         total = len(solution.assignment)
+        print "penalty; %f" % (weight * flags / float(total))
         result.append(solution.copy_with_penalty(
                         weight * flags / float(total)))
 

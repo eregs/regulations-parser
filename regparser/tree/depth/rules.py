@@ -26,19 +26,6 @@ def type_match(marker):
     return lambda typ, idx: idx < len(typ) and typ[idx] == marker
 
 
-def markerless_sandwich(pprev_typ, pprev_idx, pprev_depth,
-                        prev_typ, prev_idx, prev_depth,
-                        typ, idx, depth):
-    """MARKERLESS shouldn't be used to skip a depth, like:
-        a
-            MARKERLESS
-                a
-    """
-    sandwich = prev_typ == markers.markerless
-    inc_depth = depth == prev_depth + 1 and prev_depth == pprev_depth + 1
-    return not (sandwich and inc_depth)
-
-
 def marker_stars_markerless_symmetry(pprev_typ, pprev_idx, pprev_depth,
                                      prev_typ, prev_idx, prev_depth,
                                      typ, idx, depth):
