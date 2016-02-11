@@ -81,7 +81,6 @@ def prefer_no_markerless_sandwich(solutions, weight=1.0):
             print "ind %s" % incremented
             print "ing %s" % incrementing
 
-
             if sandwich and incremented and incrementing:
                 flags += 1
 

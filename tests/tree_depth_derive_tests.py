@@ -113,12 +113,6 @@ class DeriveTests(TestCase):
         self.assert_depth_match(['A', INLINE_STARS, STARS_TAG, '3'],
                                 [0, 1, 1, 1])
 
-    def test_markerless_outermost(self):
-        """A pattern often seen in definitions sections"""
-        self.assert_depth_match(
-            [MARKERLESS, MARKERLESS, 'a', 'b', MARKERLESS, 'a', 'b'],
-            [0, 0, 1, 1, 0, 1, 1])
-
     def test_markerless_repeated(self):
         """Repeated markerless paragraphs must be on the same level"""
         self.assert_depth_match(
