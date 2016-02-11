@@ -79,7 +79,10 @@ class HeuristicsTests(TestCase):
         self.assertEqual(solutions[0].weight, 1.0)
         self.assertTrue(solutions[1].weight < solutions[0].weight)
 
-    def test_prefer_no_markeless_sandwich(self):
+    def test_prefer_no_markerless_sandwich(self):
+        """Generate two solutions, one in which a markerless sandwich
+        is used to skip depth, and another where it is not used to 
+        skip depth."""
         self.addAssignment(markers.ints, '1', 0)
         self.addAssignment(markers.markerless, markers.MARKERLESS, 1)
         self.addAssignment(markers.roman, 'i', 1)
