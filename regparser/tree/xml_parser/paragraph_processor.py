@@ -127,6 +127,8 @@ class ParagraphProcessor(object):
             depths = derive_depths(markers, constraints)
 
             if not depths:
+                logging.warning("""Could not derive paragraph depths. Retrying
+                                   with relaxed constraints.""")
                 additional_constraints = [optional_rules.star_new_level,
                                           optional_rules.limit_paragraph_types(
                                            markers.lower, markers.upper,

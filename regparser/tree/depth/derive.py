@@ -3,7 +3,6 @@ from constraint import Problem
 from regparser.tree.depth import markers, rules
 from regparser.tree.depth.pair_rules import pair_rules
 
-import logging
 import re
 
 
@@ -155,8 +154,6 @@ def derive_depths_relaxed(original_markers, additional_constraints=[]):
     """
 
     deemphasized_markers = []
-    logging.warning("""Could not derive paragraph depths. Retrying
-        with relaxed constraints.""")
     for marker in original_markers:
         emphasized = re.match(r"<E .*>(.*)</E>", marker)
         if emphasized:
