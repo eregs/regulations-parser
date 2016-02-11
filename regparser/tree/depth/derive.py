@@ -3,8 +3,6 @@ from constraint import Problem
 from regparser.tree.depth import markers, rules
 from regparser.tree.depth.pair_rules import pair_rules
 
-import re
-
 
 class ParAssignment(object):
     """A paragraph's type, index, depth assignment"""
@@ -144,25 +142,6 @@ def derive_depths(original_markers, additional_constraints=[]):
     for assignment in problem.getSolutionIter():
         assignment = _decompress_markerless(assignment, original_markers)
         solutions.append(Solution(assignment))
-    return solutions
-
-
-def derive_depths_relaxed(original_markers, additional_constraints=[]):
-    """Derive paragraph depth with reduced constraints,
-    including removal of emphasis and disabling of the
-    depth_type_inverses optional rule.
-    """
-
-    deemphasized_markers = []
-    for marker in original_markers:
-        emphasized = re.match(r"<E .*>(.*)</E>", marker)
-        if emphasized:
-            deemphasized_markers.append(emphasized.groups()[0])
-        else:
-            deemphasized_markers.append(marker)
-
-    solutions = derive_depths(deemphasized_markers, additional_constraints)
-
     return solutions
 
 

@@ -5,8 +5,8 @@ from regparser.layer.key_terms import KeyTerms, keyterm_to_int
 from regparser.layer.formatting import table_xml_to_plaintext
 from regparser.tree.depth import heuristics, markers as mtypes, \
   optional_rules
-from regparser.tree.depth.derive import debug_idx, derive_depths,\
-  derive_depths_relaxed
+from regparser.tree.depth.markers import deemphasize
+from regparser.tree.depth.derive import debug_idx, derive_depths
 from regparser.tree.struct import Node
 from regparser.tree.xml_parser import tree_utils
 
@@ -127,15 +127,17 @@ class ParagraphProcessor(object):
             depths = derive_depths(markers, constraints)
 
             if not depths:
-                logging.warning("""Could not derive paragraph depths. Retrying
-                                   with relaxed constraints.""")
+                logging.warning("Could not derive paragraph depths."
+                                "Retrying with relaxed constraints.")
+                deemphasized_markers = [deemphasize(m) for m in markers]
                 additional_constraints = [optional_rules.star_new_level,
                                           optional_rules.limit_paragraph_types(
-                                           markers.lower, markers.upper,
-                                           markers.ints, markers.roman,
-                                           markers.em_ints, markers.em_roman,
-                                           markers.stars, markers.markerless)]
-                depths = derive_depths_relaxed(markers, additional_constraints)
+                                           mtypes.lower, mtypes.upper,
+                                           mtypes.ints, mtypes.roman,
+                                           mtypes.em_ints, mtypes.em_roman,
+                                           mtypes.stars, mtypes.markerless)]
+                depths = derive_depths(deemphasized_markers,
+                                       additional_constraints)
 
             if not depths:
                 fails_at = debug_idx(markers, constraints)
