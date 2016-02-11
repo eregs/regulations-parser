@@ -1,20 +1,32 @@
-from layer import Layer
+import re
+
+from regparser.layer.layer import Layer
 from regparser.tree.struct import Node
+
+
+_marker_re = r'([0-9]+|[a-z]+|[A-Z]+)'
 
 
 def marker_of(node):
     """Try multiple potential marker formats. See if any apply to this
     node."""
-    if node.label[-1] == Node.INTERP_MARK:
-        marker = node.label[-2]
+    text = node.text.strip()
+    relevant = [l for l in node.label if l != Node.INTERP_MARK]
+    if not relevant:
+        return ''
+    elif text.startswith('('):
+        regex_fmt = r'\({}\)'
     else:
-        marker = node.label[-1]
-
-    for fmt in ('({})', '{}.'):
-        potential_marker = fmt.format(marker)
-        if node.text.strip().startswith(potential_marker):
-            return potential_marker
-    return ''
+        regex_fmt = r'{}\.'
+    # Begin with the appropriate marker, potentially followed by a dash and
+    # another marker, ignoring whitespace
+    regex = r'{}(\s*-\s*{})?'.format(regex_fmt.format(relevant[-1]),
+                                     regex_fmt.format(_marker_re))
+    match = re.match(regex, text)
+    if match:
+        return text[:match.end()]
+    else:
+        return ''
 
 
 class ParagraphMarkers(Layer):

@@ -1,20 +1,13 @@
-import itertools
+import hashlib
 import re
-import string
 
 from regparser.tree import struct
+from regparser.tree.depth import markers as mtypes
 from regparser.search import segments
-from regparser.utils import roman_nums
 
-p_levels = [
-    list(string.ascii_lowercase),
-    [str(i) for i in range(1, 999)],
-    list(itertools.islice(roman_nums(), 0, 50)),
-    list(string.ascii_uppercase),
-    ['<E T="03">' + str(i) + '</E>' for i in range(1, 51)],
-    ['<E T="03">' + i + '</E>'
-     for i in itertools.islice(roman_nums(), 0, 50)]
-]
+
+p_levels = [list(mtypes.lower), list(mtypes.ints), list(mtypes.roman),
+            list(mtypes.upper), list(mtypes.em_ints), list(mtypes.em_roman)]
 
 
 def p_level_of(marker):
@@ -26,6 +19,21 @@ def p_level_of(marker):
         if marker in markers:
             potential_levels.append(level)
     return potential_levels
+
+
+_NONWORDS = re.compile(r'\W+')
+
+
+def hash_for_paragraph(text):
+    """Hash a chunk of text and convert it into an integer for use with a
+    MARKERLESS paragraph identifier. We'll trim to just 8 hex characters for
+    legibility. We don't need to fear hash collisions as we'll have 16**8 ~ 4
+    billion possibilities. The birthday paradox tells us we'd only expect
+    collisions after ~ 60 thousand entries.  We're expecting at most a few
+    hundred"""
+    phrase = _NONWORDS.sub('', text.lower())
+    hashed = hashlib.sha1(phrase).hexdigest()[:8]
+    return int(hashed, 16)
 
 
 class ParagraphParser():

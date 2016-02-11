@@ -1,12 +1,13 @@
 import abc
 import logging
 
-from regparser.layer.key_terms import KeyTerms, keyterm_to_int
+from regparser.layer.key_terms import KeyTerms
 from regparser.layer.formatting import table_xml_to_plaintext
 from regparser.tree.depth import heuristics, markers as mtypes, \
   optional_rules
 from regparser.tree.depth.markers import deemphasize
 from regparser.tree.depth.derive import debug_idx, derive_depths
+from regparser.tree.paragraph import hash_for_paragraph
 from regparser.tree.struct import Node
 from regparser.tree.xml_parser import tree_utils
 
@@ -55,7 +56,7 @@ class ParagraphProcessor(object):
         stack = tree_utils.NodeStack()
         stack.add(0, root)
         for node, depth_info in zip(nodes, depths):
-            self.replace_emphasis(node)
+            node.label = [mtypes.deemphasize(l) for l in node.label]
             self.replace_markerless(stack, node, depth_info.depth + 1)
             self.carry_label_to_children(node)
             if depth_info.typ != mtypes.stars:
@@ -69,18 +70,12 @@ class ParagraphProcessor(object):
             child.label = node.label + child.label[-1:]
             self.carry_label_to_children(child)
 
-    def replace_emphasis(self, node):
-        """Emphasis tags are helpful for deriving depth, but we don't want
-        them in our output, so remove here"""
-        node.label = [l.replace('<E T="03">', '').replace('</E>', '')
-                      for l in node.label]
-
     def replace_markerless(self, stack, node, depth):
         """Assign a unique index to all of the MARKERLESS paragraphs"""
         if node.label[-1] == mtypes.MARKERLESS:
             keyterm = KeyTerms.get_keyterm(node, ignore_definitions=False)
             if keyterm:
-                p_num = keyterm_to_int(keyterm)
+                p_num = hash_for_paragraph(keyterm)
             else:
                 # len(n.label[-1]) < 6 filters out keyterm nodes
                 p_num = sum(n.is_markerless() and len(n.label[-1]) < 6
