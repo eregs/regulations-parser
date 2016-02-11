@@ -3,7 +3,8 @@ import logging
 
 from regparser.layer.key_terms import KeyTerms, keyterm_to_int
 from regparser.layer.formatting import table_xml_to_plaintext
-from regparser.tree.depth import heuristics, markers as mtypes
+from regparser.tree.depth import heuristics, markers as mtypes, \
+  optional_rules
 from regparser.tree.depth.derive import debug_idx, derive_depths,\
   derive_depths_relaxed
 from regparser.tree.struct import Node
@@ -126,7 +127,13 @@ class ParagraphProcessor(object):
             depths = derive_depths(markers, constraints)
 
             if not depths:
-                depths = derive_depths_relaxed(markers)
+                additional_constraints = [optional_rules.star_new_level,
+                                          optional_rules.limit_paragraph_types(
+                                           markers.lower, markers.upper,
+                                           markers.ints, markers.roman,
+                                           markers.em_ints, markers.em_roman,
+                                           markers.stars, markers.markerless)]
+                depths = derive_depths_relaxed(markers, additional_constraints)
 
             if not depths:
                 fails_at = debug_idx(markers, constraints)

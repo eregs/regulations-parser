@@ -1,6 +1,6 @@
 from constraint import Problem
 
-from regparser.tree.depth import markers, rules, optional_rules
+from regparser.tree.depth import markers, rules
 from regparser.tree.depth.pair_rules import pair_rules
 
 import logging
@@ -148,7 +148,7 @@ def derive_depths(original_markers, additional_constraints=[]):
     return solutions
 
 
-def derive_depths_relaxed(original_markers):
+def derive_depths_relaxed(original_markers, additional_constraints=[]):
     """Derive paragraph depth with reduced constraints,
     including removal of emphasis and disabling of the
     depth_type_inverses optional rule.
@@ -164,13 +164,7 @@ def derive_depths_relaxed(original_markers):
         else:
             deemphasized_markers.append(marker)
 
-    solutions = derive_depths(deemphasized_markers,
-                              [optional_rules.star_new_level,
-                               optional_rules.limit_paragraph_types(
-                                markers.lower, markers.upper, markers.ints,
-                                markers.roman, markers.em_ints,
-                                markers.em_roman, markers.stars,
-                                markers.markerless)])
+    solutions = derive_depths(deemphasized_markers, additional_constraints)
 
     return solutions
 
