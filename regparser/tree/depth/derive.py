@@ -2,6 +2,7 @@ from constraint import Problem
 
 from regparser.tree.depth import markers, rules
 from regparser.tree.depth.pair_rules import pair_rules
+from regparser.tree.struct import Node
 
 
 class ParAssignment(object):
@@ -50,7 +51,7 @@ def _compress_markerless(marker_list):
     result = []
     saw_markerless = False
     for marker in marker_list:
-        if marker != markers.MARKERLESS:
+        if not Node.is_markerless_label([marker]):
             saw_markerless = False
             result.append(marker)
         elif not saw_markerless:
@@ -66,7 +67,7 @@ def _decompress_markerless(assignment, marker_list):
     saw_markerless = False
     a_idx = -1      # idx in the assignment dict
     for m_idx, marker in enumerate(marker_list):
-        if marker != markers.MARKERLESS:
+        if not Node.is_markerless_label([marker]):
             saw_markerless = False
             a_idx += 1
         elif not saw_markerless:

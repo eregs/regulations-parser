@@ -1,3 +1,4 @@
+import hashlib
 import re
 
 from regparser.tree import struct
@@ -18,6 +19,21 @@ def p_level_of(marker):
         if marker in markers:
             potential_levels.append(level)
     return potential_levels
+
+
+_NONWORDS = re.compile(r'\W+')
+
+
+def hash_for_paragraph(text):
+    """Hash a chunk of text and convert it into an integer for use with a
+    MARKERLESS paragraph identifier. We'll trim to just 8 hex characters for
+    legibility. We don't need to fear hash collisions as we'll have 16**8 ~ 4
+    billion possibilities. The birthday paradox tells us we'd only expect
+    collisions after ~ 60 thousand entries.  We're expecting at most a few
+    hundred"""
+    phrase = _NONWORDS.sub('', text.lower())
+    hashed = hashlib.sha1(phrase).hexdigest()[:8]
+    return int(hashed, 16)
 
 
 class ParagraphParser():

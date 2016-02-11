@@ -2,6 +2,7 @@ import json
 from unittest import TestCase
 
 from regparser.tree import struct
+from regparser.tree.depth.markers import MARKERLESS
 
 
 class NodeTest(TestCase):
@@ -280,7 +281,8 @@ class FrozenNodeTests(TestCase):
 
 class NodeTests(TestCase):
     def test_is_markerless_label(self):
-        self.assertIsNone(struct.Node.is_markerless_label(''))
-        self.assertIsNone(struct.Node.is_markerless_label(None))
+        self.assertFalse(struct.Node.is_markerless_label(''))
+        self.assertFalse(struct.Node.is_markerless_label(None))
         self.assertTrue(struct.Node.is_markerless_label(['134', 'p33']))
-        self.assertIsNone(struct.Node.is_markerless_label(['245', '23']))
+        self.assertFalse(struct.Node.is_markerless_label(['245', '23']))
+        self.assertTrue(struct.Node.is_markerless_label(['245', MARKERLESS]))
