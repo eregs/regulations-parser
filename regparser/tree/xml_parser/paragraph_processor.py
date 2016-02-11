@@ -53,7 +53,7 @@ class ParagraphProcessor(object):
         stack = tree_utils.NodeStack()
         stack.add(0, root)
         for node, depth_info in zip(nodes, depths):
-            self.replace_emphasis(node)
+            node.label = [mtypes.deemphasize(l) for l in node.label]
             self.replace_markerless(stack, node, depth_info.depth + 1)
             self.carry_label_to_children(node)
             if depth_info.typ != mtypes.stars:
@@ -66,12 +66,6 @@ class ParagraphProcessor(object):
         for idx, child in enumerate(node.children):
             child.label = node.label + child.label[-1:]
             self.carry_label_to_children(child)
-
-    def replace_emphasis(self, node):
-        """Emphasis tags are helpful for deriving depth, but we don't want
-        them in our output, so remove here"""
-        node.label = [l.replace('<E T="03">', '').replace('</E>', '')
-                      for l in node.label]
 
     def replace_markerless(self, stack, node, depth):
         """Assign a unique index to all of the MARKERLESS paragraphs"""

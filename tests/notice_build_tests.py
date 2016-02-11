@@ -31,7 +31,12 @@ class NoticeBuildTest(XMLBuilderMixin, TestCase):
             'type': 'Rule',
             'volume': 66,
         }
-        self.assertEqual(build.build_notice('5', '9292', fr), [{
+        notices = build.build_notice('5', '9292', fr)
+        self.assertEqual(1, len(notices))
+        actual_notice = notices[0]
+        for key in ['agency_names', 'cfr_parts']:
+            actual_notice[key] = sorted(actual_notice[key])
+        self.assertEqual(actual_notice, {
             'abstract': 'sum sum sum',
             'action': 'actact',
             'agency_names': ['Agency 1', 'Agency 2'],
@@ -51,7 +56,7 @@ class NoticeBuildTest(XMLBuilderMixin, TestCase):
             },
             'publication_date': '1955-12-10',
             'regulation_id_numbers': ['a231a-232q'],
-        }])
+        })
 
     def test_process_xml(self):
         """Integration test for xml processing"""
@@ -159,7 +164,7 @@ class NoticeBuildTest(XMLBuilderMixin, TestCase):
 
         subpart_changes = build.process_designate_subpart(amended_label)
 
-        self.assertEqual(['200-1-a', '200-1-b'], subpart_changes.keys())
+        self.assertItemsEqual(['200-1-a', '200-1-b'], subpart_changes.keys())
 
         for p, change in subpart_changes.items():
             self.assertEqual(change['destination'], ['205', 'Subpart', 'A'])
@@ -176,7 +181,7 @@ class NoticeBuildTest(XMLBuilderMixin, TestCase):
         build.process_amendments(notice, self.tree.render_xml())
 
         section_list = ['105-2', '105-3', '105-1']
-        self.assertEqual(notice['changes'].keys(), section_list)
+        self.assertItemsEqual(notice['changes'].keys(), section_list)
 
         for l, c in notice['changes'].items():
             change = c[0]
@@ -196,7 +201,7 @@ class NoticeBuildTest(XMLBuilderMixin, TestCase):
         notice = {'cfr_parts': ['105']}
         build.process_amendments(notice, self.tree.render_xml())
 
-        self.assertEqual(notice['changes'].keys(), ['105-1-b'])
+        self.assertItemsEqual(notice['changes'].keys(), ['105-1-b'])
 
         changes = notice['changes']['105-1-b'][0]
         self.assertEqual(changes['action'], 'PUT')
@@ -218,7 +223,7 @@ class NoticeBuildTest(XMLBuilderMixin, TestCase):
         notice = {'cfr_parts': ['105']}
         build.process_amendments(notice, self.tree.render_xml())
 
-        self.assertEqual(notice['changes'].keys(), ['105-1-b', '105-1-c'])
+        self.assertItemsEqual(notice['changes'].keys(), ['105-1-b', '105-1-c'])
 
         changes = notice['changes']['105-1-b'][0]
         self.assertEqual(changes['action'], 'PUT')
@@ -278,7 +283,7 @@ class NoticeBuildTest(XMLBuilderMixin, TestCase):
 
         notice = {'cfr_parts': ['105']}
         build.process_amendments(notice, self.tree.render_xml())
-        self.assertEqual(notice['changes'].keys(), ['105-11-p5'])
+        self.assertItemsEqual(notice['changes'].keys(), ['105-11-p5'])
 
         changes = notice['changes']['105-11-p5'][0]
         self.assertEqual(changes['action'], 'PUT')
@@ -339,7 +344,7 @@ class NoticeBuildTest(XMLBuilderMixin, TestCase):
         subpart_changes = build.process_new_subpart(notice, amended_label, par)
 
         new_nodes_added = ['105-Subpart-B', '105-30', '105-30-a']
-        self.assertEqual(new_nodes_added, subpart_changes.keys())
+        self.assertItemsEqual(new_nodes_added, subpart_changes.keys())
 
         for l, n in subpart_changes.items():
             self.assertEqual(n['action'], 'POST')

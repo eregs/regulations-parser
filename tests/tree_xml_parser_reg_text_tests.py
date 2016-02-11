@@ -527,49 +527,36 @@ class RegTextTest(XMLBuilderMixin, NodeAccessorMixin, TestCase):
         markers = reg_text.get_markers(text, mtypes.STARS_TAG)
         self.assertEqual(markers, [u'a', u'1'])
 
-    def test_get_markers_and_text(self):
+    def _split_by_markers_results(self, text):
+        """DRY conversion between a paragraph text and corresponding
+        (markers, text, tagged)"""
+        xml = etree.fromstring(u'<ROOT><P>{}</P><STARS/></ROOT>'.format(text))
+        results = reg_text.split_by_markers(xml[0])
+        return zip(*results)    # unzips...
+
+    def test_split_by_markers(self):
         text = u'(a) <E T="03">Transfer </E>—(1) <E T="03">Notice.</E> follow'
-        wrap = '<P>%s</P>' % text
+        markers, text, tagged = self._split_by_markers_results(text)
+        self.assertEqual(markers, (u'a', u'1'))
+        self.assertEqual(text, (u'(a) Transfer —', u'(1) Notice. follow'))
+        self.assertEqual(tagged, (u'(a) <E T="03">Transfer </E>—',
+                                  u'(1) <E T="03">Notice.</E> follow'))
 
-        doc = etree.fromstring(wrap)
-        markers = reg_text.get_markers(text, mtypes.STARS_TAG)
-        result = reg_text.get_markers_and_text(doc, markers)
-
-        markers = [r[0] for r in result]
-        self.assertEqual(markers, [u'a', u'1'])
-
-        text = [r[1][0] for r in result]
-        self.assertEqual(text, [u'(a) Transfer —', u'(1) Notice. follow'])
-
-        tagged = [r[1][1] for r in result]
-        self.assertEqual(
-            tagged,
-            [u'(a) <E T="03">Transfer </E>—',
-             u'(1) <E T="03">Notice.</E> follow'])
-
-    def test_get_markers_and_text_emph(self):
+    def test_split_by_markers_emph(self):
         text = '(A) aaaa. (<E T="03">1</E>) 1111'
-        xml = etree.fromstring('<P>%s</P>' % text)
-        markers = reg_text.get_markers(text, mtypes.STARS_TAG)
-        result = reg_text.get_markers_and_text(xml, markers)
+        markers, text, tagged = self._split_by_markers_results(text)
+        self.assertEqual(markers, ('A', '<E T="03">1</E>'))
+        self.assertEqual(text, ('(A) aaaa. ', '(1) 1111'))
+        self.assertEqual(tagged, ('(A) aaaa. ', '(<E T="03">1</E>) 1111'))
 
-        a, a1 = result
-        self.assertEqual(('A', ('(A) aaaa. ', '(A) aaaa. ')), a)
-        self.assertEqual(('<E T="03">1</E>', ('(1) 1111',
-                                              '(<E T="03">1</E>) 1111')), a1)
-
-    def test_get_markers_and_text_deceptive_single(self):
+    def test_split_by_markers_deceptive_single(self):
         """Don't treat a single marker differently than multiple, there might
         be prefix text"""
-        node = etree.fromstring('<P>Words then (a) a subparagraph</P>')
-        results = reg_text.get_markers_and_text(node, ['a'])
-        self.assertEqual(len(results), 2)
-        prefix, subpar = results
-
-        self.assertEqual(prefix[0], mtypes.MARKERLESS)
-        self.assertEqual(prefix[1][0], 'Words then ')
-        self.assertEqual(subpar[0], 'a')
-        self.assertEqual(subpar[1][0], '(a) a subparagraph')
+        text = 'Words then. (a) a subparagraph'
+        markers, text, tagged = self._split_by_markers_results(text)
+        self.assertEqual(markers, (mtypes.MARKERLESS, 'a'))
+        self.assertEqual(text, ('Words then. ', '(a) a subparagraph'))
+        self.assertEqual(tagged, text)
 
     def test_get_markers_bad_citation(self):
         text = '(vi)<E T="03">Keyterm.</E>The information required by '
@@ -650,8 +637,41 @@ class RegTextTest(XMLBuilderMixin, NodeAccessorMixin, TestCase):
         self.assertEqual(subjgrp_1.label, ['123', 'Subjgrp', 'CoO'])
         self.assertEqual(subjgrp_2.label, ['123', 'Subjgrp', 'ATL'])
 
+    def test_initial_markers(self):
+        """Should not find any collapsed markers and should find all of the
+        markers at the beginning of the text"""
+        text = '(k)(2)(iii) abc (j)'
+        result = [m for m in reg_text.initial_markers(text)]
+        self.assertEqual(['k', '2', 'iii'], result)
 
-class ParagraphMatcherTests(XMLBuilderMixin, TestCase):
+        text = '(i)(A) The minimum period payment'
+        result = [m for m in reg_text.initial_markers(text)]
+        self.assertEqual(['i', 'A'], result)
+
+    def test_collapsed_markers(self):
+        """We're expecting to find collapsed markers when they have certain
+        prefixes, but not when they are part of a citation or do not have the
+        appropriate prefix"""
+        text = u'(a) <E T="03">Transfer </E>—(1) <E T="03">Notice.</E> follow'
+        markers = reg_text.collapsed_markers(text)
+        self.assertEqual(markers, [u'1'])
+
+        text = '(1) See paragraph (a) for more'
+        self.assertEqual([], reg_text.collapsed_markers(text))
+
+        text = '(a) (1) More content'
+        self.assertEqual([], reg_text.collapsed_markers(text))
+
+        text = u'(a) <E T="03">Transfer—</E>(1) <E T="03">Notice.</E> follow'
+        self.assertEqual([u'1'], reg_text.collapsed_markers(text))
+
+        text = u'(a) <E T="03">Keyterm</E>—(1)(i) Content'
+        self.assertEqual(['1', 'i'], reg_text.collapsed_markers(text))
+
+        text = "(C) The information required by paragraphs (a)(2), "
+        text += "(a)(4)(iii), (a)(5), (b) through (d), (i), (l) through (p)"
+        self.assertEqual([], reg_text.collapsed_markers(text))
+
     def test_next_marker_found(self):
         """Find the first paragraph marker following a paragraph"""
         with self.tree.builder("ROOT") as root:
@@ -660,7 +680,7 @@ class ParagraphMatcherTests(XMLBuilderMixin, TestCase):
             root.P("(d) ddd")
             root.P("(1) 111")
         xml = self.tree.render_xml()[0]
-        self.assertEqual(reg_text.ParagraphMatcher().next_marker(xml), 'd')
+        self.assertEqual(reg_text.next_marker(xml), 'd')
 
     def test_next_marker_stars(self):
         """STARS tag has special significance."""
@@ -671,7 +691,7 @@ class ParagraphMatcherTests(XMLBuilderMixin, TestCase):
             root.P("(d) ddd")
             root.P("(1) 111")
         xml = self.tree.render_xml()[0]
-        self.assertEqual(reg_text.ParagraphMatcher().next_marker(xml),
+        self.assertEqual(reg_text.next_marker(xml),
                          mtypes.STARS_TAG)
 
     def test_next_marker_none(self):
@@ -681,7 +701,7 @@ class ParagraphMatcherTests(XMLBuilderMixin, TestCase):
             root.P("Content")
             root.P("(i) iii")
         xml = self.tree.render_xml()[0]
-        self.assertIsNone(reg_text.ParagraphMatcher().next_marker(xml))
+        self.assertIsNone(reg_text.next_marker(xml))
 
 
 class RegtextParagraphProcessorTests(XMLBuilderMixin, NodeAccessorMixin,

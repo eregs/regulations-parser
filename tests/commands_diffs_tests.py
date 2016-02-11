@@ -22,7 +22,7 @@ class CommandsDiffsTests(TestCase):
 
     def assert_diff_keys(self, lhs_id, rhs_id, keys):
         entry = self.diff_dir / lhs_id / rhs_id
-        self.assertEqual(keys, entry.read().keys())
+        self.assertItemsEqual(keys, entry.read().keys())
 
     def test_diffs_generated(self):
         """Diffs are calculated -- they will be empty between the same

@@ -2,8 +2,12 @@
 import re
 
 from lxml import etree
+import pyparsing
 
 from regparser import content
+from regparser.citations import remove_citation_overlaps
+from regparser.grammar import unified
+from regparser.grammar.utils import QuickSearchable
 from regparser.tree import reg_text
 from regparser.tree.depth import markers as mtypes, optional_rules
 from regparser.tree.struct import Node
@@ -178,11 +182,11 @@ def _continues_collapsed(first, second):
 def get_markers(text, next_marker=None):
     """ Extract all the paragraph markers from text. Do some checks on the
     collapsed markers."""
-    initial = tree_utils.get_paragraph_markers(text)
+    initial = initial_markers(text)
     if next_marker is None:
         collapsed = []
     else:
-        collapsed = tree_utils.get_collapsed_markers(text)
+        collapsed = collapsed_markers(text)
 
     #   Check that the collapsed markers make sense:
     #   * at least one level below the initial marker
@@ -198,20 +202,48 @@ def get_markers(text, next_marker=None):
     return initial + collapsed
 
 
-def get_markers_and_text(node, markers_list):
-    node_text = tree_utils.get_node_text(node, add_spaces=True)
-    text_with_tags = tree_utils.get_node_text_tags_preserved(node)
+def _any_depth_parse(match):
+    """Convert any_depth_p match into the appropriate marker strings"""
+    markers = [match.p1, match.p2, match.p3, match.p4, match.p5, match.p6]
+    for idx in (4, 5):
+        if markers[idx]:
+            markers[idx] = mtypes.emphasize(markers[idx])
+    return [m for m in markers if m]
 
-    actual_markers = ['(%s)' % m for m in markers_list]
-    plain_markers = [m.replace('<E T="03">', '').replace('</E>', '')
-                     for m in actual_markers]
-    node_texts = tree_utils.split_text(node_text, plain_markers)
-    tagged_texts = tree_utils.split_text(text_with_tags, actual_markers)
-    node_text_list = zip(node_texts, tagged_texts)
 
-    if len(node_text_list) > len(markers_list):     # diff can only be 1
-        markers_list.insert(0, mtypes.MARKERLESS)
-    return zip(markers_list, node_text_list)
+any_depth_p = unified.any_depth_p.copy().setParseAction(_any_depth_parse)
+
+
+def initial_markers(text):
+    """Pull out a list of the first paragraph markers, i.e. markers before any
+    text"""
+    try:
+        return list(any_depth_p.parseString(text))
+    except pyparsing.ParseException:
+        return []
+
+
+_collapsed_grammar = QuickSearchable(
+    # A guard to reduce false positives
+    pyparsing.Suppress(pyparsing.Regex(u',|\.|-|—|>')) +
+    any_depth_p)
+
+
+def collapsed_markers(text):
+    """Not all paragraph markers are at the beginning of of the text. This
+    grabs inner markers like (1) and (i) here:
+    (c) cContent —(1) 1Content (i) iContent"""
+    potential = [triplet for triplet in _collapsed_grammar.scanString(text)]
+    #   remove any that overlap with citations
+    potential = [trip for trip in remove_citation_overlaps(text, potential)]
+    #   flatten the results
+    potential = [pm for pms, _, _ in potential for pm in pms]
+    #   remove any matches that aren't (a), (1), (i), etc. -- All other
+    #   markers can't be collapsed
+    first_markers = [level[0] for level in p_levels]
+    potential = [pm for pm in potential if pm in first_markers]
+
+    return potential
 
 
 def build_from_section(reg_part, section_xml):
@@ -256,41 +288,59 @@ def build_from_section(reg_part, section_xml):
     return section_nodes
 
 
+def next_marker(xml):
+    """Find the first marker in a paragraph that follows this xml node.
+    May return None"""
+    good_tags = ('P', 'FP', mtypes.STARS_TAG)
+
+    node = xml.getnext()
+    while node is not None and node.tag not in good_tags:
+        node = node.getnext()
+
+    if getattr(node, 'tag', None) == mtypes.STARS_TAG:
+        return mtypes.STARS_TAG
+    elif node is not None:
+        tagged_text = tree_utils.get_node_text_tags_preserved(node)
+        markers = get_markers(tagged_text.strip())
+        if markers:
+            return markers[0]
+
+
+def split_by_markers(xml):
+    """Given an xml node, pull out triplets of
+        (marker, plain-text following, text-with-tags following)
+    for each subparagraph found"""
+    plain_text = tree_utils.get_node_text(xml, add_spaces=True).strip()
+    tagged_text = tree_utils.get_node_text_tags_preserved(xml).strip()
+    markers_list = get_markers(tagged_text, next_marker(xml))
+
+    plain_markers = ['({})'.format(mtypes.deemphasize(m))
+                     for m in markers_list]
+    node_texts = tree_utils.split_text(plain_text, plain_markers)
+    tagged_texts = tree_utils.split_text(
+        tagged_text, ['({})'.format(m) for m in markers_list])
+    if len(node_texts) > len(markers_list):     # due to initial MARKERLESS
+        markers_list.insert(0, mtypes.MARKERLESS)
+    return zip(markers_list, node_texts, tagged_texts)
+
+
 class ParagraphMatcher(paragraph_processor.BaseMatcher):
     """<P>/<FP> with or without initial paragraph markers -- (a)(1)(i) etc."""
     def matches(self, xml):
         return xml.tag in ('P', 'FP')
 
     def derive_nodes(self, xml, processor=None):
-        text = ''
-        tagged_text = tree_utils.get_node_text_tags_preserved(xml).strip()
-        markers_list = get_markers(tagged_text, self.next_marker(xml))
         nodes = []
-        for m, node_text in get_markers_and_text(xml, markers_list):
-            text, tagged_text = node_text
-            node = Node(text=text.strip(), label=[m], source_xml=xml)
+        plain_text = ''
+        for marker, plain_text, tagged_text in split_by_markers(xml):
+            node = Node(text=plain_text.strip(), label=[marker],
+                        source_xml=xml)
             node.tagged_text = unicode(tagged_text.strip())
             nodes.append(node)
-        if text.endswith('* * *'):
+
+        if plain_text.endswith('* * *'):    # last in loop
             nodes.append(Node(label=[mtypes.INLINE_STARS]))
         return nodes
-
-    def next_marker(self, xml):
-        """Find the first marker in a paragraph that follows this xml node.
-        May return None"""
-        good_tags = ('P', 'FP', mtypes.STARS_TAG)
-
-        node = xml.getnext()
-        while node is not None and node.tag not in good_tags:
-            node = node.getnext()
-
-        if getattr(node, 'tag', None) == mtypes.STARS_TAG:
-            return mtypes.STARS_TAG
-        elif node is not None:
-            tagged_text = tree_utils.get_node_text_tags_preserved(node)
-            markers = get_markers(tagged_text.strip())
-            if markers:
-                return markers[0]
 
 
 class RegtextParagraphProcessor(paragraph_processor.ParagraphProcessor):
@@ -309,7 +359,7 @@ class RegtextParagraphProcessor(paragraph_processor.ParagraphProcessor):
     def additional_constraints(self):
         return [optional_rules.depth_type_inverses,
                 optional_rules.star_new_level,
-                optional_rules.limit_sequence_gap(),
+                optional_rules.limit_sequence_gap(3),
                 optional_rules.limit_paragraph_types(
                     mtypes.lower, mtypes.upper, mtypes.ints, mtypes.roman,
                     mtypes.em_ints, mtypes.em_roman, mtypes.stars,

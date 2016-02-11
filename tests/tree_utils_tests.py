@@ -35,15 +35,6 @@ class TreeUtilsTest(unittest.TestCase):
         expected = ['(A)', '(2) Bananas']
         self.assertEqual(expected, result)
 
-    def test_get_paragraph_marker(self):
-        text = '(k)(2)(iii) abc (j)'
-        result = [m for m in tree_utils.get_paragraph_markers(text)]
-        self.assertEqual(['k', '2', 'iii'], result)
-
-        text = '(i)(A) The minimum period payment'
-        result = [m for m in tree_utils.get_paragraph_markers(text)]
-        self.assertEqual(['i', 'A'], result)
-
     def assert_transform_equality(self, input_val, expected_output, *fns):
         """Verify that the result of chaining (more specifically, composing)
         the fns on the input_val with result in the expected output value."""
@@ -161,24 +152,3 @@ class TreeUtilsTest(unittest.TestCase):
         self.assertEqual(len(a1.children), 0)
         self.assertEqual(a2.label, ['272', '11', 'a', '2'])
         self.assertEqual(len(a2.children), 0)
-
-    def test_get_collapsed_markers(self):
-        text = u'(a) <E T="03">Transfer </E>—(1) <E T="03">Notice.</E> follow'
-        markers = tree_utils.get_collapsed_markers(text)
-        self.assertEqual(markers, [u'1'])
-
-        text = '(1) See paragraph (a) for more'
-        self.assertEqual([], tree_utils.get_collapsed_markers(text))
-
-        text = '(a) (1) More content'
-        self.assertEqual([], tree_utils.get_collapsed_markers(text))
-
-        text = u'(a) <E T="03">Transfer—</E>(1) <E T="03">Notice.</E> follow'
-        self.assertEqual([u'1'], tree_utils.get_collapsed_markers(text))
-
-        text = u'(a) <E T="03">Keyterm</E>—(1)(i) Content'
-        self.assertEqual(['1', 'i'], tree_utils.get_collapsed_markers(text))
-
-        text = "(C) The information required by paragraphs (a)(2), "
-        text += "(a)(4)(iii), (a)(5), (b) through (d), (i), (l) through (p)"
-        self.assertEqual([], tree_utils.get_collapsed_markers(text))
