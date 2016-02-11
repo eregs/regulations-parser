@@ -15,7 +15,7 @@ targets = {
     # },
     'atf': {
         'title': 27,
-        'parts': [447],
+        'parts': [447, 478, 479, 555, 646],
         'source': 'https://atf-eregs.apps.cloud.gov/api',
     },
 }
