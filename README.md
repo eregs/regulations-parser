@@ -11,7 +11,7 @@ regulations-core, an API for hosting the parsed regulations and
 regulation-site, a front-end for the data structures generated.
 
 This repository is part of a larger project. To read about it, please see 
-[http://cfpb.github.io/eRegulations/](http://cfpb.github.io/eRegulations/).
+[http://eregs.github.io/eRegulations/](http://eregs.github.io/eRegulations/).
 
 ## Quick Start
 
