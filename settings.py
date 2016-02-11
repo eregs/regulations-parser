@@ -121,6 +121,7 @@ PREPROCESSORS = [
     "regparser.tree.xml_parser.preprocessors.Footnotes",
     "regparser.tree.xml_parser.preprocessors.AtfI50032",
     "regparser.tree.xml_parser.preprocessors.AtfI50031",
+    "regparser.tree.xml_parser.preprocessors.ImportCategories",
 ]
 
 try:
