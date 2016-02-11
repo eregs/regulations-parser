@@ -83,6 +83,7 @@ class HeuristicsTests(TestCase):
         """Generate two solutions, one in which a markerless sandwich
         is used to skip depth, and another where it is not used to
         skip depth."""
+
         self.addAssignment(markers.ints, '1', 0)
         self.addAssignment(markers.markerless, markers.MARKERLESS, 1)
         self.addAssignment(markers.roman, 'i', 1)
@@ -92,6 +93,31 @@ class HeuristicsTests(TestCase):
         self.addAssignment(markers.ints, '1', 0)
         self.addAssignment(markers.markerless, markers.MARKERLESS, 1)
         self.addAssignment(markers.roman, 'i', 2)
+        solution2 = self.solution
+
+        solutions = [Solution(solution1), Solution(solution2)]
+        solutions = heuristics.prefer_no_markerless_sandwich(solutions, 0.5)
+        self.assertEqual(solutions[0].weight, 1.0)
+        self.assertTrue(solutions[1].weight < solutions[0].weight)
+
+        self.setUp()
+        self.addAssignment(markers.markerless, markers.MARKERLESS, 0)
+        self.addAssignment(markers.markerless, markers.MARKERLESS, 0)
+        self.addAssignment(markers.lower, 'a', 1)
+        self.addAssignment(markers.lower, 'b', 1)
+        self.addAssignment(markers.markerless, markers.MARKERLESS, 0)
+        self.addAssignment(markers.lower, 'a', 1)
+        self.addAssignment(markers.lower, 'b', 1)
+        solution1 = self.solution
+
+        self.setUp()
+        self.addAssignment(markers.markerless, markers.MARKERLESS, 0)
+        self.addAssignment(markers.markerless, markers.MARKERLESS, 0)
+        self.addAssignment(markers.lower, 'a', 1)
+        self.addAssignment(markers.lower, 'b', 1)
+        self.addAssignment(markers.markerless, markers.MARKERLESS, 2)
+        self.addAssignment(markers.lower, 'a', 3)
+        self.addAssignment(markers.lower, 'b', 3)
         solution2 = self.solution
 
         solutions = [Solution(solution1), Solution(solution2)]

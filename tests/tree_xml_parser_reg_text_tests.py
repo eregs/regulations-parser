@@ -653,8 +653,10 @@ class RegTextTest(XMLBuilderMixin, NodeAccessorMixin, TestCase):
         prefixes, but not when they are part of a citation or do not have the
         appropriate prefix"""
         text = u'(a) <E T="03">Transfer </E>—(1) <E T="03">Notice.</E> follow'
-        markers = reg_text.collapsed_markers(text)
-        self.assertEqual(markers, [u'1'])
+        self.assertEqual([u'1'], reg_text.collapsed_markers(text))
+
+        text = u'(a) <E T="03">Blah </E>means (1) <E T="03">Notice.</E> follow'
+        self.assertEqual([u'1'], reg_text.collapsed_markers(text))
 
         text = '(1) See paragraph (a) for more'
         self.assertEqual([], reg_text.collapsed_markers(text))
