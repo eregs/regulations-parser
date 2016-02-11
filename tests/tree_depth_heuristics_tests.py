@@ -94,6 +94,4 @@ class HeuristicsTests(TestCase):
         solutions = [Solution(solution1), Solution(solution2)]
         solutions = heuristics.prefer_no_markerless_sandwich(solutions, 0.5)
         self.assertEqual(solutions[0].weight, 1.0)
-        print solutions[0].weight
-        print solutions[1].weight
         self.assertTrue(solutions[1].weight < solutions[0].weight)
