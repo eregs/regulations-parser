@@ -225,7 +225,7 @@ def initial_markers(text):
 
 _collapsed_grammar = QuickSearchable(
     # A guard to reduce false positives
-    pyparsing.Suppress(pyparsing.Regex(u',|\.|-|—|>')) +
+    pyparsing.Suppress(pyparsing.Regex(u',|\.|-|—|>|means ')) +
     any_depth_p)
 
 
@@ -364,3 +364,11 @@ class RegtextParagraphProcessor(paragraph_processor.ParagraphProcessor):
                     mtypes.lower, mtypes.upper, mtypes.ints, mtypes.roman,
                     mtypes.em_ints, mtypes.em_roman, mtypes.stars,
                     mtypes.markerless)]
+
+    def relaxed_constraints(self):
+        return [optional_rules.star_new_level,
+                optional_rules.limit_paragraph_types(
+                    mtypes.lower, mtypes.upper,
+                    mtypes.ints, mtypes.roman,
+                    mtypes.em_ints, mtypes.em_roman,
+                    mtypes.stars, mtypes.markerless)]
