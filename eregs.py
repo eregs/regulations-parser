@@ -12,6 +12,8 @@ from regparser import commands
 from regparser.commands.dependency_resolver import DependencyResolver
 from regparser.index import dependency
 
+logger = logging.getLogger(__name__)
+
 
 @click.group()
 @click.option('--debug/--no-debug', default=False)
@@ -21,7 +23,7 @@ def cli(debug):
     if debug:
         log_level = logging.DEBUG
         sys.excepthook = lambda t, v, tb: ipdb.post_mortem(tb)
-    coloredlogs.install(level=log_level, fmt="%(levelname)s %(message)s")
+    coloredlogs.install(level=log_level)
 
 
 for _, command_name, _ in pkgutil.iter_modules(commands.__path__):
@@ -46,7 +48,7 @@ def run_or_resolve(cmd, prev_dependency=None):
         if e.dependency == prev_dependency or len(resolvers) != 1:
             raise e
         else:
-            click.echo("Attempting to resolve dependency: " + e.dependency)
+            logger.info("Attempting to resolve dependency: %s", e.dependency)
             resolvers[0].resolution()
             run_or_resolve(cmd, e.dependency)
 

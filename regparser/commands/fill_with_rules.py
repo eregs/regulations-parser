@@ -1,8 +1,11 @@
 import click
+import logging
 
 from regparser.builder import merge_changes
 from regparser.index import dependency, entry
 from regparser.notice.compiler import compile_regulation
+
+logger = logging.getLogger(__name__)
 
 
 def dependencies(tree_path, version_ids, cfr_title, cfr_part):
@@ -56,6 +59,7 @@ def fill_with_rules(cfr_title, cfr_part):
     """Fill in missing trees using data from rules. When a regulation tree
     cannot be derived through annual editions, it must be built by parsing the
     changes in final rules. This command builds those missing trees"""
+    logger.info("Fill with rules - %s CFR %s", cfr_title, cfr_part)
     tree_path = entry.Tree(cfr_title, cfr_part)
     version_ids = list(entry.Version(cfr_title, cfr_part))
     deps = dependencies(tree_path, version_ids, cfr_title, cfr_part)

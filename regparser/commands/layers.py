@@ -1,10 +1,12 @@
 import click
+import logging
 
 from regparser.index import dependency, entry
 from regparser.plugins import classes_by_shorthand
 import settings
 
 ALL_LAYERS = classes_by_shorthand(settings.LAYERS)
+logger = logging.getLogger(__name__)
 
 
 def dependencies(tree_dir, layer_dir, version_dir):
@@ -71,6 +73,7 @@ def process_layers(stale, cfr_title, cfr_part, version):
 # @todo - allow layers to be passed as a parameter
 def layers(cfr_title, cfr_part):
     """Build all layers for all known versions."""
+    logger.info("Build layers - %s CFR %s", cfr_title, cfr_part)
     tree_dir = entry.Tree(cfr_title, cfr_part)
     layer_dir = entry.Layer(cfr_title, cfr_part)
     version_dir = entry.Version(cfr_title, cfr_part)

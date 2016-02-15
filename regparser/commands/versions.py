@@ -1,4 +1,5 @@
 from collections import namedtuple
+import logging
 import re
 
 import click
@@ -6,6 +7,9 @@ import click
 from regparser.federalregister import fetch_notice_json
 from regparser.history.versions import Version
 from regparser.index import dependency, entry
+
+
+logger = logging.getLogger(__name__)
 
 
 def fetch_version_ids(cfr_title, cfr_part, notice_dir):
@@ -68,6 +72,7 @@ def write_if_needed(cfr_title, cfr_part, version_ids, xmls, delays):
     version_dir = entry.Version(cfr_title, cfr_part)
     deps = generate_dependencies(version_dir, version_ids, delays)
     for version_id in version_ids:
+        logger.debug("Writing version %r", version_id)
         version_entry = version_dir / version_id
         deps.validate_for(version_entry)
         if deps.is_stale(version_entry):
@@ -85,7 +90,9 @@ def versions(cfr_title, cfr_part):
     cfr_title, cfr_part = str(cfr_title), str(cfr_part)
     notice_dir = entry.Notice()
 
+    logger.info("Finding versions")
     version_ids = fetch_version_ids(cfr_title, cfr_part, notice_dir)
+    logger.debug("Versions found: %r", version_ids)
     xmls = {version_id: (notice_dir / version_id).read()
             for version_id in version_ids if version_id in notice_dir}
     delays_by_version = delays(xmls.values())

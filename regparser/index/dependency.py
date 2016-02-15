@@ -1,10 +1,14 @@
 from contextlib import contextmanager
+import logging
 import os
 import shelve
 
 from dagger import dagger
 
 from . import ROOT
+
+
+logger = logging.getLogger(__name__)
 
 
 class Missing(Exception):
@@ -63,6 +67,7 @@ class Graph(object):
         """Raise an exception if a particular output has stale dependencies"""
         self._run_if_needed()
         key = str(entry)
+        logger.debug("Validating dependencies for %r", key)
         with self.dependency_db() as db:
             for dependency in db[key]:
                 if self.dag.get(dependency).stale:

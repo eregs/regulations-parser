@@ -22,6 +22,8 @@ from regparser.tree.xml_parser.interpretations import get_app_title
 
 from settings import APPENDIX_IGNORE_SUBHEADER_LABEL
 
+logger = logging.getLogger(__name__)
+
 
 def remove_toc(appendix, letter):
     """The TOC at the top of certain appendices gives us trouble since it
@@ -70,7 +72,7 @@ class AppendixProcessor(object):
                      if is_appendix_header(c)):
             text = tree_utils.get_node_text(node)
             if self.appendix_letter:
-                logging.warning("Found two appendix headers: %s and %s",
+                logger.warning("Found two appendix headers: %s and %s",
                                 self.appendix_letter, text)
             self.appendix_letter = headers.parseString(text).appendix
         return self.appendix_letter
@@ -365,7 +367,7 @@ def title_label_pair(text, appendix_letter, reg_part):
                 reg_part in APPENDIX_IGNORE_SUBHEADER_LABEL and \
                 pair[0] in APPENDIX_IGNORE_SUBHEADER_LABEL[reg_part][
                     appendix_letter]:
-            logging.warning("Ignoring subheader label %s of appendix %s",
+            logger.warning("Ignoring subheader label %s of appendix %s",
                             pair[0], appendix_letter)
             pair = None
 
@@ -396,10 +398,12 @@ def build_non_reg_text(reg_xml, reg_part):
     else:
         doc_root = reg_xml
     non_reg_sects = doc_root.xpath('//PART//APPENDIX')
+    logger.debug("Non Reg sections: %r", non_reg_sects)
     children = []
 
     for non_reg_sect in non_reg_sects:
         section_title = get_app_title(non_reg_sect)
+        logger.debug("Building non reg sect: %s", section_title)
         if 'Supplement' in section_title and 'Part' in section_title:
             children.append(build_supplement_tree(reg_part, non_reg_sect))
         else:

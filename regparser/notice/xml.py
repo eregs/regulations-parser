@@ -15,6 +15,8 @@ from regparser.notice.dates import fetch_dates
 from regparser.tree.xml_parser.xml_wrapper import XMLWrapper
 import settings
 
+logger = logging.getLogger(__name__)
+
 
 class NoticeXML(XMLWrapper):
     """Wrapper around a notice XML which provides quick access to the XML's
@@ -152,12 +154,12 @@ def notice_xmls_for_url(doc_num, notice_url):
     notice url"""
     local_notices = local_copies(notice_url)
     if local_notices:
-        logging.info("using local xml for %s", notice_url)
+        logger.info("using local xml for %s", notice_url)
         for local_notice_file in local_notices:
             with open(local_notice_file, 'r') as f:
                 yield NoticeXML(f.read(), local_notice_file).preprocess()
     else:
-        logging.info("fetching notice xml for %s", notice_url)
+        logger.info("fetching notice xml for %s", notice_url)
         content = requests.get(notice_url).content
         yield NoticeXML(content, notice_url).preprocess()
 
