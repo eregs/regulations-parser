@@ -84,14 +84,6 @@ regparser.notice.fake module
     :undoc-members:
     :show-inheritance:
 
-regparser.notice.preprocessors module
--------------------------------------
-
-.. automodule:: regparser.notice.preprocessors
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
 regparser.notice.sxs module
 ---------------------------
 

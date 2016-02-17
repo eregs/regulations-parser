@@ -36,14 +36,6 @@ regparser.grammar.delays module
     :undoc-members:
     :show-inheritance:
 
-regparser.grammar.external_citations module
--------------------------------------------
-
-.. automodule:: regparser.grammar.external_citations
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
 regparser.grammar.interpretation_headers module
 -----------------------------------------------
 

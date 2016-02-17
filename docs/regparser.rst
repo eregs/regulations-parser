@@ -1,5 +1,5 @@
-regparser API docs
-==================
+regparser package
+=================
 
 Subpackages
 -----------
@@ -10,6 +10,7 @@ Subpackages
     regparser.diff
     regparser.grammar
     regparser.history
+    regparser.index
     regparser.layer
     regparser.notice
     regparser.tree
@@ -53,14 +54,6 @@ regparser.content module
 ------------------------
 
 .. automodule:: regparser.content
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-regparser.eregs_index module
-----------------------------
-
-.. automodule:: regparser.eregs_index
     :members:
     :undoc-members:
     :show-inheritance:
