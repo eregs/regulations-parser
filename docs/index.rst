@@ -18,6 +18,7 @@ Contents:
    commandline
    dev_tasks
    deeper
+   new_rules
    regparser
 
 
