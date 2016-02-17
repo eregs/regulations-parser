@@ -6,5 +6,6 @@ if [[ $INTEGRATION_TARGET = '' ]]; then
   flake8 .
 else
   eregs clear
-  eregs integration_test $INTEGRATION_TARGET
+  ./integration_test.py install $INTEGRATION_TARGET
+  ./integration_test.py test $INTEGRATION_TARGET
 fi
