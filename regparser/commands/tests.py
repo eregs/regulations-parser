@@ -1,7 +1,5 @@
 import click
-import importlib
 import nose
-import os
 import requests_cache
 from stevedore import extension
 from stevedore.exception import NoMatches
@@ -29,23 +27,12 @@ def get_stevedore_module_names(namespace):
 
 @click.command()
 def tests():
-    mymods = ["tests"]
+    mymods = ["", "tests"]  # nose essentially ignores the first arg to argv.
     mymods.extend(get_stevedore_module_names("eregs_ns.parser.test_suite"))
-
-    modnames = []
-    dirs = set()
-    for modname in mymods:
-        modnames.append(modname)
-
-        mod = importlib.import_module(modname)
-        fname = mod.__file__
-        dirs.add(os.path.dirname(fname))
-
-    modnames = list(dirs) + modnames
 
     requests_cache.uninstall_cache()
 
-    nose.run(argv=modnames)
+    nose.run(argv=mymods)
 
 if __name__ == '__main__':
     tests()
