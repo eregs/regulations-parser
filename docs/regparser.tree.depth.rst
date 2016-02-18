@@ -28,6 +28,22 @@ regparser.tree.depth.markers module
     :undoc-members:
     :show-inheritance:
 
+regparser.tree.depth.optional_rules module
+------------------------------------------
+
+.. automodule:: regparser.tree.depth.optional_rules
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+regparser.tree.depth.pair_rules module
+--------------------------------------
+
+.. automodule:: regparser.tree.depth.pair_rules
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 regparser.tree.depth.rules module
 ---------------------------------
 

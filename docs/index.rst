@@ -9,9 +9,16 @@ Welcome to regparser's documentation!
 Contents:
 
 .. toctree::
-   :maxdepth: 4
+   :maxdepth: 1
 
+   quick_start
+   overview
+   installation
+   concepts
    commandline
+   dev_tasks
+   deeper
+   new_rules
    regparser
 
 

@@ -12,6 +12,14 @@ regparser.commands.annual_editions module
     :undoc-members:
     :show-inheritance:
 
+regparser.commands.citations module
+-----------------------------------
+
+.. automodule:: regparser.commands.citations
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 regparser.commands.clear module
 -------------------------------
 
@@ -24,6 +32,14 @@ regparser.commands.compare_to module
 ------------------------------------
 
 .. automodule:: regparser.commands.compare_to
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+regparser.commands.current_version module
+-----------------------------------------
+
+.. automodule:: regparser.commands.current_version
     :members:
     :undoc-members:
     :show-inheritance:
@@ -104,6 +120,14 @@ regparser.commands.preprocess_notice module
 -------------------------------------------
 
 .. automodule:: regparser.commands.preprocess_notice
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+regparser.commands.sync_xml module
+----------------------------------
+
+.. automodule:: regparser.commands.sync_xml
     :members:
     :undoc-members:
     :show-inheritance:
