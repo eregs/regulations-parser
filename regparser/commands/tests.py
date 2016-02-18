@@ -1,5 +1,4 @@
 import click
-import nose
 import requests_cache
 from stevedore import extension
 from stevedore.exception import NoMatches
@@ -27,6 +26,8 @@ def get_stevedore_module_names(namespace):
 
 @click.command()
 def tests():
+    import nose
+
     mymods = ["", "tests"]  # nose essentially ignores the first arg to argv.
     mymods.extend(get_stevedore_module_names("eregs_ns.parser.test_suite"))
 
