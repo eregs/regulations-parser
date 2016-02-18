@@ -25,7 +25,7 @@ def get_stevedore_module_names(namespace):
 
 
 @click.command()
-def tests():
+def full_tests():
     import nose
 
     mymods = ["", "tests"]  # nose essentially ignores the first arg to argv.
@@ -36,4 +36,4 @@ def tests():
     nose.run(argv=mymods)
 
 if __name__ == '__main__':
-    tests()
+    full_tests()
