@@ -1,3 +1,4 @@
+# vim: set encoding=utf-8
 from collections import namedtuple
 from datetime import date, datetime
 import logging
@@ -19,6 +20,19 @@ CFR_BULK_URL = ("https://www.gpo.gov/fdsys/bulkdata/CFR/{year}/title-{title}/"
 CFR_PART_URL = ("https://www.gpo.gov/fdsys/pkg/"
                 "CFR-{year}-title{title}-vol{volume}/xml/"
                 "CFR-{year}-title{title}-vol{volume}-part{part}.xml")
+
+# Matches any of the following:
+#    Parts 200 to 219
+#    Parts 200 to end
+#    Part 52 (§§ 52.1019 to 52.2019)
+# Note: The outer parentheses seem to be required by Python, although they
+#       shouldn't be
+PART_SPAN_REGEX = re.compile(
+    r'.*parts? ('
+    r'(?P<span>(?P<start>\d+) to ((?P<end>\d+)|(?P<end_literal>end)))'
+    r'|((?P<single_part>\d+) \(.*\))'
+    r'.*)',
+    flags=re.IGNORECASE)
 
 
 class Volume(namedtuple('Volume', ['year', 'title', 'vol_num'])):
@@ -49,15 +63,17 @@ class Volume(namedtuple('Volume', ['year', 'title', 'vol_num'])):
                     part_string = line
                     break
             if part_string:
-                match = re.match(r'.*parts? (\d+) to (\d+|end).*',
-                                 part_string.lower())
-                if match:
-                    start = int(match.group(1))
-                    if match.group(2) == 'end':
+                match = PART_SPAN_REGEX.match(part_string)
+                if match and match.group('span'):
+                    start = int(match.group('start'))
+                    if match.group('end_literal'):
                         end = None
                     else:
-                        end = int(match.group(2))
+                        end = int(match.group('end'))
                     self._part_span = (start, end)
+                elif match:
+                    start = int(match.group('single_part'))
+                    self._part_span = (start, start)
                 else:
                     logging.warning("Can't parse: " + part_string)
             else:
