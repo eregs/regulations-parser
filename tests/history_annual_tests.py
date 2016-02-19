@@ -1,3 +1,4 @@
+# vim: set encoding=utf-8
 import os
 import re
 from unittest import TestCase
@@ -90,6 +91,18 @@ class HistoryAnnualVolumeTests(HttpMixin, TestCase):
         self.assertEqual(xml.xpath('./FIELD')[0].text, '112 Content')
 
         self.assertEqual(volume.find_part_xml(113), None)
+
+    def test_should_contain_with_single_part(self):
+        self.expect_xml_http("""
+                <CFRDOC>
+                    <AMDDATE>Jan 1, 2001</AMDDATE>
+                    <PARTS>Part 641 (§§ 641.1 to 641.599)</PARTS>
+                </CFRDOC>""")
+
+        volume = annual.Volume(2001, 12, 2)
+        self.assertFalse(volume.should_contain(640))
+        self.assertTrue(volume.should_contain(641))
+        self.assertFalse(volume.should_contain(642))
 
     def test_should_contain__empty_volume(self):
         """If the first volume does not contain a PARTS tag, we should assume
