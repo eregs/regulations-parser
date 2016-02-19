@@ -134,8 +134,8 @@ LAYERS = plugins.extend_list('eregs_ns.parser.layers', [
     'regparser.layer.formatting.Formatting',
     'regparser.layer.graphics.Graphics',
     # CFPB specific -- these should be moved to plugins
-    # 'regparser.layer.section_by_section.SectionBySection',
-    # 'regparser.layer.interpretations.Interpretations',
+    'regparser.layer.section_by_section.SectionBySection',
+    'regparser.layer.interpretations.Interpretations',
 ])
 
 try:
