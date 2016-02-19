@@ -14,7 +14,7 @@ from regparser.commands.compare_to import compare_to
 
 targets = {
     'fec': {
-        'title': 12,
+        'title': 11,
         'parts': (
             [1, 2, 4, 5, 6, 7, 8] +
             range(100, 117) + [200, 201, 300] +
