@@ -1,7 +1,10 @@
 import click
 
 from regparser.index import dependency, entry
-from regparser.layer import ALL_LAYERS
+from regparser.plugins import classes_by_shorthand
+import settings
+
+ALL_LAYERS = classes_by_shorthand(settings.LAYERS)
 
 
 def dependencies(tree_dir, layer_dir, version_dir):
