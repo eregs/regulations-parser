@@ -19,6 +19,10 @@ CFR_BULK_URL = ("https://www.gpo.gov/fdsys/bulkdata/CFR/{year}/title-{title}/"
 CFR_PART_URL = ("https://www.gpo.gov/fdsys/pkg/"
                 "CFR-{year}-title{title}-vol{volume}/xml/"
                 "CFR-{year}-title{title}-vol{volume}-part{part}.xml")
+PART_SPAN_REGEX = re.compile(
+    r'.*parts? '
+    r'(?P<span>(?P<start>\d+) to ((?P<end>\d+)|(?P<end_literal>end)).*)',
+    flags=re.IGNORECASE)
 
 
 class Volume(namedtuple('Volume', ['year', 'title', 'vol_num'])):
@@ -49,14 +53,13 @@ class Volume(namedtuple('Volume', ['year', 'title', 'vol_num'])):
                     part_string = line
                     break
             if part_string:
-                match = re.match(r'.*parts? (\d+) to (\d+|end).*',
-                                 part_string.lower())
+                match = PART_SPAN_REGEX.match(part_string)
                 if match:
-                    start = int(match.group(1))
-                    if match.group(2) == 'end':
+                    start = int(match.group('start'))
+                    if match.group('end_literal'):
                         end = None
                     else:
-                        end = int(match.group(2))
+                        end = int(match.group('end'))
                     self._part_span = (start, end)
                 else:
                     logging.warning("Can't parse: " + part_string)
