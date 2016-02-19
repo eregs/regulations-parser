@@ -46,7 +46,8 @@ def compare(local_path, remote_url, prompt=True):
             click.echo("Content differs: {} {}".format(local_path, remote_url))
             if not prompt or click.confirm("Show diff?"):
                 diffs_str = '\n'.join(udiff(remote, local))
-                (click.echo_via_pager if prompt else click.echo)(diffs_str)
+                echo = click.echo_via_pager if prompt else click.echo
+                echo(diffs_str)
                 return diffs_str
 
 

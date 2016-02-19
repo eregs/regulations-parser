@@ -32,9 +32,9 @@ for _, command_name, _ in pkgutil.iter_modules(commands.__path__):
 
 
 def run_or_resolve(cmd, prev_dependency=None):
-    """Wrapper around cli(), providing exception handling for dependency
-    errors. When a dependency is missing, this will try to resolve that
-    dependency and then retry running cli(). When retrying, the
+    """Wrapper around a click command or group, providing exception handling for
+    dependency errors. When a dependency is missing, this will try to resolve
+    that dependency and then retry running cli(). When retrying, the
     `prev_dependency` parameter indirectly tells us if we've progressed, due
     to the dependency changing"""
     try:
