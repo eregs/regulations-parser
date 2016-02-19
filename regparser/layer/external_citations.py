@@ -6,6 +6,8 @@ from .layer import Layer
 class ExternalCitationParser(Layer):
     """External Citations are references to documents outside of eRegs. See
     `external_types` for specific types of external citations"""
+    shorthand = 'external-citations'
+
     def process(self, node):
         citations = [cite
                      for finder in external_types.ALL

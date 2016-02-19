@@ -19,6 +19,7 @@ def eliminate_extras(keyterm):
 
 class KeyTerms(Layer):
     PATTERN = re.compile(ur'.*?<E T="03">([^<]*?)</E>.*?', re.UNICODE)
+    shorthand = 'keyterms'
 
     @staticmethod
     def process_node_text(node):

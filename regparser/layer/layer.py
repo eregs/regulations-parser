@@ -26,6 +26,11 @@ class Layer(object):
         """ Take the whole tree and do any pre-processing """
         pass
 
+    @abc.abstractproperty
+    def shorthand(self):
+        """Unique identifier for this layer"""
+        raise NotImplementedError()
+
     @abc.abstractmethod
     def process(self, node):
         """ Construct the element of the layer relevant to processing the given

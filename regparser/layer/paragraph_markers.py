@@ -30,6 +30,8 @@ def marker_of(node):
 
 
 class ParagraphMarkers(Layer):
+    shorthand = 'paragraph-markers'
+
     def process(self, node):
         """Look for any leading paragraph markers."""
         marker = marker_of(node)

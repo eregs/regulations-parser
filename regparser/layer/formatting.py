@@ -248,6 +248,7 @@ class Footnotes(PlaintextFormatData):
 class Formatting(Layer):
     """Layer responsible for tables, subscripts, and other formatting-related
     information"""
+    shorthand = 'formatting'
 
     def process(self, node):
         layer_el = []

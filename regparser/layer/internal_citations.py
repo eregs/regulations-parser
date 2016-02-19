@@ -7,6 +7,8 @@ from regparser.tree.struct import walk
 
 
 class InternalCitationParser(Layer):
+    shorthand = 'internal-citations'
+
     def __init__(self, *args, **kwargs):
         Layer.__init__(self, *args, **kwargs)
         self.known_citations = set()

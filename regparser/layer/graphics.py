@@ -10,6 +10,7 @@ import settings
 
 class Graphics(Layer):
     gid = re.compile(ur'!\[([\w\s]*)\]\(([a-zA-Z0-9.\-]+?)\)')
+    shorthand = 'graphics'
 
     def check_for_thumb(self, url):
         thumb_url = re.sub(r'(.(png|gif|jpg))$', '.thumb' + '\\1', url)

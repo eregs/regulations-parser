@@ -4,6 +4,8 @@ from regparser.tree.struct import Node
 
 
 class TableOfContentsLayer(Layer):
+    shorthand = 'toc'
+
     @staticmethod
     def _relevant_nodes(node):
         """Empty parts are not displayed, so we'll skip them to find their

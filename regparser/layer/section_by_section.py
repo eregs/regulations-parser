@@ -2,6 +2,8 @@ from layer import Layer
 
 
 class SectionBySection(Layer):
+    shorthand = 'analyses'
+
     def process(self, node):
         """Determine which (if any) section-by-section analyses would apply
         to this node."""
