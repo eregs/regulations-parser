@@ -7,6 +7,7 @@ import sys
 import pip
 import click
 
+from eregs import run_or_resolve
 from regparser.commands.pipeline import pipeline
 from regparser.commands.compare_to import compare_to
 
@@ -73,4 +74,4 @@ def build_and_compare(ctx, config, part):
 
 
 if __name__ == '__main__':
-    cli()
+    run_or_resolve(cli)
