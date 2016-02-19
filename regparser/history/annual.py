@@ -25,11 +25,13 @@ CFR_PART_URL = ("https://www.gpo.gov/fdsys/pkg/"
 #    Parts 200 to 219
 #    Parts 200 to end
 #    Part 52 (§§ 52.1019 to 52.2019)
+# Note: The outer parentheses seem to be required by Python, although they
+#       shouldn't be
 PART_SPAN_REGEX = re.compile(
     r'.*parts? ('
-    r'(?P<span>(?P<start>\d+) to ((?P<end>\d+)|(?P<end_literal>end)).*)'
+    r'(?P<span>(?P<start>\d+) to ((?P<end>\d+)|(?P<end_literal>end)))'
     r'|((?P<single_part>\d+) \(.*\))'
-    r')',
+    r'.*)',
     flags=re.IGNORECASE)
 
 
@@ -62,17 +64,16 @@ class Volume(namedtuple('Volume', ['year', 'title', 'vol_num'])):
                     break
             if part_string:
                 match = PART_SPAN_REGEX.match(part_string)
-                if match:
-                    if match.group('span'):
-                        start = int(match.group('start'))
-                        if match.group('end_literal'):
-                            end = None
-                        else:
-                            end = int(match.group('end'))
-                        self._part_span = (start, end)
+                if match and match.group('span'):
+                    start = int(match.group('start'))
+                    if match.group('end_literal'):
+                        end = None
                     else:
-                        start = int(match.group('single_part'))
-                        self._part_span = (start, start)
+                        end = int(match.group('end'))
+                    self._part_span = (start, end)
+                elif match:
+                    start = int(match.group('single_part'))
+                    self._part_span = (start, start)
                 else:
                     logging.warning("Can't parse: " + part_string)
             else:
