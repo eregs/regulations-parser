@@ -1,5 +1,4 @@
-from stevedore import extension
-from stevedore.exception import NoMatches
+from regparser import plugins
 
 OUTPUT_DIR = ''
 API_BASE = ''
@@ -111,7 +110,7 @@ CUSTOM_CITATIONS = {
     "ATF I 5300.1": "https://atf-eregs.apps.cloud.gov/static/atf_eregs/5300_1.pdf",
     "ATF I 5300.2": "https://www.atf.gov/file/58806/download"}
 
-PREPROCESSORS = [
+PREPROCESSORS = plugins.extend_list('eregs_ns.parser.preprocessors', [
     "regparser.tree.xml_parser.preprocessors.MoveLastAMDPar",
     "regparser.tree.xml_parser.preprocessors.SupplementAMDPar",
     "regparser.tree.xml_parser.preprocessors.ParenthesesCleanup",
@@ -122,14 +121,22 @@ PREPROCESSORS = [
     "regparser.tree.xml_parser.preprocessors.AtfI50032",
     "regparser.tree.xml_parser.preprocessors.AtfI50031",
     "regparser.tree.xml_parser.preprocessors.ImportCategories",
-]
+])
 
-try:
-    stevedore_mgr = extension.ExtensionManager(
-        namespace="eregs_ns.parser.preprocessors", invoke_on_load=False)
-    stevedore_mgr.map(lambda ext: PREPROCESSORS.append(ext.entry_point_target))
-except NoMatches:
-    pass
+LAYERS = plugins.extend_list('eregs_ns.parser.layers', [
+    'regparser.layer.external_citations.ExternalCitationParser',
+    'regparser.layer.meta.Meta',
+    'regparser.layer.internal_citations.InternalCitationParser',
+    'regparser.layer.table_of_contents.TableOfContentsLayer',
+    'regparser.layer.terms.Terms',
+    'regparser.layer.paragraph_markers.ParagraphMarkers',
+    'regparser.layer.key_terms.KeyTerms',
+    'regparser.layer.formatting.Formatting',
+    'regparser.layer.graphics.Graphics',
+    # CFPB specific -- these should be moved to plugins
+    'regparser.layer.section_by_section.SectionBySection',
+    'regparser.layer.interpretations.Interpretations',
+])
 
 try:
     from local_settings import *

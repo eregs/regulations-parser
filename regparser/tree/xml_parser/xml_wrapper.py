@@ -1,6 +1,9 @@
 from copy import deepcopy
+
 from lxml import etree
-from regparser.tree.xml_parser import extended_preprocessors as all_preprocs
+
+from regparser.plugins import class_paths_to_classes
+import settings
 
 
 class XMLWrapper(object):
@@ -27,7 +30,7 @@ class XMLWrapper(object):
         attempts to fix some of those (general) flaws. For specific issues, we
         tend to instead use the files in settings.LOCAL_XML_PATHS"""
 
-        for preprocessor in all_preprocs.ALL:
+        for preprocessor in class_paths_to_classes(settings.PREPROCESSORS):
             preprocessor().transform(self.xml)
 
         return self

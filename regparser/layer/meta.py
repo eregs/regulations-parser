@@ -5,6 +5,8 @@ import settings
 
 
 class Meta(Layer):
+    shorthand = 'meta'
+
     def process(self, node):
         """If this is the root element, add some 'meta' information about
         this regulation, including its cfr title, effective date, and any

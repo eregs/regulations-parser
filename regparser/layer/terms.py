@@ -35,6 +35,8 @@ class ParentStack(PriorityStack):
 
 
 class Terms(Layer):
+    shorthand = 'terms'
+
     def __init__(self, *args, **kwargs):
         Layer.__init__(self, *args, **kwargs)
         self.layer['referenced'] = {}

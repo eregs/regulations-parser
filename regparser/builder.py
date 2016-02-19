@@ -14,8 +14,9 @@ from regparser.history.notices import (
 from regparser.history.delays import modify_effective_dates
 from regparser.notice import fake as notice_fake
 from regparser.notice.compiler import compile_regulation
+from regparser.plugins import class_paths_to_classes
 from regparser.tree import struct, xml_parser
-from regparser.tree.xml_parser import extended_preprocessors as all_preprocs
+import settings
 
 
 class Builder(object):
@@ -237,7 +238,7 @@ def tree_and_builder(filename, title, checkpoint_path=None, doc_number=None):
     else:
         raise ValueError("Building from text input is no longer supported")
 
-    for preprocessor in all_preprocs.ALL:
+    for preprocessor in class_paths_to_classes(settings.PREPROCESSORS):
         preprocessor().transform(reg_xml)
 
     reg_tree = checkpointer.checkpoint(
