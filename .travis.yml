@@ -1,13 +1,18 @@
 language: python
 sudo: false
 python:
-    - "2.7"
+  - "2.7"
+cache: pip
 install:
-    - pip install -r requirements.txt
-    - pip install -r requirements_test.txt
-    - pip install coveralls
+  - pip install -U pip wheel
+  - pip install -r requirements.txt
+  - pip install -r requirements_test.txt
+  - pip install coveralls
+env:
+  - INTEGRATION_TARGET=
+  - INTEGRATION_TARGET=fec
+  - INTEGRATION_TARGET=atf
 script:
-    - nosetests --with-cov --cov-report term-missing --cov regparser
-    - flake8 .
+  - ./test-travis.sh
 after_success:
-    coveralls
+  - if [[ $INTEGRATION_TARGET = '' ]]; then coveralls; fi

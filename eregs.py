@@ -31,14 +31,14 @@ for _, command_name, _ in pkgutil.iter_modules(commands.__path__):
         cli.add_command(subcommand)
 
 
-def main(prev_dependency=None):
-    """Wrapper around cli(), providing exception handling for dependency
-    errors. When a dependency is missing, this will try to resolve that
-    dependency and then retry running cli(). When retrying, the
+def run_or_resolve(cmd, prev_dependency=None):
+    """Wrapper around a click command or group, providing exception handling for
+    dependency errors. When a dependency is missing, this will try to resolve
+    that dependency and then retry running cli(). When retrying, the
     `prev_dependency` parameter indirectly tells us if we've progressed, due
     to the dependency changing"""
     try:
-        cli()
+        cmd()
     except dependency.Missing, e:
         resolvers = [resolver(e.dependency)
                      for resolver in DependencyResolver.__subclasses__()]
@@ -48,7 +48,11 @@ def main(prev_dependency=None):
         else:
             click.echo("Attempting to resolve dependency: " + e.dependency)
             resolvers[0].resolution()
-            main(e.dependency)
+            run_or_resolve(cmd, e.dependency)
+
+
+def main(prev_dependency=None):
+    run_or_resolve(cli, prev_dependency=prev_dependency)
 
 
 if __name__ == '__main__':
