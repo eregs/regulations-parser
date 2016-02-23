@@ -9,9 +9,14 @@ install:
   - pip install -r requirements_test.txt
   - pip install coveralls
 env:
-  - INTEGRATION_TARGET=
-  - INTEGRATION_TARGET=fec
-  - INTEGRATION_TARGET=atf
+  global:
+    - BUCKET=eregs-parse-cache
+    - secure: "lBz8NERe3lNshbuXcWpWpUsyNmIexJ349X6aiChv25Cor4KahlQUdF3C+Wnfj14TPWCloIeV3KK/j/Lh+4P0AF/KKfIoI1ZcPqSoz1AplBZGfJBZafXT2fqdmJ+Ptm0DLciqZiy450BptQspr6XBPkLcCB1AILyuxpSy+8urXek="
+    - secure: "Wm3bo4XGw4sy1iAPuSLZtCZsBeaZh4r7umw+5No93nWka+XsA74bxW3nifxKVBwP5hO9ojir7fRAG70dlm6zRwSnHnlITSF9GfuMn7vyNA/fFinCfTuqu7EFDApshpxrjX3Yeu0ZNUaSICQds6oJELglhLUF8fJ84YRPFkoHKrs="
+  matrix:
+    - INTEGRATION_TARGET=
+    - INTEGRATION_TARGET=fec
+    - INTEGRATION_TARGET=atf
 script:
   - ./test-travis.sh
 after_success:

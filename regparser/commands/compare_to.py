@@ -1,11 +1,12 @@
+import os
 import json
 import logging
-import os
 
 import click
-from json_delta import udiff
 import requests
 import requests_cache
+from json_delta import udiff
+from six.moves import urllib
 
 
 def local_and_remote_generator(api_base, paths):
@@ -34,21 +35,43 @@ def compare(local_path, remote_url, prompt=True):
     """Downloads and compares a local JSON file with a remote one. If there is
     a difference, notifies the user and prompts them if they want to see the
     diff"""
-    remote_response = requests.get(remote_url)
-    if remote_response.status_code == 404:
+    remote = path_to_json(remote_url)
+    if remote is None:
         logging.warn("Nonexistent: %s", remote_url)
-    else:
-        remote = remote_response.json()
-        with open(local_path) as f:
-            local = json.load(f)
+        return None
 
-        if remote != local:
-            click.echo("Content differs: {} {}".format(local_path, remote_url))
-            if not prompt or click.confirm("Show diff?"):
-                diffs_str = '\n'.join(udiff(remote, local))
-                echo = click.echo_via_pager if prompt else click.echo
-                echo(diffs_str)
-                return diffs_str
+    with open(local_path) as fp:
+        local = json.load(fp)
+
+    if remote != local:
+        click.echo("Content differs: {} {}".format(local_path, remote_url))
+        if not prompt or click.confirm("Show diff?"):
+            diffs_str = '\n'.join(udiff(remote, local))
+            echo = click.echo_via_pager if prompt else click.echo
+            echo(diffs_str)
+            return diffs_str
+
+
+def path_to_json(path):
+    parsed = urllib.parse.urlparse(path)
+    if parsed.scheme in ('http', 'https'):
+        return url_to_json(path)
+    return file_to_json(path)
+
+
+def url_to_json(path):
+    resp = requests.get(path)
+    if resp.status_code == 200:
+        return resp.json()
+    return None
+
+
+def file_to_json(path):
+    try:
+        with open(path) as fp:
+            return json.load(fp)
+    except OSError:
+        return None
 
 
 @click.command()
@@ -56,8 +79,7 @@ def compare(local_path, remote_url, prompt=True):
 @click.argument('paths', nargs=-1, required=True,
                 type=click.Path(exists=True, resolve_path=True))
 @click.option('--prompt/--no-prompt', default=True)
-@click.pass_context
-def compare_to(ctx, api_base, paths, prompt):
+def compare_to(api_base, paths, prompt):
     """Compare local JSON to a remote server. This is useful for verifying
     changes to the parser.
 
