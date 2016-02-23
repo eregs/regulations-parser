@@ -1,5 +1,6 @@
 import logging
 from importlib import import_module
+import os
 import pkgutil
 import sys
 
@@ -13,6 +14,7 @@ from regparser.commands.dependency_resolver import DependencyResolver
 from regparser.index import dependency
 
 logger = logging.getLogger(__name__)
+DEFAULT_LOG_FORMAT = "%(asctime)s %(name)-40s %(message)s"
 
 
 @click.group()
@@ -23,7 +25,9 @@ def cli(debug):
     if debug:
         log_level = logging.DEBUG
         sys.excepthook = lambda t, v, tb: ipdb.post_mortem(tb)
-    coloredlogs.install(level=log_level)
+    coloredlogs.install(
+        level=log_level,
+        fmt=os.getenv("COLOREDLOGS_LOG_FORMAT", DEFAULT_LOG_FORMAT))
 
 
 for _, command_name, _ in pkgutil.iter_modules(commands.__path__):
