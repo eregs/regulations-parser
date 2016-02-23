@@ -73,7 +73,7 @@ class AppendixProcessor(object):
             text = tree_utils.get_node_text(node)
             if self.appendix_letter:
                 logger.warning("Found two appendix headers: %s and %s",
-                                self.appendix_letter, text)
+                               self.appendix_letter, text)
             self.appendix_letter = headers.parseString(text).appendix
         return self.appendix_letter
 
@@ -368,7 +368,7 @@ def title_label_pair(text, appendix_letter, reg_part):
                 pair[0] in APPENDIX_IGNORE_SUBHEADER_LABEL[reg_part][
                     appendix_letter]:
             logger.warning("Ignoring subheader label %s of appendix %s",
-                            pair[0], appendix_letter)
+                           pair[0], appendix_letter)
             pair = None
 
     return pair
