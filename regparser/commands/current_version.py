@@ -42,7 +42,6 @@ def create_version_entry_if_needed(cfr_title, cfr_part, year):
     version_entries = entry.Version(cfr_title, cfr_part)
 
     if version_id not in version_entries:
-        logger.debug("Writing version %s", version_id)
         (version_entries / version_id).write(
             Version(identifier=version_id, effective=date.today(),
                     published=date.today()))

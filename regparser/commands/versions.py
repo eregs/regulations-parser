@@ -72,7 +72,6 @@ def write_if_needed(cfr_title, cfr_part, version_ids, xmls, delays):
     version_dir = entry.Version(cfr_title, cfr_part)
     deps = generate_dependencies(version_dir, version_ids, delays)
     for version_id in version_ids:
-        logger.debug("Writing version %r", version_id)
         version_entry = version_dir / version_id
         deps.validate_for(version_entry)
         if deps.is_stale(version_entry):
