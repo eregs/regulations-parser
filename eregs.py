@@ -7,6 +7,7 @@ import sys
 import coloredlogs
 import click
 import ipdb
+import pyparsing
 import requests_cache   # @todo - replace with cache control
 
 from regparser import commands
@@ -45,7 +46,7 @@ def run_or_resolve(cmd, prev_dependency=None):
     to the dependency changing"""
     try:
         cmd()
-    except dependency.Missing, e:
+    except dependency.Missing as e:
         resolvers = [resolver(e.dependency)
                      for resolver in DependencyResolver.__subclasses__()]
         resolvers = [r for r in resolvers if r.has_resolution()]
@@ -55,6 +56,9 @@ def run_or_resolve(cmd, prev_dependency=None):
             logger.info("Attempting to resolve dependency: %s", e.dependency)
             resolvers[0].resolution()
             run_or_resolve(cmd, e.dependency)
+    except pyparsing.ParseException as exc:
+        logger.error(u"%s:\n'%s'", exc, exc.line)
+        raise
 
 
 def main(prev_dependency=None):
