@@ -1,5 +1,12 @@
 #!/usr/bin/env python
 # encoding: utf-8
+"""
+Integration tests verifying that revisions to the parser don't change previous
+results from known agency users. On each pull request, parse regulations from
+known users and compare against the cached ground truth parse; if different,
+fail the build. On passing builds against master, parse regulations and upload
+to cache as the current ground truth.
+"""
 
 import os
 import sys
