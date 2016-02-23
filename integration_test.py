@@ -29,9 +29,9 @@ targets = {
     'atf': {
         'title': 27,
         'parts': [447, 478, 479, 555, 646],
-        'requirements': [
-            '-e git+https://github.com/18F/atf-eregs.git#egg=atf-regparser&subdirectory=eregs_extensions',  # noqa
-        ],
+        'requirements': {
+            'atf_regparser': '-e git+https://github.com/18F/atf-eregs.git#egg=atf_regparser&subdirectory=eregs_extensions',  # noqa
+        },
     },
 }
 
@@ -67,11 +67,17 @@ def cli():
 
 @cli.command()
 @click.argument('target')
-@click.pass_context
-def install(ctx, target):
+def install(target):
     config = targets[target]
-    for requirement in config.get('requirements', []):
+    for requirement in config.get('requirements', {}).values():
         pip.main(['install', '--upgrade'] + requirement.split())
+
+
+@cli.command()
+def uninstall():
+    for config in targets.values():
+        for package in config.get('requirements', {}).keys():
+            pip.main(['uninstall', '--yes', package])
 
 
 @cli.command()
