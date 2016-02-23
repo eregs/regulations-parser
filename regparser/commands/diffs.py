@@ -1,7 +1,10 @@
 import click
+import logging
 
 from regparser.diff.tree import changes_between
 from regparser.index import dependency, entry
+
+logger = logging.getLogger(__name__)
 
 
 @click.command()
@@ -9,6 +12,7 @@ from regparser.index import dependency, entry
 @click.argument('cfr_part', type=int)
 def diffs(cfr_title, cfr_part):
     """Construct diffs between known trees."""
+    logger.info("Build diffs - %s Part %s", cfr_title, cfr_part)
     tree_dir = entry.FrozenTree(cfr_title, cfr_part)
     diff_dir = entry.Diff(cfr_title, cfr_part)
     pairs = [(lhs, rhs) for lhs in tree_dir for rhs in tree_dir]

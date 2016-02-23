@@ -1,6 +1,11 @@
+import logging
 import requests
 
 from regparser.notice.build import build_notice
+
+'''
+See https://www.federalregister.gov/developers/api/v1 - GET "search" method
+'''
 
 FR_BASE = "https://www.federalregister.gov"
 API_BASE = FR_BASE + "/api/v1/"
@@ -9,6 +14,7 @@ FULL_NOTICE_FIELDS = [
     "comments_close_on", "dates", "document_number", "effective_on",
     "end_page", "full_text_xml_url", "html_url", "publication_date",
     "regulation_id_numbers", "start_page", "type", "volume"]
+logger = logging.getLogger(__name__)
 
 
 def fetch_notice_json(cfr_title, cfr_part, only_final=False,
@@ -25,7 +31,10 @@ def fetch_notice_json(cfr_title, cfr_part, only_final=False,
         params["conditions[type][]"] = 'RULE'
     if max_effective_date:
         params["conditions[effective_date][lte]"] = max_effective_date
-    response = requests.get(API_BASE + "articles", params=params).json()
+    url = API_BASE + "articles"
+    logger.info("Fetching notices - URL: %s Params: %r", url, params)
+    response = requests.get(url, params=params).json()
+    logger.debug("Fetching notices response - %r", response)
     if 'results' in response:
         return response['results']
     else:

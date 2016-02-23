@@ -1,3 +1,4 @@
+import logging
 from datetime import date
 
 import click
@@ -10,6 +11,7 @@ from regparser.tree import xml_parser
 
 
 _version_id = '{}-annual-{}'.format
+logger = logging.getLogger(__name__)
 
 
 def process_if_needed(cfr_title, cfr_part, year):
@@ -59,5 +61,7 @@ def current_version(cfr_title, cfr_part):
         year -= 1
         vol = find_volume(year, cfr_title, cfr_part)
 
+    logger.info("Getting current version - %s CFR %s, Year: %s",
+                cfr_title, cfr_part, year)
     create_version_entry_if_needed(cfr_title, cfr_part, year)
     process_if_needed(cfr_title, cfr_part, year)

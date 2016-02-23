@@ -33,6 +33,7 @@ PART_SPAN_REGEX = re.compile(
     r'|((?P<single_part>\d+) \(.*\))'
     r'.*)',
     flags=re.IGNORECASE)
+logger = logging.getLogger(__name__)
 
 
 class Volume(namedtuple('Volume', ['year', 'title', 'vol_num'])):
@@ -44,6 +45,7 @@ class Volume(namedtuple('Volume', ['year', 'title', 'vol_num'])):
     @property
     def response(self):
         if self._response is None:
+            logger.debug("GET %s", self.url)
             self._response = requests.get(self.url, stream=True)
         return self._response
 
@@ -75,10 +77,10 @@ class Volume(namedtuple('Volume', ['year', 'title', 'vol_num'])):
                     start = int(match.group('single_part'))
                     self._part_span = (start, start)
                 else:
-                    logging.warning("Can't parse: " + part_string)
+                    logger.warning("Can't parse: %s", part_string)
             else:
-                logging.warning('No <PARTS> in %s. Assuming this volume '
-                                'contains all of the regs', self.url)
+                logger.warning('No <PARTS> in %s. Assuming this volume '
+                               'contains all of the regs', self.url)
                 self._part_span = (1, None)
         return self._part_span
 
@@ -97,14 +99,17 @@ class Volume(namedtuple('Volume', ['year', 'title', 'vol_num'])):
 
     def find_part_xml(self, part):
         """Pull the XML for an annual edition, first checking locally"""
+        logger.info("Find Part xml for %s CFR %s", self.title, part)
         url = CFR_PART_URL.format(year=self.year, title=self.title,
                                   volume=self.vol_num, part=part)
         filename = url.split('/')[-1]
         for xml_path in settings.LOCAL_XML_PATHS + [xml_sync.GIT_DIR]:
             xml_path = os.path.join(xml_path, 'annual', filename)
+            logger.debug("Checking locally for file %s", xml_path)
             if os.path.isfile(xml_path):
                 with open(xml_path) as f:
                     return XMLWrapper(f.read(), xml_path)
+        logger.debug("GET %s", url)
         response = requests.get(url)
         if response.status_code == 200:
             return XMLWrapper(response.content, url)
@@ -153,6 +158,8 @@ def find_volume(year, title, part):
 
 def first_notice_and_xml(title, part):
     """Find the first annual xml and its associated notice"""
+    logger.debug("Finding first annual notice+xml - %s CFR %s",
+                 title, part)
     notices = [build_notice(title, part, n, fetch_xml=False)
                for n in fetch_notice_json(title, part, only_final=True)
                if n['full_text_xml_url'] and n['effective_on']]

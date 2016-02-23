@@ -1,5 +1,6 @@
 from collections import namedtuple
 from datetime import date
+import logging
 
 import click
 
@@ -9,6 +10,7 @@ from regparser.tree import xml_parser
 
 
 LastVersionInYear = namedtuple('LastVersionInYear', ['version_id', 'year'])
+logger = logging.getLogger(__name__)
 
 
 def last_versions(cfr_title, cfr_part):
@@ -56,5 +58,6 @@ def process_if_needed(cfr_title, cfr_part, last_versions):
 def annual_editions(cfr_title, cfr_part):
     """Parse available annual editions for this reg. Cycles through all known
     versions and parses the annual edition XML when relevant"""
+    logger.info("Parsing annual editions - %s CFR %s", cfr_title, cfr_part)
     versions = list(last_versions(cfr_title, cfr_part))
     process_if_needed(cfr_title, cfr_part, versions)

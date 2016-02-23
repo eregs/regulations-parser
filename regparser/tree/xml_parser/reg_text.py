@@ -1,4 +1,5 @@
 # vim: set encoding=utf-8
+import logging
 import re
 
 from lxml import etree
@@ -16,6 +17,9 @@ from regparser.tree.xml_parser import (
     flatsubtree_processor, import_category, paragraph_processor,
     simple_hierarchy_processor, tree_utils)
 from regparser.tree.xml_parser.appendices import build_non_reg_text
+
+
+logger = logging.getLogger(__name__)
 
 
 def get_reg_part(reg_doc):
@@ -57,6 +61,7 @@ def get_title(reg_doc):
 def preprocess_xml(xml):
     """This transforms the read XML through macros. Each macro consists of
     an xpath and a replacement xml string"""
+    logger.info("Preprocessing XML %s", xml)
     for path, replacement in content.Macros():
         replacement = etree.fromstring('<ROOT>' + replacement + '</ROOT>')
         for node in xml.xpath(path):
@@ -69,6 +74,7 @@ def preprocess_xml(xml):
 
 
 def build_tree(reg_xml):
+    logger.info("Build tree %s", reg_xml)
     preprocess_xml(reg_xml)
 
     reg_part = get_reg_part(reg_xml)

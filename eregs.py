@@ -1,16 +1,21 @@
 import logging
 from importlib import import_module
+import os
 import pkgutil
 import sys
 
 import coloredlogs
 import click
 import ipdb
+import pyparsing
 import requests_cache   # @todo - replace with cache control
 
 from regparser import commands
 from regparser.commands.dependency_resolver import DependencyResolver
 from regparser.index import dependency
+
+logger = logging.getLogger(__name__)
+DEFAULT_LOG_FORMAT = "%(asctime)s %(name)-40s %(message)s"
 
 
 @click.group()
@@ -21,7 +26,9 @@ def cli(debug):
     if debug:
         log_level = logging.DEBUG
         sys.excepthook = lambda t, v, tb: ipdb.post_mortem(tb)
-    coloredlogs.install(level=log_level, fmt="%(levelname)s %(message)s")
+    coloredlogs.install(
+        level=log_level,
+        fmt=os.getenv("COLOREDLOGS_LOG_FORMAT", DEFAULT_LOG_FORMAT))
 
 
 for _, command_name, _ in pkgutil.iter_modules(commands.__path__):
@@ -39,16 +46,19 @@ def run_or_resolve(cmd, prev_dependency=None):
     to the dependency changing"""
     try:
         cmd()
-    except dependency.Missing, e:
+    except dependency.Missing as e:
         resolvers = [resolver(e.dependency)
                      for resolver in DependencyResolver.__subclasses__()]
         resolvers = [r for r in resolvers if r.has_resolution()]
         if e.dependency == prev_dependency or len(resolvers) != 1:
             raise e
         else:
-            click.echo("Attempting to resolve dependency: " + e.dependency)
+            logger.info("Attempting to resolve dependency: %s", e.dependency)
             resolvers[0].resolution()
             run_or_resolve(cmd, e.dependency)
+    except pyparsing.ParseException as exc:
+        logger.error(u"%s:\n'%s'", exc, exc.line)
+        raise
 
 
 def main(prev_dependency=None):

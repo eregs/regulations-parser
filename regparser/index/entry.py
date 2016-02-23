@@ -10,6 +10,8 @@ from regparser.tree.struct import (
 from regparser.tree.xml_parser.xml_wrapper import XMLWrapper
 from . import ROOT
 
+logger = logging.getLogger(__name__)
+
 
 class Entry(object):
     """Encapsulates an entry within the index. This could be a directory or a
@@ -38,7 +40,7 @@ class Entry(object):
         self._create_parent_dir()
         with open(str(self), "w") as f:
             f.write(self.serialize(content))
-            logging.info("Wrote {}".format(str(self)))
+            logger.info("Wrote {}".format(str(self)))
 
     def serialize(self, content):
         """Default implementation; treat content as a string"""
