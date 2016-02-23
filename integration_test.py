@@ -4,6 +4,7 @@
 import os
 import sys
 import tarfile
+import functools
 
 import pip
 import boto3
@@ -80,12 +81,15 @@ def build(ctx, target):
     config = targets[target]
     paths = get_paths(target)
     for part in config['parts']:
-        ctx.invoke(
-            pipeline,
-            cfr_title=config['title'],
-            cfr_part=part,
-            output=paths['output_dir'],
-            only_latest=True,
+        run_or_resolve(
+            functools.partial(
+                ctx.invoke,
+                pipeline,
+                cfr_title=config['title'],
+                cfr_part=part,
+                output=paths['output_dir'],
+                only_latest=True,
+            )
         )
 
 
@@ -124,4 +128,4 @@ def upload(target):
 
 
 if __name__ == '__main__':
-    run_or_resolve(cli)
+    cli()
