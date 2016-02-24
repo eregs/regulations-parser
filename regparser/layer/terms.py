@@ -135,10 +135,6 @@ class Terms(Layer):
         exclusions = self.per_regulation_ignores(
             exclusions, node.label, node.text)
 
-        inclusions = self.included_offsets(node.label_id(), node.text)
-        inclusions = self.per_regulation_includes(
-            inclusions, node.label, node.text)
-
         matches = self.calculate_offsets(node.text, term_list, exclusions)
         for term, ref, offsets in matches:
             layer_el.append({
@@ -171,23 +167,6 @@ class Terms(Layer):
         for ignore_term in settings.IGNORE_DEFINITIONS_IN['ALL']:
             exclusions.extend(self._word_matches(ignore_term, text))
         return exclusions
-
-    def per_regulation_includes(self, inclusions, label, text):
-        cfr_part = label[0]
-        if settings.INCLUDE_DEFINITIONS_IN.get(cfr_part):
-            all_includes = settings.INCLUDE_DEFINITIONS_IN['ALL']
-            for included_term, context in all_includes:
-                inclusions.extend(self._word_matches(included_term, text))
-        return inclusions
-
-    def included_offsets(self, label, text):
-        """ We explicitly include certain chunks of text (for example,
-            words that the parser doesn't necessarily pick up as being
-            defined) that should be part of a defined term """
-        inclusions = []
-        for included_term, context in settings.INCLUDE_DEFINITIONS_IN['ALL']:
-            inclusions.extend(self._word_matches(included_term, text))
-        return inclusions
 
     def calculate_offsets(self, text, applicable_terms, exclusions=[],
                           inclusions=[]):

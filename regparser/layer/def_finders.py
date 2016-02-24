@@ -51,8 +51,9 @@ class ExplicitIncludes(FinderBase):
     def find(self, node):
         refs = []
         cfr_part = node.label[0] if node.label else None
-        for included_term, context in settings.INCLUDE_DEFINITIONS_IN.get(
-                cfr_part, []):
+        included = list(settings.INCLUDE_DEFINITIONS_IN.get("ALL", []))  # copy
+        included.extend(settings.INCLUDE_DEFINITIONS_IN.get(cfr_part, []))
+        for included_term, context in included:
             if context in node.text and included_term in node.text:
                 pos_start = node.text.index(included_term)
                 refs.append(Ref(included_term, node.label_id(), pos_start))

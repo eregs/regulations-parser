@@ -68,6 +68,9 @@ IGNORE_DEFINITIONS_IN = {'ALL': []}
 
 # List of strings: phrases which should be included as definition links
 INCLUDE_DEFINITIONS_IN = {'ALL': []}
+# Add include definitions from extensions:
+INCLUDE_DEFINITIONS_IN = plugins.update_dictionary(
+    "eregs_ns.parser.term_definitions", INCLUDE_DEFINITIONS_IN)
 
 # list of modules implementing the __contains__ and __getitem__ methods
 OVERRIDES_SOURCES = [
