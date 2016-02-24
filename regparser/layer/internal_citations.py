@@ -5,6 +5,8 @@ from regparser.citations import internal_citations, Label
 from regparser.layer.layer import Layer
 from regparser.tree.struct import walk
 
+logger = logging.getLogger(__name__)
+
 
 class InternalCitationParser(Layer):
     shorthand = 'internal-citations'
@@ -36,8 +38,9 @@ class InternalCitationParser(Layer):
             if tuple(c.label.to_list()) in self.known_citations:
                 final.append(c)
             else:
-                logging.warning("Missing citation? %s %r"
-                                % (text[c.start:c.end], c.label))
+                logger.warning("Missing citation? %s %r",
+                               text[c.start:c.end], c.label)
+                logger.debug("Context: %s" % text)
         return final
 
     def parse(self, text, label, title=None):
