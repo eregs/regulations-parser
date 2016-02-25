@@ -65,7 +65,7 @@ DEFAULT_IMAGE_URL = (
 
 # list of strings: phrases which shouldn't be broken by definition links
 IGNORE_DEFINITIONS_IN = {'ALL': []}
-# Add definition phrases to be exluded from extensions:
+# Look in extensions for definition phrases to be excluded:
 IGNORE_DEFINITIONS_IN = plugins.update_dictionary(
     "eregs_ns.parser.term_definition_exclusions", IGNORE_DEFINITIONS_IN)
 
