@@ -94,11 +94,16 @@ class Terms(Layer):
     def is_exclusion(self, term, node):
         """Some definitions are exceptions/exclusions of a previously
         defined term. At the moment, we do not want to include these as they
-        would replace previous (correct) definitions."""
+        would replace previous (correct) definitions. We also remove terms
+        which are inside an instance of the IGNORE_DEFINITIONS_IN setting"""
         applicable_terms = self.applicable_terms(node.label)
         if term in applicable_terms:
             regex = 'the term .?' + re.escape(term) + '.? does not include'
-            return bool(re.search(regex, node.text.lower()))
+            if re.search(regex, node.text.lower()):
+                return True
+            for start, end in self.ignored_offsets(node.label[0], node.text):
+                if term in node.text[start:end]:
+                    return True
         return False
 
     def node_definitions(self, node, stack=None):
