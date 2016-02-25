@@ -64,7 +64,7 @@ DEFAULT_IMAGE_URL = (
     '%s/original.gif')
 
 # dict: string->[string]: List of phrases which shouldn't contain defined
-# terms. Keyed by CFR part of 'ALL'.
+# terms. Keyed by CFR part or 'ALL'.
 IGNORE_DEFINITIONS_IN = plugins.update_dictionary(
     "eregs_ns.parser.term_ignores", {'ALL': []})
 
