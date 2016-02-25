@@ -63,17 +63,17 @@ DEFAULT_IMAGE_URL = (
     'https://s3.amazonaws.com/images.federalregister.gov/' +
     '%s/original.gif')
 
-# list of strings: phrases which shouldn't be broken by definition links
-IGNORE_DEFINITIONS_IN = {'ALL': []}
-# Look in extensions for definition phrases to be excluded:
+# dict: string->[string]: List of phrases which shouldn't contain defined
+# terms. Keyed by CFR part or 'ALL'.
 IGNORE_DEFINITIONS_IN = plugins.update_dictionary(
-    "eregs_ns.parser.term_definition_exclusions", IGNORE_DEFINITIONS_IN)
+    "eregs_ns.parser.term_ignores", {'ALL': []})
 
-# List of strings: phrases which should be included as definition links
-INCLUDE_DEFINITIONS_IN = {'ALL': []}
-# Add include definitions from extensions:
+# dict: string->[(string,string)]: List of phrases which *should* trigger a
+# definition. Pair is of the form (term, context), where "context" refers to a
+# substring match for a specific paragraph. e.g.
+# ("bob", "text noting that it defines bob")
 INCLUDE_DEFINITIONS_IN = plugins.update_dictionary(
-    "eregs_ns.parser.term_definitions", INCLUDE_DEFINITIONS_IN)
+    "eregs_ns.parser.term_definitions", {'ALL': []})
 
 # list of modules implementing the __contains__ and __getitem__ methods
 OVERRIDES_SOURCES = [

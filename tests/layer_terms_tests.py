@@ -12,12 +12,16 @@ import settings
 class LayerTermTest(TestCase):
     def setUp(self):
         self.original_ignores = settings.IGNORE_DEFINITIONS_IN
-        settings.IGNORE_DEFINITIONS_IN = {'ALL': {}}
+        settings.IGNORE_DEFINITIONS_IN = {'ALL': []}
 
     def tearDown(self):
         settings.IGNORE_DEFINITIONS_IN = self.original_ignores
 
     def test_is_exclusion(self):
+        """There are certain indicators that a definition _should not_ be
+        considered the definition of that term. For example, exclusions to a
+        general definition should not replace the original. We can also
+        explicitly ignore chunks of text when finding definitions.."""
         t = Terms(None)
         n = Node('ex ex ex', label=['1111', '2'])
         self.assertFalse(t.is_exclusion('ex', n))
@@ -32,6 +36,11 @@ class LayerTermTest(TestCase):
 
         t.scoped_terms = {('1111',): [Ref('abc', '1', 0)]}
         self.assertFalse(t.is_exclusion('ex', n))
+
+        settings.IGNORE_DEFINITIONS_IN['1111'] = ['phrase with abc in it']
+        self.assertFalse(t.is_exclusion('abc', n))
+        n.text = "Now the node has a phrase with abc in it, doesn't it?"
+        self.assertTrue(t.is_exclusion('abc', n))
 
     def test_node_definitions_no_def(self):
         """Verify that none of the matchers match certain strings"""
@@ -273,16 +282,22 @@ class LayerTermTest(TestCase):
             Ref('term', 'lablab', 4), Ref('other', 'lablab', 8),
             Ref('more', 'nonnon', 1)
         ]
-        self.assertEqual([(4, 8), (8, 13)],
-                         t.excluded_offsets('lablab', 'Some text'))
-        self.assertEqual([(1, 5)], t.excluded_offsets('nonnon', 'Other'))
-        self.assertEqual([], t.excluded_offsets('ababab', 'Ab ab ab'))
+        self.assertEqual(
+            [(4, 8), (8, 13)],
+            t.excluded_offsets(Node('Some text', label=['lablab'])))
+        self.assertEqual(
+            [(1, 5)],
+            t.excluded_offsets(Node('Other', label=['nonnon'])))
+        self.assertEqual(
+            [],
+            t.excluded_offsets(Node('Ab ab ab', label=['ababab'])))
 
     def test_excluded_offsets_blacklist(self):
         t = Terms(None)
         t.scoped_terms['_'] = [Ref('bourgeois', '12-Q-2', 0)]
         settings.IGNORE_DEFINITIONS_IN['ALL'] = ['bourgeois pig']
-        excluded = t.excluded_offsets('12-3', 'You are a bourgeois pig!')
+        excluded = t.excluded_offsets(Node('You are a bourgeois pig!',
+                                           label=['12', '3']))
         self.assertEqual([(10, 23)], excluded)
 
     def test_excluded_offsets_blacklist_per_reg(self):
@@ -294,17 +309,22 @@ class LayerTermTest(TestCase):
 
         settings.IGNORE_DEFINITIONS_IN['ALL'] = ['bourgeois pig']
         settings.IGNORE_DEFINITIONS_IN['12'] = ['consumer price index']
-        exclusions = [(0, 4)]
-        excluded = t.per_regulation_ignores(
-            exclusions, ['12', '2'], 'There is a consumer price index')
-        self.assertEqual([(0, 4), (11, 31)], excluded)
+        excluded = t.excluded_offsets(
+            Node('There is a consumer price index', label=['12', '2']))
+        self.assertEqual([(11, 31)], excluded)
 
     def test_excluded_offsets_blacklist_word_boundaries(self):
+        """If an exclusion begins/ends with word characters, the searching
+        regex should make sure to only match on word boundaries"""
+        settings.IGNORE_DEFINITIONS_IN['ALL'] = ['shed act', '(phrase)']
         t = Terms(None)
         t.scoped_terms['_'] = [Ref('act', '28-6-d', 0)]
-        settings.IGNORE_DEFINITIONS_IN['ALL'] = ['shed act']
-        excluded = t.excluded_offsets('28-9', "That's a watershed act")
+        excluded = t.excluded_offsets(Node("That's a watershed act",
+                                           label=['28', '9']))
         self.assertEqual([], excluded)
+        excluded = t.excluded_offsets(Node("This has a '(phrase)' in it",
+                                           label=['28', '9']))
+        self.assertNotEqual([], excluded)
 
     def test_calculate_offsets(self):
         applicable_terms = [('rock band', 'a'), ('band', 'b'), ('drum', 'c'),
