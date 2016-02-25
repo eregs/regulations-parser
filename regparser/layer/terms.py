@@ -36,6 +36,8 @@ class ParentStack(PriorityStack):
 
 class Terms(Layer):
     shorthand = 'terms'
+    STARTS_WITH_WORDCHAR = re.compile('^\w.*$')
+    ENDS_WITH_WORDCHAR = re.compile('^.*\w$')
 
     def __init__(self, *args, **kwargs):
         Layer.__init__(self, *args, **kwargs)
@@ -149,8 +151,14 @@ class Terms(Layer):
     def _word_matches(self, term, text):
         """Return the start and end indexes of the term within the text,
         accounting for word boundaries"""
-        return [(match.start(), match.end()) for match in
-                re.finditer(r'\b' + re.escape(term) + r'\b', text)]
+        regex = re.escape(term)
+        if self.STARTS_WITH_WORDCHAR.match(term):
+            regex = r'\b' + regex
+        if self.ENDS_WITH_WORDCHAR.match(term):
+            regex += r'\b'
+        regex = re.compile(regex)
+        return [(match.start(), match.end())
+                for match in regex.finditer(text)]
 
     def ignored_offsets(self, cfr_part, text):
         """Return a list of offsets corresponding to the presence of an
