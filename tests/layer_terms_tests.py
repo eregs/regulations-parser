@@ -12,7 +12,7 @@ import settings
 class LayerTermTest(TestCase):
     def setUp(self):
         self.original_ignores = settings.IGNORE_DEFINITIONS_IN
-        settings.IGNORE_DEFINITIONS_IN = {'ALL': {}}
+        settings.IGNORE_DEFINITIONS_IN = {'ALL': []}
 
     def tearDown(self):
         settings.IGNORE_DEFINITIONS_IN = self.original_ignores
@@ -273,16 +273,22 @@ class LayerTermTest(TestCase):
             Ref('term', 'lablab', 4), Ref('other', 'lablab', 8),
             Ref('more', 'nonnon', 1)
         ]
-        self.assertEqual([(4, 8), (8, 13)],
-                         t.excluded_offsets('lablab', 'Some text'))
-        self.assertEqual([(1, 5)], t.excluded_offsets('nonnon', 'Other'))
-        self.assertEqual([], t.excluded_offsets('ababab', 'Ab ab ab'))
+        self.assertEqual(
+            [(4, 8), (8, 13)],
+            t.excluded_offsets(Node('Some text', label=['lablab'])))
+        self.assertEqual(
+            [(1, 5)],
+            t.excluded_offsets(Node('Other', label=['nonnon'])))
+        self.assertEqual(
+            [],
+            t.excluded_offsets(Node('Ab ab ab', label=['ababab'])))
 
     def test_excluded_offsets_blacklist(self):
         t = Terms(None)
         t.scoped_terms['_'] = [Ref('bourgeois', '12-Q-2', 0)]
         settings.IGNORE_DEFINITIONS_IN['ALL'] = ['bourgeois pig']
-        excluded = t.excluded_offsets('12-3', 'You are a bourgeois pig!')
+        excluded = t.excluded_offsets(Node('You are a bourgeois pig!',
+                                           label=['12', '3']))
         self.assertEqual([(10, 23)], excluded)
 
     def test_excluded_offsets_blacklist_per_reg(self):
@@ -294,16 +300,16 @@ class LayerTermTest(TestCase):
 
         settings.IGNORE_DEFINITIONS_IN['ALL'] = ['bourgeois pig']
         settings.IGNORE_DEFINITIONS_IN['12'] = ['consumer price index']
-        exclusions = [(0, 4)]
-        excluded = t.per_regulation_ignores(
-            exclusions, ['12', '2'], 'There is a consumer price index')
-        self.assertEqual([(0, 4), (11, 31)], excluded)
+        excluded = t.excluded_offsets(
+            Node('There is a consumer price index', label=['12', '2']))
+        self.assertEqual([(11, 31)], excluded)
 
     def test_excluded_offsets_blacklist_word_boundaries(self):
         t = Terms(None)
         t.scoped_terms['_'] = [Ref('act', '28-6-d', 0)]
         settings.IGNORE_DEFINITIONS_IN['ALL'] = ['shed act']
-        excluded = t.excluded_offsets('28-9', "That's a watershed act")
+        excluded = t.excluded_offsets(Node("That's a watershed act",
+                                           label=['28', '9']))
         self.assertEqual([], excluded)
 
     def test_calculate_offsets(self):

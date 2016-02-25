@@ -151,6 +151,7 @@ class Terms(Layer):
     def _word_matches(self, term, text):
         """Return the start and end indexes of the term within the text,
         accounting for word boundaries"""
+        # @todo - this is rather slow -- probably want to memoize the results
         regex = re.escape(term)
         if self.STARTS_WITH_WORDCHAR.match(term):
             regex = r'\b' + regex
