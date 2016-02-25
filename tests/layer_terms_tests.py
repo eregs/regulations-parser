@@ -18,6 +18,10 @@ class LayerTermTest(TestCase):
         settings.IGNORE_DEFINITIONS_IN = self.original_ignores
 
     def test_is_exclusion(self):
+        """There are certain indicators that a definition _should not_ be
+        considered the definition of that term. For example, exclusions to a
+        general definition should not replace the original. We can also
+        explicitly ignore chunks of text when finding definitions.."""
         t = Terms(None)
         n = Node('ex ex ex', label=['1111', '2'])
         self.assertFalse(t.is_exclusion('ex', n))
@@ -32,6 +36,11 @@ class LayerTermTest(TestCase):
 
         t.scoped_terms = {('1111',): [Ref('abc', '1', 0)]}
         self.assertFalse(t.is_exclusion('ex', n))
+
+        settings.IGNORE_DEFINITIONS_IN['1111'] = ['phrase with abc in it']
+        self.assertFalse(t.is_exclusion('abc', n))
+        n.text = "Now the node has a phrase with abc in it, doesn't it?"
+        self.assertTrue(t.is_exclusion('abc', n))
 
     def test_node_definitions_no_def(self):
         """Verify that none of the matchers match certain strings"""
@@ -305,12 +314,17 @@ class LayerTermTest(TestCase):
         self.assertEqual([(11, 31)], excluded)
 
     def test_excluded_offsets_blacklist_word_boundaries(self):
+        """If an exclusion begins/ends with word characters, the searching
+        regex should make sure to only match on word boundaries"""
+        settings.IGNORE_DEFINITIONS_IN['ALL'] = ['shed act', '(phrase)']
         t = Terms(None)
         t.scoped_terms['_'] = [Ref('act', '28-6-d', 0)]
-        settings.IGNORE_DEFINITIONS_IN['ALL'] = ['shed act']
         excluded = t.excluded_offsets(Node("That's a watershed act",
                                            label=['28', '9']))
         self.assertEqual([], excluded)
+        excluded = t.excluded_offsets(Node("This has a '(phrase)' in it",
+                                           label=['28', '9']))
+        self.assertNotEqual([], excluded)
 
     def test_calculate_offsets(self):
         applicable_terms = [('rock band', 'a'), ('band', 'b'), ('drum', 'c'),
