@@ -131,9 +131,7 @@ class Terms(Layer):
             (term, ref) for term, ref in applicable_terms.iteritems()
             if ref.label != node.label_id()]
 
-        exclusions = self.excluded_offsets(node.label_id(), node.text)
-        exclusions = self.per_regulation_ignores(
-            exclusions, node.label, node.text)
+        exclusions = self.excluded_offsets(node)
 
         matches = self.calculate_offsets(node.text, term_list, exclusions)
         for term, ref, offsets in matches:
@@ -149,23 +147,26 @@ class Terms(Layer):
         return [(match.start(), match.end()) for match in
                 re.finditer(r'\b' + re.escape(term) + r'\b', text)]
 
-    def per_regulation_ignores(self, exclusions, label, text):
-        cfr_part = label[0]
-        if settings.IGNORE_DEFINITIONS_IN.get(cfr_part):
-            for ignore_term in settings.IGNORE_DEFINITIONS_IN[cfr_part]:
-                exclusions.extend(self._word_matches(ignore_term, text))
-        return exclusions
+    def ignored_offsets(self, cfr_part, text):
+        """Return a list of offsets corresponding to the presence of an
+        "ignored" phrase in the text"""
+        ignored_phrases = (settings.IGNORE_DEFINITIONS_IN.get('ALL', []) +
+                           settings.IGNORE_DEFINITIONS_IN.get(cfr_part, []))
+        positions = []
+        for phrase in ignored_phrases:
+            positions.extend(self._word_matches(phrase, text))
+        return positions
 
-    def excluded_offsets(self, label, text):
+    def excluded_offsets(self, node):
         """We explicitly exclude certain chunks of text (for example, words
         we are defining shouldn't have links appear within the defined
         term.) More will be added in the future"""
         exclusions = []
         for reflist in self.scoped_terms.values():
             exclusions.extend(
-                ref.position for ref in reflist if ref.label == label)
-        for ignore_term in settings.IGNORE_DEFINITIONS_IN['ALL']:
-            exclusions.extend(self._word_matches(ignore_term, text))
+                ref.position for ref in reflist
+                if ref.label == node.label_id())
+        exclusions.extend(self.ignored_offsets(node.label[0], node.text))
         return exclusions
 
     def calculate_offsets(self, text, applicable_terms, exclusions=[],
