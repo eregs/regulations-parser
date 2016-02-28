@@ -141,6 +141,7 @@ class Terms(Layer):
         exclusions = self.excluded_offsets(node)
 
         matches = self.calculate_offsets(node.text, term_list, exclusions)
+        matches = sorted(matches, key=lambda(term, r, o): term)
         for term, ref, offsets in matches:
             layer_el.append({
                 "ref": ref.term + ':' + ref.label,

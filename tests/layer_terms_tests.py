@@ -404,6 +404,8 @@ class LayerTermTest(TestCase):
             t.calculate_offsets(text, applicable_terms, [(1, 5)]))
 
     def test_process(self):
+        """The process() method should both find terms in the requested node
+        and order them by term name"""
         t = Terms(Node(children=[
             Node("ABC5", children=[Node("child")], label=['ref1']),
             Node("AABBCC5", label=['ref2']),
@@ -428,18 +430,9 @@ class LayerTermTest(TestCase):
         layer_el = t.process(Node(
             "This has abc, aabbcc, aaa, abcabc, and zzz",
             label=["101", "22", "b", "2", "ii"]))
-        self.assertEqual(4, len(layer_el))
-        found = [False, False, False, False]
-        for ref_obj in layer_el:
-            if ref_obj['ref'] == 'abc:ref1':
-                found[0] = True
-            if ref_obj['ref'] == 'aabbcc:ref2':
-                found[1] = True
-            if ref_obj['ref'] == 'aaa:ref4':
-                found[2] = True
-            if ref_obj['ref'] == 'abcabc:ref5':
-                found[3] = True
-        self.assertEqual([True, True, True, True], found)
+        self.assertEqual(
+            [el['ref'] for el in layer_el],
+            ['aaa:ref4', 'aabbcc:ref2', 'abc:ref1', 'abcabc:ref5'])
 
     def test_process_label_in_node(self):
         """Make sure we don't highlight definitions that are being defined
