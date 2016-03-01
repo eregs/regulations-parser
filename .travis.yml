@@ -10,9 +10,10 @@ install:
   - pip install coveralls
 env:
   global:
-    - BUCKET=eregs-parse-cache
-    - secure: "lBz8NERe3lNshbuXcWpWpUsyNmIexJ349X6aiChv25Cor4KahlQUdF3C+Wnfj14TPWCloIeV3KK/j/Lh+4P0AF/KKfIoI1ZcPqSoz1AplBZGfJBZafXT2fqdmJ+Ptm0DLciqZiy450BptQspr6XBPkLcCB1AILyuxpSy+8urXek="
-    - secure: "Wm3bo4XGw4sy1iAPuSLZtCZsBeaZh4r7umw+5No93nWka+XsA74bxW3nifxKVBwP5hO9ojir7fRAG70dlm6zRwSnHnlITSF9GfuMn7vyNA/fFinCfTuqu7EFDApshpxrjX3Yeu0ZNUaSICQds6oJELglhLUF8fJ84YRPFkoHKrs="
+    # Bucket managed by cloud.gov at eregs-nc/integration
+    - BUCKET=cg-bcf4ec52-851a-4aaf-b353-acc25474a336
+    - secure: "ErjIomoPl2CVB8kPkX6/yKZLBt/esvY6GnL/j9l3QTissOzyIKknCVaLDRsInyyZCBZKu1JhGHF2WI6xCTO8Ey6Mtl8lVkOE/7SPyoWVAuRujM4L13LCnaESVBk0y+GYwRlONsVP3CGGWe/iWQ6Dbx11euB1s1i0mwVgcvvRphE="
+    - secure: "I7SpIvavHAw9ObcJlJJcsSsb2O6izJVWrhKZz1tbzgkfY1lDgcqGV+0MHx9545BG8+j33C/po2QjatjO5g6arki2qwS8EwhQ+mUAh+KBIyLpnpbPY+NZrCb/MFMBLgunYyL0JzZGM75t3S1JwCbP2J/G0Kpg5xwQyoUlPsKxLgE="
   matrix:
     - INTEGRATION_TARGET=
     - INTEGRATION_TARGET=fec
