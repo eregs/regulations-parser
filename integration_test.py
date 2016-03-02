@@ -111,18 +111,14 @@ def build(ctx, target):
 @click.pass_context
 def compare(ctx, target):
     download(target)
-    config = targets[target]
     paths = get_paths(target)
-    diffs = [
-        ctx.invoke(
-            compare_to,
-            api_base=paths['cached_dir'],
-            paths=[os.path.join(paths['output_dir'], 'regulation', str(part))],
-            prompt=False,
-        )
-        for part in config['parts']
-    ]
-    if any(diffs):
+    diffs = ctx.invoke(
+        compare_to,
+        api_base=paths['cached_dir'],
+        paths=[paths['output_dir']],
+        prompt=False,
+    )
+    if diffs:
         sys.exit(1)
 
 

@@ -11,9 +11,10 @@ install:
 env:
   global:
     # Bucket managed by cloud.gov at eregs-nc/integration
+    # Note: Persistent credentials set manually to prevent reset on app unbind
     - BUCKET=cg-bcf4ec52-851a-4aaf-b353-acc25474a336
-    - secure: "ErjIomoPl2CVB8kPkX6/yKZLBt/esvY6GnL/j9l3QTissOzyIKknCVaLDRsInyyZCBZKu1JhGHF2WI6xCTO8Ey6Mtl8lVkOE/7SPyoWVAuRujM4L13LCnaESVBk0y+GYwRlONsVP3CGGWe/iWQ6Dbx11euB1s1i0mwVgcvvRphE="
-    - secure: "I7SpIvavHAw9ObcJlJJcsSsb2O6izJVWrhKZz1tbzgkfY1lDgcqGV+0MHx9545BG8+j33C/po2QjatjO5g6arki2qwS8EwhQ+mUAh+KBIyLpnpbPY+NZrCb/MFMBLgunYyL0JzZGM75t3S1JwCbP2J/G0Kpg5xwQyoUlPsKxLgE="
+    - secure: "Hkxewgry7TIDnAWclU9mxYGZqivzPbO085PJg1gMblvsTeYSxPjtX7amzpS6yFA24S+oN/zG0Hg7ya+4TVfl8BCbuWPymKYXA07uthExUQ+gPwdz476ZygUpuUdtpeVveMFE8StGTJ/pdE4o1sYBuejkEi7K3y5yyOCf8/POn8A="
+    - secure: "fy3VSSwfHdeEs9O4nri/JCV0c7UH5HwKCFCj5bJnSWyBFwHS5gbicncC3DoqBJArrIza+HPmUbeYzhiP5i0di9kc5Ss4Fnq3NgnB8UJXOr8Jwpdl4c1CzBklvv1lxNgqKrNcqsmdtfZWM+ib942tXxb9BbABePWYTPe4cMPpbok="
   matrix:
     - INTEGRATION_TARGET=
     - INTEGRATION_TARGET=fec
