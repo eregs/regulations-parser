@@ -1,3 +1,4 @@
+import logging
 import os
 import os.path
 import shutil
@@ -9,6 +10,9 @@ import requests
 from regparser.tree.struct import Node, NodeEncoder
 from regparser.notice.encoder import AmendmentEncoder
 import settings
+
+
+logger = logging.getLogger(__name__)
 
 
 class AmendmentNodeEncoder(AmendmentEncoder, NodeEncoder):
@@ -23,6 +27,7 @@ class FSWriteContent:
 
     def write(self, python_obj):
         """Write the object as json to disk"""
+        logger.debug("Writing %s", self.path)
         dir_path = os.path.split(self.path)[0]
         if not os.path.exists(dir_path):
             os.makedirs(dir_path)
@@ -41,6 +46,7 @@ class APIWriteContent:
 
     def write(self, python_obj):
         """Write the object (as json) to the API"""
+        logger.debug("Writing %s", self.path)
         requests.post(
             self.path,
             data=AmendmentNodeEncoder().encode(python_obj),
@@ -88,6 +94,7 @@ class GitWriteContent:
             self.write_tree(child_path, child)
 
     def write(self, python_object):
+        logger.debug("Writing %s", self.path)
         if "regulation" in self.path:
             dir_path, version_id = os.path.split(self.path)
             cfr_part = os.path.split(dir_path)[1]
