@@ -42,16 +42,14 @@ class NoticeXML(XMLWrapper):
         dates_tag.attrib["eregs-{}-date".format(date_type)] = value
 
     def derive_effective_date(self):
-        """Attempt to parse effective date from DATES tags. Raises exception
-        if it cannot. Also sets the field. Returns a datetime.date"""
+        """Attempt to parse effective date from DATES tags. Returns a
+        datetime.date and sets the corresponding field"""
         dates = fetch_dates(self.xml) or {}
-        if 'effective' not in dates:
-            raise Exception(
-                "Could not derive effective date for notice {}".format(
-                    self.version_id))
-        effective = datetime.strptime(dates['effective'][0], "%Y-%m-%d").date()
-        self.effective = effective
-        return effective
+        if 'effective' in dates:
+            effective = datetime.strptime(
+                dates['effective'][0], "%Y-%m-%d").date()
+            self.effective = effective
+            return effective
 
     def _get_date_attr(self, date_type):
         """Pulls out the date set in `set_date_attr`, as a datetime.date. If
