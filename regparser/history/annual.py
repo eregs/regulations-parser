@@ -84,6 +84,10 @@ class Volume(namedtuple('Volume', ['year', 'title', 'vol_num'])):
                 self._part_span = (1, None)
         return self._part_span
 
+    @property
+    def publication_date(self):
+        return date(self.year, publication_month(self.title), 1)
+
     def should_contain(self, part):
         """Does this volume contain the part number requested?"""
         if self.part_span:
@@ -122,21 +126,23 @@ def annual_edition_for(title, notice):
     return date_of_annual_after(title, eff_date).year
 
 
-def date_of_annual_after(title, eff_date):
+def publication_month(cfr_title):
     """Annual editions are published for different titles at different points
-    throughout the year. Return the date of the _first_ annual edition which
-    should contain any changes on `eff_date`. This date may well be in the
-    future"""
-    if title <= 16:
-        month_published = 1
-    elif title <= 27:
-        month_published = 4
-    elif title <= 41:
-        month_published = 7
+    throughout the year. Return the month associated with this CFR title"""
+    if cfr_title <= 16:
+        return 1
+    elif cfr_title <= 27:
+        return 4
+    elif cfr_title <= 41:
+        return 7
     else:
-        month_published = 10
+        return 10
 
-    publication_date = date(eff_date.year, month_published, 1)
+
+def date_of_annual_after(title, eff_date):
+    """Return the date of the _first_ annual edition which should contain any
+    changes on `eff_date`. This date may well be in the future"""
+    publication_date = date(eff_date.year, publication_month(title), 1)
     if eff_date <= publication_date:
         return publication_date
     else:

@@ -25,7 +25,8 @@ class CommandsCurrentVersionTests(TestCase):
                 '<ROOT />')
 
             xml_parser.reg_text.build_tree.return_value = {'my': 'tree'}
-            current_version.process_if_needed(self.title, self.part, self.year)
+            current_version.process_if_needed(
+                self.title, self.part, self.year, date.today())
             tree = entry.Entry('tree', self.title, self.part,
                                self.version_id).read()
             self.assertEqual(json.loads(tree), {'my': 'tree'})
@@ -41,7 +42,8 @@ class CommandsCurrentVersionTests(TestCase):
             annual.write('ANNUAL')
             tree.write('TREE')
 
-            current_version.process_if_needed(self.title, self.part, self.year)
+            current_version.process_if_needed(
+                self.title, self.part, self.year, date.today())
 
             # didn't change
             self.assertEqual(annual.read(), 'ANNUAL')
@@ -51,8 +53,8 @@ class CommandsCurrentVersionTests(TestCase):
         """Creates a version associated with the part and year"""
         with CliRunner().isolated_filesystem():
             current_version.create_version_entry_if_needed(
-                self.title, self.part, self.year)
+                self.title, self.part, self.year, date(self.year, 4, 8))
             version = entry.Version(
                 self.title, self.part, self.version_id).read()
-            self.assertEqual(version.effective, date.today())
-            self.assertEqual(version.published, date.today())
+            self.assertEqual(version.effective, date(self.year, 4, 8))
+            self.assertEqual(version.published, date(self.year, 4, 8))

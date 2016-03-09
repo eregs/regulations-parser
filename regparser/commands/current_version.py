@@ -14,7 +14,7 @@ _version_id = '{}-annual-{}'.format
 logger = logging.getLogger(__name__)
 
 
-def process_if_needed(cfr_title, cfr_part, year):
+def process_if_needed(cfr_title, cfr_part, year, publication_date):
     """Review dependencies; if they're out of date, parse the annual edition
     into a tree and store that"""
     version_id = _version_id(year, cfr_part)
@@ -32,10 +32,11 @@ def process_if_needed(cfr_title, cfr_part, year):
         tree = xml_parser.reg_text.build_tree(annual_entry.read().xml)
         tree_entry.write(tree)
         sxs_entry.write(build_fake_notice(
-            version_id, date.today().isoformat(), cfr_title, cfr_part))
+            version_id, publication_date.isoformat(), cfr_title, cfr_part))
 
 
-def create_version_entry_if_needed(cfr_title, cfr_part, year):
+def create_version_entry_if_needed(cfr_title, cfr_part, year,
+                                   publication_date):
     """Only write the version entry if it doesn't already exist. If we
     overwrote one, we'd be invalidating all related trees, etc."""
     version_id = _version_id(year, cfr_part)
@@ -43,8 +44,8 @@ def create_version_entry_if_needed(cfr_title, cfr_part, year):
 
     if version_id not in version_entries:
         (version_entries / version_id).write(
-            Version(identifier=version_id, effective=date.today(),
-                    published=date.today()))
+            Version(identifier=version_id, effective=publication_date,
+                    published=publication_date))
 
 
 @click.command()
@@ -53,8 +54,8 @@ def create_version_entry_if_needed(cfr_title, cfr_part, year):
 def current_version(cfr_title, cfr_part):
     """Build a regulation tree for the most recent annual edition. This will
     also construct a corresponding, empty notice to match. The version will be
-    marked as effective _today_"""
-
+    marked as effective on the date of the last annual edition (which is not
+    likely accurate)"""
     year = date.today().year
     vol = find_volume(year, cfr_title, cfr_part)
     if vol is None:
@@ -63,5 +64,7 @@ def current_version(cfr_title, cfr_part):
 
     logger.info("Getting current version - %s CFR %s, Year: %s",
                 cfr_title, cfr_part, year)
-    create_version_entry_if_needed(cfr_title, cfr_part, year)
-    process_if_needed(cfr_title, cfr_part, year)
+
+    create_version_entry_if_needed(
+        cfr_title, cfr_part, year, vol.publication_date)
+    process_if_needed(cfr_title, cfr_part, year, vol.publication_date)
