@@ -40,11 +40,11 @@ class CommandsWriteToTests(TestCase):
 
     def add_notices(self):
         """Adds an uneven assortment of notices"""
-        data = {'doc_number': 'v0', 'cfr_title': '11', 'cfr_parts': []}
+        data = {'doc_number': 'v0', 'cfr_title': 11, 'cfr_parts': []}
         entry.SxS('v0').write(data)
         data.update(cfr_parts=['1000'], doc_number='v1')
         entry.SxS('v1').write(data)
-        data.update(cfr_title='12', doc_number='v2')
+        data.update(cfr_title=12, doc_number='v2')
         entry.SxS('v2').write(data)
         data['doc_number'] = 'v3'
         entry.SxS('v3').write(data)
