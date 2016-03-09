@@ -214,7 +214,7 @@ class ClientTest(TestCase):
             os.path.join(self.tmpdir, "notice", "docdoc"), reg_writer.path)
 
     def test_diff(self):
-        reg_writer = Client.diff("lablab", "oldold", "newnew")
+        reg_writer = Client().diff("lablab", "oldold", "newnew")
         self.assertEqual(
             os.path.join(self.tmpdir, "diff", "lablab", "oldold", "newnew"),
             reg_writer.path)
