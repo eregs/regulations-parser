@@ -197,31 +197,32 @@ class ClientTest(TestCase):
         settings.OUTPUT_DIR = self.old_output
 
     def test_regulation(self):
-        client = Client()
-        reg_writer = client.regulation("lablab", "docdoc")
+        reg_writer = Client().regulation("lablab", "docdoc")
         self.assertEqual(
             os.path.join(self.tmpdir, "regulation", "lablab", "docdoc"),
             reg_writer.path)
 
     def test_layer(self):
-        client = Client()
-        reg_writer = client.layer("boblayer", "lablab", "docdoc")
+        reg_writer = Client().layer("boblayer", "lablab", "docdoc")
         self.assertEqual(
             os.path.join(self.tmpdir, "layer", "boblayer", "lablab", "docdoc"),
             reg_writer.path)
 
     def test_notice(self):
-        client = Client()
-        reg_writer = client.notice("docdoc")
+        reg_writer = Client().notice("docdoc")
         self.assertEqual(
             os.path.join(self.tmpdir, "notice", "docdoc"), reg_writer.path)
 
     def test_diff(self):
-        client = Client()
-        reg_writer = client.diff("lablab", "oldold", "newnew")
+        reg_writer = Client.diff("lablab", "oldold", "newnew")
         self.assertEqual(
             os.path.join(self.tmpdir, "diff", "lablab", "oldold", "newnew"),
             reg_writer.path)
+
+    def test_preamble(self):
+        reg_writer = Client().preamble("docdoc")
+        self.assertEqual(
+            os.path.join(self.tmpdir, "preamble", "docdoc"), reg_writer.path)
 
     def test_writer_class_fs(self):
         """File System writer is the appropriate class when a protocol isn't
