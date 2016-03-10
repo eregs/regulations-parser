@@ -14,12 +14,12 @@ _version_id = '{}-annual-{}'.format
 logger = logging.getLogger(__name__)
 
 
-def process_if_needed(cfr_title, cfr_part, year, publication_date):
+def process_if_needed(volume, cfr_part):
     """Review dependencies; if they're out of date, parse the annual edition
     into a tree and store that"""
-    version_id = _version_id(year, cfr_part)
-    annual_entry = entry.Annual(cfr_title, cfr_part, year)
-    tree_entry = entry.Tree(cfr_title, cfr_part, version_id)
+    version_id = _version_id(volume.year, cfr_part)
+    annual_entry = entry.Annual(volume.title, cfr_part, volume.year)
+    tree_entry = entry.Tree(volume.title, cfr_part, version_id)
     # This is a little odd, but we use SxS as a source for "notice" data. This
     # will eventually be removed in favor of storing the version meta data
     # directly
@@ -32,20 +32,20 @@ def process_if_needed(cfr_title, cfr_part, year, publication_date):
         tree = xml_parser.reg_text.build_tree(annual_entry.read().xml)
         tree_entry.write(tree)
         sxs_entry.write(build_fake_notice(
-            version_id, publication_date.isoformat(), cfr_title, cfr_part))
+            version_id, volume.publication_date.isoformat(), volume.title,
+            cfr_part))
 
 
-def create_version_entry_if_needed(cfr_title, cfr_part, year,
-                                   publication_date):
+def create_version_entry_if_needed(volume, cfr_part):
     """Only write the version entry if it doesn't already exist. If we
     overwrote one, we'd be invalidating all related trees, etc."""
-    version_id = _version_id(year, cfr_part)
-    version_entries = entry.Version(cfr_title, cfr_part)
+    version_id = _version_id(volume.year, cfr_part)
+    version_entries = entry.Version(volume.title, cfr_part)
 
     if version_id not in version_entries:
         (version_entries / version_id).write(
-            Version(identifier=version_id, effective=publication_date,
-                    published=publication_date))
+            Version(identifier=version_id, effective=volume.publication_date,
+                    published=volume.publication_date))
 
 
 @click.command()
@@ -65,6 +65,5 @@ def current_version(cfr_title, cfr_part):
     logger.info("Getting current version - %s CFR %s, Year: %s",
                 cfr_title, cfr_part, year)
 
-    create_version_entry_if_needed(
-        cfr_title, cfr_part, year, vol.publication_date)
-    process_if_needed(cfr_title, cfr_part, year, vol.publication_date)
+    create_version_entry_if_needed(vol, cfr_part)
+    process_if_needed(vol, cfr_part)

@@ -8,6 +8,7 @@ from mock import patch
 
 from regparser.commands import current_version
 from regparser.index import entry
+from regparser.history.annual import Volume
 
 
 class CommandsCurrentVersionTests(TestCase):
@@ -15,6 +16,7 @@ class CommandsCurrentVersionTests(TestCase):
         self.title = randint(1, 999)
         self.part = randint(1, 999)
         self.year = randint(2000, 2020)
+        self.volume = Volume(self.year, self.title, 1)
         self.version_id = '{}-annual-{}'.format(self.year, self.part)
 
     def test_process_creation(self):
@@ -25,8 +27,7 @@ class CommandsCurrentVersionTests(TestCase):
                 '<ROOT />')
 
             xml_parser.reg_text.build_tree.return_value = {'my': 'tree'}
-            current_version.process_if_needed(
-                self.title, self.part, self.year, date.today())
+            current_version.process_if_needed(self.volume, self.part)
             tree = entry.Entry('tree', self.title, self.part,
                                self.version_id).read()
             self.assertEqual(json.loads(tree), {'my': 'tree'})
@@ -42,8 +43,7 @@ class CommandsCurrentVersionTests(TestCase):
             annual.write('ANNUAL')
             tree.write('TREE')
 
-            current_version.process_if_needed(
-                self.title, self.part, self.year, date.today())
+            current_version.process_if_needed(self.volume, self.part)
 
             # didn't change
             self.assertEqual(annual.read(), 'ANNUAL')
@@ -53,8 +53,7 @@ class CommandsCurrentVersionTests(TestCase):
         """Creates a version associated with the part and year"""
         with CliRunner().isolated_filesystem():
             current_version.create_version_entry_if_needed(
-                self.title, self.part, self.year, date(self.year, 4, 8))
-            version = entry.Version(
-                self.title, self.part, self.version_id).read()
-            self.assertEqual(version.effective, date(self.year, 4, 8))
-            self.assertEqual(version.published, date(self.year, 4, 8))
+                Volume(2010, 20, 1), 1001)
+            version = entry.Version(20, 1001, '2010-annual-1001').read()
+            self.assertEqual(version.effective, date(2010, 4, 1))
+            self.assertEqual(version.published, date(2010, 4, 1))
