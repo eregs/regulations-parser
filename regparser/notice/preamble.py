@@ -26,20 +26,25 @@ def simple_children(elements, deeper_source, label):
 
 
 def nested_children(elements, deeper_source, label):
-    """Make recursively calls `make_node` to generate the
+    """Make recursive calls to `make_node` to generate
     children-with-subchildren
         :param list[etree.Element] elements:
         :param str deeper_source: SOURCE attribute which indicates a deeper
         header
         :param list[str] label: label of the parent Node"""
-    hd_idxs = [idx for idx, elt in enumerate(elements)
-               if elt.tag == 'HD' and elt.get('SOURCE') == deeper_source]
-    spans = zip(hd_idxs, hd_idxs[1:] + [len(elements)])
+    indexes_of_next_level_headers = [
+        idx for idx, elt in enumerate(elements)
+        if elt.tag == 'HD' and elt.get('SOURCE') == deeper_source]
+    # Pairs of [start, end) indexes, defining runs of XML elements which
+    # should be grouped together. The final pair will include len(elements),
+    # the end of the list
+    start_end_pairs = zip(indexes_of_next_level_headers,
+                          indexes_of_next_level_headers[1:] + [len(elements)])
     children = []
-    for idx, (begin, end) in enumerate(spans):
-        header = elements[begin]
-        sub_elements = elements[begin + 1:end]
-        ident = 'p{}'.format(hd_idxs[0] + idx)
+    for idx, (start, end) in enumerate(start_end_pairs):
+        header = elements[start]
+        sub_elements = elements[start + 1:end]
+        ident = 'p{}'.format(indexes_of_next_level_headers[0] + idx)
         child = make_node(sub_elements, header.text, label + [ident])
         children.append(child)
     return children
