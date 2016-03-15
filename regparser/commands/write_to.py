@@ -53,6 +53,12 @@ def write_diffs(client, only_title, only_part):
             client.diff(cfr_part, lhs_id, rhs_id).write(diff)
 
 
+def write_preambles(client):
+    for doc_id in entry.Preamble():
+        preamble = entry.Preamble(doc_id).read()
+        client.preamble(doc_id).write(preamble)
+
+
 @click.command()
 @click.argument('output')
 @click.option('--cfr_title', type=int, help="Limit to one CFR title")
@@ -73,3 +79,5 @@ def write_to(output, cfr_title, cfr_part):
     write_layers(client, cfr_title, cfr_part)
     write_notices(client, cfr_title, cfr_part)
     write_diffs(client, cfr_title, cfr_part)
+    if cfr_title is None and cfr_part is None:
+        write_preambles(client)

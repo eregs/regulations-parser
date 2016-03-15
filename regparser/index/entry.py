@@ -151,3 +151,10 @@ class Layer(_JSONEntry):
 class Diff(_JSONEntry):
     """Processes diffs, keyed by diff"""
     PREFIX = (ROOT, 'diff')
+
+
+class Preamble(_JSONEntry):
+    """Processes notice preambles, keyed by document id"""
+    PREFIX = (ROOT, 'preamble')
+    JSON_ENCODER = FullNodeEncoder
+    JSON_DECODER = staticmethod(full_node_decode_hook)

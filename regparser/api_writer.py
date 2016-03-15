@@ -162,3 +162,6 @@ class Client:
     def diff(self, label, old_version, new_version):
         return self.writer_class(self.base, "diff", label, old_version,
                                  new_version)
+
+    def preamble(self, doc_number):
+        return self.writer_class(self.base, "preamble", doc_number)
