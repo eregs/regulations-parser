@@ -19,20 +19,20 @@ class Entry(object):
     PREFIX = (ROOT,)
 
     def __init__(self, *args):
-        self._path = tuple(str(arg) for arg in args)
+        self.path = tuple(str(arg) for arg in args)
 
     def __div__(self, other):
         """Embellishment in the form of a DSL.
         Entry(1, 2, 3) / 4 / 5 == Entry(1, 2, 3, 4, 5)"""
-        args = self._path + (other,)
+        args = self.path + (other,)
         return self.__class__(*args)
 
     def __str__(self):
-        return os.path.join(*(self.PREFIX + self._path))
+        return os.path.join(*(self.PREFIX + self.path))
 
     def _create_parent_dir(self):
         """Create the requisite directories if needed"""
-        path = os.path.join(*(self.PREFIX + self._path[:-1]))
+        path = os.path.join(*(self.PREFIX + self.path[:-1]))
         if not os.path.exists(path):
             os.makedirs(path)
 
@@ -151,3 +151,10 @@ class Layer(_JSONEntry):
 class Diff(_JSONEntry):
     """Processes diffs, keyed by diff"""
     PREFIX = (ROOT, 'diff')
+
+
+class Preamble(_JSONEntry):
+    """Processes notice preambles, keyed by document id"""
+    PREFIX = (ROOT, 'preamble')
+    JSON_ENCODER = FullNodeEncoder
+    JSON_DECODER = staticmethod(full_node_decode_hook)

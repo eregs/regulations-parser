@@ -100,6 +100,14 @@ class CommandsVersionsTests(TestCase):
             self.assertEqual((path / '111').read().effective, date(2002, 2, 2))
             self.assertEqual((path / '222').read().effective, date(2004, 4, 4))
 
+    def test_write_to_disk_no_effective(self):
+        """If a version is somehow associated with a proposed rule (or a final
+        rule has been misparsed), we should get an exception"""
+        xml = Mock()
+        xml.effective = None
+        with self.assertRaises(versions.InvalidEffectiveDate):
+            versions.write_to_disk(xml, entry.Version('12', '1000', '11'))
+
     @patch('regparser.commands.versions.write_to_disk')
     def test_write_if_needed_raises_exception(self, write_to_disk):
         """If an input file is missing, this raises an exception"""
