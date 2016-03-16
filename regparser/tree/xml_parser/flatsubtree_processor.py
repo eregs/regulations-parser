@@ -12,7 +12,8 @@ class FlatParagraphProcessor(paragraph_processor.ParagraphProcessor):
                     ['NOTE', 'NOTES'], Node.NOTE),
                 paragraph_processor.HeaderMatcher(),
                 paragraph_processor.SimpleTagMatcher('P', 'FP'),
-                us_code.USCodeMatcher()]
+                us_code.USCodeMatcher(),
+                paragraph_processor.IgnoreTagMatcher('PRTPAGE')]
 
 
 class FlatsubtreeMatcher(paragraph_processor.BaseMatcher):

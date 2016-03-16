@@ -14,8 +14,8 @@ from regparser.tree.depth import markers as mtypes, optional_rules
 from regparser.tree.struct import Node
 from regparser.tree.paragraph import p_level_of, p_levels
 from regparser.tree.xml_parser import (
-    flatsubtree_processor, import_category, paragraph_processor,
-    simple_hierarchy_processor, tree_utils)
+    flatsubtree_processor, import_category, note_processor,
+    paragraph_processor, tree_utils)
 from regparser.tree.xml_parser.appendices import build_non_reg_text
 
 
@@ -359,8 +359,10 @@ class RegtextParagraphProcessor(paragraph_processor.ParagraphProcessor):
                 flatsubtree_processor.FlatsubtreeMatcher(tags=['EXAMPLE']),
                 paragraph_processor.HeaderMatcher(),
                 ParagraphMatcher(),
-                simple_hierarchy_processor.SimpleHierarchyMatcher(
-                    tags=['NOTE', 'NOTES'], node_type=Node.NOTE)]
+                note_processor.NoteMatcher(),
+                paragraph_processor.IgnoreTagMatcher(
+                    'SECTNO', 'SUBJECT', 'CITA', 'SECAUTH', 'APPRO',
+                    'PRTPAGE', 'EAR', 'RESERVED')]
 
     def additional_constraints(self):
         return [optional_rules.depth_type_inverses,
