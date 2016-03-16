@@ -1,6 +1,8 @@
 import abc
 import logging
 
+from lxml import etree
+
 from regparser.layer.key_terms import KeyTerms
 from regparser.layer.formatting import table_xml_to_plaintext
 from regparser.tree.depth import heuristics, markers as mtypes
@@ -9,6 +11,9 @@ from regparser.tree.depth.derive import debug_idx, derive_depths
 from regparser.tree.paragraph import hash_for_paragraph
 from regparser.tree.struct import Node
 from regparser.tree.xml_parser import tree_utils
+
+
+logger = logging.getLogger(__name__)
 
 
 class ParagraphProcessor(object):
@@ -32,6 +37,8 @@ class ParagraphProcessor(object):
             tag_matcher = next(matching, None)
             if tag_matcher:
                 nodes.extend(tag_matcher.derive_nodes(child, processor=self))
+            else:
+                logger.warning("No tag match\n%s", etree.tostring(child))
 
         # Trailing stars don't matter; slightly more efficient to ignore them
         while nodes and nodes[-1].label[0] in mtypes.stars:
@@ -192,6 +199,14 @@ class SimpleTagMatcher(BaseMatcher):
     def derive_nodes(self, xml, processor=None):
         return [Node(text=tree_utils.get_node_text(xml).strip(),
                      label=[mtypes.MARKERLESS])]
+
+
+class IgnoreTagMatcher(SimpleTagMatcher):
+    """As we log warnings when we don't know how to process a tag, this
+    matcher allows us to positively acknowledge that we're ignoring some
+    matches"""
+    def derive_nodes(self, xml, processor=None):
+        return []
 
 
 class TableMatcher(BaseMatcher):
