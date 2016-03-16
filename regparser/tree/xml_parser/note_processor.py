@@ -5,6 +5,7 @@ from regparser.tree.xml_parser import (
 
 
 class IgnoreNotesHeader(paragraph_processor.BaseMatcher):
+    """We don't want to include "Note:" and "Notes:" headers"""
     def matches(self, xml):
         return xml.tag == 'HD' and xml.text.lower().startswith('note')
 
@@ -23,6 +24,7 @@ class NoteProcessor(paragraph_processor.ParagraphProcessor):
 
 
 class NoteMatcher(paragraph_processor.BaseMatcher):
+    """Processes the contents of NOTE and NOTES tags using a NoteProcessor"""
     def matches(self, xml):
         return xml.tag in ('NOTE', 'NOTES')
 
