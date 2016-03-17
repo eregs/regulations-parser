@@ -110,26 +110,30 @@ def continue_previous_seq(typ, idx, depth, *all_prev):
 
 
 def same_parent_same_type(*all_vars):
-    """All markers in the same level (with the same parent) should have the
-    same marker type"""
+    """All markers in the same parent should have the same marker type.
+    Exceptions for:
+        STARS, which can appear at any level
+        Sequences which _begin_ with markerless paragraphs"""
     elements = [tuple(all_vars[i:i+3]) for i in range(0, len(all_vars), 3)]
 
-    def per_level(elements, last_type=None):
+    def per_level(elements, parent_type=None):
         level, grouped_children = _level_and_children(elements)
 
         if not level:
             return True     # Base Case
 
-        types = set(el[0] for el in level)
-        types = list(sorted(types, key=lambda t: t == markers.stars))
-        if len(types) > 2:
+        types = [typ for typ, idx, depth in level if not typ == markers.stars]
+        if parent_type in types:
             return False
-        if len(types) == 2 and markers.stars not in types:
-            return False
-        if last_type in types and last_type != markers.stars:
-            return False
+
+        last_type = markers.markerless
+        for typ in types:
+            if last_type != typ and last_type != markers.markerless:
+                return False
+            last_type = typ
+
         for children in grouped_children:           # Recurse
-            if not per_level(children, types[0]):
+            if not per_level(children, types[0] if types else None):
                 return False
         return True
 
