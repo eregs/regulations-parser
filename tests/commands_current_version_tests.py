@@ -33,7 +33,7 @@ class CommandsCurrentVersionTests(TestCase):
             self.assertEqual(json.loads(tree), {'my': 'tree'})
             notice = entry.SxS(self.version_id).read()
             self.assertEqual(notice['document_number'], self.version_id)
-            self.assertEqual(notice['cfr_parts'], [self.part])
+            self.assertEqual(notice['cfr_parts'], [str(self.part)])
 
     def test_process_no_need_to_create(self):
         """If everything is up to date, we don't need to build new versions"""
