@@ -11,18 +11,13 @@ class Layer(object):
     must implement"""
     __metaclass__ = abc.ABCMeta
 
-    def __init2__(self, tree, context=None):
-        if context is None:
-            context = {}
+    def __init__(self, tree, **context):
+        """Different layers may need different contextual information, such as
+        which version of a regulation is being processed, which CFR title is
+        under inspection, etc. We'd like to call the constructor of each
+        different layer in the same way (so we can just iterate over all
+        layers), so we silently eat all kwargs"""
         self.tree = tree
-        self.context = context
-        self.layer = {}
-
-    def __init__(self, tree, cfr_title=None, notices=None, version=None):
-        self.tree = tree
-        self.notices = notices or []
-        self.cfr_title = cfr_title
-        self.version = version
         self.layer = {}
 
     def pre_process(self):

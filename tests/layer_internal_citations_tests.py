@@ -7,7 +7,8 @@ from regparser.tree.struct import Node
 
 class ParseTest(TestCase):
     def setUp(self):
-        self.parser = internal_citations.InternalCitationParser(None)
+        self.parser = internal_citations.InternalCitationParser(
+            None, cfr_title=None)
         self.parser.verify_citations = False
 
     def test_process_method(self):
@@ -328,7 +329,8 @@ class ParseTest(TestCase):
                     children=[Node(label=['222', '1', '1']),
                               Node(label=['222', '1', '1'],
                                    children=[Node(label=['111', '34'])])])
-        parser = internal_citations.InternalCitationParser(tree)
+        parser = internal_citations.InternalCitationParser(
+            tree, cfr_title=None)
         parser.pre_process()
         self.assertEqual(parser.known_citations, set([
             ('1111', '2', '3'), ('222', '1', '1'), ('111', '34')]))
@@ -338,7 +340,8 @@ class ParseTest(TestCase):
                     children=[Node(label=['222', '1', '1']),
                               Node(label=['222', '1', '1'],
                                    children=[Node(label=['111', '34'])])])
-        parser = internal_citations.InternalCitationParser(tree)
+        parser = internal_citations.InternalCitationParser(
+            tree, cfr_title=None)
         parser.pre_process()
         parser.verify_citations = False
         text = 'Section 111.34 and paragraph (c)'

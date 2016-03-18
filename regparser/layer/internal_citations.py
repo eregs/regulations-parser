@@ -11,8 +11,9 @@ logger = logging.getLogger(__name__)
 class InternalCitationParser(Layer):
     shorthand = 'internal-citations'
 
-    def __init__(self, *args, **kwargs):
-        Layer.__init__(self, *args, **kwargs)
+    def __init__(self, tree, cfr_title, **context):
+        super(InternalCitationParser, self).__init__(tree, **context)
+        self.cfr_title = cfr_title
         self.known_citations = set()
         self.verify_citations = True
 

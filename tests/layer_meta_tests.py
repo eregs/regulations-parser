@@ -17,7 +17,7 @@ class LayerMetaTest(TestCase):
         settings.META = self.old_meta
 
     def test_process_cfr(self):
-        m = Meta(None, cfr_title=3)
+        m = Meta(None, cfr_title=3, version=None)
         result = m.process(Node(label=['a']))
         self.assertEqual(1, len(result))
         self.assertTrue('cfr_title_number' in result[0])
@@ -27,21 +27,15 @@ class LayerMetaTest(TestCase):
 
     def test_process_effective_date(self):
         """The effective date is derived from a Version object"""
-        mock_notices = [
-            {'effective_on': '2001-01-01', 'document_number': 'v1'},
-            {'something': 'else', 'document_number': 'v2'},
-            {'effective_on': '2003-03-03', 'comments_close_on': '2004-04-04',
-             'document_number': 'v3'},
-            {'dates': {'other': ['2005-05-05']}, 'document_number': 'v4'}]
-        m = Meta(None, cfr_title=8, notices=mock_notices,
-                 version=Version('v1', date(2004, 4, 4), date(2004, 4, 4)))
+        version = Version('v1', date(2004, 4, 4), date(2004, 4, 4))
+        m = Meta(None, cfr_title=8, version=version)
         result = m.process(Node(label=['a']))
         self.assertEqual(1, len(result))
         self.assertEqual('2004-04-04', result[0].get('effective_date'))
 
     def test_process_extra(self):
         settings.META = {'some': 'setting', 'then': 42}
-        m = Meta(None, cfr_title=19)
+        m = Meta(None, cfr_title=19, version=None)
         result = m.process(Node(label=['a']))
         self.assertEqual(1, len(result))
         self.assertTrue('some' in result[0])
@@ -50,12 +44,12 @@ class LayerMetaTest(TestCase):
         self.assertEqual(42, result[0]['then'])
 
     def test_process_not_root(self):
-        m = Meta(None, cfr_title=19)
+        m = Meta(None, cfr_title=19, version=None)
         result = m.process(Node(label=['111', '22']))
         self.assertEqual(None, result)
 
     def test_process_statutory_letter(self):
-        m = Meta(None, cfr_title=19)
+        m = Meta(None, cfr_title=19, version=None)
         result = m.process(Node(label=['1111']))
         self.assertFalse('statutory_name' in result[0])
         self.assertFalse('reg_letter' in result[0])

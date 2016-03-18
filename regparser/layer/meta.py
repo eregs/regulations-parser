@@ -7,6 +7,11 @@ import settings
 class Meta(Layer):
     shorthand = 'meta'
 
+    def __init__(self, tree, cfr_title, version, **context):
+        super(Meta, self).__init__(tree, **context)
+        self.cfr_title = cfr_title
+        self.version = version
+
     def process(self, node):
         """If this is the root element, add some 'meta' information about
         this regulation, including its cfr title, effective date, and any
