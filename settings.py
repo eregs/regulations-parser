@@ -129,20 +129,29 @@ PREPROCESSORS = plugins.extend_list('eregs_ns.parser.preprocessors', [
     "regparser.tree.xml_parser.preprocessors.ImportCategories",
 ])
 
-LAYERS = plugins.extend_list('eregs_ns.parser.layers', [
-    'regparser.layer.external_citations.ExternalCitationParser',
-    'regparser.layer.meta.Meta',
-    'regparser.layer.internal_citations.InternalCitationParser',
-    'regparser.layer.table_of_contents.TableOfContentsLayer',
-    'regparser.layer.terms.Terms',
-    'regparser.layer.paragraph_markers.ParagraphMarkers',
-    'regparser.layer.key_terms.KeyTerms',
-    'regparser.layer.formatting.Formatting',
-    'regparser.layer.graphics.Graphics',
-    # CFPB specific -- these should be moved to plugins
-    'regparser.layer.section_by_section.SectionBySection',
-    'regparser.layer.interpretations.Interpretations',
-])
+# Which layers are to be generated, keyed by document type. The ALL key is
+# special; layers in this category automatically apply to all document types
+LAYERS = {
+    'cfr': [
+        'regparser.layer.external_citations.ExternalCitationParser',
+        'regparser.layer.meta.Meta',
+        'regparser.layer.internal_citations.InternalCitationParser',
+        'regparser.layer.table_of_contents.TableOfContentsLayer',
+        'regparser.layer.terms.Terms',
+        'regparser.layer.paragraph_markers.ParagraphMarkers',
+        'regparser.layer.key_terms.KeyTerms',
+        # CFPB specific -- these should be moved to plugins
+        'regparser.layer.section_by_section.SectionBySection',
+        'regparser.layer.interpretations.Interpretations',
+    ],
+    'preamble': [],
+    # It probably makes more sense to use plugins.update_dictionary, but we're
+    # keeping this for backwards compatibility
+    'ALL': plugins.extend_list('eregs_ns.parser.layers', [
+        'regparser.layer.formatting.Formatting',
+        'regparser.layer.graphics.Graphics',
+    ]),
+}
 
 try:
     from local_settings import *

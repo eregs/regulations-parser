@@ -5,7 +5,14 @@ from regparser.index import dependency, entry
 from regparser.plugins import classes_by_shorthand
 import settings
 
-ALL_LAYERS = classes_by_shorthand(settings.LAYERS)
+
+LAYER_CLASSES = {
+    doc_type: classes_by_shorthand(class_string_list)
+    for doc_type, class_string_list in settings.LAYERS.items()}
+# Also add in the "ALL" layers
+for doc_type in LAYER_CLASSES:
+    for layer_name, cls in LAYER_CLASSES['ALL'].items():
+        LAYER_CLASSES[doc_type][layer_name] = cls
 logger = logging.getLogger(__name__)
 
 
@@ -14,7 +21,7 @@ def dependencies(tree_dir, layer_dir, version_dir):
     deps = dependency.Graph()
     sxs_dir = entry.SxS()
     for version_id in tree_dir:
-        for layer_name in ALL_LAYERS:
+        for layer_name in LAYER_CLASSES['cfr']:
             # Layers depend on their associated tree
             deps.add(layer_dir / version_id / layer_name,
                      tree_dir / version_id)
@@ -45,7 +52,7 @@ def sxs_sources(version_dir, version_id):
 def stale_layers(deps, layer_dir):
     """Return all of the layer dependencies which are now stale within
     layer_dir"""
-    for layer_name in ALL_LAYERS:
+    for layer_name in LAYER_CLASSES['cfr']:
         entry = layer_dir / layer_name
         deps.validate_for(entry)
         if deps.is_stale(entry):
@@ -62,7 +69,7 @@ def process_layers(stale, cfr_title, cfr_part, version):
         notices = []
         if layer_name == 'analyses':
             notices = sxs_sources(version_dir, version.identifier)
-        layer_json = ALL_LAYERS[layer_name](
+        layer_json = LAYER_CLASSES['cfr'][layer_name](
             tree, cfr_title, notices=notices, version=version).build()
         (layer_dir / version.identifier / layer_name).write(layer_json)
 

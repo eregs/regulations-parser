@@ -91,8 +91,8 @@ class CommandsLayersTests(TestCase):
             version = Version('1234', date(2000, 1, 1), date(2000, 1, 1))
             entry.Tree('12', '1000', '1234').write(Node())
 
-            with patch.dict(layers.ALL_LAYERS,
-                            {'meta': meta, 'analyses': analyses}):
+            with patch.dict(layers.LAYER_CLASSES,
+                            {'cfr': {'meta': meta, 'analyses': analyses}}):
                 layers.process_layers(
                     ['meta', 'analyses'], '12', '1000', version)
             self.assertEqual(meta.call_args[1].get('notices'), [])
