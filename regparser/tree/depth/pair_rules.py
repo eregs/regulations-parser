@@ -77,9 +77,10 @@ def new_sequence(prev, curr):
 
 
 def markerless_same_level(prev, curr):
-    """Markerless sequences are allowed if they are on the same level"""
-    return (prev.is_markerless() and curr.is_markerless() and
-            prev.depth == curr.depth)
+    """Markerless paragraphs can be followed by any type on the same level as
+    long as that's beginning a new sequence"""
+    return (prev.is_markerless() and prev.depth == curr.depth and
+            curr.idx == 0)
 
 
 def paragraph_markerless(prev, curr):

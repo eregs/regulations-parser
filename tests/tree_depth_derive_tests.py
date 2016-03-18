@@ -223,6 +223,18 @@ class DeriveTests(TestCase):
             [0, 0, 0]
         )
 
+    def test_markerless_at_beginning(self):
+        """Allow markerless paragraphs to be on the same level as a paragraph
+        marker"""
+        self.assert_depth_match(
+            [MARKERLESS, MARKERLESS, 'a'],
+            [0, 0, 1],
+            [0, 0, 0])
+        self.assert_depth_match(
+            [MARKERLESS, MARKERLESS, 'a', 'b', 'c', 'd'],
+            [0, 0, 1, 1, 1, 1],
+            [0, 0, 0, 0, 0, 0])
+
     def test_limit_sequence_gap(self):
         """The limit_sequence_gap rule should limit our ability to derive
         depths with gaps between adjacent paragraphs. It should be

@@ -2,20 +2,23 @@
 from unittest import TestCase
 
 from lxml import etree
+from mock import patch
 
 from regparser.tree.depth import markers as mtypes
 from regparser.tree.depth.derive import ParAssignment
 from regparser.tree.struct import Node
 from regparser.tree.xml_parser import paragraph_processor
+from tests.xml_builder import XMLBuilderMixin
 
 
 class _ExampleProcessor(paragraph_processor.ParagraphProcessor):
     MATCHERS = [paragraph_processor.SimpleTagMatcher('TAGA'),
                 paragraph_processor.SimpleTagMatcher('TAGB'),
-                paragraph_processor.StarsMatcher()]
+                paragraph_processor.StarsMatcher(),
+                paragraph_processor.IgnoreTagMatcher('IGNORE')]
 
 
-class ParagraphProcessorTest(TestCase):
+class ParagraphProcessorTest(XMLBuilderMixin, TestCase):
     def test_parse_nodes_matchers(self):
         """Verify that matchers are consulted per node"""
         xml = u"""
@@ -173,3 +176,18 @@ class ParagraphProcessorTest(TestCase):
         intro, rest = _ExampleProcessor().separate_intro(nodes)
         self.assertIsNone(intro)
         self.assertEqual(nodes, rest)
+
+    def test_logging(self):
+        """We should be writing a log when there are tags we weren't
+        expecting. We should not be writing a log if those tags are explicitly
+        ignored"""
+        with self.tree.builder('ROOT') as root:
+            root.IGNORE("this tag is explicitly ignored")
+            root.UNKNOWN("this tag is not")
+        to_patch = 'regparser.tree.xml_parser.paragraph_processor.logger'
+        with patch(to_patch) as logger:
+            result = _ExampleProcessor().parse_nodes(self.tree.render_xml())
+        self.assertEqual(result, [])
+        self.assertEqual(logger.warning.call_count, 1)
+        self.assertIn('UNKNOWN', logger.warning.call_args[0][1])
+        self.assertNotIn('IGNORE', logger.warning.call_args[0][1])
