@@ -7,8 +7,10 @@ from lxml import etree
 from regparser.tree.depth import heuristics
 from regparser.tree.depth.derive import markers as mtypes
 from regparser.tree.struct import Node
+from regparser.tree.xml_parser.flatsubtree_processor import FlatsubtreeMatcher
 from regparser.tree.xml_parser.paragraph_processor import (
-    BaseMatcher, ParagraphProcessor, SimpleTagMatcher)
+    BaseMatcher, GraphicsMatcher, IgnoreTagMatcher, ParagraphProcessor,
+    SimpleTagMatcher, TableMatcher)
 
 
 _MARKER_REGEX = re.compile(r'(?P<marker>([0-9]+)|([a-z]+)|([A-Z]+))\.')
@@ -39,7 +41,12 @@ class PreambleLevelMatcher(BaseMatcher):
 
 
 class PreambleProcessor(ParagraphProcessor):
-    MATCHERS = [PreambleLevelMatcher(), SimpleTagMatcher('P', 'FP')]
+    MATCHERS = [PreambleLevelMatcher(), SimpleTagMatcher('P', 'FP'),
+                # FTNT's are already converted; we can ignore the original
+                IgnoreTagMatcher('FTNT', 'PRTPAGE'), GraphicsMatcher(),
+                FlatsubtreeMatcher(tags=['EXTRACT'], node_type=Node.EXTRACT),
+                TableMatcher()
+                ]
 
     def select_depth(self, depths):
         """Override ParagraphProcessor to add different weights"""

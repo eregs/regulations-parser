@@ -244,3 +244,15 @@ class FencedMatcher(BaseMatcher):
         texts.append("```")
 
         return [Node("\n".join(texts), label=[mtypes.MARKERLESS])]
+
+
+class GraphicsMatcher(BaseMatcher):
+    """Convert Graphics tags into a markdown-esque format"""
+    def matches(self, xml):
+        return xml.tag == 'GPH'
+
+    def derive_nodes(self, xml, processor=None):
+        text = ''
+        for gid_xml in xml.xpath('./GID'):
+            text += '![]({})'.format(gid_xml.text)
+        return [Node(text, label=[mtypes.MARKERLESS])]
