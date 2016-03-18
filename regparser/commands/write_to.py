@@ -40,7 +40,8 @@ def write_notices(client, only_title, only_part):
     for version_id in sxs_dir:
         tree = (sxs_dir / version_id).read()
         title_match = not only_title or tree['cfr_title'] == only_title
-        part_match = not only_part or str(only_part) in tree['cfr_parts']
+        cfr_parts = map(str, tree['cfr_parts'])
+        part_match = not only_part or str(only_part) in cfr_parts
         if title_match and part_match:
             client.notice(version_id).write(tree)
 
