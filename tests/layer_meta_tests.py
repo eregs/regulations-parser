@@ -26,42 +26,18 @@ class LayerMetaTest(TestCase):
         self.assertEqual('The President', result[0]['cfr_title_text'])
 
     def test_process_effective_date(self):
-        """The effective date is derived from either notices which are passed
-        in or an explicit Version object"""
+        """The effective date is derived from a Version object"""
         mock_notices = [
             {'effective_on': '2001-01-01', 'document_number': 'v1'},
             {'something': 'else', 'document_number': 'v2'},
             {'effective_on': '2003-03-03', 'comments_close_on': '2004-04-04',
              'document_number': 'v3'},
             {'dates': {'other': ['2005-05-05']}, 'document_number': 'v4'}]
-        m = Meta(None, cfr_title=8, notices=mock_notices, version_id='v3')
-        result = m.process(Node(label=['a']))
-        self.assertEqual(1, len(result))
-        self.assertEqual('2003-03-03', result[0].get('effective_date'))
-
-        # Effective date will not be present if it can't be found
-        m = Meta(None, 9, [], None)
-        result = m.process(Node(label=['a']))
-        self.assertEqual(1, len(result))
-        self.assertFalse('effective_date' in result[0])
-
-        # Version object takes precedence
         m = Meta(None, cfr_title=8, notices=mock_notices,
                  version=Version('v1', date(2004, 4, 4), date(2004, 4, 4)))
         result = m.process(Node(label=['a']))
         self.assertEqual(1, len(result))
         self.assertEqual('2004-04-04', result[0].get('effective_date'))
-
-    def test_process_chronological(self):
-        m = Meta(None,
-                 cfr_title=12,
-                 notices=[{'effective_on': '2003-03-03',
-                           'document_number': 'v1'},
-                          {'effective_on': '2001-01-01',
-                           'document_number': 'v2'}],
-                 version_id='v1')
-        result = m.process(Node(label=['a']))
-        self.assertEqual('2003-03-03', result[0]['effective_date'])
 
     def test_process_extra(self):
         settings.META = {'some': 'setting', 'then': 42}

@@ -37,7 +37,3 @@ class Meta(Layer):
     def effective_date(self):
         if self.version:
             return self.version.effective.isoformat()
-        last_notice = filter(lambda n: n['document_number'] == self.version_id,
-                             self.notices)
-        if last_notice and 'effective_on' in last_notice[0]:
-            return last_notice[0]['effective_on']
