@@ -152,15 +152,18 @@ def stars_occupy_space(*all_vars):
         if not level:
             return True     # Base Case
 
-        last_idx = -1
+        last_idx, last_typ = -1, None
         for typ, idx, _ in level:
             if typ == markers.stars:
                 if idx == 0:    # STARS_TAG, not INLINE_STARS
                     last_idx += 1
-            elif last_idx >= idx and typ != markers.markerless:
+            # sequences must be increasing. Exception for markerless
+            elif (last_idx >= idx and
+                    markers.markerless not in (last_typ, typ)):
                 return False
             else:
                 last_idx = idx
+            last_typ = typ
 
         for children in grouped_children:           # Recurse
             if not per_level(children):
