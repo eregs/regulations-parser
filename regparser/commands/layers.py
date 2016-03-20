@@ -19,7 +19,6 @@ logger = logging.getLogger(__name__)
 def dependencies(tree_dir, layer_dir, version_dir):
     """Modify and return the dependency graph pertaining to layers"""
     deps = dependency.Graph()
-    sxs_dir = entry.SxS()
     for version_id in tree_dir:
         for layer_name in LAYER_CLASSES['cfr']:
             # Layers depend on their associated tree
@@ -27,26 +26,7 @@ def dependencies(tree_dir, layer_dir, version_dir):
                      tree_dir / version_id)
         # Meta layer also depends on the version info
         deps.add(layer_dir / version_id / 'meta', version_dir / version_id)
-        for document_number in sxs_source_names(version_dir, version_id):
-            deps.add(layer_dir / version_id / 'analyses',
-                     sxs_dir / document_number)
     return deps
-
-
-def sxs_source_names(version_dir, stop_version):
-    """The SxS layer relies on all of notices that came before a particular
-    version"""
-    for version_id in version_dir:
-        if version_id in entry.Notice():
-            yield version_id
-        if version_id == stop_version:
-            break
-
-
-def sxs_sources(version_dir, version_id):
-    """Wrapper reading JSON for the sxs_source_names"""
-    return [(entry.SxS() / doc_num).read()
-            for doc_num in sxs_source_names(version_dir, version_id)]
 
 
 def stale_layers(deps, layer_dir):
@@ -63,14 +43,10 @@ def process_layers(stale, cfr_title, cfr_part, version):
     """Build all of the stale layers for this version, writing them into the
     index. Assumes all dependencies have already been checked"""
     tree = entry.Tree(cfr_title, cfr_part, version.identifier).read()
-    version_dir = entry.Version(cfr_title, cfr_part)
     layer_dir = entry.Layer(cfr_title, cfr_part)
     for layer_name in stale:
-        notices = []
-        if layer_name == 'analyses':
-            notices = sxs_sources(version_dir, version.identifier)
         layer_json = LAYER_CLASSES['cfr'][layer_name](
-            tree, cfr_title, notices=notices, version=version).build()
+            tree, cfr_title=cfr_title, version=version).build()
         (layer_dir / version.identifier / layer_name).write(layer_json)
 
 

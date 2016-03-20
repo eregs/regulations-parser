@@ -141,8 +141,8 @@ LAYERS = {
         'regparser.layer.paragraph_markers.ParagraphMarkers',
         'regparser.layer.key_terms.KeyTerms',
         # CFPB specific -- these should be moved to plugins
-        'regparser.layer.section_by_section.SectionBySection',
         'regparser.layer.interpretations.Interpretations',
+        # SectionBySection layer is a created via a separate command
     ],
     'preamble': [],
     # It probably makes more sense to use plugins.update_dictionary, but we're
