@@ -28,6 +28,7 @@ class CommandsWriteToTests(TestCase):
         entry.Layer.cfr('12', '1000', 'v3', 'layer3').write({'3': 3})
         entry.Layer.cfr('11', '1000', 'v4', 'layer4').write({'4': 4})
         entry.Layer.cfr('12', '1001', 'v3', 'layer3').write({'3': 3})
+        entry.Layer.preamble('555_55', 'layer5').write({'5': 5})
 
     def add_diffs(self):
         """Adds an uneven assortment of diffs between trees"""
@@ -89,6 +90,8 @@ class CommandsWriteToTests(TestCase):
             # these don't match the requested cfr title/part
             self.assertFalse(self.file_exists('layer', 'layer4', '1000', 'v4'))
             self.assertFalse(self.file_exists('layer', 'layer3', '1001', 'v3'))
+            self.assertFalse(self.file_exists('layer', 'layer5',
+                                              'preamble:555_55'))
 
             self.assertTrue(self.file_exists('diff', '1000', 'v1', 'v2'))
             self.assertTrue(self.file_exists('diff', '1000', 'v2', 'v2'))
@@ -117,6 +120,8 @@ class CommandsWriteToTests(TestCase):
             self.assertTrue(self.file_exists('diff', '1001', 'v3', 'v1'))
             self.assertFalse(self.file_exists('notice', 'v0'))
             self.assertFalse(self.file_exists('notice', 'v1'))
+            self.assertFalse(self.file_exists('layer', 'layer5',
+                                              'preamble:555_55'))
 
     def test_no_params(self):
         """Integration test that all local files are written"""
@@ -128,3 +133,5 @@ class CommandsWriteToTests(TestCase):
             self.assertTrue(self.file_exists('diff', '1000', 'v3', 'v1'))
             self.assertTrue(self.file_exists('notice', 'v0'))
             self.assertTrue(self.file_exists('notice', 'v1'))
+            self.assertTrue(self.file_exists('layer', 'layer5',
+                                             'preamble:555_55'))

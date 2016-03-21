@@ -50,7 +50,18 @@ class CommandsLayersTests(TestCase):
             layers.process_cfr_layers(
                 ['keyterms', 'meta'], 12, version_entry)
 
-            self.assertEqual(
-                entry.Layer.cfr(12, 1000, '1234', 'keyterms').read(), {})
-            self.assertEqual(
-                entry.Layer.cfr(12, 1000, '1234', 'meta').read(), {})
+            self.assertTrue(
+                entry.Layer.cfr(12, 1000, '1234', 'keyterms').exists())
+            self.assertTrue(
+                entry.Layer.cfr(12, 1000, '1234', 'meta').exists())
+
+    def test_process_preamble_layers(self):
+        """All layers for a single preamble should get written."""
+        with self.cli.isolated_filesystem():
+            preamble_entry = entry.Preamble('111_222')
+            preamble_entry.write(Node())
+
+            layers.process_preamble_layers(['graphics'], preamble_entry)
+
+            self.assertTrue(
+                entry.Layer.preamble('111_222', 'graphics').exists())

@@ -65,6 +65,9 @@ class Entry(object):
     def __len__(self):
         return len(list(self.__iter__()))
 
+    def exists(self):
+        return os.path.exists(str(self))
+
 
 class Notice(Entry):
     """Processes NoticeXMLs, keyed by notice_xml"""

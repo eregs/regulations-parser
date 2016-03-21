@@ -23,10 +23,9 @@ def write_layers(client, only_title, only_part):
     for layer_dir in utils.relevant_paths(entry.Layer.cfr(), only_title,
                                           only_part):
         _, cfr_title, cfr_part, version_id = layer_dir.path
-        reference = '{}:{}'.format(version_id, cfr_part)
         for layer_name in layer_dir:
             layer = (layer_dir / layer_name).read()
-            client.layer(layer_name, reference).write(layer)
+            client.layer(layer_name, cfr_part, version_id).write(layer)
 
     if only_title is None and only_part is None:
         non_cfr_doc_types = [doc_type for doc_type in entry.Layer()
