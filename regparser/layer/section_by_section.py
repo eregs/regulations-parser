@@ -4,6 +4,10 @@ from layer import Layer
 class SectionBySection(Layer):
     shorthand = 'analyses'
 
+    def __init__(self, tree, notices, **context):
+        super(SectionBySection, self).__init__(tree, **context)
+        self.notices = notices
+
     def process(self, node):
         """Determine which (if any) section-by-section analyses would apply
         to this node."""

@@ -5,6 +5,7 @@ from regparser.commands.current_version import current_version
 from regparser.commands.diffs import diffs
 from regparser.commands.fill_with_rules import fill_with_rules
 from regparser.commands.layers import layers
+from regparser.commands.sxs_layers import sxs_layers
 from regparser.commands.sync_xml import sync_xml
 from regparser.commands.versions import versions
 from regparser.commands.write_to import write_to
@@ -39,5 +40,7 @@ def pipeline(ctx, cfr_title, cfr_part, output, only_latest, xml_ttl):
         ctx.invoke(annual_editions, **params)
         ctx.invoke(fill_with_rules, **params)
     ctx.invoke(layers, **params)
+    # sxs_layers is required until we stop using SxS data for version info
+    ctx.invoke(sxs_layers, **params)
     ctx.invoke(diffs, **params)
     ctx.invoke(write_to, output=output, **params)
