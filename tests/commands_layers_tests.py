@@ -14,26 +14,26 @@ class CommandsLayersTests(TestCase):
     def setUp(self):
         self.cli = CliRunner()
 
-    def test_stale_cfr_layers(self):
-        """We should have dependencies between all of the CFR layers and their
+    def test_stale_layers(self):
+        """We should have dependencies between all of the layers and their
         associated trees. We should also tie the meta layer to the version"""
         configured_layers = {'cfr': {'keyterms': None, 'other': None}}
         with self.cli.isolated_filesystem(), patch.dict(
                 layers.LAYER_CLASSES, configured_layers):
             version_entry = entry.Version(111, 22, 'aaa')
             version_entry.write(Version('aaa', date.today(), date.today()))
+            tree_entry = entry.Tree(111, 22, 'aaa')
             # Use list() to instantiate
             self.assertRaises(dependency.Missing,
-                              list, layers.stale_cfr_layers(version_entry))
+                              list, layers.stale_layers(tree_entry, 'cfr'))
 
             entry.Entry('tree', 111, 22, 'bbb').write('')    # wrong version
             self.assertRaises(dependency.Missing,
-                              list, layers.stale_cfr_layers(version_entry))
+                              list, layers.stale_layers(tree_entry, 'cfr'))
 
             entry.Entry('tree', 111, 22, 'aaa').write('')
             self.assertItemsEqual(
-                layers.stale_cfr_layers(version_entry),
-                ['keyterms', 'other'])
+                layers.stale_layers(tree_entry, 'cfr'), ['keyterms', 'other'])
 
             with dependency.Graph().dependency_db() as db:
                 self.assertIn(
