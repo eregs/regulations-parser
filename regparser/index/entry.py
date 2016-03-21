@@ -65,6 +65,9 @@ class Entry(object):
     def __len__(self):
         return len(list(self.__iter__()))
 
+    def exists(self):
+        return os.path.exists(str(self))
+
 
 class Notice(Entry):
     """Processes NoticeXMLs, keyed by notice_xml"""
@@ -146,6 +149,16 @@ class SxS(_JSONEntry):
 class Layer(_JSONEntry):
     """Processes layers, keyed by layer"""
     PREFIX = (ROOT, 'layer')
+
+    @classmethod
+    def cfr(cls, *args):
+        """Return a Layer entry in the appropriate namespace"""
+        return cls("cfr", *args)
+
+    @classmethod
+    def preamble(cls, *args):
+        """Return a Layer entry in the appropriate namespace"""
+        return cls("preamble", *args)
 
 
 class Diff(_JSONEntry):
