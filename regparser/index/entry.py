@@ -147,6 +147,11 @@ class Layer(_JSONEntry):
     """Processes layers, keyed by layer"""
     PREFIX = (ROOT, 'layer')
 
+    @classmethod
+    def cfr(cls, *args):
+        """Return a Layer entry in the appropriate namespace"""
+        return cls("cfr", *args)
+
 
 class Diff(_JSONEntry):
     """Processes diffs, keyed by diff"""

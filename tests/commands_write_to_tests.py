@@ -22,12 +22,12 @@ class CommandsWriteToTests(TestCase):
 
     def add_layers(self):
         """Add an assortment of layers to the index"""
-        entry.Layer('12', '1000', 'v2', 'layer1').write({'1': 1})
-        entry.Layer('12', '1000', 'v2', 'layer2').write({'2': 2})
-        entry.Layer('12', '1000', 'v3', 'layer2').write({'2': 2})
-        entry.Layer('12', '1000', 'v3', 'layer3').write({'3': 3})
-        entry.Layer('11', '1000', 'v4', 'layer4').write({'4': 4})
-        entry.Layer('12', '1001', 'v3', 'layer3').write({'3': 3})
+        entry.Layer.cfr('12', '1000', 'v2', 'layer1').write({'1': 1})
+        entry.Layer.cfr('12', '1000', 'v2', 'layer2').write({'2': 2})
+        entry.Layer.cfr('12', '1000', 'v3', 'layer2').write({'2': 2})
+        entry.Layer.cfr('12', '1000', 'v3', 'layer3').write({'3': 3})
+        entry.Layer.cfr('11', '1000', 'v4', 'layer4').write({'4': 4})
+        entry.Layer.cfr('12', '1001', 'v3', 'layer3').write({'3': 3})
 
     def add_diffs(self):
         """Adds an uneven assortment of diffs between trees"""

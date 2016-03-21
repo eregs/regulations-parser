@@ -28,8 +28,8 @@ def write_trees(client, only_title, only_part):
 
 
 def write_layers(client, only_title, only_part):
-    for layer_dir in relevant_paths(entry.Layer(), only_title, only_part):
-        cfr_title, cfr_part, version_id = layer_dir.path
+    for layer_dir in relevant_paths(entry.Layer.cfr(), only_title, only_part):
+        doc_type, cfr_title, cfr_part, version_id = layer_dir.path
         for layer_name in layer_dir:
             layer = (layer_dir / layer_name).read()
             client.layer(layer_name, cfr_part, version_id).write(layer)
