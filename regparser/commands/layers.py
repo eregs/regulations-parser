@@ -44,7 +44,7 @@ def process_cfr_layers(stale_names, cfr_title, version_entry):
     layer_dir = entry.Layer.cfr(*version_entry.path)
     for layer_name in stale_names:
         layer_json = LAYER_CLASSES['cfr'][layer_name](
-            tree, cfr_title=cfr_title, version=version).build()
+            tree, cfr_title=int(cfr_title), version=version).build()
         (layer_dir / layer_name).write(layer_json)
 
 
@@ -66,13 +66,12 @@ def layers(cfr_title, cfr_part):
     """Build all layers for all known versions."""
     logger.info("Build layers - %s CFR %s", cfr_title, cfr_part)
 
-    for tree_dir in utils.relevant_paths(entry.Tree(), cfr_title, cfr_part):
-        for version_id in tree_dir:
-            tree_entry = tree_dir / version_id
-            version_entry = entry.Version(cfr_title, cfr_part, version_id)
-            stale = stale_layers(tree_entry, 'cfr')
-            if stale:
-                process_cfr_layers(stale, cfr_title, version_entry)
+    for tree_entry in utils.relevant_paths(entry.Tree(), cfr_title, cfr_part):
+        tree_title, tree_part, version_id = tree_entry.path
+        version_entry = entry.Version(tree_title, tree_part, version_id)
+        stale = stale_layers(tree_entry, 'cfr')
+        if stale:
+            process_cfr_layers(stale, tree_title, version_entry)
 
     if cfr_title is None and cfr_part is None:
         preamble_dir = entry.Preamble()
