@@ -25,6 +25,8 @@ class NoticePreambleTests(XMLBuilderMixin, NodeAccessorMixin, TestCase):
                 suplinf.HD("II. H2", SOURCE="HD1")
                 suplinf.P("H2-P1")
                 suplinf.P("H2-P2")
+                with suplinf.GPH() as gph:
+                    gph.GID("111-222-333")
                 suplinf.LSTSUB()
                 suplinf.P("ignored")
             root.P("tail also ignored")
@@ -45,3 +47,4 @@ class NoticePreambleTests(XMLBuilderMixin, NodeAccessorMixin, TestCase):
         self.assertEqual(root['II'].title, 'II. H2')
         self.assertEqual(root['II']['p1'].text, 'H2-P1')
         self.assertEqual(root['II']['p2'].text, 'H2-P2')
+        self.assertEqual(root['II']['p3'].text, '![](111-222-333)')
