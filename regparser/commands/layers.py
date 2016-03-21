@@ -1,6 +1,7 @@
 import click
 import logging
 
+from regparser.commands import utils
 from regparser.index import dependency, entry
 from regparser.plugins import classes_by_shorthand
 import settings
@@ -47,18 +48,35 @@ def process_cfr_layers(stale_names, cfr_title, version_entry):
         (layer_dir / layer_name).write(layer_json)
 
 
+def process_preamble_layers(stale_names, preamble_entry):
+    """Build all of the stale layers for this preamble, writing them into the
+    index. Assumes all dependencies have already been checked"""
+    tree = preamble_entry.read()
+    layer_dir = entry.Layer.preamble(*preamble_entry.path)
+    for layer_name in stale_names:
+        layer_json = LAYER_CLASSES['preamble'][layer_name](tree).build()
+        (layer_dir / layer_name).write(layer_json)
+
+
 @click.command()
-@click.argument('cfr_title', type=int)
-@click.argument('cfr_part', type=int)
+@click.option('--cfr_title', type=int, help="Limit to one CFR title")
+@click.option('--cfr_part', type=int, help="Limit to one CFR part")
 # @todo - allow layers to be passed as a parameter
 def layers(cfr_title, cfr_part):
     """Build all layers for all known versions."""
     logger.info("Build layers - %s CFR %s", cfr_title, cfr_part)
 
-    tree_dir = entry.Tree(cfr_title, cfr_part)
-    for version_id in tree_dir:
-        tree_entry = tree_dir / version_id
-        version_entry = entry.Version(cfr_title, cfr_part, version_id)
-        stale = stale_layers(tree_entry, 'cfr')
-        if stale:
-            process_cfr_layers(stale, cfr_title, version_entry)
+    for tree_dir in utils.relevant_paths(entry.Tree(), cfr_title, cfr_part):
+        for version_id in tree_dir:
+            tree_entry = tree_dir / version_id
+            version_entry = entry.Version(cfr_title, cfr_part, version_id)
+            stale = stale_layers(tree_entry, 'cfr')
+            if stale:
+                process_cfr_layers(stale, cfr_title, version_entry)
+
+    if cfr_title is None and cfr_part is None:
+        preamble_dir = entry.Preamble()
+        for doc_number in preamble_dir:
+            stale = stale_layers(preamble_dir / doc_number, 'preamble')
+            if stale:
+                process_preamble_layers(stale, preamble_dir / doc_number)

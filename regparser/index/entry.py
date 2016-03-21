@@ -152,6 +152,11 @@ class Layer(_JSONEntry):
         """Return a Layer entry in the appropriate namespace"""
         return cls("cfr", *args)
 
+    @classmethod
+    def preamble(cls, *args):
+        """Return a Layer entry in the appropriate namespace"""
+        return cls("preamble", *args)
+
 
 class Diff(_JSONEntry):
     """Processes diffs, keyed by diff"""
