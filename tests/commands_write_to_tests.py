@@ -55,6 +55,12 @@ class CommandsWriteToTests(TestCase):
         path = os.path.join(self.tmpdir, *parts)
         return os.path.exists(path)
 
+    def assert_file_exists(self, *parts):
+        return self.assertTrue(self.file_exists(*parts))
+
+    def assert_no_file(self, *parts):
+        return self.assertFalse(self.file_exists(*parts))
+
     @contextmanager
     def integration(self):
         """Create a (small) set of files in the index. Handles setup and
@@ -76,35 +82,34 @@ class CommandsWriteToTests(TestCase):
             cli.invoke(write_to, [self.tmpdir, '--cfr_title', '12',
                                   '--cfr_part', '1000'])
 
-            self.assertTrue(self.file_exists('regulation', '1000', 'v2'))
-            self.assertTrue(self.file_exists('regulation', '1000', 'v3'))
-            self.assertTrue(self.file_exists('regulation', '1000', 'v4'))
+            self.assert_file_exists('regulation', '1000', 'v2')
+            self.assert_file_exists('regulation', '1000', 'v3')
+            self.assert_file_exists('regulation', '1000', 'v4')
             # these don't match the requested cfr title/part
-            self.assertFalse(self.file_exists('regulation', '1000', 'v5'))
-            self.assertFalse(self.file_exists('regulation', '1001', 'v6'))
+            self.assert_no_file('regulation', '1000', 'v5')
+            self.assert_no_file('regulation', '1001', 'v6')
 
-            self.assertTrue(self.file_exists('layer', 'layer1', '1000', 'v2'))
-            self.assertTrue(self.file_exists('layer', 'layer2', '1000', 'v2'))
-            self.assertTrue(self.file_exists('layer', 'layer2', '1000', 'v3'))
-            self.assertTrue(self.file_exists('layer', 'layer3', '1000', 'v3'))
+            self.assert_file_exists('layer', 'layer1', 'cfr', 'v2', '1000')
+            self.assert_file_exists('layer', 'layer2', 'cfr', 'v2', '1000')
+            self.assert_file_exists('layer', 'layer2', 'cfr', 'v3', '1000')
+            self.assert_file_exists('layer', 'layer3', 'cfr', 'v3', '1000')
             # these don't match the requested cfr title/part
-            self.assertFalse(self.file_exists('layer', 'layer4', '1000', 'v4'))
-            self.assertFalse(self.file_exists('layer', 'layer3', '1001', 'v3'))
-            self.assertFalse(self.file_exists('layer', 'layer5',
-                                              'preamble:555_55'))
+            self.assert_no_file('layer', 'layer4', 'cfr', 'v4', '1000')
+            self.assert_no_file('layer', 'layer2', 'cfr', 'v3', '1001')
+            self.assert_no_file('layer', 'layer5', 'preamble', '555_55')
 
-            self.assertTrue(self.file_exists('diff', '1000', 'v1', 'v2'))
-            self.assertTrue(self.file_exists('diff', '1000', 'v2', 'v2'))
-            self.assertTrue(self.file_exists('diff', '1000', 'v2', 'v1'))
+            self.assert_file_exists('diff', '1000', 'v1', 'v2')
+            self.assert_file_exists('diff', '1000', 'v2', 'v2')
+            self.assert_file_exists('diff', '1000', 'v2', 'v1')
             # these don't match the requested cfr title/part
-            self.assertFalse(self.file_exists('diff', '1000', 'v3', 'v1'))
-            self.assertFalse(self.file_exists('diff', '1001', 'v3', 'v1'))
+            self.assert_no_file('diff', '1000', 'v3', 'v1')
+            self.assert_no_file('diff', '1001', 'v3', 'v1')
 
-            self.assertTrue(self.file_exists('notice', 'v2'))
-            self.assertTrue(self.file_exists('notice', 'v3'))
+            self.assert_file_exists('notice', 'v2')
+            self.assert_file_exists('notice', 'v3')
             # these don't match the requested cfr title/part
-            self.assertFalse(self.file_exists('notice', 'v0'))
-            self.assertFalse(self.file_exists('notice', 'v1'))
+            self.assert_no_file('notice', 'v0')
+            self.assert_no_file('notice', 'v1')
 
     def test_cfr_title(self):
         """Integration test that verifies only files associated with the
@@ -112,26 +117,24 @@ class CommandsWriteToTests(TestCase):
         with self.integration() as cli:
             cli.invoke(write_to, [self.tmpdir, '--cfr_title', '12'])
 
-            self.assertFalse(self.file_exists('regulation', '1000', 'v5'))
-            self.assertTrue(self.file_exists('regulation', '1001', 'v6'))
-            self.assertFalse(self.file_exists('layer', 'layer4', '1000', 'v4'))
-            self.assertTrue(self.file_exists('layer', 'layer3', '1001', 'v3'))
-            self.assertFalse(self.file_exists('diff', '1000', 'v3', 'v1'))
-            self.assertTrue(self.file_exists('diff', '1001', 'v3', 'v1'))
-            self.assertFalse(self.file_exists('notice', 'v0'))
-            self.assertFalse(self.file_exists('notice', 'v1'))
-            self.assertFalse(self.file_exists('layer', 'layer5',
-                                              'preamble:555_55'))
+            self.assert_no_file('regulation', '1000', 'v5')
+            self.assert_file_exists('regulation', '1001', 'v6')
+            self.assert_no_file('layer', 'layer4', 'cfr', 'v4', '1000')
+            self.assert_file_exists('layer', 'layer3', 'cfr', 'v3', '1001')
+            self.assert_no_file('layer', 'layer5', 'preamble', '555_55')
+            self.assert_no_file('diff', '1000', 'v3', 'v1')
+            self.assert_file_exists('diff', '1001', 'v3', 'v1')
+            self.assert_no_file('notice', 'v0')
+            self.assert_no_file('notice', 'v1')
 
     def test_no_params(self):
         """Integration test that all local files are written"""
         with self.integration() as cli:
             cli.invoke(write_to, [self.tmpdir])
 
-            self.assertTrue(self.file_exists('regulation', '1000', 'v5'))
-            self.assertTrue(self.file_exists('layer', 'layer4', '1000', 'v4'))
-            self.assertTrue(self.file_exists('diff', '1000', 'v3', 'v1'))
-            self.assertTrue(self.file_exists('notice', 'v0'))
-            self.assertTrue(self.file_exists('notice', 'v1'))
-            self.assertTrue(self.file_exists('layer', 'layer5',
-                                             'preamble:555_55'))
+            self.assert_file_exists('regulation', '1000', 'v5')
+            self.assert_file_exists('layer', 'layer4', 'cfr', 'v4', '1000')
+            self.assert_file_exists('layer', 'layer5', 'preamble', '555_55')
+            self.assert_file_exists('diff', '1000', 'v3', 'v1')
+            self.assert_file_exists('notice', 'v0')
+            self.assert_file_exists('notice', 'v1')

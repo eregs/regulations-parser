@@ -25,17 +25,17 @@ def write_layers(client, only_title, only_part):
         _, cfr_title, cfr_part, version_id = layer_dir.path
         for layer_name in layer_dir:
             layer = (layer_dir / layer_name).read()
-            client.layer(layer_name, cfr_part, version_id).write(layer)
+            doc_id = version_id + '/' + cfr_part
+            client.layer(layer_name, 'cfr', doc_id).write(layer)
 
     if only_title is None and only_part is None:
         non_cfr_doc_types = [doc_type for doc_type in entry.Layer()
                              if doc_type != 'cfr']
         for doc_type in non_cfr_doc_types:
             for doc_id in entry.Layer(doc_type):
-                reference = "{}:{}".format(doc_type, doc_id)
                 for layer_name in entry.Layer(doc_type, doc_id):
                     layer = entry.Layer(doc_type, doc_id, layer_name).read()
-                    client.layer(layer_name, reference).write(layer)
+                    client.layer(layer_name, doc_type, doc_id).write(layer)
 
 
 def write_notices(client, only_title, only_part):
