@@ -75,6 +75,10 @@ class Node(object):
         part of the appendix"""
         return len(self.label) == 2 and self.label[1][:1].isdigit()
 
+    def walk(self, fn):
+        """See walk(node, fn)"""
+        return walk(self, fn)
+
 
 class NodeEncoder(JSONEncoder):
     """Custom JSON encoder to handle Node objects"""
