@@ -144,7 +144,9 @@ LAYERS = {
         'regparser.layer.interpretations.Interpretations',
         # SectionBySection layer is a created via a separate command
     ],
-    'preamble': [],
+    'preamble': [
+        'regparser.layer.preamble.internal_citations.InternalCitations'
+    ],
     # It probably makes more sense to use plugins.update_dictionary, but we're
     # keeping this for backwards compatibility
     'ALL': plugins.extend_list('eregs_ns.parser.layers', [
