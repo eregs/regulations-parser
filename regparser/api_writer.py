@@ -152,11 +152,9 @@ class Client:
     def regulation(self, label, doc_number):
         return self.writer_class(self.base, "regulation", label, doc_number)
 
-    def layer(self, layer_name, label, version=None):
-        args = [self.base, "layer", layer_name, label]
-        if version:
-            args.append(version)
-        return self.writer_class(*args)
+    def layer(self, layer_name, doc_type, doc_id):
+        return self.writer_class(self.base, "layer", layer_name, doc_type,
+                                 doc_id)
 
     def notice(self, doc_number):
         return self.writer_class(self.base, "notice", doc_number)
