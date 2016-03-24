@@ -21,7 +21,7 @@ class HttpMixin(object):
             json_dict = {"key": "value"}
         kwargs['body'] = json.dumps(json_dict)
         kwargs['content_type'] = 'text/json'
-        self._expect_http(**kwargs)
+        self.expect_http(**kwargs)
 
     def expect_xml_http(self, xml_str=None, **kwargs):
         """Wraps httpretty.register_uri with some defaults for XML"""
@@ -29,10 +29,13 @@ class HttpMixin(object):
             xml_str = '<ROOT></ROOT>'
         kwargs['body'] = xml_str
         kwargs['content_type'] = 'text/xml'
-        self._expect_http(**kwargs)
+        self.expect_http(**kwargs)
 
-    def _expect_http(self, **kwargs):
+    def expect_http(self, **kwargs):
         """Wraps httpretty.register_uri with some defaults"""
+        kwargs['body'] = kwargs.get('body', b'')
+        kwargs['content_type'] = kwargs.get('content_type',
+                                            'application/octet-stream')
         kwargs['method'] = kwargs.get('method', httpretty.GET)
         # Default to catching all requests
         kwargs['uri'] = kwargs.get('uri', re.compile(".*"))

@@ -1,18 +1,21 @@
 from unittest import TestCase
 
-from mock import patch, Mock
+from mock import patch
 
-from regparser.layer.graphics import Graphics
+from regparser.layer.graphics import gid_to_url, Graphics
 from regparser.tree.struct import Node
 import settings
+from tests.http_mixin import HttpMixin
 
 
-class LayerGraphicsTest(TestCase):
-
+class LayerGraphicsTest(HttpMixin, TestCase):
     def setUp(self):
+        super(LayerGraphicsTest, self).setUp()
         self.default_url = settings.DEFAULT_IMAGE_URL
+        settings.DEFAULT_IMAGE_URL = 'http://example.com/%s.gif'
 
     def tearDown(self):
+        super(LayerGraphicsTest, self).tearDown()
         settings.DEFAULT_IMAGE_URL = self.default_url
 
     def test_process(self):
@@ -20,8 +23,14 @@ class LayerGraphicsTest(TestCase):
                     "some more ![222](XXX) followed by ![ex](ABCD) and XXX " +
                     "and ![](NOTEXT)")
         g = Graphics(None)
-        with patch('regparser.layer.graphics.requests'):
-            result = g.process(node)
+        for gid in ('ABCD', 'XXX', 'NOTEXT'):
+            self.expect_http(uri='http://example.com/{}.gif'.format(gid),
+                             method='HEAD')
+            self.expect_http(
+                uri='http://example.com/{}.thumb.gif'.format(gid),
+                method='HEAD')
+
+        result = g.process(node)
         self.assertEqual(3, len(result))
         found = [False, False, False]
         for res in result:
@@ -46,53 +55,60 @@ class LayerGraphicsTest(TestCase):
     def test_process_format(self):
         node = Node("![A88 Something](ER22MY13.257-1)")
         g = Graphics(None)
-        with patch('regparser.layer.graphics.requests'):
-            self.assertEqual(1, len(g.process(node)))
+        self.expect_http(uri='http://example.com/ER22MY13.257-1.gif',
+                         method='HEAD')
+        self.expect_http(uri='http://example.com/ER22MY13.257-1.thumb.gif',
+                         method='HEAD')
+
+        self.assertEqual(1, len(g.process(node)))
 
     @patch('regparser.layer.graphics.content')
     def test_process_custom_url(self, content):
-        settings.DEFAULT_IMAGE_URL = ":::::%s:::::"
-        content.ImageOverrides.return_value = {"a": "AAA", "f": "F8"}
+        img_url = 'http://example.com/img1.gif'
+        imga_url = 'http://example2.com/AAA.gif'
+        imgf_url = 'http://example2.com/F8.gif'
+        content.ImageOverrides.return_value = {'a': imga_url, 'f': imgf_url}
 
         node = Node("![Alt1](img1)   ![Alt2](f)  ![Alt3](a)")
         g = Graphics(None)
-        with patch('regparser.layer.graphics.requests'):
-            results = g.process(node)
+        for url in (img_url, imga_url, imgf_url):
+            self.expect_http(uri=url, method='HEAD')
+            self.expect_http(uri=url[:-3] + 'thumb.gif', method='HEAD')
+
+        results = g.process(node)
         self.assertEqual(3, len(results))
-        found = [False, False, False]
-        for result in results:
-            if result['alt'] == 'Alt1' and result['url'] == ':::::img1:::::':
-                found[0] = True
-            elif result['alt'] == 'Alt2' and result['url'] == 'F8':
-                found[1] = True
-            elif result['alt'] == 'Alt3' and result['url'] == 'AAA':
-                found[2] = True
-        self.assertEqual([True, True, True], found)
+        results = set((r['alt'], r['url']) for r in results)
+        self.assertIn(('Alt1', img_url), results)
+        self.assertIn(('Alt2', imgf_url), results)
+        self.assertIn(('Alt3', imga_url), results)
 
-    def test_find_thumb1(self):
+    def test_find_thumb(self):
+        """When trying to find a thumbnail, first try HEAD, then GET"""
         node = Node("![alt1](img1)")
-        settings.DEFAULT_IMAGE_URL = "%s.png"
         g = Graphics(None)
-        with patch('regparser.layer.graphics.requests') as requests:
-            response = Mock()
-            requests.head.return_value = response
-            requests.codes.not_implemented = 501
-            requests.codes.ok = 200
-            response.status_code = 200
-            results = g.process(node)
+        thumb_url = settings.DEFAULT_IMAGE_URL % 'img1.thumb'
+        self.expect_http(uri='http://example.com/img1.gif', method='HEAD')
 
-        for result in results:
-            self.assertEqual(result['thumb_url'], 'img1.thumb.png')
+        self.expect_http(uri=thumb_url, method='HEAD')
+        self.expect_http(uri=thumb_url, status=404)
+        # doesn't hit GET
+        self.assertEqual(g.process(node)[0].get('thumb_url'), thumb_url)
 
-    def test_find_thumb2(self):
-        node = Node("![alt2](img2)")
-        settings.DEFAULT_IMAGE_URL = "%s.png"
-        g = Graphics(None)
-        with patch('regparser.layer.graphics.requests') as requests:
-            response = Mock()
-            requests.head.return_value = response
-            response.status_code = 404
-            results = g.process(node)
+        self.expect_http(uri=thumb_url, method='HEAD', status=501)
+        self.expect_http(uri=thumb_url)
+        self.assertEqual(g.process(node)[0].get('thumb_url'), thumb_url)
 
-        for result in results:
-            self.assertTrue('thumb_url' not in result)
+        self.expect_http(uri=thumb_url, method='HEAD', status=501)
+        self.expect_http(uri=thumb_url, status=404)
+        self.assertNotIn('thumb_url', g.process(node)[0])
+
+    def test_gid_to_url(self):
+        """Verify that we fall back to lowercase"""
+        self.expect_http(uri='http://example.com/ABCD123.gif', method='HEAD',
+                         status=403)
+        self.expect_http(uri='http://example.com/abcd123.gif', method='HEAD',
+                         status=403)
+        self.expect_http(uri='http://example.com/abcd123.png', method='HEAD')
+
+        self.assertEqual(gid_to_url('ABCD123'),
+                         'http://example.com/abcd123.png')
