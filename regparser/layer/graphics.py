@@ -20,7 +20,7 @@ def check_url(url):
 
 
 class Graphics(Layer):
-    gid = re.compile(ur'!\[([\w\s]*)\]\(([a-zA-Z0-9.\-]+?)\)')
+    gid = re.compile(ur'!\[(?P<alt>[\w\s]*)\]\((?P<gid>[a-zA-Z0-9.\-]+?)\)')
     ext = re.compile(r'\.(png|gif|jpg)$')
     shorthand = 'graphics'
 
@@ -43,7 +43,7 @@ class Graphics(Layer):
             layer_el_vals = {
                 'text': match.group(0),
                 'url': url,
-                'alt': match.group(1),
+                'alt': match.group('alt'),
                 'locations': list(range(len(matches_by_text[text])))
             }
             thumb_url = self.check_for_thumb(url)
