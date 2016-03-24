@@ -101,3 +101,12 @@ class LayerGraphicsTest(HttpMixin, TestCase):
         self.expect_http(uri=thumb_url, method='HEAD', status=501)
         self.expect_http(uri=thumb_url, status=404)
         self.assertNotIn('thumb_url', g.process(node)[0])
+
+    def test_gid_to_url(self):
+        """Verify that we fall back to lowercase"""
+        self.expect_http(uri='http://example.com/ABCD123.jpg', method='HEAD',
+                         status=403)
+        self.expect_http(uri='http://example.com/abcd123.jpg', method='HEAD')
+
+        self.assertEqual(gid_to_url('ABCD123'),
+                         'http://example.com/abcd123.jpg')

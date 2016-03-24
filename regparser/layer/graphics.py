@@ -1,4 +1,5 @@
 from collections import defaultdict
+import logging
 import re
 
 import requests
@@ -6,6 +7,9 @@ import requests
 from regparser import content
 from regparser.layer.layer import Layer
 import settings
+
+
+logger = logging.getLogger(__name__)
 
 
 def check_url(url):
@@ -17,6 +21,25 @@ def check_url(url):
 
     if response.status_code == requests.codes.ok:
         return url
+
+
+def gid_to_url(gid):
+    """Take a few guesses as to where this image may be"""
+    override = content.ImageOverrides().get(gid)
+    if override and check_url(override):
+        return override
+    elif override:
+        logger.warning("Overridden image 404s: %s->%s", gid, override)
+
+    upper_url = settings.DEFAULT_IMAGE_URL % gid
+    if check_url(upper_url):
+        return upper_url
+
+    lower_url = settings.DEFAULT_IMAGE_URL % gid.lower()
+    if not check_url(lower_url):
+        logger.warning("No image could be found for %s. Tried:\n%s\n%s",
+                       gid, upper_url, lower_url)
+    return lower_url
 
 
 class Graphics(Layer):
@@ -38,8 +61,7 @@ class Graphics(Layer):
         layer_el = []
         for text in matches_by_text:
             match = matches_by_text[text][0]
-            url = content.ImageOverrides().get(
-                match.group(2), settings.DEFAULT_IMAGE_URL % match.group(2))
+            url = gid_to_url(match.group('gid'))
             layer_el_vals = {
                 'text': match.group(0),
                 'url': url,
