@@ -8,19 +8,25 @@ from regparser.layer.layer import Layer
 import settings
 
 
+def check_url(url):
+    """Verify that content exists at a given URL"""
+    response = requests.head(url)
+
+    if response.status_code == requests.codes.not_implemented:
+        response = requests.get(url)
+
+    if response.status_code == requests.codes.ok:
+        return url
+
+
 class Graphics(Layer):
     gid = re.compile(ur'!\[([\w\s]*)\]\(([a-zA-Z0-9.\-]+?)\)')
+    ext = re.compile(r'\.(png|gif|jpg)$')
     shorthand = 'graphics'
 
     def check_for_thumb(self, url):
-        thumb_url = re.sub(r'(.(png|gif|jpg))$', '.thumb' + '\\1', url)
-        response = requests.head(thumb_url)
-
-        if response.status_code == requests.codes.not_implemented:
-            response = requests.get(thumb_url)
-
-        if response.status_code == requests.codes.ok:
-            return thumb_url
+        thumb_url = self.ext.sub(r'.thumb\g<0>', url)
+        return check_url(thumb_url)
 
     def process(self, node):
         """If this node has a marker for an image in it, note where to get
