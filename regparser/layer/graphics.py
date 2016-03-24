@@ -24,22 +24,24 @@ def check_url(url):
 
 
 def gid_to_url(gid):
-    """Take a few guesses as to where this image may be"""
+    """Take a few guesses as to where this image may be. This will be
+    simplified once FR.gov adds image data to their API"""
     override = content.ImageOverrides().get(gid)
     if override and check_url(override):
         return override
     elif override:
         logger.warning("Overridden image 404s: %s->%s", gid, override)
 
-    upper_url = settings.DEFAULT_IMAGE_URL % gid
-    if check_url(upper_url):
-        return upper_url
+    default = settings.DEFAULT_IMAGE_URL
+    png = settings.DEFAULT_IMAGE_URL.replace('.gif', '.png')
+    urls = [default % gid, default % gid.lower(), png % gid.lower()]
+    for url in urls:
+        if check_url(url):
+            return url
 
-    lower_url = settings.DEFAULT_IMAGE_URL % gid.lower()
-    if not check_url(lower_url):
-        logger.warning("No image could be found for %s. Tried:\n%s\n%s",
-                       gid, upper_url, lower_url)
-    return lower_url
+    logger.warning("No image could be found for %s. Tried:\n%s",
+                   gid, "\n".join(urls))
+    return url  # last option
 
 
 class Graphics(Layer):

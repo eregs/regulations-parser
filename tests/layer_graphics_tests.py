@@ -12,7 +12,7 @@ class LayerGraphicsTest(HttpMixin, TestCase):
     def setUp(self):
         super(LayerGraphicsTest, self).setUp()
         self.default_url = settings.DEFAULT_IMAGE_URL
-        settings.DEFAULT_IMAGE_URL = 'http://example.com/%s.jpg'
+        settings.DEFAULT_IMAGE_URL = 'http://example.com/%s.gif'
 
     def tearDown(self):
         super(LayerGraphicsTest, self).tearDown()
@@ -24,10 +24,10 @@ class LayerGraphicsTest(HttpMixin, TestCase):
                     "and ![](NOTEXT)")
         g = Graphics(None)
         for gid in ('ABCD', 'XXX', 'NOTEXT'):
-            self.expect_http(uri='http://example.com/{}.jpg'.format(gid),
+            self.expect_http(uri='http://example.com/{}.gif'.format(gid),
                              method='HEAD')
             self.expect_http(
-                uri='http://example.com/{}.thumb.jpg'.format(gid),
+                uri='http://example.com/{}.thumb.gif'.format(gid),
                 method='HEAD')
 
         result = g.process(node)
@@ -55,25 +55,25 @@ class LayerGraphicsTest(HttpMixin, TestCase):
     def test_process_format(self):
         node = Node("![A88 Something](ER22MY13.257-1)")
         g = Graphics(None)
-        self.expect_http(uri='http://example.com/ER22MY13.257-1.jpg',
+        self.expect_http(uri='http://example.com/ER22MY13.257-1.gif',
                          method='HEAD')
-        self.expect_http(uri='http://example.com/ER22MY13.257-1.thumb.jpg',
+        self.expect_http(uri='http://example.com/ER22MY13.257-1.thumb.gif',
                          method='HEAD')
 
         self.assertEqual(1, len(g.process(node)))
 
     @patch('regparser.layer.graphics.content')
     def test_process_custom_url(self, content):
-        img_url = 'http://example.com/img1.jpg'
-        imga_url = 'http://example2.com/AAA.jpg'
-        imgf_url = 'http://example2.com/F8.jpg'
+        img_url = 'http://example.com/img1.gif'
+        imga_url = 'http://example2.com/AAA.gif'
+        imgf_url = 'http://example2.com/F8.gif'
         content.ImageOverrides.return_value = {'a': imga_url, 'f': imgf_url}
 
         node = Node("![Alt1](img1)   ![Alt2](f)  ![Alt3](a)")
         g = Graphics(None)
         for url in (img_url, imga_url, imgf_url):
             self.expect_http(uri=url, method='HEAD')
-            self.expect_http(uri=url[:-3] + 'thumb.jpg', method='HEAD')
+            self.expect_http(uri=url[:-3] + 'thumb.gif', method='HEAD')
 
         results = g.process(node)
         self.assertEqual(3, len(results))
@@ -87,7 +87,7 @@ class LayerGraphicsTest(HttpMixin, TestCase):
         node = Node("![alt1](img1)")
         g = Graphics(None)
         thumb_url = settings.DEFAULT_IMAGE_URL % 'img1.thumb'
-        self.expect_http(uri='http://example.com/img1.jpg', method='HEAD')
+        self.expect_http(uri='http://example.com/img1.gif', method='HEAD')
 
         self.expect_http(uri=thumb_url, method='HEAD')
         self.expect_http(uri=thumb_url, status=404)
@@ -104,9 +104,11 @@ class LayerGraphicsTest(HttpMixin, TestCase):
 
     def test_gid_to_url(self):
         """Verify that we fall back to lowercase"""
-        self.expect_http(uri='http://example.com/ABCD123.jpg', method='HEAD',
+        self.expect_http(uri='http://example.com/ABCD123.gif', method='HEAD',
                          status=403)
-        self.expect_http(uri='http://example.com/abcd123.jpg', method='HEAD')
+        self.expect_http(uri='http://example.com/abcd123.gif', method='HEAD',
+                         status=403)
+        self.expect_http(uri='http://example.com/abcd123.png', method='HEAD')
 
         self.assertEqual(gid_to_url('ABCD123'),
-                         'http://example.com/abcd123.jpg')
+                         'http://example.com/abcd123.png')
