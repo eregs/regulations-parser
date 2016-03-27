@@ -1,8 +1,8 @@
 from contextlib import contextmanager
 
-import datatree
-from datatree.render.base import Renderer
 from lxml import etree
+
+from regparser.test_utils.xml_builder import XMLBuilder
 
 
 class LXMLBuilder(object):
@@ -10,65 +10,17 @@ class LXMLBuilder(object):
     bit of the redundancy found in tests. See
     tests/tree_xml_parser_reg_text_tests.py for example usage"""
 
-    @contextmanager
     def builder(self, root_tag, **kwargs):
         """Create a datatree with the root_tag at the root"""
-        tree = datatree.Tree()
-        tree.register_renderer(LXMLRenderer)
-        with getattr(tree, root_tag)(**kwargs) as root:
-            yield root
-            self.root = root
+        tree = XMLBuilder(root_tag, **kwargs)
+        self.root = tree
+        return tree
 
     def render_xml(self):
-        return self.root.render('lxml', as_root=True)
+        return self.root.xml
 
     def render_string(self):
-        return etree.tostring(self.render_xml())
-
-
-class LXMLRenderer(Renderer):
-    """Outputs lxml tree nodes. Based on the etree renderer"""
-    friendly_names = ['lxml']
-
-    def render_verbatim(self, node):
-        """It's sometimes easier to describe the node with raw XML"""
-        element = etree.fromstring(u'<{0}>{1}</{0}>'.format(
-            node.__node_name__, node.__attrs__['_xml']))
-
-        for key, value in node.__attrs__.iteritems():
-            if key != '_xml':
-                element.attrib[key] = str(value)
-
-        return element
-
-    def render_attributes(self, node):
-        """Normal path: attributes are described via __attrs__"""
-        attrs = {}
-        for key, value in node.__attrs__.iteritems():
-            attrs[key] = str(value)
-        element = etree.Element(node.__node_name__, attrs)
-        element.text = node.__value__ or ""
-        return element
-
-    def render_node(self, node, parent=None, options={}):
-        """Generate the current node, potentially adding it to a parent, then
-        recurse on children"""
-        if '_xml' in node.__attrs__:
-            element = self.render_verbatim(node)
-        else:
-            element = self.render_attributes(node)
-
-        if parent is not None:
-            parent.append(element)
-
-        for child in node.__children__:
-            self.render_node(child, element)
-
-        return element
-
-    def render_final(self, rendered, options={}):
-        """Part of the Renderer interface"""
-        return rendered
+        return self.root.xml_str
 
 
 class XMLBuilderMixin(object):

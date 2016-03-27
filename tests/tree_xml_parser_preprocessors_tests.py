@@ -113,7 +113,7 @@ class MoveAdjoiningCharsTests(XMLBuilderMixin, TestCase):
         xml = self.tree.render_xml()
         preprocessors.MoveAdjoiningChars().transform(xml)
         self.assertEqual(etree.tostring(
-                         xml.xpath('/SECTION/P/E')[0], encoding='UTF-8'),
+                         xml.xpath('./P/E')[0], encoding='UTF-8'),
                          expected_xml)
 
     def test_transform(self):
