@@ -6,8 +6,8 @@ from unittest import TestCase
 
 from regparser.history.delays import FRDelay
 from regparser.notice import xml as notice_xml
+from regparser.test_utils.xml_builder import XMLBuilder
 import settings
-from tests.xml_builder import XMLBuilderMixin
 
 
 class NoticeXMLLocalCopiesTests(TestCase):
@@ -62,17 +62,17 @@ class NoticeXMLLocalCopiesTests(TestCase):
         self.assertEqual(set(paths), set(notice_xml.local_copies(url)))
 
 
-class NoticeXMLTests(XMLBuilderMixin, TestCase):
+class NoticeXMLTests(TestCase):
     """Tests for the NoticeXML class"""
     def test_set_meta_data(self):
         """Several pieces of meta data should be set within the XML. We test
         that the NoticeXML wrapper can retrieve them and that, if we re-read
         the XML, they can still be pulled out"""
-        with self.tree.builder("ROOT") as root:
-            with root.DATES() as dates:
-                dates.P("Some content")
-            root.PRTPAGE(P="455")
-        xml = notice_xml.NoticeXML(self.tree.render_xml())
+        with XMLBuilder("ROOT") as ctx:
+            with ctx.DATES():
+                ctx.P("Some content")
+            ctx.PRTPAGE(P="455")
+        xml = notice_xml.NoticeXML(ctx.xml)
 
         xml.effective = '2005-05-05'
         xml.published = '2004-04-04'
@@ -89,7 +89,7 @@ class NoticeXMLTests(XMLBuilderMixin, TestCase):
 
     def test_set_effective_date_create(self):
         """The DATES tag should get created if not present in the XML"""
-        xml = notice_xml.NoticeXML(self.empty_xml())
+        xml = notice_xml.NoticeXML(XMLBuilder('ROOT').xml)
 
         xml.effective = '2005-05-05'
         self.assertEqual(xml.effective, date(2005, 5, 5))
@@ -99,10 +99,10 @@ class NoticeXMLTests(XMLBuilderMixin, TestCase):
     def test_derive_effective_date(self):
         """Effective date can be derived from the dates strings. When it is
         derived, it should also be set on the notice xml"""
-        with self.tree.builder("ROOT") as root:
-            with root.DATES() as dates:
-                dates.P("Effective on May 4, 2004")
-        xml = notice_xml.NoticeXML(self.tree.render_xml())
+        with XMLBuilder("ROOT") as ctx:
+            with ctx.DATES():
+                ctx.P("Effective on May 4, 2004")
+        xml = notice_xml.NoticeXML(ctx.xml)
 
         xml.effective = '2002-02-02'
         self.assertEqual(xml.derive_effective_date(), date(2004, 5, 4))
@@ -110,12 +110,12 @@ class NoticeXMLTests(XMLBuilderMixin, TestCase):
 
     def test_delays(self):
         """The XML should be search for any delaying text"""
-        with self.tree.builder("ROOT") as root:
-            with root.EFFDATE() as effdate:
-                effdate.P("The effective date of 11 FR 100 has been delayed "
-                          "until April 1, 2010. The effective date of 11 FR "
-                          "200 has also been delayed until October 10, 2010")
-        xml = notice_xml.NoticeXML(self.tree.render_xml())
+        with XMLBuilder("ROOT") as ctx:
+            with ctx.EFFDATE():
+                ctx.P("The effective date of 11 FR 100 has been delayed "
+                      "until April 1, 2010. The effective date of 11 FR 200 "
+                      "has also been delayed until October 10, 2010")
+        xml = notice_xml.NoticeXML(ctx.xml)
 
         self.assertEqual(
             xml.delays(),

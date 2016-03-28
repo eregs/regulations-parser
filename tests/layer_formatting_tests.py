@@ -4,12 +4,12 @@ from unittest import TestCase
 
 from lxml import etree
 from regparser.layer import formatting
+from regparser.test_utils.xml_builder import XMLBuilder
 from regparser.tree.struct import Node
-from tests.xml_builder import XMLBuilderMixin
 from regparser.tree.xml_parser import preprocessors
 
 
-class LayerFormattingTests(XMLBuilderMixin, TestCase):
+class LayerFormattingTests(TestCase):
     def test_build_header(self):
         """
         I think this header is supposed to look like this:
@@ -20,18 +20,19 @@ class LayerFormattingTests(XMLBuilderMixin, TestCase):
         |   |3-1|3-2|3-3|3-4|3-5|3-6|
 
         """
-        with self.tree.builder("BOXHD") as root:
-            root.CHED("1-1", H=1)
-            root.CHED("1-2", H=1)
-            root.CHED("2-1", H=2)
-            root.CHED("3-1", H=3)
-            root.CHED("3-2", H=3)
-            root.CHED("3-3", H=3)
-            root.CHED("2-2", H=2)
-            root.CHED("3-4", H=3)
-            root.CHED("3-5", H=3)
-            root.CHED(_xml="3-6<LI>Other Content</LI>", H=3)
-        root = formatting.build_header(self.tree.render_xml().xpath('./CHED'))
+        with XMLBuilder("BOXHD") as ctx:
+            ctx.CHED("1-1", H=1)
+            ctx.CHED("1-2", H=1)
+            ctx.CHED("2-1", H=2)
+            ctx.CHED("3-1", H=3)
+            ctx.CHED("3-2", H=3)
+            ctx.CHED("3-3", H=3)
+            ctx.CHED("2-2", H=2)
+            ctx.CHED("3-4", H=3)
+            ctx.CHED("3-5", H=3)
+            ctx.child_from_string(
+                '<CHED H="3">3-6<LI>Other Content</LI></CHED>')
+        root = formatting.build_header(ctx.xml.xpath('./CHED'))
 
         n11, n12 = root.children
         self.assertEqual('1-1', n11.text)
@@ -69,34 +70,35 @@ class LayerFormattingTests(XMLBuilderMixin, TestCase):
             self.assertEqual(1, n.rowspan)
 
     def test_process_table(self):
-        with self.tree.builder("GPOTABLE") as root:
-            with root.BOXHD() as hd:
-                hd.CHED("1-1", H=1)
-                hd.CHED("1-2", H=1)
-                hd.CHED("2-1", H=2)
-                hd.CHED("3-1", H=3)
-                hd.CHED("2-2", H=2)
-                hd.CHED("3-2", H=3)
-                hd.CHED(_xml="3-3<LI>Content</LI>Here", H=3)
-            with root.ROW() as row:
-                row.ENT("11")
-                row.ENT("12")
-                row.ENT("13")
-                row.ENT("14")
-            with root.ROW() as row:
-                row.ENT("21")
-                row.ENT("22")
-                row.ENT("23")
-            with root.ROW() as row:
-                row.ENT()
-                row.ENT("32")
-                row.ENT(_xml="33<E>More</E>")
-                row.ENT("34")
-        xml = self.tree.render_xml()
-        markdown = formatting.table_xml_to_plaintext(xml)
+        with XMLBuilder("GPOTABLE") as ctx:
+            with ctx.BOXHD():
+                ctx.CHED("1-1", H=1)
+                ctx.CHED("1-2", H=1)
+                ctx.CHED("2-1", H=2)
+                ctx.CHED("3-1", H=3)
+                ctx.CHED("2-2", H=2)
+                ctx.CHED("3-2", H=3)
+                ctx.child_from_string(
+                    '<CHED H="3">3-3<LI>Content</LI>Here</CHED>')
+            with ctx.ROW():
+                ctx.ENT("11")
+                ctx.ENT("12")
+                ctx.ENT("13")
+                ctx.ENT("14")
+            with ctx.ROW():
+                ctx.ENT("21")
+                ctx.ENT("22")
+                ctx.ENT("23")
+            with ctx.ROW():
+                ctx.ENT()
+                ctx.ENT("32")
+                ctx.child_from_string(
+                    '<ENT>33<E>More</E></ENT>')
+                ctx.ENT("34")
+        markdown = formatting.table_xml_to_plaintext(ctx.xml)
         self.assertTrue("3-3 Content Here" in markdown)
         self.assertTrue("33 More" in markdown)
-        node = Node(markdown, source_xml=xml)
+        node = Node(markdown, source_xml=ctx.xml)
         result = formatting.Formatting(None).process(node)
         self.assertEqual(1, len(result))
         result = result[0]
@@ -125,19 +127,18 @@ class LayerFormattingTests(XMLBuilderMixin, TestCase):
         |R1C1     |
         |R2C1|R2C2|
         """
-        with self.tree.builder("GPOTABLE", COLS="6") as root:
-            root.TTITLE("Caption")
-            with root.BOXHD() as hd:
-                hd.CHED(u"R1C1", H=1)
-                hd.CHED(u"R2C1", H=2)
-                hd.CHED(u"R2C2", H=2)
+        with XMLBuilder("GPOTABLE", COLS=6) as ctx:
+            ctx.TTITLE("Caption")
+            with ctx.BOXHD():
+                ctx.CHED(u"R1C1", H=1)
+                ctx.CHED(u"R2C1", H=2)
+                ctx.CHED(u"R2C2", H=2)
 
-        xml = self.tree.render_xml()
-        markdown = formatting.table_xml_to_plaintext(xml)
+        markdown = formatting.table_xml_to_plaintext(ctx.xml)
         self.assertTrue("R1C1" in markdown)
         self.assertTrue("R2C2" in markdown)
 
-        node = Node(markdown, source_xml=xml)
+        node = Node(markdown, source_xml=ctx.xml)
         result = formatting.Formatting(None).process(node)
         self.assertEqual(1, len(result))
         result = result[0]
@@ -161,26 +162,26 @@ class LayerFormattingTests(XMLBuilderMixin, TestCase):
 
     def test_table_with_header_with_footnotes(self):
         """
-
         |R1C1[^1] |
         |R2C1|R2C2|
         """
-        with self.tree.builder("GPOTABLE", COLS="6") as root:
-            with root.BOXHD() as hd:
-                hd.CHED(_xml=u"R1C1<SU>1</SU>", H=1)
-                hd.CHED(u"R2C1", H=2)
-                hd.CHED(u"R2C2", H=2)
-            root.TNOTE(
-                _xml="<SU>1</SU> No work of any kind shall be conducted")
+        with XMLBuilder("GPOTABLE", COLS=6) as ctx:
+            with ctx.BOXHD():
+                ctx.child_from_string(
+                    '<CHED H="1">R1C1<SU>1</SU></CHED>')
+                ctx.CHED(u"R2C1", H=2)
+                ctx.CHED(u"R2C2", H=2)
+            ctx.child_from_string(
+                "<TNOTE><SU>1</SU> No work of any kind shall be conducted"
+                "</TNOTE>")
 
         preprocessor = preprocessors.Footnotes()
-        xml = self.tree.render_xml()
-        preprocessor.transform(xml)
-        markdown = formatting.table_xml_to_plaintext(xml)
+        preprocessor.transform(ctx.xml)
+        markdown = formatting.table_xml_to_plaintext(ctx.xml)
         self.assertTrue("R1C1" in markdown)
         self.assertTrue("R2C2" in markdown)
 
-        node = Node(markdown, source_xml=xml)
+        node = Node(markdown, source_xml=ctx.xml)
         result = formatting.Formatting(None).process(node)
         self.assertEqual(2, len(result))
         table, footnote = result
@@ -216,23 +217,23 @@ class LayerFormattingTests(XMLBuilderMixin, TestCase):
 
         This is testing the implementation of the TTITLE as a caption element.
         """
-        with self.tree.builder("GPOTABLE", COLS="6") as root:
-            root.TTITLE(_xml="Caption<SU>1</SU>")
-            with root.BOXHD() as hd:
-                hd.CHED(u"R1C1", H=1)
-                hd.CHED(u"R2C1", H=2)
-                hd.CHED(u"R2C2", H=2)
-            root.TNOTE(
-                _xml="<SU>1</SU> No work of any kind shall be conducted")
+        with XMLBuilder("GPOTABLE", COLS=6) as ctx:
+            ctx.child_from_string("<TTITLE>Caption<SU>1</SU></TTITLE>")
+            with ctx.BOXHD():
+                ctx.CHED(u"R1C1", H=1)
+                ctx.CHED(u"R2C1", H=2)
+                ctx.CHED(u"R2C2", H=2)
+            ctx.child_from_string(
+                "<TNOTE><SU>1</SU> No work of any kind shall be conducted"
+                "</TNOTE>")
 
         preprocessor = preprocessors.Footnotes()
-        xml = self.tree.render_xml()
-        preprocessor.transform(xml)
-        markdown = formatting.table_xml_to_plaintext(xml)
+        preprocessor.transform(ctx.xml)
+        markdown = formatting.table_xml_to_plaintext(ctx.xml)
         self.assertTrue("R1C1" in markdown)
         self.assertTrue("R2C2" in markdown)
 
-        node = Node(markdown, source_xml=xml)
+        node = Node(markdown, source_xml=ctx.xml)
         result = formatting.Formatting(None).process(node)
         self.assertEqual(2, len(result))
         table, footnote = result
@@ -267,25 +268,24 @@ class LayerFormattingTests(XMLBuilderMixin, TestCase):
         |R2C1|R2C2|R2C3     |R2C4     |
         |    |    |R3C1|R3C2|R3C3|R3C4|
         """
-        with self.tree.builder("GPOTABLE", COLS="6") as root:
-            with root.BOXHD() as hd:
-                hd.CHED(u"R1C1", H=1)
-                hd.CHED(u"R2C1", H=2)
-                hd.CHED(u"R2C2", H=2)
-                hd.CHED(u"R1C2", H=1)
-                hd.CHED(u"R2C3", H=2)
-                hd.CHED(u"R3C1", H=3)
-                hd.CHED(u"R3C2", H=3)
-                hd.CHED(u"R2C4", H=2)
-                hd.CHED(u"R3C3", H=3)
-                hd.CHED(u"R3C4", H=3)
+        with XMLBuilder("GPOTABLE", COLS=6) as ctx:
+            with ctx.BOXHD():
+                ctx.CHED(u"R1C1", H=1)
+                ctx.CHED(u"R2C1", H=2)
+                ctx.CHED(u"R2C2", H=2)
+                ctx.CHED(u"R1C2", H=1)
+                ctx.CHED(u"R2C3", H=2)
+                ctx.CHED(u"R3C1", H=3)
+                ctx.CHED(u"R3C2", H=3)
+                ctx.CHED(u"R2C4", H=2)
+                ctx.CHED(u"R3C3", H=3)
+                ctx.CHED(u"R3C4", H=3)
 
-        xml = self.tree.render_xml()
-        markdown = formatting.table_xml_to_plaintext(xml)
+        markdown = formatting.table_xml_to_plaintext(ctx.xml)
         self.assertTrue("R1C1" in markdown)
         self.assertTrue("R2C2" in markdown)
 
-        node = Node(markdown, source_xml=xml)
+        node = Node(markdown, source_xml=ctx.xml)
         result = formatting.Formatting(None).process(node)
         self.assertEqual(1, len(result))
         result = result[0]

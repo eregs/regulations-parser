@@ -1,27 +1,27 @@
 from unittest import TestCase
 
+from regparser.test_utils.xml_builder import XMLBuilder
 from regparser.tree.xml_parser.simple_hierarchy_processor import (
         SimpleHierarchyMatcher)
-from tests.xml_builder import XMLBuilderMixin
 from tests.node_accessor import NodeAccessorMixin
 
 
-class SimpleHierarchyTests(XMLBuilderMixin, NodeAccessorMixin, TestCase):
+class SimpleHierarchyTests(NodeAccessorMixin, TestCase):
     def test_deep_hierarchy(self):
         """Run through a full example, converting an XML node into an
         appropriate tree of nodes"""
-        with self.tree.builder("ROOT") as root:
-            root.P("(a) AAA")
-            root.P("(b) BBB")
-            root.P("i. BIBIBI")
-            root.P("ii. BIIBIIBII")
-            root.P("(1) BII1BII1BII1")
-            root.P("(2) BII2BII2BII2")
-            root.P("iii. BIIIBIIIBIII")
-            root.P("(c) CCC")
+        with XMLBuilder("ROOT") as ctx:
+            ctx.P("(a) AAA")
+            ctx.P("(b) BBB")
+            ctx.P("i. BIBIBI")
+            ctx.P("ii. BIIBIIBII")
+            ctx.P("(1) BII1BII1BII1")
+            ctx.P("(2) BII2BII2BII2")
+            ctx.P("iii. BIIIBIIIBIII")
+            ctx.P("(c) CCC")
 
         matcher = SimpleHierarchyMatcher(['ROOT'], 'some_type')
-        nodes = matcher.derive_nodes(self.tree.render_xml())
+        nodes = matcher.derive_nodes(ctx.xml)
         self.assertEqual(1, len(nodes))
 
         node = self.node_accessor(nodes[0], nodes[0].label)
@@ -50,11 +50,11 @@ class SimpleHierarchyTests(XMLBuilderMixin, NodeAccessorMixin, TestCase):
     def test_no_children(self):
         """Elements with only one, markerless paragraph should not have
         children"""
-        with self.tree.builder("NOTE") as root:
-            root.P("Some text here")
+        with XMLBuilder("NOTE") as ctx:
+            ctx.P("Some text here")
 
         matcher = SimpleHierarchyMatcher(['NOTE'], 'note')
-        nodes = matcher.derive_nodes(self.tree.render_xml())
+        nodes = matcher.derive_nodes(ctx.xml)
         self.assertEqual(1, len(nodes))
         node = nodes[0]
 

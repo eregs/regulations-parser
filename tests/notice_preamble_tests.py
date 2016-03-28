@@ -2,35 +2,35 @@ from unittest import TestCase
 
 from regparser.notice import preamble
 from regparser.notice.xml import NoticeXML
+from regparser.test_utils.xml_builder import XMLBuilder
 from tests.node_accessor import NodeAccessorMixin
-from tests.xml_builder import XMLBuilderMixin
 
 
-class NoticePreambleTests(XMLBuilderMixin, NodeAccessorMixin, TestCase):
+class NoticePreambleTests(NodeAccessorMixin, TestCase):
     def test_parse_preamble_integration(self):
         """End-to-end test for parsing a notice preamble"""
-        with self.tree.builder('ROOT') as root:
-            root.P("ignored content")
-            with root.SUPLINF() as suplinf:
-                suplinf.HED("Supp Inf")
-                suplinf.P("P1")
-                suplinf.P("P2")
-                suplinf.HD("I. H1", SOURCE="HD1")
-                suplinf.P("H1-P1")
-                suplinf.HD("A. H1-1", SOURCE="HD2")
-                suplinf.P("H1-1-P1")
-                suplinf.P("H1-1-P2")
-                suplinf.HD("B. H1-2", SOURCE="HD2")
-                suplinf.P("H1-2-P1")
-                suplinf.HD("II. H2", SOURCE="HD1")
-                suplinf.P("H2-P1")
-                suplinf.P("H2-P2")
-                with suplinf.GPH() as gph:
-                    gph.GID("111-222-333")
-                suplinf.LSTSUB()
-                suplinf.P("ignored")
-            root.P("tail also ignored")
-        xml = NoticeXML(self.tree.render_xml())
+        with XMLBuilder("ROOT") as ctx:
+            ctx.P("ignored content")
+            with ctx.SUPLINF():
+                ctx.HED("Supp Inf")
+                ctx.P("P1")
+                ctx.P("P2")
+                ctx.HD("I. H1", SOURCE="HD1")
+                ctx.P("H1-P1")
+                ctx.HD("A. H1-1", SOURCE="HD2")
+                ctx.P("H1-1-P1")
+                ctx.P("H1-1-P2")
+                ctx.HD("B. H1-2", SOURCE="HD2")
+                ctx.P("H1-2-P1")
+                ctx.HD("II. H2", SOURCE="HD1")
+                ctx.P("H2-P1")
+                ctx.P("H2-P2")
+                with ctx.GPH():
+                    ctx.GID("111-222-333")
+                ctx.LSTSUB()
+                ctx.P("ignored")
+            ctx.P("tail also ignored")
+        xml = NoticeXML(ctx.xml)
         xml.version_id = 'vvv-yyy'
         root = self.node_accessor(preamble.parse_preamble(xml), ['vvv_yyy'])
 

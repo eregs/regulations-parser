@@ -3,95 +3,90 @@ from unittest import TestCase
 
 from lxml import etree
 
+from regparser.test_utils.xml_builder import XMLBuilder
 from regparser.tree.xml_parser import preprocessors
-from tests.xml_builder import XMLBuilderMixin
 
 
-class MoveLastAMDParTests(XMLBuilderMixin, TestCase):
+class MoveLastAMDParTests(TestCase):
     def test_improper_amdpar_location(self):
         """The second AMDPAR is in the wrong parent; it should be moved"""
-        with self.tree.builder("PART") as part:
-            with part.REGTEXT(ID="RT1") as regtext:
-                regtext.AMDPAR(u"1. In § 105.1, revise paragraph (b):")
-                with regtext.SECTION() as section:
-                    section.P("Some Content")
+        with XMLBuilder("PART") as ctx:
+            with ctx.REGTEXT(ID="RT1"):
+                ctx.AMDPAR(u"1. In § 105.1, revise paragraph (b):")
+                with ctx.SECTION():
+                    ctx.P("Some Content")
                 # Note this has the wrong parent
-                regtext.AMDPAR(u"3. In § 105.2, revise paragraph (a) to read:")
-            with part.REGTEXT(ID="RT2") as regtext:
-                with regtext.SECTION() as section:
-                    section.P("Other Content")
-        xml = self.tree.render_xml()
+                ctx.AMDPAR(u"3. In § 105.2, revise paragraph (a) to read:")
+            with ctx.REGTEXT(ID="RT2"):
+                with ctx.SECTION():
+                    ctx.P("Other Content")
 
-        preprocessors.MoveLastAMDPar().transform(xml)
+        preprocessors.MoveLastAMDPar().transform(ctx.xml)
 
-        amd1, amd2 = xml.xpath("//AMDPAR")
+        amd1, amd2 = ctx.xml.xpath("//AMDPAR")
         self.assertEqual(amd1.getparent().get("ID"), "RT1")
         self.assertEqual(amd2.getparent().get("ID"), "RT2")
 
     def test_trick_amdpar_location_diff_parts(self):
         """Similar situation to the above, except the regulations describe
         different parts and hence the AMDPAR should not move"""
-        with self.tree.builder("PART") as part:
-            with part.REGTEXT(ID="RT1", PART="105") as regtext:
-                regtext.AMDPAR(u"1. In § 105.1, revise paragraph (b):")
-                with regtext.SECTION() as section:
-                    section.P("Some Content")
-                regtext.AMDPAR(u"3. In § 105.2, revise paragraph (a) to read:")
-            with part.REGTEXT(ID="RT2", PART="107") as regtext:
-                with regtext.SECTION() as section:
-                    section.P("Other Content")
-        xml = self.tree.render_xml()
+        with XMLBuilder("PART") as ctx:
+            with ctx.REGTEXT(ID="RT1", PART="105"):
+                ctx.AMDPAR(u"1. In § 105.1, revise paragraph (b):")
+                with ctx.SECTION():
+                    ctx.P("Some Content")
+                ctx.AMDPAR(u"3. In § 105.2, revise paragraph (a) to read:")
+            with ctx.REGTEXT(ID="RT2", PART="107"):
+                with ctx.SECTION():
+                    ctx.P("Other Content")
 
-        preprocessors.MoveLastAMDPar().transform(xml)
+        preprocessors.MoveLastAMDPar().transform(ctx.xml)
 
-        amd1, amd2 = xml.xpath("//AMDPAR")
+        amd1, amd2 = ctx.xml.xpath("//AMDPAR")
         self.assertEqual(amd1.getparent().get("ID"), "RT1")
         self.assertEqual(amd2.getparent().get("ID"), "RT1")
 
 
-class SupplementAMDParTests(XMLBuilderMixin, TestCase):
+class SupplementAMDParTests(TestCase):
     def test_incorrect_ps(self):
         """Supplement I AMDPARs are not always labeled as should be"""
-        with self.tree.builder("PART") as part:
-            with part.REGTEXT() as regtext:
-                regtext.AMDPAR(u"1. In § 105.1, revise paragraph (b):")
-                with regtext.SECTION() as section:
-                    section.STARS()
-                    section.P("(b) Content")
-                regtext.P("2. In Supplement I to Part 105,")
-                regtext.P("A. Under Section 105.1, 1(b), paragraph 2 is "
-                          "revised")
-                regtext.P("The revisions are as follows")
-                regtext.HD("Supplement I to Part 105", SOURCE="HD1")
-                regtext.STARS()
-                with regtext.P() as p:
-                    p.E("1(b) Heading", T="03")
-                regtext.STARS()
-                regtext.P("2. New Context")
-        xml = self.tree.render_xml()
+        with XMLBuilder("PART") as ctx:
+            with ctx.REGTEXT():
+                ctx.AMDPAR(u"1. In § 105.1, revise paragraph (b):")
+                with ctx.SECTION():
+                    ctx.STARS()
+                    ctx.P("(b) Content")
+                ctx.P("2. In Supplement I to Part 105,")
+                ctx.P("A. Under Section 105.1, 1(b), paragraph 2 is revised")
+                ctx.P("The revisions are as follows")
+                ctx.HD("Supplement I to Part 105", SOURCE="HD1")
+                ctx.STARS()
+                with ctx.P():
+                    ctx.E("1(b) Heading", T="03")
+                ctx.STARS()
+                ctx.P("2. New Context")
 
-        preprocessors.SupplementAMDPar().transform(xml)
+        preprocessors.SupplementAMDPar().transform(ctx.xml)
 
         # Note that the SECTION paragraphs were not converted
         self.assertEqual(
-            [amd.text for amd in xml.xpath("//AMDPAR")],
+            [amd.text for amd in ctx.xml.xpath("//AMDPAR")],
             [u"1. In § 105.1, revise paragraph (b):",
              "2. In Supplement I to Part 105,",
              "A. Under Section 105.1, 1(b), paragraph 2 is revised",
              "The revisions are as follows"])
 
 
-class ParenthesesCleanupTests(XMLBuilderMixin, TestCase):
+class ParenthesesCleanupTests(TestCase):
     def assert_transformed(self, original, new_text):
         """Helper function to verify that the XML is transformed as
         expected"""
         self.setUp()
-        with self.tree.builder("PART") as part:
-            part.P(_xml=original)
-        xml = self.tree.render_xml()
-        preprocessors.ParenthesesCleanup().transform(xml)
+        with XMLBuilder("PART") as ctx:
+            ctx.child_from_string(u"<P>{}</P>".format(original))
+        preprocessors.ParenthesesCleanup().transform(ctx.xml)
         self.assertEqual("<P>{}</P>".format(new_text),
-                         etree.tostring(xml[0]))
+                         etree.tostring(ctx.xml[0]))
 
     def test_transform(self):
         """The parens should always move out"""
@@ -104,16 +99,15 @@ class ParenthesesCleanupTests(XMLBuilderMixin, TestCase):
                                 '<E T="03">Paragraph 22(a)(5)</E> Content')
 
 
-class MoveAdjoiningCharsTests(XMLBuilderMixin, TestCase):
+class MoveAdjoiningCharsTests(TestCase):
     def assert_transformed(self, input_xml, expected_xml):
         self.setUp()
         input_xml = input_xml.decode('utf-8')
-        with self.tree.builder("SECTION") as section:
-            section.P(_xml=input_xml)
-        xml = self.tree.render_xml()
-        preprocessors.MoveAdjoiningChars().transform(xml)
+        with XMLBuilder("SECTION") as ctx:
+            ctx.child_from_string(u"<P>{}</P>".format(input_xml))
+        preprocessors.MoveAdjoiningChars().transform(ctx.xml)
         self.assertEqual(etree.tostring(
-                         xml.xpath('./P/E')[0], encoding='UTF-8'),
+                         ctx.xml.xpath('./P/E')[0], encoding='UTF-8'),
                          expected_xml)
 
     def test_transform(self):
@@ -129,7 +123,7 @@ class MoveAdjoiningCharsTests(XMLBuilderMixin, TestCase):
                                 '<E T="03">Things</E>')
 
 
-class ApprovalsFPTests(XMLBuilderMixin, TestCase):
+class ApprovalsFPTests(TestCase):
     def control_number(self, number, prefix="Approved"):
         return ("({} by the Office of Management and Budget under "
                 "control number {})".format(prefix, number))
@@ -137,24 +131,23 @@ class ApprovalsFPTests(XMLBuilderMixin, TestCase):
     def test_transform(self):
         """Verify that FP tags get transformed, but only if they match a
         certain string"""
-        with self.tree.builder("PART") as part:
-            part.APPRO(self.control_number('1111-2222'))
-            part.FP("Something else")
-            part.FP(self.control_number('2222-4444'))
-            part.P(self.control_number('3333-6666'))
-            with part.EXTRACT() as extract:
-                extract.FP(self.control_number(
+        with XMLBuilder("PART") as ctx:
+            ctx.APPRO(self.control_number('1111-2222'))
+            ctx.FP("Something else")
+            ctx.FP(self.control_number('2222-4444'))
+            ctx.P(self.control_number('3333-6666'))
+            with ctx.EXTRACT():
+                ctx.FP(self.control_number(
                     "4444-8888", "Paragraph (b)(2) approved"))
-            part.P(self.control_number('4444-8888'))
-        xml = self.tree.render_xml()
-        preprocessors.ApprovalsFP().transform(xml)
-        appros = [appro.text for appro in xml.xpath("./APPRO")]
+            ctx.P(self.control_number('4444-8888'))
+        preprocessors.ApprovalsFP().transform(ctx.xml)
+        appros = [appro.text for appro in ctx.xml.xpath("./APPRO")]
         self.assertEqual(appros, [
             self.control_number('1111-2222'), self.control_number('2222-4444'),
             self.control_number('4444-8888', 'Paragraph (b)(2) approved')])
 
 
-class ExtractTagsTests(XMLBuilderMixin, TestCase):
+class ExtractTagsTests(TestCase):
     def setUp(self):
         super(ExtractTagsTests, self).setUp()
         self.et = preprocessors.ExtractTags()
@@ -162,110 +155,110 @@ class ExtractTagsTests(XMLBuilderMixin, TestCase):
     def test_extract_pair_not_pair(self):
         """XML shouldn't be modified and should get a negative response if
         this pattern isn't present"""
-        with self.tree.builder("ROOT") as root:
-            root.EXTRACT("contents")
-            root.TAG1()
+        with XMLBuilder("ROOT") as ctx:
+            ctx.EXTRACT("contents")
+            ctx.TAG1()
+        original = ctx.xml_copy()
 
-        with self.assert_xml_transformed() as original_xml:
-            self.assertFalse(self.et.extract_pair(original_xml[0]))
-            # No tree change
+        self.assertFalse(self.et.extract_pair(ctx.xml[0]))
+        self.assertEqual(ctx.xml_str, etree.tostring(original))
 
     def test_extract_pair_last_node(self):
         """XML shouldn't be modified when the EXTRACT is the last element"""
-        with self.tree.builder("ROOT") as root:
-            root.TAG1()
-            root.EXTRACT("contents")
+        with XMLBuilder("ROOT") as ctx:
+            ctx.TAG1()
+            ctx.EXTRACT("contents")
+        original = ctx.xml_copy()
 
-        with self.assert_xml_transformed() as original_xml:
-            self.assertFalse(self.et.extract_pair(original_xml[1]))
-            # No tree change
+        self.assertFalse(self.et.extract_pair(ctx.xml[1]))
+        self.assertEqual(ctx.xml_str, etree.tostring(original))
 
     def test_extract_pair(self):
         """Sequences of EXTRACT nodes should get joined"""
-        with self.tree.builder("ROOT") as root:
-            root.TAG1()
-            root.EXTRACT("contents1")
-            with root.EXTRACT("contents2") as extract:
-                extract.TAG2()
-                extract.TAG3()
-            root.EXTRACT("contents3")
-            root.TAG4()
-            root.EXTRACT("contents4")
+        with XMLBuilder("ROOT") as ctx:
+            ctx.TAG1()
+            ctx.EXTRACT("contents1")
+            with ctx.EXTRACT("contents2"):
+                ctx.TAG2()
+                ctx.TAG3()
+            ctx.EXTRACT("contents3")
+            ctx.TAG4()
+            ctx.EXTRACT("contents4")
 
         contents = "contents1\ncontents2<TAG2/><TAG3/>"
-        with self.assert_xml_transformed() as original_xml:
-            self.assertTrue(self.et.extract_pair(original_xml[1]))
-            with self.tree.builder("ROOT") as root:
-                root.TAG1()
-                root.EXTRACT(_xml=contents)
-                root.EXTRACT("contents3")  # First pass will only merge one
-                root.TAG4()
-                root.EXTRACT("contents4")
+        with XMLBuilder("ROOT") as ctx2:
+            ctx2.TAG1()
+            ctx2.child_from_string('<EXTRACT>{}</EXTRACT>'.format(contents))
+            ctx2.EXTRACT("contents3")  # First pass will only merge one
+            ctx2.TAG4()
+            ctx2.EXTRACT("contents4")
+        self.assertTrue(self.et.extract_pair(ctx.xml[1]))
+        self.assertEqual(ctx2.xml_str, ctx.xml_str)
 
-        with self.assert_xml_transformed() as original_xml:
-            self.assertTrue(self.et.extract_pair(original_xml[1]))
-            contents += "\ncontents3"
-            with self.tree.builder("ROOT") as root:
-                root.TAG1()
-                root.EXTRACT(_xml=contents)
-                root.TAG4()
-                root.EXTRACT("contents4")
+        contents += "\ncontents3"
+        with XMLBuilder("ROOT") as ctx3:
+            ctx3.TAG1()
+            ctx3.child_from_string('<EXTRACT>{}</EXTRACT>'.format(contents))
+            ctx3.TAG4()
+            ctx3.EXTRACT("contents4")
+        self.assertTrue(self.et.extract_pair(ctx.xml[1]))
+        self.assertEqual(ctx3.xml_str, ctx.xml_str)
 
     def test_sandwich_no_bread(self):
         """For sandwich to be triggered, EXTRACT tags need to be separated by
         only one tag"""
-        with self.tree.builder("ROOT") as root:
-            root.EXTRACT()
-            root.GPOTABLE()
-            root.GPOTABLE()
-            root.EXTRACT()
+        with XMLBuilder("ROOT") as ctx:
+            ctx.EXTRACT()
+            ctx.GPOTABLE()
+            ctx.GPOTABLE()
+            ctx.EXTRACT()
+        original = ctx.xml_copy()
 
-        with self.assert_xml_transformed() as original_xml:
-            self.assertFalse(self.et.sandwich(original_xml[0]))
-            # No tree change
+        self.assertFalse(self.et.sandwich(ctx.xml[0]))
+        self.assertEqual(ctx.xml_str, etree.tostring(original))
 
     def test_sandwich_last_tag(self):
         """For sandwich to be triggered, EXTRACT tag can't be the last tag"""
-        with self.tree.builder("ROOT") as root:
-            root.GPOTABLE()
-            root.EXTRACT()
+        with XMLBuilder("ROOT") as ctx:
+            ctx.GPOTABLE()
+            ctx.EXTRACT()
+        original = ctx.xml_copy()
 
-        with self.assert_xml_transformed() as original_xml:
-            self.assertFalse(self.et.sandwich(original_xml[1]))
-            # No tree change
+        self.assertFalse(self.et.sandwich(ctx.xml[1]))
+        self.assertEqual(ctx.xml_str, etree.tostring(original))
 
     def test_sandwich_bad_filling(self):
         """For sandwich to be triggered, EXTRACT tags need to surround one of
         a handful of specific tags"""
-        with self.tree.builder("ROOT") as root:
-            root.EXTRACT()
-            root.P()
-            root.EXTRACT()
+        with XMLBuilder("ROOT") as ctx:
+            ctx.EXTRACT()
+            ctx.P()
+            ctx.EXTRACT()
+        original = ctx.xml_copy()
 
-        with self.assert_xml_transformed() as original_xml:
-            self.assertFalse(self.et.sandwich(original_xml[0]))
-            # No tree change
+        self.assertFalse(self.et.sandwich(ctx.xml[0]))
+        self.assertEqual(ctx.xml_str, etree.tostring(original))
 
     def test_sandwich(self):
         """When the correct tags are separated by EXTRACTs, they should get
         merged"""
-        with self.tree.builder("ROOT") as root:
-            root.TAG1()
-            root.EXTRACT("extract contents")
-            root.GPOTABLE("table contents")
-            root.EXTRACT()
+        with XMLBuilder("ROOT") as ctx:
+            ctx.TAG1()
+            ctx.EXTRACT("extract contents")
+            ctx.GPOTABLE("table contents")
+            ctx.EXTRACT()
 
-        with self.assert_xml_transformed() as original_xml:
-            self.assertTrue(self.et.sandwich(original_xml[1]))
-            with self.tree.builder("ROOT") as root:
-                root.TAG1()
-                contents = ("extract contents\n<GPOTABLE>table contents"
-                            "</GPOTABLE>")
-                root.EXTRACT(_xml=contents)
-                root.EXTRACT()
+        with XMLBuilder("ROOT") as ctx2:
+            ctx2.TAG1()
+            ctx2.child_from_string(
+                '<EXTRACT>extract contents\n<GPOTABLE>table contents'
+                '</GPOTABLE></EXTRACT>')
+            ctx2.EXTRACT()
+        self.assertTrue(self.et.sandwich(ctx.xml[1]))
+        self.assertEqual(ctx.xml_str, ctx2.xml_str)
 
 
-class FootnotesTests(XMLBuilderMixin, TestCase):
+class FootnotesTests(TestCase):
     def setUp(self):
         super(FootnotesTests, self).setUp()
         self.fn = preprocessors.Footnotes()
@@ -274,13 +267,13 @@ class FootnotesTests(XMLBuilderMixin, TestCase):
         """The XML will sometimes merge multiple references to footnotes into
         a single tag. Verify that they get split"""
         def ftnt_compare(original, expected):
-            with self.tree.builder("ROOT") as root:
-                root.P(_xml=original)
+            with XMLBuilder("ROOT") as ctx:
+                ctx.child_from_string("<P>{}</P>".format(original))
 
-            with self.assert_xml_transformed() as original_xml:
-                self.fn.split_comma_footnotes(original_xml)
-                with self.tree.builder("ROOT") as root:
-                    root.P(_xml=expected)
+            with XMLBuilder("ROOT") as ctx2:
+                ctx2.child_from_string("<P>{}</P>".format(expected))
+            self.fn.split_comma_footnotes(ctx.xml)
+            self.assertEqual(ctx.xml_str, ctx2.xml_str)
 
         ftnt_compare("Some content<SU>1</SU>.", "Some content<SU>1</SU>.")
         ftnt_compare("Some content<SU>1</SU>", "Some content<SU>1</SU>")
@@ -308,40 +301,42 @@ class FootnotesTests(XMLBuilderMixin, TestCase):
     def test_add_ref_attributes(self):
         """The XML elements which reference footnotes should be modified to
         contain the contents of those footnotes"""
-        with self.tree.builder("ROOT") as root:
-            root.SU("1")
-            root.SU("2")
-            with root.FTNT() as ftnt:
-                ftnt.P(_xml="<SU>1</SU> note for one")
-            with root.TNOTE() as ftnt:
-                ftnt.P(_xml="<SU>2</SU> note for two")
+        with XMLBuilder("ROOT") as ctx:
+            ctx.SU("1")
+            ctx.SU("2")
+            with ctx.FTNT():
+                ctx.child_from_string('<P><SU>1</SU> note for one</P>')
+            with ctx.TNOTE():
+                ctx.child_from_string('<P><SU>2</SU> note for two</P>')
 
-        with self.assert_xml_transformed() as original_xml:
-            self.fn.add_ref_attributes(original_xml)
-            with self.tree.builder("ROOT") as root:
-                root.SU("1", footnote='note for one')
-                root.SU("2", footnote='note for two')
-                with root.FTNT() as ftnt:
-                    ftnt.P(_xml="<SU>1</SU> note for one")
-                with root.TNOTE() as ftnt:
-                    ftnt.P(_xml="<SU>2</SU> note for two")
+        with XMLBuilder("ROOT") as ctx2:
+            ctx2.SU("1", footnote='note for one')
+            ctx2.SU("2", footnote='note for two')
+            with ctx2.FTNT():
+                ctx2.child_from_string('<P><SU>1</SU> note for one</P>')
+            with ctx2.TNOTE():
+                ctx2.child_from_string('<P><SU>2</SU> note for two</P>')
+
+        self.fn.add_ref_attributes(ctx.xml)
+        self.assertEqual(ctx.xml_str, ctx2.xml_str)
 
     def test_add_ref_attributes_missing(self):
         """SUs in different sections aren't related"""
-        with self.tree.builder("ROOT") as root:
-            with root.SECTION() as section:
-                section.SU("1")
-            with root.SECTION() as section:
-                section.SU("1")
-                with section.FTNT() as ftnt:
-                    ftnt.P(_xml="<SU>1</SU> note for one")
+        with XMLBuilder("ROOT") as ctx:
+            with ctx.SECTION():
+                ctx.SU("1")
+            with ctx.SECTION():
+                ctx.SU("1")
+                with ctx.FTNT():
+                    ctx.child_from_string('<P><SU>1</SU> note for one</P>')
 
-        with self.assert_xml_transformed() as original_xml:
-            self.fn.add_ref_attributes(original_xml)
-            with self.tree.builder("ROOT") as root:
-                with root.SECTION() as section:
-                    section.SU("1")
-                with root.SECTION() as section:
-                    section.SU("1", footnote="note for one")
-                    with section.FTNT() as ftnt:
-                        ftnt.P(_xml="<SU>1</SU> note for one")
+        with XMLBuilder("ROOT") as ctx2:
+            with ctx2.SECTION():
+                ctx2.SU("1")
+            with ctx2.SECTION():
+                ctx2.SU("1", footnote="note for one")
+                with ctx2.FTNT():
+                    ctx2.child_from_string('<P><SU>1</SU> note for one</P>')
+
+        self.fn.add_ref_attributes(ctx.xml)
+        self.assertEqual(ctx.xml_str, ctx2.xml_str)
