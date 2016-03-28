@@ -1,3 +1,5 @@
+"""This will be deleted soon -- we just need to migrate atf-eregs and
+fec-eregs to use XMLBuilder directly"""
 from contextlib import contextmanager
 
 from lxml import etree
