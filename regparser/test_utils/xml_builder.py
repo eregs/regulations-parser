@@ -1,3 +1,4 @@
+from copy import deepcopy
 from functools import partial
 
 from lxml import etree
@@ -38,6 +39,11 @@ class XMLBuilder(object):
         self.cursor.append(el)
         return self
 
+    def child_from_string(self, xml_str):
+        """It can be easier to describe a child via straight XML"""
+        self.cursor.append(etree.fromstring(xml_str))
+        return self
+
     def __getattr__(self, name):
         """Handle unknown attributes by calling `self.child`"""
         return partial(self.child, name)
@@ -59,3 +65,6 @@ class XMLBuilder(object):
     @property
     def xml_str(self):
         return etree.tostring(self.xml)
+
+    def xml_copy(self):
+        return deepcopy(self.xml)
