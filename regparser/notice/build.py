@@ -5,7 +5,8 @@ from lxml import etree
 
 from regparser.notice import changes
 from regparser.notice.address import fetch_addresses
-from regparser.notice.amdparser import DesignateAmendment, parse_amdpar
+from regparser.notice.amdparser import (
+    amendment_from_xml, DesignateAmendment, parse_amdpar)
 from regparser.notice.build_appendix import parse_appendix_changes
 from regparser.notice.build_interp import parse_interp_changes
 from regparser.notice.changes import (
@@ -17,6 +18,9 @@ from regparser.notice.util import spaces_then_remove, swap_emphasis_tags
 from regparser.notice.xml import fetch_cfr_parts, xmls_for_url
 from regparser.tree import struct
 from regparser.tree.xml_parser import reg_text
+
+
+logger = logging.getLogger(__name__)
 
 
 def build_notice(cfr_title, cfr_part, fr_notice, fetch_xml=True,
@@ -115,7 +119,7 @@ def create_xmlless_changes(amended_labels, notice_changes):
                 notice_changes.update({label: change})
             elif amendment['action'] not in ('POST', 'PUT', 'RESERVE',
                                              'INSERT'):
-                logging.warning("Unknown action: %s", amendment['action'])
+                logger.warning("Unknown action: %s", amendment['action'])
 
 
 def create_xml_changes(amended_labels, section, notice_changes):
@@ -141,7 +145,31 @@ def create_xml_changes(amended_labels, section, notice_changes):
                 change = changes.create_reserve_amendment(amendment)
                 notice_changes.update(change)
             elif amendment['action'] not in ('DELETE', 'MOVE'):
-                logging.warning("Unknown action: %s", amendment['action'])
+                logger.warning("Unknown action: %s", amendment['action'])
+
+
+def preprocess_amdpars(notice_xml):
+    """Modify the AMDPAR tag to contain an <EREGS_INSTRUCTIONS> element.
+    This element contains an interpretation of the AMDPAR, as viewed as a
+    sequence of actions for how to modify the CFR"""
+    has_part = notice_xml.xpath('//AMDPAR/../*[@PART]')
+    context = ['0']
+    if has_part:
+        context = [has_part.get('PART')]
+    elif notice_xml.xpath('//AMDPAR'):
+        logger.warning('Could not find any PART designators.')
+    for amdparent in notice_xml.xpath('//AMDPAR/..'):
+        parent_part = amdparent.get('PART')
+        if parent_part not in (context[0], None):
+            context = [parent_part]
+        for amdpar in amdparent.xpath('.//AMDPAR'):
+            amendments, context = parse_amdpar(amdpar, context)
+            instructions = etree.SubElement(amdpar, "EREGS_INSTRUCTIONS")
+            for amendment in amendments:
+                instructions.append(amendment.as_xml())
+            instructions.set(
+                'final_context',
+                '-'.join('?' if l is None else l for l in context))
 
 
 def process_amendments(notice, notice_xml):
@@ -150,13 +178,18 @@ def process_amendments(notice, notice_xml):
     cfr_part = notice['cfr_parts'][0]
     notice_changes = changes.NoticeChanges()
 
+    preprocess_amdpars(notice_xml)
+
     # process amendments in batches, based on their parent XML
     for amdparent in notice_xml.xpath('//AMDPAR/..'):
         context = [amdparent.get('PART') or cfr_part]
         amendments_by_section = defaultdict(list)
         normal_amends = []  # amendments not moving or adding a subpart
         for amdpar in amdparent.xpath('.//AMDPAR'):
-            amendments, context = parse_amdpar(amdpar, context)
+            instructions = amdpar.xpath('./EREGS_INSTRUCTIONS')[0]
+            amendments = [amendment_from_xml(el) for el in instructions]
+            context = [None if l is '?' else l
+                       for l in instructions.get('final_context').split('-')]
             section_xml = find_section(amdpar)
             for amendment in amendments:
                 all_amends.append(amendment)

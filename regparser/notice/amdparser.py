@@ -1,6 +1,8 @@
 from itertools import takewhile
 import logging
 
+from lxml import etree
+
 from regparser.grammar import amdpar, tokens
 from regparser.tree.struct import Node
 from regparser.tree.xml_parser.tree_utils import get_node_text
@@ -559,6 +561,11 @@ class Amendment(object):
                 return [parts[0], parts[1][len('Appendix:'):]]
             # this does not account for interpretations
 
+    def as_xml(self):
+        return etree.Element(
+            self.action, label=self.original_label,
+            destination=self.destination or '')
+
 
 class DesignateAmendment(Amendment):
     """ A designate Amendment manages it's information a little differently
@@ -582,3 +589,20 @@ class DesignateAmendment(Amendment):
     def __repr__(self):
         return "(%s, %s, %s)" % (
             repr(self.action), repr(self.labels), repr(self.destination))
+
+    def as_xml(self):
+        element = etree.Element(
+            self.action, destination=self.original_destination)
+        for label in self.original_labels:
+            etree.SubElement(element, 'LABEL', label=label)
+        return element
+
+
+def amendment_from_xml(xml):
+    """Deserialize amendments"""
+    if xml.tag == 'DESIGNATE':
+        labels = [el.get('label') for el in xml.xpath('./LABEL')]
+        return DesignateAmendment(xml.tag, labels, xml.get('destination'))
+    else:
+        return Amendment(xml.tag, xml.get('label'),
+                         xml.get('destination') or None)
