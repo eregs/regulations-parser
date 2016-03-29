@@ -8,7 +8,8 @@ from regparser.notice.address import fetch_addresses
 from regparser.notice.amdparser import DesignateAmendment, parse_amdpar
 from regparser.notice.build_appendix import parse_appendix_changes
 from regparser.notice.build_interp import parse_interp_changes
-from regparser.notice.diff import find_section, find_subpart, new_subpart_added
+from regparser.notice.changes import (
+    find_section, find_subpart, new_subpart_added)
 from regparser.notice.dates import fetch_dates
 from regparser.notice.sxs import (
     build_section_by_section, find_section_by_section)
