@@ -4,11 +4,11 @@ from unittest import TestCase
 from lxml import etree
 from mock import patch
 
+from regparser.test_utils.xml_builder import XMLBuilder
 from regparser.tree.depth import markers as mtypes
 from regparser.tree.depth.derive import ParAssignment
 from regparser.tree.struct import Node
 from regparser.tree.xml_parser import paragraph_processor
-from tests.xml_builder import XMLBuilderMixin
 
 
 class _ExampleProcessor(paragraph_processor.ParagraphProcessor):
@@ -18,17 +18,14 @@ class _ExampleProcessor(paragraph_processor.ParagraphProcessor):
                 paragraph_processor.IgnoreTagMatcher('IGNORE')]
 
 
-class ParagraphProcessorTest(XMLBuilderMixin, TestCase):
+class ParagraphProcessorTest(TestCase):
     def test_parse_nodes_matchers(self):
         """Verify that matchers are consulted per node"""
-        xml = u"""
-            <ROOT>
-                <TAGA>Some content</TAGA>
-                <TAGB>Some other text</TAGB>
-                <TAGC>Not seen</TAGC>
-            </ROOT>
-        """
-        result = _ExampleProcessor().parse_nodes(etree.fromstring(xml))
+        with XMLBuilder("ROOT") as ctx:
+            ctx.TAGA("Some content")
+            ctx.TAGB("Some other text")
+            ctx.TAGC("Not seen")
+        result = _ExampleProcessor().parse_nodes(ctx.xml)
         self.assertEqual(len(result), 2)
         self.assertEqual(result[0].text, 'Some content')
         self.assertEqual(result[1].text, 'Some other text')
@@ -36,14 +33,11 @@ class ParagraphProcessorTest(XMLBuilderMixin, TestCase):
 
     def test_parse_nodes_training_stars(self):
         """Trailing stars should be ignored"""
-        xml = u"""
-            <ROOT>
-                <STARS />
-                <TAGA>Some other text</TAGA>
-                <STARS />
-            </ROOT>
-        """
-        result = _ExampleProcessor().parse_nodes(etree.fromstring(xml))
+        with XMLBuilder("ROOT") as ctx:
+            ctx.STARS()
+            ctx.TAGA("Some other text")
+            ctx.STARS()
+        result = _ExampleProcessor().parse_nodes(ctx.xml)
         self.assertEqual(len(result), 2)
         self.assertEqual(result[0].label, [mtypes.STARS_TAG])
         self.assertEqual(result[1].text, 'Some other text')
@@ -52,13 +46,10 @@ class ParagraphProcessorTest(XMLBuilderMixin, TestCase):
         """ All created nodes should have the default type, regtext, except for
         specific elements. The NODE_TYPE of the processor object is no longer
         used. """
-        xml = u"""
-            <ROOT>
-                <TAGA>Some content</TAGA>
-                <TAGB>Some other text</TAGB>
-            </ROOT>
-        """
-        result = _ExampleProcessor().parse_nodes(etree.fromstring(xml))
+        with XMLBuilder("ROOT") as ctx:
+            ctx.TAGA("Some content")
+            ctx.TAGB("Some other text")
+        result = _ExampleProcessor().parse_nodes(ctx.xml)
         self.assertEqual([n.node_type for n in result], ['regtext', 'regtext'])
 
     def test_build_hierarchy(self):
@@ -181,12 +172,12 @@ class ParagraphProcessorTest(XMLBuilderMixin, TestCase):
         """We should be writing a log when there are tags we weren't
         expecting. We should not be writing a log if those tags are explicitly
         ignored"""
-        with self.tree.builder('ROOT') as root:
-            root.IGNORE("this tag is explicitly ignored")
-            root.UNKNOWN("this tag is not")
+        with XMLBuilder("ROOT") as ctx:
+            ctx.IGNORE("this tag is explicitly ignored")
+            ctx.UNKNOWN("this tag is not")
         to_patch = 'regparser.tree.xml_parser.paragraph_processor.logger'
         with patch(to_patch) as logger:
-            result = _ExampleProcessor().parse_nodes(self.tree.render_xml())
+            result = _ExampleProcessor().parse_nodes(ctx.xml)
         self.assertEqual(result, [])
         self.assertEqual(logger.warning.call_count, 1)
         self.assertIn('UNKNOWN', logger.warning.call_args[0][1])

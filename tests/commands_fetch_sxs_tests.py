@@ -10,17 +10,17 @@ from mock import patch
 from regparser.commands.fetch_sxs import fetch_sxs
 from regparser.index import dependency, entry
 from regparser.notice.xml import NoticeXML
-from tests.xml_builder import XMLBuilderMixin
+from regparser.test_utils.xml_builder import XMLBuilder
 
 
-class CommandsFetchSxSTests(XMLBuilderMixin, TestCase):
+class CommandsFetchSxSTests(TestCase):
     def setUp(self):
         super(CommandsFetchSxSTests, self).setUp()
         self.cli = CliRunner()
-        with self.tree.builder("ROOT") as root:
-            root.PRTPAGE(P="1234")
-            root.CFR('12 CFR 1000')
-        self.notice_xml = NoticeXML(self.tree.render_xml())
+        with XMLBuilder("ROOT") as ctx:
+            ctx.PRTPAGE(P="1234")
+            ctx.CFR('12 CFR 1000')
+        self.notice_xml = NoticeXML(ctx.xml)
 
     def test_missing_notice(self):
         """If the necessary notice XML is not present, we should expect a

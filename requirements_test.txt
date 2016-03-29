@@ -1,6 +1,5 @@
 cov-core==1.15.0
 coverage==4.0.3
-datatree==0.1.8.1
 pep8==1.7.0
 flake8==2.5.1
 httpretty==0.8.12
