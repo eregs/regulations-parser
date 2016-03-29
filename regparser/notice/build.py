@@ -5,14 +5,13 @@ from lxml import etree
 
 from regparser.notice import changes
 from regparser.notice.address import fetch_addresses
+from regparser.notice.amdparser import DesignateAmendment, parse_amdpar
 from regparser.notice.build_appendix import parse_appendix_changes
 from regparser.notice.build_interp import parse_interp_changes
-from regparser.notice.diff import parse_amdpar, find_section, find_subpart
-from regparser.notice.diff import new_subpart_added
-from regparser.notice.diff import DesignateAmendment
+from regparser.notice.diff import find_section, find_subpart, new_subpart_added
 from regparser.notice.dates import fetch_dates
-from regparser.notice.sxs import find_section_by_section
-from regparser.notice.sxs import build_section_by_section
+from regparser.notice.sxs import (
+    build_section_by_section, find_section_by_section)
 from regparser.notice.util import spaces_then_remove, swap_emphasis_tags
 from regparser.notice.xml import fetch_cfr_parts, xmls_for_url
 from regparser.tree import struct

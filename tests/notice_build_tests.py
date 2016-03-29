@@ -4,7 +4,7 @@ from unittest import TestCase
 from lxml import etree
 
 from regparser.notice import build, changes
-from regparser.notice.diff import DesignateAmendment, Amendment
+from regparser.notice.amdparser import DesignateAmendment, Amendment
 from regparser.test_utils.xml_builder import XMLBuilder
 from regparser.tree.struct import Node
 

@@ -3,7 +3,7 @@ from copy import deepcopy
 
 from lxml import etree
 
-from regparser.notice.diff import DesignateAmendment
+from regparser.notice.amdparser import DesignateAmendment
 from regparser.notice.util import spaces_then_remove
 from regparser.tree.struct import Node
 from regparser.tree.xml_parser import interpretations

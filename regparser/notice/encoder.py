@@ -1,6 +1,6 @@
 from json import JSONEncoder
 
-from regparser.notice.diff import Amendment, DesignateAmendment
+from regparser.notice.amdparser import Amendment, DesignateAmendment
 
 
 class AmendmentEncoder(JSONEncoder):

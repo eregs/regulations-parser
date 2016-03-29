@@ -2,7 +2,7 @@
 from unittest import TestCase
 from regparser.notice import changes
 from regparser.tree.struct import Node, find
-from regparser.notice.diff import Amendment
+from regparser.notice.amdparser import Amendment
 
 
 class ChangesTests(TestCase):

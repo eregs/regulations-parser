@@ -2,7 +2,7 @@ from copy import deepcopy
 from itertools import dropwhile
 import logging
 
-from regparser.notice.diff import DesignateAmendment
+from regparser.notice.amdparser import DesignateAmendment
 from regparser.tree.struct import Node
 from regparser.tree.xml_parser.appendices import process_appendix
 
