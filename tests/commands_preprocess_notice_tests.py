@@ -7,20 +7,19 @@ from mock import patch
 from regparser.commands.preprocess_notice import preprocess_notice
 from regparser.index import dependency, entry
 from regparser.notice.xml import NoticeXML
+from regparser.test_utils.xml_builder import XMLBuilder
 from tests.http_mixin import HttpMixin
-from tests.xml_builder import LXMLBuilder, XMLBuilderMixin
 
 
-class CommandsPreprocessNoticeTests(HttpMixin, XMLBuilderMixin, TestCase):
+class CommandsPreprocessNoticeTests(HttpMixin, TestCase):
     def example_xml(self, effdate_str="", source=None):
         """Returns a simple notice-like XML structure"""
-        self.tree = LXMLBuilder()
-        with self.tree.builder("ROOT") as root:
-            root.CONTENT()
-            root.P()
-            with root.EFFDATE() as effdate:
-                effdate.P(effdate_str)
-        return NoticeXML(self.tree.render_xml(), source)
+        with XMLBuilder("ROOT") as ctx:
+            ctx.CONTENT()
+            ctx.P()
+            with ctx.EFFDATE():
+                ctx.P(effdate_str)
+        return NoticeXML(ctx.xml, source)
 
     def expect_common_json(self, **kwargs):
         """Expect an HTTP call and return a common json respond"""

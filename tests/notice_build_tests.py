@@ -5,11 +5,11 @@ from lxml import etree
 
 from regparser.notice import build, changes
 from regparser.notice.diff import DesignateAmendment, Amendment
+from regparser.test_utils.xml_builder import XMLBuilder
 from regparser.tree.struct import Node
-from tests.xml_builder import XMLBuilderMixin
 
 
-class NoticeBuildTest(XMLBuilderMixin, TestCase):
+class NoticeBuildTest(TestCase):
     def test_build_notice(self):
         fr = {
             'abstract': 'sum sum sum',
@@ -60,22 +60,22 @@ class NoticeBuildTest(XMLBuilderMixin, TestCase):
 
     def test_process_xml(self):
         """Integration test for xml processing"""
-        with self.tree.builder("ROOT") as root:
-            with root.SUPLINF() as suplinf:
-                with suplinf.FURINF() as furinf:
-                    furinf.HD("CONTACT INFO:")
-                    furinf.P("Extra contact info here")
-                with suplinf.ADD() as add:
-                    add.P("Email: example@example.com")
-                    add.P("Extra instructions")
-                suplinf.HD("Supplementary Info", SOURCE="HED")
-                suplinf.HD("V. Section-by-Section Analysis", SOURCE="HD1")
-                suplinf.HD("8(q) Words", SOURCE="HD2")
-                suplinf.P("Content")
-                suplinf.HD("Section that follows", SOURCE="HD1")
-                suplinf.P("Following Content")
+        with XMLBuilder("ROOT") as ctx:
+            with ctx.SUPLINF():
+                with ctx.FURINF():
+                    ctx.HD("CONTACT INFO:")
+                    ctx.P("Extra contact info here")
+                with ctx.ADD():
+                    ctx.P("Email: example@example.com")
+                    ctx.P("Extra instructions")
+                ctx.HD("Supplementary Info", SOURCE="HED")
+                ctx.HD("V. Section-by-Section Analysis", SOURCE="HD1")
+                ctx.HD("8(q) Words", SOURCE="HD2")
+                ctx.P("Content")
+                ctx.HD("Section that follows", SOURCE="HD1")
+                ctx.P("Following Content")
         notice = {'cfr_parts': ['9292'], 'meta': {'start_page': 100}}
-        self.assertEqual(build.process_xml(notice, self.tree.render_xml()), {
+        self.assertEqual(build.process_xml(notice, ctx.xml), {
             'cfr_parts': ['9292'],
             'footnotes': {},
             'meta': {'start_page': 100},
@@ -95,16 +95,16 @@ class NoticeBuildTest(XMLBuilderMixin, TestCase):
         })
 
     def test_process_xml_missing_fields(self):
-        with self.tree.builder("ROOT") as root:
-            with root.SUPLINF() as suplinf:
-                suplinf.HD("Supplementary Info", SOURCE="HED")
-                suplinf.HD("V. Section-by-Section Analysis", SOURCE="HD1")
-                suplinf.HD("8(q) Words", SOURCE="HD2")
-                suplinf.P("Content")
-                suplinf.HD("Section that follows", SOURCE="HD1")
-                suplinf.P("Following Content")
+        with XMLBuilder("ROOT") as ctx:
+            with ctx.SUPLINF():
+                ctx.HD("Supplementary Info", SOURCE="HED")
+                ctx.HD("V. Section-by-Section Analysis", SOURCE="HD1")
+                ctx.HD("8(q) Words", SOURCE="HD2")
+                ctx.P("Content")
+                ctx.HD("Section that follows", SOURCE="HD1")
+                ctx.P("Following Content")
         notice = {'cfr_parts': ['9292'], 'meta': {'start_page': 210}}
-        self.assertEqual(build.process_xml(notice, self.tree.render_xml()), {
+        self.assertEqual(build.process_xml(notice, ctx.xml), {
             'cfr_parts': ['9292'],
             'footnotes': {},
             'meta': {'start_page': 210},
@@ -119,38 +119,39 @@ class NoticeBuildTest(XMLBuilderMixin, TestCase):
         })
 
     def test_process_xml_fill_effective_date(self):
-        with self.tree.builder("ROOT") as root:
-            with root.DATES() as dates:
-                dates.P("Effective January 1, 2002")
-        xml = self.tree.render_xml()
+        with XMLBuilder("ROOT") as ctx:
+            with ctx.DATES():
+                ctx.P("Effective January 1, 2002")
 
         notice = {'cfr_parts': ['902'], 'meta': {'start_page': 10},
                   'effective_on': '2002-02-02'}
-        notice = build.process_xml(notice, xml)
+        notice = build.process_xml(notice, ctx.xml)
         self.assertEqual('2002-02-02', notice['effective_on'])
 
         notice = {'cfr_parts': ['902'], 'meta': {'start_page': 10}}
-        notice = build.process_xml(notice, xml)
+        notice = build.process_xml(notice, ctx.xml)
         # Uses the date found in the XML
         self.assertEqual('2002-01-01', notice['effective_on'])
 
         notice = {'cfr_parts': ['902'], 'meta': {'start_page': 10},
                   'effective_on': None}
-        notice = build.process_xml(notice, xml)
+        notice = build.process_xml(notice, ctx.xml)
         # Uses the date found in the XML
         self.assertEqual('2002-01-01', notice['effective_on'])
 
     def test_add_footnotes(self):
-        with self.tree.builder("ROOT") as root:
-            root.P("Some text")
-            with root.FTNT() as ftnt:
-                ftnt.P(_xml='<SU>21</SU>Footnote text')
-            with root.FTNT() as ftnt:
-                ftnt.P(_xml='<SU>43</SU>This has a<PRTPAGE P="2222" />break')
-            with root.FTNT() as ftnt:
-                ftnt.P(_xml='<SU>98</SU>This one has<E T="03">emph</E>tags')
+        with XMLBuilder("ROOT") as ctx:
+            ctx.P("Some text")
+            ctx.child_from_string(
+                '<FTNT><P><SU>21</SU>Footnote text</P></FTNT>')
+            ctx.child_from_string(
+                '<FTNT><P><SU>43</SU>This has a<PRTPAGE P="2222" />break'
+                '</P></FTNT>')
+            ctx.child_from_string(
+                '<FTNT><P><SU>98</SU>This one has<E T="03">emph</E>tags</P>'
+                '</FTNT>')
         notice = {}
-        build.add_footnotes(notice, self.tree.render_xml())
+        build.add_footnotes(notice, ctx.xml)
         self.assertEqual(notice, {'footnotes': {
             '21': 'Footnote text',
             '43': 'This has a break',
@@ -171,14 +172,14 @@ class NoticeBuildTest(XMLBuilderMixin, TestCase):
             self.assertEqual(change['action'], 'DESIGNATE')
 
     def test_process_amendments(self):
-        with self.tree.builder("REGTEXT", PART="105", TITLE="12") as regtext:
-            with regtext.SUBPART() as subpart:
-                subpart.HD(u"Subpart A—General", SOURCE="HED")
-            regtext.AMDPAR(u"2. Designate §§ 105.1 through 105.3 as subpart "
-                           "A under the heading.")
+        with XMLBuilder("REGTEXT", PART="105", TITLE="12") as ctx:
+            with ctx.SUBPART():
+                ctx.HD(u"Subpart A—General", SOURCE="HED")
+            ctx.AMDPAR(u"2. Designate §§ 105.1 through 105.3 as subpart A "
+                       u"under the heading.")
 
         notice = {'cfr_parts': ['105']}
-        build.process_amendments(notice, self.tree.render_xml())
+        build.process_amendments(notice, ctx.xml)
 
         section_list = ['105-2', '105-3', '105-1']
         self.assertItemsEqual(notice['changes'].keys(), section_list)
@@ -189,17 +190,17 @@ class NoticeBuildTest(XMLBuilderMixin, TestCase):
             self.assertEqual(change['action'], 'DESIGNATE')
 
     def test_process_amendments_section(self):
-        with self.tree.builder("REGTEXT", PART="105", TITLE="12") as regtext:
-            regtext.AMDPAR(u"3. In § 105.1, revise paragraph (b) to read as "
-                           "follows:")
-            with regtext.SECTION() as section:
-                section.SECTNO(u"§ 105.1")
-                section.SUBJECT("Purpose.")
-                section.STARS()
-                section.P("(b) This part carries out.")
+        with XMLBuilder("REGTEXT", PART="105", TITLE="12") as ctx:
+            ctx.AMDPAR(u"3. In § 105.1, revise paragraph (b) to read as "
+                       u"follows:")
+            with ctx.SECTION():
+                ctx.SECTNO(u"§ 105.1")
+                ctx.SUBJECT("Purpose.")
+                ctx.STARS()
+                ctx.P("(b) This part carries out.")
 
         notice = {'cfr_parts': ['105']}
-        build.process_amendments(notice, self.tree.render_xml())
+        build.process_amendments(notice, ctx.xml)
 
         self.assertItemsEqual(notice['changes'].keys(), ['105-1-b'])
 
@@ -209,19 +210,19 @@ class NoticeBuildTest(XMLBuilderMixin, TestCase):
             u'(b) This part carries out.'))
 
     def test_process_amendments_multiple_in_same_parent(self):
-        with self.tree.builder("REGTEXT", PART="105", TITLE="12") as regtext:
-            regtext.AMDPAR(u"1. In § 105.1, revise paragraph (b) to read as "
-                           "follows:")
-            regtext.AMDPAR("2. Also, revise paragraph (c):")
-            with regtext.SECTION() as section:
-                section.SECTNO(u"§ 105.1")
-                section.SUBJECT("Purpose.")
-                section.STARS()
-                section.P("(b) This part carries out.")
-                section.P("(c) More stuff")
+        with XMLBuilder("REGTEXT", PART="105", TITLE="12") as ctx:
+            ctx.AMDPAR(u"1. In § 105.1, revise paragraph (b) to read as "
+                       u"follows:")
+            ctx.AMDPAR("2. Also, revise paragraph (c):")
+            with ctx.SECTION():
+                ctx.SECTNO(u"§ 105.1")
+                ctx.SUBJECT("Purpose.")
+                ctx.STARS()
+                ctx.P("(b) This part carries out.")
+                ctx.P("(c) More stuff")
 
         notice = {'cfr_parts': ['105']}
-        build.process_amendments(notice, self.tree.render_xml())
+        build.process_amendments(notice, ctx.xml)
 
         self.assertItemsEqual(notice['changes'].keys(), ['105-1-b', '105-1-c'])
 
@@ -235,22 +236,22 @@ class NoticeBuildTest(XMLBuilderMixin, TestCase):
                         u'(c) More stuff')
 
     def test_process_amendments_restart_new_section(self):
-        with self.tree.builder("ROOT") as root:
-            with root.REGTEXT(PART="104", TITLE="12") as regtext:
-                regtext.AMDPAR("1. In Supplement I to Part 104, comment "
-                               "22(a) is added")
-                regtext.P("Content")
-            with root.REGTEXT(PART="105", TITLE="12") as regtext:
-                regtext.AMDPAR(u"3. In § 105.1, revise paragraph (b) to read "
-                               "as follows:")
-                with regtext.SECTION() as section:
-                    section.SECTNO(u"§ 105.1")
-                    section.SUBJECT("Purpose.")
-                    section.STARS()
-                    section.P("(b) This part carries out.")
+        with XMLBuilder("ROOT") as ctx:
+            with ctx.REGTEXT(PART="104", TITLE="12"):
+                ctx.AMDPAR("1. In Supplement I to Part 104, comment "
+                           "22(a) is added")
+                ctx.P("Content")
+            with ctx.REGTEXT(PART="105", TITLE="12"):
+                ctx.AMDPAR(u"3. In § 105.1, revise paragraph (b) to read as "
+                           u"follows:")
+                with ctx.SECTION():
+                    ctx.SECTNO(u"§ 105.1")
+                    ctx.SUBJECT("Purpose.")
+                    ctx.STARS()
+                    ctx.P("(b) This part carries out.")
 
         notice = {'cfr_parts': ['105']}
-        build.process_amendments(notice, self.tree.render_xml())
+        build.process_amendments(notice, ctx.xml)
 
         self.assertEqual(2, len(notice['amendments']))
         c22a, b = notice['amendments']
@@ -260,12 +261,12 @@ class NoticeBuildTest(XMLBuilderMixin, TestCase):
         self.assertEqual(b.label, ['105', '1', 'b'])
 
     def test_process_amendments_no_nodes(self):
-        with self.tree.builder("ROOT") as root:
-            with root.REGTEXT(PART="104", TITLE="12") as regtext:
-                regtext.AMDPAR(u"1. In § 104.13, paragraph (b) is removed")
+        with XMLBuilder("ROOT") as ctx:
+            with ctx.REGTEXT(PART="104", TITLE="12"):
+                ctx.AMDPAR(u"1. In § 104.13, paragraph (b) is removed")
 
         notice = {'cfr_parts': ['104']}
-        build.process_amendments(notice, self.tree.render_xml())
+        build.process_amendments(notice, ctx.xml)
 
         self.assertEqual(1, len(notice['amendments']))
         delete = notice['amendments'][0]
@@ -273,16 +274,16 @@ class NoticeBuildTest(XMLBuilderMixin, TestCase):
         self.assertEqual(delete.label, ['104', '13', 'b'])
 
     def test_process_amendments_markerless(self):
-        with self.tree.builder("REGTEXT", PART="105", TITLE="12") as regtext:
-            regtext.AMDPAR(u"1. Revise [label:105-11-p5] as blah")
-            with regtext.SECTION() as section:
-                section.SECTNO(u"§ 105.11")
-                section.SUBJECT("Purpose.")
-                section.STARS()
-                section.P("Some text here")
+        with XMLBuilder("REGTEXT", PART="105", TITLE="12") as ctx:
+            ctx.AMDPAR(u"1. Revise [label:105-11-p5] as blah")
+            with ctx.SECTION():
+                ctx.SECTNO(u"§ 105.11")
+                ctx.SUBJECT("Purpose.")
+                ctx.STARS()
+                ctx.P("Some text here")
 
         notice = {'cfr_parts': ['105']}
-        build.process_amendments(notice, self.tree.render_xml())
+        build.process_amendments(notice, ctx.xml)
         self.assertItemsEqual(notice['changes'].keys(), ['105-11-p5'])
 
         changes = notice['changes']['105-11-p5'][0]
@@ -290,51 +291,51 @@ class NoticeBuildTest(XMLBuilderMixin, TestCase):
 
     def test_process_amendments_multiple_sections(self):
         """Regression test verifying multiple SECTIONs in the same REGTEXT"""
-        with self.tree.builder("REGTEXT", PART="111") as regtext:
-            regtext.AMDPAR(u"1. Modify § 111.22 by revising paragraph (b)")
-            with regtext.SECTION() as section:
-                section.SECTNO(u"§ 111.22")
-                section.SUBJECT("Subject Here.")
-                section.STARS()
-                section.P("(b) Revised second paragraph")
-            regtext.AMDPAR(u"2. Modify § 111.33 by revising paragraph (c)")
-            with regtext.SECTION() as section:
-                section.SECTNO(u"§ 111.33")
-                section.SUBJECT("Another Subject")
-                section.STARS()
-                section.P("(c) Revised third paragraph")
+        with XMLBuilder("REGTEXT", PART="111") as ctx:
+            ctx.AMDPAR(u"1. Modify § 111.22 by revising paragraph (b)")
+            with ctx.SECTION():
+                ctx.SECTNO(u"§ 111.22")
+                ctx.SUBJECT("Subject Here.")
+                ctx.STARS()
+                ctx.P("(b) Revised second paragraph")
+            ctx.AMDPAR(u"2. Modify § 111.33 by revising paragraph (c)")
+            with ctx.SECTION():
+                ctx.SECTNO(u"§ 111.33")
+                ctx.SUBJECT("Another Subject")
+                ctx.STARS()
+                ctx.P("(c) Revised third paragraph")
 
         notice = {'cfr_parts': ['111']}
-        build.process_amendments(notice, self.tree.render_xml())
+        build.process_amendments(notice, ctx.xml)
         self.assertItemsEqual(notice['changes'].keys(),
                               ['111-22-b', '111-33-c'])
 
     def new_subpart_xml(self):
-        with self.tree.builder("RULE") as rule:
-            with rule.REGTEXT(PART="105", TITLE="12") as regtext:
-                regtext.AMDPAR(u"3. In § 105.1, revise paragraph (b) to read "
-                               "as follows:")
-                with regtext.SECTION() as section:
-                    section.SECTNO(u"§ 105.1")
-                    section.SUBJECT("Purpose.")
-                    section.STARS()
-                    section.P("(b) This part carries out.")
-            with rule.REGTEXT(PART="105", TITLE="12") as regtext:
-                regtext.AMDPAR("6. Add subpart B to read as follows:")
-                with regtext.CONTENTS() as contents:
-                    with contents.SUBPART() as subpart:
-                        subpart.SECHD("Sec.")
-                        subpart.SECTNO("105.30")
-                        subpart.SUBJECT("First In New Subpart.")
-                with regtext.SUBPART() as subpart:
-                    subpart.HD(u"Subpart B—Requirements", SOURCE="HED")
-                    with subpart.SECTION() as section:
-                        section.SECTNO("105.30")
-                        section.SUBJECT("First In New Subpart")
-                        section.P("For purposes of this subpart, the follow "
-                                  "apply:")
-                        section.P('(a) "Agent" means agent.')
-        return self.tree.render_xml()
+        with XMLBuilder("RULE") as ctx:
+            with ctx.REGTEXT(PART="105", TITLE="12"):
+                ctx.AMDPAR(u"3. In § 105.1, revise paragraph (b) to read as"
+                           u"follows:")
+                with ctx.SECTION():
+                    ctx.SECTNO(u"§ 105.1")
+                    ctx.SUBJECT("Purpose.")
+                    ctx.STARS()
+                    ctx.P("(b) This part carries out.")
+            with ctx.REGTEXT(PART="105", TITLE="12"):
+                ctx.AMDPAR("6. Add subpart B to read as follows:")
+                with ctx.CONTENTS():
+                    with ctx.SUBPART():
+                        ctx.SECHD("Sec.")
+                        ctx.SECTNO("105.30")
+                        ctx.SUBJECT("First In New Subpart.")
+                with ctx.SUBPART():
+                    ctx.HD(u"Subpart B—Requirements", SOURCE="HED")
+                    with ctx.SECTION():
+                        ctx.SECTNO("105.30")
+                        ctx.SUBJECT("First In New Subpart")
+                        ctx.P("For purposes of this subpart, the follow "
+                              "apply:")
+                        ctx.P('(a) "Agent" means agent.')
+        return ctx.xml
 
     def test_process_new_subpart(self):
         par = self.new_subpart_xml().xpath('//AMDPAR')[1]
@@ -363,24 +364,24 @@ class NoticeBuildTest(XMLBuilderMixin, TestCase):
     def test_process_amendments_mix_regs(self):
         """Some notices apply to multiple regs. For now, just ignore the
         sections not associated with the reg we're focused on"""
-        with self.tree.builder("ROOT") as root:
-            with root.REGTEXT(PART="105", TITLE="12") as regtext:
-                regtext.AMDPAR(u"3. In § 105.1, revise paragraph (a) to read "
-                               "as follows:")
-                with regtext.SECTION() as section:
-                    section.SECTNO(u"§ 105.1")
-                    section.SUBJECT("105Purpose.")
-                    section.P("(a) 105Content")
-            with root.REGTEXT(PART="106", TITLE="12") as regtext:
-                regtext.AMDPAR(u"3. In § 106.3, revise paragraph (b) to read "
-                               "as follows:")
-                with regtext.SECTION() as section:
-                    section.SECTNO(u"§ 106.3")
-                    section.SUBJECT("106Purpose.")
-                    section.P("(b) Content")
+        with XMLBuilder("ROOT") as ctx:
+            with ctx.REGTEXT(PART="105", TITLE="12"):
+                ctx.AMDPAR(u"3. In § 105.1, revise paragraph (a) to read as "
+                           u"follows:")
+                with ctx.SECTION():
+                    ctx.SECTNO(u"§ 105.1")
+                    ctx.SUBJECT("105Purpose.")
+                    ctx.P("(a) 105Content")
+            with ctx.REGTEXT(PART="106", TITLE="12"):
+                ctx.AMDPAR(u"3. In § 106.3, revise paragraph (b) to read as "
+                           u"follows:")
+                with ctx.SECTION():
+                    ctx.SECTNO(u"§ 106.3")
+                    ctx.SUBJECT("106Purpose.")
+                    ctx.P("(b) Content")
 
         notice = {'cfr_parts': ['105', '106']}
-        build.process_amendments(notice, self.tree.render_xml())
+        build.process_amendments(notice, ctx.xml)
 
         self.assertEqual(2, len(notice['changes']))
         self.assertTrue('105-1-a' in notice['changes'])
@@ -388,15 +389,15 @@ class NoticeBuildTest(XMLBuilderMixin, TestCase):
 
     def test_process_amendments_context(self):
         """Context should carry over between REGTEXTs"""
-        with self.tree.builder("ROOT") as root:
-            with root.REGTEXT(TITLE="12") as regtext:
-                regtext.AMDPAR(u"3. In § 106.1, revise paragraph (a) to "
-                               "read as follows:")
-            with root.REGTEXT(TITLE="12") as regtext:
-                regtext.AMDPAR("3. Add appendix C")
+        with XMLBuilder("ROOT") as ctx:
+            with ctx.REGTEXT(TITLE="12"):
+                ctx.AMDPAR(u"3. In § 106.1, revise paragraph (a) to read as "
+                           u"follows:")
+            with ctx.REGTEXT(TITLE="12"):
+                ctx.AMDPAR("3. Add appendix C")
 
         notice = {'cfr_parts': ['105', '106']}
-        build.process_amendments(notice, self.tree.render_xml())
+        build.process_amendments(notice, ctx.xml)
 
         self.assertEqual(2, len(notice['amendments']))
         amd1, amd2 = notice['amendments']
@@ -404,17 +405,17 @@ class NoticeBuildTest(XMLBuilderMixin, TestCase):
         self.assertEqual(['106', 'C'], amd2.label)
 
     def test_process_amendments_insert_in_order(self):
-        with self.tree.builder("ROOT") as root:
-            with root.REGTEXT(TITLE="10") as regtext:
-                regtext.AMDPAR('[insert-in-order] [label:123-45-p6]')
-                with regtext.SECTION() as section:
-                    section.SECTNO(u"§ 123.45")
-                    section.SUBJECT("Some Subject.")
-                    section.STARS()
-                    section.P("This is the sixth paragraph")
-                    section.STARS()
+        with XMLBuilder("ROOT") as ctx:
+            with ctx.REGTEXT(TITLE="10"):
+                ctx.AMDPAR('[insert-in-order] [label:123-45-p6]')
+                with ctx.SECTION():
+                    ctx.SECTNO(u"§ 123.45")
+                    ctx.SUBJECT("Some Subject.")
+                    ctx.STARS()
+                    ctx.P("This is the sixth paragraph")
+                    ctx.STARS()
         notice = {'cfr_parts': ['123']}
-        build.process_amendments(notice, self.tree.render_xml())
+        build.process_amendments(notice, ctx.xml)
 
         self.assertEqual(1, len(notice['amendments']))
         amendment = notice['amendments'][0]
@@ -424,35 +425,34 @@ class NoticeBuildTest(XMLBuilderMixin, TestCase):
     def test_introductory_text(self):
         """ Sometimes notices change just the introductory text of a paragraph
         (instead of changing the entire paragraph tree).  """
-        with self.tree.builder("REGTEXT", PART="106", TITLE="12") as regtext:
-            regtext.AMDPAR(u"3. In § 106.2, revise the introductory text to "
-                           "read as follows:")
-            with regtext.SECTION() as section:
-                section.SECTNO(u"§ 106.2")
-                section.SUBJECT(" Definitions ")
-                section.P(" Except as otherwise provided, the following "
-                          "apply. ")
+        with XMLBuilder("REGTEXT", PART="106", TITLE="12") as ctx:
+            ctx.AMDPAR(u"3. In § 106.2, revise the introductory text to read "
+                       u"as follows:")
+            with ctx.SECTION():
+                ctx.SECTNO(u"§ 106.2")
+                ctx.SUBJECT(" Definitions ")
+                ctx.P(" Except as otherwise provided, the following apply. ")
         notice = {'cfr_parts': ['106']}
-        build.process_amendments(notice, self.tree.render_xml())
+        build.process_amendments(notice, ctx.xml)
 
         self.assertEqual('[text]', notice['changes']['106-2'][0]['field'])
 
     def test_multiple_changes(self):
         """ A notice can have two modifications to a paragraph. """
-        with self.tree.builder("ROOT") as root:
-            with root.REGTEXT(PART="106", TITLE="12") as regtext:
-                regtext.AMDPAR(u"2. Designate §§ 106.1 through 106.3 as "
-                               "subpart A under the heading.")
-            with root.REGTEXT(PART="106", TITLE="12") as regtext:
-                regtext.AMDPAR(u"3. In § 106.2, revise the introductory text "
-                               "to read as follows:")
-                with regtext.SECTION() as section:
-                    section.SECTNO(u"§ 106.2")
-                    section.SUBJECT(" Definitions ")
-                    section.P(" Except as otherwise provided, the following "
-                              "apply. ")
+        with XMLBuilder("ROOT") as ctx:
+            with ctx.REGTEXT(PART="106", TITLE="12"):
+                ctx.AMDPAR(u"2. Designate §§ 106.1 through 106.3 as subpart "
+                           u"A under the heading.")
+            with ctx.REGTEXT(PART="106", TITLE="12"):
+                ctx.AMDPAR(u"3. In § 106.2, revise the introductory text to "
+                           u"read as follows:")
+                with ctx.SECTION():
+                    ctx.SECTNO(u"§ 106.2")
+                    ctx.SUBJECT(" Definitions ")
+                    ctx.P(" Except as otherwise provided, the following "
+                          "apply. ")
         notice = {'cfr_parts': ['106']}
-        build.process_amendments(notice, self.tree.render_xml())
+        build.process_amendments(notice, ctx.xml)
 
         self.assertEqual(2, len(notice['changes']['106-2']))
 
@@ -581,8 +581,8 @@ class NoticeBuildTest(XMLBuilderMixin, TestCase):
         self.assertEqual(notices[1]['document_number'], '222_20131010')
 
     def test_fetch_cfr_parts(self):
-        with self.tree.builder("RULE") as rule:
-            with rule.PREAMB() as preamb:
-                preamb.CFR("12 CFR Parts 1002, 1024, and 1026")
-        result = build.fetch_cfr_parts(self.tree.render_xml())
+        with XMLBuilder("RULE") as ctx:
+            with ctx.PREAMB():
+                ctx.CFR("12 CFR Parts 1002, 1024, and 1026")
+        result = build.fetch_cfr_parts(ctx.xml)
         self.assertEqual(result, ['1002', '1024', '1026'])
