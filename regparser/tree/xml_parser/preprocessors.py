@@ -311,7 +311,6 @@ class ParseAMDPARs(PreProcessorBase):
             context = [amdparent.get('PART') or context[0]]
             for amdpar in amdparent.xpath('.//AMDPAR'):
                 instructions, context = parse_amdpar(amdpar, context)
-                print etree.tostring(instructions), context
                 amdpar.append(instructions)
                 instructions.set(
                     'final_context',
