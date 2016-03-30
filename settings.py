@@ -124,6 +124,7 @@ PREPROCESSORS = plugins.extend_list('eregs_ns.parser.preprocessors', [
     "regparser.tree.xml_parser.preprocessors.ApprovalsFP",
     "regparser.tree.xml_parser.preprocessors.ExtractTags",
     "regparser.tree.xml_parser.preprocessors.Footnotes",
+    "regparser.tree.xml_parser.preprocessors.ParseAMDPARs",
     "regparser.tree.xml_parser.preprocessors.AtfI50032",
     "regparser.tree.xml_parser.preprocessors.AtfI50031",
     "regparser.tree.xml_parser.preprocessors.ImportCategories",

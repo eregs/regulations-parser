@@ -3,12 +3,17 @@
 in the XML"""
 import abc
 from copy import deepcopy
+import logging
 import re
 
 from lxml import etree
 
+from regparser.notice.amdparser import parse_amdpar
 from regparser.tree.xml_parser.tree_utils import (
     get_node_text, replace_xml_node_with_text)
+
+
+logger = logging.getLogger(__name__)
 
 
 class PreProcessorBase(object):
@@ -283,6 +288,34 @@ class Footnotes(PreProcessorBase):
         while referenced is not None and referenced.tag != 'SECTION':
             referenced = referenced.getparent()
         return referencing == referenced
+
+
+class ParseAMDPARs(PreProcessorBase):
+    """Modify the AMDPAR tag to contain an <EREGS_INSTRUCTIONS> element.
+    This element contains an interpretation of the AMDPAR, as viewed as a
+    sequence of actions for how to modify the CFR. Do _not_ modify any
+    existing EREGS_INSTRUCTIONS (they've been manually created)"""
+    # parent of any AMDPAR _without_ an EREGS_INSTRUCTIONS elt
+    AMDPARENT_XPATH = '//AMDPAR[not(EREGS_INSTRUCTIONS)]/..'
+
+    def transform(self, xml):
+        has_part = xml.xpath('//*[AMDPAR and @PART]')
+        context = ['0']
+        if has_part:
+            context = [has_part[0].get('PART')]
+        elif xml.xpath('//AMDPAR'):
+            logger.warning('Could not find any PART designators.')
+
+        for amdparent in xml.xpath(self.AMDPARENT_XPATH):
+            # Always start with only the CFR part
+            context = [amdparent.get('PART') or context[0]]
+            for amdpar in amdparent.xpath('.//AMDPAR'):
+                instructions, context = parse_amdpar(amdpar, context)
+                print etree.tostring(instructions), context
+                amdpar.append(instructions)
+                instructions.set(
+                    'final_context',
+                    '-'.join('?' if l is None else l for l in context))
 
 
 class AtfI50032(PreProcessorBase):

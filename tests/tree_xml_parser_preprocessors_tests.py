@@ -340,3 +340,50 @@ class FootnotesTests(TestCase):
 
         self.fn.add_ref_attributes(ctx.xml)
         self.assertEqual(ctx.xml_str, ctx2.xml_str)
+
+
+class ParseAMDPARsTests(TestCase):
+    def setUp(self):
+        self.amdparser = preprocessors.ParseAMDPARs()
+
+    def test_derives_part(self):
+        """Associates the closest PART info when parsing AMDPARs"""
+        with XMLBuilder("ROOT") as ctx:
+            with ctx.REGTEXT():
+                ctx.AMDPAR("Revise section 14(a)")
+            with ctx.REGTEXT(PART=1111):
+                ctx.AMDPAR("Revise section 15(b)")
+            with ctx.REGTEXT(PART=2222):
+                ctx.AMDPAR("Revise section 16(c)")
+            with ctx.REGTEXT():
+                ctx.AMDPAR("Revise section 17(d)")
+        self.amdparser.transform(ctx.xml)
+        puts = ctx.xml.xpath('//AMDPAR/EREGS_INSTRUCTIONS/PUT')
+        self.assertEqual(len(puts), 4)
+        self.assertEqual(puts[0].get('label'), '1111-?-14-a')
+        self.assertEqual(puts[1].get('label'), '1111-?-15-b')
+        self.assertEqual(puts[2].get('label'), '2222-?-16-c')
+        self.assertEqual(puts[3].get('label'), '2222-?-17-d')
+
+    def test_dont_touch_manual(self):
+        """Should not modify existing instructions"""
+        with XMLBuilder("ROOT") as ctx:
+            with ctx.REGTEXT(PART=111):
+                with ctx.AMDPAR("Revise section 22(c)"):
+                    with ctx.EREGS_INSTRUCTIONS():
+                        # Completely unrelated to the AMDPAR
+                        ctx.DELETE(label='222-?-5')
+        original = ctx.xml_str
+        self.amdparser.transform(ctx.xml)
+        self.assertEqual(original, ctx.xml_str)
+
+    def test_final_context(self):
+        """The "final_context" attribute should be written"""
+        with XMLBuilder("ROOT") as ctx:
+            with ctx.REGTEXT(PART=111):
+                ctx.AMDPAR("Remove section 2(b), revise section 3(c), add "
+                           "section 4(d)(3)")
+        self.amdparser.transform(ctx.xml)
+        instructions = ctx.xml.xpath('//AMDPAR/EREGS_INSTRUCTIONS')
+        self.assertEqual(1, len(instructions))
+        self.assertEqual(instructions[0].get('final_context'), '111-?-4-d-3')

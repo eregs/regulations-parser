@@ -5,8 +5,7 @@ from lxml import etree
 
 from regparser.notice import changes
 from regparser.notice.address import fetch_addresses
-from regparser.notice.amdparser import (
-    amendment_from_xml, DesignateAmendment, parse_amdpar)
+from regparser.notice.amdparser import amendment_from_xml, DesignateAmendment
 from regparser.notice.build_appendix import parse_appendix_changes
 from regparser.notice.build_interp import parse_interp_changes
 from regparser.notice.changes import (
@@ -148,35 +147,11 @@ def create_xml_changes(amended_labels, section, notice_changes):
                 logger.warning("Unknown action: %s", amendment['action'])
 
 
-def preprocess_amdpars(notice_xml):
-    """Modify the AMDPAR tag to contain an <EREGS_INSTRUCTIONS> element.
-    This element contains an interpretation of the AMDPAR, as viewed as a
-    sequence of actions for how to modify the CFR"""
-    has_part = notice_xml.xpath('//AMDPAR/../*[@PART]')
-    context = ['0']
-    if has_part:
-        context = [has_part.get('PART')]
-    elif notice_xml.xpath('//AMDPAR'):
-        logger.warning('Could not find any PART designators.')
-    for amdparent in notice_xml.xpath('//AMDPAR/..'):
-        parent_part = amdparent.get('PART')
-        if parent_part not in (context[0], None):
-            context = [parent_part]
-        for amdpar in amdparent.xpath('.//AMDPAR'):
-            instructions, context = parse_amdpar(amdpar, context)
-            amdpar.append(instructions)
-            instructions.set(
-                'final_context',
-                '-'.join('?' if l is None else l for l in context))
-
-
 def process_amendments(notice, notice_xml):
     """Process changes to the regulation that are expressed in the notice."""
     all_amends = []     # will be added to the notice
     cfr_part = notice['cfr_parts'][0]
     notice_changes = changes.NoticeChanges()
-
-    preprocess_amdpars(notice_xml)
 
     # process amendments in batches, based on their parent XML
     for amdparent in notice_xml.xpath('//AMDPAR/..'):
@@ -184,7 +159,12 @@ def process_amendments(notice, notice_xml):
         amendments_by_section = defaultdict(list)
         normal_amends = []  # amendments not moving or adding a subpart
         for amdpar in amdparent.xpath('.//AMDPAR'):
-            instructions = amdpar.xpath('./EREGS_INSTRUCTIONS')[0]
+            instructions = amdpar.xpath('./EREGS_INSTRUCTIONS')
+            if not instructions:
+                logger.warning('No <EREGS_INSTRUCTIONS>. Was this notice '
+                               'preprocessed?')
+                continue
+            instructions = instructions[0]
             amendments = [amendment_from_xml(el) for el in instructions]
             context = [None if l is '?' else l
                        for l in instructions.get('final_context').split('-')]
