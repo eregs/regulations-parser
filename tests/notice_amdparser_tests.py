@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-import re
 from unittest import TestCase
 
 from lxml import etree
@@ -7,10 +6,12 @@ from lxml import etree
 from regparser.grammar import tokens
 from regparser.notice import amdparser
 from regparser.notice.amdparser import Amendment, DesignateAmendment
+from regparser.test_utils.xml_builder import XMLBuilder
+from regparser.tree.paragraph import hash_for_paragraph
 
 
 class NoticeAMDPARserTests(TestCase):
-    def test_make_amendments(self):
+    def test_make_instructions(self):
         tokenized = [
             tokens.Paragraph(part='111'),
             tokens.Verb(tokens.Verb.PUT, active=True),
@@ -23,13 +24,15 @@ class NoticeAMDPARserTests(TestCase):
             tokens.Paragraph(part='666'),
             tokens.Paragraph(part='777')
         ]
-        amends = amdparser.make_amendments(tokenized)
-        self.assertEqual(amends,
-                         [Amendment(tokens.Verb.PUT, '222'),
-                          Amendment(tokens.Verb.PUT, '333'),
-                          Amendment(tokens.Verb.PUT, '444'),
-                          Amendment(tokens.Verb.DELETE, '555'),
-                          Amendment(tokens.Verb.MOVE, '666', '777')])
+        with XMLBuilder("EREGS_INSTRUCTIONS") as ctx:
+            ctx.PUT(label=222)
+            ctx.PUT(label=333)
+            ctx.PUT(label=444)
+            ctx.DELETE(label=555)
+            ctx.MOVE(label=666, destination=777)
+        self.assertEqual(
+            etree.tostring(amdparser.make_instructions(tokenized)),
+            ctx.xml_str)
 
     def test_compress_context_simple(self):
         tokenized = [
@@ -268,29 +271,18 @@ class NoticeAMDPARserTests(TestCase):
         self.assertEqual(amdparser.get_destination(tokenized, '205'),
                          '205-Subpart:J')
 
-    def test_handle_subpart_designate(self):
+    def test_make_subpart_instructions(self):
         token_list = self.paragraph_token_list()
         subpart_token = tokens.Paragraph(subpart='J')
         tokenized = [token_list, subpart_token]
+        with XMLBuilder('EREGS_INSTRUCTIONS') as ctx:
+            with ctx.DESIGNATE(destination='200-Subpart:J'):
+                ctx.LABEL(label='200-1-a')
+                ctx.LABEL(label='200-1-b')
 
-        amendment = amdparser.handle_subpart_amendment(tokenized)
-
-        self.assertEqual(amendment.action, tokens.Verb.DESIGNATE)
-        labels = [['200', '1', 'a'], ['200', '1', 'b']]
-        self.assertEqual(amendment.labels, labels)
-        self.assertEqual(amendment.destination, ['200', 'Subpart', 'J'])
-
-    def test_make_amendments_subpart(self):
-        token_list = self.paragraph_token_list()
-        subpart_token = tokens.Paragraph(subpart='J')
-        tokenized = [token_list, subpart_token]
-        amends = amdparser.make_amendments(tokenized, subpart=True)
-
-        amendment = amends[0]
-        self.assertEqual(amendment.action, tokens.Verb.DESIGNATE)
-        labels = [['200', '1', 'a'], ['200', '1', 'b']]
-        self.assertEqual(amendment.labels, labels)
-        self.assertEqual(amendment.destination, ['200', 'Subpart', 'J'])
+        self.assertEqual(
+            etree.tostring(amdparser.make_subpart_instructions(tokenized)),
+            ctx.xml_str)
 
     def test_switch_part_context(self):
         initial_context = ['105', '2']
@@ -382,19 +374,15 @@ class NoticeAMDPARserTests(TestCase):
         text = "Paragraphs 3.ii, 3.iii, 4 and newly redesignated paragraph "
         text += "10 are revised."
         xml = etree.fromstring('<AMDPAR>%s</AMDPAR>' % text)
-        amends, _ = amdparser.parse_amdpar(
+        with XMLBuilder('EREGS_INSTRUCTIONS') as ctx:
+            ctx.PUT(label='1111-Interpretations-2-(a)-3-ii')
+            ctx.PUT(label='1111-Interpretations-2-(a)-3-iii')
+            ctx.PUT(label='1111-Interpretations-2-(a)-4')
+            ctx.PUT(label='1111-Interpretations-2-(a)-10')
+
+        instructions, _ = amdparser.parse_amdpar(
             xml, ['1111', 'Interpretations', '2', '(a)'])
-        self.assertEqual(4, len(amends))
-        self.assertEqual(['1111', '2', 'a', 'Interp', '3', 'ii'],
-                         amends[0].label)
-        self.assertEqual(['1111', '2', 'a', 'Interp', '3', 'iii'],
-                         amends[1].label)
-        self.assertEqual(['1111', '2', 'a', 'Interp', '4'],
-                         amends[2].label)
-        self.assertEqual(['1111', '2', 'a', 'Interp', '10'],
-                         amends[3].label)
-        for amend in amends:
-            self.assertEqual(amend.action, 'PUT')
+        self.assertEqual(etree.tostring(instructions), ctx.xml_str)
 
     def test_parse_amdpar_interp_phrase(self):
         text = u"In Supplement I to part 999, under"
@@ -403,143 +391,121 @@ class NoticeAMDPARserTests(TestCase):
         text += u'<E T="03">3(b) Subheader,</E>'
         text += u"new paragraph 1.iv is added:"
         xml = etree.fromstring(u'<AMDPAR>%s</AMDPAR>' % text)
-        amends, _ = amdparser.parse_amdpar(xml, ['1111'])
-        self.assertEqual(1, len(amends))
-        self.assertEqual('POST', amends[0].action)
-        self.assertEqual(['999', '3', 'b', 'Interp', '1', 'iv'],
-                         amends[0].label)
+        instructions, _ = amdparser.parse_amdpar(xml, ['1111'])
+
+        with XMLBuilder('EREGS_INSTRUCTIONS') as ctx:
+            ctx.POST(label='999-Interpretations-3-(b)-1-iv')
+        self.assertEqual(etree.tostring(instructions), ctx.xml_str)
 
     def test_parse_amdpar_interp_heading(self):
         text = "ii. The heading for 35(b) blah blah is revised."
         xml = etree.fromstring(u'<AMDPAR>%s</AMDPAR>' % text)
-        amends, _ = amdparser.parse_amdpar(xml, ['1111', 'Interpretations'])
-        self.assertEqual(1, len(amends))
-        self.assertEqual('PUT', amends[0].action)
-        self.assertEqual('[title]', amends[0].field)
-        self.assertEqual(['1111', '35', 'b', 'Interp'], amends[0].label)
+        instructions, _ = amdparser.parse_amdpar(xml,
+                                                 ['1111', 'Interpretations'])
+        with XMLBuilder('EREGS_INSTRUCTIONS') as ctx:
+            ctx.PUT(label='1111-Interpretations-35-(b)[title]')
+        self.assertEqual(etree.tostring(instructions), ctx.xml_str)
 
     def test_parse_amdpar_interp_context(self):
         text = "b. 35(b)(1) Some title and paragraphs 1, 2, and 3 are added."
         xml = etree.fromstring(u'<AMDPAR>%s</AMDPAR>' % text)
-        amends, _ = amdparser.parse_amdpar(xml, ['1111', 'Interpretations'])
-        self.assertEqual(4, len(amends))
-        for amd in amends:
-            self.assertEqual('POST', amd.action)
-        amd35b1, amd35b1_1, amd35b1_2, amd35b1_3 = amends
-        self.assertEqual(['1111', '35', 'b', '1', 'Interp'], amd35b1.label)
-        self.assertEqual(['1111', '35', 'b', '1', 'Interp', '1'],
-                         amd35b1_1.label)
-        self.assertEqual(['1111', '35', 'b', '1', 'Interp', '2'],
-                         amd35b1_2.label)
-        self.assertEqual(['1111', '35', 'b', '1', 'Interp', '3'],
-                         amd35b1_3.label)
+        instructions, _ = amdparser.parse_amdpar(xml,
+                                                 ['1111', 'Interpretations'])
+        with XMLBuilder('EREGS_INSTRUCTIONS') as ctx:
+            ctx.POST(label='1111-Interpretations-35-(b)(1)')
+            ctx.POST(label='1111-Interpretations-35-(b)(1)-1')
+            ctx.POST(label='1111-Interpretations-35-(b)(1)-2')
+            ctx.POST(label='1111-Interpretations-35-(b)(1)-3')
+        self.assertEqual(etree.tostring(instructions), ctx.xml_str)
 
     def test_parse_amdpar_interp_redesignated(self):
         text = "Paragraph 1 under 51(b) is redesignated as paragraph 2 "
         text += "under subheading 51(b)(1) and revised"
         xml = etree.fromstring(u'<AMDPAR>%s</AMDPAR>' % text)
-        amends, _ = amdparser.parse_amdpar(xml, ['1111', 'Interpretations'])
-        self.assertEqual(2, len(amends))
-        delete, add = amends
-        self.assertEqual('DELETE', delete.action)
-        self.assertEqual(['1111', '51', 'b', 'Interp', '1'], delete.label)
-        self.assertEqual('POST', add.action)
-        self.assertEqual(['1111', '51', 'b', '1', 'Interp', '2'], add.label)
+        instructions, _ = amdparser.parse_amdpar(xml,
+                                                 ['1111', 'Interpretations'])
+        with XMLBuilder('EREGS_INSTRUCTIONS') as ctx:
+            ctx.DELETE(label='1111-Interpretations-51-(b)-1')
+            ctx.POST(label='1111-Interpretations-51-(b)(1)-2')
+        self.assertEqual(etree.tostring(instructions), ctx.xml_str)
 
     def test_parse_amdpar_interp_entries(self):
         text = "Entries for 12(c)(3)(ix)(A) and (B) are added."
         xml = etree.fromstring('<AMDPAR>%s</AMDPAR>' % text)
-        amends, _ = amdparser.parse_amdpar(xml, ['1111', 'Interpretations'])
-        self.assertEqual(2, len(amends))
-        a, b = amends
-        self.assertEqual('POST', a.action)
-        self.assertEqual(['1111', '12', 'c', '3', 'ix', 'A', 'Interp'],
-                         a.label)
-        self.assertEqual('POST', b.action)
-        self.assertEqual(['1111', '12', 'c', '3', 'ix', 'B', 'Interp'],
-                         b.label)
+        instructions, _ = amdparser.parse_amdpar(xml,
+                                                 ['1111', 'Interpretations'])
+        with XMLBuilder('EREGS_INSTRUCTIONS') as ctx:
+            ctx.POST(label='1111-Interpretations-12-(c)(3)(ix)(A)')
+            ctx.POST(label='1111-Interpretations-12-(c)(3)(ix)(B)')
+        self.assertEqual(etree.tostring(instructions), ctx.xml_str)
 
     def test_parse_amdpar_and_and(self):
         text = "12(a) 'Titles and Paragraphs' and paragraph 3 are added"
         xml = etree.fromstring('<AMDPAR>%s</AMDPAR>' % text)
-        amends, _ = amdparser.parse_amdpar(xml, ['1111', 'Interpretations'])
-        self.assertEqual(2, len(amends))
-        a, b = amends
-        self.assertEqual('POST', a.action)
-        self.assertEqual(['1111', '12', 'a', 'Interp'],
-                         a.label)
-        self.assertEqual('POST', b.action)
-        self.assertEqual(['1111', '12', 'a', 'Interp', '3'],
-                         b.label)
+        instructions, _ = amdparser.parse_amdpar(xml,
+                                                 ['1111', 'Interpretations'])
+        with XMLBuilder('EREGS_INSTRUCTIONS') as ctx:
+            ctx.POST(label='1111-Interpretations-12-(a)')
+            ctx.POST(label='1111-Interpretations-12-(a)-3')
+        self.assertEqual(etree.tostring(instructions), ctx.xml_str)
 
     def test_parse_amdpar_and_in_tags(self):
         text = "Under <E>Appendix A - Some phrase and another</E>, paragraph "
         text += "3 is added"
         xml = etree.fromstring('<AMDPAR>%s</AMDPAR>' % text)
-        amends, _ = amdparser.parse_amdpar(xml, ['1111', 'Interpretations'])
-        self.assertEqual(1, len(amends))
-        amend = amends[0]
-        self.assertEqual('POST', amend.action)
-        self.assertEqual(['1111', 'A', 'Interp', '3'], amend.label)
+        instructions, _ = amdparser.parse_amdpar(xml,
+                                                 ['1111', 'Interpretations'])
+        with XMLBuilder('EREGS_INSTRUCTIONS') as ctx:
+            ctx.POST(label='1111-Interpretations-A-()-3')
+        self.assertEqual(etree.tostring(instructions), ctx.xml_str)
 
     def test_parse_amdpar_verbs_ands(self):
         text = "Under 45(a)(1) Title, paragraphs 1 and 2 are removed, and "
         text += "45(a)(1)(i) Deeper Title and paragraphs 1 and 2 are added"
         xml = etree.fromstring('<AMDPAR>%s</AMDPAR>' % text)
-        amends, _ = amdparser.parse_amdpar(xml, ['1111', 'Interpretations'])
-        self.assertEqual(5, len(amends))
-        a11, a12, a1i, a1i1, a1i2 = amends
-        self.assertEqual('DELETE', a11.action)
-        self.assertEqual(['1111', '45', 'a', '1', 'Interp', '1'], a11.label)
-        self.assertEqual('DELETE', a12.action)
-        self.assertEqual(['1111', '45', 'a', '1', 'Interp', '2'], a12.label)
-
-        self.assertEqual('POST', a1i.action)
-        self.assertEqual(['1111', '45', 'a', '1', 'i', 'Interp'], a1i.label)
-        self.assertEqual('POST', a1i1.action)
-        self.assertEqual(['1111', '45', 'a', '1', 'i', 'Interp', '1'],
-                         a1i1.label)
-        self.assertEqual('POST', a1i2.action)
-        self.assertEqual(['1111', '45', 'a', '1', 'i', 'Interp', '2'],
-                         a1i2.label)
+        instructions, _ = amdparser.parse_amdpar(xml,
+                                                 ['1111', 'Interpretations'])
+        with XMLBuilder('EREGS_INSTRUCTIONS') as ctx:
+            ctx.DELETE(label='1111-Interpretations-45-(a)(1)-1')
+            ctx.DELETE(label='1111-Interpretations-45-(a)(1)-2')
+            ctx.POST(label='1111-Interpretations-45-(a)(1)(i)')
+            ctx.POST(label='1111-Interpretations-45-(a)(1)(i)-1')
+            ctx.POST(label='1111-Interpretations-45-(a)(1)(i)-2')
+        self.assertEqual(etree.tostring(instructions), ctx.xml_str)
 
     def test_parse_amdpar_add_field(self):
         text = "Adding introductory text to paragraph (c)"
         xml = etree.fromstring('<AMDPAR>%s</AMDPAR>' % text)
-        amends, _ = amdparser.parse_amdpar(xml, ['1111', None, '12'])
-        self.assertEqual(1, len(amends))
-        amd = amends[0]
-        self.assertEqual(amd.action, tokens.Verb.PUT)
-        self.assertEqual(amd.label, ['1111', '12', 'c'])
-        self.assertEqual(amd.field, '[text]')
+        instructions, _ = amdparser.parse_amdpar(xml, ['1111', None, '12'])
+
+        with XMLBuilder('EREGS_INSTRUCTIONS') as ctx:
+            ctx.PUT(label='1111-?-12-c[text]')
+        self.assertEqual(etree.tostring(instructions), ctx.xml_str)
 
     def test_parse_amdpar_moved_then_modified(self):
         text = "Under Paragraph 22(a), paragraph 1 is revised, paragraph "
         text += "2 is redesignated as paragraph 3 and revised, and new "
         text += "paragraph 2 is added."
         xml = etree.fromstring('<AMDPAR>%s</AMDPAR>' % text)
-        amends, _ = amdparser.parse_amdpar(xml, ['1111', 'Interpretations'])
-        self.assertEqual(4, len(amends))
-        a1, a2del, a3, a2add = amends
-        self.assertEqual(a1.action, tokens.Verb.PUT)
-        self.assertEqual(a1.label, ['1111', '22', 'a', 'Interp', '1'])
-        self.assertEqual(a2del.action, tokens.Verb.DELETE)
-        self.assertEqual(a2del.label, ['1111', '22', 'a', 'Interp', '2'])
-        self.assertEqual(a3.action, tokens.Verb.POST)
-        self.assertEqual(a3.label, ['1111', '22', 'a', 'Interp', '3'])
-        self.assertEqual(a2add.action, tokens.Verb.POST)
-        self.assertEqual(a2add.label, ['1111', '22', 'a', 'Interp', '2'])
+        instructions, _ = amdparser.parse_amdpar(xml,
+                                                 ['1111', 'Interpretations'])
+        with XMLBuilder('EREGS_INSTRUCTIONS') as ctx:
+            ctx.PUT(label='1111-Interpretations-22-(a)-1')
+            ctx.DELETE(label='1111-Interpretations-22-(a)-2')
+            ctx.POST(label='1111-Interpretations-22-(a)-3')
+            ctx.POST(label='1111-Interpretations-22-(a)-2')
+        self.assertEqual(etree.tostring(instructions), ctx.xml_str)
 
     def test_parse_amdpar_subject_group(self):
         xml = etree.fromstring(
             '<AMDPAR>8. Section 479.90a is added to '
             '[subject-group(Exemptions Relating to Transfers of Firearms)] '
             'to read as follows.</AMDPAR>')
-        amends, _ = amdparser.parse_amdpar(xml, [])
-        self.assertEqual(1, len(amends))
-        self.assertEqual(amends[0].action, tokens.Verb.POST)
-        self.assertEqual(amends[0].label, ['479', '90a'])
-        self.assertEqual(amends[0].original_label, '479-Subjgrp:ERtToF-90a')
+        instructions, _ = amdparser.parse_amdpar(xml, [])
+
+        with XMLBuilder('EREGS_INSTRUCTIONS') as ctx:
+            ctx.POST(label='479-Subjgrp:ERtToF-90a')
+        self.assertEqual(etree.tostring(instructions), ctx.xml_str)
 
     def test_parse_amdpar_definition(self):
         """We should correctly deduce which paragraphs are being updated, even
@@ -548,13 +514,12 @@ class NoticeAMDPARserTests(TestCase):
                 u"term “Nonimmigrant visa” in alphabetical order to read as "
                 "follows:")
         xml = etree.fromstring('<AMDPAR>%s</AMDPAR>' % text)
-        amends, _ = amdparser.parse_amdpar(xml, [])
-        self.assertEqual(1, len(amends))
-        self.assertEqual(amends[0].action, tokens.Verb.POST)
-        self.assertEqual(3, len(amends[0].label))
-        self.assertEqual(['478', '11'], amends[0].label[:2])
-        # Paragraph has a hash
-        self.assertTrue(re.match(r'p\d{4}\d+', amends[0].label[2]))
+        instructions, _ = amdparser.parse_amdpar(xml, [])
+
+        with XMLBuilder('EREGS_INSTRUCTIONS') as ctx:
+            ctx.POST(label='478-?-11-p{}'.format(hash_for_paragraph(
+                "Nonimmigrant visa")))
+        self.assertEqual(etree.tostring(instructions), ctx.xml_str)
 
 
 class AmendmentTests(TestCase):

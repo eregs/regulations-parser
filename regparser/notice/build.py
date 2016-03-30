@@ -163,10 +163,8 @@ def preprocess_amdpars(notice_xml):
         if parent_part not in (context[0], None):
             context = [parent_part]
         for amdpar in amdparent.xpath('.//AMDPAR'):
-            amendments, context = parse_amdpar(amdpar, context)
-            instructions = etree.SubElement(amdpar, "EREGS_INSTRUCTIONS")
-            for amendment in amendments:
-                instructions.append(amendment.as_xml())
+            instructions, context = parse_amdpar(amdpar, context)
+            amdpar.append(instructions)
             instructions.set(
                 'final_context',
                 '-'.join('?' if l is None else l for l in context))

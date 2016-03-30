@@ -36,8 +36,10 @@ def parse_amdpar(par, initial_context):
     initial_context = switch_part_context(tokenized, initial_context)
     initial_context = switch_level2_context(tokenized, initial_context)
     tokenized, final_context = compress_context(tokenized, initial_context)
-    amends = make_amendments(tokenized, subpart)
-    return amends, final_context
+    if subpart:
+        return make_subpart_instructions(tokenized), final_context
+    else:
+        return make_instructions(tokenized), final_context
 
 
 def matching(tokens, *types, **fields):
@@ -411,48 +413,49 @@ def get_destination(tokenized, reg_part):
     return destination
 
 
-def handle_subpart_amendment(tokenized):
-    """ Handle the situation where a new subpart is designated. """
-    verb = tokens.Verb.DESIGNATE
+def make_subpart_instructions(tokenized):
+    """Convert tokens into an `EREGS_INSTRUCTIONS` xml element specifically
+    for subpart designations"""
+    instructions = etree.Element('EREGS_INSTRUCTIONS')
+    action = etree.SubElement(instructions, tokens.Verb.DESIGNATE)
 
-    token_lists = [t for t in tokenized if isinstance(t, tokens.TokenList)]
-
+    reg_part = None
+    token_lists = matching(tokenized, tokens.TokenList)
     # There's only one token list of paragraphs, sections to be designated
-    tokens_to_be_designated = token_lists[0]
-    labels_to_be_designated = [t.label_text() for t in tokens_to_be_designated]
-    reg_part = tokens_to_be_designated.tokens[0].label[0]
-    destination = get_destination(tokenized, reg_part)
+    for token in token_lists[0]:
+        reg_part = token.label[0]
+        etree.SubElement(action, 'LABEL', label=token.label_text())
 
-    return DesignateAmendment(verb, labels_to_be_designated, destination)
+    action.set('destination', get_destination(tokenized, reg_part))
+    return instructions
 
 
-def make_amendments(tokenized, subpart=False):
-    """Convert a sequence of (normalized) tokens into a list of amendments"""
+def make_instructions(tokenized):
+    """Convert the tokens into an `EREGS_INSTRUCTIONS` xml element. Does not
+    handle subpart designations"""
+    instructions = etree.Element('EREGS_INSTRUCTIONS')
     verb = None
-    amends = []
-    if subpart:
-        amends.append(handle_subpart_amendment(tokenized))
-    else:
-        for i in range(len(tokenized)):
-            token = tokenized[i]
-            if isinstance(token, tokens.Verb):
-                assert token.active
-                verb = token.verb
-            elif isinstance(token, tokens.Paragraph):
-                if verb == tokens.Verb.MOVE:
-                    if isinstance(tokenized[i-1], tokens.Paragraph):
-                        origin = tokenized[i-1].label_text()
-                        destination = token.label_text()
-                        amends.append(Amendment(verb, origin, destination))
-                elif verb:
-                    amends.append(Amendment(verb, token.label_text()))
-    # Edits to intro text should always be PUTs
-    for amend in amends:
-        if (not isinstance(amend, DesignateAmendment) and
-            amend.field == "[text]" and
-                amend.action == tokens.Verb.POST):
-            amend.action = tokens.Verb.PUT
-    return amends
+    for i in range(len(tokenized)):
+        token = tokenized[i]
+        if token.match(tokens.Verb):
+            assert token.active
+            verb = token.verb
+        # MOVEs must have _two_ paragraphs
+        elif (verb == tokens.Verb.MOVE and
+                not tokenized[i-1].match(tokens.Paragraph)):
+            continue
+        elif verb == tokens.Verb.MOVE and token.match(tokens.Paragraph):
+            origin = tokenized[i-1].label_text()
+            etree.SubElement(instructions, verb, label=origin,
+                             destination=token.label_text())
+        elif verb and token.match(tokens.Paragraph):
+            label = token.label_text()
+            # Edits to intro text should always be PUTs
+            if label.endswith('[text]') and verb == tokens.Verb.POST:
+                etree.SubElement(instructions, tokens.Verb.PUT, label=label)
+            else:
+                etree.SubElement(instructions, verb, label=label)
+    return instructions
 
 
 class Amendment(object):
@@ -561,11 +564,6 @@ class Amendment(object):
                 return [parts[0], parts[1][len('Appendix:'):]]
             # this does not account for interpretations
 
-    def as_xml(self):
-        return etree.Element(
-            self.action, label=self.original_label,
-            destination=self.destination or '')
-
 
 class DesignateAmendment(Amendment):
     """ A designate Amendment manages it's information a little differently
@@ -589,13 +587,6 @@ class DesignateAmendment(Amendment):
     def __repr__(self):
         return "(%s, %s, %s)" % (
             repr(self.action), repr(self.labels), repr(self.destination))
-
-    def as_xml(self):
-        element = etree.Element(
-            self.action, destination=self.original_destination)
-        for label in self.original_labels:
-            etree.SubElement(element, 'LABEL', label=label)
-        return element
 
 
 def amendment_from_xml(xml):
