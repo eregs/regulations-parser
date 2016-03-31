@@ -5,18 +5,21 @@ from lxml import etree
 
 from regparser.notice import changes
 from regparser.notice.address import fetch_addresses
+from regparser.notice.amdparser import amendment_from_xml, DesignateAmendment
 from regparser.notice.build_appendix import parse_appendix_changes
 from regparser.notice.build_interp import parse_interp_changes
-from regparser.notice.diff import parse_amdpar, find_section, find_subpart
-from regparser.notice.diff import new_subpart_added
-from regparser.notice.diff import DesignateAmendment
+from regparser.notice.changes import (
+    find_section, find_subpart, new_subpart_added)
 from regparser.notice.dates import fetch_dates
-from regparser.notice.sxs import find_section_by_section
-from regparser.notice.sxs import build_section_by_section
+from regparser.notice.sxs import (
+    build_section_by_section, find_section_by_section)
 from regparser.notice.util import spaces_then_remove, swap_emphasis_tags
 from regparser.notice.xml import fetch_cfr_parts, xmls_for_url
 from regparser.tree import struct
 from regparser.tree.xml_parser import reg_text
+
+
+logger = logging.getLogger(__name__)
 
 
 def build_notice(cfr_title, cfr_part, fr_notice, fetch_xml=True,
@@ -115,7 +118,7 @@ def create_xmlless_changes(amended_labels, notice_changes):
                 notice_changes.update({label: change})
             elif amendment['action'] not in ('POST', 'PUT', 'RESERVE',
                                              'INSERT'):
-                logging.warning("Unknown action: %s", amendment['action'])
+                logger.warning("Unknown action: %s", amendment['action'])
 
 
 def create_xml_changes(amended_labels, section, notice_changes):
@@ -141,7 +144,7 @@ def create_xml_changes(amended_labels, section, notice_changes):
                 change = changes.create_reserve_amendment(amendment)
                 notice_changes.update(change)
             elif amendment['action'] not in ('DELETE', 'MOVE'):
-                logging.warning("Unknown action: %s", amendment['action'])
+                logger.warning("Unknown action: %s", amendment['action'])
 
 
 def process_amendments(notice, notice_xml):
@@ -156,7 +159,15 @@ def process_amendments(notice, notice_xml):
         amendments_by_section = defaultdict(list)
         normal_amends = []  # amendments not moving or adding a subpart
         for amdpar in amdparent.xpath('.//AMDPAR'):
-            amendments, context = parse_amdpar(amdpar, context)
+            instructions = amdpar.xpath('./EREGS_INSTRUCTIONS')
+            if not instructions:
+                logger.warning('No <EREGS_INSTRUCTIONS>. Was this notice '
+                               'preprocessed?')
+                continue
+            instructions = instructions[0]
+            amendments = [amendment_from_xml(el) for el in instructions]
+            context = [None if l is '?' else l
+                       for l in instructions.get('final_context').split('-')]
             section_xml = find_section(amdpar)
             for amendment in amendments:
                 all_amends.append(amendment)

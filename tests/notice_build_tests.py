@@ -4,8 +4,9 @@ from unittest import TestCase
 from lxml import etree
 
 from regparser.notice import build, changes
-from regparser.notice.diff import DesignateAmendment, Amendment
+from regparser.notice.amdparser import DesignateAmendment, Amendment
 from regparser.test_utils.xml_builder import XMLBuilder
+from regparser.tree.xml_parser.preprocessors import ParseAMDPARs
 from regparser.tree.struct import Node
 
 
@@ -177,6 +178,7 @@ class NoticeBuildTest(TestCase):
                 ctx.HD(u"Subpart A—General", SOURCE="HED")
             ctx.AMDPAR(u"2. Designate §§ 105.1 through 105.3 as subpart A "
                        u"under the heading.")
+        ParseAMDPARs().transform(ctx.xml)
 
         notice = {'cfr_parts': ['105']}
         build.process_amendments(notice, ctx.xml)
@@ -198,6 +200,7 @@ class NoticeBuildTest(TestCase):
                 ctx.SUBJECT("Purpose.")
                 ctx.STARS()
                 ctx.P("(b) This part carries out.")
+        ParseAMDPARs().transform(ctx.xml)
 
         notice = {'cfr_parts': ['105']}
         build.process_amendments(notice, ctx.xml)
@@ -220,6 +223,7 @@ class NoticeBuildTest(TestCase):
                 ctx.STARS()
                 ctx.P("(b) This part carries out.")
                 ctx.P("(c) More stuff")
+        ParseAMDPARs().transform(ctx.xml)
 
         notice = {'cfr_parts': ['105']}
         build.process_amendments(notice, ctx.xml)
@@ -249,6 +253,7 @@ class NoticeBuildTest(TestCase):
                     ctx.SUBJECT("Purpose.")
                     ctx.STARS()
                     ctx.P("(b) This part carries out.")
+        ParseAMDPARs().transform(ctx.xml)
 
         notice = {'cfr_parts': ['105']}
         build.process_amendments(notice, ctx.xml)
@@ -264,6 +269,7 @@ class NoticeBuildTest(TestCase):
         with XMLBuilder("ROOT") as ctx:
             with ctx.REGTEXT(PART="104", TITLE="12"):
                 ctx.AMDPAR(u"1. In § 104.13, paragraph (b) is removed")
+        ParseAMDPARs().transform(ctx.xml)
 
         notice = {'cfr_parts': ['104']}
         build.process_amendments(notice, ctx.xml)
@@ -281,6 +287,7 @@ class NoticeBuildTest(TestCase):
                 ctx.SUBJECT("Purpose.")
                 ctx.STARS()
                 ctx.P("Some text here")
+        ParseAMDPARs().transform(ctx.xml)
 
         notice = {'cfr_parts': ['105']}
         build.process_amendments(notice, ctx.xml)
@@ -304,6 +311,7 @@ class NoticeBuildTest(TestCase):
                 ctx.SUBJECT("Another Subject")
                 ctx.STARS()
                 ctx.P("(c) Revised third paragraph")
+        ParseAMDPARs().transform(ctx.xml)
 
         notice = {'cfr_parts': ['111']}
         build.process_amendments(notice, ctx.xml)
@@ -335,6 +343,8 @@ class NoticeBuildTest(TestCase):
                         ctx.P("For purposes of this subpart, the follow "
                               "apply:")
                         ctx.P('(a) "Agent" means agent.')
+
+        ParseAMDPARs().transform(ctx.xml)
         return ctx.xml
 
     def test_process_new_subpart(self):
@@ -379,6 +389,7 @@ class NoticeBuildTest(TestCase):
                     ctx.SECTNO(u"§ 106.3")
                     ctx.SUBJECT("106Purpose.")
                     ctx.P("(b) Content")
+        ParseAMDPARs().transform(ctx.xml)
 
         notice = {'cfr_parts': ['105', '106']}
         build.process_amendments(notice, ctx.xml)
@@ -395,6 +406,7 @@ class NoticeBuildTest(TestCase):
                            u"follows:")
             with ctx.REGTEXT(TITLE="12"):
                 ctx.AMDPAR("3. Add appendix C")
+        ParseAMDPARs().transform(ctx.xml)
 
         notice = {'cfr_parts': ['105', '106']}
         build.process_amendments(notice, ctx.xml)
@@ -414,6 +426,7 @@ class NoticeBuildTest(TestCase):
                     ctx.STARS()
                     ctx.P("This is the sixth paragraph")
                     ctx.STARS()
+        ParseAMDPARs().transform(ctx.xml)
         notice = {'cfr_parts': ['123']}
         build.process_amendments(notice, ctx.xml)
 
@@ -432,6 +445,7 @@ class NoticeBuildTest(TestCase):
                 ctx.SECTNO(u"§ 106.2")
                 ctx.SUBJECT(" Definitions ")
                 ctx.P(" Except as otherwise provided, the following apply. ")
+        ParseAMDPARs().transform(ctx.xml)
         notice = {'cfr_parts': ['106']}
         build.process_amendments(notice, ctx.xml)
 
@@ -451,6 +465,7 @@ class NoticeBuildTest(TestCase):
                     ctx.SUBJECT(" Definitions ")
                     ctx.P(" Except as otherwise provided, the following "
                           "apply. ")
+        ParseAMDPARs().transform(ctx.xml)
         notice = {'cfr_parts': ['106']}
         build.process_amendments(notice, ctx.xml)
 

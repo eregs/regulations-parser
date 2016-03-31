@@ -1,133 +1,116 @@
-# vim: set encoding=utf-8
-from copy import copy
 from itertools import takewhile
 import logging
+
+from lxml import etree
 
 from regparser.grammar import amdpar, tokens
 from regparser.tree.struct import Node
 from regparser.tree.xml_parser.tree_utils import get_node_text
 
 
-def fix_section_node(paragraphs, amdpar_xml):
-    """ When notices are corrected, the XML for notices doesn't follow the
-    normal syntax. Namely, pargraphs aren't inside section tags. We fix that
-    here, by finding the preceding section tag and appending paragraphs to it.
+logger = logging.getLogger(__name__)
+
+
+def parse_amdpar(par, initial_context):
+    """ Parse the <AMDPAR> tags into a list of paragraphs that have changed.
     """
 
-    sections = [s for s in amdpar_xml.itersiblings(preceding=True)
-                if s.tag == 'SECTION']
+    #   Replace and "and"s in titles; they will throw off and_token_resolution
+    for e in filter(lambda e: e.text, par.xpath('./E')):
+        e.text = e.text.replace(' and ', ' ')
+    text = get_node_text(par, add_spaces=True)
+    tokenized = [t[0] for t, _, _ in amdpar.token_patterns.scanString(text)]
 
-    # Let's only do this if we find one section tag.
-    if len(sections) == 1:
-        section = copy(sections[0])
-        for paragraph in paragraphs:
-            section.append(copy(paragraph))
-        return section
-
-
-def find_lost_section(amdpar_xml):
-    """ This amdpar doesn't have any following siblings, so we
-    look in the next regtext """
-    reg_text = amdpar_xml.getparent()
-    reg_text_siblings = [s for s in reg_text.itersiblings()
-                         if s.tag == 'REGTEXT']
-    if len(reg_text_siblings) > 0:
-        candidate_reg_text = reg_text_siblings[0]
-        amdpars = [a for a in candidate_reg_text if a.tag == 'AMDPAR']
-        if len(amdpars) == 0:
-            # Only do this if there are not AMDPARS
-            for c in candidate_reg_text:
-                if c.tag == 'SECTION':
-                    return c
-
-
-def find_section(amdpar_xml):
-    """ With an AMDPAR xml, return the first section sibling """
-    siblings = [s for s in amdpar_xml.itersiblings()]
-
-    if len(siblings) == 0:
-        return find_lost_section(amdpar_xml)
-
-    for sibling in siblings:
-        if sibling.tag == 'SECTION':
-            return sibling
-
-    paragraphs = [s for s in siblings if s.tag == 'P']
-    if len(paragraphs) > 0:
-        return fix_section_node(paragraphs, amdpar_xml)
+    tokenized = compress_context_in_tokenlists(tokenized)
+    tokenized = resolve_confused_context(tokenized, initial_context)
+    tokenized = paragraph_in_context_moved(tokenized, initial_context)
+    tokenized = remove_false_deletes(tokenized, text)
+    tokenized = multiple_moves(tokenized)
+    tokenized = switch_passive(tokenized)
+    tokenized = and_token_resolution(tokenized)
+    tokenized, subpart = deal_with_subpart_adds(tokenized)
+    tokenized = context_to_paragraph(tokenized)
+    tokenized = move_then_modify(tokenized)
+    if not subpart:
+        tokenized = separate_tokenlist(tokenized)
+    initial_context = switch_part_context(tokenized, initial_context)
+    initial_context = switch_level2_context(tokenized, initial_context)
+    tokenized, final_context = compress_context(tokenized, initial_context)
+    if subpart:
+        return make_subpart_instructions(tokenized), final_context
+    else:
+        return make_instructions(tokenized), final_context
 
 
-def find_subpart(amdpar_tag):
-    """ Look amongst an amdpar tag's siblings to find a subpart. """
-    for sibling in amdpar_tag.itersiblings():
-        if sibling.tag == 'SUBPART':
-            return sibling
+def matching(tokens, *types, **fields):
+    """We have a recurring need to find all elements in a list that "match".
+    This shorthand method helps"""
+    return [t for t in tokens if t.match(*types, **fields)]
 
 
-def switch_part_context(token_list, carried_context):
-    """ Notices can refer to multiple regulations (CFR parts). If the
-    CFR part changes, empty out the context that we carry forward. """
+def compress(lhs_label, rhs_label):
+    """Combine two labels where the rhs replaces the lhs. If the rhs is
+    empty, assume the lhs takes precedent."""
+    if not rhs_label:
+        return lhs_label
 
-    def is_valid_label(label):
-        return label and label[0] is not None
+    label = list(lhs_label)
+    label.extend([None]*len(rhs_label))
+    label = label[:len(rhs_label)]
 
-    if carried_context and carried_context[0] is not None:
-        token_list = [t for t in token_list if hasattr(t, 'label')]
-        reg_parts = [t.label[0] for t in token_list if is_valid_label(t.label)]
-
-        if len(reg_parts) > 0:
-            reg_part = reg_parts[0]
-            if reg_part != carried_context[0]:
-                return []
-    return carried_context
+    for i in range(len(rhs_label)):
+        label[i] = rhs_label[i] or label[i]
+    return label
 
 
-def switch_level2_context(token_list, carried_context):
-    """If an amendment mentions a subpart/subject group/appendix and we're
-    sure that that mention is contextual, the fact that we're working in that
-    subpart/etc. should apply to the whole AMDPAR"""
-    level2_markers = ('Subpart', 'Subjgrp', 'Appendix')
-    level2s = [token.label[1] for token in token_list
-               if token.match(tokens.Context, certain=True) and
-               any(marker in str(token.label) for marker in level2_markers)]
-    if len(level2s) == 1 and carried_context:
-        return carried_context[:1] + level2s + carried_context[2:]
-    elif len(level2s) == 1:
-        return [None] + level2s
-    elif len(level2s) > 1:
-        logging.warning("Multiple subpart contexts in amendment: %s",
-                        token_list)
-    return carried_context
+def compress_context_in_tokenlists(tokenized):
+    """Use compress (above) on elements within a tokenlist."""
+    final = []
+    for token in tokenized:
+        if token.match(tokens.TokenList):
+            subtokens = []
+            label_so_far = []
+            for subtoken in token.tokens:
+                if hasattr(subtoken, 'label'):
+                    label_so_far = compress(label_so_far, subtoken.label)
+                    subtokens.append(subtoken.copy(label=label_so_far))
+                else:
+                    subtokens.append(subtoken)
+            final.append(token.copy(tokens=subtokens))
+        else:
+            final.append(token)
+    return final
 
 
-def contains_one_instance(tokenized, element):
-    """ Return True if tokenized contains only one instance of the class
-    element. """
-    contexts = [t for t in tokenized if isinstance(t, element)]
-    return len(contexts) == 1
-
-
-def contains_one_paragraph(tokenized):
-    """ Returns True if tokenized contains only one tokens.Paragraph """
-    return contains_one_instance(tokenized, tokens.Paragraph)
-
-
-def contains_delete(tokenized):
-    """ Returns True if tokenized contains at least one DELETE. """
-    contexts = [t for t in tokenized if t.match(tokens.Verb, verb='DELETE')]
-    return len(contexts) > 0
-
-
-def remove_false_deletes(tokenized, text):
-    """ Sometimes a statement like 'Removing the 'x' from the end of
-    paragraph can be confused as removing the paragraph. Ensure that
-    doesn't happen here. Likely this method needs a little more work. """
-
-    if contains_delete(tokenized):
-        if contains_one_paragraph(tokenized):
-            if 'end of paragraph' in text:
-                return []
-    return tokenized
+def resolve_confused_context(tokenized, initial_context):
+    """Resolve situation where a Context thinks it is regtext, but it
+    *should* be an interpretation"""
+    if initial_context[1:2] == ['Interpretations']:
+        final_tokens = []
+        for token in tokenized:
+            if (token.match(tokens.Context, tokens.Paragraph) and
+                    len(token.label) > 1 and token.label[1] is None):
+                final_tokens.append(token.copy(
+                    label=[token.label[0], 'Interpretations', token.label[2],
+                           '(' + ')('.join(l for l in token.label[3:] if l) +
+                           ')']))
+            elif (token.match(tokens.Context, tokens.Paragraph) and
+                  len(token.label) > 1 and
+                    token.label[1].startswith('Appendix:')):
+                final_tokens.append(token.copy(
+                    label=[token.label[0], 'Interpretations',
+                           token.label[1][len('Appendix:'):],
+                           '(' + ')('.join(l for l in token.label[2:] if l) +
+                           ')']))
+            elif token.match(tokens.TokenList):
+                sub_tokens = resolve_confused_context(token.tokens,
+                                                      initial_context)
+                final_tokens.append(token.copy(tokens=sub_tokens))
+            else:
+                final_tokens.append(token)
+        return final_tokens
+    else:
+        return tokenized
 
 
 def paragraph_in_context_moved(tokenized, initial_context):
@@ -158,58 +141,16 @@ def paragraph_in_context_moved(tokenized, initial_context):
     return final_tokens
 
 
-def move_then_modify(tokenized):
-    """The subject of modification may be implicit in the preceding move
-    operation: A is redesignated B and changed. Replace the operation with a
-    DELETE and a POST so it's easier to compile later."""
-    final_tokens = []
-    idx = 0
-    while idx < len(tokenized) - 3:
-        move, p1, p2, edit = tokenized[idx:idx + 4]
-        if (move.match(tokens.Verb, verb=tokens.Verb.MOVE, active=True) and
-            p1.match(tokens.Paragraph) and
-            p2.match(tokens.Paragraph) and
-            edit.match(tokens.Verb, verb=tokens.Verb.PUT, active=True,
-                       and_prefix=True)):
-            final_tokens.append(tokens.Verb(tokens.Verb.DELETE, active=True))
-            final_tokens.append(p1)
-            final_tokens.append(tokens.Verb(tokens.Verb.POST, active=True))
-            final_tokens.append(p2)
-            idx += 4
-        else:
-            final_tokens.append(tokenized[idx])
-            idx += 1
-    final_tokens.extend(tokenized[idx:])
-    return final_tokens
+def remove_false_deletes(tokenized, text):
+    """ Sometimes a statement like 'Removing the 'x' from the end of
+    paragraph can be confused as removing the paragraph. Ensure that
+    doesn't happen here. Likely this method needs a little more work. """
+    contains_delete = bool(matching(tokenized, tokens.Verb, verb='DELETE'))
+    contains_one_par = len(matching(tokenized, tokens.Paragraph)) == 1
 
-
-def parse_amdpar(par, initial_context):
-    """ Parse the <AMDPAR> tags into a list of paragraphs that have changed.
-    """
-
-    #   Replace and "and"s in titles; they will throw off and_token_resolution
-    for e in filter(lambda e: e.text, par.xpath('./E')):
-        e.text = e.text.replace(' and ', ' ')
-    text = get_node_text(par, add_spaces=True)
-    tokenized = [t[0] for t, _, _ in amdpar.token_patterns.scanString(text)]
-
-    tokenized = compress_context_in_tokenlists(tokenized)
-    tokenized = resolve_confused_context(tokenized, initial_context)
-    tokenized = paragraph_in_context_moved(tokenized, initial_context)
-    tokenized = remove_false_deletes(tokenized, text)
-    tokenized = multiple_moves(tokenized)
-    tokenized = switch_passive(tokenized)
-    tokenized = and_token_resolution(tokenized)
-    tokenized, subpart = deal_with_subpart_adds(tokenized)
-    tokenized = context_to_paragraph(tokenized)
-    tokenized = move_then_modify(tokenized)
-    if not subpart:
-        tokenized = separate_tokenlist(tokenized)
-    initial_context = switch_part_context(tokenized, initial_context)
-    initial_context = switch_level2_context(tokenized, initial_context)
-    tokenized, final_context = compress_context(tokenized, initial_context)
-    amends = make_amendments(tokenized, subpart)
-    return amends, final_context
+    if contains_delete and contains_one_par and 'end of paragraph' in text:
+        return []
+    return tokenized
 
 
 def multiple_moves(tokenized):
@@ -265,37 +206,6 @@ def switch_passive(tokenized):
     return converted
 
 
-def resolve_confused_context(tokenized, initial_context):
-    """Resolve situation where a Context thinks it is regtext, but it
-    *should* be an interpretation"""
-    if initial_context[1:2] == ['Interpretations']:
-        final_tokens = []
-        for token in tokenized:
-            if (token.match(tokens.Context, tokens.Paragraph) and
-                    len(token.label) > 1 and token.label[1] is None):
-                final_tokens.append(token.copy(
-                    label=[token.label[0], 'Interpretations', token.label[2],
-                           '(' + ')('.join(l for l in token.label[3:] if l) +
-                           ')']))
-            elif (token.match(tokens.Context, tokens.Paragraph) and
-                  len(token.label) > 1 and
-                    token.label[1].startswith('Appendix:')):
-                final_tokens.append(token.copy(
-                    label=[token.label[0], 'Interpretations',
-                           token.label[1][len('Appendix:'):],
-                           '(' + ')('.join(l for l in token.label[2:] if l) +
-                           ')']))
-            elif token.match(tokens.TokenList):
-                sub_tokens = resolve_confused_context(token.tokens,
-                                                      initial_context)
-                final_tokens.append(token.copy(tokens=sub_tokens))
-            else:
-                final_tokens.append(token)
-        return final_tokens
-    else:
-        return tokenized
-
-
 def and_token_resolution(tokenized):
     """Troublesome case where a Context should be a Paragraph, but the only
     indicator is the presence of an "and" token afterwards. We'll likely
@@ -335,6 +245,30 @@ def and_token_resolution(tokenized):
     return final_tokens
 
 
+def deal_with_subpart_adds(tokenized):
+    """If we have a designate verb, and a token list, we're going to
+    change the context to a Paragraph. Because it's not a context, it's
+    part of the manipulation."""
+
+    # Ensure that we only have one of each: designate verb, a token list and
+    # a context
+    verb_exists = len(matching(tokenized, tokens.Verb,
+                               verb=tokens.Verb.DESIGNATE)) == 1
+    list_exists = len(matching(tokenized, tokens.TokenList)) == 1
+    context_exists = len(matching(tokenized, tokens.Context)) == 1
+
+    if verb_exists and list_exists and context_exists:
+        token_list = []
+        for token in tokenized:
+            if isinstance(token, tokens.Context):
+                token_list.append(tokens.Paragraph(token.label))
+            else:
+                token_list.append(token)
+        return token_list, True
+    else:
+        return tokenized, False
+
+
 def context_to_paragraph(tokenized):
     """Generally, section numbers, subparts, etc. are good contextual clues,
     but sometimes they are the object of manipulation."""
@@ -358,51 +292,29 @@ def context_to_paragraph(tokenized):
     return converted
 
 
-def is_designate_token(token):
-    """ This is a designate token """
-    return token.match(tokens.Verb, verb=tokens.Verb.DESIGNATE)
-
-
-def contains_one_designate_token(tokenized):
-    """ Return True if the list of tokens contains only one designate token.
-    """
-    designate_tokens = [t for t in tokenized if is_designate_token(t)]
-    return len(designate_tokens) == 1
-
-
-def contains_one_tokenlist(tokenized):
-    """ Return True if the list of tokens contains only one TokenList """
-    tokens_lists = [t for t in tokenized if isinstance(t, tokens.TokenList)]
-    return len(tokens_lists) == 1
-
-
-def contains_one_context(tokenized):
-    """ Returns True if the list of tokens contains only one Context. """
-    contexts = [t for t in tokenized if isinstance(t, tokens.Context)]
-    return len(contexts) == 1
-
-
-def deal_with_subpart_adds(tokenized):
-    """If we have a designate verb, and a token list, we're going to
-    change the context to a Paragraph. Because it's not a context, it's
-    part of the manipulation."""
-
-    # Ensure that we only have one of each: designate verb, a token list and
-    # a context
-    verb_exists = contains_one_designate_token(tokenized)
-    list_exists = contains_one_tokenlist(tokenized)
-    context_exists = contains_one_context(tokenized)
-
-    if verb_exists and list_exists and context_exists:
-        token_list = []
-        for token in tokenized:
-            if isinstance(token, tokens.Context):
-                token_list.append(tokens.Paragraph(token.label))
-            else:
-                token_list.append(token)
-        return token_list, True
-    else:
-        return tokenized, False
+def move_then_modify(tokenized):
+    """The subject of modification may be implicit in the preceding move
+    operation: A is redesignated B and changed. Replace the operation with a
+    DELETE and a POST so it's easier to compile later."""
+    final_tokens = []
+    idx = 0
+    while idx < len(tokenized) - 3:
+        move, p1, p2, edit = tokenized[idx:idx + 4]
+        if (move.match(tokens.Verb, verb=tokens.Verb.MOVE, active=True) and
+            p1.match(tokens.Paragraph) and
+            p2.match(tokens.Paragraph) and
+            edit.match(tokens.Verb, verb=tokens.Verb.PUT, active=True,
+                       and_prefix=True)):
+            final_tokens.append(tokens.Verb(tokens.Verb.DELETE, active=True))
+            final_tokens.append(p1)
+            final_tokens.append(tokens.Verb(tokens.Verb.POST, active=True))
+            final_tokens.append(p2)
+            idx += 4
+        else:
+            final_tokens.append(tokenized[idx])
+            idx += 1
+    final_tokens.extend(tokenized[idx:])
+    return final_tokens
 
 
 def separate_tokenlist(tokenized):
@@ -418,38 +330,40 @@ def separate_tokenlist(tokenized):
     return converted
 
 
-def compress(lhs_label, rhs_label):
-    """Combine two labels where the rhs replaces the lhs. If the rhs is
-    empty, assume the lhs takes precedent."""
-    if not rhs_label:
-        return lhs_label
+def switch_part_context(token_list, carried_context):
+    """ Notices can refer to multiple regulations (CFR parts). If the
+    CFR part changes, empty out the context that we carry forward. """
 
-    label = list(lhs_label)
-    label.extend([None]*len(rhs_label))
-    label = label[:len(rhs_label)]
+    def is_valid_label(label):
+        return label and label[0] is not None
 
-    for i in range(len(rhs_label)):
-        label[i] = rhs_label[i] or label[i]
-    return label
+    if carried_context and carried_context[0] is not None:
+        token_list = [t for t in token_list if hasattr(t, 'label')]
+        reg_parts = [t.label[0] for t in token_list if is_valid_label(t.label)]
+
+        if len(reg_parts) > 0:
+            reg_part = reg_parts[0]
+            if reg_part != carried_context[0]:
+                return []
+    return carried_context
 
 
-def compress_context_in_tokenlists(tokenized):
-    """Use compress (above) on elements within a tokenlist."""
-    final = []
-    for token in tokenized:
-        if token.match(tokens.TokenList):
-            subtokens = []
-            label_so_far = []
-            for subtoken in token.tokens:
-                if hasattr(subtoken, 'label'):
-                    label_so_far = compress(label_so_far, subtoken.label)
-                    subtokens.append(subtoken.copy(label=label_so_far))
-                else:
-                    subtokens.append(subtoken)
-            final.append(token.copy(tokens=subtokens))
-        else:
-            final.append(token)
-    return final
+def switch_level2_context(token_list, carried_context):
+    """If an amendment mentions a subpart/subject group/appendix and we're
+    sure that that mention is contextual, the fact that we're working in that
+    subpart/etc. should apply to the whole AMDPAR"""
+    level2_markers = ('Subpart', 'Subjgrp', 'Appendix')
+    level2s = [token.label[1] for token in token_list
+               if token.match(tokens.Context, certain=True) and
+               any(marker in str(token.label) for marker in level2_markers)]
+    if len(level2s) == 1 and carried_context:
+        return carried_context[:1] + level2s + carried_context[2:]
+    elif len(level2s) == 1:
+        return [None] + level2s
+    elif len(level2s) > 1:
+        logger.warning("Multiple subpart contexts in amendment: %s",
+                       token_list)
+    return carried_context
 
 
 def compress_context(tokenized, initial_context):
@@ -499,19 +413,49 @@ def get_destination(tokenized, reg_part):
     return destination
 
 
-def handle_subpart_amendment(tokenized):
-    """ Handle the situation where a new subpart is designated. """
-    verb = tokens.Verb.DESIGNATE
+def make_subpart_instructions(tokenized):
+    """Convert tokens into an `EREGS_INSTRUCTIONS` xml element specifically
+    for subpart designations"""
+    instructions = etree.Element('EREGS_INSTRUCTIONS')
+    action = etree.SubElement(instructions, tokens.Verb.DESIGNATE)
 
-    token_lists = [t for t in tokenized if isinstance(t, tokens.TokenList)]
-
+    reg_part = None
+    token_lists = matching(tokenized, tokens.TokenList)
     # There's only one token list of paragraphs, sections to be designated
-    tokens_to_be_designated = token_lists[0]
-    labels_to_be_designated = [t.label_text() for t in tokens_to_be_designated]
-    reg_part = tokens_to_be_designated.tokens[0].label[0]
-    destination = get_destination(tokenized, reg_part)
+    for token in token_lists[0]:
+        reg_part = token.label[0]
+        etree.SubElement(action, 'LABEL', label=token.label_text())
 
-    return DesignateAmendment(verb, labels_to_be_designated, destination)
+    action.set('destination', get_destination(tokenized, reg_part))
+    return instructions
+
+
+def make_instructions(tokenized):
+    """Convert the tokens into an `EREGS_INSTRUCTIONS` xml element. Does not
+    handle subpart designations"""
+    instructions = etree.Element('EREGS_INSTRUCTIONS')
+    verb = None
+    for i in range(len(tokenized)):
+        token = tokenized[i]
+        if token.match(tokens.Verb):
+            assert token.active
+            verb = token.verb
+        # MOVEs must have _two_ paragraphs
+        elif (verb == tokens.Verb.MOVE and
+                not tokenized[i-1].match(tokens.Paragraph)):
+            continue
+        elif verb == tokens.Verb.MOVE and token.match(tokens.Paragraph):
+            origin = tokenized[i-1].label_text()
+            etree.SubElement(instructions, verb, label=origin,
+                             destination=token.label_text())
+        elif verb and token.match(tokens.Paragraph):
+            label = token.label_text()
+            # Edits to intro text should always be PUTs
+            if label.endswith('[text]') and verb == tokens.Verb.POST:
+                etree.SubElement(instructions, tokens.Verb.PUT, label=label)
+            else:
+                etree.SubElement(instructions, verb, label=label)
+    return instructions
 
 
 class Amendment(object):
@@ -645,38 +589,11 @@ class DesignateAmendment(Amendment):
             repr(self.action), repr(self.labels), repr(self.destination))
 
 
-def make_amendments(tokenized, subpart=False):
-    """Convert a sequence of (normalized) tokens into a list of amendments"""
-    verb = None
-    amends = []
-    if subpart:
-        amends.append(handle_subpart_amendment(tokenized))
+def amendment_from_xml(xml):
+    """Deserialize amendments"""
+    if xml.tag == 'DESIGNATE':
+        labels = [el.get('label') for el in xml.xpath('./LABEL')]
+        return DesignateAmendment(xml.tag, labels, xml.get('destination'))
     else:
-        for i in range(len(tokenized)):
-            token = tokenized[i]
-            if isinstance(token, tokens.Verb):
-                assert token.active
-                verb = token.verb
-            elif isinstance(token, tokens.Paragraph):
-                if verb == tokens.Verb.MOVE:
-                    if isinstance(tokenized[i-1], tokens.Paragraph):
-                        origin = tokenized[i-1].label_text()
-                        destination = token.label_text()
-                        amends.append(Amendment(verb, origin, destination))
-                elif verb:
-                    amends.append(Amendment(verb, token.label_text()))
-    # Edits to intro text should always be PUTs
-    for amend in amends:
-        if (not isinstance(amend, DesignateAmendment) and
-            amend.field == "[text]" and
-                amend.action == tokens.Verb.POST):
-            amend.action = tokens.Verb.PUT
-    return amends
-
-
-def new_subpart_added(amendment):
-    """ Return True if label indicates that a new subpart was added """
-    new_subpart = amendment.action == 'POST'
-    label = amendment.original_label
-    m = [t for t, _, _ in amdpar.subpart_label.scanString(label)]
-    return (len(m) > 0 and new_subpart)
+        return Amendment(xml.tag, xml.get('label'),
+                         xml.get('destination') or None)

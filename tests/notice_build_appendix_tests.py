@@ -4,7 +4,7 @@ from lxml import etree
 from mock import patch
 
 from regparser.notice import build_appendix
-from regparser.notice.diff import Amendment
+from regparser.notice.amdparser import Amendment
 
 
 class NoticeBuildAppendixTest(TestCase):

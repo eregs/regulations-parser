@@ -35,7 +35,7 @@ class XMLBuilder(object):
             el = etree.Element(tag)
             for key, value in sorted(kwargs.items()):
                 el.set(key, str(value))
-            el.text = _text or ''
+            el.text = _text
         self.cursor.append(el)
         return self
 

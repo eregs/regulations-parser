@@ -7,7 +7,7 @@ from unittest import TestCase
 from regparser.api_writer import (
     APIWriteContent, Client, FSWriteContent, GitWriteContent, Repo)
 from regparser.tree.struct import Node
-from regparser.notice.diff import Amendment, DesignateAmendment
+from regparser.notice.amdparser import Amendment, DesignateAmendment
 import settings
 from tests.http_mixin import HttpMixin
 

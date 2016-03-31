@@ -116,9 +116,9 @@ class ParagraphProcessor(object):
             root.text = " ".join([root.text, intro_node.text]).strip()
             # @todo - this is ugly. Make tagged_text a legitimate field on Node
             tagged_text_list = []
-            if hasattr(root, 'tagged_text'):
+            if getattr(root, 'tagged_text', None):
                 tagged_text_list.append(root.tagged_text)
-            if hasattr(intro_node, 'tagged_text'):
+            if getattr(intro_node, 'tagged_text', None):
                 tagged_text_list.append(intro_node.tagged_text)
             if tagged_text_list:
                 root.tagged_text = ' '.join(tagged_text_list)
