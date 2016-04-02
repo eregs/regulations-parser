@@ -4,7 +4,6 @@ from mock import patch
 
 from regparser.test_utils.node_accessor import NodeAccessor
 from regparser.test_utils.xml_builder import XMLBuilder
-from regparser.tree.depth import markers as mtypes
 from regparser.tree.xml_parser import note_processor
 
 
