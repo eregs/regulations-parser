@@ -5,14 +5,14 @@ from unittest import TestCase
 from lxml import etree
 from mock import patch
 
+from regparser.test_utils.node_accessor import NodeAccessor
 from regparser.test_utils.xml_builder import XMLBuilder
 from regparser.tree.depth import markers as mtypes
 from regparser.tree.struct import Node
 from regparser.tree.xml_parser import reg_text
-from tests.node_accessor import NodeAccessorMixin
 
 
-class RegTextTest(NodeAccessorMixin, TestCase):
+class RegTextTest(TestCase):
     @contextmanager
     def section(self, part=8675, section=309, subject="Definitions."):
         """Many tests need a SECTION tag followed by the SECTNO and SUBJECT"""
@@ -26,7 +26,7 @@ class RegTextTest(NodeAccessorMixin, TestCase):
             ctx.P("Some content about this section.")
             ctx.P("(a) something something")
         node = reg_text.build_from_section('8675', ctx.xml)[0]
-        node = self.node_accessor(node, ['8675', '309'])
+        node = NodeAccessor(node)
         self.assertEqual('Some content about this section.', node.text.strip())
         self.assertEqual(['a'], node.child_labels)
 
@@ -43,7 +43,7 @@ class RegTextTest(NodeAccessorMixin, TestCase):
                 '<P>(b) <E T="03">Contents</E> (1) Here</P>')
             ctx.P("(2) More text")
         node = reg_text.build_from_section('8675', ctx.xml)[0]
-        node = self.node_accessor(node, ['8675', '309'])
+        node = NodeAccessor(node)
         self.assertEqual(['a', 'b'], node.child_labels)
         self.assertEqual(['1', '2'], node['a'].child_labels)
         self.assertEqual(['1', '2'], node['b'].child_labels)
@@ -56,7 +56,7 @@ class RegTextTest(NodeAccessorMixin, TestCase):
             ctx.child_from_string(u'<P>(A) AAA—(<E T="03">1</E>) eeee</P>')
             ctx.STARS()
         node = reg_text.build_from_section('8675', ctx.xml)[0]
-        node = self.node_accessor(node, ['8675', '309'])
+        node = NodeAccessor(node)
         a1iA = node['a']['1']['i']['A']
         self.assertEqual(u"(A) AAA—", a1iA.text)
         self.assertEqual(['1'], a1iA.child_labels)
@@ -68,7 +68,7 @@ class RegTextTest(NodeAccessorMixin, TestCase):
                 u'<P>(a) <E T="03">Keyterm</E>—(1)(i) Content</P>')
             ctx.P("(ii) Content2")
         node = reg_text.build_from_section('8675', ctx.xml)[0]
-        node = self.node_accessor(node, ['8675', '309'])
+        node = NodeAccessor(node)
         self.assertEqual(['a'], node.child_labels)
         self.assertEqual(['1'], node['a'].child_labels)
         self.assertEqual(['i', 'ii'], node['a']['1'].child_labels)
@@ -103,7 +103,7 @@ class RegTextTest(NodeAccessorMixin, TestCase):
             ctx.P("(i) Is this 8675-309-h-2-i or 8675-309-i")
             ctx.P(final_par)
         node = reg_text.build_from_section('8675', ctx.xml)[0]
-        return self.node_accessor(node, ['8675', '309'])
+        return NodeAccessor(node)
 
     def test_build_from_section_ambiguous_ii(self):
         n8675_309 = self._setup_for_ambiguous("(ii) A")
@@ -135,7 +135,7 @@ class RegTextTest(NodeAccessorMixin, TestCase):
             ctx.child_from_string(u'<P>(2) 222—(i) iii. (A) AAA</P>')
             ctx.P("(B) BBB")
         n309 = reg_text.build_from_section('8675', ctx.xml)[0]
-        n309 = self.node_accessor(n309, ['8675', '309'])
+        n309 = NodeAccessor(n309)
         self.assertEqual(['a'], n309.child_labels)
         self.assertEqual(['1', '2'], n309['a'].child_labels)
         self.assertEqual(['i'], n309['a']['2'].child_labels)
@@ -150,7 +150,7 @@ class RegTextTest(NodeAccessorMixin, TestCase):
             ctx.child_from_string('<P>(<E T="03">1</E>) i1i1i1</P>')
             ctx.child_from_string('<P>\n(<E T="03">2</E>) i2i2i2</P>')
         node = reg_text.build_from_section('8675', ctx.xml)[0]
-        node = self.node_accessor(node, ['8675', '309'])
+        node = NodeAccessor(node)
         self.assertEqual(['a'], node.child_labels)
         self.assertEqual(['1'], node['a'].child_labels)
         self.assertEqual(['i'], node['a']['1'].child_labels)
@@ -163,7 +163,8 @@ class RegTextTest(NodeAccessorMixin, TestCase):
             ctx.child_from_string(
                 '<P>(b)<E T="03">General.</E>Content Content.</P>')
         node = reg_text.build_from_section('8675', ctx.xml)[0]
-        node = self.node_accessor(node, ['8675', '16'])
+        node = NodeAccessor(node)
+        self.assertEqual(['8675', '16'], node.label)
         self.assertEqual(['b'], node.child_labels)
         self.assertEqual(node['b'].text.strip(),
                          "(b) General. Content Content.")
@@ -182,7 +183,7 @@ class RegTextTest(NodeAccessorMixin, TestCase):
             ctx.FP("fpfpfp")
             ctx.P("(c) ccc")
         node = reg_text.build_from_section('8675', ctx.xml)[0]
-        node = self.node_accessor(node, ['8675', '309'])
+        node = NodeAccessor(node)
         self.assertEqual(['a', 'b', 'c'], node.child_labels)
         self.assertEqual([], node['a'].child_labels)
         self.assertEqual(['p1'], node['b'].child_labels)
@@ -201,7 +202,7 @@ class RegTextTest(NodeAccessorMixin, TestCase):
                     ctx.ENT("Left content", I="01")
                     ctx.ENT("Right content")
         node = reg_text.build_from_section('8675', ctx.xml)[0]
-        node = self.node_accessor(node, ['8675', '309'])
+        node = NodeAccessor(node)
         self.assertEqual(['a'], node.child_labels)
         self.assertEqual(['p1'], node['a'].child_labels)
         self.assertEqual("||Header|\n|---|---|\n|Left content|Right content|",
@@ -429,9 +430,7 @@ class RegTextTest(NodeAccessorMixin, TestCase):
                 ctx.PRTPAGE(P="8")
                 ctx.P("1. Some content")
                 ctx.P("2. Other content")
-        node = self.node_accessor(
-            reg_text.build_from_section('8675', ctx.xml)[0],
-            ['8675', '309'])
+        node = NodeAccessor(reg_text.build_from_section('8675', ctx.xml)[0])
 
         self.assertEqual(['a'], node.child_labels)
         self.assertEqual(['p1'], node['a'].child_labels)
@@ -702,7 +701,7 @@ class RegTextTest(NodeAccessorMixin, TestCase):
         self.assertIsNone(reg_text.next_marker(ctx.xml[0]))
 
 
-class RegtextParagraphProcessorTests(NodeAccessorMixin, TestCase):
+class RegtextParagraphProcessorTests(TestCase):
     def test_process_markerless_collapsed(self):
         """Should be able to find collapsed markers in a markerless
         paragraph"""
@@ -713,8 +712,9 @@ class RegtextParagraphProcessorTests(NodeAccessorMixin, TestCase):
             ctx.P("(b) Second definition")
         root = Node(label=['111', '22'])
         root = reg_text.RegtextParagraphProcessor().process(ctx.xml, root)
-        root = self.node_accessor(root, ['111', '22'])
+        root = NodeAccessor(root)
 
+        self.assertEqual(['111', '22'], root.label)
         self.assertEqual(2, len(root.child_labels))
         self.assertTrue(all(c.is_markerless for c in root.children))
         keyterm_label = root.child_labels[1]
@@ -731,7 +731,7 @@ class RegtextParagraphProcessorTests(NodeAccessorMixin, TestCase):
                     ctx.P("(A) Sub-sub-paragraph")
                     ctx.P("(i)(I) Even more nested")
         root = reg_text.RegtextParagraphProcessor().process(ctx.xml, Node())
-        root = self.node_accessor(root, [])
+        root = NodeAccessor(root)
 
         self.assertEqual(root['p1'].text, "Some intro")
         self.assertEqual(root['p2']['p1'].title, 'The U.S. Code!')

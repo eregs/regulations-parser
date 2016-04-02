@@ -2,11 +2,11 @@ from unittest import TestCase
 
 from regparser.notice import preamble
 from regparser.notice.xml import NoticeXML
+from regparser.test_utils.node_accessor import NodeAccessor
 from regparser.test_utils.xml_builder import XMLBuilder
-from tests.node_accessor import NodeAccessorMixin
 
 
-class NoticePreambleTests(NodeAccessorMixin, TestCase):
+class NoticePreambleTests(TestCase):
     def test_parse_preamble_integration(self):
         """End-to-end test for parsing a notice preamble"""
         with XMLBuilder("ROOT") as ctx:
@@ -32,8 +32,9 @@ class NoticePreambleTests(NodeAccessorMixin, TestCase):
             ctx.P("tail also ignored")
         xml = NoticeXML(ctx.xml)
         xml.version_id = 'vvv-yyy'
-        root = self.node_accessor(preamble.parse_preamble(xml), ['vvv_yyy'])
+        root = NodeAccessor(preamble.parse_preamble(xml))
 
+        self.assertEqual(root.label, ['vvv_yyy'])
         self.assertEqual(root.title, 'Supp Inf')
         self.assertEqual(root['p1'].text, 'P1')
         self.assertEqual(root['p2'].text, 'P2')

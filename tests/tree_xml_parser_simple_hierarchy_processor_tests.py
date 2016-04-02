@@ -1,12 +1,12 @@
 from unittest import TestCase
 
+from regparser.test_utils.node_accessor import NodeAccessor
 from regparser.test_utils.xml_builder import XMLBuilder
 from regparser.tree.xml_parser.simple_hierarchy_processor import (
         SimpleHierarchyMatcher)
-from tests.node_accessor import NodeAccessorMixin
 
 
-class SimpleHierarchyTests(NodeAccessorMixin, TestCase):
+class SimpleHierarchyTests(TestCase):
     def test_deep_hierarchy(self):
         """Run through a full example, converting an XML node into an
         appropriate tree of nodes"""
@@ -24,7 +24,7 @@ class SimpleHierarchyTests(NodeAccessorMixin, TestCase):
         nodes = matcher.derive_nodes(ctx.xml)
         self.assertEqual(1, len(nodes))
 
-        node = self.node_accessor(nodes[0], nodes[0].label)
+        node = NodeAccessor(nodes[0])
         self.assertEqual('some_type', node.node_type)
         self.assertEqual(['a', 'b', 'c'], node.child_labels)
         self.assertNotEqual('some_type', node['a'].node_type)
