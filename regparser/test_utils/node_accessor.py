@@ -20,4 +20,3 @@ class NodeAccessor(object):
                 if child.label[-1] == label:
                     return NodeAccessor(child)
         raise KeyError()
-
