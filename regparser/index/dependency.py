@@ -1,7 +1,5 @@
-from contextlib import contextmanager
 import logging
 import os
-import shelve
 
 import networkx
 
@@ -22,30 +20,20 @@ class Missing(Exception):
 
 class Graph(object):
     """Track dependencies between input and output files, storing them in
-    `dependencies.db` for later retrieval. This lets us know that an output
+    `dependencies.gml` for later retrieval. This lets us know that an output
     with dependencies needs to be updated if those dependencies have been
     updated"""
-    DB_FILE = os.path.join(ROOT, "dependencies.db")
+    GML_FILE = os.path.join(ROOT, "dependencies.gml")
 
     def __init__(self):
         if not os.path.exists(ROOT):
             os.makedirs(ROOT)
-        self.graph = networkx.DiGraph()
+
+        if os.path.exists(self.GML_FILE):
+            self.graph = networkx.read_gml(self.GML_FILE)
+        else:
+            self.graph = networkx.DiGraph()
         self._ran = False
-
-        with self.dependency_db() as db:
-            for key, dependencies in db.items():
-                self.graph.add_edges_from((d, key) for d in dependencies)
-
-    @contextmanager
-    def dependency_db(self):
-        """Python 2 doesn't have a context manager for shelve.open, so we've
-        created one"""
-        db = shelve.open(self.DB_FILE)
-        try:
-            yield db
-        finally:
-            db.close()
 
     def add(self, output_entry, input_entry):
         """Add a dependency where output tuple relies on input_tuple"""
@@ -53,22 +41,19 @@ class Graph(object):
         from_str, to_str = str(output_entry), str(input_entry)
 
         self.graph.add_edge(to_str, from_str)
-        with self.dependency_db() as db:
-            deps = db.get(from_str, set())
-            deps.add(to_str)
-            db[from_str] = deps
+        networkx.write_gml(self.graph, self.GML_FILE)
 
     def derive_stale(self, filename, parent=None):
         modtime = self.graph.node[filename].get('modtime')
-        stale = self.graph.node[filename].get('stale', False)
+        stale = self.graph.node[filename].get('stale')
         if os.path.exists(filename):
             modtime = os.path.getmtime(filename)
         else:
-            stale = True
+            stale = filename
 
         if (parent and modtime and
                 self.graph.node[parent]['modtime'] > modtime):
-            stale = True
+            stale = parent
         elif parent:
             stale = stale or self.graph.node[parent]['stale']
 
@@ -90,10 +75,9 @@ class Graph(object):
         self._run_if_needed()
         key = str(entry)
         logger.debug("Validating dependencies for %r", key)
-        with self.dependency_db() as db:
-            for dependency in db[key]:
-                if self.graph.node[dependency].get('stale'):
-                    raise Missing(key, dependency)
+        for dependency in self.graph.predecessors(key):
+            if self.graph.node[dependency].get('stale'):
+                raise Missing(key, self.graph.node[dependency]['stale'])
 
     def is_stale(self, entry):
         """Determine if a file needs to be rebuilt"""
