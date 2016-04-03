@@ -3,7 +3,7 @@ import logging
 import os
 import shelve
 
-from dagger import dagger
+import networkx
 
 from . import ROOT
 
@@ -30,12 +30,12 @@ class Graph(object):
     def __init__(self):
         if not os.path.exists(ROOT):
             os.makedirs(ROOT)
-        self.dag = dagger()
+        self.graph = networkx.DiGraph()
         self._ran = False
 
         with self.dependency_db() as db:
             for key, dependencies in db.items():
-                self.dag.add(key, dependencies)
+                self.graph.add_edges_from((d, key) for d in dependencies)
 
     @contextmanager
     def dependency_db(self):
@@ -52,15 +52,37 @@ class Graph(object):
         self._ran = False
         from_str, to_str = str(output_entry), str(input_entry)
 
-        self.dag.add(from_str, [to_str])
+        self.graph.add_edge(to_str, from_str)
         with self.dependency_db() as db:
             deps = db.get(from_str, set())
             deps.add(to_str)
             db[from_str] = deps
 
+    def derive_stale(self, filename, parent=None):
+        modtime = self.graph.node[filename].get('modtime')
+        stale = self.graph.node[filename].get('stale', False)
+        if os.path.exists(filename):
+            modtime = os.path.getmtime(filename)
+        else:
+            stale = True
+
+        if (parent and modtime and
+                self.graph.node[parent]['modtime'] > modtime):
+            stale = True
+        elif parent:
+            stale = stale or self.graph.node[parent]['stale']
+
+        self.graph.node[filename]['modtime'] = modtime
+        self.graph.node[filename]['stale'] = stale
+
+        for adj in self.graph[filename]:
+            self.derive_stale(adj, filename)
+
     def _run_if_needed(self):
         if not self._ran:
-            self.dag.run()
+            for node in self.graph:
+                if not self.graph.predecessors(node):
+                    self.derive_stale(node)
             self._ran = True
 
     def validate_for(self, entry):
@@ -70,10 +92,10 @@ class Graph(object):
         logger.debug("Validating dependencies for %r", key)
         with self.dependency_db() as db:
             for dependency in db[key]:
-                if self.dag.get(dependency).stale:
+                if self.graph.node[dependency].get('stale'):
                     raise Missing(key, dependency)
 
     def is_stale(self, entry):
         """Determine if a file needs to be rebuilt"""
         self._run_if_needed()
-        return bool(self.dag.get(str(entry)).stale)
+        return bool(self.graph.node[str(entry)].get('stale'))
