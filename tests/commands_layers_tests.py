@@ -35,10 +35,10 @@ class CommandsLayersTests(TestCase):
             self.assertItemsEqual(
                 layers.stale_layers(tree_entry, 'cfr'), ['keyterms', 'other'])
 
-            with dependency.Graph().dependency_db() as db:
-                self.assertIn(
-                    str(version_entry),
-                    db[str(entry.Layer.cfr(111, 22, 'aaa', 'meta'))])
+            self.assertIn(
+                str(version_entry),
+                dependency.Graph().dependencies(
+                    str(entry.Layer.cfr(111, 22, 'aaa', 'meta'))))
 
     def test_process_cfr_layers(self):
         """All layers for a single version should get written."""
