@@ -49,12 +49,14 @@ class Graph(object):
     def node(self, filename):
         """Get node attributes for a specific filename. If the node isn't
         present, create it"""
+        filename = str(filename)
         if filename not in self._graph:
             self._graph.add_node(filename)
         return self._graph.node[filename]
 
     def dependencies(self, filename):
         """What does other nodes does this filename *directly* depend on?"""
+        filename = str(filename)
         if filename in self._graph:
             return self._graph.predecessors(filename)
         else:
@@ -73,6 +75,8 @@ class Graph(object):
                 modtime = time()
                 stale = node
 
+            # Check immediate dependencies (which were updated in a previous
+            # step)
             for dependency in self.dependencies(node):
                 if self.node(dependency)['modtime'] > modtime:
                     stale = dependency
