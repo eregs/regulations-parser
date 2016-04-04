@@ -1,5 +1,6 @@
 import logging
 import os
+from time import time
 
 import networkx
 
@@ -33,62 +34,55 @@ class Graph(object):
             self._graph = networkx.read_gml(self.GML_FILE)
         else:
             self._graph = networkx.DiGraph()
-        self._ran = False
+        self.rebuild()
 
     def add(self, output_entry, input_entry):
         """Add a dependency where output tuple relies on input_tuple"""
-        self._ran = False
-        from_str, to_str = str(output_entry), str(input_entry)
-
-        self._graph.add_edge(to_str, from_str)
+        self._graph.add_edge(str(input_entry), str(output_entry))
+        self.rebuild()
         networkx.write_gml(self._graph, self.GML_FILE)
 
     def __contains__(self, key):
+        """Does the graph contain a particular node?"""
         return key in self._graph
 
     def node(self, filename):
+        """Get node attributes for a specific filename. If the node isn't
+        present, create it"""
         if filename not in self._graph:
             self._graph.add_node(filename)
         return self._graph.node[filename]
 
     def dependencies(self, filename):
+        """What does other nodes does this filename *directly* depend on?"""
         if filename in self._graph:
             return self._graph.predecessors(filename)
         else:
             return []
 
-    def roots(self):
-        for node in self._graph:
-            if not self.dependencies(node):
-                yield(node)
+    def rebuild(self):
+        """Scan the modification times of all the nodes in the graph to
+        determine what's been updated. We mark nodes "stale" if one of their
+        dependencies has been updated since the depending node was built. Use
+        topological sort to make sure we process dependencies first."""
+        for node in networkx.topological_sort(self._graph):
+            if os.path.exists(node):
+                modtime = os.path.getmtime(node)
+                stale = ''
+            else:
+                modtime = time()
+                stale = node
 
-    def derive_stale(self, filename, parent=None):
-        modtime = self.node(filename).get('modtime')
-        stale = self.node(filename).get('stale')
-        if os.path.exists(filename):
-            modtime = os.path.getmtime(filename)
-        else:
-            stale = filename
+            for dependency in self.dependencies(node):
+                if self.node(dependency)['modtime'] > modtime:
+                    stale = dependency
+                else:
+                    stale = self.node(dependency)['stale'] or stale
 
-        if parent and modtime and self.node(parent)['modtime'] > modtime:
-            stale = parent
-        elif parent:
-            stale = stale or self.node(parent)['stale']
-
-        self.node(filename).update(modtime=modtime, stale=stale)
-
-        for adj in self._graph[filename]:
-            self.derive_stale(adj, filename)
-
-    def _run_if_needed(self):
-        if not self._ran:
-            for root in self.roots():
-                self.derive_stale(root)
-            self._ran = True
+            self.node(node).update(modtime=modtime, stale=stale)
 
     def validate_for(self, entry):
         """Raise an exception if a particular output has stale dependencies"""
-        self._run_if_needed()
         key = str(entry)
         logger.debug("Validating dependencies for %r", key)
         for dependency in self.dependencies(key):
@@ -97,5 +91,4 @@ class Graph(object):
 
     def is_stale(self, entry):
         """Determine if a file needs to be rebuilt"""
-        self._run_if_needed()
         return bool(self.node(str(entry)).get('stale'))

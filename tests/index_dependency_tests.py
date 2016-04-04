@@ -49,8 +49,7 @@ class DependencyGraphTests(TestCase):
             # Set the update time of the dependency to the future
             os.utime(str(self.dependency),
                      (time()*1000 + 1000, time()*1000 + 1000))
-            dgraph._ran = False
-            dgraph._run_if_needed()
+            dgraph.rebuild()
             self.assertFalse(dgraph.is_stale(self.dependency))
             self.assertTrue(dgraph.is_stale(self.depender))
 
