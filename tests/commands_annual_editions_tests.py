@@ -24,9 +24,11 @@ class CommandsAnnualEditionsTests(TestCase):
             with self.assertRaises(click.UsageError):
                 list(annual_editions.last_versions('12', '1000'))
 
-    def test_last_versions_multiple_versions(self):
+    @patch('regparser.commands.annual_editions.annual.find_volume')
+    def test_last_versions_multiple_versions(self, find_volume):
         """If multiple versions affect the same annual edition, we should only
         receive the last"""
+        find_volume.return_value = True
         with self.cli.isolated_filesystem():
             path = entry.Version('12', '1000')
             (path / '1111').write(Version('1111', date(2000, 12, 1),
@@ -40,6 +42,23 @@ class CommandsAnnualEditionsTests(TestCase):
             self.assertEqual(results, [
                 annual_editions.LastVersionInYear('2222', 2001),
                 annual_editions.LastVersionInYear('3333', 2002)])
+
+    @patch('regparser.commands.annual_editions.annual.find_volume')
+    def test_last_versions_not_printed(self, find_volume):
+        """We should only find the annual editions which have been published
+        already"""
+        # 2001 exists; no other years do
+        find_volume.side_effect = lambda year, title, part: year == 2001
+        with self.cli.isolated_filesystem():
+            path = entry.Version('12', '1000')
+            (path / '1111').write(Version('1111', date(2000, 12, 1),
+                                          date(2000, 12, 1)))
+            (path / '2222').write(Version('2222', date(2001, 12, 1),
+                                          date(2001, 12, 1)))
+
+            results = list(annual_editions.last_versions(12, 1000))
+            self.assertEqual(results, [
+                annual_editions.LastVersionInYear('1111', 2001)])
 
     def test_process_if_needed_missing_dependency_error(self):
         """If the annual XML or version isn't present, we should see a

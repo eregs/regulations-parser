@@ -1,5 +1,4 @@
 from collections import namedtuple
-from datetime import date
 import logging
 
 import click
@@ -23,10 +22,13 @@ def last_versions(cfr_title, cfr_part):
     for version_id in path:
         version = (path / version_id).read()
         pub_date = annual.date_of_annual_after(cfr_title, version.effective)
-        if pub_date < date.today():
-            have_annual_edition[pub_date.year] = version.identifier
+        have_annual_edition[pub_date.year] = version.identifier
     for year in sorted(have_annual_edition.keys()):
-        yield LastVersionInYear(have_annual_edition[year], year)
+        if annual.find_volume(year, cfr_title, cfr_part):
+            yield LastVersionInYear(have_annual_edition[year], year)
+        else:
+            logger.warning("%s edition for %s CFR %s not published yet",
+                           year, cfr_title, cfr_part)
 
 
 def process_if_needed(cfr_title, cfr_part, last_versions):
