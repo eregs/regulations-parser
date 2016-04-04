@@ -91,10 +91,10 @@ class CommandsPreprocessNoticeTests(HttpMixin, TestCase):
         with cli.isolated_filesystem():
             cli.invoke(preprocess_notice, ['1234-5678'])
             entry_str = str(entry.Notice() / '1234-5678')
-            self.assertIn(entry_str, dependency.Graph().graph)
+            self.assertIn(entry_str, dependency.Graph())
 
         notice_xmls_for_url.return_value[0].source = 'http://example.com'
         with cli.isolated_filesystem():
             cli.invoke(preprocess_notice, ['1234-5678'])
             entry_str = str(entry.Notice() / '1234-5678')
-            self.assertNotIn(entry_str, dependency.Graph().graph)
+            self.assertNotIn(entry_str, dependency.Graph())

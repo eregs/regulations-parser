@@ -35,7 +35,7 @@ def derived_from_rules(version_ids, deps, tree_path):
     for version_id in version_ids:
         path = str(tree_path / version_id)
         rule_change = str(entry.RuleChanges(version_id))
-        if path in deps.graph and rule_change in deps.graph.predecessors(path):
+        if rule_change in deps.dependencies(path):
             rule_versions.append(version_id)
     return rule_versions
 

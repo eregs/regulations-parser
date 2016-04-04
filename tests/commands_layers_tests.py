@@ -37,7 +37,7 @@ class CommandsLayersTests(TestCase):
 
             self.assertIn(
                 str(version_entry),
-                dependency.Graph().graph.predecessors(
+                dependency.Graph().dependencies(
                     str(entry.Layer.cfr(111, 22, 'aaa', 'meta'))))
 
     def test_process_cfr_layers(self):

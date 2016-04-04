@@ -61,9 +61,9 @@ class DependencyGraphTests(TestCase):
             dgraph.add(self.depender, self.dependency / '1')
             dgraph.add(self.depender, self.dependency / '2')
             self.assertItemsEqual(
-                dgraph.graph.predecessors(str(self.depender)),
+                dgraph.dependencies(str(self.depender)),
                 [str(self.dependency / 1), str(self.dependency / 2)])
 
             self.assertItemsEqual(
-                dependency.Graph().graph.predecessors(str(self.depender)),
+                dependency.Graph().dependencies(str(self.depender)),
                 [str(self.dependency / 1), str(self.dependency / 2)])

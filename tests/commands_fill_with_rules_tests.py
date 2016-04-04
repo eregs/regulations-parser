@@ -28,26 +28,24 @@ class CommandsFillWithRulesTests(TestCase):
                 tree_dir, version_ids, '12', '1000')
 
             # First is skipped, as we can't build it from a rule
-            self.assertNotIn(str(tree_dir / '111'), deps.graph)
+            self.assertNotIn(str(tree_dir / '111'), deps)
             # Second can also be skipped as a tree already exists
-            self.assertItemsEqual(deps.graph.node.get(str(tree_dir / '222')),
-                                  [])
+            self.assertEqual(deps.dependencies(str(tree_dir / '222')), [])
             # Third relies on the associated versions and the second tree
             self.assertItemsEqual(
-                deps.graph.predecessors(str(tree_dir / '333')),
+                deps.dependencies(str(tree_dir / '333')),
                 [str(tree_dir / '222'), str(rule_dir / '333'),
                  str(vers_dir / '333')])
             # Fourth relies on the third, even though it's not been built
             self.assertItemsEqual(
-                deps.graph.predecessors(str(tree_dir / '444')),
+                deps.dependencies(str(tree_dir / '444')),
                 [str(tree_dir / '333'), str(rule_dir / '444'),
                  str(vers_dir / '444')])
             # Fifth can be skipped as the tree already exists
-            self.assertItemsEqual(deps.graph.node.get(str(tree_dir / '555')),
-                                  [])
+            self.assertEqual(deps.dependencies(str(tree_dir / '555')), [])
             # Six relies on the fifth
             self.assertItemsEqual(
-                deps.graph.predecessors(str(tree_dir / '666')),
+                deps.dependencies(str(tree_dir / '666')),
                 [str(tree_dir / '555'), str(rule_dir / '666'),
                  str(vers_dir / '666')])
 
