@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from itertools import takewhile
 import logging
 
@@ -28,16 +29,16 @@ def parse_amdpar(par, initial_context):
     tokenized = multiple_moves(tokenized)
     tokenized = switch_passive(tokenized)
     tokenized = and_token_resolution(tokenized)
-    tokenized, subpart = deal_with_subpart_adds(tokenized)
+    tokenized, designated_subpart = subpart_designation(tokenized)
     tokenized = context_to_paragraph(tokenized)
     tokenized = move_then_modify(tokenized)
-    if not subpart:
+    if not designated_subpart:
         tokenized = separate_tokenlist(tokenized)
     initial_context = switch_part_context(tokenized, initial_context)
     initial_context = switch_level2_context(tokenized, initial_context)
     tokenized, final_context = compress_context(tokenized, initial_context)
-    if subpart:
-        return make_subpart_instructions(tokenized), final_context
+    if designated_subpart:
+        return make_subpart_designation_instructions(tokenized), final_context
     else:
         return make_instructions(tokenized), final_context
 
@@ -245,10 +246,12 @@ def and_token_resolution(tokenized):
     return final_tokens
 
 
-def deal_with_subpart_adds(tokenized):
+def subpart_designation(tokenized):
     """If we have a designate verb, and a token list, we're going to
     change the context to a Paragraph. Because it's not a context, it's
-    part of the manipulation."""
+    part of the manipulation.
+    e.g. Designate §§ 1005.1 through 1005.20 as subpart A under the heading
+    set forth above."""
 
     # Ensure that we only have one of each: designate verb, a token list and
     # a context
@@ -413,20 +416,20 @@ def get_destination(tokenized, reg_part):
     return destination
 
 
-def make_subpart_instructions(tokenized):
+def make_subpart_designation_instructions(tokenized):
     """Convert tokens into an `EREGS_INSTRUCTIONS` xml element specifically
-    for subpart designations"""
+    for subpart designations, like Designate §§ 1005.1 through 1005.20 as
+    subpart A"""
     instructions = etree.Element('EREGS_INSTRUCTIONS')
-    action = etree.SubElement(instructions, tokens.Verb.DESIGNATE)
-
-    reg_part = None
     token_lists = matching(tokenized, tokens.TokenList)
-    # There's only one token list of paragraphs, sections to be designated
-    for token in token_lists[0]:
-        reg_part = token.label[0]
-        etree.SubElement(action, 'LABEL', label=token.label_text())
 
-    action.set('destination', get_destination(tokenized, reg_part))
+    # There's only one token list of paragraphs, sections to be designated
+    reg_part = token_lists[0].tokens[0].label[0]
+    subpart = get_destination(tokenized, reg_part)
+
+    for token in token_lists[0]:
+        etree.SubElement(instructions, 'MOVE_INTO_SUBPART',
+                         label=token.label_text(), subpart=subpart)
     return instructions
 
 
@@ -591,9 +594,9 @@ class DesignateAmendment(Amendment):
 
 def amendment_from_xml(xml):
     """Deserialize amendments"""
-    if xml.tag == 'DESIGNATE':
-        labels = [el.get('label') for el in xml.xpath('./LABEL')]
-        return DesignateAmendment(xml.tag, labels, xml.get('destination'))
+    if xml.tag == 'MOVE_INTO_SUBPART':
+        return DesignateAmendment('DESIGNATE', [xml.get('label')],
+                                  xml.get('subpart'))
     else:
         return Amendment(xml.tag, xml.get('label'),
                          xml.get('destination') or None)
