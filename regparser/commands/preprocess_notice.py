@@ -15,8 +15,13 @@ def preprocess_notice(document_number):
     resulting file(s). There may be more than one as documents might be split
     if they have multiple effective dates."""
     meta = federalregister.meta_data(
-        document_number,
-        ["effective_on", "full_text_xml_url", "publication_date", "volume"])
+        document_number, [
+            "effective_on",
+            "comments_close_on",
+            "full_text_xml_url",
+            "publication_date",
+            "volume"
+        ])
     notice_xmls = list(notice_xmls_for_url(document_number,
                                            meta['full_text_xml_url']))
     deps = dependency.Graph()
@@ -24,6 +29,11 @@ def preprocess_notice(document_number):
         file_name = document_number
         notice_xml.published = meta['publication_date']
         notice_xml.fr_volume = meta['volume']
+
+        if meta.get("comments_close_on"):
+            notice_xml.comments_close_on = meta["comments_close_on"]
+        else:
+            notice_xml.derive_closing_date()
 
         if len(notice_xmls) > 1:
             effective_date = notice_xml.derive_effective_date()
