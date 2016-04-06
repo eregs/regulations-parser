@@ -45,6 +45,56 @@ class CommandsPreprocessNoticeTests(HttpMixin, TestCase):
             self.assertEqual(written.effective, date(2008, 8, 8))
 
     @patch('regparser.commands.preprocess_notice.notice_xmls_for_url')
+    def test_single_notice_comments_close_on_meta(self, notice_xmls_for_url):
+        """
+        Verify that when we have metadata for the comment closing date, we
+        write it to the object.
+        """
+        cli = CliRunner()
+        self.expect_common_json(comments_close_on="2010-10-10")
+        notice_xmls_for_url.return_value = [self.example_xml()]
+        with cli.isolated_filesystem():
+            cli.invoke(preprocess_notice, ['1234-5678'])
+            self.assertEqual(1, len(entry.Notice()))
+
+            written = entry.Notice('1234-5678').read()
+            self.assertEqual(written.comments_close_on, date(2010, 10, 10))
+
+    @patch('regparser.commands.preprocess_notice.notice_xmls_for_url')
+    def test_single_notice_comments_close_on_xml(self, notice_xmls_for_url):
+        """
+        Verify that when we have XML info but no metadata for the comment
+        closing date, we still write it to the object.
+        """
+        cli = CliRunner()
+        self.expect_common_json()
+        notice_xmls_for_url.return_value = [self.example_xml(
+            "Comments close on November 11, 2011")]
+        with cli.isolated_filesystem():
+            cli.invoke(preprocess_notice, ['1234-5678'])
+            self.assertEqual(1, len(entry.Notice()))
+
+            written = entry.Notice('1234-5678').read()
+            self.assertEqual(written.comments_close_on, date(2011, 11, 11))
+
+    @patch('regparser.commands.preprocess_notice.notice_xmls_for_url')
+    def test_single_notice_comments_close_on_prefer(self, notice_xmls_for_url):
+        """
+        Verify that when we XML and metadata for the comment
+        closing date, we use the metadata.
+        """
+        cli = CliRunner()
+        self.expect_common_json(comments_close_on="2010-10-10")
+        notice_xmls_for_url.return_value = [self.example_xml(
+            "Comments close on November 11, 2011")]
+        with cli.isolated_filesystem():
+            cli.invoke(preprocess_notice, ['1234-5678'])
+            self.assertEqual(1, len(entry.Notice()))
+
+            written = entry.Notice('1234-5678').read()
+            self.assertEqual(written.comments_close_on, date(2010, 10, 10))
+
+    @patch('regparser.commands.preprocess_notice.notice_xmls_for_url')
     def test_missing_effective_date(self, notice_xmls_for_url):
         """We should not explode if no effective date is present. Instead, we
         should parse the effective date from the XML"""

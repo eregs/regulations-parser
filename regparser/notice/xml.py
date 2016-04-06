@@ -41,6 +41,16 @@ class NoticeXML(XMLWrapper):
             value = value.isoformat()
         dates_tag.attrib["eregs-{}-date".format(date_type)] = value
 
+    def derive_closing_date(self):
+        """Attempt to parse comment closing date from DATES tags. Returns a
+        datetime.date and sets the corresponding field"""
+        dates = fetch_dates(self.xml) or {}
+        if 'comments' in dates:
+            comments = datetime.strptime(
+                dates['comments'][0], "%Y-%m-%d").date()
+            self.comments_close_on = comments
+            return comments
+
     def derive_effective_date(self):
         """Attempt to parse effective date from DATES tags. Returns a
         datetime.date and sets the corresponding field"""
@@ -61,6 +71,14 @@ class NoticeXML(XMLWrapper):
     # --- Setters/Getters for specific fields. ---
     # We encode relevant information within the XML, but wish to provide easy
     # access
+
+    @property
+    def comments_close_on(self):
+        return self._get_date_attr('comments-close-on')
+
+    @comments_close_on.setter
+    def comments_close_on(self, value):
+        self._set_date_attr('comments-close-on', value)
 
     @property
     def effective(self):
