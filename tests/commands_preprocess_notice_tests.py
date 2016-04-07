@@ -120,11 +120,11 @@ class CommandsPreprocessNoticeTests(HttpMixin, TestCase):
             self.assertEqual(len(written.xpath("//EREGS_AGENCIES")), 1)
             self.assertEqual(len(written.xpath("//EREGS_AGENCY")), 1)
             epa = written.xpath("//EREGS_AGENCY")[0]
-            self.assertEqual(epa.attrib["eregs-agency-name"],
+            self.assertEqual(epa.attrib["name"],
                              "Environmental Protection Agency")
-            self.assertEqual(epa.attrib["eregs-agency-raw-name"],
+            self.assertEqual(epa.attrib["raw-name"],
                              "ENVIRONMENTAL PROTECTION AGENCY")
-            self.assertEqual(epa.attrib["eregs-agency-id"],
+            self.assertEqual(epa.attrib["agency-id"],
                              "145")
 
     @patch('regparser.commands.preprocess_notice.notice_xmls_for_url')

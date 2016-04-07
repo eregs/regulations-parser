@@ -154,11 +154,11 @@ class NoticeXMLTests(TestCase):
         eregs_agencies = xml.xpath("//EREGS_AGENCIES")[0]
         self.assertEquals(len(eregs_agencies.xpath("//EREGS_AGENCY")), 1)
         epa = eregs_agencies.xpath("//EREGS_AGENCY")[0]
-        self.assertEquals(epa.attrib["eregs-agency-name"],
+        self.assertEquals(epa.attrib["name"],
                           "Environmental Protection Agency")
-        self.assertEquals(epa.attrib["eregs-agency-raw-name"],
+        self.assertEquals(epa.attrib["raw-name"],
                           "ENVIRONMENTAL PROTECTION AGENCY")
-        self.assertEquals(epa.attrib["eregs-agency-id"], "145")
+        self.assertEquals(epa.attrib["agency-id"], "145")
 
     def test_derive_agencies_singlesub(self):
         """
@@ -198,19 +198,17 @@ class NoticeXMLTests(TestCase):
         eregs_agencies = xml.xpath("//EREGS_AGENCIES")[0]
         self.assertEquals(len(eregs_agencies.xpath("//EREGS_AGENCY")), 1)
         doj = eregs_agencies.xpath("//EREGS_AGENCY")[0]
-        self.assertEquals(doj.attrib["eregs-agency-name"],
-                          "Justice Department")
-        self.assertEquals(doj.attrib["eregs-agency-raw-name"],
-                          "DEPARTMENT OF JUSTICE")
-        self.assertEquals(doj.attrib["eregs-agency-id"], "268")
+        self.assertEquals(doj.attrib["name"], "Justice Department")
+        self.assertEquals(doj.attrib["raw-name"], "DEPARTMENT OF JUSTICE")
+        self.assertEquals(doj.attrib["agency-id"], "268")
         self.assertEquals(len(doj.xpath("//EREGS_SUBAGENCY")), 1)
         atf = doj.xpath("//EREGS_SUBAGENCY")[0]
-        self.assertEquals(atf.attrib["eregs-agency-name"],
+        self.assertEquals(atf.attrib["name"],
                           "Alcohol, Tobacco, Firearms, and Explosives Bureau")
         self.assertEquals(
-            atf.attrib["eregs-agency-raw-name"],
+            atf.attrib["raw-name"],
             "Bureau of Alcohol, Tobacco, Firearms and Explosives")
-        self.assertEquals(atf.attrib["eregs-agency-id"], "19")
+        self.assertEquals(atf.attrib["agency-id"], "19")
 
     def test_derive_agencies_unrelated(self):
         """
@@ -250,19 +248,18 @@ class NoticeXMLTests(TestCase):
         eregs_agencies = xml.xpath("//EREGS_AGENCIES")[0]
         self.assertEquals(len(eregs_agencies.xpath("//EREGS_AGENCY")), 1)
         treas = eregs_agencies.xpath("//EREGS_AGENCY")[0]
-        self.assertEquals(treas.attrib["eregs-agency-name"],
-                          "Treasury Department")
-        self.assertEquals(treas.attrib["eregs-agency-raw-name"],
+        self.assertEquals(treas.attrib["name"], "Treasury Department")
+        self.assertEquals(treas.attrib["raw-name"],
                           "DEPARTMENT OF THE TREASURY")
-        self.assertEquals(treas.attrib["eregs-agency-id"], "497")
+        self.assertEquals(treas.attrib["agency-id"], "497")
         self.assertEquals(len(eregs_agencies.xpath("//EREGS_SUBAGENCY")), 1)
         atf = eregs_agencies.xpath("//EREGS_SUBAGENCY")[0]
-        self.assertEquals(atf.attrib["eregs-agency-name"],
+        self.assertEquals(atf.attrib["name"],
                           u'Alcohol, Tobacco, Firearms, and Explosives Bureau')
         self.assertEquals(
-            atf.attrib["eregs-agency-raw-name"],
+            atf.attrib["raw-name"],
             u"Bureau of Alcohol, Tobacco, Firearms and Explosives")
-        self.assertEquals(atf.attrib["eregs-agency-id"], "19")
+        self.assertEquals(atf.attrib["agency-id"], "19")
 
     def test_derive_agencies_mixed(self):
         """
@@ -313,26 +310,22 @@ class NoticeXMLTests(TestCase):
         eregs_agencies = xml.xpath("//EREGS_AGENCIES")[0]
         self.assertEquals(len(eregs_agencies.xpath("//EREGS_AGENCY")), 2)
         treas = eregs_agencies.xpath("//EREGS_AGENCY")[0]
-        self.assertEquals(treas.attrib["eregs-agency-name"],
-                          "Treasury Department")
-        self.assertEquals(treas.attrib["eregs-agency-raw-name"],
+        self.assertEquals(treas.attrib["name"], "Treasury Department")
+        self.assertEquals(treas.attrib["raw-name"],
                           "DEPARTMENT OF THE TREASURY")
-        self.assertEquals(treas.attrib["eregs-agency-id"], "497")
+        self.assertEquals(treas.attrib["agency-id"], "497")
         doj = eregs_agencies.xpath("//EREGS_AGENCY")[1]
-        self.assertEquals(doj.attrib["eregs-agency-name"],
-                          "Justice Department")
-        self.assertEquals(doj.attrib["eregs-agency-raw-name"],
-                          "DEPARTMENT OF JUSTICE")
-        self.assertEquals(doj.attrib["eregs-agency-id"],
-                          "268")
+        self.assertEquals(doj.attrib["name"], "Justice Department")
+        self.assertEquals(doj.attrib["raw-name"], "DEPARTMENT OF JUSTICE")
+        self.assertEquals(doj.attrib["agency-id"], "268")
         self.assertEquals(len(doj.xpath("//EREGS_SUBAGENCY")), 1)
         atf = doj.xpath("//EREGS_SUBAGENCY")[0]
-        self.assertEquals(atf.attrib["eregs-agency-name"],
+        self.assertEquals(atf.attrib["name"],
                           u'Alcohol, Tobacco, Firearms, and Explosives Bureau')
         self.assertEquals(
-            atf.attrib["eregs-agency-raw-name"],
+            atf.attrib["raw-name"],
             u"Bureau of Alcohol, Tobacco, Firearms and Explosives")
-        self.assertEquals(atf.attrib["eregs-agency-id"], "19")
+        self.assertEquals(atf.attrib["agency-id"], "19")
 
     def test_derive_agencies_generations(self):
         """
@@ -392,33 +385,24 @@ class NoticeXMLTests(TestCase):
         eregs_agencies = xml.xpath("//EREGS_AGENCIES")[0]
         self.assertEquals(len(eregs_agencies.xpath("//EREGS_AGENCY")), 1)
         doj = eregs_agencies.xpath("//EREGS_AGENCY")[0]
-        self.assertEquals(doj.attrib["eregs-agency-name"],
-                          "Justice Department")
-        self.assertEquals(doj.attrib["eregs-agency-raw-name"],
-                          "DEPARTMENT OF JUSTICE")
-        self.assertEquals(doj.attrib["eregs-agency-id"], "268")
+        self.assertEquals(doj.attrib["name"], "Justice Department")
+        self.assertEquals(doj.attrib["raw-name"], "DEPARTMENT OF JUSTICE")
+        self.assertEquals(doj.attrib["agency-id"], "268")
         self.assertEquals(len(doj.xpath("//EREGS_SUBAGENCY")), 3)
         self.assertEquals(len(doj.xpath("EREGS_SUBAGENCY")), 1)
         atf = doj.xpath("//EREGS_SUBAGENCY")[0]
-        self.assertEquals(atf.attrib["eregs-agency-name"],
+        self.assertEquals(atf.attrib["name"],
                           u'Alcohol, Tobacco, Firearms, and Explosives Bureau')
-        self.assertEquals(atf.attrib["eregs-agency-raw-name"],
-                          "%s%s" % ("Bureau of Alcohol, Tobacco, ",
-                                    "Firearms and Explosives"))
-        self.assertEquals(atf.attrib["eregs-agency-id"],
-                          "19")
+        self.assertEquals(
+            atf.attrib["raw-name"],
+            "Bureau of Alcohol, Tobacco, Firearms and Explosives")
+        self.assertEquals(atf.attrib["agency-id"], "19")
         self.assertEquals(len(atf.xpath("EREGS_SUBAGENCY")), 1)
         subatf = atf.xpath("EREGS_SUBAGENCY")[0]
-        self.assertEquals(subatf.attrib["eregs-agency-name"],
-                          u'ATF subagency')
-        self.assertEquals(subatf.attrib["eregs-agency-raw-name"],
-                          u"SUBAGENCY OF ATF")
-        self.assertEquals(subatf.attrib["eregs-agency-id"],
-                          u"100023")
+        self.assertEquals(subatf.attrib["name"], u'ATF subagency')
+        self.assertEquals(subatf.attrib["raw-name"], u"SUBAGENCY OF ATF")
+        self.assertEquals(subatf.attrib["agency-id"], u"100023")
         subsubatf = subatf.xpath("EREGS_SUBAGENCY")[0]
-        self.assertEquals(subsubatf.attrib["eregs-agency-name"],
-                          u'ATF subsubagency')
-        self.assertEquals(subsubatf.attrib["eregs-agency-raw-name"],
-                          u"SUBSUBAGENCY OF ATF")
-        self.assertEquals(subsubatf.attrib["eregs-agency-id"],
-                          u"100072")
+        self.assertEquals(subsubatf.attrib["name"], u'ATF subsubagency')
+        self.assertEquals(subsubatf.attrib["raw-name"], u"SUBSUBAGENCY OF ATF")
+        self.assertEquals(subsubatf.attrib["agency-id"], u"100072")

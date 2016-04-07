@@ -18,6 +18,31 @@ import settings
 logger = logging.getLogger(__name__)
 
 
+def add_children(el, children):
+    """
+    Given an element and a list of children, recursively appends
+    children as EREGS_SUBAGENCY elements with the appropriate
+    attributes, and appends their children to them, etc.
+
+    :arg Element el:    The XML element to add child elements to.
+                        Should be either EREGS_AGENCY or
+                        EREGS_SUBAGENCY.
+    :arg list children: dict objects containing the agency information.
+                        Must have subagencies in `children` fields.
+
+    :rtype: XML Element
+    """
+    for agency in children:
+        sub_el = etree.Element("EREGS_SUBAGENCY", **{
+            "name": str(agency["name"]),
+            "raw-name": str(agency["raw_name"]),
+            "agency-id": str(agency["id"])
+        })
+        add_children(sub_el, agency["children"])
+        el.append(sub_el)
+    return el
+
+
 class NoticeXML(XMLWrapper):
     """Wrapper around a notice XML which provides quick access to the XML's
     encoded data fields"""
@@ -55,10 +80,9 @@ class NoticeXML(XMLWrapper):
 
 
             <EREGS_AGENCIES>
-                <EREGS_AGENCY eregs-agency-name="x" eregs-agency-id="00"
-                 eregs-agency-raw-name="X">
-                    <EREGS_SUBAGENCY eregs-agency-name="y" eregs-agency-id="01"
-                    eregs-agency-raw-name="Y"></EREGS_SUBAGENCY>
+                <EREGS_AGENCY name="x" agency-id="00" raw-name="X">
+                    <EREGS_SUBAGENCY name="y" agency-id="01" raw-name="Y">
+                    </EREGS_SUBAGENCY>
                 </EREGS_AGENCY>
             </EREGS_AGENCIES>
 
@@ -93,32 +117,6 @@ class NoticeXML(XMLWrapper):
         for key in child_keys:
             del agency_map[key]
 
-        def add_children(el, children):
-            """
-            Given an element and a list of children, recursively appends
-            children as EREGS_SUBAGENCY elements with the appropriate
-            attributes, and appends their children to them, etc.
-
-            :arg Element el:    The XML element to add child elements to.
-                                Should be either EREGS_AGENCY or
-                                EREGS_SUBAGENCY.
-            :arg list children: dict objects containing the agency information.
-                                Must have subagencies in `children` fields.
-
-            :rtype: XML Element
-            """
-            if children:
-                for agency in children:
-                    sub_el = etree.Element("EREGS_SUBAGENCY")
-                    sub_el.attrib["eregs-agency-name"] = str(agency["name"])
-                    sub_el.attrib["eregs-agency-raw-name"] = str(
-                        agency["raw_name"])
-                    sub_el.attrib["eregs-agency-id"] = str(agency["id"])
-                    if agency.get("children", []):
-                        sub_el = add_children(sub_el, agency["children"])
-                    el.append(sub_el)
-            return el
-
         # Add the elements, starting with a parent ``EREGS_AGENCIES`` element.
         agencies_el = etree.Element("EREGS_AGENCIES")
         for agency_id in agency_map:
@@ -127,9 +125,9 @@ class NoticeXML(XMLWrapper):
                 agency_el = etree.Element("EREGS_AGENCY")
             else:
                 agency_el = etree.Element("EREGS_SUBAGENCY")
-            agency_el.attrib["eregs-agency-name"] = str(agency["name"])
-            agency_el.attrib["eregs-agency-raw-name"] = str(agency["raw_name"])
-            agency_el.attrib["eregs-agency-id"] = str(agency["id"])
+            agency_el.attrib["name"] = str(agency["name"])
+            agency_el.attrib["raw-name"] = str(agency["raw_name"])
+            agency_el.attrib["agency-id"] = str(agency["id"])
             add_children(agency_el, agency.get("children", []))
             agencies_el.append(agency_el)
 
