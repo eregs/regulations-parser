@@ -129,3 +129,280 @@ class NoticeXMLTests(TestCase):
         for path in ('./dot/relative', 'normal/relative', '/absolute/ref'):
             self.assertTrue(
                 notice_xml.NoticeXML('<ROOT/>', source=path).source_is_local)
+
+    def test_derive_agencies_simple(self):
+        """
+        Test that we can properly derive agency info from the metadata or the
+        XML itself, and that it's added to the XML.
+        """
+        agencies_info = [{
+            u'name': u'Environmental Protection Agency',
+            u'parent_id': None,
+            u'raw_name': u'ENVIRONMENTAL PROTECTION AGENCY',
+            u'url': u'%s%s' % (u'https://www.federalregister.gov/',
+                               u'agencies/environmental-protection-agency'),
+            u'json_url': u'%s%s' % ('https://www.federalregister.gov/',
+                                    'api/v1/agencies/145.json'),
+            u'id': 145
+        }]
+        with XMLBuilder("ROOT") as ctx:
+            with ctx.DATES():
+                ctx.P("Effective on May 4, 2004")
+        xml = notice_xml.NoticeXML(ctx.xml)
+        xml.derive_agencies(agencies=agencies_info)
+        self.assertEquals(len(xml.xpath("//EREGS_AGENCIES")), 1)
+        eregs_agencies = xml.xpath("//EREGS_AGENCIES")[0]
+        self.assertEquals(len(eregs_agencies.xpath("//EREGS_AGENCY")), 1)
+        epa = eregs_agencies.xpath("//EREGS_AGENCY")[0]
+        self.assertEquals(epa.attrib["name"],
+                          "Environmental Protection Agency")
+        self.assertEquals(epa.attrib["raw-name"],
+                          "ENVIRONMENTAL PROTECTION AGENCY")
+        self.assertEquals(epa.attrib["agency-id"], "145")
+
+    def test_derive_agencies_singlesub(self):
+        """
+        Test that we can properly derive agency info from the metadata and add
+        it to the XML if there is a subagency.
+        """
+        agencies_info = [
+            {
+                u'name': u'Justice Department',
+                u'parent_id': None,
+                u'url': u'%s%s' % (u'https://www.federalregister.gov/',
+                                   u'agencies/justice-department'),
+                u'raw_name': u'DEPARTMENT OF JUSTICE',
+                u'json_url': u'%s%s' % (u'https://www.federalregister.gov/',
+                                        u'api/v1/agencies/268.json'),
+                u'id': 268
+            },
+            {
+                u'name': u'Alcohol, Tobacco, Firearms, and Explosives Bureau',
+                u'parent_id': 268,
+                u'url': '%s%s%s' % (u'https://www.federalregister.gov/',
+                                    u'agencies/alcohol-tobacco-firearms',
+                                    u'-and-explosives-bureau'),
+                u'raw_name': '%s%s' % (u'Bureau of Alcohol, Tobacco, Firearms',
+                                       u' and Explosives'),
+                u'json_url': '%s%s' % (u'https://www.federalregister.gov/',
+                                       u'api/v1/agencies/19.json'),
+                u'id': 19
+            }
+        ]
+        with XMLBuilder("ROOT") as ctx:
+            with ctx.DATES():
+                ctx.P("Effective on May 4, 2004")
+        xml = notice_xml.NoticeXML(ctx.xml)
+        xml.derive_agencies(agencies=agencies_info)
+        self.assertEquals(len(xml.xpath("//EREGS_AGENCIES")), 1)
+        eregs_agencies = xml.xpath("//EREGS_AGENCIES")[0]
+        self.assertEquals(len(eregs_agencies.xpath("//EREGS_AGENCY")), 1)
+        doj = eregs_agencies.xpath("//EREGS_AGENCY")[0]
+        self.assertEquals(doj.attrib["name"], "Justice Department")
+        self.assertEquals(doj.attrib["raw-name"], "DEPARTMENT OF JUSTICE")
+        self.assertEquals(doj.attrib["agency-id"], "268")
+        self.assertEquals(len(doj.xpath("//EREGS_SUBAGENCY")), 1)
+        atf = doj.xpath("//EREGS_SUBAGENCY")[0]
+        self.assertEquals(atf.attrib["name"],
+                          "Alcohol, Tobacco, Firearms, and Explosives Bureau")
+        self.assertEquals(
+            atf.attrib["raw-name"],
+            "Bureau of Alcohol, Tobacco, Firearms and Explosives")
+        self.assertEquals(atf.attrib["agency-id"], "19")
+
+    def test_derive_agencies_unrelated(self):
+        """
+        Test that we can properly derive agency info from the metadata and add
+        it to the XML if there is an agency and a non-child subagency.
+        """
+        agencies_info = [
+            {
+                u'name': u'Treasury Department',
+                u'parent_id': None,
+                u'url': u'%s%s' % (u'https://www.federalregister.gov/',
+                                   u'agencies/treasury-department'),
+                u'raw_name': u'DEPARTMENT OF THE TREASURY',
+                u'json_url': u'%s%s' % (u'https://www.federalregister.gov/',
+                                        u'api/v1/agencies/497.json'),
+                u'id': 497
+            },
+            {
+                u'name': u'Alcohol, Tobacco, Firearms, and Explosives Bureau',
+                u'parent_id': 268,
+                u'url': '%s%s%s' % (u'https://www.federalregister.gov/',
+                                    u'agencies/alcohol-tobacco-firearms',
+                                    u'-and-explosives-bureau'),
+                u'raw_name': '%s%s' % (u'Bureau of Alcohol, Tobacco, Firearms',
+                                       u' and Explosives'),
+                u'json_url': '%s%s' % (u'https://www.federalregister.gov/',
+                                       u'api/v1/agencies/19.json'),
+                u'id': 19
+            }
+        ]
+        with XMLBuilder("ROOT") as ctx:
+            with ctx.DATES():
+                ctx.P("Effective on May 4, 2004")
+        xml = notice_xml.NoticeXML(ctx.xml)
+        xml.derive_agencies(agencies=agencies_info)
+        self.assertEquals(len(xml.xpath("//EREGS_AGENCIES")), 1)
+        eregs_agencies = xml.xpath("//EREGS_AGENCIES")[0]
+        self.assertEquals(len(eregs_agencies.xpath("//EREGS_AGENCY")), 1)
+        treas = eregs_agencies.xpath("//EREGS_AGENCY")[0]
+        self.assertEquals(treas.attrib["name"], "Treasury Department")
+        self.assertEquals(treas.attrib["raw-name"],
+                          "DEPARTMENT OF THE TREASURY")
+        self.assertEquals(treas.attrib["agency-id"], "497")
+        self.assertEquals(len(eregs_agencies.xpath("//EREGS_SUBAGENCY")), 1)
+        atf = eregs_agencies.xpath("//EREGS_SUBAGENCY")[0]
+        self.assertEquals(atf.attrib["name"],
+                          u'Alcohol, Tobacco, Firearms, and Explosives Bureau')
+        self.assertEquals(
+            atf.attrib["raw-name"],
+            u"Bureau of Alcohol, Tobacco, Firearms and Explosives")
+        self.assertEquals(atf.attrib["agency-id"], "19")
+
+    def test_derive_agencies_mixed(self):
+        """
+        Test that we can properly derive agency info from the metadata and add
+        it to the XML if we have a parent-child relationship and an unrelated
+        agency.
+        """
+        agencies_info = [
+            {
+                u'name': u'Treasury Department',
+                u'parent_id': None,
+                u'url': u'%s%s' % (u'https://www.federalregister.gov/',
+                                   u'agencies/treasury-department'),
+                u'raw_name': u'DEPARTMENT OF THE TREASURY',
+                u'json_url': u'%s%s' % (u'https://www.federalregister.gov/',
+                                        u'api/v1/agencies/497.json'),
+                u'id': 497
+            },
+            {
+                u'name': u'Alcohol, Tobacco, Firearms, and Explosives Bureau',
+                u'parent_id': 268,
+                u'url': '%s%s%s' % (u'https://www.federalregister.gov/',
+                                    u'agencies/alcohol-tobacco-firearms',
+                                    u'-and-explosives-bureau'),
+                u'raw_name': '%s%s' % (u'Bureau of Alcohol, Tobacco, Firearms',
+                                       u' and Explosives'),
+                u'json_url': '%s%s' % (u'https://www.federalregister.gov/',
+                                       u'api/v1/agencies/19.json'),
+                u'id': 19
+            },
+            {
+                u'name': u'Justice Department',
+                u'parent_id': None,
+                u'url': u'%s%s' % (u'https://www.federalregister.gov/',
+                                   u'agencies/justice-department'),
+                u'raw_name': u'DEPARTMENT OF JUSTICE',
+                u'json_url': u'%s%s' % (u'https://www.federalregister.gov/',
+                                        u'api/v1/agencies/268.json'),
+                u'id': 268
+            }
+        ]
+        with XMLBuilder("ROOT") as ctx:
+            with ctx.DATES():
+                ctx.P("Effective on May 4, 2004")
+        xml = notice_xml.NoticeXML(ctx.xml)
+        xml.derive_agencies(agencies=agencies_info)
+        self.assertEquals(len(xml.xpath("//EREGS_AGENCIES")), 1)
+        eregs_agencies = xml.xpath("//EREGS_AGENCIES")[0]
+        self.assertEquals(len(eregs_agencies.xpath("//EREGS_AGENCY")), 2)
+        treas = eregs_agencies.xpath("//EREGS_AGENCY")[0]
+        self.assertEquals(treas.attrib["name"], "Treasury Department")
+        self.assertEquals(treas.attrib["raw-name"],
+                          "DEPARTMENT OF THE TREASURY")
+        self.assertEquals(treas.attrib["agency-id"], "497")
+        doj = eregs_agencies.xpath("//EREGS_AGENCY")[1]
+        self.assertEquals(doj.attrib["name"], "Justice Department")
+        self.assertEquals(doj.attrib["raw-name"], "DEPARTMENT OF JUSTICE")
+        self.assertEquals(doj.attrib["agency-id"], "268")
+        self.assertEquals(len(doj.xpath("//EREGS_SUBAGENCY")), 1)
+        atf = doj.xpath("//EREGS_SUBAGENCY")[0]
+        self.assertEquals(atf.attrib["name"],
+                          u'Alcohol, Tobacco, Firearms, and Explosives Bureau')
+        self.assertEquals(
+            atf.attrib["raw-name"],
+            u"Bureau of Alcohol, Tobacco, Firearms and Explosives")
+        self.assertEquals(atf.attrib["agency-id"], "19")
+
+    def test_derive_agencies_generations(self):
+        """
+        Test that we can properly derive agency info from the metadata and add
+        it to the XML if we have nested parent-child relationships.
+        """
+        agencies_info = [
+            {
+                u'name': u'ATF subagency',
+                u'parent_id': 19,
+                u'url': u'%s%s' % (u'https://www.federalregister.gov/',
+                                   u'agencies/atf-subagency'),
+                u'raw_name': u'SUBAGENCY OF ATF',
+                u'json_url': u'%s%s' % (u'https://www.federalregister.gov/',
+                                        u'api/v1/agencies/100023.json'),
+                u'id': 100023
+            },
+            {
+                u'name': u'Alcohol, Tobacco, Firearms, and Explosives Bureau',
+                u'parent_id': 268,
+                u'url': '%s%s%s' % (u'https://www.federalregister.gov/',
+                                    u'agencies/alcohol-tobacco-firearms',
+                                    u'-and-explosives-bureau'),
+                u'raw_name': '%s%s' % (u'Bureau of Alcohol, Tobacco, Firearms',
+                                       u' and Explosives'),
+                u'json_url': '%s%s' % (u'https://www.federalregister.gov/',
+                                       u'api/v1/agencies/19.json'),
+                u'id': 19
+            },
+            {
+                u'name': u'Justice Department',
+                u'parent_id': None,
+                u'url': u'%s%s' % (u'https://www.federalregister.gov/',
+                                   u'agencies/justice-department'),
+                u'raw_name': u'DEPARTMENT OF JUSTICE',
+                u'json_url': u'%s%s' % (u'https://www.federalregister.gov/',
+                                        u'api/v1/agencies/268.json'),
+                u'id': 268
+            },
+            {
+                u'name': u'ATF subsubagency',
+                u'parent_id': 100023,
+                u'url': u'%s%s' % (u'https://www.federalregister.gov/',
+                                   u'agencies/atf-subsubagency'),
+                u'raw_name': u'SUBSUBAGENCY OF ATF',
+                u'json_url': u'%s%s' % (u'https://www.federalregister.gov/',
+                                        u'api/v1/agencies/100072.json'),
+                u'id': 100072
+            },
+        ]
+        with XMLBuilder("ROOT") as ctx:
+            with ctx.DATES():
+                ctx.P("Effective on May 4, 2004")
+        xml = notice_xml.NoticeXML(ctx.xml)
+        xml.derive_agencies(agencies=agencies_info)
+        self.assertEquals(len(xml.xpath("//EREGS_AGENCIES")), 1)
+        eregs_agencies = xml.xpath("//EREGS_AGENCIES")[0]
+        self.assertEquals(len(eregs_agencies.xpath("//EREGS_AGENCY")), 1)
+        doj = eregs_agencies.xpath("//EREGS_AGENCY")[0]
+        self.assertEquals(doj.attrib["name"], "Justice Department")
+        self.assertEquals(doj.attrib["raw-name"], "DEPARTMENT OF JUSTICE")
+        self.assertEquals(doj.attrib["agency-id"], "268")
+        self.assertEquals(len(doj.xpath("//EREGS_SUBAGENCY")), 3)
+        self.assertEquals(len(doj.xpath("EREGS_SUBAGENCY")), 1)
+        atf = doj.xpath("//EREGS_SUBAGENCY")[0]
+        self.assertEquals(atf.attrib["name"],
+                          u'Alcohol, Tobacco, Firearms, and Explosives Bureau')
+        self.assertEquals(
+            atf.attrib["raw-name"],
+            "Bureau of Alcohol, Tobacco, Firearms and Explosives")
+        self.assertEquals(atf.attrib["agency-id"], "19")
+        self.assertEquals(len(atf.xpath("EREGS_SUBAGENCY")), 1)
+        subatf = atf.xpath("EREGS_SUBAGENCY")[0]
+        self.assertEquals(subatf.attrib["name"], u'ATF subagency')
+        self.assertEquals(subatf.attrib["raw-name"], u"SUBAGENCY OF ATF")
+        self.assertEquals(subatf.attrib["agency-id"], u"100023")
+        subsubatf = subatf.xpath("EREGS_SUBAGENCY")[0]
+        self.assertEquals(subsubatf.attrib["name"], u'ATF subsubagency')
+        self.assertEquals(subsubatf.attrib["raw-name"], u"SUBSUBAGENCY OF ATF")
+        self.assertEquals(subsubatf.attrib["agency-id"], u"100072")
