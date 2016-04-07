@@ -135,11 +135,12 @@ class NoticeXMLTests(TestCase):
         Test that we can properly derive agency info from the metadata or the
         XML itself, and that it's added to the XML.
         """
-        agencies_info = [{u'name': u'Environmental Protection Agency',
+        agencies_info = [{
+            u'name': u'Environmental Protection Agency',
             u'parent_id': None,
             u'raw_name': u'ENVIRONMENTAL PROTECTION AGENCY',
             u'url': u'%s%s' % (u'https://www.federalregister.gov/',
-                'agencies/environmental-protection-agency'),
+                               u'agencies/environmental-protection-agency'),
             u'json_url': u'%s%s' % ('https://www.federalregister.gov/',
                                     'api/v1/agencies/145.json'),
             u'id': 145
@@ -148,7 +149,7 @@ class NoticeXMLTests(TestCase):
             with ctx.DATES():
                 ctx.P("Effective on May 4, 2004")
         xml = notice_xml.NoticeXML(ctx.xml)
-        agency_info = xml.derive_agencies(agencies=agencies_info)
+        xml.derive_agencies(agencies=agencies_info)
         self.assertEquals(len(xml.xpath("//EREGS_AGENCIES")), 1)
         eregs_agencies = xml.xpath("//EREGS_AGENCIES")[0]
         self.assertEquals(len(eregs_agencies.xpath("//EREGS_AGENCY")), 1)
@@ -192,7 +193,7 @@ class NoticeXMLTests(TestCase):
             with ctx.DATES():
                 ctx.P("Effective on May 4, 2004")
         xml = notice_xml.NoticeXML(ctx.xml)
-        agency_info = xml.derive_agencies(agencies=agencies_info)
+        xml.derive_agencies(agencies=agencies_info)
         self.assertEquals(len(xml.xpath("//EREGS_AGENCIES")), 1)
         eregs_agencies = xml.xpath("//EREGS_AGENCIES")[0]
         self.assertEquals(len(eregs_agencies.xpath("//EREGS_AGENCY")), 1)
@@ -205,8 +206,9 @@ class NoticeXMLTests(TestCase):
         self.assertEquals(len(doj.xpath("//EREGS_SUBAGENCY")), 1)
         atf = doj.xpath("//EREGS_SUBAGENCY")[0]
         self.assertEquals(atf.attrib["eregs-agency-name"],
-            "Alcohol, Tobacco, Firearms, and Explosives Bureau")
-        self.assertEquals(atf.attrib["eregs-agency-raw-name"],
+                          "Alcohol, Tobacco, Firearms, and Explosives Bureau")
+        self.assertEquals(
+            atf.attrib["eregs-agency-raw-name"],
             "Bureau of Alcohol, Tobacco, Firearms and Explosives")
         self.assertEquals(atf.attrib["eregs-agency-id"], "19")
 
@@ -243,7 +245,7 @@ class NoticeXMLTests(TestCase):
             with ctx.DATES():
                 ctx.P("Effective on May 4, 2004")
         xml = notice_xml.NoticeXML(ctx.xml)
-        agency_info = xml.derive_agencies(agencies=agencies_info)
+        xml.derive_agencies(agencies=agencies_info)
         self.assertEquals(len(xml.xpath("//EREGS_AGENCIES")), 1)
         eregs_agencies = xml.xpath("//EREGS_AGENCIES")[0]
         self.assertEquals(len(eregs_agencies.xpath("//EREGS_AGENCY")), 1)
@@ -257,8 +259,9 @@ class NoticeXMLTests(TestCase):
         atf = eregs_agencies.xpath("//EREGS_SUBAGENCY")[0]
         self.assertEquals(atf.attrib["eregs-agency-name"],
                           u'Alcohol, Tobacco, Firearms, and Explosives Bureau')
-        self.assertEquals(atf.attrib["eregs-agency-raw-name"],
-            "Bureau of Alcohol, Tobacco, Firearms and Explosives")
+        self.assertEquals(
+            atf.attrib["eregs-agency-raw-name"],
+            u"Bureau of Alcohol, Tobacco, Firearms and Explosives")
         self.assertEquals(atf.attrib["eregs-agency-id"], "19")
 
     def test_derive_agencies_mixed(self):
@@ -305,7 +308,7 @@ class NoticeXMLTests(TestCase):
             with ctx.DATES():
                 ctx.P("Effective on May 4, 2004")
         xml = notice_xml.NoticeXML(ctx.xml)
-        agency_info = xml.derive_agencies(agencies=agencies_info)
+        xml.derive_agencies(agencies=agencies_info)
         self.assertEquals(len(xml.xpath("//EREGS_AGENCIES")), 1)
         eregs_agencies = xml.xpath("//EREGS_AGENCIES")[0]
         self.assertEquals(len(eregs_agencies.xpath("//EREGS_AGENCY")), 2)
@@ -326,8 +329,9 @@ class NoticeXMLTests(TestCase):
         atf = doj.xpath("//EREGS_SUBAGENCY")[0]
         self.assertEquals(atf.attrib["eregs-agency-name"],
                           u'Alcohol, Tobacco, Firearms, and Explosives Bureau')
-        self.assertEquals(atf.attrib["eregs-agency-raw-name"],
-            "Bureau of Alcohol, Tobacco, Firearms and Explosives")
+        self.assertEquals(
+            atf.attrib["eregs-agency-raw-name"],
+            u"Bureau of Alcohol, Tobacco, Firearms and Explosives")
         self.assertEquals(atf.attrib["eregs-agency-id"], "19")
 
     def test_derive_agencies_generations(self):
@@ -383,7 +387,7 @@ class NoticeXMLTests(TestCase):
             with ctx.DATES():
                 ctx.P("Effective on May 4, 2004")
         xml = notice_xml.NoticeXML(ctx.xml)
-        agency_info = xml.derive_agencies(agencies=agencies_info)
+        xml.derive_agencies(agencies=agencies_info)
         self.assertEquals(len(xml.xpath("//EREGS_AGENCIES")), 1)
         eregs_agencies = xml.xpath("//EREGS_AGENCIES")[0]
         self.assertEquals(len(eregs_agencies.xpath("//EREGS_AGENCY")), 1)
