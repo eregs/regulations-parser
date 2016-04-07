@@ -42,7 +42,7 @@ class NoticeXML(XMLWrapper):
             value = value.isoformat()
         dates_tag.attrib["eregs-{}-date".format(date_type)] = value
 
-    def derive_agencies(self, agencies=[]):
+    def derive_agencies(self, agencies=None):
         """
         SIDE EFFECTS: this operates on the XML of the NoticeXML itself as well
         as returning some information.
