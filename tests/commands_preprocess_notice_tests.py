@@ -95,6 +95,38 @@ class CommandsPreprocessNoticeTests(HttpMixin, TestCase):
             self.assertEqual(written.comments_close_on, date(2010, 10, 10))
 
     @patch('regparser.commands.preprocess_notice.notice_xmls_for_url')
+    def test_single_notice_one_agency_meta(self, notice_xmls_for_url):
+        """
+        Verify that we get agency info from the metadata.
+        """
+        cli = CliRunner()
+        agencies_info = [{u'name': u'Environmental Protection Agency',
+            u'parent_id': None,
+            u'raw_name': u'ENVIRONMENTAL PROTECTION AGENCY',
+            u'url': u'%s%s' % (u'https://www.federalregister.gov/',
+                'agencies/environmental-protection-agency'),
+            u'json_url': u'%s%s' % ('https://www.federalregister.gov/',
+                                    'api/v1/agencies/145.json'),
+            u'id': 145
+        }]
+        self.expect_common_json(agencies=agencies_info)
+        notice_xmls_for_url.return_value = [self.example_xml()]
+        with cli.isolated_filesystem():
+            cli.invoke(preprocess_notice, ['1234-5678'])
+            self.assertEqual(1, len(entry.Notice()))
+
+            written = entry.Notice('1234-5678').read()
+            self.assertEqual(len(written.xpath("//EREGS_AGENCIES")), 1)
+            self.assertEqual(len(written.xpath("//EREGS_AGENCY")), 1)
+            epa = written.xpath("//EREGS_AGENCY")[0]
+            self.assertEqual(epa.attrib["eregs-agency-name"],
+                             "Environmental Protection Agency")
+            self.assertEqual(epa.attrib["eregs-agency-raw-name"],
+                             "ENVIRONMENTAL PROTECTION AGENCY")
+            self.assertEqual(epa.attrib["eregs-agency-id"],
+                             "145")
+
+    @patch('regparser.commands.preprocess_notice.notice_xmls_for_url')
     def test_missing_effective_date(self, notice_xmls_for_url):
         """We should not explode if no effective date is present. Instead, we
         should parse the effective date from the XML"""

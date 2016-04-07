@@ -16,6 +16,7 @@ def preprocess_notice(document_number):
     if they have multiple effective dates."""
     meta = federalregister.meta_data(
         document_number, [
+            "agencies",
             "effective_on",
             "comments_close_on",
             "full_text_xml_url",
@@ -34,6 +35,8 @@ def preprocess_notice(document_number):
             notice_xml.comments_close_on = meta["comments_close_on"]
         else:
             notice_xml.derive_closing_date()
+
+        notice_xml.derive_agencies(agencies=meta.get("agencies", []))
 
         if len(notice_xmls) > 1:
             effective_date = notice_xml.derive_effective_date()

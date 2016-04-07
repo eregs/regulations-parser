@@ -1,5 +1,6 @@
 """Functions for processing the xml associated with the Federal Register's
 notices"""
+from collections import defaultdict
 from datetime import date, datetime
 import logging
 import os
@@ -40,6 +41,100 @@ class NoticeXML(XMLWrapper):
         if isinstance(value, date):
             value = value.isoformat()
         dates_tag.attrib["eregs-{}-date".format(date_type)] = value
+
+    def derive_agencies(self, agencies=[]):
+        """
+        SIDE EFFECTS: this operates on the XML of the NoticeXML itself as well
+        as returning some information.
+
+        Adds elements to the NoticeXML to reflect information about the
+        agencies connected to to notice.
+
+        Looks for that information in a list of dicts passed in as
+        ``agencies``, then adds it to the beginning of the XML as a set of
+        elements that will look something like this::
+
+
+            <EREGS_AGENCIES>
+                <EREGS_AGENCY eregs-agency-name="x" eregs-agency-id="00"
+                 eregs-agency-raw-name="X">
+                    <EREGS_SUBAGENCY eregs-agency-name="y" eregs-agency-id="01"
+                    eregs-agency-raw-name="Y"></EREGS_SUBAGENCY>
+                </EREGS_AGENCY>
+            </EREGS_AGENCIES>
+
+        :arg list agencies: dict objects containing agency information,
+                            including ``id``, ``parent_id``, ``name``, and
+                            ``raw_name``.
+
+        :rtype: dict
+        :returns:   A dict of ``id``: ``defaultdict``, where the id is
+                    the id of the agency, and the ``defaultdicts`` are nested
+                    to reflect their parent/child relationships.
+        """
+
+        if not agencies:
+            # The FR Notice XML doesn't tend to have all the metadata we need
+            # contained within it, so don't try to parse that, just log an
+            # error.
+            logging.warn("Preprocessing notice: no agency metadata.")
+            return {}
+
+        # We need turn turn the references to parent_ids into a tree of dicts
+        # that contain subagencies in children fields:
+        agency_map = {agency["id"]:
+                      defaultdict(list, agency) for agency in agencies}
+        child_keys = []
+        for key in agency_map:
+            agency = agency_map[key]
+            if agency.get("parent_id") and agency["parent_id"] in agency_map:
+                agency_map[agency["parent_id"]]["children"].append(agency)
+                child_keys.append(key)
+        for key in child_keys:
+            del agency_map[key]
+
+        def add_children(el, children):
+            """
+            Given an element and a list of children, recursively appends
+            children as EREGS_SUBAGENCY elements with the appropriate
+            attributes, and appends their children to them, etc.
+
+            :arg Element el:    The XML element to add child elements to.
+                                Should be either EREGS_AGENCY or
+                                EREGS_SUBAGENCY.
+            :arg list children: dict objects containing the agency information.
+                                Must have subagencies in `children` fields.
+
+            :rtype: XML Element
+            """
+            if children:
+                for agency in children:
+                    sub_el = etree.Element("EREGS_SUBAGENCY")
+                    sub_el.attrib["eregs-agency-name"] = str(agency["name"])
+                    sub_el.attrib["eregs-agency-raw-name"] = str(
+                        agency["raw_name"])
+                    sub_el.attrib["eregs-agency-id"] = str(agency["id"])
+                    if agency.get("children", []):
+                        sub_el = add_children(sub_el, agency["children"])
+                    el.append(sub_el)
+            return el
+
+        # Add the elements, starting with a parent ``EREGS_AGENCIES`` element.
+        agencies_el = etree.Element("EREGS_AGENCIES")
+        for agency_id in agency_map:
+            agency = agency_map[agency_id]
+            if not agency.get("parent_id"):
+                agency_el = etree.Element("EREGS_AGENCY")
+            else:
+                agency_el = etree.Element("EREGS_SUBAGENCY")
+            agency_el.attrib["eregs-agency-name"] = str(agency["name"])
+            agency_el.attrib["eregs-agency-raw-name"] = str(agency["raw_name"])
+            agency_el.attrib["eregs-agency-id"] = str(agency["id"])
+            add_children(agency_el, agency.get("children", []))
+            agencies_el.append(agency_el)
+
+        self.xml.insert(0, agencies_el)
+        return agency_map
 
     def derive_closing_date(self):
         """Attempt to parse comment closing date from DATES tags. Returns a
