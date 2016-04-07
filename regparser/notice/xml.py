@@ -121,13 +121,13 @@ class NoticeXML(XMLWrapper):
         agencies_el = etree.Element("EREGS_AGENCIES")
         for agency_id in agency_map:
             agency = agency_map[agency_id]
-            if not agency.get("parent_id"):
-                agency_el = etree.Element("EREGS_AGENCY")
-            else:
-                agency_el = etree.Element("EREGS_SUBAGENCY")
-            agency_el.attrib["name"] = str(agency["name"])
-            agency_el.attrib["raw-name"] = str(agency["raw_name"])
-            agency_el.attrib["agency-id"] = str(agency["id"])
+            has_parent = agency.get("parent_id")
+            tag = "EREGS_SUBAGENCY" if has_parent else "EREGS_AGENCY"
+            agency_el = etree.Element(tag, **{
+                "name": str(agency["name"]),
+                "raw-name": str(agency["raw_name"]),
+                "agency-id": str(agency["id"])
+            })
             add_children(agency_el, agency.get("children", []))
             agencies_el.append(agency_el)
 
