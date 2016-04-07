@@ -1,6 +1,5 @@
 """Functions for processing the xml associated with the Federal Register's
 notices"""
-from collections import defaultdict
 from datetime import date, datetime
 import logging
 import os
@@ -82,8 +81,9 @@ class NoticeXML(XMLWrapper):
 
         # We need turn turn the references to parent_ids into a tree of dicts
         # that contain subagencies in children fields:
-        agency_map = {agency["id"]:
-                      defaultdict(list, agency) for agency in agencies}
+        for agency in agencies:
+            agency["children"] = []
+        agency_map = {agency["id"]: agency for agency in agencies}
         child_keys = []
         for key in agency_map:
             agency = agency_map[key]
