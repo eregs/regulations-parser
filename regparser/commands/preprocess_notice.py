@@ -17,6 +17,7 @@ def preprocess_notice(document_number):
     meta = federalregister.meta_data(
         document_number, [
             "agencies",
+            "docket_ids",
             "effective_on",
             "comments_close_on",
             "full_text_xml_url",
@@ -39,6 +40,7 @@ def preprocess_notice(document_number):
 
         notice_xml.derive_agencies(agencies=meta.get("agencies", []))
         notice_xml.derive_rins(rins=meta.get("regulation_id_numbers", []))
+        notice_xml.derive_docket_ids(docket_ids=meta.get("docket_ids", []))
 
         if len(notice_xmls) > 1:
             effective_date = notice_xml.derive_effective_date()

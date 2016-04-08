@@ -146,6 +146,27 @@ class CommandsPreprocessNoticeTests(HttpMixin, TestCase):
             self.assertEqual(rin.attrib["rin"], "2050-AG65")
 
     @patch('regparser.commands.preprocess_notice.notice_xmls_for_url')
+    def test_single_notice_docket_ids(self, notice_xmls_for_url):
+        """
+        Verify that we get docket_ids from the metadata.
+        """
+        cli = CliRunner()
+        self.expect_common_json(docket_ids=["EPA-HQ-SFUND-2010-1086",
+                                            "FRL-9925-69-OLEM"])
+        notice_xmls_for_url.return_value = [self.example_xml()]
+        with cli.isolated_filesystem():
+            cli.invoke(preprocess_notice, ['1234-5678'])
+            self.assertEqual(1, len(entry.Notice()))
+
+            written = entry.Notice('1234-5678').read()
+            self.assertEqual(len(written.xpath("//EREGS_DOCKET_IDS")), 1)
+            self.assertEqual(len(written.xpath("//EREGS_DOCKET_ID")), 2)
+            did = written.xpath("//EREGS_DOCKET_ID")[0]
+            self.assertEqual(did.attrib["docket_id"], "EPA-HQ-SFUND-2010-1086")
+            did = written.xpath("//EREGS_DOCKET_ID")[1]
+            self.assertEqual(did.attrib["docket_id"], "FRL-9925-69-OLEM")
+
+    @patch('regparser.commands.preprocess_notice.notice_xmls_for_url')
     def test_missing_effective_date(self, notice_xmls_for_url):
         """We should not explode if no effective date is present. Instead, we
         should parse the effective date from the XML"""

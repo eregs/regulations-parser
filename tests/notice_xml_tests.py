@@ -452,3 +452,44 @@ class NoticeXMLTests(TestCase):
         xml = notice_xml.NoticeXML(root.xml)
         xml.derive_rins(rins=["2050-AG60", "2050-AG61"])
         self.assertEqual(["2050-AG60", "2050-AG61"], xml.rins, return_value)
+
+    def test_docket_ids(self):
+        # From the metadata:
+        xml = notice_xml.NoticeXML(XMLBuilder('ROOT').xml)
+        xml.derive_docket_ids(docket_ids=["EPA-HQ-SFUND-2010-1086"])
+        self.assertEqual(["EPA-HQ-SFUND-2010-1086"], xml.docket_ids)
+
+        # From the metadata using a setter:
+        xml = notice_xml.NoticeXML(XMLBuilder('ROOT').xml)
+        xml.docket_ids = ["EPA-HQ-SFUND-2010-1086"]
+        self.assertEqual(["EPA-HQ-SFUND-2010-1086"], xml.docket_ids)
+
+        # From the XML:
+        with XMLBuilder("ROOT") as root:
+            root.DEPDOC("[EPA-HQ-SFUND-2010-1086]")
+        xml = notice_xml.NoticeXML(root.xml)
+        return_value = xml.derive_docket_ids()
+        self.assertEqual(["EPA-HQ-SFUND-2010-1086"], xml.docket_ids,
+                         return_value)
+
+        # From the XML, two docket ids:
+        with XMLBuilder("ROOT") as root:
+            root.DEPDOC("[EPA-HQ-SFUND-2010-1086; FRL-9925-69-OLEM]")
+        xml = notice_xml.NoticeXML(root.xml)
+        return_value = xml.derive_docket_ids()
+        self.assertEqual(["EPA-HQ-SFUND-2010-1086", "FRL-9925-69-OLEM"],
+                         xml.docket_ids, return_value)
+
+        # Two docket ids, metadata:
+        xml = notice_xml.NoticeXML(XMLBuilder('ROOT').xml)
+        xml.derive_docket_ids(docket_ids=["EPA-HQ-SFUND-2010-1086",
+                                          "FRL-9925-69-OLEM"])
+        self.assertEqual(["EPA-HQ-SFUND-2010-1086", "FRL-9925-69-OLEM"],
+                         xml.docket_ids)
+
+        # Prefer metadata over XML:
+        with XMLBuilder("ROOT") as root:
+            root.DEPDOC("[EPA-HQ-SFUND-2010-1086]")
+        xml = notice_xml.NoticeXML(root.xml)
+        return_value = xml.derive_docket_ids(docket_ids=["FRL-9925-69-OLEM"])
+        self.assertEqual(["FRL-9925-69-OLEM"], xml.docket_ids, return_value)

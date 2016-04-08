@@ -102,6 +102,42 @@ class NoticeXML(XMLWrapper):
         self.xml.insert(0, rins_el)
         return rins
 
+    def derive_docket_ids(self, docket_ids=None):
+        """
+        Modify the XML tree so that it contains meta data for docket ids.
+
+        If we're not given a list, extract the information from the XML.
+
+        The XML we're adding will look something like this::
+
+            <EREGS_DOCKET_IDS>
+                <EREGS_DOCKET_ID docket_id="EPA-HQ-SFUND-2010-1086" />
+                <EREGS_DOCKET_ID docket_id="FRL-9925-69-OLEM" />
+            </EREGS_DOCKET_IDS>
+
+        :arg list docket_ids: docket_ids, which should be strings.
+
+        :rtype: list
+        :returns: A list of docket_ids.
+        """
+        if not docket_ids:
+            docket_ids = []
+            xml_did_els = self.xpath('//DEPDOC')
+            for xml_did_el in xml_did_els:
+                did_str = xml_did_el.text.replace("[", "").replace("]", "")
+                docket_ids.extend([_.strip() for _ in did_str.split(";")])
+
+        dids_el = self.xpath('//EREGS_DOCKET_IDS')
+        if dids_el:
+            dids_el = dids_el[0]
+        else:   # Tag wasn't present; create it
+            dids_el = etree.Element("EREGS_DOCKET_IDS")
+        for docket_id in docket_ids:
+            did_el = etree.Element("EREGS_DOCKET_ID", docket_id=docket_id)
+            dids_el.append(did_el)
+        self.xml.insert(0, dids_el)
+        return docket_ids
+
     def derive_agencies(self, agencies=None):
         """
         SIDE EFFECTS: this operates on the XML of the NoticeXML itself as well
@@ -208,6 +244,14 @@ class NoticeXML(XMLWrapper):
     @rins.setter
     def rins(self, rins=None):
         self.derive_rins(rins)
+
+    @property
+    def docket_ids(self):
+        return [_.attrib['docket_id'] for _ in self.xpath("//EREGS_DOCKET_ID")]
+
+    @docket_ids.setter
+    def docket_ids(self, docket_ids=None):
+        self.derive_docket_ids(docket_ids)
 
     @property
     def comments_close_on(self):
