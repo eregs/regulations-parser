@@ -74,6 +74,12 @@ class NoticeXML(XMLWrapper):
 
         If we're not given a list, extract the information from the XML.
 
+        The XML we're adding will look something like this::
+
+            <EREGS_RINS>
+                <EREGS_RIN rin="2050-AG65" />
+            </EREGS_RINS>
+
         :arg list rins: RINs, which should be strings.
 
         :rtype: list
