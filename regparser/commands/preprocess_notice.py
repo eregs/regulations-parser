@@ -21,6 +21,7 @@ def preprocess_notice(document_number):
             "comments_close_on",
             "full_text_xml_url",
             "publication_date",
+            "regulation_id_numbers",
             "volume"
         ])
     notice_xmls = list(notice_xmls_for_url(document_number,
@@ -37,6 +38,7 @@ def preprocess_notice(document_number):
             notice_xml.derive_closing_date()
 
         notice_xml.derive_agencies(agencies=meta.get("agencies", []))
+        notice_xml.derive_rins(rins=meta.get("regulation_id_numbers", []))
 
         if len(notice_xmls) > 1:
             effective_date = notice_xml.derive_effective_date()

@@ -128,6 +128,24 @@ class CommandsPreprocessNoticeTests(HttpMixin, TestCase):
                              "145")
 
     @patch('regparser.commands.preprocess_notice.notice_xmls_for_url')
+    def test_single_notice_rins(self, notice_xmls_for_url):
+        """
+        Verify that we get rins from the metadata and XMl.
+        """
+        cli = CliRunner()
+        self.expect_common_json(regulation_id_numbers=["2050-AG65"])
+        notice_xmls_for_url.return_value = [self.example_xml()]
+        with cli.isolated_filesystem():
+            cli.invoke(preprocess_notice, ['1234-5678'])
+            self.assertEqual(1, len(entry.Notice()))
+
+            written = entry.Notice('1234-5678').read()
+            self.assertEqual(len(written.xpath("//EREGS_RINS")), 1)
+            self.assertEqual(len(written.xpath("//EREGS_RIN")), 1)
+            rin = written.xpath("//EREGS_RIN")[0]
+            self.assertEqual(rin.attrib["rin"], "2050-AG65")
+
+    @patch('regparser.commands.preprocess_notice.notice_xmls_for_url')
     def test_missing_effective_date(self, notice_xmls_for_url):
         """We should not explode if no effective date is present. Instead, we
         should parse the effective date from the XML"""

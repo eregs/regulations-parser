@@ -406,3 +406,49 @@ class NoticeXMLTests(TestCase):
         self.assertEquals(subsubatf.attrib["name"], u'ATF subsubagency')
         self.assertEquals(subsubatf.attrib["raw-name"], u"SUBSUBAGENCY OF ATF")
         self.assertEquals(subsubatf.attrib["agency-id"], u"100072")
+
+    def test_rins(self):
+        # From the metadata:
+        xml = notice_xml.NoticeXML(XMLBuilder('ROOT').xml)
+        xml.derive_rins(rins=["2050-AG67"])
+        self.assertEqual(["2050-AG67"], xml.rins)
+
+        # From the metadata using a setter:
+        xml = notice_xml.NoticeXML(XMLBuilder('ROOT').xml)
+        xml.rins = ["2050-AG67"]
+        self.assertEqual(["2050-AG67"], xml.rins)
+
+        # From the XML:
+        with XMLBuilder("ROOT") as root:
+            root.RIN("RIN 2050-AG68")
+        xml = notice_xml.NoticeXML(root.xml)
+        return_value = xml.derive_rins()
+        self.assertEqual(["2050-AG68"], xml.rins, return_value)
+
+        # From the XML, no prefix:
+        with XMLBuilder("ROOT") as root:
+            root.RIN(" 2050-AG69")
+        xml = notice_xml.NoticeXML(root.xml)
+        return_value = xml.derive_rins()
+        self.assertEqual(["2050-AG69"], xml.rins, return_value)
+
+        # Two numbers:
+        xml = notice_xml.NoticeXML(XMLBuilder('ROOT').xml)
+        xml.derive_rins(rins=["2050-AG60", "2050-AG61"])
+        self.assertEqual(["2050-AG60", "2050-AG61"], xml.rins)
+
+        # Two numbers XML:
+        with XMLBuilder("ROOT") as root:
+            root.RIN("RIN 2050-AG60")
+            root.RIN("RIN 2050-AG61")
+        xml = notice_xml.NoticeXML(root.xml)
+        return_value = xml.derive_rins()
+        self.assertEqual(["2050-AG60", "2050-AG61"], xml.rins, return_value)
+
+        # Prefer metadata over XML:
+        with XMLBuilder("ROOT") as root:
+            root.RIN("RIN 2050-BG60")
+            root.RIN("RIN 2050-BG61")
+        xml = notice_xml.NoticeXML(root.xml)
+        xml.derive_rins(rins=["2050-AG60", "2050-AG61"])
+        self.assertEqual(["2050-AG60", "2050-AG61"], xml.rins, return_value)
