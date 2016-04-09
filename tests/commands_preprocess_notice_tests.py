@@ -181,3 +181,27 @@ class CommandsPreprocessNoticeTests(HttpMixin, TestCase):
             cli.invoke(preprocess_notice, ['1234-5678'])
             entry_str = str(entry.Notice() / '1234-5678')
             self.assertNotIn(entry_str, dependency.Graph())
+
+    @patch('regparser.commands.preprocess_notice.notice_xmls_for_url')
+    def test_single_notice_cfr_refs(self, notice_xmls_for_url):
+        """
+        Verify that we get CFR references from the metadata.
+        """
+        cli = CliRunner()
+        self.expect_common_json(cfr_references=[
+            {"title": "40", "part": "300"}, {"title": "40", "part": "301"}])
+        notice_xmls_for_url.return_value = [self.example_xml()]
+        with cli.isolated_filesystem():
+            cli.invoke(preprocess_notice, ['1234-5678'])
+            self.assertEqual(1, len(entry.Notice()))
+
+            written = entry.Notice('1234-5678').read()
+            self.assertEqual(len(written.xpath("//EREGS_CFR_REFS")), 1)
+            self.assertEqual(len(written.xpath("//EREGS_CFR_TITLE_REF")), 1)
+            title = written.xpath("//EREGS_CFR_TITLE_REF")[0]
+            self.assertEqual(title.attrib["title"], "40")
+            self.assertEqual(len(written.xpath("//EREGS_CFR_PART_REF")), 2)
+            part = written.xpath("//EREGS_CFR_PART_REF")[0]
+            self.assertEqual(part.attrib["part"], "300")
+            part = written.xpath("//EREGS_CFR_PART_REF")[1]
+            self.assertEqual(part.attrib["part"], "301")

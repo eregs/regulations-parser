@@ -134,6 +134,52 @@ class NoticeXML(XMLWrapper):
         self.xml.insert(0, agencies_el)
         return agency_map
 
+    def derive_cfr_refs(self, refs=None):
+        """
+        Get the references to CFR titles and parts out of the metadata.
+        Return a list of them grouped by title and sorted, for example::
+
+            [{"title": "0", "part": "23"}, {"title": "0", "part": "17"}]
+
+        Becomes::
+
+            [{"title": "0", "parts": ["17", "23"]}]
+
+        Transform the XML to include elements that look like this::
+
+            <EREGS_CFR_REFS>
+                <EREGS_CFR_TITLE_REF title="40">
+                    <EREGS_CFR_PART_REF part="300" />
+                    <EREGS_CFR_PART_REF part="310" />
+                </EREGS_CFR_TITLE_REF>
+            </EREGS_CFR_REFS>
+
+        :arg list refs: The list of title/part pairs.
+        :rtype: list
+        :returns: Grouped & sorted list.
+        """
+        refs = refs if refs else []
+        # Group parts by title:
+        refd = {_["title"]: [] for _ in refs}
+        for ref in refs:
+            refd[ref["title"]].append(ref["part"])
+        refs = [{u"title": k, "parts": refd[k]} for k in refd]
+        # Sort parts and sort list by title:
+        refs = [{u"title": _["title"],
+                 "parts": sorted(_["parts"], key=lambda x: int(x))}
+                for _ in refs]
+        refs = sorted(refs, key=lambda x: int(x["title"]))
+
+        refs_el = etree.Element("EREGS_CFR_REFS")
+        for pair in refs:
+            el = etree.Element("EREGS_CFR_TITLE_REF", title=pair["title"])
+            for part in pair["parts"]:
+                part_el = etree.Element("EREGS_CFR_PART_REF", part=part)
+                el.append(part_el)
+            refs_el.append(el)
+        self.xml.insert(0, refs_el)
+        return refs
+
     def derive_closing_date(self):
         """Attempt to parse comment closing date from DATES tags. Returns a
         datetime.date and sets the corresponding field"""
@@ -164,6 +210,19 @@ class NoticeXML(XMLWrapper):
     # --- Setters/Getters for specific fields. ---
     # We encode relevant information within the XML, but wish to provide easy
     # access
+
+    @property
+    def cfr_refs(self):
+        refs = []
+        for title_el in self.xpath("//EREGS_CFR_TITLE_REF"):
+            parts = title_el.xpath("EREGS_CFR_PART_REF")
+            parts = [_.attrib["part"] for _ in parts]
+            refs.append({"title": title_el.attrib["title"], "parts": parts})
+        return refs
+
+    @cfr_refs.setter
+    def cfr_refs(self, refs=None):
+        self.derive_cfr_refs(refs)
 
     @property
     def comments_close_on(self):
