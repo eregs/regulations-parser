@@ -4,7 +4,7 @@ from unittest import TestCase
 from mock import patch
 
 from regparser import federalregister
-from tests.http_mixin import HttpMixin
+from regparser.test_utils.http_mixin import HttpMixin
 
 
 class FederalRegisterTest(HttpMixin, TestCase):

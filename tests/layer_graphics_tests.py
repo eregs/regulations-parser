@@ -3,9 +3,9 @@ from unittest import TestCase
 from mock import patch
 
 from regparser.layer.graphics import gid_to_url, Graphics
+from regparser.test_utils.http_mixin import HttpMixin
 from regparser.tree.struct import Node
 import settings
-from tests.http_mixin import HttpMixin
 
 
 class LayerGraphicsTest(HttpMixin, TestCase):

@@ -7,8 +7,8 @@ from mock import patch
 from regparser.commands.preprocess_notice import preprocess_notice
 from regparser.index import dependency, entry
 from regparser.notice.xml import NoticeXML
+from regparser.test_utils.http_mixin import HttpMixin
 from regparser.test_utils.xml_builder import XMLBuilder
-from tests.http_mixin import HttpMixin
 
 
 class CommandsPreprocessNoticeTests(HttpMixin, TestCase):
