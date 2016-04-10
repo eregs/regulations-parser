@@ -347,22 +347,6 @@ class NoticeBuildTest(TestCase):
         ParseAMDPARs().transform(ctx.xml)
         return ctx.xml
 
-    def test_process_new_subpart(self):
-        par = self.new_subpart_xml().xpath('//AMDPAR')[1]
-
-        amended_label = Amendment('POST', '105-Subpart:B')
-        notice = {'cfr_parts': ['105']}
-        subpart_changes = build.process_new_subpart(notice, amended_label, par)
-
-        new_nodes_added = ['105-Subpart-B', '105-30', '105-30-a']
-        self.assertItemsEqual(new_nodes_added, subpart_changes.keys())
-
-        for l, n in subpart_changes.items():
-            self.assertEqual(n['action'], 'POST')
-
-        self.assertEqual(
-            subpart_changes['105-Subpart-B']['node']['node_type'], 'subpart')
-
     def test_process_amendments_subpart(self):
         notice = {'cfr_parts': ['105']}
         build.process_amendments(notice, self.new_subpart_xml())
