@@ -7,7 +7,7 @@ from unittest import TestCase
 from regparser.api_writer import (
     APIWriteContent, Client, FSWriteContent, GitWriteContent, Repo)
 from regparser.tree.struct import Node
-from regparser.notice.amdparser import Amendment, DesignateAmendment
+from regparser.notice.amdparser import Amendment
 import settings
 from tests.http_mixin import HttpMixin
 
@@ -59,11 +59,7 @@ class FSWriteContentTest(TestCase):
 
         writer.write(Amendment("action", "label", 'destination'))
         self.assertEqual(self.read("replace", "it"),
-                         ['action', ['label'], 'destination'])
-
-        writer.write(DesignateAmendment("action", ["label"], 'destination'))
-        self.assertEqual(self.read("replace", "it"),
-                         ['action', [['label']], 'destination'])
+                         ['action', ['label'], ['destination']])
 
 
 class APIWriteContentTest(HttpMixin, TestCase):

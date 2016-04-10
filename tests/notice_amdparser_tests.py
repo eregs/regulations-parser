@@ -5,7 +5,7 @@ from lxml import etree
 
 from regparser.grammar import tokens
 from regparser.notice import amdparser
-from regparser.notice.amdparser import Amendment, DesignateAmendment
+from regparser.notice.amdparser import Amendment
 from regparser.test_utils.xml_builder import XMLBuilder
 from regparser.tree.paragraph import hash_for_paragraph
 
@@ -276,8 +276,8 @@ class NoticeAMDPARserTests(TestCase):
         subpart_token = tokens.Paragraph(subpart='J')
         tokenized = [token_list, subpart_token]
         with XMLBuilder('EREGS_INSTRUCTIONS') as ctx:
-            ctx.MOVE_INTO_SUBPART(label='200-1-a', subpart='200-Subpart:J')
-            ctx.MOVE_INTO_SUBPART(label='200-1-b', subpart='200-Subpart:J')
+            ctx.MOVE_INTO_SUBPART(label='200-1-a', destination='200-Subpart:J')
+            ctx.MOVE_INTO_SUBPART(label='200-1-b', destination='200-Subpart:J')
 
         self.assertEqual(
             etree.tostring(amdparser.make_subpart_designation_instructions(
@@ -563,11 +563,3 @@ class AmendmentTests(TestCase):
             self.assertEqual(
                 Amendment('VERB', label).tree_format_level2(),
                 expected)
-
-
-class DesignateAmendmentTests(TestCase):
-    def test_fix_interp_format(self):
-        amd = DesignateAmendment(
-            'action', [], '1005-Interpretations-31-(b)(1)-3')
-        self.assertEqual(amd.destination,
-                         ['1005', '31', 'b', '1', 'Interp', '3'])

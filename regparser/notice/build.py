@@ -4,7 +4,7 @@ from lxml import etree
 
 from regparser.notice import changes
 from regparser.notice.address import fetch_addresses
-from regparser.notice.amdparser import amendment_from_xml, DesignateAmendment
+from regparser.notice.amdparser import amendment_from_xml
 from regparser.notice.amendments import ContentCache
 from regparser.notice.changes import new_subpart_added
 from regparser.notice.dates import fetch_dates
@@ -77,15 +77,9 @@ def set_document_numbers(notices):
 
 def process_designate_subpart(amendment):
     """ Process the designate amendment if it adds a subpart. """
-
-    if 'Subpart' in amendment.destination:
-        subpart_changes = {}
-
-        for label in amendment.labels:
-            label_id = '-'.join(label)
-            subpart_changes[label_id] = {
-                'action': 'DESIGNATE', 'destination': amendment.destination}
-        return subpart_changes
+    label_id = '-'.join(amendment.label)
+    return {label_id: {'action': 'DESIGNATE',
+                       'destination': amendment.destination}}
 
 
 def create_xmlless_changes(amended_labels, notice_changes):
@@ -146,7 +140,7 @@ def process_amendments(notice, notice_xml):
         struct = cache.content_of_change(instruction_xml)
         amendment = amendment_from_xml(instruction_xml)
         all_amends.append(amendment)
-        if isinstance(amendment, DesignateAmendment):
+        if instruction_xml.tag == 'MOVE_INTO_SUBPART':
             subpart_changes = process_designate_subpart(amendment)
             if subpart_changes:
                 notice_changes.update(subpart_changes)

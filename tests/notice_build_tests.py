@@ -4,7 +4,7 @@ from unittest import TestCase
 from lxml import etree
 
 from regparser.notice import build, changes
-from regparser.notice.amdparser import DesignateAmendment, Amendment
+from regparser.notice.amdparser import Amendment
 from regparser.test_utils.xml_builder import XMLBuilder
 from regparser.tree.xml_parser.preprocessors import ParseAMDPARs
 from regparser.tree.struct import Node
@@ -160,17 +160,15 @@ class NoticeBuildTest(TestCase):
         }})
 
     def test_process_designate_subpart(self):
-        p_list = ['200-?-1-a', '200-?-1-b']
-        destination = '205-Subpart:A'
-        amended_label = DesignateAmendment('DESIGNATE', p_list, destination)
+        amended_label = Amendment('MOVE_INTO_SUBPART', '200-?-1-a',
+                                  '205-Subpart:A')
 
         subpart_changes = build.process_designate_subpart(amended_label)
 
-        self.assertItemsEqual(['200-1-a', '200-1-b'], subpart_changes.keys())
-
-        for p, change in subpart_changes.items():
-            self.assertEqual(change['destination'], ['205', 'Subpart', 'A'])
-            self.assertEqual(change['action'], 'DESIGNATE')
+        self.assertItemsEqual(['200-1-a'], subpart_changes.keys())
+        change = subpart_changes['200-1-a']
+        self.assertEqual(change['destination'], ['205', 'Subpart', 'A'])
+        self.assertEqual(change['action'], 'DESIGNATE')
 
     def test_process_amendments(self):
         with XMLBuilder("REGTEXT", PART="105", TITLE="12") as ctx:
@@ -456,8 +454,8 @@ class NoticeBuildTest(TestCase):
         self.assertEqual(2, len(notice['changes']['106-2']))
 
     def test_create_xmlless_changes(self):
-        labels_amended = [Amendment('DELETE', '200-2-a'),
-                          Amendment('MOVE', '200-2-b', '200-2-c')]
+        labels_amended = [Amendment('DELETE', '200-?-2-a'),
+                          Amendment('MOVE', '200-?-2-b', '200-?-2-c')]
         notice_changes = changes.NoticeChanges()
         build.create_xmlless_changes(labels_amended, notice_changes)
 
@@ -468,7 +466,7 @@ class NoticeBuildTest(TestCase):
                          move)
 
     def test_create_xml_changes_reserve(self):
-        labels_amended = [Amendment('RESERVE', '200-2-a')]
+        labels_amended = [Amendment('RESERVE', '200-?-2-a')]
 
         n2a = Node('[Reserved]', label=['200', '2', 'a'])
         n2 = Node('n2', label=['200', '2'], children=[n2a])
@@ -482,7 +480,7 @@ class NoticeBuildTest(TestCase):
         self.assertEqual(reserve['node']['text'], u'[Reserved]')
 
     def test_create_xml_changes_stars(self):
-        labels_amended = [Amendment('PUT', '200-2-a')]
+        labels_amended = [Amendment('PUT', '200-?-2-a')]
         n2a1 = Node('(1) Content', label=['200', '2', 'a', '1'])
         n2a2 = Node('(2) Content', label=['200', '2', 'a', '2'])
         n2a = Node('(a) * * *', label=['200', '2', 'a'], children=[n2a1, n2a2])
@@ -506,7 +504,7 @@ class NoticeBuildTest(TestCase):
         self.assertFalse('field' in change)
 
     def test_create_xml_changes_stars_hole(self):
-        labels_amended = [Amendment('PUT', '200-2-a')]
+        labels_amended = [Amendment('PUT', '200-?-2-a')]
         n2a1 = Node('(1) * * *', label=['200', '2', 'a', '1'])
         n2a2 = Node('(2) a2a2a2', label=['200', '2', 'a', '2'])
         n2a = Node('(a) aaa', label=['200', '2', 'a'], children=[n2a1, n2a2])
@@ -530,7 +528,7 @@ class NoticeBuildTest(TestCase):
         self.assertFalse('field' in change)
 
     def test_create_xml_changes_child_stars(self):
-        labels_amended = [Amendment('PUT', '200-2-a')]
+        labels_amended = [Amendment('PUT', '200-?-2-a')]
         xml = etree.fromstring("<ROOT><P>(a) Content</P><STARS /></ROOT>")
         n2a = Node('(a) Content', label=['200', '2', 'a'],
                    source_xml=xml.xpath('//P')[0])
