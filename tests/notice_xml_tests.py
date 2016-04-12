@@ -407,7 +407,7 @@ class NoticeXMLTests(TestCase):
         self.assertEquals(subsubatf.attrib["raw-name"], u"SUBSUBAGENCY OF ATF")
         self.assertEquals(subsubatf.attrib["agency-id"], u"100072")
 
-    def test_derive_cfr_refs(self):
+    def test_set_cfr_refs(self):
         """
         Test that we get the correct CFR references from the metadata, and put
         them into the right format.
@@ -415,7 +415,7 @@ class NoticeXMLTests(TestCase):
         def _reftest(refs, expected):
             ctx = XMLBuilder("ROOT").P("filler")
             xml = notice_xml.NoticeXML(ctx.xml)
-            result = xml.derive_cfr_refs(refs=refs)
+            result = xml.set_cfr_refs(refs=refs)
             self.assertEquals(expected, result, xml.cfr_refs)
         refs = [
             {"title": "40", "part": "300"},
@@ -427,18 +427,10 @@ class NoticeXMLTests(TestCase):
             {"title": "42", "part": "303"}
         ]
         expected = [
-            {
-                "title": "40",
-                "parts": ["300", "301", "302", "303"]
-            },
-            {
-                "title": "41",
-                "parts": ["210"]
-            },
-            {
-                "title": "42",
-                "parts": ["302", "303"]
-            }
+            notice_xml.TitlePartsRef(title="40",
+                                     parts=["300", "301", "302", "303"]),
+            notice_xml.TitlePartsRef(title="41", parts=["210"]),
+            notice_xml.TitlePartsRef(title="42", parts=["302", "303"])
         ]
         _reftest(refs, expected)
         _reftest([], [])
@@ -450,17 +442,8 @@ class NoticeXMLTests(TestCase):
             {"title": "40", "part": "300"},
         ]
         expected = [
-            {
-                "title": "40",
-                "parts": ["300", "330"]
-            },
-            {
-                "title": "41",
-                "parts": ["210"]
-            },
-            {
-                "title": "42",
-                "parts": ["302", "303"]
-            }
+            notice_xml.TitlePartsRef(title="40", parts=["300", "330"]),
+            notice_xml.TitlePartsRef(title="41", parts=["210"]),
+            notice_xml.TitlePartsRef(title="42", parts=["302", "303"])
         ]
         _reftest(refs, expected)

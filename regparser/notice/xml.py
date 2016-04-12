@@ -1,5 +1,6 @@
 """Functions for processing the xml associated with the Federal Register's
 notices"""
+from collections import namedtuple
 from datetime import date, datetime
 import logging
 import os
@@ -16,6 +17,8 @@ from regparser.tree.xml_parser.xml_wrapper import XMLWrapper
 import settings
 
 logger = logging.getLogger(__name__)
+
+TitlePartsRef = namedtuple("TitlePartsRef", ["title", "parts"])
 
 
 def add_children(el, children):
@@ -134,16 +137,17 @@ class NoticeXML(XMLWrapper):
         self.xml.insert(0, agencies_el)
         return agency_map
 
-    def derive_cfr_refs(self, refs=None):
+    def set_cfr_refs(self, refs=None):
         """
         Get the references to CFR titles and parts out of the metadata.
-        Return a list of them grouped by title and sorted, for example::
+        Return a list of TitlePartsRef objects grouped by title and
+        sorted, for example::
 
             [{"title": "0", "part": "23"}, {"title": "0", "part": "17"}]
 
         Becomes::
 
-            [{"title": "0", "parts": ["17", "23"]}]
+            [TitlePartsRef(title="0", parts=["17", "23"])]
 
         Transform the XML to include elements that look like this::
 
@@ -154,29 +158,29 @@ class NoticeXML(XMLWrapper):
                 </EREGS_CFR_TITLE_REF>
             </EREGS_CFR_REFS>
 
-        :arg list refs: The list of title/part pairs.
+        :arg list refs: The list of title/part pairs; if empty, will create an
+            empty ``EREGS_CFR_REFS`` element and return an empty list.
         :rtype: list
         :returns: Grouped & sorted list.
         """
-        refs = refs if refs else []
+        refs = refs or []
         # Group parts by title:
-        refd = {_["title"]: [] for _ in refs}
+        refd = {r["title"]: [] for r in refs}
         for ref in refs:
             refd[ref["title"]].append(ref["part"])
         refs = [{u"title": k, "parts": refd[k]} for k in refd]
         # Sort parts and sort list by title:
-        refs = [{u"title": _["title"],
-                 "parts": sorted(_["parts"], key=lambda x: int(x))}
-                for _ in refs]
-        refs = sorted(refs, key=lambda x: int(x["title"]))
+        refs = [TitlePartsRef(r["title"],
+                              sorted(r["parts"], key=lambda x: int(x)))
+                for r in refs]
+        refs = sorted(refs, key=lambda x: int(x.title))
 
         refs_el = etree.Element("EREGS_CFR_REFS")
-        for pair in refs:
-            el = etree.Element("EREGS_CFR_TITLE_REF", title=pair["title"])
-            for part in pair["parts"]:
-                part_el = etree.Element("EREGS_CFR_PART_REF", part=part)
-                el.append(part_el)
-            refs_el.append(el)
+        for ref in refs:
+            el = etree.SubElement(refs_el, "EREGS_CFR_TITLE_REF",
+                                  title=ref.title)
+            for part in ref.parts:
+                etree.SubElement(el, "EREGS_CFR_PART_REF", part=part)
         self.xml.insert(0, refs_el)
         return refs
 
@@ -216,13 +220,11 @@ class NoticeXML(XMLWrapper):
         refs = []
         for title_el in self.xpath("//EREGS_CFR_TITLE_REF"):
             parts = title_el.xpath("EREGS_CFR_PART_REF")
-            parts = [_.attrib["part"] for _ in parts]
-            refs.append({"title": title_el.attrib["title"], "parts": parts})
-        return refs
+            parts = [p.attrib["part"] for p in parts]
+            refs.append(TitlePartsRef(title=title_el.attrib["title"],
+                                      parts=parts))
 
-    @cfr_refs.setter
-    def cfr_refs(self, refs=None):
-        self.derive_cfr_refs(refs)
+        return refs
 
     @property
     def comments_close_on(self):
