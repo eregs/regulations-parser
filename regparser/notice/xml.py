@@ -75,7 +75,8 @@ class NoticeXML(XMLWrapper):
         numbers.
         The Federal Register API implies that documents can have more than one.
 
-        If we're not given a list, extract the information from the XML.
+        If we're not given a list, or the list is empty, extract the
+        information from the XML.
 
         The XML we're adding will look something like this::
 
@@ -100,8 +101,7 @@ class NoticeXML(XMLWrapper):
         else:   # Tag wasn't present; create it
             rins_el = etree.Element("EREGS_RINS")
         for rin in rins:
-            rin_el = etree.Element("EREGS_RIN", rin=rin)
-            rins_el.append(rin_el)
+            etree.SubElement(rins_el, "EREGS_RIN", rin=rin)
         self.xml.insert(0, rins_el)
         return rins
 
@@ -109,7 +109,8 @@ class NoticeXML(XMLWrapper):
         """
         Modify the XML tree so that it contains meta data for docket ids.
 
-        If we're not given a list, extract the information from the XML.
+        If we're not given a list, or the list is empty, extract the
+        information from the XML.
 
         The XML we're adding will look something like this::
 
@@ -128,7 +129,7 @@ class NoticeXML(XMLWrapper):
             xml_did_els = self.xpath('//DEPDOC')
             for xml_did_el in xml_did_els:
                 did_str = xml_did_el.text.replace("[", "").replace("]", "")
-                docket_ids.extend([_.strip() for _ in did_str.split(";")])
+                docket_ids.extend([d.strip() for d in did_str.split(";")])
 
         dids_el = self.xpath('//EREGS_DOCKET_IDS')
         if dids_el:
@@ -136,8 +137,7 @@ class NoticeXML(XMLWrapper):
         else:   # Tag wasn't present; create it
             dids_el = etree.Element("EREGS_DOCKET_IDS")
         for docket_id in docket_ids:
-            did_el = etree.Element("EREGS_DOCKET_ID", docket_id=docket_id)
-            dids_el.append(did_el)
+            etree.SubElement(dids_el, "EREGS_DOCKET_ID", docket_id=docket_id)
         self.xml.insert(0, dids_el)
         return docket_ids
 
@@ -288,22 +288,14 @@ class NoticeXML(XMLWrapper):
     # access
 
     @property
-<<<<<<< HEAD
     def rins(self):
         return [_.attrib['rin'] for _ in self.xpath("//EREGS_RIN")]
-
-    @rins.setter
-    def rins(self, rins=None):
-        self.derive_rins(rins)
 
     @property
     def docket_ids(self):
         return [_.attrib['docket_id'] for _ in self.xpath("//EREGS_DOCKET_ID")]
 
-    @docket_ids.setter
-    def docket_ids(self, docket_ids=None):
-        self.derive_docket_ids(docket_ids)
-=======
+    @property
     def cfr_refs(self):
         refs = []
         for title_el in self.xpath("//EREGS_CFR_TITLE_REF"):
@@ -313,7 +305,6 @@ class NoticeXML(XMLWrapper):
                                       parts=parts))
 
         return refs
->>>>>>> master
 
     @property
     def comments_close_on(self):

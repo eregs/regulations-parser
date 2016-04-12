@@ -408,91 +408,80 @@ class NoticeXMLTests(TestCase):
         self.assertEquals(subsubatf.attrib["agency-id"], u"100072")
 
     def test_rins(self):
-        # From the metadata:
-        xml = notice_xml.NoticeXML(XMLBuilder('ROOT').xml)
-        xml.derive_rins(rins=["2050-AG67"])
-        self.assertEqual(["2050-AG67"], xml.rins)
+        def rinstest(rins, expected, xml=None):
+            if not xml:
+                ctx = XMLBuilder("ROOT").P("filler")
+                xml = notice_xml.NoticeXML(ctx.xml)
+            result = xml.derive_rins(rins=rins)
+            self.assertEquals(expected, result, xml.rins)
 
-        # From the metadata using a setter:
-        xml = notice_xml.NoticeXML(XMLBuilder('ROOT').xml)
-        xml.rins = ["2050-AG67"]
-        self.assertEqual(["2050-AG67"], xml.rins)
+        # From the metadata:
+        rinstest(["2050-AG67"], ["2050-AG67"])
 
         # From the XML:
         with XMLBuilder("ROOT") as root:
             root.RIN("RIN 2050-AG68")
         xml = notice_xml.NoticeXML(root.xml)
-        return_value = xml.derive_rins()
-        self.assertEqual(["2050-AG68"], xml.rins, return_value)
+        rinstest([], ["2050-AG68"], xml=xml)
 
         # From the XML, no prefix:
         with XMLBuilder("ROOT") as root:
             root.RIN(" 2050-AG69")
         xml = notice_xml.NoticeXML(root.xml)
-        return_value = xml.derive_rins()
-        self.assertEqual(["2050-AG69"], xml.rins, return_value)
+        rinstest([], ["2050-AG69"], xml=xml)
 
         # Two numbers:
-        xml = notice_xml.NoticeXML(XMLBuilder('ROOT').xml)
-        xml.derive_rins(rins=["2050-AG60", "2050-AG61"])
-        self.assertEqual(["2050-AG60", "2050-AG61"], xml.rins)
+        rinstest(["2050-AG60", "2050-AG61"], ["2050-AG60", "2050-AG61"])
 
         # Two numbers XML:
         with XMLBuilder("ROOT") as root:
             root.RIN("RIN 2050-AG60")
             root.RIN("RIN 2050-AG61")
         xml = notice_xml.NoticeXML(root.xml)
-        return_value = xml.derive_rins()
-        self.assertEqual(["2050-AG60", "2050-AG61"], xml.rins, return_value)
+        rinstest(["2050-AG60", "2050-AG61"], ["2050-AG60", "2050-AG61"],
+                 xml=xml)
 
         # Prefer metadata over XML:
         with XMLBuilder("ROOT") as root:
             root.RIN("RIN 2050-BG60")
             root.RIN("RIN 2050-BG61")
         xml = notice_xml.NoticeXML(root.xml)
-        xml.derive_rins(rins=["2050-AG60", "2050-AG61"])
-        self.assertEqual(["2050-AG60", "2050-AG61"], xml.rins, return_value)
+        rinstest(["2050-AG60", "2050-AG61"], ["2050-AG60", "2050-AG61"],
+                 xml=xml)
 
     def test_docket_ids(self):
-        # From the metadata:
-        xml = notice_xml.NoticeXML(XMLBuilder('ROOT').xml)
-        xml.derive_docket_ids(docket_ids=["EPA-HQ-SFUND-2010-1086"])
-        self.assertEqual(["EPA-HQ-SFUND-2010-1086"], xml.docket_ids)
+        def ditest(dis, expected, xml=None):
+            if not xml:
+                ctx = XMLBuilder("ROOT").P("filler")
+                xml = notice_xml.NoticeXML(ctx.xml)
+            result = xml.derive_docket_ids(docket_ids=dis)
+            self.assertEquals(expected, result, xml.docket_ids)
 
-        # From the metadata using a setter:
-        xml = notice_xml.NoticeXML(XMLBuilder('ROOT').xml)
-        xml.docket_ids = ["EPA-HQ-SFUND-2010-1086"]
-        self.assertEqual(["EPA-HQ-SFUND-2010-1086"], xml.docket_ids)
+        # From the metadata:
+        ditest(["EPA-HQ-SFUND-2010-1086"], ["EPA-HQ-SFUND-2010-1086"])
 
         # From the XML:
         with XMLBuilder("ROOT") as root:
             root.DEPDOC("[EPA-HQ-SFUND-2010-1086]")
         xml = notice_xml.NoticeXML(root.xml)
-        return_value = xml.derive_docket_ids()
-        self.assertEqual(["EPA-HQ-SFUND-2010-1086"], xml.docket_ids,
-                         return_value)
+        ditest(["EPA-HQ-SFUND-2010-1086"], ["EPA-HQ-SFUND-2010-1086"], xml=xml)
 
         # From the XML, two docket ids:
         with XMLBuilder("ROOT") as root:
             root.DEPDOC("[EPA-HQ-SFUND-2010-1086; FRL-9925-69-OLEM]")
         xml = notice_xml.NoticeXML(root.xml)
-        return_value = xml.derive_docket_ids()
-        self.assertEqual(["EPA-HQ-SFUND-2010-1086", "FRL-9925-69-OLEM"],
-                         xml.docket_ids, return_value)
+        ditest(["EPA-HQ-SFUND-2010-1086", "FRL-9925-69-OLEM"],
+               ["EPA-HQ-SFUND-2010-1086", "FRL-9925-69-OLEM"], xml=xml)
 
         # Two docket ids, metadata:
-        xml = notice_xml.NoticeXML(XMLBuilder('ROOT').xml)
-        xml.derive_docket_ids(docket_ids=["EPA-HQ-SFUND-2010-1086",
-                                          "FRL-9925-69-OLEM"])
-        self.assertEqual(["EPA-HQ-SFUND-2010-1086", "FRL-9925-69-OLEM"],
-                         xml.docket_ids)
+        ditest(["EPA-HQ-SFUND-2010-1086", "FRL-9925-69-OLEM"],
+               ["EPA-HQ-SFUND-2010-1086", "FRL-9925-69-OLEM"])
 
         # Prefer metadata over XML:
         with XMLBuilder("ROOT") as root:
             root.DEPDOC("[EPA-HQ-SFUND-2010-1086]")
         xml = notice_xml.NoticeXML(root.xml)
-        return_value = xml.derive_docket_ids(docket_ids=["FRL-9925-69-OLEM"])
-        self.assertEqual(["FRL-9925-69-OLEM"], xml.docket_ids, return_value)
+        ditest(["FRL-9925-69-OLEM"], ["FRL-9925-69-OLEM"], xml=xml)
 
     def test_set_cfr_refs(self):
         """
