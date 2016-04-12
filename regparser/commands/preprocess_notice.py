@@ -18,6 +18,7 @@ def preprocess_notice(document_number):
         document_number, [
             "agencies",
             "effective_on",
+            "cfr_references",
             "comments_close_on",
             "full_text_xml_url",
             "publication_date",
@@ -37,6 +38,7 @@ def preprocess_notice(document_number):
             notice_xml.derive_closing_date()
 
         notice_xml.derive_agencies(agencies=meta.get("agencies", []))
+        notice_xml.set_cfr_refs(refs=meta.get("cfr_references", []))
 
         if len(notice_xmls) > 1:
             effective_date = notice_xml.derive_effective_date()
