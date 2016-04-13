@@ -438,7 +438,7 @@ class NoticeXMLTests(TestCase):
             root.RIN("RIN 2050-AG60")
             root.RIN("RIN 2050-AG61")
         xml = notice_xml.NoticeXML(root.xml)
-        rinstest(["2050-AG60", "2050-AG61"], ["2050-AG60", "2050-AG61"],
+        rinstest([], ["2050-AG60", "2050-AG61"],
                  xml=xml)
 
         # Prefer metadata over XML:
@@ -464,14 +464,13 @@ class NoticeXMLTests(TestCase):
         with XMLBuilder("ROOT") as root:
             root.DEPDOC("[EPA-HQ-SFUND-2010-1086]")
         xml = notice_xml.NoticeXML(root.xml)
-        ditest(["EPA-HQ-SFUND-2010-1086"], ["EPA-HQ-SFUND-2010-1086"], xml=xml)
+        ditest([], ["EPA-HQ-SFUND-2010-1086"], xml=xml)
 
         # From the XML, two docket ids:
         with XMLBuilder("ROOT") as root:
             root.DEPDOC("[EPA-HQ-SFUND-2010-1086; FRL-9925-69-OLEM]")
         xml = notice_xml.NoticeXML(root.xml)
-        ditest(["EPA-HQ-SFUND-2010-1086", "FRL-9925-69-OLEM"],
-               ["EPA-HQ-SFUND-2010-1086", "FRL-9925-69-OLEM"], xml=xml)
+        ditest([], ["EPA-HQ-SFUND-2010-1086", "FRL-9925-69-OLEM"], xml=xml)
 
         # Two docket ids, metadata:
         ditest(["EPA-HQ-SFUND-2010-1086", "FRL-9925-69-OLEM"],
