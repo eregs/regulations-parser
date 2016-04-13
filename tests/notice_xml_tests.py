@@ -407,6 +407,81 @@ class NoticeXMLTests(TestCase):
         self.assertEquals(subsubatf.attrib["raw-name"], u"SUBSUBAGENCY OF ATF")
         self.assertEquals(subsubatf.attrib["agency-id"], u"100072")
 
+    def test_rins(self):
+        def rinstest(rins, expected, xml=None):
+            if not xml:
+                ctx = XMLBuilder("ROOT").P("filler")
+                xml = notice_xml.NoticeXML(ctx.xml)
+            result = xml.derive_rins(rins=rins)
+            self.assertEquals(expected, result, xml.rins)
+
+        # From the metadata:
+        rinstest(["2050-AG67"], ["2050-AG67"])
+
+        # From the XML:
+        with XMLBuilder("ROOT") as root:
+            root.RIN("RIN 2050-AG68")
+        xml = notice_xml.NoticeXML(root.xml)
+        rinstest([], ["2050-AG68"], xml=xml)
+
+        # From the XML, no prefix:
+        with XMLBuilder("ROOT") as root:
+            root.RIN(" 2050-AG69")
+        xml = notice_xml.NoticeXML(root.xml)
+        rinstest([], ["2050-AG69"], xml=xml)
+
+        # Two numbers:
+        rinstest(["2050-AG60", "2050-AG61"], ["2050-AG60", "2050-AG61"])
+
+        # Two numbers XML:
+        with XMLBuilder("ROOT") as root:
+            root.RIN("RIN 2050-AG60")
+            root.RIN("RIN 2050-AG61")
+        xml = notice_xml.NoticeXML(root.xml)
+        rinstest([], ["2050-AG60", "2050-AG61"],
+                 xml=xml)
+
+        # Prefer metadata over XML:
+        with XMLBuilder("ROOT") as root:
+            root.RIN("RIN 2050-BG60")
+            root.RIN("RIN 2050-BG61")
+        xml = notice_xml.NoticeXML(root.xml)
+        rinstest(["2050-AG60", "2050-AG61"], ["2050-AG60", "2050-AG61"],
+                 xml=xml)
+
+    def test_docket_ids(self):
+        def ditest(dis, expected, xml=None):
+            if not xml:
+                ctx = XMLBuilder("ROOT").P("filler")
+                xml = notice_xml.NoticeXML(ctx.xml)
+            result = xml.derive_docket_ids(docket_ids=dis)
+            self.assertEquals(expected, result, xml.docket_ids)
+
+        # From the metadata:
+        ditest(["EPA-HQ-SFUND-2010-1086"], ["EPA-HQ-SFUND-2010-1086"])
+
+        # From the XML:
+        with XMLBuilder("ROOT") as root:
+            root.DEPDOC("[EPA-HQ-SFUND-2010-1086]")
+        xml = notice_xml.NoticeXML(root.xml)
+        ditest([], ["EPA-HQ-SFUND-2010-1086"], xml=xml)
+
+        # From the XML, two docket ids:
+        with XMLBuilder("ROOT") as root:
+            root.DEPDOC("[EPA-HQ-SFUND-2010-1086; FRL-9925-69-OLEM]")
+        xml = notice_xml.NoticeXML(root.xml)
+        ditest([], ["EPA-HQ-SFUND-2010-1086", "FRL-9925-69-OLEM"], xml=xml)
+
+        # Two docket ids, metadata:
+        ditest(["EPA-HQ-SFUND-2010-1086", "FRL-9925-69-OLEM"],
+               ["EPA-HQ-SFUND-2010-1086", "FRL-9925-69-OLEM"])
+
+        # Prefer metadata over XML:
+        with XMLBuilder("ROOT") as root:
+            root.DEPDOC("[EPA-HQ-SFUND-2010-1086]")
+        xml = notice_xml.NoticeXML(root.xml)
+        ditest(["FRL-9925-69-OLEM"], ["FRL-9925-69-OLEM"], xml=xml)
+
     def test_set_cfr_refs(self):
         """
         Test that we get the correct CFR references from the metadata, and put
