@@ -8,7 +8,7 @@ from mock import Mock, patch
 
 from regparser.index import xml_sync
 from regparser.history import annual
-from tests.http_mixin import HttpMixin
+from regparser.test_utils.http_mixin import HttpMixin
 
 
 class HistoryAnnualVolumeTests(HttpMixin, TestCase):
