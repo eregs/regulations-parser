@@ -490,16 +490,16 @@ class NoticeXMLTests(TestCase):
         def _reftest(refs, expected):
             ctx = XMLBuilder("ROOT").P("filler")
             xml = notice_xml.NoticeXML(ctx.xml)
-            result = xml.set_cfr_refs(refs=refs)
-            self.assertEquals(expected, result, xml.cfr_refs)
+            xml.set_cfr_refs(refs=refs)
+            self.assertEquals(expected, xml.cfr_refs)
         refs = [
-            {"title": "40", "part": "300"},
-            {"title": "41", "part": "210"},
-            {"title": "40", "part": "301"},
-            {"title": "40", "part": "302"},
-            {"title": "40", "part": "303"},
-            {"title": "42", "part": "302"},
-            {"title": "42", "part": "303"}
+            {"title": 40, "part": 300},
+            {"title": 41, "part": 210},
+            {"title": 40, "part": 301},
+            {"title": 40, "part": 302},
+            {"title": 40, "part": 303},
+            {"title": 42, "part": 302},
+            {"title": 42, "part": 303}
         ]
         expected = [
             notice_xml.TitlePartsRef(title="40",
@@ -510,11 +510,11 @@ class NoticeXMLTests(TestCase):
         _reftest(refs, expected)
         _reftest([], [])
         refs = [
-            {"title": "42", "part": "302"},
-            {"title": "42", "part": "303"},
-            {"title": "40", "part": "330"},
-            {"title": "41", "part": "210"},
-            {"title": "40", "part": "300"},
+            {"title": 42, "part": 302},
+            {"title": 42, "part": 303},
+            {"title": 40, "part": 330},
+            {"title": 41, "part": 210},
+            {"title": 40, "part": 300},
         ]
         expected = [
             notice_xml.TitlePartsRef(title="40", parts=["300", "330"]),
