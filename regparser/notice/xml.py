@@ -215,7 +215,7 @@ class NoticeXML(XMLWrapper):
         Return a list of TitlePartsRef objects grouped by title and
         sorted, for example::
 
-            [{"title": "0", "part": "23"}, {"title": "0", "part": "17"}]
+            [{"title": 0, "part": 23}, {"title": 0, "part": 17}]
 
         Becomes::
 
@@ -242,19 +242,17 @@ class NoticeXML(XMLWrapper):
             refd[ref["title"]].append(ref["part"])
         refs = [{u"title": k, "parts": refd[k]} for k in refd]
         # Sort parts and sort list by title:
-        refs = [TitlePartsRef(r["title"],
-                              sorted(r["parts"], key=lambda x: int(x)))
+        refs = [TitlePartsRef(r["title"], sorted(r["parts"], key=int))
                 for r in refs]
         refs = sorted(refs, key=lambda x: int(x.title))
 
         refs_el = etree.Element("EREGS_CFR_REFS")
         for ref in refs:
             el = etree.SubElement(refs_el, "EREGS_CFR_TITLE_REF",
-                                  title=ref.title)
+                                  title=str(ref.title))
             for part in ref.parts:
-                etree.SubElement(el, "EREGS_CFR_PART_REF", part=part)
+                etree.SubElement(el, "EREGS_CFR_PART_REF", part=str(part))
         self.xml.insert(0, refs_el)
-        return refs
 
     def derive_closing_date(self):
         """Attempt to parse comment closing date from DATES tags. Returns a
