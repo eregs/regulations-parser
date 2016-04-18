@@ -236,6 +236,9 @@ class NoticeXML(XMLWrapper):
         :returns: Grouped & sorted list.
         """
         refs = refs or []
+        # Convert everything into strings
+        refs = [dict(title=str(r["title"]), part=str(r["part"])) for r in refs]
+
         # Group parts by title:
         refd = {r["title"]: [] for r in refs}
         for ref in refs:

@@ -492,12 +492,12 @@ class NoticeXMLTests(TestCase):
             xml = notice_xml.NoticeXML(ctx.xml)
             result = xml.set_cfr_refs(refs=refs)
             self.assertEquals(expected, result, xml.cfr_refs)
-        refs = [
-            {"title": "40", "part": "300"},
+        refs = [    # Mix of ints and strings
+            {"title": 40, "part": 300},
             {"title": "41", "part": "210"},
-            {"title": "40", "part": "301"},
+            {"title": 40, "part": "301"},
             {"title": "40", "part": "302"},
-            {"title": "40", "part": "303"},
+            {"title": "40", "part": 303},
             {"title": "42", "part": "302"},
             {"title": "42", "part": "303"}
         ]
