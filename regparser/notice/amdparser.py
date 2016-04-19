@@ -513,12 +513,13 @@ class Amendment(object):
     TEXT = '[text]'
     HEADING = '[heading]'
 
-    def __init__(self, action, label, destination=None):
+    def __init__(self, action, label, destination=None, amdpar_xml=None):
         self.destination = None
         self.field = None
 
         self.action = action
         self.original_label = label
+        self.amdpar_xml = amdpar_xml
         self.label = convert_label(self.original_label)
 
         if destination:
@@ -567,4 +568,5 @@ class Amendment(object):
 def amendment_from_xml(xml):
     """Deserialize amendments"""
     return Amendment(xml.tag, xml.get('label'),
-                     xml.get('destination') or None)
+                     xml.get('destination') or None,
+                     amdpar_xml=xml.getparent().getparent())

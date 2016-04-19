@@ -4,7 +4,7 @@ regulation have changed.  """
 
 import logging
 import copy
-from collections import defaultdict
+from collections import defaultdict, OrderedDict
 
 from regparser.grammar import amdpar
 from regparser.grammar.tokens import Verb
@@ -133,7 +133,7 @@ def match_labels_and_changes(amendments, section_node):
 
     amend_map = defaultdict(list)
     for amend in amendments:
-        change = {'action': amend.action}
+        change = {'action': amend.action, 'amdpar_xml': amend.amdpar_xml}
         if amend.field is not None:
             change['field'] = amend.field
 
@@ -295,6 +295,14 @@ class NoticeChanges(object):
     """ Notice changes. """
     def __init__(self):
         self.changes = defaultdict(list)
+        self.changes_by_xml = defaultdict(OrderedDict)
+
+    def add_changes(self, amdpar_xml, changes):
+        for label, change in changes.items():
+            existing = self.changes_by_xml[amdpar_xml].get(label, [])
+            if change not in existing:
+                existing.append(change)
+            self.changes_by_xml[amdpar_xml][label] = existing
 
     def update(self, changes):
         """ Essentially add more changes into NoticeChanges. This is

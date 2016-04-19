@@ -82,19 +82,22 @@ def process_designate_subpart(amendment):
                        'destination': amendment.destination}}
 
 
-def create_xmlless_changes(amended_labels, notice_changes):
+def create_xmlless_changes(amendment, notice_changes):
     """Deletes, moves, and the like do not have an associated XML structure.
     Add their changes"""
-    amend_map = changes.match_labels_and_changes(amended_labels, None)
+    amend_map = changes.match_labels_and_changes([amendment], None)
     for label, amendments in amend_map.iteritems():
         for amendment in amendments:
             if amendment['action'] == 'DELETE':
-                notice_changes.update({label: {'action': amendment['action']}})
+                notice_changes.add_changes(
+                    amendment['amdpar_xml'],
+                    {label: {'action': amendment['action']}})
             elif amendment['action'] == 'MOVE':
                 change = {'action': amendment['action']}
                 destination = [d for d in amendment['destination'] if d != '?']
                 change['destination'] = destination
-                notice_changes.update({label: change})
+                notice_changes.add_changes(
+                    amendment['amdpar_xml'], {label: change})
             else:
                 logger.warning("Unknown action: %s", amendment['action'])
 
@@ -117,17 +120,16 @@ def create_xml_changes(amended_labels, section, notice_changes):
                 else:
                     nodes = changes.create_add_amendment(amendment)
                 for n in nodes:
-                    notice_changes.update(n)
+                    notice_changes.add_changes(amendment['amdpar_xml'], n)
             elif amendment['action'] == 'RESERVE':
                 change = changes.create_reserve_amendment(amendment)
-                notice_changes.update(change)
+                notice_changes.add_changes(amendment['amdpar_xml'], change)
             else:
                 logger.warning("Unknown action: %s", amendment['action'])
 
 
 def process_amendments(notice, notice_xml):
     """Process changes to the regulation that are expressed in the notice."""
-    all_amends = []     # will be added to the notice
     notice_changes = changes.NoticeChanges()
 
     if notice_xml.xpath('.//AMDPAR[not(EREGS_INSTRUCTIONS)]'):
@@ -139,18 +141,17 @@ def process_amendments(notice, notice_xml):
     for instruction_xml in notice_xml.xpath('.//EREGS_INSTRUCTIONS/*'):
         struct = cache.content_of_change(instruction_xml)
         amendment = amendment_from_xml(instruction_xml)
-        all_amends.append(amendment)
         if instruction_xml.tag == 'MOVE_INTO_SUBPART':
             subpart_changes = process_designate_subpart(amendment)
             if subpart_changes:
-                notice_changes.update(subpart_changes)
+                notice_changes.add_changes(amendment.amdpar_xml, changes)
         elif new_subpart_added(amendment):
             subpart_changes = {}
             for change in changes.create_subpart_amendment(struct):
                 subpart_changes.update(change)
-            notice_changes.update(subpart_changes)
+            notice_changes.add_changes(amendment.amdpar_xml, subpart_changes)
         elif not struct:
-            create_xmlless_changes([amendment], notice_changes)
+            create_xmlless_changes(amendment, notice_changes)
         else:
             key = '-'.join(struct.label)
             if key not in batch:
@@ -160,9 +161,17 @@ def process_amendments(notice, notice_xml):
     for d in batch.values():
         create_xml_changes(d['amends'], d['struct'], notice_changes)
 
-    if all_amends:
-        notice['amendments'] = all_amends
-        notice['changes'] = notice_changes.changes
+    amendments = []
+    for amdpar_xml in notice_xml.xpath('.//AMDPAR'):
+        amendment = {"instruction": amdpar_xml.text}
+        relevant_changes = notice_changes.changes_by_xml[amdpar_xml]
+        if relevant_changes:
+            amendment['changes'] = list(relevant_changes.items())
+
+        amendments.append(amendment)
+
+    if amendments:
+        notice['amendments'] = amendments
 
     return notice
 
