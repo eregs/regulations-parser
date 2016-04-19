@@ -144,7 +144,8 @@ def process_amendments(notice, notice_xml):
         if instruction_xml.tag == 'MOVE_INTO_SUBPART':
             subpart_changes = process_designate_subpart(amendment)
             if subpart_changes:
-                notice_changes.add_changes(amendment.amdpar_xml, changes)
+                notice_changes.add_changes(amendment.amdpar_xml,
+                                           subpart_changes)
         elif new_subpart_added(amendment):
             subpart_changes = {}
             for change in changes.create_subpart_amendment(struct):

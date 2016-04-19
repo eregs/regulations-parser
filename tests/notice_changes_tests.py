@@ -165,14 +165,15 @@ class ChangesTests(TestCase):
     def test_match_labels_and_changes_move(self):
         labels_amended = [Amendment('MOVE', '200-?-1', '200-?-2')]
         amend_map = changes.match_labels_and_changes(labels_amended, None)
-        self.assertEqual(amend_map, {
-            '200-1': [{'action': 'MOVE', 'destination': ['200', '2']}]})
+        self.assertEqual(dict(amend_map), {
+            '200-1': [{'action': 'MOVE', 'destination': ['200', '2'],
+                       'amdpar_xml': None}]})
 
     def test_match_labels_and_changes_delete(self):
         labels_amended = [Amendment('DELETE', '200-?-1-a-i')]
         amend_map = changes.match_labels_and_changes(labels_amended, None)
-        self.assertEqual(amend_map, {
-            '200-1-a-i': [{'action': 'DELETE'}]})
+        self.assertEqual(dict(amend_map), {
+            '200-1-a-i': [{'action': 'DELETE', 'amdpar_xml': None}]})
 
     def test_match_labels_and_changes_reserve(self):
         labels_amended = [Amendment('RESERVE', '200-?-2-a')]
@@ -402,18 +403,19 @@ class ChangesTests(TestCase):
 class NoticeChangesTests(TestCase):
     def test_update_duplicates(self):
         nc = changes.NoticeChanges()
-        nc.update({'123-12': {'action': 'DELETE'},
-                   '123-22': {'action': 'OTHER'}})
-        nc.update({'123-12': {'action': 'DELETE'}})
-        nc.update({'123-12': {'action': 'OTHER'}})
-        nc.update({'123-22': {'action': 'OTHER'},
-                   '123-32': {'action': 'LAST'}})
+        nc.add_changes(None, {'123-12': {'action': 'DELETE'},
+                              '123-22': {'action': 'OTHER'}})
+        nc.add_changes(None, {'123-12': {'action': 'DELETE'}})
+        nc.add_changes(None, {'123-12': {'action': 'OTHER'}})
+        nc.add_changes(None, {'123-22': {'action': 'OTHER'},
+                              '123-32': {'action': 'LAST'}})
 
-        self.assertTrue('123-12' in nc.changes)
-        self.assertTrue('123-22' in nc.changes)
-        self.assertTrue('123-32' in nc.changes)
+        data = nc.changes_by_xml[None]
+        self.assertTrue('123-12' in data)
+        self.assertTrue('123-22' in data)
+        self.assertTrue('123-32' in data)
 
-        self.assertEqual(nc.changes['123-12'],
+        self.assertEqual(data['123-12'],
                          [{'action': 'DELETE'}, {'action': 'OTHER'}])
-        self.assertEqual(nc.changes['123-22'], [{'action': 'OTHER'}])
-        self.assertEqual(nc.changes['123-32'], [{'action': 'LAST'}])
+        self.assertEqual(data['123-22'], [{'action': 'OTHER'}])
+        self.assertEqual(data['123-32'], [{'action': 'LAST'}])

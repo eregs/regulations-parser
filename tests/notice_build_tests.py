@@ -181,11 +181,12 @@ class NoticeBuildTest(TestCase):
         notice = {'cfr_parts': ['105']}
         build.process_amendments(notice, ctx.xml)
 
-        section_list = ['105-2', '105-3', '105-1']
-        self.assertItemsEqual(notice['changes'].keys(), section_list)
-
-        for l, c in notice['changes'].items():
-            change = c[0]
+        changes = dict(notice['amendments'][0]['changes'])
+        self.assertItemsEqual(['105-1', '105-2', '105-3'],
+                              changes.keys())
+        for change_list in changes.values():
+            self.assertEqual(1, len(change_list))
+            change = change_list[0]
             self.assertEqual(change['destination'], ['105', 'Subpart', 'A'])
             self.assertEqual(change['action'], 'DESIGNATE')
 
@@ -202,10 +203,11 @@ class NoticeBuildTest(TestCase):
 
         notice = {'cfr_parts': ['105']}
         build.process_amendments(notice, ctx.xml)
+        changes = dict(notice['amendments'][0]['changes'])
 
-        self.assertItemsEqual(notice['changes'].keys(), ['105-1-b'])
+        self.assertEqual(changes.keys(), ['105-1-b'])
 
-        changes = notice['changes']['105-1-b'][0]
+        changes = changes['105-1-b'][0]
         self.assertEqual(changes['action'], 'PUT')
         self.assertTrue(changes['node']['text'].startswith(
             u'(b) This part carries out.'))
@@ -226,13 +228,16 @@ class NoticeBuildTest(TestCase):
         notice = {'cfr_parts': ['105']}
         build.process_amendments(notice, ctx.xml)
 
-        self.assertItemsEqual(notice['changes'].keys(), ['105-1-b', '105-1-c'])
+        amd1, amd2 = notice['amendments']
+        changes1, changes2 = dict(amd1['changes']), dict(amd2['changes'])
+        self.assertEqual(changes1.keys(), ['105-1-b'])
+        self.assertEqual(changes2.keys(), ['105-1-c'])
 
-        changes = notice['changes']['105-1-b'][0]
+        changes = changes1['105-1-b'][0]
         self.assertEqual(changes['action'], 'PUT')
         self.assertEqual(changes['node']['text'].strip(),
                          u'(b) This part carries out.')
-        changes = notice['changes']['105-1-c'][0]
+        changes = changes2['105-1-c'][0]
         self.assertEqual(changes['action'], 'PUT')
         self.assertTrue(changes['node']['text'].strip(),
                         u'(c) More stuff')
@@ -242,7 +247,9 @@ class NoticeBuildTest(TestCase):
             with ctx.REGTEXT(PART="104", TITLE="12"):
                 ctx.AMDPAR("1. In Supplement I to Part 104, comment "
                            "22(a) is added")
-                ctx.P("Content")
+                ctx.HD("SUPPLEMENT I", SOURCE='HED')
+                ctx.HD("22(a)", SOURCE='HD1')
+                ctx.P("1. Content")
             with ctx.REGTEXT(PART="105", TITLE="12"):
                 ctx.AMDPAR(u"3. In § 105.1, revise paragraph (b) to read as "
                            u"follows:")
@@ -257,11 +264,13 @@ class NoticeBuildTest(TestCase):
         build.process_amendments(notice, ctx.xml)
 
         self.assertEqual(2, len(notice['amendments']))
-        c22a, b = notice['amendments']
-        self.assertEqual(c22a.action, 'POST')
-        self.assertEqual(b.action, 'PUT')
-        self.assertEqual(c22a.label, ['104', '22', 'a', 'Interp'])
-        self.assertEqual(b.label, ['105', '1', 'b'])
+        amd1, amd2 = notice['amendments']
+        changes1, changes2 = dict(amd1['changes']), dict(amd2['changes'])
+        self.assertIn('104-22-a-Interp', changes1)
+        self.assertIn('105-1-b', changes2)
+
+        self.assertEqual(changes1['104-22-a-Interp'][0]['action'], 'POST')
+        self.assertEqual(changes2['105-1-b'][0]['action'], 'PUT')
 
     def test_process_amendments_no_nodes(self):
         with XMLBuilder("ROOT") as ctx:
@@ -273,9 +282,9 @@ class NoticeBuildTest(TestCase):
         build.process_amendments(notice, ctx.xml)
 
         self.assertEqual(1, len(notice['amendments']))
-        delete = notice['amendments'][0]
-        self.assertEqual(delete.action, 'DELETE')
-        self.assertEqual(delete.label, ['104', '13', 'b'])
+        changes = dict(notice['amendments'][0]['changes'])
+        self.assertIn('104-13-b', changes)
+        self.assertEqual(changes['104-13-b'][0]['action'], 'DELETE')
 
     def test_process_amendments_markerless(self):
         with XMLBuilder("REGTEXT", PART="105", TITLE="12") as ctx:
@@ -289,9 +298,10 @@ class NoticeBuildTest(TestCase):
 
         notice = {'cfr_parts': ['105']}
         build.process_amendments(notice, ctx.xml)
-        self.assertItemsEqual(notice['changes'].keys(), ['105-11-p5'])
+        changes = dict(notice['amendments'][0]['changes'])
+        self.assertEqual(changes.keys(), ['105-11-p5'])
 
-        changes = notice['changes']['105-11-p5'][0]
+        changes = changes['105-11-p5'][0]
         self.assertEqual(changes['action'], 'PUT')
 
     def test_process_amendments_multiple_sections(self):
@@ -313,8 +323,10 @@ class NoticeBuildTest(TestCase):
 
         notice = {'cfr_parts': ['111']}
         build.process_amendments(notice, ctx.xml)
-        self.assertItemsEqual(notice['changes'].keys(),
-                              ['111-22-b', '111-33-c'])
+        self.assertEqual(dict(notice['amendments'][0]['changes']).keys(),
+                         ['111-22-b'])
+        self.assertEqual(dict(notice['amendments'][1]['changes']).keys(),
+                         ['111-33-c'])
 
     def new_subpart_xml(self):
         with XMLBuilder("RULE") as ctx:
@@ -349,9 +361,12 @@ class NoticeBuildTest(TestCase):
         notice = {'cfr_parts': ['105']}
         build.process_amendments(notice, self.new_subpart_xml())
 
-        self.assertTrue('105-Subpart-B' in notice['changes'].keys())
-        self.assertTrue('105-30-a' in notice['changes'].keys())
-        self.assertTrue('105-30' in notice['changes'].keys())
+        subpart_amendment = notice['amendments'][1]
+        changes = dict(subpart_amendment['changes'])
+
+        self.assertTrue('105-Subpart-B' in changes)
+        self.assertTrue('105-30-a' in changes)
+        self.assertTrue('105-30' in changes)
 
     def test_process_amendments_mix_regs(self):
         """Some notices apply to multiple regs. For now, just ignore the
@@ -376,9 +391,9 @@ class NoticeBuildTest(TestCase):
         notice = {'cfr_parts': ['105', '106']}
         build.process_amendments(notice, ctx.xml)
 
-        self.assertEqual(2, len(notice['changes']))
-        self.assertTrue('105-1-a' in notice['changes'])
-        self.assertTrue('106-3-b' in notice['changes'])
+        amd1, amd2 = notice['amendments']
+        self.assertEqual(['105-1-a'], dict(amd1['changes']).keys())
+        self.assertEqual(['106-3-b'], dict(amd2['changes']).keys())
 
     def test_process_amendments_context(self):
         """Context should carry over between REGTEXTs"""
@@ -386,17 +401,24 @@ class NoticeBuildTest(TestCase):
             with ctx.REGTEXT(TITLE="12"):
                 ctx.AMDPAR(u"3. In § 106.1, revise paragraph (a) to read as "
                            u"follows:")
+                with ctx.SECTION():
+                    ctx.SECTNO(u"§ 106.1")
+                    ctx.SUBJECT("Some Subject.")
+                    ctx.P("(a) Something new")
             with ctx.REGTEXT(TITLE="12"):
                 ctx.AMDPAR("3. Add appendix C")
+                ctx.HD("Appendix C to Part 106", SOURCE="HD1")
+                with ctx.EXTRACT():
+                    ctx.P("Text")
         ParseAMDPARs().transform(ctx.xml)
 
         notice = {'cfr_parts': ['105', '106']}
         build.process_amendments(notice, ctx.xml)
 
-        self.assertEqual(2, len(notice['amendments']))
         amd1, amd2 = notice['amendments']
-        self.assertEqual(['106', '1', 'a'], amd1.label)
-        self.assertEqual(['106', 'C'], amd2.label)
+        self.assertEqual(['106-1-a'], dict(amd1['changes']).keys())
+        self.assertItemsEqual(['106-C', '106-C-p1'],
+                              dict(amd2['changes']).keys())
 
     def test_process_amendments_insert_in_order(self):
         with XMLBuilder("ROOT") as ctx:
@@ -413,9 +435,9 @@ class NoticeBuildTest(TestCase):
         build.process_amendments(notice, ctx.xml)
 
         self.assertEqual(1, len(notice['amendments']))
-        amendment = notice['amendments'][0]
-        self.assertEqual(['123', '45', 'p6'], amendment.label)
-        self.assertEqual('INSERT', amendment.action)
+        changes = dict(notice['amendments'][0]['changes'])
+        self.assertEqual(['123-45-p6'], changes.keys())
+        self.assertEqual('INSERT', changes['123-45-p6'][0]['action'])
 
     def test_introductory_text(self):
         """ Sometimes notices change just the introductory text of a paragraph
@@ -431,7 +453,8 @@ class NoticeBuildTest(TestCase):
         notice = {'cfr_parts': ['106']}
         build.process_amendments(notice, ctx.xml)
 
-        self.assertEqual('[text]', notice['changes']['106-2'][0]['field'])
+        change = dict(notice['amendments'][0]['changes'])['106-2'][0]
+        self.assertEqual('[text]', change.get('field'))
 
     def test_multiple_changes(self):
         """ A notice can have two modifications to a paragraph. """
@@ -451,16 +474,20 @@ class NoticeBuildTest(TestCase):
         notice = {'cfr_parts': ['106']}
         build.process_amendments(notice, ctx.xml)
 
-        self.assertEqual(2, len(notice['changes']['106-2']))
+        amd1, amd2 = notice['amendments']
+        changes1, changes2 = dict(amd1['changes']), dict(amd2['changes'])
+        self.assertEqual(1, len(changes1['106-2']))
+        self.assertEqual(1, len(changes2['106-2']))
 
     def test_create_xmlless_changes(self):
         labels_amended = [Amendment('DELETE', '200-?-2-a'),
                           Amendment('MOVE', '200-?-2-b', '200-?-2-c')]
         notice_changes = changes.NoticeChanges()
-        build.create_xmlless_changes(labels_amended, notice_changes)
+        for amendment in labels_amended:
+            build.create_xmlless_changes(amendment, notice_changes)
 
-        delete = notice_changes.changes['200-2-a'][0]
-        move = notice_changes.changes['200-2-b'][0]
+        delete = notice_changes.changes_by_xml[None]['200-2-a'][0]
+        move = notice_changes.changes_by_xml[None]['200-2-b'][0]
         self.assertEqual({'action': 'DELETE'}, delete)
         self.assertEqual({'action': 'MOVE', 'destination': ['200', '2', 'c']},
                          move)
@@ -475,7 +502,7 @@ class NoticeBuildTest(TestCase):
         notice_changes = changes.NoticeChanges()
         build.create_xml_changes(labels_amended, root, notice_changes)
 
-        reserve = notice_changes.changes['200-2-a'][0]
+        reserve = notice_changes.changes_by_xml[None]['200-2-a'][0]
         self.assertEqual(reserve['action'], 'RESERVE')
         self.assertEqual(reserve['node']['text'], u'[Reserved]')
 
@@ -489,19 +516,20 @@ class NoticeBuildTest(TestCase):
 
         notice_changes = changes.NoticeChanges()
         build.create_xml_changes(labels_amended, root, notice_changes)
+        data = notice_changes.changes_by_xml[None]
 
         for label in ('200-2-a-1', '200-2-a-2'):
-            self.assertTrue(label in notice_changes.changes)
-            self.assertEqual(1, len(notice_changes.changes[label]))
-            change = notice_changes.changes[label][0]
+            self.assertIn(label, data)
+            self.assertEqual(1, len(data[label]))
+            change = data[label][0]
             self.assertEqual('PUT', change['action'])
-            self.assertFalse('field' in change)
+            self.assertNotIn('field', change)
 
-        self.assertTrue('200-2-a' in notice_changes.changes)
-        self.assertEqual(1, len(notice_changes.changes['200-2-a']))
-        change = notice_changes.changes['200-2-a'][0]
+        self.assertTrue('200-2-a' in data)
+        self.assertEqual(1, len(data['200-2-a']))
+        change = data['200-2-a'][0]
         self.assertEqual('KEEP', change['action'])
-        self.assertFalse('field' in change)
+        self.assertNotIn('field', change)
 
     def test_create_xml_changes_stars_hole(self):
         labels_amended = [Amendment('PUT', '200-?-2-a')]
@@ -514,16 +542,17 @@ class NoticeBuildTest(TestCase):
         notice_changes = changes.NoticeChanges()
         build.create_xml_changes(labels_amended, root, notice_changes)
 
+        data = notice_changes.changes_by_xml[None]
         for label in ('200-2-a', '200-2-a-2'):
-            self.assertTrue(label in notice_changes.changes)
-            self.assertEqual(1, len(notice_changes.changes[label]))
-            change = notice_changes.changes[label][0]
+            self.assertIn(label, data)
+            self.assertEqual(1, len(data[label]))
+            change = data[label][0]
             self.assertEqual('PUT', change['action'])
-            self.assertFalse('field' in change)
+            self.assertNotIn('field', change)
 
-        self.assertTrue('200-2-a-1' in notice_changes.changes)
-        self.assertEqual(1, len(notice_changes.changes['200-2-a-1']))
-        change = notice_changes.changes['200-2-a-1'][0]
+        self.assertIn('200-2-a-1', data)
+        self.assertEqual(1, len(data['200-2-a-1']))
+        change = data['200-2-a-1'][0]
         self.assertEqual('KEEP', change['action'])
         self.assertFalse('field' in change)
 
@@ -538,22 +567,24 @@ class NoticeBuildTest(TestCase):
 
         notice_changes = changes.NoticeChanges()
         build.create_xml_changes(labels_amended, root, notice_changes)
+        data = notice_changes.changes_by_xml[None]
 
-        self.assertTrue('200-2-a' in notice_changes.changes)
-        self.assertTrue(1, len(notice_changes.changes['200-2-a']))
-        change = notice_changes.changes['200-2-a'][0]
+        self.assertIn('200-2-a', data)
+        self.assertTrue(1, len(data['200-2-a']))
+        change = data['200-2-a'][0]
         self.assertEqual('PUT', change['action'])
-        self.assertFalse('field' in change)
+        self.assertNotIn('field', change)
 
         n2a.text = n2a.text + ":"
         n2a.source_xml.text = n2a.source_xml.text + ":"
 
         notice_changes = changes.NoticeChanges()
         build.create_xml_changes(labels_amended, root, notice_changes)
+        data = notice_changes.changes_by_xml[None]
 
-        self.assertTrue('200-2-a' in notice_changes.changes)
-        self.assertTrue(1, len(notice_changes.changes['200-2-a']))
-        change = notice_changes.changes['200-2-a'][0]
+        self.assertIn('200-2-a', data)
+        self.assertTrue(1, len(data['200-2-a']))
+        change = data['200-2-a'][0]
         self.assertEqual('PUT', change['action'])
         self.assertEqual('[text]', change.get('field'))
 

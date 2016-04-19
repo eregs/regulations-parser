@@ -294,7 +294,6 @@ def pretty_change(change):
 class NoticeChanges(object):
     """ Notice changes. """
     def __init__(self):
-        self.changes = defaultdict(list)
         self.changes_by_xml = defaultdict(OrderedDict)
 
     def add_changes(self, amdpar_xml, changes):
