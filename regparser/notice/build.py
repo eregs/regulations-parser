@@ -138,6 +138,7 @@ def process_amendments(notice, notice_xml):
 
     cache = ContentCache()
     batch = {}
+    authority_by_xml = {}
     for instruction_xml in notice_xml.xpath('.//EREGS_INSTRUCTIONS/*'):
         struct = cache.content_of_change(instruction_xml)
         amendment = amendment_from_xml(instruction_xml)
@@ -146,6 +147,8 @@ def process_amendments(notice, notice_xml):
             if subpart_changes:
                 notice_changes.add_changes(amendment.amdpar_xml,
                                            subpart_changes)
+        elif instruction_xml.tag == 'AUTHORITY':
+            authority_by_xml[amendment.amdpar_xml] = instruction_xml.text
         elif new_subpart_added(amendment):
             subpart_changes = {}
             for change in changes.create_subpart_amendment(struct):
@@ -172,6 +175,8 @@ def process_amendments(notice, notice_xml):
         relevant_changes = notice_changes.changes_by_xml[amdpar_xml]
         if relevant_changes:
             amendment['changes'] = list(relevant_changes.items())
+        if amdpar_xml in authority_by_xml:
+            amendment['authority'] = authority_by_xml[amdpar_xml]
 
         amendments.append(amendment)
 

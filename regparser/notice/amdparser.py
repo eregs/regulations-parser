@@ -20,6 +20,10 @@ def parse_amdpar(par, initial_context):
     for e in filter(lambda e: e.text, par.xpath('./E')):
         e.text = e.text.replace(' and ', ' ')
     text = get_node_text(par, add_spaces=True)
+    auth = par.getnext()    # potential authority info
+    if auth is not None and auth.tag != 'AUTH':
+        auth = None
+
     tokenized = [t[0] for t, _, _ in amdpar.token_patterns.scanString(text)]
 
     tokenized = compress_context_in_tokenlists(tokenized)
@@ -39,6 +43,9 @@ def parse_amdpar(par, initial_context):
     tokenized, final_context = compress_context(tokenized, initial_context)
     if designated_subpart:
         return make_subpart_designation_instructions(tokenized), final_context
+    elif auth is not None:
+        cfr_part = final_context[0]
+        return make_authority_instructions(auth, cfr_part), final_context
     else:
         return make_instructions(tokenized), final_context
 
@@ -430,6 +437,16 @@ def make_subpart_designation_instructions(tokenized):
     for token in token_lists[0]:
         etree.SubElement(instructions, 'MOVE_INTO_SUBPART',
                          label=token.label_text(), destination=subpart)
+    return instructions
+
+
+def make_authority_instructions(auth_xml, cfr_part):
+    """Creates an `EREGS_INSTRUCTIONS` element specific to the authority
+    information"""
+    instructions = etree.Element('EREGS_INSTRUCTIONS')
+    authority = etree.SubElement(instructions, 'AUTHORITY', label=cfr_part)
+    authority.text = '\n'.join(get_node_text(p, add_spaces=True)
+                               for p in auth_xml.xpath('./P'))
     return instructions
 
 

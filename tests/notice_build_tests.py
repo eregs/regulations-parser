@@ -481,6 +481,26 @@ class NoticeBuildTest(TestCase):
         self.assertEqual(['123-45-p6'], changes.keys())
         self.assertEqual('INSERT', changes['123-45-p6'][0]['action'])
 
+    def test_process_amendments_authority(self):
+        amdpar = ('1. The authority citation for 27 CFR Part 555 continues '
+                  'to read as follows:')
+        auth = '18 U.S.C. 847.'
+        with XMLBuilder("ROOT") as ctx:
+            with ctx.REGTEXT(TITLE="27", PART="555"):
+                ctx.AMDPAR(amdpar)
+                with ctx.AUTH():
+                    ctx.HD("Authority:", SOURCE="HED")
+                    ctx.P(auth)
+        ParseAMDPARs().transform(ctx.xml)
+        notice = {'cfr_parts': ['123']}
+        build.process_amendments(notice, ctx.xml)
+
+        amendment = notice['amendments'][0]
+        self.assertEqual(amendment['instruction'], amdpar)
+        self.assertEqual(amendment['cfr_part'], '555')
+        self.assertEqual(amendment['authority'], auth)
+        self.assertNotIn('changes', amendment)
+
     def test_introductory_text(self):
         """ Sometimes notices change just the introductory text of a paragraph
         (instead of changing the entire paragraph tree).  """
