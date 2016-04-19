@@ -550,7 +550,7 @@ class NoticeBuildTest(TestCase):
                           Amendment('MOVE', '200-?-2-b', '200-?-2-c')]
         notice_changes = changes.NoticeChanges()
         for amendment in labels_amended:
-            build.create_xmlless_changes(amendment, notice_changes)
+            build.create_xmlless_change(amendment, notice_changes)
 
         delete = notice_changes.changes_by_xml[None]['200-2-a'][0]
         move = notice_changes.changes_by_xml[None]['200-2-b'][0]

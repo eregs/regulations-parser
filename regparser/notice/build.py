@@ -82,7 +82,7 @@ def process_designate_subpart(amendment):
                        'destination': amendment.destination}}
 
 
-def create_xmlless_changes(amendment, notice_changes):
+def create_xmlless_change(amendment, notice_changes):
     """Deletes, moves, and the like do not have an associated XML structure.
     Add their changes"""
     amend_map = changes.match_labels_and_changes([amendment], None)
@@ -155,7 +155,7 @@ def process_amendments(notice, notice_xml):
                 subpart_changes.update(change)
             notice_changes.add_changes(amendment.amdpar_xml, subpart_changes)
         elif not struct:
-            create_xmlless_changes(amendment, notice_changes)
+            create_xmlless_change(amendment, notice_changes)
         else:
             key = '-'.join(struct.label)
             if key not in batch:

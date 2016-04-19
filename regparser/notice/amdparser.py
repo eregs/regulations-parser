@@ -254,7 +254,7 @@ def and_token_resolution(tokenized):
 
 
 def subpart_designation(tokenized):
-    """If we have a designate verb, and a token list, we're going to
+    u"""If we have a designate verb, and a token list, we're going to
     change the context to a Paragraph. Because it's not a context, it's
     part of the manipulation.
     e.g. Designate §§ 1005.1 through 1005.20 as subpart A under the heading
@@ -424,7 +424,7 @@ def get_destination(tokenized, reg_part):
 
 
 def make_subpart_designation_instructions(tokenized):
-    """Convert tokens into an `EREGS_INSTRUCTIONS` xml element specifically
+    u"""Convert tokens into an `EREGS_INSTRUCTIONS` xml element specifically
     for subpart designations, like Designate §§ 1005.1 through 1005.20 as
     subpart A"""
     instructions = etree.Element('EREGS_INSTRUCTIONS')
