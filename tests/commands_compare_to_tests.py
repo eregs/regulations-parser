@@ -9,7 +9,7 @@ from click.testing import CliRunner
 from mock import patch
 
 from regparser.commands import compare_to
-from tests.http_mixin import HttpMixin
+from regparser.test_utils.http_mixin import HttpMixin
 
 
 class CommandsCompareToTests(HttpMixin, TestCase):
