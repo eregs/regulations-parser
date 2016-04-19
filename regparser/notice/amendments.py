@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from collections import namedtuple
 from copy import deepcopy
 import logging
 from itertools import dropwhile
@@ -14,6 +15,7 @@ from regparser.tree.xml_parser.reg_text import (
 
 
 logger = logging.getLogger(__name__)
+Content = namedtuple('Content', ['struct', 'amends'])
 
 
 class ContentCache(object):
@@ -26,7 +28,7 @@ class ContentCache(object):
     def fetch(self, key, fn, *args):
         """Check the cache; if not present, run fn with the given args"""
         if key is not None and key not in self.by_xml:
-            self.by_xml[key] = fn(*args)
+            self.by_xml[key] = Content(fn(*args), [])
         return self.by_xml.get(key)
 
     def content_of_change(self, instruction_xml):
@@ -59,9 +61,14 @@ class ContentCache(object):
             return self.fetch(xml, parse_interp, cfr_part, xml)
         else:
             xml = find_section(amdpar)
-            sections = self.fetch(xml, build_from_section, cfr_part, xml)
-            if sections:
-                return sections[0]
+            return self.fetch(xml, parse_regtext, xml, cfr_part)
+
+
+def parse_regtext(xml, cfr_part):
+    """Small wrapper around build_from_section that returns only one section"""
+    sections = build_from_section(cfr_part, xml)
+    if sections:
+        return sections[0]
 
 
 def parse_appendix(xml, cfr_part, letter):

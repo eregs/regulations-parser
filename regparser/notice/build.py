@@ -137,11 +137,10 @@ def process_amendments(notice, notice_xml):
             'No <EREGS_INSTRUCTIONS>. Was this notice preprocessed?')
 
     cache = ContentCache()
-    batch = {}
     authority_by_xml = {}
     for instruction_xml in notice_xml.xpath('.//EREGS_INSTRUCTIONS/*'):
-        struct = cache.content_of_change(instruction_xml)
         amendment = amendment_from_xml(instruction_xml)
+        content = cache.content_of_change(instruction_xml)
         if instruction_xml.tag == 'MOVE_INTO_SUBPART':
             subpart_changes = process_designate_subpart(amendment)
             if subpart_changes:
@@ -151,19 +150,16 @@ def process_amendments(notice, notice_xml):
             authority_by_xml[amendment.amdpar_xml] = instruction_xml.text
         elif new_subpart_added(amendment):
             subpart_changes = {}
-            for change in changes.create_subpart_amendment(struct):
+            for change in changes.create_subpart_amendment(content.struct):
                 subpart_changes.update(change)
             notice_changes.add_changes(amendment.amdpar_xml, subpart_changes)
-        elif not struct:
-            create_xmlless_change(amendment, notice_changes)
+        elif content:
+            content.amends.append(amendment)
         else:
-            key = '-'.join(struct.label)
-            if key not in batch:
-                batch[key] = {'struct': struct, 'amends': []}
-            batch[key]['amends'].append(amendment)
+            create_xmlless_change(amendment, notice_changes)
 
-    for d in batch.values():
-        create_xml_changes(d['amends'], d['struct'], notice_changes)
+    for content in cache.by_xml.values():
+        create_xml_changes(content.amends, content.struct, notice_changes)
 
     amendments = []
     for amdpar_xml in notice_xml.xpath('.//AMDPAR'):
