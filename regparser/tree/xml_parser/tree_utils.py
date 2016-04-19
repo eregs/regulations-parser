@@ -1,9 +1,10 @@
 # vim: set encoding=utf-8
 from copy import deepcopy
-import HTMLParser
+from HTMLParser import HTMLParser
 from itertools import chain
 
-from regparser.tree.depth import markers as mtypes
+from lxml import etree
+
 from regparser.tree.priority_stack import PriorityStack
 
 
@@ -110,9 +111,8 @@ def get_node_text(node, add_spaces=False):
     _superscript_to_text(node, add_spaces)
     _footnotes_to_text(node, add_spaces)
 
-    parts = [node.text] +\
-        list(chain(*([c.text, c.tail] for c in node.getchildren()))) +\
-        [node.tail]
+    parts = [node.text] + list(
+        chain(*([c.text, c.tail] for c in node.getchildren())))
 
     final_text = ''
     for part in filter(bool, parts):
@@ -120,23 +120,20 @@ def get_node_text(node, add_spaces=False):
     return final_text.strip()
 
 
+_tag_black_list = ('PRTPAGE', )
+
+
 def get_node_text_tags_preserved(node):
-    """ Given an XML node, generate text from the node, skipping the PRTPAGE
-    tag. """
+    """Get the body of an XML node as a string, avoiding a specific blacklist
+    of bad tags."""
+    node = deepcopy(node)
+    etree.strip_tags(node, *_tag_black_list)
+    node_text = etree.tostring(node)
 
-    html_parser = HTMLParser.HTMLParser()
+    # Remove the wrapping tag
+    end_open_tag = node_text.index('>')
+    start_close_tag = node_text.rindex('<')
+    node_text = node_text[end_open_tag + 1:start_close_tag]
 
-    if node.text:
-        node_text = node.text
-    else:
-        node_text = ''
-
-    for c in node:
-        if c.tag == 'E':
-            # xlmns non-sense makes me do this.
-            node_text += mtypes.emphasize(c.text)
-        if c.tail is not None:
-            node_text += c.tail
-
-    node_text = html_parser.unescape(node_text)
+    node_text = HTMLParser().unescape(node_text)
     return node_text
