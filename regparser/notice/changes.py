@@ -298,20 +298,15 @@ class NoticeChanges(object):
         self.changes_by_xml = defaultdict(OrderedDict)
 
     def add_changes(self, amdpar_xml, changes):
+        """ Essentially add more changes into NoticeChanges. This is
+        cognizant of the fact that a single label can have more than
+        one change. Do not add the same change twice (as may occur if both
+        the parent and child are marked as added)"""
         for label, change in changes.items():
             existing = self.changes_by_xml[amdpar_xml].get(label, [])
             if change not in existing:
                 existing.append(change)
             self.changes_by_xml[amdpar_xml][label] = existing
-
-    def update(self, changes):
-        """ Essentially add more changes into NoticeChanges. This is
-        cognizant of the fact that a single label can have more than
-        one change. Do not add the same change twice (as may occur if both
-        the parent and child are marked as added)"""
-        for l, c in changes.items():
-            if c not in self.changes[l]:
-                self.changes[l].append(c)
 
 
 def fix_section_node(paragraphs, amdpar_xml):
