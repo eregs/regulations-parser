@@ -165,6 +165,10 @@ def process_amendments(notice, notice_xml):
     amendments = []
     for amdpar_xml in notice_xml.xpath('.//AMDPAR'):
         amendment = {"instruction": amdpar_xml.text}
+        # There'll be at most one
+        for inst_xml in amdpar_xml.xpath('./EREGS_INSTRUCTIONS'):
+            context = inst_xml.get('final_context', '')
+            amendment['cfr_part'] = context.split('-')[0]
         relevant_changes = notice_changes.changes_by_xml[amdpar_xml]
         if relevant_changes:
             amendment['changes'] = list(relevant_changes.items())

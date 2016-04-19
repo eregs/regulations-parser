@@ -171,17 +171,21 @@ class NoticeBuildTest(TestCase):
         self.assertEqual(change['action'], 'DESIGNATE')
 
     def test_process_amendments(self):
+        amdpar = (u"2. Designate §§ 105.1 through 105.3 as subpart A under "
+                  u"the heading.")
         with XMLBuilder("REGTEXT", PART="105", TITLE="12") as ctx:
             with ctx.SUBPART():
                 ctx.HD(u"Subpart A—General", SOURCE="HED")
-            ctx.AMDPAR(u"2. Designate §§ 105.1 through 105.3 as subpart A "
-                       u"under the heading.")
+            ctx.AMDPAR(amdpar)
         ParseAMDPARs().transform(ctx.xml)
 
         notice = {'cfr_parts': ['105']}
         build.process_amendments(notice, ctx.xml)
+        amendment = notice['amendments'][0]
+        changes = dict(amendment['changes'])
 
-        changes = dict(notice['amendments'][0]['changes'])
+        self.assertEqual(amendment['instruction'], amdpar)
+        self.assertEqual(amendment['cfr_part'], '105')
         self.assertItemsEqual(['105-1', '105-2', '105-3'],
                               changes.keys())
         for change_list in changes.values():
@@ -191,9 +195,9 @@ class NoticeBuildTest(TestCase):
             self.assertEqual(change['action'], 'DESIGNATE')
 
     def test_process_amendments_section(self):
+        amdpar = u"3. In § 105.1, revise paragraph (b) to read as follows:"
         with XMLBuilder("REGTEXT", PART="105", TITLE="12") as ctx:
-            ctx.AMDPAR(u"3. In § 105.1, revise paragraph (b) to read as "
-                       u"follows:")
+            ctx.AMDPAR(amdpar)
             with ctx.SECTION():
                 ctx.SECTNO(u"§ 105.1")
                 ctx.SUBJECT("Purpose.")
@@ -203,8 +207,11 @@ class NoticeBuildTest(TestCase):
 
         notice = {'cfr_parts': ['105']}
         build.process_amendments(notice, ctx.xml)
-        changes = dict(notice['amendments'][0]['changes'])
+        amendment = notice['amendments'][0]
+        changes = dict(amendment['changes'])
 
+        self.assertEqual(amendment['instruction'], amdpar)
+        self.assertEqual(amendment['cfr_part'], '105')
         self.assertEqual(changes.keys(), ['105-1-b'])
 
         changes = changes['105-1-b'][0]
@@ -213,10 +220,11 @@ class NoticeBuildTest(TestCase):
             u'(b) This part carries out.'))
 
     def test_process_amendments_multiple_in_same_parent(self):
+        amdpar1 = u"1. In § 105.1, revise paragraph (b) to read as follows:"
+        amdpar2 = "2. Also, revise paragraph (c):"
         with XMLBuilder("REGTEXT", PART="105", TITLE="12") as ctx:
-            ctx.AMDPAR(u"1. In § 105.1, revise paragraph (b) to read as "
-                       u"follows:")
-            ctx.AMDPAR("2. Also, revise paragraph (c):")
+            ctx.AMDPAR(amdpar1)
+            ctx.AMDPAR(amdpar2)
             with ctx.SECTION():
                 ctx.SECTNO(u"§ 105.1")
                 ctx.SUBJECT("Purpose.")
@@ -230,6 +238,10 @@ class NoticeBuildTest(TestCase):
 
         amd1, amd2 = notice['amendments']
         changes1, changes2 = dict(amd1['changes']), dict(amd2['changes'])
+        self.assertEqual(amd1['instruction'], amdpar1)
+        self.assertEqual(amd1['cfr_part'], '105')
+        self.assertEqual(amd2['instruction'], amdpar2)
+        self.assertEqual(amd2['cfr_part'], '105')
         self.assertEqual(changes1.keys(), ['105-1-b'])
         self.assertEqual(changes2.keys(), ['105-1-c'])
 
@@ -243,16 +255,16 @@ class NoticeBuildTest(TestCase):
                         u'(c) More stuff')
 
     def test_process_amendments_restart_new_section(self):
+        amdpar1 = "1. In Supplement I to Part 104, comment 22(a) is added"
+        amdpar2 = u"3. In § 105.1, revise paragraph (b) to read as follows:"
         with XMLBuilder("ROOT") as ctx:
             with ctx.REGTEXT(PART="104", TITLE="12"):
-                ctx.AMDPAR("1. In Supplement I to Part 104, comment "
-                           "22(a) is added")
+                ctx.AMDPAR(amdpar1)
                 ctx.HD("SUPPLEMENT I", SOURCE='HED')
                 ctx.HD("22(a)", SOURCE='HD1')
                 ctx.P("1. Content")
             with ctx.REGTEXT(PART="105", TITLE="12"):
-                ctx.AMDPAR(u"3. In § 105.1, revise paragraph (b) to read as "
-                           u"follows:")
+                ctx.AMDPAR(amdpar2)
                 with ctx.SECTION():
                     ctx.SECTNO(u"§ 105.1")
                     ctx.SUBJECT("Purpose.")
@@ -266,6 +278,10 @@ class NoticeBuildTest(TestCase):
         self.assertEqual(2, len(notice['amendments']))
         amd1, amd2 = notice['amendments']
         changes1, changes2 = dict(amd1['changes']), dict(amd2['changes'])
+        self.assertEqual(amd1['instruction'], amdpar1)
+        self.assertEqual(amd1['cfr_part'], '104')
+        self.assertEqual(amd2['instruction'], amdpar2)
+        self.assertEqual(amd2['cfr_part'], '105')
         self.assertIn('104-22-a-Interp', changes1)
         self.assertIn('105-1-b', changes2)
 
@@ -273,22 +289,27 @@ class NoticeBuildTest(TestCase):
         self.assertEqual(changes2['105-1-b'][0]['action'], 'PUT')
 
     def test_process_amendments_no_nodes(self):
+        amdpar = u"1. In § 104.13, paragraph (b) is removed"
         with XMLBuilder("ROOT") as ctx:
             with ctx.REGTEXT(PART="104", TITLE="12"):
-                ctx.AMDPAR(u"1. In § 104.13, paragraph (b) is removed")
+                ctx.AMDPAR(amdpar)
         ParseAMDPARs().transform(ctx.xml)
 
         notice = {'cfr_parts': ['104']}
         build.process_amendments(notice, ctx.xml)
 
-        self.assertEqual(1, len(notice['amendments']))
-        changes = dict(notice['amendments'][0]['changes'])
+        amendment = notice['amendments'][0]
+        changes = dict(amendment['changes'])
+
+        self.assertEqual(amendment['instruction'], amdpar)
+        self.assertEqual(amendment['cfr_part'], '104')
         self.assertIn('104-13-b', changes)
         self.assertEqual(changes['104-13-b'][0]['action'], 'DELETE')
 
     def test_process_amendments_markerless(self):
+        amdpar = u"1. Revise [label:105-11-p5] as blah"
         with XMLBuilder("REGTEXT", PART="105", TITLE="12") as ctx:
-            ctx.AMDPAR(u"1. Revise [label:105-11-p5] as blah")
+            ctx.AMDPAR(amdpar)
             with ctx.SECTION():
                 ctx.SECTNO(u"§ 105.11")
                 ctx.SUBJECT("Purpose.")
@@ -298,22 +319,27 @@ class NoticeBuildTest(TestCase):
 
         notice = {'cfr_parts': ['105']}
         build.process_amendments(notice, ctx.xml)
-        changes = dict(notice['amendments'][0]['changes'])
-        self.assertEqual(changes.keys(), ['105-11-p5'])
+        amendment = notice['amendments'][0]
+        changes = dict(amendment['changes'])
 
+        self.assertEqual(amendment['instruction'], amdpar)
+        self.assertEqual(amendment['cfr_part'], '105')
+        self.assertEqual(changes.keys(), ['105-11-p5'])
         changes = changes['105-11-p5'][0]
         self.assertEqual(changes['action'], 'PUT')
 
     def test_process_amendments_multiple_sections(self):
         """Regression test verifying multiple SECTIONs in the same REGTEXT"""
+        amdpar1 = u"1. Modify § 111.22 by revising paragraph (b)"
+        amdpar2 = u"2. Modify § 111.33 by revising paragraph (c)"
         with XMLBuilder("REGTEXT", PART="111") as ctx:
-            ctx.AMDPAR(u"1. Modify § 111.22 by revising paragraph (b)")
+            ctx.AMDPAR(amdpar1)
             with ctx.SECTION():
                 ctx.SECTNO(u"§ 111.22")
                 ctx.SUBJECT("Subject Here.")
                 ctx.STARS()
                 ctx.P("(b) Revised second paragraph")
-            ctx.AMDPAR(u"2. Modify § 111.33 by revising paragraph (c)")
+            ctx.AMDPAR(amdpar2)
             with ctx.SECTION():
                 ctx.SECTNO(u"§ 111.33")
                 ctx.SUBJECT("Another Subject")
@@ -323,10 +349,13 @@ class NoticeBuildTest(TestCase):
 
         notice = {'cfr_parts': ['111']}
         build.process_amendments(notice, ctx.xml)
-        self.assertEqual(dict(notice['amendments'][0]['changes']).keys(),
-                         ['111-22-b'])
-        self.assertEqual(dict(notice['amendments'][1]['changes']).keys(),
-                         ['111-33-c'])
+        amd1, amd2 = notice['amendments']
+        self.assertEqual(amd1['instruction'], amdpar1)
+        self.assertEqual(amd1['cfr_part'], '111')
+        self.assertEqual(dict(amd1['changes']).keys(), ['111-22-b'])
+        self.assertEqual(amd2['instruction'], amdpar2)
+        self.assertEqual(amd2['cfr_part'], '111')
+        self.assertEqual(dict(amd2['changes']).keys(), ['111-33-c'])
 
     def new_subpart_xml(self):
         with XMLBuilder("RULE") as ctx:
@@ -371,17 +400,17 @@ class NoticeBuildTest(TestCase):
     def test_process_amendments_mix_regs(self):
         """Some notices apply to multiple regs. For now, just ignore the
         sections not associated with the reg we're focused on"""
+        amdpar1 = u"3. In § 105.1, revise paragraph (a) to read as follows:"
+        amdpar2 = u"3. In § 106.3, revise paragraph (b) to read as follows:"
         with XMLBuilder("ROOT") as ctx:
             with ctx.REGTEXT(PART="105", TITLE="12"):
-                ctx.AMDPAR(u"3. In § 105.1, revise paragraph (a) to read as "
-                           u"follows:")
+                ctx.AMDPAR(amdpar1)
                 with ctx.SECTION():
                     ctx.SECTNO(u"§ 105.1")
                     ctx.SUBJECT("105Purpose.")
                     ctx.P("(a) 105Content")
             with ctx.REGTEXT(PART="106", TITLE="12"):
-                ctx.AMDPAR(u"3. In § 106.3, revise paragraph (b) to read as "
-                           u"follows:")
+                ctx.AMDPAR(amdpar2)
                 with ctx.SECTION():
                     ctx.SECTNO(u"§ 106.3")
                     ctx.SUBJECT("106Purpose.")
@@ -392,21 +421,26 @@ class NoticeBuildTest(TestCase):
         build.process_amendments(notice, ctx.xml)
 
         amd1, amd2 = notice['amendments']
+        self.assertEqual(amd1['instruction'], amdpar1)
+        self.assertEqual(amd1['cfr_part'], '105')
+        self.assertEqual(amd2['instruction'], amdpar2)
+        self.assertEqual(amd2['cfr_part'], '106')
         self.assertEqual(['105-1-a'], dict(amd1['changes']).keys())
         self.assertEqual(['106-3-b'], dict(amd2['changes']).keys())
 
     def test_process_amendments_context(self):
         """Context should carry over between REGTEXTs"""
+        amdpar1 = u"3. In § 106.1, revise paragraph (a) to read as follows:"
+        amdpar2 = "3. Add appendix C"
         with XMLBuilder("ROOT") as ctx:
             with ctx.REGTEXT(TITLE="12"):
-                ctx.AMDPAR(u"3. In § 106.1, revise paragraph (a) to read as "
-                           u"follows:")
+                ctx.AMDPAR(amdpar1)
                 with ctx.SECTION():
                     ctx.SECTNO(u"§ 106.1")
                     ctx.SUBJECT("Some Subject.")
                     ctx.P("(a) Something new")
             with ctx.REGTEXT(TITLE="12"):
-                ctx.AMDPAR("3. Add appendix C")
+                ctx.AMDPAR(amdpar2)
                 ctx.HD("Appendix C to Part 106", SOURCE="HD1")
                 with ctx.EXTRACT():
                     ctx.P("Text")
@@ -416,14 +450,19 @@ class NoticeBuildTest(TestCase):
         build.process_amendments(notice, ctx.xml)
 
         amd1, amd2 = notice['amendments']
+        self.assertEqual(amd1['instruction'], amdpar1)
+        self.assertEqual(amd1['cfr_part'], '106')
+        self.assertEqual(amd2['instruction'], amdpar2)
+        self.assertEqual(amd2['cfr_part'], '106')
         self.assertEqual(['106-1-a'], dict(amd1['changes']).keys())
         self.assertItemsEqual(['106-C', '106-C-p1'],
                               dict(amd2['changes']).keys())
 
     def test_process_amendments_insert_in_order(self):
+        amdpar = '[insert-in-order] [label:123-45-p6]'
         with XMLBuilder("ROOT") as ctx:
             with ctx.REGTEXT(TITLE="10"):
-                ctx.AMDPAR('[insert-in-order] [label:123-45-p6]')
+                ctx.AMDPAR(amdpar)
                 with ctx.SECTION():
                     ctx.SECTNO(u"§ 123.45")
                     ctx.SUBJECT("Some Subject.")
@@ -434,8 +473,11 @@ class NoticeBuildTest(TestCase):
         notice = {'cfr_parts': ['123']}
         build.process_amendments(notice, ctx.xml)
 
-        self.assertEqual(1, len(notice['amendments']))
-        changes = dict(notice['amendments'][0]['changes'])
+        amendment = notice['amendments'][0]
+        changes = dict(amendment['changes'])
+
+        self.assertEqual(amendment['instruction'], amdpar)
+        self.assertEqual(amendment['cfr_part'], '123')
         self.assertEqual(['123-45-p6'], changes.keys())
         self.assertEqual('INSERT', changes['123-45-p6'][0]['action'])
 
@@ -443,8 +485,7 @@ class NoticeBuildTest(TestCase):
         """ Sometimes notices change just the introductory text of a paragraph
         (instead of changing the entire paragraph tree).  """
         with XMLBuilder("REGTEXT", PART="106", TITLE="12") as ctx:
-            ctx.AMDPAR(u"3. In § 106.2, revise the introductory text to read "
-                       u"as follows:")
+            ctx.AMDPAR(u"3. In § 106.2, revise the introductory text to read:")
             with ctx.SECTION():
                 ctx.SECTNO(u"§ 106.2")
                 ctx.SUBJECT(" Definitions ")
@@ -458,13 +499,14 @@ class NoticeBuildTest(TestCase):
 
     def test_multiple_changes(self):
         """ A notice can have two modifications to a paragraph. """
+        amdpar1 = (u"2. Designate §§ 106.1 through 106.3 as subpart A under "
+                   u"the heading.")
+        amdpar2 = u"3. In § 106.2, revise the introductory text to read:"
         with XMLBuilder("ROOT") as ctx:
             with ctx.REGTEXT(PART="106", TITLE="12"):
-                ctx.AMDPAR(u"2. Designate §§ 106.1 through 106.3 as subpart "
-                           u"A under the heading.")
+                ctx.AMDPAR(amdpar1)
             with ctx.REGTEXT(PART="106", TITLE="12"):
-                ctx.AMDPAR(u"3. In § 106.2, revise the introductory text to "
-                           u"read as follows:")
+                ctx.AMDPAR(amdpar2)
                 with ctx.SECTION():
                     ctx.SECTNO(u"§ 106.2")
                     ctx.SUBJECT(" Definitions ")
@@ -476,6 +518,10 @@ class NoticeBuildTest(TestCase):
 
         amd1, amd2 = notice['amendments']
         changes1, changes2 = dict(amd1['changes']), dict(amd2['changes'])
+        self.assertEqual(amd1['instruction'], amdpar1)
+        self.assertEqual(amd1['cfr_part'], '106')
+        self.assertEqual(amd2['instruction'], amdpar2)
+        self.assertEqual(amd2['cfr_part'], '106')
         self.assertEqual(1, len(changes1['106-2']))
         self.assertEqual(1, len(changes2['106-2']))
 
