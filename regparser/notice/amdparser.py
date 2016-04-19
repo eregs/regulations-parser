@@ -482,7 +482,6 @@ def convert_label(label_str):
             label = label[:1] + sub_type.split(':')
         elif uses_subpart:   # Subpart info is skipped
             label = label[:1] + label[2:]
-    print label_str, label
     return label
 
 
