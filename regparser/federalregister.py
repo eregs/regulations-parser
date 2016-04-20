@@ -10,10 +10,10 @@ See https://www.federalregister.gov/developers/api/v1 - GET "search" method
 FR_BASE = "https://www.federalregister.gov"
 API_BASE = FR_BASE + "/api/v1/"
 FULL_NOTICE_FIELDS = [
-    "abstract", "action", "agency_names", "cfr_references", "citation",
-    "comments_close_on", "dates", "document_number", "effective_on",
-    "end_page", "full_text_xml_url", "html_url", "publication_date",
-    "regulation_id_numbers", "start_page", "type", "volume"]
+    "cfr_references", "citation", "comments_close_on", "dates",
+    "document_number", "effective_on", "end_page", "full_text_xml_url",
+    "html_url", "publication_date", "regulation_id_numbers", "start_page",
+    "type", "volume"]
 logger = logging.getLogger(__name__)
 
 
