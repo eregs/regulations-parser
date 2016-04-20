@@ -59,6 +59,33 @@ def build_notice(cfr_title, cfr_part, fr_notice, fetch_xml=True,
     return [notice]
 
 
+def build_json(notice_xml):
+    result = {
+        'cfr_title': notice_xml.cfr_refs[0].title,  # Assumes a shared title
+        'cfr_parts': [ref.part for ref in notice_xml.cfr_refs],
+        'comments_close_on': notice_xml.comments_close_on,
+        'document_number': notice_xml.version_id,
+        'publication_date': notice_xml.published,
+        'regulation_id_numbers': notice_xml.rins,
+        'effective_on': notice_xml.effective,
+        'initial_effective_on': notice_xml.effective,
+        'fr_url': None,
+        'fr_volume': notice_xml.fr_volume,
+        'meta': None
+    }
+    result.update({
+        "fr_url": None,
+        "fr_volume": None,
+        "meta": {"dates": None, "end_page": None, "start_page": None,
+                 "type": None},
+    })
+    """
+    process_sxs(notice, notice_xml)
+    process_amendments(notice, notice_xml)
+    add_footnotes(notice, notice_xml)
+    """
+
+
 def split_doc_num(doc_num, effective_date):
     """ If we have a split notice, we construct a document number
     based on the original document number and the effective date. """

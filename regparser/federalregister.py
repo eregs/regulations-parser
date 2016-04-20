@@ -1,8 +1,6 @@
 import logging
 import requests
 
-from regparser.notice.build import build_notice
-
 '''
 See https://www.federalregister.gov/developers/api/v1 - GET "search" method
 '''
@@ -39,14 +37,6 @@ def fetch_notice_json(cfr_title, cfr_part, only_final=False,
         return response['results']
     else:
         return []
-
-
-def fetch_notices(cfr_title, cfr_part, only_final=False):
-    """Search and then convert to notice objects (including parsing)"""
-    notices = []
-    for result in fetch_notice_json(cfr_title, cfr_part, only_final):
-        notices.extend(build_notice(cfr_title, cfr_part, result))
-    return notices
 
 
 def meta_data(document_number, fields=None):

@@ -1,7 +1,9 @@
-import click
+import copy
 import logging
 
-from regparser.builder import merge_changes
+import click
+
+from regparser import content
 from regparser.index import dependency, entry
 from regparser.notice.compiler import compile_regulation
 
@@ -48,6 +50,21 @@ def process(tree_path, previous, version_id):
     changes = merge_changes(version_id, notice.get('changes', {}))
     new_tree = compile_regulation(prev_tree, changes)
     (tree_path / version_id).write(new_tree)
+
+
+def merge_changes(document_number, changes):
+    """Changes can be present in the notice or in an external set inside the
+    `content` module. If any are present in the latter, they extend the
+    former"""
+    patches = content.RegPatches().get(document_number)
+    if patches:
+        changes = copy.copy(changes)
+        for key in patches:
+            if key in changes:
+                changes[key].extend(patches[key])
+            else:
+                changes[key] = patches[key]
+    return changes
 
 
 @click.command()
