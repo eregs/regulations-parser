@@ -30,7 +30,7 @@ For Linux and OS X, this looks like:
   # Make a shell script
   echo '#!/bin/sh' > eregs
   # The script will create a directory for the output
-  echo 'mkdir output' >> eregs
+  echo 'mkdir -p output' >> eregs
   # It'll also create a placeholder local_settings.py, if none exists
   echo 'touch local_settings.py' >> eregs
   # The script will wrap the docker command with appropriate flags while
