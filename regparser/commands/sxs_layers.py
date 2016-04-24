@@ -46,5 +46,6 @@ def sxs_layers(cfr_title, cfr_part):
             notices = [sxs.read() for sxs in previous_sxs(
                         cfr_title, cfr_part, version_id)]
             layer_json = SectionBySection(tree, notices).build()
-            entry.Layer(cfr_title, cfr_part, version_id, 'analyses').write(
+            entry.Layer.cfr(
+                cfr_title, cfr_part, version_id, 'analyses').write(
                 layer_json)
