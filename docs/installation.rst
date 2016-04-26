@@ -45,9 +45,9 @@ Remember to make that script executable:
   chmod +x eregs.sh
 
 To parse, run the wrapper script, ``path/to/eregs.sh``, instead of ``eregs``
-wherever instructed to in the rest of this documentation documentation. Also,
-leave off the final argument in ``pipeline`` and ``write_to`` commands if you
-would like to see the results in the "output" directory.
+wherever instructed to in the rest of this documentation. Also, leave off the
+final argument in ``pipeline`` and ``write_to`` commands if you would like to
+see the results in the "output" directory.
 
 -----------
 From Source
