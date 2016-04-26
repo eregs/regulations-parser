@@ -92,14 +92,6 @@ regparser.commands.layers module
     :undoc-members:
     :show-inheritance:
 
-regparser.commands.notice_order module
---------------------------------------
-
-.. automodule:: regparser.commands.notice_order
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
 regparser.commands.parse_rule_changes module
 --------------------------------------------
 
@@ -136,14 +128,6 @@ regparser.commands.versions module
 ----------------------------------
 
 .. automodule:: regparser.commands.versions
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-regparser.commands.watch_node module
-------------------------------------
-
-.. automodule:: regparser.commands.watch_node
     :members:
     :undoc-members:
     :show-inheritance:

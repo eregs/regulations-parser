@@ -54,6 +54,10 @@ class TreeUtilsTest(unittest.TestCase):
         self.assert_transform_equality(
             '<P>(a) Fruit. Apples, and Pineapples</P>',
             '(a) Fruit. Apples, and Pineapples', *transforms)
+        self.assert_transform_equality(
+            '<P>(a) <E T="01">Other</E> tags: <PIGLATIN>oof</PIGLATIN></P>',
+            '(a) <E T="01">Other</E> tags: <PIGLATIN>oof</PIGLATIN>',
+            *transforms)
 
     def test_get_node_text(self):
         """Verify that the appropriate tags are removed, and, if requested,
@@ -105,6 +109,13 @@ class TreeUtilsTest(unittest.TestCase):
         self.assert_transform_equality(
             '<P>y = x<E T="52">0</E> + mx<SU>2</SU></P>',
             'y = x_{0} + mx^{2}', *no_space)
+
+    def test_get_node_text_no_tail(self):
+        """get_node_text should not include any "tail" present (e.g. if
+        processing part of a larger XML doc)"""
+        xml = etree.fromstring("<root>Some <p>paragraph</p> w/ tail</root>")
+        xml = xml.xpath("./p")[0]
+        self.assertEqual(tree_utils.get_node_text(xml), 'paragraph')
 
     def test_unwind_stack(self):
         level_one_n = Node(label=['272'])

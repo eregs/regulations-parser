@@ -1,9 +1,10 @@
 from collections import defaultdict
+import copy
 import logging
 
 import click
 
-from regparser.builder import merge_changes
+from regparser import content
 from regparser.index import dependency, entry
 from regparser.notice.compiler import compile_regulation
 
@@ -51,9 +52,22 @@ def process(tree_path, previous, version_id):
     for amendment in notice.get('amendments', []):
         for label, change_list in amendment.get('changes', []):
             notice_changes[label].extend(change_list)
-    changes = merge_changes(version_id, notice_changes)
+    changes = apply_patches(version_id, notice_changes)
     new_tree = compile_regulation(prev_tree, changes)
     (tree_path / version_id).write(new_tree)
+
+
+def apply_patches(document_number, changes):
+    """Changes can be present in the notice or in an external set inside the
+    `content` module. If any are present in the latter, they extend the
+    former"""
+    # Don't want to modify the original; it may still be referenced
+    changes = copy.deepcopy(changes)
+    patches = content.RegPatches().get(document_number) or {}
+    for key, value in patches.items():
+        existing = changes.get(key, [])
+        changes[key] = existing + value
+    return changes
 
 
 @click.command()

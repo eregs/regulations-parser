@@ -13,9 +13,6 @@ from regparser.tree.struct import Node
 class NoticeBuildTest(TestCase):
     def test_build_notice(self):
         fr = {
-            'abstract': 'sum sum sum',
-            'action': 'actact',
-            'agency_names': ['Agency 1', 'Agency 2'],
             'cfr_references': [{'title': 12, 'part': 9191},
                                {'title': 12, 'part': 9292}],
             'citation': 'citation citation',
@@ -35,12 +32,8 @@ class NoticeBuildTest(TestCase):
         notices = build.build_notice('5', '9292', fr)
         self.assertEqual(1, len(notices))
         actual_notice = notices[0]
-        for key in ['agency_names', 'cfr_parts']:
-            actual_notice[key] = sorted(actual_notice[key])
+        actual_notice['cfr_parts'] = sorted(actual_notice['cfr_parts'])
         self.assertEqual(actual_notice, {
-            'abstract': 'sum sum sum',
-            'action': 'actact',
-            'agency_names': ['Agency 1', 'Agency 2'],
             'cfr_parts': ['9191', '9292'],
             'cfr_title': '5',
             'document_number': '7878-111',
@@ -63,12 +56,6 @@ class NoticeBuildTest(TestCase):
         """Integration test for xml processing"""
         with XMLBuilder("ROOT") as ctx:
             with ctx.SUPLINF():
-                with ctx.FURINF():
-                    ctx.HD("CONTACT INFO:")
-                    ctx.P("Extra contact info here")
-                with ctx.ADD():
-                    ctx.P("Email: example@example.com")
-                    ctx.P("Extra instructions")
                 ctx.HD("Supplementary Info", SOURCE="HED")
                 ctx.HD("V. Section-by-Section Analysis", SOURCE="HD1")
                 ctx.HD("8(q) Words", SOURCE="HD2")
@@ -80,11 +67,6 @@ class NoticeBuildTest(TestCase):
             'cfr_parts': ['9292'],
             'footnotes': {},
             'meta': {'start_page': 100},
-            'addresses': {
-                'methods': [('Email', 'example@example.com')],
-                'instructions': ['Extra instructions']
-            },
-            'contact': 'Extra contact info here',
             'section_by_section': [{
                 'title': '8(q) Words',
                 'paragraphs': ['Content'],

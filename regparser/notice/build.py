@@ -3,7 +3,6 @@ import logging
 from lxml import etree
 
 from regparser.notice import changes
-from regparser.notice.address import fetch_addresses
 from regparser.notice.amdparser import amendment_from_xml
 from regparser.notice.amendments import ContentCache
 from regparser.notice.changes import new_subpart_added
@@ -26,8 +25,7 @@ def build_notice(cfr_title, cfr_part, fr_notice, fetch_xml=True,
         cfr_parts.add(cfr_part)
     notice = {'cfr_title': cfr_title, 'cfr_parts': list(cfr_parts)}
     #   Copy over most fields
-    for field in ['abstract', 'action', 'agency_names', 'comments_close_on',
-                  'document_number', 'publication_date',
+    for field in ['comments_close_on', 'document_number', 'publication_date',
                   'regulation_id_numbers']:
         if fr_notice[field]:
             notice[field] = fr_notice[field]
@@ -195,14 +193,6 @@ def process_sxs(notice, notice_xml):
 def process_xml(notice, notice_xml):
     """Pull out relevant fields from the xml and add them to the notice"""
     notice = dict(notice)   # defensive copy
-
-    xml_chunk = notice_xml.xpath('//FURINF/P')
-    if xml_chunk:
-        notice['contact'] = xml_chunk[0].text
-
-    addresses = fetch_addresses(notice_xml)
-    if addresses:
-        notice['addresses'] = addresses
 
     if not notice.get('effective_on'):
         dates = fetch_dates(notice_xml)

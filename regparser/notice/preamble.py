@@ -11,6 +11,7 @@ from regparser.tree.xml_parser.flatsubtree_processor import FlatsubtreeMatcher
 from regparser.tree.xml_parser.paragraph_processor import (
     BaseMatcher, GraphicsMatcher, IgnoreTagMatcher, ParagraphProcessor,
     SimpleTagMatcher, TableMatcher)
+from regparser.tree.xml_parser.tree_utils import get_node_text
 
 
 _MARKER_REGEX = re.compile(r'(?P<marker>([0-9]+)|([a-z]+)|([A-Z]+))\.')
@@ -90,6 +91,23 @@ def transform_xml(elements, title, depth):
     return root
 
 
+def parse_intro(notice_xml, doc_id):
+    """The introduction to the preamble includes some key paragraphs which
+    we bundle together in an "intro" node"""
+    root = Node(node_type='preamble_intro', label=[doc_id, 'intro'],
+                title='Preamble introduction')
+    parent_tags = ('AGY', 'ACT', 'SUM', 'DATES', 'ADD', 'FURINF')
+    xpath = '|'.join('.//' + parent_tag for parent_tag in parent_tags)
+    for xml in notice_xml.xpath(xpath):
+        title = xml.xpath('./HD')[0].text.strip()
+        text = '\n'.join(get_node_text(p) for p in xml.xpath('./P'))
+        label = [doc_id, 'intro', 'p{}'.format(len(root.children) + 1)]
+        root.children.append(Node(
+            text=text, node_type='preamble', label=label, title=title))
+    if root.children:
+        return root
+
+
 def parse_preamble(notice_xml):
     """Convert preamble into a Node tree. The preamble is contained within the
     SUPLINF tag, but before a list of altered subjects. Processing proceeds in
@@ -107,4 +125,7 @@ def parse_preamble(notice_xml):
     root = transform_xml(suplinf[1:], title, depth=1)
     root_node = Node(node_type='preamble', label=label, title=title)
     PreambleProcessor().process(root, root_node)
+    intro = parse_intro(notice_xml, label[0])
+    if intro:
+        root_node.children.insert(0, intro)
     return root_node
