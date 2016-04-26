@@ -47,23 +47,21 @@ def process(tree_path, previous, version_id):
     present in the associated rule"""
     prev_tree = (tree_path / previous).read()
     notice = entry.RuleChanges(version_id).read()
-    changes = merge_changes(version_id, notice.get('changes', {}))
+    changes = apply_patches(version_id, notice.get('changes', {}))
     new_tree = compile_regulation(prev_tree, changes)
     (tree_path / version_id).write(new_tree)
 
 
-def merge_changes(document_number, changes):
+def apply_patches(document_number, changes):
     """Changes can be present in the notice or in an external set inside the
     `content` module. If any are present in the latter, they extend the
     former"""
-    patches = content.RegPatches().get(document_number)
-    if patches:
-        changes = copy.copy(changes)
-        for key in patches:
-            if key in changes:
-                changes[key].extend(patches[key])
-            else:
-                changes[key] = patches[key]
+    # Don't want to modify the original; it may still be referenced
+    changes = copy.deepcopy(changes)
+    patches = content.RegPatches().get(document_number) or {}
+    for key, value in patches.items():
+        existing = changes.get(key, [])
+        changes[key] = existing + value
     return changes
 
 
