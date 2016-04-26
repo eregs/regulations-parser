@@ -123,17 +123,15 @@ def get_node_text(node, add_spaces=False):
 _tag_black_list = ('PRTPAGE', )
 
 
-def get_node_text_tags_preserved(node):
+def get_node_text_tags_preserved(xml_node):
     """Get the body of an XML node as a string, avoiding a specific blacklist
     of bad tags."""
-    node = deepcopy(node)
-    etree.strip_tags(node, *_tag_black_list)
-    node_text = etree.tostring(node)
+    xml_node = deepcopy(xml_node)
+    etree.strip_tags(xml_node, *_tag_black_list)
 
     # Remove the wrapping tag
-    end_open_tag = node_text.index('>')
-    start_close_tag = node_text.rindex('<')
-    node_text = node_text[end_open_tag + 1:start_close_tag]
+    node_text = xml_node.text or ''
+    node_text += ''.join(etree.tostring(child) for child in xml_node)
 
     node_text = HTMLParser().unescape(node_text)
     return node_text
