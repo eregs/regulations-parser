@@ -23,28 +23,31 @@ allow input/output via stdio, and prevent containers from hanging around in
 between executions. To do that, we recommend creating a wrapper script and
 executing the parser through that wrapper.
 
-For Linux and OS X, this looks like:
+For Linux and OS X, you could create a script, ``eregs.sh``, that looks like:
 
 .. code-block:: bash
 
-  # Make a shell script
-  echo '#!/bin/sh' > eregs
-  # The script will create a directory for the output
-  echo 'mkdir -p output' >> eregs
-  # It'll also create a placeholder local_settings.py, if none exists
-  echo 'touch local_settings.py' >> eregs
-  # The script will wrap the docker command with appropriate flags while
-  # passing in any arguments.
+  #!/bin/sh
+  # Create a directory for the output
+  mkdir -p output
+  # Create a placeholder local_settings.py, if none exists
+  touch local_settings.py
+  # Execute docker with appropriate flags while passing in any arguments.
   # --rm removes the container after execution
+  # -it makes the container interactive (particularly useful with --debug)
   # -v mounts volumes for cache, output, and copies in the local settings
-  echo 'docker run --rm -it -v eregs-cache:/app/cache -v $PWD/output:/app/output -v $PWD/local_settings.py:/app/code/local_settings.py eregs/parser $@' >> eregs
-  # Make the script executable
-  chmod +x eregs
+  docker run --rm -it -v eregs-cache:/app/cache -v $PWD/output:/app/output -v $PWD/local_settings.py:/app/code/local_settings.py eregs/parser $@
 
-To execute parsing commands, just run ``path/to/eregs`` in place of ``eregs``
-in future documentation. Leave off the final argument in ``pipeline`` and
-``write_to`` commands if you would like to see the results in the "output"
-directory.
+Remember to make that script executable:
+
+.. code-block:: bash
+
+  chmod +x eregs.sh
+
+To parse, run the wrapper script, ``path/to/eregs.sh``, instead of ``eregs``
+wherever instructed to in the rest of this documentation documentation. Also,
+leave off the final argument in ``pipeline`` and ``write_to`` commands if you
+would like to see the results in the "output" directory.
 
 -----------
 From Source
