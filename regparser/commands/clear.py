@@ -6,16 +6,11 @@ import click
 from regparser.index import entry
 
 
-SQLITE_CACHE = 'fr_cache.sqlite'
-
-
 @click.command()
 @click.argument('path', nargs=-1)
-@click.option('--http-cache/--no-http-cache', default=False,
-              help="Clear HTTP request (FR, GPO, etc.). Defaults false")
-def clear(path, http_cache):
-    """Delete intermediate data. Only PATH arguments are cleared unless no
-    arguments are present, then everything is wiped.
+def clear(path):
+    """Delete intermediate and cache data. Only PATH arguments are cleared
+    unless no arguments are present, then everything is wiped.
 
     \b
     $ eregs clear                   # clears everything
@@ -30,6 +25,3 @@ def clear(path, http_cache):
             shutil.rmtree(path)
         else:
             click.echo("Warning: path does not exist: " + path)
-
-    if http_cache and os.path.exists(SQLITE_CACHE):
-        os.remove(SQLITE_CACHE)

@@ -14,7 +14,7 @@ from regparser.commands.write_to import write_to
 @click.command()
 @click.argument('cfr_title', type=int)
 @click.argument('cfr_part', type=int)
-@click.argument('output')
+@click.argument('output', envvar='EREGS_OUTPUT_DIR')
 @click.option('--only-latest', is_flag=True, default=False,
               help="Don't derive history; use the latest annual edition")
 @click.option('--xml-ttl', type=int, default=60*60,

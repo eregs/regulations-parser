@@ -64,7 +64,7 @@ def write_preambles(client):
 
 
 @click.command()
-@click.argument('output')
+@click.argument('output', envvar='EREGS_OUTPUT_DIR')
 @click.option('--cfr_title', type=int, help="Limit to one CFR title")
 @click.option('--cfr_part', type=int, help="Limit to one CFR part")
 def write_to(output, cfr_title, cfr_part):

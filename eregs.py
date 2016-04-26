@@ -8,11 +8,10 @@ import coloredlogs
 import click
 import ipdb
 import pyparsing
-import requests_cache   # @todo - replace with cache control
 
 from regparser import commands
 from regparser.commands.dependency_resolver import DependencyResolver
-from regparser.index import dependency
+from regparser.index import dependency, http_cache
 
 logger = logging.getLogger(__name__)
 DEFAULT_LOG_FORMAT = "%(asctime)s %(name)-40s %(message)s"
@@ -22,7 +21,7 @@ DEFAULT_LOG_FORMAT = "%(asctime)s %(name)-40s %(message)s"
 @click.option('--debug/--no-debug', default=False)
 def cli(debug):
     log_level = logging.INFO
-    requests_cache.install_cache('fr_cache', expire_after=60*60*24*3)  # 3 days
+    http_cache.install()
     if debug:
         log_level = logging.DEBUG
         sys.excepthook = lambda t, v, tb: ipdb.post_mortem(tb)

@@ -150,11 +150,6 @@ generating diffs (currently an n:super:`2` operation). Generally, parsing will
 take less than ten minutes, but in the extreme example of reg Z, it currently
 requires several hours.
 
-There are a few methods to speed up this process. Installing
-``requests-cache`` will cache API-read calls (such as those made when calling
-the Federal Register). The cache lives in an sqlite database
-(``fr_cache.sqlite``), which can be safely removed without error.
-
 Parsing Error Example
 =====================
 
