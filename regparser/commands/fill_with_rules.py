@@ -1,3 +1,4 @@
+from collections import defaultdict
 import copy
 import logging
 
@@ -47,7 +48,11 @@ def process(tree_path, previous, version_id):
     present in the associated rule"""
     prev_tree = (tree_path / previous).read()
     notice = entry.RuleChanges(version_id).read()
-    changes = apply_patches(version_id, notice.get('changes', {}))
+    notice_changes = defaultdict(list)
+    for amendment in notice.get('amendments', []):
+        for label, change_list in amendment.get('changes', []):
+            notice_changes[label].extend(change_list)
+    changes = apply_patches(version_id, notice_changes)
     new_tree = compile_regulation(prev_tree, changes)
     (tree_path / version_id).write(new_tree)
 

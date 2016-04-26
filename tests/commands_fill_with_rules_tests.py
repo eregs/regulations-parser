@@ -1,6 +1,7 @@
 from unittest import TestCase
 
 from click.testing import CliRunner
+from mock import patch
 
 from regparser.commands import fill_with_rules
 from regparser.index import dependency, entry
@@ -63,3 +64,29 @@ class CommandsFillWithRulesTests(TestCase):
             derived = fill_with_rules.derived_from_rules(
                 ['111', '222', '333', '444'], deps, tree_dir)
             self.assertEqual(derived, ['222', '333'])
+
+    @patch('regparser.commands.fill_with_rules.compile_regulation')
+    def test_process(self, compile_regulation):
+        """Verify that the correct changes are found"""
+        compile_regulation.return_value = Node()
+        with self.cli.isolated_filesystem():
+            tree_dir = entry.Tree('12', '1000')
+            (tree_dir / 'old').write(Node())
+            entry.RuleChanges('new').write({
+                "amendments": [
+                    {"instruction": "Something something",
+                     "cfr_part": "1000",
+                     "authority": "USC Numbers"},
+                    {"instruction": "More things",
+                     "cfr_part": "1000",
+                     "changes": [["1000-2-b", ["2b changes"]],
+                                 ["1000-2-c", ["2c changes"]]]},
+                    {"instruction": "Yet more changes",
+                     "cfr_part": "1000",
+                     "changes": [["1000-4-a", ["4a changes"]]]}
+                ]})
+            fill_with_rules.process(tree_dir, 'old', 'new')
+            changes = dict(compile_regulation.call_args[0][1])
+            self.assertEqual(changes, {
+                "1000-2-b": ["2b changes"], "1000-2-c": ["2c changes"],
+                "1000-4-a": ["4a changes"]})

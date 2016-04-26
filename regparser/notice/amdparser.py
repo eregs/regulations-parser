@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from itertools import takewhile
 import logging
 
@@ -19,6 +20,10 @@ def parse_amdpar(par, initial_context):
     for e in filter(lambda e: e.text, par.xpath('./E')):
         e.text = e.text.replace(' and ', ' ')
     text = get_node_text(par, add_spaces=True)
+    auth = par.getnext()    # potential authority info
+    if auth is not None and auth.tag != 'AUTH':
+        auth = None
+
     tokenized = [t[0] for t, _, _ in amdpar.token_patterns.scanString(text)]
 
     tokenized = compress_context_in_tokenlists(tokenized)
@@ -28,16 +33,19 @@ def parse_amdpar(par, initial_context):
     tokenized = multiple_moves(tokenized)
     tokenized = switch_passive(tokenized)
     tokenized = and_token_resolution(tokenized)
-    tokenized, subpart = deal_with_subpart_adds(tokenized)
+    tokenized, designated_subpart = subpart_designation(tokenized)
     tokenized = context_to_paragraph(tokenized)
     tokenized = move_then_modify(tokenized)
-    if not subpart:
+    if not designated_subpart:
         tokenized = separate_tokenlist(tokenized)
     initial_context = switch_part_context(tokenized, initial_context)
     initial_context = switch_level2_context(tokenized, initial_context)
     tokenized, final_context = compress_context(tokenized, initial_context)
-    if subpart:
-        return make_subpart_instructions(tokenized), final_context
+    if designated_subpart:
+        return make_subpart_designation_instructions(tokenized), final_context
+    elif auth is not None:
+        cfr_part = final_context[0]
+        return make_authority_instructions(auth, cfr_part), final_context
     else:
         return make_instructions(tokenized), final_context
 
@@ -245,10 +253,12 @@ def and_token_resolution(tokenized):
     return final_tokens
 
 
-def deal_with_subpart_adds(tokenized):
-    """If we have a designate verb, and a token list, we're going to
+def subpart_designation(tokenized):
+    u"""If we have a designate verb, and a token list, we're going to
     change the context to a Paragraph. Because it's not a context, it's
-    part of the manipulation."""
+    part of the manipulation.
+    e.g. Designate §§ 1005.1 through 1005.20 as subpart A under the heading
+    set forth above."""
 
     # Ensure that we only have one of each: designate verb, a token list and
     # a context
@@ -413,20 +423,30 @@ def get_destination(tokenized, reg_part):
     return destination
 
 
-def make_subpart_instructions(tokenized):
-    """Convert tokens into an `EREGS_INSTRUCTIONS` xml element specifically
-    for subpart designations"""
+def make_subpart_designation_instructions(tokenized):
+    u"""Convert tokens into an `EREGS_INSTRUCTIONS` xml element specifically
+    for subpart designations, like Designate §§ 1005.1 through 1005.20 as
+    subpart A"""
     instructions = etree.Element('EREGS_INSTRUCTIONS')
-    action = etree.SubElement(instructions, tokens.Verb.DESIGNATE)
-
-    reg_part = None
     token_lists = matching(tokenized, tokens.TokenList)
-    # There's only one token list of paragraphs, sections to be designated
-    for token in token_lists[0]:
-        reg_part = token.label[0]
-        etree.SubElement(action, 'LABEL', label=token.label_text())
 
-    action.set('destination', get_destination(tokenized, reg_part))
+    # There's only one token list of paragraphs, sections to be designated
+    reg_part = token_lists[0].tokens[0].label[0]
+    subpart = get_destination(tokenized, reg_part)
+
+    for token in token_lists[0]:
+        etree.SubElement(instructions, 'MOVE_INTO_SUBPART',
+                         label=token.label_text(), destination=subpart)
+    return instructions
+
+
+def make_authority_instructions(auth_xml, cfr_part):
+    """Creates an `EREGS_INSTRUCTIONS` element specific to the authority
+    information"""
+    instructions = etree.Element('EREGS_INSTRUCTIONS')
+    authority = etree.SubElement(instructions, 'AUTHORITY', label=cfr_part)
+    authority.text = '\n'.join(get_node_text(p, add_spaces=True)
+                               for p in auth_xml.xpath('./P'))
     return instructions
 
 
@@ -458,6 +478,50 @@ def make_instructions(tokenized):
     return instructions
 
 
+def convert_label(label_str):
+    """The labels that come back from parsing the list of amendments are not
+    the same type we use in the rest of parsing. Convert between the two here
+    (removing subpart markers, converting to interp format, etc.)"""
+    fields_removed = label_str
+    for field in (Amendment.TITLE, Amendment.TEXT, Amendment.HEADING):
+        fields_removed = fields_removed.replace(field, '')
+
+    label = fields_removed.split('-')
+    if len(label) > 1:
+        sub_type = label[1]
+        uses_subpart = any(m in sub_type for m in ('?', 'Subpart', 'Subjgrp'))
+        if sub_type == 'Interpretations':
+            label = convert_interp_label(label)
+        elif 'Appendix:' in sub_type:
+            label = label[:1] + [sub_type[len('Appendix:'):]] + label[2:]
+        elif uses_subpart and len(label) == 2:   # Subpart/Subject Group
+            # 111-Subpart:A -> 111-Subpart-A
+            label = label[:1] + sub_type.split(':')
+        elif uses_subpart:   # Subpart info is skipped
+            label = label[:1] + label[2:]
+    return label
+
+
+def convert_interp_label(label):
+    """Convert between the interp format of amendments and the normal,
+    node label format
+    :param list[str] label:"""
+    new_style = label[:1]
+    if len(label) == 2:
+        return new_style + [Node.INTERP_MARK]
+    # Convert appendix format
+    new_style.append(label[2].replace('Appendix:', ''))
+    # Add paragraphs
+    if len(label) > 3:
+        paragraphs = [p.strip('()') for p in label[3].split(')(')]
+        paragraphs = filter(bool, paragraphs)
+        new_style.extend(paragraphs)
+    new_style.append(Node.INTERP_MARK)
+    # Add any paragraphs of the comment
+    new_style.extend(label[4:])
+    return new_style
+
+
 class Amendment(object):
     """ An Amendment object contains all the information necessary for
     an amendment. """
@@ -466,62 +530,17 @@ class Amendment(object):
     TEXT = '[text]'
     HEADING = '[heading]'
 
-    def remove_intro(self, l):
-        """ Remove the marker that indicates this is a change to introductory
-        text. """
-        l = l.replace(self.TITLE, '').replace(self.TEXT, '')
-        return l.replace(self.HEADING, '')
+    def __init__(self, action, label, destination=None, amdpar_xml=None):
+        self.destination = None
+        self.field = None
 
-    def fix_interp_format(self, components):
-        """Convert between the interp format of amendments and the normal,
-        node label format"""
-        if ['Interpretations'] == components[1:2]:
-            if len(components) > 2:
-                new_style = [components[0],
-                             components[2].replace('Appendix:', '')]
-                # Add paragraphs
-                if len(components) > 3:
-                    paragraphs = [p.strip('()')
-                                  for p in components[3].split(')(')]
-                    paragraphs = filter(bool, paragraphs)
-                    new_style.extend(paragraphs)
-                new_style.append(Node.INTERP_MARK)
-                # Add any paragraphs of the comment
-                new_style.extend(components[4:])
-                return new_style
-            else:
-                return components[:1] + [Node.INTERP_MARK]
-        return components
-
-    def fix_appendix_format(self, components):
-        """Convert between the appendix format of amendments and the normal,
-        node label format"""
-        return [c.replace('Appendix:', '') for c in components]
-
-    def fix_label(self, label):
-        """ The labels that come back from parsing the list of amendments
-        are not the same type we use in the rest of parsing. Convert between
-        the two here (removing question markers, converting to interp
-        format, etc.)"""
-        def wanted(l):
-            bad_markers = ('?', 'Subpart', 'Subjgrp')
-            return not any(marker in l for marker in bad_markers)
-
-        components = label.split('-')
-        components = [self.remove_intro(l) for l in components if wanted(l)]
-        components = self.fix_interp_format(components)
-        components = self.fix_appendix_format(components)
-        return components
-
-    def __init__(self, action, label, destination=None):
         self.action = action
         self.original_label = label
-        self.label = self.fix_label(self.original_label)
+        self.amdpar_xml = amdpar_xml
+        self.label = convert_label(self.original_label)
 
-        if destination and '-' in destination:
-            self.destination = self.fix_interp_format(destination.split('-'))
-        else:
-            self.destination = destination
+        if destination:
+            self.destination = convert_label(destination)
 
         if self.TITLE in self.original_label:
             self.field = self.TITLE
@@ -529,8 +548,6 @@ class Amendment(object):
             self.field = self.TEXT
         elif self.HEADING in self.original_label:
             self.field = self.HEADING
-        else:
-            self.field = None
 
     def label_id(self):
         """ Return the label id (dash delimited) for this label. """
@@ -565,35 +582,8 @@ class Amendment(object):
             # this does not account for interpretations
 
 
-class DesignateAmendment(Amendment):
-    """ A designate Amendment manages it's information a little differently
-    than a normal Amendment. Namely, there's more handling around Subparts."""
-
-    def __init__(self, action, label_list, destination):
-        self.action = action
-        self.original_labels = label_list
-        self.labels = [self.fix_label(l) for l in self.original_labels]
-        self.original_destination = destination
-
-        if 'Subpart' in destination and ':' in destination:
-            reg_part, subpart = self.original_destination.split('-')
-            _, subpart_letter = destination.split(':')
-            self.destination = [reg_part, 'Subpart', subpart_letter]
-        elif '-' in destination:
-            self.destination = self.fix_interp_format(destination.split('-'))
-        else:
-            self.destination = destination
-
-    def __repr__(self):
-        return "(%s, %s, %s)" % (
-            repr(self.action), repr(self.labels), repr(self.destination))
-
-
 def amendment_from_xml(xml):
     """Deserialize amendments"""
-    if xml.tag == 'DESIGNATE':
-        labels = [el.get('label') for el in xml.xpath('./LABEL')]
-        return DesignateAmendment(xml.tag, labels, xml.get('destination'))
-    else:
-        return Amendment(xml.tag, xml.get('label'),
-                         xml.get('destination') or None)
+    return Amendment(xml.tag, xml.get('label'),
+                     xml.get('destination') or None,
+                     amdpar_xml=xml.getparent().getparent())
