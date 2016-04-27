@@ -35,12 +35,3 @@ class ImageOverrides(object):
             if source and key in source:
                 return source[key]
         return default
-
-
-class RegPatches(object):
-    def get(self, key, default=None):
-        for source in settings.REGPATCHES_SOURCES:
-            source = _try_to_load(source, 'regpatches')
-            if source and key in source:
-                return source[key]
-        return default
