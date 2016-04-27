@@ -22,7 +22,7 @@ def dependencies(tree_path, version_ids, cfr_title, cfr_part):
     deps = dependency.Graph()
     for prev, curr in gaps:
         deps.add(tree_path / curr, tree_path / prev)
-        deps.add(tree_path / curr, entry.RuleChanges(curr))
+        deps.add(tree_path / curr, entry.Notice(curr))
         deps.add(tree_path / curr,
                  entry.Version(cfr_title, cfr_part, curr))
     return deps
@@ -35,8 +35,8 @@ def derived_from_rules(version_ids, deps, tree_path):
     rule_versions = []
     for version_id in version_ids:
         path = str(tree_path / version_id)
-        rule_change = str(entry.RuleChanges(version_id))
-        if rule_change in deps.dependencies(path):
+        notice = str(entry.Notice(version_id))
+        if notice in deps.dependencies(path):
             rule_versions.append(version_id)
     return rule_versions
 
@@ -45,9 +45,9 @@ def process(tree_path, previous, version_id):
     """Build and write a tree by combining the preceding tree with changes
     present in the associated rule"""
     prev_tree = (tree_path / previous).read()
-    notice = entry.RuleChanges(version_id).read()
+    notice = entry.Notice(version_id).read()
     notice_changes = defaultdict(list)
-    for amendment in notice.get('amendments', []):
+    for amendment in notice.amendments:
         for label, change_list in amendment.get('changes', []):
             notice_changes[label].extend(change_list)
     new_tree = compile_regulation(prev_tree, notice_changes)

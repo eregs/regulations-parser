@@ -9,6 +9,7 @@ setup(
         'License :: CC0 1.0 Universal (CC0 1.0) Public Domain Dedication'
     ],
     install_requires=[
+        "cached-property",
         "click",
         "coloredLogs",
         "GitPython",

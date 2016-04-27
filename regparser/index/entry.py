@@ -134,12 +134,6 @@ class FrozenTree(Tree):
     JSON_DECODER = staticmethod(frozen_node_decode_hook)
 
 
-class RuleChanges(_JSONEntry):
-    """Processes notices, keyed by rule_changes"""
-    PREFIX = (ROOT, 'rule_changes')
-    JSON_ENCODER = AmendmentEncoder
-
-
 class SxS(_JSONEntry):
     """Processes Section-by-Section analyses, keyed by sxs"""
     PREFIX = (ROOT, 'sxs')
