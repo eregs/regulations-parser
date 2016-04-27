@@ -2,7 +2,7 @@ import click
 
 from regparser.commands.dependency_resolver import DependencyResolver
 from regparser.index import dependency, entry
-from regparser.notice.build import process_amendments
+from regparser.notice.amendments import fetch_amendments
 
 
 @click.command()
@@ -23,9 +23,11 @@ def parse_rule_changes(document_number):
     # specific file to process
 
     notice_xml = notice_entry.read()
-    notice = process_amendments({'cfr_parts': notice_xml.cfr_parts},
-                                notice_xml.xml)
-    rule_entry.write(notice)
+    amendments = fetch_amendments(notice_xml.xml)
+    if amendments:
+        rule_entry.write({'amendments': amendments})
+    else:
+        rule_entry.write({})
 
 
 class RuleChangesResolver(DependencyResolver):

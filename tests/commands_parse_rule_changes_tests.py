@@ -26,20 +26,19 @@ class CommandsParseRuleChangesTests(TestCase):
             self.assertTrue(isinstance(result.exception,
                                        dependency.Missing))
 
-    @patch('regparser.commands.parse_rule_changes.process_amendments')
-    def test_writes(self, process_amendments):
+    @patch('regparser.commands.parse_rule_changes.fetch_amendments')
+    def test_writes(self, fetch_amendments):
         """If the notice XML is present, we write the parsed version to disk,
         even if that version's already present"""
-        process_amendments.return_value = {'filled': 'values'}
+        fetch_amendments.return_value = ['something']
         with self.cli.isolated_filesystem():
             entry.Notice('1111').write(self.notice_xml)
             self.cli.invoke(parse_rule_changes, ['1111'])
-            self.assertTrue(process_amendments.called)
-            args = process_amendments.call_args[0]
-            self.assertTrue(isinstance(args[0], dict))
-            self.assertTrue(isinstance(args[1], etree._Element))
+            self.assertTrue(fetch_amendments.called)
+            args = fetch_amendments.call_args[0]
+            self.assertTrue(isinstance(args[0], etree._Element))
 
-            process_amendments.reset_mock()
+            fetch_amendments.reset_mock()
             entry.Entry('rule_changes', '1111').write('content')
             self.cli.invoke(parse_rule_changes, ['1111'])
-            self.assertTrue(process_amendments.called)
+            self.assertTrue(fetch_amendments.called)
