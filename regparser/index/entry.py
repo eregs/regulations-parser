@@ -109,6 +109,15 @@ class Version(Entry):
             yield version.identifier
 
 
+class FinalVersion(Version):
+    """Like Version, but only list versions associated with final rules"""
+    def __iter__(self):
+        for version_id in super(FinalVersion, self).__iter__():
+            version = (self / version_id).read()
+            if version.is_final:
+                yield version_id
+
+
 class _JSONEntry(Entry):
     """Base class for importing/exporting JSON"""
     JSON_ENCODER = json.JSONEncoder

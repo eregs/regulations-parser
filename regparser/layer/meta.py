@@ -40,5 +40,5 @@ class Meta(Layer):
         return [dict(layer.items() + settings.META.items())]
 
     def effective_date(self):
-        if self.version:
+        if self.version and self.version.effective:
             return self.version.effective.isoformat()

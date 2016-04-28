@@ -78,7 +78,7 @@ def write_if_needed(cfr_title, cfr_part, version_ids, xmls, delays):
     """All versions which are stale (either because they were never create or
     because their dependency has been updated) are written to disk. If any
     dependency is missing, an exception is raised"""
-    version_dir = entry.Version(cfr_title, cfr_part)
+    version_dir = entry.FinalVersion(cfr_title, cfr_part)
     deps = generate_dependencies(version_dir, version_ids, delays)
     for version_id in version_ids:
         version_entry = version_dir / version_id
