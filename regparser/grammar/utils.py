@@ -119,8 +119,6 @@ class QuickSearchable(pyparsing.ParseElementEnhance):
             return recurse(grammar.exprs[0].expr) | recurse(grammar.exprs[1])
         elif isinstance(grammar, pyparsing.And):
             return recurse(grammar.exprs[0])
-        elif isinstance(grammar, pyparsing.Optional):
-            return set([re.escape(str(grammar.expr))])
         elif isinstance(grammar, (pyparsing.MatchFirst, pyparsing.Or)):
             return reduce(lambda so_far, expr: so_far | recurse(expr),
                           grammar.exprs, set())
