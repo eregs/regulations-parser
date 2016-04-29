@@ -62,7 +62,7 @@ class USCFinder(FinderBase):
     CITE_TYPE = 'USC'
     GRAMMAR = QuickSearchable(
         Word(string.digits).setResultsName("title") +
-        Marker("U.S.C.") +
+        "U.S.C." +
         Suppress(Optional("Chapter")) +
         Word(string.digits).setResultsName("section"))
 
