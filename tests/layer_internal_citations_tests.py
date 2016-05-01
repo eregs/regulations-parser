@@ -324,7 +324,7 @@ class ParseTest(TestCase):
         result = self.parser.process(Node(text, label=['1111']))
         self.assertEqual(None, result)
 
-    def test_pre_process(self):
+    def test_verify_citations(self):
         tree = Node(label=['1111', '2', '3'],
                     children=[Node(label=['222', '1', '1']),
                               Node(label=['222', '1', '1'],
@@ -335,14 +335,6 @@ class ParseTest(TestCase):
         self.assertEqual(parser.known_citations, set([
             ('1111', '2', '3'), ('222', '1', '1'), ('111', '34')]))
 
-    def test_verify_citations(self):
-        tree = Node(label=['1111', '2', '3'],
-                    children=[Node(label=['222', '1', '1']),
-                              Node(label=['222', '1', '1'],
-                                   children=[Node(label=['111', '34'])])])
-        parser = internal_citations.InternalCitationParser(
-            tree, cfr_title=None)
-        parser.pre_process()
         parser.verify_citations = False
         text = 'Section 111.34 and paragraph (c)'
         result = parser.process(Node(text))
