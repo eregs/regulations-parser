@@ -29,9 +29,11 @@ class GrammarCommonTests(TestCase):
         self.assertEqual(u'[Reserved]', result.subpart_title)
         self.assertEqual(u'J', result.subpart)
 
-    def test_marker_comment1(self):
+    def test_marker_comment(self):
         texts = [u'comment § 1004.3-4-i',
+                 u'comment § 1004.3-4.i',
                  u'comment 1004.3-4-i',
+                 u'comment 1004.3-4.i',
                  u'comment 3-4-i']
         for t in texts:
             result = unified.marker_comment.parseString(t)
@@ -51,17 +53,6 @@ class GrammarCommonTests(TestCase):
         self.assert_notice_cfr_p_match('12 CFR Parts 1024',
                                        title=12, parts=[1024])
         self.assert_notice_cfr_p_match('12 CFR 1024', title=12, parts=[1024])
-
-    def test_marker_comment2(self):
-        texts = [u'comment § 1004.3-4-i',
-                 u'comment § 1004.3-4.i',
-                 u'comment 1004.3-4-i',
-                 u'comment 1004.3-4.i',
-                 u'comment 3-4-i']
-        for t in texts:
-            result = unified.marker_comment.parseString(t)
-            self.assertEqual("3", result.section)
-            self.assertEqual("4", result.c1)
 
     def _decode(self, txt):
         """Convert from HTML entities"""
