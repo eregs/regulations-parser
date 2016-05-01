@@ -260,12 +260,6 @@ def flatten_tree(node_list, node):
     node_list.append(no_kids)
 
 
-def remove_intro(l):
-    """ Remove the marker that indicates this is a change to introductory
-    text. """
-    return l.replace('[text]', '')
-
-
 def pretty_change(change):
     """Pretty print output for a change"""
     node = change.get('node')

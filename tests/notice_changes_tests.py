@@ -112,10 +112,6 @@ class ChangesTests(TestCase):
         for n in node_list:
             self.assertEqual(n.children, [])
 
-    def test_remove_intro(self):
-        text = 'abcd[text]'
-        self.assertEqual('abcd', changes.remove_intro(text))
-
     def test_resolve_candidates(self):
         amend_map = {}
 

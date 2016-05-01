@@ -13,10 +13,6 @@ class Client:
     def __init__(self):
         self.base_url = settings.API_BASE
 
-    def regulation(self, label, version):
-        """End point for regulation JSON. Return the result as a dict"""
-        return self._get("regulation/%s/%s" % (label, version))
-
     def regversions(self, label):
         """End point for versions of a given reg."""
         return self._get("regulation/%s" % label)
