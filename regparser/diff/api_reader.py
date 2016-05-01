@@ -13,10 +13,6 @@ class Client:
     def __init__(self):
         self.base_url = settings.API_BASE
 
-    def regversions(self, label):
-        """End point for versions of a given reg."""
-        return self._get("regulation/%s" % label)
-
     def layer(self, layer_name, label, version):
         """End point for layer JSON. Return the result as a list"""
         return self._get("layer/%s/%s/%s" % (layer_name, label, version))

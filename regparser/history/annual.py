@@ -1,6 +1,6 @@
 # vim: set encoding=utf-8
 from collections import namedtuple
-from datetime import date, datetime
+from datetime import date
 import logging
 import os
 import re
@@ -114,13 +114,6 @@ class Volume(namedtuple('Volume', ['year', 'title', 'vol_num'])):
         response = requests.get(url)
         if response.status_code == 200:
             return XMLWrapper(response.content, url)
-
-
-def annual_edition_for(title, notice):
-    """Annual editions are published for different titles at different
-    points throughout the year. Find the 'next' annual edition"""
-    eff_date = datetime.strptime(notice['effective_on'], '%Y-%m-%d').date()
-    return date_of_annual_after(title, eff_date).year
 
 
 def publication_month(cfr_title):
