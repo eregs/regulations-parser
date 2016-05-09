@@ -11,7 +11,7 @@ logger = logging.getLogger(__name__)
 def previous_sxs(cfr_title, cfr_part, stop_version):
     """The SxS layer relies on all notices that came before a particular
     version"""
-    for previous_version in entry.Version(cfr_title, cfr_part):
+    for previous_version in entry.FinalVersion(cfr_title, cfr_part):
         yield entry.SxS(previous_version)
         if previous_version == stop_version:
             break

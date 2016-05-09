@@ -161,9 +161,6 @@ All of the settings listed in ``settings.py`` can be overridden in a
   which should be consulted if replacing chunks of XML in notices. This is
   more or less deprecated by ``LOCAL_XML_PATHS``. Defaults to a ``regcontent``
   module.
-* ``REGPATCHES_SOURCES`` - a list of python modules (represented via
-  strings) which should be consulted when determining changes to regulations
-  made in final rules.  Defaults to a ``regcontent`` module
 * ``LOCAL_XML_PATHS`` - a list of paths to search for notices from the
   Federal Register. This directory should match the folder structure of the
   Federal Register. If a notice is present in one of the local paths, that

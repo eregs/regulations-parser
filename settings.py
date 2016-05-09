@@ -86,13 +86,6 @@ MACROS_SOURCES = [
     'regcontent.macros'
 ]
 
-# list of modules implementing the __contains__ and __getitem__ methods
-# The key is the notice that needs to be modified; it should point to a dict
-# which will get merged with the notice['changes'] dict
-REGPATCHES_SOURCES = [
-    'regcontent.regpatches'
-]
-
 # In some cases, it is beneficial to tweak the XML the Federal Register
 # provides. This setting specifies file paths to look through for local
 # versions of their XML. See also XML_REPO below, which is effectively tacked

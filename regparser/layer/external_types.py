@@ -6,7 +6,7 @@ import re
 import string
 import urllib
 
-from pyparsing import Suppress, Word
+from pyparsing import Optional, Suppress, Word
 
 from regparser.citations import cfr_citations
 from regparser.grammar.utils import Marker, QuickSearchable
@@ -62,7 +62,8 @@ class USCFinder(FinderBase):
     CITE_TYPE = 'USC'
     GRAMMAR = QuickSearchable(
         Word(string.digits).setResultsName("title") +
-        Marker("U.S.C.") +
+        "U.S.C." +
+        Suppress(Optional("Chapter")) +
         Word(string.digits).setResultsName("section"))
 
     def find(self, node):

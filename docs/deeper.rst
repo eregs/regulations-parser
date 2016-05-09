@@ -74,17 +74,6 @@ becomes 503-1.xml, 503-2.xml, etc. Each file must then be *manually*
 modified to change the effective date and remove sections that are not
 relevant to this date. We sometimes refer to this as "splitting" the notice.
 
-While editing the notice is generally an effective strategy, there are
-certain corner cases in which the parser simply does not support the logic
-needed to determine what's going on. In these situations, you have the
-option of using custom "patches" for notices, via the ``REGPATCHES_SOURCES``
-setting. The setting refers to a Python object that has keys and values
-(e.g. a ``dict``). The keys are notice document numbers (e.g. 2013-22752 or
-2013-22752_20140110 for a split notice). When the changes associated with a
-particular notice are consulted (to build the next regulation version), the
-entries in the value are added to the list of notice ``changes``. This
-strategy is useful for certain appendix alterations.
-
 Appendix Parsing
 ================
 

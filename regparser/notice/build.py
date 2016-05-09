@@ -2,16 +2,12 @@ import logging
 
 from lxml import etree
 
-from regparser.notice import changes
-from regparser.notice.amdparser import amendment_from_xml
-from regparser.notice.amendments import ContentCache
-from regparser.notice.changes import new_subpart_added
+from regparser.notice.amendments import fetch_amendments
 from regparser.notice.dates import fetch_dates
 from regparser.notice.sxs import (
     build_section_by_section, find_section_by_section)
 from regparser.notice.util import spaces_then_remove, swap_emphasis_tags
 from regparser.notice.xml import fetch_cfr_parts, xmls_for_url
-from regparser.tree import struct
 
 
 logger = logging.getLogger(__name__)
@@ -73,113 +69,6 @@ def set_document_numbers(notices):
     return notices
 
 
-def process_designate_subpart(amendment):
-    """ Process the designate amendment if it adds a subpart. """
-    label_id = '-'.join(amendment.label)
-    return {label_id: {'action': 'DESIGNATE',
-                       'destination': amendment.destination}}
-
-
-def create_xmlless_change(amendment, notice_changes):
-    """Deletes, moves, and the like do not have an associated XML structure.
-    Add their changes"""
-    amend_map = changes.match_labels_and_changes([amendment], None)
-    for label, amendments in amend_map.iteritems():
-        for amendment in amendments:
-            if amendment['action'] == 'DELETE':
-                notice_changes.add_changes(
-                    amendment['amdpar_xml'],
-                    {label: {'action': amendment['action']}})
-            elif amendment['action'] == 'MOVE':
-                change = {'action': amendment['action']}
-                destination = [d for d in amendment['destination'] if d != '?']
-                change['destination'] = destination
-                notice_changes.add_changes(
-                    amendment['amdpar_xml'], {label: change})
-            else:
-                logger.warning("Unknown action: %s", amendment['action'])
-
-
-def create_xml_changes(amended_labels, section, notice_changes):
-    """For PUT/POST, match the amendments to the section nodes that got
-    parsed, and actually create the notice changes. """
-
-    def per_node(node):
-        node.child_labels = [c.label_id() for c in node.children]
-    struct.walk(section, per_node)
-
-    amend_map = changes.match_labels_and_changes(amended_labels, section)
-
-    for label, amendments in amend_map.iteritems():
-        for amendment in amendments:
-            if amendment['action'] in ('POST', 'PUT', 'INSERT'):
-                if 'field' in amendment:
-                    nodes = changes.create_field_amendment(label, amendment)
-                else:
-                    nodes = changes.create_add_amendment(amendment)
-                for n in nodes:
-                    notice_changes.add_changes(amendment['amdpar_xml'], n)
-            elif amendment['action'] == 'RESERVE':
-                change = changes.create_reserve_amendment(amendment)
-                notice_changes.add_changes(amendment['amdpar_xml'], change)
-            else:
-                logger.warning("Unknown action: %s", amendment['action'])
-
-
-def process_amendments(notice, notice_xml):
-    """Process changes to the regulation that are expressed in the notice."""
-    notice_changes = changes.NoticeChanges()
-
-    if notice_xml.xpath('.//AMDPAR[not(EREGS_INSTRUCTIONS)]'):
-        logger.warning(
-            'No <EREGS_INSTRUCTIONS>. Was this notice preprocessed?')
-
-    cache = ContentCache()
-    authority_by_xml = {}
-    for instruction_xml in notice_xml.xpath('.//EREGS_INSTRUCTIONS/*'):
-        amendment = amendment_from_xml(instruction_xml)
-        content = cache.content_of_change(instruction_xml)
-        if instruction_xml.tag == 'MOVE_INTO_SUBPART':
-            subpart_changes = process_designate_subpart(amendment)
-            if subpart_changes:
-                notice_changes.add_changes(amendment.amdpar_xml,
-                                           subpart_changes)
-        elif instruction_xml.tag == 'AUTHORITY':
-            authority_by_xml[amendment.amdpar_xml] = instruction_xml.text
-        elif new_subpart_added(amendment):
-            subpart_changes = {}
-            for change in changes.create_subpart_amendment(content.struct):
-                subpart_changes.update(change)
-            notice_changes.add_changes(amendment.amdpar_xml, subpart_changes)
-        elif content:
-            content.amends.append(amendment)
-        else:
-            create_xmlless_change(amendment, notice_changes)
-
-    for content in cache.by_xml.values():
-        create_xml_changes(content.amends, content.struct, notice_changes)
-
-    amendments = []
-    for amdpar_xml in notice_xml.xpath('.//AMDPAR'):
-        amendment = {"instruction": amdpar_xml.text}
-        # There'll be at most one
-        for inst_xml in amdpar_xml.xpath('./EREGS_INSTRUCTIONS'):
-            context = inst_xml.get('final_context', '')
-            amendment['cfr_part'] = context.split('-')[0]
-        relevant_changes = notice_changes.changes_by_xml[amdpar_xml]
-        if relevant_changes:
-            amendment['changes'] = list(relevant_changes.items())
-        if amdpar_xml in authority_by_xml:
-            amendment['authority'] = authority_by_xml[amdpar_xml]
-
-        amendments.append(amendment)
-
-    if amendments:
-        notice['amendments'] = amendments
-
-    return notice
-
-
 def process_sxs(notice, notice_xml):
     """ Find and build SXS from the notice_xml. """
     sxs = find_section_by_section(notice_xml)
@@ -204,7 +93,9 @@ def process_xml(notice, notice_xml):
         notice['cfr_parts'] = cfr_parts
 
     process_sxs(notice, notice_xml)
-    process_amendments(notice, notice_xml)
+    amds = fetch_amendments(notice_xml)
+    if amds:
+        notice['amendments'] = amds
     add_footnotes(notice, notice_xml)
 
     return notice

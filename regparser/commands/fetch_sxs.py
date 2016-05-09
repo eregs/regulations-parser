@@ -35,7 +35,7 @@ def fetch_sxs(document_number):
     sxs_entry.write(notice)
 
 
-class RuleChangesResolver(DependencyResolver):
+class SxSResolver(DependencyResolver):
     PATH_PARTS = entry.SxS.PREFIX + (
         '(?P<doc_number>[a-zA-Z0-9-_]+)',)
 

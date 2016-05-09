@@ -85,10 +85,3 @@ class ImageOverridesTests(GetterBase, TestCase):
 
     def content_obj(self):
         return content.ImageOverrides()
-
-
-class RegPatchesTests(GetterBase, TestCase):
-    settings_key = 'REGPATCHES_SOURCES'
-
-    def content_obj(self):
-        return content.RegPatches()
