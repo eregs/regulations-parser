@@ -1,16 +1,23 @@
 """Generate a minimal notice without hitting the FR"""
+from regparser.notice.xml import NoticeXML, TitlePartsRef
+
+from lxml import etree
 
 
 def build(doc_number, effective_on, cfr_title, cfr_part):
-    return {
-        "document_number": doc_number,
-        "effective_on": effective_on,
-        "initial_effective_on": effective_on,
-        "publication_date": effective_on,
-        "cfr_title": cfr_title,
-        "cfr_parts": [str(cfr_part)],   # for consistency w/ normal notices
-        "fr_url": None
-    }
+    notice_xml = NoticeXML(etree.fromstring("""
+        <ROOT>
+            <PRTPAGE P="1" />
+            <AGENCY></AGENCY>
+            <SUBJECT></SUBJECT>
+        </ROOT>
+    """))
+    notice_xml.fr_volume = 10
+    notice_xml.version_id = doc_number
+    notice_xml.effective = effective_on
+    notice_xml.published = effective_on
+    notice_xml.cfr_refs = [TitlePartsRef(cfr_title, [cfr_part])]
+    return notice_xml
 
 
 def effective_date_for(xml_tree):
