@@ -242,7 +242,8 @@ class NoticeXML(XMLWrapper):
         not present, returns None"""
         value = self.xpath(".//DATES")[0].get('eregs-{}-date'.format(
             date_type))
-        return datetime.strptime(value, "%Y-%m-%d").date()
+        if value:
+            return datetime.strptime(value, "%Y-%m-%d").date()
 
     # --- Setters/Getters for specific fields. ---
     # We encode relevant information within the XML, but wish to provide easy
@@ -337,9 +338,52 @@ class NoticeXML(XMLWrapper):
     def version_id(self, value):
         self.xml.attrib['eregs-version-id'] = str(value)
 
+    @property
+    def fr_html_url(self):
+        return self.xml.attrib.get('fr-html-url')
+
+    @fr_html_url.setter
+    def fr_html_url(self, value):
+        self.xml.attrib['fr-html-url'] = value
+
     @cached_property        # rather expensive operation, so cache results
     def amendments(self):
         return fetch_amendments(self.xml)
+
+    @property
+    def fr_citation(self):
+        return '{} FR {}'.format(self.fr_volume, self.start_page)
+
+    @property
+    def title(self):
+        return self.xpath('//SUBJECT')[0].text
+
+    @property
+    def primary_agency(self):
+        return self.xpath('//AGENCY')[0].text
+
+    def as_dict(self):
+        """We use JSON to represent notices in the API. This converts the
+        relevant data into a dictionary to get one step closer. Unfortunately,
+        that design assumes a single cfr_part"""
+        cfr_ref = self.cfr_refs[0]
+        notice = {'amendments': self.amendments,
+                  'cfr_parts': cfr_ref.parts,
+                  'cfr_title': cfr_ref.title,
+                  'dockets': self.docket_ids,
+                  'document_number': self.version_id,
+                  'fr_citation': self.fr_citation,
+                  'fr_url': self.fr_html_url,
+                  'fr_volume': self.fr_volume,
+                  'primary_agency': self.primary_agency,
+                  'publication_date': self.published.isoformat(),
+                  'regulation_id_numbers': self.rins,
+                  'title': self.title}
+        if self.comments_close_on:
+            notice['comments_close'] = self.comments_close_on.isoformat()
+        if self.effective:
+            notice['effective_on'] = self.effective.isoformat()
+        return notice
 
 
 def local_copies(url):

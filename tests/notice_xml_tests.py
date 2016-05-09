@@ -503,3 +503,38 @@ class NoticeXMLTests(TestCase):
             notice_xml.TitlePartsRef(title=41, parts=[210]),
             notice_xml.TitlePartsRef(title=42, parts=[302, 303])
         ])
+
+    def test_as_dict(self):
+        with XMLBuilder("ROOT") as ctx:
+            ctx.PRTPAGE(P=44)
+            ctx.AGENCY('Awesome Admin')
+            ctx.SUBJECT('This is the title')
+
+        notice = notice_xml.NoticeXML(ctx.xml)
+        notice.cfr_refs = [
+            notice_xml.TitlePartsRef(title=11, parts=[234, 456])]
+        notice.version_id = 'v1v1v1'
+        notice.fr_volume = 33
+        notice.fr_html_url = 'http://example.com'
+        notice.published = date(2002, 2, 2)
+        notice.comments_close_on = date(2003, 3, 3)
+        notice.effective = date(2004, 4, 4)
+        notice.derive_rins(['r1111', 'r2222'])
+        notice.derive_docket_ids(['d1111', 'd2222'])
+
+        self.assertEqual(notice.as_dict(), {
+            'amendments': [],
+            'comments_close': '2003-03-03',
+            'cfr_parts': [234, 456],
+            'cfr_title': 11,
+            'dockets': ['d1111', 'd2222'],
+            'document_number': 'v1v1v1',
+            'effective_on': '2004-04-04',
+            'fr_citation': '33 FR 43',
+            'fr_url': 'http://example.com',
+            'fr_volume': 33,
+            'primary_agency': 'Awesome Admin',
+            'publication_date': '2002-02-02',
+            'regulation_id_numbers': ['r1111', 'r2222'],
+            'title': 'This is the title'
+        })

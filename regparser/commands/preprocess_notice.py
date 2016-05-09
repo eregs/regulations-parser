@@ -51,6 +51,7 @@ def preprocess_notice(document_number):
             "cfr_references",
             "comments_close_on",
             "full_text_xml_url",
+            "html_url",
             "publication_date",
             "regulation_id_numbers",
             "volume"
@@ -62,6 +63,8 @@ def preprocess_notice(document_number):
         file_name = document_number
         notice_xml.published = meta['publication_date']
         notice_xml.fr_volume = meta['volume']
+        if meta.get('html_url'):
+            notice_xml.fr_html_url = meta['html_url']
 
         if meta.get("comments_close_on"):
             notice_xml.comments_close_on = meta["comments_close_on"]
