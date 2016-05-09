@@ -212,6 +212,11 @@ def merge_duplicates(nodes):
         return nodes
 
 
+def assign_preorder_index(root_node):
+    for idx, node in enumerate(root_node.walk(lambda n: n)):
+        node.preorder_idx = idx
+
+
 def treeify(nodes):
     """Given a list of nodes, convert those nodes into the appropriate tree
     structure based on their labels. This assumes that all nodes will fall
