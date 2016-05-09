@@ -525,7 +525,7 @@ class NoticeXMLTests(TestCase):
         self.assertEqual(notice.as_dict(), {
             'amendments': [],
             'comments_close': '2003-03-03',
-            'cfr_parts': [234, 456],
+            'cfr_parts': ['234', '456'],
             'cfr_title': 11,
             'dockets': ['d1111', 'd2222'],
             'document_number': 'v1v1v1',
@@ -533,6 +533,7 @@ class NoticeXMLTests(TestCase):
             'fr_citation': '33 FR 43',
             'fr_url': 'http://example.com',
             'fr_volume': 33,
+            'meta': {'start_page': 43},
             'primary_agency': 'Awesome Admin',
             'publication_date': '2002-02-02',
             'regulation_id_numbers': ['r1111', 'r2222'],

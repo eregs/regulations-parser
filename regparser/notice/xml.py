@@ -368,13 +368,15 @@ class NoticeXML(XMLWrapper):
         that design assumes a single cfr_part"""
         cfr_ref = self.cfr_refs[0]
         notice = {'amendments': self.amendments,
-                  'cfr_parts': cfr_ref.parts,
+                  'cfr_parts': [str(part) for part in cfr_ref.parts],
                   'cfr_title': cfr_ref.title,
                   'dockets': self.docket_ids,
                   'document_number': self.version_id,
                   'fr_citation': self.fr_citation,
                   'fr_url': self.fr_html_url,
                   'fr_volume': self.fr_volume,
+                  # @todo - SxS depends on this; we should remove soon
+                  'meta': {'start_page': self.start_page},
                   'primary_agency': self.primary_agency,
                   'publication_date': self.published.isoformat(),
                   'regulation_id_numbers': self.rins,
