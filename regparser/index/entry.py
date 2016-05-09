@@ -109,6 +109,15 @@ class Version(Entry):
             yield version.identifier
 
 
+class FinalVersion(Version):
+    """Like Version, but only list versions associated with final rules"""
+    def __iter__(self):
+        for version_id in super(FinalVersion, self).__iter__():
+            version = (self / version_id).read()
+            if version.is_final:
+                yield version_id
+
+
 class _JSONEntry(Entry):
     """Base class for importing/exporting JSON"""
     JSON_ENCODER = json.JSONEncoder
@@ -132,12 +141,6 @@ class Tree(_JSONEntry):
 class FrozenTree(Tree):
     """Like Tree, but decodes as FrozenNodes"""
     JSON_DECODER = staticmethod(frozen_node_decode_hook)
-
-
-class RuleChanges(_JSONEntry):
-    """Processes notices, keyed by rule_changes"""
-    PREFIX = (ROOT, 'rule_changes')
-    JSON_ENCODER = AmendmentEncoder
 
 
 class SxS(_JSONEntry):

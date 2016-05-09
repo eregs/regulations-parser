@@ -16,7 +16,7 @@ def last_versions(cfr_title, cfr_part):
     """Run through all known versions of this regulation and pull out versions
     which are the last to be included before an annual edition"""
     have_annual_edition = {}
-    path = entry.Version(cfr_title, cfr_part)
+    path = entry.FinalVersion(cfr_title, cfr_part)
     if len(path) == 0:
         raise click.UsageError("No versions found. Run `versions`?")
     for version_id in path:
