@@ -13,7 +13,10 @@ def write_trees(client, only_title, only_part):
     for tree_entry in utils.relevant_paths(entry.Tree(), only_title,
                                            only_part):
         cfr_title, cfr_part, version_id = tree_entry.path
-        client.regulation(cfr_part, version_id).write(tree_entry.read())
+        content = tree_entry.read()
+        for idx, node in enumerate(content.walk(lambda n: n)):
+            node.preorder_idx = idx
+        client.regulation(cfr_part, version_id).write(content)
 
 
 def write_layers(client, only_title, only_part):
