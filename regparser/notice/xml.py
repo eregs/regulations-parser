@@ -211,50 +211,11 @@ class NoticeXML(XMLWrapper):
         self.xml.insert(0, agencies_el)
         return agency_map
 
-    def set_cfr_refs(self, refs=None):
-        """
-        Get the references to CFR titles and parts out of the metadata.
-        Return a list of TitlePartsRef objects grouped by title and
-        sorted, for example::
-
-            [{"title": 0, "part": 23}, {"title": 0, "part": 17}]
-
-        Becomes::
-
-            [TitlePartsRef(title="0", parts=["17", "23"])]
-
-        Transform the XML to include elements that look like this::
-
-            <EREGS_CFR_REFS>
-                <EREGS_CFR_TITLE_REF title="40">
-                    <EREGS_CFR_PART_REF part="300" />
-                    <EREGS_CFR_PART_REF part="310" />
-                </EREGS_CFR_TITLE_REF>
-            </EREGS_CFR_REFS>
-
-        :arg list refs: The list of title/part pairs; if empty, will create an
-            empty ``EREGS_CFR_REFS`` element and return an empty list.
-        :rtype: list
-        :returns: Grouped & sorted list.
-        """
-        refs = refs or []
-        # Group parts by title:
-        refd = {r["title"]: [] for r in refs}
-        for ref in refs:
-            refd[ref["title"]].append(ref["part"])
-        refs = [{u"title": k, "parts": refd[k]} for k in refd]
-        # Sort parts and sort list by title:
-        refs = [TitlePartsRef(r["title"], sorted(r["parts"], key=int))
-                for r in refs]
-        refs = sorted(refs, key=lambda x: int(x.title))
-
-        refs_el = etree.Element("EREGS_CFR_REFS")
-        for ref in refs:
-            el = etree.SubElement(refs_el, "EREGS_CFR_TITLE_REF",
-                                  title=str(ref.title))
-            for part in ref.parts:
-                etree.SubElement(el, "EREGS_CFR_PART_REF", part=str(part))
-        self.xml.insert(0, refs_el)
+    def derive_cfr_refs(self):
+        """Pull out CFR information from the CFR tag"""
+        for cfr_elm in self.xpath('//CFR'):
+            result = notice_cfr_p.parseString(cfr_elm.text)
+            yield TitlePartsRef(result.cfr_title, list(result.cfr_parts))
 
     def derive_closing_date(self):
         """Attempt to parse comment closing date from DATES tags. Returns a
@@ -300,11 +261,32 @@ class NoticeXML(XMLWrapper):
         refs = []
         for title_el in self.xpath("//EREGS_CFR_TITLE_REF"):
             parts = title_el.xpath("EREGS_CFR_PART_REF")
-            parts = [p.attrib["part"] for p in parts]
-            refs.append(TitlePartsRef(title=title_el.attrib["title"],
+            parts = [int(p.attrib["part"]) for p in parts]
+            refs.append(TitlePartsRef(title=int(title_el.attrib["title"]),
                                       parts=parts))
 
         return refs
+
+    @cfr_refs.setter
+    def cfr_refs(self, value):
+        """
+        Transform the XML to include elements that look like this::
+
+            <EREGS_CFR_REFS>
+                <EREGS_CFR_TITLE_REF title="40">
+                    <EREGS_CFR_PART_REF part="300" />
+                    <EREGS_CFR_PART_REF part="310" />
+                </EREGS_CFR_TITLE_REF>
+            </EREGS_CFR_REFS>
+        :arg list value: List of TitlePartsRef elements
+        """
+        refs_el = etree.Element("EREGS_CFR_REFS")
+        for ref in value:
+            el = etree.SubElement(refs_el, "EREGS_CFR_TITLE_REF",
+                                  title=str(ref.title))
+            for part in ref.parts:
+                etree.SubElement(el, "EREGS_CFR_PART_REF", part=str(part))
+        self.xml.insert(0, refs_el)
 
     @property
     def comments_close_on(self):
@@ -355,30 +337,9 @@ class NoticeXML(XMLWrapper):
     def version_id(self, value):
         self.xml.attrib['eregs-version-id'] = str(value)
 
-    @property
-    def cfr_parts(self):
-        return [int(p) for p in fetch_cfr_parts(self.xml)]
-
-    @property
-    def cfr_titles(self):
-        return list(sorted(set(
-            int(notice_cfr_p.parseString(cfr_elm.text).cfr_title)
-            for cfr_elm in self.xpath('//CFR'))))
-
     @cached_property        # rather expensive operation, so cache results
     def amendments(self):
         return fetch_amendments(self.xml)
-
-
-def fetch_cfr_parts(notice_xml):
-    """ Sometimes we need to read the CFR part numbers from the notice
-        XML itself. This would need to happen when we've broken up a
-        multiple-effective-date notice that has multiple CFR parts that
-        may not be included in each date. """
-    parts = []
-    for cfr_elm in notice_xml.xpath('//CFR'):
-        parts.extend(notice_cfr_p.parseString(cfr_elm.text).cfr_parts)
-    return list(sorted(set(parts)))
 
 
 def local_copies(url):

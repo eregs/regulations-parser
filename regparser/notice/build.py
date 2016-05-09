@@ -2,12 +2,13 @@ import logging
 
 from lxml import etree
 
+from regparser.grammar.unified import notice_cfr_p
 from regparser.notice.amendments import fetch_amendments
 from regparser.notice.dates import fetch_dates
 from regparser.notice.sxs import (
     build_section_by_section, find_section_by_section)
 from regparser.notice.util import spaces_then_remove, swap_emphasis_tags
-from regparser.notice.xml import fetch_cfr_parts, xmls_for_url
+from regparser.notice.xml import xmls_for_url
 
 
 logger = logging.getLogger(__name__)
@@ -77,6 +78,18 @@ def process_sxs(notice, notice_xml):
     sxs = build_section_by_section(sxs, notice['meta']['start_page'],
                                    notice['cfr_parts'][0])
     notice['section_by_section'] = sxs
+
+
+# @todo - this can be deleted once we remove process_xml
+def fetch_cfr_parts(notice_xml):
+    """ Sometimes we need to read the CFR part numbers from the notice
+        XML itself. This would need to happen when we've broken up a
+        multiple-effective-date notice that has multiple CFR parts that
+        may not be included in each date. """
+    parts = []
+    for cfr_elm in notice_xml.xpath('//CFR'):
+        parts.extend(notice_cfr_p.parseString(cfr_elm.text).cfr_parts)
+    return list(sorted(set(parts)))
 
 
 def process_xml(notice, notice_xml):
