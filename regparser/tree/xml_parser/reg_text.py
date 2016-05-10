@@ -366,12 +366,8 @@ class RegtextParagraphProcessor(paragraph_processor.ParagraphProcessor):
 
     def additional_constraints(self):
         return [optional_rules.depth_type_inverses,
-                optional_rules.star_new_level,
-                optional_rules.limit_sequence_gap(3),
-                optional_rules.limit_paragraph_types(
-                    mtypes.lower, mtypes.upper, mtypes.ints, mtypes.roman,
-                    mtypes.em_ints, mtypes.em_roman, mtypes.stars,
-                    mtypes.markerless)]
+                optional_rules.limit_sequence_gap(3)
+                ] + self.relaxed_constraints()
 
     def relaxed_constraints(self):
         return [optional_rules.star_new_level,

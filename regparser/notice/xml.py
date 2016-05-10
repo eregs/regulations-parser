@@ -6,12 +6,14 @@ import logging
 import os
 from urlparse import urlparse
 
+from cached_property import cached_property
 from lxml import etree
 import requests
 
 from regparser.grammar.unified import notice_cfr_p
 from regparser.history.delays import delays_in_sentence
 from regparser.index import xml_sync
+from regparser.notice.amendments import fetch_amendments
 from regparser.notice.dates import fetch_dates
 from regparser.tree.xml_parser.xml_wrapper import XMLWrapper
 import settings
@@ -362,6 +364,10 @@ class NoticeXML(XMLWrapper):
         return list(sorted(set(
             int(notice_cfr_p.parseString(cfr_elm.text).cfr_title)
             for cfr_elm in self.xpath('//CFR'))))
+
+    @cached_property        # rather expensive operation, so cache results
+    def amendments(self):
+        return fetch_amendments(self.xml)
 
 
 def fetch_cfr_parts(notice_xml):
