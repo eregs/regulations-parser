@@ -7,7 +7,6 @@ from mock import patch
 from regparser.commands.proposal_versions import proposal_versions
 from regparser.history.versions import Version
 from regparser.index import dependency, entry
-from regparser.notice.xml import TitlePartsRef
 
 
 class CommandsProposalVersionsTests(TestCase):
@@ -27,8 +26,7 @@ class CommandsProposalVersionsTests(TestCase):
         # entry.Notice('dddd').read()
         notice = entry.Notice.return_value.read.return_value
         notice.published = date.today()
-        notice.cfr_refs = [TitlePartsRef(11, [111, 222]),
-                           TitlePartsRef(22, [222, 333])]
+        notice.cfr_ref_pairs = [(11, 111), (11, 222), (22, 222), (22, 333)]
         with self.cli.isolated_filesystem():
             result = self.cli.invoke(proposal_versions, ['dddd'])
             self.assertIsNone(result.exception)

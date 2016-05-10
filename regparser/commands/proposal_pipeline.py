@@ -30,12 +30,9 @@ def proposal_pipeline(ctx, xml_file, output, only_latest, xml_ttl):
     ctx.invoke(import_notice, xml_file=xml_file)
 
     notice_xml = parse_notice(xml_file)
-    cfr_pairs = [(ref.title, part)
-                 for ref in notice_xml.cfr_refs for part in ref.parts]
-
     ctx.invoke(notice_preamble, doc_number=notice_xml.version_id)
 
-    for title, part in cfr_pairs:
+    for title, part in notice_xml.cfr_ref_pairs:
         if only_latest:
             ctx.invoke(current_version, cfr_title=title, cfr_part=part)
         else:
@@ -44,7 +41,7 @@ def proposal_pipeline(ctx, xml_file, output, only_latest, xml_ttl):
 
     ctx.invoke(proposal_versions, doc_number=notice_xml.version_id)
 
-    for title, part in cfr_pairs:
+    for title, part in notice_xml.cfr_ref_pairs:
         ctx.invoke(fill_with_rules, cfr_title=title, cfr_part=part)
         ctx.invoke(diffs, cfr_title=title, cfr_part=part)
 

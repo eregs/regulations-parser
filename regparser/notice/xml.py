@@ -302,6 +302,11 @@ class NoticeXML(XMLWrapper):
         self.xml.insert(0, refs_el)
 
     @property
+    def cfr_ref_pairs(self):
+        return [(ref.title, part)
+                for ref in self.cfr_refs for part in ref.parts]
+
+    @property
     def comments_close_on(self):
         return self._get_date_attr('comments-close-on')
 
