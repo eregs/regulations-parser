@@ -245,6 +245,18 @@ class NoticeXML(XMLWrapper):
         if value:
             return datetime.strptime(value, "%Y-%m-%d").date()
 
+    def derive_where_needed(self):
+        """A handful of fields might be parse-able from the original XML. If
+        we don't have values through modification, derive them here"""
+        if not self.comments_close_on:
+            self.derive_closing_date()
+        if not self.rins:
+            self.derive_rins()
+        if not self.cfr_refs:
+            self.cfr_refs = self.derive_cfr_refs()
+        if not self.effective:
+            self.derive_effective_date()
+
     # --- Setters/Getters for specific fields. ---
     # We encode relevant information within the XML, but wish to provide easy
     # access
