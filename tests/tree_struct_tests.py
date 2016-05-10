@@ -120,6 +120,36 @@ class DepthTreeTest(TestCase):
         self.assertEqual("3", struct.join_text(n3))
         self.assertEqual("4", struct.join_text(n4))
 
+    def test_assign_preorder_indexes(self):
+        """
+                       n1(0)
+                      /    \
+                    n2(1)   n3(5)
+                      |
+                    n4(2)
+                  /   \
+               n5(3)   n6(4)
+        """
+        n1 = struct.Node("1")
+        n2 = struct.Node("2")
+        n3 = struct.Node("3")
+        n4 = struct.Node("4")
+        n5 = struct.Node("5")
+        n6 = struct.Node("6")
+
+        n1.children = [n2, n3]
+        n2.children = [n4]
+        n4.children = [n5, n6]
+
+        struct.assign_preorder_index(n1)
+
+        self.assertEqual(0, n1.preorder_idx)
+        self.assertEqual(1, n2.preorder_idx)
+        self.assertEqual(2, n4.preorder_idx)
+        self.assertEqual(3, n5.preorder_idx)
+        self.assertEqual(4, n6.preorder_idx)
+        self.assertEqual(5, n3.preorder_idx)
+
     def test_encode(self):
         n1 = struct.Node('texttext', [struct.Node(node_type='t')],
                          ['1', '2', '3'])
