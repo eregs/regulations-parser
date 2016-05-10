@@ -327,7 +327,9 @@ class NoticeXML(XMLWrapper):
 
     @property
     def fr_volume(self):
-        return int(self.xpath(".//PRTPAGE")[0].attrib['eregs-fr-volume'])
+        value = self.xpath(".//PRTPAGE")[0].attrib.get('eregs-fr-volume')
+        if value:
+            return int(value)
 
     @fr_volume.setter
     def fr_volume(self, value):
