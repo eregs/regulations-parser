@@ -5,6 +5,7 @@ from regparser.api_writer import Client
 from regparser.commands import utils
 from regparser.index import entry
 from regparser.notice.build import add_footnotes, process_sxs
+from regparser.tree.struct import assign_preorder_index
 
 
 logger = logging.getLogger(__name__)
@@ -14,7 +15,9 @@ def write_trees(client, only_title, only_part):
     for tree_entry in utils.relevant_paths(entry.Tree(), only_title,
                                            only_part):
         cfr_title, cfr_part, version_id = tree_entry.path
-        client.regulation(cfr_part, version_id).write(tree_entry.read())
+        content = tree_entry.read()
+        assign_preorder_index(content)
+        client.regulation(cfr_part, version_id).write(content)
 
 
 def write_layers(client, only_title, only_part):
@@ -72,6 +75,7 @@ def write_diffs(client, only_title, only_part):
 def write_preambles(client):
     for doc_id in entry.Preamble():
         preamble = entry.Preamble(doc_id).read()
+        assign_preorder_index(preamble)
         client.preamble(doc_id).write(preamble)
 
 
