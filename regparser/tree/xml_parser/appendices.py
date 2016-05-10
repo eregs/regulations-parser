@@ -256,7 +256,7 @@ class AppendixProcessor(object):
         self.m_stack = tree_utils.NodeStack()
 
         self.part = part
-        self.paragraph_count = 0
+        self.paragraph_counter = 0
         self.header_count = 0
         self.depth = None
         self.appendix_letter = None

@@ -1,16 +1,13 @@
 # vim: set encoding=utf-8
 from collections import namedtuple
-from datetime import date, datetime
+from datetime import date
 import logging
 import os
 import re
 
 import requests
 
-from regparser.federalregister import fetch_notice_json
-from regparser.history.delays import modify_effective_dates
 from regparser.index import xml_sync
-from regparser.notice.build import build_notice
 from regparser.tree.xml_parser.xml_wrapper import XMLWrapper
 import settings
 
@@ -40,7 +37,7 @@ class Volume(namedtuple('Volume', ['year', 'title', 'vol_num'])):
     def __init__(self, year, title, vol_num):
         super(Volume, self).__init__(year, title, vol_num)
         self.url = CFR_BULK_URL.format(year=year, title=title, volume=vol_num)
-        self._response, self._exists, self._part_span = None, None, None
+        self._response, self._part_span = None, None
 
     @property
     def response(self):
@@ -119,13 +116,6 @@ class Volume(namedtuple('Volume', ['year', 'title', 'vol_num'])):
             return XMLWrapper(response.content, url)
 
 
-def annual_edition_for(title, notice):
-    """Annual editions are published for different titles at different
-    points throughout the year. Find the 'next' annual edition"""
-    eff_date = datetime.strptime(notice['effective_on'], '%Y-%m-%d').date()
-    return date_of_annual_after(title, eff_date).year
-
-
 def publication_month(cfr_title):
     """Annual editions are published for different titles at different points
     throughout the year. Return the month associated with this CFR title"""
@@ -160,28 +150,3 @@ def find_volume(year, title, part):
         vol_num += 1
         volume = Volume(year, title, vol_num)
     return None
-
-
-def first_notice_and_xml(title, part):
-    """Find the first annual xml and its associated notice"""
-    logger.debug("Finding first annual notice+xml - %s CFR %s",
-                 title, part)
-    notices = [build_notice(title, part, n, fetch_xml=False)
-               for n in fetch_notice_json(title, part, only_final=True)
-               if n['full_text_xml_url'] and n['effective_on']]
-    modify_effective_dates(notices)
-
-    notices = sorted(notices,
-                     key=lambda n: (n['effective_on'], n['publication_date']))
-
-    years = {}
-    for n in notices:
-        year = annual_edition_for(title, n)
-        years[year] = n
-
-    for year, notice in sorted(years.iteritems()):
-        volume = find_volume(year, title, part)
-        if volume:
-            part_xml = volume.find_part_xml(part)
-            if part_xml is not None:
-                return (notice, part_xml)

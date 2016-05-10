@@ -1,7 +1,6 @@
 # vim: set encoding=utf-8
 from unittest import TestCase
 
-from regparser.tree import reg_text
 from regparser.tree.struct import FrozenNode
 from regparser.diff import tree as difftree
 
@@ -9,30 +8,32 @@ from regparser.diff import tree as difftree
 class DiffTreeTest(TestCase):
     def test_subparts(self):
         """ Create a tree with no subparts, then add subparts. """
-        title = u"Regulation Title"
-        sect1_title = u"§ 204.1 First Section"
-        sect1 = u"(a) I believe this is (b) the best section "
-        sect2_title = u"§ 204.2 Second Section"
-        sect2 = u"Some sections \ndon't have \ndepth at all."
+        old_tree = FrozenNode(title="Regulation Title", label=['204'],
+                              children=[
+            FrozenNode(node_type='emptypart', label=['204', 'Subpart'],
+                       children=[
+                FrozenNode(title=u"§ 204.1 First Section", label=['204', '1'],
+                           children=[
+                    FrozenNode(text="(a) I believe this is the best section",
+                               label=['204', '1', 'a'])]),
+                FrozenNode(title=u"§ 204.2 Second Section", label=['204', '2'],
+                           text=u"Some sections \ndon't have \ndepth at all.")
+            ])])
+        new_tree = FrozenNode(title="Regulation Title", label=['204'],
+                              children=[
+            FrozenNode(node_type='subpart', label=['204', 'Subpart', 'A'],
+                       title=u"Subpart A—First subpart", children=[
+                FrozenNode(title=u"§ 204.1 First Section", label=['204', '1'],
+                           children=[
+                    FrozenNode(text="(a) I believe this is the best section",
+                               label=['204', '1', 'a'])])]),
+            FrozenNode(node_type='subpart', label=['204', 'Subpart', 'B'],
+                       title=u"Subpart B—Second subpart", children=[
+                FrozenNode(title=u"§ 204.2 Second Section", label=['204', '2'],
+                           text=u"Some sections \ndon't have \ndepth at all.")
+            ])])
 
-        old_text = "\n".join([title, sect1_title, sect1, sect2_title, sect2])
-        older = reg_text.build_reg_text_tree(old_text, 204)
-
-        ntitle = u"Regulation Title"
-        nsubpart_a = u"Subpart A—First subpart"
-        nsect1_title = u"§ 204.1 First Section"
-        nsect1 = u"(a) I believe this is (b) the best section "
-        nsubpart_b = u"Subpart B—Second subpart"
-        nsect2_title = u"§ 204.2 Second Section"
-        nsect2 = u"Some sections \ndon't have \ndepth at all."
-
-        new_text = "\n".join([
-            ntitle, nsubpart_a, nsect1_title,
-            nsect1, nsubpart_b, nsect2_title, nsect2])
-        newer = reg_text.build_reg_text_tree(new_text, 204)
-
-        result = dict(difftree.changes_between(
-            FrozenNode.from_node(older), FrozenNode.from_node(newer)))
+        result = dict(difftree.changes_between(old_tree, new_tree))
 
         self.assertEquals(
             result['204-Subpart-A'],
@@ -41,7 +42,7 @@ class DiffTreeTest(TestCase):
                 "tagged_text": None,
                 "label": ("204", "Subpart", "A"),
                 "child_labels": ("204-1",),
-                "title": u"First subpart"},
+                "title": u"Subpart A—First subpart"},
                 "op": "added"})
         self.assertTrue('204-Subpart-B' in result)
         self.assertEquals(result['204-Subpart'], {"op": "deleted"})
