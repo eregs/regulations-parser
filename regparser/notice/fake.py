@@ -18,9 +18,3 @@ def build(doc_number, effective_on, cfr_title, cfr_part):
     notice_xml.published = effective_on
     notice_xml.cfr_refs = [TitlePartsRef(cfr_title, [cfr_part])]
     return notice_xml
-
-
-def effective_date_for(xml_tree):
-    """Return the date associated with an annual edition of regulation XML"""
-    nodes = xml_tree.xpath('//DATE') or xml_tree.xpath('//ORIGINALDATE')
-    return nodes[0].text

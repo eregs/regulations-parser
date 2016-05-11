@@ -106,20 +106,6 @@ class DepthTreeTest(TestCase):
         self.assertEqual(root.children[0],
                          struct.find_parent(root, 'root-1-b'))
 
-    def test_join_text(self):
-        n1 = struct.Node("1")
-        n2 = struct.Node("2")
-        n3 = struct.Node("3")
-        n4 = struct.Node("4")
-
-        n1.children = [n2, n3]
-        n2.children = [n4]
-
-        self.assertEqual("1243", struct.join_text(n1))
-        self.assertEqual("24", struct.join_text(n2))
-        self.assertEqual("3", struct.join_text(n3))
-        self.assertEqual("4", struct.join_text(n4))
-
     def test_assign_preorder_indexes(self):
         """
                        n1(0)

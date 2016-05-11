@@ -112,10 +112,6 @@ class ChangesTests(TestCase):
         for n in node_list:
             self.assertEqual(n.children, [])
 
-    def test_remove_intro(self):
-        text = 'abcd[text]'
-        self.assertEqual('abcd', changes.remove_intro(text))
-
     def test_resolve_candidates(self):
         amend_map = {}
 
@@ -289,26 +285,6 @@ class ChangesTests(TestCase):
         self.assertEqual(
             changes.pretty_change(change), 'A Field changed to: Some Text')
 
-    def test_find_section(self):
-        with XMLBuilder('REGTEXT') as ctx:
-            ctx.AMDPAR("In 200.1 revise paragraph (b) as follows:")
-            with ctx.SECTION():
-                ctx.SECTNO("200.1")
-                ctx.SUBJECT("Authority and Purpose.")
-                ctx.P(" (b) This part is very important. ")
-            ctx.AMDPAR("In 200.3 revise paragraph (b)(1) as follows:")
-            with ctx.SECTION():
-                ctx.SECTNO("200.3")
-                ctx.SUBJECT("Definitions")
-                ctx.P(" (b)(1) Define a term here. ")
-
-        amdpar_xml = ctx.xml.xpath('//AMDPAR')[0]
-        section = changes.find_section(amdpar_xml)
-        self.assertEqual(section.tag, 'SECTION')
-
-        sectno_xml = section.xpath('./SECTNO')[0]
-        self.assertEqual(sectno_xml.text, '200.1')
-
     def test_new_subpart_added(self):
         amended_label = Amendment('POST', '200-Subpart:B')
         self.assertTrue(changes.new_subpart_added(amended_label))
@@ -357,47 +333,6 @@ class ChangesTests(TestCase):
 
         self.assertEqual(section_paragraphs[0].text, 'paragraph 1')
         self.assertEqual(section_paragraphs[1].text, 'paragraph 2')
-
-    def test_find_section_paragraphs(self):
-        with XMLBuilder("REGTEXT") as ctx:
-            with ctx.SECTION():
-                ctx.SECTNO(" 205.4 ")
-                ctx.SUBJECT("[Corrected]")
-            ctx.AMDPAR(u"3. In § 105.1, revise paragraph (b) to read as "
-                       u"follows:")
-            ctx.P("(b) paragraph 1")
-
-        amdpar = ctx.xml.xpath('//AMDPAR')[0]
-        section = changes.find_section(amdpar)
-        self.assertNotEqual(None, section)
-        paragraphs = [p for p in section if p.tag == 'P']
-        self.assertEqual(paragraphs[0].text, '(b) paragraph 1')
-
-    def test_find_lost_section(self):
-        with XMLBuilder("PART") as ctx:
-            with ctx.REGTEXT():
-                ctx.AMDPAR(u"3. In § 105.1, revise paragraph (b) to read as "
-                           u"follows:")
-            with ctx.REGTEXT():
-                with ctx.SECTION():
-                    ctx.SECTNO(" 205.4 ")
-                    ctx.SUBJECT("[Corrected]")
-        amdpar = ctx.xml.xpath('//AMDPAR')[0]
-        section = changes.find_lost_section(amdpar)
-        self.assertNotEqual(None, section)
-
-    def test_find_section_lost(self):
-        with XMLBuilder("PART") as ctx:
-            with ctx.REGTEXT():
-                ctx.AMDPAR(u"3. In § 105.1, revise paragraph (b) to read as "
-                           u"follows:")
-            with ctx.REGTEXT():
-                with ctx.SECTION():
-                    ctx.SECTNO(" 205.4 ")
-                    ctx.SUBJECT("[Corrected]")
-        amdpar = ctx.xml.xpath('//AMDPAR')[0]
-        section = changes.find_section(amdpar)
-        self.assertNotEqual(None, section)
 
 
 class NoticeChangesTests(TestCase):
