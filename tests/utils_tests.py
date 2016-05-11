@@ -26,7 +26,3 @@ class Utils(TestCase):
         body = "Here is text that follows\nnewlines\n\n\nabout in the body"
         self.assertEqual((title, "\n" + body),
                          utils.title_body(title + "\n" + body))
-
-    def test_flatten(self):
-        self.assertEqual(['a', 'b', 'c'],
-                         utils.flatten([['a', 'b'], ['c'], []]))

@@ -26,8 +26,3 @@ def title_body(text):
     if newline < 0:
         return text, ""
     return text[:newline], text[newline:]
-
-
-def flatten(list_of_lists):
-    """List[List[X]] -> List[X]"""
-    return sum(list_of_lists, [])

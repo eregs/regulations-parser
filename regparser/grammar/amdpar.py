@@ -97,6 +97,12 @@ def _paren_join(elements):
     return '(' + ')('.join(el for el in elements if el) + ')'
 
 
+def _paren_from_match(match):
+    values = [match.p1, match.p2, match.p3, match.p4, match.plaintext_p5,
+              match.plaintext_p6]
+    return _paren_join(values)
+
+
 marker_subpart = (
     context_certainty +
     unified.marker_subpart
@@ -109,21 +115,16 @@ comment_context_with_section = (
     atomic.section +
     unified.depth1_p + ~
     FollowedBy("-")
-).setParseAction(
-    lambda m: tokens.Context(
-        [None, 'Interpretations', m.section,
-         _paren_join([m.p1, m.p2, m.p3, m.p4, m.plaintext_p5, m.plaintext_p6])
-         ], bool(m.certain)))
+).setParseAction(lambda m: tokens.Context(
+    [None, 'Interpretations', m.section, _paren_from_match(m)],
+    bool(m.certain)))
 # Mild modification of the above; catches "under 2(b)"
 comment_context_under_with_section = (
     Marker("under") +
     atomic.section +
     unified.depth1_p
-).setParseAction(
-    lambda m: tokens.Context(
-        [None, 'Interpretations', m.section,
-         _paren_join([m.p1, m.p2, m.p3, m.p4, m.plaintext_p5, m.plaintext_p6])
-         ], True))
+).setParseAction(lambda m: tokens.Context(
+    [None, 'Interpretations', m.section, _paren_from_match(m)], True))
 comment_context_without_section = (
     context_certainty +
     atomic.paragraph_marker +
@@ -266,9 +267,7 @@ single_comment_with_section = (
 ).setParseAction(
     lambda m: tokens.Paragraph(
         is_interp=True, section=m.section,
-        paragraphs=[
-            _paren_join([m.p1, m.p2, m.p3, m.p4, m.plaintext_p5,
-                         m.plaintext_p6]), m.level2, m.level3, m.level4]))
+        paragraphs=[_paren_from_match(m), m.level2, m.level3, m.level4]))
 single_comment_par = (
     atomic.paragraph_marker +
     comment_p
@@ -395,8 +394,7 @@ multiple_comments = (
     Marker("comments") +
     make_multiple(atomic.section + unified.depth1_p)
 ).setParseAction(make_par_list(lambda m: [
-    None, 'Interpretations', m.section,
-    _paren_join([m.p1, m.p2, m.p3, m.p4, m.plaintext_p5, m.plaintext_p6])]))
+    None, 'Interpretations', m.section, _paren_from_match(m)]))
 
 multiple_interp_entries = (
     Marker("entries") + Marker("for") +

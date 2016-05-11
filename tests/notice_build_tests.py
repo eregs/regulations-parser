@@ -48,7 +48,8 @@ class NoticeBuildTest(TestCase):
         })
 
     def test_process_xml(self):
-        """Integration test for xml processing"""
+        """Integration test for xml processing, including validating that some
+        fields may be missing"""
         with XMLBuilder("ROOT") as ctx:
             with ctx.SUPLINF():
                 ctx.HD("Supplementary Info", SOURCE="HED")
@@ -57,6 +58,7 @@ class NoticeBuildTest(TestCase):
                 ctx.P("Content")
                 ctx.HD("Section that follows", SOURCE="HD1")
                 ctx.P("Following Content")
+
         notice = {'cfr_parts': ['9292'], 'meta': {'start_page': 100}}
         self.assertEqual(build.process_xml(notice, ctx.xml), {
             'cfr_parts': ['9292'],
@@ -72,15 +74,6 @@ class NoticeBuildTest(TestCase):
             }],
         })
 
-    def test_process_xml_missing_fields(self):
-        with XMLBuilder("ROOT") as ctx:
-            with ctx.SUPLINF():
-                ctx.HD("Supplementary Info", SOURCE="HED")
-                ctx.HD("V. Section-by-Section Analysis", SOURCE="HD1")
-                ctx.HD("8(q) Words", SOURCE="HD2")
-                ctx.P("Content")
-                ctx.HD("Section that follows", SOURCE="HD1")
-                ctx.P("Following Content")
         notice = {'cfr_parts': ['9292'], 'meta': {'start_page': 210}}
         self.assertEqual(build.process_xml(notice, ctx.xml), {
             'cfr_parts': ['9292'],
