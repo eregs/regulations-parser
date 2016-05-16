@@ -81,8 +81,9 @@ def write_to(output, cfr_title, cfr_part):
                 cfr_title, cfr_part, output)
     client = Client(output)
     write_trees(client, cfr_title, cfr_part)
+    if cfr_title is None and cfr_part is None:
+        write_preambles(client)
+    # Note that layers must always be written _after_ the trees they reference
     write_layers(client, cfr_title, cfr_part)
     write_notices(client, cfr_title, cfr_part)
     write_diffs(client, cfr_title, cfr_part)
-    if cfr_title is None and cfr_part is None:
-        write_preambles(client)
