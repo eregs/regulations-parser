@@ -149,6 +149,11 @@ LAYERS = {
     ]),
 }
 
+# Regulations.gov settings
+REGS_GOV_API = 'https://api.data.gov/regulations/v3/'
+REGS_GOV_DOC_TPL = 'https://www.regulations.gov/#!documentDetail;D={doc_id}'
+REGS_GOV_KEY = 'DEMO_KEY'
+
 try:
     from local_settings import *
 except ImportError:
