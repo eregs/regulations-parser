@@ -212,6 +212,8 @@ class NoticeXML(XMLWrapper):
             self.cfr_refs = self.derive_cfr_refs()
         if not self.effective:
             self.effective = self.derive_effective_date()
+        if not self.docket_ids:
+            self.docket_ids = self.derive_docket_ids()
 
         supporting = self.supporting_documents
         needs_supporting = not supporting
