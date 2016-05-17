@@ -69,81 +69,27 @@ class NoticeXML(XMLWrapper):
             self.xml.insert(0, dates_tag)
         if isinstance(value, date):
             value = value.isoformat()
+        if value is None:
+            value = ''
         dates_tag.attrib["eregs-{}-date".format(date_type)] = value
 
-    def derive_rins(self, rins=None):
-        """
-        Modify the XML tree so that it contains meta data for regulation id
-        numbers.
-        The Federal Register API implies that documents can have more than one.
+    def derive_rins(self):
+        """Extract regulatory id numbers from the XML (in the RINs tag)"""
+        xml_rins = self.xpath('//RIN')
+        for xml_rin in xml_rins:
+            rin = xml_rin.text.replace("RIN", "").strip()
+            yield rin
 
-        If we're not given a list, or the list is empty, extract the
-        information from the XML.
-
-        The XML we're adding will look something like this::
-
-            <EREGS_RINS>
-                <EREGS_RIN rin="2050-AG65" />
-            </EREGS_RINS>
-
-        :arg list rins: RINs, which should be strings.
-
-        :rtype: list
-        :returns: A list of regulation id numbers.
-        """
-        if not rins:
-            rins = []
-            xml_rins = self.xpath('//RIN')
-            for xml_rin in xml_rins:
-                rin = xml_rin.text.replace("RIN", "").strip()
-                rins.append(rin)
-        rins_el = self.xpath('//EREGS_RINS')
-        if rins_el:
-            rins_el = rins_el[0]
-        else:   # Tag wasn't present; create it
-            rins_el = etree.Element("EREGS_RINS")
-        for rin in rins:
-            etree.SubElement(rins_el, "EREGS_RIN", rin=rin)
-        self.xml.insert(0, rins_el)
-        return rins
-
-    def derive_docket_ids(self, docket_ids=None):
-        """
-        Modify the XML tree so that it contains meta data for docket ids.
-
-        If we're not given a list, or the list is empty, extract the
-        information from the XML.
-
-        The XML we're adding will look something like this::
-
-            <EREGS_DOCKET_IDS>
-                <EREGS_DOCKET_ID docket_id="EPA-HQ-SFUND-2010-1086" />
-                <EREGS_DOCKET_ID docket_id="FRL-9925-69-OLEM" />
-            </EREGS_DOCKET_IDS>
-
-        :arg list docket_ids: docket_ids, which should be strings.
-
-        :rtype: list
-        :returns: A list of docket_ids.
-        """
-        if not docket_ids:
-            docket_ids = []
-            xml_did_els = self.xpath('//DEPDOC')
-            for xml_did_el in xml_did_els:
-                did_str = xml_did_el.text.replace("[", "").replace("]", "")
-                docket_ids.extend([d.strip() for d in did_str.split(";")])
-
-        dids_el = self.xpath('//EREGS_DOCKET_IDS')
-        if dids_el:
-            dids_el = dids_el[0]
-        else:   # Tag wasn't present; create it
-            dids_el = etree.Element("EREGS_DOCKET_IDS")
-        for docket_id in docket_ids:
-            etree.SubElement(dids_el, "EREGS_DOCKET_ID", docket_id=docket_id)
-        self.xml.insert(0, dids_el)
+    def derive_docket_ids(self):
+        """Extract docket numbers from the XML (in the DEPDOC tag)"""
+        docket_ids = []
+        xml_did_els = self.xpath('//DEPDOC')
+        for xml_did_el in xml_did_els:
+            did_str = xml_did_el.text.replace("[", "").replace("]", "")
+            docket_ids.extend([d.strip() for d in did_str.split(";")])
         return docket_ids
 
-    def derive_agencies(self, agencies=None):
+    def set_agencies(self, agencies=None):
         """
         SIDE EFFECTS: this operates on the XML of the NoticeXML itself as well
         as returning some information.
@@ -224,7 +170,6 @@ class NoticeXML(XMLWrapper):
         if 'comments' in dates:
             comments = datetime.strptime(
                 dates['comments'][0], "%Y-%m-%d").date()
-            self.comments_close_on = comments
             return comments
 
     def derive_effective_date(self):
@@ -234,7 +179,6 @@ class NoticeXML(XMLWrapper):
         if 'effective' in dates:
             effective = datetime.strptime(
                 dates['effective'][0], "%Y-%m-%d").date()
-            self.effective = effective
             return effective
 
     def _get_date_attr(self, date_type):
@@ -249,13 +193,13 @@ class NoticeXML(XMLWrapper):
         """A handful of fields might be parse-able from the original XML. If
         we don't have values through modification, derive them here"""
         if not self.comments_close_on:
-            self.derive_closing_date()
+            self.comments_close_on = self.derive_closing_date()
         if not self.rins:
-            self.derive_rins()
+            self.rins = self.derive_rins()
         if not self.cfr_refs:
             self.cfr_refs = self.derive_cfr_refs()
         if not self.effective:
-            self.derive_effective_date()
+            self.effective = self.derive_effective_date()
 
     # --- Setters/Getters for specific fields. ---
     # We encode relevant information within the XML, but wish to provide easy
@@ -265,9 +209,56 @@ class NoticeXML(XMLWrapper):
     def rins(self):
         return [_.attrib['rin'] for _ in self.xpath("//EREGS_RIN")]
 
+    @rins.setter
+    def rins(self, value):
+        """
+        Modify the XML tree so that it contains meta data for regulation id
+        numbers.
+        The Federal Register API implies that documents can have more than one.
+
+        The XML we're adding will look something like this::
+
+            <EREGS_RINS>
+                <EREGS_RIN rin="2050-AG65" />
+            </EREGS_RINS>
+
+        :arg list value: RINs, which should be strings.
+        """
+        rins_el = self.xpath('//EREGS_RINS')
+        if rins_el:
+            rins_el = rins_el[0]
+        else:   # Tag wasn't present; create it
+            rins_el = etree.Element("EREGS_RINS")
+        for rin in value:
+            etree.SubElement(rins_el, "EREGS_RIN", rin=rin)
+        self.xml.insert(0, rins_el)
+
     @property
     def docket_ids(self):
         return [_.attrib['docket_id'] for _ in self.xpath("//EREGS_DOCKET_ID")]
+
+    @docket_ids.setter
+    def docket_ids(self, value):
+        """
+        Modify the XML tree so that it contains meta data for docket ids.
+
+        The XML we're adding will look something like this::
+
+            <EREGS_DOCKET_IDS>
+                <EREGS_DOCKET_ID docket_id="EPA-HQ-SFUND-2010-1086" />
+                <EREGS_DOCKET_ID docket_id="FRL-9925-69-OLEM" />
+            </EREGS_DOCKET_IDS>
+
+        :arg list value: docket_ids, which should be strings.
+        """
+        dids_el = self.xpath('//EREGS_DOCKET_IDS')
+        if dids_el:
+            dids_el = dids_el[0]
+        else:   # Tag wasn't present; create it
+            dids_el = etree.Element("EREGS_DOCKET_IDS")
+        for docket_id in value:
+            etree.SubElement(dids_el, "EREGS_DOCKET_ID", docket_id=docket_id)
+        self.xml.insert(0, dids_el)
 
     @property
     def cfr_refs(self):
