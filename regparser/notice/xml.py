@@ -397,13 +397,9 @@ class NoticeXML(XMLWrapper):
             <EREGS_SUPPORTING_DOCS>
                 <EREGS_SUPPORTING_DOC
                     regs_id="EPA-HQ-SFUND-2010-1086-0001"
-                    href="http://example.com/0001"
-                    fr_id="12345-6789"
                     title="Title goes here" />
                 <EREGS_SUPPORTING_DOC
                     regs_id="EPA-HQ-SFUND-2010-1086-0002"
-                    href="http://example.com/0002"
-                    fr_id=""
                     title="Title goes here" />
             </EREGS_SUPPORTING_DOCS>
 
