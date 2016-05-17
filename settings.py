@@ -149,9 +149,10 @@ LAYERS = {
     ]),
 }
 
-# Regulations.gov settings
+# Regulations.gov settings. The demo key is rate limited by IP; sign up for
+# your own key at
+# http://regulationsgov.github.io/developers/key/
 REGS_GOV_API = 'https://api.data.gov/regulations/v3/'
-REGS_GOV_DOC_TPL = 'https://www.regulations.gov/#!documentDetail;D={doc_id}'
 REGS_GOV_KEY = 'DEMO_KEY'
 
 try:

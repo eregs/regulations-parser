@@ -498,10 +498,7 @@ class NoticeXMLTests(TestCase):
 
     def test_supporting_documents(self):
         """Should be able to set and retrieve supporting documents"""
-        documents = [
-            RegsGovDoc('rid1', 'fid1', 'http://example.com/1', 't1'),
-            RegsGovDoc('rid2', None, 'http://example.com/2', 't2'),
-            RegsGovDoc('rid3', 'fid3', 'http://example.com/3', 't3')]
+        documents = [RegsGovDoc(str(i), str(i)*3) for i in range(4)]
         notice = notice_xml.NoticeXML(XMLBuilder("ROOT").xml)
         self.assertEqual([], notice.supporting_documents)
         notice.supporting_documents = documents
@@ -524,16 +521,14 @@ class NoticeXMLTests(TestCase):
         notice.effective = date(2004, 4, 4)
         notice.rins = ['r1111', 'r2222']
         notice.docket_ids = ['d1111', 'd2222']
-        notice.comment_docket_id = 'comment-docket'
-        support_doc = RegsGovDoc(
-            regs_id='some-id', fr_id=None, title='A support doc',
-            href='http://example.com/something')
-        notice.supporting_documents = [support_doc]
+        notice.comment_doc_id = 'comment-docket'
+        notice.primary_docket = 'd2222'
+        notice.supporting_documents = [RegsGovDoc('some-id', 'A support doc')]
 
         self.assertEqual(notice.as_dict(), {
             'amendments': [],
             'comments_close': '2003-03-03',
-            'comment_docket_id': 'comment-docket',
+            'comment_doc_id': 'comment-docket',
             'cfr_parts': ['234', '456'],
             'cfr_title': 11,
             'dockets': ['d1111', 'd2222'],
@@ -544,10 +539,10 @@ class NoticeXMLTests(TestCase):
             'fr_volume': 33,
             'meta': {'start_page': 43},
             'primary_agency': 'Awesome Admin',
+            'primary_docket': 'd2222',
             'publication_date': '2002-02-02',
             'regulation_id_numbers': ['r1111', 'r2222'],
             'supporting_documents': [
-                {'regs_id': 'some-id', 'fr_id': None, 'title': 'A support doc',
-                 'href': 'http://example.com/something'}],
+                {'regs_id': 'some-id', 'title': 'A support doc'}],
             'title': 'This is the title'
         })

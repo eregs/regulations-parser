@@ -15,5 +15,15 @@ class RegsGovTests(HttpMixin, TestCase):
         self.assertIsNone(regs_gov.proposal('docket', 'CCCC'))
         proposal = regs_gov.proposal('docket', 'AAAA')
         self.assertEqual(proposal.regs_id, '2222')
-        self.assertEqual(self.last_http_params().get('dct'),
-                         ['PR'])
+
+    def test_supporting_docs(self):
+        """Should filter the results to the appropriate types"""
+        self.expect_json_http({'documents': [
+            dict(documentId='1', documentType='Notice', title='a'),
+            dict(documentId='2', documentType='Other', title='b'),
+            dict(documentId='3', documentType='Final Rule', title='c'),
+            dict(documentId='4', documentType='Supporting & Related Material',
+                 title='d')]})
+        self.assertEqual(
+            list(regs_gov.supporting_docs('docket')),
+            [regs_gov.RegsGovDoc('2', 'b'), regs_gov.RegsGovDoc('4', 'd')])

@@ -49,6 +49,17 @@ def add_children(el, children):
     return el
 
 
+def _root_property(attrib):
+    """We add multiple attributes to the NoticeXML's root element"""
+    def getter(self):
+        return self.xml.attrib.get(attrib)
+
+    def setter(self, value):
+        self.xml.attrib[attrib] = str(value)
+
+    return property(getter, setter)
+
+
 class NoticeXML(XMLWrapper):
     """Wrapper around a notice XML which provides quick access to the XML's
     encoded data fields"""
@@ -201,16 +212,18 @@ class NoticeXML(XMLWrapper):
             self.cfr_refs = self.derive_cfr_refs()
         if not self.effective:
             self.effective = self.derive_effective_date()
-        if not self.comment_docket_id:
-            for docket_id in self.docket_ids:
-                proposal = regs_gov.proposal(docket_id, self.version_id)
-                if proposal:
-                    self.comment_docket_id = proposal.id
-        if not self.supporting_documents:
-            supporting = []
-            for docket_id in self.docket_ids:
+
+        supporting = self.supporting_documents
+        needs_supporting = not supporting
+        for docket_id in self.docket_ids:
+            proposal = regs_gov.proposal(docket_id, self.version_id)
+            if proposal and not self.comment_doc_id:
+                self.comment_doc_id = proposal.id
+            if proposal and not self.primary_docket:
+                self.primary_docket = docket_id
+            if needs_supporting:
                 supporting.extend(regs_gov.supporting_docs(docket_id))
-            self.support_documents = supporting
+        self.supporting_documents = supporting
 
     # --- Setters/Getters for specific fields. ---
     # We encode relevant information within the XML, but wish to provide easy
@@ -351,22 +364,6 @@ class NoticeXML(XMLWrapper):
     def end_page(self):
         return int(self.xpath(".//PRTPAGE")[-1].attrib["P"])
 
-    @property
-    def version_id(self):
-        return self.xml.attrib.get('eregs-version-id')
-
-    @version_id.setter
-    def version_id(self, value):
-        self.xml.attrib['eregs-version-id'] = str(value)
-
-    @property
-    def fr_html_url(self):
-        return self.xml.attrib.get('fr-html-url')
-
-    @fr_html_url.setter
-    def fr_html_url(self, value):
-        self.xml.attrib['fr-html-url'] = value
-
     @cached_property        # rather expensive operation, so cache results
     def amendments(self):
         return fetch_amendments(self.xml)
@@ -384,21 +381,10 @@ class NoticeXML(XMLWrapper):
         return self.xpath('//AGENCY')[0].text
 
     @property
-    def comment_docket_id(self):
-        return self.xml.attrib.get('eregs-comment-docket-id')
-
-    @comment_docket_id.setter
-    def comment_docket_id(self, value):
-        self.xml.attrib['eregs-comment-docket-id'] = str(value)
-
-    @property
     def supporting_documents(self):
         """:rtype: list of regs_gov.RegsGovDoc"""
-        attribs = [dict(s.attrib)
-                   for s in self.xpath('//EREGS_SUPPORTING_DOC')]
-        for attrib in attribs:
-            attrib['fr_id'] = attrib['fr_id'] or None
-        return [regs_gov.RegsGovDoc(**attrib) for attrib in attribs]
+        return [regs_gov.RegsGovDoc(**s.attrib)
+                for s in self.xpath('//EREGS_SUPPORTING_DOC')]
 
     @supporting_documents.setter
     def supporting_documents(self, value):
@@ -429,8 +415,13 @@ class NoticeXML(XMLWrapper):
         else:   # Tag wasn't present; create it
             container = etree.SubElement(self.xml, 'EREGS_SUPPORTING_DOCS')
         for doc in value:
-            doc = {key: value or '' for key, value in doc._asdict().items()}
-            etree.SubElement(container, 'EREGS_SUPPORTING_DOC', **doc)
+            etree.SubElement(container, 'EREGS_SUPPORTING_DOC',
+                             **doc._asdict())
+
+    version_id = _root_property('eregs-version-id')
+    fr_html_url = _root_property('fr-html-url')
+    comment_doc_id = _root_property('eregs-comment-doc-id')
+    primary_docket = _root_property('eregs-primary-docket')
 
     def as_dict(self):
         """We use JSON to represent notices in the API. This converts the
@@ -448,6 +439,7 @@ class NoticeXML(XMLWrapper):
                   # @todo - SxS depends on this; we should remove soon
                   'meta': {'start_page': self.start_page},
                   'primary_agency': self.primary_agency,
+                  'primary_docket': self.primary_docket,
                   'publication_date': self.published.isoformat(),
                   'regulation_id_numbers': self.rins,
                   'supporting_documents': [
@@ -457,8 +449,8 @@ class NoticeXML(XMLWrapper):
             notice['comments_close'] = self.comments_close_on.isoformat()
         if self.effective:
             notice['effective_on'] = self.effective.isoformat()
-        if self.comment_docket_id:
-            notice['comment_docket_id'] = self.comment_docket_id
+        if self.comment_doc_id:
+            notice['comment_doc_id'] = self.comment_doc_id
         return notice
 
 
