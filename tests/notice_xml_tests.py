@@ -6,6 +6,7 @@ from unittest import TestCase
 
 from regparser.history.delays import FRDelay
 from regparser.notice import xml as notice_xml
+from regparser.regs_gov import RegsGovDoc
 from regparser.test_utils.xml_builder import XMLBuilder
 import settings
 
@@ -495,6 +496,17 @@ class NoticeXMLTests(TestCase):
             notice_xml.TitlePartsRef(title=42, parts=[302, 303])
         ])
 
+    def test_supporting_documents(self):
+        """Should be able to set and retrieve supporting documents"""
+        documents = [
+            RegsGovDoc('rid1', 'fid1', 'http://example.com/1', 't1'),
+            RegsGovDoc('rid2', None, 'http://example.com/2', 't2'),
+            RegsGovDoc('rid3', 'fid3', 'http://example.com/3', 't3')]
+        notice = notice_xml.NoticeXML(XMLBuilder("ROOT").xml)
+        self.assertEqual([], notice.supporting_documents)
+        notice.supporting_documents = documents
+        self.assertEqual(documents, notice.supporting_documents)
+
     def test_as_dict(self):
         with XMLBuilder("ROOT") as ctx:
             ctx.PRTPAGE(P=44)
@@ -512,10 +524,16 @@ class NoticeXMLTests(TestCase):
         notice.effective = date(2004, 4, 4)
         notice.rins = ['r1111', 'r2222']
         notice.docket_ids = ['d1111', 'd2222']
+        notice.comment_docket_id = 'comment-docket'
+        support_doc = RegsGovDoc(
+            regs_id='some-id', fr_id=None, title='A support doc',
+            href='http://example.com/something')
+        notice.supporting_documents = [support_doc]
 
         self.assertEqual(notice.as_dict(), {
             'amendments': [],
             'comments_close': '2003-03-03',
+            'comment_docket_id': 'comment-docket',
             'cfr_parts': ['234', '456'],
             'cfr_title': 11,
             'dockets': ['d1111', 'd2222'],
@@ -528,5 +546,8 @@ class NoticeXMLTests(TestCase):
             'primary_agency': 'Awesome Admin',
             'publication_date': '2002-02-02',
             'regulation_id_numbers': ['r1111', 'r2222'],
+            'supporting_documents': [
+                {'regs_id': 'some-id', 'fr_id': None, 'title': 'A support doc',
+                 'href': 'http://example.com/something'}],
             'title': 'This is the title'
         })

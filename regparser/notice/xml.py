@@ -10,6 +10,7 @@ from cached_property import cached_property
 from lxml import etree
 import requests
 
+from regparser import regs_gov
 from regparser.grammar.unified import notice_cfr_p
 from regparser.history.delays import delays_in_sentence
 from regparser.index import xml_sync
@@ -200,6 +201,16 @@ class NoticeXML(XMLWrapper):
             self.cfr_refs = self.derive_cfr_refs()
         if not self.effective:
             self.effective = self.derive_effective_date()
+        if not self.comment_docket_id:
+            for docket_id in self.docket_ids:
+                proposal = regs_gov.proposal(docket_id, self.version_id)
+                if proposal:
+                    self.comment_docket_id = proposal.id
+        if not self.supporting_documents:
+            supporting = []
+            for docket_id in self.docket_ids:
+                supporting.extend(regs_gov.supporting_docs(docket_id))
+            self.support_documents = supporting
 
     # --- Setters/Getters for specific fields. ---
     # We encode relevant information within the XML, but wish to provide easy
@@ -372,6 +383,55 @@ class NoticeXML(XMLWrapper):
     def primary_agency(self):
         return self.xpath('//AGENCY')[0].text
 
+    @property
+    def comment_docket_id(self):
+        return self.xml.attrib.get('eregs-comment-docket-id')
+
+    @comment_docket_id.setter
+    def comment_docket_id(self, value):
+        self.xml.attrib['eregs-comment-docket-id'] = str(value)
+
+    @property
+    def supporting_documents(self):
+        """:rtype: list of regs_gov.RegsGovDoc"""
+        attribs = [dict(s.attrib)
+                   for s in self.xpath('//EREGS_SUPPORTING_DOC')]
+        for attrib in attribs:
+            attrib['fr_id'] = attrib['fr_id'] or None
+        return [regs_gov.RegsGovDoc(**attrib) for attrib in attribs]
+
+    @supporting_documents.setter
+    def supporting_documents(self, value):
+        """A docket consists of multiple, related documents. The most
+        important is generally the proposal and/or final rule, but there are
+        often supporting documents we need to link to.
+
+        Modify the XML to look like::
+
+            <EREGS_SUPPORTING_DOCS>
+                <EREGS_SUPPORTING_DOC
+                    regs_id="EPA-HQ-SFUND-2010-1086-0001"
+                    href="http://example.com/0001"
+                    fr_id="12345-6789"
+                    title="Title goes here" />
+                <EREGS_SUPPORTING_DOC
+                    regs_id="EPA-HQ-SFUND-2010-1086-0002"
+                    href="http://example.com/0002"
+                    fr_id=""
+                    title="Title goes here" />
+            </EREGS_SUPPORTING_DOCS>
+
+        :arg list value: list of regs_gov.RegsGovDocs
+        """
+        container = self.xpath('//EREGS_SUPPORTING_DOCS')
+        if container:
+            container = container[0]
+        else:   # Tag wasn't present; create it
+            container = etree.SubElement(self.xml, 'EREGS_SUPPORTING_DOCS')
+        for doc in value:
+            doc = {key: value or '' for key, value in doc._asdict().items()}
+            etree.SubElement(container, 'EREGS_SUPPORTING_DOC', **doc)
+
     def as_dict(self):
         """We use JSON to represent notices in the API. This converts the
         relevant data into a dictionary to get one step closer. Unfortunately,
@@ -390,11 +450,15 @@ class NoticeXML(XMLWrapper):
                   'primary_agency': self.primary_agency,
                   'publication_date': self.published.isoformat(),
                   'regulation_id_numbers': self.rins,
+                  'supporting_documents': [
+                      d._asdict() for d in self.supporting_documents],
                   'title': self.title}
         if self.comments_close_on:
             notice['comments_close'] = self.comments_close_on.isoformat()
         if self.effective:
             notice['effective_on'] = self.effective.isoformat()
+        if self.comment_docket_id:
+            notice['comment_docket_id'] = self.comment_docket_id
         return notice
 
 
