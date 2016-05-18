@@ -4,6 +4,7 @@ import logging
 from regparser.api_writer import Client
 from regparser.commands import utils
 from regparser.index import entry
+from regparser.notice.build import add_footnotes, process_sxs
 
 
 logger = logging.getLogger(__name__)
@@ -40,14 +41,25 @@ def write_layers(client, only_title, only_part):
 
 
 def write_notices(client, only_title, only_part):
-    sxs_dir = entry.SxS()
-    for version_id in sxs_dir:
-        tree = (sxs_dir / version_id).read()
-        title_match = not only_title or tree['cfr_title'] == only_title
-        cfr_parts = map(str, tree['cfr_parts'])
-        part_match = not only_part or str(only_part) in cfr_parts
+    """
+    :param int or None only_title: Filter results to one title
+    :param int or None only_part: Filter results to one part
+    """
+    notice_dir = entry.Notice()
+    for version_id in notice_dir:
+        notice_xml = (notice_dir / version_id).read()
+        title_match = only_title is None or any(ref.title == only_title
+                                                for ref in notice_xml.cfr_refs)
+        # @todo - this doesn't confirm the part is within the title
+        cfr_parts = [part for ref in notice_xml.cfr_refs for part in ref.parts]
+        part_match = only_part is None or only_part in cfr_parts
         if title_match and part_match:
-            client.notice(version_id).write(tree)
+            as_dict = notice_xml.as_dict()
+            # @todo - SxS and footnotes aren't used outside of CFPB
+            add_footnotes(as_dict, notice_xml.xml)
+            if cfr_parts:
+                process_sxs(as_dict, notice_xml.xml)
+            client.notice(version_id).write(as_dict)
 
 
 def write_diffs(client, only_title, only_part):

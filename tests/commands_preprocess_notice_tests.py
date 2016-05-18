@@ -2,11 +2,13 @@ from datetime import date
 from unittest import TestCase
 
 from click.testing import CliRunner
+from lxml import etree
 from mock import patch
 
-from regparser.commands.preprocess_notice import preprocess_notice
+from regparser.commands.preprocess_notice import (
+    convert_cfr_refs, preprocess_notice)
 from regparser.index import dependency, entry
-from regparser.notice.xml import NoticeXML
+from regparser.notice.xml import NoticeXML, TitlePartsRef
 from regparser.test_utils.http_mixin import HttpMixin
 from regparser.test_utils.xml_builder import XMLBuilder
 
@@ -222,7 +224,7 @@ class CommandsPreprocessNoticeTests(HttpMixin, TestCase):
             self.assertNotIn(entry_str, dependency.Graph())
 
     @patch('regparser.commands.preprocess_notice.notice_xmls_for_url')
-    def test_single_notice_cfr_refs(self, notice_xmls_for_url):
+    def test_single_notice_cfr_refs_from_metadata(self, notice_xmls_for_url):
         """
         Verify that we get CFR references from the metadata.
         """
@@ -244,3 +246,63 @@ class CommandsPreprocessNoticeTests(HttpMixin, TestCase):
             self.assertEqual(part.attrib["part"], "300")
             part = written.xpath("//EREGS_CFR_PART_REF")[1]
             self.assertEqual(part.attrib["part"], "301")
+
+    @patch('regparser.commands.preprocess_notice.notice_xmls_for_url')
+    def test_single_notice_cfr_refs_from_xml(self, notice_xmls_for_url):
+        """
+        Verify that we get CFR references from the xml.
+        """
+        cli = CliRunner()
+        self.expect_common_json()
+        notice_xml = self.example_xml()
+        cfr_el = etree.SubElement(notice_xml.xml, 'CFR')
+        cfr_el.text = '40 CFR 300, 301'
+        notice_xmls_for_url.return_value = [notice_xml]
+        with cli.isolated_filesystem():
+            cli.invoke(preprocess_notice, ['1234-5678'])
+            self.assertEqual(1, len(entry.Notice()))
+
+            written = entry.Notice('1234-5678').read()
+            self.assertEqual(len(written.xpath("//EREGS_CFR_REFS")), 1)
+            self.assertEqual(len(written.xpath("//EREGS_CFR_TITLE_REF")), 1)
+            title = written.xpath("//EREGS_CFR_TITLE_REF")[0]
+            self.assertEqual(title.attrib["title"], "40")
+            self.assertEqual(len(written.xpath("//EREGS_CFR_PART_REF")), 2)
+            part = written.xpath("//EREGS_CFR_PART_REF")[0]
+            self.assertEqual(part.attrib["part"], "300")
+            part = written.xpath("//EREGS_CFR_PART_REF")[1]
+            self.assertEqual(part.attrib["part"], "301")
+
+    def test_convert_cfr_refs(self):
+        """
+        Test that we get the correct CFR references from the metadata
+        """
+        refs = [
+            {"title": 40, "part": 300},
+            {"title": 41, "part": 210},
+            {"title": 40, "part": 301},
+            {"title": 40, "part": 302},
+            {"title": 40, "part": 303},
+            {"title": 42, "part": 302},
+            {"title": 42, "part": 303}
+        ]
+        expected = [
+            TitlePartsRef(title=40, parts=[300, 301, 302, 303]),
+            TitlePartsRef(title=41, parts=[210]),
+            TitlePartsRef(title=42, parts=[302, 303])
+        ]
+        self.assertEqual(convert_cfr_refs(refs), expected)
+
+        refs = [
+            {"title": 42, "part": 302},
+            {"title": 42, "part": 303},
+            {"title": 40, "part": 330},
+            {"title": 41, "part": 210},
+            {"title": 40, "part": 300},
+        ]
+        expected = [
+            TitlePartsRef(title=40, parts=[300, 330]),
+            TitlePartsRef(title=41, parts=[210]),
+            TitlePartsRef(title=42, parts=[302, 303])
+        ]
+        self.assertEqual(convert_cfr_refs(refs), expected)

@@ -482,43 +482,60 @@ class NoticeXMLTests(TestCase):
         xml = notice_xml.NoticeXML(root.xml)
         ditest(["FRL-9925-69-OLEM"], ["FRL-9925-69-OLEM"], xml=xml)
 
-    def test_set_cfr_refs(self):
+    def test_cfr_refs(self):
         """
-        Test that we get the correct CFR references from the metadata, and put
-        them into the right format.
+        Test that we can set and retrieve the same values
         """
-        def _reftest(refs, expected):
+        def _reftest(refs):
             ctx = XMLBuilder("ROOT").P("filler")
             xml = notice_xml.NoticeXML(ctx.xml)
-            xml.set_cfr_refs(refs=refs)
-            self.assertEquals(expected, xml.cfr_refs)
-        refs = [
-            {"title": 40, "part": 300},
-            {"title": 41, "part": 210},
-            {"title": 40, "part": 301},
-            {"title": 40, "part": 302},
-            {"title": 40, "part": 303},
-            {"title": 42, "part": 302},
-            {"title": 42, "part": 303}
-        ]
-        expected = [
-            notice_xml.TitlePartsRef(title="40",
-                                     parts=["300", "301", "302", "303"]),
-            notice_xml.TitlePartsRef(title="41", parts=["210"]),
-            notice_xml.TitlePartsRef(title="42", parts=["302", "303"])
-        ]
-        _reftest(refs, expected)
-        _reftest([], [])
-        refs = [
-            {"title": 42, "part": 302},
-            {"title": 42, "part": 303},
-            {"title": 40, "part": 330},
-            {"title": 41, "part": 210},
-            {"title": 40, "part": 300},
-        ]
-        expected = [
-            notice_xml.TitlePartsRef(title="40", parts=["300", "330"]),
-            notice_xml.TitlePartsRef(title="41", parts=["210"]),
-            notice_xml.TitlePartsRef(title="42", parts=["302", "303"])
-        ]
-        _reftest(refs, expected)
+            xml.cfr_refs = refs
+            self.assertEqual(refs, xml.cfr_refs)
+
+        _reftest([])
+        _reftest([
+            notice_xml.TitlePartsRef(title=40, parts=[300, 301, 302, 303]),
+            notice_xml.TitlePartsRef(title=41, parts=[210]),
+            notice_xml.TitlePartsRef(title=42, parts=[302, 303])
+        ])
+        _reftest([
+            notice_xml.TitlePartsRef(title=40, parts=[300, 330]),
+            notice_xml.TitlePartsRef(title=41, parts=[210]),
+            notice_xml.TitlePartsRef(title=42, parts=[302, 303])
+        ])
+
+    def test_as_dict(self):
+        with XMLBuilder("ROOT") as ctx:
+            ctx.PRTPAGE(P=44)
+            ctx.AGENCY('Awesome Admin')
+            ctx.SUBJECT('This is the title')
+
+        notice = notice_xml.NoticeXML(ctx.xml)
+        notice.cfr_refs = [
+            notice_xml.TitlePartsRef(title=11, parts=[234, 456])]
+        notice.version_id = 'v1v1v1'
+        notice.fr_volume = 33
+        notice.fr_html_url = 'http://example.com'
+        notice.published = date(2002, 2, 2)
+        notice.comments_close_on = date(2003, 3, 3)
+        notice.effective = date(2004, 4, 4)
+        notice.derive_rins(['r1111', 'r2222'])
+        notice.derive_docket_ids(['d1111', 'd2222'])
+
+        self.assertEqual(notice.as_dict(), {
+            'amendments': [],
+            'comments_close': '2003-03-03',
+            'cfr_parts': ['234', '456'],
+            'cfr_title': 11,
+            'dockets': ['d1111', 'd2222'],
+            'document_number': 'v1v1v1',
+            'effective_on': '2004-04-04',
+            'fr_citation': '33 FR 43',
+            'fr_url': 'http://example.com',
+            'fr_volume': 33,
+            'meta': {'start_page': 43},
+            'primary_agency': 'Awesome Admin',
+            'publication_date': '2002-02-02',
+            'regulation_id_numbers': ['r1111', 'r2222'],
+            'title': 'This is the title'
+        })

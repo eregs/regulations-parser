@@ -5,9 +5,12 @@ import shutil
 from unittest import TestCase
 
 from click.testing import CliRunner
+from lxml import etree
 
 from regparser.commands.write_to import write_to
 from regparser.index import entry
+from regparser.notice.xml import NoticeXML
+from regparser.test_utils.xml_builder import XMLBuilder
 from regparser.tree.struct import Node
 
 
@@ -41,14 +44,27 @@ class CommandsWriteToTests(TestCase):
 
     def add_notices(self):
         """Adds an uneven assortment of notices"""
-        data = {'doc_number': 'v0', 'cfr_title': 11, 'cfr_parts': []}
-        entry.SxS('v0').write(data)
-        data.update(cfr_parts=['1000'], doc_number='v1')
-        entry.SxS('v1').write(data)
-        data.update(cfr_title=12, doc_number='v2')
-        entry.SxS('v2').write(data)
-        data['doc_number'] = 'v3'
-        entry.SxS('v3').write(data)
+        with XMLBuilder("ROOT", **{"eregs-version-id": "v0"}) as ctx:
+            ctx.PRTPAGE(P=1, **{"eregs-fr-volume": 1})
+            ctx.AGENCY("Agency")
+            ctx.SUBJECT("Subj")
+            ctx.DATES(**{'eregs-published-date': '2001-01-01'})
+            with ctx.EREGS_CFR_REFS():
+                ctx.EREGS_CFR_TITLE_REF(title=11)
+        xml = ctx.xml
+        entry.Notice('v0').write(NoticeXML(xml))
+
+        etree.SubElement(xml.xpath('//EREGS_CFR_TITLE_REF')[0],
+                         'EREGS_CFR_PART_REF', part='1000')
+        xml.attrib['eregs-version-id'] = 'v1'
+        entry.Notice('v1').write(NoticeXML(xml))
+
+        xml.xpath('//EREGS_CFR_TITLE_REF')[0].attrib['title'] = '12'
+        xml.attrib['eregs-version-id'] = 'v2'
+        entry.Notice('v2').write(NoticeXML(xml))
+
+        xml.attrib['eregs-version-id'] = 'v3'
+        entry.Notice('v3').write(NoticeXML(xml))
 
     def file_exists(self, *parts):
         """Helper method to verify that a file was created"""
