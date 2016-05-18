@@ -358,6 +358,7 @@ class RegtextParagraphProcessor(paragraph_processor.ParagraphProcessor):
                 import_category.ImportCategoryMatcher(),
                 flatsubtree_processor.FlatsubtreeMatcher(tags=['EXAMPLE']),
                 paragraph_processor.HeaderMatcher(),
+                paragraph_processor.GraphicsMatcher(),
                 ParagraphMatcher(),
                 note_processor.NoteMatcher(),
                 paragraph_processor.IgnoreTagMatcher(

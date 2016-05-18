@@ -450,6 +450,21 @@ class RegTextTest(TestCase):
         node = reg_text.build_from_section('8675', ctx.xml)[0]
         self.assertEqual(node.text, "Some \n content")
 
+    def test_build_from_section_image(self):
+        """We should process images (GPH/GID)"""
+        with XMLBuilder("SECTION", "\n\n") as ctx:
+            ctx.SECTNO(u"§ 8675.309")
+            ctx.SUBJECT("subsubsub")
+            ctx.P("(a) aaa")
+            with ctx.GPH():
+                ctx.GID("a-gid")
+            ctx.P("(b) bbb")
+
+        node = NodeAccessor(reg_text.build_from_section('8675', ctx.xml)[0])
+        self.assertEqual(['a', 'b'], node.child_labels)
+        self.assertEqual(['p1'], node['a'].child_labels)
+        self.assertEqual('![](a-gid)', node['a']['p1'].text)
+
     def test_get_title(self):
         with XMLBuilder("PART") as ctx:
             ctx.HD("regulation title")
