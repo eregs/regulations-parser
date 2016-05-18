@@ -4,6 +4,8 @@ import shutil
 import tempfile
 from unittest import TestCase
 
+from mock import patch
+
 from regparser.history.delays import FRDelay
 from regparser.notice import xml as notice_xml
 from regparser.regs_gov import RegsGovDoc
@@ -65,15 +67,18 @@ class NoticeXMLLocalCopiesTests(TestCase):
 
 class NoticeXMLTests(TestCase):
     """Tests for the NoticeXML class"""
-    def test_set_meta_data(self):
-        """Several pieces of meta data should be set within the XML. We test
-        that the NoticeXML wrapper can retrieve them and that, if we re-read
-        the XML, they can still be pulled out"""
+    def _dummy_notice(self):
         with XMLBuilder("ROOT") as ctx:
             with ctx.DATES():
                 ctx.P("Some content")
             ctx.PRTPAGE(P="455")
-        xml = notice_xml.NoticeXML(ctx.xml)
+        return notice_xml.NoticeXML(ctx.xml)
+
+    def test_set_meta_data(self):
+        """Several pieces of meta data should be set within the XML. We test
+        that the NoticeXML wrapper can retrieve them and that, if we re-read
+        the XML, they can still be pulled out"""
+        xml = self._dummy_notice()
 
         xml.effective = '2005-05-05'
         xml.published = '2004-04-04'
@@ -90,7 +95,7 @@ class NoticeXMLTests(TestCase):
 
     def test_set_effective_date_create(self):
         """The DATES tag should get created if not present in the XML"""
-        xml = notice_xml.NoticeXML(XMLBuilder('ROOT').xml)
+        xml = self._dummy_notice()
 
         xml.effective = '2005-05-05'
         self.assertEqual(xml.effective, date(2005, 5, 5))
@@ -414,8 +419,7 @@ class NoticeXMLTests(TestCase):
     def test_rins(self):
         def rinstest(rins, expected, xml=None):
             if not xml:
-                ctx = XMLBuilder("ROOT").P("filler")
-                xml = notice_xml.NoticeXML(ctx.xml)
+                xml = self._dummy_notice()
             rins = rins or xml.derive_rins()
             xml.rins = rins
             self.assertEquals(expected, xml.rins)
@@ -449,8 +453,7 @@ class NoticeXMLTests(TestCase):
     def test_docket_ids(self):
         def ditest(dis, expected, xml=None):
             if not xml:
-                ctx = XMLBuilder("ROOT").P("filler")
-                xml = notice_xml.NoticeXML(ctx.xml)
+                xml = self._dummy_notice()
             dis = dis or xml.derive_docket_ids()
             xml.docket_ids = dis
             self.assertEquals(expected, xml.docket_ids)
@@ -479,8 +482,7 @@ class NoticeXMLTests(TestCase):
         Test that we can set and retrieve the same values
         """
         def _reftest(refs):
-            ctx = XMLBuilder("ROOT").P("filler")
-            xml = notice_xml.NoticeXML(ctx.xml)
+            xml = self._dummy_notice()
             xml.cfr_refs = refs
             self.assertEqual(refs, xml.cfr_refs)
 
@@ -499,10 +501,27 @@ class NoticeXMLTests(TestCase):
     def test_supporting_documents(self):
         """Should be able to set and retrieve supporting documents"""
         documents = [RegsGovDoc(str(i), str(i)*3) for i in range(4)]
-        notice = notice_xml.NoticeXML(XMLBuilder("ROOT").xml)
+        notice = self._dummy_notice()
         self.assertEqual([], notice.supporting_documents)
         notice.supporting_documents = documents
         self.assertEqual(documents, notice.supporting_documents)
+
+    @patch('regparser.notice.xml.regs_gov.supporting_docs')
+    @patch('regparser.notice.xml.regs_gov.proposal')
+    def test_derive_where_needed_regs_gov(self, mock_proposal,
+                                          mock_supporting_docs):
+        """Verify that the comment_doc_id, primary_docket and
+        supporting_documents get set in the `derive_where_needed` method"""
+        notice = self._dummy_notice()
+        notice.docket_ids = ['docketdocket']
+        mock_proposal.return_value = RegsGovDoc('rrrid', 'A title')
+        supporting = [RegsGovDoc('r2', 't2'), RegsGovDoc('r3', 't3')]
+        mock_supporting_docs.return_value = supporting
+
+        notice.derive_where_needed()
+        self.assertEqual(notice.comment_doc_id, 'rrrid')
+        self.assertEqual(notice.primary_docket, 'docketdocket')
+        self.assertEqual(notice.supporting_documents, supporting)
 
     def test_as_dict(self):
         with XMLBuilder("ROOT") as ctx:
