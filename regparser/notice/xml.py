@@ -220,7 +220,7 @@ class NoticeXML(XMLWrapper):
         for docket_id in self.docket_ids:
             proposal = regs_gov.proposal(docket_id, self.version_id)
             if proposal and not self.comment_doc_id:
-                self.comment_doc_id = proposal.id
+                self.comment_doc_id = proposal.regs_id
             if proposal and not self.primary_docket:
                 self.primary_docket = docket_id
             if needs_supporting:
