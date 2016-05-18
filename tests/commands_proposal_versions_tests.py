@@ -26,14 +26,13 @@ class CommandsProposalVersionsTests(TestCase):
         # entry.Notice('dddd').read()
         notice = entry.Notice.return_value.read.return_value
         notice.published = date.today()
-        notice.cfr_refs = [('11', ['111', '222']),
-                           ('22', ['222', '333'])]
+        notice.cfr_ref_pairs = [(11, 111), (11, 222), (22, 222), (22, 333)]
         with self.cli.isolated_filesystem():
             result = self.cli.invoke(proposal_versions, ['dddd'])
             self.assertIsNone(result.exception)
             self.assertEqual('dddd', entry.Notice.call_args[0][0])
             self.assertEqual([lst[0] for lst in entry.Version.call_args_list],
-                             [('11', '111', 'dddd'), ('11', '222', 'dddd'),
-                              ('22', '222', 'dddd'), ('22', '333', 'dddd')])
+                             [(11, 111, 'dddd'), (11, 222, 'dddd'),
+                              (22, 222, 'dddd'), (22, 333, 'dddd')])
             self.assertEqual(entry.Version.return_value.write.call_args[0][0],
                              Version('dddd', date.today(), None))

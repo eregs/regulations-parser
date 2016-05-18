@@ -3,6 +3,7 @@ import logging
 
 from regparser.api_writer import Client
 from regparser.commands import utils
+from regparser.history.versions import Version
 from regparser.index import entry
 from regparser.notice.build import add_footnotes, process_sxs
 
@@ -40,6 +41,27 @@ def write_layers(client, only_title, only_part):
                     client.layer(layer_name, doc_type, doc_id).write(layer)
 
 
+def transform_notice(notice_xml):
+    """The API has a different format for notices than the local XML. We'll
+    need to convert and add appropriate fields"""
+    as_dict = notice_xml.as_dict()
+    as_dict['versions'] = {}
+    for cfr_title, cfr_part in notice_xml.cfr_ref_pairs:
+        version_dir = entry.Version(cfr_title, cfr_part)
+        versions = [(version_dir / id).read() for id in version_dir]
+        with_parents = zip(versions, Version.parents_of(versions))
+        for version, parent in with_parents:
+            if version.identifier == notice_xml.version_id and parent:
+                as_dict['versions'][cfr_part] = {"left": parent.identifier,
+                                                 "right": version.identifier}
+
+    # @todo - SxS and footnotes aren't used outside of CFPB
+    add_footnotes(as_dict, notice_xml.xml)
+    if notice_xml.cfr_ref_pairs:
+        process_sxs(as_dict, notice_xml.xml)
+    return as_dict
+
+
 def write_notices(client, only_title, only_part):
     """
     :param int or None only_title: Filter results to one title
@@ -54,12 +76,7 @@ def write_notices(client, only_title, only_part):
         cfr_parts = [part for ref in notice_xml.cfr_refs for part in ref.parts]
         part_match = only_part is None or only_part in cfr_parts
         if title_match and part_match:
-            as_dict = notice_xml.as_dict()
-            # @todo - SxS and footnotes aren't used outside of CFPB
-            add_footnotes(as_dict, notice_xml.xml)
-            if cfr_parts:
-                process_sxs(as_dict, notice_xml.xml)
-            client.notice(version_id).write(as_dict)
+            client.notice(version_id).write(transform_notice(notice_xml))
 
 
 def write_diffs(client, only_title, only_part):

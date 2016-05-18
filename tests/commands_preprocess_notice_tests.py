@@ -1,4 +1,5 @@
 from datetime import date
+import re
 from unittest import TestCase
 
 from click.testing import CliRunner
@@ -30,7 +31,9 @@ class CommandsPreprocessNoticeTests(HttpMixin, TestCase):
                   'full_text_xml_url': 'some://url',
                   'volume': 45}
         params.update(kwargs)
-        self.expect_json_http(params)
+        self.expect_json_http(params, uri=re.compile('.*federalregister.*'))
+        # No data from regs.gov
+        self.expect_json_http({}, uri=re.compile('.*regulations.*'))
 
     @patch('regparser.commands.preprocess_notice.notice_xmls_for_url')
     def test_single_notice(self, notice_xmls_for_url):

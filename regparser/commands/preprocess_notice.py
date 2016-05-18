@@ -60,35 +60,33 @@ def preprocess_notice(document_number):
                                            meta['full_text_xml_url']))
     deps = dependency.Graph()
     for notice_xml in notice_xmls:
-        file_name = document_number
         notice_xml.published = meta['publication_date']
         notice_xml.fr_volume = meta['volume']
         if meta.get('html_url'):
             notice_xml.fr_html_url = meta['html_url']
-
         if meta.get("comments_close_on"):
             notice_xml.comments_close_on = meta["comments_close_on"]
-        else:
-            notice_xml.derive_closing_date()
+        if meta.get('regulation_id_numbers'):
+            notice_xml.rins = meta['regulation_id_numbers']
+        if meta.get('docket_ids'):
+            notice_xml.docket_ids = meta['docket_ids']
 
-        notice_xml.derive_agencies(agencies=meta.get("agencies", []))
-        notice_xml.derive_rins(rins=meta.get("regulation_id_numbers", []))
-        notice_xml.derive_docket_ids(docket_ids=meta.get("docket_ids", []))
+        notice_xml.set_agencies(meta.get('agencies', []))
+
         cfr_refs = convert_cfr_refs(meta.get('cfr_references', []))
-        if not cfr_refs:
-            cfr_refs = notice_xml.derive_cfr_refs()
-        notice_xml.cfr_refs = cfr_refs
+        if cfr_refs:
+            notice_xml.cfr_refs = cfr_refs
 
+        file_name = document_number
         if len(notice_xmls) > 1:
             effective_date = notice_xml.derive_effective_date()
             file_name = split_doc_num(document_number,
                                       effective_date.isoformat())
         elif meta.get('effective_on'):
             notice_xml.effective = meta['effective_on']
-        else:
-            notice_xml.derive_effective_date()
 
         notice_xml.version_id = file_name
+        notice_xml.derive_where_needed()
 
         notice_entry = entry.Notice(file_name)
         notice_entry.write(notice_xml)
