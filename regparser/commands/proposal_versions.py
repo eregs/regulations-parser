@@ -15,6 +15,7 @@ def proposal_versions(doc_number):
     notice = notice.read()
     version = Version(doc_number, notice.published, None)
 
-    for cfr_title, cfr_parts in notice.cfr_refs:
-        for cfr_part in cfr_parts:
-            entry.Version(cfr_title, cfr_part, doc_number).write(version)
+    for cfr_title, cfr_part in notice.cfr_ref_pairs:
+        version_entry = entry.Version(cfr_title, cfr_part, doc_number)
+        if not version_entry.exists() or version_entry.read() != version:
+            version_entry.write(version)

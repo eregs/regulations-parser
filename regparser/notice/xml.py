@@ -245,6 +245,18 @@ class NoticeXML(XMLWrapper):
         if value:
             return datetime.strptime(value, "%Y-%m-%d").date()
 
+    def derive_where_needed(self):
+        """A handful of fields might be parse-able from the original XML. If
+        we don't have values through modification, derive them here"""
+        if not self.comments_close_on:
+            self.derive_closing_date()
+        if not self.rins:
+            self.derive_rins()
+        if not self.cfr_refs:
+            self.cfr_refs = self.derive_cfr_refs()
+        if not self.effective:
+            self.derive_effective_date()
+
     # --- Setters/Getters for specific fields. ---
     # We encode relevant information within the XML, but wish to provide easy
     # access
@@ -290,6 +302,11 @@ class NoticeXML(XMLWrapper):
         self.xml.insert(0, refs_el)
 
     @property
+    def cfr_ref_pairs(self):
+        return [(ref.title, part)
+                for ref in self.cfr_refs for part in ref.parts]
+
+    @property
     def comments_close_on(self):
         return self._get_date_attr('comments-close-on')
 
@@ -315,7 +332,9 @@ class NoticeXML(XMLWrapper):
 
     @property
     def fr_volume(self):
-        return int(self.xpath(".//PRTPAGE")[0].attrib['eregs-fr-volume'])
+        value = self.xpath(".//PRTPAGE")[0].attrib.get('eregs-fr-volume')
+        if value:
+            return int(value)
 
     @fr_volume.setter
     def fr_volume(self, value):
