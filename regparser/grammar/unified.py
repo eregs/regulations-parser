@@ -1,7 +1,8 @@
 # vim: set encoding=utf-8
 """Some common combinations"""
-from pyparsing import Empty, FollowedBy, LineEnd, Literal, OneOrMore, Optional
-from pyparsing import Suppress, SkipTo, ZeroOrMore
+from pyparsing import (
+    FollowedBy, LineEnd, Literal, OneOrMore, Optional, Suppress, SkipTo,
+    ZeroOrMore)
 
 from regparser.grammar import atomic
 from regparser.grammar.utils import keep_pos, Marker, QuickSearchable
@@ -9,8 +10,7 @@ from regparser.grammar.utils import keep_pos, Marker, QuickSearchable
 period_section = Suppress(".") + atomic.section
 part_section = atomic.part + period_section
 marker_part_section = (
-    atomic.section_marker.copy().setParseAction(keep_pos).setResultsName(
-        "marker") +
+    keep_pos(atomic.section_marker).setResultsName("marker") +
     part_section)
 
 depth6_p = atomic.em_roman_p | atomic.plaintext_level6_p
@@ -42,14 +42,14 @@ part_section_paragraph = QuickSearchable(
 part_section + Optional(depth1_p)
 
 m_section_paragraph = QuickSearchable(
-    atomic.paragraph_marker.copy().setParseAction(
-        keep_pos).setResultsName("marker") +
+    keep_pos(atomic.paragraph_marker).setResultsName("marker") +
     atomic.section +
     depth1_p)
 
 marker_paragraph = QuickSearchable(
-    (atomic.paragraph_marker | atomic.paragraphs_marker).setParseAction(
-        keep_pos).setResultsName("marker") +
+    keep_pos(
+        atomic.paragraph_marker | atomic.paragraphs_marker
+        ).setResultsName("marker") +
     depth1_p)
 
 
@@ -74,39 +74,33 @@ appendix_with_section = QuickSearchable(
                     appendix_section).setResultsName("appendix_section"))
 
 appendix_with_part = QuickSearchable(
-    atomic.appendix_marker.copy().setParseAction(keep_pos).setResultsName(
-        "marker") +
+    keep_pos(atomic.appendix_marker).setResultsName("marker") +
     atomic.appendix +
     Suppress(",") + Marker('part') +
     atomic.upper_roman_a +
     Optional(any_a) + Optional(any_a) + Optional(any_a))
 
 marker_appendix = QuickSearchable(
-    atomic.appendix_marker.copy().setParseAction(keep_pos).setResultsName(
-        "marker") +
+    keep_pos(atomic.appendix_marker).setResultsName("marker") +
     (appendix_with_section | atomic.appendix))
 
 marker_part = (
-    atomic.part_marker.copy().setParseAction(keep_pos).setResultsName(
-        "marker") +
+    keep_pos(atomic.part_marker).setResultsName("marker") +
     atomic.part)
 
 marker_subpart = (
-    atomic.subpart_marker.copy().setParseAction(keep_pos).setResultsName(
-        "marker") +
+    keep_pos(atomic.subpart_marker).setResultsName("marker") +
     atomic.subpart)
 
 marker_subpart_title = (
-    atomic.subpart_marker.copy().setParseAction(keep_pos).setResultsName(
-        "marker") +
+    keep_pos(atomic.subpart_marker).setResultsName("marker") +
     atomic.subpart +
     Optional(Suppress(Literal(u"—"))) +
     SkipTo(LineEnd()).setResultsName("subpart_title")
 )
 
 marker_comment = QuickSearchable(
-    atomic.comment_marker.copy().setParseAction(keep_pos).setResultsName(
-        "marker") +
+    keep_pos(atomic.comment_marker).setResultsName("marker") +
     (section_comment | section_paragraph | ps_paragraph | mps_paragraph) +
     Optional(depth1_c)
 )
@@ -118,12 +112,10 @@ def make_multiple(head, tail=None, wrap_tail=False):
     for setting these elements up"""
     if tail is None:
         tail = head
-    # Use `Empty` over `copy` as `head`/`tail` may be single-element grammars,
-    # in which case we don't want to completely rename the results
-    head = (head + Empty()).setParseAction(keep_pos).setResultsName("head")
+    head = keep_pos(head).setResultsName("head")
     # We need to address just the matching text separately from the
     # conjunctive phrase
-    tail = (tail + Empty()).setParseAction(keep_pos).setResultsName("match")
+    tail = keep_pos(tail).setResultsName("match")
     tail = (atomic.conj_phrases + tail).setResultsName(
         "tail", listAllMatches=True)
     if wrap_tail:

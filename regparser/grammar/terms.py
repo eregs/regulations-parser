@@ -10,18 +10,13 @@ from regparser.grammar.utils import (
 
 smart_quotes = QuickSearchable(
     Suppress(DocLiteral(u'“', "left-smart-quote")) +
-    SkipTo(
-        DocLiteral(
-            u'”',
-            "right-smart-quote")).setParseAction(
-                keep_pos).setResultsName("term")
+    keep_pos(SkipTo(DocLiteral(
+        u'”', "right-smart-quote"))).setResultsName("term")
 )
 
 e_tag = (
     Suppress(Regex(r"<E[^>]*>")) +
-    OneOrMore(
-        Word(srange("[a-zA-Z-]"))
-    ).setParseAction(keep_pos).setResultsName("term") +
+    keep_pos(OneOrMore(Word(srange("[a-zA-Z-]")))).setResultsName("term") +
     Suppress(Literal("</E>"))
 )
 
@@ -45,9 +40,7 @@ key_term_parser = QuickSearchable(
     LineStart() +
     Optional(Suppress(unified.any_depth_p)) +
     Suppress(Regex(r"<E[^>]*>")) +
-    OneOrMore(
-        Word(srange("[a-zA-Z-,]"))
-    ).setParseAction(keep_pos).setResultsName("term") +
+    keep_pos(OneOrMore(Word(srange("[a-zA-Z-,]")))).setResultsName("term") +
     Optional(Suppress(".")) +
     Suppress(Literal("</E>"))
 )
@@ -56,6 +49,6 @@ scope_term_type_parser = QuickSearchable(
     Marker("purposes") + Marker("of") + Optional(Marker("this")) +
     SkipTo(",").setResultsName("scope") + Literal(",") +
     Optional(Marker("the") + Marker("term")) +
-    SkipTo(Marker("means") |
-           (Marker("refers") +
-            Marker("to"))).setParseAction(keep_pos).setResultsName("term"))
+    keep_pos(
+        SkipTo(Marker("means") | (Marker("refers") + Marker("to")))
+        ).setResultsName("term"))
