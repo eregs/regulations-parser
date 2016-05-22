@@ -156,15 +156,3 @@ Tools
   known copy, as stored in an instance of ``regulations-core`` (the API). The
   command will compare the requested JSON files and provide an interface for
   seeing the differences, if present.
-
-Legacy Commands
----------------
-
-* ``notice_order`` - This uses a system similar to ``versions`` to determine
-  and order the final rules associated with a regulation. It will likely be
-  removed in favor of better output in the ``versions`` command.
-* ``watch_node`` - Given a particular portion of the regulation (specifically
-  a "node label") to track, this command splits out a history of changes to
-  that portion. This is particularly useful for debugging. This currently uses
-  a ``build_from`` like processing model; it needs to be ported to comply with
-  the data created by ``pipeline``.

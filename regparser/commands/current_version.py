@@ -20,10 +20,7 @@ def process_if_needed(volume, cfr_part):
     version_id = _version_id(volume.year, cfr_part)
     annual_entry = entry.Annual(volume.title, cfr_part, volume.year)
     tree_entry = entry.Tree(volume.title, cfr_part, version_id)
-    # This is a little odd, but we use SxS as a source for "notice" data. This
-    # will eventually be removed in favor of storing the version meta data
-    # directly
-    sxs_entry = entry.SxS(version_id)
+    notice_entry = entry.Notice(version_id)
 
     deps = dependency.Graph()
     deps.add(tree_entry, annual_entry)
@@ -31,16 +28,15 @@ def process_if_needed(volume, cfr_part):
     if deps.is_stale(tree_entry):
         tree = xml_parser.reg_text.build_tree(annual_entry.read().xml)
         tree_entry.write(tree)
-        sxs_entry.write(build_fake_notice(
-            version_id, volume.publication_date.isoformat(), volume.title,
-            cfr_part))
+        notice_entry.write(build_fake_notice(
+            version_id, volume.publication_date, volume.title, cfr_part))
 
 
 def create_version_entry_if_needed(volume, cfr_part):
     """Only write the version entry if it doesn't already exist. If we
     overwrote one, we'd be invalidating all related trees, etc."""
     version_id = _version_id(volume.year, cfr_part)
-    version_entries = entry.Version(volume.title, cfr_part)
+    version_entries = entry.FinalVersion(volume.title, cfr_part)
 
     if version_id not in version_entries:
         (version_entries / version_id).write(

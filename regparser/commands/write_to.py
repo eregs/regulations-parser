@@ -3,7 +3,9 @@ import logging
 
 from regparser.api_writer import Client
 from regparser.commands import utils
+from regparser.history.versions import Version
 from regparser.index import entry
+from regparser.notice.build import add_footnotes, process_sxs
 
 
 logger = logging.getLogger(__name__)
@@ -13,7 +15,8 @@ def write_trees(client, only_title, only_part):
     for tree_entry in utils.relevant_paths(entry.Tree(), only_title,
                                            only_part):
         cfr_title, cfr_part, version_id = tree_entry.path
-        client.regulation(cfr_part, version_id).write(tree_entry.read())
+        content = tree_entry.read()
+        client.regulation(cfr_part, version_id).write(content)
 
 
 def write_layers(client, only_title, only_part):
@@ -38,15 +41,42 @@ def write_layers(client, only_title, only_part):
                     client.layer(layer_name, doc_type, doc_id).write(layer)
 
 
+def transform_notice(notice_xml):
+    """The API has a different format for notices than the local XML. We'll
+    need to convert and add appropriate fields"""
+    as_dict = notice_xml.as_dict()
+    as_dict['versions'] = {}
+    for cfr_title, cfr_part in notice_xml.cfr_ref_pairs:
+        version_dir = entry.Version(cfr_title, cfr_part)
+        versions = [(version_dir / id).read() for id in version_dir]
+        with_parents = zip(versions, Version.parents_of(versions))
+        for version, parent in with_parents:
+            if version.identifier == notice_xml.version_id and parent:
+                as_dict['versions'][cfr_part] = {"left": parent.identifier,
+                                                 "right": version.identifier}
+
+    # @todo - SxS and footnotes aren't used outside of CFPB
+    add_footnotes(as_dict, notice_xml.xml)
+    if notice_xml.cfr_ref_pairs:
+        process_sxs(as_dict, notice_xml.xml)
+    return as_dict
+
+
 def write_notices(client, only_title, only_part):
-    sxs_dir = entry.SxS()
-    for version_id in sxs_dir:
-        tree = (sxs_dir / version_id).read()
-        title_match = not only_title or tree['cfr_title'] == only_title
-        cfr_parts = map(str, tree['cfr_parts'])
-        part_match = not only_part or str(only_part) in cfr_parts
+    """
+    :param int or None only_title: Filter results to one title
+    :param int or None only_part: Filter results to one part
+    """
+    notice_dir = entry.Notice()
+    for version_id in notice_dir:
+        notice_xml = (notice_dir / version_id).read()
+        title_match = only_title is None or any(ref.title == only_title
+                                                for ref in notice_xml.cfr_refs)
+        # @todo - this doesn't confirm the part is within the title
+        cfr_parts = [part for ref in notice_xml.cfr_refs for part in ref.parts]
+        part_match = only_part is None or only_part in cfr_parts
         if title_match and part_match:
-            client.notice(version_id).write(tree)
+            client.notice(version_id).write(transform_notice(notice_xml))
 
 
 def write_diffs(client, only_title, only_part):
@@ -64,7 +94,7 @@ def write_preambles(client):
 
 
 @click.command()
-@click.argument('output')
+@click.argument('output', envvar='EREGS_OUTPUT_DIR')
 @click.option('--cfr_title', type=int, help="Limit to one CFR title")
 @click.option('--cfr_part', type=int, help="Limit to one CFR part")
 def write_to(output, cfr_title, cfr_part):
@@ -80,8 +110,9 @@ def write_to(output, cfr_title, cfr_part):
                 cfr_title, cfr_part, output)
     client = Client(output)
     write_trees(client, cfr_title, cfr_part)
+    if cfr_title is None and cfr_part is None:
+        write_preambles(client)
+    # Note that layers must always be written _after_ the trees they reference
     write_layers(client, cfr_title, cfr_part)
     write_notices(client, cfr_title, cfr_part)
     write_diffs(client, cfr_title, cfr_part)
-    if cfr_title is None and cfr_part is None:
-        write_preambles(client)

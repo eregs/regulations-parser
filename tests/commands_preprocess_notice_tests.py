@@ -1,14 +1,17 @@
 from datetime import date
+import re
 from unittest import TestCase
 
 from click.testing import CliRunner
+from lxml import etree
 from mock import patch
 
-from regparser.commands.preprocess_notice import preprocess_notice
+from regparser.commands.preprocess_notice import (
+    convert_cfr_refs, preprocess_notice)
 from regparser.index import dependency, entry
-from regparser.notice.xml import NoticeXML
+from regparser.notice.xml import NoticeXML, TitlePartsRef
+from regparser.test_utils.http_mixin import HttpMixin
 from regparser.test_utils.xml_builder import XMLBuilder
-from tests.http_mixin import HttpMixin
 
 
 class CommandsPreprocessNoticeTests(HttpMixin, TestCase):
@@ -28,7 +31,9 @@ class CommandsPreprocessNoticeTests(HttpMixin, TestCase):
                   'full_text_xml_url': 'some://url',
                   'volume': 45}
         params.update(kwargs)
-        self.expect_json_http(params)
+        self.expect_json_http(params, uri=re.compile('.*federalregister.*'))
+        # No data from regs.gov
+        self.expect_json_http({}, uri=re.compile('.*regulations.*'))
 
     @patch('regparser.commands.preprocess_notice.notice_xmls_for_url')
     def test_single_notice(self, notice_xmls_for_url):
@@ -128,6 +133,45 @@ class CommandsPreprocessNoticeTests(HttpMixin, TestCase):
                              "145")
 
     @patch('regparser.commands.preprocess_notice.notice_xmls_for_url')
+    def test_single_notice_rins(self, notice_xmls_for_url):
+        """
+        Verify that we get rins from the metadata and XMl.
+        """
+        cli = CliRunner()
+        self.expect_common_json(regulation_id_numbers=["2050-AG65"])
+        notice_xmls_for_url.return_value = [self.example_xml()]
+        with cli.isolated_filesystem():
+            cli.invoke(preprocess_notice, ['1234-5678'])
+            self.assertEqual(1, len(entry.Notice()))
+
+            written = entry.Notice('1234-5678').read()
+            self.assertEqual(len(written.xpath("//EREGS_RINS")), 1)
+            self.assertEqual(len(written.xpath("//EREGS_RIN")), 1)
+            rin = written.xpath("//EREGS_RIN")[0]
+            self.assertEqual(rin.attrib["rin"], "2050-AG65")
+
+    @patch('regparser.commands.preprocess_notice.notice_xmls_for_url')
+    def test_single_notice_docket_ids(self, notice_xmls_for_url):
+        """
+        Verify that we get docket_ids from the metadata.
+        """
+        cli = CliRunner()
+        self.expect_common_json(docket_ids=["EPA-HQ-SFUND-2010-1086",
+                                            "FRL-9925-69-OLEM"])
+        notice_xmls_for_url.return_value = [self.example_xml()]
+        with cli.isolated_filesystem():
+            cli.invoke(preprocess_notice, ['1234-5678'])
+            self.assertEqual(1, len(entry.Notice()))
+
+            written = entry.Notice('1234-5678').read()
+            self.assertEqual(len(written.xpath("//EREGS_DOCKET_IDS")), 1)
+            self.assertEqual(len(written.xpath("//EREGS_DOCKET_ID")), 2)
+            did = written.xpath("//EREGS_DOCKET_ID")[0]
+            self.assertEqual(did.attrib["docket_id"], "EPA-HQ-SFUND-2010-1086")
+            did = written.xpath("//EREGS_DOCKET_ID")[1]
+            self.assertEqual(did.attrib["docket_id"], "FRL-9925-69-OLEM")
+
+    @patch('regparser.commands.preprocess_notice.notice_xmls_for_url')
     def test_missing_effective_date(self, notice_xmls_for_url):
         """We should not explode if no effective date is present. Instead, we
         should parse the effective date from the XML"""
@@ -181,3 +225,87 @@ class CommandsPreprocessNoticeTests(HttpMixin, TestCase):
             cli.invoke(preprocess_notice, ['1234-5678'])
             entry_str = str(entry.Notice() / '1234-5678')
             self.assertNotIn(entry_str, dependency.Graph())
+
+    @patch('regparser.commands.preprocess_notice.notice_xmls_for_url')
+    def test_single_notice_cfr_refs_from_metadata(self, notice_xmls_for_url):
+        """
+        Verify that we get CFR references from the metadata.
+        """
+        cli = CliRunner()
+        self.expect_common_json(cfr_references=[
+            {"title": "40", "part": "300"}, {"title": "40", "part": "301"}])
+        notice_xmls_for_url.return_value = [self.example_xml()]
+        with cli.isolated_filesystem():
+            cli.invoke(preprocess_notice, ['1234-5678'])
+            self.assertEqual(1, len(entry.Notice()))
+
+            written = entry.Notice('1234-5678').read()
+            self.assertEqual(len(written.xpath("//EREGS_CFR_REFS")), 1)
+            self.assertEqual(len(written.xpath("//EREGS_CFR_TITLE_REF")), 1)
+            title = written.xpath("//EREGS_CFR_TITLE_REF")[0]
+            self.assertEqual(title.attrib["title"], "40")
+            self.assertEqual(len(written.xpath("//EREGS_CFR_PART_REF")), 2)
+            part = written.xpath("//EREGS_CFR_PART_REF")[0]
+            self.assertEqual(part.attrib["part"], "300")
+            part = written.xpath("//EREGS_CFR_PART_REF")[1]
+            self.assertEqual(part.attrib["part"], "301")
+
+    @patch('regparser.commands.preprocess_notice.notice_xmls_for_url')
+    def test_single_notice_cfr_refs_from_xml(self, notice_xmls_for_url):
+        """
+        Verify that we get CFR references from the xml.
+        """
+        cli = CliRunner()
+        self.expect_common_json()
+        notice_xml = self.example_xml()
+        cfr_el = etree.SubElement(notice_xml.xml, 'CFR')
+        cfr_el.text = '40 CFR 300, 301'
+        notice_xmls_for_url.return_value = [notice_xml]
+        with cli.isolated_filesystem():
+            cli.invoke(preprocess_notice, ['1234-5678'])
+            self.assertEqual(1, len(entry.Notice()))
+
+            written = entry.Notice('1234-5678').read()
+            self.assertEqual(len(written.xpath("//EREGS_CFR_REFS")), 1)
+            self.assertEqual(len(written.xpath("//EREGS_CFR_TITLE_REF")), 1)
+            title = written.xpath("//EREGS_CFR_TITLE_REF")[0]
+            self.assertEqual(title.attrib["title"], "40")
+            self.assertEqual(len(written.xpath("//EREGS_CFR_PART_REF")), 2)
+            part = written.xpath("//EREGS_CFR_PART_REF")[0]
+            self.assertEqual(part.attrib["part"], "300")
+            part = written.xpath("//EREGS_CFR_PART_REF")[1]
+            self.assertEqual(part.attrib["part"], "301")
+
+    def test_convert_cfr_refs(self):
+        """
+        Test that we get the correct CFR references from the metadata
+        """
+        refs = [
+            {"title": 40, "part": 300},
+            {"title": 41, "part": 210},
+            {"title": 40, "part": 301},
+            {"title": 40, "part": 302},
+            {"title": 40, "part": 303},
+            {"title": 42, "part": 302},
+            {"title": 42, "part": 303}
+        ]
+        expected = [
+            TitlePartsRef(title=40, parts=[300, 301, 302, 303]),
+            TitlePartsRef(title=41, parts=[210]),
+            TitlePartsRef(title=42, parts=[302, 303])
+        ]
+        self.assertEqual(convert_cfr_refs(refs), expected)
+
+        refs = [
+            {"title": 42, "part": 302},
+            {"title": 42, "part": 303},
+            {"title": 40, "part": 330},
+            {"title": 41, "part": 210},
+            {"title": 40, "part": 300},
+        ]
+        expected = [
+            TitlePartsRef(title=40, parts=[300, 330]),
+            TitlePartsRef(title=41, parts=[210]),
+            TitlePartsRef(title=42, parts=[302, 303])
+        ]
+        self.assertEqual(convert_cfr_refs(refs), expected)

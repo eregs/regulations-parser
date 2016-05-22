@@ -4,8 +4,11 @@ import shutil
 import tempfile
 from unittest import TestCase
 
+from mock import patch
+
 from regparser.history.delays import FRDelay
 from regparser.notice import xml as notice_xml
+from regparser.regs_gov import RegsGovDoc
 from regparser.test_utils.xml_builder import XMLBuilder
 import settings
 
@@ -64,15 +67,18 @@ class NoticeXMLLocalCopiesTests(TestCase):
 
 class NoticeXMLTests(TestCase):
     """Tests for the NoticeXML class"""
-    def test_set_meta_data(self):
-        """Several pieces of meta data should be set within the XML. We test
-        that the NoticeXML wrapper can retrieve them and that, if we re-read
-        the XML, they can still be pulled out"""
+    def _dummy_notice(self):
         with XMLBuilder("ROOT") as ctx:
             with ctx.DATES():
                 ctx.P("Some content")
             ctx.PRTPAGE(P="455")
-        xml = notice_xml.NoticeXML(ctx.xml)
+        return notice_xml.NoticeXML(ctx.xml)
+
+    def test_set_meta_data(self):
+        """Several pieces of meta data should be set within the XML. We test
+        that the NoticeXML wrapper can retrieve them and that, if we re-read
+        the XML, they can still be pulled out"""
+        xml = self._dummy_notice()
 
         xml.effective = '2005-05-05'
         xml.published = '2004-04-04'
@@ -89,7 +95,7 @@ class NoticeXMLTests(TestCase):
 
     def test_set_effective_date_create(self):
         """The DATES tag should get created if not present in the XML"""
-        xml = notice_xml.NoticeXML(XMLBuilder('ROOT').xml)
+        xml = self._dummy_notice()
 
         xml.effective = '2005-05-05'
         self.assertEqual(xml.effective, date(2005, 5, 5))
@@ -106,6 +112,9 @@ class NoticeXMLTests(TestCase):
 
         xml.effective = '2002-02-02'
         self.assertEqual(xml.derive_effective_date(), date(2004, 5, 4))
+        # does _not_ set that date
+        self.assertEqual(xml.effective, date(2002, 2, 2))
+        xml.effective = xml.derive_effective_date()
         self.assertEqual(xml.effective, date(2004, 5, 4))
 
     def test_delays(self):
@@ -130,7 +139,7 @@ class NoticeXMLTests(TestCase):
             self.assertTrue(
                 notice_xml.NoticeXML('<ROOT/>', source=path).source_is_local)
 
-    def test_derive_agencies_simple(self):
+    def test_set_agencies_simple(self):
         """
         Test that we can properly derive agency info from the metadata or the
         XML itself, and that it's added to the XML.
@@ -149,7 +158,7 @@ class NoticeXMLTests(TestCase):
             with ctx.DATES():
                 ctx.P("Effective on May 4, 2004")
         xml = notice_xml.NoticeXML(ctx.xml)
-        xml.derive_agencies(agencies=agencies_info)
+        xml.set_agencies(agencies=agencies_info)
         self.assertEquals(len(xml.xpath("//EREGS_AGENCIES")), 1)
         eregs_agencies = xml.xpath("//EREGS_AGENCIES")[0]
         self.assertEquals(len(eregs_agencies.xpath("//EREGS_AGENCY")), 1)
@@ -160,7 +169,7 @@ class NoticeXMLTests(TestCase):
                           "ENVIRONMENTAL PROTECTION AGENCY")
         self.assertEquals(epa.attrib["agency-id"], "145")
 
-    def test_derive_agencies_singlesub(self):
+    def test_set_agencies_singlesub(self):
         """
         Test that we can properly derive agency info from the metadata and add
         it to the XML if there is a subagency.
@@ -193,7 +202,7 @@ class NoticeXMLTests(TestCase):
             with ctx.DATES():
                 ctx.P("Effective on May 4, 2004")
         xml = notice_xml.NoticeXML(ctx.xml)
-        xml.derive_agencies(agencies=agencies_info)
+        xml.set_agencies(agencies=agencies_info)
         self.assertEquals(len(xml.xpath("//EREGS_AGENCIES")), 1)
         eregs_agencies = xml.xpath("//EREGS_AGENCIES")[0]
         self.assertEquals(len(eregs_agencies.xpath("//EREGS_AGENCY")), 1)
@@ -210,7 +219,7 @@ class NoticeXMLTests(TestCase):
             "Bureau of Alcohol, Tobacco, Firearms and Explosives")
         self.assertEquals(atf.attrib["agency-id"], "19")
 
-    def test_derive_agencies_unrelated(self):
+    def test_set_agencies_unrelated(self):
         """
         Test that we can properly derive agency info from the metadata and add
         it to the XML if there is an agency and a non-child subagency.
@@ -243,7 +252,7 @@ class NoticeXMLTests(TestCase):
             with ctx.DATES():
                 ctx.P("Effective on May 4, 2004")
         xml = notice_xml.NoticeXML(ctx.xml)
-        xml.derive_agencies(agencies=agencies_info)
+        xml.set_agencies(agencies=agencies_info)
         self.assertEquals(len(xml.xpath("//EREGS_AGENCIES")), 1)
         eregs_agencies = xml.xpath("//EREGS_AGENCIES")[0]
         self.assertEquals(len(eregs_agencies.xpath("//EREGS_AGENCY")), 1)
@@ -261,7 +270,7 @@ class NoticeXMLTests(TestCase):
             u"Bureau of Alcohol, Tobacco, Firearms and Explosives")
         self.assertEquals(atf.attrib["agency-id"], "19")
 
-    def test_derive_agencies_mixed(self):
+    def test_set_agencies_mixed(self):
         """
         Test that we can properly derive agency info from the metadata and add
         it to the XML if we have a parent-child relationship and an unrelated
@@ -305,7 +314,7 @@ class NoticeXMLTests(TestCase):
             with ctx.DATES():
                 ctx.P("Effective on May 4, 2004")
         xml = notice_xml.NoticeXML(ctx.xml)
-        xml.derive_agencies(agencies=agencies_info)
+        xml.set_agencies(agencies=agencies_info)
         self.assertEquals(len(xml.xpath("//EREGS_AGENCIES")), 1)
         eregs_agencies = xml.xpath("//EREGS_AGENCIES")[0]
         self.assertEquals(len(eregs_agencies.xpath("//EREGS_AGENCY")), 2)
@@ -327,7 +336,7 @@ class NoticeXMLTests(TestCase):
             u"Bureau of Alcohol, Tobacco, Firearms and Explosives")
         self.assertEquals(atf.attrib["agency-id"], "19")
 
-    def test_derive_agencies_generations(self):
+    def test_set_agencies_generations(self):
         """
         Test that we can properly derive agency info from the metadata and add
         it to the XML if we have nested parent-child relationships.
@@ -380,7 +389,7 @@ class NoticeXMLTests(TestCase):
             with ctx.DATES():
                 ctx.P("Effective on May 4, 2004")
         xml = notice_xml.NoticeXML(ctx.xml)
-        xml.derive_agencies(agencies=agencies_info)
+        xml.set_agencies(agencies=agencies_info)
         self.assertEquals(len(xml.xpath("//EREGS_AGENCIES")), 1)
         eregs_agencies = xml.xpath("//EREGS_AGENCIES")[0]
         self.assertEquals(len(eregs_agencies.xpath("//EREGS_AGENCY")), 1)
@@ -406,3 +415,153 @@ class NoticeXMLTests(TestCase):
         self.assertEquals(subsubatf.attrib["name"], u'ATF subsubagency')
         self.assertEquals(subsubatf.attrib["raw-name"], u"SUBSUBAGENCY OF ATF")
         self.assertEquals(subsubatf.attrib["agency-id"], u"100072")
+
+    def test_rins(self):
+        def rinstest(rins, expected, xml=None):
+            if not xml:
+                xml = self._dummy_notice()
+            rins = rins or xml.derive_rins()
+            xml.rins = rins
+            self.assertEquals(expected, xml.rins)
+
+        # From the metadata:
+        rinstest(["2050-AG67"], ["2050-AG67"])
+
+        # From the XML:
+        with XMLBuilder("ROOT") as root:
+            root.RIN("RIN 2050-AG68")
+        xml = notice_xml.NoticeXML(root.xml)
+        rinstest([], ["2050-AG68"], xml=xml)
+
+        # From the XML, no prefix:
+        with XMLBuilder("ROOT") as root:
+            root.RIN(" 2050-AG69")
+        xml = notice_xml.NoticeXML(root.xml)
+        rinstest([], ["2050-AG69"], xml=xml)
+
+        # Two numbers:
+        rinstest(["2050-AG60", "2050-AG61"], ["2050-AG60", "2050-AG61"])
+
+        # Two numbers XML:
+        with XMLBuilder("ROOT") as root:
+            root.RIN("RIN 2050-AG60")
+            root.RIN("RIN 2050-AG61")
+        xml = notice_xml.NoticeXML(root.xml)
+        rinstest([], ["2050-AG60", "2050-AG61"],
+                 xml=xml)
+
+    def test_docket_ids(self):
+        def ditest(dis, expected, xml=None):
+            if not xml:
+                xml = self._dummy_notice()
+            dis = dis or xml.derive_docket_ids()
+            xml.docket_ids = dis
+            self.assertEquals(expected, xml.docket_ids)
+
+        # From the metadata:
+        ditest(["EPA-HQ-SFUND-2010-1086"], ["EPA-HQ-SFUND-2010-1086"])
+
+        # From the XML:
+        with XMLBuilder("ROOT") as root:
+            root.DEPDOC("[EPA-HQ-SFUND-2010-1086]")
+        xml = notice_xml.NoticeXML(root.xml)
+        ditest([], ["EPA-HQ-SFUND-2010-1086"], xml=xml)
+
+        # From the XML, two docket ids:
+        with XMLBuilder("ROOT") as root:
+            root.DEPDOC("[EPA-HQ-SFUND-2010-1086; FRL-9925-69-OLEM]")
+        xml = notice_xml.NoticeXML(root.xml)
+        ditest([], ["EPA-HQ-SFUND-2010-1086", "FRL-9925-69-OLEM"], xml=xml)
+
+        # Two docket ids, metadata:
+        ditest(["EPA-HQ-SFUND-2010-1086", "FRL-9925-69-OLEM"],
+               ["EPA-HQ-SFUND-2010-1086", "FRL-9925-69-OLEM"])
+
+    def test_cfr_refs(self):
+        """
+        Test that we can set and retrieve the same values
+        """
+        def _reftest(refs):
+            xml = self._dummy_notice()
+            xml.cfr_refs = refs
+            self.assertEqual(refs, xml.cfr_refs)
+
+        _reftest([])
+        _reftest([
+            notice_xml.TitlePartsRef(title=40, parts=[300, 301, 302, 303]),
+            notice_xml.TitlePartsRef(title=41, parts=[210]),
+            notice_xml.TitlePartsRef(title=42, parts=[302, 303])
+        ])
+        _reftest([
+            notice_xml.TitlePartsRef(title=40, parts=[300, 330]),
+            notice_xml.TitlePartsRef(title=41, parts=[210]),
+            notice_xml.TitlePartsRef(title=42, parts=[302, 303])
+        ])
+
+    def test_supporting_documents(self):
+        """Should be able to set and retrieve supporting documents"""
+        documents = [RegsGovDoc(str(i), str(i)*3) for i in range(4)]
+        notice = self._dummy_notice()
+        self.assertEqual([], notice.supporting_documents)
+        notice.supporting_documents = documents
+        self.assertEqual(documents, notice.supporting_documents)
+
+    @patch('regparser.notice.xml.regs_gov.supporting_docs')
+    @patch('regparser.notice.xml.regs_gov.proposal')
+    def test_derive_where_needed_regs_gov(self, mock_proposal,
+                                          mock_supporting_docs):
+        """Verify that the comment_doc_id, primary_docket and
+        supporting_documents get set in the `derive_where_needed` method"""
+        notice = self._dummy_notice()
+        notice.docket_ids = ['docketdocket']
+        mock_proposal.return_value = RegsGovDoc('rrrid', 'A title')
+        supporting = [RegsGovDoc('r2', 't2'), RegsGovDoc('r3', 't3')]
+        mock_supporting_docs.return_value = supporting
+
+        notice.derive_where_needed()
+        self.assertEqual(notice.comment_doc_id, 'rrrid')
+        self.assertEqual(notice.primary_docket, 'docketdocket')
+        self.assertEqual(notice.supporting_documents, supporting)
+
+    def test_as_dict(self):
+        with XMLBuilder("ROOT") as ctx:
+            ctx.PRTPAGE(P=44)
+            ctx.AGENCY('Awesome Admin')
+            ctx.SUBJECT('This is the title')
+
+        notice = notice_xml.NoticeXML(ctx.xml)
+        notice.cfr_refs = [
+            notice_xml.TitlePartsRef(title=11, parts=[234, 456])]
+        notice.version_id = 'v1v1v1'
+        notice.fr_volume = 33
+        notice.fr_html_url = 'http://example.com'
+        notice.published = date(2002, 2, 2)
+        notice.comments_close_on = date(2003, 3, 3)
+        notice.effective = date(2004, 4, 4)
+        notice.rins = ['r1111', 'r2222']
+        notice.docket_ids = ['d1111', 'd2222']
+        notice.comment_doc_id = 'comment-docket'
+        notice.primary_docket = 'd2222'
+        notice.supporting_documents = [RegsGovDoc('some-id', 'A support doc')]
+
+        self.assertEqual(notice.as_dict(), {
+            'amendments': [],
+            'comments_close': '2003-03-03',
+            'comment_doc_id': 'comment-docket',
+            'cfr_parts': ['234', '456'],
+            'cfr_title': 11,
+            'dockets': ['d1111', 'd2222'],
+            'document_number': 'v1v1v1',
+            'effective_on': '2004-04-04',
+            'fr_citation': '33 FR 43',
+            'fr_url': 'http://example.com',
+            'fr_volume': 33,
+            'meta': {'start_page': 43},
+            'primary_agency': 'Awesome Admin',
+            'primary_docket': 'd2222',
+            'publication_date': '2002-02-02',
+            'regulation_id_numbers': ['r1111', 'r2222'],
+            'supporting_documents': [
+                {'regs_id': 'some-id', 'title': 'A support doc'}],
+            'title': 'This is the title'
+        })

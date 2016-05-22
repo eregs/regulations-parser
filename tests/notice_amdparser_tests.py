@@ -5,7 +5,7 @@ from lxml import etree
 
 from regparser.grammar import tokens
 from regparser.notice import amdparser
-from regparser.notice.amdparser import Amendment, DesignateAmendment
+from regparser.notice.amdparser import Amendment
 from regparser.test_utils.xml_builder import XMLBuilder
 from regparser.tree.paragraph import hash_for_paragraph
 
@@ -229,14 +229,14 @@ class NoticeAMDPARserTests(TestCase):
             tokens.Paragraph(part='200', sub='1', section='b')]
         return tokens.TokenList(paragraph_tokens)
 
-    def test_deal_with_subpart_adds(self):
+    def test_subpart_designation(self):
         designate_token = tokens.Verb(tokens.Verb.DESIGNATE, True)
         token_list = self.paragraph_token_list()
         context = tokens.Context(['Subpart', 'A'])
 
         tokenized = [designate_token, token_list, context]
 
-        toks, subpart_added = amdparser.deal_with_subpart_adds(tokenized)
+        toks, subpart_added = amdparser.subpart_designation(tokenized)
         self.assertTrue(subpart_added)
 
         paragraph_found = False
@@ -249,12 +249,12 @@ class NoticeAMDPARserTests(TestCase):
 
         self.assertTrue(paragraph_found)
 
-    def test_deal_with_subpart_adds_no_subpart(self):
+    def test_subpart_designation_no_subpart(self):
         designate_token = tokens.Verb(tokens.Verb.DESIGNATE, True)
         token_list = self.paragraph_token_list()
         tokenized = [designate_token, token_list]
 
-        toks, subpart_added = amdparser.deal_with_subpart_adds(tokenized)
+        toks, subpart_added = amdparser.subpart_designation(tokenized)
         self.assertFalse(subpart_added)
 
     def test_get_destination_normal(self):
@@ -271,17 +271,17 @@ class NoticeAMDPARserTests(TestCase):
         self.assertEqual(amdparser.get_destination(tokenized, '205'),
                          '205-Subpart:J')
 
-    def test_make_subpart_instructions(self):
+    def test_make_subpart_designation_instructions(self):
         token_list = self.paragraph_token_list()
         subpart_token = tokens.Paragraph(subpart='J')
         tokenized = [token_list, subpart_token]
         with XMLBuilder('EREGS_INSTRUCTIONS') as ctx:
-            with ctx.DESIGNATE(destination='200-Subpart:J'):
-                ctx.LABEL(label='200-1-a')
-                ctx.LABEL(label='200-1-b')
+            ctx.MOVE_INTO_SUBPART(label='200-1-a', destination='200-Subpart:J')
+            ctx.MOVE_INTO_SUBPART(label='200-1-b', destination='200-Subpart:J')
 
         self.assertEqual(
-            etree.tostring(amdparser.make_subpart_instructions(tokenized)),
+            etree.tostring(amdparser.make_subpart_designation_instructions(
+                tokenized)),
             ctx.xml_str)
 
     def test_switch_part_context(self):
@@ -563,11 +563,3 @@ class AmendmentTests(TestCase):
             self.assertEqual(
                 Amendment('VERB', label).tree_format_level2(),
                 expected)
-
-
-class DesignateAmendmentTests(TestCase):
-    def test_fix_interp_format(self):
-        amd = DesignateAmendment(
-            'action', [], '1005-Interpretations-31-(b)(1)-3')
-        self.assertEqual(amd.destination,
-                         ['1005', '31', 'b', '1', 'Interp', '3'])

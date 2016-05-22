@@ -1,13 +1,19 @@
 from contextlib import contextmanager
+from datetime import date
 import os
 import tempfile
 import shutil
 from unittest import TestCase
 
 from click.testing import CliRunner
+from lxml import etree
+from mock import Mock, patch
 
-from regparser.commands.write_to import write_to
+from regparser.commands.write_to import transform_notice, write_to
+from regparser.history.versions import Version
 from regparser.index import entry
+from regparser.notice.xml import NoticeXML
+from regparser.test_utils.xml_builder import XMLBuilder
 from regparser.tree.struct import Node
 
 
@@ -41,14 +47,27 @@ class CommandsWriteToTests(TestCase):
 
     def add_notices(self):
         """Adds an uneven assortment of notices"""
-        data = {'doc_number': 'v0', 'cfr_title': 11, 'cfr_parts': []}
-        entry.SxS('v0').write(data)
-        data.update(cfr_parts=['1000'], doc_number='v1')
-        entry.SxS('v1').write(data)
-        data.update(cfr_title=12, doc_number='v2')
-        entry.SxS('v2').write(data)
-        data['doc_number'] = 'v3'
-        entry.SxS('v3').write(data)
+        with XMLBuilder("ROOT", **{"eregs-version-id": "v0"}) as ctx:
+            ctx.PRTPAGE(P=1, **{"eregs-fr-volume": 1})
+            ctx.AGENCY("Agency")
+            ctx.SUBJECT("Subj")
+            ctx.DATES(**{'eregs-published-date': '2001-01-01'})
+            with ctx.EREGS_CFR_REFS():
+                ctx.EREGS_CFR_TITLE_REF(title=11)
+        xml = ctx.xml
+        entry.Notice('v0').write(NoticeXML(xml))
+
+        etree.SubElement(xml.xpath('//EREGS_CFR_TITLE_REF')[0],
+                         'EREGS_CFR_PART_REF', part='1000')
+        xml.attrib['eregs-version-id'] = 'v1'
+        entry.Notice('v1').write(NoticeXML(xml))
+
+        xml.xpath('//EREGS_CFR_TITLE_REF')[0].attrib['title'] = '12'
+        xml.attrib['eregs-version-id'] = 'v2'
+        entry.Notice('v2').write(NoticeXML(xml))
+
+        xml.attrib['eregs-version-id'] = 'v3'
+        entry.Notice('v3').write(NoticeXML(xml))
 
     def file_exists(self, *parts):
         """Helper method to verify that a file was created"""
@@ -138,3 +157,37 @@ class CommandsWriteToTests(TestCase):
             self.assert_file_exists('diff', '1000', 'v3', 'v1')
             self.assert_file_exists('notice', 'v0')
             self.assert_file_exists('notice', 'v1')
+
+    @patch('regparser.commands.write_to.add_footnotes')
+    @patch('regparser.commands.write_to.process_sxs')
+    def test_transform_notice(self, process_sxs, add_footnotes):
+        """We should add version information and the SxS functions should be
+        called"""
+        with CliRunner().isolated_filesystem():
+            entry.Version(11, 222, 'v1').write(
+                Version('v1', date(2001, 1, 1), date(2002, 2, 2)))
+            entry.Version(11, 222, 'v2').write(
+                Version('v2', date(2002, 2, 2), date(2003, 3, 3)))
+            entry.Version(11, 222, 'v3').write(
+                Version('v3', date(2003, 3, 3), date(2004, 4, 4)))
+            entry.Version(11, 223, 'v1').write(
+                Version('v1', date(2001, 1, 1), date(2002, 2, 2)))
+            entry.Version(11, 224, 'v1').write(
+                Version('v1', date(2001, 1, 1), date(2002, 2, 2)))
+            entry.Version(11, 222, 'proposal').write(
+                Version('proposal', date(2003, 6, 6), None))
+            entry.Version(11, 223, 'proposal').write(
+                Version('proposal', date(2003, 6, 6), None))
+
+            notice_xml = Mock()
+            notice_xml.as_dict.return_value = {}
+            notice_xml.version_id = 'proposal'
+            notice_xml.cfr_ref_pairs = [(11, 222), (11, 223)]
+
+            result = transform_notice(notice_xml)
+            self.assertEqual(result['versions'], {
+                222: {'left': 'v3', 'right': 'proposal'},
+                223: {'left': 'v1', 'right': 'proposal'}})
+
+            self.assertTrue(process_sxs.called)
+            self.assertTrue(add_footnotes.called)

@@ -3,8 +3,9 @@ from unittest import TestCase
 
 from click.testing import CliRunner
 
+from regparser import index
 from regparser.commands.clear import clear
-from regparser.index import entry
+from regparser.index import entry, http_cache
 
 
 class CommandsClearTests(TestCase):
@@ -16,17 +17,14 @@ class CommandsClearTests(TestCase):
         with self.cli.isolated_filesystem():
             self.cli.invoke(clear)
 
-    def test_deletes_fr_cache(self):
+    def test_deletes_http_cache(self):
         with self.cli.isolated_filesystem():
-            open('fr_cache.sqlite', 'w').close()
-            self.assertTrue(os.path.exists('fr_cache.sqlite'))
+            os.makedirs(index.ROOT)
+            open(http_cache.PATH, 'w').close()
+            self.assertTrue(os.path.exists(http_cache.PATH))
 
-            # flag must be present
             self.cli.invoke(clear)
-            self.assertTrue(os.path.exists('fr_cache.sqlite'))
-
-            self.cli.invoke(clear, ['--http-cache'])
-            self.assertFalse(os.path.exists('fr_cache.sqlite'))
+            self.assertFalse(os.path.exists(http_cache.PATH))
 
     def test_deletes_index(self):
         with self.cli.isolated_filesystem():

@@ -1,27 +1,11 @@
 import re
 from unittest import TestCase
 
-from mock import patch
-
 from regparser import federalregister
-from tests.http_mixin import HttpMixin
+from regparser.test_utils.http_mixin import HttpMixin
 
 
 class FederalRegisterTest(HttpMixin, TestCase):
-    @patch('regparser.federalregister.build_notice')
-    def test_fetch_notices(self, build_note):
-        self.expect_json_http({"results": [{"some": "thing"},
-                                           {"another": "thing"}]})
-        build_note.return_value = ['NOTICE!']
-
-        notices = federalregister.fetch_notices(23, 1222)
-
-        params = self.last_http_params()
-        self.assertEqual(params['conditions[cfr][title]'], ['23'])
-        self.assertEqual(params['conditions[cfr][part]'], ['1222'])
-
-        self.assertEqual(['NOTICE!', 'NOTICE!'], notices)
-
     def test_meta_data_okay(self):
         """Successfully returns the appropriate JSON"""
         self.expect_json_http({"some": "value"},

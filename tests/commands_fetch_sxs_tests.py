@@ -19,7 +19,9 @@ class CommandsFetchSxSTests(TestCase):
         self.cli = CliRunner()
         with XMLBuilder("ROOT") as ctx:
             ctx.PRTPAGE(P="1234")
-            ctx.CFR('12 CFR 1000')
+            with ctx.EREGS_CFR_REFS():
+                with ctx.EREGS_CFR_TITLE_REF(title="12"):
+                    ctx.EREGS_CFR_PART_REF(part="1000")
         self.notice_xml = NoticeXML(ctx.xml)
 
     def test_missing_notice(self):

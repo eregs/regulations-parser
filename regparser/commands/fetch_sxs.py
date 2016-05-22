@@ -30,12 +30,12 @@ def fetch_sxs(document_number):
     # fields
     notice_xml = notice_entry.read()
     notice_meta = meta_data(document_number, FULL_NOTICE_FIELDS)
-    notice = build_notice(notice_xml.cfr_titles[0], None, notice_meta,
+    notice = build_notice(notice_xml.cfr_refs[0].title, None, notice_meta,
                           xml_to_process=notice_xml.xml)[0]
     sxs_entry.write(notice)
 
 
-class RuleChangesResolver(DependencyResolver):
+class SxSResolver(DependencyResolver):
     PATH_PARTS = entry.SxS.PREFIX + (
         '(?P<doc_number>[a-zA-Z0-9-_]+)',)
 

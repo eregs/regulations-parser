@@ -188,13 +188,6 @@ def find_parent(root, label):
     return find_first(root, has_child)
 
 
-def join_text(node):
-    """Join the text of this node and all children"""
-    bits = []
-    walk(node, lambda n: bits.append(n.text))
-    return ''.join(bits)
-
-
 def merge_duplicates(nodes):
     """Given a list of nodes with the same-length label, merge any
     duplicates (by combining their children)"""

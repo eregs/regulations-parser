@@ -4,7 +4,7 @@ regulation have changed.  """
 
 import logging
 import copy
-from collections import defaultdict
+from collections import defaultdict, OrderedDict
 
 from regparser.grammar import amdpar
 from regparser.grammar.tokens import Verb
@@ -133,7 +133,7 @@ def match_labels_and_changes(amendments, section_node):
 
     amend_map = defaultdict(list)
     for amend in amendments:
-        change = {'action': amend.action}
+        change = {'action': amend.action, 'amdpar_xml': amend.amdpar_xml}
         if amend.field is not None:
             change['field'] = amend.field
 
@@ -260,12 +260,6 @@ def flatten_tree(node_list, node):
     node_list.append(no_kids)
 
 
-def remove_intro(l):
-    """ Remove the marker that indicates this is a change to introductory
-    text. """
-    return l.replace('[text]', '')
-
-
 def pretty_change(change):
     """Pretty print output for a change"""
     node = change.get('node')
@@ -294,16 +288,18 @@ def pretty_change(change):
 class NoticeChanges(object):
     """ Notice changes. """
     def __init__(self):
-        self.changes = defaultdict(list)
+        self.changes_by_xml = defaultdict(OrderedDict)
 
-    def update(self, changes):
+    def add_changes(self, amdpar_xml, changes):
         """ Essentially add more changes into NoticeChanges. This is
         cognizant of the fact that a single label can have more than
         one change. Do not add the same change twice (as may occur if both
         the parent and child are marked as added)"""
-        for l, c in changes.items():
-            if c not in self.changes[l]:
-                self.changes[l].append(c)
+        for label, change in changes.items():
+            existing = self.changes_by_xml[amdpar_xml].get(label, [])
+            if change not in existing:
+                existing.append(change)
+            self.changes_by_xml[amdpar_xml][label] = existing
 
 
 def fix_section_node(paragraphs, amdpar_xml):
@@ -321,38 +317,6 @@ def fix_section_node(paragraphs, amdpar_xml):
         for paragraph in paragraphs:
             section.append(copy.deepcopy(paragraph))
         return section
-
-
-def find_lost_section(amdpar_xml):
-    """ This amdpar doesn't have any following siblings, so we
-    look in the next regtext """
-    reg_text = amdpar_xml.getparent()
-    reg_text_siblings = [s for s in reg_text.itersiblings()
-                         if s.tag == 'REGTEXT']
-    if len(reg_text_siblings) > 0:
-        candidate_reg_text = reg_text_siblings[0]
-        amdpars = [a for a in candidate_reg_text if a.tag == 'AMDPAR']
-        if len(amdpars) == 0:
-            # Only do this if there are not AMDPARS
-            for c in candidate_reg_text:
-                if c.tag == 'SECTION':
-                    return c
-
-
-def find_section(amdpar_xml):
-    """ With an AMDPAR xml, return the first section sibling """
-    siblings = [s for s in amdpar_xml.itersiblings()]
-
-    if len(siblings) == 0:
-        return find_lost_section(amdpar_xml)
-
-    for sibling in siblings:
-        if sibling.tag == 'SECTION':
-            return sibling
-
-    paragraphs = [s for s in siblings if s.tag == 'P']
-    if len(paragraphs) > 0:
-        return fix_section_node(paragraphs, amdpar_xml)
 
 
 def find_subpart(amdpar_tag):

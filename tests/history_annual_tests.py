@@ -8,7 +8,7 @@ from mock import Mock, patch
 
 from regparser.index import xml_sync
 from regparser.history import annual
-from tests.http_mixin import HttpMixin
+from regparser.test_utils.http_mixin import HttpMixin
 
 
 class HistoryAnnualVolumeTests(HttpMixin, TestCase):
@@ -135,41 +135,6 @@ class HistoryAnnualVolumeTests(HttpMixin, TestCase):
 
 
 class HistoryAnnualTests(TestCase):
-    def test_annual_edition_for(self):
-        for title in range(1, 17):
-            notice = {'effective_on': '2000-01-01'}
-            self.assertEqual(annual.annual_edition_for(title, notice), 2000)
-
-            notice = {'effective_on': '2000-01-02'}
-            self.assertEqual(annual.annual_edition_for(title, notice), 2001)
-        for title in range(17, 28):
-            notice = {'effective_on': '2000-01-01'}
-            self.assertEqual(annual.annual_edition_for(title, notice), 2000)
-
-            notice = {'effective_on': '2000-04-01'}
-            self.assertEqual(annual.annual_edition_for(title, notice), 2000)
-
-            notice = {'effective_on': '2000-04-02'}
-            self.assertEqual(annual.annual_edition_for(title, notice), 2001)
-        for title in range(28, 42):
-            notice = {'effective_on': '2000-01-01'}
-            self.assertEqual(annual.annual_edition_for(title, notice), 2000)
-
-            notice = {'effective_on': '2000-07-01'}
-            self.assertEqual(annual.annual_edition_for(title, notice), 2000)
-
-            notice = {'effective_on': '2000-07-02'}
-            self.assertEqual(annual.annual_edition_for(title, notice), 2001)
-        for title in range(42, 100):
-            notice = {'effective_on': '2000-01-01'}
-            self.assertEqual(annual.annual_edition_for(title, notice), 2000)
-
-            notice = {'effective_on': '2000-10-01'}
-            self.assertEqual(annual.annual_edition_for(title, notice), 2000)
-
-            notice = {'effective_on': '2000-10-02'}
-            self.assertEqual(annual.annual_edition_for(title, notice), 2001)
-
     @patch('regparser.history.annual.Volume')
     def test_find_volume(self, Volume):
         v1 = Mock()

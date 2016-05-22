@@ -86,13 +86,6 @@ MACROS_SOURCES = [
     'regcontent.macros'
 ]
 
-# list of modules implementing the __contains__ and __getitem__ methods
-# The key is the notice that needs to be modified; it should point to a dict
-# which will get merged with the notice['changes'] dict
-REGPATCHES_SOURCES = [
-    'regcontent.regpatches'
-]
-
 # In some cases, it is beneficial to tweak the XML the Federal Register
 # provides. This setting specifies file paths to look through for local
 # versions of their XML. See also XML_REPO below, which is effectively tacked
@@ -155,6 +148,12 @@ LAYERS = {
         'regparser.layer.graphics.Graphics',
     ]),
 }
+
+# Regulations.gov settings. The demo key is rate limited by IP; sign up for
+# your own key at
+# http://regulationsgov.github.io/developers/key/
+REGS_GOV_API = 'https://api.data.gov/regulations/v3/'
+REGS_GOV_KEY = 'DEMO_KEY'
 
 try:
     from local_settings import *

@@ -1,21 +1,27 @@
 """Functions for processing the xml associated with the Federal Register's
 notices"""
+from collections import namedtuple
 from datetime import date, datetime
 import logging
 import os
 from urlparse import urlparse
 
+from cached_property import cached_property
 from lxml import etree
 import requests
 
+from regparser import regs_gov
 from regparser.grammar.unified import notice_cfr_p
 from regparser.history.delays import delays_in_sentence
 from regparser.index import xml_sync
+from regparser.notice.amendments import fetch_amendments
 from regparser.notice.dates import fetch_dates
 from regparser.tree.xml_parser.xml_wrapper import XMLWrapper
 import settings
 
 logger = logging.getLogger(__name__)
+
+TitlePartsRef = namedtuple("TitlePartsRef", ["title", "parts"])
 
 
 def add_children(el, children):
@@ -43,6 +49,17 @@ def add_children(el, children):
     return el
 
 
+def _root_property(attrib):
+    """We add multiple attributes to the NoticeXML's root element"""
+    def getter(self):
+        return self.xml.attrib.get(attrib)
+
+    def setter(self, value):
+        self.xml.attrib[attrib] = str(value)
+
+    return property(getter, setter)
+
+
 class NoticeXML(XMLWrapper):
     """Wrapper around a notice XML which provides quick access to the XML's
     encoded data fields"""
@@ -64,9 +81,27 @@ class NoticeXML(XMLWrapper):
             self.xml.insert(0, dates_tag)
         if isinstance(value, date):
             value = value.isoformat()
+        if value is None:
+            value = ''
         dates_tag.attrib["eregs-{}-date".format(date_type)] = value
 
-    def derive_agencies(self, agencies=None):
+    def derive_rins(self):
+        """Extract regulatory id numbers from the XML (in the RINs tag)"""
+        xml_rins = self.xpath('//RIN')
+        for xml_rin in xml_rins:
+            rin = xml_rin.text.replace("RIN", "").strip()
+            yield rin
+
+    def derive_docket_ids(self):
+        """Extract docket numbers from the XML (in the DEPDOC tag)"""
+        docket_ids = []
+        xml_did_els = self.xpath('//DEPDOC')
+        for xml_did_el in xml_did_els:
+            did_str = xml_did_el.text.replace("[", "").replace("]", "")
+            docket_ids.extend([d.strip() for d in did_str.split(";")])
+        return docket_ids
+
+    def set_agencies(self, agencies=None):
         """
         SIDE EFFECTS: this operates on the XML of the NoticeXML itself as well
         as returning some information.
@@ -134,6 +169,12 @@ class NoticeXML(XMLWrapper):
         self.xml.insert(0, agencies_el)
         return agency_map
 
+    def derive_cfr_refs(self):
+        """Pull out CFR information from the CFR tag"""
+        for cfr_elm in self.xpath('//CFR'):
+            result = notice_cfr_p.parseString(cfr_elm.text)
+            yield TitlePartsRef(result.cfr_title, list(result.cfr_parts))
+
     def derive_closing_date(self):
         """Attempt to parse comment closing date from DATES tags. Returns a
         datetime.date and sets the corresponding field"""
@@ -141,7 +182,6 @@ class NoticeXML(XMLWrapper):
         if 'comments' in dates:
             comments = datetime.strptime(
                 dates['comments'][0], "%Y-%m-%d").date()
-            self.comments_close_on = comments
             return comments
 
     def derive_effective_date(self):
@@ -151,7 +191,6 @@ class NoticeXML(XMLWrapper):
         if 'effective' in dates:
             effective = datetime.strptime(
                 dates['effective'][0], "%Y-%m-%d").date()
-            self.effective = effective
             return effective
 
     def _get_date_attr(self, date_type):
@@ -159,11 +198,130 @@ class NoticeXML(XMLWrapper):
         not present, returns None"""
         value = self.xpath(".//DATES")[0].get('eregs-{}-date'.format(
             date_type))
-        return datetime.strptime(value, "%Y-%m-%d").date()
+        if value:
+            return datetime.strptime(value, "%Y-%m-%d").date()
+
+    def derive_where_needed(self):
+        """A handful of fields might be parse-able from the original XML. If
+        we don't have values through modification, derive them here"""
+        if not self.comments_close_on:
+            self.comments_close_on = self.derive_closing_date()
+        if not self.rins:
+            self.rins = self.derive_rins()
+        if not self.cfr_refs:
+            self.cfr_refs = self.derive_cfr_refs()
+        if not self.effective:
+            self.effective = self.derive_effective_date()
+        if not self.docket_ids:
+            self.docket_ids = self.derive_docket_ids()
+
+        supporting = self.supporting_documents
+        needs_supporting = not supporting
+        for docket_id in self.docket_ids:
+            proposal = regs_gov.proposal(docket_id, self.version_id)
+            if proposal and not self.comment_doc_id:
+                self.comment_doc_id = proposal.regs_id
+            if proposal and not self.primary_docket:
+                self.primary_docket = docket_id
+            if needs_supporting:
+                supporting.extend(regs_gov.supporting_docs(docket_id))
+        self.supporting_documents = supporting
 
     # --- Setters/Getters for specific fields. ---
     # We encode relevant information within the XML, but wish to provide easy
     # access
+
+    @property
+    def rins(self):
+        return [_.attrib['rin'] for _ in self.xpath("//EREGS_RIN")]
+
+    @rins.setter
+    def rins(self, value):
+        """
+        Modify the XML tree so that it contains meta data for regulation id
+        numbers.
+        The Federal Register API implies that documents can have more than one.
+
+        The XML we're adding will look something like this::
+
+            <EREGS_RINS>
+                <EREGS_RIN rin="2050-AG65" />
+            </EREGS_RINS>
+
+        :arg list value: RINs, which should be strings.
+        """
+        rins_el = self.xpath('//EREGS_RINS')
+        if rins_el:
+            rins_el = rins_el[0]
+        else:   # Tag wasn't present; create it
+            rins_el = etree.Element("EREGS_RINS")
+        for rin in value:
+            etree.SubElement(rins_el, "EREGS_RIN", rin=rin)
+        self.xml.insert(0, rins_el)
+
+    @property
+    def docket_ids(self):
+        return [_.attrib['docket_id'] for _ in self.xpath("//EREGS_DOCKET_ID")]
+
+    @docket_ids.setter
+    def docket_ids(self, value):
+        """
+        Modify the XML tree so that it contains meta data for docket ids.
+
+        The XML we're adding will look something like this::
+
+            <EREGS_DOCKET_IDS>
+                <EREGS_DOCKET_ID docket_id="EPA-HQ-SFUND-2010-1086" />
+                <EREGS_DOCKET_ID docket_id="FRL-9925-69-OLEM" />
+            </EREGS_DOCKET_IDS>
+
+        :arg list value: docket_ids, which should be strings.
+        """
+        dids_el = self.xpath('//EREGS_DOCKET_IDS')
+        if dids_el:
+            dids_el = dids_el[0]
+        else:   # Tag wasn't present; create it
+            dids_el = etree.Element("EREGS_DOCKET_IDS")
+        for docket_id in value:
+            etree.SubElement(dids_el, "EREGS_DOCKET_ID", docket_id=docket_id)
+        self.xml.insert(0, dids_el)
+
+    @property
+    def cfr_refs(self):
+        refs = []
+        for title_el in self.xpath("//EREGS_CFR_TITLE_REF"):
+            parts = title_el.xpath("EREGS_CFR_PART_REF")
+            parts = [int(p.attrib["part"]) for p in parts]
+            refs.append(TitlePartsRef(title=int(title_el.attrib["title"]),
+                                      parts=parts))
+
+        return refs
+
+    @cfr_refs.setter
+    def cfr_refs(self, value):
+        """
+        Transform the XML to include elements that look like this::
+
+            <EREGS_CFR_REFS>
+                <EREGS_CFR_TITLE_REF title="40">
+                    <EREGS_CFR_PART_REF part="300" />
+                    <EREGS_CFR_PART_REF part="310" />
+                </EREGS_CFR_TITLE_REF>
+            </EREGS_CFR_REFS>
+        :arg list value: List of TitlePartsRef elements
+        """
+        refs_el = etree.Element("EREGS_CFR_REFS")
+        for ref in value:
+            el = etree.SubElement(refs_el, "EREGS_CFR_TITLE_REF",
+                                  title=str(ref.title))
+            for part in ref.parts:
+                etree.SubElement(el, "EREGS_CFR_PART_REF", part=str(part))
+        self.xml.insert(0, refs_el)
+
+    @property
+    def cfr_ref_pairs(self):
+        return [(ref.title, part)
+                for ref in self.cfr_refs for part in ref.parts]
 
     @property
     def comments_close_on(self):
@@ -191,7 +349,9 @@ class NoticeXML(XMLWrapper):
 
     @property
     def fr_volume(self):
-        return int(self.xpath(".//PRTPAGE")[0].attrib['eregs-fr-volume'])
+        value = self.xpath(".//PRTPAGE")[0].attrib.get('eregs-fr-volume')
+        if value:
+            return int(value)
 
     @fr_volume.setter
     def fr_volume(self, value):
@@ -206,34 +366,90 @@ class NoticeXML(XMLWrapper):
     def end_page(self):
         return int(self.xpath(".//PRTPAGE")[-1].attrib["P"])
 
-    @property
-    def version_id(self):
-        return self.xml.attrib.get('eregs-version-id')
-
-    @version_id.setter
-    def version_id(self, value):
-        self.xml.attrib['eregs-version-id'] = str(value)
+    @cached_property        # rather expensive operation, so cache results
+    def amendments(self):
+        return fetch_amendments(self.xml)
 
     @property
-    def cfr_parts(self):
-        return [int(p) for p in fetch_cfr_parts(self.xml)]
+    def fr_citation(self):
+        return '{} FR {}'.format(self.fr_volume, self.start_page)
 
     @property
-    def cfr_titles(self):
-        return list(sorted(set(
-            int(notice_cfr_p.parseString(cfr_elm.text).cfr_title)
-            for cfr_elm in self.xpath('//CFR'))))
+    def title(self):
+        return self.xpath('//SUBJECT')[0].text
 
+    @property
+    def primary_agency(self):
+        return self.xpath('//AGENCY')[0].text
 
-def fetch_cfr_parts(notice_xml):
-    """ Sometimes we need to read the CFR part numbers from the notice
-        XML itself. This would need to happen when we've broken up a
-        multiple-effective-date notice that has multiple CFR parts that
-        may not be included in each date. """
-    parts = []
-    for cfr_elm in notice_xml.xpath('//CFR'):
-        parts.extend(notice_cfr_p.parseString(cfr_elm.text).cfr_parts)
-    return list(sorted(set(parts)))
+    @property
+    def supporting_documents(self):
+        """:rtype: list of regs_gov.RegsGovDoc"""
+        return [regs_gov.RegsGovDoc(**s.attrib)
+                for s in self.xpath('//EREGS_SUPPORTING_DOC')]
+
+    @supporting_documents.setter
+    def supporting_documents(self, value):
+        """A docket consists of multiple, related documents. The most
+        important is generally the proposal and/or final rule, but there are
+        often supporting documents we need to link to.
+
+        Modify the XML to look like::
+
+            <EREGS_SUPPORTING_DOCS>
+                <EREGS_SUPPORTING_DOC
+                    regs_id="EPA-HQ-SFUND-2010-1086-0001"
+                    title="Title goes here" />
+                <EREGS_SUPPORTING_DOC
+                    regs_id="EPA-HQ-SFUND-2010-1086-0002"
+                    title="Title goes here" />
+            </EREGS_SUPPORTING_DOCS>
+
+        :arg list value: list of regs_gov.RegsGovDocs
+        """
+        container = self.xpath('//EREGS_SUPPORTING_DOCS')
+        if container:
+            container = container[0]
+        else:   # Tag wasn't present; create it
+            container = etree.SubElement(self.xml, 'EREGS_SUPPORTING_DOCS')
+        for doc in value:
+            etree.SubElement(container, 'EREGS_SUPPORTING_DOC',
+                             **doc._asdict())
+
+    version_id = _root_property('eregs-version-id')
+    fr_html_url = _root_property('fr-html-url')
+    comment_doc_id = _root_property('eregs-comment-doc-id')
+    primary_docket = _root_property('eregs-primary-docket')
+
+    def as_dict(self):
+        """We use JSON to represent notices in the API. This converts the
+        relevant data into a dictionary to get one step closer. Unfortunately,
+        that design assumes a single cfr_part"""
+        cfr_ref = self.cfr_refs[0]
+        notice = {'amendments': self.amendments,
+                  'cfr_parts': [str(part) for part in cfr_ref.parts],
+                  'cfr_title': cfr_ref.title,
+                  'dockets': self.docket_ids,
+                  'document_number': self.version_id,
+                  'fr_citation': self.fr_citation,
+                  'fr_url': self.fr_html_url,
+                  'fr_volume': self.fr_volume,
+                  # @todo - SxS depends on this; we should remove soon
+                  'meta': {'start_page': self.start_page},
+                  'primary_agency': self.primary_agency,
+                  'primary_docket': self.primary_docket,
+                  'publication_date': self.published.isoformat(),
+                  'regulation_id_numbers': self.rins,
+                  'supporting_documents': [
+                      d._asdict() for d in self.supporting_documents],
+                  'title': self.title}
+        if self.comments_close_on:
+            notice['comments_close'] = self.comments_close_on.isoformat()
+        if self.effective:
+            notice['effective_on'] = self.effective.isoformat()
+        if self.comment_doc_id:
+            notice['comment_doc_id'] = self.comment_doc_id
+        return notice
 
 
 def local_copies(url):

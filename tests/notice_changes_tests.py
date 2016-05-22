@@ -112,10 +112,6 @@ class ChangesTests(TestCase):
         for n in node_list:
             self.assertEqual(n.children, [])
 
-    def test_remove_intro(self):
-        text = 'abcd[text]'
-        self.assertEqual('abcd', changes.remove_intro(text))
-
     def test_resolve_candidates(self):
         amend_map = {}
 
@@ -163,19 +159,20 @@ class ChangesTests(TestCase):
         self.assertEqual(1, len(amend_map.keys()))
 
     def test_match_labels_and_changes_move(self):
-        labels_amended = [Amendment('MOVE', '200-1', '200-2')]
+        labels_amended = [Amendment('MOVE', '200-?-1', '200-?-2')]
         amend_map = changes.match_labels_and_changes(labels_amended, None)
-        self.assertEqual(amend_map, {
-            '200-1': [{'action': 'MOVE', 'destination': ['200', '2']}]})
+        self.assertEqual(dict(amend_map), {
+            '200-1': [{'action': 'MOVE', 'destination': ['200', '2'],
+                       'amdpar_xml': None}]})
 
     def test_match_labels_and_changes_delete(self):
-        labels_amended = [Amendment('DELETE', '200-1-a-i')]
+        labels_amended = [Amendment('DELETE', '200-?-1-a-i')]
         amend_map = changes.match_labels_and_changes(labels_amended, None)
-        self.assertEqual(amend_map, {
-            '200-1-a-i': [{'action': 'DELETE'}]})
+        self.assertEqual(dict(amend_map), {
+            '200-1-a-i': [{'action': 'DELETE', 'amdpar_xml': None}]})
 
     def test_match_labels_and_changes_reserve(self):
-        labels_amended = [Amendment('RESERVE', '200-2-a')]
+        labels_amended = [Amendment('RESERVE', '200-?-2-a')]
         amend_map = changes.match_labels_and_changes(
             labels_amended, self.section_node())
         self.assertItemsEqual(['200-2-a'], amend_map.keys())
@@ -194,8 +191,8 @@ class ChangesTests(TestCase):
         return root
 
     def test_match_labels_and_changes(self):
-        labels_amended = [Amendment('POST', '200-2'),
-                          Amendment('PUT', '200-2-a')]
+        labels_amended = [Amendment('POST', '200-?-2'),
+                          Amendment('PUT', '200-?-2-a')]
 
         amend_map = changes.match_labels_and_changes(
             labels_amended, self.section_node())
@@ -209,8 +206,8 @@ class ChangesTests(TestCase):
 
     def test_match_labels_and_changes_candidate(self):
         labels_amended = [
-            Amendment('POST', '200-2'),
-            Amendment('PUT', '200-2-a-1-i')]
+            Amendment('POST', '200-?-2'),
+            Amendment('PUT', '200-?-2-a-1-i')]
 
         n1 = Node('n2', label=['200', '2'])
         n2 = Node('n2a', label=['200', '2', 'i'])
@@ -288,26 +285,6 @@ class ChangesTests(TestCase):
         self.assertEqual(
             changes.pretty_change(change), 'A Field changed to: Some Text')
 
-    def test_find_section(self):
-        with XMLBuilder('REGTEXT') as ctx:
-            ctx.AMDPAR("In 200.1 revise paragraph (b) as follows:")
-            with ctx.SECTION():
-                ctx.SECTNO("200.1")
-                ctx.SUBJECT("Authority and Purpose.")
-                ctx.P(" (b) This part is very important. ")
-            ctx.AMDPAR("In 200.3 revise paragraph (b)(1) as follows:")
-            with ctx.SECTION():
-                ctx.SECTNO("200.3")
-                ctx.SUBJECT("Definitions")
-                ctx.P(" (b)(1) Define a term here. ")
-
-        amdpar_xml = ctx.xml.xpath('//AMDPAR')[0]
-        section = changes.find_section(amdpar_xml)
-        self.assertEqual(section.tag, 'SECTION')
-
-        sectno_xml = section.xpath('./SECTNO')[0]
-        self.assertEqual(sectno_xml.text, '200.1')
-
     def test_new_subpart_added(self):
         amended_label = Amendment('POST', '200-Subpart:B')
         self.assertTrue(changes.new_subpart_added(amended_label))
@@ -357,63 +334,23 @@ class ChangesTests(TestCase):
         self.assertEqual(section_paragraphs[0].text, 'paragraph 1')
         self.assertEqual(section_paragraphs[1].text, 'paragraph 2')
 
-    def test_find_section_paragraphs(self):
-        with XMLBuilder("REGTEXT") as ctx:
-            with ctx.SECTION():
-                ctx.SECTNO(" 205.4 ")
-                ctx.SUBJECT("[Corrected]")
-            ctx.AMDPAR(u"3. In § 105.1, revise paragraph (b) to read as "
-                       u"follows:")
-            ctx.P("(b) paragraph 1")
-
-        amdpar = ctx.xml.xpath('//AMDPAR')[0]
-        section = changes.find_section(amdpar)
-        self.assertNotEqual(None, section)
-        paragraphs = [p for p in section if p.tag == 'P']
-        self.assertEqual(paragraphs[0].text, '(b) paragraph 1')
-
-    def test_find_lost_section(self):
-        with XMLBuilder("PART") as ctx:
-            with ctx.REGTEXT():
-                ctx.AMDPAR(u"3. In § 105.1, revise paragraph (b) to read as "
-                           u"follows:")
-            with ctx.REGTEXT():
-                with ctx.SECTION():
-                    ctx.SECTNO(" 205.4 ")
-                    ctx.SUBJECT("[Corrected]")
-        amdpar = ctx.xml.xpath('//AMDPAR')[0]
-        section = changes.find_lost_section(amdpar)
-        self.assertNotEqual(None, section)
-
-    def test_find_section_lost(self):
-        with XMLBuilder("PART") as ctx:
-            with ctx.REGTEXT():
-                ctx.AMDPAR(u"3. In § 105.1, revise paragraph (b) to read as "
-                           u"follows:")
-            with ctx.REGTEXT():
-                with ctx.SECTION():
-                    ctx.SECTNO(" 205.4 ")
-                    ctx.SUBJECT("[Corrected]")
-        amdpar = ctx.xml.xpath('//AMDPAR')[0]
-        section = changes.find_section(amdpar)
-        self.assertNotEqual(None, section)
-
 
 class NoticeChangesTests(TestCase):
     def test_update_duplicates(self):
         nc = changes.NoticeChanges()
-        nc.update({'123-12': {'action': 'DELETE'},
-                   '123-22': {'action': 'OTHER'}})
-        nc.update({'123-12': {'action': 'DELETE'}})
-        nc.update({'123-12': {'action': 'OTHER'}})
-        nc.update({'123-22': {'action': 'OTHER'},
-                   '123-32': {'action': 'LAST'}})
+        nc.add_changes(None, {'123-12': {'action': 'DELETE'},
+                              '123-22': {'action': 'OTHER'}})
+        nc.add_changes(None, {'123-12': {'action': 'DELETE'}})
+        nc.add_changes(None, {'123-12': {'action': 'OTHER'}})
+        nc.add_changes(None, {'123-22': {'action': 'OTHER'},
+                              '123-32': {'action': 'LAST'}})
 
-        self.assertTrue('123-12' in nc.changes)
-        self.assertTrue('123-22' in nc.changes)
-        self.assertTrue('123-32' in nc.changes)
+        data = nc.changes_by_xml[None]
+        self.assertTrue('123-12' in data)
+        self.assertTrue('123-22' in data)
+        self.assertTrue('123-32' in data)
 
-        self.assertEqual(nc.changes['123-12'],
+        self.assertEqual(data['123-12'],
                          [{'action': 'DELETE'}, {'action': 'OTHER'}])
-        self.assertEqual(nc.changes['123-22'], [{'action': 'OTHER'}])
-        self.assertEqual(nc.changes['123-32'], [{'action': 'LAST'}])
+        self.assertEqual(data['123-22'], [{'action': 'OTHER'}])
+        self.assertEqual(data['123-32'], [{'action': 'LAST'}])

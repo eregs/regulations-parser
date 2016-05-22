@@ -24,18 +24,10 @@ class XMLBuilder(object):
 
     def child(self, tag, _text=None, **kwargs):
         """Add a child to our xml."""
-        # For backwards compatibility. To be removed soon
-        if '_xml' in kwargs:
-            attrs = ['{}="{}"'.format(key, value)
-                     for key, value in kwargs.items() if key != '_xml']
-            attr_str = ' '.join(attrs)
-            el = etree.fromstring(u'<{0} {1}>{2}</{0}>'.format(
-                tag, attr_str, kwargs['_xml']))
-        else:
-            el = etree.Element(tag)
-            for key, value in sorted(kwargs.items()):
-                el.set(key, str(value))
-            el.text = _text
+        el = etree.Element(tag)
+        for key, value in sorted(kwargs.items()):
+            el.set(key, str(value))
+        el.text = _text
         self.cursor.append(el)
         return self
 

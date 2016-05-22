@@ -11,6 +11,3 @@ docs/_build
 regparser.egg-info/
 
 .eregs_index/
-
-# eregs output
-/fr_cache.sqlite

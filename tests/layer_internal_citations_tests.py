@@ -161,17 +161,6 @@ class ParseTest(TestCase):
         start, end = result[1]['offsets'][0]
         self.assertEqual(u'(2)', text[start:end])
 
-    def test_multiple_paragraphs_alpha_then_roman1(self):
-        text = u'paragraphs (b)(1)(ii) and (iii)'
-        result = self.parser.process(Node(text, label=['1005', '6']))
-        self.assertEqual(2, len(result))
-        self.assertEqual(['1005', '6', 'b', '1', 'ii'], result[0]['citation'])
-        self.assertEqual(['1005', '6', 'b', '1', 'iii'], result[1]['citation'])
-        start, end = result[0]['offsets'][0]
-        self.assertEqual(u'(b)(1)(ii)', text[start:end])
-        start, end = result[1]['offsets'][0]
-        self.assertEqual(u'(iii)', text[start:end])
-
     def test_multiple_paragraphs_max_depth(self):
         text = u'see paragraphs (z)(9)(vi)(A) and (D)'
         results = self.parser.process(Node(text, label=['999', '88']))
@@ -186,108 +175,67 @@ class ParseTest(TestCase):
         offsets = resultD['offsets'][0]
         self.assertEqual('(D)', text[offsets[0]:offsets[1]])
 
-    def test_multiple_paragraphs_alpha_then_roman2(self):
-        text = u'§ 1005.15(d)(1)(i) and (ii)'
-        result = self.parser.process(Node(text, label=['1005', '15']))
-        self.assertEqual(2, len(result))
-        self.assertEqual(['1005', '15', 'd', '1', 'i'], result[0]['citation'])
-        self.assertEqual(['1005', '15', 'd', '1', 'ii'], result[1]['citation'])
-        start, end = result[0]['offsets'][0]
-        self.assertEqual(u'1005.15(d)(1)(i)', text[start:end])
-        start, end = result[1]['offsets'][0]
-        self.assertEqual(u'(ii)', text[start:end])
+    def _assert_paragraphs(self, text, label, text_to_labels):
+        """Given text to search, a node label, and a mapping between text in
+        the original and citation labels, verify that the citations can be
+        found in the text"""
+        results = self.parser.process(Node(text, label=label))
+        self.assertEqual(len(text_to_labels), len(results))
+        for result in results:
+            start, end = result['offsets'][0]
+            key = text[start:end]
+            self.assertEqual(text_to_labels[key], result['citation'])
 
-    def test_multiple_paragraphs_alpha_then_roman3(self):
-        text = u'§ 1005.9(a)(5) (i), (ii), or (iii)'
-        result = self.parser.process(Node(text, label=['1005', '9']))
-        self.assertEqual(3, len(result))
-        self.assertEqual(['1005', '9', 'a', '5', 'i'], result[0]['citation'])
-        self.assertEqual(['1005', '9', 'a', '5', 'ii'], result[1]['citation'])
-        self.assertEqual(['1005', '9', 'a', '5', 'iii'], result[2]['citation'])
-        start, end = result[0]['offsets'][0]
-        self.assertEqual(u'1005.9(a)(5) (i)', text[start:end])
-        start, end = result[1]['offsets'][0]
-        self.assertEqual(u'(ii)', text[start:end])
-        start, end = result[2]['offsets'][0]
-        self.assertEqual(u'(iii)', text[start:end])
-
-    def test_multiple_paragraphs_alpha_then_roman4(self):
-        text = u'§ 1005.11(a)(1)(vi) or (vii).'
-        result = self.parser.process(Node(text, label=['1005', '11']))
-        self.assertEqual(2, len(result))
-        self.assertEqual(['1005', '11', 'a', '1', 'vi'], result[0]['citation'])
-        self.assertEqual(['1005', '11', 'a', '1', 'vii'],
-                         result[1]['citation'])
-        start, end = result[0]['offsets'][0]
-        self.assertEqual(u'1005.11(a)(1)(vi)', text[start:end])
-        start, end = result[1]['offsets'][0]
-        self.assertEqual(u'(vii)', text[start:end])
+    def test_multiple_paragraphs_alpha_then_roman(self):
+        self._assert_paragraphs(
+            'paragraphs (b)(1)(ii) and (iii)', ['1005', '6'],
+            {'(b)(1)(ii)': ['1005', '6', 'b', '1', 'ii'],
+             '(iii)': ['1005', '6', 'b', '1', 'iii']})
+        self._assert_paragraphs(
+            u'§ 1005.15(d)(1)(i) and (ii)', ['1005', '15'],
+            {'1005.15(d)(1)(i)': ['1005', '15', 'd', '1', 'i'],
+             '(ii)': ['1005', '15', 'd', '1', 'ii']})
+        self._assert_paragraphs(
+            u'§ 1005.9(a)(5) (i), (ii), or (iii)', ['1005', '9'],
+            {'1005.9(a)(5) (i)': ['1005', '9', 'a', '5', 'i'],
+             '(ii)': ['1005', '9', 'a', '5', 'ii'],
+             '(iii)': ['1005', '9', 'a', '5', 'iii']})
+        self._assert_paragraphs(
+            u'§ 1005.11(a)(1)(vi) or (vii).', ['1005', '11'],
+            {'1005.11(a)(1)(vi)': ['1005', '11', 'a', '1', 'vi'],
+             '(vii)': ['1005', '11', 'a', '1', 'vii']})
 
     def test_appendix_citation(self):
-        text = "Please see A-5 and Q-2(r) and Z-12(g)(2)(ii) then more text"
-        result = self.parser.process(Node(text, label=['1005', '10']))
-        self.assertEqual(3, len(result))
-        resultA, resultQ, resultZ = result
-
-        self.assertEqual(['1005', 'A', '5'], resultA['citation'])
-        offsets = resultA['offsets'][0]
-        self.assertEqual('A-5', text[offsets[0]:offsets[1]])
-        self.assertEqual(['1005', 'Q', '2(r)'], resultQ['citation'])
-        offsets = resultQ['offsets'][0]
-        self.assertEqual('Q-2(r)', text[offsets[0]:offsets[1]])
-        self.assertEqual(['1005', 'Z', '12(g)(2)(ii)'], resultZ['citation'])
-        offsets = resultZ['offsets'][0]
-        self.assertEqual('Z-12(g)(2)(ii)', text[offsets[0]:offsets[1]])
+        self._assert_paragraphs(
+            "Please see A-5 and Q-2(r) and Z-12(g)(2)(ii) then more text",
+            ['1005', '10'],
+            {'A-5': ['1005', 'A', '5'],
+             'Q-2(r)': ['1005', 'Q', '2(r)'],
+             'Z-12(g)(2)(ii)': ['1005', 'Z', '12(g)(2)(ii)']})
 
     def test_section_verbose(self):
-        text = "And Section 222.87(d)(2)(i) says something"
-        result = self.parser.process(Node(text, label=['222', '87']))
-        self.assertEqual(1, len(result))
-        self.assertEqual(['222', '87', 'd', '2', 'i'], result[0]['citation'])
-        offsets = result[0]['offsets'][0]
-        self.assertEqual('222.87(d)(2)(i)', text[offsets[0]:offsets[1]])
-
-    def test_sections_verbose(self):
-        text = "Listing sections 11.55(d) and 321.11 (h)(4)"
-        result = self.parser.process(Node(text, label=['222', '87']))
-        self.assertEqual(2, len(result))
-        r11, r321 = result
-
-        self.assertEqual(['11', '55', 'd'], r11['citation'])
-        offsets = r11['offsets'][0]
-        self.assertEqual('11.55(d)', text[offsets[0]:offsets[1]])
-
-        self.assertEqual(['321', '11', 'h', '4'], r321['citation'])
-        offsets = r321['offsets'][0]
-        self.assertEqual('321.11 (h)(4)', text[offsets[0]:offsets[1]])
+        self._assert_paragraphs(
+            "And Section 222.87(d)(2)(i) says something", ['222', '87'],
+            {'222.87(d)(2)(i)': ['222', '87', 'd', '2', 'i']})
+        self._assert_paragraphs(
+            "Listing sections 11.55(d) and 321.11 (h)(4)", ['222', '87'],
+            {'11.55(d)': ['11', '55', 'd'],
+             '321.11 (h)(4)': ['321', '11', 'h', '4']})
 
     def test_comment_header(self):
-        text = "See comment 32(b)(3) blah blah"
-        result = self.parser.process(Node(text, label=['222', '87']))
-        self.assertEqual(1, len(result))
-        self.assertEqual(['222', '32', 'b', '3', Node.INTERP_MARK],
-                         result[0]['citation'])
-        offsets = result[0]['offsets'][0]
-        self.assertEqual('32(b)(3)', text[offsets[0]:offsets[1]])
+        self._assert_paragraphs(
+            "See comment 32(b)(3) blah blah", ['222', '87'],
+            {'32(b)(3)': ['222', '32', 'b', '3', Node.INTERP_MARK]})
 
     def test_sub_comment(self):
-        text = "refer to comment 36(a)(2)-3 of thing"
-        result = self.parser.process(Node(text, label=['222', '87']))
-        self.assertEqual(1, len(result))
-        self.assertEqual(['222', '36', 'a', '2', Node.INTERP_MARK, '3'],
-                         result[0]['citation'])
-        offsets = result[0]['offsets'][0]
-        self.assertEqual('36(a)(2)-3', text[offsets[0]:offsets[1]])
-
-    def test_sub_comment2(self):
-        text = "See comment 3(b)(1)-1.v."
-        result = self.parser.process(Node(text, label=['222', '87']))
-        self.assertEqual(1, len(result))
-        self.assertEqual(['222', '3', 'b', '1', Node.INTERP_MARK, '1', 'v'],
-                         result[0]['citation'])
-        offsets = result[0]['offsets'][0]
-        #   Note the final period is not included
-        self.assertEqual('3(b)(1)-1.v', text[offsets[0]:offsets[1]])
+        self._assert_paragraphs(
+            "refer to comment 36(a)(2)-3 of thing", ['222', '87'],
+            {'36(a)(2)-3': ['222', '36', 'a', '2', Node.INTERP_MARK, '3']})
+        self._assert_paragraphs(
+            "See comment 3(b)(1)-1.v.", ['222', '87'],
+            #   Note the final period is not included
+            {'3(b)(1)-1.v': ['222', '3', 'b', '1', Node.INTERP_MARK, '1',
+                             'v']})
 
     def test_multiple_comments(self):
         text = "See, e.g., comments 31(b)(1)(iv)-1 and 31(b)(1)(vi)-1"
@@ -324,7 +272,7 @@ class ParseTest(TestCase):
         result = self.parser.process(Node(text, label=['1111']))
         self.assertEqual(None, result)
 
-    def test_pre_process(self):
+    def test_verify_citations(self):
         tree = Node(label=['1111', '2', '3'],
                     children=[Node(label=['222', '1', '1']),
                               Node(label=['222', '1', '1'],
@@ -335,14 +283,6 @@ class ParseTest(TestCase):
         self.assertEqual(parser.known_citations, set([
             ('1111', '2', '3'), ('222', '1', '1'), ('111', '34')]))
 
-    def test_verify_citations(self):
-        tree = Node(label=['1111', '2', '3'],
-                    children=[Node(label=['222', '1', '1']),
-                              Node(label=['222', '1', '1'],
-                                   children=[Node(label=['111', '34'])])])
-        parser = internal_citations.InternalCitationParser(
-            tree, cfr_title=None)
-        parser.pre_process()
         parser.verify_citations = False
         text = 'Section 111.34 and paragraph (c)'
         result = parser.process(Node(text))

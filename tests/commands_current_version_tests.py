@@ -9,6 +9,7 @@ from mock import patch
 from regparser.commands import current_version
 from regparser.index import entry
 from regparser.history.annual import Volume
+from regparser.notice.xml import TitlePartsRef
 
 
 class CommandsCurrentVersionTests(TestCase):
@@ -31,9 +32,10 @@ class CommandsCurrentVersionTests(TestCase):
             tree = entry.Entry('tree', self.title, self.part,
                                self.version_id).read()
             self.assertEqual(json.loads(tree), {'my': 'tree'})
-            notice = entry.SxS(self.version_id).read()
-            self.assertEqual(notice['document_number'], self.version_id)
-            self.assertEqual(notice['cfr_parts'], [str(self.part)])
+            notice = entry.Notice(self.version_id).read()
+            self.assertEqual(notice.version_id, self.version_id)
+            self.assertEqual(notice.cfr_refs,
+                             [TitlePartsRef(self.title, [self.part])])
 
     def test_process_no_need_to_create(self):
         """If everything is up to date, we don't need to build new versions"""
