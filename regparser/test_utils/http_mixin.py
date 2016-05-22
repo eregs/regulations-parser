@@ -45,7 +45,7 @@ class HttpMixin(object):
         return httpretty.last_request().querystring
 
     def last_http_headers(self):
-        return httpretty.last_request().headers.dict
+        return httpretty.last_request().headers
 
     def last_http_body(self):
         return httpretty.last_request().parsed_body
