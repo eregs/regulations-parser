@@ -8,7 +8,7 @@ json-delta==2.0
 lxml==3.6.0
 networkx==1.11
 pyparsing==2.1.4
-python-constraint==1.2
+git+https://github.com/python-constraint/python-constraint.git
 requests==2.10.0
 requests-cache==0.4.12
 six==1.10.0
