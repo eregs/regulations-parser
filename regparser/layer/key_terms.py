@@ -1,3 +1,4 @@
+from __future__ import unicode_literals
 import re
 
 from layer import Layer
@@ -18,7 +19,7 @@ def eliminate_extras(keyterm):
 
 
 class KeyTerms(Layer):
-    PATTERN = re.compile(ur'.*?<E T="03">([^<]*?)</E>.*?', re.UNICODE)
+    PATTERN = re.compile(r'.*?<E T="03">([^<]*?)</E>.*?', re.UNICODE)
     shorthand = 'keyterms'
 
     @staticmethod

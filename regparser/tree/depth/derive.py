@@ -1,4 +1,5 @@
 from constraint import Problem
+import six
 
 from regparser.tree.depth import markers, rules
 from regparser.tree.depth.pair_rules import pair_rules
@@ -42,7 +43,7 @@ class Solution(object):
                          for par in self.assignment)
 
     def pretty_print(self):
-        print self.pretty_str()
+        six.print_(self.pretty_str())
 
 
 def _compress_markerless(marker_list):

@@ -2,6 +2,7 @@ from collections import namedtuple
 import re
 
 import pyparsing
+from six.moves import reduce
 
 
 Position = namedtuple('Position', ['start', 'end'])

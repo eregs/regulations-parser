@@ -325,8 +325,6 @@ class RegulationTree(object):
             if existing:
                 logging.warning(
                     'Adding a node that already exists: %s' % node.label_id())
-                print '%s %s' % (existing.text, node.label)
-                print '----'
 
             if ((node.node_type == Node.APPENDIX and len(node.label) == 2) or
                     node.node_type == Node.SUBPART):

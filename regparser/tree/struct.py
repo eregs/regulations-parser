@@ -3,6 +3,7 @@ from json import JSONEncoder
 import hashlib
 
 from lxml import etree
+import six
 
 from regparser.tree.depth.markers import MARKERLESS
 
@@ -23,13 +24,13 @@ class Node(object):
     def __init__(self, text='', children=[], label=[], title=None,
                  node_type=REGTEXT, source_xml=None):
 
-        self.text = unicode(text)
+        self.text = six.text_type(text)
 
         # defensive copy
         self.children = list(children)
 
         self.label = [str(l) for l in label if l != '']
-        title = unicode(title or '')
+        title = six.text_type(title or '')
         self.title = title or None
         self.node_type = node_type
         self.source_xml = source_xml
@@ -39,8 +40,11 @@ class Node(object):
                  "node_type = %s)") % (repr(self.text), repr(self.children),
                 repr(self.label), repr(self.title), repr(self.node_type)))
 
-    def __cmp__(self, other):
-        return cmp(repr(self), repr(other))
+    def __lt__(self, other):
+        return repr(self) < repr(other)
+
+    def __eq__(self, other):
+        return repr(self) == repr(other)
 
     def label_id(self):
         return '-'.join(self.label)

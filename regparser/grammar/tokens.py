@@ -5,6 +5,8 @@
 """
 from copy import copy
 
+import six
+
 
 def _none_str(value):
     """Shorthand for displaying a variable as a string or the text None"""
@@ -97,7 +99,7 @@ class Paragraph(Token):
         """label and field are the only "materialized" fields. Everything
         other field becomes part of the label, offering a more legible API"""
         if sub is None and subpart:
-            if isinstance(subpart, basestring):
+            if isinstance(subpart, six.string_types):
                 sub = 'Subpart:{}'.format(subpart)
             else:
                 sub = 'Subpart'

@@ -6,6 +6,7 @@ import string
 from pyparsing import (
     CaselessLiteral, FollowedBy, LineEnd, Literal, OneOrMore, Optional,
     QuotedString, Suppress, Word, ZeroOrMore)
+from six.moves import reduce
 
 from regparser.grammar import atomic, tokens, unified
 from regparser.grammar.utils import Marker, QuickSearchable, WordBoundaries

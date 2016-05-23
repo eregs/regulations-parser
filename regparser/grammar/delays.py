@@ -2,6 +2,7 @@ from datetime import date
 import string
 
 from pyparsing import Optional, Suppress, Word
+from six.moves import reduce
 
 from regparser.grammar import utils
 

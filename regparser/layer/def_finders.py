@@ -5,6 +5,7 @@ from itertools import chain
 import re
 
 from pyparsing import ParseException
+import six
 
 from regparser.citations import Label
 from regparser.grammar import terms as grammar
@@ -16,7 +17,7 @@ class Ref(object):
     """A reference to a defined term. Keeps track of the term, where it was
     found and the term's position in that node's text"""
     def __init__(self, term, label, start):
-        self.term = unicode(term).lower()
+        self.term = six.text_type(term).lower()
         self.label = label
         self.start = start
         self.end = self.start + len(term)
