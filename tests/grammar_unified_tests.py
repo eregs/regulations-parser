@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
-from HTMLParser import HTMLParser
 from unittest import TestCase
+
+from six.moves.html_parser import HTMLParser
 
 from regparser.grammar import unified
 

@@ -1,9 +1,9 @@
-# vim: set encoding=utf-8
+# -*- coding: utf-8 -*-
 """Atomic components; probably shouldn't use these directly"""
-from HTMLParser import HTMLParser
 import string
 
 from pyparsing import Optional, ParserElement, Regex, Suppress, Word
+from six.moves.html_parser import HTMLParser
 
 from regparser.grammar.utils import Marker, SuffixMarker, WordBoundaries
 

@@ -1,9 +1,9 @@
-# vim: set encoding=utf-8
+# -*- coding: utf-8 -*-
 from copy import deepcopy
-from HTMLParser import HTMLParser
 from itertools import chain
 
 from lxml import etree
+from six.moves.html_parser import HTMLParser
 
 from regparser.tree.priority_stack import PriorityStack
 
