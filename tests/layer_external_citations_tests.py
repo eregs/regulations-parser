@@ -11,7 +11,7 @@ def get_citation(citations, text):
     """
         Return the 1st citation whose text matches the given text
     """
-    matched = filter(lambda x: x['text'] == text, citations)
+    matched = [c for c in citations if c['text'] == text]
     if matched:
         return matched[0]
     return None

@@ -108,7 +108,7 @@ class Label(object):
             lst.append(self.settings.get('c1'))
             lst.append(self.settings.get('c2'))
             lst.append(self.settings.get('c3'))
-        return filter(bool, lst)
+        return [l for l in lst if l]
 
     def __repr__(self):
         fields = ', '.join(

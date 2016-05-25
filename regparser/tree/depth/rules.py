@@ -200,8 +200,7 @@ def ancestors(all_prev):
     for prev_type, prev_idx, prev_depth in all_prev:
         result[prev_depth] = (prev_type, prev_idx, prev_depth)
         result[prev_depth + 1:] = [None]*(10 - prev_depth)
-    result = filter(bool, result)
-    return result
+    return [r for r in result if r]
 
 
 def _level_and_children(elements):

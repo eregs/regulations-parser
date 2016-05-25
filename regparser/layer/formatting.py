@@ -203,7 +203,7 @@ class FencedData(PlaintextFormatData):
     def match_data(self, match):
         return {'fence_data': {
             'type': match.group('type'),
-            'lines': filter(bool, match.group('lines').split("\n"))
+            'lines': [l for l in match.group('lines').split("\n") if l]
         }}
 
 
