@@ -4,11 +4,12 @@ from collections import namedtuple
 from datetime import date, datetime
 import logging
 import os
-from urlparse import urlparse
 
 from cached_property import cached_property
 from lxml import etree
 import requests
+from six.moves.urllib.parse import urlparse
+
 
 from regparser import regs_gov
 from regparser.grammar.unified import notice_cfr_p

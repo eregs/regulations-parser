@@ -3,10 +3,10 @@ import json
 import logging
 
 import click
+from json_delta import udiff
 import requests
 import requests_cache
-from json_delta import udiff
-from six.moves import urllib
+from six.moves.urllib.parse import urlparse
 
 
 def local_and_remote_generator(api_base, paths):
@@ -53,7 +53,7 @@ def compare(local_path, remote_url, prompt=True):
 
 
 def path_to_json(path):
-    parsed = urllib.parse.urlparse(path)
+    parsed = urlparse(path)
     if parsed.scheme in ('http', 'https'):
         return url_to_json(path)
     return file_to_json(path)
