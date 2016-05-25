@@ -1,5 +1,7 @@
 from unittest import TestCase
 
+import six
+
 from regparser.layer.preamble.internal_citations import InternalCitations
 from regparser.tree.struct import Node
 
@@ -22,8 +24,9 @@ class InternalCitationsTests(TestCase):
             self.assertEqual(cit[0], '111_22')
             self.assertEqual(cit[1:], tuple(text.split('.')))
         results = [t for _, t in results]
-        self.assertItemsEqual(results, [
-            'I.A', 'I.A.1', 'I.A.1.a', 'I.A.1.a.i', 'I.A.1.a.i.a'])
+        six.assertCountEqual(
+            self,
+            results, ['I.A', 'I.A.1', 'I.A.1.a', 'I.A.1.a.i', 'I.A.1.a.i.a'])
 
     def test_process_unknown(self):
         """We should not find a citation if it doesn't exist in the tree"""

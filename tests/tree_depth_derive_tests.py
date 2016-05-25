@@ -1,5 +1,7 @@
 from unittest import TestCase
 
+import six
+
 from regparser.tree.depth import markers, optional_rules, rules
 from regparser.tree.depth.derive import debug_idx, derive_depths
 from regparser.tree.depth.markers import INLINE_STARS, MARKERLESS, STARS_TAG
@@ -14,7 +16,7 @@ class DeriveTests(TestCase):
         depths (in any order). Allows extra contraints."""
         solutions = derive_depths(markers, extra)
         results = {tuple(a.depth for a in s) for s in solutions}
-        self.assertItemsEqual(results, {tuple(s) for s in depths_set})
+        six.assertCountEqual(self, results, {tuple(s) for s in depths_set})
 
     def test_ints(self):
         self.assert_depth_match(['1', '2', '3', '4'],

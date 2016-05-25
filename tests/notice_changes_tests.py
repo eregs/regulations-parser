@@ -1,5 +1,8 @@
-# vim: set encoding=utf-8
+# -*- coding: utf-8 -*-
 from unittest import TestCase
+
+import six
+
 from regparser.notice import changes
 from regparser.notice.amdparser import Amendment
 from regparser.test_utils.xml_builder import XMLBuilder
@@ -175,7 +178,7 @@ class ChangesTests(TestCase):
         labels_amended = [Amendment('RESERVE', '200-?-2-a')]
         amend_map = changes.match_labels_and_changes(
             labels_amended, self.section_node())
-        self.assertItemsEqual(['200-2-a'], amend_map.keys())
+        six.assertCountEqual(self, ['200-2-a'], amend_map.keys())
 
         amendments = amend_map['200-2-a']
         self.assertEqual(amendments[0]['action'], 'RESERVE')

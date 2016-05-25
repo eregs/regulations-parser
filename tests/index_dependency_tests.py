@@ -4,6 +4,7 @@ from time import time
 from unittest import TestCase
 
 from click.testing import CliRunner
+import six
 
 from regparser.index import dependency, entry
 
@@ -61,11 +62,13 @@ class DependencyGraphTests(TestCase):
         with self.dependency_graph() as dgraph:
             dgraph.add(self.depender, self.dependency / '1')
             dgraph.add(self.depender, self.dependency / '2')
-            self.assertItemsEqual(
+            six.assertCountEqual(
+                self,
                 dgraph.dependencies(str(self.depender)),
                 [str(self.dependency / 1), str(self.dependency / 2)])
 
-            self.assertItemsEqual(
+            six.assertCountEqual(
+                self,
                 dependency.Graph().dependencies(str(self.depender)),
                 [str(self.dependency / 1), str(self.dependency / 2)])
 

@@ -3,6 +3,7 @@ from unittest import TestCase
 
 from click.testing import CliRunner
 from mock import patch
+import six
 
 from regparser.commands import fill_with_rules
 from regparser.history.versions import Version
@@ -37,19 +38,22 @@ class CommandsFillWithRulesTests(TestCase):
             # Second can also be skipped as a tree already exists
             self.assertEqual(deps.dependencies(str(tree_dir / '222')), [])
             # Third relies on the associated versions and the second tree
-            self.assertItemsEqual(
+            six.assertCountEqual(
+                self,
                 deps.dependencies(str(tree_dir / '333')),
                 [str(tree_dir / '222'), str(notice_dir / '333'),
                  str(vers_dir / '333')])
             # Fourth relies on the third, even though it's not been built
-            self.assertItemsEqual(
+            six.assertCountEqual(
+                self,
                 deps.dependencies(str(tree_dir / '444')),
                 [str(tree_dir / '333'), str(notice_dir / '444'),
                  str(vers_dir / '444')])
             # Fifth can be skipped as the tree already exists
             self.assertEqual(deps.dependencies(str(tree_dir / '555')), [])
             # Six relies on the fifth
-            self.assertItemsEqual(
+            six.assertCountEqual(
+                self,
                 deps.dependencies(str(tree_dir / '666')),
                 [str(tree_dir / '555'), str(notice_dir / '666'),
                  str(vers_dir / '666')])

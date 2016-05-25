@@ -1,7 +1,8 @@
-# vim: set fileencoding=utf-8
+# -*- coding: utf-8 -*-
 from unittest import TestCase
 
 from mock import patch
+import six
 
 from regparser.layer.terms import ParentStack, Terms
 from regparser.layer.def_finders import Ref
@@ -270,7 +271,8 @@ class LayerTermTest(TestCase):
             Node(label=['111', 'A'], node_type=Node.APPENDIX, children=[
                 Node(label=['111', 'A', '1'], node_type=Node.APPENDIX)])])
         t.look_for_defs(root)
-        self.assertItemsEqual(
+        six.assertCountEqual(
+            self,
             t.scoped_terms['EXCLUDED'],
             # note the absence of APPENDIX, and anything below an EXTRACT
             ['111', '111-Subpart', '111-1', '111-1-a', '111-1-b', '111-1-c',
@@ -332,10 +334,12 @@ class LayerTermTest(TestCase):
         text = "I am in a rock band. That's a band with a drum, a rock drum."
         t = Terms(None)
         matches = t.calculate_offsets(text, applicable_terms)
-        self.assertItemsEqual(matches, [
-            ('rock band', 'a', [(10, 19)]),
-            ('band', 'b', [(30, 34)]),
-            ('drum', 'c', [(42, 46), (55, 59)])])
+        six.assertCountEqual(
+            self,
+            matches,
+            [('rock band', 'a', [(10, 19)]),
+             ('band', 'b', [(30, 34)]),
+             ('drum', 'c', [(42, 46), (55, 59)])])
 
     def test_calculate_offsets_pluralized1(self):
         applicable_terms = [('rock band', 'a'), ('band', 'b'), ('drum', 'c'),
@@ -344,11 +348,13 @@ class LayerTermTest(TestCase):
         text += " Many bands. "
         t = Terms(None)
         matches = t.calculate_offsets(text, applicable_terms)
-        self.assertItemsEqual(matches, [
-            ('rock band', 'a', [(10, 19)]),
-            ('band', 'b', [(30, 34)]),
-            ('bands', 'b', [(66, 71)]),
-            ('drum', 'c', [(42, 46), (55, 59)])])
+        six.assertCountEqual(
+            self,
+            matches,
+            [('rock band', 'a', [(10, 19)]),
+             ('band', 'b', [(30, 34)]),
+             ('bands', 'b', [(66, 71)]),
+             ('drum', 'c', [(42, 46), (55, 59)])])
 
     def test_calculate_offsets_pluralized2(self):
         applicable_terms = [('activity', 'a'), ('other thing', 'd')]

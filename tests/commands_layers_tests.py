@@ -3,6 +3,7 @@ from unittest import TestCase
 
 from click.testing import CliRunner
 from mock import patch
+import six
 
 from regparser.commands import layers
 from regparser.history.versions import Version
@@ -32,7 +33,8 @@ class CommandsLayersTests(TestCase):
                               list, layers.stale_layers(tree_entry, 'cfr'))
 
             entry.Entry('tree', 111, 22, 'aaa').write('')
-            self.assertItemsEqual(
+            six.assertCountEqual(
+                self,
                 layers.stale_layers(tree_entry, 'cfr'), ['keyterms', 'other'])
 
             self.assertIn(

@@ -2,6 +2,7 @@ import os
 from unittest import TestCase
 
 from click.testing import CliRunner
+import six
 
 from regparser import index
 from regparser.commands.clear import clear
@@ -50,9 +51,12 @@ class CommandsClearTests(TestCase):
                 entry.Entry(*path.split('/')).write('')
 
             self.cli.invoke(clear, ['delroot', 'root/delsub'])
-            self.assertItemsEqual(['top-level-file', 'root', 'other-root'],
-                                  list(entry.Entry()))
-            self.assertItemsEqual(['othersub', 'aaa'],
-                                  list(entry.Entry('root')))
-            self.assertItemsEqual(['aaa'],
-                                  list(entry.Entry('other-root')))
+            six.assertCountEqual(self,
+                                 ['top-level-file', 'root', 'other-root'],
+                                 list(entry.Entry()))
+            six.assertCountEqual(self,
+                                 ['othersub', 'aaa'],
+                                 list(entry.Entry('root')))
+            six.assertCountEqual(self,
+                                 ['aaa'],
+                                 list(entry.Entry('other-root')))

@@ -2,6 +2,7 @@
 from unittest import TestCase
 
 from mock import patch
+import six
 
 from regparser.notice import amendments, changes
 from regparser.notice.amdparser import Amendment
@@ -173,7 +174,7 @@ class NoticeAmendmentsTest(TestCase):
 
         subpart_changes = amendments.process_designate_subpart(amended_label)
 
-        self.assertItemsEqual(['200-1-a'], subpart_changes.keys())
+        six.assertCountEqual(self, ['200-1-a'], subpart_changes.keys())
         change = subpart_changes['200-1-a']
         self.assertEqual(change['destination'], ['205', 'Subpart', 'A'])
         self.assertEqual(change['action'], 'DESIGNATE')
@@ -192,8 +193,7 @@ class NoticeAmendmentsTest(TestCase):
 
         self.assertEqual(amendment['instruction'], amdpar)
         self.assertEqual(amendment['cfr_part'], '105')
-        self.assertItemsEqual(['105-1', '105-2', '105-3'],
-                              changes.keys())
+        six.assertCountEqual(self, ['105-1', '105-2', '105-3'], changes.keys())
         for change_list in changes.values():
             self.assertEqual(1, len(change_list))
             change = change_list[0]
@@ -434,8 +434,9 @@ class NoticeAmendmentsTest(TestCase):
         self.assertEqual(amd2['instruction'], amdpar2)
         self.assertEqual(amd2['cfr_part'], '106')
         self.assertEqual(['106-1-a'], dict(amd1['changes']).keys())
-        self.assertItemsEqual(['106-C', '106-C-p1'],
-                              dict(amd2['changes']).keys())
+        six.assertCountEqual(self,
+                             ['106-C', '106-C-p1'],
+                             dict(amd2['changes']).keys())
 
     def test_process_amendments_insert_in_order(self):
         amdpar = '[insert-in-order] [label:123-45-p6]'
