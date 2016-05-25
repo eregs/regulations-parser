@@ -56,7 +56,7 @@ class XMLBuilder(object):
 
     @property
     def xml_str(self):
-        return etree.tostring(self.xml)
+        return etree.tounicode(self.xml)
 
     def xml_copy(self):
         return deepcopy(self.xml)

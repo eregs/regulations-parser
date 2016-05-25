@@ -86,7 +86,7 @@ class ParenthesesCleanupTests(TestCase):
             ctx.child_from_string(u"<P>{}</P>".format(original))
         preprocessors.ParenthesesCleanup().transform(ctx.xml)
         self.assertEqual("<P>{}</P>".format(new_text),
-                         etree.tostring(ctx.xml[0]))
+                         etree.tounicode(ctx.xml[0]))
 
     def test_transform(self):
         """The parens should always move out"""
@@ -102,17 +102,15 @@ class ParenthesesCleanupTests(TestCase):
 class MoveAdjoiningCharsTests(TestCase):
     def assert_transformed(self, input_xml, expected_xml):
         self.setUp()
-        input_xml = input_xml.decode('utf-8')
         with XMLBuilder("SECTION") as ctx:
             ctx.child_from_string(u"<P>{}</P>".format(input_xml))
         preprocessors.MoveAdjoiningChars().transform(ctx.xml)
-        self.assertEqual(etree.tostring(
-                         ctx.xml.xpath('./P/E')[0], encoding='UTF-8'),
+        self.assertEqual(etree.tounicode(ctx.xml.xpath('./P/E')[0]),
                          expected_xml)
 
     def test_transform(self):
-        self.assert_transformed('<E T="03">Things</E>— more things',
-                                '<E T="03">Things—</E> more things')
+        self.assert_transformed(u'<E T="03">Things</E>— more things',
+                                u'<E T="03">Things—</E> more things')
         self.assert_transformed('<E T="03">Things</E>.',
                                 '<E T="03">Things.</E>')
         self.assert_transformed('<E T="03">Things</E>. more things',
@@ -161,7 +159,7 @@ class ExtractTagsTests(TestCase):
         original = ctx.xml_copy()
 
         self.assertFalse(self.et.extract_pair(ctx.xml[0]))
-        self.assertEqual(ctx.xml_str, etree.tostring(original))
+        self.assertEqual(ctx.xml_str, etree.tounicode(original))
 
     def test_extract_pair_last_node(self):
         """XML shouldn't be modified when the EXTRACT is the last element"""
@@ -171,7 +169,7 @@ class ExtractTagsTests(TestCase):
         original = ctx.xml_copy()
 
         self.assertFalse(self.et.extract_pair(ctx.xml[1]))
-        self.assertEqual(ctx.xml_str, etree.tostring(original))
+        self.assertEqual(ctx.xml_str, etree.tounicode(original))
 
     def test_extract_pair(self):
         """Sequences of EXTRACT nodes should get joined"""
@@ -215,7 +213,7 @@ class ExtractTagsTests(TestCase):
         original = ctx.xml_copy()
 
         self.assertFalse(self.et.sandwich(ctx.xml[0]))
-        self.assertEqual(ctx.xml_str, etree.tostring(original))
+        self.assertEqual(ctx.xml_str, etree.tounicode(original))
 
     def test_sandwich_last_tag(self):
         """For sandwich to be triggered, EXTRACT tag can't be the last tag"""
@@ -225,7 +223,7 @@ class ExtractTagsTests(TestCase):
         original = ctx.xml_copy()
 
         self.assertFalse(self.et.sandwich(ctx.xml[1]))
-        self.assertEqual(ctx.xml_str, etree.tostring(original))
+        self.assertEqual(ctx.xml_str, etree.tounicode(original))
 
     def test_sandwich_bad_filling(self):
         """For sandwich to be triggered, EXTRACT tags need to surround one of
@@ -237,7 +235,7 @@ class ExtractTagsTests(TestCase):
         original = ctx.xml_copy()
 
         self.assertFalse(self.et.sandwich(ctx.xml[0]))
-        self.assertEqual(ctx.xml_str, etree.tostring(original))
+        self.assertEqual(ctx.xml_str, etree.tounicode(original))
 
     def test_sandwich(self):
         """When the correct tags are separated by EXTRACTs, they should get

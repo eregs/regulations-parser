@@ -176,8 +176,8 @@ class ExtractTags(PreProcessorBase):
         naive solution: convert to a string, reparse"""
         next_el = extract.getnext()
         if next_el is not None:
-            xml_str = self.strip_root_tag(etree.tostring(extract))
-            next_str = etree.tostring(next_el)
+            xml_str = self.strip_root_tag(etree.tounicode(extract))
+            next_str = etree.tounicode(next_el)
 
             if include_tag:
                 xml_str += '\n' + next_str

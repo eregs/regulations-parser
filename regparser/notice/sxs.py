@@ -73,7 +73,7 @@ def build_section_by_section(sxs, fr_start_page, previous_label):
             swap_emphasis_tags(paragraph_xml)
             # Anything inside a SU can also be ignored
             for su in paragraph_xml.xpath('./SU'):
-                su_text = etree.tostring(su)
+                su_text = etree.tounicode(su)
                 footnotes.append({
                     'paragraph': p_idx,
                     'reference': su.text,

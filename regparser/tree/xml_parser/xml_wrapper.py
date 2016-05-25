@@ -40,4 +40,4 @@ class XMLWrapper(object):
         return self.xml.xpath(*args, **kwargs)
 
     def xml_str(self):
-        return etree.tostring(self.xml, pretty_print=True)
+        return etree.tounicode(self.xml, pretty_print=True)

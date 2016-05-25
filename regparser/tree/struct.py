@@ -108,7 +108,7 @@ class FullNodeEncoder(JSONEncoder):
             result = {field: getattr(obj, field, None)
                       for field in self.FIELDS}
             if obj.source_xml is not None:
-                result['source_xml'] = etree.tostring(obj.source_xml)
+                result['source_xml'] = etree.tounicode(obj.source_xml)
             return result
         return super(FullNodeEncoder, self).default(obj)
 
