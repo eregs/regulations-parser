@@ -271,7 +271,7 @@ def create_xmlless_change(amendment, notice_changes):
     """Deletes, moves, and the like do not have an associated XML structure.
     Add their changes"""
     amend_map = changes.match_labels_and_changes([amendment], None)
-    for label, amendments in amend_map.iteritems():
+    for label, amendments in amend_map.items():
         for amendment in amendments:
             if amendment['action'] == 'DELETE':
                 notice_changes.add_changes(
@@ -297,7 +297,7 @@ def create_xml_changes(amended_labels, section, notice_changes):
 
     amend_map = changes.match_labels_and_changes(amended_labels, section)
 
-    for label, amendments in amend_map.iteritems():
+    for label, amendments in amend_map.items():
         for amendment in amendments:
             if amendment['action'] in ('POST', 'PUT', 'INSERT'):
                 if 'field' in amendment:

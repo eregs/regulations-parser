@@ -52,7 +52,7 @@ def generate_dependencies(version_dir, version_ids, delays):
     deps = dependency.Graph()
     for version_id in version_ids:
         deps.add(version_dir / version_id, notice_dir / version_id)
-    for delayed, delay in delays.iteritems():
+    for delayed, delay in delays.items():
         deps.add(version_dir / delayed, notice_dir / delay.by)
     return deps
 

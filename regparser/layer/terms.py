@@ -136,7 +136,7 @@ class Terms(Layer):
         layer_el = []
         #   Remove any definitions defined in this paragraph
         term_list = [
-            (term, ref) for term, ref in applicable_terms.iteritems()
+            (term, ref) for term, ref in applicable_terms.items()
             if ref.label != node.label_id()]
 
         exclusions = self.excluded_offsets(node)
