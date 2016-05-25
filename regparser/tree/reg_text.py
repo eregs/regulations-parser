@@ -31,7 +31,7 @@ def build_subpart(text, part):
 def subjgrp_label(starting_title, letter_list):
     words = starting_title.split()
     candidate_title = ""
-    suffixes = [""] + list(string.lowercase)
+    suffixes = [""] + list(string.ascii_lowercase)
     if len(words) == 1:
         """
         E.g. if the word is "Penalties" the progression is:
