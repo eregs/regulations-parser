@@ -1,7 +1,7 @@
 from __future__ import unicode_literals
 import re
 
-from layer import Layer
+from regparser.layer.layer import Layer
 from regparser.layer.paragraph_markers import marker_of
 from regparser.layer.terms import Terms
 

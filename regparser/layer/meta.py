@@ -1,6 +1,6 @@
 import re
 
-from layer import Layer
+from regparser.layer.layer import Layer
 import settings
 
 
