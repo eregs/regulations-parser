@@ -26,6 +26,7 @@ class Entry(object):
         Entry(1, 2, 3) / 4 / 5 == Entry(1, 2, 3, 4, 5)"""
         args = self.path + (other,)
         return self.__class__(*args)
+    __truediv__ = __div__
 
     def __str__(self):
         return os.path.join(*(self.PREFIX + self.path))
