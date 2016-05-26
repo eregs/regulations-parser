@@ -1,5 +1,6 @@
 """Functions for processing the xml associated with the Federal Register's
 notices"""
+import codecs
 from collections import namedtuple
 from datetime import date, datetime
 import logging
@@ -482,11 +483,11 @@ def notice_xmls_for_url(doc_num, notice_url):
     if local_notices:
         logger.info("using local xml for %s", notice_url)
         for local_notice_file in local_notices:
-            with open(local_notice_file, 'r') as f:
+            with codecs.open(local_notice_file, 'r', 'utf-8') as f:
                 yield NoticeXML(f.read(), local_notice_file).preprocess()
     else:
         logger.info("fetching notice xml for %s", notice_url)
-        content = requests.get(notice_url).content
+        content = requests.get(notice_url).text
         yield NoticeXML(content, notice_url).preprocess()
 
 

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import codecs
 from collections import namedtuple
 from datetime import date
 import logging
@@ -54,7 +55,7 @@ class Volume(namedtuple('Volume', ['year', 'title', 'vol_num', 'url'])):
         _part_span = False
         part_string = ''
 
-        for line in self.response.iter_lines():
+        for line in self.response.iter_lines(decode_unicode=True):
             if '<PARTS>' in line:
                 part_string = line
                 break
@@ -105,12 +106,12 @@ class Volume(namedtuple('Volume', ['year', 'title', 'vol_num', 'url'])):
             xml_path = os.path.join(xml_path, 'annual', filename)
             logger.debug("Checking locally for file %s", xml_path)
             if os.path.isfile(xml_path):
-                with open(xml_path) as f:
+                with codecs.open(xml_path, 'r', 'utf-8') as f:
                     return XMLWrapper(f.read(), xml_path)
         logger.debug("GET %s", url)
         response = requests.get(url)
         if response.status_code == 200:
-            return XMLWrapper(response.content, url)
+            return XMLWrapper(response.text, url)
 
 
 def publication_month(cfr_title):

@@ -33,7 +33,6 @@ class Client:
         else:   # file system
             if os.path.isdir(self.base_url + suffix):
                 suffix = suffix + "/index.html"
-            f = open(self.base_url + suffix)
-            json_str = f.read()
-            f.close()
+            with open(self.base_url + suffix) as f:
+                json_str = f.read()
         return json.loads(json_str, object_hook=node_decode_hook)
