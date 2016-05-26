@@ -301,9 +301,9 @@ class FrozenNode(object):
         hasher.update(self.tagged_text.encode('utf-8'))
         hasher.update(self.title.encode('utf-8'))
         hasher.update(self.label_id.encode('utf-8'))
-        hasher.update(self.node_type)
+        hasher.update(self.node_type.encode('utf-8'))
         for child in self.children:
-            hasher.update(child.hash)
+            hasher.update(child.hash.encode('utf-8'))
         return hasher.hexdigest()
 
     def __hash__(self):

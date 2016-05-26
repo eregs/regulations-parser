@@ -32,7 +32,7 @@ def hash_for_paragraph(text):
     collisions after ~ 60 thousand entries.  We're expecting at most a few
     hundred"""
     phrase = _NONWORDS.sub('', text.lower())
-    hashed = hashlib.sha1(phrase).hexdigest()[:8]
+    hashed = hashlib.sha1(phrase.encode('utf-8')).hexdigest()[:8]
     return int(hashed, 16)
 
 
