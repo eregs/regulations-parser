@@ -208,8 +208,12 @@ def create_add_amendment(amendment):
             parent_label = None
         changes.append(format_node(node, amendment, parent_label))
 
-    for change in filter(lambda c: c.values()[0]['action'] == 'PUT', changes):
-        label = change.keys()[0]
+    puts = [c for c in changes
+            if any(v['action'] == 'PUT' for v in c.values())]
+    for change in puts:
+        # This is awkward, but we know there will only be _one_ key in the
+        # "changes" dictionary
+        label = list(change.keys())[0]
         node = struct.find(amendment['node'], label)
         text = node.text.strip()
         marker = marker_of(node)
