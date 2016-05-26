@@ -14,10 +14,12 @@ class XMLWrapper(object):
         """Includes automatic conversion from string and a deep copy for
         safety. `source` represents the providence of this xml. It is _not_
         serialized and hence does not follow the xml through the index"""
-        if isinstance(xml, six.string_types):
+        if isinstance(xml, six.binary_type):
             self.xml = etree.fromstring(xml)
-        else:
+        elif isinstance(xml, etree._Element):
             self.xml = deepcopy(xml)
+        else:
+            raise ValueError("xml should be either binary or an lxml node")
         self.source = source
 
     @property

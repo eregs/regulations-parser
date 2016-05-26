@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-import codecs
 from collections import namedtuple
 from datetime import date
 import logging
@@ -107,12 +106,12 @@ class Volume(namedtuple('Volume', ['year', 'title', 'vol_num'])):
             xml_path = os.path.join(xml_path, 'annual', filename)
             logger.debug("Checking locally for file %s", xml_path)
             if os.path.isfile(xml_path):
-                with codecs.open(xml_path, 'r', 'utf-8') as f:
+                with open(xml_path, 'rb') as f:
                     return XMLWrapper(f.read(), xml_path)
         logger.debug("GET %s", url)
         response = requests.get(url)
         if response.status_code == 200:
-            return XMLWrapper(response.text, url)
+            return XMLWrapper(response.content, url)
 
 
 def publication_month(cfr_title):
