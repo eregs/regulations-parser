@@ -35,10 +35,11 @@ PART_SPAN_REGEX = re.compile(
 logger = logging.getLogger(__name__)
 
 
-class Volume(namedtuple('Volume', ['year', 'title', 'vol_num', 'url'])):
-    def __new__(cls, year, title, vol_num):
-        url = CFR_BULK_URL.format(year=year, title=title, volume=vol_num)
-        return super(Volume, cls).__new__(cls, year, title, vol_num, url)
+class Volume(namedtuple('Volume', ['year', 'title', 'vol_num'])):
+    @property
+    def url(self):
+        return CFR_BULK_URL.format(year=self.year, title=self.title,
+                                   volume=self.vol_num)
 
     @cached_property
     def response(self):

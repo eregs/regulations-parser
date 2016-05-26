@@ -1,6 +1,7 @@
-# vim: set fileencoding=utf-8
+# -*- coding: utf-8 -*-
 """Parsers for finding a term that's being defined within a node"""
 import abc
+from collections import namedtuple
 from itertools import chain
 import re
 
@@ -13,23 +14,20 @@ from regparser.tree.struct import Node
 import settings
 
 
-class Ref(object):
+class Ref(namedtuple('Ref', ['term', 'label', 'start'])):
     """A reference to a defined term. Keeps track of the term, where it was
     found and the term's position in that node's text"""
-    def __init__(self, term, label, start):
-        self.term = six.text_type(term).lower()
-        self.label = label
-        self.start = start
-        self.end = self.start + len(term)
-        self.position = (self.start, self.end)
+    def __new__(cls, term, label, start):
+        term = six.text_type(term).lower()
+        return super(Ref, cls).__new__(cls, term, label, start)
 
-    def __eq__(self, other):
-        """Equality depends on equality of the fields"""
-        return isinstance(other, Ref) and repr(self) == repr(other)
+    @property
+    def end(self):
+        return self.start + len(self.term)
 
-    def __repr__(self):
-        return 'Ref( term=%s, label=%s, start=%s )' % (
-            repr(self.term), repr(self.label), repr(self.start))
+    @property
+    def position(self):
+        return (self.start, self.end)
 
 
 class FinderBase(object):
