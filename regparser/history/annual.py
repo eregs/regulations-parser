@@ -1,10 +1,11 @@
-# vim: set encoding=utf-8
+# -*- coding: utf-8 -*-
 from collections import namedtuple
 from datetime import date
 import logging
 import os
 import re
 
+from cached_property import cached_property
 import requests
 
 from regparser.index import xml_sync
@@ -33,53 +34,49 @@ PART_SPAN_REGEX = re.compile(
 logger = logging.getLogger(__name__)
 
 
-class Volume(namedtuple('Volume', ['year', 'title', 'vol_num'])):
-    def __init__(self, year, title, vol_num):
-        super(Volume, self).__init__(year, title, vol_num)
-        self.url = CFR_BULK_URL.format(year=year, title=title, volume=vol_num)
-        self._response, self._part_span = None, None
+class Volume(namedtuple('Volume', ['year', 'title', 'vol_num', 'url'])):
+    def __new__(cls, year, title, vol_num):
+        url = CFR_BULK_URL.format(year=year, title=title, volume=vol_num)
+        return super(Volume, cls).__new__(cls, year, title, vol_num, url)
 
-    @property
+    @cached_property
     def response(self):
-        if self._response is None:
-            logger.debug("GET %s", self.url)
-            self._response = requests.get(self.url, stream=True)
-        return self._response
+        logger.debug("GET %s", self.url)
+        return requests.get(self.url, stream=True)
 
     @property
     def exists(self):
         return self.response.status_code == 200
 
-    @property
+    @cached_property
     def part_span(self):
         """Calculate and memoize the range of parts this volume covers"""
-        if self._part_span is None:
-            self._part_span = False
-            part_string = ''
+        _part_span = False
+        part_string = ''
 
-            for line in self.response.iter_lines():
-                if '<PARTS>' in line:
-                    part_string = line
-                    break
-            if part_string:
-                match = PART_SPAN_REGEX.match(part_string)
-                if match and match.group('span'):
-                    start = int(match.group('start'))
-                    if match.group('end_literal'):
-                        end = None
-                    else:
-                        end = int(match.group('end'))
-                    self._part_span = (start, end)
-                elif match:
-                    start = int(match.group('single_part'))
-                    self._part_span = (start, start)
+        for line in self.response.iter_lines():
+            if '<PARTS>' in line:
+                part_string = line
+                break
+        if part_string:
+            match = PART_SPAN_REGEX.match(part_string)
+            if match and match.group('span'):
+                start = int(match.group('start'))
+                if match.group('end_literal'):
+                    end = None
                 else:
-                    logger.warning("Can't parse: %s", part_string)
+                    end = int(match.group('end'))
+                _part_span = (start, end)
+            elif match:
+                start = int(match.group('single_part'))
+                _part_span = (start, start)
             else:
-                logger.warning('No <PARTS> in %s. Assuming this volume '
-                               'contains all of the regs', self.url)
-                self._part_span = (1, None)
-        return self._part_span
+                logger.warning("Can't parse: %s", part_string)
+        else:
+            logger.warning('No <PARTS> in %s. Assuming this volume '
+                           'contains all of the regs', self.url)
+            _part_span = (1, None)
+        return _part_span
 
     @property
     def publication_date(self):
