@@ -37,7 +37,10 @@ class Meta(Layer):
         if effective_date:
             layer['effective_date'] = effective_date
 
-        return [dict(layer.items() + settings.META.items())]
+        result = {}
+        result.update(layer)
+        result.update(settings.META)
+        return [result]
 
     def effective_date(self):
         if self.version and self.version.effective:
