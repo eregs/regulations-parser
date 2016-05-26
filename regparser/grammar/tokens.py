@@ -80,7 +80,7 @@ class Context(Token):
 
     def __repr__(self):
         return "Context([ %s , certain=%s ])" % (
-            ', '.join(map(_none_str, self.label)), self.certain)
+            ', '.join(_none_str(l) for l in self.label), self.certain)
 
 
 class Paragraph(Token):
@@ -120,7 +120,7 @@ class Paragraph(Token):
 
     def __repr__(self):
         return "Paragraph([ %s ], field = %s )" % (
-            ', '.join(map(_none_str, self.label)), _none_str(self.field))
+            ', '.join(_none_str(l) for l in self.label), _none_str(self.field))
 
     def label_text(self):
         """Converts self.label into a string"""
@@ -139,7 +139,7 @@ class TokenList(Token):
         self.tokens = tokens
 
     def __repr__(self):
-        return "TokenList([ %s ])" % ', '.join(map(repr, self.tokens))
+        return "TokenList([ %s ])" % ', '.join(repr(t) for t in self.tokens)
 
     def __iter__(self):
         return iter(self.tokens)

@@ -49,7 +49,7 @@ class NoticeSxsTests(TestCase):
                      'This is in an extract', 'Sub Sub Content']
 
         computed = sxs.find_section_by_section(etree.fromstring(full_xml))
-        self.assertEqual(sxs_texts, map(lambda el: el.text, computed))
+        self.assertEqual(sxs_texts, [el.text for el in computed])
 
     def test_find_section_by_section_intro_text(self):
         sxs_xml = """
@@ -72,7 +72,7 @@ class NoticeSxsTests(TestCase):
 
         sxs_texts = ['Section 8675.309 Stuff', 'Content']
         computed = sxs.find_section_by_section(etree.fromstring(full_xml))
-        self.assertEqual(sxs_texts, map(lambda el: el.text, computed))
+        self.assertEqual(sxs_texts, [el.text for el in computed])
 
     def test_find_section_by_section_not_present(self):
         full_xml = """

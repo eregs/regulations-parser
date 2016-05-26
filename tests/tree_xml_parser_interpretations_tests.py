@@ -421,14 +421,14 @@ class InterpretationsTest(TestCase):
                 interpretations.is_title(etree.fromstring(non_title)))
 
     def test_collapsed_markers_matches(self):
-        self.assertEqual(['i'], map(
-            lambda m: m.group(1),
-            interpretations.collapsed_markers_matches(
-                '1. AAA - i. More', '1. AAA - i. More')))
-        self.assertEqual(['1'], map(
-            lambda m: m.group(1),
-            interpretations.collapsed_markers_matches(
-                'A. AAA: 1. More', 'A. AAA: <E T="03">1</E>. More')))
+        self.assertEqual(
+            ['i'],
+            [m.group(1) for m in interpretations.collapsed_markers_matches(
+                '1. AAA - i. More', '1. AAA - i. More')])
+        self.assertEqual(
+            ['1'],
+            [m.group(1) for m in interpretations.collapsed_markers_matches(
+                'A. AAA: 1. More', 'A. AAA: <E T="03">1</E>. More')])
         for txt in ("1. Content - i.e. More content",
                     u"1. Stuff in quotes like, “N.A.”",
                     u"i. References appendix D, part I.A.1. Stuff"

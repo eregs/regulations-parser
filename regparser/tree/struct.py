@@ -331,7 +331,7 @@ class FrozenNode(object):
         also checks if this node has already been instantiated. If so, it
         returns the instantiated version (i.e. only one of each identical node
         exists in memory)"""
-        children = map(FrozenNode.from_node, node.children)
+        children = [FrozenNode.from_node(n) for n in node.children]
         fresh = FrozenNode(text=node.text, children=children, label=node.label,
                            title=node.title or '', node_type=node.node_type,
                            tagged_text=getattr(node, 'tagged_text', '') or '')

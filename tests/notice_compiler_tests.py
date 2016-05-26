@@ -252,9 +252,9 @@ class CompilerTests(TestCase):
         reg_tree.replace_node_and_subtree(n1_new)
 
         self.assertEqual([['205', '2'], ['205', '1'], ['205', '3']],
-                         map(lambda n: n.label, reg_tree.tree.children))
+                         [n.label for n in reg_tree.tree.children])
         self.assertEqual(['n2', 'n1n1', 'n3'],
-                         map(lambda n: n.text, reg_tree.tree.children))
+                         [n.text for n in reg_tree.tree.children])
 
     def test_reserve_add_new(self):
         root = self.tree_with_paragraphs()
