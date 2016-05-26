@@ -33,7 +33,7 @@ def find_section_by_section(xml_tree):
 
     try:
         # Ignore Header
-        sxs.next()
+        next(sxs)
         # Remove any intro paragraphs
         sxs = dropwhile(lambda el: el.tag != 'HD', sxs)
         sxs = takewhile(
