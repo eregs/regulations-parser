@@ -23,7 +23,7 @@ class Solution(object):
         if isinstance(assignment, list):
             self.assignment = assignment
         else:   # assignment is a dict (as returned by constraint solver)
-            for i in range(len(assignment) / 3):    # for (type, idx, depth)
+            for i in range(len(assignment) // 3):    # for (type, idx, depth)
                 self.assignment.append(
                     ParAssignment(assignment['type' + str(i)],
                                   assignment['idx' + str(i)],
@@ -153,7 +153,7 @@ def debug_idx(markers, constraints=[]):
     working, not_working = -1, len(markers)
 
     while working != not_working - 1:
-        midpoint = (working + not_working) / 2
+        midpoint = (working + not_working) // 2
         solutions = derive_depths(markers[:midpoint + 1], constraints)
         if solutions:
             working = midpoint

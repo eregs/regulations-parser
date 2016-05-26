@@ -181,7 +181,7 @@ def depth_type_order(order):
     order = list(order)     # defensive copy
 
     def inner(constrain, all_variables):
-        for i in range(0, len(all_variables) / 3):
+        for i in range(0, len(all_variables) // 3):
             constrain(lambda t, d: (d < len(order) and
                                     (t in (markers.stars, order[d]) or
                                      t in order[d])),
