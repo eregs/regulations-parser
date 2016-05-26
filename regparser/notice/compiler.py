@@ -200,6 +200,8 @@ class RegulationTree(object):
                         comment_pars[-1], roman=(len(comment_pars) == 2)))
                 elif c.node_type == Node.APPENDIX:
                     sort_order.append(make_label_sortable(c.label[-1], False))
+                elif c.node_type == Node.EMPTYPART:
+                    sort_order.append((0,))
                 else:
                     sort_order.append(make_label_sortable(
                         c.label[-1], roman=(len(c.label) == 5)))
