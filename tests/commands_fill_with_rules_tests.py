@@ -31,7 +31,7 @@ class CommandsFillWithRulesTests(TestCase):
             (tree_dir / '555').write(Node())
 
             deps = fill_with_rules.dependencies(
-                tree_dir, vers_dir, zip(versions, parents))
+                tree_dir, vers_dir, list(zip(versions, parents)))
 
             # First is skipped, as we can't build it from a rule
             self.assertNotIn(str(tree_dir / '111'), deps)

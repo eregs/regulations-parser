@@ -46,9 +46,8 @@ def segment_by_header(text, part):
 def merge_labels(labels):
     max_len = max(len(l) for l in labels)
     labels = [l + [None]*(max_len - len(l)) for l in labels]
-    merged = zip(*labels)
     final_label = []
-    for tups in merged:
+    for tups in zip(*labels):
         final_label.append('_'.join(sorted(set(tups))))
     return final_label
 

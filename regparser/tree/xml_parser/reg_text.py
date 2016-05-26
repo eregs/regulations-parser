@@ -328,7 +328,7 @@ def split_by_markers(xml):
         tagged_text, ['({})'.format(m) for m in markers_list])
     if len(node_texts) > len(markers_list):     # due to initial MARKERLESS
         markers_list.insert(0, mtypes.MARKERLESS)
-    return zip(markers_list, node_texts, tagged_texts)
+    return list(zip(markers_list, node_texts, tagged_texts))
 
 
 class ParagraphMatcher(paragraph_processor.BaseMatcher):
