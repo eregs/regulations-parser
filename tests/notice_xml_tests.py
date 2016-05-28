@@ -88,7 +88,7 @@ class NoticeXMLTests(TestCase):
         self.assertEqual(xml.published, date(2004, 4, 4))
         self.assertEqual(xml.fr_volume, 22)
 
-        xml = notice_xml.NoticeXML(xml.xml_str())
+        xml = notice_xml.NoticeXML(xml.xml)
         self.assertEqual(xml.effective, date(2005, 5, 5))
         self.assertEqual(xml.published, date(2004, 4, 4))
         self.assertEqual(xml.fr_volume, 22)
@@ -99,7 +99,7 @@ class NoticeXMLTests(TestCase):
 
         xml.effective = '2005-05-05'
         self.assertEqual(xml.effective, date(2005, 5, 5))
-        xml = notice_xml.NoticeXML(xml.xml_str())
+        xml = notice_xml.NoticeXML(xml.xml)
         self.assertEqual(xml.effective, date(2005, 5, 5))
 
     def test_derive_effective_date(self):
@@ -134,10 +134,10 @@ class NoticeXMLTests(TestCase):
     def test_source_is_local(self):
         for url in ('https://example.com', 'http://example.com'):
             self.assertFalse(
-                notice_xml.NoticeXML('<ROOT/>', source=url).source_is_local)
+                notice_xml.NoticeXML(b'<ROOT/>', source=url).source_is_local)
         for path in ('./dot/relative', 'normal/relative', '/absolute/ref'):
             self.assertTrue(
-                notice_xml.NoticeXML('<ROOT/>', source=path).source_is_local)
+                notice_xml.NoticeXML(b'<ROOT/>', source=path).source_is_local)
 
     def test_set_agencies_simple(self):
         """

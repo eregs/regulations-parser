@@ -20,7 +20,7 @@ class CommandsNoticePreambleTests(TestCase):
             self.assertIsInstance(result.exception, dependency.Missing)
             self.assertFalse(parse_preamble.called)
 
-            entry.Entry('notice_xml', '111-222').write('<ROOT />')
+            entry.Entry('notice_xml', '111-222').write(b'<ROOT />')
             result = cli.invoke(notice_preamble, ['111-222'])
             self.assertIsNone(result.exception)
             self.assertTrue(parse_preamble.called)

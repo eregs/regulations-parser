@@ -47,6 +47,6 @@ class CommandsFetchSxSTests(TestCase):
                 isinstance(kwargs['xml_to_process'], etree._Element))
 
             build_notice.reset_mock()
-            entry.Entry('rule_changes', '1111').write('content')
+            entry.Entry('rule_changes', '1111').write(b'content')
             self.cli.invoke(fetch_sxs, ['1111'])
             self.assertTrue(build_notice.called)

@@ -28,11 +28,11 @@ class CommandsLayersTests(TestCase):
             self.assertRaises(dependency.Missing,
                               list, layers.stale_layers(tree_entry, 'cfr'))
 
-            entry.Entry('tree', 111, 22, 'bbb').write('')    # wrong version
+            entry.Entry('tree', 111, 22, 'bbb').write(b'')    # wrong version
             self.assertRaises(dependency.Missing,
                               list, layers.stale_layers(tree_entry, 'cfr'))
 
-            entry.Entry('tree', 111, 22, 'aaa').write('')
+            entry.Entry('tree', 111, 22, 'aaa').write(b'')
             six.assertCountEqual(
                 self,
                 layers.stale_layers(tree_entry, 'cfr'), ['keyterms', 'other'])

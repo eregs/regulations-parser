@@ -29,8 +29,8 @@ class CommandsClearTests(TestCase):
 
     def test_deletes_index(self):
         with self.cli.isolated_filesystem():
-            entry.Entry('aaa', 'bbb').write('ccc')
-            entry.Entry('bbb', 'ccc').write('ddd')
+            entry.Entry('aaa', 'bbb').write(b'ccc')
+            entry.Entry('bbb', 'ccc').write(b'ddd')
             self.assertEqual(1, len(entry.Entry("aaa")))
             self.assertEqual(1, len(entry.Entry("bbb")))
 
@@ -48,7 +48,7 @@ class CommandsClearTests(TestCase):
                        'top-level-file', 'other-root/aaa']
 
             for path in to_delete + to_keep:
-                entry.Entry(*path.split('/')).write('')
+                entry.Entry(*path.split('/')).write(b'')
 
             self.cli.invoke(clear, ['delroot', 'root/delsub'])
             six.assertCountEqual(self,

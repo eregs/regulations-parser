@@ -95,7 +95,7 @@ class CommandsFillWithRulesTests(TestCase):
         with self.cli.isolated_filesystem():
             tree_dir = entry.Tree('12', '1000')
             (tree_dir / 'old').write(Node())
-            entry.Entry('notice_xml', 'new').write('')
+            entry.Entry('notice_xml', 'new').write(b'')
             fill_with_rules.process(tree_dir, 'old', 'new')
             changes = dict(compile_regulation.call_args[0][1])
             self.assertEqual(changes, {
