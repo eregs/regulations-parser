@@ -210,9 +210,9 @@ class CompilerTests(TestCase):
         n2b = Node('n2b', label=['205', '2', 'b'])
         n2.children = [n2a, n2b]
 
-        root = Node('', label=['205'])
-        root.children = [n1, n2, n4]
-        return root
+        subpart = Node(node_type=Node.EMPTYPART, label=['205', 'Subpart'],
+                       children=[n1, n2, n4])
+        return Node('', label=['205'], children=[subpart])
 
     def test_replace_node_and_subtree(self):
         n1 = Node('n1', label=['205', '1'])
@@ -252,9 +252,9 @@ class CompilerTests(TestCase):
         reg_tree.replace_node_and_subtree(n1_new)
 
         self.assertEqual([['205', '2'], ['205', '1'], ['205', '3']],
-                         map(lambda n: n.label, reg_tree.tree.children))
+                         [n.label for n in reg_tree.tree.children])
         self.assertEqual(['n2', 'n1n1', 'n3'],
-                         map(lambda n: n.text, reg_tree.tree.children))
+                         [n.text for n in reg_tree.tree.children])
 
     def test_reserve_add_new(self):
         root = self.tree_with_paragraphs()
@@ -515,13 +515,13 @@ class CompilerTests(TestCase):
         parent = reg_tree.get_parent(section)
         self.assertEqual(parent.label_id(), '205-Subpart-B')
 
-    def test_get_parent_no_subpart(self):
+    def test_get_parent_nameless_subpart(self):
         root = self.tree_with_paragraphs()
         reg_tree = compiler.RegulationTree(root)
 
         parent = reg_tree.get_parent(
             Node('', label=['205', '1'], node_type=Node.REGTEXT))
-        self.assertEqual(parent.label_id(), '205')
+        self.assertEqual(parent.label_id(), '205-Subpart')
 
     def test_create_new_subpart(self):
         root = self._tree_with_subparts()
@@ -910,7 +910,8 @@ class CompilerTests(TestCase):
                 return changes[key]
 
         new_tree = compiler.compile_regulation(prev_tree, SortedKeysDict())
-        s1, s2, s4 = new_tree.children
+        subpart = new_tree.children[0]
+        s1, s2, s4 = subpart.children
         self.assertEqual(2, len(s2.children))
         s2a, s2b = s2.children
         self.assertEqual("aaa", s2a.text)

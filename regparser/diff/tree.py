@@ -56,7 +56,7 @@ def _new_in_rhs(lhs_list, rhs_list):
     """Compare the lhs and rhs lists to see if the rhs contains elements not
     in the lhs"""
     added = []
-    lhs_codes = tuple(map(lambda n: n.label_id, lhs_list))
+    lhs_codes = tuple(n.label_id for n in lhs_list)
     for node in rhs_list:
         if node.label_id not in lhs_codes:
             added.append(node)
@@ -91,7 +91,7 @@ def changes_between(lhs, rhs):
 
     # Removed children. Note params reversed
     removed_children = _new_in_rhs(rhs.children, lhs.children)
-    changes.extend(map(_data_for_delete, removed_children))
+    changes.extend(_data_for_delete(c) for c in removed_children)
     # grandchildren which appear to be deleted, but may just have been moved
     possibly_moved = {}
     for child in removed_children:

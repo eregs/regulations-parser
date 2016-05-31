@@ -1,3 +1,4 @@
+import codecs
 import logging
 
 import click
@@ -11,7 +12,7 @@ logger = logging.getLogger(__name__)
 
 def parse_notice(xml_file_path):
     """Read the notice from the XML file; fill out any missing fields"""
-    with open(xml_file_path, 'r') as f:
+    with codecs.open(xml_file_path, 'r', 'utf-8') as f:
         notice_xml = NoticeXML(f.read(), xml_file_path).preprocess()
 
     if has_requirements(notice_xml):

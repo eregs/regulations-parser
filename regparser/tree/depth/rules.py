@@ -181,7 +181,7 @@ def depth_type_order(order):
     order = list(order)     # defensive copy
 
     def inner(constrain, all_variables):
-        for i in range(0, len(all_variables) / 3):
+        for i in range(0, len(all_variables) // 3):
             constrain(lambda t, d: (d < len(order) and
                                     (t in (markers.stars, order[d]) or
                                      t in order[d])),
@@ -200,8 +200,7 @@ def ancestors(all_prev):
     for prev_type, prev_idx, prev_depth in all_prev:
         result[prev_depth] = (prev_type, prev_idx, prev_depth)
         result[prev_depth + 1:] = [None]*(10 - prev_depth)
-    result = filter(bool, result)
-    return result
+    return [r for r in result if r]
 
 
 def _level_and_children(elements):

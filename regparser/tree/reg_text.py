@@ -1,4 +1,5 @@
-# vim: set encoding=utf-8
+# -*- coding: utf-8 -*-
+from __future__ import unicode_literals
 import string
 
 from regparser.grammar.unified import marker_subpart_title
@@ -30,7 +31,7 @@ def build_subpart(text, part):
 def subjgrp_label(starting_title, letter_list):
     words = starting_title.split()
     candidate_title = ""
-    suffixes = [""] + list(string.lowercase)
+    suffixes = [""] + list(string.ascii_lowercase)
     if len(words) == 1:
         """
         E.g. if the word is "Penalties" the progression is:
@@ -121,12 +122,12 @@ def build_subjgrp(title, part, letter_list):
 
 def find_next_subpart_start(text):
     """ Find the start of the next Subpart (e.g. Subpart B)"""
-    return find_start(text, u'Subpart', ur'[A-Z]—')
+    return find_start(text, 'Subpart', r'[A-Z]—')
 
 
 def find_next_section_start(text, part):
     """Find the start of the next section (e.g. 205.14)"""
-    return find_start(text, u"§", str(part) + r"\.\d+")
+    return find_start(text, "§", str(part) + r"\.\d+")
 
 
 def next_section_offsets(text, part):

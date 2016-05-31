@@ -64,7 +64,7 @@ def fill_with_rules(cfr_title, cfr_part):
     version_dir = entry.Version(cfr_title, cfr_part)
 
     versions = [(version_dir / v).read() for v in version_dir]
-    versions_with_parents = zip(versions, Version.parents_of(versions))
+    versions_with_parents = list(zip(versions, Version.parents_of(versions)))
     deps = dependencies(tree_dir, version_dir, versions_with_parents)
 
     derived = [(version.identifier, parent.identifier)

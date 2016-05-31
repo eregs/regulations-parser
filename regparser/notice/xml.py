@@ -4,11 +4,12 @@ from collections import namedtuple
 from datetime import date, datetime
 import logging
 import os
-from urlparse import urlparse
 
 from cached_property import cached_property
 from lxml import etree
 import requests
+from six.moves.urllib.parse import urlparse
+
 
 from regparser import regs_gov
 from regparser.grammar.unified import notice_cfr_p
@@ -481,7 +482,7 @@ def notice_xmls_for_url(doc_num, notice_url):
     if local_notices:
         logger.info("using local xml for %s", notice_url)
         for local_notice_file in local_notices:
-            with open(local_notice_file, 'r') as f:
+            with open(local_notice_file, 'rb') as f:
                 yield NoticeXML(f.read(), local_notice_file).preprocess()
     else:
         logger.info("fetching notice xml for %s", notice_url)

@@ -31,7 +31,7 @@ class NoticeAMDPARserTests(TestCase):
             ctx.DELETE(label=555)
             ctx.MOVE(label=666, destination=777)
         self.assertEqual(
-            etree.tostring(amdparser.make_instructions(tokenized)),
+            etree.tounicode(amdparser.make_instructions(tokenized)),
             ctx.xml_str)
 
     def test_compress_context_simple(self):
@@ -280,7 +280,7 @@ class NoticeAMDPARserTests(TestCase):
             ctx.MOVE_INTO_SUBPART(label='200-1-b', destination='200-Subpart:J')
 
         self.assertEqual(
-            etree.tostring(amdparser.make_subpart_designation_instructions(
+            etree.tounicode(amdparser.make_subpart_designation_instructions(
                 tokenized)),
             ctx.xml_str)
 
@@ -382,7 +382,7 @@ class NoticeAMDPARserTests(TestCase):
 
         instructions, _ = amdparser.parse_amdpar(
             xml, ['1111', 'Interpretations', '2', '(a)'])
-        self.assertEqual(etree.tostring(instructions), ctx.xml_str)
+        self.assertEqual(etree.tounicode(instructions), ctx.xml_str)
 
     def test_parse_amdpar_interp_phrase(self):
         text = u"In Supplement I to part 999, under"
@@ -395,7 +395,7 @@ class NoticeAMDPARserTests(TestCase):
 
         with XMLBuilder('EREGS_INSTRUCTIONS') as ctx:
             ctx.POST(label='999-Interpretations-3-(b)-1-iv')
-        self.assertEqual(etree.tostring(instructions), ctx.xml_str)
+        self.assertEqual(etree.tounicode(instructions), ctx.xml_str)
 
     def test_parse_amdpar_interp_heading(self):
         text = "ii. The heading for 35(b) blah blah is revised."
@@ -404,7 +404,7 @@ class NoticeAMDPARserTests(TestCase):
                                                  ['1111', 'Interpretations'])
         with XMLBuilder('EREGS_INSTRUCTIONS') as ctx:
             ctx.PUT(label='1111-Interpretations-35-(b)[title]')
-        self.assertEqual(etree.tostring(instructions), ctx.xml_str)
+        self.assertEqual(etree.tounicode(instructions), ctx.xml_str)
 
     def test_parse_amdpar_interp_context(self):
         text = "b. 35(b)(1) Some title and paragraphs 1, 2, and 3 are added."
@@ -416,7 +416,7 @@ class NoticeAMDPARserTests(TestCase):
             ctx.POST(label='1111-Interpretations-35-(b)(1)-1')
             ctx.POST(label='1111-Interpretations-35-(b)(1)-2')
             ctx.POST(label='1111-Interpretations-35-(b)(1)-3')
-        self.assertEqual(etree.tostring(instructions), ctx.xml_str)
+        self.assertEqual(etree.tounicode(instructions), ctx.xml_str)
 
     def test_parse_amdpar_interp_redesignated(self):
         text = "Paragraph 1 under 51(b) is redesignated as paragraph 2 "
@@ -427,7 +427,7 @@ class NoticeAMDPARserTests(TestCase):
         with XMLBuilder('EREGS_INSTRUCTIONS') as ctx:
             ctx.DELETE(label='1111-Interpretations-51-(b)-1')
             ctx.POST(label='1111-Interpretations-51-(b)(1)-2')
-        self.assertEqual(etree.tostring(instructions), ctx.xml_str)
+        self.assertEqual(etree.tounicode(instructions), ctx.xml_str)
 
     def test_parse_amdpar_interp_entries(self):
         text = "Entries for 12(c)(3)(ix)(A) and (B) are added."
@@ -437,7 +437,7 @@ class NoticeAMDPARserTests(TestCase):
         with XMLBuilder('EREGS_INSTRUCTIONS') as ctx:
             ctx.POST(label='1111-Interpretations-12-(c)(3)(ix)(A)')
             ctx.POST(label='1111-Interpretations-12-(c)(3)(ix)(B)')
-        self.assertEqual(etree.tostring(instructions), ctx.xml_str)
+        self.assertEqual(etree.tounicode(instructions), ctx.xml_str)
 
     def test_parse_amdpar_and_and(self):
         text = "12(a) 'Titles and Paragraphs' and paragraph 3 are added"
@@ -447,7 +447,7 @@ class NoticeAMDPARserTests(TestCase):
         with XMLBuilder('EREGS_INSTRUCTIONS') as ctx:
             ctx.POST(label='1111-Interpretations-12-(a)')
             ctx.POST(label='1111-Interpretations-12-(a)-3')
-        self.assertEqual(etree.tostring(instructions), ctx.xml_str)
+        self.assertEqual(etree.tounicode(instructions), ctx.xml_str)
 
     def test_parse_amdpar_and_in_tags(self):
         text = "Under <E>Appendix A - Some phrase and another</E>, paragraph "
@@ -457,7 +457,7 @@ class NoticeAMDPARserTests(TestCase):
                                                  ['1111', 'Interpretations'])
         with XMLBuilder('EREGS_INSTRUCTIONS') as ctx:
             ctx.POST(label='1111-Interpretations-A-()-3')
-        self.assertEqual(etree.tostring(instructions), ctx.xml_str)
+        self.assertEqual(etree.tounicode(instructions), ctx.xml_str)
 
     def test_parse_amdpar_verbs_ands(self):
         text = "Under 45(a)(1) Title, paragraphs 1 and 2 are removed, and "
@@ -471,7 +471,7 @@ class NoticeAMDPARserTests(TestCase):
             ctx.POST(label='1111-Interpretations-45-(a)(1)(i)')
             ctx.POST(label='1111-Interpretations-45-(a)(1)(i)-1')
             ctx.POST(label='1111-Interpretations-45-(a)(1)(i)-2')
-        self.assertEqual(etree.tostring(instructions), ctx.xml_str)
+        self.assertEqual(etree.tounicode(instructions), ctx.xml_str)
 
     def test_parse_amdpar_add_field(self):
         text = "Adding introductory text to paragraph (c)"
@@ -480,7 +480,7 @@ class NoticeAMDPARserTests(TestCase):
 
         with XMLBuilder('EREGS_INSTRUCTIONS') as ctx:
             ctx.PUT(label='1111-?-12-c[text]')
-        self.assertEqual(etree.tostring(instructions), ctx.xml_str)
+        self.assertEqual(etree.tounicode(instructions), ctx.xml_str)
 
     def test_parse_amdpar_moved_then_modified(self):
         text = "Under Paragraph 22(a), paragraph 1 is revised, paragraph "
@@ -494,7 +494,7 @@ class NoticeAMDPARserTests(TestCase):
             ctx.DELETE(label='1111-Interpretations-22-(a)-2')
             ctx.POST(label='1111-Interpretations-22-(a)-3')
             ctx.POST(label='1111-Interpretations-22-(a)-2')
-        self.assertEqual(etree.tostring(instructions), ctx.xml_str)
+        self.assertEqual(etree.tounicode(instructions), ctx.xml_str)
 
     def test_parse_amdpar_subject_group(self):
         xml = etree.fromstring(
@@ -505,7 +505,7 @@ class NoticeAMDPARserTests(TestCase):
 
         with XMLBuilder('EREGS_INSTRUCTIONS') as ctx:
             ctx.POST(label='479-Subjgrp:ERtToF-90a')
-        self.assertEqual(etree.tostring(instructions), ctx.xml_str)
+        self.assertEqual(etree.tounicode(instructions), ctx.xml_str)
 
     def test_parse_amdpar_definition(self):
         """We should correctly deduce which paragraphs are being updated, even
@@ -519,7 +519,7 @@ class NoticeAMDPARserTests(TestCase):
         with XMLBuilder('EREGS_INSTRUCTIONS') as ctx:
             ctx.POST(label='478-?-11-p{}'.format(hash_for_paragraph(
                 "Nonimmigrant visa")))
-        self.assertEqual(etree.tostring(instructions), ctx.xml_str)
+        self.assertEqual(etree.tounicode(instructions), ctx.xml_str)
 
 
 class AmendmentTests(TestCase):

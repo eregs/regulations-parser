@@ -549,7 +549,7 @@ class RegTextTest(TestCase):
         (markers, text, tagged)"""
         xml = etree.fromstring(u'<ROOT><P>{}</P><STARS/></ROOT>'.format(text))
         results = reg_text.split_by_markers(xml[0])
-        return zip(*results)    # unzips...
+        return list(zip(*results))    # unzips...
 
     def test_split_by_markers(self):
         text = u'(a) <E T="03">Transfer </E>—(1) <E T="03">Notice.</E> follow'

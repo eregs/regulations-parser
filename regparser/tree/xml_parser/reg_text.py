@@ -1,9 +1,10 @@
-# vim: set encoding=utf-8
+# -*- coding: utf-8 -*-
 import logging
 import re
 
 from lxml import etree
 import pyparsing
+import six
 
 from regparser import content
 from regparser.citations import remove_citation_overlaps
@@ -327,7 +328,7 @@ def split_by_markers(xml):
         tagged_text, ['({})'.format(m) for m in markers_list])
     if len(node_texts) > len(markers_list):     # due to initial MARKERLESS
         markers_list.insert(0, mtypes.MARKERLESS)
-    return zip(markers_list, node_texts, tagged_texts)
+    return list(zip(markers_list, node_texts, tagged_texts))
 
 
 class ParagraphMatcher(paragraph_processor.BaseMatcher):
@@ -341,7 +342,7 @@ class ParagraphMatcher(paragraph_processor.BaseMatcher):
         for marker, plain_text, tagged_text in split_by_markers(xml):
             node = Node(text=plain_text.strip(), label=[marker],
                         source_xml=xml)
-            node.tagged_text = unicode(tagged_text.strip())
+            node.tagged_text = six.text_type(tagged_text.strip())
             nodes.append(node)
 
         if plain_text.endswith('* * *'):    # last in loop

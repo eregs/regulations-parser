@@ -1,10 +1,12 @@
-# vim: set fileencoding=utf-8
+# -*- coding: utf-8 -*-
 """Parsers for finding a term that's being defined within a node"""
 import abc
+from collections import namedtuple
 from itertools import chain
 import re
 
 from pyparsing import ParseException
+import six
 
 from regparser.citations import Label
 from regparser.grammar import terms as grammar
@@ -12,23 +14,20 @@ from regparser.tree.struct import Node
 import settings
 
 
-class Ref(object):
+class Ref(namedtuple('Ref', ['term', 'label', 'start'])):
     """A reference to a defined term. Keeps track of the term, where it was
     found and the term's position in that node's text"""
-    def __init__(self, term, label, start):
-        self.term = unicode(term).lower()
-        self.label = label
-        self.start = start
-        self.end = self.start + len(term)
-        self.position = (self.start, self.end)
+    def __new__(cls, term, label, start):
+        term = six.text_type(term).lower()
+        return super(Ref, cls).__new__(cls, term, label, start)
 
-    def __eq__(self, other):
-        """Equality depends on equality of the fields"""
-        return isinstance(other, Ref) and repr(self) == repr(other)
+    @property
+    def end(self):
+        return self.start + len(self.term)
 
-    def __repr__(self):
-        return 'Ref( term=%s, label=%s, start=%s )' % (
-            repr(self.term), repr(self.label), repr(self.start))
+    @property
+    def position(self):
+        return (self.start, self.end)
 
 
 class FinderBase(object):
@@ -71,7 +70,7 @@ class SmartQuotes(FinderBase):
         refs = []
         if self.stack and self.has_def_indicator():
             for match, _, _ in grammar.smart_quotes.scanString(node.text):
-                term = match.term.tokens[0].strip(',.;')
+                term = match.term[0].strip(',.;')
                 refs.append(Ref(term, node.label_id(), match.term.pos[0]))
         return refs
 
@@ -103,9 +102,9 @@ class ScopeMatch(FinderBase):
                 node.text):
             valid_scope = self.finder.scope_of_text(
                 match.scope, Label.from_node(node), verify_prefix=False)
-            valid_term = re.match("^[a-z ]+$", match.term.tokens[0])
+            valid_term = re.match("^[a-z ]+$", match.term[0])
             if valid_scope and valid_term:
-                term = match.term.tokens[0].strip()
+                term = match.term[0].strip()
                 pos_start = node.text.index(term, match.term.pos[0])
                 refs.append(Ref(term, node.label_id(), pos_start))
         return refs
@@ -126,7 +125,7 @@ class XMLTermMeans(FinderBase):
             """Position in match reflects XML tags, so its dropped in
             preference of new values based on node.text."""
             for match in chain([match.head], match.tail):
-                pos_start = self.pos_start(match.term.tokens[0], node.text)
+                pos_start = self.pos_start(match.term[0], node.text)
                 term = node.tagged_text[match.term.pos[0]:match.term.pos[1]]
                 ref = Ref(term, node.label_id(), pos_start)
                 refs.append(ref)

@@ -1,4 +1,4 @@
-from layer import Layer
+from regparser.layer.layer import Layer
 
 
 class SectionBySection(Layer):

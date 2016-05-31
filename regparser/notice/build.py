@@ -127,7 +127,7 @@ def add_footnotes(notice, notice_xml):
             child.remove(ref[0])
             content = child.text
             for cc in child:
-                content += etree.tostring(cc)
+                content += etree.tounicode(cc)
             if child.tail:
                 content += child.tail
             notice['footnotes'][ref[0].text] = content.strip()

@@ -2,6 +2,7 @@
 from unittest import TestCase
 
 from mock import patch
+import six
 
 from regparser.notice import amendments, changes
 from regparser.notice.amdparser import Amendment
@@ -173,7 +174,7 @@ class NoticeAmendmentsTest(TestCase):
 
         subpart_changes = amendments.process_designate_subpart(amended_label)
 
-        self.assertItemsEqual(['200-1-a'], subpart_changes.keys())
+        six.assertCountEqual(self, ['200-1-a'], subpart_changes.keys())
         change = subpart_changes['200-1-a']
         self.assertEqual(change['destination'], ['205', 'Subpart', 'A'])
         self.assertEqual(change['action'], 'DESIGNATE')
@@ -192,8 +193,7 @@ class NoticeAmendmentsTest(TestCase):
 
         self.assertEqual(amendment['instruction'], amdpar)
         self.assertEqual(amendment['cfr_part'], '105')
-        self.assertItemsEqual(['105-1', '105-2', '105-3'],
-                              changes.keys())
+        six.assertCountEqual(self, ['105-1', '105-2', '105-3'], changes.keys())
         for change_list in changes.values():
             self.assertEqual(1, len(change_list))
             change = change_list[0]
@@ -216,7 +216,7 @@ class NoticeAmendmentsTest(TestCase):
 
         self.assertEqual(amendment['instruction'], amdpar)
         self.assertEqual(amendment['cfr_part'], '105')
-        self.assertEqual(changes.keys(), ['105-1-b'])
+        six.assertCountEqual(self, changes.keys(), ['105-1-b'])
 
         changes = changes['105-1-b'][0]
         self.assertEqual(changes['action'], 'PUT')
@@ -243,8 +243,8 @@ class NoticeAmendmentsTest(TestCase):
         self.assertEqual(amd1['cfr_part'], '105')
         self.assertEqual(amd2['instruction'], amdpar2)
         self.assertEqual(amd2['cfr_part'], '105')
-        self.assertEqual(changes1.keys(), ['105-1-b'])
-        self.assertEqual(changes2.keys(), ['105-1-c'])
+        six.assertCountEqual(self, changes1.keys(), ['105-1-b'])
+        six.assertCountEqual(self, changes2.keys(), ['105-1-c'])
 
         changes = changes1['105-1-b'][0]
         self.assertEqual(changes['action'], 'PUT')
@@ -316,7 +316,7 @@ class NoticeAmendmentsTest(TestCase):
 
         self.assertEqual(amendment['instruction'], amdpar)
         self.assertEqual(amendment['cfr_part'], '105')
-        self.assertEqual(changes.keys(), ['105-11-p5'])
+        six.assertCountEqual(self, changes.keys(), ['105-11-p5'])
         changes = changes['105-11-p5'][0]
         self.assertEqual(changes['action'], 'PUT')
 
@@ -342,10 +342,12 @@ class NoticeAmendmentsTest(TestCase):
         amd1, amd2 = amendments.fetch_amendments(ctx.xml)
         self.assertEqual(amd1['instruction'], amdpar1)
         self.assertEqual(amd1['cfr_part'], '111')
-        self.assertEqual(dict(amd1['changes']).keys(), ['111-22-b'])
+        six.assertCountEqual(self,
+                             [c[0] for c in amd1['changes']], ['111-22-b'])
         self.assertEqual(amd2['instruction'], amdpar2)
         self.assertEqual(amd2['cfr_part'], '111')
-        self.assertEqual(dict(amd2['changes']).keys(), ['111-33-c'])
+        six.assertCountEqual(self,
+                             [c[0] for c in amd2['changes']], ['111-33-c'])
 
     def test_process_amendments_subpart(self):
         with XMLBuilder("RULE") as ctx:
@@ -407,8 +409,10 @@ class NoticeAmendmentsTest(TestCase):
         self.assertEqual(amd1['cfr_part'], '105')
         self.assertEqual(amd2['instruction'], amdpar2)
         self.assertEqual(amd2['cfr_part'], '106')
-        self.assertEqual(['105-1-a'], dict(amd1['changes']).keys())
-        self.assertEqual(['106-3-b'], dict(amd2['changes']).keys())
+        six.assertCountEqual(self,
+                             [c[0] for c in amd1['changes']], ['105-1-a'])
+        six.assertCountEqual(self,
+                             [c[0] for c in amd2['changes']], ['106-3-b'])
 
     def test_process_amendments_context(self):
         """Context should carry over between REGTEXTs"""
@@ -433,9 +437,11 @@ class NoticeAmendmentsTest(TestCase):
         self.assertEqual(amd1['cfr_part'], '106')
         self.assertEqual(amd2['instruction'], amdpar2)
         self.assertEqual(amd2['cfr_part'], '106')
-        self.assertEqual(['106-1-a'], dict(amd1['changes']).keys())
-        self.assertItemsEqual(['106-C', '106-C-p1'],
-                              dict(amd2['changes']).keys())
+        six.assertCountEqual(self,
+                             [c[0] for c in amd1['changes']], ['106-1-a'])
+        six.assertCountEqual(
+            self,
+            [c[0] for c in amd2['changes']], ['106-C', '106-C-p1'])
 
     def test_process_amendments_insert_in_order(self):
         amdpar = '[insert-in-order] [label:123-45-p6]'
@@ -455,7 +461,7 @@ class NoticeAmendmentsTest(TestCase):
 
         self.assertEqual(amendment['instruction'], amdpar)
         self.assertEqual(amendment['cfr_part'], '123')
-        self.assertEqual(['123-45-p6'], changes.keys())
+        six.assertCountEqual(self, ['123-45-p6'], changes.keys())
         self.assertEqual('INSERT', changes['123-45-p6'][0]['action'])
 
     def test_process_amendments_authority(self):

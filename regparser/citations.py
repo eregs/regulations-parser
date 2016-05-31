@@ -108,7 +108,7 @@ class Label(object):
             lst.append(self.settings.get('c1'))
             lst.append(self.settings.get('c2'))
             lst.append(self.settings.get('c3'))
-        return filter(bool, lst)
+        return [l for l in lst if l]
 
     def __repr__(self):
         fields = ', '.join(
@@ -213,7 +213,7 @@ def multiple_citations(matches, initial_label, comment=False,
         label = initial_label   # Share context in between sub-citations
         for submatch in chain([outer_match.head], outer_match.tail):
             match = submatch.match or submatch     # might be wrapped
-            new_label = match_to_label(match.tokens, label, comment)
+            new_label = match_to_label(match, label, comment)
             if include_fill and submatch.through:
                 for fill_label in label.labels_until(new_label):
                     yield ParagraphCitation(

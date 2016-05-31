@@ -2,6 +2,8 @@ import json
 import logging
 import os
 
+from lxml import etree
+
 from regparser.history.versions import Version as VersionStruct
 from regparser.notice.encoder import AmendmentEncoder
 from regparser.notice.xml import NoticeXML
@@ -26,6 +28,7 @@ class Entry(object):
         Entry(1, 2, 3) / 4 / 5 == Entry(1, 2, 3, 4, 5)"""
         args = self.path + (other,)
         return self.__class__(*args)
+    __truediv__ = __div__
 
     def __str__(self):
         return os.path.join(*(self.PREFIX + self.path))
@@ -38,21 +41,21 @@ class Entry(object):
 
     def write(self, content):
         self._create_parent_dir()
-        with open(str(self), "w") as f:
+        with open(str(self), 'wb') as f:
             f.write(self.serialize(content))
             logger.info("Wrote {}".format(str(self)))
 
     def serialize(self, content):
-        """Default implementation; treat content as a string"""
+        """Default implementation; treat content as bytes"""
         return content
 
     def read(self):
         self._create_parent_dir()
-        with open(str(self)) as f:
+        with open(str(self), 'rb') as f:
             return self.deserialize(f.read())
 
     def deserialize(self, content):
-        """Default implementation; treat the content as a string"""
+        """Default implementation; treat the content as bytes"""
         return content
 
     def __iter__(self):
@@ -74,7 +77,7 @@ class Notice(Entry):
     PREFIX = (ROOT, 'notice_xml')
 
     def serialize(self, content):
-        return content.xml_str()
+        return etree.tostring(content.xml, encoding='UTF-8')
 
     def deserialize(self, content):
         return NoticeXML(content, str(self))
@@ -85,7 +88,7 @@ class Annual(Entry):
     PREFIX = (ROOT, 'annual')
 
     def serialize(self, content):
-        return content.xml_str()
+        return etree.tostring(content.xml, encoding='UTF-8')
 
     def deserialize(self, content):
         return XMLWrapper(content, str(self))
@@ -96,10 +99,10 @@ class Version(Entry):
     PREFIX = (ROOT, 'version')
 
     def serialize(self, content):
-        return content.json()
+        return content.json().encode('utf-8')
 
     def deserialize(self, content):
-        return VersionStruct.from_json(content)
+        return VersionStruct.from_json(content.decode('utf-8'))
 
     def __iter__(self):
         """Deserialize all Version objects we're aware of."""
@@ -124,11 +127,14 @@ class _JSONEntry(Entry):
     JSON_DECODER = None
 
     def serialize(self, content):
-        return self.JSON_ENCODER(
-            sort_keys=True, indent=4, separators=(', ', ': ')).encode(content)
+        encoder = self.JSON_ENCODER(
+            sort_keys=True, indent=4, separators=(', ', ': '))
+        as_text = encoder.encode(content)
+        return as_text.encode('utf-8')  # as bytes
 
     def deserialize(self, content):
-        return json.loads(content, object_hook=self.JSON_DECODER)
+        as_text = content.decode('utf-8')
+        return json.loads(as_text, object_hook=self.JSON_DECODER)
 
 
 class Tree(_JSONEntry):

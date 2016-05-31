@@ -1,5 +1,5 @@
-# vim: set encoding=utf-8
-from layer import Layer
+# -*- coding: utf-8 -*-
+from regparser.layer.layer import Layer
 from regparser.tree.struct import Node
 
 

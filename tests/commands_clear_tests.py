@@ -2,6 +2,7 @@ import os
 from unittest import TestCase
 
 from click.testing import CliRunner
+import six
 
 from regparser import index
 from regparser.commands.clear import clear
@@ -28,8 +29,8 @@ class CommandsClearTests(TestCase):
 
     def test_deletes_index(self):
         with self.cli.isolated_filesystem():
-            entry.Entry('aaa', 'bbb').write('ccc')
-            entry.Entry('bbb', 'ccc').write('ddd')
+            entry.Entry('aaa', 'bbb').write(b'ccc')
+            entry.Entry('bbb', 'ccc').write(b'ddd')
             self.assertEqual(1, len(entry.Entry("aaa")))
             self.assertEqual(1, len(entry.Entry("bbb")))
 
@@ -47,12 +48,15 @@ class CommandsClearTests(TestCase):
                        'top-level-file', 'other-root/aaa']
 
             for path in to_delete + to_keep:
-                entry.Entry(*path.split('/')).write('')
+                entry.Entry(*path.split('/')).write(b'')
 
             self.cli.invoke(clear, ['delroot', 'root/delsub'])
-            self.assertItemsEqual(['top-level-file', 'root', 'other-root'],
-                                  list(entry.Entry()))
-            self.assertItemsEqual(['othersub', 'aaa'],
-                                  list(entry.Entry('root')))
-            self.assertItemsEqual(['aaa'],
-                                  list(entry.Entry('other-root')))
+            six.assertCountEqual(self,
+                                 ['top-level-file', 'root', 'other-root'],
+                                 list(entry.Entry()))
+            six.assertCountEqual(self,
+                                 ['othersub', 'aaa'],
+                                 list(entry.Entry('root')))
+            six.assertCountEqual(self,
+                                 ['aaa'],
+                                 list(entry.Entry('other-root')))

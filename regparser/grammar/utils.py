@@ -2,26 +2,35 @@ from collections import namedtuple
 import re
 
 import pyparsing
-
-
-def keep_pos(source, location, tokens):
-    """Wrap the tokens with a class that also keeps track of the match's
-    location."""
-    return (WrappedResult(tokens, location, pyparsing.getTokensEndLoc()),)
+from six.moves import reduce
 
 
 Position = namedtuple('Position', ['start', 'end'])
 
 
-class WrappedResult():
-    """Keep track of matches along with their position. This is a bit of a
-    hack to get around PyParsing's tendency to drop that info."""
-    def __init__(self, tokens, start, end):
-        self.tokens = tokens
-        self.pos = Position(start, end)
+def keep_pos(expr):
+    """Transform a pyparsing grammar by inserting an attribute, "pos", on the
+    match which describes position information"""
+    locMarker = pyparsing.Empty().setParseAction(lambda s, loc, t: loc)
+    endlocMarker = locMarker.copy()
+    endlocMarker.callPreparse = False   # don't allow the cursor to move
+    return (
+        locMarker.setResultsName("pos_start") +
+        expr +
+        endlocMarker.setResultsName("pos_end")
+    ).setParseAction(parse_position)
 
-    def __getattr__(self, attr):
-        return getattr(self.tokens, attr)
+
+def parse_position(source, location, tokens):
+    """A pyparsing parse action which pulls out (and removes) the position
+    information and replaces it with a Position object"""
+    start, end = tokens['pos_start'], tokens['pos_end']
+    del tokens[0]
+    del tokens[-1]
+    del tokens['pos_start']
+    del tokens['pos_end']
+    tokens['pos'] = Position(start, end)
+    return tokens
 
 
 class DocLiteral(pyparsing.Literal):
@@ -117,6 +126,9 @@ class QuickSearchable(pyparsing.ParseElementEnhance):
         if (isinstance(grammar, pyparsing.And) and
                 isinstance(grammar.exprs[0], pyparsing.Optional)):
             return recurse(grammar.exprs[0].expr) | recurse(grammar.exprs[1])
+        if (isinstance(grammar, pyparsing.And) and
+                isinstance(grammar.exprs[0], pyparsing.Empty)):
+            return recurse(grammar.exprs[1])
         elif isinstance(grammar, pyparsing.And):
             return recurse(grammar.exprs[0])
         elif isinstance(grammar, (pyparsing.MatchFirst, pyparsing.Or)):

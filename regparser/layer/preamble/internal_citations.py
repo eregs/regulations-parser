@@ -10,11 +10,11 @@ logger = logging.getLogger(__name__)
 
 
 level1 = Word("IVXLCDM").leaveWhitespace().setResultsName("l1")
-level2 = Word(string.uppercase).leaveWhitespace().setResultsName("l2")
+level2 = Word(string.ascii_uppercase).leaveWhitespace().setResultsName("l2")
 level3 = Word(string.digits).leaveWhitespace().setResultsName("l3")
-level4 = Word(string.lowercase).leaveWhitespace().setResultsName("l4")
+level4 = Word(string.ascii_lowercase).leaveWhitespace().setResultsName("l4")
 level5 = Word("ivxlcdm").leaveWhitespace().setResultsName("l5")
-level6 = Word(string.lowercase).leaveWhitespace().setResultsName("l6")
+level6 = Word(string.ascii_lowercase).leaveWhitespace().setResultsName("l6")
 period = Suppress(".").leaveWhitespace()
 
 # e.g. I.B, I.B.3, I.B.3.d, I.B.3.d.v, I.B.3.d.v.f

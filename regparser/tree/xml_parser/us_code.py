@@ -1,5 +1,7 @@
 import re
 
+import six
+
 from regparser.tree.depth import markers as mtypes, optional_rules
 from regparser.tree.struct import Node
 from regparser.tree.xml_parser import paragraph_processor, tree_utils
@@ -37,7 +39,7 @@ class USCodeParagraphMatcher(paragraph_processor.BaseMatcher):
                        tree_utils.split_text(tagged_text, with_parens))
         for m, text, tagged_text in triplets:
             node = Node(text=text.strip(), label=[m], source_xml=xml)
-            node.tagged_text = unicode(tagged_text.strip())
+            node.tagged_text = six.text_type(tagged_text.strip())
             nodes.append(node)
         return nodes
 

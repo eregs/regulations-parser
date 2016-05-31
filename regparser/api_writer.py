@@ -1,3 +1,4 @@
+import codecs
 import logging
 import os
 import os.path
@@ -85,8 +86,8 @@ class GitWriteContent:
         node_text += ']\n'
 
         node_text += '---\n' + node.text
-        with open(root_path + os.sep + 'index.md', 'w') as f:
-            f.write(node_text.encode('utf8'))
+        with codecs.open(root_path + os.sep + 'index.md', 'w', 'utf-8') as f:
+            f.write(node_text)
 
         for idx, child in enumerate(node.children):
             child_path = root_path + os.sep + child_folders[idx]

@@ -38,7 +38,7 @@ class ParagraphProcessor(object):
             if tag_matcher:
                 nodes.extend(tag_matcher.derive_nodes(child, processor=self))
             else:
-                logger.warning("No tag match\n%s", etree.tostring(child))
+                logger.warning("No tag match\n%s", etree.tounicode(child))
 
         # Trailing stars don't matter; slightly more efficient to ignore them
         while nodes and nodes[-1].label[0] in mtypes.stars:

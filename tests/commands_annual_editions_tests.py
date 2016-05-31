@@ -86,13 +86,13 @@ class CommandsAnnualEditionsTests(TestCase):
             entry.Version('12', '1000', '1111').write(
                 Version('1111', date(2000, 1, 1), date(2000, 1, 1)))
             entry.Entry('annual', '12', '1000', 2000).write(
-                '<ROOT></ROOT>')
+                b'<ROOT></ROOT>')
 
             annual_editions.process_if_needed('12', '1000', last_versions)
             self.assertTrue(build_tree.called)
 
             build_tree.reset_mock()
-            entry.Entry('tree', '12', '1000', '1111').write('tree-here')
+            entry.Entry('tree', '12', '1000', '1111').write(b'tree-here')
             annual_editions.process_if_needed('12', '1000', last_versions)
             self.assertFalse(build_tree.called)
 

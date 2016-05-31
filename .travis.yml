@@ -2,6 +2,9 @@ language: python
 sudo: false
 python:
   - "2.7"
+  - "3.3"
+  - "3.4"
+  - "3.5"
 cache: pip
 install:
   - pip install -U pip wheel
@@ -22,4 +25,4 @@ env:
 script:
   - ./test-travis.sh
 after_success:
-  - if [[ $INTEGRATION_TARGET = '' ]]; then coveralls; fi
+  - if [[ $INTEGRATION_TARGET = '' ]] && [[ $TRAVIS_PYTHON_VERSION = '2.7' ]]; then coveralls; fi

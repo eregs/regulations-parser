@@ -3,6 +3,7 @@ from json import JSONEncoder
 import hashlib
 
 from lxml import etree
+import six
 
 from regparser.tree.depth.markers import MARKERLESS
 
@@ -23,13 +24,13 @@ class Node(object):
     def __init__(self, text='', children=[], label=[], title=None,
                  node_type=REGTEXT, source_xml=None):
 
-        self.text = unicode(text)
+        self.text = six.text_type(text)
 
         # defensive copy
         self.children = list(children)
 
         self.label = [str(l) for l in label if l != '']
-        title = unicode(title or '')
+        title = six.text_type(title or '')
         self.title = title or None
         self.node_type = node_type
         self.source_xml = source_xml
@@ -39,8 +40,11 @@ class Node(object):
                  "node_type = %s)") % (repr(self.text), repr(self.children),
                 repr(self.label), repr(self.title), repr(self.node_type)))
 
-    def __cmp__(self, other):
-        return cmp(repr(self), repr(other))
+    def __lt__(self, other):
+        return repr(self) < repr(other)
+
+    def __eq__(self, other):
+        return repr(self) == repr(other)
 
     def label_id(self):
         return '-'.join(self.label)
@@ -104,7 +108,7 @@ class FullNodeEncoder(JSONEncoder):
             result = {field: getattr(obj, field, None)
                       for field in self.FIELDS}
             if obj.source_xml is not None:
-                result['source_xml'] = etree.tostring(obj.source_xml)
+                result['source_xml'] = etree.tounicode(obj.source_xml)
             return result
         return super(FullNodeEncoder, self).default(obj)
 
@@ -297,9 +301,9 @@ class FrozenNode(object):
         hasher.update(self.tagged_text.encode('utf-8'))
         hasher.update(self.title.encode('utf-8'))
         hasher.update(self.label_id.encode('utf-8'))
-        hasher.update(self.node_type)
+        hasher.update(self.node_type.encode('utf-8'))
         for child in self.children:
-            hasher.update(child.hash)
+            hasher.update(child.hash.encode('utf-8'))
         return hasher.hexdigest()
 
     def __hash__(self):
@@ -327,7 +331,7 @@ class FrozenNode(object):
         also checks if this node has already been instantiated. If so, it
         returns the instantiated version (i.e. only one of each identical node
         exists in memory)"""
-        children = map(FrozenNode.from_node, node.children)
+        children = [FrozenNode.from_node(n) for n in node.children]
         fresh = FrozenNode(text=node.text, children=children, label=node.label,
                            title=node.title or '', node_type=node.node_type,
                            tagged_text=getattr(node, 'tagged_text', '') or '')

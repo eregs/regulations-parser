@@ -4,6 +4,8 @@ import os
 from unittest import TestCase
 
 from click.testing import CliRunner
+import six
+
 from regparser.commands.diffs import diffs
 from regparser.index import entry
 from regparser.tree.struct import Node
@@ -22,7 +24,7 @@ class CommandsDiffsTests(TestCase):
 
     def assert_diff_keys(self, lhs_id, rhs_id, keys):
         entry = self.diff_dir / lhs_id / rhs_id
-        self.assertItemsEqual(keys, entry.read().keys())
+        six.assertCountEqual(self, keys, entry.read().keys())
 
     def test_diffs_generated(self):
         """Diffs are calculated -- they will be empty between the same

@@ -25,13 +25,13 @@ class CommandsCurrentVersionTests(TestCase):
         to_patch = 'regparser.commands.current_version.xml_parser'
         with CliRunner().isolated_filesystem(), patch(to_patch) as xml_parser:
             entry.Entry('annual', self.title, self.part, self.year).write(
-                '<ROOT />')
+                b'<ROOT />')
 
             xml_parser.reg_text.build_tree.return_value = {'my': 'tree'}
             current_version.process_if_needed(self.volume, self.part)
             tree = entry.Entry('tree', self.title, self.part,
                                self.version_id).read()
-            self.assertEqual(json.loads(tree), {'my': 'tree'})
+            self.assertEqual(json.loads(tree.decode('utf-8')), {'my': 'tree'})
             notice = entry.Notice(self.version_id).read()
             self.assertEqual(notice.version_id, self.version_id)
             self.assertEqual(notice.cfr_refs,
@@ -42,14 +42,14 @@ class CommandsCurrentVersionTests(TestCase):
         with CliRunner().isolated_filesystem():
             annual = entry.Entry('annual', self.title, self.part, self.year)
             tree = entry.Entry('tree', self.title, self.part, self.version_id)
-            annual.write('ANNUAL')
-            tree.write('TREE')
+            annual.write(b'ANNUAL')
+            tree.write(b'TREE')
 
             current_version.process_if_needed(self.volume, self.part)
 
             # didn't change
-            self.assertEqual(annual.read(), 'ANNUAL')
-            self.assertEqual(tree.read(), 'TREE')
+            self.assertEqual(annual.read(), b'ANNUAL')
+            self.assertEqual(tree.read(), b'TREE')
 
     def test_create_version(self):
         """Creates a version associated with the part and year"""

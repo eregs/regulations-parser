@@ -1,10 +1,12 @@
-# vim: set encoding=utf-8
-import logging
+# -*- coding: utf-8 -*-
+from __future__ import unicode_literals
 from itertools import takewhile
+import logging
 import re
 
 from lxml import etree
 from pyparsing import LineStart, Optional, Suppress
+import six
 
 from regparser.citations import internal_citations
 from regparser.grammar import appendix as grammar
@@ -53,7 +55,7 @@ def is_appendix_header(node):
             (node.tag == 'HD' and node.attrib['SOURCE'] == 'HED'))
 
 
-_first_markers = [re.compile(ur'[\)\.|,|;|-|—]\s*\(' + lvl[0] + '\)')
+_first_markers = [re.compile(r'[\)\.|,|;|-|—]\s*\(' + lvl[0] + '\)')
                   for lvl in p_levels]
 
 
@@ -393,7 +395,7 @@ def initial_marker(text):
 def build_non_reg_text(reg_xml, reg_part):
     """ This builds the tree for the non-regulation text such as Appendices
     and the Supplement section """
-    if isinstance(reg_xml, str) or isinstance(reg_xml, unicode):
+    if isinstance(reg_xml, six.string_types):
         doc_root = etree.fromstring(reg_xml)
     else:
         doc_root = reg_xml

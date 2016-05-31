@@ -56,7 +56,7 @@ class InternalCitationParser(Layer):
                                        title=title)
         if self.verify_citations:
             citations = self.remove_missing_citations(citations, text)
-        all_citations = list(map(to_layer, citations))
+        all_citations = [to_layer(c) for c in citations]
 
         return self.strip_whitespace(text, all_citations)
 

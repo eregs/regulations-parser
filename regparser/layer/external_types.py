@@ -4,9 +4,9 @@ import abc
 from collections import namedtuple
 import re
 import string
-import urllib
 
 from pyparsing import Optional, Suppress, Word
+from six.moves.urllib.parse import urlencode
 
 from regparser.citations import cfr_citations
 from regparser.grammar.utils import Marker, QuickSearchable
@@ -36,7 +36,7 @@ class FinderBase(object):
 def fdsys_url(**params):
     """Generate a URL to an FDSYS redirect"""
     params['year'] = params.get('year', 'mostrecent')
-    return 'http://api.fdsys.gov/link?{}'.format(urllib.urlencode(params))
+    return 'http://api.fdsys.gov/link?{}'.format(urlencode(params))
 
 
 class CFRFinder(FinderBase):

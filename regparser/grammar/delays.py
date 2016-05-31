@@ -2,6 +2,7 @@ from datetime import date
 import string
 
 from pyparsing import Optional, Suppress, Word
+from six.moves import reduce
 
 from regparser.grammar import utils
 
@@ -49,7 +50,7 @@ def int2Month(m):
     return token.setParseAction(lambda: m)
 
 
-months = reduce(lambda l, r: l | r, map(int2Month, range(2, 13)))
+months = reduce(lambda l, r: l | r, (int2Month(i) for i in range(2, 13)))
 
 
 date_parser = (

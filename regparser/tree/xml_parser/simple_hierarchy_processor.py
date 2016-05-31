@@ -1,5 +1,7 @@
 import re
 
+import six
+
 from regparser.tree.depth import markers as mtypes, optional_rules
 from regparser.tree.struct import Node
 from regparser.tree.xml_parser import paragraph_processor, tree_utils
@@ -19,7 +21,7 @@ class DepthParagraphMatcher(paragraph_processor.BaseMatcher):
     def derive_nodes(self, xml, processor=None):
         text = tree_utils.get_node_text(xml).strip()
         node = Node(text=text, source_xml=xml)
-        node.tagged_text = unicode(
+        node.tagged_text = six.text_type(
             tree_utils.get_node_text_tags_preserved(xml).strip())
 
         regex = self._PAREN_REGEX if text[:1] == '(' else self._PERIOD_REGEX

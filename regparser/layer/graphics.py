@@ -1,3 +1,4 @@
+from __future__ import unicode_literals
 from collections import defaultdict
 import logging
 import re
@@ -45,7 +46,7 @@ def gid_to_url(gid):
 
 
 class Graphics(Layer):
-    gid = re.compile(ur'!\[(?P<alt>[\w\s]*)\]\((?P<gid>[a-zA-Z0-9.\-]+?)\)')
+    gid = re.compile(r'!\[(?P<alt>[\w\s]*)\]\((?P<gid>[a-zA-Z0-9.\-]+?)\)')
     ext = re.compile(r'\.(png|gif|jpg)$')
     shorthand = 'graphics'
 

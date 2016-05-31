@@ -40,14 +40,14 @@ class CommandsSxSLayersTests(TestCase):
                               11, 222, 'aaa')
 
             self.create_versions()
-            entry.Entry('sxs', 'aaa').write('')
-            entry.Entry('sxs', 'bbb').write('')
+            entry.Entry('sxs', 'aaa').write(b'')
+            entry.Entry('sxs', 'bbb').write(b'')
             self.assertRaises(dependency.Missing, sxs_layers.is_stale,
                               11, 222, 'aaa')
 
-            entry.Entry('tree', 11, 222, 'bbb').write('')   # Wrong tree
+            entry.Entry('tree', 11, 222, 'bbb').write(b'')   # Wrong tree
             self.assertRaises(dependency.Missing, sxs_layers.is_stale,
                               11, 222, 'aaa')
 
-            entry.Entry('tree', 11, 222, 'aaa').write('')
+            entry.Entry('tree', 11, 222, 'aaa').write(b'')
             self.assertTrue(sxs_layers.is_stale(11, 222, 'aaa'))

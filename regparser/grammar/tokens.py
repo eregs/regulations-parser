@@ -5,6 +5,8 @@
 """
 from copy import copy
 
+import six
+
 
 def _none_str(value):
     """Shorthand for displaying a variable as a string or the text None"""
@@ -24,13 +26,13 @@ class Token(object):
         return ((not types or any(isinstance(self, typ) for typ in types)) and
                 (not fields or all(hasattr(self, f) for f in fields)) and
                 (not fields or all(getattr(self, f) ==
-                                   v for f, v in fields.iteritems())))
+                                   v for f, v in fields.items())))
 
     def copy(self, **fields):
         """Helper method to create a new instance of this token with the
         **fields set."""
         new_version = copy(self)
-        for field, value in fields.iteritems():
+        for field, value in fields.items():
             setattr(new_version, field, value)
         return new_version
 
@@ -78,7 +80,7 @@ class Context(Token):
 
     def __repr__(self):
         return "Context([ %s , certain=%s ])" % (
-            ', '.join(map(_none_str, self.label)), self.certain)
+            ', '.join(_none_str(l) for l in self.label), self.certain)
 
 
 class Paragraph(Token):
@@ -97,7 +99,7 @@ class Paragraph(Token):
         """label and field are the only "materialized" fields. Everything
         other field becomes part of the label, offering a more legible API"""
         if sub is None and subpart:
-            if isinstance(subpart, basestring):
+            if isinstance(subpart, six.string_types):
                 sub = 'Subpart:{}'.format(subpart)
             else:
                 sub = 'Subpart'
@@ -118,7 +120,7 @@ class Paragraph(Token):
 
     def __repr__(self):
         return "Paragraph([ %s ], field = %s )" % (
-            ', '.join(map(_none_str, self.label)), _none_str(self.field))
+            ', '.join(_none_str(l) for l in self.label), _none_str(self.field))
 
     def label_text(self):
         """Converts self.label into a string"""
@@ -137,7 +139,7 @@ class TokenList(Token):
         self.tokens = tokens
 
     def __repr__(self):
-        return "TokenList([ %s ])" % ', '.join(map(repr, self.tokens))
+        return "TokenList([ %s ])" % ', '.join(repr(t) for t in self.tokens)
 
     def __iter__(self):
         return iter(self.tokens)

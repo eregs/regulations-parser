@@ -87,7 +87,7 @@ def find_candidate(root, label_last, amended_labels):
 def resolve_candidates(amend_map, warn=True):
     """Ensure candidate isn't actually accounted for elsewhere, and fix
     it's label. """
-    for label, nodes in amend_map.items():
+    for label, nodes in list(amend_map.items()):
         for node in filter(lambda n: 'node' in n and n['candidate'], nodes):
             node_label = node['node'].label_id()
             if node_label not in amend_map:
@@ -208,8 +208,12 @@ def create_add_amendment(amendment):
             parent_label = None
         changes.append(format_node(node, amendment, parent_label))
 
-    for change in filter(lambda c: c.values()[0]['action'] == 'PUT', changes):
-        label = change.keys()[0]
+    puts = [c for c in changes
+            if any(v['action'] == 'PUT' for v in c.values())]
+    for change in puts:
+        # This is awkward, but we know there will only be _one_ key in the
+        # "changes" dictionary
+        label = list(change.keys())[0]
         node = struct.find(amendment['node'], label)
         text = node.text.strip()
         marker = marker_of(node)

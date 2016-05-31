@@ -1,4 +1,5 @@
-# vim: set fileencoding=utf-8
+# -*- coding: utf-8 -*-
+from __future__ import unicode_literals
 from collections import defaultdict
 import re
 
@@ -135,13 +136,13 @@ class Terms(Layer):
         layer_el = []
         #   Remove any definitions defined in this paragraph
         term_list = [
-            (term, ref) for term, ref in applicable_terms.iteritems()
+            (term, ref) for term, ref in applicable_terms.items()
             if ref.label != node.label_id()]
 
         exclusions = self.excluded_offsets(node)
 
         matches = self.calculate_offsets(node.text, term_list, exclusions)
-        matches = sorted(matches, key=lambda(term, r, o): term)
+        matches = sorted(matches, key=lambda triplet: triplet[0])
         for term, ref, offsets in matches:
             layer_el.append({
                 "ref": ref.term + ':' + ref.label,
@@ -206,7 +207,7 @@ class Terms(Layer):
 
         matches = []
         for term, ref in search_terms:
-            re_term = ur'\b' + re.escape(term) + ur'\b'
+            re_term = r'\b' + re.escape(term) + r'\b'
             offsets = [
                 (m.start(), m.end())
                 for m in re.finditer(re_term, text.lower())]

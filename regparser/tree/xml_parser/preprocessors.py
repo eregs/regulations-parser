@@ -1,6 +1,7 @@
-# vim: set encoding=utf-8
+# -*- coding: utf-8 -*-
 """Set of transforms we run on notice XML to account for common inaccuracies
 in the XML"""
+from __future__ import unicode_literals
 import abc
 from copy import deepcopy
 import logging
@@ -96,7 +97,7 @@ class ParenthesesCleanup(PreProcessorBase):
 
 
 class MoveAdjoiningChars(PreProcessorBase):
-    ORPHAN_REGEX = re.compile(ur"(\.|—)")
+    ORPHAN_REGEX = re.compile(r"(\.|—)")
 
     def transform(self, xml):
         # if an e tag has an emdash or period after it, put the
@@ -175,8 +176,8 @@ class ExtractTags(PreProcessorBase):
         naive solution: convert to a string, reparse"""
         next_el = extract.getnext()
         if next_el is not None:
-            xml_str = self.strip_root_tag(etree.tostring(extract))
-            next_str = etree.tostring(next_el)
+            xml_str = self.strip_root_tag(etree.tounicode(extract))
+            next_str = etree.tounicode(next_el)
 
             if include_tag:
                 xml_str += '\n' + next_str

@@ -49,5 +49,5 @@ def body_to_string(xml_node):
     """Create a string from the text of this node and its children (without
     the outer tag)"""
     return (xml_node.text.lstrip() +
-            ''.join(etree.tostring(c) for c in xml_node) +
+            ''.join(etree.tounicode(c) for c in xml_node) +
             (xml_node.tail or '').rstrip())

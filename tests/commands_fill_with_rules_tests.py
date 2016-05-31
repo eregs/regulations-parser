@@ -3,6 +3,7 @@ from unittest import TestCase
 
 from click.testing import CliRunner
 from mock import patch
+import six
 
 from regparser.commands import fill_with_rules
 from regparser.history.versions import Version
@@ -30,26 +31,29 @@ class CommandsFillWithRulesTests(TestCase):
             (tree_dir / '555').write(Node())
 
             deps = fill_with_rules.dependencies(
-                tree_dir, vers_dir, zip(versions, parents))
+                tree_dir, vers_dir, list(zip(versions, parents)))
 
             # First is skipped, as we can't build it from a rule
             self.assertNotIn(str(tree_dir / '111'), deps)
             # Second can also be skipped as a tree already exists
             self.assertEqual(deps.dependencies(str(tree_dir / '222')), [])
             # Third relies on the associated versions and the second tree
-            self.assertItemsEqual(
+            six.assertCountEqual(
+                self,
                 deps.dependencies(str(tree_dir / '333')),
                 [str(tree_dir / '222'), str(notice_dir / '333'),
                  str(vers_dir / '333')])
             # Fourth relies on the third, even though it's not been built
-            self.assertItemsEqual(
+            six.assertCountEqual(
+                self,
                 deps.dependencies(str(tree_dir / '444')),
                 [str(tree_dir / '333'), str(notice_dir / '444'),
                  str(vers_dir / '444')])
             # Fifth can be skipped as the tree already exists
             self.assertEqual(deps.dependencies(str(tree_dir / '555')), [])
             # Six relies on the fifth
-            self.assertItemsEqual(
+            six.assertCountEqual(
+                self,
                 deps.dependencies(str(tree_dir / '666')),
                 [str(tree_dir / '555'), str(notice_dir / '666'),
                  str(vers_dir / '666')])
@@ -91,7 +95,7 @@ class CommandsFillWithRulesTests(TestCase):
         with self.cli.isolated_filesystem():
             tree_dir = entry.Tree('12', '1000')
             (tree_dir / 'old').write(Node())
-            entry.Entry('notice_xml', 'new').write('')
+            entry.Entry('notice_xml', 'new').write(b'')
             fill_with_rules.process(tree_dir, 'old', 'new')
             changes = dict(compile_regulation.call_args[0][1])
             self.assertEqual(changes, {

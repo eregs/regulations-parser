@@ -1,4 +1,5 @@
-# vim: set encoding=utf-8
+# -*- coding: utf-8 -*-
+from __future__ import unicode_literals
 import itertools
 import logging
 import re
@@ -42,7 +43,7 @@ def get_first_interp_marker(text):
         return text[:text.find('*')].strip()        # up to star
 
 
-_first_markers = [re.compile(ur'[\.|,|;|:|\-|—]\s*(' + marker + ')\.')
+_first_markers = [re.compile(r'[\.|,|;|:|\-|—]\s*(' + marker + ')\.')
                   for marker in ['i', 'A', '1']]
 
 
@@ -66,7 +67,7 @@ def collapsed_markers_matches(node_text, tagged_text):
                     for m in marker.finditer(node_text) if m.start() > 0)
         possible = remove_citation_overlaps(node_text, possible)
         # If certain characters follow, kill it
-        for following in ("e.", ")", u"”", '"', "'"):
+        for following in ("e.", ")", "”", '"', "'"):
             possible = [(m, s, end) for m, s, end in possible
                         if not node_text[end:].startswith(following)]
         possible = [m for m, _, _ in possible]

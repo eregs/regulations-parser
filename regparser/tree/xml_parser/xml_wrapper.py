@@ -1,6 +1,7 @@
 from copy import deepcopy
 
 from lxml import etree
+import six
 
 from regparser.plugins import class_paths_to_classes
 import settings
@@ -13,10 +14,12 @@ class XMLWrapper(object):
         """Includes automatic conversion from string and a deep copy for
         safety. `source` represents the providence of this xml. It is _not_
         serialized and hence does not follow the xml through the index"""
-        if isinstance(xml, basestring):
+        if isinstance(xml, six.binary_type):
             self.xml = etree.fromstring(xml)
-        else:
+        elif isinstance(xml, etree._Element):
             self.xml = deepcopy(xml)
+        else:
+            raise ValueError("xml should be either binary or an lxml node")
         self.source = source
 
     @property
@@ -39,4 +42,4 @@ class XMLWrapper(object):
         return self.xml.xpath(*args, **kwargs)
 
     def xml_str(self):
-        return etree.tostring(self.xml, pretty_print=True)
+        return etree.tounicode(self.xml, pretty_print=True)
