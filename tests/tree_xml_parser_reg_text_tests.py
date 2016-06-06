@@ -2,7 +2,7 @@
 from contextlib import contextmanager
 from unittest import TestCase
 
-from lxml import etree
+from defusedxml.lxml import etree
 from mock import patch
 
 from regparser.test_utils.node_accessor import NodeAccessor

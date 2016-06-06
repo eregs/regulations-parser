@@ -2,7 +2,7 @@
 from copy import deepcopy
 from itertools import chain
 
-from lxml import etree
+from defusedxml.lxml import etree
 from six.moves.html_parser import HTMLParser
 
 from regparser.tree.priority_stack import PriorityStack

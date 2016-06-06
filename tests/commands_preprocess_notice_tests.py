@@ -3,7 +3,7 @@ import re
 from unittest import TestCase
 
 from click.testing import CliRunner
-from lxml import etree
+from defusedxml.lxml import etree
 from mock import patch
 
 from regparser.commands.preprocess_notice import (

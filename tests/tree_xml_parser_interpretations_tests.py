@@ -1,6 +1,6 @@
 # vim: set encoding=utf-8
 from unittest import TestCase
-from lxml import etree
+from defusedxml.lxml import etree
 
 from regparser.tree.xml_parser import interpretations, tree_utils
 

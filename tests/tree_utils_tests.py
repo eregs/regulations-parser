@@ -2,7 +2,7 @@
 from functools import partial as mk_partial_fn
 import unittest
 
-from lxml import etree
+from defusedxml.lxml import etree
 
 from regparser.tree.struct import Node
 from regparser.tree.xml_parser import tree_utils

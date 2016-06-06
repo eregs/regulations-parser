@@ -4,7 +4,7 @@ from copy import deepcopy
 import logging
 from itertools import dropwhile
 
-from lxml import etree
+from defusedxml.lxml import etree
 
 from regparser.notice import changes, util
 from regparser.notice.amdparser import amendment_from_xml

@@ -6,7 +6,7 @@ import shutil
 from unittest import TestCase
 
 from click.testing import CliRunner
-from lxml import etree
+from defusedxml.lxml import etree
 from mock import Mock, patch
 
 from regparser.commands.write_to import transform_notice, write_to

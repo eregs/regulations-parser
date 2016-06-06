@@ -2,7 +2,7 @@
 from itertools import takewhile
 import logging
 
-from lxml import etree
+from defusedxml.lxml import etree
 
 from regparser.grammar import amdpar, tokens
 from regparser.tree.struct import Node

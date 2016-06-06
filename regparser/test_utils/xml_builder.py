@@ -1,7 +1,7 @@
 from copy import deepcopy
 from functools import partial
 
-from lxml import etree
+from defusedxml.lxml import etree
 
 
 class XMLBuilder(object):

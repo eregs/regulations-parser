@@ -1,4 +1,4 @@
-from lxml import etree
+from defusedxml.lxml import etree
 
 
 def prepost_pend_spaces(el):

@@ -4,7 +4,7 @@ from itertools import takewhile
 import logging
 import re
 
-from lxml import etree
+from defusedxml.lxml import etree
 from pyparsing import LineStart, Optional, Suppress
 import six
 
