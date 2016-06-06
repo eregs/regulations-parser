@@ -1,6 +1,6 @@
 from copy import deepcopy
 
-from lxml import etree
+from defusedxml.lxml import etree
 import six
 
 from regparser.plugins import class_paths_to_classes

@@ -7,7 +7,7 @@ from copy import deepcopy
 import logging
 import re
 
-from lxml import etree
+from defusedxml.lxml import etree
 
 from regparser.notice.amdparser import parse_amdpar
 from regparser.tree.xml_parser.tree_utils import (

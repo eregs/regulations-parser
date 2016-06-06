@@ -1,7 +1,7 @@
 import abc
 import logging
 
-from lxml import etree
+from defusedxml.lxml import etree
 
 from regparser.layer.key_terms import KeyTerms
 from regparser.layer.formatting import table_xml_to_plaintext

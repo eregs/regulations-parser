@@ -12,6 +12,7 @@ setup(
         "cached-property",
         "click",
         "coloredLogs",
+        "defusedxml",
         "GitPython",
         "inflection",
         "ipdb",

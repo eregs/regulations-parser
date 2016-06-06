@@ -6,7 +6,7 @@ import logging
 import os
 
 from cached_property import cached_property
-from lxml import etree
+from defusedxml.lxml import etree
 import requests
 from six.moves.urllib.parse import urlparse
 

@@ -1,5 +1,5 @@
 # vim: set encoding=utf-8
-from lxml import etree
+from defusedxml.lxml import etree
 from regparser.notice import sxs
 from unittest import TestCase
 

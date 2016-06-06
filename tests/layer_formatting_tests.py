@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 from unittest import TestCase
 
-from lxml import etree
+from defusedxml.lxml import etree
 from regparser.layer import formatting
 from regparser.test_utils.xml_builder import XMLBuilder
 from regparser.tree.struct import Node

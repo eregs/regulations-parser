@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from unittest import TestCase
 
-from lxml import etree
+from defusedxml.lxml import etree
 
 from regparser.grammar import tokens
 from regparser.notice import amdparser

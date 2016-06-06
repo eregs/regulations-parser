@@ -26,7 +26,8 @@ def update_dictionary(namespace, original):
     def handle_plugin(ext):
         # Because the extension is not a class, we can just access ext.plugin
         plugin = ext.plugin
-        assert isinstance(plugin, dict)
+        if not isinstance(plugin, dict):
+            raise Exception("Plugin must be a dict: %s", plugin)
         for key in plugin:
             original[key].extend(plugin[key])
 

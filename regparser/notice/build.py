@@ -1,6 +1,6 @@
 import logging
 
-from lxml import etree
+from defusedxml.lxml import etree
 
 from regparser.grammar.unified import notice_cfr_p
 from regparser.notice.amendments import fetch_amendments

@@ -2,7 +2,7 @@ import json
 import logging
 import os
 
-from lxml import etree
+from defusedxml.lxml import etree
 
 from regparser.history.versions import Version as VersionStruct
 from regparser.notice.encoder import AmendmentEncoder

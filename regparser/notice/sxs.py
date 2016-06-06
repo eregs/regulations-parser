@@ -1,7 +1,7 @@
 from copy import deepcopy
 from itertools import dropwhile, takewhile
 
-from lxml import etree
+from defusedxml.lxml import etree
 
 from regparser.citations import internal_citations, Label
 from regparser.notice.util import body_to_string, spaces_then_remove
