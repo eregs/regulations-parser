@@ -12,7 +12,11 @@ This repository is part of a larger project. To read about it, please see
 
 ## Status
 [![Build Status](https://travis-ci.org/eregs/regulations-parser.png)](https://travis-ci.org/eregs/regulations-parser)
-[![Coverage Status](https://coveralls.io/repos/18F/regulations-parser/badge.svg?branch=master&service=github)](https://coveralls.io/github/18F/regulations-parser?branch=master)
+[![Dependency Status](https://gemnasium.com/badges/github.com/eregs/regulations-parser.svg)](https://gemnasium.com/github.com/eregs/regulations-parser)
+[![Coverage Status](https://coveralls.io/repos/eregs/regulations-parser/badge.svg?branch=master&service=github)](https://coveralls.io/github/eregs/regulations-parser?branch=master)
+[![Code Climate](https://codeclimate.com/github/eregs/regulations-parser/badges/gpa.svg)](https://codeclimate.com/github/eregs/regulations-parser)
+[![Code Issues](https://www.quantifiedcode.com/api/v1/project/1be777570ae34c9694b51e29674b68f6/badge.svg)](https://www.quantifiedcode.com/app/project/1be777570ae34c9694b51e29674b68f6)
+
 
 ## Docs
 
