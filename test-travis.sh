@@ -4,6 +4,7 @@ set -x
 if [[ $INTEGRATION_TARGET = '' ]]; then
   nosetests --with-cov --cov-report term-missing --cov regparser
   flake8 .
+  bandit -r .
 else
   eregs clear
   ./integration_test.py uninstall
