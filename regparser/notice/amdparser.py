@@ -458,7 +458,8 @@ def make_instructions(tokenized):
     for i in range(len(tokenized)):
         token = tokenized[i]
         if token.match(tokens.Verb):
-            assert token.active
+            if not token.active:
+                raise Exception("Verb should be active: %s", token)
             verb = token.verb
         # MOVEs must have _two_ paragraphs
         elif (verb == tokens.Verb.MOVE and
