@@ -131,31 +131,32 @@ def match_labels_and_changes(amendments, section_node):
     eliminate paragraphs that are just stars for positioning, for example.  """
     amended_labels = [a.label_id() for a in amendments]
 
-    amend_map = defaultdict(list)
+    amend_map = OrderedDict()
     for amend in amendments:
+        existing = amend_map.get(amend.label_id(), [])
         change = {'action': amend.action, 'amdpar_xml': amend.amdpar_xml}
         if amend.field is not None:
             change['field'] = amend.field
 
         if amend.action == 'MOVE':
             change['destination'] = amend.destination
-            amend_map[amend.label_id()].append(change)
+            amend_map[amend.label_id()] = existing + [change]
         elif amend.action == 'DELETE':
-            amend_map[amend.label_id()].append(change)
+            amend_map[amend.label_id()] = existing + [change]
         elif section_node is not None:
             node = struct.find(section_node, amend.label_id())
             if node is None:
                 candidate = find_misparsed_node(
                     section_node, amend.label, change, amended_labels)
                 if candidate:
-                    amend_map[amend.label_id()].append(candidate)
+                    amend_map[amend.label_id()] = existing + [candidate]
             else:
                 change['node'] = node
                 change['candidate'] = False
                 level2 = amend.tree_format_level2()
                 if level2 and node.is_section():
                     change['parent_label'] = level2
-                amend_map[amend.label_id()].append(change)
+                amend_map[amend.label_id()] = existing + [change]
 
     resolve_candidates(amend_map)
     return amend_map
