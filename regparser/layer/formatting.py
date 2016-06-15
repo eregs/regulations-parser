@@ -1,7 +1,7 @@
 """Find and abstracts formatting information from the regulation tree. In many
 ways, this is like a markdown parser."""
 import abc
-from collections import defaultdict
+from collections import OrderedDict
 import re
 
 from regparser.layer.layer import Layer
@@ -176,10 +176,11 @@ class PlaintextFormatData(object):
         """Find all matches of self.REGEX, transform them into the appropriate
         data structure, return these as a list"""
         # [string] -> (match object, count)
-        match_text_counter = defaultdict(lambda: (None, 0))
+        match_text_counter = OrderedDict()
         for match in self.REGEX.finditer(text):
             match_text = match.group(0)
-            _, count = match_text_counter[match_text]
+            existing = match_text_counter.get(match_text, (None, 0))
+            count = existing[1]
             match_text_counter[match_text] = (match, count + 1)
 
         for match, count in match_text_counter.values():
