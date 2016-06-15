@@ -128,15 +128,15 @@ class ParagraphProcessor(object):
             depths = derive_depths(markers, constraints)
 
             if not depths:
-                logging.warning("Could not derive paragraph depths."
-                                " Retrying with relaxed constraints.")
+                logger.warning("Could not derive paragraph depths."
+                               " Retrying with relaxed constraints.")
                 deemphasized_markers = [deemphasize(m) for m in markers]
                 constraints = self.relaxed_constraints()
                 depths = derive_depths(deemphasized_markers, constraints)
 
             if not depths:
                 fails_at = debug_idx(markers, constraints)
-                logging.error(
+                logger.error(
                     "Could not determine paragraph depths (<%s /> %s):\n"
                     "%s\n"
                     "?? %s\n"

@@ -9,6 +9,7 @@ from regparser.tree.paragraph import ParagraphParser
 from regparser.tree.struct import Node, treeify
 
 
+logger = logging.getLogger(__name__)
 #   Can only be preceded by white space or a start of line
 interpParser = ParagraphParser(r"(?<![^\s])%s\.", Node.INTERP)
 
@@ -97,5 +98,5 @@ def text_to_labels(text, initial_label, warn=True, force_start=False):
                 list(initial_pars[0]) +
                 [Node.INTERP_MARK]]
     elif warn:
-        logging.warning("Couldn't turn into label: " + text)
+        logger.warning("Couldn't turn into label: " + text)
     return []
