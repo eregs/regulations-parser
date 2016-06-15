@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from copy import deepcopy
 from itertools import chain
+import re
 
 from lxml import etree
 from six.moves.html_parser import HTMLParser
@@ -103,6 +104,9 @@ def _footnotes_to_text(node, add_spaces):
         replace_xml_node_with_text(su, text)
 
 
+_whitespace = re.compile(u'\s+', re.UNICODE)    # aware of "thin" spaces, etc.
+
+
 def get_node_text(node, add_spaces=False):
     """ Extract all the text from an XML node (including the text of it's
     children). """
@@ -113,9 +117,10 @@ def get_node_text(node, add_spaces=False):
 
     parts = [node.text] + list(
         chain(*([c.text, c.tail] for c in node.getchildren())))
+    parts = [_whitespace.sub(' ', part) for part in parts if part]
 
     final_text = ''
-    for part in filter(bool, parts):
+    for part in parts:
         final_text = _combine_with_space(final_text, part, add_spaces)
     return final_text.strip()
 

@@ -443,12 +443,12 @@ class RegTextTest(TestCase):
         with XMLBuilder("SECTION", "\n\n") as ctx:
             ctx.SECTNO(u"§ 8675.309")
             ctx.SUBJECT("subsubsub")
-            ctx.P("   Some \n content\n")
+            ctx.P(u"   Some \n\u2009 content\n")
             ctx.P("(a) aaa")
             ctx.P("(b) bbb")
 
         node = reg_text.build_from_section('8675', ctx.xml)[0]
-        self.assertEqual(node.text, "Some \n content")
+        self.assertEqual(node.text, "Some content")
 
     def test_build_from_section_image(self):
         """We should process images (GPH/GID)"""
