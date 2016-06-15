@@ -1,4 +1,5 @@
 import difflib
+import re
 
 from regparser.diff.text import get_opcodes, INSERT, DELETE, REPLACE, EQUAL
 from regparser.tree import struct
@@ -8,18 +9,23 @@ ADDED = 'added'
 MODIFIED = 'modified'
 DELETED = 'deleted'
 
+_whitespace = re.compile(u'\s+', re.UNICODE)    # aware of "thin" spaces, etc.
+
 
 def _local_text_changes(lhs, rhs):
     """Account for only text changes between nodes. This explicitly excludes
     children"""
-    if lhs.text != rhs.text or lhs.title != rhs.title:
+    l_text, r_text, l_title, r_title = [
+        _whitespace.sub(' ', text)
+        for text in (lhs.text, rhs.text, lhs.title, rhs.title)]
+    if l_text != r_text or l_title != r_title:
         node_changes = {"op": MODIFIED}
 
-        text_opcodes = get_opcodes(lhs.text, rhs.text)
+        text_opcodes = get_opcodes(l_text, r_text)
         if text_opcodes:
             node_changes["text"] = text_opcodes
 
-        title_opcodes = get_opcodes(lhs.title, rhs.title)
+        title_opcodes = get_opcodes(l_title, r_title)
         if title_opcodes:
             node_changes["title"] = title_opcodes
         return (lhs.label_id, node_changes)
