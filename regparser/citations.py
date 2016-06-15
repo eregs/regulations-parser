@@ -6,6 +6,9 @@ from regparser.tree.paragraph import p_levels
 from regparser.tree.struct import Node
 
 
+logger = logging.getLogger(__name__)
+
+
 class Label(object):
     #   @TODO: subparts
     _p_markers = tuple('p{}'.format(i) for i in range(1, 10))
@@ -144,7 +147,7 @@ class Label(object):
         level = [lvl for lvl in p_levels if start in lvl and end in lvl]
         if (self.schema != other.schema or len(self_list) != len(other_list) or
                 self_list[:-1] != other_list[:-1] or not level):
-            logging.warning("Bad use of 'through': %s - %s", self, other)
+            logger.warning("Bad use of 'through': %s - %s", self, other)
         else:
             level = level[0]
             start_idx, end_idx = level.index(start), level.index(end)

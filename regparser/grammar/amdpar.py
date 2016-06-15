@@ -14,6 +14,9 @@ from regparser.tree.paragraph import p_levels, hash_for_paragraph
 from regparser.tree.reg_text import subjgrp_label
 
 
+logger = logging.getLogger(__name__)
+
+
 intro_text_marker = (
     (Marker("introductory") + WordBoundaries(CaselessLiteral("text"))) |
     (Marker("subject") + Marker("heading")).setParseAction(lambda _: "text")
@@ -298,7 +301,7 @@ def _through_paren(prev_lab, next_lab):
     # we can't compute A-14(a)(2) through B-14(a)(4) nor can we compute
     # A-14(a)(1) through A-14(b)(3)
     if lhs[:lhs_idx] != rhs[:rhs_idx] or prev_lab[:-1] != next_lab[:-1]:
-        logging.warning("Bad use of 'through': %s %s", prev_lab, next_lab)
+        logger.warning("Bad use of 'through': %s %s", prev_lab, next_lab)
         return []
     else:
         prefix = lhs[:lhs_idx + 1]
@@ -310,7 +313,7 @@ def _through_paren(prev_lab, next_lab):
                     return [tokens.Paragraph(prev_lab[:-1] +
                                              [prefix + level[i] + ')'])
                             for i in range(lidx + 1, ridx)]
-        logging.warning("Error with 'through': %s %s", prev_lab, next_lab)
+        logger.warning("Error with 'through': %s %s", prev_lab, next_lab)
         return []
 
 

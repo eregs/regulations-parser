@@ -13,6 +13,9 @@ from regparser.tree import struct
 from regparser.tree.paragraph import p_levels
 
 
+logger = logging.getLogger(__name__)
+
+
 def node_to_dict(node):
     """ Convert a node to a dictionary representation. We skip the
     children, turning them instead into a list of labels instead. """
@@ -96,7 +99,7 @@ def resolve_candidates(amend_map, warn=True):
                 del amend_map[label]
                 if warn:
                     mesg = 'Unable to match amendment to change for: %s'
-                    logging.warning(mesg, label)
+                    logger.warning(mesg, label)
 
 
 def find_misparsed_node(section_node, label, change, amended_labels):

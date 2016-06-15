@@ -68,9 +68,9 @@ class CommandsCompareToTests(HttpMixin, TestCase):
     def test_compare_404(self):
         """If the remote file doesn't exist, we should be notified"""
         self.expect_json_http(status=404)
-        with patch('regparser.commands.compare_to.logging') as logging:
+        with patch('regparser.commands.compare_to.logger') as logger:
             self.run_compare('local_file', 'http://example.com/remote')
-        self.assertEqual(logging.warn.call_args[0],
+        self.assertEqual(logger.warn.call_args[0],
                          ('Nonexistent: %s', 'http://example.com/remote'))
 
     def test_compare_no_diff(self):

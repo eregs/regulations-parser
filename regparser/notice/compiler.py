@@ -13,6 +13,9 @@ from regparser.tree.xml_parser import interpretations, reg_text
 from regparser.utils import roman_nums
 
 
+logger = logging.getLogger(__name__)
+
+
 def get_parent_label(node):
     """ Given a node, get the label of it's parent. """
     if node.node_type == Node.SUBPART:
@@ -158,8 +161,8 @@ class RegulationTree(object):
             parent_label_id = get_parent_label(node)
             parent = find(self.tree, parent_label_id)
         if not parent:
-            logging.error("Could not find parent of %s. Misparsed amendment?",
-                          node.label_id())
+            logger.error("Could not find parent of %s. Misparsed amendment?",
+                         node.label_id())
         return parent
 
     def add_to_root(self, node):
@@ -225,7 +228,7 @@ class RegulationTree(object):
         """ Delete the node with label_id from the tree. """
         node = find(self.tree, label_id)
         if node is None:
-            logging.warning("Attempting to delete %s failed", label_id)
+            logger.warning("Attempting to delete %s failed", label_id)
         else:
             self.delete_from_parent(node)
 
@@ -309,7 +312,7 @@ class RegulationTree(object):
         """ Add an entirely new node to the regulation tree. """
         existing = find(self.tree, node.label_id())
         if existing and is_reserved_node(existing):
-            logging.warning('Replacing reserved node: %s' % node.label_id())
+            logger.warning('Replacing reserved node: %s' % node.label_id())
             return self.replace_node_and_subtree(node)
         elif existing and is_interp_placeholder(existing):
             existing.title = node.title
@@ -325,7 +328,7 @@ class RegulationTree(object):
             pass
         else:
             if existing:
-                logging.warning(
+                logger.warning(
                     'Adding a node that already exists: %s' % node.label_id())
 
             if ((node.node_type == Node.APPENDIX and len(node.label) == 2) or
@@ -340,8 +343,8 @@ class RegulationTree(object):
                 if parent is None:
                     # This is a corner case, where we're trying to add a child
                     # to a parent that should exist.
-                    logging.warning('No existing parent for: %s' %
-                                    node.label_id())
+                    logger.warning('No existing parent for: %s' %
+                                   node.label_id())
                     parent = self.create_empty_node(get_parent_label(node))
                 # Fix the case where the node with label "<PART>-Subpart" is
                 # the correct parent.
@@ -394,7 +397,7 @@ class RegulationTree(object):
         """ Move an existing node to another subpart. If the new subpart
         doesn't exist, create it. """
         if len(label.split('-')) != 2:
-            logging.error(
+            logger.error(
                 "Trying to move a non-section into a subpart: %s -> %s",
                 label, subpart_label)
             return
@@ -486,8 +489,8 @@ def one_change(reg, label, change):
         node = dict_to_node(change['node'])
         reg.insert_in_order(node)
     else:
-        logging.warning("Unsure how to compile with this action: %s @ %s",
-                        change['action'], label)
+        logger.warning("Unsure how to compile with this action: %s @ %s",
+                       change['action'], label)
 
 
 def _needs_delay(reg, change):
@@ -532,6 +535,6 @@ def compile_regulation(previous_tree, notice_changes):
 
     # Force any remaining changes -- generally means something went wrong
     for label, change in next_pass:
-        logging.warning('Conflicting Change: %s:%s', label, change['action'])
+        logger.warning('Conflicting Change: %s:%s', label, change['action'])
         one_change(reg, label, change)
     return reg.tree

@@ -136,7 +136,7 @@ class NoticeXML(XMLWrapper):
             # The FR Notice XML doesn't tend to have all the metadata we need
             # contained within it, so don't try to parse that, just log an
             # error.
-            logging.warn("Preprocessing notice: no agency metadata.")
+            logger.warn("Preprocessing notice: no agency metadata.")
             return {}
 
         # We need turn turn the references to parent_ids into a tree of dicts

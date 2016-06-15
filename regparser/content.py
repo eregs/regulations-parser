@@ -7,6 +7,9 @@ import logging
 import settings
 
 
+logger = logging.getLogger(__name__)
+
+
 def _try_to_load(path, ident='module'):
     module, obj = path.rsplit('.', 1)
     try:
@@ -15,7 +18,7 @@ def _try_to_load(path, ident='module'):
         if hasattr(module, obj):
             return getattr(module, obj)
     except ImportError:
-        logging.warning("Could not load " + ident + " from " + path)
+        logger.warning("Could not load " + ident + " from " + path)
 
 
 class Macros(object):

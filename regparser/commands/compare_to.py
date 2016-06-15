@@ -9,6 +9,9 @@ import requests_cache
 from six.moves.urllib.parse import urlparse
 
 
+logger = logging.getLogger(__name__)
+
+
 def local_and_remote_generator(api_base, paths):
     """Find all local files in `paths` and pair them with the appropriate
     remote file (prefixing with api_base). As the local files could be at any
@@ -37,7 +40,7 @@ def compare(local_path, remote_url, prompt=True):
     diff"""
     remote = path_to_json(remote_url)
     if remote is None:
-        logging.warn("Nonexistent: %s", remote_url)
+        logger.warn("Nonexistent: %s", remote_url)
         return None
 
     with open(local_path) as fp:

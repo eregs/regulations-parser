@@ -13,6 +13,7 @@ from regparser.tree.struct import Node, treeify
 from regparser.tree.xml_parser import tree_utils
 
 
+logger = logging.getLogger(__name__)
 _marker_regex = re.compile(
     r'^\s*(' +                 # line start
     '([0-9]+)' +               # digits
@@ -117,8 +118,8 @@ def process_inner_children(inner_stack, xml_node):
         if xml_node.tag == 'STARS':
             nodes.append(Node(label=[mtypes.STARS_TAG]))
         elif not first_marker and nodes:
-            logging.warning("Couldn't determine interp marker. Appending to "
-                            "previous paragraph: %s", node_text)
+            logger.warning("Couldn't determine interp marker. Appending to "
+                           "previous paragraph: %s", node_text)
             previous = nodes[-1]
             previous.text += "\n\n" + node_text
             if hasattr(previous, 'tagged_text'):
