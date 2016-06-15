@@ -64,7 +64,7 @@ class Layer(object):
         for match in matches:
             text_to_matches[text[start_fn(match):end_fn(match)]].append(match)
 
-        for match_text, matches in text_to_matches.items():
+        for match_text, matches in sorted(text_to_matches.items()):
             locations, location = [], 0
             idx = text.find(match_text)
             while idx != -1:
