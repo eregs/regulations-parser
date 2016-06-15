@@ -99,3 +99,9 @@ class DiffTreeTest(TestCase):
              'text': [('insert', len("Root"), " modified")],
              'child_ops': [('equal', 0, 1),   # 1111-a
                            ('delete', 1, 2)]})
+
+    def test_whitespace_comparison(self):
+        """We shouldn't trigger diffs for whitespace changes"""
+        lhs = FrozenNode(u"Some\t\nthing", label=['123'])
+        rhs = lhs.clone(text=u"Some\u2009 thing")   # thin-space
+        self.assertEqual(difftree.changes_between(lhs, rhs), [])
