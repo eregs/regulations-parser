@@ -14,7 +14,6 @@ Asynchronous `eregs` commands. To run,
     5. check the status of your jobs:
         python async_eregs.py   # no parameters other than host, port, db
 """
-
 import click
 from rq import Queue, registry
 from rq.queue import FailedQueue
@@ -24,8 +23,9 @@ from regparser.tasks import run_eregs_command
 
 
 def _print(job):
-    log_length = len(job.meta.get('logs', ''))
-    click.echo("\t({}){}".format(log_length, job))
+    logs = job.meta.get('logs', '')
+    log_length = len(logs.split('\n'))
+    click.echo("\t{}\n\t\tLogs:{}".format(job, log_length))
 
 
 def show_stats(conn):
@@ -46,6 +46,8 @@ def show_stats(conn):
     click.echo("Failed:")
     for job in FailedQueue(connection=conn).jobs:
         _print(job)
+        for line in job.exc_info.split('\n'):
+            click.echo("\t\t" + line)
 
 
 @click.command(context_settings=dict(ignore_unknown_options=True))
@@ -62,10 +64,11 @@ def main(host, port, db, eregs_args):
     else:
         queue = Queue(connection=conn)
         # Can't directly use the above context as it doesn't pickle well
-        queue.enqueue(run_eregs_command, eregs_args, host, port, db,
-                      # Run for at most half an hour, don't delete successes
-                      timeout=60*30, result_ttl=-1)
-        click.echo("OK")
+        job = queue.enqueue(run_eregs_command, eregs_args, host, port, db,
+                            # Run for at most half an hour
+                            # Don't delete successes
+                            timeout=60*30, result_ttl=-1)
+        click.echo("OK: {}".format(job))
 
 
 if __name__ == '__main__':
