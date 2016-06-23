@@ -127,7 +127,6 @@ PREPROCESSORS = plugins.extend_list('eregs_ns.parser.preprocessors', [
 # special; layers in this category automatically apply to all document types
 LAYERS = {
     'cfr': [
-        'regparser.layer.external_citations.ExternalCitationParser',
         'regparser.layer.meta.Meta',
         'regparser.layer.internal_citations.InternalCitationParser',
         'regparser.layer.table_of_contents.TableOfContentsLayer',
@@ -144,6 +143,7 @@ LAYERS = {
     # It probably makes more sense to use plugins.update_dictionary, but we're
     # keeping this for backwards compatibility
     'ALL': plugins.extend_list('eregs_ns.parser.layers', [
+        'regparser.layer.external_citations.ExternalCitationParser',
         'regparser.layer.formatting.Formatting',
         'regparser.layer.graphics.Graphics',
     ]),
