@@ -120,5 +120,19 @@ class CustomFinder(FinderBase):
                            url)
 
 
+class UrlFinder(FinderBase):
+    """Any raw urls in the text"""
+    CITE_TYPE = 'OTHER'
+    REGEX = re.compile(r'https?:\/\/\S+')
+    PUNCTUATION = """.,;?'")-"""
+
+    def find(self, node):
+        for match in self.REGEX.finditer(node.text):
+            # remove any trailing punctuation
+            url = match.group(0).rstrip(self.PUNCTUATION)
+            yield Cite(self.CITE_TYPE, match.start(), match.start() + len(url),
+                       {}, url)
+
+
 # Surface all of the external citation finder classes
 ALL = FinderBase.__subclasses__()
