@@ -113,3 +113,17 @@ class ParseTest(TestCase):
                                         'components': {},
                                         'url': 'http://example.com/magic',
                                         'locations': [0, 2]})
+
+    def test_urls(self):
+        """If text contains http-based urls, they should be tagged"""
+        node = Node("Something http://example.com, not: a url://here "
+                    "but https://here.is.something/with?slashes=true.")
+        citations = ExternalCitationParser(None).process(node)
+        urls = ['http://example.com',
+                'https://here.is.something/with?slashes=true']
+
+        self.assertEqual(2, len(citations))
+        for url in urls:
+            citation = get_citation(citations, url)
+            self.assertEqual(citation['url'], url)
+            self.assertEqual(citation['text'], url)
