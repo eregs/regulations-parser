@@ -60,8 +60,8 @@ def run_or_resolve(cmd, prev_dependency=None):
         raise
 
 
-def main(prev_dependency=None):
-    run_or_resolve(cli, prev_dependency=prev_dependency)
+def main():
+    run_or_resolve(cli)
 
 
 if __name__ == '__main__':
