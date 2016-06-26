@@ -1,3 +1,5 @@
+import sys
+
 import click
 import requests_cache
 from stevedore import extension
@@ -26,14 +28,15 @@ def get_stevedore_module_names(namespace):
 
 @click.command()
 def full_tests():
-    import nose
+    import pytest
 
-    mymods = ["", "tests"]  # nose essentially ignores the first arg to argv.
+    mymods = ["tests"]
     mymods.extend(get_stevedore_module_names("eregs_ns.parser.test_suite"))
 
     requests_cache.uninstall_cache()
 
-    nose.run(argv=mymods)
+    errno = pytest.main(['--pyargs'] + mymods)
+    sys.exit(errno)
 
 if __name__ == '__main__':
     full_tests()
