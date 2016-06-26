@@ -29,21 +29,5 @@ Features
 Requirements
 ------------
 
-* Python (2.7)
-* lxml (3.2.0) - Used to parse out information XML from the federal register
-* pyparsing (1.5.7) - Used to do generic parsing on the plain text
-* inflection (0.1.2) - Helps determine pluralization (for terms layer)
-* requests (1.2.3) - Client library for writing output to an API
-* requests_cache (0.4.4) - *Optional* - Library for caching request results
-  (speeds up rebuilding regulations)
-* GitPython (0.3.2.RC1) - Allows the regulation to be written as a git repo
-* python-constraint (1.2) - Used to determine paragraph depth
-
-If running tests:
-
-* nose (1.2.1) - A pluggable test runner
-* mock (1.0.1) - Makes constructing mock objects/functions easy
-* coverage (3.6) - Reports on test coverage
-* cov-core (1.7) - Needed by coverage
-* nose-cov (1.6) - Connects nose to coverage
-
+Python 2.7, 3.3, 3.4, 3.5. See ``requirements.txt`` and similar for specific
+library versions.
