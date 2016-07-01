@@ -46,9 +46,12 @@ class NoticePreambleTests(TestCase):
 
         # We maintain the order presented
         self.assertEqual(root['intro']['p1'].title, 'SUMMARY:')
-        self.assertEqual(root['intro']['p1'].text, 'Out of order summary')
+        self.assertEqual(root['intro']['p1'].text, '')
+        self.assertEqual(root['intro']['p1']['p1'].text,
+                         'Out of order summary')
         self.assertEqual(root['intro']['p2'].title, 'AGENCY:')
-        self.assertEqual(root['intro']['p2'].text, 'Agency name here.')
+        self.assertEqual(root['intro']['p2'].text, '')
+        self.assertEqual(root['intro']['p2']['p1'].text, 'Agency name here.')
         self.assertEqual(root['p1'].text, 'P1')
         self.assertEqual(root['p2'].text, 'P2')
         self.assertEqual(root['I'].title, 'I. H1')
