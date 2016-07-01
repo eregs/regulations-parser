@@ -100,10 +100,15 @@ def parse_intro(notice_xml, doc_id):
     xpath = '|'.join('.//' + parent_tag for parent_tag in parent_tags)
     for xml in notice_xml.xpath(xpath):
         title = xml.xpath('./HD')[0].text.strip()
-        text = '\n'.join(get_node_text(p) for p in xml.xpath('./P'))
-        label = [doc_id, 'intro', 'p{}'.format(len(root.children) + 1)]
-        root.children.append(Node(
-            text=text, node_type='preamble', label=label, title=title))
+        paras = [get_node_text(p) for p in xml.xpath("./P")]
+        parent_label = [doc_id, 'intro', 'p{}'.format(len(root.children) + 1)]
+        children = []
+        for i, para in enumerate(paras, start=1):
+            label = [doc_id, 'intro', 'p{}'.format(len(root.children) + 1),
+                     'p{}'.format(i)]
+            children.append(Node(text=para, node_type='preamble', label=label))
+        root.children.append(Node(node_type='preamble', label=parent_label,
+                                  title=title, children=children))
     if root.children:
         return root
 
