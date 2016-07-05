@@ -33,18 +33,18 @@ the testing requirements:
 
   pip install -r requirements_test.txt
 
-Then, run nose on all of the available unit tests:
+Then, run py.test on all of the available unit tests:
 
 .. code-block:: bash
 
-  nosetests
+  py.test
 
 If you'd like a report of test coverage, use the
-`nose-cov <https://pypi.python.org/pypi/nose-cov>`_ plugin:
+`pytest-cov <https://pypi.python.org/pypi/pytest-cov>`_ plugin:
 
 .. code-block:: bash
 
-  nosetests --with-cov --cov-report term-missing --cov regparser
+  py.test --cov-report term-missing --cov regparser
 
 Note also that this library is continuously tested via Travis. Pull requests
 should rarely be merged unless Travis gives the green light.
