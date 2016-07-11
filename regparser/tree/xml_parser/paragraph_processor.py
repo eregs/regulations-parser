@@ -197,7 +197,9 @@ class SimpleTagMatcher(BaseMatcher):
         return xml.tag in self.tags
 
     def derive_nodes(self, xml, processor=None):
+        tagged = tree_utils.get_node_text_tags_preserved(xml).strip()
         return [Node(text=tree_utils.get_node_text(xml).strip(),
+                     tagged_text=tagged,
                      label=[mtypes.MARKERLESS])]
 
 
