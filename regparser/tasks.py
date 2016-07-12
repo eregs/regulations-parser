@@ -1,13 +1,13 @@
 import logging
 
-from redis import StrictRedis
+import django_rq
 from rq import get_current_job
 from six import StringIO
 
 import eregs
 
 
-def run_eregs_command(eregs_args, host, port, db):
+def run_eregs_command(eregs_args):
     """Run `eregs *eregs_args`, capturing all of the logs and storing them in
     Redis"""
     log = StringIO()
@@ -26,7 +26,7 @@ def run_eregs_command(eregs_args, host, port, db):
         log_handler.flush()
         # Recreating the connection due to a bug in rq:
         # https://github.com/nvie/rq/issues/479
-        conn = StrictRedis(host=host, port=port, db=db)
+        conn = django_rq.get_connection()
         job = get_current_job(conn)
         job.meta['logs'] = log.getvalue()
         job.save()

@@ -3,6 +3,8 @@
 .coverage
 local_settings.py
 
+*.sqlite3
+
 regulations
 regcontent
 
