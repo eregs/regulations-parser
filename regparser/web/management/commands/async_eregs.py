@@ -1,9 +1,11 @@
-from regparser.tasks import run_eregs_command
+from argparse import RawTextHelpFormatter
 
 from django.core.management.base import BaseCommand
 import django_rq
 from rq import registry
 from rq.queue import FailedQueue
+
+from regparser.tasks import run_eregs_command
 
 
 _OPTIONS = ('cfr_title', 'cfr_part', 'xml-ttl')
@@ -71,6 +73,7 @@ class Command(BaseCommand):
     """
 
     def add_arguments(self, parser):
+        parser.formatter_class = RawTextHelpFormatter
         parser.add_argument('eregs_args', nargs='*')
         for option in _OPTIONS:
             parser.add_argument('--' + option)
