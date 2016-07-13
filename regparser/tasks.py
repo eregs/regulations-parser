@@ -4,7 +4,7 @@ import django_rq
 from rq import get_current_job
 from six import StringIO
 
-import eregs
+from regparser.web.management.commands import eregs
 
 
 def run_eregs_command(eregs_args):
