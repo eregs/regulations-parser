@@ -11,16 +11,14 @@ to cache as the current ground truth.
 import os
 import sys
 import tarfile
-import functools
 
 import pip
 import boto3
 import click
 import requests
 
-from eregs import run_or_resolve
-from regparser.commands.pipeline import pipeline
 from regparser.commands.compare_to import compare_to
+from regparser.web.management.commands.eregs import cli as eregs_cli
 
 
 targets = {
@@ -94,16 +92,8 @@ def build(ctx, target):
     config = targets[target]
     paths = get_paths(target)
     for part in config['parts']:
-        run_or_resolve(
-            functools.partial(
-                ctx.invoke,
-                pipeline,
-                cfr_title=config['title'],
-                cfr_part=part,
-                output=paths['output_dir'],
-                only_latest=True,
-            )
-        )
+        eregs_cli('pipeline', str(config['title']), str(part),
+                  paths['output_dir'], '--only-latest')
 
 
 @cli.command()

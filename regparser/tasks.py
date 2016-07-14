@@ -4,7 +4,7 @@ import django_rq
 from rq import get_current_job
 from six import StringIO
 
-import eregs
+from regparser.web.management.commands import eregs
 
 
 def run_eregs_command(eregs_args):
@@ -18,10 +18,8 @@ def run_eregs_command(eregs_args):
     logger.addHandler(log_handler)
 
     try:
-        eregs.run_or_resolve(lambda: eregs.cli.invoke(
-            # Must recreate the context each time so that the arg
-            # list can be destroyed again
-            eregs.cli.make_context('eregs', args=list(eregs_args))))
+        context = eregs.cli.make_context('eregs', args=list(eregs_args))
+        eregs.cli.invoke(context)
     finally:
         log_handler.flush()
         # Recreating the connection due to a bug in rq:
