@@ -22,7 +22,7 @@ class Node(object):
     MARKERLESS_REGEX = re.compile(r'p\d+')
 
     def __init__(self, text='', children=[], label=[], title=None,
-                 node_type=REGTEXT, source_xml=None):
+                 node_type=REGTEXT, source_xml=None, tagged_text=None):
 
         self.text = six.text_type(text)
 
@@ -34,6 +34,11 @@ class Node(object):
         self.title = title or None
         self.node_type = node_type
         self.source_xml = source_xml
+        if tagged_text is not None:
+            # Note that parts of the parser use the presence/absence of this
+            # attribute (rather than its value) as an indicator. When that's
+            # no longer the case, we can remove the `if` here
+            self.tagged_text = tagged_text
 
     def __repr__(self):
         return (("Node( text = %s, children = %s, label = %s, title = %s, " +

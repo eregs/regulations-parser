@@ -79,7 +79,7 @@ class ParagraphProcessor(object):
     def replace_markerless(self, stack, node, depth):
         """Assign a unique index to all of the MARKERLESS paragraphs"""
         if node.label[-1] == mtypes.MARKERLESS:
-            keyterm = KeyTerms.get_keyterm(node, ignore_definitions=False)
+            keyterm = KeyTerms.keyterm_in_node(node, ignore_definitions=False)
             if keyterm:
                 p_num = hash_for_paragraph(keyterm)
             else:
@@ -197,7 +197,9 @@ class SimpleTagMatcher(BaseMatcher):
         return xml.tag in self.tags
 
     def derive_nodes(self, xml, processor=None):
+        tagged = tree_utils.get_node_text_tags_preserved(xml).strip()
         return [Node(text=tree_utils.get_node_text(xml).strip(),
+                     tagged_text=tagged,
                      label=[mtypes.MARKERLESS])]
 
 

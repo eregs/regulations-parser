@@ -58,7 +58,7 @@ def collapsed_markers_matches(node_text, tagged_text):
     node_for_keyterms = Node(node_text, node_type=Node.INTERP,
                              label=[get_first_interp_marker(node_text)])
     node_for_keyterms.tagged_text = tagged_text
-    keyterm = KeyTerms.get_keyterm(node_for_keyterms)
+    keyterm = KeyTerms.keyterm_in_node(node_for_keyterms)
     if keyterm:
         node_text = node_text.replace(keyterm, '.'*len(keyterm))
 

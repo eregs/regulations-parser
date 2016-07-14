@@ -6,68 +6,56 @@ from regparser.layer.paragraph_markers import marker_of
 from regparser.layer.terms import Terms
 
 
-def eliminate_extras(keyterm):
-    """ The XML <E> tags that indicate keyterms are also used
-    for italics. So, phrases such as 'See' and 'See also' are included
-    sometimes in the keyterm. We eliminate that here. """
+KEYTERM_RE = re.compile(r'<E T="03">(?P<keyterm>[^<]*?)</E>', re.UNICODE)
+TRIM_FROM_KEYTERM = ['See also', 'See']
 
-    extras = [' See also', ' See']
-    for extra in extras:
-        if keyterm.endswith(extra):
-            keyterm = keyterm[:-len(extra)]
-    return keyterm
+
+def keyterm_in_text(tagged_text):
+    """Pull out the key term of the provided markup using a regex. The XML <E>
+    tags that indicate keyterms are also used for italics, which means some
+    non-key term phrases would be lumped in. We eliminate them here."""
+    match = KEYTERM_RE.match(tagged_text.strip())
+    keyterm = ''
+    if match:
+        keyterm = match.group('keyterm')
+    keyterm = keyterm.strip()
+
+    for to_trim in TRIM_FROM_KEYTERM:
+        if keyterm.endswith(to_trim):
+            keyterm = keyterm[:-len(to_trim)].strip()
+
+    return keyterm or None
 
 
 class KeyTerms(Layer):
-    PATTERN = re.compile(r'.*?<E T="03">([^<]*?)</E>.*?', re.UNICODE)
     shorthand = 'keyterms'
 
-    @staticmethod
-    def process_node_text(node):
-        """Take a paragraph, remove the marker, and extraneous whitespaces."""
-        marker = marker_of(node)
-        text = node.tagged_text
+    @classmethod
+    def keyterm_in_node(cls, node, ignore_definitions=True):
+        tagged = (getattr(node, 'tagged_text', None) or '')
+        tagged = tagged.replace(marker_of(node), '', 1).strip()
+        keyterm = keyterm_in_text(tagged)
 
-        text = text.replace(marker, '', 1).strip()
-        return text
-
-    @staticmethod
-    def keyterm_is_first(node, keyterm):
-        """ The keyterm should be the first phrase in the paragraph. """
-        node_text = KeyTerms.process_node_text(node)
-        start = node_text.find(keyterm)
-        tag_length = len("<E T='03'>")
-
-        return start == tag_length
-
-    @staticmethod
-    def get_keyterm(node, ignore_definitions=True):
-        match = KeyTerms.PATTERN.match(getattr(node, 'tagged_text', ''))
-        keyterm = match.groups()[0] if match else None
-        if keyterm and KeyTerms.keyterm_is_first(node, keyterm):
-            if ignore_definitions:
-                return KeyTerms.remove_definition_keyterm(node, keyterm)
+        if keyterm and not (ignore_definitions and
+                            cls.is_definition(node, keyterm)):
             return keyterm
 
     @staticmethod
-    def remove_definition_keyterm(node, keyterm):
+    def is_definition(node, keyterm):
         """A definition might be masquerading as a keyterm. Do not allow
         this"""
         included, excluded = Terms(None).node_definitions(node)
         terms = included + excluded
         keyterm_as_term = keyterm.lower()
-        if not any(ref.term == keyterm_as_term for ref in terms):
-            return keyterm
+        return any(ref.term == keyterm_as_term for ref in terms)
 
     def process(self, node):
         """ Get keyterms if we have text in the node that preserves the
         <E> tags. """
-        if hasattr(node, 'tagged_text'):
-            keyterm = KeyTerms.get_keyterm(node)
-            if keyterm:
-                keyterm = eliminate_extras(keyterm)
-                layer_el = [{
-                    "key_term": keyterm,
-                    # The first instance of the key term is right one.
-                    "locations": [0]}]
-                return layer_el
+        keyterm = self.keyterm_in_node(node)
+        if keyterm:
+            return [{
+                "key_term": keyterm,
+                # The first instance of the key term is right one.
+                "locations": [0]
+            }]

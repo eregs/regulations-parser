@@ -138,7 +138,9 @@ LAYERS = {
         # SectionBySection layer is a created via a separate command
     ],
     'preamble': [
-        'regparser.layer.preamble.internal_citations.InternalCitations'
+        'regparser.layer.preamble.key_terms.KeyTerms',
+        'regparser.layer.preamble.internal_citations.InternalCitations',
+        'regparser.layer.preamble.paragraph_markers.ParagraphMarkers'
     ],
     # It probably makes more sense to use plugins.update_dictionary, but we're
     # keeping this for backwards compatibility
