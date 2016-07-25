@@ -390,6 +390,20 @@ class LayerFormattingTests(TestCase):
             ])
 
 
+def test_node_to_table_xml_els():
+    """We should be able to find a GPOTABLE in multiple places"""
+    xml_str = '<GPOTABLE unique="id">Content</GPOTABLE>'
+    nested_str = '<P>Stuff <NESTED>{}</NESTED></P>'.format(xml_str)
+    node1 = Node(source_xml=etree.fromstring(xml_str))
+    node2 = Node(source_xml=etree.fromstring(nested_str))
+    node3 = Node(tagged_text=xml_str)
+    node4 = Node(tagged_text=nested_str)
+    for node in (node1, node2, node3, node4):
+        result = formatting.node_to_table_xml_els(node)
+        assert len(result) == 1
+        assert result[0].attrib['unique'] == 'id'
+
+
 class FencedTests(TestCase):
     def test_process(self):
         text = "Content content\n```abc def\nLine 1\nLine 2\n```"

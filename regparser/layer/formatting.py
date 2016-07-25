@@ -4,6 +4,8 @@ import abc
 from collections import OrderedDict
 import re
 
+from lxml import etree
+
 from regparser.layer.layer import Layer
 from regparser.tree import struct
 from regparser.tree.priority_stack import PriorityStack
@@ -246,6 +248,17 @@ class Footnotes(PlaintextFormatData):
         return {'footnote_data': {'ref': match.group('ref'), 'note': note}}
 
 
+def node_to_table_xml_els(node):
+    """Search in a few places for GPOTABLE xml elements"""
+    if node.source_xml is not None:
+        root_xml_el = node.source_xml
+    else:
+        root_xml_el = etree.fromstring(u'<ROOT>{}</ROOT>'.format(
+            getattr(node, 'tagged_text', '')))
+
+    return root_xml_el.xpath('self::GPOTABLE|.//GPOTABLE')
+
+
 class Formatting(Layer):
     """Layer responsible for tables, subscripts, and other formatting-related
     information"""
@@ -253,16 +266,10 @@ class Formatting(Layer):
 
     def process(self, node):
         layer_el = []
-        if node.source_xml is not None:
-            if node.source_xml.tag == 'GPOTABLE':
-                tables = [node.source_xml]
-            else:
-                tables = []
-            tables.extend(node.source_xml.xpath('.//GPOTABLE'))
-            for table in tables:
-                layer_el.append({'text': table_xml_to_plaintext(table),
-                                 'locations': [0],
-                                 'table_data': table_xml_to_data(table)})
+        for table_el in node_to_table_xml_els(node):
+            layer_el.append({'text': table_xml_to_plaintext(table_el),
+                             'locations': [0],
+                             'table_data': table_xml_to_data(table_el)})
 
         for finder_class in PlaintextFormatData.__subclasses__():
             layer_el.extend(finder_class().process(node.text))
