@@ -219,7 +219,7 @@ class TableMatcher(BaseMatcher):
     def derive_nodes(self, xml, processor=None):
         node = Node(table_xml_to_plaintext(xml), label=[mtypes.MARKERLESS],
                     source_xml=xml)
-        node.tagged_text = etree.tostring(xml).strip()
+        node.tagged_text = etree.tounicode(xml).strip()
         return [node]
 
 
