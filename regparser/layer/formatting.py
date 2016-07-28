@@ -253,6 +253,7 @@ def node_to_table_xml_els(node):
     if node.source_xml is not None:
         root_xml_el = node.source_xml
     else:
+        # Wrap tagged_text in a placeholder tag as it might be an XML fragment
         root_xml_el = etree.fromstring(u'<ROOT>{}</ROOT>'.format(
             getattr(node, 'tagged_text', '')))
 
