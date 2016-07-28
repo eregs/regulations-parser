@@ -260,6 +260,7 @@ class RegTextTest(TestCase):
         table_node = extract_node.children[0]
         self.assertEqual('regtext', table_node.node_type)
         self.assertEqual('GPOTABLE', table_node.source_xml.tag)
+        self.assertTrue(table_node.tagged_text.startswith('<GPOTABLE'))
 
     def test_build_from_section_extract_with_table_and_headers(self):
         """Account for regtext with a header and a table in an extract"""

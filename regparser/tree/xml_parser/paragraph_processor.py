@@ -217,8 +217,10 @@ class TableMatcher(BaseMatcher):
         return xml.tag == 'GPOTABLE'
 
     def derive_nodes(self, xml, processor=None):
-        return [Node(table_xml_to_plaintext(xml), label=[mtypes.MARKERLESS],
-                     source_xml=xml)]
+        node = Node(table_xml_to_plaintext(xml), label=[mtypes.MARKERLESS],
+                    source_xml=xml)
+        node.tagged_text = etree.tounicode(xml).strip()
+        return [node]
 
 
 class HeaderMatcher(BaseMatcher):
