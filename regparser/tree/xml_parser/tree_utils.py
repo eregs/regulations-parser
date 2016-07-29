@@ -83,13 +83,13 @@ def replace_xml_node_with_text(node, text):
 
 
 def _subscript_to_text(node, add_spaces):
-    for e in node.xpath(".//E[@T='52']"):
+    for e in node.xpath(".//E[@T='52' or @T='54']"):
         text = _combine_with_space("_{" + e.text + "}", e.tail, add_spaces)
         replace_xml_node_with_text(e, text)
 
 
 def _superscript_to_text(node, add_spaces):
-    for e in node.xpath(".//E[@T='51']|.//SU[not(@footnote)]"):
+    for e in node.xpath(".//E[@T='51' or @T='53']|.//SU[not(@footnote)]"):
         text = _combine_with_space("^{" + e.text + "}", e.tail, add_spaces)
         replace_xml_node_with_text(e, text)
 
