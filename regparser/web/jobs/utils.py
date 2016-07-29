@@ -24,6 +24,24 @@ def queue_eregs_job(args, timeout=60*30, result_ttl=-1):
                              result_ttl=-1)
 
 
+def delete_eregs_job(job_id):
+    """
+    Removes a job from the Redis queue.
+
+    Side effects
+        Removes a job from the Redis queue.
+
+    :arg uuid4 job_id: The UUID for the job.
+
+    :rtype: None
+    :returns: None
+    """
+    queue = django_rq.get_queue()
+    redis_job = queue.fetch_job(str(job_id))
+    if redis_job:
+        redis_job.delete()
+
+
 def add_redis_data_to_job_data(job_data):
     """
     Retrieves status data about a job from the Redis queue and, if the job has

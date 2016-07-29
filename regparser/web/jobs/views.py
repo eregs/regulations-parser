@@ -2,6 +2,7 @@ from regparser.web.jobs.models import ParsingJob
 from regparser.web.jobs.serializers import ParsingJobSerializer
 from regparser.web.jobs.utils import (
     add_redis_data_to_job_data,
+    delete_eregs_job,
     queue_eregs_job,
     status_url
 )
@@ -105,6 +106,28 @@ class JobViewInstance(mixins.RetrieveModelMixin,
     renderer_classes = renderer_classes
     serializer_class = ParsingJobSerializer
     lookup_field = "job_id"
+
+    def delete(self, request, *args, **kwargs):
+        return self.destroy(request, *args, **kwargs)
+
+    def destroy(self, request, *args, **kwargs):
+        """
+        Overridden in order to remove the job from the Redis queue as well as
+        the DB.
+
+        Side Effects
+            Via ``delete_eregs_job``, alters the Redis queue and the DB.
+
+        :arg HttpRequest request: the incoming request.
+
+        :rtype: Response
+        :returns: JSON or HTML of the information about the job.
+        """
+        instance = self.get_object()
+        job_id = instance.job_id
+        self.perform_destroy(instance)
+        delete_eregs_job(job_id)
+        return Response(status=status.HTTP_204_NO_CONTENT)
 
     def get(self, request, *args, **kwargs):
         return self.retrieve(request, *args, **kwargs)
