@@ -157,6 +157,14 @@ LAYERS = {
 REGS_GOV_API = 'https://api.data.gov/regulations/v3/'
 REGS_GOV_KEY = 'DEMO_KEY'
 
+# These are the host and port for the regparser Django server running the
+# administrative UI.
+# It's apparently necessary to include the hostname and post in settings
+# because the information in the HTTP request can be spoofed.
+# For development, override these in ``local_settings.py``.
+CANONICAL_HOSTNAME = "https://example.com"
+CANONICAL_PORT = ""
+
 try:
     from local_settings import *
 except ImportError:
