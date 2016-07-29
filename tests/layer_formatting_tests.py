@@ -3,6 +3,7 @@
 from unittest import TestCase
 
 from lxml import etree
+
 from regparser.layer import formatting
 from regparser.test_utils.xml_builder import XMLBuilder
 from regparser.tree.struct import Node
@@ -391,13 +392,15 @@ class LayerFormattingTests(TestCase):
 
 
 def test_node_to_table_xml_els():
-    """We should be able to find a GPOTABLE in multiple places"""
-    xml_str = '<GPOTABLE unique="id">Content</GPOTABLE>'
-    nested_str = '<P>Stuff <NESTED>{}</NESTED></P>'.format(xml_str)
-    node1 = Node(source_xml=etree.fromstring(xml_str))
-    node2 = Node(source_xml=etree.fromstring(nested_str))
-    node3 = Node(tagged_text=xml_str)
-    node4 = Node(tagged_text=nested_str)
+    """We should be able to find a GPOTABLE in multiple places. Tagged_text is
+    can be an unescaped XML _fragment_"""
+    escaped_str = '<GPOTABLE unique="id">Content &amp; stuff</GPOTABLE>'
+    unescaped_str = '<GPOTABLE unique="id">Content & stuff</GPOTABLE>'
+    nested_str = '<P>Stuff <NESTED>{}</NESTED></P>'
+    node1 = Node(source_xml=etree.fromstring(escaped_str))
+    node2 = Node(source_xml=etree.fromstring(nested_str.format(escaped_str)))
+    node3 = Node(tagged_text=unescaped_str)
+    node4 = Node(tagged_text=nested_str.format(unescaped_str))
     for node in (node1, node2, node3, node4):
         result = formatting.node_to_table_xml_els(node)
         assert len(result) == 1
