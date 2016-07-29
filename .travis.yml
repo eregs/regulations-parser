@@ -6,7 +6,6 @@ python:
   - "3.5"
 cache: pip
 install:
-  - pip install -U pip wheel
   - pip install -r requirements.txt
   - pip install -r requirements_test.txt
   - pip install coveralls
@@ -21,6 +20,7 @@ env:
     - INTEGRATION_TARGET=
     - INTEGRATION_TARGET=fec
     - INTEGRATION_TARGET=atf
+    - INTEGRATION_TARGET=epa
 script:
   - ./test-travis.sh
 after_success:

@@ -38,6 +38,13 @@ targets = {
             'atf_regparser': '-e git+https://github.com/18F/atf-eregs.git#egg=atf_regparser&subdirectory=eregs_extensions',  # noqa
         },
     },
+    'epa': {
+        'title': 40,
+        'parts': [262, 263, 264, 265, 271],
+        'requirements': {
+            'epa_regparser': '-e git+https://github.com/18F/epa-notice.git#egg=epa_regparser&subdirectory=eregs_extensions',  # noqa
+        },
+    },
 }
 
 
