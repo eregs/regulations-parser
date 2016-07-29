@@ -13,6 +13,7 @@ class FlatParagraphProcessor(paragraph_processor.ParagraphProcessor):
                 paragraph_processor.HeaderMatcher(),
                 paragraph_processor.SimpleTagMatcher('P', 'FP'),
                 us_code.USCodeMatcher(),
+                paragraph_processor.GraphicsMatcher(),
                 paragraph_processor.IgnoreTagMatcher('PRTPAGE')]
 
 
