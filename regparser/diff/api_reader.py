@@ -1,8 +1,7 @@
 import json
 import os
 
-import requests
-
+from regparser.index.http_cache import http_client
 from regparser.tree.struct import node_decode_hook
 import settings
 
@@ -29,7 +28,7 @@ class Client:
         """Actually make the GET request. Assume the result is JSON. Right
         now, there is no error handling"""
         if self.base_url.startswith('http'):    # API
-            json_str = requests.get(self.base_url + suffix).text
+            json_str = http_client().get(self.base_url + suffix).text
         else:   # file system
             if os.path.isdir(self.base_url + suffix):
                 suffix = suffix + "/index.html"

@@ -6,9 +6,9 @@ import os
 import re
 
 from cached_property import cached_property
-import requests
 
 from regparser.index import xml_sync
+from regparser.index.http_cache import http_client
 from regparser.tree.xml_parser.xml_wrapper import XMLWrapper
 import settings
 
@@ -43,7 +43,7 @@ class Volume(namedtuple('Volume', ['year', 'title', 'vol_num'])):
     @cached_property
     def response(self):
         logger.debug("GET %s", self.url)
-        return requests.get(self.url, stream=True)
+        return http_client().get(self.url, stream=True)
 
     @property
     def exists(self):
@@ -109,7 +109,7 @@ class Volume(namedtuple('Volume', ['year', 'title', 'vol_num'])):
                 with open(xml_path, 'rb') as f:
                     return XMLWrapper(f.read(), xml_path)
         logger.debug("GET %s", url)
-        response = requests.get(url)
+        response = http_client().get(url)
         if response.status_code == 200:
             return XMLWrapper(response.content, url)
 

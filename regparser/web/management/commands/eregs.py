@@ -8,7 +8,6 @@ import coloredlogs
 import ipdb
 
 from regparser.commands.retry import RetryingCommand
-from regparser.index import http_cache
 
 
 DEFAULT_LOG_FORMAT = "%(asctime)s %(name)-40s %(message)s"
@@ -24,7 +23,6 @@ class DjangoCommandRegistrator(BaseRegistrator):
 @click.option('--debug/--no-debug', default=False)
 def cli(debug):
     log_level = logging.INFO
-    http_cache.install()
     if debug:
         log_level = logging.DEBUG
         sys.excepthook = lambda t, v, tb: ipdb.post_mortem(tb)

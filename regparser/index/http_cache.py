@@ -1,14 +1,11 @@
-import os
-
-import requests_cache   # @todo - replace with cache control
-
-from . import ROOT
+from django.conf import settings
+import django_rq
+import requests_cache
 
 
-PATH = os.path.join(ROOT, 'http_cache.sqlite')
+def http_client():
+    config = settings.REQUESTS_CACHE
+    if config.get('backend') == 'redis' and 'connection' not in config:
+        config['connection'] = django_rq.get_connection()
 
-
-def install():
-    if not os.path.exists(ROOT):
-        os.makedirs(ROOT)
-    requests_cache.install_cache(PATH, expire_after=60*60*24*3)  # 3 days
+    return requests_cache.CachedSession(**config)

@@ -1,7 +1,6 @@
 import sys
 
 import click
-import requests_cache
 from stevedore import extension
 from stevedore.exception import NoMatches
 
@@ -32,8 +31,6 @@ def full_tests():
 
     mymods = ["tests"]
     mymods.extend(get_stevedore_module_names("eregs_ns.parser.test_suite"))
-
-    requests_cache.uninstall_cache()
 
     errno = pytest.main(['--pyargs'] + mymods)
     sys.exit(errno)
