@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_rq',
     'regparser.web',
+    'regparser.web.jobs',
+    'rest_framework'
 ]
 
 MIDDLEWARE_CLASSES = [
