@@ -2,8 +2,7 @@ import os
 import shutil
 
 import click
-
-from regparser.index import entry
+from django.conf import settings
 
 
 @click.command()
@@ -19,7 +18,7 @@ def clear(path):
     """
     if not path:
         path = ['']
-    paths = [os.path.join(entry.ROOT, p) for p in path]
+    paths = [os.path.join(settings.EREGS_INDEX_ROOT, p) for p in path]
     for path in paths:
         if os.path.exists(path):
             shutil.rmtree(path)

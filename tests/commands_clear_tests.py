@@ -1,62 +1,60 @@
 import os
-from unittest import TestCase
 
 from click.testing import CliRunner
-from django.conf import settings
-import six
+import pytest
 
 from regparser.commands.clear import clear
-from regparser.index import entry, http_cache
+from regparser.index import entry
 
 
-class CommandsClearTests(TestCase):
-    def setUp(self):
-        self.cli = CliRunner()
+@pytest.fixture
+def tmpdir_setup(tmpdir, settings):
+    """Put the index files in a temporary location"""
+    settings.EREGS_INDEX_ROOT = str(tmpdir)
+    settings.REQUESTS_CACHE.update(
+        backend='sqlite', cache_name=str(tmpdir.join("http_cache")))
+    return settings
 
-    def test_no_errors_when_clear(self):
-        """Should raise no errors when no cached files are present"""
-        with self.cli.isolated_filesystem():
-            self.cli.invoke(clear)
 
-    def test_deletes_http_cache(self):
-        with self.cli.isolated_filesystem():
-            os.makedirs(settings.EREGS_INDEX_ROOT)
-            open(http_cache.PATH, 'w').close()
-            self.assertTrue(os.path.exists(http_cache.PATH))
+def test_no_errors_when_clear(tmpdir_setup):
+    """Should raise no errors when no cached files are present"""
+    CliRunner().invoke(clear)
 
-            self.cli.invoke(clear)
-            self.assertFalse(os.path.exists(http_cache.PATH))
 
-    def test_deletes_index(self):
-        with self.cli.isolated_filesystem():
-            entry.Entry('aaa', 'bbb').write(b'ccc')
-            entry.Entry('bbb', 'ccc').write(b'ddd')
-            self.assertEqual(1, len(entry.Entry("aaa")))
-            self.assertEqual(1, len(entry.Entry("bbb")))
+def test_deletes_http_cache(tmpdir_setup):
+    sqlite_filename = tmpdir_setup.REQUESTS_CACHE['cache_name'] + '.sqlite'
+    open(sqlite_filename, 'w').close()
+    assert os.path.exists(sqlite_filename)
 
-            self.cli.invoke(clear)
-            self.assertEqual(0, len(entry.Entry("aaa")))
-            self.assertEqual(0, len(entry.Entry("bbb")))
+    CliRunner().invoke(clear)
+    assert not os.path.exists(sqlite_filename)
 
-    def test_deletes_can_be_focused(self):
-        """If params are provided to delete certain directories, only those
-        directories should get removed"""
-        with self.cli.isolated_filesystem():
-            to_delete = ['delroot/aaa/bbb', 'delroot/aaa/ccc',
-                         'root/delsub/aaa', 'root/delsub/bbb']
-            to_keep = ['root/othersub/aaa', 'root/aaa',
-                       'top-level-file', 'other-root/aaa']
 
-            for path in to_delete + to_keep:
-                entry.Entry(*path.split('/')).write(b'')
+def test_deletes_index(tmpdir_setup):
+    entry.Entry('aaa', 'bbb').write(b'ccc')
+    entry.Entry('bbb', 'ccc').write(b'ddd')
+    assert 1 == len(entry.Entry("aaa"))
+    assert 1 == len(entry.Entry("bbb"))
 
-            self.cli.invoke(clear, ['delroot', 'root/delsub'])
-            six.assertCountEqual(self,
-                                 ['top-level-file', 'root', 'other-root'],
-                                 list(entry.Entry()))
-            six.assertCountEqual(self,
-                                 ['othersub', 'aaa'],
-                                 list(entry.Entry('root')))
-            six.assertCountEqual(self,
-                                 ['aaa'],
-                                 list(entry.Entry('other-root')))
+    CliRunner().invoke(clear)
+    assert 0 == len(entry.Entry("aaa"))
+    assert 0 == len(entry.Entry("bbb"))
+
+
+def test_deletes_can_be_focused(tmpdir_setup):
+    """If params are provided to delete certain directories, only those
+    directories should get removed"""
+    to_delete = ['delroot/aaa/bbb', 'delroot/aaa/ccc',
+                 'root/delsub/aaa', 'root/delsub/bbb']
+    to_keep = ['root/othersub/aaa', 'root/aaa',
+               'top-level-file', 'other-root/aaa']
+
+    for path in to_delete + to_keep:
+        entry.Entry(*path.split('/')).write(b'')
+
+    CliRunner().invoke(clear, ['delroot', 'root/delsub'])
+
+    expected = set(['top-level-file', 'root', 'other-root'])
+    assert set(entry.Entry()) == expected
+    assert set(entry.Entry('root')) == set(['othersub', 'aaa'])
+    assert set(entry.Entry('other-root')) == set(['aaa'])
