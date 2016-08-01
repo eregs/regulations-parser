@@ -126,3 +126,12 @@ RQ_QUEUES = {
         'DB': 0
     },
 }
+
+
+EREGS_INDEX_ROOT = os.environ.get('EREGS_CACHE_DIR', '.eregs_index')
+
+REQUESTS_CACHE = {
+    'backend': 'sqlite',
+    'cache_name': os.path.join(EREGS_INDEX_ROOT, 'http_cache.sqlite'),
+    'expire_after': 60*60*24*3      # 3 days
+}

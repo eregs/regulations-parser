@@ -2,13 +2,13 @@ import logging
 import os
 import time
 
+from django.conf import settings as django_settings
 import git
 
 import settings
-from . import ROOT
 
 
-GIT_DIR = os.path.join(ROOT, 'xmls')
+GIT_DIR = os.path.join(django_settings.EREGS_INDEX_ROOT, 'xmls')
 logger = logging.getLogger(__name__)
 
 

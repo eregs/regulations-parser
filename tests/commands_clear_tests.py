@@ -2,9 +2,9 @@ import os
 from unittest import TestCase
 
 from click.testing import CliRunner
+from django.conf import settings
 import six
 
-from regparser import index
 from regparser.commands.clear import clear
 from regparser.index import entry, http_cache
 
@@ -20,7 +20,7 @@ class CommandsClearTests(TestCase):
 
     def test_deletes_http_cache(self):
         with self.cli.isolated_filesystem():
-            os.makedirs(index.ROOT)
+            os.makedirs(settings.EREGS_INDEX_ROOT)
             open(http_cache.PATH, 'w').close()
             self.assertTrue(os.path.exists(http_cache.PATH))
 
