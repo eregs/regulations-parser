@@ -20,8 +20,8 @@ def queue_eregs_job(args, timeout=60*30, result_ttl=-1):
     :rtype: uuid4
     :returns: The UUID for the job.
     """
-    return django_rq.enqueue(run_eregs_command, args, timeout=60*30,
-                             result_ttl=-1)
+    return django_rq.enqueue(run_eregs_command, args, timeout=timeout,
+                             result_ttl=result_ttl)
 
 
 def delete_eregs_job(job_id):
