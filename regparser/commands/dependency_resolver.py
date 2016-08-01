@@ -2,6 +2,8 @@ import abc
 import os
 import re
 
+from django.conf import settings
+
 
 class DependencyResolver(object):
     """Base class for objects which know how to "fix" missing dependencies."""
@@ -11,7 +13,8 @@ class DependencyResolver(object):
     PATH_PARTS = tuple()
 
     def __init__(self, dependency_path):
-        regex = re.compile(re.escape(os.sep).join(self.PATH_PARTS))
+        path_parts = (settings.EREGS_INDEX_ROOT,) + self.PATH_PARTS
+        regex = re.compile(re.escape(os.sep).join(path_parts))
         self.match = regex.match(dependency_path)
 
     def has_resolution(self):

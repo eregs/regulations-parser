@@ -18,7 +18,7 @@ logger = logging.getLogger(__name__)
 class Entry(object):
     """Encapsulates an entry within the index. This could be a directory or a
     file"""
-    PREFIX = (settings.EREGS_INDEX_ROOT,)
+    PREFIX = None
 
     def __init__(self, *args):
         self.path = tuple(str(arg) for arg in args)
@@ -31,11 +31,17 @@ class Entry(object):
     __truediv__ = __div__
 
     def __str__(self):
-        return os.path.join(*(self.PREFIX + self.path))
+        prefix = settings.EREGS_INDEX_ROOT
+        if self.PREFIX:
+            prefix = os.path.join(prefix, self.PREFIX)
+        return os.path.join(prefix, *self.path)
 
     def _create_parent_dir(self):
         """Create the requisite directories if needed"""
-        path = os.path.join(*(self.PREFIX + self.path[:-1]))
+        path = settings.EREGS_INDEX_ROOT
+        if self.PREFIX:
+            path = os.path.join(path, self.PREFIX)
+        path = os.path.join(path, *self.path[:-1])
         if not os.path.exists(path):
             os.makedirs(path)
 
@@ -74,7 +80,7 @@ class Entry(object):
 
 class Notice(Entry):
     """Processes NoticeXMLs, keyed by notice_xml"""
-    PREFIX = (settings.EREGS_INDEX_ROOT, 'notice_xml')
+    PREFIX = 'notice_xml'
 
     def serialize(self, content):
         return etree.tostring(content.xml, encoding='UTF-8')
@@ -85,7 +91,7 @@ class Notice(Entry):
 
 class Annual(Entry):
     """Processes XML, keyed by annual"""
-    PREFIX = (settings.EREGS_INDEX_ROOT, 'annual')
+    PREFIX = 'annual'
 
     def serialize(self, content):
         return etree.tostring(content.xml, encoding='UTF-8')
@@ -96,7 +102,7 @@ class Annual(Entry):
 
 class Version(Entry):
     """Processes Versions, keyed by version"""
-    PREFIX = (settings.EREGS_INDEX_ROOT, 'version')
+    PREFIX = 'version'
 
     def serialize(self, content):
         return content.json().encode('utf-8')
@@ -139,7 +145,7 @@ class _JSONEntry(Entry):
 
 class Tree(_JSONEntry):
     """Processes Nodes, keyed by tree"""
-    PREFIX = (settings.EREGS_INDEX_ROOT, 'tree')
+    PREFIX = 'tree'
     JSON_ENCODER = FullNodeEncoder
     JSON_DECODER = staticmethod(full_node_decode_hook)
 
@@ -151,13 +157,13 @@ class FrozenTree(Tree):
 
 class SxS(_JSONEntry):
     """Processes Section-by-Section analyses, keyed by sxs"""
-    PREFIX = (settings.EREGS_INDEX_ROOT, 'sxs')
+    PREFIX = 'sxs'
     JSON_ENCODER = AmendmentEncoder
 
 
 class Layer(_JSONEntry):
     """Processes layers, keyed by layer"""
-    PREFIX = (settings.EREGS_INDEX_ROOT, 'layer')
+    PREFIX = 'layer'
 
     @classmethod
     def cfr(cls, *args):
@@ -172,11 +178,11 @@ class Layer(_JSONEntry):
 
 class Diff(_JSONEntry):
     """Processes diffs, keyed by diff"""
-    PREFIX = (settings.EREGS_INDEX_ROOT, 'diff')
+    PREFIX = 'diff'
 
 
 class Preamble(_JSONEntry):
     """Processes notice preambles, keyed by document id"""
-    PREFIX = (settings.EREGS_INDEX_ROOT, 'preamble')
+    PREFIX = 'preamble'
     JSON_ENCODER = FullNodeEncoder
     JSON_DECODER = staticmethod(full_node_decode_hook)

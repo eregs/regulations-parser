@@ -36,8 +36,7 @@ def fetch_sxs(document_number):
 
 
 class SxSResolver(DependencyResolver):
-    PATH_PARTS = entry.SxS.PREFIX + (
-        '(?P<doc_number>[a-zA-Z0-9-_]+)',)
+    PATH_PARTS = (entry.SxS.PREFIX, '(?P<doc_number>[a-zA-Z0-9-_]+)')
 
     def resolution(self):
         args = [self.match.group('doc_number')]
