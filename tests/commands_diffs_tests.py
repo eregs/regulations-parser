@@ -4,6 +4,7 @@ import os
 from unittest import TestCase
 
 from click.testing import CliRunner
+import pytest
 import six
 
 from regparser.commands.diffs import diffs
@@ -11,6 +12,7 @@ from regparser.index import entry
 from regparser.tree.struct import Node
 
 
+@pytest.mark.django_db
 class CommandsDiffsTests(TestCase):
     @contextmanager
     def integration_setup(self):

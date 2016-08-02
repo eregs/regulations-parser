@@ -3,6 +3,7 @@ from unittest import TestCase
 
 from click.testing import CliRunner
 from mock import patch
+import pytest
 import six
 
 from regparser.commands import layers
@@ -11,6 +12,7 @@ from regparser.index import dependency, entry
 from regparser.tree.struct import Node
 
 
+@pytest.mark.django_db
 class CommandsLayersTests(TestCase):
     def setUp(self):
         self.cli = CliRunner()

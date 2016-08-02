@@ -5,6 +5,7 @@ from unittest import TestCase
 
 from click.testing import CliRunner
 from mock import patch
+import pytest
 
 from regparser.commands import current_version
 from regparser.index import entry
@@ -12,6 +13,7 @@ from regparser.history.annual import Volume
 from regparser.notice.xml import TitlePartsRef
 
 
+@pytest.mark.django_db
 class CommandsCurrentVersionTests(TestCase):
     def setUp(self):
         self.title = randint(1, 999)
