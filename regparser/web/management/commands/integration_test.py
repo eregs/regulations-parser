@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-# encoding: utf-8
 """
 Integration tests verifying that revisions to the parser don't change previous
 results from known agency users. On each pull request, parse regulations from
@@ -12,9 +10,9 @@ import os
 import sys
 import tarfile
 
-import pip
 import boto3
-import click
+import djclick as click
+import pip
 import requests
 
 from regparser.commands.compare_to import compare_to
@@ -73,11 +71,11 @@ def download(target):
 
 
 @click.group()
-def cli():
+def integration_test():
     pass
 
 
-@cli.command()
+@integration_test.command()
 @click.argument('target')
 def install(target):
     config = targets[target]
@@ -85,25 +83,26 @@ def install(target):
         pip.main(['install', '--upgrade'] + requirement.split())
 
 
-@cli.command()
+@integration_test.command()
 def uninstall():
     for config in targets.values():
         for package in config.get('requirements', {}).keys():
             pip.main(['uninstall', '--yes', package])
 
 
-@cli.command()
+@integration_test.command()
 @click.argument('target')
 @click.pass_context
 def build(ctx, target):
     config = targets[target]
     paths = get_paths(target)
+
     for part in config['parts']:
         eregs_cli('pipeline', str(config['title']), str(part),
                   paths['output_dir'], '--only-latest')
 
 
-@cli.command()
+@integration_test.command()
 @click.argument('target')
 @click.pass_context
 def compare(ctx, target):
@@ -119,7 +118,7 @@ def compare(ctx, target):
         sys.exit(1)
 
 
-@cli.command()
+@integration_test.command()
 @click.argument('target')
 def upload(target):
     paths = get_paths(target)
@@ -131,7 +130,3 @@ def upload(target):
         Key=paths['cached_archive'],
         Body=open(paths['cached_archive'], 'rb'),
     )
-
-
-if __name__ == '__main__':
-    cli()

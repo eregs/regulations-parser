@@ -2,9 +2,8 @@ import logging
 import os
 from time import time
 
+from django.conf import settings
 import networkx
-
-from . import ROOT
 
 
 logger = logging.getLogger(__name__)
@@ -24,11 +23,11 @@ class Graph(object):
     `dependencies.gml` for later retrieval. This lets us know that an output
     with dependencies needs to be updated if those dependencies have been
     updated"""
-    GML_FILE = os.path.join(ROOT, "dependencies.gml")
+    GML_FILE = os.path.join(settings.EREGS_INDEX_ROOT, "dependencies.gml")
 
     def __init__(self):
-        if not os.path.exists(ROOT):
-            os.makedirs(ROOT)
+        if not os.path.exists(settings.EREGS_INDEX_ROOT):
+            os.makedirs(settings.EREGS_INDEX_ROOT)
 
         if os.path.exists(self.GML_FILE):
             self._graph = networkx.read_gml(self.GML_FILE)

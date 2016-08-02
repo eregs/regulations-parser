@@ -1,4 +1,2 @@
 redis==2.10.5
 rq==0.6.0
-django_rq==0.9.1
-djangorestframework==3.4

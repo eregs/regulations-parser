@@ -1,5 +1,6 @@
 import logging
-import requests
+
+from regparser.index.http_cache import http_client
 
 '''
 See https://www.federalregister.gov/developers/api/v1 - GET "search" method
@@ -31,7 +32,7 @@ def fetch_notice_json(cfr_title, cfr_part, only_final=False,
         params["conditions[effective_date][lte]"] = max_effective_date
     url = API_BASE + "articles"
     logger.info("Fetching notices - URL: %s Params: %r", url, params)
-    response = requests.get(url, params=params).json()
+    response = http_client().get(url, params=params).json()
     logger.debug("Fetching notices response - %r", response)
     if 'results' in response:
         return response['results']
@@ -46,6 +47,6 @@ def meta_data(document_number, fields=None):
     params = {}     # default fields are generally good
     if fields:
         params["fields[]"] = fields
-    response = requests.get(url, params=params)
+    response = http_client().get(url, params=params)
     response.raise_for_status()
     return response.json()

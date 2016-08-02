@@ -6,6 +6,7 @@ import re
 import requests
 
 from regparser import content
+from regparser.index.http_cache import http_client
 from regparser.layer.layer import Layer
 import settings
 
@@ -15,10 +16,11 @@ logger = logging.getLogger(__name__)
 
 def check_url(url):
     """Verify that content exists at a given URL"""
-    response = requests.head(url)
+    client = http_client()
+    response = client.head(url)
 
     if response.status_code == requests.codes.not_implemented:
-        response = requests.get(url)
+        response = client.get(url)
 
     if response.status_code == requests.codes.ok:
         return url

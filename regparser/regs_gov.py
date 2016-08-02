@@ -1,7 +1,8 @@
 from collections import namedtuple
 
 import logging
-import requests
+
+from regparser.index.http_cache import http_client
 
 from settings import REGS_GOV_API, REGS_GOV_KEY
 REGS_GOV_DOC_API = REGS_GOV_API + 'documents.json'
@@ -17,7 +18,7 @@ def docs(docket_id, filter_fn=None):
     # Use a list for consistent ordering, which is useful for caching
     params = [('api_key', REGS_GOV_KEY), ('dktid', docket_id), ('rpp', 1000),
               ('sb', 'docId'), ('so', 'ASC'), ('dct', 'N+PR+FR+O+SR')]
-    results = requests.get(REGS_GOV_DOC_API, params=params).json()
+    results = http_client().get(REGS_GOV_DOC_API, params=params).json()
     if results.get('error'):
         logger.warning("Error retrieving data from regs.gov: %s",
                        results['error'].get('message'))

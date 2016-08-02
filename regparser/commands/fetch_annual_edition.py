@@ -20,7 +20,8 @@ def fetch_annual_edition(cfr_title, cfr_part, year):
 
 
 class AnnualEditionResolver(DependencyResolver):
-    PATH_PARTS = entry.Annual.PREFIX + (
+    PATH_PARTS = (
+        entry.Annual.PREFIX,
         '(?P<cfr_title>\d+)',
         '(?P<cfr_part>\d+)',
         '(?P<year>\d{4})')

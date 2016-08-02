@@ -23,6 +23,5 @@ setup(
         "requests",
         "requests-cache"
     ],
-    entry_points={"console_scripts": [
-        "eregs=regparser.web.management.commands.eregs:cli.main"]}
+    entry_points={"console_scripts": ["eregs=eregs:main"]}
 )

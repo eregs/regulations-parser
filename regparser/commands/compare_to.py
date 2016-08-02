@@ -5,7 +5,6 @@ import logging
 import click
 from json_delta import udiff
 import requests
-import requests_cache
 from six.moves.urllib.parse import urlparse
 
 
@@ -94,10 +93,6 @@ def compare_to(api_base, paths, prompt):
     versions of 555. Glob syntax works if your shell supports it"""
     if not api_base.endswith("/"):
         api_base += "/"
-
-    # @todo: ugly to uninstall the cache after installing it in eregs.py.
-    # Remove the globalness
-    requests_cache.uninstall_cache()
 
     pairs = local_and_remote_generator(api_base, paths)
     return any([compare(local, remote, prompt) for local, remote in pairs])
