@@ -80,6 +80,7 @@ Get the required libraries
 
   cd regulations-parser
   pip install -r requirements.txt
+  ./manage.py migrate
 
 --------------
 Run the parser
