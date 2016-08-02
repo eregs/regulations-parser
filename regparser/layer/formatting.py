@@ -253,9 +253,12 @@ def node_to_table_xml_els(node):
     if node.source_xml is not None:
         root_xml_el = node.source_xml
     else:
-        # Wrap tagged_text in a placeholder tag as it might be an XML fragment
-        root_xml_el = etree.fromstring(u'<ROOT>{}</ROOT>'.format(
-            getattr(node, 'tagged_text', '')))
+        # tagged_text isn't quite XML -- it's often a fragment with unescaped
+        # characters. Clean it up before searching it
+        tagged_text = getattr(node, 'tagged_text', '')
+        tagged_text = tagged_text.replace('&', '&amp;')
+        tagged_text = u'<ROOT>{}</ROOT>'.format(tagged_text)
+        root_xml_el = etree.fromstring(tagged_text)
 
     return root_xml_el.xpath('self::GPOTABLE|.//GPOTABLE')
 
