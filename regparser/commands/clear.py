@@ -4,6 +4,8 @@ import shutil
 import click
 from django.conf import settings
 
+from regparser.web.index.models import Dependency, DependencyNode
+
 
 @click.command()
 @click.argument('path', nargs=-1)
@@ -24,3 +26,5 @@ def clear(path):
             shutil.rmtree(path)
         else:
             click.echo("Warning: path does not exist: " + path)
+    Dependency.objects.all().delete()
+    DependencyNode.objects.all().delete()

@@ -2,8 +2,10 @@ import logging
 import os
 from time import time
 
-from django.conf import settings
+from django.db import transaction
 import networkx
+
+from regparser.web.index.models import Dependency, DependencyNode
 
 
 logger = logging.getLogger(__name__)
@@ -23,23 +25,39 @@ class Graph(object):
     `dependencies.gml` for later retrieval. This lets us know that an output
     with dependencies needs to be updated if those dependencies have been
     updated"""
-    GML_FILE = os.path.join(settings.EREGS_INDEX_ROOT, "dependencies.gml")
 
     def __init__(self):
-        if not os.path.exists(settings.EREGS_INDEX_ROOT):
-            os.makedirs(settings.EREGS_INDEX_ROOT)
-
-        if os.path.exists(self.GML_FILE):
-            self._graph = networkx.read_gml(self.GML_FILE)
-        else:
-            self._graph = networkx.DiGraph()
+        self.deserialize()
         self.rebuild()
+
+    @transaction.atomic
+    def serialize(self):
+        """Convert the in-memory self._graph into db records"""
+        Dependency.objects.all().delete()
+        DependencyNode.objects.all().delete()
+
+        DependencyNode.objects.bulk_create(
+            DependencyNode(label=label) for label in self._graph)
+
+        Dependency.objects.bulk_create(
+            Dependency(depender_id=depender, target_id=target)
+            for (depender, target) in self._graph.edges())
+
+    @transaction.atomic
+    def deserialize(self):
+        """Convert db records into the in-memory self._graph"""
+        self._graph = networkx.DiGraph()
+        self._graph.add_nodes_from(
+            n.label for n in DependencyNode.objects.all())
+        self._graph.add_edges_from(
+            (e.depender_id, e.target_id)
+            for e in Dependency.objects.all())
 
     def add(self, output_entry, input_entry):
         """Add a dependency where output tuple relies on input_tuple"""
         self._graph.add_edge(str(input_entry), str(output_entry))
         self.rebuild()
-        networkx.write_gml(self._graph, self.GML_FILE)
+        self.serialize()    # @todo: make this incremental
 
     def __contains__(self, key):
         """Does the graph contain a particular node?"""
@@ -102,4 +120,4 @@ class Graph(object):
         for dependency in self.dependencies(key):
             return self._graph.remove_edge(dependency, key)
         self.rebuild()
-        networkx.write_gml(self._graph, self.GML_FILE)
+        self.serialize()    # @todo: incremental

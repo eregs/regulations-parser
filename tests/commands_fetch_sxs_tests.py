@@ -6,6 +6,7 @@ from unittest import TestCase
 from click.testing import CliRunner
 from lxml import etree
 from mock import patch
+import pytest
 
 from regparser.commands.fetch_sxs import fetch_sxs
 from regparser.index import dependency, entry
@@ -13,6 +14,7 @@ from regparser.notice.xml import NoticeXML
 from regparser.test_utils.xml_builder import XMLBuilder
 
 
+@pytest.mark.django_db
 class CommandsFetchSxSTests(TestCase):
     def setUp(self):
         super(CommandsFetchSxSTests, self).setUp()

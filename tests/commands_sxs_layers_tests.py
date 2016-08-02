@@ -2,12 +2,14 @@ from datetime import date
 from unittest import TestCase
 
 from click.testing import CliRunner
+import pytest
 
 from regparser.commands import sxs_layers
 from regparser.history.versions import Version
 from regparser.index import dependency, entry
 
 
+@pytest.mark.django_db
 class CommandsSxSLayersTests(TestCase):
     def create_versions(self):
         entry.Version(11, 222, 'aaa').write(

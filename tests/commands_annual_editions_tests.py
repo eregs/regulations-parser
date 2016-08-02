@@ -6,6 +6,7 @@ from unittest import TestCase
 import click
 from click.testing import CliRunner
 from mock import patch
+import pytest
 
 from regparser.commands import annual_editions
 from regparser.history.versions import Version
@@ -13,6 +14,7 @@ from regparser.index import dependency, entry
 from regparser.tree.struct import Node
 
 
+@pytest.mark.django_db
 class CommandsAnnualEditionsTests(TestCase):
     def setUp(self):
         self.cli = CliRunner()

@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django_rq',
     'regparser.web',
     'regparser.web.jobs',
+    'regparser.web.index',
     'rest_framework'
 ]
 

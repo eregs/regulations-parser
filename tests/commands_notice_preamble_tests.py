@@ -2,11 +2,13 @@ from unittest import TestCase
 
 from click.testing import CliRunner
 from mock import patch
+import pytest
 
 from regparser.commands.notice_preamble import notice_preamble
 from regparser.index import dependency, entry
 
 
+@pytest.mark.django_db
 class CommandsNoticePreambleTests(TestCase):
     @patch('regparser.commands.notice_preamble.parse_preamble')
     def test_notice_preamble(self, parse_preamble):

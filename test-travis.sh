@@ -1,6 +1,8 @@
 set -e
 set -x
 
+./manage.py migrate
+
 if [[ $INTEGRATION_TARGET = '' ]]; then
   py.test --cov-report term-missing --cov regparser
   flake8 .

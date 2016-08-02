@@ -4,11 +4,13 @@ from time import time
 from unittest import TestCase
 
 from click.testing import CliRunner
+import pytest
 import six
 
 from regparser.index import dependency, entry
 
 
+@pytest.mark.django_db
 class DependencyGraphTests(TestCase):
     @contextmanager
     def dependency_graph(self):

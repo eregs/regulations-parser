@@ -5,12 +5,14 @@ from unittest import TestCase
 
 from click.testing import CliRunner
 from mock import Mock, patch
+import pytest
 
 from regparser.commands import versions
 from regparser.history.delays import FRDelay
 from regparser.index import dependency, entry
 
 
+@pytest.mark.django_db
 class CommandsVersionsTests(TestCase):
     def setUp(self):
         self.cli = CliRunner()

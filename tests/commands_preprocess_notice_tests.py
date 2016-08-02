@@ -5,6 +5,7 @@ from unittest import TestCase
 from click.testing import CliRunner
 from lxml import etree
 from mock import patch
+import pytest
 
 from regparser.commands.preprocess_notice import (
     convert_cfr_refs, preprocess_notice)
@@ -14,6 +15,7 @@ from regparser.test_utils.http_mixin import HttpMixin
 from regparser.test_utils.xml_builder import XMLBuilder
 
 
+@pytest.mark.django_db
 class CommandsPreprocessNoticeTests(HttpMixin, TestCase):
     def example_xml(self, effdate_str="", source=None):
         """Returns a simple notice-like XML structure"""
@@ -209,9 +211,9 @@ class CommandsPreprocessNoticeTests(HttpMixin, TestCase):
             self.assertEqual(mar.effective, date(2003, 3, 3))
 
     @patch('regparser.commands.preprocess_notice.notice_xmls_for_url')
-    def test_dependencies(self, notice_xmls_for_url):
+    def test_dependencies_local(self, notice_xmls_for_url):
         """If the xml comes from a local source, we should expect a dependency
-        be present. Otherwise, we should expect no dependency"""
+        be present"""
         cli = CliRunner()
         self.expect_common_json()
         notice_xmls_for_url.return_value = [self.example_xml(source='./here')]
@@ -220,6 +222,13 @@ class CommandsPreprocessNoticeTests(HttpMixin, TestCase):
             entry_str = str(entry.Notice() / '1234-5678')
             self.assertIn(entry_str, dependency.Graph())
 
+    @patch('regparser.commands.preprocess_notice.notice_xmls_for_url')
+    def test_dependencies_remote(self, notice_xmls_for_url):
+        """If the xml comes from a remote source, we should not see a
+        dependency"""
+        cli = CliRunner()
+        self.expect_common_json()
+        notice_xmls_for_url.return_value = [self.example_xml(source='./here')]
         notice_xmls_for_url.return_value[0].source = 'http://example.com'
         with cli.isolated_filesystem():
             cli.invoke(preprocess_notice, ['1234-5678'])

@@ -4,7 +4,7 @@ from click.testing import CliRunner
 import pytest
 
 from regparser.commands.clear import clear
-from regparser.index import entry
+from regparser.index import dependency, entry
 
 
 @pytest.fixture
@@ -39,6 +39,19 @@ def test_deletes_index(tmpdir_setup):
     CliRunner().invoke(clear)
     assert 0 == len(entry.Entry("aaa"))
     assert 0 == len(entry.Entry("bbb"))
+
+
+@pytest.mark.django_db
+def test_deletes_dependencies(tmpdir_setup):
+    graph = dependency.Graph()
+    graph.add('a', 'b')
+    assert len(graph.dependencies('a')) == 1
+    graph = dependency.Graph()
+    assert len(graph.dependencies('a')) == 1
+
+    CliRunner().invoke(clear)
+    graph = dependency.Graph()
+    assert len(graph.dependencies('a')) == 0
 
 
 def test_deletes_can_be_focused(tmpdir_setup):
