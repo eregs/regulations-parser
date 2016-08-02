@@ -108,6 +108,8 @@ class LayerGraphicsTest(HttpMixin, TestCase):
                          status=403)
         self.expect_http(uri='http://example.com/abcd123.gif', method='HEAD',
                          status=403)
+        self.expect_http(uri='http://example.com/ABCD123.png', method='HEAD',
+                         status=403)
         self.expect_http(uri='http://example.com/abcd123.png', method='HEAD')
 
         self.assertEqual(gid_to_url('ABCD123'),
