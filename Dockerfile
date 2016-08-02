@@ -8,7 +8,8 @@ WORKDIR /app/src/
 RUN apk add --update libxslt libxml2-dev libxslt-dev musl-dev gcc git \
     && pip install --no-cache-dir -r requirements.txt \
     && apk del --purge libxml2-dev libxslt-dev musl-dev gcc \
-    && rm -rf /var/cache/apk/*
+    && rm -rf /var/cache/apk/* \
+    && ./manage.py migrate
 
 ENV PYTHONUNBUFFERED="1" \
     EREGS_CACHE_DIR="/app/cache" \
