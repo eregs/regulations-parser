@@ -6,8 +6,8 @@ import os
 import re
 
 from cached_property import cached_property
+import requests
 
-from regparser.index import xml_sync
 from regparser.index.http_cache import http_client
 from regparser.tree.xml_parser.xml_wrapper import XMLWrapper
 import settings
@@ -102,15 +102,21 @@ class Volume(namedtuple('Volume', ['year', 'title', 'vol_num'])):
         url = CFR_PART_URL.format(year=self.year, title=self.title,
                                   volume=self.vol_num, part=part)
         filename = url.split('/')[-1]
-        for xml_path in settings.LOCAL_XML_PATHS + [xml_sync.GIT_DIR]:
+        for xml_path in settings.LOCAL_XML_PATHS:
             xml_path = os.path.join(xml_path, 'annual', filename)
             logger.debug("Checking locally for file %s", xml_path)
             if os.path.isfile(xml_path):
                 with open(xml_path, 'rb') as f:
                     return XMLWrapper(f.read(), xml_path)
-        logger.debug("GET %s", url)
-        response = http_client().get(url)
-        if response.status_code == 200:
+
+        client = http_client()
+        first_try_url = settings.XML_REPO_PREFIX + 'annual/' + filename
+        logging.info('trying to fetch annual edition from %s', first_try_url)
+        response = client.get(first_try_url)
+        if response.status_code != requests.codes.ok:
+            logger.info('failed. fetching from %s', url)
+            response = client.get(url)
+        if response.status_code == requests.codes.ok:
             return XMLWrapper(response.content, url)
 
 
