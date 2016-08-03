@@ -5,7 +5,6 @@ from regparser.commands.current_version import current_version
 from regparser.commands.diffs import diffs
 from regparser.commands.fill_with_rules import fill_with_rules
 from regparser.commands.layers import layers
-from regparser.commands.sync_xml import sync_xml
 from regparser.commands.versions import versions
 from regparser.commands.write_to import write_to
 
@@ -16,10 +15,8 @@ from regparser.commands.write_to import write_to
 @click.argument('output', envvar='EREGS_OUTPUT_DIR')
 @click.option('--only-latest', is_flag=True, default=False,
               help="Don't derive history; use the latest annual edition")
-@click.option('--xml-ttl', type=int, default=60*60,
-              help='Time to cache XML downloads, in seconds')
 @click.pass_context
-def pipeline(ctx, cfr_title, cfr_part, output, only_latest, xml_ttl):
+def pipeline(ctx, cfr_title, cfr_part, output, only_latest):
     """Full regulation parsing pipeline. Consists of retrieving and parsing
     annual edition, attempting to parse final rules in between, deriving
     layers and diffs, and writing them to disk or an API
@@ -31,7 +28,6 @@ def pipeline(ctx, cfr_title, cfr_part, output, only_latest, xml_ttl):
     * a directory prefixed with "git://". This will export to a git
       repository"""
     params = {'cfr_title': cfr_title, 'cfr_part': cfr_part}
-    ctx.invoke(sync_xml, xml_ttl=xml_ttl)
     if only_latest:
         ctx.invoke(current_version, **params)
     else:
