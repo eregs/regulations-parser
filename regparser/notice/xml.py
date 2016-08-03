@@ -7,13 +7,13 @@ import os
 
 from cached_property import cached_property
 from lxml import etree
+import requests
 from six.moves.urllib.parse import urlparse
 
 
 from regparser import regs_gov
 from regparser.grammar.unified import notice_cfr_p
 from regparser.history.delays import delays_in_sentence
-from regparser.index import xml_sync
 from regparser.index.http_cache import http_client
 from regparser.notice.amendments import fetch_amendments
 from regparser.notice.dates import fetch_dates
@@ -458,7 +458,7 @@ def local_copies(url):
     parsed_url = urlparse(url)
     path = parsed_url.path.replace('/', os.sep)
     notice_dir_suffix, file_name = os.path.split(path)
-    for xml_path in settings.LOCAL_XML_PATHS + [xml_sync.GIT_DIR]:
+    for xml_path in settings.LOCAL_XML_PATHS:
         if os.path.isfile(xml_path + path):
             return [xml_path + path]
         else:
@@ -485,9 +485,16 @@ def notice_xmls_for_url(doc_num, notice_url):
             with open(local_notice_file, 'rb') as f:
                 yield NoticeXML(f.read(), local_notice_file).preprocess()
     else:
-        logger.info("fetching notice xml for %s", notice_url)
-        content = http_client().get(notice_url).content
-        yield NoticeXML(content, notice_url).preprocess()
+        # ignore initial slash
+        path_parts = urlparse(notice_url).path[1:].split('/')
+        client = http_client()
+        first_try_url = settings.XML_REPO_PREFIX + '/'.join(path_parts)
+        logger.info('trying to fetch notice xml from %s', first_try_url)
+        response = client.get(first_try_url)
+        if response.status_code != requests.codes.ok:
+            logger.info('failed. fetching from %s', notice_url)
+            response = client.get(notice_url)
+        yield NoticeXML(response.content, notice_url).preprocess()
 
 
 def xmls_for_url(notice_url):
