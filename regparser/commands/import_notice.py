@@ -2,7 +2,7 @@ import logging
 
 import click
 
-from regparser.index import dependency, entry
+from regparser.index import entry
 from regparser.notice.xml import NoticeXML
 
 
@@ -34,22 +34,6 @@ def has_requirements(notice_xml):
         return True
 
 
-def write_if_stale(notice_xml):
-    """We only want to write out the processed xml if it is "stale", i.e. if
-    its source has changed"""
-    deps = dependency.Graph()
-    notice_entry = entry.Notice(notice_xml.version_id)
-
-    new_notice = notice_entry not in deps
-    diff_source = notice_xml.source not in deps.dependencies(notice_xml)
-    source_changed = deps.is_stale(notice_entry)
-
-    if new_notice or diff_source or source_changed:
-        deps.clear_for(notice_entry)
-        deps.add(notice_entry, notice_xml.source)
-        notice_entry.write(notice_xml)
-
-
 @click.command()
 @click.argument('xml_file', type=click.Path(exists=True))
 def import_notice(xml_file):
@@ -58,4 +42,5 @@ def import_notice(xml_file):
     validations on the XML"""
     notice_xml = parse_notice(xml_file)
     if notice_xml:
-        write_if_stale(notice_xml)
+        notice_entry = entry.Notice(notice_xml.version_id)
+        notice_entry.write(notice_xml)
