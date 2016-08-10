@@ -1,7 +1,7 @@
 FROM python:2.7-alpine
 
 COPY ["regparser", "/app/src/regparser/"]
-COPY ["settings.py", "eregs.py", "requirements.txt", "setup.py", "/app/src/"]
+COPY ["settings.py", "eregs.py", "requirements.txt", "setup.py", "manage.py", "/app/src/"]
 VOLUME ["/app/cache", "/app/output"]
 
 WORKDIR /app/src/
