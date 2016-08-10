@@ -23,22 +23,20 @@ def write_layers(client, only_title, only_part):
     """Write all layers that match the filtering criteria. If CFR title/part
     are used to filter, only process CFR layers. Otherwise, process all
     layers."""
-    for layer_dir in utils.relevant_paths(entry.Layer.cfr(), only_title,
-                                          only_part):
-        _, cfr_title, cfr_part, version_id = layer_dir.path
-        for layer_name in layer_dir:
-            layer = (layer_dir / layer_name).read()
-            doc_id = version_id + '/' + cfr_part
-            client.layer(layer_name, 'cfr', doc_id).write(layer)
+    for layer_entry in utils.relevant_paths(entry.Layer.cfr(), only_title,
+                                            only_part):
+        _, cfr_title, cfr_part, version_id, layer_name = layer_entry.path
+        layer = layer_entry.read()
+        doc_id = version_id + '/' + cfr_part
+        client.layer(layer_name, 'cfr', doc_id).write(layer)
 
     if only_title is None and only_part is None:
-        non_cfr_doc_types = [doc_type for doc_type in entry.Layer()
-                             if doc_type != 'cfr']
-        for doc_type in non_cfr_doc_types:
-            for doc_id in entry.Layer(doc_type):
-                for layer_name in entry.Layer(doc_type, doc_id):
-                    layer = entry.Layer(doc_type, doc_id, layer_name).read()
-                    client.layer(layer_name, doc_type, doc_id).write(layer)
+        for sub_entry in entry.Layer().sub_entries():
+            if sub_entry.path[0] == 'cfr':
+                continue
+            doc_type, doc_id, layer_name = sub_entry.path
+            layer = sub_entry.read()
+            client.layer(layer_name, doc_type, doc_id).write(layer)
 
 
 def transform_notice(notice_xml):
@@ -67,30 +65,30 @@ def write_notices(client, only_title, only_part):
     :param int or None only_title: Filter results to one title
     :param int or None only_part: Filter results to one part
     """
-    notice_dir = entry.Notice()
-    for version_id in notice_dir:
-        notice_xml = (notice_dir / version_id).read()
+    for notice_entry in entry.Notice().sub_entries():
+        notice_xml = notice_entry.read()
         title_match = only_title is None or any(ref.title == only_title
                                                 for ref in notice_xml.cfr_refs)
         # @todo - this doesn't confirm the part is within the title
         cfr_parts = [part for ref in notice_xml.cfr_refs for part in ref.parts]
         part_match = only_part is None or only_part in cfr_parts
         if title_match and part_match:
-            client.notice(version_id).write(transform_notice(notice_xml))
+            client.notice(notice_entry.path[-1]).write(
+                transform_notice(notice_xml))
 
 
 def write_diffs(client, only_title, only_part):
-    for diff_dir in utils.relevant_paths(entry.Diff(), only_title, only_part):
-        cfr_title, cfr_part, lhs_id = diff_dir.path
-        for rhs_id in diff_dir:
-            diff = (diff_dir / rhs_id).read()
-            client.diff(cfr_part, lhs_id, rhs_id).write(diff)
+    for diff_entry in utils.relevant_paths(entry.Diff(), only_title,
+                                           only_part):
+        cfr_title, cfr_part, lhs_id, rhs_id = diff_entry.path
+        diff = diff_entry.read()
+        client.diff(cfr_part, lhs_id, rhs_id).write(diff)
 
 
 def write_preambles(client):
-    for doc_id in entry.Preamble():
-        preamble = entry.Preamble(doc_id).read()
-        client.preamble(doc_id).write(preamble)
+    for preamble_entry in entry.Preamble().sub_entries():
+        preamble = preamble_entry.read()
+        client.preamble(preamble_entry.path[-1]).write(preamble)
 
 
 @click.command()
