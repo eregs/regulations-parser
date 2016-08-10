@@ -56,19 +56,17 @@ class Entry(object):
         """Default implementation; treat the content as bytes"""
         return content
 
-    def __iter__(self):
-        """All sub-entries, i.e. the directory contents, as strings"""
+    def sub_entries(self):
         # @todo optimization point: use db indexes/similar to speed up this
         # query
-        self_path = str(self)
-        for entry in DBEntry.objects.filter(
-                label__label__startswith=self_path):
+        prefix = str(self) + os.sep
+        for entry in DBEntry.objects.filter(label__label__startswith=prefix):
             # Note: implicitly ordering by label in the DB model
-            if os.path.dirname(entry.label_id) == self_path:
-                yield os.path.basename(entry.label_id)
-
-    def __len__(self):
-        return len(list(self.__iter__()))
+            suffix = entry.label_id[len(prefix):]
+            sub_entry = self
+            for suffix_part in suffix.split(os.sep):
+                sub_entry = sub_entry / suffix_part
+            yield sub_entry
 
     def exists(self):
         return DBEntry.objects.filter(label=str(self)).exists()
@@ -106,21 +104,20 @@ class Version(Entry):
     def deserialize(self, content):
         return VersionStruct.from_json(content.decode('utf-8'))
 
-    def __iter__(self):
-        """Deserialize all Version objects we're aware of."""
-        versions = [(self / path).read()
-                    for path in super(Version, self).__iter__()]
+    def sub_entries(self):
+        """Sort children by version"""
+        versions = [path.read()
+                    for path in super(Version, self).sub_entries()]
         for version in sorted(versions):
-            yield version.identifier
+            yield self / version.identifier
 
 
 class FinalVersion(Version):
     """Like Version, but only list versions associated with final rules"""
-    def __iter__(self):
-        for version_id in super(FinalVersion, self).__iter__():
-            version = (self / version_id).read()
-            if version.is_final:
-                yield version_id
+    def sub_entries(self):
+        for path in super(FinalVersion, self).sub_entries():
+            if path.read().is_final:
+                yield path
 
 
 class _JSONEntry(Entry):

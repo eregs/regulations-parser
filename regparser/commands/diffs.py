@@ -15,7 +15,9 @@ def diffs(cfr_title, cfr_part):
     logger.info("Build diffs - %s Part %s", cfr_title, cfr_part)
     tree_dir = entry.FrozenTree(cfr_title, cfr_part)
     diff_dir = entry.Diff(cfr_title, cfr_part)
-    pairs = [(lhs, rhs) for lhs in tree_dir for rhs in tree_dir]
+    pairs = [(l.path[-1], r.path[-1])
+             for l in tree_dir.sub_entries()
+             for r in tree_dir.sub_entries()]
     deps = dependency.Graph()
     for lhs_id, rhs_id in pairs:
         deps.add(diff_dir / lhs_id / rhs_id, tree_dir / lhs_id)

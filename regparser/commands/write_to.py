@@ -48,7 +48,7 @@ def transform_notice(notice_xml):
     as_dict['versions'] = {}
     for cfr_title, cfr_part in notice_xml.cfr_ref_pairs:
         version_dir = entry.Version(cfr_title, cfr_part)
-        versions = [(version_dir / id).read() for id in version_dir]
+        versions = [v.read() for v in version_dir.sub_entries()]
         with_parents = zip(versions, Version.parents_of(versions))
         for version, parent in with_parents:
             if version.identifier == notice_xml.version_id and parent:

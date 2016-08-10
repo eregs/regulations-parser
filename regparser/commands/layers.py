@@ -74,8 +74,7 @@ def layers(cfr_title, cfr_part):
             process_cfr_layers(stale, tree_title, version_entry)
 
     if cfr_title is None and cfr_part is None:
-        preamble_dir = entry.Preamble()
-        for doc_number in preamble_dir:
-            stale = stale_layers(preamble_dir / doc_number, 'preamble')
+        for preamble_entry in entry.Preamble().sub_entries():
+            stale = stale_layers(preamble_entry, 'preamble')
             if stale:
-                process_preamble_layers(stale, preamble_dir / doc_number)
+                process_preamble_layers(stale, preamble_entry)

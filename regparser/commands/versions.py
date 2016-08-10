@@ -17,12 +17,13 @@ def fetch_version_ids(cfr_title, cfr_part, notice_dir):
     register and the local filesystem"""
     version_ids = []
     final_rules = fetch_notice_json(cfr_title, cfr_part, only_final=True)
+    notice_ids = [v.path[-1] for v in notice_dir.sub_entries()]
 
     for document_number in (fr['document_number'] for fr in final_rules):
         # Document number followed by a date
         regex = re.compile(re.escape(document_number) + r"_\d{8}")
         version_ids.extend(
-            [name for name in notice_dir if regex.match(name)] or
+            [name for name in notice_ids if regex.match(name)] or
             [document_number])
 
     return version_ids
@@ -102,6 +103,7 @@ def versions(cfr_title, cfr_part):
     version_ids = fetch_version_ids(cfr_title, cfr_part, notice_dir)
     logger.debug("Versions found: %r", version_ids)
     xmls = {version_id: (notice_dir / version_id).read()
-            for version_id in version_ids if version_id in notice_dir}
+            for version_id in version_ids
+            if (notice_dir / version_id).exists()}
     delays_by_version = delays(xmls.values())
     write_if_needed(cfr_title, cfr_part, version_ids, xmls, delays_by_version)
