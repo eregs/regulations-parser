@@ -1,15 +1,16 @@
 from contextlib import contextmanager
-from time import time
-import os
+from datetime import timedelta
 from unittest import TestCase
 
 from click.testing import CliRunner
+from django.utils import timezone
 import pytest
 import six
 
 from regparser.commands.diffs import diffs
 from regparser.index import entry
 from regparser.tree.struct import Node
+from regparser.web.index.models import Entry as DBEntry
 
 
 @pytest.mark.django_db
@@ -52,6 +53,8 @@ class CommandsDiffsTests(TestCase):
             self.assert_diff_keys('v1', 'v2', ['update'])
 
             # declare an input tree stale
-            os.utime(str(self.tree_dir / 'v1'), (time() + 1000, time() + 1000))
+            label_id = str(self.tree_dir / 'v1')
+            new_time = timezone.now() + timedelta(hours=1)
+            DBEntry.objects.filter(label_id=label_id).update(modified=new_time)
             self.cli.invoke(diffs, ['12', '1000'])
             self.assert_diff_keys('v1', 'v2', ['1000'])
