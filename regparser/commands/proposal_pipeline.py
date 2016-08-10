@@ -8,7 +8,6 @@ from regparser.commands.import_notice import import_notice, parse_notice
 from regparser.commands.layers import layers
 from regparser.commands.notice_preamble import notice_preamble
 from regparser.commands.proposal_versions import proposal_versions
-from regparser.commands.sync_xml import sync_xml
 from regparser.commands.versions import versions
 from regparser.commands.write_to import write_to
 
@@ -18,15 +17,12 @@ from regparser.commands.write_to import write_to
 @click.argument('output', envvar='EREGS_OUTPUT_DIR')
 @click.option('--only-latest', is_flag=True, default=False,
               help="Don't derive historyl use the latest annual edition")
-@click.option('--xml-ttl', type=int, default=60*60,
-              help='Time to cache XML downloads, in seconds')
 @click.pass_context
-def proposal_pipeline(ctx, xml_file, output, only_latest, xml_ttl):
+def proposal_pipeline(ctx, xml_file, output, only_latest):
     """Full proposal parsing pipeline. Reads the XML file provided, pulls out
     the preamble, parses versions of the relevant CFR parts, inserts a version
     for each associated with this proposal, builds layers + diffs, and writes
     them out."""
-    ctx.invoke(sync_xml, xml_ttl=xml_ttl)
     ctx.invoke(import_notice, xml_file=xml_file)
 
     notice_xml = parse_notice(xml_file)

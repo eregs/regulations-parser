@@ -1,12 +1,9 @@
 # vim: set encoding=utf-8
-import os
 import re
 from unittest import TestCase
 
-from click.testing import CliRunner
 from mock import Mock, patch
 
-from regparser.index import xml_sync
 from regparser.history import annual
 from regparser.test_utils.http_mixin import HttpMixin
 
@@ -119,19 +116,25 @@ class HistoryAnnualVolumeTests(HttpMixin, TestCase):
         self.assertTrue(volume.should_contain(100))
         self.assertTrue(volume.should_contain(1000))
 
-    def test_find_part_local(self):
+    @patch('regparser.history.annual.http_client')
+    def test_find_part_local(self, http_client):
         """Verify that a local copy of the annual edition content is
         checked"""
-        with CliRunner().isolated_filesystem():
-            path = os.path.join(xml_sync.GIT_DIR, 'annual')
-            os.makedirs(path)
-            path = os.path.join(path, 'CFR-2020-title11-vol12-part13.xml')
-            with open(path, 'w') as f:
-                f.write('<ROOT><CHILD>content</CHILD></ROOT>')
+        http_client.return_value.get.return_value.status_code = 200
+        http_client.return_value.get.return_value.content = b"""
+        <PART>
+            <EAR>Pt. 111</EAR>
+            <HD SOURCE="HED">PART 111-Something</HD>
+            <FIELD>111 Content</FIELD>
+        </PART>"""
+        volume = annual.Volume(2001, 12, 1)
 
-            xml = annual.Volume(2020, 11, 12).find_part_xml(13)
-            self.assertEqual(xml.xpath('./CHILD')[0].text,
-                             'content')
+        volume.find_part_xml(111)
+        assert http_client.return_value.get.call_count == 1
+
+        http_client.return_value.get.return_value.status_code = 404
+        volume.find_part_xml(111)
+        assert http_client.return_value.get.call_count == 3
 
 
 class HistoryAnnualTests(TestCase):
