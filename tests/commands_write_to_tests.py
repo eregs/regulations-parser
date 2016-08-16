@@ -8,6 +8,7 @@ from unittest import TestCase
 from click.testing import CliRunner
 from lxml import etree
 from mock import Mock, patch
+import pytest
 
 from regparser.commands.write_to import transform_notice, write_to
 from regparser.history.versions import Version
@@ -17,6 +18,7 @@ from regparser.test_utils.xml_builder import XMLBuilder
 from regparser.tree.struct import Node
 
 
+@pytest.mark.django_db
 class CommandsWriteToTests(TestCase):
     def add_trees(self):
         """Add some versions to the index"""

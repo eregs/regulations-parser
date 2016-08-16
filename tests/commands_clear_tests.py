@@ -1,10 +1,15 @@
 import os
 
 from click.testing import CliRunner
+import httpretty
 import pytest
 
 from regparser.commands.clear import clear
 from regparser.index import dependency, entry
+from regparser.index.http_cache import http_client
+from regparser.test_utils.http_mixin import http_pretty_fixture
+
+http_pretty = http_pretty_fixture
 
 
 @pytest.fixture
@@ -21,24 +26,27 @@ def test_no_errors_when_clear(tmpdir_setup):
     CliRunner().invoke(clear)
 
 
-def test_deletes_http_cache(tmpdir_setup):
-    sqlite_filename = tmpdir_setup.REQUESTS_CACHE['cache_name'] + '.sqlite'
-    open(sqlite_filename, 'w').close()
-    assert os.path.exists(sqlite_filename)
+@pytest.mark.django_db
+def test_deletes_http_cache(http_pretty, tmpdir_setup):
+    assert len(http_client().cache.responses) == 0
+
+    httpretty.register_uri(httpretty.GET, 'http://example.com')
+    http_client().get('http://example.com')
+    assert len(http_client().cache.responses) == 1
 
     CliRunner().invoke(clear)
-    assert not os.path.exists(sqlite_filename)
+    assert len(http_client().cache.responses) == 0
 
 
+@pytest.mark.django_db
 def test_deletes_index(tmpdir_setup):
     entry.Entry('aaa', 'bbb').write(b'ccc')
     entry.Entry('bbb', 'ccc').write(b'ddd')
-    assert 1 == len(entry.Entry("aaa"))
-    assert 1 == len(entry.Entry("bbb"))
+    assert 1 == len(list(entry.Entry("aaa").sub_entries()))
+    assert 1 == len(list(entry.Entry("bbb").sub_entries()))
 
     CliRunner().invoke(clear)
-    assert 0 == len(entry.Entry("aaa"))
-    assert 0 == len(entry.Entry("bbb"))
+    assert [] == list(entry.Entry().sub_entries())
 
 
 @pytest.mark.django_db
@@ -54,6 +62,7 @@ def test_deletes_dependencies(tmpdir_setup):
     assert len(graph.dependencies('a')) == 0
 
 
+@pytest.mark.django_db
 def test_deletes_can_be_focused(tmpdir_setup):
     """If params are provided to delete certain directories, only those
     directories should get removed"""
@@ -67,7 +76,5 @@ def test_deletes_can_be_focused(tmpdir_setup):
 
     CliRunner().invoke(clear, ['delroot', 'root/delsub'])
 
-    expected = set(['top-level-file', 'root', 'other-root'])
-    assert set(entry.Entry()) == expected
-    assert set(entry.Entry('root')) == set(['othersub', 'aaa'])
-    assert set(entry.Entry('other-root')) == set(['aaa'])
+    assert set(os.sep.join(c.path)
+               for c in entry.Entry().sub_entries()) == set(to_keep)

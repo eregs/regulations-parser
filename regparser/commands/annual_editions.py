@@ -17,10 +17,10 @@ def last_versions(cfr_title, cfr_part):
     which are the last to be included before an annual edition"""
     have_annual_edition = {}
     path = entry.FinalVersion(cfr_title, cfr_part)
-    if len(path) == 0:
+    if not any(path.sub_entries()):
         raise click.UsageError("No versions found. Run `versions`?")
-    for version_id in path:
-        version = (path / version_id).read()
+    for subpath in path.sub_entries():
+        version = subpath.read()
         pub_date = annual.date_of_annual_after(cfr_title, version.effective)
         have_annual_edition[pub_date.year] = version.identifier
     for year in sorted(have_annual_edition.keys()):

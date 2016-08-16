@@ -1,10 +1,9 @@
-from datetime import date
-import os
-from time import time
+from datetime import date, timedelta
 from unittest import TestCase
 
 import click
 from click.testing import CliRunner
+from django.utils import timezone
 from mock import patch
 import pytest
 
@@ -12,6 +11,7 @@ from regparser.commands import annual_editions
 from regparser.history.versions import Version
 from regparser.index import dependency, entry
 from regparser.tree.struct import Node
+from regparser.web.index.models import Entry as DBEntry
 
 
 @pytest.mark.django_db
@@ -99,7 +99,8 @@ class CommandsAnnualEditionsTests(TestCase):
             self.assertFalse(build_tree.called)
 
             # Simulate a change to an input file
-            os.utime(str(entry.Annual('12', '1000', '2000')),
-                     (time() + 1000, time() + 1000))
+            label_id = str(entry.Annual(12, 1000, 2000))
+            new_time = timezone.now() + timedelta(hours=1)
+            DBEntry.objects.filter(label_id=label_id).update(modified=new_time)
             annual_editions.process_if_needed('12', '1000', last_versions)
             self.assertTrue(build_tree.called)

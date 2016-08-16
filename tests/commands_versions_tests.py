@@ -1,15 +1,15 @@
-from datetime import date
-import os
-from time import time
+from datetime import date, timedelta
 from unittest import TestCase
 
 from click.testing import CliRunner
+from django.utils import timezone
 from mock import Mock, patch
 import pytest
 
 from regparser.commands import versions
 from regparser.history.delays import FRDelay
 from regparser.index import dependency, entry
+from regparser.web.index.models import Entry as DBEntry
 
 
 @pytest.mark.django_db
@@ -151,8 +151,9 @@ class CommandsVersionsTests(TestCase):
             self.assertFalse(write_to_disk.called)
 
             # Simulate a change to an input file
-            os.utime(str(entry.Notice('222')),
-                     (time() + 1000, time() + 1000))
+            label_id = str(entry.Notice('222'))
+            new_time = timezone.now() + timedelta(hours=1)
+            DBEntry.objects.filter(label_id=label_id).update(modified=new_time)
             versions.write_if_needed(
                 'title', 'part', ['111'], {'111': 'xml111'},
                 {'111': versions.Delay('222', 'until-date')})

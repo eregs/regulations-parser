@@ -2,7 +2,7 @@ import click
 
 from regparser import federalregister
 from regparser.commands.dependency_resolver import DependencyResolver
-from regparser.index import dependency, entry
+from regparser.index import entry
 from regparser.notice.build import split_doc_num
 from regparser.notice.xml import notice_xmls_for_url, TitlePartsRef
 
@@ -58,7 +58,6 @@ def preprocess_notice(document_number):
         ])
     notice_xmls = list(notice_xmls_for_url(document_number,
                                            meta['full_text_xml_url']))
-    deps = dependency.Graph()
     for notice_xml in notice_xmls:
         notice_xml.published = meta['publication_date']
         notice_xml.fr_volume = meta['volume']
@@ -90,8 +89,6 @@ def preprocess_notice(document_number):
 
         notice_entry = entry.Notice(file_name)
         notice_entry.write(notice_xml)
-        if notice_xml.source_is_local:
-            deps.add(str(notice_entry), notice_xml.source)
 
 
 class NoticeResolver(DependencyResolver):
