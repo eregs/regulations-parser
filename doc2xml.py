@@ -16,7 +16,7 @@ Known limitations:
       headers exist. If the docx uses custom style sheets instead, it won't
       work
     * Only processes the preamble data, not the CFR changes
-"""
+"""     # noqa
 from __future__ import print_function
 from itertools import tee
 import re
@@ -71,8 +71,8 @@ class Builder(object):
 
     def skip_header(self):
         def not_header(par):
-            return not (par.text.strip() and par.runs[0].bold
-                        and not any(c.isdigit() for c in par.text))
+            return not (par.text.strip() and par.runs[0].bold and
+                        not any(c.isdigit() for c in par.text))
         self.dropwhile(not_header)
         return self
 
