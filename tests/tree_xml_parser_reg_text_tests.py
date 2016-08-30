@@ -82,7 +82,7 @@ class RegTextTest(TestCase):
         self.assertEqual(u'§ 8675.309 [Reserved]', node.title)
         self.assertEqual([], node.children)
 
-    def test_build_from_section_reserved_range(self):
+    def test_build_from_3_section_reserved_range(self):
         with XMLBuilder("SECTION") as ctx:
             ctx.SECTNO(u"§§ 8675.309-8675.311")
             ctx.RESERVED("[Reserved]")
@@ -93,6 +93,14 @@ class RegTextTest(TestCase):
         self.assertEqual(u'§ 8675.309 [Reserved]', n309.title)
         self.assertEqual(u'§ 8675.310 [Reserved]', n310.title)
         self.assertEqual(u'§ 8675.311 [Reserved]', n311.title)
+
+    def test_build_from_4_section_reserved_range(self):
+        with XMLBuilder("SECTION") as ctx:
+            ctx.SECTNO(u"§§ 8675.309-8675.312")
+            ctx.RESERVED("[Reserved]")
+        n309 = reg_text.build_from_section('8675', ctx.xml)[0]
+        self.assertEqual(n309.label, ['8675', '309'])
+        self.assertEqual(u'§§ 8675.309-312 [Reserved]', n309.title)
 
     def _setup_for_ambiguous(self, final_par):
         with self.section() as ctx:
