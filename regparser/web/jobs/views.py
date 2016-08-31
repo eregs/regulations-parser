@@ -314,6 +314,9 @@ class FileUploadViewInstance(mixins.RetrieveModelMixin,
     lookup_field = "hexhash"
 
     def get(self, request, *args, **kwargs):
+        # Is the next line the best way to kick off a 404 if there's no match?
+        self.retrieve(request, *args, **kwargs)
+
         uploaded_file = RegulationFile.objects.get(hexhash=kwargs["hexhash"])
         return HttpResponse(uploaded_file.contents)
 

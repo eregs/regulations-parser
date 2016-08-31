@@ -136,7 +136,7 @@ class RegulationFileTestCase(APITestCase):
         super(RegulationFileTestCase, self).__init__(*args, **kwargs)
 
     def test_create_file(self):
-        with NamedTemporaryFile(suffix=".xml") as tmp:
+        with NamedTemporaryFile(suffix=".xml", delete=True) as tmp:
             tmp.write(self.file_contents)
             tmp_name = ospath.split(tmp.name)[-1]
             tmp.seek(0)
@@ -152,7 +152,7 @@ class RegulationFileTestCase(APITestCase):
 
     def test_reject_duplicates(self):
         self.test_create_file()
-        with NamedTemporaryFile(suffix=".xml") as tmp:
+        with NamedTemporaryFile(suffix=".xml", delete=True) as tmp:
             tmp.write(self.file_contents)
             tmp.seek(0)
             response = self.client.post(
@@ -165,14 +165,14 @@ class RegulationFileTestCase(APITestCase):
         with patch("regparser.web.jobs.views.FileUploadView",
                    new=PatchedFileUploadView) as p:
             p.size_limit = 10000
-            with NamedTemporaryFile(suffix=".xml") as tmp:
+            with NamedTemporaryFile(suffix=".xml", delete=True) as tmp:
                 tmp.write(self.file_contents)
                 tmp.seek(0)
                 response = self.client.post(
                     "/rp/job/upload/", {"file": tmp})
             self.assertEquals(201, response.status_code)
 
-            with NamedTemporaryFile(suffix=".xml") as tmp:
+            with NamedTemporaryFile(suffix=".xml", delete=True) as tmp:
                 contents = "123" * 100001
                 tmp.write(contents)
                 tmp.seek(0)
@@ -181,3 +181,110 @@ class RegulationFileTestCase(APITestCase):
             self.assertEquals(400, response.status_code)
             self.assertEquals("File too large (10000-byte limit).",
                               response.data["error"])
+
+    def test_create_and_read_and_delete(self):
+        expected = self.test_create_file().data
+        url = urlparse(expected["url"])
+        response = self.client.get(url.path)
+        self.assertEquals(self.file_contents, response.content)
+
+        response = self.client.get("/rp/job/upload/", format="json")
+        self.assertEquals(1, len(response.data))
+        data = response.data[0]
+        self.assertEquals("File contents not shown.", data["contents"])
+        self.assertEquals(expected["file"], data["file"])
+        self.assertEquals(expected["filename"], data["filename"])
+        self.assertEquals(self.hashed_contents, data["hexhash"])
+        self.assertEquals(url.path, urlparse(data["url"]).path)
+
+        response = self.client.delete(url.path)
+        self.assertEqual(204, response.status_code)
+
+        response = self.client.get(url.path)
+        self.assertEqual(404, response.status_code)
+
+        response = self.client.get("/rp/job/upload/", format="json")
+        data = response.data
+        self.assertEquals(0, len(data))
+
+
+@patch("regparser.web.jobs.views.queue_eregs_job", fake_redis_job)
+@patch("regparser.web.jobs.views.queue_notification_email", fake_queue_email)
+class ProposalPipelineTestCase(APITestCase):
+
+    defaults = {
+        "clear_cache": False,
+        "destination": eregs_site_api_url,
+        "only_latest": True,
+        "use_uploaded_metadata": None,
+        "use_uploaded_regulation": None,
+        "regulation_url": "",
+        "status": "received"
+    }
+    file_contents = "456"
+
+    def __init__(self, *args, **kwargs):
+        self.hashed_contents = md5(self.file_contents).hexdigest()
+        super(ProposalPipelineTestCase, self).__init__(*args, **kwargs)
+
+    def _create_file(self):
+        with NamedTemporaryFile(suffix=".xml") as tmp:
+            tmp.write(self.file_contents)
+            tmp.seek(0)
+            response = self.client.post("/rp/job/upload/", {"file": tmp})
+        return response.data
+
+    def _postjson(self, data):
+        return self.client.post("/rp/job/proposal-pipeline/", data,
+                                format="json")
+
+    def _stock_response_check(self, expected, actual):
+        """
+        Since we're using a lot of fake values, the tests for them will always
+        be the same.
+        """
+        for key in expected:
+            self.assertEqual(expected[key], actual[key])
+        self.assertIn(actual["status"], job_status_values)
+
+    def test_create(self):
+        file_data = self._create_file()
+        data = {
+            "file_hexhash": file_data["hexhash"],
+            "notification_email": "test@example.com"
+        }
+        response = self._postjson(data)
+        expected = {k: data[k] for k in data}
+        expected.update(self.defaults)
+        expected["url"] = status_url(fake_pipeline_id,
+                                     sub_path="proposal-pipeline/")
+        self._stock_response_check(expected, response.data)
+        return expected
+
+    def test_create_with_missing_fields(self):
+        data = {"notification_email": "test@example.com"}
+        response = self._postjson(data)
+
+        self.assertEqual(400, response.status_code)
+        self.assertEqual({"file_hexhash": ["This field is required."]},
+                         response.data)
+
+    def test_create_and_read_and_delete(self):
+        expected = self.test_create()
+
+        url = urlparse(expected["url"])
+        response = self.client.get(url.path, format="json")
+        self._stock_response_check(expected, response.data)
+
+        response = self.client.get("/rp/job/proposal-pipeline/", format="json")
+        self.assertEqual(1, len(response.data))
+        self._stock_response_check(expected, response.data[0])
+
+        response = self.client.delete(url.path, format="json")
+        self.assertEqual(204, response.status_code)
+
+        response = self.client.get(url.path, format="json")
+        self.assertEqual(404, response.status_code)
+
+        response = self.client.get("/rp/job/proposal-pipeline/", format="json")
+        self.assertEqual(0, len(response.data))
