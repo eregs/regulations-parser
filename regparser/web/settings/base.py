@@ -138,3 +138,6 @@ REQUESTS_CACHE = {
     'cache_name': os.path.join(EREGS_INDEX_ROOT, 'http_cache'),
     'expire_after': 60*60*24*3      # 3 days
 }
+
+FILE_UPLOAD_HANDLERS = [
+    "django.core.files.uploadhandler.TemporaryFileUploadHandler"]

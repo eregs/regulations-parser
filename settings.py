@@ -165,6 +165,10 @@ REGS_GOV_KEY = 'DEMO_KEY'
 CANONICAL_HOSTNAME = "https://example.com"
 CANONICAL_PORT = ""
 
+# The URL for the regulations-site API that parser commands invoked from the
+# web API/UI should run against:
+EREGS_SITE_API_URL = "http://localhost:1234/api/"
+
 try:
     from local_settings import *
 except ImportError:

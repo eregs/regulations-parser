@@ -1,16 +1,24 @@
 from django.db import models
 
+job_status_pairs = (
+    ("complete", "complete"),
+    ("complete_with_errors", "complete_with_errors"),
+    ("failed", "failed"),
+    ("in_progress", "in_progress"),
+    ("received", "received")
+)
+job_status_values = [j[0] for j in job_status_pairs]
+
 
 class ParsingJob(models.Model):
 
+    class Meta:
+        abstract = True
+
     created = models.DateTimeField(auto_now_add=True)
-    cfr_title = models.IntegerField()
-    cfr_part = models.IntegerField()
     clear_cache = models.BooleanField(default=False)
-    destination = models.URLField(default="http://fake-reg-site.gov/api",
-                                  max_length=2000)
+    destination = models.URLField(max_length=2000)
     notification_email = models.EmailField(blank="True", max_length=254)
-    only_latest = models.BooleanField(default=False)
     job_id = models.UUIDField(default=None, null=True)
     use_uploaded_metadata = models.UUIDField(default=None, null=True)
     use_uploaded_regulation = models.UUIDField(default=None, null=True)
@@ -24,4 +32,29 @@ class ParsingJob(models.Model):
         ("complete", "complete"),
         ("complete_with_errors", "complete_with_errors")
     ), default="received")
+    url = models.URLField(blank=True, max_length=2000)
+
+    def save(self, *args, **kwargs):
+        super(ParsingJob, self).save(*args, **kwargs)
+
+
+class PipelineJob(ParsingJob):
+
+    cfr_title = models.IntegerField()
+    cfr_part = models.IntegerField()
+    only_latest = models.BooleanField(default=False)
+
+
+class ProposalPipelineJob(ParsingJob):
+
+    file_hexhash = models.CharField(max_length=32)
+    only_latest = models.BooleanField(default=True)
+
+
+class RegulationFile(models.Model):
+
+    contents = models.BinaryField()
+    file = models.FileField(null=True)
+    filename = models.CharField(default=None, max_length=512, null=True)
+    hexhash = models.CharField(default=None, max_length=32, null=True)
     url = models.URLField(blank=True, max_length=2000)
