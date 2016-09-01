@@ -267,12 +267,17 @@ def build_from_section(reg_part, section_xml):
             secnum_candidate = int(secnum_candidate)
         section_nums.append(secnum_candidate)
 
-    #  Span of section numbers
+    #  Merge spans longer than 3 sections
+    section_span_end = None
     if u'§§' == section_no[:2] and '-' in section_no:
         first, last = section_nums
-        section_nums = []
-        for i in range(first, last + 1):
-            section_nums.append(i)
+        if last - first + 1 > 3:
+            section_span_end = str(last)
+            section_nums = [first]
+        else:
+            section_nums = []
+            for i in range(first, last + 1):
+                section_nums.append(i)
 
     section_nodes = []
     for section_number in section_nums:
@@ -280,7 +285,11 @@ def build_from_section(reg_part, section_xml):
         section_text = (section_xml.text or '').strip()
         tagged_section_text = section_xml.text
 
-        section_title = u"§ " + reg_part + "." + section_number
+        if section_span_end:
+            section_title = u"§§ {}.{}-{}".format(
+                    reg_part, section_number, section_span_end)
+        else:
+            section_title = u"§ {}.{}".format(reg_part, section_number)
         if subject_text:
             section_title += " " + subject_text
 
