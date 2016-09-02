@@ -7,7 +7,7 @@ job_status_pairs = (
     ("in_progress", "in_progress"),
     ("received", "received")
 )
-job_status_values = [j[0] for j in job_status_pairs]
+job_status_values = tuple(j[0] for j in job_status_pairs)
 
 
 class ParsingJob(models.Model):
@@ -25,17 +25,9 @@ class ParsingJob(models.Model):
 
     parser_errors = models.TextField(blank=True)
     regulation_url = models.URLField(blank=True, max_length=2000)
-    status = models.CharField(max_length=32, choices=(
-        ("received", "received"),
-        ("in_progress", "in_progress"),
-        ("failed", "failed"),
-        ("complete", "complete"),
-        ("complete_with_errors", "complete_with_errors")
-    ), default="received")
+    status = models.CharField(max_length=32, choices=job_status_pairs,
+                              default="received")
     url = models.URLField(blank=True, max_length=2000)
-
-    def save(self, *args, **kwargs):
-        super(ParsingJob, self).save(*args, **kwargs)
 
 
 class PipelineJob(ParsingJob):
