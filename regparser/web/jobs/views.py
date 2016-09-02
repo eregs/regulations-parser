@@ -317,7 +317,7 @@ class FileUploadView(mixins.ListModelMixin, mixins.CreateModelMixin,
         filename = uploaded_file.name
         url = file_url(hexhash)
 
-        if RegulationFile.objects.filter(hexhash=hexhash).count() > 0:
+        if RegulationFile.objects.filter(hexhash=hexhash).exists():
             return Response(dict(error="File already present."),
                             status=status.HTTP_400_BAD_REQUEST)
         else:
