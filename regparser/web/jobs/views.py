@@ -202,6 +202,19 @@ class PipelineJobViewList(BaseViewList, JobViewList):
     sub_path = "pipeline/"
 
     def build_eregs_args(self, validated_data):
+        """
+        Overrides the method from ``BaseViewList`` in order to pass the
+        arguments appropriate for the ``pipeline`` command.
+
+        Side Effects
+            Runs the ``pipeline`` command.
+
+        :arg dict validated_data: Incoming data from the POST that's already
+        been validated by the serializer.
+
+        :rtype: list[str]
+        :returns: The components of the argument string in list form.
+        """
         return [
             "pipeline",
             str(validated_data["cfr_title"]),
@@ -225,6 +238,22 @@ class ProposalPipelineJobViewList(BaseViewList, JobViewList):
     sub_path = "proposal-pipeline/"
 
     def build_eregs_args(self, validated_data):
+        """
+        Overrides the method from ``BaseViewList`` in order to pass the
+        arguments appropriate for the ``proposal_pipeline`` command.
+
+        Impure
+            Reads the contents of the proposal file from the filesystem (in
+            future, the DB, but impure either way).
+        Side Effects
+            Runs the ``proposal_pipeline`` command.
+
+        :arg dict validated_data: Incoming data from the POST that's already
+        been validated by the serializer.
+
+        :rtype: list[str]
+        :returns: The components of the argument string in list form.
+        """
         reg_file = RegulationFile.objects.get(
             hexhash=validated_data["file_hexhash"])
         # TODO: This is a total hack; we should not be storing the contents in
@@ -314,6 +343,18 @@ class FileUploadViewInstance(mixins.RetrieveModelMixin,
     lookup_field = "hexhash"
 
     def get(self, request, *args, **kwargs):
+        """
+        Overrides the method from ``RetrieveModelMixin`` so that we return the
+        contents of the file instead of a JSON object representing the file.
+
+        Impure
+            Reads from the DB.
+
+        :arg HttpRequest request: the incoming request.
+
+        :rtype: Response
+        :returns: The raw contents of the file.
+        """
         # Is the next line the best way to kick off a 404 if there's no match?
         self.retrieve(request, *args, **kwargs)
 
