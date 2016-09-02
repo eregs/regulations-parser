@@ -32,8 +32,7 @@ def send_notification_email(email_address, status_url):
     backend = django_settings.EMAIL_BACKEND
     connection = get_connection(backend=backend)
     send_mail(status_url, "Job finished at %s" % status_url,
-              "notifications@18F.gov", ["tadhg.ohiggins@gsa.gov"],
-              connection=connection)
+              "notifications@18F.gov", [email_address], connection=connection)
 
 
 def queue_notification_email(job, status_url, email_address):
