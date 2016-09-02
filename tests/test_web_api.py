@@ -19,6 +19,14 @@ fake_pipeline_id = "f726e1e0-d43c-4eb7-9274-681ddaba427a"
 fake_email_id = "4774f0f6-b53e-4b34-821e-fc8ae5e113fe"
 
 
+def fake_add_redis_data_to_job_data(job_data):
+    return job_data
+
+
+def fake_delete_eregs_job(job_id):
+    return None
+
+
 def fake_redis_job(args, timeout=60*30, result_ttl=-1):
     return type("FakeRedisJob", (object, ), {"id": fake_pipeline_id})
 
@@ -29,6 +37,9 @@ def fake_queue_email(job, statusurl, email_address):
 
 # Even though these functions are in the ``utils`` module, the code paths we're
 # following mean we're encountering them in the ``views`` namespace:
+@patch("regparser.web.jobs.views.add_redis_data_to_job_data",
+       fake_add_redis_data_to_job_data)
+@patch("regparser.web.jobs.views.delete_eregs_job", fake_delete_eregs_job)
 @patch("regparser.web.jobs.views.queue_eregs_job", fake_redis_job)
 @patch("regparser.web.jobs.views.queue_notification_email", fake_queue_email)
 class PipelineJobTestCase(APITestCase):
@@ -208,6 +219,9 @@ class RegulationFileTestCase(APITestCase):
         self.assertEquals(0, len(data))
 
 
+@patch("regparser.web.jobs.views.add_redis_data_to_job_data",
+       fake_add_redis_data_to_job_data)
+@patch("regparser.web.jobs.views.delete_eregs_job", fake_delete_eregs_job)
 @patch("regparser.web.jobs.views.queue_eregs_job", fake_redis_job)
 @patch("regparser.web.jobs.views.queue_notification_email", fake_queue_email)
 class ProposalPipelineTestCase(APITestCase):
