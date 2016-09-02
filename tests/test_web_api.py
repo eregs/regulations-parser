@@ -141,30 +141,36 @@ class PipelineJobTestCase(APITestCase):
 class RegulationFileTestCase(APITestCase):
 
     file_contents = "123"
+    hashed_contents = None
 
-    def __init__(self, *args, **kwargs):
-        self.hashed_contents = md5(self.file_contents).hexdigest()
-        super(RegulationFileTestCase, self).__init__(*args, **kwargs)
+    def get_hashed_contents(self):
+        if self.hashed_contents is None:
+            try:
+                self.hashed_contents = md5(self.file_contents.encode(
+                    "utf-8")).hexdigest()
+            except AttributeError:
+                self.hashed_contents = md5(self.file_contents).hexdigest()
+        return self.hashed_contents
 
     def test_create_file(self):
         with NamedTemporaryFile(suffix=".xml", delete=True) as tmp:
-            tmp.write(self.file_contents)
+            tmp.write(self.file_contents.encode("utf-8"))
             tmp_name = ospath.split(tmp.name)[-1]
             tmp.seek(0)
             response = self.client.post(
                 "/rp/job/upload/", {"file": tmp})
         self.assertEquals(201, response.status_code)
         data = response.data
-        self.assertEquals(self.hashed_contents, data["hexhash"])
+        self.assertEquals(self.get_hashed_contents(), data["hexhash"])
         self.assertEquals(tmp_name, data["filename"])
         self.assertEquals("File contents not shown.", data["contents"])
-        self.assertEquals(file_url(self.hashed_contents), data["url"])
+        self.assertEquals(file_url(self.get_hashed_contents()), data["url"])
         return response
 
     def test_reject_duplicates(self):
         self.test_create_file()
         with NamedTemporaryFile(suffix=".xml", delete=True) as tmp:
-            tmp.write(self.file_contents)
+            tmp.write(self.file_contents.encode("utf-8"))
             tmp.seek(0)
             response = self.client.post(
                 "/rp/job/upload/", {"file": tmp})
@@ -177,7 +183,7 @@ class RegulationFileTestCase(APITestCase):
                    new=PatchedFileUploadView) as p:
             p.size_limit = 10000
             with NamedTemporaryFile(suffix=".xml", delete=True) as tmp:
-                tmp.write(self.file_contents)
+                tmp.write(self.file_contents.encode("utf-8"))
                 tmp.seek(0)
                 response = self.client.post(
                     "/rp/job/upload/", {"file": tmp})
@@ -185,7 +191,7 @@ class RegulationFileTestCase(APITestCase):
 
             with NamedTemporaryFile(suffix=".xml", delete=True) as tmp:
                 contents = "123" * 100001
-                tmp.write(contents)
+                tmp.write(contents.encode("utf-8"))
                 tmp.seek(0)
                 response = self.client.post(
                     "/rp/job/upload/", {"file": tmp})
@@ -197,7 +203,8 @@ class RegulationFileTestCase(APITestCase):
         expected = self.test_create_file().data
         url = urlparse(expected["url"])
         response = self.client.get(url.path)
-        self.assertEquals(self.file_contents, response.content)
+        contents = response.content.decode("utf-8")
+        self.assertEquals(self.file_contents, contents)
 
         response = self.client.get("/rp/job/upload/", format="json")
         self.assertEquals(1, len(response.data))
@@ -205,7 +212,7 @@ class RegulationFileTestCase(APITestCase):
         self.assertEquals("File contents not shown.", data["contents"])
         self.assertEquals(expected["file"], data["file"])
         self.assertEquals(expected["filename"], data["filename"])
-        self.assertEquals(self.hashed_contents, data["hexhash"])
+        self.assertEquals(self.get_hashed_contents(), data["hexhash"])
         self.assertEquals(url.path, urlparse(data["url"]).path)
 
         response = self.client.delete(url.path)
@@ -237,13 +244,9 @@ class ProposalPipelineTestCase(APITestCase):
     }
     file_contents = "456"
 
-    def __init__(self, *args, **kwargs):
-        self.hashed_contents = md5(self.file_contents).hexdigest()
-        super(ProposalPipelineTestCase, self).__init__(*args, **kwargs)
-
     def _create_file(self):
         with NamedTemporaryFile(suffix=".xml") as tmp:
-            tmp.write(self.file_contents)
+            tmp.write(self.file_contents.encode("utf-8"))
             tmp.seek(0)
             response = self.client.post("/rp/job/upload/", {"file": tmp})
         return response.data
