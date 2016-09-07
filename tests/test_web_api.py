@@ -150,8 +150,10 @@ class PipelineJobTestCase(APITestCase):
 
 class RegulationFileTestCase(APITestCase):
 
-    file_contents = "123"
-    hashed_contents = None
+    def __init__(self, *args, **kwargs):
+        self.file_contents = "123"
+        self.hashed_contents = None
+        super(RegulationFileTestCase, self).__init__(*args, **kwargs)
 
     def get_hashed_contents(self):
         if self.hashed_contents is None:
@@ -243,16 +245,18 @@ class RegulationFileTestCase(APITestCase):
 @patch("regparser.web.jobs.views.queue_notification_email", fake_queue_email)
 class ProposalPipelineTestCase(APITestCase):
 
-    defaults = {
-        "clear_cache": False,
-        "destination": eregs_site_api_url,
-        "only_latest": True,
-        "use_uploaded_metadata": None,
-        "use_uploaded_regulation": None,
-        "regulation_url": "",
-        "status": "received"
-    }
-    file_contents = "456"
+    def __init__(self, *args, **kwargs):
+        self.defaults = {
+            "clear_cache": False,
+            "destination": eregs_site_api_url,
+            "only_latest": True,
+            "use_uploaded_metadata": None,
+            "use_uploaded_regulation": None,
+            "regulation_url": "",
+            "status": "received"
+        }
+        self.file_contents = "456"
+        super(ProposalPipelineTestCase, self).__init__(*args, **kwargs)
 
     def _create_file(self):
         with NamedTemporaryFile(suffix=".xml") as tmp:
