@@ -1,5 +1,5 @@
 from hashlib import md5
-from mock import patch
+from mock import patch, Mock
 from os import path as ospath
 from random import choice
 from regparser.web.jobs.models import job_status_values
@@ -23,36 +23,20 @@ except ImportError:
     from urlparse import urlparse
 
 fake_pipeline_id = uuid4()
-fake_email_id = uuid4()
 
 
-def fake_getter(attrname):
-    return attrname
-
-
-def fake_add_redis_data_to_job_data(job_data):
-    return job_data
-
-
-def fake_delete_eregs_job(job_id):
-    return None
-
-
-def fake_redis_job(args, timeout=60*30, result_ttl=-1):
+def _fake_redis_job(cmd, args, timeout=60*30, result_ttl=-1, depends_on=None):
     return type("FakeRedisJob", (object, ), {"id": fake_pipeline_id})
 
 
-def fake_queue_email(job, statusurl, email_address):
-    return fake_email_id
+def _fake_redis_queue():
+    fq = Mock()
+    fq.fetch_job = Mock(return_value=None)
+    return fq
 
 
-# Even though these functions are in the ``utils`` module, the code paths we're
-# following mean we're encountering them in the ``views`` namespace:
-@patch("regparser.web.jobs.views.add_redis_data_to_job_data",
-       fake_add_redis_data_to_job_data)
-@patch("regparser.web.jobs.views.delete_eregs_job", fake_delete_eregs_job)
-@patch("regparser.web.jobs.views.queue_eregs_job", fake_redis_job)
-@patch("regparser.web.jobs.views.queue_notification_email", fake_queue_email)
+@patch("django_rq.enqueue", _fake_redis_job)
+@patch("django_rq.get_queue", _fake_redis_queue)
 class PipelineJobTestCase(APITestCase):
 
     def __init__(self, *args, **kwargs):
@@ -241,11 +225,8 @@ class RegulationFileTestCase(APITestCase):
         self.assertEquals(0, len(data))
 
 
-@patch("regparser.web.jobs.views.add_redis_data_to_job_data",
-       fake_add_redis_data_to_job_data)
-@patch("regparser.web.jobs.views.delete_eregs_job", fake_delete_eregs_job)
-@patch("regparser.web.jobs.views.queue_eregs_job", fake_redis_job)
-@patch("regparser.web.jobs.views.queue_notification_email", fake_queue_email)
+@patch("django_rq.enqueue", _fake_redis_job)
+@patch("django_rq.get_queue", _fake_redis_queue)
 class ProposalPipelineTestCase(APITestCase):
 
     def __init__(self, *args, **kwargs):
