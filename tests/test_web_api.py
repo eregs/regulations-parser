@@ -12,6 +12,7 @@ from regparser.web.jobs.views import FileUploadView as PatchedFileUploadView
 from rest_framework.test import APITestCase
 from string import hexdigits
 from tempfile import NamedTemporaryFile
+from uuid import uuid4
 
 import pytest
 import settings
@@ -21,8 +22,8 @@ try:
 except ImportError:
     from urlparse import urlparse
 
-fake_pipeline_id = "f726e1e0-d43c-4eb7-9274-681ddaba427a"
-fake_email_id = "4774f0f6-b53e-4b34-821e-fc8ae5e113fe"
+fake_pipeline_id = uuid4()
+fake_email_id = uuid4()
 
 
 def fake_getter(attrname):
