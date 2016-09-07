@@ -193,7 +193,7 @@ class RegulationFileTestCase(APITestCase):
     def test_reject_large(self):
         with patch("regparser.web.jobs.views.FileUploadView",
                    new=PatchedFileUploadView) as p:
-            p.size_limit = 10000
+            p.size_limit = 10
             with NamedTemporaryFile(suffix=".xml", delete=True) as tmp:
                 tmp.write(self.file_contents.encode("utf-8"))
                 tmp.seek(0)
@@ -202,13 +202,13 @@ class RegulationFileTestCase(APITestCase):
             self.assertEquals(201, response.status_code)
 
             with NamedTemporaryFile(suffix=".xml", delete=True) as tmp:
-                contents = "123" * 100001
+                contents = "123" * 11
                 tmp.write(contents.encode("utf-8"))
                 tmp.seek(0)
                 response = self.client.post(
                     "/rp/job/upload/", {"file": tmp})
             self.assertEquals(400, response.status_code)
-            self.assertEquals("File too large (10000-byte limit).",
+            self.assertEquals("File too large (10-byte limit).",
                               response.data["error"])
 
     def test_create_and_read_and_delete(self):
