@@ -70,8 +70,8 @@ class PipelineJobTestCase(APITestCase):
         }
         response = self._postjson(data)
 
-        expected = {k: data[k] for k in data}
-        expected.update(self.defaults)
+        expected = dict(self.defaults)
+        expected.update({k: data[k] for k in data})
         expected["url"] = status_url(fake_pipeline_id, sub_path="pipeline/")
         self._stock_response_check(expected, response.data)
         return expected
@@ -84,8 +84,8 @@ class PipelineJobTestCase(APITestCase):
         }
         response = self._postjson(data)
 
-        expected = {k: data[k] for k in data}
-        expected.update(self.defaults)
+        expected = dict(self.defaults)
+        expected.update({k: data[k] for k in data})
         # Even if the input is a str, the return values should be ints:
         expected["cfr_title"] = int(expected["cfr_title"])
         expected["cfr_part"] = int(expected["cfr_part"])
@@ -269,8 +269,9 @@ class ProposalPipelineTestCase(APITestCase):
             "notification_email": "test@example.com"
         }
         response = self._postjson(data)
-        expected = {k: data[k] for k in data}
-        expected.update(self.defaults)
+
+        expected = dict(self.defaults)
+        expected.update({k: data[k] for k in data})
         expected["url"] = status_url(fake_pipeline_id,
                                      sub_path="proposal-pipeline/")
         self._stock_response_check(expected, response.data)
