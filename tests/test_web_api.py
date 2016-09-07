@@ -54,14 +54,16 @@ def fake_queue_email(job, statusurl, email_address):
 @patch("regparser.web.jobs.views.queue_notification_email", fake_queue_email)
 class PipelineJobTestCase(APITestCase):
 
-    defaults = {
-        "clear_cache": False,
-        "destination": eregs_site_api_url,
-        "use_uploaded_metadata": None,
-        "use_uploaded_regulation": None,
-        "regulation_url": "",
-        "status": "received"
-    }
+    def __init__(self, *args, **kwargs):
+        self.defaults = {
+            "clear_cache": False,
+            "destination": eregs_site_api_url,
+            "use_uploaded_metadata": None,
+            "use_uploaded_regulation": None,
+            "regulation_url": "",
+            "status": "received"
+        }
+        super(PipelineJobTestCase, self).__init__(*args, **kwargs)
 
     def _postjson(self, data):
         return self.client.post("/rp/job/pipeline/", data, format="json")
