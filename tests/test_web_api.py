@@ -1,6 +1,7 @@
 from hashlib import md5
 from mock import patch
 from os import path as ospath
+from random import choice
 from regparser.web.jobs.models import job_status_values
 from regparser.web.jobs.utils import (
     eregs_site_api_url,
@@ -9,7 +10,12 @@ from regparser.web.jobs.utils import (
 )
 from regparser.web.jobs.views import FileUploadView as PatchedFileUploadView
 from rest_framework.test import APITestCase
+from string import hexdigits
 from tempfile import NamedTemporaryFile
+
+import pytest
+import settings
+
 try:
     from urllib.parse import urlparse
 except ImportError:
@@ -17,6 +23,10 @@ except ImportError:
 
 fake_pipeline_id = "f726e1e0-d43c-4eb7-9274-681ddaba427a"
 fake_email_id = "4774f0f6-b53e-4b34-821e-fc8ae5e113fe"
+
+
+def fake_getter(attrname):
+    return attrname
 
 
 def fake_add_redis_data_to_job_data(job_data):
@@ -305,3 +315,61 @@ class ProposalPipelineTestCase(APITestCase):
 
         response = self.client.get("/rp/job/proposal-pipeline/", format="json")
         self.assertEqual(0, len(response.data))
+
+
+@patch.object(settings, "CANONICAL_HOSTNAME", "http://domain.tld")
+def test_status_url():
+    domain = "http://domain.tld"
+    urlpath = "/rp/job/"
+    hexes = ["".join([choice(hexdigits) for i in range(32)]) for j in range(6)]
+
+    def _check(port=None):
+        for hx in hexes:
+            url = urlparse(status_url(hx))
+            assert domain == "%s://%s" % (url.scheme, url.hostname)
+            if port is None:
+                assert url.port is port
+            else:
+                assert url.port == port
+            assert "%s%s/" % (urlpath, hx) == url.path
+
+            url = urlparse(status_url(hx, sub_path="%s/" % hx[:10]))
+            assert domain == "%s://%s" % (url.scheme, url.hostname)
+            if port is None:
+                assert url.port is port
+            else:
+                assert url.port == port
+            assert "%s%s%s/" % (urlpath, "%s/" % hx[:10], hx) == url.path
+
+    with patch.object(settings, "CANONICAL_PORT", "2323"):
+        _check(port=2323)
+
+    with patch.object(settings, "CANONICAL_PORT", "80"):
+        _check()
+
+    with patch.object(settings, "CANONICAL_PORT", ""):
+        _check()
+
+    with pytest.raises(ValueError) as err:
+        status_url("something", "something-without-a-slash")
+
+    assert isinstance(err.value, ValueError)
+
+
+@patch.object(settings, "CANONICAL_HOSTNAME", "http://domain.tld")
+def test_file_url():
+    urlpath = "/rp/job/upload/"
+    domain = "http://domain.tld"
+    hexes = ["".join([choice(hexdigits) for i in range(32)]) for j in range(6)]
+
+    with patch.object(settings, "CANONICAL_PORT", "2323"):
+        for hx in hexes:
+            assert file_url(hx) == "%s:2323%s%s/" % (domain, urlpath, hx)
+
+    with patch.object(settings, "CANONICAL_PORT", "80"):
+        for hx in hexes:
+            assert file_url(hx) == "%s%s%s/" % (domain, urlpath, hx)
+
+    with patch.object(settings, "CANONICAL_PORT", ""):
+        for hx in hexes:
+            assert file_url(hx) == "%s%s%s/" % (domain, urlpath, hx)
