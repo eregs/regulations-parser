@@ -62,13 +62,17 @@ class PipelineJobTestCase(APITestCase):
             self.assertEqual(expected[key], actual[key])
         self.assertIn(actual["status"], job_status_values)
 
-    def test_create_ints(self):
+    def _create_ints(self):
         data = {
             "cfr_title": 0,
             "cfr_part": 0,
             "notification_email": "test@example.com"
         }
         response = self._postjson(data)
+        return (data, response)
+
+    def test_create_ints(self):
+        data, response = self._create_ints()
 
         expected = dict(self.defaults)
         expected.update({k: data[k] for k in data})
@@ -111,7 +115,7 @@ class PipelineJobTestCase(APITestCase):
         self.assertEqual(0, len(response.data))
 
     def test_create_and_read(self):
-        expected = self.test_create_ints()
+        expected = self._create_ints()[1].data
 
         url = urlparse(expected["url"])
         response = self.client.get(url.path, format="json")
@@ -122,7 +126,7 @@ class PipelineJobTestCase(APITestCase):
         self._stock_response_check(expected, response.data[0])
 
     def test_create_delete_and_read(self):
-        expected = self.test_create_ints()
+        expected = self._create_ints()[1].data
 
         url = urlparse(expected["url"])
         response = self.client.delete(url.path, format="json")
