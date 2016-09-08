@@ -1,13 +1,17 @@
-from regparser.web.jobs.models import ParsingJob
+from regparser.web.jobs.models import (
+    ParsingJob,
+    PipelineJob,
+    ProposalPipelineJob,
+    RegulationFile
+)
 from rest_framework import serializers
 
 
 class ParsingJobSerializer(serializers.ModelSerializer):
+
     class Meta:
         model = ParsingJob
         fields = (
-            "cfr_title",
-            "cfr_part",
             "clear_cache",
             "destination",  # Unsure about whether this should accept user
                             # input or be set by the system.
@@ -33,3 +37,47 @@ class ParsingJobSerializer(serializers.ModelSerializer):
 
     def save(self, **kwargs):
         super(ParsingJobSerializer, self).save(**kwargs)
+
+
+class PipelineJobSerializer(ParsingJobSerializer):
+
+    class Meta(ParsingJobSerializer.Meta):
+        model = PipelineJob
+        fields = ParsingJobSerializer.Meta.fields + (
+                "cfr_title",
+                "cfr_part"
+            )
+
+
+class ProposalPipelineJobSerializer(ParsingJobSerializer):
+
+    class Meta(ParsingJobSerializer.Meta):
+        model = ProposalPipelineJob
+        fields = ParsingJobSerializer.Meta.fields + (
+            "file_hexhash",
+        )
+
+    # Fields we don't want user input for are listed below.
+    file_hexhash = serializers.CharField(max_length=32)
+
+
+class FileUploadSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = RegulationFile
+        fields = (
+            "contents",
+            "file",
+            "filename",
+            "hexhash",
+            "url"
+        )
+
+    contents = serializers.SerializerMethodField()
+    file = serializers.FileField()
+    filename = serializers.CharField(read_only=True)
+    hexhash = serializers.CharField(read_only=True)
+    url = serializers.URLField(read_only=True)
+
+    def get_contents(self, obj):
+        return "File contents not shown."

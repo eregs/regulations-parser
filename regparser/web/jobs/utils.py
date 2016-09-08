@@ -1,6 +1,10 @@
 from regparser.tasks import run_eregs_command
+from django.conf import settings as django_settings
+from django.core.mail import get_connection, send_mail
 import django_rq
 import settings
+
+eregs_site_api_url = getattr(settings, "EREGS_SITE_API_URL")
 
 
 def queue_eregs_job(args, timeout=60*30, result_ttl=-1):
@@ -22,6 +26,18 @@ def queue_eregs_job(args, timeout=60*30, result_ttl=-1):
     """
     return django_rq.enqueue(run_eregs_command, args, timeout=timeout,
                              result_ttl=result_ttl)
+
+
+def send_notification_email(email_address, status_url):
+    backend = django_settings.EMAIL_BACKEND
+    connection = get_connection(backend=backend)
+    send_mail(status_url, "Job finished at %s" % status_url,
+              "notifications@18F.gov", [email_address], connection=connection)
+
+
+def queue_notification_email(job, status_url, email_address):
+    return django_rq.enqueue(send_notification_email, email_address,
+                             status_url, depends_on=job)
 
 
 def delete_eregs_job(job_id):
@@ -67,9 +83,9 @@ def add_redis_data_to_job_data(job_data):
     return job_data
 
 
-def status_url(job_id):
+def get_host():
     """
-    We want to give users a URL for checking the status of a job.
+    We want to provide users with status URLs, and so need host:port.
     While I can't think of an exploit resulting from relying on the host data
     from the request if the request were spoofed, we'll be cautious and define
     the canonical host data ourselves.
@@ -79,13 +95,56 @@ def status_url(job_id):
     Impure
         Pulls information from settings.
 
+    :rtype: str
+    :returns: The URL for host in the form host:port, for example:
+        http://domain.tld:2323
+
+        Note that the schema is not supplied (we assume it's included in the
+        string provided to settings) and no trailing slash is provided.
+
+        We assume that the port from setigns is the bare number, with no
+        trailing colon, so we add that here.
+    """
+    hostname = getattr(settings, "CANONICAL_HOSTNAME", "")
+    hostport = getattr(settings, "CANONICAL_PORT", "")
+    if hostport and hostport is not "80":
+        hostport = ":%s" % hostport
+    elif hostport is "80":
+        hostport = ""
+    return "%s%s" % (hostname, hostport)
+
+
+def status_url(job_id, sub_path=""):
+    """
+    Returns a URL for checking the status of a job.
+
+    Impure
+        Via get_host(), pulls information from settings.
+
     :arg uuid4 job_id: The UUID of the job.
+    :arg str sub_path: The part of the path indicating the type of job. Must
+        include a trailing slash.
 
     :rtype: str
     :returns: The URL for checking on the status of the job.
     """
-    hostname = getattr(settings, "CANONICAL_HOSTNAME", "")
-    hostport = getattr(settings, "CANONICAL_PORT", "")
-    if hostport:
-        hostport = ":%s" % hostport
-    return "%s%s/rp/job/%s/" % (hostname, hostport, job_id)
+    if sub_path and not sub_path.endswith("/"):
+        raise ValueError
+    host = get_host()
+    return "%s/rp/job/%s%s/" % (host, sub_path, job_id)
+
+
+def file_url(file_hash):
+    """
+    Returns a URL for retrieving an uploaded file.
+
+    Impure
+        Via get_host(), pulls information from settings.
+
+    :arg str file_hash: The MD5 hexstring of the file contents.
+
+    :rtype: str
+    :returns: The URL for checking on the status of the job.
+    """
+    host = get_host()
+    return "%s/rp/job/upload/%s/" % (host, file_hash)
