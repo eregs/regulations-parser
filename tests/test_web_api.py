@@ -1,6 +1,7 @@
 from hashlib import md5
 from mock import patch, Mock
 from os import path as ospath
+from six.moves.urllib.parse import urlparse
 from random import choice
 from regparser.web.jobs.models import job_status_values
 from regparser.web.jobs.utils import (
@@ -17,10 +18,6 @@ from uuid import uuid4
 import pytest
 import settings
 
-try:
-    from urllib.parse import urlparse
-except ImportError:
-    from urlparse import urlparse
 
 fake_pipeline_id = uuid4()
 
