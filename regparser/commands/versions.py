@@ -1,5 +1,6 @@
 from collections import namedtuple
 import logging
+from operator import attrgetter, itemgetter
 import re
 
 import click
@@ -15,15 +16,16 @@ logger = logging.getLogger(__name__)
 def fetch_version_ids(cfr_title, cfr_part, notice_dir):
     """Returns a list of version ids after looking them up between the federal
     register and the local filesystem"""
-    version_ids = []
+    present_ids = [v.path[-1] for v in notice_dir.sub_entries()]
     final_rules = fetch_notice_json(cfr_title, cfr_part, only_final=True)
 
-    for document_number in (fr['document_number'] for fr in final_rules):
-        # Document number followed by a date
-        regex = re.compile(re.escape(document_number) + r"_\d{8}")
-        version_ids.extend(
-            [name for name in notice_dir if regex.match(name)] or
-            [document_number])
+    version_ids = []
+    for fr_id in map(itemgetter('document_number'), final_rules):
+        # Version_id concatenated with the date
+        regex = re.compile(re.escape(fr_id) + r"_\d{8}")
+        split_entries = [vid for vid in present_ids if regex.match(vid)]
+        # Add either the split entries or the original version_id
+        version_ids.extend(split_entries or [fr_id])
 
     return version_ids
 
@@ -36,10 +38,9 @@ def delays(xmls):
     version of the regulation"""
     delays = {}
     # Sort so that later modifications override earlier ones
-    for delayer in sorted(xmls, key=lambda xml: xml.published):
+    for delayer in sorted(xmls, key=attrgetter('published')):
         for delay in delayer.delays():
-            for delayed in filter(lambda x: delay.modifies_notice_xml(x),
-                                  xmls):
+            for delayed in filter(delay.modifies_notice_xml, xmls):
                 delays[delayed.version_id] = Delay(delayer.version_id,
                                                    delay.delayed_until)
     return delays
@@ -101,7 +102,9 @@ def versions(cfr_title, cfr_part):
     logger.info("Finding versions")
     version_ids = fetch_version_ids(cfr_title, cfr_part, notice_dir)
     logger.debug("Versions found: %r", version_ids)
-    xmls = {version_id: (notice_dir / version_id).read()
-            for version_id in version_ids if version_id in notice_dir}
+
+    version_entries = [notice_dir / version_id for version_id in version_ids]
+    # notices keyed by version_id
+    xmls = {e.path[-1]: e.read() for e in version_entries if e.exists()}
     delays_by_version = delays(xmls.values())
     write_if_needed(cfr_title, cfr_part, version_ids, xmls, delays_by_version)

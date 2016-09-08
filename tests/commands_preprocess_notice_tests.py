@@ -46,7 +46,7 @@ class CommandsPreprocessNoticeTests(HttpMixin, TestCase):
         notice_xmls_for_url.return_value = [self.example_xml()]
         with cli.isolated_filesystem():
             cli.invoke(preprocess_notice, ['1234-5678'])
-            self.assertEqual(1, len(entry.Notice()))
+            self.assertEqual(1, len(list(entry.Notice().sub_entries())))
 
             written = entry.Notice('1234-5678').read()
             self.assertEqual(written.effective, date(2008, 8, 8))
@@ -62,7 +62,7 @@ class CommandsPreprocessNoticeTests(HttpMixin, TestCase):
         notice_xmls_for_url.return_value = [self.example_xml()]
         with cli.isolated_filesystem():
             cli.invoke(preprocess_notice, ['1234-5678'])
-            self.assertEqual(1, len(entry.Notice()))
+            self.assertEqual(1, len(list(entry.Notice().sub_entries())))
 
             written = entry.Notice('1234-5678').read()
             self.assertEqual(written.comments_close_on, date(2010, 10, 10))
@@ -79,7 +79,7 @@ class CommandsPreprocessNoticeTests(HttpMixin, TestCase):
             "Comments close on November 11, 2011")]
         with cli.isolated_filesystem():
             cli.invoke(preprocess_notice, ['1234-5678'])
-            self.assertEqual(1, len(entry.Notice()))
+            self.assertEqual(1, len(list(entry.Notice().sub_entries())))
 
             written = entry.Notice('1234-5678').read()
             self.assertEqual(written.comments_close_on, date(2011, 11, 11))
@@ -96,7 +96,7 @@ class CommandsPreprocessNoticeTests(HttpMixin, TestCase):
             "Comments close on November 11, 2011")]
         with cli.isolated_filesystem():
             cli.invoke(preprocess_notice, ['1234-5678'])
-            self.assertEqual(1, len(entry.Notice()))
+            self.assertEqual(1, len(list(entry.Notice().sub_entries())))
 
             written = entry.Notice('1234-5678').read()
             self.assertEqual(written.comments_close_on, date(2010, 10, 10))
@@ -121,7 +121,7 @@ class CommandsPreprocessNoticeTests(HttpMixin, TestCase):
         notice_xmls_for_url.return_value = [self.example_xml()]
         with cli.isolated_filesystem():
             cli.invoke(preprocess_notice, ['1234-5678'])
-            self.assertEqual(1, len(entry.Notice()))
+            self.assertEqual(1, len(list(entry.Notice().sub_entries())))
 
             written = entry.Notice('1234-5678').read()
             self.assertEqual(len(written.xpath("//EREGS_AGENCIES")), 1)
@@ -144,7 +144,7 @@ class CommandsPreprocessNoticeTests(HttpMixin, TestCase):
         notice_xmls_for_url.return_value = [self.example_xml()]
         with cli.isolated_filesystem():
             cli.invoke(preprocess_notice, ['1234-5678'])
-            self.assertEqual(1, len(entry.Notice()))
+            self.assertEqual(1, len(list(entry.Notice().sub_entries())))
 
             written = entry.Notice('1234-5678').read()
             self.assertEqual(len(written.xpath("//EREGS_RINS")), 1)
@@ -163,7 +163,7 @@ class CommandsPreprocessNoticeTests(HttpMixin, TestCase):
         notice_xmls_for_url.return_value = [self.example_xml()]
         with cli.isolated_filesystem():
             cli.invoke(preprocess_notice, ['1234-5678'])
-            self.assertEqual(1, len(entry.Notice()))
+            self.assertEqual(1, len(list(entry.Notice().sub_entries())))
 
             written = entry.Notice('1234-5678').read()
             self.assertEqual(len(written.xpath("//EREGS_DOCKET_IDS")), 1)
@@ -200,7 +200,7 @@ class CommandsPreprocessNoticeTests(HttpMixin, TestCase):
         with cli.isolated_filesystem():
             cli.invoke(preprocess_notice, ['1234-5678'])
             notice_path = entry.Notice()
-            self.assertEqual(3, len(notice_path))
+            self.assertEqual(3, len(list(entry.Notice().sub_entries())))
 
             jan = (notice_path / '1234-5678_20010101').read()
             feb = (notice_path / '1234-5678_20020202').read()
@@ -233,7 +233,7 @@ class CommandsPreprocessNoticeTests(HttpMixin, TestCase):
         with cli.isolated_filesystem():
             cli.invoke(preprocess_notice, ['1234-5678'])
             entry_str = str(entry.Notice() / '1234-5678')
-            self.assertNotIn(entry_str, dependency.Graph())
+            assert len(dependency.Graph().dependencies(entry_str)) == 0
 
     @patch('regparser.commands.preprocess_notice.notice_xmls_for_url')
     def test_single_notice_cfr_refs_from_metadata(self, notice_xmls_for_url):
@@ -246,7 +246,7 @@ class CommandsPreprocessNoticeTests(HttpMixin, TestCase):
         notice_xmls_for_url.return_value = [self.example_xml()]
         with cli.isolated_filesystem():
             cli.invoke(preprocess_notice, ['1234-5678'])
-            self.assertEqual(1, len(entry.Notice()))
+            self.assertEqual(1, len(list(entry.Notice().sub_entries())))
 
             written = entry.Notice('1234-5678').read()
             self.assertEqual(len(written.xpath("//EREGS_CFR_REFS")), 1)
@@ -272,7 +272,7 @@ class CommandsPreprocessNoticeTests(HttpMixin, TestCase):
         notice_xmls_for_url.return_value = [notice_xml]
         with cli.isolated_filesystem():
             cli.invoke(preprocess_notice, ['1234-5678'])
-            self.assertEqual(1, len(entry.Notice()))
+            self.assertEqual(1, len(list(entry.Notice().sub_entries())))
 
             written = entry.Notice('1234-5678').read()
             self.assertEqual(len(written.xpath("//EREGS_CFR_REFS")), 1)

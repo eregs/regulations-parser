@@ -36,10 +36,10 @@ def create_version_entry_if_needed(volume, cfr_part):
     """Only write the version entry if it doesn't already exist. If we
     overwrote one, we'd be invalidating all related trees, etc."""
     version_id = _version_id(volume.year, cfr_part)
-    version_entries = entry.FinalVersion(volume.title, cfr_part)
+    version_dir = entry.FinalVersion(volume.title, cfr_part)
 
-    if version_id not in version_entries:
-        (version_entries / version_id).write(
+    if version_id not in [c.path[-1] for c in version_dir.sub_entries()]:
+        (version_dir / version_id).write(
             Version(identifier=version_id, effective=volume.publication_date,
                     published=volume.publication_date))
 

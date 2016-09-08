@@ -1,13 +1,14 @@
 from contextlib import contextmanager
-import os
-from time import time
+from datetime import timedelta
 from unittest import TestCase
 
 from click.testing import CliRunner
+from django.utils import timezone
 import pytest
 import six
 
 from regparser.index import dependency, entry
+from regparser.web.index.models import Entry as DBEntry
 
 
 @pytest.mark.django_db
@@ -22,7 +23,8 @@ class DependencyGraphTests(TestCase):
 
     def _touch(self, filename, offset):
         """Update the modification time for a dependency"""
-        os.utime(str(filename), (time()*1000 + offset, time()*1000 + offset))
+        time = timezone.now() + timedelta(hours=1)
+        DBEntry.objects.filter(label_id=str(filename)).update(modified=time)
 
     def test_nonexistent_files_are_stale(self):
         """By definition, if a file is not present, it needs to be rebuilt"""

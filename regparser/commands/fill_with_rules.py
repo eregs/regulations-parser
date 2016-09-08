@@ -16,7 +16,7 @@ def dependencies(tree_dir, version_dir, versions_with_parents):
     calculation, we ignore the first version, as we won't be able to build
     anything for it. Add dependencies for any gaps, tying the output tree to
     the preceding tree, the version info and the parsed rule"""
-    existing_tree_ids = set(tree_dir)
+    existing_tree_ids = set(tree.path[-1] for tree in tree_dir.sub_entries())
     versions_with_parents = versions_with_parents[1:]
     gaps = [(version, parent) for (version, parent) in versions_with_parents
             if version.identifier not in existing_tree_ids]
@@ -63,7 +63,7 @@ def fill_with_rules(cfr_title, cfr_part):
     tree_dir = entry.Tree(cfr_title, cfr_part)
     version_dir = entry.Version(cfr_title, cfr_part)
 
-    versions = [(version_dir / v).read() for v in version_dir]
+    versions = [c.read() for c in version_dir.sub_entries()]
     versions_with_parents = list(zip(versions, Version.parents_of(versions)))
     deps = dependencies(tree_dir, version_dir, versions_with_parents)
 

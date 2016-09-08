@@ -3,12 +3,14 @@ from unittest import TestCase
 
 from click.testing import CliRunner
 from mock import patch
+import pytest
 
 from regparser.commands.proposal_versions import proposal_versions
 from regparser.history.versions import Version
 from regparser.index import dependency, entry
 
 
+@pytest.mark.django_db
 class CommandsProposalVersionsTests(TestCase):
     def setUp(self):
         self.cli = CliRunner()
@@ -23,7 +25,6 @@ class CommandsProposalVersionsTests(TestCase):
 
     @patch('regparser.commands.proposal_versions.entry')
     def test_creates_version(self, entry):
-        # entry.Notice('dddd').read()
         notice = entry.Notice.return_value.read.return_value
         notice.published = date.today()
         notice.cfr_ref_pairs = [(11, 111), (11, 222), (22, 222), (22, 333)]

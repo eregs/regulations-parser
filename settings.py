@@ -99,9 +99,8 @@ LOCAL_XML_PATHS = []
 # number, appendix, and label.
 APPENDIX_IGNORE_SUBHEADER_LABEL = {}
 
-# The `pipeline` command pulls in the latest edits to FR notices. This URL
-# defines where it should find those edits
-XML_REPO = 'https://github.com/eregs/fr-notices.git'
+# Refer to a shared collection of modified FR notices
+XML_REPO_PREFIX = 'https://raw.githubusercontent.com/eregs/fr-notices/master/'
 
 # A dictionary of agency-specific external citations
 # @todo - move ATF citations to an extension

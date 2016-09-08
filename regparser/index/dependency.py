@@ -1,11 +1,11 @@
 import logging
-import os
-from time import time
 
 from django.db import transaction
+from django.utils import timezone
 import networkx
 
-from regparser.web.index.models import Dependency, DependencyNode
+from regparser.web.index.models import (
+    Dependency, DependencyNode, Entry as DBEntry)
 
 
 logger = logging.getLogger(__name__)
@@ -34,10 +34,11 @@ class Graph(object):
     def serialize(self):
         """Convert the in-memory self._graph into db records"""
         Dependency.objects.all().delete()
-        DependencyNode.objects.all().delete()
 
+        new_vertices = set(self._graph.nodes()) - set(
+            node.label for node in DependencyNode.objects.all())
         DependencyNode.objects.bulk_create(
-            DependencyNode(label=label) for label in self._graph)
+            DependencyNode(label=label) for label in new_vertices)
 
         Dependency.objects.bulk_create(
             Dependency(depender_id=depender, target_id=target)
@@ -85,11 +86,12 @@ class Graph(object):
         dependencies has been updated since the depending node was built. Use
         topological sort to make sure we process dependencies first."""
         for node in networkx.topological_sort(self._graph):
-            if os.path.exists(node):
-                modtime = os.path.getmtime(node)
+            entry = DBEntry.objects.filter(label_id=node).first()
+            if entry:
+                modtime = entry.modified
                 stale = ''
             else:
-                modtime = time()
+                modtime = timezone.now()
                 stale = node
 
             # Check immediate dependencies (which were updated in a previous

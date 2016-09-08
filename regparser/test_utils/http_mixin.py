@@ -2,6 +2,7 @@ import json
 import re
 
 import httpretty
+import pytest
 
 
 class HttpMixin(object):
@@ -49,3 +50,10 @@ class HttpMixin(object):
 
     def last_http_body(self):
         return httpretty.last_request().parsed_body
+
+
+@pytest.yield_fixture
+def http_pretty_fixture():
+    httpretty.enable()
+    yield
+    httpretty.disable()
