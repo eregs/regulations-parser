@@ -145,11 +145,8 @@ class RegulationFileTestCase(APITestCase):
 
     def get_hashed_contents(self):
         if self.hashed_contents is None:
-            try:
-                self.hashed_contents = md5(self.file_contents.encode(
-                    "utf-8")).hexdigest()
-            except AttributeError:
-                self.hashed_contents = md5(self.file_contents).hexdigest()
+            self.hashed_contents = md5(self.file_contents.encode(
+                "utf-8")).hexdigest()
         return self.hashed_contents
 
     def test_create_file(self):
