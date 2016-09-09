@@ -322,16 +322,15 @@ class FileUploadView(mixins.ListModelMixin, mixins.CreateModelMixin,
         filename = uploaded_file.name
         url = file_url(hexhash)
 
-        if RegulationFile.objects.filter(hexhash=hexhash).exists():
-            return Response(dict(error="File already present."),
-                            status=status.HTTP_400_BAD_REQUEST)
-        else:
+        if not RegulationFile.objects.filter(hexhash=hexhash).exists():
             serialized.save(contents=contents, file=uploaded_file,
                             filename=filename, hexhash=hexhash, url=url)
-
-        headers = self.get_success_headers(serialized.data)
-        return Response(serialized.data, status=status.HTTP_201_CREATED,
-                        headers=headers)
+            headers = self.get_success_headers(serialized.data)
+            return Response(serialized.data, status=status.HTTP_201_CREATED,
+                            headers=headers)
+        else:
+            return Response(dict(error="File already present."),
+                            status=status.HTTP_400_BAD_REQUEST)
 
     def post(self, request, *args, **kwargs):
         return self.create(request, *args, **kwargs)
