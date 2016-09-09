@@ -23,13 +23,11 @@ fake_pipeline_id = uuid4()
 
 
 def _fake_redis_job(cmd, args, timeout=60*30, result_ttl=-1, depends_on=None):
-    return type("FakeRedisJob", (object, ), {"id": fake_pipeline_id})
+    return Mock(id=fake_pipeline_id)
 
 
 def _fake_redis_queue():
-    fq = Mock()
-    fq.fetch_job = Mock(return_value=None)
-    return fq
+    return Mock(fetch_job=Mock(return_value=None))
 
 
 @patch("django_rq.enqueue", _fake_redis_job)
