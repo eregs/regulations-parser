@@ -107,9 +107,9 @@ def get_host():
     """
     hostname = getattr(settings, "CANONICAL_HOSTNAME", "")
     hostport = getattr(settings, "CANONICAL_PORT", "")
-    if hostport and hostport is not "80":
+    if hostport and hostport not in ("80", "443"):
         hostport = ":%s" % hostport
-    elif hostport is "80":
+    elif hostport in ("80", "443"):
         hostport = ""
     return "%s%s" % (hostname, hostport)
 

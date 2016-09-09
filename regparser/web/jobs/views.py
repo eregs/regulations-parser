@@ -206,8 +206,10 @@ class PipelineJobViewList(BaseViewList, JobViewList):
         Overrides the method from ``BaseViewList`` in order to pass the
         arguments appropriate for the ``pipeline`` command.
 
-        Side Effects
-            Runs the ``pipeline`` command.
+        It returns a list of string components that can be passed to the
+        `eregs.py` task runner. For example::
+
+            ["pipeline", "0", "0", "http://some.url/"]
 
         :arg dict validated_data: Incoming data from the POST that's already
         been validated by the serializer.
@@ -242,11 +244,14 @@ class ProposalPipelineJobViewList(BaseViewList, JobViewList):
         Overrides the method from ``BaseViewList`` in order to pass the
         arguments appropriate for the ``proposal_pipeline`` command.
 
+        It returns a list of string components that can be passed to the
+        `eregs.py` task runner. For example::
+
+            ["proposal_pipeline", "/tmp/tmp.xml", "http://some.url/"]
+
         Impure
             Reads the contents of the proposal file from the filesystem (in
-            future, the DB, but impure either way).
-        Side Effects
-            Runs the ``proposal_pipeline`` command.
+            future, likely some other file storage, but impure either way).
 
         :arg dict validated_data: Incoming data from the POST that's already
         been validated by the serializer.
@@ -317,16 +322,15 @@ class FileUploadView(mixins.ListModelMixin, mixins.CreateModelMixin,
         filename = uploaded_file.name
         url = file_url(hexhash)
 
-        if RegulationFile.objects.filter(hexhash=hexhash).exists():
-            return Response(dict(error="File already present."),
-                            status=status.HTTP_400_BAD_REQUEST)
-        else:
+        if not RegulationFile.objects.filter(hexhash=hexhash).exists():
             serialized.save(contents=contents, file=uploaded_file,
                             filename=filename, hexhash=hexhash, url=url)
-
-        headers = self.get_success_headers(serialized.data)
-        return Response(serialized.data, status=status.HTTP_201_CREATED,
-                        headers=headers)
+            headers = self.get_success_headers(serialized.data)
+            return Response(serialized.data, status=status.HTTP_201_CREATED,
+                            headers=headers)
+        else:
+            return Response(dict(error="File already present."),
+                            status=status.HTTP_400_BAD_REQUEST)
 
     def post(self, request, *args, **kwargs):
         return self.create(request, *args, **kwargs)

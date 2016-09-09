@@ -1,6 +1,7 @@
 from hashlib import md5
 from mock import patch, Mock
 from os import path as ospath
+from six.moves.urllib.parse import urlparse
 from random import choice
 from regparser.web.jobs.models import job_status_values
 from regparser.web.jobs.utils import (
@@ -17,22 +18,16 @@ from uuid import uuid4
 import pytest
 import settings
 
-try:
-    from urllib.parse import urlparse
-except ImportError:
-    from urlparse import urlparse
 
 fake_pipeline_id = uuid4()
 
 
 def _fake_redis_job(cmd, args, timeout=60*30, result_ttl=-1, depends_on=None):
-    return type("FakeRedisJob", (object, ), {"id": fake_pipeline_id})
+    return Mock(id=fake_pipeline_id)
 
 
 def _fake_redis_queue():
-    fq = Mock()
-    fq.fetch_job = Mock(return_value=None)
-    return fq
+    return Mock(fetch_job=Mock(return_value=None))
 
 
 @patch("django_rq.enqueue", _fake_redis_job)
@@ -148,11 +143,8 @@ class RegulationFileTestCase(APITestCase):
 
     def get_hashed_contents(self):
         if self.hashed_contents is None:
-            try:
-                self.hashed_contents = md5(self.file_contents.encode(
-                    "utf-8")).hexdigest()
-            except AttributeError:
-                self.hashed_contents = md5(self.file_contents).hexdigest()
+            self.hashed_contents = md5(self.file_contents.encode(
+                "utf-8")).hexdigest()
         return self.hashed_contents
 
     def test_create_file(self):
@@ -337,11 +329,9 @@ def test_status_url():
     with patch.object(settings, "CANONICAL_PORT", "2323"):
         _check(port=2323)
 
-    with patch.object(settings, "CANONICAL_PORT", "80"):
-        _check()
-
-    with patch.object(settings, "CANONICAL_PORT", ""):
-        _check()
+    for port in ("80", "443", ""):
+        with patch.object(settings, "CANONICAL_PORT", port):
+            _check()
 
     with pytest.raises(ValueError) as err:
         status_url("something", "something-without-a-slash")
@@ -359,10 +349,7 @@ def test_file_url():
         for hx in hexes:
             assert file_url(hx) == "%s:2323%s%s/" % (domain, urlpath, hx)
 
-    with patch.object(settings, "CANONICAL_PORT", "80"):
-        for hx in hexes:
-            assert file_url(hx) == "%s%s%s/" % (domain, urlpath, hx)
-
-    with patch.object(settings, "CANONICAL_PORT", ""):
-        for hx in hexes:
-            assert file_url(hx) == "%s%s%s/" % (domain, urlpath, hx)
+    for port in ("80", "443", ""):
+        with patch.object(settings, "CANONICAL_PORT", port):
+            for hx in hexes:
+                assert file_url(hx) == "%s%s%s/" % (domain, urlpath, hx)
