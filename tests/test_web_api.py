@@ -331,11 +331,9 @@ def test_status_url():
     with patch.object(settings, "CANONICAL_PORT", "2323"):
         _check(port=2323)
 
-    with patch.object(settings, "CANONICAL_PORT", "80"):
-        _check()
-
-    with patch.object(settings, "CANONICAL_PORT", ""):
-        _check()
+    for port in ("80", "443", ""):
+        with patch.object(settings, "CANONICAL_PORT", port):
+            _check()
 
     with pytest.raises(ValueError) as err:
         status_url("something", "something-without-a-slash")
@@ -353,10 +351,7 @@ def test_file_url():
         for hx in hexes:
             assert file_url(hx) == "%s:2323%s%s/" % (domain, urlpath, hx)
 
-    with patch.object(settings, "CANONICAL_PORT", "80"):
-        for hx in hexes:
-            assert file_url(hx) == "%s%s%s/" % (domain, urlpath, hx)
-
-    with patch.object(settings, "CANONICAL_PORT", ""):
-        for hx in hexes:
-            assert file_url(hx) == "%s%s%s/" % (domain, urlpath, hx)
+    for port in ("80", "443", ""):
+        with patch.object(settings, "CANONICAL_PORT", port):
+            for hx in hexes:
+                assert file_url(hx) == "%s%s%s/" % (domain, urlpath, hx)
