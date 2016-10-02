@@ -44,9 +44,9 @@ class PipelineJobSerializer(ParsingJobSerializer):
     class Meta(ParsingJobSerializer.Meta):
         model = PipelineJob
         fields = ParsingJobSerializer.Meta.fields + (
-                "cfr_title",
-                "cfr_part"
-            )
+            "cfr_title",
+            "cfr_part"
+        )
 
 
 class ProposalPipelineJobSerializer(ParsingJobSerializer):

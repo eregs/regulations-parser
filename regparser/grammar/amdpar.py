@@ -478,7 +478,7 @@ subject_group = (
 
 # Phrases like '“Nonimmigrant visa”' become 'p12345678'
 _double_quote_label = QuotedString(
-        quoteChar=u'“', endQuoteChar=u'”'
+    quoteChar=u'“', endQuoteChar=u'”'
 ).setParseAction(lambda m: "p{}".format(hash_for_paragraph(m[0])))
 # Phrases like "definition for the term “Nonimmigrant visa”" become a
 # paragraph token with the appropriate paragraph label set

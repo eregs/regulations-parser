@@ -287,7 +287,7 @@ def build_from_section(reg_part, section_xml):
 
         if section_span_end:
             section_title = u"§§ {}.{}-{}".format(
-                    reg_part, section_number, section_span_end)
+                reg_part, section_number, section_span_end)
         else:
             section_title = u"§ {}.{}".format(reg_part, section_number)
         if subject_text:

@@ -82,6 +82,6 @@ def prefer_no_markerless_sandwich(solutions, weight=1.0):
 
         total = len(solution.assignment)
         result.append(solution.copy_with_penalty(
-                        weight * flags / float(total)))
+            weight * flags / float(total)))
 
     return result
