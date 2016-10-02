@@ -102,7 +102,7 @@ def build_section_by_section(sxs, fr_start_page, previous_label):
             'paragraphs': paragraphs,
             'children': children,
             'footnote_refs': footnotes
-            }
+        }
 
         if (labels and  # No label => subheader
                 # Concatenate if repeat label or backtrack
