@@ -60,7 +60,7 @@ def collapsed_markers_matches(node_text, tagged_text):
     node_for_keyterms.tagged_text = tagged_text
     keyterm = KeyTerms.keyterm_in_node(node_for_keyterms)
     if keyterm:
-        node_text = node_text.replace(keyterm, '.'*len(keyterm))
+        node_text = node_text.replace(keyterm, '.' * len(keyterm))
 
     collapsed_markers = []
     for marker in _first_markers:

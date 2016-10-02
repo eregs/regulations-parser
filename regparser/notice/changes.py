@@ -40,7 +40,7 @@ def bad_label(node):
                 return True
             elif i == 1 and not l.isdigit():
                 return True
-            elif i > 1 and l not in p_levels[i-2]:
+            elif i > 1 and l not in p_levels[i - 2]:
                 return True
     return False
 

@@ -78,7 +78,7 @@ class BaseViewList(object):
         serialized.is_valid(raise_exception=True)
 
         eregs_args = self.build_eregs_args(serialized.validated_data)
-        job = queue_eregs_job(eregs_args, timeout=60*30, result_ttl=-1)
+        job = queue_eregs_job(eregs_args, timeout=60 * 30, result_ttl=-1)
 
         # Paranoia--validate the values we provide:
         job_id = job.id

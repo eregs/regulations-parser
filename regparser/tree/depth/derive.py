@@ -39,7 +39,7 @@ class Solution(object):
         return iter(self.assignment)
 
     def pretty_str(self):
-        return "\n".join(" "*4*par.depth + par.typ[par.idx]
+        return "\n".join(" " * 4 * par.depth + par.typ[par.idx]
                          for par in self.assignment)
 
     def pretty_print(self):
@@ -117,19 +117,19 @@ def derive_depths(original_markers, additional_constraints=[]):
         all_vars.extend([type_var, idx_var, depth_var])
 
         if idx > 0:
-            pairs = all_vars[3*(idx-1):]
+            pairs = all_vars[3 * (idx - 1):]
             problem.addConstraint(pair_rules, pairs)
 
         if idx > 1:
-            pairs = all_vars[3*(idx-2):]
+            pairs = all_vars[3 * (idx - 2):]
             problem.addConstraint(rules.triplet_tests, pairs)
 
     # separate loop so that the simpler checks run first
     for idx in range(1, len(marker_list)):
         # start with the current idx
-        params = all_vars[3*idx:3*(idx+1)]
+        params = all_vars[3 * idx:3 * (idx + 1)]
         # then add on all previous
-        params += all_vars[:3*idx]
+        params += all_vars[:3 * idx]
         problem.addConstraint(rules.continue_previous_seq, params)
 
     # @todo: There's probably efficiency gains to making these rules over

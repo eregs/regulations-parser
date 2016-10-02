@@ -42,7 +42,7 @@ class Label(object):
         for idx, value in enumerate(node.label):
             if value == 'Interp':
                 #   Add remaining bits as comment fields
-                for cidx in range(idx+1, len(node.label)):
+                for cidx in range(idx + 1, len(node.label)):
                     comment_field = cls.comment_schema[cidx - idx]
                     settings[comment_field] = node.label[cidx]
                 #   Stop processing the prefix fields
@@ -142,7 +142,7 @@ class Label(object):
         123.45(a)(3), (4), and (5)"""
         self_list = self.to_list(for_node=False)
         other_list = other.to_list(for_node=False)
-        field = self.schema[len(self_list)-1]
+        field = self.schema[len(self_list) - 1]
         start, end = self_list[-1], other_list[-1]
         level = [lvl for lvl in p_levels if start in lvl and end in lvl]
         if (self.schema != other.schema or len(self_list) != len(other_list) or
@@ -151,7 +151,7 @@ class Label(object):
         else:
             level = level[0]
             start_idx, end_idx = level.index(start), level.index(end)
-            for marker in level[start_idx+1:end_idx]:
+            for marker in level[start_idx + 1:end_idx]:
                 yield self.copy(**{field: marker})
 
 

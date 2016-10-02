@@ -118,7 +118,7 @@ def table_xml_to_plaintext(xml_node):
     for simple tables. This gets included in the reg plain text"""
     header = [tree_utils.get_node_text(hd, add_spaces=True).strip()
               for hd in xml_node.xpath('./BOXHD/CHED|./TTITLE')]
-    divider = ['---']*len(header)
+    divider = ['---'] * len(header)
     rows = []
     for tr in xml_node.xpath('./ROW'):
         rows.append([tree_utils.get_node_text(td, add_spaces=True).strip()

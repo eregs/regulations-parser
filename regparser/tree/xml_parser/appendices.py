@@ -162,13 +162,13 @@ class AppendixProcessor(object):
         node_for_keyterms.label = [initial_marker(text)[0]]
         keyterm = KeyTerms.keyterm_in_node(node_for_keyterms)
         if keyterm:
-            mtext = text.replace(keyterm, '.'*len(keyterm))
+            mtext = text.replace(keyterm, '.' * len(keyterm))
         else:
             mtext = text
 
         for mtext in split_paragraph_text(mtext):
             if keyterm:     # still need the original text
-                mtext = mtext.replace('.'*len(keyterm), keyterm)
+                mtext = mtext.replace('.' * len(keyterm), keyterm)
             node = Node(mtext, node_type=Node.APPENDIX,
                         label=[initial_marker(mtext)[0]])
             self.nodes.append(node)

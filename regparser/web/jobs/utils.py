@@ -7,7 +7,7 @@ import settings
 eregs_site_api_url = getattr(settings, "EREGS_SITE_API_URL")
 
 
-def queue_eregs_job(args, timeout=60*30, result_ttl=-1):
+def queue_eregs_job(args, timeout=60 * 30, result_ttl=-1):
     """
     Adds an eRegs command to the Redis queue to be run asynchronously.
 

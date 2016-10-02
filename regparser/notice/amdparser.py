@@ -63,7 +63,7 @@ def compress(lhs_label, rhs_label):
         return lhs_label
 
     label = list(lhs_label)
-    label.extend([None]*len(rhs_label))
+    label.extend([None] * len(rhs_label))
     label = label[:len(rhs_label)]
 
     for i in range(len(rhs_label)):
@@ -171,7 +171,7 @@ def multiple_moves(tokenized):
         if skip:
             skip -= 1
         elif idx < len(tokenized) - 2:
-            el1, el2 = tokenized[idx+1:idx+3]
+            el1, el2 = tokenized[idx + 1:idx + 3]
             if (el0.match(tokens.TokenList) and el2.match(tokens.TokenList) and
                 el1.match(tokens.Verb, verb=tokens.Verb.MOVE,
                           active=False) and
@@ -462,10 +462,10 @@ def make_instructions(tokenized):
             verb = token.verb
         # MOVEs must have _two_ paragraphs
         elif (verb == tokens.Verb.MOVE and
-                not tokenized[i-1].match(tokens.Paragraph)):
+                not tokenized[i - 1].match(tokens.Paragraph)):
             continue
         elif verb == tokens.Verb.MOVE and token.match(tokens.Paragraph):
-            origin = tokenized[i-1].label_text()
+            origin = tokenized[i - 1].label_text()
             etree.SubElement(instructions, verb, label=origin,
                              destination=token.label_text())
         elif verb and token.match(tokens.Paragraph):

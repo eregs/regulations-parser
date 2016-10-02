@@ -168,7 +168,7 @@ class ExtractTags(PreProcessorBase):
     def strip_root_tag(self, string):
         first_tag_ends_at = string.find('>')
         last_tag_starts_at = string.rfind('<')
-        return string[first_tag_ends_at+1:last_tag_starts_at]
+        return string[first_tag_ends_at + 1:last_tag_starts_at]
 
     def combine_with_following(self, extract, include_tag):
         """We need to merge an extract with the following tag. Rather than
@@ -256,7 +256,7 @@ class Footnotes(PreProcessorBase):
         tail_texts = []
         for ref in reversed(refs):
             idx = to_process.rfind(ref)
-            tail_texts.append(to_process[idx+len(ref):])
+            tail_texts.append(to_process[idx + len(ref):])
             to_process = to_process[:idx]
         # The last (reversed first) tail should contain the su.tail
         tail_texts[0] += su.tail or ''

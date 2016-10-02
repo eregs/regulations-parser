@@ -326,9 +326,9 @@ def _through_sect(prev_lab, next_lab):
 def _through_paragraph(prev_lab, next_lab):
     """Expand "through" for labels ending in a paragraph."""
     depth = len(prev_lab)
-    start = p_levels[depth-4].index(prev_lab[-1]) + 1
-    end = p_levels[depth-4].index(next_lab[-1])
-    return [tokens.Paragraph(prev_lab[:depth-1] + [p_levels[depth-4][i]])
+    start = p_levels[depth - 4].index(prev_lab[-1]) + 1
+    end = p_levels[depth - 4].index(next_lab[-1])
+    return [tokens.Paragraph(prev_lab[:depth - 1] + [p_levels[depth - 4][i]])
             for i in range(start, end)]
 
 
