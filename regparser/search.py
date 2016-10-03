@@ -14,7 +14,7 @@ def find_offsets(text, search_fn):
     if start is None or start == -1:
         return None
 
-    post_start_text = text[start+1:]
+    post_start_text = text[start + 1:]
     end = search_fn(post_start_text)
     if end and end > -1:
         return (start, start + end + 1)
@@ -33,11 +33,11 @@ def segments(text, offsets_fn, exclude=[]):
     offsets = offsets_fn(remaining_text, seg_id, exclude)
     while offsets:
         begin, end = offsets
-        segs.append((begin+text_offset, end+text_offset))
+        segs.append((begin + text_offset, end + text_offset))
         seg_id += 1
         text_offset += end
 
         remaining_text = remaining_text[end:]
-        exclude = [(e[0]-end, e[1]-end) for e in exclude]
+        exclude = [(e[0] - end, e[1] - end) for e in exclude]
         offsets = offsets_fn(remaining_text, seg_id, exclude)
     return segs

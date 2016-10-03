@@ -114,7 +114,7 @@ def same_parent_same_type(*all_vars):
     Exceptions for:
         STARS, which can appear at any level
         Sequences which _begin_ with markerless paragraphs"""
-    elements = [tuple(all_vars[i:i+3]) for i in range(0, len(all_vars), 3)]
+    elements = [tuple(all_vars[i:i + 3]) for i in range(0, len(all_vars), 3)]
 
     def per_level(elements, parent_type=None):
         level, grouped_children = _level_and_children(elements)
@@ -144,7 +144,7 @@ def stars_occupy_space(*all_vars):
     """Star markers can't be ignored in sequence, so 1, *, 2 doesn't make
     sense for a single level, unless it's an inline star. In the inline
     case, we can think of it as 1, intro-text-to-1, 2"""
-    elements = [tuple(all_vars[i:i+3]) for i in range(0, len(all_vars), 3)]
+    elements = [tuple(all_vars[i:i + 3]) for i in range(0, len(all_vars), 3)]
 
     def per_level(elements):
         level, grouped_children = _level_and_children(elements)
@@ -194,12 +194,12 @@ def ancestors(all_prev):
     """Given an assignment of values, construct a list of the relevant
     parents, e.g. 1, i, a, ii, A gives us 1, ii, A"""
     # Group (type, idx, depth) per marker
-    all_prev = [tuple(all_prev[i:i+3]) for i in range(0, len(all_prev), 3)]
+    all_prev = [tuple(all_prev[i:i + 3]) for i in range(0, len(all_prev), 3)]
 
-    result = [None]*10
+    result = [None] * 10
     for prev_type, prev_idx, prev_depth in all_prev:
         result[prev_depth] = (prev_type, prev_idx, prev_depth)
-        result[prev_depth + 1:] = [None]*(10 - prev_depth)
+        result[prev_depth + 1:] = [None] * (10 - prev_depth)
     return [r for r in result if r]
 
 

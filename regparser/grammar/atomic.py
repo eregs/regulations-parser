@@ -104,7 +104,7 @@ conj_phrases = (
     (Marker("except") + Marker("for")) |
     Suppress(
         Marker("through") | "-" | u"–"
-        ).setParseAction(lambda: True).setResultsName("through")
+    ).setParseAction(lambda: True).setResultsName("through")
 )
 
 title = Word(string.digits).setResultsName("cfr_title")

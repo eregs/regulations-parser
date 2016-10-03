@@ -51,4 +51,4 @@ scope_term_type_parser = QuickSearchable(
     Optional(Marker("the") + Marker("term")) +
     keep_pos(
         SkipTo(Marker("means") | (Marker("refers") + Marker("to")))
-        ).setResultsName("term"))
+    ).setResultsName("term"))

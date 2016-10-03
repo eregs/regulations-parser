@@ -88,5 +88,5 @@ class Command(BaseCommand):
             job = django_rq.enqueue(run_eregs_command, eregs_args,
                                     # Run for at most half an hour
                                     # Don't delete successes
-                                    timeout=60*30, result_ttl=-1)
+                                    timeout=60 * 30, result_ttl=-1)
             self.stdout.write("OK: {}".format(job))

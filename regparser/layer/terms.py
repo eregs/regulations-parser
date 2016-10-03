@@ -147,7 +147,7 @@ class Terms(Layer):
             layer_el.append({
                 "ref": ref.term + ':' + ref.label,
                 "offsets": offsets
-                })
+            })
         return layer_el
 
     def _word_matches(self, term, text):

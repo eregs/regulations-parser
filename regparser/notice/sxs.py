@@ -102,7 +102,7 @@ def build_section_by_section(sxs, fr_start_page, previous_label):
             'paragraphs': paragraphs,
             'children': children,
             'footnote_refs': footnotes
-            }
+        }
 
         if (labels and  # No label => subheader
                 # Concatenate if repeat label or backtrack
@@ -122,7 +122,7 @@ def add_spaces_to_title(title):
     for citation in internal_citations(title, Label()):
         end = citation.end
         # Next char is an alpha and last char isn't a space
-        if end < len(title) and title[end].isalpha() and title[end-1] != ' ':
+        if end < len(title) and title[end].isalpha() and title[end - 1] != ' ':
             title = title[:end] + ' ' + title[end:]
             break   # Assumes there is only one paragraph in a title
     return title
@@ -171,7 +171,7 @@ def split_into_ttsr(sxs, cfr_part):
                                                    title_citations), sxs[1:]))
     text_elements = list(takewhile(lambda e: e.tag != 'HD', section))
     sub_sections = section[len(text_elements):]
-    remaining = sxs[1+len(text_elements)+len(sub_sections):]
+    remaining = sxs[1 + len(text_elements) + len(sub_sections):]
     return (title, text_elements, sub_sections, remaining)
 
 

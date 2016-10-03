@@ -22,9 +22,9 @@ def deemphasize(marker):
 
 
 lower = (tuple(string.ascii_lowercase) +
-         tuple(a+a for a in string.ascii_lowercase if a != 'i'))
+         tuple(a + a for a in string.ascii_lowercase if a != 'i'))
 upper = (tuple(string.ascii_uppercase) +
-         tuple(a+a for a in string.ascii_uppercase))
+         tuple(a + a for a in string.ascii_uppercase))
 ints = tuple(str(i) for i in range(1, 999))
 roman = tuple(itertools.islice(roman_nums(), 0, 50))
 upper_roman = tuple(r.upper() for r in roman)

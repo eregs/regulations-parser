@@ -326,9 +326,9 @@ def _through_sect(prev_lab, next_lab):
 def _through_paragraph(prev_lab, next_lab):
     """Expand "through" for labels ending in a paragraph."""
     depth = len(prev_lab)
-    start = p_levels[depth-4].index(prev_lab[-1]) + 1
-    end = p_levels[depth-4].index(next_lab[-1])
-    return [tokens.Paragraph(prev_lab[:depth-1] + [p_levels[depth-4][i]])
+    start = p_levels[depth - 4].index(prev_lab[-1]) + 1
+    end = p_levels[depth - 4].index(next_lab[-1])
+    return [tokens.Paragraph(prev_lab[:depth - 1] + [p_levels[depth - 4][i]])
             for i in range(start, end)]
 
 
@@ -478,7 +478,7 @@ subject_group = (
 
 # Phrases like '“Nonimmigrant visa”' become 'p12345678'
 _double_quote_label = QuotedString(
-        quoteChar=u'“', endQuoteChar=u'”'
+    quoteChar=u'“', endQuoteChar=u'”'
 ).setParseAction(lambda m: "p{}".format(hash_for_paragraph(m[0])))
 # Phrases like "definition for the term “Nonimmigrant visa”" become a
 # paragraph token with the appropriate paragraph label set

@@ -46,7 +46,7 @@ def sxs_layers(cfr_title, cfr_part):
         if is_stale(cfr_title, cfr_part, version_id):
             tree = (tree_dir / version_id).read()
             notices = [sxs.read() for sxs in previous_sxs(
-                        cfr_title, cfr_part, version_id)]
+                cfr_title, cfr_part, version_id)]
             layer_json = SectionBySection(tree, notices).build()
             entry.Layer.cfr(
                 cfr_title, cfr_part, version_id, 'analyses').write(

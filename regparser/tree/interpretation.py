@@ -39,14 +39,14 @@ def segment_by_header(text, part):
 
     offset_pairs = []
     for idx in range(1, len(starts)):
-        offset_pairs.append((starts[idx-1], starts[idx]))
+        offset_pairs.append((starts[idx - 1], starts[idx]))
 
     return offset_pairs
 
 
 def merge_labels(labels):
     max_len = max(len(l) for l in labels)
-    labels = [l + [None]*(max_len - len(l)) for l in labels]
+    labels = [l + [None] * (max_len - len(l)) for l in labels]
     final_label = []
     for tups in zip(*labels):
         final_label.append('_'.join(sorted(set(tups))))

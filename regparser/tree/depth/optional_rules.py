@@ -17,7 +17,7 @@ def depth_type_inverses(constrain, all_variables):
         if typ == markers.stars or typ == markers.markerless:
             return True
         for i in range(0, len(all_prev), 3):
-            prev_typ, prev_idx, prev_depth = all_prev[i:i+3]
+            prev_typ, prev_idx, prev_depth = all_prev[i:i + 3]
             if prev_depth == depth and prev_typ not in (markers.stars, typ,
                                                         markers.markerless):
                 return False
@@ -26,7 +26,7 @@ def depth_type_inverses(constrain, all_variables):
         return True
 
     for i in range(0, len(all_variables), 3):
-        constrain(inner, all_variables[i:i+3] + all_variables[:i])
+        constrain(inner, all_variables[i:i + 3] + all_variables[:i])
 
 
 def star_new_level(constrain, all_variables):
@@ -73,6 +73,6 @@ def limit_sequence_gap(size=0):
 
     def constrainer(constrain, all_variables):
         for i in range(0, len(all_variables), 3):
-            constrain(inner, all_variables[i:i+3] + all_variables[:i])
+            constrain(inner, all_variables[i:i + 3] + all_variables[:i])
 
     return constrainer

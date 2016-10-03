@@ -51,7 +51,7 @@ class ParagraphParser():
         """Return a list of matches if this paragraph id matches one of the
         subparagraph ids (e.g.  letter (i) and roman numeral (i)."""
         matches = []
-        for depth in range(p_level+1, len(p_levels)):
+        for depth in range(p_level + 1, len(p_levels)):
             for sub_id, sub in enumerate(p_levels[depth]):
                 if sub == p_levels[p_level][paragraph]:
                     matches.append((depth, sub_id))
@@ -67,7 +67,7 @@ class ParagraphParser():
             p_level, paragraph)
         starts = starts + [(len(text), len(text))]
         for i in range(1, len(starts)):
-            _, prev_end = starts[i-1]
+            _, prev_end = starts[i - 1]
             next_start, _ = starts[i]
             s_text = text[prev_end:next_start]
             s_exclude = [
@@ -79,7 +79,7 @@ class ParagraphParser():
                         s_text, hazard_level, hazard_idx + 1, s_exclude):
                     is_subparagraph = True
             if not is_subparagraph:
-                return starts[i-1]
+                return starts[i - 1]
 
     def find_paragraph_start_match(self, text, p_level, paragraph, exclude=[]):
         """Find the positions for the start and end of the requested label.

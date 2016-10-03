@@ -14,7 +14,7 @@ def prefer_multiple_children(solutions, weight=1.0):
         flags = 0
         depths = [a.depth for a in solution.assignment]
         for i, depth in enumerate(depths):
-            child_depths = takewhile(lambda d: d > depth, depths[i+1:])
+            child_depths = takewhile(lambda d: d > depth, depths[i + 1:])
             matching_depths = [d for d in child_depths if d == depth + 1]
             if len(matching_depths) == 1:
                 flags += 1
@@ -82,6 +82,6 @@ def prefer_no_markerless_sandwich(solutions, weight=1.0):
 
         total = len(solution.assignment)
         result.append(solution.copy_with_penalty(
-                        weight * flags / float(total)))
+            weight * flags / float(total)))
 
     return result
