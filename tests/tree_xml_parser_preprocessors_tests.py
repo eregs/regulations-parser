@@ -1,7 +1,8 @@
-# vim: set encoding=utf-8
+# -*- coding: utf-8 -*-
 from unittest import TestCase
 
 from lxml import etree
+import pytest
 
 from regparser.test_utils.xml_builder import XMLBuilder
 from regparser.tree.xml_parser import preprocessors
@@ -99,26 +100,21 @@ class ParenthesesCleanupTests(TestCase):
                                 '<E T="03">Paragraph 22(a)(5)</E> Content')
 
 
-class MoveAdjoiningCharsTests(TestCase):
-    def assert_transformed(self, input_xml, expected_xml):
-        self.setUp()
-        with XMLBuilder("SECTION") as ctx:
-            ctx.child_from_string(u"<P>{}</P>".format(input_xml))
-        preprocessors.MoveAdjoiningChars().transform(ctx.xml)
-        self.assertEqual(etree.tounicode(ctx.xml.xpath('./P/E')[0]),
-                         expected_xml)
-
-    def test_transform(self):
-        self.assert_transformed(u'<E T="03">Things</E>— more things',
-                                u'<E T="03">Things—</E> more things')
-        self.assert_transformed('<E T="03">Things</E>.',
-                                '<E T="03">Things.</E>')
-        self.assert_transformed('<E T="03">Things</E>. more things',
-                                '<E T="03">Things.</E> more things')
-        self.assert_transformed('<E T="03">Things</E>. more things.',
-                                '<E T="03">Things.</E> more things.')
-        self.assert_transformed('<E T="03">Things</E>',
-                                '<E T="03">Things</E>')
+@pytest.mark.parametrize("input_xml,expected_xml", [
+    (u'<E T="03">Things</E>— more things',
+        u'<E T="03">Things—</E> more things'),
+    ('<E T="03">Things</E>.', '<E T="03">Things.</E>'),
+    ('<E T="03">Things</E>. more things', '<E T="03">Things.</E> more things'),
+    ('<E T="03">Things</E>. more things.',
+        '<E T="03">Things.</E> more things.'),
+    ('<E T="03">Things</E>', '<E T="03">Things</E>'),
+    ('<E T="03" />. Empty', '<E T="03">.</E> Empty')
+])
+def test_MoveAdjoiningChars_transform(input_xml, expected_xml):
+    with XMLBuilder("SECTION") as ctx:
+        ctx.child_from_string(u"<P>{}</P>".format(input_xml))
+    preprocessors.MoveAdjoiningChars().transform(ctx.xml)
+    assert etree.tounicode(ctx.xml.xpath('./P/E')[0]) == expected_xml
 
 
 class ApprovalsFPTests(TestCase):

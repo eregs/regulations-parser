@@ -106,7 +106,7 @@ class MoveAdjoiningChars(PreProcessorBase):
             orphan = self.ORPHAN_REGEX.match(e.tail or '')
 
             if orphan:
-                e.text = e.text + orphan.group(1)
+                e.text = (e.text or '') + orphan.group(1)
                 e.tail = self.ORPHAN_REGEX.sub('', e.tail, 1)
 
 
