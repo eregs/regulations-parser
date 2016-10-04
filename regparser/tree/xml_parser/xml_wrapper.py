@@ -4,6 +4,7 @@ from lxml import etree
 import six
 
 from regparser.plugins import class_paths_to_classes
+from regparser.tree.xml_parser.preprocessors import replace_html_entities
 import settings
 
 
@@ -15,6 +16,7 @@ class XMLWrapper(object):
         safety. `source` represents the providence of this xml. It is _not_
         serialized and hence does not follow the xml through the index"""
         if isinstance(xml, six.binary_type):
+            xml = replace_html_entities(xml)
             self.xml = etree.fromstring(xml)
         elif isinstance(xml, etree._Element):
             self.xml = deepcopy(xml)

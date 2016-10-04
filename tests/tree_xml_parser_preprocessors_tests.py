@@ -381,3 +381,10 @@ class ParseAMDPARsTests(TestCase):
         instructions = ctx.xml.xpath('//AMDPAR/EREGS_INSTRUCTIONS')
         self.assertEqual(1, len(instructions))
         self.assertEqual(instructions[0].get('final_context'), '111-?-4-d-3')
+
+
+def test_replace_html_entities():
+    xml_str = b"text <with field='&apos;'> But &rdquo; and &gt; + 2&cent;s"
+    expected = u"text <with field='&apos;'> But ” and &gt; + 2¢s"
+    expected = expected.encode('utf-8')
+    assert preprocessors.replace_html_entities(xml_str) == expected
