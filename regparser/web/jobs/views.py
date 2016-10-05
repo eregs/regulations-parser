@@ -199,7 +199,7 @@ class JobViewInstance(mixins.RetrieveModelMixin,
 class PipelineJobViewList(BaseViewList, JobViewList):
     queryset = PipelineJob.objects.all()
     serializer_class = PipelineJobSerializer
-    sub_path = "pipeline/"
+    sub_path = "regulations/"
 
     def build_eregs_args(self, validated_data):
         """
@@ -231,13 +231,13 @@ class PipelineJobViewList(BaseViewList, JobViewList):
 class PipelineJobViewInstance(JobViewInstance):
     queryset = PipelineJob.objects.all()
     serializer_class = PipelineJobSerializer
-    sub_path = "pipeline/"
+    sub_path = "regulations/"
 
 
 class ProposalPipelineJobViewList(BaseViewList, JobViewList):
     queryset = ProposalPipelineJob.objects.all()
     serializer_class = ProposalPipelineJobSerializer
-    sub_path = "proposal-pipeline/"
+    sub_path = "notices/"
 
     def build_eregs_args(self, validated_data):
         """
@@ -279,7 +279,7 @@ class ProposalPipelineJobViewList(BaseViewList, JobViewList):
 class ProposalPipelineJobViewInstance(JobViewInstance):
     queryset = ProposalPipelineJob.objects.all()
     serializer_class = ProposalPipelineJobSerializer
-    sub_path = "proposal-pipeline/"
+    sub_path = "notices/"
 
 
 class FileUploadView(mixins.ListModelMixin, mixins.CreateModelMixin,
