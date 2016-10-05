@@ -20,7 +20,7 @@ logger = logging.getLogger(__name__)
 
 # Anything "&upTo12Chars;" that's not &quot; &amp; &apos; &lt; &gt;
 # https://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references#Predefined_entities_in_XML
-HTML_RE = re.compile(r'&(?!(quot|amp|apos|lt|gt))[^;]{0,12};')
+HTML_RE = re.compile(b'&(?!(quot|amp|apos|lt|gt))[^;]{0,12};')
 
 
 def replace_html_entities(xml_bin_str):
@@ -30,10 +30,12 @@ def replace_html_entities(xml_bin_str):
     parser = HTMLParser()
     match = HTML_RE.search(xml_bin_str)
     while match:
-        replacement = parser.unescape(match.group(0)).encode('UTF-8')
+        match_bin = match.group(0)
+        match_str = match_bin.decode('utf-8')
+        replacement = parser.unescape(match_str).encode('UTF-8')
         logger.debug("Replacing %s with %s in retrieved XML",
-                     match.group(0), replacement)
-        xml_bin_str = xml_bin_str.replace(match.group(0), replacement)
+                     match_str, replacement)
+        xml_bin_str = xml_bin_str.replace(match_bin, replacement)
         match = HTML_RE.search(xml_bin_str)
     return xml_bin_str
 
