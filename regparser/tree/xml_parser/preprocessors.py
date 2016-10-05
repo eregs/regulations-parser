@@ -8,6 +8,7 @@ import logging
 import re
 
 from lxml import etree
+from six.moves.html_parser import HTMLParser
 
 from regparser.notice.amdparser import parse_amdpar
 from regparser.tree.xml_parser.tree_utils import (
@@ -15,6 +16,28 @@ from regparser.tree.xml_parser.tree_utils import (
 
 
 logger = logging.getLogger(__name__)
+
+
+# Anything "&upTo12Chars;" that's not &quot; &amp; &apos; &lt; &gt;
+# https://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references#Predefined_entities_in_XML
+HTML_RE = re.compile(b'&(?!(quot|amp|apos|lt|gt))[^;]{0,12};')
+
+
+def replace_html_entities(xml_bin_str):
+    """XML does not contain entity references for many HTML entities, yet the
+    Federal Register XML sometimes contains the HTML entities. Replace them
+    here, lest we throw off XML parsing"""
+    parser = HTMLParser()
+    match = HTML_RE.search(xml_bin_str)
+    while match:
+        match_bin = match.group(0)
+        match_str = match_bin.decode('utf-8')
+        replacement = parser.unescape(match_str).encode('UTF-8')
+        logger.debug("Replacing %s with %s in retrieved XML",
+                     match_str, replacement)
+        xml_bin_str = xml_bin_str.replace(match_bin, replacement)
+        match = HTML_RE.search(xml_bin_str)
+    return xml_bin_str
 
 
 class PreProcessorBase(object):
@@ -106,7 +129,7 @@ class MoveAdjoiningChars(PreProcessorBase):
             orphan = self.ORPHAN_REGEX.match(e.tail or '')
 
             if orphan:
-                e.text = e.text + orphan.group(1)
+                e.text = (e.text or '') + orphan.group(1)
                 e.tail = self.ORPHAN_REGEX.sub('', e.tail, 1)
 
 
