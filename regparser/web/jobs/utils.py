@@ -131,7 +131,7 @@ def status_url(job_id, sub_path=""):
     if sub_path and not sub_path.endswith("/"):
         raise ValueError
     host = get_host()
-    return "%s/rp/job/%s%s/" % (host, sub_path, job_id)
+    return "%s/rp/jobs/%s%s/" % (host, sub_path, job_id)
 
 
 def file_url(file_hash):
@@ -147,4 +147,4 @@ def file_url(file_hash):
     :returns: The URL for checking on the status of the job.
     """
     host = get_host()
-    return "%s/rp/job/upload/%s/" % (host, file_hash)
+    return "%s/rp/jobs/files/%s/" % (host, file_hash)

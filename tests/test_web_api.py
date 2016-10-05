@@ -46,7 +46,7 @@ class PipelineJobTestCase(APITestCase):
         super(PipelineJobTestCase, self).__init__(*args, **kwargs)
 
     def _postjson(self, data):
-        return self.client.post("/rp/job/pipeline/", data, format="json")
+        return self.client.post("/rp/jobs/regulations/", data, format="json")
 
     def _stock_response_check(self, expected, actual):
         """
@@ -71,7 +71,7 @@ class PipelineJobTestCase(APITestCase):
 
         expected = dict(self.defaults)
         expected.update({k: data[k] for k in data})
-        expected["url"] = status_url(fake_pipeline_id, sub_path="pipeline/")
+        expected["url"] = status_url(fake_pipeline_id, sub_path="regulations/")
         self._stock_response_check(expected, response.data)
         return expected
 
@@ -88,7 +88,7 @@ class PipelineJobTestCase(APITestCase):
         # Even if the input is a str, the return values should be ints:
         expected["cfr_title"] = int(expected["cfr_title"])
         expected["cfr_part"] = int(expected["cfr_part"])
-        expected["url"] = status_url(fake_pipeline_id, sub_path="pipeline/")
+        expected["url"] = status_url(fake_pipeline_id, sub_path="regulations/")
         self._stock_response_check(expected, response.data)
 
     def test_create_with_missing_fields(self):
@@ -106,7 +106,7 @@ class PipelineJobTestCase(APITestCase):
         self.assertEqual({"cfr_part": ["This field is required."]},
                          response.data)
 
-        response = self.client.get("/rp/job/pipeline/", format="json")
+        response = self.client.get("/rp/jobs/regulations/", format="json")
         self.assertEqual(0, len(response.data))
 
     def test_create_and_read(self):
@@ -116,7 +116,7 @@ class PipelineJobTestCase(APITestCase):
         response = self.client.get(url.path, format="json")
         self._stock_response_check(expected, response.data)
 
-        response = self.client.get("/rp/job/pipeline/", format="json")
+        response = self.client.get("/rp/jobs/regulations/", format="json")
         self.assertEqual(1, len(response.data))
         self._stock_response_check(expected, response.data[0])
 
@@ -130,7 +130,7 @@ class PipelineJobTestCase(APITestCase):
         response = self.client.get(url.path, format="json")
         self.assertEqual(404, response.status_code)
 
-        response = self.client.get("/rp/job/pipeline/", format="json")
+        response = self.client.get("/rp/jobs/regulations/", format="json")
         self.assertEqual(0, len(response.data))
 
 
@@ -153,7 +153,7 @@ class RegulationFileTestCase(APITestCase):
             tmp_name = ospath.split(tmp.name)[-1]
             tmp.seek(0)
             response = self.client.post(
-                "/rp/job/upload/", {"file": tmp})
+                "/rp/jobs/files/", {"file": tmp})
         self.assertEquals(201, response.status_code)
         data = response.data
         self.assertEquals(self.get_hashed_contents(), data["hexhash"])
@@ -168,7 +168,7 @@ class RegulationFileTestCase(APITestCase):
             tmp.write(self.file_contents.encode("utf-8"))
             tmp.seek(0)
             response = self.client.post(
-                "/rp/job/upload/", {"file": tmp})
+                "/rp/jobs/files/", {"file": tmp})
         self.assertEquals(400, response.status_code)
         self.assertIn("error", response.data)
         self.assertEquals("File already present.", response.data["error"])
@@ -181,7 +181,7 @@ class RegulationFileTestCase(APITestCase):
                 tmp.write(self.file_contents.encode("utf-8"))
                 tmp.seek(0)
                 response = self.client.post(
-                    "/rp/job/upload/", {"file": tmp})
+                    "/rp/jobs/files/", {"file": tmp})
             self.assertEquals(201, response.status_code)
 
             with NamedTemporaryFile(suffix=".xml", delete=True) as tmp:
@@ -189,7 +189,7 @@ class RegulationFileTestCase(APITestCase):
                 tmp.write(contents.encode("utf-8"))
                 tmp.seek(0)
                 response = self.client.post(
-                    "/rp/job/upload/", {"file": tmp})
+                    "/rp/jobs/files/", {"file": tmp})
             self.assertEquals(400, response.status_code)
             self.assertEquals("File too large (10-byte limit).",
                               response.data["error"])
@@ -201,7 +201,7 @@ class RegulationFileTestCase(APITestCase):
         contents = response.content.decode("utf-8")
         self.assertEquals(self.file_contents, contents)
 
-        response = self.client.get("/rp/job/upload/", format="json")
+        response = self.client.get("/rp/jobs/files/", format="json")
         self.assertEquals(1, len(response.data))
         data = response.data[0]
         self.assertEquals("File contents not shown.", data["contents"])
@@ -216,7 +216,7 @@ class RegulationFileTestCase(APITestCase):
         response = self.client.get(url.path)
         self.assertEqual(404, response.status_code)
 
-        response = self.client.get("/rp/job/upload/", format="json")
+        response = self.client.get("/rp/jobs/files/", format="json")
         data = response.data
         self.assertEquals(0, len(data))
 
@@ -242,11 +242,11 @@ class ProposalPipelineTestCase(APITestCase):
         with NamedTemporaryFile(suffix=".xml") as tmp:
             tmp.write(self.file_contents.encode("utf-8"))
             tmp.seek(0)
-            response = self.client.post("/rp/job/upload/", {"file": tmp})
+            response = self.client.post("/rp/jobs/files/", {"file": tmp})
         return response.data
 
     def _postjson(self, data):
-        return self.client.post("/rp/job/proposal-pipeline/", data,
+        return self.client.post("/rp/jobs/notices/", data,
                                 format="json")
 
     def _stock_response_check(self, expected, actual):
@@ -268,8 +268,7 @@ class ProposalPipelineTestCase(APITestCase):
 
         expected = dict(self.defaults)
         expected.update({k: data[k] for k in data})
-        expected["url"] = status_url(fake_pipeline_id,
-                                     sub_path="proposal-pipeline/")
+        expected["url"] = status_url(fake_pipeline_id, sub_path="notices/")
         self._stock_response_check(expected, response.data)
         return expected
 
@@ -288,7 +287,7 @@ class ProposalPipelineTestCase(APITestCase):
         response = self.client.get(url.path, format="json")
         self._stock_response_check(expected, response.data)
 
-        response = self.client.get("/rp/job/proposal-pipeline/", format="json")
+        response = self.client.get("/rp/jobs/notices/", format="json")
         self.assertEqual(1, len(response.data))
         self._stock_response_check(expected, response.data[0])
 
@@ -298,14 +297,14 @@ class ProposalPipelineTestCase(APITestCase):
         response = self.client.get(url.path, format="json")
         self.assertEqual(404, response.status_code)
 
-        response = self.client.get("/rp/job/proposal-pipeline/", format="json")
+        response = self.client.get("/rp/jobs/notices/", format="json")
         self.assertEqual(0, len(response.data))
 
 
 @patch.object(settings, "CANONICAL_HOSTNAME", "http://domain.tld")
 def test_status_url():
     domain = "http://domain.tld"
-    urlpath = "/rp/job/"
+    urlpath = "/rp/jobs/"
     hexes = ["".join([choice(hexdigits) for i in range(32)]) for j in range(6)]
 
     def _check(port=None):
@@ -341,7 +340,7 @@ def test_status_url():
 
 @patch.object(settings, "CANONICAL_HOSTNAME", "http://domain.tld")
 def test_file_url():
-    urlpath = "/rp/job/upload/"
+    urlpath = "/rp/jobs/files/"
     domain = "http://domain.tld"
     hexes = ["".join([choice(hexdigits) for i in range(32)]) for j in range(6)]
 
