@@ -317,8 +317,8 @@ class FileUploadView(mixins.ListModelMixin, mixins.CreateModelMixin,
             contents = b"".join(chunk for chunk in uploaded_file.chunks())
         else:
             contents = uploaded_file.read()
-        md = hashlib.md5(contents)
-        hexhash = md.hexdigest()
+        sha = hashlib.sha256(contents)
+        hexhash = sha.hexdigest()
         filename = uploaded_file.name
         url = file_url(hexhash)
 
