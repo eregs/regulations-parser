@@ -11,7 +11,7 @@ urlpatterns = [
         views.ProposalPipelineJobViewList.as_view()),
     url(r'^jobs/notices(/)(?P<job_id>[-a-z0-9]+)(/)$',
         views.ProposalPipelineJobViewInstance.as_view()),
-    url(r'^jobs/files/(?P<hexhash>[a-z0-9]{32})(/)$',
+    url(r'^jobs/files/(?P<hexhash>[a-z0-9]{64})(/)$',
         views.FileUploadViewInstance.as_view()),
     url(r'^jobs/files(/)$',
         views.FileUploadView.as_view()),

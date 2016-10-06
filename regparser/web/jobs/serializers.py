@@ -58,7 +58,7 @@ class ProposalPipelineJobSerializer(ParsingJobSerializer):
         )
 
     # Fields we don't want user input for are listed below.
-    file_hexhash = serializers.CharField(max_length=32)
+    file_hexhash = serializers.CharField(max_length=64)
 
 
 class FileUploadSerializer(serializers.ModelSerializer):

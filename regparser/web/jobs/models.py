@@ -39,7 +39,7 @@ class PipelineJob(ParsingJob):
 
 class ProposalPipelineJob(ParsingJob):
 
-    file_hexhash = models.CharField(max_length=32)
+    file_hexhash = models.CharField(max_length=64)
     only_latest = models.BooleanField(default=True)
 
 
@@ -48,5 +48,5 @@ class RegulationFile(models.Model):
     contents = models.BinaryField()
     file = models.FileField(null=True)
     filename = models.CharField(default=None, max_length=512, null=True)
-    hexhash = models.CharField(default=None, max_length=32, null=True)
+    hexhash = models.CharField(default=None, max_length=64, null=True)
     url = models.URLField(blank=True, max_length=2000)

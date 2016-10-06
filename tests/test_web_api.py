@@ -1,4 +1,4 @@
-from hashlib import md5
+from hashlib import sha256
 from mock import patch, Mock
 from os import path as ospath
 from six.moves.urllib.parse import urlparse
@@ -143,7 +143,7 @@ class RegulationFileTestCase(APITestCase):
 
     def get_hashed_contents(self):
         if self.hashed_contents is None:
-            self.hashed_contents = md5(self.file_contents.encode(
+            self.hashed_contents = sha256(self.file_contents.encode(
                 "utf-8")).hexdigest()
         return self.hashed_contents
 
