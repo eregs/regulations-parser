@@ -48,5 +48,5 @@ class RegulationFile(models.Model):
     contents = models.BinaryField()
     file = models.FileField(null=True)
     filename = models.CharField(default=None, max_length=512, null=True)
-    hexhash = models.CharField(default=None, max_length=64, null=True)
+    hexhash = models.CharField(max_length=64, primary_key=True)
     url = models.URLField(blank=True, max_length=2000)
