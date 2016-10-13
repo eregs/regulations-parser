@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="regparser",
-    version="2.0.0",
+    version="4.0.0",
     packages=find_packages(),
     classifiers=[
         'License :: Public Domain',
@@ -12,6 +12,11 @@ setup(
         "cached-property",
         "click",
         "coloredLogs",
+        "Django==1.9.*",
+        "dj-database-url",
+        "django-click",
+        "django_rq",
+        "djangorestframework",
         "GitPython",
         "inflection",
         "ipdb",
@@ -21,7 +26,9 @@ setup(
         "pyparsing",
         "python-constraint",
         "requests",
-        "requests-cache"
+        "requests-cache",
+        "six",
+        "stevedore"
     ],
     entry_points={"console_scripts": ["eregs=eregs:main"]}
 )
