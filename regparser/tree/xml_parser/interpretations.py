@@ -156,6 +156,12 @@ def process_inner_children(inner_stack, xml_node):
     while nodes and nodes[-1].label[0] in mtypes.stars:
         nodes = nodes[:-1]
 
+    add_nodes_to_stack(nodes, inner_stack)
+
+
+def add_nodes_to_stack(nodes, inner_stack):
+    """Calculate most likely depth assignments to each node; add to the
+    provided stack"""
     # Use constraint programming to figure out possible depth assignments
     depths = derive_depths(
         [node.label[0] for node in nodes],
