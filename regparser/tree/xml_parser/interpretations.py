@@ -64,20 +64,31 @@ def collapsed_markers_matches(node_text, tagged_text):
 
     collapsed_markers = []
     for marker in _first_markers:
-        possible = ((m, m.start(), m.end())
-                    for m in marker.finditer(node_text) if m.start() > 0)
+        possible = [(m, m.start(), m.end())
+                    for m in marker.finditer(node_text)]
         possible = remove_citation_overlaps(node_text, possible)
-        # If certain characters follow, kill it
-        for following in ("e.", ")", "”", '"', "'"):
-            possible = [(m, s, end) for m, s, end in possible
-                        if not node_text[end:].startswith(following)]
-        possible = [m for m, _, _ in possible]
-        # As all "1." collapsed markers must be emphasized, run a quick
-        # check to weed out some false positives
-        if '<E T="03">1' not in tagged_text:
-            possible = filter(lambda m: m.group(1) != '1', possible)
-        collapsed_markers.extend(possible)
+        possible = [triplet[0] for triplet in possible]
+        collapsed_markers.extend(
+            match for match in possible
+            if not false_collapsed_marker(match, node_text, tagged_text)
+        )
     return collapsed_markers
+
+
+def false_collapsed_marker(match, node_text, tagged_text):
+    """Is the provided regex match a false positive -- it looks like an
+    interpretation paragraph marker, but isn't actually?"""
+    if match.start() == 0:     # not a collapsed marker
+        return True
+    # If certain characters follow, kill it
+    tail = node_text[match.end():]
+    if any(tail.startswith(c) for c in ("e.", ")", "”", '"', "'")):
+        return True
+    # As all "1." collapsed markers must be emphasized, run a quick
+    # check to weed out some false positives
+    if '<E T="03">1' not in tagged_text and match.group(1) == '1':
+        return True
+    return False
 
 
 def _non_hed(xml_node):
