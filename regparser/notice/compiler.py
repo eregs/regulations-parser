@@ -102,6 +102,16 @@ def replace_first_sentence(text, replacement):
         return replacement
 
 
+def node_text_equality(left, right):
+    """Do these two nodes have the same text fields? Accounts for Nones"""
+    return (
+        left and right and
+        left.text == right.text and
+        left.title == right.title and
+        getattr(left, 'tagged_text', '') == getattr(right, 'tagged_text', '')
+    )
+
+
 def overwrite_marker(origin, new_label):
     """ The node passed in has a label, but we're going to give it a
     new one (new_label). This is necessary during node moves.  """
@@ -309,7 +319,8 @@ class RegulationTree(object):
         return find(self.tree, label)
 
     def add_node(self, node, parent_label=None):
-        """ Add an entirely new node to the regulation tree. """
+        """ Add an entirely new node to the regulation tree. Accounts for
+        placeholders, reserved nodes, """
         existing = find(self.tree, node.label_id())
         if existing and is_reserved_node(existing):
             logger.warning('Replacing reserved node: %s' % node.label_id())
@@ -319,14 +330,9 @@ class RegulationTree(object):
             existing.text = node.text
             if hasattr(node, 'tagged_text'):
                 existing.tagged_text = node.tagged_text
-        # Unfortunately, the same nodes (particularly headers) might be
-        # added by multiple notices...
-        elif (existing and existing.text == node.text and
-              existing.title == node.title and
-              getattr(existing, 'tagged_text', '') == getattr(
-                  node, 'tagged_text', '')):
-            pass
-        else:
+        # Proceed only if we're not re-adding an existing node (common in our
+        # messy data)
+        elif not node_text_equality(existing, node):
             if existing:
                 logger.warning(
                     'Adding a node that already exists: %s' % node.label_id())
@@ -343,7 +349,7 @@ class RegulationTree(object):
                 if parent is None:
                     # This is a corner case, where we're trying to add a child
                     # to a parent that should exist.
-                    logger.warning('No existing parent for: %s' %
+                    logger.warning('No existing parent for: %s',
                                    node.label_id())
                     parent = self.create_empty_node(get_parent_label(node))
                 # Fix the case where the node with label "<PART>-Subpart" is
@@ -352,8 +358,8 @@ class RegulationTree(object):
                         parent.children[0].node_type == Node.EMPTYPART):
                     parent = parent.children[0]
                 parent.children = self.add_child(
-                    parent.children, node, getattr(parent, 'child_labels',
-                                                   []))
+                    parent.children, node,
+                    getattr(parent, 'child_labels', []))
 
     def insert_in_order(self, node):
         """Add a new node, but determine its position in its parent by looking
