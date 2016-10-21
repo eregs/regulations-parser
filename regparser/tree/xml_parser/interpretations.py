@@ -139,36 +139,45 @@ def process_inner_children(inner_stack, xml_node):
             else:
                 previous.tagged_text = text_with_tags
         else:
-            collapsed = collapsed_markers_matches(node_text, text_with_tags)
-
-            #   -2 throughout to account for matching the character + period
-            ends = [m.end() - 2 for m in collapsed[1:]] + [len(node_text)]
-            starts = [m.end() - 2 for m in collapsed] + [len(node_text)]
-
-            #   Node for this paragraph
-            n = Node(node_text[0:starts[0]], label=[first_marker],
-                     node_type=Node.INTERP)
-            n.tagged_text = text_with_tags
-            nodes.append(n)
-            if n.text.endswith('* * *'):
-                nodes.append(Node(label=[mtypes.INLINE_STARS]))
-
-            #   Collapsed-marker children
-            for match, end in zip(collapsed, ends):
-                marker = match.group(1)
-                if marker == '1':
-                    marker = '<E T="03">1</E>'
-                n = Node(node_text[match.end() - 2:end], label=[marker],
-                         node_type=Node.INTERP)
-                nodes.append(n)
-                if n.text.endswith('* * *'):
-                    nodes.append(Node(label=[mtypes.INLINE_STARS]))
+            nodes.extend(nodes_from_interp_p(xml_node))
 
     # Trailing stars don't matter; slightly more efficient to ignore them
     while nodes and nodes[-1].label[0] in mtypes.stars:
         nodes = nodes[:-1]
 
     add_nodes_to_stack(nodes, inner_stack)
+
+
+def nodes_from_interp_p(xml_node):
+    """Given an XML node that contains text for an interpretation paragraph,
+    split it into sub-paragraphs and account for trailing stars"""
+    node_text = tree_utils.get_node_text(xml_node, add_spaces=True)
+    text_with_tags = tree_utils.get_node_text_tags_preserved(xml_node)
+    first_marker = get_first_interp_marker(text_with_tags)
+    collapsed = collapsed_markers_matches(node_text, text_with_tags)
+
+    #   -2 throughout to account for matching the character + period
+    ends = [m.end() - 2 for m in collapsed[1:]] + [len(node_text)]
+    starts = [m.end() - 2 for m in collapsed] + [len(node_text)]
+
+    #   Node for this paragraph
+    n = Node(node_text[0:starts[0]], label=[first_marker],
+             node_type=Node.INTERP)
+    n.tagged_text = text_with_tags
+    yield n
+    if n.text.endswith('* * *'):
+        yield Node(label=[mtypes.INLINE_STARS])
+
+    #   Collapsed-marker children
+    for match, end in zip(collapsed, ends):
+        marker = match.group(1)
+        if marker == '1':
+            marker = '<E T="03">1</E>'
+        n = Node(node_text[match.end() - 2:end], label=[marker],
+                 node_type=Node.INTERP)
+        yield n
+        if n.text.endswith('* * *'):
+            yield Node(label=[mtypes.INLINE_STARS])
 
 
 def add_nodes_to_stack(nodes, inner_stack):
