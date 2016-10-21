@@ -80,29 +80,41 @@ def collapsed_markers_matches(node_text, tagged_text):
     return collapsed_markers
 
 
+def _non_hed(xml_node):
+    """E.g. <HD SOURCE="H2">Text here</HD>"""
+    return xml_node.tag.upper() == 'HD' and xml_node.attrib['SOURCE'] != 'HED'
+
+
+def _p_with_label_in_child(xml_node):
+    """E.g. <P><E>22(a)</E>.</P>"""
+    children = xml_node.getchildren()
+    return (
+        xml_node.tag.upper() == 'P' and
+        not (xml_node.text or '').strip() and
+        len(children) == 1 and
+        not (children[0].tail or '').strip(" \n\t.") and
+        text_to_labels(children[0].text, Label(), warn=False)
+    )
+
+
+def _non_interp_p_with_label(xml_node):
+    """E.g. <P>22(a)</P> but not <P>ii. 22(a)</P>"""
+    return (
+        xml_node.tag.upper() == 'P' and
+        not xml_node.getchildren() and
+        xml_node.text and not get_first_interp_marker(xml_node.text) and
+        text_to_labels(xml_node.text, Label(), warn=False, force_start=True)
+    )
+
+
 def is_title(xml_node):
     """Not all titles are created equal. Sometimes a title appears as a
     paragraph tag, mostly to add confusion."""
-    if xml_node.getchildren():
-        child = xml_node.getchildren()[0]
-    else:
-        child = None
-    return bool(
-        (
-            xml_node.tag.upper() == 'HD' and
-            xml_node.attrib['SOURCE'] != 'HED') or
-        (
-            xml_node.tag.upper() == 'P' and
-            (xml_node.text is None or not xml_node.text.strip()) and
-            len(xml_node.getchildren()) == 1 and
-            (child.tail is None or not child.tail.strip(" \n\t.")) and
-            text_to_labels(child.text, Label(), warn=False)) or
-        (
-            xml_node.tag.upper() == 'P' and
-            len(xml_node.getchildren()) == 0 and
-            xml_node.text and not get_first_interp_marker(xml_node.text) and
-            text_to_labels(xml_node.text, Label(), warn=False,
-                           force_start=True)))
+    return (
+        _non_hed(xml_node) or
+        _p_with_label_in_child(xml_node) or
+        _non_interp_p_with_label(xml_node)
+    )
 
 
 def process_inner_children(inner_stack, xml_node):
