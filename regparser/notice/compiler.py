@@ -6,7 +6,7 @@ from collections import defaultdict
 import copy
 import itertools
 import logging
-import string
+import re
 
 from regparser.grammar.tokens import Verb
 from regparser.tree.struct import Node, find, find_parent
@@ -36,46 +36,19 @@ def get_parent_label(node):
         return '-'.join(parent_label)
 
 
-# @todo -- can we replace this with a regex?
-def segment_string(text):
-    """Segment a string into component parts based on character class.
-       "45Ai33b" becomes ("45", "A", "i", "33", "b")
-    """
-    classes = (string.digits, string.ascii_lowercase, string.ascii_uppercase)
-    current, seg_type = "", None
-    for char in text:
-        char_type = None
-        for cls in classes:
-            if char in cls:
-                char_type = cls
-
-        if char_type != seg_type and current:   # new type of character
-            yield current
-            current = ""
-
-        seg_type = char_type
-        if char_type:
-            current += char
-
-    if current:     # off-by-one
-        yield current
+_component_re = re.compile('[a-z]+|[A-Z]+|[0-9]+')
 
 
 def make_label_sortable(label, roman=False):
     """ Make labels sortable, but converting them as appropriate.
+    For example, "45Ai33b" becomes (45, "A", "i", 33, "b").
     Also, appendices have labels that look like 30(a), we make those
     appropriately sortable. """
-
-    if label.isdigit():
-        return (int(label),)
     if roman:
         romans = list(itertools.islice(roman_nums(), 0, 50))
         return (1 + romans.index(label),)
-
-    segments = segment_string(label)
-
-    segments = [int(seg) if seg.isdigit() else seg for seg in segments]
-    return tuple(segments)
+    segments = _component_re.findall(label)
+    return tuple(int(seg) if seg.isdigit() else seg for seg in segments)
 
 
 def make_root_sortable(label, node_type):
