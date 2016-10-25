@@ -64,45 +64,68 @@ def collapsed_markers_matches(node_text, tagged_text):
 
     collapsed_markers = []
     for marker in _first_markers:
-        possible = ((m, m.start(), m.end())
-                    for m in marker.finditer(node_text) if m.start() > 0)
+        possible = [(m, m.start(), m.end())
+                    for m in marker.finditer(node_text)]
         possible = remove_citation_overlaps(node_text, possible)
-        # If certain characters follow, kill it
-        for following in ("e.", ")", "”", '"', "'"):
-            possible = [(m, s, end) for m, s, end in possible
-                        if not node_text[end:].startswith(following)]
-        possible = [m for m, _, _ in possible]
-        # As all "1." collapsed markers must be emphasized, run a quick
-        # check to weed out some false positives
-        if '<E T="03">1' not in tagged_text:
-            possible = filter(lambda m: m.group(1) != '1', possible)
-        collapsed_markers.extend(possible)
+        possible = [triplet[0] for triplet in possible]
+        collapsed_markers.extend(
+            match for match in possible
+            if not false_collapsed_marker(match, node_text, tagged_text)
+        )
     return collapsed_markers
+
+
+def false_collapsed_marker(match, node_text, tagged_text):
+    """Is the provided regex match a false positive -- it looks like an
+    interpretation paragraph marker, but isn't actually?"""
+    if match.start() == 0:     # not a collapsed marker
+        return True
+    # If certain characters follow, kill it
+    tail = node_text[match.end():]
+    if any(tail.startswith(c) for c in ("e.", ")", "”", '"', "'")):
+        return True
+    # As all "1." collapsed markers must be emphasized, run a quick
+    # check to weed out some false positives
+    if '<E T="03">1' not in tagged_text and match.group(1) == '1':
+        return True
+    return False
+
+
+def _non_hed(xml_node):
+    """E.g. <HD SOURCE="H2">Text here</HD>"""
+    return xml_node.tag.upper() == 'HD' and xml_node.attrib['SOURCE'] != 'HED'
+
+
+def _p_with_label_in_child(xml_node):
+    """E.g. <P><E>22(a)</E>.</P>"""
+    children = xml_node.getchildren()
+    return (
+        xml_node.tag.upper() == 'P' and
+        not (xml_node.text or '').strip() and
+        len(children) == 1 and
+        not (children[0].tail or '').strip(" \n\t.") and
+        text_to_labels(children[0].text, Label(), warn=False)
+    )
+
+
+def _non_interp_p_with_label(xml_node):
+    """E.g. <P>22(a)</P> but not <P>ii. 22(a)</P>"""
+    return (
+        xml_node.tag.upper() == 'P' and
+        not xml_node.getchildren() and
+        xml_node.text and not get_first_interp_marker(xml_node.text) and
+        text_to_labels(xml_node.text, Label(), warn=False, force_start=True)
+    )
 
 
 def is_title(xml_node):
     """Not all titles are created equal. Sometimes a title appears as a
     paragraph tag, mostly to add confusion."""
-    if xml_node.getchildren():
-        child = xml_node.getchildren()[0]
-    else:
-        child = None
-    return bool(
-        (
-            xml_node.tag.upper() == 'HD' and
-            xml_node.attrib['SOURCE'] != 'HED') or
-        (
-            xml_node.tag.upper() == 'P' and
-            (xml_node.text is None or not xml_node.text.strip()) and
-            len(xml_node.getchildren()) == 1 and
-            (child.tail is None or not child.tail.strip(" \n\t.")) and
-            text_to_labels(child.text, Label(), warn=False)) or
-        (
-            xml_node.tag.upper() == 'P' and
-            len(xml_node.getchildren()) == 0 and
-            xml_node.text and not get_first_interp_marker(xml_node.text) and
-            text_to_labels(xml_node.text, Label(), warn=False,
-                           force_start=True)))
+    return (
+        _non_hed(xml_node) or
+        _p_with_label_in_child(xml_node) or
+        _non_interp_p_with_label(xml_node)
+    )
 
 
 def process_inner_children(inner_stack, xml_node):
@@ -127,35 +150,50 @@ def process_inner_children(inner_stack, xml_node):
             else:
                 previous.tagged_text = text_with_tags
         else:
-            collapsed = collapsed_markers_matches(node_text, text_with_tags)
-
-            #   -2 throughout to account for matching the character + period
-            ends = [m.end() - 2 for m in collapsed[1:]] + [len(node_text)]
-            starts = [m.end() - 2 for m in collapsed] + [len(node_text)]
-
-            #   Node for this paragraph
-            n = Node(node_text[0:starts[0]], label=[first_marker],
-                     node_type=Node.INTERP)
-            n.tagged_text = text_with_tags
-            nodes.append(n)
-            if n.text.endswith('* * *'):
-                nodes.append(Node(label=[mtypes.INLINE_STARS]))
-
-            #   Collapsed-marker children
-            for match, end in zip(collapsed, ends):
-                marker = match.group(1)
-                if marker == '1':
-                    marker = '<E T="03">1</E>'
-                n = Node(node_text[match.end() - 2:end], label=[marker],
-                         node_type=Node.INTERP)
-                nodes.append(n)
-                if n.text.endswith('* * *'):
-                    nodes.append(Node(label=[mtypes.INLINE_STARS]))
+            nodes.extend(nodes_from_interp_p(xml_node))
 
     # Trailing stars don't matter; slightly more efficient to ignore them
     while nodes and nodes[-1].label[0] in mtypes.stars:
         nodes = nodes[:-1]
 
+    add_nodes_to_stack(nodes, inner_stack)
+
+
+def nodes_from_interp_p(xml_node):
+    """Given an XML node that contains text for an interpretation paragraph,
+    split it into sub-paragraphs and account for trailing stars"""
+    node_text = tree_utils.get_node_text(xml_node, add_spaces=True)
+    text_with_tags = tree_utils.get_node_text_tags_preserved(xml_node)
+    first_marker = get_first_interp_marker(text_with_tags)
+    collapsed = collapsed_markers_matches(node_text, text_with_tags)
+
+    #   -2 throughout to account for matching the character + period
+    ends = [m.end() - 2 for m in collapsed[1:]] + [len(node_text)]
+    starts = [m.end() - 2 for m in collapsed] + [len(node_text)]
+
+    #   Node for this paragraph
+    n = Node(node_text[0:starts[0]], label=[first_marker],
+             node_type=Node.INTERP)
+    n.tagged_text = text_with_tags
+    yield n
+    if n.text.endswith('* * *'):
+        yield Node(label=[mtypes.INLINE_STARS])
+
+    #   Collapsed-marker children
+    for match, end in zip(collapsed, ends):
+        marker = match.group(1)
+        if marker == '1':
+            marker = '<E T="03">1</E>'
+        n = Node(node_text[match.end() - 2:end], label=[marker],
+                 node_type=Node.INTERP)
+        yield n
+        if n.text.endswith('* * *'):
+            yield Node(label=[mtypes.INLINE_STARS])
+
+
+def add_nodes_to_stack(nodes, inner_stack):
+    """Calculate most likely depth assignments to each node; add to the
+    provided stack"""
     # Use constraint programming to figure out possible depth assignments
     depths = derive_depths(
         [node.label[0] for node in nodes],

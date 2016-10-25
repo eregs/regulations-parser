@@ -6,6 +6,7 @@ from collections import defaultdict
 import copy
 import itertools
 import logging
+import re
 
 from regparser.grammar.tokens import Verb
 from regparser.tree.struct import Node, find, find_parent
@@ -35,45 +36,19 @@ def get_parent_label(node):
         return '-'.join(parent_label)
 
 
+_component_re = re.compile('[a-z]+|[A-Z]+|[0-9]+')
+
+
 def make_label_sortable(label, roman=False):
     """ Make labels sortable, but converting them as appropriate.
+    For example, "45Ai33b" becomes (45, "A", "i", 33, "b").
     Also, appendices have labels that look like 30(a), we make those
     appropriately sortable. """
-
-    if label.isdigit():
-        return (int(label),)
     if roman:
         romans = list(itertools.islice(roman_nums(), 0, 50))
         return (1 + romans.index(label),)
-
-    # segment the label piece into component parts
-    # e.g. 45Ai33b becomes (45, 'A', 'i', 33, 'b')
-    INT, UPPER, LOWER = 1, 2, 3
-    segments, segment, seg_type = [], "", None
-    for ch in label:
-        if ch.isdigit():
-            ch_type = INT
-        elif ch.isalpha() and ch == ch.upper():
-            ch_type = UPPER
-        elif ch.isalpha() and ch == ch.lower():
-            ch_type = LOWER
-        else:
-            # other character, e.g. parens, guarantee segmentation
-            ch_type = None
-
-        if ch_type != seg_type and segment:     # new type of character
-            segments.append(segment)
-            segment = ""
-
-        seg_type = ch_type
-        if ch_type:
-            segment += ch
-
-    if segment:    # ended with something other than a paren
-        segments.append(segment)
-
-    segments = [int(seg) if seg.isdigit() else seg for seg in segments]
-    return tuple(segments)
+    segments = _component_re.findall(label)
+    return tuple(int(seg) if seg.isdigit() else seg for seg in segments)
 
 
 def make_root_sortable(label, node_type):
@@ -100,6 +75,16 @@ def replace_first_sentence(text, replacement):
         return '.'.join(sentences)
     else:
         return replacement
+
+
+def node_text_equality(left, right):
+    """Do these two nodes have the same text fields? Accounts for Nones"""
+    return (
+        left and right and
+        left.text == right.text and
+        left.title == right.title and
+        getattr(left, 'tagged_text', '') == getattr(right, 'tagged_text', '')
+    )
 
 
 def overwrite_marker(origin, new_label):
@@ -309,7 +294,8 @@ class RegulationTree(object):
         return find(self.tree, label)
 
     def add_node(self, node, parent_label=None):
-        """ Add an entirely new node to the regulation tree. """
+        """ Add an entirely new node to the regulation tree. Accounts for
+        placeholders, reserved nodes, """
         existing = find(self.tree, node.label_id())
         if existing and is_reserved_node(existing):
             logger.warning('Replacing reserved node: %s' % node.label_id())
@@ -319,14 +305,9 @@ class RegulationTree(object):
             existing.text = node.text
             if hasattr(node, 'tagged_text'):
                 existing.tagged_text = node.tagged_text
-        # Unfortunately, the same nodes (particularly headers) might be
-        # added by multiple notices...
-        elif (existing and existing.text == node.text and
-              existing.title == node.title and
-              getattr(existing, 'tagged_text', '') == getattr(
-                  node, 'tagged_text', '')):
-            pass
-        else:
+        # Proceed only if we're not re-adding an existing node (common in our
+        # messy data)
+        elif not node_text_equality(existing, node):
             if existing:
                 logger.warning(
                     'Adding a node that already exists: %s' % node.label_id())
@@ -343,7 +324,7 @@ class RegulationTree(object):
                 if parent is None:
                     # This is a corner case, where we're trying to add a child
                     # to a parent that should exist.
-                    logger.warning('No existing parent for: %s' %
+                    logger.warning('No existing parent for: %s',
                                    node.label_id())
                     parent = self.create_empty_node(get_parent_label(node))
                 # Fix the case where the node with label "<PART>-Subpart" is
@@ -352,8 +333,8 @@ class RegulationTree(object):
                         parent.children[0].node_type == Node.EMPTYPART):
                     parent = parent.children[0]
                 parent.children = self.add_child(
-                    parent.children, node, getattr(parent, 'child_labels',
-                                                   []))
+                    parent.children, node,
+                    getattr(parent, 'child_labels', []))
 
     def insert_in_order(self, node):
         """Add a new node, but determine its position in its parent by looking
