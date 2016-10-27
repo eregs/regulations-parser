@@ -30,6 +30,15 @@ def _fake_redis_queue():
     return Mock(fetch_job=Mock(return_value=None))
 
 
+@pytest.fixture
+def tmp_media_root(tmpdir, settings):
+    """For each test, create a temporary directory where its media (including
+    any uploaded files) will be stored. The `tmpdir` fixture creates and tears
+    down a temporary directory; the `settings` fixture allows us to easily set
+    (and automatically unset) any Django setting"""
+    settings.MEDIA_ROOT = str(tmpdir)
+
+
 @patch("django_rq.enqueue", _fake_redis_job)
 @patch("django_rq.get_queue", _fake_redis_queue)
 class PipelineJobTestCase(APITestCase):
@@ -134,8 +143,8 @@ class PipelineJobTestCase(APITestCase):
         self.assertEqual(0, len(response.data))
 
 
+@pytest.mark.usefixtures("tmp_media_root")
 class RegulationFileTestCase(APITestCase):
-
     def __init__(self, *args, **kwargs):
         self.file_contents = "123"
         self.hashed_contents = None
@@ -221,6 +230,7 @@ class RegulationFileTestCase(APITestCase):
         self.assertEquals(0, len(data))
 
 
+@pytest.mark.usefixtures("tmp_media_root")
 @patch("django_rq.enqueue", _fake_redis_job)
 @patch("django_rq.get_queue", _fake_redis_queue)
 class ProposalPipelineTestCase(APITestCase):
