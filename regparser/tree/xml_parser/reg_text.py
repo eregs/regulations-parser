@@ -120,20 +120,15 @@ def build_tree(reg_xml):
     return tree
 
 
-def get_subpart_title(subpart_xml):
+def get_subpart_group_title(subpart_xml):
+    """Derive the title of a subpart or subject group"""
     hds = subpart_xml.xpath('./RESERVED|./HD')
     if hds:
-        return [hd.text for hd in hds][0]
-
-
-def get_subjgrp_title(subjgrp_xml):
-    hds = subjgrp_xml.xpath('./RESERVED|./HD')
-    if hds:
-        return [hd.text for hd in hds][0]
+        return tree_utils.get_node_text(hds[0])
 
 
 def build_subpart(reg_part, subpart_xml):
-    subpart_title = get_subpart_title(subpart_xml)
+    subpart_title = get_subpart_group_title(subpart_xml)
     subpart = reg_text.build_subpart(subpart_title, reg_part)
 
     sections = []
@@ -148,7 +143,7 @@ def build_subpart(reg_part, subpart_xml):
 def build_subjgrp(reg_part, subjgrp_xml, letter_list):
     # This handles subjgrps that have been pulled out and injected into the
     # same level as subparts.
-    subjgrp_title = get_subjgrp_title(subjgrp_xml)
+    subjgrp_title = get_subpart_group_title(subjgrp_xml)
     letter_list, subjgrp = reg_text.build_subjgrp(subjgrp_title, reg_part,
                                                   letter_list)
 
