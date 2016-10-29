@@ -171,23 +171,20 @@ class NoticeXML(XMLWrapper):
             result = notice_cfr_p.parseString(cfr_elm.text)
             yield TitlePartsRef(result.cfr_title, list(result.cfr_parts))
 
-    def derive_closing_date(self):
+    def _derive_date_type(self, date_type):
         """Attempt to parse comment closing date from DATES tags. Returns a
         datetime.date and sets the corresponding field"""
         dates = fetch_dates(self.xml) or {}
-        if 'comments' in dates:
+        if date_type in dates:
             comments = datetime.strptime(
-                dates['comments'][0], "%Y-%m-%d").date()
+                dates[date_type][0], "%Y-%m-%d").date()
             return comments
 
+    def derive_closing_date(self):
+        return self._derive_date_type('comments')
+
     def derive_effective_date(self):
-        """Attempt to parse effective date from DATES tags. Returns a
-        datetime.date and sets the corresponding field"""
-        dates = fetch_dates(self.xml) or {}
-        if 'effective' in dates:
-            effective = datetime.strptime(
-                dates['effective'][0], "%Y-%m-%d").date()
-            return effective
+        return self._derive_date_type('effective')
 
     def _get_date_attr(self, date_type):
         """Pulls out the date set in `set_date_attr`, as a datetime.date. If
