@@ -74,12 +74,7 @@ class NoticeXML(XMLWrapper):
     def _set_date_attr(self, date_type, value):
         """Modify the XML tree so that it contains meta data for a date
         field. Accepts both strings and dates"""
-        dates_tag = self.xpath('//DATES')
-        if dates_tag:
-            dates_tag = dates_tag[0]
-        else:   # Tag wasn't present; create it
-            dates_tag = etree.Element("DATES")
-            self.xml.insert(0, dates_tag)
+        dates_tag = self._find_or_create('DATES')
         if isinstance(value, date):
             value = value.isoformat()
         if value is None:
@@ -251,14 +246,9 @@ class NoticeXML(XMLWrapper):
 
         :arg list value: RINs, which should be strings.
         """
-        rins_el = self.xpath('//EREGS_RINS')
-        if rins_el:
-            rins_el = rins_el[0]
-        else:   # Tag wasn't present; create it
-            rins_el = etree.Element("EREGS_RINS")
+        rins_el = self._find_or_create('EREGS_RINS')
         for rin in value:
             etree.SubElement(rins_el, "EREGS_RIN", rin=rin)
-        self.xml.insert(0, rins_el)
 
     @property
     def docket_ids(self):
@@ -278,14 +268,9 @@ class NoticeXML(XMLWrapper):
 
         :arg list value: docket_ids, which should be strings.
         """
-        dids_el = self.xpath('//EREGS_DOCKET_IDS')
-        if dids_el:
-            dids_el = dids_el[0]
-        else:   # Tag wasn't present; create it
-            dids_el = etree.Element("EREGS_DOCKET_IDS")
+        dids_el = self._find_or_create('EREGS_DOCKET_IDS')
         for docket_id in value:
             etree.SubElement(dids_el, "EREGS_DOCKET_ID", docket_id=docket_id)
-        self.xml.insert(0, dids_el)
 
     @property
     def cfr_refs(self):
@@ -408,11 +393,7 @@ class NoticeXML(XMLWrapper):
 
         :arg list value: list of regs_gov.RegsGovDocs
         """
-        container = self.xpath('//EREGS_SUPPORTING_DOCS')
-        if container:
-            container = container[0]
-        else:   # Tag wasn't present; create it
-            container = etree.SubElement(self.xml, 'EREGS_SUPPORTING_DOCS')
+        container = self._find_or_create('EREGS_SUPPORTING_DOCS')
         for doc in value:
             etree.SubElement(container, 'EREGS_SUPPORTING_DOC',
                              **doc._asdict())
