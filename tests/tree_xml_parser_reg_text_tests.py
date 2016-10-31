@@ -497,18 +497,6 @@ class RegTextTest(TestCase):
         part = reg_text.get_reg_part(ctx.xml)
         self.assertEqual(part, '204')
 
-    def test_get_subpart_title(self):
-        with XMLBuilder("SUBPART") as ctx:
-            ctx.HD(u"Subpart A—First subpart")
-        subpart_title = reg_text.get_subpart_title(ctx.xml)
-        self.assertEqual(subpart_title, u'Subpart A—First subpart')
-
-    def test_get_subpart_title_reserved(self):
-        with XMLBuilder("SUBPART") as ctx:
-            ctx.RESERVED("Subpart J [Reserved]")
-        subpart_title = reg_text.get_subpart_title(ctx.xml)
-        self.assertEqual(subpart_title, u'Subpart J [Reserved]')
-
     def test_build_subpart(self):
         with XMLBuilder("SUBPART") as ctx:
             ctx.HD(u"Subpart A—First subpart")
@@ -767,3 +755,25 @@ class RegtextParagraphProcessorTests(TestCase):
         self.assertEqual(code['x']['1']['A']['i'].text, '(i)')
         self.assertEqual(code['x']['1']['A']['i']['I'].text,
                          '(I) Even more nested')
+
+
+def test_get_subpart_group_title():
+    with XMLBuilder("SUBPART") as ctx:
+        ctx.HD(u"Subpart A—First subpart")
+    subpart_title = reg_text.get_subpart_group_title(ctx.xml)
+    assert subpart_title == u'Subpart A—First subpart'
+
+
+def test_get_subpart_group_title_reserved():
+    with XMLBuilder("SUBPART") as ctx:
+        ctx.RESERVED("Subpart J [Reserved]")
+    subpart_title = reg_text.get_subpart_group_title(ctx.xml)
+    assert subpart_title == u'Subpart J [Reserved]'
+
+
+def test_get_subpart_group_title_em():
+    with XMLBuilder("SUBPART") as ctx:
+        ctx.child_from_string(
+            u'<HD SOURCE="HED">Subpart B—<E T="0714">Partes</E> Review</HD>')
+    subpart_title = reg_text.get_subpart_group_title(ctx.xml)
+    assert subpart_title == u'Subpart B—Partes Review'
