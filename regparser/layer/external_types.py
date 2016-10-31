@@ -58,7 +58,30 @@ class CFRFinder(FinderBase):
                            fdsys_url(collection='cfr', **fdsys_params))
 
 
-class USCFinder(FinderBase):
+class FDSYSFinder(object):
+    """Common parent class to Finders which generate an FDSYS url based on
+    matching a PyParsing grammar"""
+    __metaclass__ = abc.ABCMeta
+
+    @abc.abstractproperty
+    def GRAMMAR(self):
+        """A pyparsing grammar with relevant components labeled"""
+        raise NotImplementedError()
+
+    @abc.abstractproperty
+    def CONST_PARAMS(self):
+        """Constant parameters we pass to the FDSYS url; a dict"""
+        raise NotImplementedError()
+
+    def find(self, node):
+        for match, start, end in self.GRAMMAR.scanString(node.text):
+            params = dict(match)
+            params.update(self.CONST_PARAMS)
+            yield Cite(self.CITE_TYPE, start, end, dict(match),
+                       fdsys_url(**params))
+
+
+class USCFinder(FDSYSFinder, FinderBase):
     """U.S. Code"""
     CITE_TYPE = 'USC'
     GRAMMAR = QuickSearchable(
@@ -66,42 +89,26 @@ class USCFinder(FinderBase):
         "U.S.C." +
         Suppress(Optional("Chapter")) +
         Word(string.digits).setResultsName("section"))
-
-    def find(self, node):
-        for match, start, end in self.GRAMMAR.scanString(node.text):
-            components = {'title': match.title, 'section': match.section}
-            yield Cite(self.CITE_TYPE, start, end, components,
-                       fdsys_url(collection='uscode', **components))
+    CONST_PARAMS = dict(collection='uscode')
 
 
-class PublicLawFinder(FinderBase):
+class PublicLawFinder(FDSYSFinder, FinderBase):
     """Public Law"""
     CITE_TYPE = 'PUBLIC_LAW'
     GRAMMAR = QuickSearchable(
         Marker("Public") + Marker("Law") +
         Word(string.digits).setResultsName("congress") + Suppress("-") +
         Word(string.digits).setResultsName("lawnum"))
-
-    def find(self, node):
-        for match, start, end in self.GRAMMAR.scanString(node.text):
-            components = {'congress': match.congress, 'lawnum': match.lawnum}
-            yield Cite(self.CITE_TYPE, start, end, components,
-                       fdsys_url(collection='plaw', lawtype='public',
-                                 **components))
+    CONST_PARAMS = dict(collection='plaw', lawtype='public')
 
 
-class StatutesFinder(FinderBase):
+class StatutesFinder(FDSYSFinder, FinderBase):
     """Statutes at large"""
     CITE_TYPE = 'STATUTES_AT_LARGE'
     GRAMMAR = QuickSearchable(
         Word(string.digits).setResultsName("volume") + Suppress("Stat.") +
         Word(string.digits).setResultsName("page"))
-
-    def find(self, node):
-        for match, start, end in self.GRAMMAR.scanString(node.text):
-            components = {'volume': match.volume, 'page': match.page}
-            yield Cite(self.CITE_TYPE, start, end, components,
-                       fdsys_url(collection='statute', **components))
+    CONST_PARAMS = dict(collection='statute')
 
 
 class CustomFinder(FinderBase):

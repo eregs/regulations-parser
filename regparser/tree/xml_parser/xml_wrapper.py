@@ -45,3 +45,12 @@ class XMLWrapper(object):
 
     def xml_str(self):
         return etree.tounicode(self.xml, pretty_print=True)
+
+    def _find_or_create(self, tag):
+        """Look for the first matching tag present in the document. If it's
+        not present, create it by inserting it into the root"""
+        matches = self.xpath('//' + tag)
+        if matches:
+            return matches[0]
+        else:
+            return etree.SubElement(self.xml, tag)

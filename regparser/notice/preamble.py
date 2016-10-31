@@ -1,3 +1,4 @@
+from collections import OrderedDict
 from copy import deepcopy
 from itertools import takewhile
 import re
@@ -49,14 +50,9 @@ class PreambleProcessor(ParagraphProcessor):
                 TableMatcher()
                 ]
 
-    def select_depth(self, depths):
-        """Override ParagraphProcessor to add different weights"""
-        depths = heuristics.prefer_diff_types_diff_levels(depths, 0.2)
-        depths = heuristics.prefer_multiple_children(depths, 0.4)
-        depths = heuristics.prefer_shallow_depths(depths, 0.8)
-        depths = heuristics.prefer_no_markerless_sandwich(depths, 0.2)
-        depths = sorted(depths, key=lambda d: d.weight, reverse=True)
-        return depths[0]
+    DEPTH_HEURISTICS = OrderedDict(ParagraphProcessor.DEPTH_HEURISTICS)
+    DEPTH_HEURISTICS[heuristics.prefer_diff_types_diff_levels] = 0.2
+    DEPTH_HEURISTICS[heuristics.prefer_shallow_depths] = 0.8
 
 
 def transform_xml(elements, title, depth):
