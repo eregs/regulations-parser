@@ -131,14 +131,6 @@ class NoticeXMLTests(TestCase):
             [FRDelay(11, 100, date(2010, 4, 1)),
              FRDelay(11, 200, date(2010, 10, 10))])
 
-    def test_source_is_local(self):
-        for url in ('https://example.com', 'http://example.com'):
-            self.assertFalse(
-                notice_xml.NoticeXML(b'<ROOT/>', source=url).source_is_local)
-        for path in ('./dot/relative', 'normal/relative', '/absolute/ref'):
-            self.assertTrue(
-                notice_xml.NoticeXML(b'<ROOT/>', source=path).source_is_local)
-
     def test_set_agencies_simple(self):
         """
         Test that we can properly derive agency info from the metadata or the
