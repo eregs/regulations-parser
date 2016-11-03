@@ -1,4 +1,3 @@
-import json
 from unittest import TestCase
 
 from regparser.tree import struct
@@ -126,24 +125,6 @@ class DepthTreeTest(TestCase):
             'label': [],
             'title': 'Some Title'
         }))
-
-    def test_decode(self):
-        d = {'some': 'example'}
-        self.assertEqual(
-            d, json.loads(json.dumps(d), object_hook=struct.node_decode_hook))
-
-        d = {'text': 't', 'label': [2, 3, 4], 'node_type': 'regtext',
-             'children': [1, 2, 3]}
-        self.assertEqual(
-            struct.Node('t', [1, 2, 3], [2, 3, 4],
-                        node_type=struct.Node.REGTEXT),
-            json.loads(json.dumps(d), object_hook=struct.node_decode_hook))
-
-        d = {'text': 't', 'label': [2, 3, 4], 'node_type': 'ttt',
-             'children': [1, 2, 3], 'title': 'Example Title'}
-        self.assertEqual(
-            struct.Node('t', [1, 2, 3], [2, 3, 4], 'Example Title', u'ttt'),
-            json.loads(json.dumps(d), object_hook=struct.node_decode_hook))
 
     def test_treeify(self):
         n1 = struct.Node(label=['1'])

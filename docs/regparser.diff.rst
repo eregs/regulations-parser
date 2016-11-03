@@ -4,14 +4,6 @@ regparser.diff package
 Submodules
 ----------
 
-regparser.diff.api_reader module
---------------------------------
-
-.. automodule:: regparser.diff.api_reader
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
 regparser.diff.text module
 --------------------------
 
