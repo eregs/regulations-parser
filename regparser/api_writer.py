@@ -58,7 +58,8 @@ class GitWriteContent:
     def __init__(self, *path_parts):
         self.path = os.path.join(*path_parts)
 
-    def folder_name(self, node):
+    @staticmethod
+    def folder_name(node):
         """Directories are generally just the last element a node's label,
         but subparts and interpretations are a little special."""
         if node.node_type == Node.SUBPART:
