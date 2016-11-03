@@ -27,6 +27,7 @@ setup(
         "python-constraint",
         "requests",
         "requests-cache",
+        "roman",
         "six",
         "stevedore"
     ],
