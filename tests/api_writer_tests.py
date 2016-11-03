@@ -9,7 +9,6 @@ from regparser.api_writer import (
 from regparser.notice.amdparser import Amendment
 from regparser.test_utils.http_mixin import HttpMixin
 from regparser.tree.struct import Node
-import settings
 
 
 class FSWriteContentTest(TestCase):
@@ -153,95 +152,59 @@ class GitWriteContentTest(TestCase):
         self.assertEqual(0, len(commit.parents))
 
 
-class ClientTest(TestCase):
-    def setUp(self):
-        self.base = settings.API_BASE
-        settings.API_BASE = ''
+def test_regulation(tmpdir):
+    reg_writer = Client(str(tmpdir)).regulation("lablab", "docdoc")
+    assert reg_writer.path == str(
+        tmpdir.join("regulation", "lablab", "docdoc"))
 
-        self.had_git_output = hasattr(settings, 'GIT_OUTPUT_DIR')
-        self.old_git_output = getattr(settings, 'GIT_OUTPUT_DIR', '')
-        settings.GIT_OUTPUT_DIR = ''
 
-        self.old_output = settings.OUTPUT_DIR
-        self.tmpdir = tempfile.mkdtemp()
-        settings.OUTPUT_DIR = self.tmpdir
+def test_layer(tmpdir):
+    reg_writer = Client(str(tmpdir)).layer("boblayer", "lablab", "docdoc")
+    assert reg_writer.path == str(
+        tmpdir.join("layer", "boblayer", "lablab", "docdoc"))
 
-    def tearDown(self):
-        settings.API_BASE = self.base
-        if self.had_git_output:
-            settings.GIT_OUTPUT_DIR = self.old_git_output
-        else:
-            del(settings.GIT_OUTPUT_DIR)
-        shutil.rmtree(self.tmpdir)
-        settings.OUTPUT_DIR = self.old_output
 
-    def test_regulation(self):
-        reg_writer = Client().regulation("lablab", "docdoc")
-        self.assertEqual(
-            os.path.join(self.tmpdir, "regulation", "lablab", "docdoc"),
-            reg_writer.path)
+def test_notice(tmpdir):
+    reg_writer = Client(str(tmpdir)).notice("docdoc")
+    assert reg_writer.path == str(tmpdir.join("notice", "docdoc"))
 
-    def test_layer(self):
-        reg_writer = Client().layer("boblayer", "lablab", "docdoc")
-        self.assertEqual(
-            os.path.join(self.tmpdir, "layer", "boblayer", "lablab", "docdoc"),
-            reg_writer.path)
 
-    def test_notice(self):
-        reg_writer = Client().notice("docdoc")
-        self.assertEqual(
-            os.path.join(self.tmpdir, "notice", "docdoc"), reg_writer.path)
+def test_diff(tmpdir):
+    reg_writer = Client(str(tmpdir)).diff("lablab", "oldold", "newnew")
+    assert reg_writer.path == str(
+        tmpdir.join("diff", "lablab", "oldold", "newnew"))
 
-    def test_diff(self):
-        reg_writer = Client().diff("lablab", "oldold", "newnew")
-        self.assertEqual(
-            os.path.join(self.tmpdir, "diff", "lablab", "oldold", "newnew"),
-            reg_writer.path)
 
-    def test_preamble(self):
-        reg_writer = Client().preamble("docdoc")
-        self.assertEqual(
-            os.path.join(self.tmpdir, "preamble", "docdoc"), reg_writer.path)
+def test_preamble(tmpdir):
+    reg_writer = Client(str(tmpdir)).preamble("docdoc")
+    assert reg_writer.path == str(tmpdir.join("preamble", "docdoc"))
 
-    def test_writer_class_fs(self):
-        """File System writer is the appropriate class when a protocol isn't
-        present. It is also the default"""
-        client = Client('/path/to/somewhere')
-        self.assertEqual('/path/to/somewhere', client.base)
-        self.assertEqual(FSWriteContent, client.writer_class)
 
-        client = Client('file://somewhere')
-        self.assertEqual('somewhere', client.base)
-        self.assertEqual(FSWriteContent, client.writer_class)
+def test_writer_class_fs():
+    """File System writer is the appropriate class when a protocol isn't
+    present."""
+    client = Client('/path/to/somewhere')
+    assert client.base == '/path/to/somewhere'
+    assert client.writer_class == FSWriteContent
 
-        client = Client()
-        self.assertEqual(self.tmpdir, client.base)
-        self.assertEqual(FSWriteContent, client.writer_class)
+    client = Client('file://somewhere')
+    assert client.base == 'somewhere'
+    assert client.writer_class == FSWriteContent
 
-    def test_writer_class_git(self):
-        """Git will be used if the protocol is git:// or if GIT_OUTPUT_DIR is
-        defined"""
-        client = Client('git://some/path')
-        self.assertEqual('some/path', client.base)
-        self.assertEqual(GitWriteContent, client.writer_class)
 
-        settings.GIT_OUTPUT_DIR = 'another/path'
-        client = Client()
-        self.assertEqual('another/path', client.base)
-        self.assertEqual(GitWriteContent, client.writer_class)
+def test_writer_class_git():
+    """Git will be used if the protocol is git://"""
+    client = Client('git://some/path')
+    assert client.base == 'some/path'
+    assert client.writer_class == GitWriteContent
 
-    def test_writer_class_api(self):
-        """Uses APIWriteContent if the base begins with http, https, or
-        API_BASE is set"""
-        client = Client('http://example.com/then/more')
-        self.assertEqual('http://example.com/then/more', client.base)
-        self.assertEqual(APIWriteContent, client.writer_class)
 
-        client = Client('https://example.com/then/more')
-        self.assertEqual('https://example.com/then/more', client.base)
-        self.assertEqual(APIWriteContent, client.writer_class)
+def test_writer_class_api():
+    """Uses APIWriteContent if the base begins with http or https"""
+    client = Client('http://example.com/then/more')
+    assert client.base == 'http://example.com/then/more'
+    assert client.writer_class == APIWriteContent
 
-        settings.API_BASE = 'http://example.com/'
-        client = Client()
-        self.assertEqual('http://example.com/', client.base)
-        self.assertEqual(APIWriteContent, client.writer_class)
+    client = Client('https://example.com/then/more')
+    assert client.base == 'https://example.com/then/more'
+    assert client.writer_class == APIWriteContent

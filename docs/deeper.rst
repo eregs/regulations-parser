@@ -28,26 +28,27 @@ Output
 ======
 
 The parser has three options for what it does with the parsed documents it
-creates. With no configuration, all of the objects it creates will be
-pretty-printed as JSON files and stored in subfolders of the current
-directory. Where the output is written can be configured via the
-``OUTPUT_DIR`` setting. Spitting out JSON files this way is a good way to
-track how tweaks to the parser might have unexpected effects on the output
--- just diff two such directories.
+creates, depending on the protocol it's give in ``write_to``/``pipeline``,
+etc.
 
-If the ``API_BASE`` setting is configured, the output will be written to an
-API (running ``regulations-core``) rather than the file system. The same JSON
-files are sent to the API as in the above method. This would be the method
-used once you are comfortable with the results (by testing the filesystem
-output).
+When no protocol is given (or the ``file://`` protocol is used), all of the
+created objects will be pretty-printed as JSON files and stored in subfolders
+of the provided path. Spitting out JSON files this way is a good way to track
+how tweaks to the parser might have unexpected effects on the output -- just
+diff two such directories.
 
-A final method, a bit divergent from the other two, is to write the results
-as a git repository. Using the ``GIT_OUTPUT_DIR`` setting, you can tell the
-parser to write the versions of the regulation (*only*; layers, notices,
-etc. are not written) as a git history. Each node in the parse tree will be
-written as a markdown file, with hierarchical information encoded in
-directories. This is an experimental feature, but has a great deal of
-potential.
+If the protocol is ``http://`` or ``https://``, the output will be written to
+an API (running ``regulations-core``) rather than the file system. The same
+JSON files are sent to the API as in the above method. This would be the
+method used once you are comfortable with the results (by testing the
+filesystem output).
+
+A final method, a bit divergent from the other two, is to write the results as
+a git repository. To try this, use the ``git://`` protocol, telling the parser
+to write the versions of the regulation (*only*; layers, notices, etc. are not
+written) as a git history. Each node in the parse tree will be written as a
+markdown file, with hierarchical information encoded in directories. This is
+an experimental feature, but has a great deal of potential.
 
 Modifying Data
 ==============
@@ -230,6 +231,8 @@ existing docs first.
 
 Integration with regulations-core and regulations-site
 ======================================================
+
+*TODO* This section is rather out-of-date.
 
 With the above examples, you should have been able to run the parser and
 generate some output. "But where's the website?" you ask. The parser was

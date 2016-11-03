@@ -10,7 +10,6 @@ import requests
 
 from regparser.tree.struct import Node, NodeEncoder
 from regparser.notice.encoder import AmendmentEncoder
-import settings
 
 
 logger = logging.getLogger(__name__)
@@ -130,14 +129,8 @@ class GitWriteContent:
 class Client:
     """A Client for writing regulation(s) and meta data."""
 
-    def __init__(self, base=None):
-        if base is None and settings.API_BASE:
-            base = settings.API_BASE
-        elif base is None and getattr(settings, 'GIT_OUTPUT_DIR', ''):
-            base = 'git://' + settings.GIT_OUTPUT_DIR
-        elif base is None:
-            base = settings.OUTPUT_DIR
-        elif base.startswith('file://'):
+    def __init__(self, base):
+        if base.startswith('file://'):
             base = base[len('file://'):]
 
         if base.startswith('http://') or base.startswith('https://'):
