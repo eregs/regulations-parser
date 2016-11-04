@@ -1,10 +1,11 @@
+"""Fetch data from the Federal Register
+
+See https://www.federalregister.gov/developers/api/v1 - GET "search" method
+"""
 import logging
 
 from regparser.index.http_cache import http_client
 
-'''
-See https://www.federalregister.gov/developers/api/v1 - GET "search" method
-'''
 
 FR_BASE = "https://www.federalregister.gov"
 API_BASE = FR_BASE + "/api/v1/"
