@@ -236,7 +236,7 @@ class Dashes(PlaintextFormatData):
 
 
 class Footnotes(PlaintextFormatData):
-    """E.g.     [^4](Contents of footnote with escaped parens: \(\)s)"""
+    r"""E.g.     [^4](Contents of footnote with escaped parens: \(\)s)"""
     _ref_regex = r"\[\^(?P<ref>[^\]]*)\]"   # [^\]]* = take until hitting a ]
     _begin_note_regex = r"\((?P<note>.*?)"
     _close_paren = r"(?<!\\)\)"     # neg lookbehind for skipping escaped \)

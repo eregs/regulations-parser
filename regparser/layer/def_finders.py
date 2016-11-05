@@ -81,7 +81,7 @@ class SmartQuotes(FinderBase):
         for node in self.stack.lineage():
             lower_text = node.text.lower()
             in_text = 'Definition' in node.text
-            in_title = 'Definition' in (node.title or '')
+            in_title = 'Definition' in node.title or ''
             pattern1 = re.search('the term .* (means|refers to)', lower_text)
             pattern2 = re.search(u'“[^”]+” (means|refers to)', lower_text)
             if in_text or in_title or pattern1 or pattern2:
@@ -122,8 +122,8 @@ class XMLTermMeans(FinderBase):
         refs = []
         tagged_text = getattr(node, 'tagged_text', '')
         for match, _, _ in grammar.xml_term_parser.scanString(tagged_text):
-            """Position in match reflects XML tags, so its dropped in
-            preference of new values based on node.text."""
+            # Position in match reflects XML tags, so its dropped in
+            # preference of new values based on node.text."""
             for match in chain([match.head], match.tail):
                 pos_start = self.pos_start(match.term[0], node.text)
                 term = node.tagged_text[match.term.pos[0]:match.term.pos[1]]
@@ -163,7 +163,8 @@ class DefinitionKeyterm(object):
         """Makes a title comparable with cls._section_titles"""
         return cls._NORMALIZE_RE.sub('', (title or "").lower())
 
-    def _split_phrase(self, phrase):
+    @staticmethod
+    def _split_phrase(phrase):
         """A single phrase might contain multiple terms. Attempt to split it
         into subphrases. Using a heuristic, we declare that if all subphrases
         are a single word long, those subphrases are each terms. In this way,

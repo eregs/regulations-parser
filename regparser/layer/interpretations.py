@@ -47,7 +47,8 @@ class Interpretations(Layer):
                              if not self.empty_interpretation(n)]
             return [{'reference': l} for l in interp_labels] or None
 
-    def empty_interpretation(self, interp):
+    @staticmethod
+    def empty_interpretation(interp):
         """We don't want to include empty (e.g. \n\n) nodes as
         interpretations unless their children are subparagraphs. We
         distinguish subparagraphs from structural children by checking the
