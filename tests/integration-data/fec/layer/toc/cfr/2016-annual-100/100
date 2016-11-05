@@ -1,0 +1,726 @@
+{
+    "100": [
+        {
+            "index": [
+                "100", 
+                "Subpart", 
+                "A"
+            ], 
+            "title": "General Definitions"
+        }, 
+        {
+            "index": [
+                "100", 
+                "Subpart", 
+                "B"
+            ], 
+            "title": "Definition of Contribution (52 U.S.C. 30101(8))"
+        }, 
+        {
+            "index": [
+                "100", 
+                "Subpart", 
+                "C"
+            ], 
+            "title": "Exceptions to Contributions"
+        }, 
+        {
+            "index": [
+                "100", 
+                "Subpart", 
+                "D"
+            ], 
+            "title": "Definition of Expenditure (52 U.S.C. 30101(9))"
+        }, 
+        {
+            "index": [
+                "100", 
+                "Subpart", 
+                "E"
+            ], 
+            "title": "Exceptions to Expenditures"
+        }
+    ], 
+    "100-Subpart-A": [
+        {
+            "index": [
+                "100", 
+                "1"
+            ], 
+            "title": "\u00a7 100.1 Scope."
+        }, 
+        {
+            "index": [
+                "100", 
+                "2"
+            ], 
+            "title": "\u00a7 100.2 Election (52 U.S.C. 30101(1))."
+        }, 
+        {
+            "index": [
+                "100", 
+                "3"
+            ], 
+            "title": "\u00a7 100.3 Candidate (52 U.S.C. 30101(2))."
+        }, 
+        {
+            "index": [
+                "100", 
+                "4"
+            ], 
+            "title": "\u00a7 100.4 Federal office (52 U.S.C. 30101(3))."
+        }, 
+        {
+            "index": [
+                "100", 
+                "5"
+            ], 
+            "title": "\u00a7 100.5 Political committee (52 U.S.C. 30101(4), (5), and (6))."
+        }, 
+        {
+            "index": [
+                "100", 
+                "6"
+            ], 
+            "title": "\u00a7 100.6 Connected organization (52 U.S.C. 30101(7))."
+        }, 
+        {
+            "index": [
+                "100", 
+                "7"
+            ], 
+            "title": "\u00a7 100.7 [Reserved]"
+        }, 
+        {
+            "index": [
+                "100", 
+                "8"
+            ], 
+            "title": "\u00a7 100.8 [Reserved]"
+        }, 
+        {
+            "index": [
+                "100", 
+                "9"
+            ], 
+            "title": "\u00a7 100.9 Commission (52 U.S.C. 30101(10))."
+        }, 
+        {
+            "index": [
+                "100", 
+                "10"
+            ], 
+            "title": "\u00a7 100.10 Person (52 U.S.C. 30101(11))."
+        }, 
+        {
+            "index": [
+                "100", 
+                "11"
+            ], 
+            "title": "\u00a7 100.11 State (52 U.S.C. 30101(12))."
+        }, 
+        {
+            "index": [
+                "100", 
+                "12"
+            ], 
+            "title": "\u00a7 100.12 Identification (52 U.S.C. 30101(13))."
+        }, 
+        {
+            "index": [
+                "100", 
+                "13"
+            ], 
+            "title": "\u00a7 100.13 National committee (52 U.S.C. 30101(14))."
+        }, 
+        {
+            "index": [
+                "100", 
+                "14"
+            ], 
+            "title": "\u00a7 100.14 State Committee, subordinate committee, district, or local committee (52 U.S.C. 30101(15))."
+        }, 
+        {
+            "index": [
+                "100", 
+                "15"
+            ], 
+            "title": "\u00a7 100.15 Political party (52 U.S.C. 30101(16))."
+        }, 
+        {
+            "index": [
+                "100", 
+                "16"
+            ], 
+            "title": "\u00a7 100.16 Independent expenditure (52 U.S.C. 30101(17))."
+        }, 
+        {
+            "index": [
+                "100", 
+                "17"
+            ], 
+            "title": "\u00a7 100.17 Clearly identified (52 U.S.C. 30101(18))."
+        }, 
+        {
+            "index": [
+                "100", 
+                "18"
+            ], 
+            "title": "\u00a7 100.18 Act (52 U.S.C. 30101(19))."
+        }, 
+        {
+            "index": [
+                "100", 
+                "19"
+            ], 
+            "title": "\u00a7 100.19 File, filed, or filing (52 U.S.C. 30104(a))."
+        }, 
+        {
+            "index": [
+                "100", 
+                "20"
+            ], 
+            "title": "\u00a7 100.20 Occupation (52 U.S.C. 30101(13))."
+        }, 
+        {
+            "index": [
+                "100", 
+                "21"
+            ], 
+            "title": "\u00a7 100.21 Employer (52 U.S.C. 30101(13))."
+        }, 
+        {
+            "index": [
+                "100", 
+                "22"
+            ], 
+            "title": "\u00a7 100.22 Expressly advocating (52 U.S.C. 30101(17))."
+        }, 
+        {
+            "index": [
+                "100", 
+                "23"
+            ], 
+            "title": "\u00a7 100.23 [Reserved]"
+        }, 
+        {
+            "index": [
+                "100", 
+                "24"
+            ], 
+            "title": "\u00a7 100.24 Federal election activity (52 U.S.C. 30101(20))."
+        }, 
+        {
+            "index": [
+                "100", 
+                "25"
+            ], 
+            "title": "\u00a7 100.25 Generic campaign activity (52 U.S.C. 30101(21))."
+        }, 
+        {
+            "index": [
+                "100", 
+                "26"
+            ], 
+            "title": "\u00a7 100.26 Public communication (52 U.S.C. 30101(22))."
+        }, 
+        {
+            "index": [
+                "100", 
+                "27"
+            ], 
+            "title": "\u00a7 100.27 Mass mailing (52 U.S.C. 30101(23))."
+        }, 
+        {
+            "index": [
+                "100", 
+                "28"
+            ], 
+            "title": "\u00a7 100.28 Telephone bank (52 U.S.C. 30101(24))."
+        }, 
+        {
+            "index": [
+                "100", 
+                "29"
+            ], 
+            "title": "\u00a7 100.29 Electioneering communication (52 U.S.C. 30104(f)(3))."
+        }, 
+        {
+            "index": [
+                "100", 
+                "30"
+            ], 
+            "title": "\u00a7 100.30 [Reserved]"
+        }, 
+        {
+            "index": [
+                "100", 
+                "31"
+            ], 
+            "title": "\u00a7 100.31 [Reserved]"
+        }, 
+        {
+            "index": [
+                "100", 
+                "32"
+            ], 
+            "title": "\u00a7 100.32 [Reserved]"
+        }, 
+        {
+            "index": [
+                "100", 
+                "33"
+            ], 
+            "title": "\u00a7 100.33 Personal funds."
+        }, 
+        {
+            "index": [
+                "100", 
+                "34"
+            ], 
+            "title": "\u00a7\u00a7 100.34-50 [Reserved]"
+        }
+    ], 
+    "100-Subpart-B": [
+        {
+            "index": [
+                "100", 
+                "51"
+            ], 
+            "title": "\u00a7 100.51 Scope."
+        }, 
+        {
+            "index": [
+                "100", 
+                "52"
+            ], 
+            "title": "\u00a7 100.52 Gift, subscription, loan, advance or deposit of money."
+        }, 
+        {
+            "index": [
+                "100", 
+                "53"
+            ], 
+            "title": "\u00a7 100.53 Attendance at a fundraiser or political event."
+        }, 
+        {
+            "index": [
+                "100", 
+                "54"
+            ], 
+            "title": "\u00a7 100.54 Compensation for personal services."
+        }, 
+        {
+            "index": [
+                "100", 
+                "55"
+            ], 
+            "title": "\u00a7 100.55 Extension of credit."
+        }, 
+        {
+            "index": [
+                "100", 
+                "56"
+            ], 
+            "title": "\u00a7 100.56 Office building or facility for national party committees."
+        }, 
+        {
+            "index": [
+                "100", 
+                "57"
+            ], 
+            "title": "\u00a7 100.57 [Reserved]"
+        }
+    ], 
+    "100-Subpart-C": [
+        {
+            "index": [
+                "100", 
+                "71"
+            ], 
+            "title": "\u00a7 100.71 Scope."
+        }, 
+        {
+            "index": [
+                "100", 
+                "72"
+            ], 
+            "title": "\u00a7 100.72 Testing the waters."
+        }, 
+        {
+            "index": [
+                "100", 
+                "73"
+            ], 
+            "title": "\u00a7 100.73 News story, commentary, or editorial by the media."
+        }, 
+        {
+            "index": [
+                "100", 
+                "74"
+            ], 
+            "title": "\u00a7 100.74 Uncompensated services by volunteers."
+        }, 
+        {
+            "index": [
+                "100", 
+                "75"
+            ], 
+            "title": "\u00a7 100.75 Use of a volunteer's real or personal property."
+        }, 
+        {
+            "index": [
+                "100", 
+                "76"
+            ], 
+            "title": "\u00a7 100.76 Use of church or community room."
+        }, 
+        {
+            "index": [
+                "100", 
+                "77"
+            ], 
+            "title": "\u00a7 100.77 Invitations, food, and beverages."
+        }, 
+        {
+            "index": [
+                "100", 
+                "78"
+            ], 
+            "title": "\u00a7 100.78 Sale of food or beverages by vendor."
+        }, 
+        {
+            "index": [
+                "100", 
+                "79"
+            ], 
+            "title": "\u00a7 100.79 Unreimbursed payment for transportation and subsistence expenses."
+        }, 
+        {
+            "index": [
+                "100", 
+                "80"
+            ], 
+            "title": "\u00a7 100.80 Slate cards and sample ballots."
+        }, 
+        {
+            "index": [
+                "100", 
+                "81"
+            ], 
+            "title": "\u00a7 100.81 Payments by corporations and labor organizations."
+        }, 
+        {
+            "index": [
+                "100", 
+                "82"
+            ], 
+            "title": "\u00a7 100.82 Bank loans."
+        }, 
+        {
+            "index": [
+                "100", 
+                "83"
+            ], 
+            "title": "\u00a7 100.83 Brokerage loans and lines of credit to candidates."
+        }, 
+        {
+            "index": [
+                "100", 
+                "84"
+            ], 
+            "title": "\u00a7 100.84 Office building for State, local, or district party committees or organizations."
+        }, 
+        {
+            "index": [
+                "100", 
+                "85"
+            ], 
+            "title": "\u00a7 100.85 Legal or accounting services to political party committees."
+        }, 
+        {
+            "index": [
+                "100", 
+                "86"
+            ], 
+            "title": "\u00a7 100.86 Legal or accounting services to other political committees."
+        }, 
+        {
+            "index": [
+                "100", 
+                "87"
+            ], 
+            "title": "\u00a7 100.87 Volunteer activity for party committees."
+        }, 
+        {
+            "index": [
+                "100", 
+                "88"
+            ], 
+            "title": "\u00a7 100.88 Volunteer activity for candidates."
+        }, 
+        {
+            "index": [
+                "100", 
+                "89"
+            ], 
+            "title": "\u00a7 100.89 Voter registration and get-out-the-vote activities for Presidential candidates."
+        }, 
+        {
+            "index": [
+                "100", 
+                "90"
+            ], 
+            "title": "\u00a7 100.90 Ballot access fees."
+        }, 
+        {
+            "index": [
+                "100", 
+                "91"
+            ], 
+            "title": "\u00a7 100.91 Recounts."
+        }, 
+        {
+            "index": [
+                "100", 
+                "92"
+            ], 
+            "title": "\u00a7 100.92 Candidate debates."
+        }, 
+        {
+            "index": [
+                "100", 
+                "93"
+            ], 
+            "title": "\u00a7 100.93 Travel by aircraft or other means of transportation."
+        }, 
+        {
+            "index": [
+                "100", 
+                "94"
+            ], 
+            "title": "\u00a7 100.94 Uncompensated Internet activity by individuals that is not a contribution."
+        }
+    ], 
+    "100-Subpart-D": [
+        {
+            "index": [
+                "100", 
+                "110"
+            ], 
+            "title": "\u00a7 100.110 Scope."
+        }, 
+        {
+            "index": [
+                "100", 
+                "111"
+            ], 
+            "title": "\u00a7 100.111 Gift, subscription, loan, advance or deposit of money."
+        }, 
+        {
+            "index": [
+                "100", 
+                "112"
+            ], 
+            "title": "\u00a7 100.112 Contracts, promises, and agreements to make expenditures."
+        }, 
+        {
+            "index": [
+                "100", 
+                "113"
+            ], 
+            "title": "\u00a7 100.113 Independent expenditures."
+        }, 
+        {
+            "index": [
+                "100", 
+                "114"
+            ], 
+            "title": "\u00a7 100.114 Office building or facility for national party committees."
+        }
+    ], 
+    "100-Subpart-E": [
+        {
+            "index": [
+                "100", 
+                "130"
+            ], 
+            "title": "\u00a7 100.130 Scope."
+        }, 
+        {
+            "index": [
+                "100", 
+                "131"
+            ], 
+            "title": "\u00a7 100.131 Testing the waters."
+        }, 
+        {
+            "index": [
+                "100", 
+                "132"
+            ], 
+            "title": "\u00a7 100.132 News story, commentary, or editorial by the media."
+        }, 
+        {
+            "index": [
+                "100", 
+                "133"
+            ], 
+            "title": "\u00a7 100.133 Voter registration and get-out-the-vote activities."
+        }, 
+        {
+            "index": [
+                "100", 
+                "134"
+            ], 
+            "title": "\u00a7 100.134 Internal communications by corporations, labor organizations, and membership organizations."
+        }, 
+        {
+            "index": [
+                "100", 
+                "135"
+            ], 
+            "title": "\u00a7 100.135 Use of a volunteer's real or personal property."
+        }, 
+        {
+            "index": [
+                "100", 
+                "136"
+            ], 
+            "title": "\u00a7 100.136 Use of a church or a community room."
+        }, 
+        {
+            "index": [
+                "100", 
+                "137"
+            ], 
+            "title": "\u00a7 100.137 Invitations, food, and beverages."
+        }, 
+        {
+            "index": [
+                "100", 
+                "138"
+            ], 
+            "title": "\u00a7 100.138 Sale of food and beverages by vendor."
+        }, 
+        {
+            "index": [
+                "100", 
+                "139"
+            ], 
+            "title": "\u00a7 100.139 Unreimbursed payment for transportation and subsistence expenses."
+        }, 
+        {
+            "index": [
+                "100", 
+                "140"
+            ], 
+            "title": "\u00a7 100.140 Slate cards and sample ballots."
+        }, 
+        {
+            "index": [
+                "100", 
+                "141"
+            ], 
+            "title": "\u00a7 100.141 Payment by corporations and labor organizations."
+        }, 
+        {
+            "index": [
+                "100", 
+                "142"
+            ], 
+            "title": "\u00a7 100.142 Bank loans."
+        }, 
+        {
+            "index": [
+                "100", 
+                "143"
+            ], 
+            "title": "\u00a7 100.143 Brokerage loans and lines of credit to candidates."
+        }, 
+        {
+            "index": [
+                "100", 
+                "144"
+            ], 
+            "title": "\u00a7 100.144 Office building for State, local, or district party committees or organizations."
+        }, 
+        {
+            "index": [
+                "100", 
+                "145"
+            ], 
+            "title": "\u00a7 100.145 Legal or accounting services to political party committees."
+        }, 
+        {
+            "index": [
+                "100", 
+                "146"
+            ], 
+            "title": "\u00a7 100.146 Legal or accounting services to other political committees."
+        }, 
+        {
+            "index": [
+                "100", 
+                "147"
+            ], 
+            "title": "\u00a7 100.147 Volunteer activity for party committees."
+        }, 
+        {
+            "index": [
+                "100", 
+                "148"
+            ], 
+            "title": "\u00a7 100.148 Volunteer activity for candidate."
+        }, 
+        {
+            "index": [
+                "100", 
+                "149"
+            ], 
+            "title": "\u00a7 100.149 Voter registration and get-out-the-vote activities for Presidential candidates."
+        }, 
+        {
+            "index": [
+                "100", 
+                "150"
+            ], 
+            "title": "\u00a7 100.150 Ballot access fees."
+        }, 
+        {
+            "index": [
+                "100", 
+                "151"
+            ], 
+            "title": "\u00a7 100.151 Recounts."
+        }, 
+        {
+            "index": [
+                "100", 
+                "152"
+            ], 
+            "title": "\u00a7 100.152 Fundraising costs for Presidential candidates."
+        }, 
+        {
+            "index": [
+                "100", 
+                "153"
+            ], 
+            "title": "\u00a7 100.153 Routine living expenses."
+        }, 
+        {
+            "index": [
+                "100", 
+                "154"
+            ], 
+            "title": "\u00a7 100.154 Candidate debates."
+        }, 
+        {
+            "index": [
+                "100", 
+                "155"
+            ], 
+            "title": "\u00a7 100.155 Uncompensated Internet activity by individuals that is not an expenditure."
+        }
+    ]
+}

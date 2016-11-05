@@ -1,0 +1,1579 @@
+{
+    "children": [
+        {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "116", 
+                                "1", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) Terminating committee. For purposes of this part, terminating committee means any political committee that is winding down its political activities in preparation for filing a termination report, and that would be able to terminate under 11 CFR 102.3 except that it has outstanding debts or obligations. A political committee will be considered to be winding down its political activities if it has ceased to make or accept contributions and expenditures, other than contributions accepted for debt retirement purposes and expenditures representing payments of debts or obligations previously incurred or payments for the costs associated with the termination of political activity, such as the costs of complying with the post election requirements of the Act, if applicable, and other necessary administrative costs associated with winding down a campaign or winding down committee activities, including office space rental, staff salaries and office supplies."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "116", 
+                                "1", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) Ongoing committee. For purposes of this part, ongoing committee means any political committee that has not terminated and does not qualify as a terminating committee."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "116", 
+                                "1", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) Commercial vendor. For purposes of this part, commercial vendor means any persons providing goods or services to a candidate or political committee whose usual and normal business involves the sale, rental, lease or provision of those goods or services."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "116", 
+                                "1", 
+                                "d"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(d) Disputed debt. For purposes of this part, disputed debt means an actual or potential debt or obligation owed by a political committee, including an obligation arising from a written contract, promise or agreement to make an expenditure, where there is a bona fide disagreement between the creditor and the political committee as to the existence or amount of the obligation owed by the political committee."
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "116", 
+                                        "1", 
+                                        "e", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Any agreement between the creditor and political committee that full payment is not due until after the creditor provides goods or services to the political committee;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "116", 
+                                        "1", 
+                                        "e", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Any agreement between the creditor and the political committee that the political committee will have additional time to pay the creditor beyond the previously agreed to due date; and"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "116", 
+                                        "1", 
+                                        "e", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) The failure of the political committee to make full payment to the creditor by a previously agreed to due date."
+                                }
+                            ], 
+                            "label": [
+                                "116", 
+                                "1", 
+                                "e"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(e) Extension of credit. For purposes of this part, extension of credit includes but is not limited to:"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "116", 
+                                "1", 
+                                "f"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(f) Creditor. For purposes of this part, creditor means any person or entity to whom a debt is owed."
+                        }
+                    ], 
+                    "label": [
+                        "116", 
+                        "1"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 116.1 Definitions."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "116", 
+                                "2", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) Terminating committees. A terminating committee may settle outstanding debts provided that the terminating committee files a debt settlement plan and the requirements of 11 CFR 116.7 are satisfied. The Commission will review each debt settlement plan filed to determine whether or not the terminating committee appears to have complied with the requirements set forth in this part, and whether or not the proposed debt settlement plan would result in an apparent violation of the Act or the Commission's regulations."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "116", 
+                                "2", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) Ongoing committees. Ongoing committees shall not settle any outstanding debts for less than the entire amount owed, but may request a Commission determination that such debts are not payable under 11 CFR 116.9, and may resolve disputed debts under 11 CFR 116.10. Creditors may forgive debts owed by ongoing committees under the limited circumstances provided in 11 CFR 116.8."
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "116", 
+                                                "2", 
+                                                "c", 
+                                                "1", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) It has any outstanding debts or obligations; or"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "116", 
+                                                "2", 
+                                                "c", 
+                                                "1", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) It has any funds or assets available to pay part or all of the outstanding debts or obligations owed by another authorized committee of the same candidate and that other authorized committee is unable to pay such debts or obligations."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "116", 
+                                        "2", 
+                                        "c", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) An authorized committee shall not settle any outstanding debts for less than the entire amount owed if any other authorized committee of the same candidate has permissible funds available to pay part or all of the amount outstanding. Except as provided in paragraph (c)(3), of this section, an authorized committee shall not terminate under 11 CFR 102.3 if\u2014"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "116", 
+                                        "2", 
+                                        "c", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) No transfers of funds may be made from a candidate's authorized committee to another authorized committee of the same candidate if the transferor committee has net debts outstanding at the time of the transfer under the formula described in 11 CFR 110.1(b)(3)(ii)."
+                                }, 
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "116", 
+                                                "2", 
+                                                "c", 
+                                                "3", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) The authorized committee that has assigned the debts otherwise qualifies for termination under 11 CFR 102.3; and"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "116", 
+                                                "2", 
+                                                "c", 
+                                                "3", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) The authorized committee that received the assigned debts notifies the Commission in writing that it has assumed the obligation to pay the entire amount owed and that it has assumed the obligation to report the debts, and any contributions received for retirement of the assigned debts, in accordance with 11 CFR part 104. The assigned debts shall be disclosed on a separate schedule of debts and obligations attached to the authorized committee's reports. Contributions received for retirement of the assigned debts shall be disclosed on a separate schedule of receipts attached to the authorized committee's reports. See 11 CFR 110.1 (b)(3) and (b)(4) and 110.2 (b)(3) and (b)(4). The authorized committee that has assigned the debts shall notify each creditor in writing of the assignment no later than thirty days before the assignment takes effect and shall include the name and address of the authorized committee that will receive the assigned debts."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "116", 
+                                        "2", 
+                                        "c", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) An authorized committee that qualifies as a terminating committee may assign debts to another authorized committee of the same candidate to the extent permitted under applicable state law provided that the authorized committee assigning the debts has no cash on hand or assets available to pay any part of the outstanding debts, and provided that the authorized committee assigning the debts was not organized to further the candidate's campaign in an election not yet held. If a Presidential candidate elects to receive federal funds pursuant to 11 CFR part 9001 et seq. or 11 CFR part 9031 et seq., the authorized committee(s) of the Presidential candidate shall not assign debts or receive assigned debts until after the authorized committee(s) or the Presidential candidate has made all required repayments pursuant to 11 CFR parts 9007 and 9038 and has paid all civil penalties pursuant to 52 U.S.C. 30109. An authorized committee that has assigned all its outstanding debts may terminate if\u2014"
+                                }
+                            ], 
+                            "label": [
+                                "116", 
+                                "2", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) Authorized committees."
+                        }
+                    ], 
+                    "label": [
+                        "116", 
+                        "2"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 116.2 Debts owed by terminating committees, ongoing committees, and authorized committees."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "116", 
+                                "3", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) Unincorporated vendor. A commercial vendor that is not a corporation may extend credit to a candidate, a political committee or another person on behalf of a candidate or political committee. An extension of credit will not be considered a contribution to the candidate or political committee provided that the credit is extended in the ordinary course of the commercial vendor's business and the terms are substantially similar to extensions of credit to nonpolitical debtors that are of similar risk and size of obligation."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "116", 
+                                "3", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) Incorporated vendor. A corporation in its capacity as a commercial vendor may extend credit to a candidate, a political committee or another person on behalf of a candidate or political committee provided that the credit is extended in the ordinary course of the corporation's business and the terms are substantially similar to extensions of credit to nonpolitical debtors that are of similar risk and size of obligation."
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "116", 
+                                        "3", 
+                                        "c", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Whether the commercial vendor followed its established procedures and its past practice in approving the extension of credit;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "116", 
+                                        "3", 
+                                        "c", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Whether the commercial vendor received prompt payment in full if it previously extended credit to the same candidate or political committee; and"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "116", 
+                                        "3", 
+                                        "c", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) Whether the extension of credit conformed to the usual and normal practice in the commercial vendor's trade or industry."
+                                }
+                            ], 
+                            "label": [
+                                "116", 
+                                "3", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) Ordinary course of business. In determining whether credit was extended in the ordinary course of business, the Commission will consider\u2014"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "116", 
+                                "3", 
+                                "d"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(d) Extension of credit by regulated industries. The Commission may rely on the regulations prescribed by the Federal Communications Commission, the Interstate Commerce Commission, and the Department of Transportation on behalf of the Civil Aeronautics Board, issued pursuant to 52 U.S.C. 30141 and any other regulations prescribed by other Federal agencies to determine whether extensions of credit by the entities regulated by those Federal agencies were made in the ordinary course of business."
+                        }
+                    ], 
+                    "label": [
+                        "116", 
+                        "3"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 116.3 Extensions of credit by commercial vendors."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "116", 
+                                        "4", 
+                                        "a", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) The amount forgiven is exempted from the definition of contribution in 11 CFR part 100, subpart C; or"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "116", 
+                                        "4", 
+                                        "a", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) The commercial vendor has treated the debt in a commercially reasonable manner and the requirements of 11 CFR 116.7 or 116.8, as appropriate, are satisfied."
+                                }
+                            ], 
+                            "label": [
+                                "116", 
+                                "4", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) Unincorporated vendor. A commercial vendor that is not a corporation may forgive or settle a debt incurred by a candidate, a political committee or another person on behalf of a candidate or political committee for less than the entire amount owed on the debt. The amount forgiven will not be considered a contribution by the commercial vendor to the candidate or political committee if\u2014"
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "116", 
+                                        "4", 
+                                        "b", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) The amount forgiven is exempted from the definition of contribution in 11 CFR part 100, subpart C; or"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "116", 
+                                        "4", 
+                                        "b", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) The corporation has treated the debt in a commercially reasonable manner and the requirements of 11 CFR 116.7 or 116.8, as appropriate, are satisfied."
+                                }
+                            ], 
+                            "label": [
+                                "116", 
+                                "4", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) Incorporated vendor. A corporation may not forgive or settle a debt incurred by a candidate, a political committee or another person on behalf of a candidate or political committee for less than the entire amount owed on the debt unless\u2014"
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "116", 
+                                        "4", 
+                                        "c", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) The amount forgiven is exempted from the definition of contribution in 11 CFR part 100, subpart C; or"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "116", 
+                                        "4", 
+                                        "c", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) The candidate and the political committee have undertaken all reasonable efforts to satisfy the outstanding debt and the requirements of 11 CFR 116.7 or 116.8, as appropriate, including the submission of the information specified in those sections and Commission review, are satisfied."
+                                }
+                            ], 
+                            "label": [
+                                "116", 
+                                "4", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) Reasonable efforts by a political committee. A debt or obligation owed by a candidate or a political committee may be totally forgiven (see 11 CFR 116.8), or settled (see 11 CFR 116.7), provided that\u2014"
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "116", 
+                                        "4", 
+                                        "d", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) The initial extension of credit was made in accordance with 11 CFR 116.3;"
+                                }, 
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "116", 
+                                                "4", 
+                                                "d", 
+                                                "2", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) Engaging in fundraising efforts;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "116", 
+                                                "4", 
+                                                "d", 
+                                                "2", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) Reducing overhead and administrative costs; and"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "116", 
+                                                "4", 
+                                                "d", 
+                                                "2", 
+                                                "iii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iii) Liquidating assets; and"
+                                        }
+                                    ], 
+                                    "label": [
+                                        "116", 
+                                        "4", 
+                                        "d", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) The candidate or political committee has undertaken all reasonable efforts to satisfy the outstanding debt. Such efforts may include, but are not limited to, the following\u2014"
+                                }, 
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "116", 
+                                                "4", 
+                                                "d", 
+                                                "3", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) Oral and written requests for payment;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "116", 
+                                                "4", 
+                                                "d", 
+                                                "3", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) Withholding delivery of additional goods or services until overdue debts are satisfied;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "116", 
+                                                "4", 
+                                                "d", 
+                                                "3", 
+                                                "iii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iii) Imposition of additional charges or penalties for late payment;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "116", 
+                                                "4", 
+                                                "d", 
+                                                "3", 
+                                                "iv"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iv) Referral of overdue debts to a commercial debt collection service; and"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "116", 
+                                                "4", 
+                                                "d", 
+                                                "3", 
+                                                "v"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(v) Litigation."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "116", 
+                                        "4", 
+                                        "d", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) The commercial vendor has pursued its remedies as vigorously as it would pursue its remedies against a nonpolitical debtor in similar circumstances. Such remedies may include, but are not limited to, the following\u2014"
+                                }
+                            ], 
+                            "label": [
+                                "116", 
+                                "4", 
+                                "d"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(d) Commercially reasonable. The Commission will determine that a debt settlement between a political committee and a commercial vendor is commercially reasonable if\u2014"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "116", 
+                                "4", 
+                                "e"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(e) Settlement or forgiveness not required. The provisions of this part shall not be construed to require a commercial vendor to forgive or settle the debt for less than the entire amount owed."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "116", 
+                                "4", 
+                                "f"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(f) Reporting. The political committee shall continue to report the debt in accordance with 11 CFR 104.3(d) and 104.11 until the Commission has completed a review of the debt settlement plan pursuant to 11 CFR 116.7(f) or until the Commission has completed a review of the request to forgive the debt pursuant to 11 CFR 116.8, or until the political committee pays the debt, whichever occurs first."
+                        }
+                    ], 
+                    "label": [
+                        "116", 
+                        "4"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 116.4 Forgiveness or settlement of debts owed to commercial vendors."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "116", 
+                                "5", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) Scope. This section applies to individuals who are not acting as commercial vendors. Individuals who are acting as commercial vendors shall follow the requirements of 11 CFR 116.3 and 116.4."
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "116", 
+                                        "5", 
+                                        "b", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) The payment is for the individual's transportation expenses incurred while traveling on behalf of a candidate or political committee of a political party or for usual and normal subsistence expenses incurred by an individual, other than a volunteer, while traveling on behalf of a candidate or political committee of a political party; and"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "116", 
+                                        "5", 
+                                        "b", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) The individual is reimbursed within sixty days after the closing date of the billing statement on which the charges first appear if the payment was made using a personal credit card, or within thirty days after the date on which the expenses were incurred if a personal credit card was not used. For purposes of this section, the closing date shall be the date indicated on the billing statement which serves as the cutoff date for determining which charges are included on that billing statement. In addition, \u201csubsistence expenses\u201d include only expenditures for personal living expenses related to a particular individual traveling on committee business, such as food or lodging."
+                                }
+                            ], 
+                            "label": [
+                                "116", 
+                                "5", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) Treatment as contributions. The payment by an individual from his or her personal funds, including a personal credit card, for the costs incurred in providing goods or services to, or obtaining goods or services that are used by or on behalf of, a candidate or a political committee is a contribution unless the payment is exempted from the definition of contribution under 11 CFR 100.79. If the payment is not exempted under 11 CFR 100.79, it shall be considered a contribution by the individual unless\u2014"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "116", 
+                                "5", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) Treatment as debts. A political committee shall treat the obligation arising from a payment described in paragraph (b) of this section as an outstanding debt until reimbursed."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "116", 
+                                "5", 
+                                "d"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(d) Settlement or forgiveness of the debt. The individual and the political committee may agree to the total forgiveness of the debt (See 11 CFR 116.8) or a settlement of the debt for less than the entire amount owed (See 11 CFR 116.7), provided that the requirements of 11 CFR 116.7 or 116.8, as appropriate, including the submission of the information specified in these sections and Commission review, are satisfied. The provisions of this part shall not be construed to require the individual to forgive or settle the debt for less than the entire amount owed."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "116", 
+                                "5", 
+                                "e"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(e) Reporting. The political committee shall continue to report the obligation arising from the payment as a debt in accordance with 11 CFR 104.3(d) and 104.11 until the Commission has completed a review of the debt settlement plan pursuant to 11 CFR 116.7(f) or until the Commission has completed a review of the request to forgive the debt pursuant to 11 CFR 116.8, or until the political committee pays the debt, whichever occurs first."
+                        }
+                    ], 
+                    "label": [
+                        "116", 
+                        "5"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 116.5 Advances by committee staff and other individuals."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "116", 
+                                "6", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) Treatment as debts or volunteer services. If a political committee does not pay an employee for services rendered to the political committee in accordance with an employment contract or a formal or informal agreement to do so, the unpaid amount either may be treated as a debt owed by the political committee to the employee or, provided that the employee signs a written statement agreeing to be considered a volunteer, converted to a volunteer services arrangement under 11 CFR 100.74. The unpaid amount shall not be treated as a contribution under 11 CFR part 100, subparts B and C."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "116", 
+                                "6", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) Settlement or forgiveness of the debt. If the unpaid amount is treated as a debt, the employee and the political committee may agree to a settlement of the debt for less than the entire amount owed pursuant to 11 CFR 116.7. The provisions of this part shall not be construed to require the employee to settle the debt for less than the entire amount owed."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "116", 
+                                "6", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) Reporting. If the unpaid amount is treated as a debt, the political committee shall continue to report the debt in accordance with 11 CFR 104.3(d) and 104.11 until the Commission has completed a review of the debt settlement plan pursuant to 11 CFR 116.7(f) or until the employee agrees to be considered a volunteer, or until the political committee pays the debt, whichever occurs first."
+                        }
+                    ], 
+                    "label": [
+                        "116", 
+                        "6"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 116.6 Salary payments owed to employees."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "116", 
+                                        "7", 
+                                        "a", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Has been paid in full;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "116", 
+                                        "7", 
+                                        "a", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Has been settled and the requirements of this section, including Commission review, have been satisfied;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "116", 
+                                        "7", 
+                                        "a", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) Has been forgiven by the creditor and the requirements of 11 CFR 116.8, including Commission review, have been satisfied;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "116", 
+                                        "7", 
+                                        "a", 
+                                        "4"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(4) Has been determined not to be payable pursuant to 11 CFR 116.9; or"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "116", 
+                                        "7", 
+                                        "a", 
+                                        "5"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(5) Has been otherwise extinguished or discharged."
+                                }
+                            ], 
+                            "label": [
+                                "116", 
+                                "7", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) Procedures for filing debt settlement plans. Every terminating committee as defined in 11 CFR 116.1(a) shall file at least one debt settlement plan with the Commission prior to filing its termination report under 11 CFR 102.3. The terminating committee shall file a debt settlement plan after the creditors included in the debt settlement plan have agreed to the settlement or forgiveness of the particular debt(s) owed to each of them. The terminating committee shall not make any payments to the creditors included in the debt settlement plan until completion of Commission review. The Commission encourages terminating committees to include as many debt settlement agreements as possible in a debt settlement plan. The terminating committee shall not file its termination report under 11 CFR 102.3 and shall not terminate until each debt or obligation owed either:"
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "116", 
+                                        "7", 
+                                        "b", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Amounts owed to commercial vendors (See 11 CFR 116.3 and 116.4);"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "116", 
+                                        "7", 
+                                        "b", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Debts arising from advances by committee staff and other individuals (See 11 CFR 116.5);"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "116", 
+                                        "7", 
+                                        "b", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) Salary owed to committee employees (See 11 CFR 116.6); and"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "116", 
+                                        "7", 
+                                        "b", 
+                                        "4"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(4) Debts arising from loans from political committees or individuals, including candidates, to the extent permitted under 11 CFR part 110."
+                                }
+                            ], 
+                            "label": [
+                                "116", 
+                                "7", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) Debts subject to settlement. Debts and obligations subject to the debt settlement and Commission review requirements and procedures set forth in this section include:"
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "116", 
+                                        "7", 
+                                        "c", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Debts and obligations that shall not be forgiven or settled for less than the entire amount owed include repayment obligations pursuant to 11 CFR 9007.2, 9008.10, 9008.11, 9038.2 or 9038.3 of funds received from the Presidential Election Campaign Fund or the Presidential Primary Matching Payment Account."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "116", 
+                                        "7", 
+                                        "c", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Disputed debts are not subject to the debt settlement and Commission review requirements and procedures. (See CFR 116.10)."
+                                }
+                            ], 
+                            "label": [
+                                "116", 
+                                "7", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) Debts that shall not be settled; Disputed debts."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "116", 
+                                "7", 
+                                "d"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(d) Reporting. The terminating committee shall continue to report each outstanding debt or obligation included in a debt settlement plan in accordance with 11 CFR 104.3(d) and 104.11 until the Commission has completed a review of the debt settlement plan pursuant to paragraph (f) of this section. The terminating committee shall continue to report all remaining debts and obligations not included in the debt settlement plan in accordance with 11 CFR 104.3 and 104.11."
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "116", 
+                                                "7", 
+                                                "e", 
+                                                "1", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) The terms of the initial extension of credit and a description of the terms under which the creditor has extended credit to nonpolitical debtors of similar risk and size of obligation;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "116", 
+                                                "7", 
+                                                "e", 
+                                                "1", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) A description of the efforts made by the candidate or the terminating committee to satisfy the debt;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "116", 
+                                                "7", 
+                                                "e", 
+                                                "1", 
+                                                "iii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iii) A description of the remedies pursued by the creditor to obtain payment of the debt and a comparison to the remedies customarily pursued by the creditor in similar circumstances involving nonpolitical debtors; and"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "116", 
+                                                "7", 
+                                                "e", 
+                                                "1", 
+                                                "iv"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iv) The terms of the debt settlement and a comparison to the terms of the creditor's other debt settlements involving nonpolitical debtors in similar circumstances, if any."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "116", 
+                                        "7", 
+                                        "e", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) The debt settlement plan shall provide the following information on each debt covered by the plan\u2014"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "116", 
+                                        "7", 
+                                        "e", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Each debt settlement plan filed under this section shall include a signed statement from each creditor covered indicating agreement to the terms of the settlement of the debt owed to that creditor."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "116", 
+                                        "7", 
+                                        "e", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) The debt settlement plan shall include a statement as to whether the terminating committee has sufficient cash on hand to pay the total amount indicated in the debt settlement plan, and if not, a statement as to what steps the terminating committee will take to obtain the funds needed to make the payments."
+                                }, 
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "116", 
+                                                "7", 
+                                                "e", 
+                                                "4", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) Whether the terminating committee intends to pay the entire amount still owed on each remaining debt or obligation or to settle such debts and obligations, and if settlement is contemplated, the terms that were or will be offered to the creditor(s); and"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "116", 
+                                                "7", 
+                                                "e", 
+                                                "4", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) Whether the terminating committee has sufficient cash on hand to pay such remaining debts and obligations, or to pay a lesser portion of such amounts, and if not, what steps the terminating committee will take to obtain the funds needed to make such payments."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "116", 
+                                        "7", 
+                                        "e", 
+                                        "4"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(4) If a debt settlement plan does not include settlements for all of the terminating committee's outstanding debts and obligations, the debt settlement plan shall include a separate list of all of the terminating committee's remaining debts and obligations, including debts that are not subject to debt settlement as set forth in paragraph (c) of this section. The debt settlement plan shall indicate\u2014"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "116", 
+                                        "7", 
+                                        "e", 
+                                        "5"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(5) If the terminating committee expects to have residual funds or assets after disposing of all its outstanding debts and obligations, the debt settlement plan shall include a statement as to the purpose for which such residual funds or assets will be used. See 11 CFR 110.1(b)(3)(iii) regarding contributions received to pay net debts outstanding owed by authorized committees."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "116", 
+                                        "7", 
+                                        "e", 
+                                        "6"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(6) The political committee filing the debt settlement plan shall demonstrate in the debt settlement plan that such political committee qualifies as a terminating committee under 11 CFR 116.1(a) and shall state when the political committee expects to file a termination report under 11 CFR 102.3."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "116", 
+                                        "7", 
+                                        "e", 
+                                        "7"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(7) Upon the Commission's request, the candidate, the terminating committee or the creditor shall provide such additional information as the Commission may require to review the debt settlement plan. The Commission may also require the submission of additional debt settlement agreements prior to Commission review of the debt settlement plan."
+                                }
+                            ], 
+                            "label": [
+                                "116", 
+                                "7", 
+                                "e"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(e) Contents of debt settlement plans."
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "116", 
+                                        "7", 
+                                        "f", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) The information provided by the terminating committee and the creditors under this section;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "116", 
+                                        "7", 
+                                        "f", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) The amount of each debt that remains unpaid and the length of time each debt has been overdue;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "116", 
+                                        "7", 
+                                        "f", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) The amount and percentage of each debt that would be forgiven under the plan;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "116", 
+                                        "7", 
+                                        "f", 
+                                        "4"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(4) The total amount of debts and obligations owed by the terminating committee to all creditors, compared to the total amount of cash on hand and other amounts available to pay those debts and obligations;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "116", 
+                                        "7", 
+                                        "f", 
+                                        "5"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(5) The year to date expenditures and receipts of the terminating committee; and"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "116", 
+                                        "7", 
+                                        "f", 
+                                        "6"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(6) Whether the total percentage that was or will be repaid on any loans made by the candidate to the terminating committee is comparable to the total percentage that was or will be paid to other creditors."
+                                }
+                            ], 
+                            "label": [
+                                "116", 
+                                "7", 
+                                "f"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(f) Commission review of debt settlement plans. In reviewing the debt settlement plan, the Commission will consider\u2014"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "116", 
+                                "7", 
+                                "g"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(g) Debts dischargeable in bankruptcy. If a terminating committee is released from debts or obligations pursuant to a discharge under 11 U.S.C. chapter 7, the terminating committee's debt settlement plan shall include a copy of the order issued by the Bankruptcy Court of the United States so indicating, and a list of all debts and obligations from which the terminating committee is released, in lieu of the information specified in paragraphs (e)(1), (e)(2), and (e)(3) of this section."
+                        }
+                    ], 
+                    "label": [
+                        "116", 
+                        "7"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 116.7 Debt settlement plans filed by terminating committees; Commission review."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "116", 
+                                        "8", 
+                                        "a", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) The creditor has exercised reasonable diligence in attempting to locate the ongoing committee and has been unable to do so; or"
+                                }, 
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "116", 
+                                                "8", 
+                                                "a", 
+                                                "2", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) Does not have sufficient cash on hand to pay the creditor;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "116", 
+                                                "8", 
+                                                "a", 
+                                                "2", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) Has receipts of less than $1000 during the previous twenty-four months;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "116", 
+                                                "8", 
+                                                "a", 
+                                                "2", 
+                                                "iii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iii) Has disbursements of less than $1000 during the previous twenty-four months; and"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "116", 
+                                                "8", 
+                                                "a", 
+                                                "2", 
+                                                "iv"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iv) Owes debts to other creditors of such magnitude that the creditor could reasonably conclude that the ongoing committee will not pay this particular debt."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "116", 
+                                        "8", 
+                                        "a", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) The ongoing committee\u2014"
+                                }
+                            ], 
+                            "label": [
+                                "116", 
+                                "8", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) General requirements. A creditor may forgive the outstanding balance of a debt owed by an ongoing committee if the creditor and the ongoing committee have satisfied the requirements of 11 CFR 116.3 or 116.5, as appropriate, regarding extensions of credit by commercial vendors and advances by committee staff and other individuals, and the debt has been outstanding for at least twenty-four months, and\u2014"
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "116", 
+                                        "8", 
+                                        "b", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) The terms of the initial extension of credit and a description of the terms under which the creditor has extended credit to nonpolitical debtors of similar risk and size of obligation;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "116", 
+                                        "8", 
+                                        "b", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) A description of the efforts made by the candidate or the ongoing committee to satisfy the debt;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "116", 
+                                        "8", 
+                                        "b", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) A description of the remedies pursued by the creditor to obtain payment of the debt and a comparison to the remedies customarily pursued by the creditor in similar circumstances involving nonpolitical debtors; and"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "116", 
+                                        "8", 
+                                        "b", 
+                                        "4"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(4) An indication that the creditor has forgiven other debts involving nonpolitical debtors in similar circumstances, if any."
+                                }
+                            ], 
+                            "label": [
+                                "116", 
+                                "8", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) Procedures for forgiving debts. A creditor that intends to forgive a debt owed by an ongoing committee shall notify the Commission by letter of its intent. The letter shall demonstrate that the requirements set forth in paragraph (a) of this section are satisfied. The letter shall provide the following information\u2014"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "116", 
+                                "8", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) Commission review. Upon the Commission's request, the ongoing committee or the creditor shall provide such additional information as the Commission may require to review the creditor's request. The Commission will review each request to forgive a debt to determine whether the candidate, the ongoing committee, and the creditor have complied with the requirements of 11 CFR part 116, and whether or not the forgiveness of the debt would result in an apparent violation of the Act or the Commission's regulations."
+                        }
+                    ], 
+                    "label": [
+                        "116", 
+                        "8"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 116.8 Creditor forgiveness of debts owed by ongoing committees; Commission review."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "116", 
+                                        "9", 
+                                        "a", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) The creditor has gone out of business and no other entity has a right to be paid the amount owed; or"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "116", 
+                                        "9", 
+                                        "a", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) The political committee has exercised reasonable diligence in attempting to locate the creditor and has been unable to do so. Reasonable diligence in attempting to locate the creditor means the political committee has attempted to ascertain the current address and telephone number, and has attempted to contact the creditor by registered or certified mail, and either in person or by telephone."
+                                }
+                            ], 
+                            "label": [
+                                "116", 
+                                "9", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) General requirements. A political committee may request that the Commission determine that a debt owed to a creditor is not payable for purposes of the Act if the debt has been outstanding for at least twenty-four months, and the requirements of paragraph (b) or (c) of this section, as appropriate, have been satisfied, and\u2014"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "116", 
+                                "9", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) Terminating committees. If the political committee making the request is a terminating committee, the terminating committee shall include the request in a debt settlement plan filed with the Commission, and shall demonstrate that the requirements of 11 CFR 116.3, 116.5 or 116.6, as appropriate, and 116.9(a) are satisfied. The terminating committee shall continue to disclose the debt on its schedules of outstanding debts and obligations until the Commission has completed its review of the debt settlement plan pursuant to 11 CFR 116.7(f) and has determined that the debt is not payable for purposes of the Act."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "116", 
+                                "9", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) Ongoing committees. If the political committee making the request is an ongoing committee, the ongoing committee shall make the request in writing and shall demonstrate that the requirements of 11 CFR 116.3, 116.5 or 116.6, as appropriate, and 116.9(a) are satisfied. The Commission will review the request to determine whether the ongoing committee and the creditor have complied with the requirements of 11 CFR part 116, and to determine whether reporting the debt as not payable would result in an apparent violation of the Act or the Commission's regulations. The ongoing committee shall continue to disclose the debt on its schedules of outstanding debts and obligations until the Commission has completed its review of the request and has determined that the debt is not payable for purposes of the Act."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "116", 
+                                "9", 
+                                "d"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(d) Reporting. Upon notification that the Commission has determined that the debt is not payable for purposes of the Act, the political committee may list the debt as not payable on the next due report. Notwithstanding 11 CFR 104.11, the debt does not have to be included in subsequent reports unless the status of the debt changes. The presence of a debt that the Commission has determined is not payable shall not bar the political committee from terminating its registration pursuant to 11 CFR 102.3."
+                        }
+                    ], 
+                    "label": [
+                        "116", 
+                        "9"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 116.9 Creditors that cannot be found or that are out of business."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "116", 
+                                "10", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) Reporting disputed debts. A political committee shall report a disputed debt in accordance with 11 CFR 104.3(d) and 104.11 if the creditor has provided something of value to the political committee. Until the dispute is resolved, the political committee shall disclose on the appropriate reports any amounts paid to the creditor, any amount the political committee admits it owes and the amount the creditor claims is owed. The political committee may also note on the appropriate reports that the disclosure of the disputed debt does not constitute an admission of liability or a waiver of any claims the political committee may have against the creditor. (See also 11 CFR 9035.1(a)(2) regarding the effect of disputed debts on a candidate's expenditure limitations under 11 CFR part 9035.)"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "116", 
+                                "10", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) Disputed debts owed by terminating committees. If a terminating committee and a creditor have been unable to resolve a disputed debt, and the terminating committee files a debt settlement plan covering other debts or other creditors, the terminating committee shall include in the debt settlement plan a brief description as to the nature of the dispute and the status of the terminating committee's efforts to resolve the dispute. The debt settlement plan need not include a signed affidavit from the creditor involved in the dispute pursuant to 11 CFR 116.7(e)(2)."
+                        }
+                    ], 
+                    "label": [
+                        "116", 
+                        "10"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 116.10 Disputed debts."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "116", 
+                                "11", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) For purposes of this part, personal loans mean a loan or loans, including advances, made by a candidate, using personal funds, as defined in 11 CFR 100.33, to his or her authorized committee where the proceeds of the loan were used in connection with the candidate's campaign for election. Personal loans also include loans made to a candidate's authorized committee that are endorsed or guaranteed by the candidate or that are secured by the candidate's personal funds."
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "116", 
+                                        "11", 
+                                        "b", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) May repay the entire amount of the personal loans using contributions to the candidate or the candidate's authorized committee provided that those contributions were made on the day of the election or before;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "116", 
+                                        "11", 
+                                        "b", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) May repay up to $250,000 of the personal loans from contributions made to the candidate or the candidate's authorized committee after the date of the election; and"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "116", 
+                                        "11", 
+                                        "b", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) Must not repay, directly or indirectly, the aggregate amount of the personal loans that exceeds $250,000, from contributions to the candidate or the candidate's authorized committee if those contributions were made after the date of the election."
+                                }
+                            ], 
+                            "label": [
+                                "116", 
+                                "11", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) For personal loans that, in the aggregate, exceed $250,000 in connection with an election, the authorized committee:"
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "116", 
+                                        "11", 
+                                        "c", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) If the authorized committee uses the amount of cash on hand as of the day after the election to repay all or part of the personal loans, it must do so within 20 days of the election."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "116", 
+                                        "11", 
+                                        "c", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Within 20 days of the election date, the authorized committee must treat the portion of the aggregate outstanding balance of the personal loans that exceeds $250,000 minus the amount of cash on hand as of the day after the election used to repay the loan as a contribution by the candidate."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "116", 
+                                        "11", 
+                                        "c", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) The candidate's principal campaign committee must report the transactions in paragraphs (c)(1) and (c)(2) of this section in the first report scheduled to be filed after the election pursuant to 11 CFR 104.5(a) or (b)."
+                                }
+                            ], 
+                            "label": [
+                                "116", 
+                                "11", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) If the aggregate outstanding balance of the personal loans exceeds $250,000 after the election, the authorized political committee must comply with the following conditions:"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "116", 
+                                "11", 
+                                "d"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(d) This section applies separately to each election."
+                        }
+                    ], 
+                    "label": [
+                        "116", 
+                        "11"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 116.11 Restriction on an authorized committee's repayment of personal loans exceeding $250,000 made by the candidate to the authorized committee."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "116", 
+                                "12", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) A candidate's authorized committee may repay to the candidate a personal loan, as defined in 11 CFR 116.11(a), of up to $250,000 where the proceeds of the loan were used in connection with the candidate's campaign for election. The repayment may be made from contributions to the candidate or the candidate's authorized committee at any time before, on, or after the date of the election."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "116", 
+                                "12", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) This section applies separately to each election."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "116", 
+                                "12", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) Nothing in this section shall supersede 11 CFR 9035.2 regarding the limitations on expenditures from personal funds or family funds of a presidential candidate who accepts matching funds."
+                        }
+                    ], 
+                    "label": [
+                        "116", 
+                        "12"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 116.12 Repayment of candidate loans of $250,000 or less."
+                }
+            ], 
+            "label": [
+                "116", 
+                "Subpart"
+            ], 
+            "node_type": "emptypart", 
+            "text": ""
+        }
+    ], 
+    "label": [
+        "116"
+    ], 
+    "node_type": "regtext", 
+    "text": "", 
+    "title": "PART 116\u2014DEBTS OWED BY CANDIDATES AND POLITICAL COMMITTEES"
+}

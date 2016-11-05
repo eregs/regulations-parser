@@ -1,0 +1,40 @@
+{
+    "children": [
+        {
+            "children": [
+                {
+                    "children": [], 
+                    "label": [
+                        "9430", 
+                        "1"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "The U.S. Election Assistance Commission adopts the regulations at 31 CFR parts 900-904, governing administrative collection, offset, compromise, and the suspension or termination of collection activity for civil claims for money, funds, or property, as defined by 31 U.S.C. 3701(b).", 
+                    "title": "\u00a7 9430.1 Cross-reference to executive branch-wide debt collection regulations."
+                }, 
+                {
+                    "children": [], 
+                    "label": [
+                        "9430", 
+                        "2"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7\u00a7 9430.2-5 [Reserved]"
+                }
+            ], 
+            "label": [
+                "9430", 
+                "Subpart"
+            ], 
+            "node_type": "emptypart", 
+            "text": ""
+        }
+    ], 
+    "label": [
+        "9430"
+    ], 
+    "node_type": "regtext", 
+    "text": "", 
+    "title": "PART 9430\u2014DEBT COLLECTION"
+}

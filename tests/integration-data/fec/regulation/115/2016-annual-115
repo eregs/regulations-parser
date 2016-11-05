@@ -1,0 +1,331 @@
+{
+    "children": [
+        {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "115", 
+                                                "1", 
+                                                "a", 
+                                                "1", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) The rendition of personal services; or"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "115", 
+                                                "1", 
+                                                "a", 
+                                                "1", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) Furnishing any material, supplies, or equipment; or"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "115", 
+                                                "1", 
+                                                "a", 
+                                                "1", 
+                                                "iii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iii) Selling any land or buildings;"
+                                        }
+                                    ], 
+                                    "label": [
+                                        "115", 
+                                        "1", 
+                                        "a", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Enters into any contract with the United States or any department or agency thereof either for\u2014"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "115", 
+                                        "1", 
+                                        "a", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) If the payment for the performance of the contract or payment for the material, supplies, equipment, land, or building is to be made in whole or in part from funds appropriated by the Congress."
+                                }
+                            ], 
+                            "label": [
+                                "115", 
+                                "1", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) A Federal contractor means a person, as defined in 11 CFR 100.10 who\u2014"
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "115", 
+                                        "1", 
+                                        "b", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) The completion of performance under; or"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "115", 
+                                        "1", 
+                                        "b", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) The termination of negotiations for, the contract or furnishing of material, supplies, equipment, land, or buildings, or the rendition of personal services."
+                                }
+                            ], 
+                            "label": [
+                                "115", 
+                                "1", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) The period during which a person is prohibited from making a contribution or expenditure is the time between the earlier of the commencement of negotiations or when the requests for proposals are sent out, and the later of\u2014"
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "115", 
+                                        "1", 
+                                        "c", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) A sole source, negotiated, or advertised procurement conducted by the United States or any of its agencies;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "115", 
+                                        "1", 
+                                        "c", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) A written (except as otherwise authorized) contract, between any person and the United States or any of its departments or agencies, for the furnishing of personal property, real property, or personal services; and"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "115", 
+                                        "1", 
+                                        "c", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) Any modification of a contract."
+                                }
+                            ], 
+                            "label": [
+                                "115", 
+                                "1", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) For purposes of this part, a contract includes"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "115", 
+                                "1", 
+                                "d"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(d) The basic contractual relationship must be with the United States or any department or agency thereof. A person who contracts with a State or local jurisdiction or entity other than the United States or any department or agency thereof is not subject to this part, even if the State or local jurisdiction or entity is funded in whole or in part from funds appropriated by the Congress. The third party beneficiary of a Federal contract is not subject to the prohibitions of this part."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "115", 
+                                "1", 
+                                "e"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(e) The term labor organization has the meaning given it by \u00a7\u2009114.1(a)."
+                        }
+                    ], 
+                    "label": [
+                        "115", 
+                        "1"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 115.1 Definitions."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "115", 
+                                "2", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) It shall be unlawful for a Federal contractor, as defined in \u00a7\u2009115.1(a), to make, either directly or indirectly, any contribution or expenditure of money or other thing of value, or to promise expressly or impliedly to make any such contribution or expenditure to any political party, committee, or candidate for Federal office or to any person for any political purpose or use. This prohibition does not apply to contributions or expenditures in connection with State or local elections."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "115", 
+                                "2", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) This prohibition runs for the time period set forth in \u00a7\u2009115.1(b)."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "115", 
+                                "2", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) It shall be unlawful for any person knowingly to solicit any such contribution from a Federal contractor."
+                        }
+                    ], 
+                    "label": [
+                        "115", 
+                        "2"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 115.2 Prohibition."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "115", 
+                                "3", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) Corporations, labor organizations, membership organizations, cooperatives, and corporations without capital stock to which this part applies may expend treasury monies to establish, administer, and solicit contributions to any separate segregated fund subject to the provisions of part 114. Each specific prohibition, allowance, and duty applicable to a corporation, labor organization, or separate segregated fund under part 114 applies to a corporation, labor organization, or separate segregated fund to which this part applies."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "115", 
+                                "3", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) The question of whether a professional organization is a corporation is determined by the law of the State in which the professional organization exists."
+                        }
+                    ], 
+                    "label": [
+                        "115", 
+                        "3"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 115.3 Corporations, labor organizations, membership organizations, cooperatives, and corporations without capital stock."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "115", 
+                                "4", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) The assets of a partnership which is a Federal contractor may not be used to make contributions or expenditures in connection with Federal elections."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "115", 
+                                "4", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) Individual partners may make contributions or expenditures in their own names from their personal assets."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "115", 
+                                "4", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) Nothing in this part prohibits an employee of a partnership which is a Federal contractor from making contributions or expenditures from his or her personal assets."
+                        }
+                    ], 
+                    "label": [
+                        "115", 
+                        "4"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 115.4 Partnerships."
+                }, 
+                {
+                    "children": [], 
+                    "label": [
+                        "115", 
+                        "5"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "Individuals or sole proprietors who are Federal contractors are prohibited from making contributions or expenditures from their business, personal, or other funds under their dominion or control. The spouse of an individual or sole proprietor who is a Federal contractor is not prohibited from making a personal contribution or expenditure in his or her name.", 
+                    "title": "\u00a7 115.5 Individuals and sole proprietors."
+                }, 
+                {
+                    "children": [], 
+                    "label": [
+                        "115", 
+                        "6"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "Nothing in this part shall prohibit the stockholders, officers, or employees of a corporation, the employees, officers, or members of an unincorporated association, cooperative, membership organization, labor organization, or other group or organization which is a Federal contractor from making contributions or expenditures from their personal assets.", 
+                    "title": "\u00a7 115.6 Employee contributions or expenditures."
+                }
+            ], 
+            "label": [
+                "115", 
+                "Subpart"
+            ], 
+            "node_type": "emptypart", 
+            "text": ""
+        }
+    ], 
+    "label": [
+        "115"
+    ], 
+    "node_type": "regtext", 
+    "text": "", 
+    "title": "PART 115\u2014FEDERAL CONTRACTORS"
+}

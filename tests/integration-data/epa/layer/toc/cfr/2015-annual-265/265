@@ -1,0 +1,1861 @@
+{
+    "265": [
+        {
+            "index": [
+                "265", 
+                "Subpart", 
+                "A"
+            ], 
+            "title": "General"
+        }, 
+        {
+            "index": [
+                "265", 
+                "Subpart", 
+                "B"
+            ], 
+            "title": "General Facility Standards"
+        }, 
+        {
+            "index": [
+                "265", 
+                "Subpart", 
+                "C"
+            ], 
+            "title": "Preparedness and Prevention"
+        }, 
+        {
+            "index": [
+                "265", 
+                "Subpart", 
+                "D"
+            ], 
+            "title": "Contingency Plan and Emergency Procedures"
+        }, 
+        {
+            "index": [
+                "265", 
+                "Subpart", 
+                "E"
+            ], 
+            "title": "Manifest System, Recordkeeping, and Reporting"
+        }, 
+        {
+            "index": [
+                "265", 
+                "Subpart", 
+                "F"
+            ], 
+            "title": "Ground-Water Monitoring"
+        }, 
+        {
+            "index": [
+                "265", 
+                "Subpart", 
+                "G"
+            ], 
+            "title": "Closure and Post-Closure"
+        }, 
+        {
+            "index": [
+                "265", 
+                "Subpart", 
+                "H"
+            ], 
+            "title": "Financial Requirements"
+        }, 
+        {
+            "index": [
+                "265", 
+                "Subpart", 
+                "I"
+            ], 
+            "title": "Use and Management of Containers"
+        }, 
+        {
+            "index": [
+                "265", 
+                "Subpart", 
+                "J"
+            ], 
+            "title": "Tank Systems"
+        }, 
+        {
+            "index": [
+                "265", 
+                "Subpart", 
+                "K"
+            ], 
+            "title": "Surface Impoundments"
+        }, 
+        {
+            "index": [
+                "265", 
+                "Subpart", 
+                "L"
+            ], 
+            "title": "Waste Piles"
+        }, 
+        {
+            "index": [
+                "265", 
+                "Subpart", 
+                "M"
+            ], 
+            "title": "Land Treatment"
+        }, 
+        {
+            "index": [
+                "265", 
+                "Subpart", 
+                "N"
+            ], 
+            "title": "Landfills"
+        }, 
+        {
+            "index": [
+                "265", 
+                "Subpart", 
+                "O"
+            ], 
+            "title": "Incinerators"
+        }, 
+        {
+            "index": [
+                "265", 
+                "Subpart", 
+                "P"
+            ], 
+            "title": "Thermal Treatment"
+        }, 
+        {
+            "index": [
+                "265", 
+                "Subpart", 
+                "Q"
+            ], 
+            "title": "Chemical, Physical, and Biological Treatment"
+        }, 
+        {
+            "index": [
+                "265", 
+                "Subpart", 
+                "R"
+            ], 
+            "title": "Underground Injection"
+        }, 
+        {
+            "index": [
+                "265", 
+                "Subpart", 
+                "S"
+            ], 
+            "title": "-V [Reserved]"
+        }, 
+        {
+            "index": [
+                "265", 
+                "Subpart", 
+                "W"
+            ], 
+            "title": "Drip Pads"
+        }, 
+        {
+            "index": [
+                "265", 
+                "Subpart", 
+                "X"
+            ], 
+            "title": "-Z [Reserved]"
+        }, 
+        {
+            "index": [
+                "265", 
+                "Subpart", 
+                "AA"
+            ], 
+            "title": "Air Emission Standards for Process Vents"
+        }, 
+        {
+            "index": [
+                "265", 
+                "Subpart", 
+                "BB"
+            ], 
+            "title": "Air Emission Standards for Equipment Leaks"
+        }, 
+        {
+            "index": [
+                "265", 
+                "Subpart", 
+                "CC"
+            ], 
+            "title": "Air Emission Standards for Tanks, Surface Impoundments, and Containers"
+        }, 
+        {
+            "index": [
+                "265", 
+                "Subpart", 
+                "DD"
+            ], 
+            "title": "Containment Buildings"
+        }, 
+        {
+            "index": [
+                "265", 
+                "Subpart", 
+                "EE"
+            ], 
+            "title": "Hazardous Waste Munitions and Explosives Storage"
+        }, 
+        {
+            "index": [
+                "265", 
+                "I"
+            ], 
+            "title": "Appendix I to Part 265\u2014Recordkeeping Instructions"
+        }, 
+        {
+            "index": [
+                "265", 
+                "II"
+            ], 
+            "title": "Appendix II to Part 265 [Reserved]"
+        }, 
+        {
+            "index": [
+                "265", 
+                "III"
+            ], 
+            "title": "Appendix III to Part 265\u2014EPA Interim Primary Drinking Water Standards"
+        }, 
+        {
+            "index": [
+                "265", 
+                "IV"
+            ], 
+            "title": "Appendix IV to Part 265\u2014Tests for Significance"
+        }, 
+        {
+            "index": [
+                "265", 
+                "V"
+            ], 
+            "title": "Appendix V to Part 265\u2014Examples of Potentially Incompatible Waste"
+        }, 
+        {
+            "index": [
+                "265", 
+                "VI"
+            ], 
+            "title": "Appendix VI to Part 265\u2014Compounds With Henry's Law Constant Less Than 0.1 Y/X"
+        }
+    ], 
+    "265-I-p3-3": [
+        {
+            "index": [
+                "265", 
+                "I", 
+                "p3", 
+                "3", 
+                "h1"
+            ], 
+            "title": "Table 2\u2014Handling Codes for Treatment, Storage and Disposal Methods"
+        }
+    ], 
+    "265-Subpart-A": [
+        {
+            "index": [
+                "265", 
+                "1"
+            ], 
+            "title": "\u00a7 265.1 Purpose, scope, and applicability."
+        }, 
+        {
+            "index": [
+                "265", 
+                "2"
+            ], 
+            "title": "\u00a7 265.2 [Reserved]"
+        }, 
+        {
+            "index": [
+                "265", 
+                "3"
+            ], 
+            "title": "\u00a7 265.3 [Reserved]"
+        }, 
+        {
+            "index": [
+                "265", 
+                "4"
+            ], 
+            "title": "\u00a7 265.4 Imminent hazard action."
+        }
+    ], 
+    "265-Subpart-AA": [
+        {
+            "index": [
+                "265", 
+                "1030"
+            ], 
+            "title": "\u00a7 265.1030 Applicability."
+        }, 
+        {
+            "index": [
+                "265", 
+                "1031"
+            ], 
+            "title": "\u00a7 265.1031 Definitions."
+        }, 
+        {
+            "index": [
+                "265", 
+                "1032"
+            ], 
+            "title": "\u00a7 265.1032 Standards: Process vents."
+        }, 
+        {
+            "index": [
+                "265", 
+                "1033"
+            ], 
+            "title": "\u00a7 265.1033 Standards: Closed-vent systems and control devices."
+        }, 
+        {
+            "index": [
+                "265", 
+                "1034"
+            ], 
+            "title": "\u00a7 265.1034 Test methods and procedures."
+        }, 
+        {
+            "index": [
+                "265", 
+                "1035"
+            ], 
+            "title": "\u00a7 265.1035 Recordkeeping requirements."
+        }, 
+        {
+            "index": [
+                "265", 
+                "1036"
+            ], 
+            "title": "\u00a7\u00a7 265.1036-1049 [Reserved]"
+        }
+    ], 
+    "265-Subpart-B": [
+        {
+            "index": [
+                "265", 
+                "10"
+            ], 
+            "title": "\u00a7 265.10 Applicability."
+        }, 
+        {
+            "index": [
+                "265", 
+                "11"
+            ], 
+            "title": "\u00a7 265.11 Identification number."
+        }, 
+        {
+            "index": [
+                "265", 
+                "12"
+            ], 
+            "title": "\u00a7 265.12 Required notices."
+        }, 
+        {
+            "index": [
+                "265", 
+                "13"
+            ], 
+            "title": "\u00a7 265.13 General waste analysis."
+        }, 
+        {
+            "index": [
+                "265", 
+                "14"
+            ], 
+            "title": "\u00a7 265.14 Security."
+        }, 
+        {
+            "index": [
+                "265", 
+                "15"
+            ], 
+            "title": "\u00a7 265.15 General inspection requirements."
+        }, 
+        {
+            "index": [
+                "265", 
+                "16"
+            ], 
+            "title": "\u00a7 265.16 Personnel training."
+        }, 
+        {
+            "index": [
+                "265", 
+                "17"
+            ], 
+            "title": "\u00a7 265.17 General requirements for ignitable, reactive, or incompatible wastes."
+        }, 
+        {
+            "index": [
+                "265", 
+                "18"
+            ], 
+            "title": "\u00a7 265.18 Location standards."
+        }, 
+        {
+            "index": [
+                "265", 
+                "19"
+            ], 
+            "title": "\u00a7 265.19 Construction quality assurance program."
+        }
+    ], 
+    "265-Subpart-BB": [
+        {
+            "index": [
+                "265", 
+                "1050"
+            ], 
+            "title": "\u00a7 265.1050 Applicability."
+        }, 
+        {
+            "index": [
+                "265", 
+                "1051"
+            ], 
+            "title": "\u00a7 265.1051 Definitions."
+        }, 
+        {
+            "index": [
+                "265", 
+                "1052"
+            ], 
+            "title": "\u00a7 265.1052 Standards: Pumps in light liquid service."
+        }, 
+        {
+            "index": [
+                "265", 
+                "1053"
+            ], 
+            "title": "\u00a7 265.1053 Standards: Compressors."
+        }, 
+        {
+            "index": [
+                "265", 
+                "1054"
+            ], 
+            "title": "\u00a7 265.1054 Standards: Pressure relief devices in gas/vapor service."
+        }, 
+        {
+            "index": [
+                "265", 
+                "1055"
+            ], 
+            "title": "\u00a7 265.1055 Standards: Sampling connection systems."
+        }, 
+        {
+            "index": [
+                "265", 
+                "1056"
+            ], 
+            "title": "\u00a7 265.1056 Standards: Open-ended valves or lines."
+        }, 
+        {
+            "index": [
+                "265", 
+                "1057"
+            ], 
+            "title": "\u00a7 265.1057 Standards: Valves in gas/vapor service or in light liquid service."
+        }, 
+        {
+            "index": [
+                "265", 
+                "1058"
+            ], 
+            "title": "\u00a7 265.1058 Standards: Pumps and valves in heavy liquid service, pressure relief devices in light liquid or heavy liquid service, and flanges and other connectors."
+        }, 
+        {
+            "index": [
+                "265", 
+                "1059"
+            ], 
+            "title": "\u00a7 265.1059 Standards: Delay of repair."
+        }, 
+        {
+            "index": [
+                "265", 
+                "1060"
+            ], 
+            "title": "\u00a7 265.1060 Standards: Closed-vent systems and control devices."
+        }, 
+        {
+            "index": [
+                "265", 
+                "1061"
+            ], 
+            "title": "\u00a7 265.1061 Alternative standards for valves in gas/vapor service or in light liquid service: percentage of valves allowed to leak."
+        }, 
+        {
+            "index": [
+                "265", 
+                "1062"
+            ], 
+            "title": "\u00a7 265.1062 Alternative standards for valves in gas/vapor service or in light liquid service: skip period leak detection and repair."
+        }, 
+        {
+            "index": [
+                "265", 
+                "1063"
+            ], 
+            "title": "\u00a7 265.1063 Test methods and procedures."
+        }, 
+        {
+            "index": [
+                "265", 
+                "1064"
+            ], 
+            "title": "\u00a7 265.1064 Recordkeeping requirements."
+        }, 
+        {
+            "index": [
+                "265", 
+                "1065"
+            ], 
+            "title": "\u00a7\u00a7 265.1065-1079 [Reserved]"
+        }
+    ], 
+    "265-Subpart-C": [
+        {
+            "index": [
+                "265", 
+                "30"
+            ], 
+            "title": "\u00a7 265.30 Applicability."
+        }, 
+        {
+            "index": [
+                "265", 
+                "31"
+            ], 
+            "title": "\u00a7 265.31 Maintenance and operation of facility."
+        }, 
+        {
+            "index": [
+                "265", 
+                "32"
+            ], 
+            "title": "\u00a7 265.32 Required equipment."
+        }, 
+        {
+            "index": [
+                "265", 
+                "33"
+            ], 
+            "title": "\u00a7 265.33 Testing and maintenance of equipment."
+        }, 
+        {
+            "index": [
+                "265", 
+                "34"
+            ], 
+            "title": "\u00a7 265.34 Access to communications or alarm system."
+        }, 
+        {
+            "index": [
+                "265", 
+                "35"
+            ], 
+            "title": "\u00a7 265.35 Required aisle space."
+        }, 
+        {
+            "index": [
+                "265", 
+                "36"
+            ], 
+            "title": "\u00a7 265.36 [Reserved]"
+        }, 
+        {
+            "index": [
+                "265", 
+                "37"
+            ], 
+            "title": "\u00a7 265.37 Arrangements with local authorities."
+        }
+    ], 
+    "265-Subpart-CC": [
+        {
+            "index": [
+                "265", 
+                "1080"
+            ], 
+            "title": "\u00a7 265.1080 Applicability."
+        }, 
+        {
+            "index": [
+                "265", 
+                "1081"
+            ], 
+            "title": "\u00a7 265.1081 Definitions."
+        }, 
+        {
+            "index": [
+                "265", 
+                "1082"
+            ], 
+            "title": "\u00a7 265.1082 Schedule for implementation of air emission standards."
+        }, 
+        {
+            "index": [
+                "265", 
+                "1083"
+            ], 
+            "title": "\u00a7 265.1083 Standards: General."
+        }, 
+        {
+            "index": [
+                "265", 
+                "1084"
+            ], 
+            "title": "\u00a7 265.1084 Waste determination procedures."
+        }, 
+        {
+            "index": [
+                "265", 
+                "1085"
+            ], 
+            "title": "\u00a7 265.1085 Standards: Tanks."
+        }, 
+        {
+            "index": [
+                "265", 
+                "1086"
+            ], 
+            "title": "\u00a7 265.1086 Standards: Surface impoundments."
+        }, 
+        {
+            "index": [
+                "265", 
+                "1087"
+            ], 
+            "title": "\u00a7 265.1087 Standards: Containers."
+        }, 
+        {
+            "index": [
+                "265", 
+                "1088"
+            ], 
+            "title": "\u00a7 265.1088 Standards: Closed-vent systems and control devices."
+        }, 
+        {
+            "index": [
+                "265", 
+                "1089"
+            ], 
+            "title": "\u00a7 265.1089 Inspection and monitoring requirements."
+        }, 
+        {
+            "index": [
+                "265", 
+                "1090"
+            ], 
+            "title": "\u00a7 265.1090 Recordkeeping requirements."
+        }, 
+        {
+            "index": [
+                "265", 
+                "1091"
+            ], 
+            "title": "\u00a7 265.1091 [Reserved]"
+        }
+    ], 
+    "265-Subpart-D": [
+        {
+            "index": [
+                "265", 
+                "50"
+            ], 
+            "title": "\u00a7 265.50 Applicability."
+        }, 
+        {
+            "index": [
+                "265", 
+                "51"
+            ], 
+            "title": "\u00a7 265.51 Purpose and implementation of contingency plan."
+        }, 
+        {
+            "index": [
+                "265", 
+                "52"
+            ], 
+            "title": "\u00a7 265.52 Content of contingency plan."
+        }, 
+        {
+            "index": [
+                "265", 
+                "53"
+            ], 
+            "title": "\u00a7 265.53 Copies of contingency plan."
+        }, 
+        {
+            "index": [
+                "265", 
+                "54"
+            ], 
+            "title": "\u00a7 265.54 Amendment of contingency plan."
+        }, 
+        {
+            "index": [
+                "265", 
+                "55"
+            ], 
+            "title": "\u00a7 265.55 Emergency coordinator."
+        }, 
+        {
+            "index": [
+                "265", 
+                "56"
+            ], 
+            "title": "\u00a7 265.56 Emergency procedures."
+        }
+    ], 
+    "265-Subpart-DD": [
+        {
+            "index": [
+                "265", 
+                "1100"
+            ], 
+            "title": "\u00a7 265.1100 Applicability."
+        }, 
+        {
+            "index": [
+                "265", 
+                "1101"
+            ], 
+            "title": "\u00a7 265.1101 Design and operating standards."
+        }, 
+        {
+            "index": [
+                "265", 
+                "1102"
+            ], 
+            "title": "\u00a7 265.1102 Closure and post-closure care."
+        }, 
+        {
+            "index": [
+                "265", 
+                "1103"
+            ], 
+            "title": "\u00a7\u00a7 265.1103-1110 [Reserved]"
+        }
+    ], 
+    "265-Subpart-E": [
+        {
+            "index": [
+                "265", 
+                "70"
+            ], 
+            "title": "\u00a7 265.70 Applicability."
+        }, 
+        {
+            "index": [
+                "265", 
+                "71"
+            ], 
+            "title": "\u00a7 265.71 Use of manifest system."
+        }, 
+        {
+            "index": [
+                "265", 
+                "72"
+            ], 
+            "title": "\u00a7 265.72 Manifest discrepancies."
+        }, 
+        {
+            "index": [
+                "265", 
+                "73"
+            ], 
+            "title": "\u00a7 265.73 Operating record."
+        }, 
+        {
+            "index": [
+                "265", 
+                "74"
+            ], 
+            "title": "\u00a7 265.74 Availability, retention, and disposition of records."
+        }, 
+        {
+            "index": [
+                "265", 
+                "75"
+            ], 
+            "title": "\u00a7 265.75 Biennial report."
+        }, 
+        {
+            "index": [
+                "265", 
+                "76"
+            ], 
+            "title": "\u00a7 265.76 Unmanifested waste report."
+        }, 
+        {
+            "index": [
+                "265", 
+                "77"
+            ], 
+            "title": "\u00a7 265.77 Additional reports."
+        }
+    ], 
+    "265-Subpart-EE": [
+        {
+            "index": [
+                "265", 
+                "1200"
+            ], 
+            "title": "\u00a7 265.1200 Applicability."
+        }, 
+        {
+            "index": [
+                "265", 
+                "1201"
+            ], 
+            "title": "\u00a7 265.1201 Design and operating standards."
+        }, 
+        {
+            "index": [
+                "265", 
+                "1202"
+            ], 
+            "title": "\u00a7 265.1202 Closure and post-closure care."
+        }
+    ], 
+    "265-Subpart-F": [
+        {
+            "index": [
+                "265", 
+                "90"
+            ], 
+            "title": "\u00a7 265.90 Applicability."
+        }, 
+        {
+            "index": [
+                "265", 
+                "91"
+            ], 
+            "title": "\u00a7 265.91 Ground-water monitoring system."
+        }, 
+        {
+            "index": [
+                "265", 
+                "92"
+            ], 
+            "title": "\u00a7 265.92 Sampling and analysis."
+        }, 
+        {
+            "index": [
+                "265", 
+                "93"
+            ], 
+            "title": "\u00a7 265.93 Preparation, evaluation, and response."
+        }, 
+        {
+            "index": [
+                "265", 
+                "94"
+            ], 
+            "title": "\u00a7 265.94 Recordkeeping and reporting."
+        }
+    ], 
+    "265-Subpart-G": [
+        {
+            "index": [
+                "265", 
+                "110"
+            ], 
+            "title": "\u00a7 265.110 Applicability."
+        }, 
+        {
+            "index": [
+                "265", 
+                "111"
+            ], 
+            "title": "\u00a7 265.111 Closure performance standard."
+        }, 
+        {
+            "index": [
+                "265", 
+                "112"
+            ], 
+            "title": "\u00a7 265.112 Closure plan; amendment of plan."
+        }, 
+        {
+            "index": [
+                "265", 
+                "113"
+            ], 
+            "title": "\u00a7 265.113 Closure; time allowed for closure."
+        }, 
+        {
+            "index": [
+                "265", 
+                "114"
+            ], 
+            "title": "\u00a7 265.114 Disposal or decontamination of equipment, structures and soils."
+        }, 
+        {
+            "index": [
+                "265", 
+                "115"
+            ], 
+            "title": "\u00a7 265.115 Certification of closure."
+        }, 
+        {
+            "index": [
+                "265", 
+                "116"
+            ], 
+            "title": "\u00a7 265.116 Survey plat."
+        }, 
+        {
+            "index": [
+                "265", 
+                "117"
+            ], 
+            "title": "\u00a7 265.117 Post-closure care and use of property."
+        }, 
+        {
+            "index": [
+                "265", 
+                "118"
+            ], 
+            "title": "\u00a7 265.118 Post-closure plan; amendment of plan."
+        }, 
+        {
+            "index": [
+                "265", 
+                "119"
+            ], 
+            "title": "\u00a7 265.119 Post-closure notices."
+        }, 
+        {
+            "index": [
+                "265", 
+                "120"
+            ], 
+            "title": "\u00a7 265.120 Certification of completion of post-closure care."
+        }, 
+        {
+            "index": [
+                "265", 
+                "121"
+            ], 
+            "title": "\u00a7 265.121 Post-closure requirements for facilities that obtain enforceable documents in lieu of post-closure permits."
+        }
+    ], 
+    "265-Subpart-H": [
+        {
+            "index": [
+                "265", 
+                "140"
+            ], 
+            "title": "\u00a7 265.140 Applicability."
+        }, 
+        {
+            "index": [
+                "265", 
+                "141"
+            ], 
+            "title": "\u00a7 265.141 Definitions of terms as used in this subpart."
+        }, 
+        {
+            "index": [
+                "265", 
+                "142"
+            ], 
+            "title": "\u00a7 265.142 Cost estimate for closure."
+        }, 
+        {
+            "index": [
+                "265", 
+                "143"
+            ], 
+            "title": "\u00a7 265.143 Financial assurance for closure."
+        }, 
+        {
+            "index": [
+                "265", 
+                "144"
+            ], 
+            "title": "\u00a7 265.144 Cost estimate for post-closure care."
+        }, 
+        {
+            "index": [
+                "265", 
+                "145"
+            ], 
+            "title": "\u00a7 265.145 Financial assurance for post-closure care."
+        }, 
+        {
+            "index": [
+                "265", 
+                "146"
+            ], 
+            "title": "\u00a7 265.146 Use of a mechanism for financial assurance of both closure and post-closure care."
+        }, 
+        {
+            "index": [
+                "265", 
+                "147"
+            ], 
+            "title": "\u00a7 265.147 Liability requirements."
+        }, 
+        {
+            "index": [
+                "265", 
+                "148"
+            ], 
+            "title": "\u00a7 265.148 Incapacity of owners or operators, guarantors, or financial institutions."
+        }, 
+        {
+            "index": [
+                "265", 
+                "149"
+            ], 
+            "title": "\u00a7 265.149 Use of State-required mechanisms."
+        }, 
+        {
+            "index": [
+                "265", 
+                "150"
+            ], 
+            "title": "\u00a7 265.150 State assumption of responsibility."
+        }
+    ], 
+    "265-Subpart-I": [
+        {
+            "index": [
+                "265", 
+                "170"
+            ], 
+            "title": "\u00a7 265.170 Applicability."
+        }, 
+        {
+            "index": [
+                "265", 
+                "171"
+            ], 
+            "title": "\u00a7 265.171 Condition of containers."
+        }, 
+        {
+            "index": [
+                "265", 
+                "172"
+            ], 
+            "title": "\u00a7 265.172 Compatibility of waste with container."
+        }, 
+        {
+            "index": [
+                "265", 
+                "173"
+            ], 
+            "title": "\u00a7 265.173 Management of containers."
+        }, 
+        {
+            "index": [
+                "265", 
+                "174"
+            ], 
+            "title": "\u00a7 265.174 Inspections."
+        }, 
+        {
+            "index": [
+                "265", 
+                "175"
+            ], 
+            "title": "\u00a7 265.175 [Reserved]"
+        }, 
+        {
+            "index": [
+                "265", 
+                "176"
+            ], 
+            "title": "\u00a7 265.176 Special requirements for ignitable or reactive waste."
+        }, 
+        {
+            "index": [
+                "265", 
+                "177"
+            ], 
+            "title": "\u00a7 265.177 Special requirements for incompatible wastes."
+        }, 
+        {
+            "index": [
+                "265", 
+                "178"
+            ], 
+            "title": "\u00a7 265.178 Air emission standards."
+        }
+    ], 
+    "265-Subpart-J": [
+        {
+            "index": [
+                "265", 
+                "190"
+            ], 
+            "title": "\u00a7 265.190 Applicability."
+        }, 
+        {
+            "index": [
+                "265", 
+                "191"
+            ], 
+            "title": "\u00a7 265.191 Assessment of existing tank system's integrity."
+        }, 
+        {
+            "index": [
+                "265", 
+                "192"
+            ], 
+            "title": "\u00a7 265.192 Design and installation of new tank systems or components."
+        }, 
+        {
+            "index": [
+                "265", 
+                "193"
+            ], 
+            "title": "\u00a7 265.193 Containment and detection of releases."
+        }, 
+        {
+            "index": [
+                "265", 
+                "194"
+            ], 
+            "title": "\u00a7 265.194 General operating requirements."
+        }, 
+        {
+            "index": [
+                "265", 
+                "195"
+            ], 
+            "title": "\u00a7 265.195 Inspections."
+        }, 
+        {
+            "index": [
+                "265", 
+                "196"
+            ], 
+            "title": "\u00a7 265.196 Response to leaks or spills and disposition of leaking or unfit-for-use tank systems."
+        }, 
+        {
+            "index": [
+                "265", 
+                "197"
+            ], 
+            "title": "\u00a7 265.197 Closure and post-closure care."
+        }, 
+        {
+            "index": [
+                "265", 
+                "198"
+            ], 
+            "title": "\u00a7 265.198 Special requirements for ignitable or reactive wastes."
+        }, 
+        {
+            "index": [
+                "265", 
+                "199"
+            ], 
+            "title": "\u00a7 265.199 Special requirements for incompatible wastes."
+        }, 
+        {
+            "index": [
+                "265", 
+                "200"
+            ], 
+            "title": "\u00a7 265.200 Waste analysis and trial tests."
+        }, 
+        {
+            "index": [
+                "265", 
+                "201"
+            ], 
+            "title": "\u00a7 265.201 Special requirements for generators of between 100 and 1,000 kg/mo that accumulate hazardous waste in tanks."
+        }, 
+        {
+            "index": [
+                "265", 
+                "202"
+            ], 
+            "title": "\u00a7 265.202 Air emission standards."
+        }
+    ], 
+    "265-Subpart-K": [
+        {
+            "index": [
+                "265", 
+                "220"
+            ], 
+            "title": "\u00a7 265.220 Applicability."
+        }, 
+        {
+            "index": [
+                "265", 
+                "221"
+            ], 
+            "title": "\u00a7 265.221 Design and operating requirements."
+        }, 
+        {
+            "index": [
+                "265", 
+                "222"
+            ], 
+            "title": "\u00a7 265.222 Action leakage rate."
+        }, 
+        {
+            "index": [
+                "265", 
+                "223"
+            ], 
+            "title": "\u00a7 265.223 Containment system."
+        }, 
+        {
+            "index": [
+                "265", 
+                "224"
+            ], 
+            "title": "\u00a7 265.224 Response actions."
+        }, 
+        {
+            "index": [
+                "265", 
+                "225"
+            ], 
+            "title": "\u00a7 265.225 Waste analysis and trial tests."
+        }, 
+        {
+            "index": [
+                "265", 
+                "226"
+            ], 
+            "title": "\u00a7 265.226 Monitoring and inspection."
+        }, 
+        {
+            "index": [
+                "265", 
+                "227"
+            ], 
+            "title": "\u00a7 265.227 [Reserved]"
+        }, 
+        {
+            "index": [
+                "265", 
+                "228"
+            ], 
+            "title": "\u00a7 265.228 Closure and post-closure care."
+        }, 
+        {
+            "index": [
+                "265", 
+                "229"
+            ], 
+            "title": "\u00a7 265.229 Special requirements for ignitable or reactive waste."
+        }, 
+        {
+            "index": [
+                "265", 
+                "230"
+            ], 
+            "title": "\u00a7 265.230 Special requirements for incompatible wastes."
+        }, 
+        {
+            "index": [
+                "265", 
+                "231"
+            ], 
+            "title": "\u00a7 265.231 Air emission standards."
+        }
+    ], 
+    "265-Subpart-L": [
+        {
+            "index": [
+                "265", 
+                "250"
+            ], 
+            "title": "\u00a7 265.250 Applicability."
+        }, 
+        {
+            "index": [
+                "265", 
+                "251"
+            ], 
+            "title": "\u00a7 265.251 Protection from wind."
+        }, 
+        {
+            "index": [
+                "265", 
+                "252"
+            ], 
+            "title": "\u00a7 265.252 Waste analysis."
+        }, 
+        {
+            "index": [
+                "265", 
+                "253"
+            ], 
+            "title": "\u00a7 265.253 Containment."
+        }, 
+        {
+            "index": [
+                "265", 
+                "254"
+            ], 
+            "title": "\u00a7 265.254 Design and operating requirements."
+        }, 
+        {
+            "index": [
+                "265", 
+                "255"
+            ], 
+            "title": "\u00a7 265.255 Action leakage rates."
+        }, 
+        {
+            "index": [
+                "265", 
+                "256"
+            ], 
+            "title": "\u00a7 265.256 Special requirements for ignitable or reactive waste."
+        }, 
+        {
+            "index": [
+                "265", 
+                "257"
+            ], 
+            "title": "\u00a7 265.257 Special requirements for incompatible wastes."
+        }, 
+        {
+            "index": [
+                "265", 
+                "258"
+            ], 
+            "title": "\u00a7 265.258 Closure and post-closure care."
+        }, 
+        {
+            "index": [
+                "265", 
+                "259"
+            ], 
+            "title": "\u00a7 265.259 Response actions."
+        }, 
+        {
+            "index": [
+                "265", 
+                "260"
+            ], 
+            "title": "\u00a7 265.260 Monitoring and inspection."
+        }
+    ], 
+    "265-Subpart-M": [
+        {
+            "index": [
+                "265", 
+                "270"
+            ], 
+            "title": "\u00a7 265.270 Applicability."
+        }, 
+        {
+            "index": [
+                "265", 
+                "271"
+            ], 
+            "title": "\u00a7 265.271 [Reserved]"
+        }, 
+        {
+            "index": [
+                "265", 
+                "272"
+            ], 
+            "title": "\u00a7 265.272 General operating requirements."
+        }, 
+        {
+            "index": [
+                "265", 
+                "273"
+            ], 
+            "title": "\u00a7 265.273 Waste analysis."
+        }, 
+        {
+            "index": [
+                "265", 
+                "274"
+            ], 
+            "title": "\u00a7 265.274 [Reserved]"
+        }, 
+        {
+            "index": [
+                "265", 
+                "275"
+            ], 
+            "title": "\u00a7 265.275 [Reserved]"
+        }, 
+        {
+            "index": [
+                "265", 
+                "276"
+            ], 
+            "title": "\u00a7 265.276 Food chain crops."
+        }, 
+        {
+            "index": [
+                "265", 
+                "277"
+            ], 
+            "title": "\u00a7 265.277 [Reserved]"
+        }, 
+        {
+            "index": [
+                "265", 
+                "278"
+            ], 
+            "title": "\u00a7 265.278 Unsaturated zone (zone of aeration) monitoring."
+        }, 
+        {
+            "index": [
+                "265", 
+                "279"
+            ], 
+            "title": "\u00a7 265.279 Recordkeeping."
+        }, 
+        {
+            "index": [
+                "265", 
+                "280"
+            ], 
+            "title": "\u00a7 265.280 Closure and post-closure."
+        }, 
+        {
+            "index": [
+                "265", 
+                "281"
+            ], 
+            "title": "\u00a7 265.281 Special requirements for ignitable or reactive waste."
+        }, 
+        {
+            "index": [
+                "265", 
+                "282"
+            ], 
+            "title": "\u00a7 265.282 Special requirements for incompatible wastes."
+        }
+    ], 
+    "265-Subpart-N": [
+        {
+            "index": [
+                "265", 
+                "300"
+            ], 
+            "title": "\u00a7 265.300 Applicability."
+        }, 
+        {
+            "index": [
+                "265", 
+                "301"
+            ], 
+            "title": "\u00a7 265.301 Design and operating requirements."
+        }, 
+        {
+            "index": [
+                "265", 
+                "302"
+            ], 
+            "title": "\u00a7 265.302 Action leakage rate."
+        }, 
+        {
+            "index": [
+                "265", 
+                "303"
+            ], 
+            "title": "\u00a7 265.303 Response actions."
+        }, 
+        {
+            "index": [
+                "265", 
+                "304"
+            ], 
+            "title": "\u00a7 265.304 Monitoring and inspection."
+        }, 
+        {
+            "index": [
+                "265", 
+                "305"
+            ], 
+            "title": "\u00a7\u00a7 265.305-308 [Reserved]"
+        }, 
+        {
+            "index": [
+                "265", 
+                "309"
+            ], 
+            "title": "\u00a7 265.309 Surveying and recordkeeping."
+        }, 
+        {
+            "index": [
+                "265", 
+                "310"
+            ], 
+            "title": "\u00a7 265.310 Closure and post-closure care."
+        }, 
+        {
+            "index": [
+                "265", 
+                "311"
+            ], 
+            "title": "\u00a7 265.311 [Reserved]"
+        }, 
+        {
+            "index": [
+                "265", 
+                "312"
+            ], 
+            "title": "\u00a7 265.312 Special requirements for ignitable or reactive waste."
+        }, 
+        {
+            "index": [
+                "265", 
+                "313"
+            ], 
+            "title": "\u00a7 265.313 Special requirements for incompatible wastes."
+        }, 
+        {
+            "index": [
+                "265", 
+                "314"
+            ], 
+            "title": "\u00a7 265.314 Special requirements for bulk and containerized liquids."
+        }, 
+        {
+            "index": [
+                "265", 
+                "315"
+            ], 
+            "title": "\u00a7 265.315 Special requirements for containers."
+        }, 
+        {
+            "index": [
+                "265", 
+                "316"
+            ], 
+            "title": "\u00a7 265.316 Disposal of small containers of hazardous waste in overpacked drums (lab packs)."
+        }
+    ], 
+    "265-Subpart-O": [
+        {
+            "index": [
+                "265", 
+                "340"
+            ], 
+            "title": "\u00a7 265.340 Applicability."
+        }, 
+        {
+            "index": [
+                "265", 
+                "341"
+            ], 
+            "title": "\u00a7 265.341 Waste analysis."
+        }, 
+        {
+            "index": [
+                "265", 
+                "342"
+            ], 
+            "title": "\u00a7 265.342 [Reserved]"
+        }, 
+        {
+            "index": [
+                "265", 
+                "343"
+            ], 
+            "title": "\u00a7 265.343 [Reserved]"
+        }, 
+        {
+            "index": [
+                "265", 
+                "344"
+            ], 
+            "title": "\u00a7 265.344 [Reserved]"
+        }, 
+        {
+            "index": [
+                "265", 
+                "345"
+            ], 
+            "title": "\u00a7 265.345 General operating requirements."
+        }, 
+        {
+            "index": [
+                "265", 
+                "346"
+            ], 
+            "title": "\u00a7 265.346 [Reserved]"
+        }, 
+        {
+            "index": [
+                "265", 
+                "347"
+            ], 
+            "title": "\u00a7 265.347 Monitoring and inspections."
+        }, 
+        {
+            "index": [
+                "265", 
+                "348"
+            ], 
+            "title": "\u00a7 265.348 [Reserved]"
+        }, 
+        {
+            "index": [
+                "265", 
+                "349"
+            ], 
+            "title": "\u00a7 265.349 [Reserved]"
+        }, 
+        {
+            "index": [
+                "265", 
+                "350"
+            ], 
+            "title": "\u00a7 265.350 [Reserved]"
+        }, 
+        {
+            "index": [
+                "265", 
+                "351"
+            ], 
+            "title": "\u00a7 265.351 Closure."
+        }, 
+        {
+            "index": [
+                "265", 
+                "352"
+            ], 
+            "title": "\u00a7 265.352 Interim status incinerators burning particular hazardous wastes."
+        }, 
+        {
+            "index": [
+                "265", 
+                "353"
+            ], 
+            "title": "\u00a7\u00a7 265.353-369 [Reserved]"
+        }
+    ], 
+    "265-Subpart-P": [
+        {
+            "index": [
+                "265", 
+                "370"
+            ], 
+            "title": "\u00a7 265.370 Other thermal treatment."
+        }, 
+        {
+            "index": [
+                "265", 
+                "371"
+            ], 
+            "title": "\u00a7 265.371 [Reserved]"
+        }, 
+        {
+            "index": [
+                "265", 
+                "372"
+            ], 
+            "title": "\u00a7 265.372 [Reserved]"
+        }, 
+        {
+            "index": [
+                "265", 
+                "373"
+            ], 
+            "title": "\u00a7 265.373 General operating requirements."
+        }, 
+        {
+            "index": [
+                "265", 
+                "374"
+            ], 
+            "title": "\u00a7 265.374 [Reserved]"
+        }, 
+        {
+            "index": [
+                "265", 
+                "375"
+            ], 
+            "title": "\u00a7 265.375 Waste analysis."
+        }, 
+        {
+            "index": [
+                "265", 
+                "376"
+            ], 
+            "title": "\u00a7 265.376 [Reserved]"
+        }, 
+        {
+            "index": [
+                "265", 
+                "377"
+            ], 
+            "title": "\u00a7 265.377 Monitoring and inspections."
+        }, 
+        {
+            "index": [
+                "265", 
+                "378"
+            ], 
+            "title": "\u00a7 265.378 [Reserved]"
+        }, 
+        {
+            "index": [
+                "265", 
+                "379"
+            ], 
+            "title": "\u00a7 265.379 [Reserved]"
+        }, 
+        {
+            "index": [
+                "265", 
+                "380"
+            ], 
+            "title": "\u00a7 265.380 [Reserved]"
+        }, 
+        {
+            "index": [
+                "265", 
+                "381"
+            ], 
+            "title": "\u00a7 265.381 Closure."
+        }, 
+        {
+            "index": [
+                "265", 
+                "382"
+            ], 
+            "title": "\u00a7 265.382 Open burning; waste explosives."
+        }, 
+        {
+            "index": [
+                "265", 
+                "383"
+            ], 
+            "title": "\u00a7 265.383 Interim status thermal treatment devices burning particular hazardous waste."
+        }
+    ], 
+    "265-Subpart-Q": [
+        {
+            "index": [
+                "265", 
+                "400"
+            ], 
+            "title": "\u00a7 265.400 Applicability."
+        }, 
+        {
+            "index": [
+                "265", 
+                "401"
+            ], 
+            "title": "\u00a7 265.401 General operating requirements."
+        }, 
+        {
+            "index": [
+                "265", 
+                "402"
+            ], 
+            "title": "\u00a7 265.402 Waste analysis and trial tests."
+        }, 
+        {
+            "index": [
+                "265", 
+                "403"
+            ], 
+            "title": "\u00a7 265.403 Inspections."
+        }, 
+        {
+            "index": [
+                "265", 
+                "404"
+            ], 
+            "title": "\u00a7 265.404 Closure."
+        }, 
+        {
+            "index": [
+                "265", 
+                "405"
+            ], 
+            "title": "\u00a7 265.405 Special requirements for ignitable or reactive waste."
+        }, 
+        {
+            "index": [
+                "265", 
+                "406"
+            ], 
+            "title": "\u00a7 265.406 Special requirements for incompatible wastes."
+        }
+    ], 
+    "265-Subpart-R": [
+        {
+            "index": [
+                "265", 
+                "430"
+            ], 
+            "title": "\u00a7 265.430 Applicability."
+        }
+    ], 
+    "265-Subpart-W": [
+        {
+            "index": [
+                "265", 
+                "440"
+            ], 
+            "title": "\u00a7 265.440 Applicability."
+        }, 
+        {
+            "index": [
+                "265", 
+                "441"
+            ], 
+            "title": "\u00a7 265.441 Assessment of existing drip pad integrity."
+        }, 
+        {
+            "index": [
+                "265", 
+                "442"
+            ], 
+            "title": "\u00a7 265.442 Design and installation of new drip pads."
+        }, 
+        {
+            "index": [
+                "265", 
+                "443"
+            ], 
+            "title": "\u00a7 265.443 Design and operating requirements."
+        }, 
+        {
+            "index": [
+                "265", 
+                "444"
+            ], 
+            "title": "\u00a7 265.444 Inspections."
+        }, 
+        {
+            "index": [
+                "265", 
+                "445"
+            ], 
+            "title": "\u00a7 265.445 Closure."
+        }
+    ]
+}

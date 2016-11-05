@@ -1,0 +1,228 @@
+{
+    "8-1": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "3701", 
+                "title": "31"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "31 U.S.C. 3701", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=3701&title=31&year=mostrecent"
+        }
+    ], 
+    "8-2-b-1": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "11", 
+                "part": "111", 
+                "section": "51"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "11 CFR 111.51", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=111&section=51&titlenum=11&year=mostrecent"
+        }, 
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "11", 
+                "p1": "a", 
+                "part": "111", 
+                "section": "51"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "11 CFR 111.51(a)", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=111&section=51&titlenum=11&year=mostrecent"
+        }
+    ], 
+    "8-2-b-6": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "5514", 
+                "title": "5"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "5 U.S.C. 5514", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=5514&title=5&year=mostrecent"
+        }
+    ], 
+    "8-3-a": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "31", 
+                "part": "901", 
+                "section": "1"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "31 CFR 901.1", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=901&section=1&titlenum=31&year=mostrecent"
+        }
+    ], 
+    "8-3-b": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "31", 
+                "part": "285", 
+                "section": "11"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "285.11", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=285&section=11&titlenum=31&year=mostrecent"
+        }, 
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "31", 
+                "part": "285", 
+                "section": "4"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "285.4", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=285&section=4&titlenum=31&year=mostrecent"
+        }, 
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "31", 
+                "part": "285", 
+                "section": "7"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "285.7", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=285&section=7&titlenum=31&year=mostrecent"
+        }, 
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "31", 
+                "part": "285", 
+                "section": "2"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "31 CFR 285.2", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=285&section=2&titlenum=31&year=mostrecent"
+        }, 
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "3701", 
+                "title": "31"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "31 U.S.C. 3701", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=3701&title=31&year=mostrecent"
+        }
+    ], 
+    "8-3-c": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "31", 
+                "part": "285", 
+                "section": "12"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "31 CFR 285.12", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=285&section=12&titlenum=31&year=mostrecent"
+        }
+    ], 
+    "8-4": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "31", 
+                "p1": "h", 
+                "part": "901", 
+                "section": "2"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "31 CFR 901.2(h)", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=901&section=2&titlenum=31&year=mostrecent"
+        }
+    ], 
+    "8-5-a": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "31", 
+                "part": "901", 
+                "section": "9"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "31 CFR 901.9", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=901&section=9&titlenum=31&year=mostrecent"
+        }, 
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "3717", 
+                "title": "31"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "31 U.S.C. 3717", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=3717&title=31&year=mostrecent"
+        }
+    ], 
+    "8-5-c-2": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "31", 
+                "p1": "a", 
+                "part": "902", 
+                "section": "2"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "31 CFR 902.2(a)", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=902&section=2&titlenum=31&year=mostrecent"
+        }
+    ], 
+    "8-5-d": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "3717", 
+                "title": "31"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "31 U.S.C. 3717", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=3717&title=31&year=mostrecent"
+        }
+    ]
+}

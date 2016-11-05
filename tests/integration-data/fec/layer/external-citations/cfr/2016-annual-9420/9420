@@ -1,0 +1,135 @@
+{
+    "9420-2-p4047032031": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "15301", 
+                "title": "42"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "42 U.S.C. 15301", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=15301&title=42&year=mostrecent"
+        }
+    ], 
+    "9420-2-p4049386677": [
+        {
+            "citation_type": "STATUTES_AT_LARGE", 
+            "components": {
+                "page": "394", 
+                "volume": "87"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "87 Stat. 394", 
+            "url": "http://api.fdsys.gov/link?collection=statute&page=394&volume=87&year=mostrecent"
+        }, 
+        {
+            "citation_type": "STATUTES_AT_LARGE", 
+            "components": {
+                "page": "1617", 
+                "volume": "88"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "88 Stat. 1617", 
+            "url": "http://api.fdsys.gov/link?collection=statute&page=1617&volume=88&year=mostrecent"
+        }, 
+        {
+            "citation_type": "STATUTES_AT_LARGE", 
+            "components": {
+                "page": "2955", 
+                "volume": "92"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "92 Stat. 2955", 
+            "url": "http://api.fdsys.gov/link?collection=statute&page=2955&volume=92&year=mostrecent"
+        }
+    ], 
+    "9420-5-b": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "4151", 
+                "title": "42"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "42 U.S.C. 4151", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=4151&title=42&year=mostrecent"
+        }
+    ], 
+    "9420-6": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "4151", 
+                "title": "42"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "42 U.S.C. 4151", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=4151&title=42&year=mostrecent"
+        }
+    ], 
+    "9420-8-b": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "29", 
+                "part": "1614", 
+                "section": "101"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "29 CFR 1614.101", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=1614&section=101&titlenum=29&year=mostrecent"
+        }, 
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "791", 
+                "title": "29"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "29 U.S.C. 791", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=791&title=29&year=mostrecent"
+        }
+    ], 
+    "9420-8-e": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "792", 
+                "title": "29"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "29 U.S.C. 792", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=792&title=29&year=mostrecent"
+        }, 
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "4151", 
+                "title": "42"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "42 U.S.C. 4151", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=4151&title=42&year=mostrecent"
+        }
+    ]
+}

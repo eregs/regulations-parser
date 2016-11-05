@@ -1,0 +1,272 @@
+{
+    "6": [
+        {
+            "index": [
+                "6", 
+                "101"
+            ], 
+            "title": "\u00a7 6.101 Purpose."
+        }, 
+        {
+            "index": [
+                "6", 
+                "102"
+            ], 
+            "title": "\u00a7 6.102 Application."
+        }, 
+        {
+            "index": [
+                "6", 
+                "103"
+            ], 
+            "title": "\u00a7 6.103 Definitions."
+        }, 
+        {
+            "index": [
+                "6", 
+                "104"
+            ], 
+            "title": "\u00a7\u00a7 6.104-109 [Reserved]"
+        }, 
+        {
+            "index": [
+                "6", 
+                "110"
+            ], 
+            "title": "\u00a7 6.110 Evaluation."
+        }, 
+        {
+            "index": [
+                "6", 
+                "111"
+            ], 
+            "title": "\u00a7 6.111 Notice."
+        }, 
+        {
+            "index": [
+                "6", 
+                "112"
+            ], 
+            "title": "\u00a7\u00a7 6.112-129 [Reserved]"
+        }, 
+        {
+            "index": [
+                "6", 
+                "130"
+            ], 
+            "title": "\u00a7 6.130 General prohibitions against discrimination."
+        }, 
+        {
+            "index": [
+                "6", 
+                "131"
+            ], 
+            "title": "\u00a7\u00a7 6.131-139 [Reserved]"
+        }, 
+        {
+            "index": [
+                "6", 
+                "140"
+            ], 
+            "title": "\u00a7 6.140 Employment."
+        }, 
+        {
+            "index": [
+                "6", 
+                "141"
+            ], 
+            "title": "\u00a7\u00a7 6.141-148 [Reserved]"
+        }, 
+        {
+            "index": [
+                "6", 
+                "149"
+            ], 
+            "title": "\u00a7 6.149 Program accessibility: Discrimination prohibited."
+        }, 
+        {
+            "index": [
+                "6", 
+                "150"
+            ], 
+            "title": "\u00a7 6.150 Program accessibility; Existing facilities."
+        }, 
+        {
+            "index": [
+                "6", 
+                "151"
+            ], 
+            "title": "\u00a7 6.151 Program accessibility: New construction and alterations."
+        }, 
+        {
+            "index": [
+                "6", 
+                "152"
+            ], 
+            "title": "\u00a7\u00a7 6.152-159 [Reserved]"
+        }, 
+        {
+            "index": [
+                "6", 
+                "160"
+            ], 
+            "title": "\u00a7 6.160 Communications."
+        }, 
+        {
+            "index": [
+                "6", 
+                "161"
+            ], 
+            "title": "\u00a7\u00a7 6.161-169 [Reserved]"
+        }, 
+        {
+            "index": [
+                "6", 
+                "170"
+            ], 
+            "title": "\u00a7 6.170 Compliance procedures."
+        }, 
+        {
+            "index": [
+                "6", 
+                "171"
+            ], 
+            "title": "\u00a7\u00a7 6.171-999 [Reserved]"
+        }
+    ], 
+    "6-Subpart": [
+        {
+            "index": [
+                "6", 
+                "101"
+            ], 
+            "title": "\u00a7 6.101 Purpose."
+        }, 
+        {
+            "index": [
+                "6", 
+                "102"
+            ], 
+            "title": "\u00a7 6.102 Application."
+        }, 
+        {
+            "index": [
+                "6", 
+                "103"
+            ], 
+            "title": "\u00a7 6.103 Definitions."
+        }, 
+        {
+            "index": [
+                "6", 
+                "104"
+            ], 
+            "title": "\u00a7\u00a7 6.104-109 [Reserved]"
+        }, 
+        {
+            "index": [
+                "6", 
+                "110"
+            ], 
+            "title": "\u00a7 6.110 Evaluation."
+        }, 
+        {
+            "index": [
+                "6", 
+                "111"
+            ], 
+            "title": "\u00a7 6.111 Notice."
+        }, 
+        {
+            "index": [
+                "6", 
+                "112"
+            ], 
+            "title": "\u00a7\u00a7 6.112-129 [Reserved]"
+        }, 
+        {
+            "index": [
+                "6", 
+                "130"
+            ], 
+            "title": "\u00a7 6.130 General prohibitions against discrimination."
+        }, 
+        {
+            "index": [
+                "6", 
+                "131"
+            ], 
+            "title": "\u00a7\u00a7 6.131-139 [Reserved]"
+        }, 
+        {
+            "index": [
+                "6", 
+                "140"
+            ], 
+            "title": "\u00a7 6.140 Employment."
+        }, 
+        {
+            "index": [
+                "6", 
+                "141"
+            ], 
+            "title": "\u00a7\u00a7 6.141-148 [Reserved]"
+        }, 
+        {
+            "index": [
+                "6", 
+                "149"
+            ], 
+            "title": "\u00a7 6.149 Program accessibility: Discrimination prohibited."
+        }, 
+        {
+            "index": [
+                "6", 
+                "150"
+            ], 
+            "title": "\u00a7 6.150 Program accessibility; Existing facilities."
+        }, 
+        {
+            "index": [
+                "6", 
+                "151"
+            ], 
+            "title": "\u00a7 6.151 Program accessibility: New construction and alterations."
+        }, 
+        {
+            "index": [
+                "6", 
+                "152"
+            ], 
+            "title": "\u00a7\u00a7 6.152-159 [Reserved]"
+        }, 
+        {
+            "index": [
+                "6", 
+                "160"
+            ], 
+            "title": "\u00a7 6.160 Communications."
+        }, 
+        {
+            "index": [
+                "6", 
+                "161"
+            ], 
+            "title": "\u00a7\u00a7 6.161-169 [Reserved]"
+        }, 
+        {
+            "index": [
+                "6", 
+                "170"
+            ], 
+            "title": "\u00a7 6.170 Compliance procedures."
+        }, 
+        {
+            "index": [
+                "6", 
+                "171"
+            ], 
+            "title": "\u00a7\u00a7 6.171-999 [Reserved]"
+        }
+    ]
+}

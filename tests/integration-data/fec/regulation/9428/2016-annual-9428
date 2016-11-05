@@ -1,0 +1,898 @@
+{
+    "children": [
+        {
+            "children": [
+                {
+                    "children": [], 
+                    "label": [
+                        "9428", 
+                        "1"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "The regulations in this part implement the responsibilities delegated to the Commission under Section 9 of the National Voter Registration Act of 1993, Public Law 103-31, 97 Stat. 77, 42 U.S.C. 1973gg-1 et seq. (\u201cNVRA\u201d). They describe the format and contents of the national mail voter registration form and the information that will be required from the states for inclusion in the Commission's biennial report to Congress.", 
+                    "title": "\u00a7 9428.1 Purpose & scope."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "9428", 
+                                "2", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) Form means the national mail voter registration application form, which includes the registration application, accompanying general instructions for completing the application, and state-specific instructions."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "9428", 
+                                "2", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) Chief state election official means the designated state officer or employee responsible for the coordination of state responsibilities under 42 U.S.C. 1973gg-8."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "9428", 
+                                "2", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) Active voters means all registered voters except those who have been sent but have not responded to a confirmation mailing sent in accordance with 42 U.S.C. 1973gg-6(d) and have not since offered to vote."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "9428", 
+                                "2", 
+                                "d"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(d) Inactive voters means registrants who have been sent but have not responded to a confirmation mailing sent in accordance with 42 U.S.C. 1973gg-6(d) and have not since offered to vote."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "9428", 
+                                "2", 
+                                "e"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(e) Duplicate registration application means an offer to register by a person already registered to vote at the same address, under the same name, and (where applicable) in the same political party."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "9428", 
+                                "2", 
+                                "f"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(f) State means a state of the United States and the District of Columbia not exempt from coverage under 42 U.S.C. 1973gg-2(b)."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "9428", 
+                                "2", 
+                                "g"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(g) Closed primary state means a state that requires party registration as a precondition to vote for partisan races in primary elections or for other nominating procedures."
+                        }
+                    ], 
+                    "label": [
+                        "9428", 
+                        "2"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "As used in this part:", 
+                    "title": "\u00a7 9428.2 Definitions."
+                }
+            ], 
+            "label": [
+                "9428", 
+                "Subpart", 
+                "A"
+            ], 
+            "node_type": "subpart", 
+            "text": "", 
+            "title": "General Provisions"
+        }, 
+        {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "9428", 
+                                "3", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) The national mail voter registration form shall consist of three components: An application, which shall contain appropriate fields for the applicant to provide all of the information required or requested under 11 CFR 9428.4; general instructions for completing the application; and accompanying state-specific instructions."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "9428", 
+                                "3", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) The state-specific instructions shall contain the following information for each state, arranged by state: the address where the application should be mailed and information regarding the state's specific voter eligibility and registration requirements."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "9428", 
+                                "3", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) States shall accept, use, and make available the form described in this section."
+                        }
+                    ], 
+                    "label": [
+                        "9428", 
+                        "3"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 9428.3 General information."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9428", 
+                                        "4", 
+                                        "a", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Last, first, and middle name, any suffix, and (optional) any prefix;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9428", 
+                                        "4", 
+                                        "a", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Address where the applicant lives including: street number and street name, or rural route with a box number; apartment or unit number; city, town, or village name; state; and zip code; with instructions to draw a locational map if the applicant lives in a rural district or has a non-traditional residence, and directions not to use a post office box or rural route without a box number;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9428", 
+                                        "4", 
+                                        "a", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) Mailing address if different from the address where the applicant lives, such as a post office box, rural route without a box number, or other street address; city, town, or village name; state; and zip code;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9428", 
+                                        "4", 
+                                        "a", 
+                                        "4"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(4) Month, day, and year of birth;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9428", 
+                                        "4", 
+                                        "a", 
+                                        "5"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(5) Telephone number (optional); and"
+                                }, 
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9428", 
+                                                "4", 
+                                                "a", 
+                                                "6", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) The application shall direct the applicant to consult the accompanying state-specific instructions to determine what type of voter identification number, if any, is required or requested by the applicant's state."
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9428", 
+                                                "4", 
+                                                "a", 
+                                                "6", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) For each state that requires the applicant's full social security number as its voter identification number, the state's Privacy Act notice required at 11 CFR 9428.6(c) shall be reprinted with the instructions for that state."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "9428", 
+                                        "4", 
+                                        "a", 
+                                        "6"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(6) Voter identification number as required or requested by the applicant's state of residence for election administration purposes."
+                                }, 
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9428", 
+                                                "4", 
+                                                "a", 
+                                                "7", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) The application shall direct the applicant to consult the accompanying state-specific instructions to determine if the applicant's state is a closed primary state."
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9428", 
+                                                "4", 
+                                                "a", 
+                                                "7", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) The accompanying instructions shall state that if the applicant is registering in a state that requires the declaration of party affiliation, then failure to indicate a political party preference, indicating \u201cnone\u201d, or selecting a party that is not recognized under state law may prevent the applicant from voting in partisan races in primary elections and participating in political party caucuses or conventions, but will not bar an applicant from voting in other elections."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "9428", 
+                                        "4", 
+                                        "a", 
+                                        "7"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(7) Political party preference, for an applicant in a closed primary state."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9428", 
+                                        "4", 
+                                        "a", 
+                                        "8"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(8) Race/ethnicity, if applicable for the applicant's state of residence. The application shall direct the applicant to consult the state-specific instructions to determine whether race/ethnicity is required or requested by the applicant's state."
+                                }
+                            ], 
+                            "label": [
+                                "9428", 
+                                "4", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) Information about the applicant. The application shall provide appropriate fields for the applicant's:"
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9428", 
+                                        "4", 
+                                        "b", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Specify each eligibility requirement (including citizenship). The application shall list U.S. Citizenship as a universal eligibility requirement and include a statement that incorporates by reference each state's specific additional eligibility requirements (including any special pledges) as set forth in the accompany state instructions;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9428", 
+                                        "4", 
+                                        "b", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Contain an attestation on the application that the applicant, to the best of his or her knowledge and belief, meets each of his or her state's specific eligibility requirements;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9428", 
+                                        "4", 
+                                        "b", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) Provide a field on the application for the signature of the applicant, under penalty of perjury, and the date of the applicant's signature;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9428", 
+                                        "4", 
+                                        "b", 
+                                        "4"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(4) Inform an applicant on the application of the penalties provided by law for submitting a false voter registration application;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9428", 
+                                        "4", 
+                                        "b", 
+                                        "5"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(5) Provide a field on the application for the name, address, and (optional) telephone number of the person who assisted the applicant in completing the form if the applicant is unable to sign the application without assistance;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9428", 
+                                        "4", 
+                                        "b", 
+                                        "6"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(6) State that if an applicant declines to register to vote, the fact that the applicant has declined to register will remain confidential and will be used only for voter registration purposes; and"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9428", 
+                                        "4", 
+                                        "b", 
+                                        "7"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(7) State that if an applicant does register to vote, the office at which the applicant submits a voter registration application will remain confidential and will be used only for voter registration purposes."
+                                }
+                            ], 
+                            "label": [
+                                "9428", 
+                                "4", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) Additional information required by the Act. (42 U.S.C. 1973gg-7(b) (2) and (4)). The form shall also:"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "9428", 
+                                "4", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) Other information. The form will, if appropriate, require an applicant's former address or former name or request a drawing of the area where the applicant lives in relation to local landmarks."
+                        }
+                    ], 
+                    "label": [
+                        "9428", 
+                        "4"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 9428.4 Contents."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "9428", 
+                                "5", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) The application shall conform to the technical specifications described in the Commission's National Mail Voter Registration Form Technical Specifications."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "9428", 
+                                "5", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) Size. The application shall consist of a 5\u2033 by 8\u2033 application card of sufficient stock and weight to satisfy postal regulations. The application card shall be attached by a perforated fold to another 5\u2033 by 8\u2033 card that contains space for the information set forth at 11 CFR 9428.4(c)."
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9428", 
+                                        "5", 
+                                        "c", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) The application shall be sealable."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9428", 
+                                        "5", 
+                                        "c", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) The outside of the application shall contain an appropriate number of address lines to be completed by the applicant using the state information provided."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9428", 
+                                        "5", 
+                                        "c", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) Both sides of the application card shall contain space designated \u201cFor Official Use Only.\u201d"
+                                }
+                            ], 
+                            "label": [
+                                "9428", 
+                                "5", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) Layout."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "9428", 
+                                "5", 
+                                "d"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(d) Color. The application shall be of ink and paper colors of sufficient contrast to permit for optical scanning capabilities."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "9428", 
+                                "5", 
+                                "e"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(e) Signature field. The application shall contain a signature field in lieu of a signature line."
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9428", 
+                                        "5", 
+                                        "f", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) All print on the form shall be of the largest practicable type size."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9428", 
+                                        "5", 
+                                        "f", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) The requirements on the form specified in 11 CFR 9428.4(b)(1), (6), and (7) shall be in print identical to that used in the attestation portion of the application required by 11 CFR 9428.4(b)(2)."
+                                }
+                            ], 
+                            "label": [
+                                "9428", 
+                                "5", 
+                                "f"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(f) Type size."
+                        }
+                    ], 
+                    "label": [
+                        "9428", 
+                        "5"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 9428.5 Format."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9428", 
+                                        "6", 
+                                        "a", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) All voter registration eligibility requirements of that state and their corresponding state constitution or statutory citations, including but not limited to the specific state requirements, if any, relating to minimum age, length of residence, reasons to disenfranchise such as criminal conviction or mental incompetence, and whether the state is a closed primary state."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9428", 
+                                        "6", 
+                                        "a", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Any voter identification number that the state requires or requests; and"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9428", 
+                                        "6", 
+                                        "a", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) Whether the state requires or requests a declaration of race/ethnicity;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9428", 
+                                        "6", 
+                                        "a", 
+                                        "4"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(4) The state's deadline for accepting voter registration applications; and"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9428", 
+                                        "6", 
+                                        "a", 
+                                        "5"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(5) The state election office address where the application shall be mailed."
+                                }
+                            ], 
+                            "label": [
+                                "9428", 
+                                "6", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) Each chief state election official shall certify to the Commission within 30 days after July 25, 1994:"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "9428", 
+                                "6", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) If a state, in accordance with 11 CFR 9428.4(a)(2), requires the applicant's full social security number, the chief state election official shall provide the Commission with the text of the state's privacy statement required under the Privacy Act of 1974 (5 U.S.C. 552a note)."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "9428", 
+                                "6", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) Each chief state election official shall notify the Commission, in writing, within 30 days of any change to the state's voter eligibility requirements or other information reported under this section."
+                        }
+                    ], 
+                    "label": [
+                        "9428", 
+                        "6"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 9428.6 Chief state election official."
+                }
+            ], 
+            "label": [
+                "9428", 
+                "Subpart", 
+                "B"
+            ], 
+            "node_type": "subpart", 
+            "text": "", 
+            "title": "National Mail Voter Registration Form"
+        }, 
+        {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "9428", 
+                                "7", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) The chief state election official shall provide the information required under this section with the Commission by March 31 of each odd-numbered year beginning March 31, 1995 on a form to be provided by the Commission. Reports shall be mailed to: National Clearinghouse on Election Administration, Election Assistance Commission, 1201 New York Avenue, NW., Suite 300, Washington, DC 20005. The data to be reported in accordance with this section shall consist of applications or responses received up to and including the date of the preceding federal general election."
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9428", 
+                                        "7", 
+                                        "b", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) The total number of registered voters statewide, including both \u201cactive\u201d and \u201cinactive\u201d voters if such a distinction is made by the state, in the federal general election two years prior to the most recent federal general election;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9428", 
+                                        "7", 
+                                        "b", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) The total number of registered voters statewide, including both \u201cactive\u201d and \u201cinactive\u201d voters if such a distinction is made by the state, in the most recent federal election;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9428", 
+                                        "7", 
+                                        "b", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) The total number of new valid registrations accepted statewide between the past two federal general elections, including all registrations that are new to the local jurisdiction and re-registrations across jurisdictional lines, but excluding all applications that are duplicates, rejected, or report only a change of name, address, or (where applicable) party preference within the local jurisdiction;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9428", 
+                                        "7", 
+                                        "b", 
+                                        "4"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(4) If the state distinguishes between \u201cactive\u201d and \u201cinactive\u201d voters, the total number of registrants statewide that were considered \u201cinactive\u201d at the close of the most recent federal general election;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9428", 
+                                        "7", 
+                                        "b", 
+                                        "5"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(5) The total number of registrations statewide that were, for whatever reason, deleted from the registration list, including both \u201cactive\u201d and \u201cinactive\u201d voters if such a distinction is made by the state, between the past two federal general elections;"
+                                }, 
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9428", 
+                                                "7", 
+                                                "b", 
+                                                "6", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) All motor vehicle offices statewide;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9428", 
+                                                "7", 
+                                                "b", 
+                                                "6", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) Mail;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9428", 
+                                                "7", 
+                                                "b", 
+                                                "6", 
+                                                "iii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iii) All public assistance agencies that are mandated as registration sites under the Act;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9428", 
+                                                "7", 
+                                                "b", 
+                                                "6", 
+                                                "iv"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iv) All state-funded agencies primarily serving persons with disabilities;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9428", 
+                                                "7", 
+                                                "b", 
+                                                "6", 
+                                                "v"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(v) All Armed Forces recruitment offices;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9428", 
+                                                "7", 
+                                                "b", 
+                                                "6", 
+                                                "vi"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(vi) All other agencies designated by the state;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9428", 
+                                                "7", 
+                                                "b", 
+                                                "6", 
+                                                "vii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(vii) All other means, including but not limited to, in person, deputy registrars, and organized voter registration drives delivering forms directly to registrars;"
+                                        }
+                                    ], 
+                                    "label": [
+                                        "9428", 
+                                        "7", 
+                                        "b", 
+                                        "6"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(6) The statewide number of registration applications received statewide (regardless of whether they were valid, rejected, duplicative, or address, name or party changes) that were received from or generated by each of the following categories:"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9428", 
+                                        "7", 
+                                        "b", 
+                                        "7"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(7) The total number of duplicate registration applications statewide that, between the past two federal general elections were received in the appropriate election office and generated by each of the categories described in paragraphs (b)(6) (i) through (vii) of this section;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9428", 
+                                        "7", 
+                                        "b", 
+                                        "8"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(8) The statewide number of confirmation notices mailed out between the past two federal general elections and the statewide number of responses received to these notices during the same period;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9428", 
+                                        "7", 
+                                        "b", 
+                                        "9"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(9) Answers to a series of questions with categorical responses for the state to indicate which options or procedures the state has selected in implementing the NVRA or any significant changes to the state's voter registration program; and"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9428", 
+                                        "7", 
+                                        "b", 
+                                        "10"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(10) Any additional information that would be helpful to the Commission for meeting the reporting requirement under 42 U.S.C. 1973gg-7(a)(3)."
+                                }
+                            ], 
+                            "label": [
+                                "9428", 
+                                "7", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) Except as provided in paragraph (c) of this section, the report required under this section shall include:"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "9428", 
+                                "7", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) For the State report due March 31, 1995, the chief state election official need only provide the information described in paragraph (b)(2) of this section and a brief narrative or general description of the state's implementation of the NVRA."
+                        }
+                    ], 
+                    "label": [
+                        "9428", 
+                        "7"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 9428.7 Contents of reports from the states."
+                }
+            ], 
+            "label": [
+                "9428", 
+                "Subpart", 
+                "C"
+            ], 
+            "node_type": "subpart", 
+            "text": "", 
+            "title": "Recordkeeping and Reporting"
+        }
+    ], 
+    "label": [
+        "9428"
+    ], 
+    "node_type": "regtext", 
+    "text": "", 
+    "title": "PART 9428\u2014NATIONAL VOTER REGISTRATION ACT (42 U.S.C. 1973gg-1 "
+}

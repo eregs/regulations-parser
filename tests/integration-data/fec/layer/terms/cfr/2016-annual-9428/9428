@@ -1,0 +1,727 @@
+{
+    "9428-1": [
+        {
+            "offsets": [
+                [
+                    299, 
+                    303
+                ]
+            ], 
+            "ref": "form:9428-2-a"
+        }, 
+        {
+            "offsets": [
+                [
+                    355, 
+                    361
+                ]
+            ], 
+            "ref": "state:9428-2-f"
+        }
+    ], 
+    "9428-2-a": [
+        {
+            "offsets": [
+                [
+                    185, 
+                    190
+                ]
+            ], 
+            "ref": "state:9428-2-f"
+        }
+    ], 
+    "9428-2-b": [
+        {
+            "offsets": [
+                [
+                    55, 
+                    60
+                ], 
+                [
+                    117, 
+                    122
+                ]
+            ], 
+            "ref": "state:9428-2-f"
+        }
+    ], 
+    "9428-2-g": [
+        {
+            "offsets": [
+                [
+                    33, 
+                    38
+                ]
+            ], 
+            "ref": "state:9428-2-f"
+        }
+    ], 
+    "9428-3-a": [
+        {
+            "offsets": [
+                [
+                    41, 
+                    45
+                ]
+            ], 
+            "ref": "form:9428-2-a"
+        }, 
+        {
+            "offsets": [
+                [
+                    301, 
+                    306
+                ]
+            ], 
+            "ref": "state:9428-2-f"
+        }
+    ], 
+    "9428-3-b": [
+        {
+            "offsets": [
+                [
+                    8, 
+                    13
+                ], 
+                [
+                    85, 
+                    90
+                ], 
+                [
+                    104, 
+                    109
+                ], 
+                [
+                    192, 
+                    197
+                ]
+            ], 
+            "ref": "state:9428-2-f"
+        }
+    ], 
+    "9428-3-c": [
+        {
+            "offsets": [
+                [
+                    53, 
+                    57
+                ]
+            ], 
+            "ref": "form:9428-2-a"
+        }, 
+        {
+            "offsets": [
+                [
+                    4, 
+                    10
+                ]
+            ], 
+            "ref": "state:9428-2-f"
+        }
+    ], 
+    "9428-4-a-2": [
+        {
+            "offsets": [
+                [
+                    169, 
+                    174
+                ]
+            ], 
+            "ref": "state:9428-2-f"
+        }
+    ], 
+    "9428-4-a-3": [
+        {
+            "offsets": [
+                [
+                    192, 
+                    197
+                ]
+            ], 
+            "ref": "state:9428-2-f"
+        }
+    ], 
+    "9428-4-a-6": [
+        {
+            "offsets": [
+                [
+                    76, 
+                    81
+                ]
+            ], 
+            "ref": "state:9428-2-f"
+        }
+    ], 
+    "9428-4-a-6-i": [
+        {
+            "offsets": [
+                [
+                    75, 
+                    80
+                ], 
+                [
+                    210, 
+                    215
+                ]
+            ], 
+            "ref": "state:9428-2-f"
+        }
+    ], 
+    "9428-4-a-6-ii": [
+        {
+            "offsets": [
+                [
+                    14, 
+                    19
+                ], 
+                [
+                    118, 
+                    123
+                ], 
+                [
+                    224, 
+                    229
+                ]
+            ], 
+            "ref": "state:9428-2-f"
+        }
+    ], 
+    "9428-4-a-7": [
+        {
+            "offsets": [
+                [
+                    54, 
+                    74
+                ]
+            ], 
+            "ref": "closed primary state:9428-2-g"
+        }
+    ], 
+    "9428-4-a-7-i": [
+        {
+            "offsets": [
+                [
+                    146, 
+                    166
+                ]
+            ], 
+            "ref": "closed primary state:9428-2-g"
+        }, 
+        {
+            "offsets": [
+                [
+                    75, 
+                    80
+                ], 
+                [
+                    135, 
+                    140
+                ]
+            ], 
+            "ref": "state:9428-2-f"
+        }
+    ], 
+    "9428-4-a-7-ii": [
+        {
+            "offsets": [
+                [
+                    41, 
+                    46
+                ], 
+                [
+                    89, 
+                    94
+                ], 
+                [
+                    271, 
+                    276
+                ]
+            ], 
+            "ref": "state:9428-2-f"
+        }
+    ], 
+    "9428-4-a-8": [
+        {
+            "offsets": [
+                [
+                    54, 
+                    59
+                ], 
+                [
+                    132, 
+                    137
+                ], 
+                [
+                    240, 
+                    245
+                ]
+            ], 
+            "ref": "state:9428-2-f"
+        }
+    ], 
+    "9428-4-b": [
+        {
+            "offsets": [
+                [
+                    89, 
+                    93
+                ]
+            ], 
+            "ref": "form:9428-2-a"
+        }
+    ], 
+    "9428-4-b-1": [
+        {
+            "offsets": [
+                [
+                    209, 
+                    214
+                ], 
+                [
+                    324, 
+                    329
+                ]
+            ], 
+            "ref": "state:9428-2-f"
+        }
+    ], 
+    "9428-4-b-2": [
+        {
+            "offsets": [
+                [
+                    139, 
+                    144
+                ]
+            ], 
+            "ref": "state:9428-2-f"
+        }
+    ], 
+    "9428-4-b-5": [
+        {
+            "offsets": [
+                [
+                    153, 
+                    157
+                ]
+            ], 
+            "ref": "form:9428-2-a"
+        }
+    ], 
+    "9428-4-b-6": [
+        {
+            "offsets": [
+                [
+                    4, 
+                    9
+                ]
+            ], 
+            "ref": "state:9428-2-f"
+        }
+    ], 
+    "9428-4-b-7": [
+        {
+            "offsets": [
+                [
+                    4, 
+                    9
+                ]
+            ], 
+            "ref": "state:9428-2-f"
+        }
+    ], 
+    "9428-4-c": [
+        {
+            "offsets": [
+                [
+                    27, 
+                    31
+                ]
+            ], 
+            "ref": "form:9428-2-a"
+        }
+    ], 
+    "9428-5-a": [
+        {
+            "offsets": [
+                [
+                    129, 
+                    133
+                ]
+            ], 
+            "ref": "form:9428-2-a"
+        }
+    ], 
+    "9428-5-c-2": [
+        {
+            "offsets": [
+                [
+                    131, 
+                    136
+                ]
+            ], 
+            "ref": "state:9428-2-f"
+        }
+    ], 
+    "9428-5-f-1": [
+        {
+            "offsets": [
+                [
+                    21, 
+                    25
+                ]
+            ], 
+            "ref": "form:9428-2-a"
+        }
+    ], 
+    "9428-5-f-2": [
+        {
+            "offsets": [
+                [
+                    28, 
+                    32
+                ]
+            ], 
+            "ref": "form:9428-2-a"
+        }
+    ], 
+    "9428-6-a": [
+        {
+            "offsets": [
+                [
+                    9, 
+                    38
+                ]
+            ], 
+            "ref": "chief state election official:9428-2-b"
+        }
+    ], 
+    "9428-6-a-1": [
+        {
+            "offsets": [
+                [
+                    354, 
+                    374
+                ]
+            ], 
+            "ref": "closed primary state:9428-2-g"
+        }, 
+        {
+            "offsets": [
+                [
+                    60, 
+                    65
+                ], 
+                [
+                    90, 
+                    95
+                ], 
+                [
+                    175, 
+                    180
+                ], 
+                [
+                    343, 
+                    348
+                ]
+            ], 
+            "ref": "state:9428-2-f"
+        }
+    ], 
+    "9428-6-a-2": [
+        {
+            "offsets": [
+                [
+                    45, 
+                    50
+                ]
+            ], 
+            "ref": "state:9428-2-f"
+        }
+    ], 
+    "9428-6-a-3": [
+        {
+            "offsets": [
+                [
+                    16, 
+                    21
+                ]
+            ], 
+            "ref": "state:9428-2-f"
+        }
+    ], 
+    "9428-6-a-4": [
+        {
+            "offsets": [
+                [
+                    8, 
+                    13
+                ]
+            ], 
+            "ref": "state:9428-2-f"
+        }
+    ], 
+    "9428-6-a-5": [
+        {
+            "offsets": [
+                [
+                    8, 
+                    13
+                ]
+            ], 
+            "ref": "state:9428-2-f"
+        }
+    ], 
+    "9428-6-b": [
+        {
+            "offsets": [
+                [
+                    114, 
+                    143
+                ]
+            ], 
+            "ref": "chief state election official:9428-2-b"
+        }, 
+        {
+            "offsets": [
+                [
+                    9, 
+                    14
+                ], 
+                [
+                    194, 
+                    199
+                ]
+            ], 
+            "ref": "state:9428-2-f"
+        }
+    ], 
+    "9428-6-c": [
+        {
+            "offsets": [
+                [
+                    9, 
+                    38
+                ]
+            ], 
+            "ref": "chief state election official:9428-2-b"
+        }, 
+        {
+            "offsets": [
+                [
+                    116, 
+                    121
+                ]
+            ], 
+            "ref": "state:9428-2-f"
+        }
+    ], 
+    "9428-7-a": [
+        {
+            "offsets": [
+                [
+                    8, 
+                    37
+                ]
+            ], 
+            "ref": "chief state election official:9428-2-b"
+        }, 
+        {
+            "offsets": [
+                [
+                    184, 
+                    188
+                ]
+            ], 
+            "ref": "form:9428-2-a"
+        }
+    ], 
+    "9428-7-b-1": [
+        {
+            "offsets": [
+                [
+                    136, 
+                    141
+                ]
+            ], 
+            "ref": "state:9428-2-f"
+        }
+    ], 
+    "9428-7-b-2": [
+        {
+            "offsets": [
+                [
+                    136, 
+                    141
+                ]
+            ], 
+            "ref": "state:9428-2-f"
+        }
+    ], 
+    "9428-7-b-4": [
+        {
+            "offsets": [
+                [
+                    11, 
+                    16
+                ]
+            ], 
+            "ref": "state:9428-2-f"
+        }
+    ], 
+    "9428-7-b-5": [
+        {
+            "offsets": [
+                [
+                    199, 
+                    204
+                ]
+            ], 
+            "ref": "state:9428-2-f"
+        }
+    ], 
+    "9428-7-b-6-iv": [
+        {
+            "offsets": [
+                [
+                    9, 
+                    14
+                ]
+            ], 
+            "ref": "state:9428-2-f"
+        }
+    ], 
+    "9428-7-b-6-vi": [
+        {
+            "offsets": [
+                [
+                    42, 
+                    47
+                ]
+            ], 
+            "ref": "state:9428-2-f"
+        }
+    ], 
+    "9428-7-b-6-vii": [
+        {
+            "offsets": [
+                [
+                    134, 
+                    139
+                ]
+            ], 
+            "ref": "form:9428-2-a"
+        }
+    ], 
+    "9428-7-b-7": [
+        {
+            "offsets": [
+                [
+                    24, 
+                    59
+                ]
+            ], 
+            "ref": "duplicate registration application:9428-2-e"
+        }
+    ], 
+    "9428-7-b-9": [
+        {
+            "offsets": [
+                [
+                    72, 
+                    77
+                ], 
+                [
+                    122, 
+                    127
+                ], 
+                [
+                    200, 
+                    205
+                ]
+            ], 
+            "ref": "state:9428-2-f"
+        }
+    ], 
+    "9428-7-c": [
+        {
+            "offsets": [
+                [
+                    49, 
+                    78
+                ]
+            ], 
+            "ref": "chief state election official:9428-2-b"
+        }, 
+        {
+            "offsets": [
+                [
+                    12, 
+                    17
+                ], 
+                [
+                    211, 
+                    216
+                ]
+            ], 
+            "ref": "state:9428-2-f"
+        }
+    ], 
+    "referenced": {
+        "active voters:9428-2-c": {
+            "position": [
+                4, 
+                17
+            ], 
+            "reference": "9428-2-c", 
+            "term": "active voters"
+        }, 
+        "chief state election official:9428-2-b": {
+            "position": [
+                4, 
+                33
+            ], 
+            "reference": "9428-2-b", 
+            "term": "chief state election official"
+        }, 
+        "closed primary state:9428-2-g": {
+            "position": [
+                4, 
+                24
+            ], 
+            "reference": "9428-2-g", 
+            "term": "closed primary state"
+        }, 
+        "duplicate registration application:9428-2-e": {
+            "position": [
+                4, 
+                38
+            ], 
+            "reference": "9428-2-e", 
+            "term": "duplicate registration application"
+        }, 
+        "form:9428-2-a": {
+            "position": [
+                4, 
+                8
+            ], 
+            "reference": "9428-2-a", 
+            "term": "form"
+        }, 
+        "inactive voters:9428-2-d": {
+            "position": [
+                4, 
+                19
+            ], 
+            "reference": "9428-2-d", 
+            "term": "inactive voters"
+        }, 
+        "state:9428-2-f": {
+            "position": [
+                4, 
+                9
+            ], 
+            "reference": "9428-2-f", 
+            "term": "state"
+        }
+    }
+}

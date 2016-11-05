@@ -1,0 +1,117 @@
+{
+    "9012-1-a": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "11", 
+                "part": "9004"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "11 CFR part 9004", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=9004&titlenum=11&year=mostrecent"
+        }
+    ], 
+    "9012-1-b": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "11", 
+                "p1": "a", 
+                "p2": "3", 
+                "part": "9008", 
+                "section": "7"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "11 CFR 9008.7(a)(3)", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=9008&section=7&titlenum=11&year=mostrecent"
+        }, 
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "11", 
+                "part": "9008"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "11 CFR part 9008", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=9008&titlenum=11&year=mostrecent"
+        }
+    ], 
+    "9012-2-a": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "11", 
+                "p1": "a", 
+                "p2": "3", 
+                "part": "9002", 
+                "section": "11"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "11 CFR 9002.11(a)(3)", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=9002&section=11&titlenum=11&year=mostrecent"
+        }, 
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "11", 
+                "p1": "b", 
+                "part": "9005", 
+                "section": "2"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "11 CFR 9005.2(b)", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=9005&section=2&titlenum=11&year=mostrecent"
+        }
+    ], 
+    "9012-3-a": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "11", 
+                "part": "9005"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "11 CFR part 9005", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=9005&titlenum=11&year=mostrecent"
+        }
+    ], 
+    "9012-3-b": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "11", 
+                "part": "9008", 
+                "section": "6"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "11 CFR 9008.6", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=9008&section=6&titlenum=11&year=mostrecent"
+        }, 
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "11", 
+                "part": "9008"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "11 CFR part 9008", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=9008&titlenum=11&year=mostrecent"
+        }
+    ]
+}

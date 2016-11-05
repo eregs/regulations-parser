@@ -1,0 +1,320 @@
+{
+    "children": [
+        {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "7", 
+                                "1", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) The regulations in this part apply to members and employees of the Federal Election Commission (\u201cCommission\u201d)."
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "7", 
+                                        "1", 
+                                        "b", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) 5 CFR part 735 (Employee Responsibilities and Conduct);"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "7", 
+                                        "1", 
+                                        "b", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) 5 CFR part 2634 (Executive Branch Financial Disclosure, Qualified Trusts, and Certificates of Divestiture);"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "7", 
+                                        "1", 
+                                        "b", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) 5 CFR part 2635 (Standards of Ethical Conduct for Employees of the Executive Branch); and"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "7", 
+                                        "1", 
+                                        "b", 
+                                        "4"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(4) 5 CFR part 4701 (Supplemental Standards of Ethical Conduct for Employees of the Federal Election Commission)."
+                                }
+                            ], 
+                            "label": [
+                                "7", 
+                                "1", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) In addition, members and employees of the Commission are subject to the following regulations:"
+                        }
+                    ], 
+                    "label": [
+                        "7", 
+                        "1"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 7.1 Scope."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "7", 
+                                "2", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) Commission means the Federal Election Commission, 999 E Street NW., Washington, DC 20463."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "7", 
+                                "2", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) Commissioner means a member of the Federal Election Commission, in accordance with 52 U.S.C. 30106."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "7", 
+                                "2", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) Designated Agency Ethics Official means the employee designated by the Commission to administer the provisions of the Ethics in Government Act of 1978 (5 U.S.C. appendix), as amended, and includes a designee of the Designated Agency Ethics Official. The General Counsel serves as the Commission's Designated Agency Ethics Official."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "7", 
+                                "2", 
+                                "d"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(d) Employee means an employee of the Federal Election Commission and includes a special Government employee as defined in 18 U.S.C. 202(a)."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "7", 
+                                "2", 
+                                "e"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(e) Ex parte communication means any written or oral communication by any person outside the agency to any Commissioner or any member of any Commissioner's staff, but not to any other Commission employee, that imparts information or argument regarding prospective Commission action or potential action concerning any pending enforcement matter."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "7", 
+                                "2", 
+                                "f"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(f) Inspector General means the individual appointed by the Commission to administer the provisions of the Inspector General Act of 1978, as amended (5 U.S.C. appendix), and includes any designee of the Inspector General."
+                        }
+                    ], 
+                    "label": [
+                        "7", 
+                        "2"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "As used in this part:", 
+                    "title": "\u00a7 7.2 Definitions."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "7", 
+                                "3", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) A Commissioner or employee seeking advice and guidance on matters covered by this part or 5 CFR parts 735, 2634, 2635, 2640, or 4701 may consult with the Designated Agency Ethics Official. The Designated Agency Ethics Official should be consulted before undertaking any action that might violate this part or 5 CFR parts 735, 2634, 2635, 2640, or 4701 governing the conduct of Commissioners or employees."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "7", 
+                                "3", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) The Designated Agency Ethics Official, a Commissioner, or an employee may request an opinion from the Director of the Office of Government Ethics regarding an interpretation of 5 CFR parts 2634, 2635, or 2640."
+                        }
+                    ], 
+                    "label": [
+                        "7", 
+                        "3"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 7.3 Interpretation and guidance."
+                }, 
+                {
+                    "children": [], 
+                    "label": [
+                        "7", 
+                        "4"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "Commissioners and employees shall disclose immediately any suspected violation of a statute or of a rule set forth in this part or of a rule set forth in 5 CFR parts 735, 2634, 2635, 2640, or 4701 to the Designated Agency Ethics Official, the Office of Inspector General, or other appropriate law enforcement authorities.", 
+                    "title": "\u00a7 7.4 Reporting suspected violations."
+                }, 
+                {
+                    "children": [], 
+                    "label": [
+                        "7", 
+                        "5"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "A violation of this part or 5 CFR parts 735, 2634, 2635, 2640, or 4701 by an employee may be cause for appropriate corrective, disciplinary, or adverse action in addition to any penalty prescribed by law.", 
+                    "title": "\u00a7 7.5 Corrective action."
+                }, 
+                {
+                    "children": [], 
+                    "label": [
+                        "7", 
+                        "6"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "No member of the Commission may devote a substantial portion of his or her time to any other business, vocation, or employment. Any individual who is engaging substantially in any other business, vocation, or employment at the time such individual begins to serve as a member of the Commission will appropriately limit such activity no later than 90 days after beginning to serve as such a member.", 
+                    "title": "\u00a7 7.6 Outside employment and activities by Commissioners."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "7", 
+                                "7", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) Commission employees are subject to criminal penalties if they discuss or otherwise make public any matters pertaining to a complaint or investigation under 52 U.S.C. 30109, without the written permission of the person complained against or being investigated. Such communications are prohibited by 52 U.S.C. 30109(a)(12)(A)."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "7", 
+                                "7", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) Section 30109(a)(12)(B) of Title 52 of the United States Code provides as follows: \u201cAny member or employee of the Commission, or any other person, who violates the provisions of [52 U.S.C. 30109(a)(12)(A)] shall be fined not more than $2,000. Any such member, employee, or other person who knowingly and willfully violates the provisions of [52 U.S.C. 30109(a)(12)(A)] shall be fined not more than $5,000.\u201d"
+                        }
+                    ], 
+                    "label": [
+                        "7", 
+                        "7"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 7.7 Prohibition against making complaints and investigations public."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "7", 
+                                "8", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) Except to the extent required for the disposition of enforcement matters as required by law (as, for example, during the normal course of an investigation or a conciliation effort), no Commissioner or member of any Commissioner's staff shall make or entertain any ex parte communications."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "7", 
+                                "8", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) The prohibition of this section shall apply from the time a complaint is filed with the Commission pursuant to 52 U.S.C. 30109(a)(1) or from the time that the Commission determines on the basis of information ascertained in the normal course of its supervisory responsibilities that it has reason to believe that a violation has occurred or may occur pursuant to 52 U.S.C. 30109(a)(2), and such prohibition shall remain in force until the Commission has concluded all action with respect to the enforcement matter in question."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "7", 
+                                "8", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) Any written communication prohibited by paragraph (a) of this section shall be delivered to the General Counsel, who shall place the communication in the case file."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "7", 
+                                "8", 
+                                "d"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(d) A Commissioner or member of any Commissioner's staff involved in handling enforcement actions who receives an offer to make an oral communication or any communication concerning any enforcement action pending before the Commission as described in paragraph (a) of this section, shall decline to listen to such communication. If unsuccessful in preventing the communication, the Commissioner or employee shall advise the person making the communication that he or she will not consider the communication and shall prepare a statement setting forth the substance and circumstances of the communication. Within 48 hours of receipt of the communication, the Commissioner or any member of any Commissioner's staff shall prepare a statement setting forth the substance and circumstances of the communication and shall deliver the statement to the General Counsel for placing in the file in the manner set forth in paragraph (c) of this section."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "7", 
+                                "8", 
+                                "e"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(e) Additional rules governing ex parte communications made in connection with Commission enforcement actions are found at 11 CFR 111.22. Rules governing ex parte communications made in connection with public funding, Commission audits, litigation, rulemakings, and advisory opinions are found at 11 CFR part 201."
+                        }
+                    ], 
+                    "label": [
+                        "7", 
+                        "8"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "In order to avoid the possibility of prejudice, real or apparent, to the public interest in enforcement actions pending before the Commission pursuant to 52 U.S.C. 30109:", 
+                    "title": "\u00a7 7.8 Ex parte communications in enforcement actions."
+                }
+            ], 
+            "label": [
+                "7", 
+                "Subpart"
+            ], 
+            "node_type": "emptypart", 
+            "text": ""
+        }
+    ], 
+    "label": [
+        "7"
+    ], 
+    "node_type": "regtext", 
+    "text": "", 
+    "title": "PART 7\u2014STANDARDS OF CONDUCT"
+}

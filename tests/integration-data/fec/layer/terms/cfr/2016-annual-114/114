@@ -1,0 +1,2534 @@
+{
+    "114-1-a-2-i": [
+        {
+            "offsets": [
+                [
+                    60, 
+                    97
+                ], 
+                [
+                    163, 
+                    200
+                ]
+            ], 
+            "ref": "executive or administrative personnel:114-1-c"
+        }, 
+        {
+            "offsets": [
+                [
+                    125, 
+                    143
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }, 
+        {
+            "offsets": [
+                [
+                    43, 
+                    55
+                ]
+            ], 
+            "ref": "stockholder:114-1-h"
+        }
+    ], 
+    "114-1-a-2-ii": [
+        {
+            "offsets": [
+                [
+                    96, 
+                    133
+                ], 
+                [
+                    207, 
+                    244
+                ]
+            ], 
+            "ref": "executive or administrative personnel:114-1-c"
+        }, 
+        {
+            "offsets": [
+                [
+                    163, 
+                    181
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }, 
+        {
+            "offsets": [
+                [
+                    79, 
+                    91
+                ]
+            ], 
+            "ref": "stockholder:114-1-h"
+        }
+    ], 
+    "114-1-a-2-iii": [
+        {
+            "offsets": [
+                [
+                    161, 
+                    179
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-1-a-2-vi": [
+        {
+            "offsets": [
+                [
+                    287, 
+                    305
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-1-a-2-vii": [
+        {
+            "offsets": [
+                [
+                    290, 
+                    308
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-1-b": [
+        {
+            "offsets": [
+                [
+                    280, 
+                    298
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-1-c": [
+        {
+            "offsets": [
+                [
+                    89, 
+                    107
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-1-c-2-i": [
+        {
+            "offsets": [
+                [
+                    43, 
+                    61
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-1-c-2-iii": [
+        {
+            "offsets": [
+                [
+                    46, 
+                    58
+                ]
+            ], 
+            "ref": "stockholder:114-1-h"
+        }
+    ], 
+    "114-1-c-2-iv": [
+        {
+            "offsets": [
+                [
+                    55, 
+                    73
+                ], 
+                [
+                    188, 
+                    206
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-1-c-3": [
+        {
+            "offsets": [
+                [
+                    48, 
+                    85
+                ]
+            ], 
+            "ref": "executive or administrative personnel:114-1-c"
+        }
+    ], 
+    "114-1-e-1": [
+        {
+            "offsets": [
+                [
+                    168, 
+                    186
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-1-e-6": [
+        {
+            "offsets": [
+                [
+                    271, 
+                    290
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-1-i": [
+        {
+            "offsets": [
+                [
+                    123, 
+                    141
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-1-j": [
+        {
+            "offsets": [
+                [
+                    79, 
+                    116
+                ], 
+                [
+                    322, 
+                    359
+                ], 
+                [
+                    598, 
+                    635
+                ]
+            ], 
+            "ref": "executive or administrative personnel:114-1-c"
+        }, 
+        {
+            "offsets": [
+                [
+                    265, 
+                    283
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }, 
+        {
+            "offsets": [
+                [
+                    62, 
+                    74
+                ]
+            ], 
+            "ref": "stockholder:114-1-h"
+        }
+    ], 
+    "114-10-a": [
+        {
+            "offsets": [
+                [
+                    30, 
+                    49
+                ], 
+                [
+                    195, 
+                    214
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-10-a-p1": [
+        {
+            "offsets": [
+                [
+                    145, 
+                    164
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-10-b-1": [
+        {
+            "offsets": [
+                [
+                    21, 
+                    40
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-10-b-2": [
+        {
+            "offsets": [
+                [
+                    21, 
+                    40
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-10-c": [
+        {
+            "offsets": [
+                [
+                    46, 
+                    65
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-10-d": [
+        {
+            "offsets": [
+                [
+                    46, 
+                    64
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-11-a-4": [
+        {
+            "offsets": [
+                [
+                    7, 
+                    18
+                ]
+            ], 
+            "ref": "stockholder:114-1-h"
+        }
+    ], 
+    "114-11-a-5": [
+        {
+            "offsets": [
+                [
+                    7, 
+                    18
+                ]
+            ], 
+            "ref": "stockholder:114-1-h"
+        }
+    ], 
+    "114-11-b": [
+        {
+            "offsets": [
+                [
+                    98, 
+                    116
+                ], 
+                [
+                    252, 
+                    270
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-11-c": [
+        {
+            "offsets": [
+                [
+                    6, 
+                    24
+                ], 
+                [
+                    161, 
+                    179
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-11-d": [
+        {
+            "offsets": [
+                [
+                    155, 
+                    173
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-12-c-1": [
+        {
+            "offsets": [
+                [
+                    21, 
+                    39
+                ], 
+                [
+                    313, 
+                    331
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-13": [
+        {
+            "offsets": [
+                [
+                    67, 
+                    85
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-2-b": [
+        {
+            "offsets": [
+                [
+                    36, 
+                    54
+                ], 
+                [
+                    170, 
+                    188
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-2-b-p1": [
+        {
+            "offsets": [
+                [
+                    145, 
+                    164
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-2-c": [
+        {
+            "offsets": [
+                [
+                    680, 
+                    698
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }, 
+        {
+            "offsets": [
+                [
+                    38, 
+                    57
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-2-e": [
+        {
+            "offsets": [
+                [
+                    90, 
+                    108
+                ], 
+                [
+                    196, 
+                    214
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-2-f-1": [
+        {
+            "offsets": [
+                [
+                    382, 
+                    400
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }, 
+        {
+            "offsets": [
+                [
+                    21, 
+                    40
+                ], 
+                [
+                    134, 
+                    153
+                ], 
+                [
+                    323, 
+                    342
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-2-f-2-i": [
+        {
+            "offsets": [
+                [
+                    74, 
+                    93
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-2-f-2-i-A": [
+        {
+            "offsets": [
+                [
+                    49, 
+                    67
+                ], 
+                [
+                    280, 
+                    298
+                ], 
+                [
+                    336, 
+                    354
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-2-f-2-i-B": [
+        {
+            "offsets": [
+                [
+                    42, 
+                    60
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-2-f-2-i-C": [
+        {
+            "offsets": [
+                [
+                    25, 
+                    43
+                ], 
+                [
+                    222, 
+                    240
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-2-f-2-i-E": [
+        {
+            "offsets": [
+                [
+                    89, 
+                    107
+                ], 
+                [
+                    135, 
+                    153
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-2-f-2-ii": [
+        {
+            "offsets": [
+                [
+                    192, 
+                    210
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-2-f-2-iii": [
+        {
+            "offsets": [
+                [
+                    120, 
+                    139
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-2-f-4": [
+        {
+            "offsets": [
+                [
+                    125, 
+                    143
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-2-f-4-i": [
+        {
+            "offsets": [
+                [
+                    44, 
+                    62
+                ], 
+                [
+                    236, 
+                    254
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-2-f-4-iii": [
+        {
+            "offsets": [
+                [
+                    120, 
+                    138
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-2-f-5": [
+        {
+            "offsets": [
+                [
+                    176, 
+                    188
+                ]
+            ], 
+            "ref": "stockholder:114-1-h"
+        }
+    ], 
+    "114-3-a-1": [
+        {
+            "offsets": [
+                [
+                    21, 
+                    40
+                ], 
+                [
+                    205, 
+                    224
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-3-b": [
+        {
+            "offsets": [
+                [
+                    303, 
+                    321
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-3-c-1": [
+        {
+            "offsets": [
+                [
+                    224, 
+                    242
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-3-c-1-i": [
+        {
+            "offsets": [
+                [
+                    66, 
+                    84
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-3-c-1-ii": [
+        {
+            "offsets": [
+                [
+                    85, 
+                    103
+                ], 
+                [
+                    374, 
+                    392
+                ], 
+                [
+                    561, 
+                    579
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-3-c-2-i": [
+        {
+            "offsets": [
+                [
+                    219, 
+                    237
+                ], 
+                [
+                    367, 
+                    385
+                ], 
+                [
+                    434, 
+                    452
+                ], 
+                [
+                    634, 
+                    652
+                ], 
+                [
+                    740, 
+                    758
+                ], 
+                [
+                    839, 
+                    857
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-3-c-2-ii": [
+        {
+            "offsets": [
+                [
+                    210, 
+                    228
+                ], 
+                [
+                    345, 
+                    363
+                ], 
+                [
+                    656, 
+                    674
+                ], 
+                [
+                    825, 
+                    843
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-3-c-2-iii": [
+        {
+            "offsets": [
+                [
+                    25, 
+                    43
+                ], 
+                [
+                    248, 
+                    266
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-3-c-2-iv": [
+        {
+            "offsets": [
+                [
+                    27, 
+                    45
+                ], 
+                [
+                    351, 
+                    369
+                ], 
+                [
+                    569, 
+                    587
+                ], 
+                [
+                    746, 
+                    764
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-3-c-2-iv-A": [
+        {
+            "offsets": [
+                [
+                    124, 
+                    142
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-3-c-3": [
+        {
+            "offsets": [
+                [
+                    36, 
+                    54
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-3-c-4-i": [
+        {
+            "offsets": [
+                [
+                    21, 
+                    39
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-3-c-4-iii": [
+        {
+            "offsets": [
+                [
+                    23, 
+                    41
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-4-a": [
+        {
+            "offsets": [
+                [
+                    30, 
+                    48
+                ], 
+                [
+                    163, 
+                    181
+                ], 
+                [
+                    386, 
+                    404
+                ], 
+                [
+                    513, 
+                    531
+                ], 
+                [
+                    631, 
+                    649
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-4-b": [
+        {
+            "offsets": [
+                [
+                    39, 
+                    57
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-4-b-2": [
+        {
+            "offsets": [
+                [
+                    39, 
+                    57
+                ], 
+                [
+                    116, 
+                    134
+                ], 
+                [
+                    233, 
+                    251
+                ], 
+                [
+                    317, 
+                    335
+                ], 
+                [
+                    403, 
+                    421
+                ], 
+                [
+                    620, 
+                    638
+                ], 
+                [
+                    759, 
+                    777
+                ], 
+                [
+                    946, 
+                    964
+                ], 
+                [
+                    991, 
+                    1009
+                ], 
+                [
+                    1076, 
+                    1094
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-4-b-2-i": [
+        {
+            "offsets": [
+                [
+                    108, 
+                    126
+                ], 
+                [
+                    270, 
+                    288
+                ], 
+                [
+                    531, 
+                    549
+                ], 
+                [
+                    664, 
+                    682
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-4-b-2-ii": [
+        {
+            "offsets": [
+                [
+                    7, 
+                    25
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-4-c": [
+        {
+            "offsets": [
+                [
+                    39, 
+                    57
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-4-c-1": [
+        {
+            "offsets": [
+                [
+                    30, 
+                    48
+                ], 
+                [
+                    276, 
+                    294
+                ], 
+                [
+                    397, 
+                    415
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-4-c-2-i": [
+        {
+            "offsets": [
+                [
+                    21, 
+                    39
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-4-c-3-i": [
+        {
+            "offsets": [
+                [
+                    21, 
+                    39
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-4-c-3-ii": [
+        {
+            "offsets": [
+                [
+                    22, 
+                    40
+                ], 
+                [
+                    132, 
+                    150
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-4-c-3-iii": [
+        {
+            "offsets": [
+                [
+                    23, 
+                    41
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-4-c-3-iv-A": [
+        {
+            "offsets": [
+                [
+                    23, 
+                    41
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-4-c-4-i": [
+        {
+            "offsets": [
+                [
+                    21, 
+                    39
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-4-c-5-i": [
+        {
+            "offsets": [
+                [
+                    21, 
+                    39
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-4-c-5-ii-A": [
+        {
+            "offsets": [
+                [
+                    23, 
+                    41
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-4-c-5-ii-B-1": [
+        {
+            "offsets": [
+                [
+                    23, 
+                    41
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-4-c-5-ii-B-2": [
+        {
+            "offsets": [
+                [
+                    196, 
+                    214
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-4-c-6-i": [
+        {
+            "offsets": [
+                [
+                    21, 
+                    39
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-4-c-6-ii-B": [
+        {
+            "offsets": [
+                [
+                    296, 
+                    314
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-4-d-1": [
+        {
+            "offsets": [
+                [
+                    79, 
+                    97
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-4-d-2-i": [
+        {
+            "offsets": [
+                [
+                    23, 
+                    41
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-4-d-2-ii": [
+        {
+            "offsets": [
+                [
+                    190, 
+                    208
+                ], 
+                [
+                    360, 
+                    378
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-4-d-2-v": [
+        {
+            "offsets": [
+                [
+                    23, 
+                    41
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-4-f-1": [
+        {
+            "offsets": [
+                [
+                    132, 
+                    151
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-4-f-3": [
+        {
+            "offsets": [
+                [
+                    21, 
+                    39
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-5-a-1": [
+        {
+            "offsets": [
+                [
+                    339, 
+                    357
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-5-a-2": [
+        {
+            "offsets": [
+                [
+                    73, 
+                    91
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-5-a-2-ii": [
+        {
+            "offsets": [
+                [
+                    110, 
+                    128
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-5-a-2-ii-p1": [
+        {
+            "offsets": [
+                [
+                    17, 
+                    35
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-5-b": [
+        {
+            "offsets": [
+                [
+                    384, 
+                    402
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }, 
+        {
+            "offsets": [
+                [
+                    42, 
+                    61
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-5-b-2": [
+        {
+            "offsets": [
+                [
+                    19, 
+                    37
+                ], 
+                [
+                    600, 
+                    618
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-5-c-1": [
+        {
+            "offsets": [
+                [
+                    61, 
+                    79
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-5-c-2": [
+        {
+            "offsets": [
+                [
+                    65, 
+                    83
+                ], 
+                [
+                    216, 
+                    234
+                ], 
+                [
+                    389, 
+                    407
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-5-d": [
+        {
+            "offsets": [
+                [
+                    113, 
+                    131
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-5-e-1": [
+        {
+            "offsets": [
+                [
+                    21, 
+                    39
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-5-e-2": [
+        {
+            "offsets": [
+                [
+                    135, 
+                    172
+                ]
+            ], 
+            "ref": "executive or administrative personnel:114-1-c"
+        }, 
+        {
+            "offsets": [
+                [
+                    119, 
+                    131
+                ]
+            ], 
+            "ref": "stockholder:114-1-h"
+        }
+    ], 
+    "114-5-e-2-i": [
+        {
+            "offsets": [
+                [
+                    65, 
+                    83
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-5-e-2-ii": [
+        {
+            "offsets": [
+                [
+                    289, 
+                    307
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-5-g": [
+        {
+            "offsets": [
+                [
+                    137, 
+                    155
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-5-g-1": [
+        {
+            "offsets": [
+                [
+                    205, 
+                    242
+                ], 
+                [
+                    293, 
+                    330
+                ]
+            ], 
+            "ref": "executive or administrative personnel:114-1-c"
+        }, 
+        {
+            "offsets": [
+                [
+                    165, 
+                    177
+                ]
+            ], 
+            "ref": "stockholder:114-1-h"
+        }
+    ], 
+    "114-5-g-2": [
+        {
+            "offsets": [
+                [
+                    194, 
+                    231
+                ]
+            ], 
+            "ref": "executive or administrative personnel:114-1-c"
+        }, 
+        {
+            "offsets": [
+                [
+                    6, 
+                    24
+                ], 
+                [
+                    73, 
+                    91
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-5-h": [
+        {
+            "offsets": [
+                [
+                    103, 
+                    121
+                ], 
+                [
+                    303, 
+                    321
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-5-i": [
+        {
+            "offsets": [
+                [
+                    280, 
+                    298
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-5-k": [
+        {
+            "offsets": [
+                [
+                    247, 
+                    284
+                ]
+            ], 
+            "ref": "executive or administrative personnel:114-1-c"
+        }, 
+        {
+            "offsets": [
+                [
+                    343, 
+                    361
+                ], 
+                [
+                    666, 
+                    684
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }, 
+        {
+            "offsets": [
+                [
+                    123, 
+                    167
+                ]
+            ], 
+            "ref": "method of soliciting voluntary contributions:114-1-g"
+        }, 
+        {
+            "offsets": [
+                [
+                    231, 
+                    243
+                ]
+            ], 
+            "ref": "stockholder:114-1-h"
+        }
+    ], 
+    "114-5-k-1": [
+        {
+            "offsets": [
+                [
+                    235, 
+                    272
+                ]
+            ], 
+            "ref": "executive or administrative personnel:114-1-c"
+        }, 
+        {
+            "offsets": [
+                [
+                    325, 
+                    343
+                ], 
+                [
+                    390, 
+                    408
+                ], 
+                [
+                    554, 
+                    572
+                ], 
+                [
+                    762, 
+                    780
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }, 
+        {
+            "offsets": [
+                [
+                    219, 
+                    231
+                ]
+            ], 
+            "ref": "stockholder:114-1-h"
+        }
+    ], 
+    "114-5-k-2": [
+        {
+            "offsets": [
+                [
+                    114, 
+                    151
+                ]
+            ], 
+            "ref": "executive or administrative personnel:114-1-c"
+        }, 
+        {
+            "offsets": [
+                [
+                    233, 
+                    251
+                ], 
+                [
+                    309, 
+                    327
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }, 
+        {
+            "offsets": [
+                [
+                    98, 
+                    110
+                ]
+            ], 
+            "ref": "stockholder:114-1-h"
+        }
+    ], 
+    "114-5-k-3": [
+        {
+            "offsets": [
+                [
+                    124, 
+                    161
+                ]
+            ], 
+            "ref": "executive or administrative personnel:114-1-c"
+        }, 
+        {
+            "offsets": [
+                [
+                    245, 
+                    263
+                ], 
+                [
+                    275, 
+                    293
+                ], 
+                [
+                    372, 
+                    390
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }, 
+        {
+            "offsets": [
+                [
+                    108, 
+                    120
+                ]
+            ], 
+            "ref": "stockholder:114-1-h"
+        }
+    ], 
+    "114-5-k-4": [
+        {
+            "offsets": [
+                [
+                    147, 
+                    184
+                ]
+            ], 
+            "ref": "executive or administrative personnel:114-1-c"
+        }, 
+        {
+            "offsets": [
+                [
+                    248, 
+                    266
+                ], 
+                [
+                    308, 
+                    326
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }, 
+        {
+            "offsets": [
+                [
+                    131, 
+                    143
+                ]
+            ], 
+            "ref": "stockholder:114-1-h"
+        }
+    ], 
+    "114-5-l": [
+        {
+            "offsets": [
+                [
+                    315, 
+                    352
+                ], 
+                [
+                    434, 
+                    471
+                ]
+            ], 
+            "ref": "executive or administrative personnel:114-1-c"
+        }, 
+        {
+            "offsets": [
+                [
+                    32, 
+                    51
+                ], 
+                [
+                    381, 
+                    400
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }, 
+        {
+            "offsets": [
+                [
+                    88, 
+                    132
+                ]
+            ], 
+            "ref": "method of soliciting voluntary contributions:114-1-g"
+        }, 
+        {
+            "offsets": [
+                [
+                    298, 
+                    310
+                ]
+            ], 
+            "ref": "stockholder:114-1-h"
+        }
+    ], 
+    "114-6-a": [
+        {
+            "offsets": [
+                [
+                    210, 
+                    247
+                ], 
+                [
+                    487, 
+                    524
+                ]
+            ], 
+            "ref": "executive or administrative personnel:114-1-c"
+        }, 
+        {
+            "offsets": [
+                [
+                    196, 
+                    208
+                ], 
+                [
+                    360, 
+                    372
+                ], 
+                [
+                    470, 
+                    482
+                ]
+            ], 
+            "ref": "stockholder:114-1-h"
+        }
+    ], 
+    "114-6-b": [
+        {
+            "offsets": [
+                [
+                    185, 
+                    222
+                ]
+            ], 
+            "ref": "executive or administrative personnel:114-1-c"
+        }, 
+        {
+            "offsets": [
+                [
+                    6, 
+                    24
+                ], 
+                [
+                    165, 
+                    183
+                ], 
+                [
+                    291, 
+                    309
+                ], 
+                [
+                    426, 
+                    444
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }, 
+        {
+            "offsets": [
+                [
+                    227, 
+                    239
+                ]
+            ], 
+            "ref": "stockholder:114-1-h"
+        }
+    ], 
+    "114-6-c": [
+        {
+            "offsets": [
+                [
+                    112, 
+                    149
+                ]
+            ], 
+            "ref": "executive or administrative personnel:114-1-c"
+        }, 
+        {
+            "offsets": [
+                [
+                    98, 
+                    110
+                ]
+            ], 
+            "ref": "stockholder:114-1-h"
+        }
+    ], 
+    "114-6-c-2": [
+        {
+            "offsets": [
+                [
+                    26, 
+                    44
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-6-d": [
+        {
+            "offsets": [
+                [
+                    318, 
+                    336
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-6-d-1": [
+        {
+            "offsets": [
+                [
+                    115, 
+                    152
+                ]
+            ], 
+            "ref": "executive or administrative personnel:114-1-c"
+        }, 
+        {
+            "offsets": [
+                [
+                    308, 
+                    326
+                ], 
+                [
+                    377, 
+                    395
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }, 
+        {
+            "offsets": [
+                [
+                    93, 
+                    104
+                ]
+            ], 
+            "ref": "stockholder:114-1-h"
+        }
+    ], 
+    "114-6-d-3-ii": [
+        {
+            "offsets": [
+                [
+                    32, 
+                    50
+                ], 
+                [
+                    312, 
+                    330
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-6-d-3-iii": [
+        {
+            "offsets": [
+                [
+                    31, 
+                    49
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-6-d-4": [
+        {
+            "offsets": [
+                [
+                    21, 
+                    39
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-6-e-1": [
+        {
+            "offsets": [
+                [
+                    21, 
+                    39
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }, 
+        {
+            "offsets": [
+                [
+                    215, 
+                    265
+                ]
+            ], 
+            "ref": "method of facilitating the making of contributions:114-1-f"
+        }
+    ], 
+    "114-6-e-2": [
+        {
+            "offsets": [
+                [
+                    71, 
+                    89
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-6-e-3": [
+        {
+            "offsets": [
+                [
+                    53, 
+                    71
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-6-e-3-i": [
+        {
+            "offsets": [
+                [
+                    270, 
+                    307
+                ]
+            ], 
+            "ref": "executive or administrative personnel:114-1-c"
+        }, 
+        {
+            "offsets": [
+                [
+                    147, 
+                    165
+                ], 
+                [
+                    242, 
+                    260
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }, 
+        {
+            "offsets": [
+                [
+                    316, 
+                    328
+                ]
+            ], 
+            "ref": "stockholder:114-1-h"
+        }
+    ], 
+    "114-6-e-3-ii": [
+        {
+            "offsets": [
+                [
+                    306, 
+                    324
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }, 
+        {
+            "offsets": [
+                [
+                    77, 
+                    89
+                ], 
+                [
+                    158, 
+                    170
+                ]
+            ], 
+            "ref": "stockholder:114-1-h"
+        }
+    ], 
+    "114-6-e-3-iii": [
+        {
+            "offsets": [
+                [
+                    200, 
+                    218
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-6-e-4": [
+        {
+            "offsets": [
+                [
+                    37, 
+                    55
+                ], 
+                [
+                    243, 
+                    261
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-6-e-5": [
+        {
+            "offsets": [
+                [
+                    25, 
+                    44
+                ], 
+                [
+                    158, 
+                    177
+                ], 
+                [
+                    409, 
+                    428
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-7-a": [
+        {
+            "offsets": [
+                [
+                    195, 
+                    232
+                ]
+            ], 
+            "ref": "executive or administrative personnel:114-1-c"
+        }
+    ], 
+    "114-7-b": [
+        {
+            "offsets": [
+                [
+                    136, 
+                    155
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-7-c": [
+        {
+            "offsets": [
+                [
+                    164, 
+                    201
+                ]
+            ], 
+            "ref": "executive or administrative personnel:114-1-c"
+        }, 
+        {
+            "offsets": [
+                [
+                    148, 
+                    160
+                ]
+            ], 
+            "ref": "stockholder:114-1-h"
+        }
+    ], 
+    "114-7-e": [
+        {
+            "offsets": [
+                [
+                    115, 
+                    152
+                ]
+            ], 
+            "ref": "executive or administrative personnel:114-1-c"
+        }
+    ], 
+    "114-7-h": [
+        {
+            "offsets": [
+                [
+                    118, 
+                    155
+                ]
+            ], 
+            "ref": "executive or administrative personnel:114-1-c"
+        }
+    ], 
+    "114-8-c": [
+        {
+            "offsets": [
+                [
+                    154, 
+                    191
+                ]
+            ], 
+            "ref": "executive or administrative personnel:114-1-c"
+        }, 
+        {
+            "offsets": [
+                [
+                    137, 
+                    149
+                ], 
+                [
+                    270, 
+                    282
+                ]
+            ], 
+            "ref": "stockholder:114-1-h"
+        }
+    ], 
+    "114-8-d-3": [
+        {
+            "offsets": [
+                [
+                    395, 
+                    432
+                ]
+            ], 
+            "ref": "executive or administrative personnel:114-1-c"
+        }, 
+        {
+            "offsets": [
+                [
+                    379, 
+                    391
+                ]
+            ], 
+            "ref": "stockholder:114-1-h"
+        }
+    ], 
+    "114-8-d-4": [
+        {
+            "offsets": [
+                [
+                    123, 
+                    160
+                ]
+            ], 
+            "ref": "executive or administrative personnel:114-1-c"
+        }, 
+        {
+            "offsets": [
+                [
+                    105, 
+                    117
+                ]
+            ], 
+            "ref": "stockholder:114-1-h"
+        }
+    ], 
+    "114-8-d-5": [
+        {
+            "offsets": [
+                [
+                    141, 
+                    178
+                ], 
+                [
+                    218, 
+                    255
+                ], 
+                [
+                    836, 
+                    873
+                ]
+            ], 
+            "ref": "executive or administrative personnel:114-1-c"
+        }, 
+        {
+            "offsets": [
+                [
+                    268, 
+                    280
+                ], 
+                [
+                    570, 
+                    582
+                ], 
+                [
+                    877, 
+                    889
+                ]
+            ], 
+            "ref": "stockholder:114-1-h"
+        }
+    ], 
+    "114-8-e-2": [
+        {
+            "offsets": [
+                [
+                    169, 
+                    206
+                ]
+            ], 
+            "ref": "executive or administrative personnel:114-1-c"
+        }, 
+        {
+            "offsets": [
+                [
+                    153, 
+                    165
+                ]
+            ], 
+            "ref": "stockholder:114-1-h"
+        }
+    ], 
+    "114-8-e-3": [
+        {
+            "offsets": [
+                [
+                    34, 
+                    78
+                ]
+            ], 
+            "ref": "method of soliciting voluntary contributions:114-1-g"
+        }
+    ], 
+    "114-8-e-4": [
+        {
+            "offsets": [
+                [
+                    533, 
+                    551
+                ], 
+                [
+                    704, 
+                    722
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }, 
+        {
+            "offsets": [
+                [
+                    105, 
+                    117
+                ]
+            ], 
+            "ref": "stockholder:114-1-h"
+        }
+    ], 
+    "114-8-f": [
+        {
+            "offsets": [
+                [
+                    218, 
+                    255
+                ], 
+                [
+                    361, 
+                    398
+                ], 
+                [
+                    610, 
+                    647
+                ], 
+                [
+                    753, 
+                    790
+                ], 
+                [
+                    898, 
+                    935
+                ]
+            ], 
+            "ref": "executive or administrative personnel:114-1-c"
+        }, 
+        {
+            "offsets": [
+                [
+                    292, 
+                    304
+                ], 
+                [
+                    402, 
+                    414
+                ], 
+                [
+                    688, 
+                    700
+                ], 
+                [
+                    794, 
+                    806
+                ], 
+                [
+                    963, 
+                    975
+                ]
+            ], 
+            "ref": "stockholder:114-1-h"
+        }
+    ], 
+    "114-8-g-2": [
+        {
+            "offsets": [
+                [
+                    99, 
+                    136
+                ]
+            ], 
+            "ref": "executive or administrative personnel:114-1-c"
+        }, 
+        {
+            "offsets": [
+                [
+                    82, 
+                    94
+                ]
+            ], 
+            "ref": "stockholder:114-1-h"
+        }
+    ], 
+    "114-8-i-1": [
+        {
+            "offsets": [
+                [
+                    49, 
+                    86
+                ]
+            ], 
+            "ref": "executive or administrative personnel:114-1-c"
+        }
+    ], 
+    "114-8-i-2": [
+        {
+            "offsets": [
+                [
+                    40, 
+                    77
+                ]
+            ], 
+            "ref": "executive or administrative personnel:114-1-c"
+        }
+    ], 
+    "114-9-a": [
+        {
+            "offsets": [
+                [
+                    69, 
+                    81
+                ]
+            ], 
+            "ref": "stockholder:114-1-h"
+        }
+    ], 
+    "114-9-a-1": [
+        {
+            "offsets": [
+                [
+                    4, 
+                    16
+                ]
+            ], 
+            "ref": "stockholder:114-1-h"
+        }
+    ], 
+    "114-9-a-1-ii": [
+        {
+            "offsets": [
+                [
+                    18, 
+                    30
+                ]
+            ], 
+            "ref": "stockholder:114-1-h"
+        }
+    ], 
+    "114-9-a-3": [
+        {
+            "offsets": [
+                [
+                    6, 
+                    17
+                ]
+            ], 
+            "ref": "stockholder:114-1-h"
+        }
+    ], 
+    "114-9-b": [
+        {
+            "offsets": [
+                [
+                    11, 
+                    29
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-9-b-1": [
+        {
+            "offsets": [
+                [
+                    47, 
+                    65
+                ], 
+                [
+                    113, 
+                    131
+                ], 
+                [
+                    219, 
+                    237
+                ], 
+                [
+                    348, 
+                    366
+                ], 
+                [
+                    430, 
+                    448
+                ], 
+                [
+                    466, 
+                    484
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-9-b-1-ii": [
+        {
+            "offsets": [
+                [
+                    111, 
+                    129
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-9-b-2": [
+        {
+            "offsets": [
+                [
+                    148, 
+                    166
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-9-b-2-ii-B": [
+        {
+            "offsets": [
+                [
+                    74, 
+                    92
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-9-b-3": [
+        {
+            "offsets": [
+                [
+                    106, 
+                    124
+                ], 
+                [
+                    242, 
+                    260
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-9-c": [
+        {
+            "offsets": [
+                [
+                    24, 
+                    42
+                ], 
+                [
+                    131, 
+                    149
+                ], 
+                [
+                    253, 
+                    271
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "114-9-d": [
+        {
+            "offsets": [
+                [
+                    34, 
+                    52
+                ], 
+                [
+                    207, 
+                    225
+                ], 
+                [
+                    408, 
+                    426
+                ]
+            ], 
+            "ref": "labor organization:114-1-d"
+        }
+    ], 
+    "referenced": {
+        "executive or administrative personnel:114-1-c": {
+            "position": [
+                4, 
+                41
+            ], 
+            "reference": "114-1-c", 
+            "term": "executive or administrative personnel"
+        }, 
+        "labor organization:114-1-d": {
+            "position": [
+                4, 
+                22
+            ], 
+            "reference": "114-1-d", 
+            "term": "labor organization"
+        }, 
+        "method of facilitating the making of contributions:114-1-f": {
+            "position": [
+                4, 
+                54
+            ], 
+            "reference": "114-1-f", 
+            "term": "method of facilitating the making of contributions"
+        }, 
+        "method of soliciting voluntary contributions:114-1-g": {
+            "position": [
+                4, 
+                48
+            ], 
+            "reference": "114-1-g", 
+            "term": "method of soliciting voluntary contributions"
+        }, 
+        "stockholder:114-1-h": {
+            "position": [
+                4, 
+                15
+            ], 
+            "reference": "114-1-h", 
+            "term": "stockholder"
+        }
+    }
+}

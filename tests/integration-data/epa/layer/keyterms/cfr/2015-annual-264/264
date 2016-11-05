@@ -1,0 +1,786 @@
+{
+    "264-1031-p1304292439": [
+        {
+            "key_term": "In gas/vapor service", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-1031-p38658251": [
+        {
+            "key_term": "Air stripping operation", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-1055-c": [
+        {
+            "key_term": "In-situ", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-1086-b": [
+        {
+            "key_term": "General requirements.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-1086-c": [
+        {
+            "key_term": "Container Level 1 standards.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-1086-d": [
+        {
+            "key_term": "Container Level 2 standards.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-1086-e": [
+        {
+            "key_term": "Container Level 3 standards.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-112-a": [
+        {
+            "key_term": "Written plan.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-112-b": [
+        {
+            "key_term": "Content of plan.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-112-c": [
+        {
+            "key_term": "Amendment of plan.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-112-d": [
+        {
+            "key_term": "Notification of partial closure and final closure.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-112-e": [
+        {
+            "key_term": "Removal of wastes and decontamination or dismantling of equipment.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-118-a": [
+        {
+            "key_term": "Written Plan.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-118-d": [
+        {
+            "key_term": "Amendment of plan.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-1201-b-1": [
+        {
+            "key_term": "Earth-covered magazines.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-1201-b-2": [
+        {
+            "key_term": "Above-ground magazines.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-1201-b-3": [
+        {
+            "key_term": "Outdoor or open storage areas.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-143-a": [
+        {
+            "key_term": "Closure trust fund.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-143-b": [
+        {
+            "key_term": "Surety bond guaranteeing payment into a closure trust fund.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-143-c": [
+        {
+            "key_term": "Surety bond guaranteeing performance of closure.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-143-d": [
+        {
+            "key_term": "Closure letter of credit.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-143-e": [
+        {
+            "key_term": "Closure insurance.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-143-f": [
+        {
+            "key_term": "Financial test and corporate guarantee for closure.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-143-g": [
+        {
+            "key_term": "Use of multiple financial mechanisms.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-143-h": [
+        {
+            "key_term": "Use of a financial mechanism for multiple facilities.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-143-i": [
+        {
+            "key_term": "Release of the owner or operator from the requirements of this section.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-145-a": [
+        {
+            "key_term": "Post-closure trust fund.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-145-b": [
+        {
+            "key_term": "Surety bond guaranteeing payment into a post-closure trust fund.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-145-c": [
+        {
+            "key_term": "Surety bond guaranteeing performance of post-closure care.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-145-d": [
+        {
+            "key_term": "Post-closure letter of credit.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-145-e": [
+        {
+            "key_term": "Post-closure insurance.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-145-f": [
+        {
+            "key_term": "Financial test and corporate guarantee for post-closure care.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-145-g": [
+        {
+            "key_term": "Use of multiple financial mechanisms.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-145-h": [
+        {
+            "key_term": "Use of a financial mechanism for multiple facilities.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-145-i": [
+        {
+            "key_term": "Release of the owner or operator from the requirements of this section.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-147-a": [
+        {
+            "key_term": "Coverage for sudden accidental occurrences.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-147-b": [
+        {
+            "key_term": "Coverage for nonsudden accidental occurrences.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-147-c": [
+        {
+            "key_term": "Request for variance.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-147-d": [
+        {
+            "key_term": "Adjustments by the Regional Administrator.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-147-e": [
+        {
+            "key_term": "Period of coverage.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-147-f": [
+        {
+            "key_term": "Financial test for liability coverage.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-147-g": [
+        {
+            "key_term": "Guarantee for liability coverage.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-147-h": [
+        {
+            "key_term": "Letter of credit for liability coverage.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-147-i": [
+        {
+            "key_term": "Surety bond for liability coverage.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-147-j": [
+        {
+            "key_term": "Trust fund for liability coverage.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-151-a-1-p1-p1058158689": [
+        {
+            "key_term": "Section 11. Advice of Counsel.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-151-a-1-p1-p1220317721": [
+        {
+            "key_term": "Section 8. Express Powers of Trustee.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-151-a-1-p1-p1248697894": [
+        {
+            "key_term": "Section 9. Taxes and Expenses.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-151-a-1-p1-p2067211400": [
+        {
+            "key_term": "Section 6. Trustee Management.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-151-a-1-p1-p2229262615": [
+        {
+            "key_term": "Section 1. Definitions.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-151-a-1-p1-p2251497875": [
+        {
+            "key_term": "Section 20. Interpretation.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-151-a-1-p1-p2253121815": [
+        {
+            "key_term": "Section 3. Establishment of Fund.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-151-a-1-p1-p2320588326": [
+        {
+            "key_term": "Section 16. Amendment of Agreement.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-151-a-1-p1-p2341470721": [
+        {
+            "key_term": "Section 10. Annual Valuation.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-151-a-1-p1-p2438643377": [
+        {
+            "key_term": "Section 14. Instructions to the Trustee.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-151-a-1-p1-p2561895577": [
+        {
+            "key_term": "Section 18. Immunity and Indemnification.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-151-a-1-p1-p2605330181": [
+        {
+            "key_term": "Section 7. Commingling and Investment.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-151-a-1-p1-p2650467813": [
+        {
+            "key_term": "Section 12. Trustee Compensation.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-151-a-1-p1-p2725594101": [
+        {
+            "key_term": "Section 4. Payment for Closure and Post-Closure Care.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-151-a-1-p1-p2971796097": [
+        {
+            "key_term": "Section 15. Notice of Nonpayment.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-151-a-1-p1-p3690673980": [
+        {
+            "key_term": "Section 19. Choice of Law.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-151-a-1-p1-p4112851782": [
+        {
+            "key_term": "Section 17. Irrevocability and Termination.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-151-a-1-p1-p4156203575": [
+        {
+            "key_term": "Section 2. Identification of Facilities and Cost Estimates.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-151-a-1-p1-p783449596": [
+        {
+            "key_term": "Section 5. Payments Comprising the Fund.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-151-a-1-p1-p807374516": [
+        {
+            "key_term": "Section 13. Successor Trustee.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-18-a": [
+        {
+            "key_term": "Seismic considerations.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-18-b": [
+        {
+            "key_term": "Floodplains.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-18-c": [
+        {
+            "key_term": "Salt dome formations, salt bed formations, underground mines and caves.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-19-a": [
+        {
+            "key_term": "CQA program.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-19-b": [
+        {
+            "key_term": "Written CQA plan.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-19-c": [
+        {
+            "key_term": "Contents of program.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-19-d": [
+        {
+            "key_term": "Certification.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-196-a": [
+        {
+            "key_term": "Cessation of use; prevent flow or addition of wastes.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-196-b": [
+        {
+            "key_term": "Removal of waste from tank system or secondary containment system.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-196-c": [
+        {
+            "key_term": "Containment of visible releases to the environment.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-196-d": [
+        {
+            "key_term": "Notifications, reports.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-196-e": [
+        {
+            "key_term": "Provision of secondary containment, repair, or closure.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-196-f": [
+        {
+            "key_term": "Certification of major repairs.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-340-b": [
+        {
+            "key_term": "Integration of the MACT standards.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-552-a-3": [
+        {
+            "key_term": "Prohibition against placing liquids in CAMUs.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-554-a": [
+        {
+            "key_term": "What is a staging pile?", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-554-b": [
+        {
+            "key_term": "When may I use a staging pile?", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-554-c": [
+        {
+            "key_term": "What information must I provide to get a staging pile designated?", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-554-d": [
+        {
+            "key_term": "What performance criteria must a staging pile satisfy?", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-554-e": [
+        {
+            "key_term": "May a staging pile receive ignitable or reactive remediation waste?", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-554-f": [
+        {
+            "key_term": "How do I handle incompatible remediation wastes in a staging pile?", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-554-g": [
+        {
+            "key_term": "Are staging piles subject to Land Disposal Restrictions (LDR) and Minimum Technological Requirements (MTR)?", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-554-h": [
+        {
+            "key_term": "How long may I operate a staging pile?", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-554-i": [
+        {
+            "key_term": "May I receive an operating extension for a staging pile?", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-554-j": [
+        {
+            "key_term": "What is the closure requirement for a staging pile located in a previously contaminated area?", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-554-k": [
+        {
+            "key_term": "What is the closure requirement for a staging pile located in an uncontaminated area?", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-554-l": [
+        {
+            "key_term": "How may my existing permit (for example, RAP), closure plan, or order be modified to allow me to use a staging pile?", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-554-m": [
+        {
+            "key_term": "Is information about the staging pile available to the public?", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-71-f": [
+        {
+            "key_term": "Legal equivalence to paper manifests.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-71-h": [
+        {
+            "key_term": "Special procedures applicable to replacement manifests.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-71-i": [
+        {
+            "key_term": "Special procedures applicable to electronic signature methods undergoing tests.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-71-j": [
+        {
+            "key_term": "Imposition of user fee for electronic manifest use.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "264-71-k": [
+        {
+            "key_term": "Electronic manifest signatures.", 
+            "locations": [
+                0
+            ]
+        }
+    ]
+}

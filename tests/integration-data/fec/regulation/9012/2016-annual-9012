@@ -1,0 +1,198 @@
+{
+    "children": [
+        {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "9012", 
+                                "1", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) It shall be unlawful for an eligible candidate of a political party for President and Vice President in a Presidential election or the candidate's authorized committee(s) knowingly and willfully to incur qualified campaign expenses in excess of the aggregate payments to which the eligible candidates of a major party are entitled under 11 CFR part 9004 with respect to such election."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "9012", 
+                                "1", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) It shall be unlawful for the national committee of a major or minor party knowingly and willfully to incur expenses with respect to a presidential nominating convention in excess of the expenditure limitation applicable with respect to such committee under 11 CFR part 9008, unless the incurring of such expenses is authorized by the Commission under 11 CFR 9008.7(a)(3)."
+                        }
+                    ], 
+                    "label": [
+                        "9012", 
+                        "1"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 9012.1 Excessive expenses."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "9012", 
+                                "2", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) It shall be unlawful for an eligible candidate of a major party in a Presidential election or any of his or her authorized committees knowingly and willfully to accept any contribution to defray qualified campaign expenses, except to the extent necessary to make up any deficiency in payments received from the Fund due to the application of 11 CFR 9005.2(b), or to defray expenses which would be qualified campaign expenses but for 11 CFR 9002.11(a)(3)."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "9012", 
+                                "2", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) It shall be unlawful for an eligible candidate of a political party (other than a major party) in a Presidential election or any of his or her authorized committees knowingly and willfully to accept and expend or retain contributions to defray qualified campaign expenses in an amount which exceeds the qualified campaign expenses incurred in that election by that eligible candidate or his or her authorized committee(s)."
+                        }
+                    ], 
+                    "label": [
+                        "9012", 
+                        "2"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 9012.2 Unauthorized acceptance of contributions."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9012", 
+                                        "3", 
+                                        "a", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) To defray the qualified campaign expenses with respect to which such payment was made; or"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9012", 
+                                        "3", 
+                                        "a", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) To repay loans the proceeds of which were used, or otherwise to restore funds (other than contributions to defray qualified campaign expenses which were received and expended) which were used, to defray such qualified campaign expenses."
+                                }
+                            ], 
+                            "label": [
+                                "9012", 
+                                "3", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) It shall be unlawful for any person who receives any payment under 11 CFR part 9005, or to whom any portion of any payment so received is transferred, knowingly and willfully to use, or authorize the use of, such payment or any portion thereof for any purpose other than\u2014"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "9012", 
+                                "3", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) It shall be unlawful for the national committee of a major or minor party which receives any payment under 11 CFR part 9008 to use, or authorize the use of, such payment for any purpose other than a purpose authorized by 11 CFR 9008.6."
+                        }
+                    ], 
+                    "label": [
+                        "9012", 
+                        "3"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 9012.3 Unlawful use of payments received from the Fund."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "9012", 
+                                "4", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) To furnish any false, fictitious, or fraudulent evidence, books or information to the Commission under 11 CFR parts 9001-9008, or to include in any evidence, books or information so furnished any misrepresentation of a material fact, or to falsify or conceal any evidence, books or information relevant to a certification by the Commission or any examination and audit by the Commission under 11 CFR parts 9001 et seq.; or"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "9012", 
+                                "4", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) To fail to furnish to the Commission any records, books or information requested by the Commission for purposes of 11 CFR parts 9001 et seq."
+                        }
+                    ], 
+                    "label": [
+                        "9012", 
+                        "4"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "It shall be unlawful for any person knowingly and willfully\u2014", 
+                    "title": "\u00a7 9012.4 Unlawful misrepresentations and falsification of statements, records or other evidence to the Commission; refusal to furnish books and records."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "9012", 
+                                "5", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) It shall be unlawful for any person knowingly and willfully to give or accept any kickback or any illegal payment in connection with any qualified campaign expenses of any eligible candidate or his or her authorized committee(s)."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "9012", 
+                                "5", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) It shall be unlawful for the national committee of a major or minor party knowingly and willfully to give or accept any kickback or any illegal payment in connection with any expense incurred by such committee with respect to a Presidential nominating convention."
+                        }
+                    ], 
+                    "label": [
+                        "9012", 
+                        "5"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 9012.5 Kickbacks and illegal payments."
+                }
+            ], 
+            "label": [
+                "9012", 
+                "Subpart"
+            ], 
+            "node_type": "emptypart", 
+            "text": ""
+        }
+    ], 
+    "label": [
+        "9012"
+    ], 
+    "node_type": "regtext", 
+    "text": "", 
+    "title": "PART 9012\u2014UNAUTHORIZED EXPENDITURES AND CONTRIBUTIONS"
+}

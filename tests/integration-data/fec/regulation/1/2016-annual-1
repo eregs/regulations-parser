@@ -1,0 +1,818 @@
+{
+    "children": [
+        {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "1", 
+                                "1", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) The purpose of this part is to set forth rules informing the public as to what information is maintained by the Federal Election Commission about identifiable individuals and to inform those individuals how they may gain access to and correct or amend information about themselves."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "1", 
+                                "1", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) The regulations in this part carry out the requirements of the Privacy Act of 1974 (Pub. L. 93-579) and in particular 5 U.S.C. 552a as added by that Act."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "1", 
+                                "1", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) The regulations in this part apply only to records disclosed or requested under the Privacy Act of 1974, and not to requests for information made pursuant to 5 U.S.C. 552, the Freedom of Information Act, or requests for reports and statements filed with the Federal Election Commission which are public records and available for inspection and copying pursuant to 52 U.S.C. 30109(a)(4)(C) and 30111(a)(4)"
+                        }
+                    ], 
+                    "label": [
+                        "1", 
+                        "1"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 1.1 Purpose and scope."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "1", 
+                                "2", 
+                                "p1"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "As defined in the Privacy Act of 1974 and for the purposes of this part, unless otherwise required by the context, the following terms shall have these meanings:"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "1", 
+                                "2", 
+                                "p1995683239"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "Act means the Federal Election Campaign Act of 1971, as amended and chapters 95 and 96 of the Internal Revenue Code of 1954."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "1", 
+                                "2", 
+                                "p4047032031"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "Commission means the Federal Election Commission, its Commissioners and employees."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "1", 
+                                "2", 
+                                "p318973502"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "Commissioner means an individual appointed to the Federal Election Commission pursuant to 52 U.S.C. 30106(a)."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "1", 
+                                "2", 
+                                "p1486693130"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "Individual means a citizen of the United States or an alien lawfully admitted for permanent residence."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "1", 
+                                "2", 
+                                "p3944085712"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "Maintain includes maintain, collect, use or disseminate."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "1", 
+                                "2", 
+                                "p660238336"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "Record means any item, collection, or grouping of information about an individual that is maintained by an agency, including but not limited to his or her education, financial transactions, medical history, and criminal or employment history and that contains his or her name, or the identifying number, symbol or other identifying particular assigned to the individual, such as finger or voice print or a photograph."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "1", 
+                                "2", 
+                                "p4248822688"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "Routine use means the use of such record for a purpose compatible with the purpose for which the information was collected."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "1", 
+                                "2", 
+                                "p3378136114"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "Systems of Records means a group of any records under the control of the Federal Election Commission from which information is retrieved by the name of the individual or by some identifying number, symbol, or other identifying particular assigned to the individual."
+                        }
+                    ], 
+                    "label": [
+                        "1", 
+                        "2"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 1.2 Definitions."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "1", 
+                                "3", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) Any individual may request the Commission to inform him or her whether a particular record system named by the individual contains a record pertaining to him or her. The request may be made in person or in writing at the location and to the person specified in the notice describing that record system."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "1", 
+                                "3", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) An individual who believes that the Commission maintains records pertaining to him or her but who cannot determine which record system contains those records, may request assistance by mail or in person from the Chief Privacy Officer, Federal Election Commission, 999 E Street, NW., Washington, DC 20463 during the hours of 9 a.m. to 5:30 p.m."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "1", 
+                                "3", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) Requests under paragraphs (a) or (b) of this section shall be acknowledged by the Commission within 15 days from the date of receipt of the request. If the Commission is unable to locate the information requested under paragraphs (a) or (b) of this section, it shall so notify the individual within 15 days after receipt of the request. Such acknowledgement may request additional information to assist the Commission in locating the record or it may advise the individual that no record or document exists about that individual."
+                        }
+                    ], 
+                    "label": [
+                        "1", 
+                        "3"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 1.3 Procedures for requests pertaining to individual records in a record system."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "1", 
+                                "4", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) After being informed by the Commission that a record system contains a record pertaining to him or her, an individual may request the Commission to disclose that record in the manner described in this section. Each request for the disclosure of a record or a copy of it shall be made at the Federal Election Commission, 999 E Street, NW., Washington, DC 20463 and to the system manager identified in the notice describing the systems of records, either in writing or in person. Requests may be made by specifically authorized agents or by parents or guardians of individuals."
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "1", 
+                                        "4", 
+                                        "b", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) The name of the record system containing the record;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "1", 
+                                        "4", 
+                                        "b", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Proof as described in paragraph (c) of this section that he or she is the individual to whom the requested record relates;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "1", 
+                                        "4", 
+                                        "b", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) Any other information required by the notice describing the record system."
+                                }
+                            ], 
+                            "label": [
+                                "1", 
+                                "4", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) Each individual requesting the disclosure of a record or copy of a record shall furnish the following information with his or her request:"
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "1", 
+                                        "4", 
+                                        "c", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Requests made in writing shall include a statement, signed by the individual and either notarized or witnessed by two persons (including witnesses' addresses). If the individual appears before a notary, he or she shall submit adequate proof of identification in the form of a drivers license, birth certificate, passport or other identification acceptable to the notary. If the statement is witnessed, it shall include a sentence above the witnesses' signatures that they personally know the individual or that the individual has submitted proof of his or her identification to their satisfaction. In any case in which, because of the extreme sensitivity of the record sought to be seen or copied, the Commission determines that the identification is not adequate, it may request the individual to submit additional proof of identification."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "1", 
+                                        "4", 
+                                        "c", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) If the request is made in person, the requestor shall submit proof of identification similar to that described in paragraph (c)(1) of this section, acceptable to the Commission. The individual may have a person of his or her own choosing accompany him or her when the record is disclosed."
+                                }
+                            ], 
+                            "label": [
+                                "1", 
+                                "4", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) Proof of identity as required by paragraph (b)(2) of this section shall be provided as described in paragraphs (c) (1) and (2) of this section. Requests made by an agent, parent, or guardian, shall be in accordance with the procedures described in \u00a7\u20091.10."
+                        }
+                    ], 
+                    "label": [
+                        "1", 
+                        "4"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 1.4 Times, places, and requirements for identification of individuals making requests."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "1", 
+                                "5", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) Upon submission of proof of identification as required by \u00a7\u20091.4, the Commission shall allow the individual to see and/or obtain a copy of the requested record or shall send a copy of the record to the individual by registered mail. If the individual requests to see the record, the Commission may make the record available either at the location where the record is maintained or at a place more suitable to the requestor, if possible. The record shall be made available as soon as possible but in no event later than 15 days after proof of identification."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "1", 
+                                "5", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) The Commission must furnish each record requested by an individual under this part in a form intelligible to that individual."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "1", 
+                                "5", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) If the Commission denies access to a record to an individual, he or she shall be advised of the reason for the denial and advised of the right to judicial review."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "1", 
+                                "5", 
+                                "d"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(d) Upon request, an individual will be provided access to the accounting of disclosures from his or her record under the same procedures as provided above and in \u00a7\u20091.4."
+                        }
+                    ], 
+                    "label": [
+                        "1", 
+                        "5"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 1.5 Disclosure of requested information to individuals."
+                }, 
+                {
+                    "children": [], 
+                    "label": [
+                        "1", 
+                        "6"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 1.6 Special procedure: Medical records. [Reserved]"
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "1", 
+                                "7", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) Any individual who has reviewed a record pertaining to him or her that was furnished under this part, may request the Commission to correct or amend all or any part of that record."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "1", 
+                                "7", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) Each individual requesting a correction or amendment shall send the request to the Commission through the person who furnished the record."
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "1", 
+                                        "7", 
+                                        "c", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) The name of the individual requesting the correction or amendment;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "1", 
+                                        "7", 
+                                        "c", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) The name of the system of records in which the record sought to be amended is maintained;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "1", 
+                                        "7", 
+                                        "c", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) The location of the system of records from which the individual record was obtained;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "1", 
+                                        "7", 
+                                        "c", 
+                                        "4"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(4) A copy of the record sought to be amended or corrected or a sufficiently detailed description of that record;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "1", 
+                                        "7", 
+                                        "c", 
+                                        "5"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(5) A statement of the material in the record that the individual desires to correct or amend;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "1", 
+                                        "7", 
+                                        "c", 
+                                        "6"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(6) A statement of the basis for the requested correction or amendment including any material that the individual can furnish to substantiate the reasons for the correction or amendment sought."
+                                }
+                            ], 
+                            "label": [
+                                "1", 
+                                "7", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) Each request for a correction or amendment of a record shall contain the following information:"
+                        }
+                    ], 
+                    "label": [
+                        "1", 
+                        "7"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 1.7 Request for correction or amendment to record."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "1", 
+                                "8", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) The Commission shall, not later than ten (10) days (excluding Saturdays, Sundays and legal holidays) after the receipt of the request for a correction or amendment of a record under \u00a7\u20091.7, acknowledge receipt of the request and inform the individual whether information is required before the correction or amendment can be considered."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "1", 
+                                "8", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) If no additional information is required, within ten (10) days from receipt of the request, the Commission shall either make the requested correction or amendment or notify the individual of its refusal to do so, including in the notification the reasons for the refusal, and the appeal procedures provided in \u00a7\u20091.9."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "1", 
+                                "8", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) The Commission shall make each requested correction or amendment to a record if that correction or amendment will tend to negate inaccurate, irrelevant, untimely, or incomplete matter in the record."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "1", 
+                                "8", 
+                                "d"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(d) The Commission shall inform prior recipients of any amendment or correction or notation of dispute of such individual's record if an accounting of the disclosure was made. The individual may request a list of prior recipients if an accounting of the disclosure was made."
+                        }
+                    ], 
+                    "label": [
+                        "1", 
+                        "8"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 1.8 Agency review of request for correction or amendment of record."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "1", 
+                                "9", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) Any individual whose request for a correction or amendment has been denied in whole or in part, may appeal that decision to the Commissioners no later than one hundred eighty (180) days after the adverse decision is rendered."
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "1", 
+                                        "9", 
+                                        "b", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) The name of the individual making the appeal;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "1", 
+                                        "9", 
+                                        "b", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Identification of the record sought to be amended;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "1", 
+                                        "9", 
+                                        "b", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) The record system in which that record is contained;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "1", 
+                                        "9", 
+                                        "b", 
+                                        "4"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(4) A short statement describing the amendment sought; and"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "1", 
+                                        "9", 
+                                        "b", 
+                                        "5"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(5) The name and location of the agency official who initially denied the correction or amendment."
+                                }
+                            ], 
+                            "label": [
+                                "1", 
+                                "9", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) The appeal shall be in writing and shall contain the following information:"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "1", 
+                                "9", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) Not later than thirty (30) days (excluding Saturdays, Sundays and legal holidays) after the date on which the Commission receives the appeal, the Commissioners shall complete their review of the appeal and make a final decision thereon. However, for good cause shown, the Commissioners may extend that thirty (30) day period. If the Commissioners extend the period, the individual requesting the review shall be promptly notified of the extension and the anticipated date of a decision."
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "1", 
+                                        "9", 
+                                        "d", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) The decision and, if the denial is upheld, the reasons for the decision;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "1", 
+                                        "9", 
+                                        "d", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) The right of the requestor to institute a civil action in a Federal District Court for judicial review of the decision; and"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "1", 
+                                        "9", 
+                                        "d", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) The right of the requestor to file with the Commission a concise statement setting forth the reasons for his or her disagreement with the Commission denial of the correction or amendment. The Commission shall make this statement available to any person to whom the record is later disclosed, together with a brief statement, if appropriate, of the Commission's reasons for denying the requested correction or amendment. The Commission shall also send a copy of the statement to prior recipients of the individual's record if an accounting of the disclosures was made."
+                                }
+                            ], 
+                            "label": [
+                                "1", 
+                                "9", 
+                                "d"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(d) After review of an appeal, the Commission shall send a written notice to the requestor containing the following information:"
+                        }
+                    ], 
+                    "label": [
+                        "1", 
+                        "9"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 1.9 Appeal of initial adverse agency determination on amendment or correction."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "1", 
+                                "10", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) Any individual who desires to have a record covered by this part disclosed to or mailed to another person may designate such person and authorize such person to act as his or her agent for that specific purpose. The authorization shall be in writing, signed by the individual and notarized or witnessed as provided in \u00a7\u20091.4(c)."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "1", 
+                                "10", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) The parent of any minor individual or the legal guardian of any individual who has been declared by a court of competent jurisdiction to be incompetent, due to physical or mental incapacity or age, may act on behalf of that individual in any matter covered by this part. A parent or guardian who desires to act on behalf of such an individual shall present suitable evidence of parentage or guardianship, by birth certificate, certified copy of a court order, or similar documents, and proof of the individual's identity in a form that complies with \u00a7\u20091.4(c) of this part."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "1", 
+                                "10", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) An individual to whom a record is to be disclosed in person, pursuant to this part may have a person of his or her own choosing accompany him or her when the record is disclosed."
+                        }
+                    ], 
+                    "label": [
+                        "1", 
+                        "10"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 1.10 Disclosure of record to person other than the individual to whom it pertains."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "1", 
+                                "11", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) The Commission shall not charge an individual for the costs of making a search for a record or the costs of reviewing the record. When the Commission makes a copy of a record as a necessary part of the process of disclosing the record to an individual, the Commission shall not charge the individual for the cost of making that copy."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "1", 
+                                "11", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) If an individual requests the Commission to furnish a copy of the record, the Commission shall charge the individual for the costs of making the copy. The fee that the Commission has established for making a copy is ten cents ($.10) per page."
+                        }
+                    ], 
+                    "label": [
+                        "1", 
+                        "11"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 1.11 Fees."
+                }, 
+                {
+                    "children": [], 
+                    "label": [
+                        "1", 
+                        "12"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "Any person who makes a false statement in connection with any request for a record, or an amendment or correction thereto, under this part, is subject to the penalties prescribed in 18 U.S.C. 494 and 495.", 
+                    "title": "\u00a7 1.12 Penalties."
+                }, 
+                {
+                    "children": [], 
+                    "label": [
+                        "1", 
+                        "13"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 1.13 General exemptions. [Reserved]"
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "1", 
+                                "14", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) No individual, under the provisions of these regulations, shall be entitled to access to materials compiled in its systems of records identified as FEC audits and investigations (FEC 2) or FEC compliance actions (FEC 3). These exempted systems relate to the Commission's power to exercise exclusive civil jurisdiction over the enforcement of the Act under 52 U.S.C. 30107(a)(6) and (e); and to defend itself in actions filed against it under 52 U.S.C. 30107(a)(6). Further the Commission has a duty to investigate violations of the Act under 52 U.S.C. 30109(a)(2); to conduct audits and investigations pursuant to 52 U.S.C. 30111(b), 26 U.S.C. 9007 and 9038; and to refer apparent violations of the Act to the Attorney General or other law enforcement authorities under 52 U.S.C. 30109(a)(5) and 30107(a)(9). Information contained in FEC systems 2 and 3 contain the working papers of the Commission staff and form the basis for either civil and/or criminal proceedings pursuant to the exercise of the powers and duties of the Commission. These materials must be protected until such time as they are subject to public access under the provision of 52 U.S.C. 30109(a)(4)(B) or 5 U.S.C. 552, or other relevant statutes."
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "1", 
+                                        "14", 
+                                        "b", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Pursuant to 5 U.S.C. 552a(j)(2), records contained in FEC 12, Office of Inspector General Investigative Files, are exempt from the provisions of 5 U.S.C. 552a, except subsections (b), (c) (1) and (2), (e)(4) (A) through (F), (e) (6), (7), (9), (10), and (11) and (f) , and the corresponding provisions of 11 CFR part 1, to the extent this system of records relates in any way to the enforcement of criminal laws."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "1", 
+                                        "14", 
+                                        "b", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Pursuant to 5 U.S.C. 552a(k)(2), FEC 12, Office of Inspector General Investigative Files, is exempt from 552a (c)(3), (d), (e)(1), (e)(4)(G), (H), and (I), and (f), and the corresponding provisions of 11 CFR part 1, to the extent the system of records consists of investigatory material compiled for law enforcement purposes, except for material that falls within the exemption included in paragraph (b)(1) of this section."
+                                }
+                            ], 
+                            "label": [
+                                "1", 
+                                "14", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b)"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "1", 
+                                "14", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) The provisions of paragraph (a) of this section shall not apply to the extent that application of the subsection would deny any individual any right, privilege or benefit to which he or she would otherwise be entitled to receive."
+                        }
+                    ], 
+                    "label": [
+                        "1", 
+                        "14"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 1.14 Specific exemptions."
+                }
+            ], 
+            "label": [
+                "1", 
+                "Subpart"
+            ], 
+            "node_type": "emptypart", 
+            "text": ""
+        }
+    ], 
+    "label": [
+        "1"
+    ], 
+    "node_type": "regtext", 
+    "text": "", 
+    "title": "PART 1\u2014PRIVACY ACT"
+}

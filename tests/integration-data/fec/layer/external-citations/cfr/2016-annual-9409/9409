@@ -1,0 +1,113 @@
+{
+    "9409-11-b": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "1733", 
+                "title": "28"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "28 U.S.C. 1733", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=1733&title=28&year=mostrecent"
+        }
+    ], 
+    "9409-14-b": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "11", 
+                "part": "9405"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "11 CFR 9405", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=9405&titlenum=11&year=mostrecent"
+        }
+    ], 
+    "9409-14-d": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "1821", 
+                "title": "28"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "28 U.S.C. 1821", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=1821&title=28&year=mostrecent"
+        }
+    ], 
+    "9409-15-a": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "207", 
+                "title": "18"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "18 U.S.C. 207", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=207&title=18&year=mostrecent"
+        }, 
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "641", 
+                "title": "18"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "18 U.S.C. 641", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=641&title=18&year=mostrecent"
+        }
+    ], 
+    "9409-2-a-3": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "552", 
+                "title": "5"
+            }, 
+            "locations": [
+                0, 
+                1
+            ], 
+            "text": "5 U.S.C. 552", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=552&title=5&year=mostrecent"
+        }
+    ], 
+    "9409-3-p1362899739-a": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "552", 
+                "title": "5"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "5 U.S.C. 552", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=552&title=5&year=mostrecent"
+        }
+    ], 
+    "9409-3-p4047032031": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "15301", 
+                "title": "42"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "42 U.S.C. 15301", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=15301&title=42&year=mostrecent"
+        }
+    ]
+}

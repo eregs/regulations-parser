@@ -1,0 +1,2299 @@
+{
+    "children": [
+        {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "106", 
+                                        "1", 
+                                        "a", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Expenditures, including in-kind contributions, independent expenditures, and coordinated expenditures made on behalf of more than one clearly identified Federal candidate shall be attributed to each such candidate according to the benefit reasonably expected to be derived. For example, in the case of a publication or broadcast communication, the attribution shall be determined by the proportion of space or time devoted to each candidate as compared to the total space or time devoted to all candidates. In the case of a fundraising program or event where funds are collected by one committee for more than one clearly identified candidate, the attribution shall be determined by the proportion of funds received by each candidate as compared to the total receipts by all candidates. In the case of a phone bank, the attribution shall be determined by the number of questions or statements devoted to each candidate as compared to the total number of questions or statements devoted to all candidates. These methods shall also be used to allocate payments involving both expenditures on behalf of one or more clearly identified Federal candidates and disbursements on behalf of one or more clearly identified non-Federal candidates."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "106", 
+                                        "1", 
+                                        "a", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) An expenditure made on behalf of more than one clearly identified Federal candidate shall be reported pursuant to 11 CFR 104.10(a) or 104.17(a), as appropriate. A payment that also includes amounts attributable to one or more non-Federal candidates, and that is made by a political committee with separate Federal and non-Federal accounts, shall be made according to the procedures set forth in 11 CFR 106.6(e) or 106.7(f), but shall be reported pursuant to 11 CFR 104.10(a) or 104.17(a). If a State, district, or local party committee's payment on behalf of both a Federal candidate and a non-Federal candidate is for a Federal election activity, only Federal funds may be used for the entire payment. For Federal election activities, the provisions of 11 CFR 300.33 and 104.17(a) will apply to payments attributable to candidates."
+                                }
+                            ], 
+                            "label": [
+                                "106", 
+                                "1", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) General rule."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "106", 
+                                "1", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) An authorized expenditure made by a candidate or political committee on behalf of another candidate shall be reported as a contribution in-kind (transfer) to the candidate on whose behalf the expenditure was made, except that expenditures made by party committees pursuant to \u00a7\u2009109.32 or 109.33 need only be reported as an expenditure."
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "106", 
+                                        "1", 
+                                        "c", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Expenditures for rent, personnel, overhead, general administrative, fund-raising, and other day-to-day costs of political committees need not be attributed to individual candidates, unless these expenditures are made on behalf of a clearly identified candidate and the expenditure can be directly attributed to that candidate."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "106", 
+                                        "1", 
+                                        "c", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Expenditures for educational campaign seminars, for training of campaign workers, and for registration or get-out-the-vote drives of committees need not be attributed to individual candidates unless these expenditures are made on behalf of a clearly identified candidate, and the expenditure can be directly attributed to that candidate."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "106", 
+                                        "1", 
+                                        "c", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) Payments made for the cost of certain voter registration and get-out-the-vote activities conducted by State or local party organizations on behalf of any Presidential or Vice-Presidential candidate(s) are exempt from the definition of a contribution or an expenditure under 11 CFR 100.89 and 100.149. If the State or local party organization includes references to any candidate(s) seeking nomination or election to the House of Representatives or Senate of the United States the portion of the cost of such activities allocable to such candidate(s) shall be considered a contribution to or an expenditure on behalf of such candidate(s), unless such reference is incidental to the overall activity. If such reference is incidental to the overall activity, such costs shall not be considered a contribution to or expenditure on behalf of any candidate(s)."
+                                }
+                            ], 
+                            "label": [
+                                "106", 
+                                "1", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) Exceptions:"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "106", 
+                                "1", 
+                                "d"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(d) For purposes of this section, clearly identified shall have the same meaning as set forth at 11 CFR 100.17."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "106", 
+                                "1", 
+                                "e"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(e) State, district, and local party committees, separate segregated funds, and nonconnected committees that make mixed Federal/non-Federal payments for activities other than an activity entailing an expenditure for a Federal candidate and disbursement for a non-Federal candidate, or that make mixed Federal/Levin fund payments, shall allocate those expenses in accordance with 11 CFR 106.6, 106.7, or 300.33, as appropriate."
+                        }
+                    ], 
+                    "label": [
+                        "106", 
+                        "1"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 106.1 Allocation of expenses between candidates."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "106", 
+                                        "2", 
+                                        "a", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) This section applies to Presidential primary candidates receiving or expecting to receive federal matching funds pursuant to 11 CFR parts 9031 et seq. The expenditures described in 11 CFR 106.2(b)(2) shall be allocated to a particular State if incurred by a candidate's authorized committee(s) for the purpose of influencing the nomination of that candidate for the office of President with respect to that State. An expenditure shall not necessarily be allocated to the State in which the expenditure is incurred or paid. In the event that the Commission disputes the candidate's allocation or claim of exemption for a particular expense, the candidate shall demonstrate, with supporting documentation, that his or her proposed method of allocation or claim of exemption was reasonable. Expenditures required to be allocated to the primary election under 11 CFR 9034.4(e) shall also be allocated to particular states in accordance with this section."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "106", 
+                                        "2", 
+                                        "a", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Disbursements made prior to the time an individual becomes a candidate for the purpose of determining whether that individual should become a candidate pursuant to 11 CFR 100.72(a) and 100.131(a), i.e., payments for testing the waters, shall be allocable expenditures under this section if the individual becomes a candidate."
+                                }
+                            ], 
+                            "label": [
+                                "106", 
+                                "2", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) General\u2014"
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "106", 
+                                        "2", 
+                                        "b", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) General allocation method. Unless otherwise specified under 11 CFR 106.2(b)(2), an expenditure described in 11 CFR 106.2(b)(2) and incurred by a candidate's authorized committee(s) for the purpose of influencing the nomination of that candidate in more than one State shall be allocated to each State on a reasonable and uniformly applied basis. The total amount allocated to a particular State may be reduced by the amount of exempt fundraising expenses for that State, as specified in 11 CFR 110.8(c)(2)."
+                                }, 
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "106", 
+                                                        "2", 
+                                                        "b", 
+                                                        "2", 
+                                                        "i", 
+                                                        "A"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(A) Print media. Except for expenditures exempted under 11 CFR 106.2(b)(2)(i) (E) and (F), allocation of expenditures for the publication and distribution of newspaper, magazine and other types of printed advertisements distributed in more than one State shall be made using relative circulation percentages in each State or an estimate thereof. For purposes of this section, allocation to a particular State will not be required if less than 3% of the total estimated readership of the publication is in that State."
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "106", 
+                                                        "2", 
+                                                        "b", 
+                                                        "2", 
+                                                        "i", 
+                                                        "B"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(B) Broadcast media. Except for expenditures exempted under 11 CFR 106.2(b)(2)(i) (E) and (F), expenditures for radio, television and similar types of advertisements purchased in a particular media market that covers more than one State shall be allocated to each State in proportion to the estimated audience. This allocation of expenditures, shall be made using industry market data. If industry market data is not available, the committee shall obtain market data from the media carrier transmitting the advertisement(s)."
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "106", 
+                                                        "2", 
+                                                        "b", 
+                                                        "2", 
+                                                        "i", 
+                                                        "C"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(C) Refunds for media expenditures. Refunds for broadcast time or advertisement space, purchased but not used, shall be credited to the States on the same basis as the original allocation."
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "106", 
+                                                        "2", 
+                                                        "b", 
+                                                        "2", 
+                                                        "i", 
+                                                        "D"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(D) Limits on allocation of media expenditures. No allocation of media expenditures shall be made to any State in which the primary election has already been held."
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "106", 
+                                                        "2", 
+                                                        "b", 
+                                                        "2", 
+                                                        "i", 
+                                                        "E"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(E) National advertising. Expenditures incurred for advertisements on national networks, national cable or in publications distributed nationwide need not be allocated to any State."
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "106", 
+                                                        "2", 
+                                                        "b", 
+                                                        "2", 
+                                                        "i", 
+                                                        "F"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(F) Media production costs. Expenditures incurred for production of media advertising, whether or not that advertising is used in more than one State, need not be allocated to any State."
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "106", 
+                                                        "2", 
+                                                        "b", 
+                                                        "2", 
+                                                        "i", 
+                                                        "G"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(G) Commissions. Expenditures for commissions, fees and other compensation for the purchase of broadcast or print media need not be allocated to any State."
+                                                }
+                                            ], 
+                                            "label": [
+                                                "106", 
+                                                "2", 
+                                                "b", 
+                                                "2", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) Media expenditures\u2014"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "106", 
+                                                "2", 
+                                                "b", 
+                                                "2", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) Expenditures for mass mailings and other campaign materials. Expenditures for mass mailings of more than 500 pieces to addresses in the same State, and expenditures for shipping campaign materials to a State, including pins, bumperstickers, handbills, brochures, posters and yardsigns, shall be allocated to that State. For purposes of this section, mass mailing includes newsletters and other materials in which the content of the materials is substantially identical. Records supporting the committee's allocations under this section shall include: For each mass mailing, documentation showing the total number of pieces mailed and the number mailed to each state or zip code; and, for other campaign materials acquired for use outside the State of purchase, records relating to any shipping costs incurred for transporting these items to each State."
+                                        }, 
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "106", 
+                                                        "2", 
+                                                        "b", 
+                                                        "2", 
+                                                        "iii", 
+                                                        "A"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(A) Overhead expenditures of State offices and other facilities. Except for expenditures exempted under 11 CFR 106.2(b)(2)(iii)(C), overhead expenditures of committee offices whose activities are directed at a particular State, and the costs of other facilities used for office functions and campaign events, shall be allocated to that State. An amount that does not exceed 10% of office overhead expenditures for a particular State may be treated as exempt compliance expenses, and may be excluded from allocation to that State."
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "106", 
+                                                        "2", 
+                                                        "b", 
+                                                        "2", 
+                                                        "iii", 
+                                                        "B"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(B) Overhead expenditures of regional offices. Except for expenditures exempted under 11 CFR 106.2(b)(2)(iii)(C), overhead expenditures of a committee regional office or any committee office with responsibilities in two or more States shall be allocated to the State holding the next primary election, caucus or convention in the region. The committee shall maintain records to demonstrate that an office operated on a regional basis. These records should show, for example, the kinds of programs conducted from the office, the number and nature of contacts with other States in the region, and the amount of time devoted to regional programs by staff working in the regional office."
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "106", 
+                                                        "2", 
+                                                        "b", 
+                                                        "2", 
+                                                        "iii", 
+                                                        "C"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(C) Overhead expenditures of national campaign headquarters. Expenditures incurred for administrative, staff, and overhead expenditures of the national campaign headquarters need not be allocated to any State, except as provided in paragraph (b)(2)(iv) of this section."
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "106", 
+                                                        "2", 
+                                                        "b", 
+                                                        "2", 
+                                                        "iii", 
+                                                        "D"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(D) Definition of overhead expenditures. For purposes of 11 CFR 106.2(b)(2)(iii), overhead expenditures include, but are not limited to, rent, utilities, equipment, furniture, supplies, and telephone service base charges. \u201cTelephone service base charges\u201d include any regular monthly charges for committee phone service, and charges for phone installation and intrastate phone calls other than charges related to a special program under 11 CFR 106.2(b)(2)(iv). Inter-state calls are not included in \u201ctelephone service base charges.\u201d Overhead expenditures also include the costs of temporary offices established while the candidate is traveling in the State or in the final weeks before the primary election, as well as expenses paid by campaign staff and subsequently reimbursed by the committee, such as miscellaneous supplies, copying, printing and telephone expenses. See 11 CFR 116.5."
+                                                }
+                                            ], 
+                                            "label": [
+                                                "106", 
+                                                "2", 
+                                                "b", 
+                                                "2", 
+                                                "iii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iii) Overhead expenditures\u2014"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "106", 
+                                                "2", 
+                                                "b", 
+                                                "2", 
+                                                "iv"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iv) Expenditures for special telephone programs. Expenditures for special telephone programs targeted at a particular State, including the costs of designing and operating the program, the costs of installing or renting telephone lines and equipment, toll charges, personnel costs, consultants' fees, related travel costs, and rental of office space, including a pro rata portion of national, regional or State office space used for such purposes, shall be allocated to that State based on the percentage of telephone calls made to that State. Special telephone programs include voter registration, get out the vote efforts, fundraising, and telemarketing efforts conducted on behalf of the candidate. A special telephone program is targeted at a particular State if 10% or more of the total telephone calls made each month are made to that State. Records supporting the committee's allocation of each special telephone program under this section shall include either the telephone bills showing the total number of calls made in that program and the number made to each State; or, a copy of the list used to make the calls, from which these numbers can be determined."
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "106", 
+                                                "2", 
+                                                "b", 
+                                                "2", 
+                                                "v"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(v) Public opinion poll expenditures. Expenditures incurred for the taking of a public opinion poll covering only one State shall be allocated to that State. Except for expenditures incurred in conducting a public opinion poll on a nationwide basis, expenditures incurred for the taking of a public opinion poll covering two or more States shall be allocated to those States based on the number of people interviewed in each State. Expenditures incurred for the taking of a public opinion poll include consultant's fees, travel costs and other expenses associated with designing and conducting the poll. Records supporting the committee's allocation under this section shall include documentation showing the total number of people contacted for each poll and the number contacted in each State."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "106", 
+                                        "2", 
+                                        "b", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Specific allocation methods. Expenditures that fall within the categories listed below shall be allocated based on the following methods. The method used to allocate a category of expenditures shall be based on consistent data for each State to which an allocation is made."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "106", 
+                                        "2", 
+                                        "b", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) National consulting fees. Expenditures for consultants' fees need not be allocated to any State if the fees are charged for consulting on national campaign strategy. Expenditures for consultants' fees charged for conducting special telephone programs and public opinion polls shall be allocated in accordance with paragraphs (b)(2) (iv) and (v) of this section."
+                                }
+                            ], 
+                            "label": [
+                                "106", 
+                                "2", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) Method of allocating expenditures among States\u2014"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "106", 
+                                "2", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) Reporting. All expenditures allocated under this section shall be reported on FEC Form 3P, page 3."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "106", 
+                                "2", 
+                                "d"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(d) Recordkeeping. All assumptions and supporting calculations for allocations made under this section shall be documented and retained for Commission inspection. In addition to the records specified in paragraph (b) of this section, the treasurer shall retain records supporting the committee's allocations of expenditures to particular States and claims of exemption from allocation under this section. If the records supporting the allocation or claim of exemption are not retained, the expenditure shall be considered allocable and shall be allocated to the State holding the next primary election, caucus or convention after the expenditure is incurred."
+                        }
+                    ], 
+                    "label": [
+                        "106", 
+                        "2"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 106.2 State allocation of expenditures incurred by authorized committees of Presidential primary candidates receiving matching funds."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "106", 
+                                "3", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) This section applies to allocation for expenses between campaign and non-campaign related travel with respect to campaigns of candidates for Federal office, other than Presidential and Vice Presidential candidates who receive federal funds pursuant to 11 CFR part 9005 or 9036. (See 11 CFR 9004.7 and 9034.7) All expenditures for campaign-related travel paid for by a candidate from a campaign account or by his or her authorized committees or by any other political committee shall be reported."
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "106", 
+                                        "3", 
+                                        "b", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Travel expenses paid for by a candidate from personal funds, or from a source other than a political committee, shall constitute reportable expenditures if the travel is campaign-related."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "106", 
+                                        "3", 
+                                        "b", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Where a candidate's trip involves both campaign-related and non-campaign-related stops, the expenditures allocable for campaign purposes are reportable, and are calculated on the actual cost-per-mile of the means of transportation actually used, starting at the point of origin of the trip, via every campaign-related stop and ending at the point of origin."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "106", 
+                                        "3", 
+                                        "b", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) Where a candidate conducts any campaign-related activity in a stop, the stop is a campaign-related stop and travel expenditures made are reportable. Campaign-related activity shall not include any incidental contacts."
+                                }
+                            ], 
+                            "label": [
+                                "106", 
+                                "3", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b)"
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "106", 
+                                        "3", 
+                                        "c", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Where an individual, other than a candidate, conducts campaign-related activities on a trip, the portion of the trip attributed to each candidate shall be allocated on a reasonable basis."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "106", 
+                                        "3", 
+                                        "c", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Travel expenses of a candidate's spouse and family are reportable as expenditures only if the spouse or family members conduct campaign-related activities."
+                                }
+                            ], 
+                            "label": [
+                                "106", 
+                                "3", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c)"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "106", 
+                                "3", 
+                                "d"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(d) Costs incurred by a candidate for the United States Senate or House of Representatives for travel between Washington, DC, and the State or district in which he or she is a candidate need not be reported herein unless the costs are paid by a candidate's authorized committee(s), or by any other political committee(s)."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "106", 
+                                "3", 
+                                "e"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(e) Notwithstanding paragraphs (b) and (c) of this section, the reportable expenditure for a candidate who uses government accommodations for travel that is campaign-related is the rate for comparable accommodations. The reportable expenditure for a candidate who uses a government conveyance for travel that is campaign-related is the applicable rate for a comparable commercial conveyance set forth in 11 CFR 100.93(e). In the case of a candidate authorized by law or required by national security to be accompanied by staff and equipment, the allocable expenditures are the costs of facilities sufficient to accommodate the party, less authorized or required personnel and equipment. If such a trip includes both campaign and noncampaign stops, equivalent costs are calculated in accordance with paragraphs (b) and (c) of this section."
+                        }
+                    ], 
+                    "label": [
+                        "106", 
+                        "3"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 106.3 Allocation of expenses between campaign and non-campaign related travel."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "106", 
+                                "4", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) The purchase of opinion poll results by a candidate or a candidate's authorized political committee or agent is an expenditure by the candidate. Regarding the purchase of opinion poll results for the purpose of determining whether an individual should become a candidate, see 11 CFR 100.131(a)."
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "106", 
+                                        "4", 
+                                        "b", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Requested the poll results before their receipt;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "106", 
+                                        "4", 
+                                        "b", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Uses the poll results; or"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "106", 
+                                        "4", 
+                                        "b", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) Does not notify the contributor that the results are refused."
+                                }
+                            ], 
+                            "label": [
+                                "106", 
+                                "4", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) The purchase of opinion poll results by a political committee or other person not authorized by a candidate to make expenditures and the subsequent acceptance of the poll results by a candidate or a candidate's authorized political committee or agent or by another unauthorized political committee is a contribution in-kind by the purchaser to the candidate or other political committee and an expenditure by the candidate or other political committee. Regarding the purchase of opinion poll results for the purpose of determining whether an individual should become a candidate, see 11 CFR 100.72(a). The poll results are accepted by a candidate or other political committee if the candidate or the candidate's authorized political committee or agent or the other unauthorized political committee\u2014"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "106", 
+                                "4", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) The acceptance of any part of a poll's results which part, prior to receipt, has been made public without any request, authorization, prearrangement, or coordination by the candidate-receipient or political committee-recipient, shall not be treated as a contribution in-kind and expenditure under paragraph (b) of this section."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "106", 
+                                "4", 
+                                "d"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(d) The purchase of opinion poll results by an unauthorized political committee for its own use, in whole or in part, is an overhead expenditure by the political committee under \u00a7\u2009106.1(c)(1) to the extent of the benefit derived by the committee."
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "106", 
+                                        "4", 
+                                        "e", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) That share of the overall cost of the poll which is allocable to each candidate (including State and local candidates) or political committee, based upon the cost allocation formula of the polling firm from which the results are purchased. Under this method the size of the sample, the number of computer column codes, the extent of computer tabulations, and the extent of written analysis and verbal consultation, if applicable, may be used to determine the shares; or"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "106", 
+                                        "4", 
+                                        "e", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) An amount computed by dividing the overall cost of the poll equally among candidates (including State and local candidates) or political committees receiving the results; or"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "106", 
+                                        "4", 
+                                        "e", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) A proportion of the overall cost of the poll equal to the proportion that the number of question results received by the candidate or political committee bears to the total number of question results received by all candidates (including State and local candidates) and political committees; or"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "106", 
+                                        "4", 
+                                        "e", 
+                                        "4"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(4) An amount computed by any other method which reasonably reflects the benefit derived."
+                                }
+                            ], 
+                            "label": [
+                                "106", 
+                                "4", 
+                                "e"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(e) The amount of a contribution under paragraph (b) of this section or of any expenditure under paragraphs (a) and (b) of this section attributable to each candidate-recipient or political committee-recipient shall be\u2014"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "106", 
+                                "4", 
+                                "f"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(f) The first candidate(s) or committee(s) receiving poll results under paragraph (b) or (d) of this section and any candidate or political committee receiving poll results under paragraph (b) of this section within 15 days after receipt by the initial recipient(s) shall compute the amount of the contribution in-kind and the expenditure as provided in paragraph (e) of this section."
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "106", 
+                                        "4", 
+                                        "g", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) If the results are received during the period 16 to 60 days following receipt by the initial recipient(s), 50 percent of the amount allocated to an initial recipient of the same results;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "106", 
+                                        "4", 
+                                        "g", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) If the results are received during the period 61 to 180 days after receipt by the initial recipient(s), 5 percent of the amount allocated to an initial recipient of the same results;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "106", 
+                                        "4", 
+                                        "g", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) If the results are received more than 180 days after receipt by the initial recipient(s), no amount need be allocated."
+                                }
+                            ], 
+                            "label": [
+                                "106", 
+                                "4", 
+                                "g"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(g) The amount of the contribution and expenditure reported by a candidate or a political committee receiving poll results under paragraph (b) of this section more than 15 days after receipt of such poll results by the initial recipient(s) shall be\u2014"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "106", 
+                                "4", 
+                                "h"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(h) A contributor of poll results under paragraph (b) of this section shall maintain records sufficient to support the valuation of the contribution(s) in-kind and shall inform the candidate-recipient(s) or political committee-recipient(s) of the value of the contribution(s)."
+                        }
+                    ], 
+                    "label": [
+                        "106", 
+                        "4"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 106.4 Allocation of polling expenses."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "106", 
+                                                "5", 
+                                                "a", 
+                                                "1", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) General rules regarding allocation of Federal and non-Federal expenses by party committees;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "106", 
+                                                "5", 
+                                                "a", 
+                                                "1", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) Percentages to be allocated for administrative expenses and costs of generic voter drives by national party committees;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "106", 
+                                                "5", 
+                                                "a", 
+                                                "1", 
+                                                "iii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iii) Methods for allocation of administrative expenses, costs of generic voter drives, and of fundraising costs by national party committees; and"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "106", 
+                                                "5", 
+                                                "a", 
+                                                "1", 
+                                                "iv"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iv) Procedures for payment of allocable expenses. Requirements for reporting of allocated disbursements are set forth in 11 CFR 104.10."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "106", 
+                                        "5", 
+                                        "a", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Disbursements from Federal and non-Federal accounts. National party committees that make disbursements in connection with Federal and non-Federal elections shall make those disbursements entirely from funds subject to the prohibitions and limitations of the Act, or from accounts established pursuant to 11 CFR 102.5. Political committees that have established separate Federal and non-Federal accounts under 11 CFR 102.5(a)(1)(i) shall allocate expenses between those accounts according to this section. Organizations that are not political committees but have established separate Federal and non-Federal accounts under 11 CFR 102.5(b)(1)(i), or that make Federal and non-Federal disbursements from a single account under 11 CFR 102.5(b)(1)(ii), shall also allocate their Federal and non-Federal expenses according to this section. This section covers:"
+                                }, 
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "106", 
+                                                "5", 
+                                                "a", 
+                                                "2", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) Administrative expenses including rent, utilities, office supplies, and salaries, except for such expenses directly attributable to a clearly identified candidate;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "106", 
+                                                "5", 
+                                                "a", 
+                                                "2", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) The direct costs of a fundraising program or event including disbursements for solicitation of funds and for planning and administration of actual fundraising events, where Federal and non-Federal funds are collected by one committee through such program or event; and"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "106", 
+                                                "5", 
+                                                "a", 
+                                                "2", 
+                                                "iii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iii) [Reserved]"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "106", 
+                                                "5", 
+                                                "a", 
+                                                "2", 
+                                                "iv"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iv) Generic voter drives including voter identification, voter registration, and get-out-the-vote drives, or any other activities that urge the general public to register, vote or support candidates of a particular party or associated with a particular issue, without mentioning a specific candidate."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "106", 
+                                        "5", 
+                                        "a", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Costs to be allocated. National party committees that make disbursements in connection with Federal and non-Federal elections shall allocate expenses according to this section for the following categories of activity:"
+                                }
+                            ], 
+                            "label": [
+                                "106", 
+                                "5", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) General rules\u2014"
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "106", 
+                                        "5", 
+                                        "b", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) General rule. Each national party committee other than a Senate or House campaign committee shall allocate a fixed percentage of its administrative expenses and costs of generic voter drives, as described in paragraph (a)(2) of this section, to its Federal and non-Federal account(s) each year. These percentages shall differ according to whether or not the allocable expenses were incurred in a presidential election year. Such committees shall allocate the costs of each combined Federal and non-Federal fundraising program or event according to paragraph (f) of this section, with no fixed percentages required."
+                                }, 
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "106", 
+                                                "5", 
+                                                "b", 
+                                                "2", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) Presidential election years. In presidential election years, national party committees other than the Senate or House campaign committees shall allocate to their Federal accounts at least 65% each of their administrative expenses and costs of generic voter drives."
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "106", 
+                                                "5", 
+                                                "b", 
+                                                "2", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) Non-presidential election years. In all years other than presidential election years, national party committees other than the Senate or House campaign committees shall allocate to their Federal accounts at least 60% each of their administrative expenses and costs of generic voter drives."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "106", 
+                                        "5", 
+                                        "b", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Fixed percentages according to type of election year. National party committees other than the Senate or House campaign committees shall allocate their administrative expenses and costs of generic voter drives according to paragraphs (b)(2) (i) and (ii) as follows:"
+                                }
+                            ], 
+                            "label": [
+                                "106", 
+                                "5", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) National party committees other than Senate or House campaign committees; fixed percentages for allocating administrative expenses and costs of generic voter drives\u2014"
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "106", 
+                                                "5", 
+                                                "c", 
+                                                "1", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) Under this method, expenses shall be allocated based on the ratio of Federal expenditures to total Federal and non-Federal disbursements made by the committee during the two-year Federal election cycle. This ratio shall be estimated and reported at the beginning of each Federal election cycle, based upon the committee's Federal and non-Federal disbursements in a prior comparable Federal election cycle or upon the committee's reasonable prediction of its disbursements for the coming two years. In calculating its Federal expenditures, the committee shall include only amounts contributed to or otherwise spent on behalf of specific federal candidates. Calculation of total Federal and non-Federal disbursements shall also be limited to disbursements for specific candidates, and shall not include overhead or other generic costs."
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "106", 
+                                                "5", 
+                                                "c", 
+                                                "1", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) On each of its periodic reports, the committee shall adjust its allocation ratio to reconcile it with the ratio of actual Federal and non-Federal disbursements made, to date. If the non-Federal account has paid more than its allocable share, the committee shall transfer funds from its Federal to its non-Federal account, as necessary, to reflect the adjusted allocation ratio. The committee shall make note of any such adjustments and transfers on its periodic reports, submitted pursuant to 11 CFR 104.5."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "106", 
+                                        "5", 
+                                        "c", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Method for allocating administrative expenses and costs of generic voter drives. Subject to the minimum percentage set forth in paragraph (c)(2) of this section, each Senate or House campaign committee of a national party shall allocate its administrative expenses and costs of generic voter drives, as described in paragraph (a)(2) of this section, according to the funds expended method, described in paragraphs (c)(1)(i) and (ii) as follows:"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "106", 
+                                        "5", 
+                                        "c", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Minimum Federal percentage for administrative expenses and costs of generic voter drives. Regardless of the allocation ratio calculated under paragraph (c)(1) of this section, each Senate or House campaign committee of a national party shall allocate to its Federal account at least 65% each of its administrative expenses and costs of generic voter drives each year. If the committee's own allocation calculation under paragraph (c)(1) of this section yields a Federal share greater than 65%, then the higher percentage shall be applied. If such calculation yields a Federal share lower than 65%, then the committee shall report its calculated ratio according to 11 CFR 104.10(b), and shall apply the required minimum Federal percentage."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "106", 
+                                        "5", 
+                                        "c", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) Allocation of fundraising costs. Senate and House campaign committees shall allocate the costs of each combined Federal and non-Federal fundraising program or event according to paragraph (f) of this section, with no minimum percentages required."
+                                }
+                            ], 
+                            "label": [
+                                "106", 
+                                "5", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) Senate and House campaign committees of a national party; method and minimum Federal percentage for allocating administrative expenses and costs of generic voter drives\u2014"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "106", 
+                                "5", 
+                                "d"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(d)-(e) [Reserved]"
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "106", 
+                                        "5", 
+                                        "f", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) If Federal and non-Federal funds are collected by one committee through a joint activity, that committee shall allocate its direct costs of fundraising, as described in paragraph (a)(2) of this section, according to the funds received method. Under this method, the committee shall allocate its fundraising costs based on the ratio of funds received into its Federal account to its total receipts from each fundraising program or event. This ratio shall be estimated prior to each such program or event based upon the committee's reasonable prediction of its Federal and non-Federal revenue from that program or event, and shall be noted in the committee's report for the period in which the first disbursement for such program or event occurred, submitted pursuant 11 CFR 104.5. Any disbursements for fundraising costs made prior to the actual program or event shall be allocated according to this estimated ratio."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "106", 
+                                        "5", 
+                                        "f", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) No later than the date 60 days after each fundraising program or event from which both Federal and non-Federal funds are collected, the committee shall adjust the allocation ratio for that program or event to reflect the actual ratio of funds received. If the non-Federal account has paid more than its allocable share, the committee shall transfer funds from its Federal to its non-Federal account, as necessary, to reflect the adjusted allocation ratio. If the Federal account has paid more than its allocable share, the committee shall make any transfers of funds from its non-federal to its federal account to reflect the adjusted allocation ratio within the 60-day time period established by this paragraph. The committee shall make note of any such adjustments and transfers in its report for any period in which a transfer was made, and shall also report the date of the fundraising program or event that serves as the basis for the transfer. In the case of a telemarketing or direct mail campaign, the date for purposes of this paragraph is the last day of the telemarketing campaign, or the day on which the final direct mail solicitations are mailed."
+                                }
+                            ], 
+                            "label": [
+                                "106", 
+                                "5", 
+                                "f"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(f) National party committees; method for allocating direct costs of fundraising."
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "106", 
+                                                "5", 
+                                                "g", 
+                                                "1", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) Payment by Federal account; transfers from non-Federal account to Federal account. The committee shall pay the entire amount of an allocable expense from its Federal account and shall transfer funds from its non-Federal account to its Federal account solely to cover the non-Federal share of that allocable expense."
+                                        }, 
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "106", 
+                                                        "5", 
+                                                        "g", 
+                                                        "1", 
+                                                        "ii", 
+                                                        "A"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(A) The committee shall establish a separate allocation account into which funds from its Federal and non-Federal accounts shall be deposited solely for the purpose of paying the allocable expenses of joint Federal and non-Federal activities. Once a committee has established a separate allocation account for this purpose, all allocable expenses shall be paid from that account for as long as the account is maintained."
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "106", 
+                                                        "5", 
+                                                        "g", 
+                                                        "1", 
+                                                        "ii", 
+                                                        "B"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(B) The committee shall transfer funds from its Federal and non-Federal accounts to its allocation account in amounts proportionate to the Federal or non-Federal share of each allocable expense."
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "106", 
+                                                        "5", 
+                                                        "g", 
+                                                        "1", 
+                                                        "ii", 
+                                                        "C"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(C) No funds contained in the allocation account may be transferred to any other account maintained by the committee."
+                                                }
+                                            ], 
+                                            "label": [
+                                                "106", 
+                                                "5", 
+                                                "g", 
+                                                "1", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) Payment by separate allocation account; transfers from Federal and non-Federal accounts to allocation account."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "106", 
+                                        "5", 
+                                        "g", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Payment options. Committees that have established separate Federal and non-Federal accounts under 11 CFR 102.5(a)(1)(i) or (b)(1)(i) shall pay the expenses of joint Federal and non-Federal activities described in paragraph (a)(2) of this section according to either paragraph (g)(1)(i) or (ii), as follows:"
+                                }, 
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "106", 
+                                                "5", 
+                                                "g", 
+                                                "2", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) Under either payment option described in paragraphs (g)(1)(i) or (ii) of this section, the committee shall transfer funds from its non-Federal account to its Federal account or from its Federal and non-Federal accounts to its separate allocation account following determination of the final cost of each joint Federal and non-Federal activity, or in advance of such determination if advance payment is required by the vendor and if such payment is based on a reasonable estimate of the activity's final cost as determined by the committee and the vendor(s) involved."
+                                        }, 
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "106", 
+                                                        "5", 
+                                                        "g", 
+                                                        "2", 
+                                                        "ii", 
+                                                        "A"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(A) For each such transfer, the committee must itemize in its reports the allocable activities for which the transferred funds are intended to pay, as required by 11 CFR 104.10(b)(3); and"
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "106", 
+                                                        "5", 
+                                                        "g", 
+                                                        "2", 
+                                                        "ii", 
+                                                        "B"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(B) Except as provided in paragraph (f)(2) of this section, such funds may not be transferred more than 10 days before or more than 60 days after the payments for which they are designated are made."
+                                                }
+                                            ], 
+                                            "label": [
+                                                "106", 
+                                                "5", 
+                                                "g", 
+                                                "2", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) Funds transferred from a committee's non-Federal account to its Federal account or its allocation account are subject to the following requirements:"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "106", 
+                                                "5", 
+                                                "g", 
+                                                "2", 
+                                                "iii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iii) Any portion of a transfer from a committee's non-Federal account to its Federal account or its allocation account that does not meet the requirements of paragraph (g)(2)(ii) of this section shall be presumed to be a loan or contribution from the non-Federal account to a Federal account, in violation of the Act."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "106", 
+                                        "5", 
+                                        "g", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Timing of transfers between accounts."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "106", 
+                                        "5", 
+                                        "g", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) Reporting transfers of funds and allocated disbursements. A political committee that transfers funds between accounts and pays allocable expenses according to this section shall report each such transfer and disbursement pursuant to 11 CFR 104.10(b)."
+                                }
+                            ], 
+                            "label": [
+                                "106", 
+                                "5", 
+                                "g"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(g) Payment of allocable expenses by committees with separate Federal and non-Federal accounts\u2014"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "106", 
+                                "5", 
+                                "h"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(h) Sunset provision. This section applies from November 6, 2002, to December 31, 2002. After December 31, 2002, see 11 CFR 106.7(a)."
+                        }
+                    ], 
+                    "label": [
+                        "106", 
+                        "5"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 106.5 Allocation of expenses between federal and non-federal activities by national party committees."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "106", 
+                                "6", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) General rule. Separate segregated funds and nonconnected committees that make disbursements in connection with federal and non-federal elections shall make those disbursements either entirely from funds subject to the prohibitions and limitations of the Act, or from accounts established pursuant to 11 CFR 102.5. Separate segregated funds and nonconnected committees that have established separate federal and non-federal accounts under 11 CFR 102.5 (a)(1)(i), or that make federal and non-federal disbursements from a single account under 11 CFR 102.5(a)(1)(ii), shall allocate their federal and non-federal expenses according to paragraphs (c), (d), and (f) of this section. For purposes of this section, \u201cnonconnected committee\u201d includes any committee which conducts activities in connection with an election, but which is not a party committee, an authorized committee of any candidate for federal election, or a separate segregated fund."
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "106", 
+                                                "6", 
+                                                "b", 
+                                                "1", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) Administrative expenses including rent, utilities, office supplies, and salaries not attributable to a clearly identified candidate, except that for a separate segregated fund such expenses may be paid instead by its connected organization;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "106", 
+                                                "6", 
+                                                "b", 
+                                                "1", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) The direct costs of a fundraising program or event including disbursements for solicitation of funds and for planning and administration of actual fundraising events, where Federal and non-Federal funds are collected through such program or event, except that for a separate segregated fund such expenses may be paid instead by its connected organization;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "106", 
+                                                "6", 
+                                                "b", 
+                                                "1", 
+                                                "iii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iii) Generic voter drives including voter identification, voter registration, and get-out-the-vote drives, or any other activities that urge the general public to register, vote or support candidates of a particular party or associated with a particular issue, without mentioning a specific candidate; and"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "106", 
+                                                "6", 
+                                                "b", 
+                                                "1", 
+                                                "iv"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iv) Public communications that refer to a political party, but do not refer to any clearly identified Federal or non-Federal candidate;"
+                                        }
+                                    ], 
+                                    "label": [
+                                        "106", 
+                                        "6", 
+                                        "b", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Costs to be allocated. Separate segregated funds and nonconnected committees that make disbursements in connection with Federal and non-Federal elections shall allocate expenses for the following categories of activity in accordance with paragraphs (c) or (d) of this section:"
+                                }, 
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "106", 
+                                                        "6", 
+                                                        "b", 
+                                                        "2", 
+                                                        "i", 
+                                                        "A"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(A) One or more clearly identified Federal candidates, but do not refer to any clearly identified non-Federal candidates; or"
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "106", 
+                                                        "6", 
+                                                        "b", 
+                                                        "2", 
+                                                        "i", 
+                                                        "B"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(B) One or more clearly identified Federal candidates and also refer to candidates of a particular party or associated with a particular issue, but do not refer to any clearly identified non-Federal candidates;"
+                                                }
+                                            ], 
+                                            "label": [
+                                                "106", 
+                                                "6", 
+                                                "b", 
+                                                "2", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) Voter drives, including voter identification, voter registration, and get-out-the-vote drives, in which the printed materials or scripted messages refer to, or the written instructions direct the separate segregated fund's or nonconnected committee's employee or volunteer to refer to:"
+                                        }, 
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "106", 
+                                                        "6", 
+                                                        "b", 
+                                                        "2", 
+                                                        "ii", 
+                                                        "A"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(A) One or more clearly identified non-Federal candidates, but do not refer to any clearly identified Federal candidates; or"
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "106", 
+                                                        "6", 
+                                                        "b", 
+                                                        "2", 
+                                                        "ii", 
+                                                        "B"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(B) One or more clearly identified non-Federal candidates and also refer to candidates of a particular party or associated with a particular issue, but do not refer to any clearly identified Federal candidates;"
+                                                }
+                                            ], 
+                                            "label": [
+                                                "106", 
+                                                "6", 
+                                                "b", 
+                                                "2", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) Voter drives, including voter identification, voter registration, and get-out-the-vote drives, in which the printed materials or scripted messages refer to, or the written instructions direct the separate segregated fund's or nonconnected committee's employee or volunteer to refer to:"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "106", 
+                                                "6", 
+                                                "b", 
+                                                "2", 
+                                                "iii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iii) Public communications that refer to one or more clearly identified Federal candidates, regardless of whether there is reference to a political party, but do not refer to any clearly identified non-Federal candidates; and"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "106", 
+                                                "6", 
+                                                "b", 
+                                                "2", 
+                                                "iv"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iv) Public communications that refer to a political party, and refer to one or more clearly identified non-Federal candidates, but do not refer to any clearly identified Federal candidates."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "106", 
+                                        "6", 
+                                        "b", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Costs not subject to allocation. Separate segregated funds and nonconnected committees that make disbursements for the following categories of activity shall pay for those activities in accordance with paragraph (f) of this section:"
+                                }
+                            ], 
+                            "label": [
+                                "106", 
+                                "6", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) Payments for administrative expenses, voter drives and certain public communications\u2014"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "106", 
+                                "6", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) [Reserved]"
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "106", 
+                                        "6", 
+                                        "d", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) If federal and non-federal funds are collected by one committee through a joint activity, that committee shall allocate its direct costs of fundraising, as described in paragraph (a)(2) of this section, according to the funds received method. Under this method, the committee shall allocate its fundraising costs based on the ratio of funds received into its federal account to its total receipts from each fundraising program or event. This ratio shall be estimated prior to each such program or event based upon the committee's reasonable prediction of its federal and non-federal revenue from that program or event, and shall be noted in the committee's report for the period in which the first disbursement for such program or event occurred, submitted pursuant to 11 CFR 104.5. Any disbursements for fundraising costs made prior to the actual program or event shall be allocated according to this estimated ratio."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "106", 
+                                        "6", 
+                                        "d", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) No later than the date 60 days after each fundraising program or event from which both federal and non-federal funds are collected, the committee shall adjust the allocation ratio for that program or event to reflect the actual ratio of funds received. If the non-federal account has paid more than its allocable share, the committee shall transfer funds from its federal to its non-federal account, as necessary, to reflect the adjusted allocation ratio. If the federal account has paid more than its allocable share, the committee shall make any transfers of funds from its non-federal to its federal account to reflect the adjusted allocation ratio within the 60-day time period established by this paragraph. The committee shall make note of any such adjustments and transfers in its report for any period in which a transfer was made, and shall also report the date of the fundraising program or event which serves as the basis for the transfer. In the case of a telemarketing or direct mail campaign, the \u201cdate\u201d for purposes of this paragraph is the last day of the telemarketing campaign, or the day on which the final direct mail solicitations are mailed."
+                                }
+                            ], 
+                            "label": [
+                                "106", 
+                                "6", 
+                                "d"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(d) Method for allocating direct costs of fundraising."
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "106", 
+                                                "6", 
+                                                "e", 
+                                                "1", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) Payment by federal account; transfers from non-federal account to federal account. The committee shall pay the entire amount of an allocable expense from its federal account and shall transfer funds from its non-federal account to its federal account solely to cover the non-federal share of that allocable expense."
+                                        }, 
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "106", 
+                                                        "6", 
+                                                        "e", 
+                                                        "1", 
+                                                        "ii", 
+                                                        "A"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(A) The committee shall establish a separate allocation account into which funds from its federal and non-federal accounts shall be deposited solely for the purpose of paying the allocable expenses of joint federal and non-federal activities. Once a committee has established an allocation account for this purpose, all allocable expenses shall be paid from that account for as long as the account is maintained."
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "106", 
+                                                        "6", 
+                                                        "e", 
+                                                        "1", 
+                                                        "ii", 
+                                                        "B"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(B) The committee shall transfer funds from its federal and non-federal accounts to its allocation account in amounts proportionate to the federal or non-federal share of each allocable expense."
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "106", 
+                                                        "6", 
+                                                        "e", 
+                                                        "1", 
+                                                        "ii", 
+                                                        "C"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(C) No funds contained in the allocation account may be transferred to any other account maintained by the committee."
+                                                }
+                                            ], 
+                                            "label": [
+                                                "106", 
+                                                "6", 
+                                                "e", 
+                                                "1", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) Payment by separate allocation account; transfers from federal and non-federal accounts to allocation account."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "106", 
+                                        "6", 
+                                        "e", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Payment options. Nonconnected committees and separate segregated funds that have established separate federal and non-federal accounts under 11 CFR 102.5 (a)(1)(i) shall pay the expenses of joint federal and non-federal activities described in paragraph (b) of this section according to either paragraph (e)(1)(i) or (ii), as follows:"
+                                }, 
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "106", 
+                                                "6", 
+                                                "e", 
+                                                "2", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) Under either payment option described in paragraphs (e)(1) (i) or (ii) of this section, the committee shall transfer funds from its non-federal account or from its federal and non-federal accounts to its separate allocation account following determination of the final cost of each joint federal and non-federal activity, or in advance of such determination if advance payment is required by the vendor and if such payment is based on a reasonable estimate of the activity's final cost as determined by the committee and the vendor(s) involved."
+                                        }, 
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "106", 
+                                                        "6", 
+                                                        "e", 
+                                                        "2", 
+                                                        "ii", 
+                                                        "A"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(A) For each such transfer, the committee must itemize in its reports the allocable activities for which the tranferred funds are intended to pay, as required by 11 CFR 104.10(b)(3); and"
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "106", 
+                                                        "6", 
+                                                        "e", 
+                                                        "2", 
+                                                        "ii", 
+                                                        "B"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(B) Except as provided in paragraph (d)(2) of this section, such funds may not be transferred more than 10 days before or more than 60 days after the payments for which they are designated are made."
+                                                }
+                                            ], 
+                                            "label": [
+                                                "106", 
+                                                "6", 
+                                                "e", 
+                                                "2", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) Funds transferred from a committee's non-federal account to its federal account or its allocation account are subject to the following requirements:"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "106", 
+                                                "6", 
+                                                "e", 
+                                                "2", 
+                                                "iii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iii) Any portion of a transfer from a committee's non-federal account to its federal account or its allocation account that does not meet the requirements of paragraph (e)(2)(ii) of this section shall be presumed to be a loan or contribution from the non-federal account to a federal account, in violation of the Act."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "106", 
+                                        "6", 
+                                        "e", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Timing of transfers between accounts."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "106", 
+                                        "6", 
+                                        "e", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) Reporting transfers of funds and allocated disbursements. A political committee that transfers funds between accounts and pays allocable expenses according to this section shall report each such transfer and disbursement pursuant to 11 CFR 104.10(b)."
+                                }
+                            ], 
+                            "label": [
+                                "106", 
+                                "6", 
+                                "e"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(e) Payment of allocable expenses by committees with separate federal and non-federal accounts\u2014"
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "106", 
+                                        "6", 
+                                        "f", 
+                                        "p1"
+                                    ], 
+                                    "node_type": "note", 
+                                    "text": "On November 30, 2009, the United States District Court for the District of Columbia ordered that paragraphs (c) and (f) of \u00a7\u2009106.6 are vacated. See Final  v. FEC, No. 05-0049 (D.D.C. Nov. 30, 2009)."
+                                }
+                            ], 
+                            "label": [
+                                "106", 
+                                "6", 
+                                "f"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(f) [Reserved]"
+                        }
+                    ], 
+                    "label": [
+                        "106", 
+                        "6"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 106.6 Allocation of expenses between federal and non-federal activities by separate segregated funds and nonconnected committees."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "106", 
+                                "7", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) National party committees are prohibited from raising or spending non-Federal funds. Therefore, these committees shall not allocate expenditures and disbursements between Federal and non-Federal accounts. All disbursements by a national party committee must be made from a Federal account."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "106", 
+                                "7", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) State, district, and local party committees that make expenditures and disbursements in connection with both Federal and non-Federal elections for activities that are not Federal election activities pursuant to 11 CFR 100.24 may use only funds subject to the prohibitions and limitations of the Act, or they may allocate such expenditures and disbursements between their Federal and their non-Federal accounts. State, district, and local party committees that are political committees that have established separate Federal and non-Federal accounts under 11 CFR 102.5(a)(1)(i) shall allocate expenses between those accounts according to paragraphs (c) and (d) of this section. Party organizations that are not political committees but have established separate Federal and non-Federal accounts, or that make Federal and non-Federal disbursements from a single account, shall also allocate their Federal and non-Federal expenses according to paragraphs (c) and (d) of this section. In lieu of establishing separate accounts, party organizations that are not political committees may choose to use a reasonable accounting method approved by the Commission (including any method embedded in software provided or approved by the Commission) pursuant to 11 CFR 102.5 and 300.30."
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "106", 
+                                        "7", 
+                                        "c", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Salaries, wages, and fringe benefits. State, district, and local party committees must either pay salaries, wages, and fringe benefits for employees who spend 25% or less of their time in a given month on Federal election activity or activity in connection with a Federal election with funds from their Federal account, or with a combination of funds from their Federal and non-Federal accounts, in accordance with paragraph (d)(2) of this section. See 11 CFR 300.33(d)(1)."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "106", 
+                                        "7", 
+                                        "c", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Administrative costs. State, district, and local party committees may either pay administrative costs, including rent, utilities, office equipment, office supplies, postage for other than mass mailings, and routine building maintenance, upkeep and repair, from their Federal account, or allocate such expenses between their Federal and non-Federal accounts, except that any such expenses directly attributable to a clearly identified Federal candidate must be paid only from the Federal account."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "106", 
+                                        "7", 
+                                        "c", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) Exempt party activities that are not Federal election activities. State, district, and local party committees may pay expenses for party activities that are exempt from the definitions of contribution and expenditure under 11 CFR 100.80, 100.87 or 100.89, and 100.140, 100.147 or 100.149, that are conducted in conjunction with non-Federal activity, and that are not Federal election activities pursuant to 11 CFR 100.24, from their Federal accounts, or may allocate these expenses between their Federal and non-Federal accounts."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "106", 
+                                        "7", 
+                                        "c", 
+                                        "4"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(4) Certain fundraising costs. State, district, and local party committees may allocate the direct costs of joint fundraising programs or events between their Federal and non-Federal accounts according to the funds received method described in paragraph (d)(4) of this section. The direct costs of a fundraising program or event include expenses for the solicitation of funds and for the planning and administration of actual fundraising programs and events."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "106", 
+                                        "7", 
+                                        "c", 
+                                        "5"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(5) Voter-drive activities that do not qualify as Federal election activities and that are not party exempt activities. Expenses for voter identification, voter registration, and get-out-the-vote drives, and any other activities that urge the general public to register or vote, or that promote or oppose a political party, without promoting or opposing a candidate or non-Federal candidate, that do not qualify as Federal election activities and that are not exempt party activities, must be paid with Federal funds or may be allocated between the committee's Federal and non-Federal accounts."
+                                }
+                            ], 
+                            "label": [
+                                "106", 
+                                "7", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) Costs allocable by State, district, and local party committees between Federal and non-Federal accounts\u2014"
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "106", 
+                                                "7", 
+                                                "d", 
+                                                "1", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) Except as provided in paragraph (d)(1)(iii) of this section, salaries, wages, and fringe benefits paid for employees who spend 25% or less of their compensated time in a given month on Federal election activities or on activities in connection with a Federal election must either be paid only from the Federal account or be allocated as administrative costs under paragraph (d)(2) of this section."
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "106", 
+                                                "7", 
+                                                "d", 
+                                                "1", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) Salaries, wages, and fringe benefits paid for employees who spend more than 25% of their compensated time in a given month on Federal election activities or on activities in connection with a Federal election must be paid only from a Federal account. See 11 CFR 300.33(d)(1), and paragraph (e)(2) of this section."
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "106", 
+                                                "7", 
+                                                "d", 
+                                                "1", 
+                                                "iii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iii) Salaries, wages, and fringe benefits paid for employees who spend none of their compensated time in a given month on Federal election activities or on activities in connection with a Federal election may be paid entirely with funds that comply with State law."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "106", 
+                                        "7", 
+                                        "d", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Salaries and wages. Committees must keep a monthly log of the percentage of time each employee spends in connection with a Federal election. Allocations of salaries and wages shall be undertaken as follows:"
+                                }, 
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "106", 
+                                                "7", 
+                                                "d", 
+                                                "2", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) Presidential election years. In any even year in which a Presidential candidate, but no Senate candidate appears on the ballot, and in the preceding year, State, district, and local party committees must allocate at least 28% of administrative expenses to their Federal accounts."
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "106", 
+                                                "7", 
+                                                "d", 
+                                                "2", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) Presidential and Senate election year. In any even year in which a Presidential candidate and a Senate candidate appear on the ballot, and in the preceding year, State, district, and local party committees must allocate at least 36% of administrative expenses to their Federal accounts."
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "106", 
+                                                "7", 
+                                                "d", 
+                                                "2", 
+                                                "iii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iii) Senate election year. In any even year in which a Senate candidate, but no Presidential candidate, appears on the ballot, and in the preceding year, State, district, and local party committees must allocate at least 21% of administrative expenses to their Federal account."
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "106", 
+                                                "7", 
+                                                "d", 
+                                                "2", 
+                                                "iv"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iv) Non-Presidential and non-Senate year. In any even year in which neither a Presidential nor a Senate candidate appears on the ballot, and in the preceding year, State, district, and local party committees must allocate at least 15% of administrative expenses to their Federal account."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "106", 
+                                        "7", 
+                                        "d", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Administrative costs. State, district, and local party committees that choose to allocate administrative expenses may do so subject to the following requirements:"
+                                }, 
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "106", 
+                                                "7", 
+                                                "d", 
+                                                "3", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) Presidential election years. In any even year in which a Presidential candidate, but no Senate candidate appears on the ballot, and in the preceding year, State, district, and local party committees must allocate at least 28% of these expenses to their Federal accounts."
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "106", 
+                                                "7", 
+                                                "d", 
+                                                "3", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) Presidential and Senate election year. In any even year in which a Presidential candidate and a Senate candidate appear on the ballot, and in the preceding year, State, district, and local party committees must allocate at least 36% of these expenses to their Federal accounts."
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "106", 
+                                                "7", 
+                                                "d", 
+                                                "3", 
+                                                "iii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iii) Senate election year. In any even year in which a Senate candidate, but no Presidential candidate, appears on the ballot, and in the preceding year, State, district, and local party committees must allocate at least 21% of these expenses to their Federal account."
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "106", 
+                                                "7", 
+                                                "d", 
+                                                "3", 
+                                                "iv"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iv) Non-Presidential and non-Senate year. In any even year in which neither a Presidential nor a Senate candidate appears on the ballot, and in the preceding year, State, district, and local party committee must allocate at least 15% of these expenses to their Federal account."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "106", 
+                                        "7", 
+                                        "d", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) Exempt party activities and voter drive activities that are not Federal election activities. State, district, and local party committees that choose to allocate expenses for exempt activities conducted in conjunction with non-Federal activities and voter drive activities, that are not Federal election activities, must do so subject to the following requirements:"
+                                }, 
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "106", 
+                                                "7", 
+                                                "d", 
+                                                "4", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) The committee must allocate its fundraising costs based on the ratio of funds received into its Federal account to its total receipts from each fundraising program or event. This ratio shall be estimated prior to each such program or event based upon the committee's reasonable prediction of its Federal and non-Federal revenue from that program or event, and must be noted in the committee's report for the period in which the first disbursement for such program or event occurred, submitted pursuant to 11 CFR 104.5. Any disbursements for fundraising costs made prior to the actual program or event must be allocated according to this estimated ratio."
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "106", 
+                                                "7", 
+                                                "d", 
+                                                "4", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) No later than the date 60 days after each fundraising program or event from which both Federal and non-Federal funds are collected, the committee shall adjust the allocation ratio for that program or event to reflect the actual ratio of funds received. If the non-Federal account has paid more than its allocable share, the committee shall transfer funds from its Federal to its non-Federal account, as necessary, to reflect the adjusted allocation ratio. If the Federal account has paid more than its allocable share, the committee shall make any transfers of funds from its non-Federal to its Federal account to reflect the adjusted allocation ratio within the 60-day time period established by this paragraph. The committee shall make note of any such adjustments and transfers in its report for any period in which a transfer was made, and shall also report the date of the fundraising program or event that serves as the basis for the transfer. In the case of a telemarketing or direct mail campaign, the date for purposes of this paragraph is the last day of the telemarketing campaign, or the day on which the final direct mail solicitations are mailed."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "106", 
+                                        "7", 
+                                        "d", 
+                                        "4"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(4) Fundraising for Federal and non-Federal accounts. If Federal and non-Federal funds are collected by a State, district, or local party committee through a joint fundraising activity, that committee must allocate its direct fundraising costs using the funds received method and according to the following procedures:"
+                                }
+                            ], 
+                            "label": [
+                                "106", 
+                                "7", 
+                                "d"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(d) Allocation percentages, ratios, and record-keeping\u2014"
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "106", 
+                                        "7", 
+                                        "e", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Disbursements for State, district, and local party committees for activities that refer only to one or more candidates for Federal office must not be allocated. All such disbursements must be made from a Federal account."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "106", 
+                                        "7", 
+                                        "e", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Salaries and wages. Salaries and wages for employees who spend more than 25% of their compensated time in a given month on activities in connection with a Federal election must not be allocated. All such disbursements must be made from a Federal account. See 11 CFR 300.33(d)(2)."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "106", 
+                                        "7", 
+                                        "e", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) Federal election activities. Activities that are Federal election activities pursuant to 11 CFR 100.24 must not be allocated between Federal and non-Federal accounts. Only Federal funds, or a mixture of Federal funds and Levin funds, as provided in 11 CFR 300.33, may be used."
+                                }
+                            ], 
+                            "label": [
+                                "106", 
+                                "7", 
+                                "e"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(e) Costs not allocable by State, district, and local party committees between Federal and non-Federal accounts. The following costs incurred by State, district, and local party committees shall be paid only with Federal funds:"
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "106", 
+                                                "7", 
+                                                "f", 
+                                                "1", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) State, district, and local party committees must pay the entire amount of an allocable expense from their Federal accounts and transfer funds from their non-Federal account to the Federal account solely to cover the non-Federal share of that allocable expense; or"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "106", 
+                                                "7", 
+                                                "f", 
+                                                "1", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) State, district, or local party committees may establish a separate allocation account into which funds from its Federal and non-Federal accounts may be deposited solely for the purpose of paying the allocable expenses of joint Federal and non-Federal activities."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "106", 
+                                        "7", 
+                                        "f", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Payments from Federal accounts or from allocation accounts."
+                                }, 
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "106", 
+                                                "7", 
+                                                "f", 
+                                                "2", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) If a Federal or allocation account is used to make allocable expenditures and disbursements, State, district, and local party committees must transfer funds from their non-Federal to their Federal or allocation account to meet allocable expenses no more than 10 days before and no more than 60 days after the payments for which they are designated are made from a Federal or allocation account, except that transfers may be made more than 10 days before a payment is made from the Federal or allocation account if advance payment is required by the vendor(s) and if such payment is based on a reasonable estimate of the activity's final costs as determined by the committee and the vendor(s) involved."
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "106", 
+                                                "7", 
+                                                "f", 
+                                                "2", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) Any portion of a transfer from a committee's non-Federal account to its Federal or allocation account that does not meet the requirement of paragraph (f)(2)(i) of this section shall be presumed to be a loan or contribution from the non-Federal account to the Federal or allocation account, in violation of the Act."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "106", 
+                                        "7", 
+                                        "f", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Timing."
+                                }
+                            ], 
+                            "label": [
+                                "106", 
+                                "7", 
+                                "f"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(f) Transfers between accounts to cover allocable expenses. State, district, and local party committees may transfer funds from their non-Federal to their Federal accounts or to an allocation account solely to meet allocable expenses under this section and only pursuant to the following requirements:"
+                        }
+                    ], 
+                    "label": [
+                        "106", 
+                        "7"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 106.7 Allocation of expenses between Federal and non-Federal accounts by party committees, other than for Federal election activities."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "106", 
+                                        "8", 
+                                        "a", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) The communication refers to a clearly identified Federal candidate;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "106", 
+                                        "8", 
+                                        "a", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) The communication does not refer to any other clearly identified Federal or non-Federal candidate;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "106", 
+                                        "8", 
+                                        "a", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) The communication includes another reference that generically refers to other candidates of the Federal candidate's party without clearly identifying them;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "106", 
+                                        "8", 
+                                        "a", 
+                                        "4"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(4) The communication does not solicit a contribution, donation, or any other funds from any person; and"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "106", 
+                                        "8", 
+                                        "a", 
+                                        "5"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(5) The phone bank is not exempt from the definition of \u201ccontribution\u201d under 11 CFR 100.89 and is not exempt from the definition of \u201cexpenditure\u201d under 11 CFR 100.149."
+                                }
+                            ], 
+                            "label": [
+                                "106", 
+                                "8", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) Scope. This section applies to the costs of a phone bank conducted by a national, State, district, or local committee or organization of a political party where\u2014"
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "106", 
+                                        "8", 
+                                        "b", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Fifty percent of the disbursement is not attributable to any other Federal or non-Federal candidate, but must be paid for entirely with Federal funds; and"
+                                }, 
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "106", 
+                                                "8", 
+                                                "b", 
+                                                "2", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) An in-kind contribution, subject to the limitations set forth in 11 CFR 110.1 or 110.2; or"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "106", 
+                                                "8", 
+                                                "b", 
+                                                "2", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) A coordinated expenditure or an independent expenditure, subject to the limitations, restrictions, and requirements of 11 CFR 109.10, 109.32, and 109.33; or"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "106", 
+                                                "8", 
+                                                "b", 
+                                                "2", 
+                                                "iii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iii) Reimbursed by the clearly identified Federal candidate or his or her authorized committee."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "106", 
+                                        "8", 
+                                        "b", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Fifty percent of the disbursement is attributed to the clearly identified Federal candidate and must be paid for entirely with Federal funds. This disbursement may be one or a combination of the following:"
+                                }
+                            ], 
+                            "label": [
+                                "106", 
+                                "8", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) Attribution. Each disbursement for the costs of a phone bank described in paragraph (a) of this section shall be attributed as follows:"
+                        }
+                    ], 
+                    "label": [
+                        "106", 
+                        "8"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 106.8 Allocation of expenses for political party committee phone banks that refer to a clearly identified Federal candidate."
+                }
+            ], 
+            "label": [
+                "106", 
+                "Subpart"
+            ], 
+            "node_type": "emptypart", 
+            "text": ""
+        }
+    ], 
+    "label": [
+        "106"
+    ], 
+    "node_type": "regtext", 
+    "text": "", 
+    "title": "PART 106\u2014ALLOCATIONS OF CANDIDATE AND COMMITTEE ACTIVITIES"
+}

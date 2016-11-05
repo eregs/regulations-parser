@@ -1,0 +1,87 @@
+{
+    "9407-1": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "552", 
+                "title": "5"
+            }, 
+            "locations": [
+                0, 
+                1
+            ], 
+            "text": "5 U.S.C. 552", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=552&title=5&year=mostrecent"
+        }
+    ], 
+    "9407-2-p318973502": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "15323", 
+                "title": "42"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "42 U.S.C. 15323", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=15323&title=42&year=mostrecent"
+        }
+    ], 
+    "9407-2-p4047032031": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "15301", 
+                "title": "42"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "42 U.S.C. 15301", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=15301&title=42&year=mostrecent"
+        }
+    ], 
+    "9407-5-a-10": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "554", 
+                "title": "5"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "5 U.S.C. 554", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=554&title=5&year=mostrecent"
+        }
+    ], 
+    "9407-5-a-3": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "552", 
+                "title": "5"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "5 U.S.C. 552", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=552&title=5&year=mostrecent"
+        }
+    ], 
+    "9407-8": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "11", 
+                "part": "9405"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "11 CFR part 9405", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=9405&titlenum=11&year=mostrecent"
+        }
+    ]
+}

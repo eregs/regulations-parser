@@ -1,0 +1,914 @@
+{
+    "children": [
+        {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "5", 
+                                "1", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) Commission means the Federal Election Commission established by the Federal Election Campaign Act of 1971, as amended."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "5", 
+                                "1", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) Commissioner means an individual appointed to the Federal Election Commission pursuant to 52 U.S.C. 30109 6(a)."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "5", 
+                                "1", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) Request means to seek access to Commission materials subject to the provisions of the Federal Election Campaign Act of 1971, as amended."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "5", 
+                                "1", 
+                                "d"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(d) Requestor is any person who submits a request to the Commission."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "5", 
+                                "1", 
+                                "e"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(e) Act means the Federal Election Campaign Act, as amended by the Federal Election Campaign Act Amendments of 1974, 1976, and 1979, and unless specifically excluded, includes chapters 95 and 96 of the Internal Revenue Code of 1954 relating to public financing of Federal elections."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "5", 
+                                "1", 
+                                "f"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(f) Public Disclosure Division of the Commission is that division which is responsible for, among other things, the processing of requests for public access to records which are submitted to the Commission pursuant to 52 U.S.C. 30109(a)(4)(B)(ii) and 30111(a)."
+                        }
+                    ], 
+                    "label": [
+                        "5", 
+                        "1"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 5.1 Definitions."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "5", 
+                                "2", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) The Commission will make the fullest possible disclosure of records to the public, consistent with the rights of individuals to privacy, the rights of persons contracting with the Commission with respect to trade secrets and commercial or financial information entitled to confidential treatment, and the need for the Commission to promote free internal policy deliberations and to pursue its official activities without undue disruption."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "5", 
+                                "2", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) Nothing herein shall be deemed to restrict the public availability of Commission records falling outside provisions of the Act, or to restrict such public access to Commission records as is available pursuant to the Freedom of Information Act and the rules set forth as part 4 of this chapter."
+                        }
+                    ], 
+                    "label": [
+                        "5", 
+                        "2"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 5.2 Policy on disclosure of records."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "5", 
+                                "3", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) The regulations in this part implement the provisions of 52 U.S.C. 30108(d), 30109(a)(4)(B)(ii), and 30111(a)."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "5", 
+                                "3", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) Public access to such Commission records as are subject to the collateral provisions of the Freedom of Information Act and are not included in the material subject to disclosure under this part (described in 11 CFR 5.4(a)) shall be governed by the rules set forth as part 4 of this chapter."
+                        }
+                    ], 
+                    "label": [
+                        "5", 
+                        "3"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 5.3 Scope."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "5", 
+                                        "4", 
+                                        "a", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Reports of receipts and expenditures, designations of campaign depositories, statements of organization, candidate designations of campaign committees and the indices compiled from the filings therein."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "5", 
+                                        "4", 
+                                        "a", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Requests for advisory opinions, written comments submitted in connection therewith, and responses issued by the Commission."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "5", 
+                                        "4", 
+                                        "a", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) With respect to enforcement matters, any conciliation agreement entered into between the Commission and any respondent."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "5", 
+                                        "4", 
+                                        "a", 
+                                        "4"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(4) Opinions of Commissioners rendered in enforcement cases and General Counsel's Reports and non-exempt 52 U.S.C. 30109 investigatory materials shall be placed on the public record of the Agency no later than 30 days from the date on which all respondents are notified that the Commission has voted to close such an enforcement file."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "5", 
+                                        "4", 
+                                        "a", 
+                                        "5"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(5) Letter requests for guidance and responses thereto."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "5", 
+                                        "4", 
+                                        "a", 
+                                        "6"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(6) The minutes of Commission meetings."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "5", 
+                                        "4", 
+                                        "a", 
+                                        "7"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(7) Material routinely prepared for public distribution, e.g. campaign guidelines, FEC Record, press releases, speeches, notices to candidates and committees."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "5", 
+                                        "4", 
+                                        "a", 
+                                        "8"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(8) Audit reports (if discussed in open session)."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "5", 
+                                        "4", 
+                                        "a", 
+                                        "9"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(9) Agendas for Commission meetings."
+                                }
+                            ], 
+                            "label": [
+                                "5", 
+                                "4", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) In accordance with 52 U.S.C. 30111(a), the Commission shall make the following material available for public inspection and copying through the Commission's Public Disclosure Division:"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "5", 
+                                "4", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) The provisions of this part apply only to existing records; nothing herein shall be construed as requiring the creation of new records."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "5", 
+                                "4", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) In order to ensure the integrity of the Commission records subject to the Act and the maximum availability of such records to the public, nothing herein shall be construed as permitting the physical removal of any Commission records from the public facilities maintained by the Public Disclosure Division other than copies of such records obtained in accordance with the provisions of this part."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "5", 
+                                "4", 
+                                "d"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(d) Release of records under this section is subject to the provisions of 5 U.S.C. 552a."
+                        }
+                    ], 
+                    "label": [
+                        "5", 
+                        "4"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 5.4 Availability of records."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "5", 
+                                "5", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) A request to inspect or copy those public records described in 11 CFR 5.4(a) may be made in person or by mail. The Public Disclosure Division is open Monday through Friday between the hours of 9 a.m. and 5 p.m. and is located on the first floor, 999 E Street, NW., Washington, DC 20463."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "5", 
+                                "5", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) Each request shall describe the records sought with sufficient specificity with respect to names, dates and subject matter to permit the records to be located with a reasonable amount of effort. A requester will be promptly advised if the requested records cannot be located on the basis of the description given and that further identifying information must be provided before the request can be satisfied."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "5", 
+                                "5", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) Requests for copies of records not available through the Public Disclosure Division shall be addressed to the Chief FOIA Officer, Federal Election Commission, 999 E Street, NW., Washington, DC 20463. Requests for Commission records not described in 11 CFR 5.4(a) shall be treated as requests made pursuant to the Freedom of Information Act (5 U.S.C. 552) and shall be governed by 11 CFR part 4. In the event that the Public Disclosure Division receives a written request for access to materials not described in 11 CFR 5.4(a), it shall promptly forward such request to the Commission FOIA Officer for processing in accordance with the provisions of part 4 of this chapter."
+                        }
+                    ], 
+                    "label": [
+                        "5", 
+                        "5"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 5.5 Request for records."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "5", 
+                                                        "6", 
+                                                        "a", 
+                                                        "1", 
+                                                        "p1", 
+                                                        "p1"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "Photocopying from microfilm reader-printer\u2014$.15 per page"
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "5", 
+                                                        "6", 
+                                                        "a", 
+                                                        "1", 
+                                                        "p1", 
+                                                        "p2"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "Photocopying from photocopying machines\u2014$.05 per page"
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "5", 
+                                                        "6", 
+                                                        "a", 
+                                                        "1", 
+                                                        "p1", 
+                                                        "p3"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "Paper copies from microfilm\u2014Paper Print Machine\u2014$.05 per frame/page"
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "5", 
+                                                        "6", 
+                                                        "a", 
+                                                        "1", 
+                                                        "p1", 
+                                                        "p4"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "", 
+                                                    "title": "Reels of Microfilm"
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "5", 
+                                                        "6", 
+                                                        "a", 
+                                                        "1", 
+                                                        "p1", 
+                                                        "p5"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "Daily film (partial or complete roll)\u2014$2.85 per roll"
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "5", 
+                                                        "6", 
+                                                        "a", 
+                                                        "1", 
+                                                        "p1", 
+                                                        "p6"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "Other film (partial or complete roll)\u2014$5.00 per roll"
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "5", 
+                                                        "6", 
+                                                        "a", 
+                                                        "1", 
+                                                        "p1", 
+                                                        "p7"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "", 
+                                                    "title": "Publications: (new or not from stocks available)"
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "5", 
+                                                        "6", 
+                                                        "a", 
+                                                        "1", 
+                                                        "p1", 
+                                                        "p8"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "Cost of photocopying (reproducing) document\u2014$.05 per page"
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "5", 
+                                                        "6", 
+                                                        "a", 
+                                                        "1", 
+                                                        "p1", 
+                                                        "p9"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "Cost of binding document\u2014$.30 per inch"
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "5", 
+                                                        "6", 
+                                                        "a", 
+                                                        "1", 
+                                                        "p1", 
+                                                        "p10"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "Plus cost of staff research time after first 1/2 hour (see Research Time)"
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "5", 
+                                                        "6", 
+                                                        "a", 
+                                                        "1", 
+                                                        "p1", 
+                                                        "p11"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "", 
+                                                    "title": "Publications: (available stock)"
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "5", 
+                                                        "6", 
+                                                        "a", 
+                                                        "1", 
+                                                        "p1", 
+                                                        "p12"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "If available from stock on hand, cost is based on previously calculated cost as stated in the publication (based on actual cost per copy, including reproduction and binding)."
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "5", 
+                                                        "6", 
+                                                        "a", 
+                                                        "1", 
+                                                        "p1", 
+                                                        "p13"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "", 
+                                                    "title": "Computer Tapes:"
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "5", 
+                                                        "6", 
+                                                        "a", 
+                                                        "1", 
+                                                        "p1", 
+                                                        "p14"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "Cost ($.0006 per Computer Resource Unit Utilized\u2014CRU) to process the request plus the cost of the computer tape ($25) and professional staff time (see Research Time). The cost varies based upon request."
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "5", 
+                                                        "6", 
+                                                        "a", 
+                                                        "1", 
+                                                        "p1", 
+                                                        "p15"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "", 
+                                                    "title": "Computer Indexes:"
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "5", 
+                                                        "6", 
+                                                        "a", 
+                                                        "1", 
+                                                        "p1", 
+                                                        "p16"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "No charge for 20 or fewer requests for computer indexes, except for a name search as described below."
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "5", 
+                                                        "6", 
+                                                        "a", 
+                                                        "1", 
+                                                        "p1", 
+                                                        "p17"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "C Index\u2014Committee Index of Disclosure Documents\u2014No charge for requests of 20 or fewer committee ID numbers. Requests for more than 20 ID numbers will cost $.05 for each ID number requested."
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "5", 
+                                                        "6", 
+                                                        "a", 
+                                                        "1", 
+                                                        "p1", 
+                                                        "p18"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "E Index (Parts 1-4)\u2014Candidate Index of Supporting Documents\u2014No charge for requests of 20 or fewer candidate ID numbers. Requests for more than 20 ID numbers will cost $.10 for each ID number requested."
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "5", 
+                                                        "6", 
+                                                        "a", 
+                                                        "1", 
+                                                        "p1", 
+                                                        "p19"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "D Index\u2014Committee Index or Candidates Supported/Opposed\u2014No charge for requests of 20 or fewer committee ID numbers. Requests for more than 20 ID numbers will cost $.30 for each committee ID number requested."
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "5", 
+                                                        "6", 
+                                                        "a", 
+                                                        "1", 
+                                                        "p1", 
+                                                        "p20"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "E Index (Complete)\u2014Candidate Index of Supporting Documents\u2014No charge for requests of 20 or fewer committee ID numbers. Requests for more than 20 ID numbers will cost $2.00 for each candidate ID number requested."
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "5", 
+                                                        "6", 
+                                                        "a", 
+                                                        "1", 
+                                                        "p1", 
+                                                        "p21"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "G Index\u2014Selected List of Receipts and Expenditures\u2014No charge for requests of 20 or fewer committee ID numbers. Requests for more than 20 ID numbers will cost $2.00 for each ID number requested."
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "5", 
+                                                        "6", 
+                                                        "a", 
+                                                        "1", 
+                                                        "p1", 
+                                                        "p22"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "Other computer index requests for more than 20 ID numbers will cost $.0006 per CRU (Computer Resource Unit) utilized."
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "5", 
+                                                        "6", 
+                                                        "a", 
+                                                        "1", 
+                                                        "p1", 
+                                                        "p23"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "Name Search\u2014A computer search of an entire individual contributor file for contributions made by a particular individual or individuals will cost $.0006 per CRU (Computer Resource Unit) utilized."
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "5", 
+                                                        "6", 
+                                                        "a", 
+                                                        "1", 
+                                                        "p1", 
+                                                        "p24"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "", 
+                                                    "title": "Research Time/Photocopying Time"
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "5", 
+                                                        "6", 
+                                                        "a", 
+                                                        "1", 
+                                                        "p1", 
+                                                        "p25"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "Clerical: First 1/2 hour is free; remaining time costs $4.50 per each half hour (agency average of staff below a GS-11) for each request."
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "5", 
+                                                        "6", 
+                                                        "a", 
+                                                        "1", 
+                                                        "p1", 
+                                                        "p26"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "Professional: First 1/2 hour is free; remaining time costs $12.40 per each half hour (agency average of staff at GS-11 and above) for each request."
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "5", 
+                                                        "6", 
+                                                        "a", 
+                                                        "1", 
+                                                        "p1", 
+                                                        "p27"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "", 
+                                                    "title": "Other Charges"
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "5", 
+                                                        "6", 
+                                                        "a", 
+                                                        "1", 
+                                                        "p1", 
+                                                        "p28"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "Certification of a Document: $7.35 per quarter hour."
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "5", 
+                                                        "6", 
+                                                        "a", 
+                                                        "1", 
+                                                        "p1", 
+                                                        "p29"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "Transcripts of Commission meetings not previously transcribed: $7.50 per half hour (equivalent of a GS-11 executive secretary)."
+                                                }
+                                            ], 
+                                            "label": [
+                                                "5", 
+                                                "6", 
+                                                "a", 
+                                                "1", 
+                                                "p1"
+                                            ], 
+                                            "node_type": "extract", 
+                                            "text": ""
+                                        }
+                                    ], 
+                                    "label": [
+                                        "5", 
+                                        "6", 
+                                        "a", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Fees will be charged for copies of records which are furnished to a requester under this part and for the staff time spent in locating and reproducing such records. The fees to be levied for services rendered under this part shall not exceed the Commission's direct cost of processing requests for those records computed on the basis of the actual number of copies produced and the staff time expended in fulfilling the particular request, in accordance with the following schedule of standard fees:"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "5", 
+                                        "6", 
+                                        "a", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Upon receipt of any request for the production of computer tape or microfilm, the Commission will advise the requester of the identity of the private contractor who will perform the duplication services. The fee for the production of computer tape or microfilm shall be made payable to that private contractor and shall be fowarded to the Commission."
+                                }
+                            ], 
+                            "label": [
+                                "5", 
+                                "6", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a)"
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "5", 
+                                                "6", 
+                                                "b", 
+                                                "p1", 
+                                                "p1"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "Advisory Opinion Index"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "5", 
+                                                "6", 
+                                                "b", 
+                                                "p1", 
+                                                "p2"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "Report on Financial Activity"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "5", 
+                                                "6", 
+                                                "b", 
+                                                "p1", 
+                                                "p3"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "Financial Control and Compliance Manual"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "5", 
+                                                "6", 
+                                                "b", 
+                                                "p1", 
+                                                "p4"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "MUR Index"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "5", 
+                                                "6", 
+                                                "b", 
+                                                "p1", 
+                                                "p5"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "Guideline for Presentation in Good Order"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "5", 
+                                                "6", 
+                                                "b", 
+                                                "p1", 
+                                                "p6"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "Office Account Index"
+                                        }
+                                    ], 
+                                    "label": [
+                                        "5", 
+                                        "6", 
+                                        "b", 
+                                        "p1"
+                                    ], 
+                                    "node_type": "extract", 
+                                    "text": ""
+                                }
+                            ], 
+                            "label": [
+                                "5", 
+                                "6", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) Commission publications for which fees will be charged under 11 CFR 5.6(a) include, but are not limited to, the following:"
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "5", 
+                                        "6", 
+                                        "c", 
+                                        "p1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "Similarly, if the records requested require the production of microfilm or of computer tapes, the Commission will not instruct its contractor to duplicate the records until the requester has submitted payment as directed or has made acceptable arrangements to pay the total amount due. If any fee is not precisely ascertainable, an estimate will be made by the Commission and the requester will be required to forward the fee so estimated. In the event any advance payment differs from the actual fee, an appropriate adjustment will be made at the time the copies are made available by the Commission."
+                                }
+                            ], 
+                            "label": [
+                                "5", 
+                                "6", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) In the event the anticipated fees for all pending requests from the same requester exceed $25.00, records will not be searched, nor copies furnished, until the requester pays, or makes acceptable arrangements to pay, the total amount due."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "5", 
+                                "6", 
+                                "d"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(d) The Commission may reduce or waive payments of fees hereunder if it determines that such waiver or reduction is in the public interest because the furnishing of the requested information to the particular requester involved can be considered as primarily benefiting the general public as opposed to primarily benefiting the person or organization requesting the information."
+                        }
+                    ], 
+                    "label": [
+                        "5", 
+                        "6"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 5.6 Fees."
+                }
+            ], 
+            "label": [
+                "5", 
+                "Subpart"
+            ], 
+            "node_type": "emptypart", 
+            "text": ""
+        }
+    ], 
+    "label": [
+        "5"
+    ], 
+    "node_type": "regtext", 
+    "text": "", 
+    "title": "PART 5\u2014ACCESS TO PUBLIC DISCLOSURE DIVISION DOCUMENTS"
+}

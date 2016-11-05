@@ -1,0 +1,48 @@
+{
+    "9006": [
+        {
+            "index": [
+                "9006", 
+                "1"
+            ], 
+            "title": "\u00a7 9006.1 Separate reports."
+        }, 
+        {
+            "index": [
+                "9006", 
+                "2"
+            ], 
+            "title": "\u00a7 9006.2 Filing dates."
+        }, 
+        {
+            "index": [
+                "9006", 
+                "3"
+            ], 
+            "title": "\u00a7 9006.3 Alphabetized schedules."
+        }
+    ], 
+    "9006-Subpart": [
+        {
+            "index": [
+                "9006", 
+                "1"
+            ], 
+            "title": "\u00a7 9006.1 Separate reports."
+        }, 
+        {
+            "index": [
+                "9006", 
+                "2"
+            ], 
+            "title": "\u00a7 9006.2 Filing dates."
+        }, 
+        {
+            "index": [
+                "9006", 
+                "3"
+            ], 
+            "title": "\u00a7 9006.3 Alphabetized schedules."
+        }
+    ]
+}

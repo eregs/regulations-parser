@@ -1,0 +1,137 @@
+{
+    "children": [
+        {
+            "children": [
+                {
+                    "children": [], 
+                    "label": [
+                        "103", 
+                        "1"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "Each committee shall notify the Commission of the campaign depository(ies) it has designated, pursuant to 11 CFR 101.1 and 103.2.", 
+                    "title": "\u00a7 103.1 Notification of the commission."
+                }, 
+                {
+                    "children": [], 
+                    "label": [
+                        "103", 
+                        "2"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "Each political committee shall designate one or more State banks, federally chartered depository institutions (including a national bank), or depository institutions the depositor accounts of which are insured by the Federal Deposit Insurance Corporation, Federal Savings and Loan Insurance Corporation, or the National Credit Union Administration, as its campaign depository or depositories. One or more depositories may be established in one or more States. Each political committee shall maintain at least one checking account or transaction account at one of its depositories. Additional accounts may be established at each depository.", 
+                    "title": "\u00a7 103.2 Depositories (52 U.S.C. 30102(h)(1))."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "103", 
+                                "3", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) All receipts by a political committee shall be deposited in account(s) established pursuant to 11 CFR 103.2, except that any contribution may be, within 10 days of the treasurer's receipt, returned to the contributor without being deposited. The treasurer of the committee shall be responsible for making such deposits. All deposits shall be made within 10 days of the treasurer's receipt. A committee shall make all disbursements by check or similar drafts drawn on an account at its designated campaign depository, except for expenditures of $100 or less made from a petty cash fund maintained pursuant to 11 CFR 102.11. Funds may be transferred from the depository for investment purposes, but shall be returned to the depository before such funds are used to make expenditures."
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "103", 
+                                        "3", 
+                                        "b", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Contributions that present genuine questions as to whether they were made by corporations, labor organizations, foreign nationals, or Federal contractors may be, within ten days of the treasurer's receipt, either deposited into a campaign depository under 11 CFR 103.3(a) or returned to the contributor. If any such contribution is deposited, the treasurer shall make his or her best efforts to determine the legality of the contribution. The treasurer shall make at least one written or oral request for evidence of the legality of the contribution. Such evidence includes, but is not limited to, a written statement from the contributor explaining why the contribution is legal, or a written statement by the treasurer memorializing an oral communication explaining why the contribution is legal. If the contribution cannot be determined to be legal, the treasurer shall, within thirty days of the treasurer's receipt of the contribution, refund the contribution to the contributor."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "103", 
+                                        "3", 
+                                        "b", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) If the treasurer in exercising his or her responsibilities under 11 CFR 103.3(b) determined that at the time a contribution was received and deposited, it did not appear to be made by a corporation, labor organization, foreign national or Federal contractor, or made in the name of another, but later discovers that it is illegal based on new evidence not available to the political committee at the time of receipt and deposit, the treasurer shall refund the contribution to the contributor within thirty days of the date on which the illegality is discovered. If the political committee does not have sufficient funds to refund the contribution at the time the illegality is discovered, the political committee shall make the refund from the next funds it receives."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "103", 
+                                        "3", 
+                                        "b", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) Contributions which on their face exceed the contribution limitations set forth in 11 CFR 110.1 or 110.2, and contributions which do not appear to be excessive on their face, but which exceed the contribution limits set forth in 11 CFR 110.1 or 110.2 when aggregated with other contributions from the same contributor, and contributions which cannot be accepted under the net debts outstanding provisions of 11 CFR 110.1(b)(3) and 110.2(b)(3) may be either deposited into a campaign depository under 11 CFR 103.3(a) or returned to the contributor. If any such contribution is deposited, the treasurer may request redesignation or reattribution of the contribution by the contributor in accordance with 11 CFR 110.1(b), 110.1(k) or 110.2(b), as appropriate. If a redesignation or reattribution is not obtained, the treasurer shall, within sixty days of the treasurer's receipt of the contribution, refund the contribution to the contributor."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "103", 
+                                        "3", 
+                                        "b", 
+                                        "4"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(4) Any contribution which appears to be illegal under 11 CFR 103.3(b) (1) or (3), and which is deposited into a campaign depository shall not be used for any disbursements by the political committee until the contribution has been determined to be legal. The political committee must either establish a separate account in a campaign depository for such contributions or maintain sufficient funds to make all such refunds."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "103", 
+                                        "3", 
+                                        "b", 
+                                        "5"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(5) If a contribution which appears to be illegal under 11 CFR 103.3(b) (1) or (3) is deposited in a campaign depository, the treasurer shall make and retain a written record noting the basis for the appearance of illegality. A statement noting that the legality of the contribution is in question shall be included in the report noting the receipt of the contribution. If a contribution is refunded to the contributor because it cannot be determined to be legal, the treasurer shall note the refund on the report covering the reporting period in which the refund is made."
+                                }
+                            ], 
+                            "label": [
+                                "103", 
+                                "3", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) The treasurer shall be responsible for examining all contributions received for evidence of illegality and for ascertaining whether contributions received, when aggregated with other contributions from the same contributor, exceed the contribution limitations of 11 CFR 110.1 or 110.2."
+                        }
+                    ], 
+                    "label": [
+                        "103", 
+                        "3"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 103.3 Deposit of receipts and disbursements (52 U.S.C. 30102(h)(1))."
+                }, 
+                {
+                    "children": [], 
+                    "label": [
+                        "103", 
+                        "4"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "Any campaign depository designated by the principal campaign committee of a political party's candidate for President shall be the campaign depository for that political party's candidate for the office of Vice President.", 
+                    "title": "\u00a7 103.4 Vice Presidential candidate campaign depositories."
+                }
+            ], 
+            "label": [
+                "103", 
+                "Subpart"
+            ], 
+            "node_type": "emptypart", 
+            "text": ""
+        }
+    ], 
+    "label": [
+        "103"
+    ], 
+    "node_type": "regtext", 
+    "text": "", 
+    "title": "PART 103\u2014CAMPAIGN DEPOSITORIES (52 U.S.C. 30102(h))"
+}

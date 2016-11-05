@@ -1,0 +1,955 @@
+{
+    "262": [
+        {
+            "index": [
+                "262", 
+                "Subpart", 
+                "A"
+            ], 
+            "title": "General"
+        }, 
+        {
+            "index": [
+                "262", 
+                "Subpart", 
+                "B"
+            ], 
+            "title": "The Manifest"
+        }, 
+        {
+            "index": [
+                "262", 
+                "Subpart", 
+                "C"
+            ], 
+            "title": "Pre-Transport Requirements"
+        }, 
+        {
+            "index": [
+                "262", 
+                "Subpart", 
+                "D"
+            ], 
+            "title": "Recordkeeping and Reporting"
+        }, 
+        {
+            "index": [
+                "262", 
+                "Subpart", 
+                "E"
+            ], 
+            "title": "Exports of Hazardous Waste"
+        }, 
+        {
+            "index": [
+                "262", 
+                "Subpart", 
+                "F"
+            ], 
+            "title": "Imports of Hazardous Waste"
+        }, 
+        {
+            "index": [
+                "262", 
+                "Subpart", 
+                "G"
+            ], 
+            "title": "Farmers"
+        }, 
+        {
+            "index": [
+                "262", 
+                "Subpart", 
+                "H"
+            ], 
+            "title": "Transboundary Movements of Hazardous Waste for Recovery Within the OECD"
+        }, 
+        {
+            "index": [
+                "262", 
+                "Subpart", 
+                "I"
+            ], 
+            "title": "New York State Public Utilities"
+        }, 
+        {
+            "index": [
+                "262", 
+                "Subpart", 
+                "J"
+            ], 
+            "title": "University Laboratories XL Project\u2014Laboratory Environmental Management Standard"
+        }, 
+        {
+            "index": [
+                "262", 
+                "Subpart", 
+                "K"
+            ], 
+            "title": "Alternative Requirements for Hazardous Waste Determination and Accumulation of Unwanted Material for Laboratories Owned by Eligible Academic Entities"
+        }, 
+        {
+            "index": [
+                "262", 
+                "A"
+            ], 
+            "title": "Appendix A to Part 262\u2014Uniform Hazardous Waste Manifest and Instructions (EPA Forms 8700-22 and 8700-22A and Their Instructions)"
+        }
+    ], 
+    "262-A": [
+        {
+            "index": [
+                "262", 
+                "A", 
+                "h1"
+            ], 
+            "title": "U.S. EPA Form 8700-22"
+        }, 
+        {
+            "index": [
+                "262", 
+                "A", 
+                "h2"
+            ], 
+            "title": "Manifest 8700-22"
+        }, 
+        {
+            "index": [
+                "262", 
+                "A", 
+                "h3"
+            ], 
+            "title": "I. Instructions for Generators"
+        }, 
+        {
+            "index": [
+                "262", 
+                "A", 
+                "h4"
+            ], 
+            "title": "Manifest 8700-22"
+        }, 
+        {
+            "index": [
+                "262", 
+                "A", 
+                "h5"
+            ], 
+            "title": "I. Instructions for Generators"
+        }, 
+        {
+            "index": [
+                "262", 
+                "A", 
+                "h21"
+            ], 
+            "title": "II. Instructions for International Shipment Block"
+        }, 
+        {
+            "index": [
+                "262", 
+                "A", 
+                "h23"
+            ], 
+            "title": "III. Instructions for Transporters"
+        }, 
+        {
+            "index": [
+                "262", 
+                "A", 
+                "h25"
+            ], 
+            "title": "IV. Instructions for Owners and Operators of Treatment, Storage, and Disposal Facilities"
+        }, 
+        {
+            "index": [
+                "262", 
+                "A", 
+                "h32"
+            ], 
+            "title": "Manifest Continuation Sheet"
+        }, 
+        {
+            "index": [
+                "262", 
+                "A", 
+                "h33"
+            ], 
+            "title": "Instructions\u2014Continuation Sheet, U.S. EPA Form 8700-22A"
+        }, 
+        {
+            "index": [
+                "262", 
+                "A", 
+                "h46"
+            ], 
+            "title": "Transporters"
+        }, 
+        {
+            "index": [
+                "262", 
+                "A", 
+                "h49"
+            ], 
+            "title": "Owner and Operators of Treatment, Storage, or Disposal Facilities"
+        }
+    ], 
+    "262-A-h21": [
+        {
+            "index": [
+                "262", 
+                "A", 
+                "h21", 
+                "h22"
+            ], 
+            "title": "Item 16. International Shipments"
+        }
+    ], 
+    "262-A-h23": [
+        {
+            "index": [
+                "262", 
+                "A", 
+                "h23", 
+                "h24"
+            ], 
+            "title": "Item 17. Transporters' Acknowledgments of Receipt"
+        }
+    ], 
+    "262-A-h25": [
+        {
+            "index": [
+                "262", 
+                "A", 
+                "h25", 
+                "h26"
+            ], 
+            "title": "Item 18. Discrepancy"
+        }, 
+        {
+            "index": [
+                "262", 
+                "A", 
+                "h25", 
+                "h30"
+            ], 
+            "title": "Item 19. Hazardous Waste Report Management Method Codes"
+        }, 
+        {
+            "index": [
+                "262", 
+                "A", 
+                "h25", 
+                "h31"
+            ], 
+            "title": "Item 20. Designated Facility Owner or Operator Certification of Receipt (Except As Noted in Item 18a)"
+        }
+    ], 
+    "262-A-h25-h26": [
+        {
+            "index": [
+                "262", 
+                "A", 
+                "h25", 
+                "h26", 
+                "h27"
+            ], 
+            "title": "Item 18a. Discrepancy Indication Space"
+        }, 
+        {
+            "index": [
+                "262", 
+                "A", 
+                "h25", 
+                "h26", 
+                "h28"
+            ], 
+            "title": "Item 18b. Alternate Facility (or Generator) for Receipt of Full Load Rejections"
+        }, 
+        {
+            "index": [
+                "262", 
+                "A", 
+                "h25", 
+                "h26", 
+                "h29"
+            ], 
+            "title": "Item 18c. Alternate Facility (or Generator) Signature"
+        }
+    ], 
+    "262-A-h46": [
+        {
+            "index": [
+                "262", 
+                "A", 
+                "h46", 
+                "h47"
+            ], 
+            "title": "Item 33. Transporter\u2014Acknowledgment of Receipt of Materials"
+        }, 
+        {
+            "index": [
+                "262", 
+                "A", 
+                "h46", 
+                "h48"
+            ], 
+            "title": "Item 34. Transporter\u2014Acknowledgment of Receipt of Materials"
+        }
+    ], 
+    "262-A-h49": [
+        {
+            "index": [
+                "262", 
+                "A", 
+                "h49", 
+                "h50"
+            ], 
+            "title": "Item 35. Discrepancy Indication Space"
+        }, 
+        {
+            "index": [
+                "262", 
+                "A", 
+                "h49", 
+                "h51"
+            ], 
+            "title": "Item 36. Hazardous Waste Report Management Method Codes"
+        }
+    ], 
+    "262-A-h5": [
+        {
+            "index": [
+                "262", 
+                "A", 
+                "h5", 
+                "h6"
+            ], 
+            "title": "Item 1. Generator's U.S. EPA Identification Number"
+        }, 
+        {
+            "index": [
+                "262", 
+                "A", 
+                "h5", 
+                "h7"
+            ], 
+            "title": "Item 2. Page 1 of _"
+        }, 
+        {
+            "index": [
+                "262", 
+                "A", 
+                "h5", 
+                "h8"
+            ], 
+            "title": "Item 3. Emergency Response Phone Number"
+        }, 
+        {
+            "index": [
+                "262", 
+                "A", 
+                "h5", 
+                "h9"
+            ], 
+            "title": "Item 4. Manifest Tracking Number"
+        }, 
+        {
+            "index": [
+                "262", 
+                "A", 
+                "h5", 
+                "h10"
+            ], 
+            "title": "Item 5. Generator's Mailing Address, Phone Number and Site Address"
+        }, 
+        {
+            "index": [
+                "262", 
+                "A", 
+                "h5", 
+                "h11"
+            ], 
+            "title": "Item 6. Transporter 1 Company Name, and U.S. EPA ID Number"
+        }, 
+        {
+            "index": [
+                "262", 
+                "A", 
+                "h5", 
+                "h12"
+            ], 
+            "title": "Item 7. Transporter 2 Company Name and U.S. EPA ID Number"
+        }, 
+        {
+            "index": [
+                "262", 
+                "A", 
+                "h5", 
+                "h13"
+            ], 
+            "title": "Item 8. Designated Facility Name, Site Address, and U.S. EPA ID Number"
+        }, 
+        {
+            "index": [
+                "262", 
+                "A", 
+                "h5", 
+                "h14"
+            ], 
+            "title": "Item 9. U.S. DOT Description (Including Proper Shipping Name, Hazard Class or Division, Identification Number, and Packing Group)"
+        }, 
+        {
+            "index": [
+                "262", 
+                "A", 
+                "h5", 
+                "h15"
+            ], 
+            "title": "Item 10. Containers (Number and Type)"
+        }, 
+        {
+            "index": [
+                "262", 
+                "A", 
+                "h5", 
+                "h16"
+            ], 
+            "title": "Item 11. Total Quantity"
+        }, 
+        {
+            "index": [
+                "262", 
+                "A", 
+                "h5", 
+                "h17"
+            ], 
+            "title": "Item 12. Units of Measure (Weight/Volume)"
+        }, 
+        {
+            "index": [
+                "262", 
+                "A", 
+                "h5", 
+                "h18"
+            ], 
+            "title": "Item 13. Waste Codes"
+        }, 
+        {
+            "index": [
+                "262", 
+                "A", 
+                "h5", 
+                "h19"
+            ], 
+            "title": "Item 14. Special Handling Instructions and Additional Information."
+        }, 
+        {
+            "index": [
+                "262", 
+                "A", 
+                "h5", 
+                "h20"
+            ], 
+            "title": "Item 15. Generator's/Offeror's Certifications"
+        }
+    ], 
+    "262-Subpart-A": [
+        {
+            "index": [
+                "262", 
+                "10"
+            ], 
+            "title": "\u00a7 262.10 Purpose, scope, and applicability."
+        }, 
+        {
+            "index": [
+                "262", 
+                "11"
+            ], 
+            "title": "\u00a7 262.11 Hazardous waste determination."
+        }, 
+        {
+            "index": [
+                "262", 
+                "12"
+            ], 
+            "title": "\u00a7 262.12 EPA identification numbers."
+        }
+    ], 
+    "262-Subpart-B": [
+        {
+            "index": [
+                "262", 
+                "20"
+            ], 
+            "title": "\u00a7 262.20 General requirements."
+        }, 
+        {
+            "index": [
+                "262", 
+                "21"
+            ], 
+            "title": "\u00a7 262.21 Manifest tracking numbers, manifest printing, and obtaining manifests."
+        }, 
+        {
+            "index": [
+                "262", 
+                "22"
+            ], 
+            "title": "\u00a7 262.22 Number of copies."
+        }, 
+        {
+            "index": [
+                "262", 
+                "23"
+            ], 
+            "title": "\u00a7 262.23 Use of the manifest."
+        }, 
+        {
+            "index": [
+                "262", 
+                "24"
+            ], 
+            "title": "\u00a7 262.24 Use of the electronic manifest."
+        }, 
+        {
+            "index": [
+                "262", 
+                "25"
+            ], 
+            "title": "\u00a7 262.25 Electronic manifest signatures."
+        }, 
+        {
+            "index": [
+                "262", 
+                "27"
+            ], 
+            "title": "\u00a7 262.27 Waste minimization certification."
+        }
+    ], 
+    "262-Subpart-C": [
+        {
+            "index": [
+                "262", 
+                "30"
+            ], 
+            "title": "\u00a7 262.30 Packaging."
+        }, 
+        {
+            "index": [
+                "262", 
+                "31"
+            ], 
+            "title": "\u00a7 262.31 Labeling."
+        }, 
+        {
+            "index": [
+                "262", 
+                "32"
+            ], 
+            "title": "\u00a7 262.32 Marking."
+        }, 
+        {
+            "index": [
+                "262", 
+                "33"
+            ], 
+            "title": "\u00a7 262.33 Placarding."
+        }, 
+        {
+            "index": [
+                "262", 
+                "34"
+            ], 
+            "title": "\u00a7 262.34 Accumulation time."
+        }
+    ], 
+    "262-Subpart-D": [
+        {
+            "index": [
+                "262", 
+                "40"
+            ], 
+            "title": "\u00a7 262.40 Recordkeeping."
+        }, 
+        {
+            "index": [
+                "262", 
+                "41"
+            ], 
+            "title": "\u00a7 262.41 Biennial report."
+        }, 
+        {
+            "index": [
+                "262", 
+                "42"
+            ], 
+            "title": "\u00a7 262.42 Exception reporting."
+        }, 
+        {
+            "index": [
+                "262", 
+                "43"
+            ], 
+            "title": "\u00a7 262.43 Additional reporting."
+        }, 
+        {
+            "index": [
+                "262", 
+                "44"
+            ], 
+            "title": "\u00a7 262.44 Special requirements for generators of between 100 and 1000 kg/mo."
+        }
+    ], 
+    "262-Subpart-E": [
+        {
+            "index": [
+                "262", 
+                "50"
+            ], 
+            "title": "\u00a7 262.50 Applicability."
+        }, 
+        {
+            "index": [
+                "262", 
+                "51"
+            ], 
+            "title": "\u00a7 262.51 Definitions."
+        }, 
+        {
+            "index": [
+                "262", 
+                "52"
+            ], 
+            "title": "\u00a7 262.52 General requirements."
+        }, 
+        {
+            "index": [
+                "262", 
+                "53"
+            ], 
+            "title": "\u00a7 262.53 Notification of intent to export."
+        }, 
+        {
+            "index": [
+                "262", 
+                "54"
+            ], 
+            "title": "\u00a7 262.54 Special manifest requirements."
+        }, 
+        {
+            "index": [
+                "262", 
+                "55"
+            ], 
+            "title": "\u00a7 262.55 Exception reports."
+        }, 
+        {
+            "index": [
+                "262", 
+                "56"
+            ], 
+            "title": "\u00a7 262.56 Annual reports."
+        }, 
+        {
+            "index": [
+                "262", 
+                "57"
+            ], 
+            "title": "\u00a7 262.57 Recordkeeping."
+        }, 
+        {
+            "index": [
+                "262", 
+                "58"
+            ], 
+            "title": "\u00a7 262.58 International agreements."
+        }
+    ], 
+    "262-Subpart-F": [
+        {
+            "index": [
+                "262", 
+                "60"
+            ], 
+            "title": "\u00a7 262.60 Imports of hazardous waste."
+        }
+    ], 
+    "262-Subpart-G": [
+        {
+            "index": [
+                "262", 
+                "70"
+            ], 
+            "title": "\u00a7 262.70 Farmers."
+        }
+    ], 
+    "262-Subpart-H": [
+        {
+            "index": [
+                "262", 
+                "80"
+            ], 
+            "title": "\u00a7 262.80 Applicability."
+        }, 
+        {
+            "index": [
+                "262", 
+                "81"
+            ], 
+            "title": "\u00a7 262.81 Definitions."
+        }, 
+        {
+            "index": [
+                "262", 
+                "82"
+            ], 
+            "title": "\u00a7 262.82 General conditions."
+        }, 
+        {
+            "index": [
+                "262", 
+                "83"
+            ], 
+            "title": "\u00a7 262.83 Notification and consent."
+        }, 
+        {
+            "index": [
+                "262", 
+                "84"
+            ], 
+            "title": "\u00a7 262.84 Movement document."
+        }, 
+        {
+            "index": [
+                "262", 
+                "85"
+            ], 
+            "title": "\u00a7 262.85 Contracts."
+        }, 
+        {
+            "index": [
+                "262", 
+                "86"
+            ], 
+            "title": "\u00a7 262.86 Provisions relating to recognized traders."
+        }, 
+        {
+            "index": [
+                "262", 
+                "87"
+            ], 
+            "title": "\u00a7 262.87 Reporting and recordkeeping."
+        }, 
+        {
+            "index": [
+                "262", 
+                "88"
+            ], 
+            "title": "\u00a7 262.88 Pre-approval for U.S. recovery facilities [Reserved]"
+        }, 
+        {
+            "index": [
+                "262", 
+                "89"
+            ], 
+            "title": "\u00a7 262.89 OECD waste lists."
+        }
+    ], 
+    "262-Subpart-I": [
+        {
+            "index": [
+                "262", 
+                "90"
+            ], 
+            "title": "\u00a7 262.90 Project XL for Public Utilities in New York State."
+        }
+    ], 
+    "262-Subpart-J": [
+        {
+            "index": [
+                "262", 
+                "100"
+            ], 
+            "title": "\u00a7 262.100 To what organizations does this subpart apply?"
+        }, 
+        {
+            "index": [
+                "262", 
+                "101"
+            ], 
+            "title": "\u00a7 262.101 What is in this subpart?"
+        }, 
+        {
+            "index": [
+                "262", 
+                "102"
+            ], 
+            "title": "\u00a7 262.102 What special definitions are included in this subpart?"
+        }, 
+        {
+            "index": [
+                "262", 
+                "103"
+            ], 
+            "title": "\u00a7 262.103 What is the scope of the laboratory environmental management standard?"
+        }, 
+        {
+            "index": [
+                "262", 
+                "104"
+            ], 
+            "title": "\u00a7 262.104 What are the minimum performance criteria?"
+        }, 
+        {
+            "index": [
+                "262", 
+                "105"
+            ], 
+            "title": "\u00a7 262.105 What must be included in the laboratory environmental management plan?"
+        }, 
+        {
+            "index": [
+                "262", 
+                "106"
+            ], 
+            "title": "\u00a7 262.106 When must a hazardous waste determination be made?"
+        }, 
+        {
+            "index": [
+                "262", 
+                "107"
+            ], 
+            "title": "\u00a7 262.107 Under what circumstances will a university's participation in this environmental management standard pilot be terminated?"
+        }, 
+        {
+            "index": [
+                "262", 
+                "108"
+            ], 
+            "title": "\u00a7 262.108 When will this subpart expire?"
+        }
+    ], 
+    "262-Subpart-K": [
+        {
+            "index": [
+                "262", 
+                "200"
+            ], 
+            "title": "\u00a7 262.200 Definitions for this subpart."
+        }, 
+        {
+            "index": [
+                "262", 
+                "201"
+            ], 
+            "title": "\u00a7 262.201 Applicability of this subpart."
+        }, 
+        {
+            "index": [
+                "262", 
+                "202"
+            ], 
+            "title": "\u00a7 262.202 This subpart is optional."
+        }, 
+        {
+            "index": [
+                "262", 
+                "203"
+            ], 
+            "title": "\u00a7 262.203 How an eligible academic entity indicates it will be subject to the requirements of this subpart."
+        }, 
+        {
+            "index": [
+                "262", 
+                "204"
+            ], 
+            "title": "\u00a7 262.204 How an eligible academic entity indicates it will withdraw from the requirements of this subpart."
+        }, 
+        {
+            "index": [
+                "262", 
+                "205"
+            ], 
+            "title": "\u00a7 262.205 Summary of the requirements of this subpart."
+        }, 
+        {
+            "index": [
+                "262", 
+                "206"
+            ], 
+            "title": "\u00a7 262.206 Labeling and management standards for containers of unwanted material in the laboratory."
+        }, 
+        {
+            "index": [
+                "262", 
+                "207"
+            ], 
+            "title": "\u00a7 262.207 Training."
+        }, 
+        {
+            "index": [
+                "262", 
+                "208"
+            ], 
+            "title": "\u00a7 262.208 Removing containers of unwanted material from the laboratory."
+        }, 
+        {
+            "index": [
+                "262", 
+                "209"
+            ], 
+            "title": "\u00a7 262.209 Where and when to make the hazardous waste determination and where to send containers of unwanted material upon removal from the laboratory."
+        }, 
+        {
+            "index": [
+                "262", 
+                "210"
+            ], 
+            "title": "\u00a7 262.210 Making the hazardous waste determination in the laboratory before the unwanted material is removed from the laboratory."
+        }, 
+        {
+            "index": [
+                "262", 
+                "211"
+            ], 
+            "title": "\u00a7 262.211 Making the hazardous waste determination at an on-site central accumulation area."
+        }, 
+        {
+            "index": [
+                "262", 
+                "212"
+            ], 
+            "title": "\u00a7 262.212 Making the hazardous waste determination at an on-site interim status or permitted treatment, storage or disposal facility."
+        }, 
+        {
+            "index": [
+                "262", 
+                "213"
+            ], 
+            "title": "\u00a7 262.213 Laboratory clean-outs."
+        }, 
+        {
+            "index": [
+                "262", 
+                "214"
+            ], 
+            "title": "\u00a7 262.214 Laboratory management plan."
+        }, 
+        {
+            "index": [
+                "262", 
+                "215"
+            ], 
+            "title": "\u00a7 262.215 Unwanted material that is not solid or hazardous waste."
+        }, 
+        {
+            "index": [
+                "262", 
+                "216"
+            ], 
+            "title": "\u00a7 262.216 Non-laboratory hazardous waste generated at an eligible academic entity."
+        }
+    ]
+}

@@ -1,0 +1,17 @@
+{
+    "115-1-a": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "11", 
+                "part": "100", 
+                "section": "10"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "11 CFR 100.10", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=100&section=10&titlenum=11&year=mostrecent"
+        }
+    ]
+}

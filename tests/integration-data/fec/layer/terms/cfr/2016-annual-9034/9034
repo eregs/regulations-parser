@@ -1,0 +1,178 @@
+{
+    "9034-2-a-1": [
+        {
+            "offsets": [
+                [
+                    75, 
+                    93
+                ]
+            ], 
+            "ref": "written instrument:9034-2-b"
+        }
+    ], 
+    "9034-2-a-4": [
+        {
+            "offsets": [
+                [
+                    8, 
+                    26
+                ]
+            ], 
+            "ref": "written instrument:9034-2-b"
+        }
+    ], 
+    "9034-2-c": [
+        {
+            "offsets": [
+                [
+                    8, 
+                    26
+                ], 
+                [
+                    196, 
+                    214
+                ]
+            ], 
+            "ref": "written instrument:9034-2-b"
+        }
+    ], 
+    "9034-2-c-1": [
+        {
+            "offsets": [
+                [
+                    111, 
+                    120
+                ]
+            ], 
+            "ref": "signature:9034-2-c"
+        }
+    ], 
+    "9034-2-c-1-i": [
+        {
+            "offsets": [
+                [
+                    135, 
+                    144
+                ]
+            ], 
+            "ref": "signature:9034-2-c"
+        }
+    ], 
+    "9034-2-c-8-i": [
+        {
+            "offsets": [
+                [
+                    136, 
+                    145
+                ]
+            ], 
+            "ref": "signature:9034-2-c"
+        }, 
+        {
+            "offsets": [
+                [
+                    67, 
+                    85
+                ]
+            ], 
+            "ref": "written instrument:9034-2-b"
+        }
+    ], 
+    "9034-5-a-2-ii": [
+        {
+            "offsets": [
+                [
+                    30, 
+                    44
+                ]
+            ], 
+            "ref": "capital assets:9034-5-c-1"
+        }, 
+        {
+            "offsets": [
+                [
+                    49, 
+                    61
+                ]
+            ], 
+            "ref": "other assets:9034-5-c-1"
+        }
+    ], 
+    "9034-5-c-2": [
+        {
+            "offsets": [
+                [
+                    4, 
+                    16
+                ], 
+                [
+                    27, 
+                    39
+                ], 
+                [
+                    519, 
+                    531
+                ]
+            ], 
+            "ref": "other assets:9034-5-c-1"
+        }
+    ], 
+    "referenced": {
+        "capital assets:9034-5-c-1": {
+            "position": [
+                59, 
+                73
+            ], 
+            "reference": "9034-5-c-1", 
+            "term": "capital assets"
+        }, 
+        "essentially political:9034-2-c-6": {
+            "position": [
+                133, 
+                154
+            ], 
+            "reference": "9034-2-c-6", 
+            "term": "essentially political"
+        }, 
+        "other assets:9034-5-c-1": {
+            "position": [
+                454, 
+                466
+            ], 
+            "reference": "9034-5-c-1", 
+            "term": "other assets"
+        }, 
+        "other assets:9034-5-c-2": {
+            "position": [
+                148, 
+                160
+            ], 
+            "reference": "9034-5-c-2", 
+            "term": "other assets"
+        }, 
+        "signature:9034-2-c": {
+            "position": [
+                408, 
+                417
+            ], 
+            "reference": "9034-2-c", 
+            "term": "signature"
+        }, 
+        "written instrument also:9034-2-b": {
+            "position": [
+                413, 
+                436
+            ], 
+            "reference": "9034-2-b", 
+            "term": "written instrument also"
+        }, 
+        "written instrument:9034-2-b": {
+            "position": [
+                43, 
+                61
+            ], 
+            "reference": "9034-2-b", 
+            "term": "written instrument"
+        }
+    }
+}

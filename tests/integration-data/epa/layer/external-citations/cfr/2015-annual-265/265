@@ -1,0 +1,2695 @@
+{
+    "265-1-b": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "264", 
+                "section": "553"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "264.553", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=264&section=553&titlenum=40&year=mostrecent"
+        }, 
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "264", 
+                "section": "554"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "264.554", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=264&section=554&titlenum=40&year=mostrecent"
+        }, 
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "264", 
+                "section": "552"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR 264.552", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=264&section=552&titlenum=40&year=mostrecent"
+        }, 
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "p1": "e", 
+                "part": "270", 
+                "section": "10"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR 270.10 (e)", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=270&section=10&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1-c-11-i-D": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "260", 
+                "section": "10"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR 260.10", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=260&section=10&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1-c-12": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "262", 
+                "section": "30"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR 262.30", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=262&section=30&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1-c-14": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "260", 
+                "section": "10"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR 260.10", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=260&section=10&titlenum=40&year=mostrecent"
+        }, 
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "273"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 273", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=273&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1-c-14-i": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "273", 
+                "section": "2"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR 273.2", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=273&section=2&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1-c-15": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "262", 
+                "section": "90"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR 262.90", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=262&section=90&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1-e": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "268"
+            }, 
+            "locations": [
+                0, 
+                1
+            ], 
+            "text": "40 CFR part 268", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=268&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1030-b-1": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "270"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 270", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=270&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1030-b-2": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "p1": "a", 
+                "part": "262", 
+                "section": "34"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR 262.34(a)", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=262&section=34&titlenum=40&year=mostrecent"
+        }, 
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "270"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 270", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=270&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1030-b-3": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "261", 
+                "section": "6"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR 261.6", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=261&section=6&titlenum=40&year=mostrecent"
+        }, 
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "p1": "a", 
+                "part": "262", 
+                "section": "34"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR 262.34(a)", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=262&section=34&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1030-c": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "52", 
+                "section": "2454"
+            }, 
+            "locations": [
+                0, 
+                1
+            ], 
+            "text": "40 CFR 52.2454", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=52&section=2454&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1030-d": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "60"
+            }, 
+            "locations": [
+                0, 
+                1
+            ], 
+            "text": "40 CFR part 60", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=60&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1033-e-1": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "60"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 60", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=60&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1033-e-2-p1-p4": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "60"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 60", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=60&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1033-e-3": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "60"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 60", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=60&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1033-m-1-i": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "264"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 264", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=264&titlenum=40&year=mostrecent"
+        }, 
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "270"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 270", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=270&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1033-m-1-ii": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "264"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 264", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=264&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1033-m-1-iii": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "61"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 61", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=61&titlenum=40&year=mostrecent"
+        }, 
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "63"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 63", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=63&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1033-m-2-i": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "264"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 264", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=264&titlenum=40&year=mostrecent"
+        }, 
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "270"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 270", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=270&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1033-m-3-i": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "266"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 266", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=266&titlenum=40&year=mostrecent"
+        }, 
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "270"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 270", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=270&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1033-m-3-ii": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "266"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 266", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=266&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1034-b-1": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "60"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 60", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=60&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1034-c-1-i": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "60"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 60", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=60&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1034-c-1-ii": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "60"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 60", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=60&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1035-c-10-iv": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "60"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 60", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=60&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1050-b-1": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "270"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 270", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=270&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1050-b-2": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "p1": "a", 
+                "part": "262", 
+                "section": "34"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR 262.34(a)", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=262&section=34&titlenum=40&year=mostrecent"
+        }, 
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "270"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 270", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=270&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1050-b-3": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "261", 
+                "section": "6"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR 261.6", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=261&section=6&titlenum=40&year=mostrecent"
+        }, 
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "p1": "a", 
+                "part": "262", 
+                "section": "34"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR 262.34(a)", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=262&section=34&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1050-f": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "52", 
+                "section": "2454"
+            }, 
+            "locations": [
+                0, 
+                1
+            ], 
+            "text": "40 CFR 52.2454", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=52&section=2454&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1050-g": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "63"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 63", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=63&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1063-b-1": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "60"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 60", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=60&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1064-m": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "60"
+            }, 
+            "locations": [
+                0, 
+                1, 
+                2
+            ], 
+            "text": "40 CFR part 60", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=60&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1080-b-7": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "60"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 60", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=60&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1080-b-8": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "264", 
+                "section": "1031"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR 264.1031", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=264&section=1031&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1080-c-1": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "124", 
+                "section": "15"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR 124.15", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=124&section=15&titlenum=40&year=mostrecent"
+        }, 
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "p1": "d", 
+                "part": "270", 
+                "section": "50"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR 270.50(d)", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=270&section=50&titlenum=40&year=mostrecent"
+        }, 
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "264"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 264", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=264&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1080-c-2": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "124", 
+                "section": "15"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR 124.15", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=124&section=15&titlenum=40&year=mostrecent"
+        }, 
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "p1": "d", 
+                "part": "270", 
+                "section": "50"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR 270.50(d)", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=270&section=50&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1080-e-1": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "52", 
+                "section": "2454"
+            }, 
+            "locations": [
+                0, 
+                1
+            ], 
+            "text": "40 CFR 52.2454", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=52&section=2454&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1080-f-2-viii-A": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "p1": "a", 
+                "p2": "4", 
+                "p3": "i", 
+                "part": "63", 
+                "section": "117"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR 63.117(a)(4)(i)", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=63&section=117&titlenum=40&year=mostrecent"
+        }, 
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "p1": "a", 
+                "p2": "4", 
+                "p3": "ii", 
+                "part": "63", 
+                "section": "117"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR 63.117(a)(4)(ii)", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=63&section=117&titlenum=40&year=mostrecent"
+        }, 
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "p1": "b", 
+                "part": "63", 
+                "section": "7"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR 63.7(b)", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=63&section=7&titlenum=40&year=mostrecent"
+        }, 
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "p1": "g", 
+                "p2": "1", 
+                "part": "63", 
+                "section": "7"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR 63.7(g)(1)", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=63&section=7&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1080-f-2-viii-B-4": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "52"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR Part 52", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=52&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1080-f-2-viii-E-1": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "2"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 2", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=2&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1080-f-2-viii-E-2": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "2"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 2", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=2&titlenum=40&year=mostrecent"
+        }, 
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "552", 
+                "title": "42"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "42 U.S.C. 552", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=552&title=42&year=mostrecent"
+        }
+    ], 
+    "265-1080-f-2-viii-F": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "2"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR Part 2", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=2&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1080-f-2-viii-G": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "p1": "a", 
+                "p2": "1", 
+                "part": "270", 
+                "section": "11"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR 270.11(a)(1)", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=270&section=11&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1080-f-4-i": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "60"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 60", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=60&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1080-f-4-ii": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "60"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 60", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=60&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1080-f-4-iii": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "60"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 60", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=60&titlenum=40&year=mostrecent"
+        }, 
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "63"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 63", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=63&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1080-f-4-iii-C-1": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "60"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 60", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=60&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1080-f-4-iv": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "60"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 60", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=60&titlenum=40&year=mostrecent"
+        }, 
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "63"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 63", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=63&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1080-f-4-iv-B": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "60"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 60", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=60&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1080-f-5-i": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "60"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 60", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=60&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1080-f-5-ii-A": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "60"
+            }, 
+            "locations": [
+                0, 
+                1
+            ], 
+            "text": "40 CFR part 60", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=60&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1080-f-5-iii": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "60"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 60", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=60&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1080-f-5-v": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "p1": "b", 
+                "part": "63", 
+                "section": "180"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR 63.180(b)", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=63&section=180&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1080-f-6-ii": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "60"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 60", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=60&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1080-f-6-vii": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "63", 
+                "section": "2"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR 63.2", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=63&section=2&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1081-p2126068831-1": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "261"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 261", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=261&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1083-c-2-ix-A": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "60"
+            }, 
+            "locations": [
+                0, 
+                1
+            ], 
+            "text": "40 CFR part 60", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=60&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1083-c-2-v-B": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "63"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 63", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=63&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1083-c-2-vii-A": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "264"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 264", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=264&titlenum=40&year=mostrecent"
+        }, 
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "270"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 270", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=270&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1083-c-2-viii-A": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "266"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 266", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=266&titlenum=40&year=mostrecent"
+        }, 
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "270"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 270", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=270&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1083-c-2-viii-B": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "266"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 266", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=266&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1083-c-4-i": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "268", 
+                "section": "40"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR 268.40", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=268&section=40&titlenum=40&year=mostrecent"
+        }, 
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "268"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 268", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=268&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1083-c-4-ii": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "p1": "a", 
+                "part": "268", 
+                "section": "42"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR 268.42(a)", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=268&section=42&titlenum=40&year=mostrecent"
+        }, 
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "p1": "b", 
+                "part": "268", 
+                "section": "42"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR 268.42(b)", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=268&section=42&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1083-c-5-i": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "61"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 61", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=61&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1083-c-5-iii": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "52", 
+                "section": "741"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR 52.741", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=52&section=741&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1084-a-3-ii-C": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "60"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 60", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=60&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1084-a-3-iii": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "60"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 60", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=60&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1084-a-3-iii-A": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "63"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 63", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=63&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1084-a-3-iii-B": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "63"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 63", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=63&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1084-a-3-iv-B-1": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "60"
+            }, 
+            "locations": [
+                0, 
+                1
+            ], 
+            "text": "40 CFR part 60", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=60&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1084-a-4-ii": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "63"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 63", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=63&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1084-a-4-iii": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "60"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 60", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=60&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1084-b-3-ii-C": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "60"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 60", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=60&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1084-b-3-iii": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "60"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 60", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=60&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1084-b-3-iii-A": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "63"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 63", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=63&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1084-b-3-iii-B": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "63"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 63", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=63&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1084-b-6-i": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "63"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 63", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=63&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1084-b-9-iii": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "63"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 63", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=63&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1084-c-3-i": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "60"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 60", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=60&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1084-c-3-ii-A": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "60"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 60", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=60&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1084-d-1": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "60"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 60", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=60&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1084-d-3": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "60"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 60", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=60&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1084-d-4": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "60"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 60", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=60&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1084-d-6": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "60"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 60", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=60&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1084-d-7": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "60"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 60", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=60&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1085-i-1": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "52", 
+                "section": "741"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR 52.741", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=52&section=741&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1085-j-1": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "63"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 63", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=63&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1086-e-1": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "63"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 63", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=63&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1087-c-3-ii-A": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "p1": "b", 
+                "part": "261", 
+                "section": "7"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR 261.7(b)", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=261&section=7&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1087-c-3-ii-B": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "p1": "b", 
+                "part": "261", 
+                "section": "7"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR 261.7(b)", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=261&section=7&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1087-c-4-i": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "p1": "b", 
+                "part": "261", 
+                "section": "7"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR 261.7(b)", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=261&section=7&titlenum=40&year=mostrecent"
+        }, 
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "262"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 262", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=262&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1087-d-1-iii": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "60"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 60", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=60&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1087-d-3-ii-A": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "p1": "b", 
+                "part": "261", 
+                "section": "7"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR 261.7(b)", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=261&section=7&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1087-d-3-ii-B": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "p1": "b", 
+                "part": "261", 
+                "section": "7"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR 261.7(b)", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=261&section=7&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1087-d-4-i": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "p1": "b", 
+                "part": "261", 
+                "section": "7"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR 261.7(b)", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=261&section=7&titlenum=40&year=mostrecent"
+        }, 
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "262"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 262", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=262&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1087-e-2-i": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "52", 
+                "section": "741"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR 52.741", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=52&section=741&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1087-f-1": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "49", 
+                "part": "178"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "49 CFR part 178", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=178&titlenum=49&year=mostrecent"
+        }, 
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "49", 
+                "part": "179"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "49 CFR part 179", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=179&titlenum=49&year=mostrecent"
+        }
+    ], 
+    "265-1087-f-2": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "49", 
+                "part": "107"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "49 CFR part 107", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=107&titlenum=49&year=mostrecent"
+        }, 
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "49", 
+                "part": "172"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "49 CFR part 172", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=172&titlenum=49&year=mostrecent"
+        }, 
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "49", 
+                "part": "173"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "49 CFR part 173", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=173&titlenum=49&year=mostrecent"
+        }, 
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "49", 
+                "part": "180"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "49 CFR part 180", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=180&titlenum=49&year=mostrecent"
+        }
+    ], 
+    "265-1087-f-3": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "49", 
+                "part": "178"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "49 CFR part 178", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=178&titlenum=49&year=mostrecent"
+        }
+    ], 
+    "265-1087-f-4": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "49", 
+                "p1": "b", 
+                "part": "173", 
+                "section": "12"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "49 CFR 173.12(b)", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=173&section=12&titlenum=49&year=mostrecent"
+        }, 
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "49", 
+                "part": "178"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "49 CFR part 178", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=178&titlenum=49&year=mostrecent"
+        }
+    ], 
+    "265-1087-h": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "60"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 60", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=60&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1087-h-1": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "60"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 60", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=60&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1088-c-5-i-D": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "266"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 266", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=266&titlenum=40&year=mostrecent"
+        }, 
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "270"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 270", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=270&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1088-c-5-i-E": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "266"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 266", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=266&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1090-b-2-iv-A": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "52", 
+                "section": "741"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR 52.741", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=52&section=741&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1090-d-1": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "52", 
+                "section": "741"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR 52.741", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=52&section=741&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1090-h": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "60"
+            }, 
+            "locations": [
+                0, 
+                1
+            ], 
+            "text": "40 CFR part 60", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=60&titlenum=40&year=mostrecent"
+        }, 
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "61"
+            }, 
+            "locations": [
+                0, 
+                1
+            ], 
+            "text": "40 CFR part 61", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=61&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1090-j-1": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "60"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 60", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=60&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1090-j-2": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "60"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 60", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=60&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-110-c": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "p1": "c", 
+                "p2": "7", 
+                "part": "270", 
+                "section": "1"
+            }, 
+            "locations": [
+                1
+            ], 
+            "text": "40 CFR 270.1(c)(7)", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=270&section=1&titlenum=40&year=mostrecent"
+        }, 
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "p1": "c", 
+                "p2": "7", 
+                "part": "270", 
+                "section": "1"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR 270.1(c)(7)", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=270&section=1&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-110-d": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "264", 
+                "section": "90"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR 264.90", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=264&section=90&titlenum=40&year=mostrecent"
+        }, 
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "p1": "c", 
+                "p2": "7", 
+                "part": "270", 
+                "section": "1"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR 270.1(c)(7)", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=270&section=1&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-113-e": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "3004", 
+                "title": "42"
+            }, 
+            "locations": [
+                0, 
+                1
+            ], 
+            "text": "42 U.S.C. 3004", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=3004&title=42&year=mostrecent"
+        }
+    ], 
+    "265-12-a-2": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "262"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 262", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=262&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1200": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "266", 
+                "section": "205"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR 266.205", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=266&section=205&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-1202-b": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "264", 
+                "section": "310"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR 264.310", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=264&section=310&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-121-a": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "p1": "c", 
+                "part": "270", 
+                "section": "1"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR 270.1(c)", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=270&section=1&titlenum=40&year=mostrecent"
+        }, 
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "p1": "c", 
+                "p2": "7", 
+                "part": "270", 
+                "section": "1"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR 270.1(c)(7)", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=270&section=1&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-121-a-1": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "270", 
+                "section": "28"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR 270.28", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=270&section=28&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-121-a-3": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "264", 
+                "section": "100"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "264.100", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=264&section=100&titlenum=40&year=mostrecent"
+        }, 
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "264", 
+                "section": "91"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR 264.91", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=264&section=91&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-121-b-1-iii": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "p1": "c", 
+                "p2": "7", 
+                "part": "270", 
+                "section": "1"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR 270.1(c)(7)", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=270&section=1&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-13-a-2-p294295945": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "p1": "b", 
+                "part": "268", 
+                "section": "7"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR 268.7 (b)", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=268&section=7&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-140-d": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "p1": "c", 
+                "p2": "7", 
+                "part": "270", 
+                "section": "1"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR 270.1(c)(7)", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=270&section=1&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-16-a-4": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "29", 
+                "p1": "q", 
+                "part": "1910", 
+                "section": "120"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "1910.120(q)", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=1910&section=120&titlenum=29&year=mostrecent"
+        }, 
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "29", 
+                "p1": "p", 
+                "p2": "8", 
+                "part": "1910", 
+                "section": "120"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "29 CFR 1910.120(p)(8)", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=1910&section=120&titlenum=29&year=mostrecent"
+        }
+    ], 
+    "265-173-b-p1": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "49", 
+                "part": "173", 
+                "section": "28"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "49 CFR 173.28", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=173&section=28&titlenum=49&year=mostrecent"
+        }
+    ], 
+    "265-193-c-4-p1": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "302"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 302", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=302&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-195-a-p1": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "302"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 302", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=302&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-196-d-1": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "302"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 302", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=302&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-196-f-p2": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "302"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR Part 302", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=302&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-221-d-2-i-B": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "270", 
+                "section": "2"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR 270.2", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=270&section=2&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-229": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "268"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 268", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=268&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-256-a": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "268"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 268", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=268&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-281": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "268"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 268", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=268&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-301-d-2-i-B": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "270", 
+                "section": "2"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR 270.2", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=270&section=2&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-312-a": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "268"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 268", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=268&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-314-f-2": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "270", 
+                "section": "2"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR 270.2", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=270&section=2&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-316-f": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "p1": "c", 
+                "p2": "1", 
+                "part": "268", 
+                "section": "42"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR 268.42(c)(1)", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=268&section=42&titlenum=40&year=mostrecent"
+        }, 
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "268"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 268", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=268&titlenum=40&year=mostrecent"
+        }, 
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "49", 
+                "part": "173", 
+                "section": "12"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "49 CFR 173.12", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=173&section=12&titlenum=49&year=mostrecent"
+        }
+    ], 
+    "265-70-a": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "p1": "a", 
+                "part": "266", 
+                "section": "203"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR 266.203(a)", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=266&section=203&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-70-b": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "261", 
+                "section": "7"
+            }, 
+            "locations": [
+                0, 
+                1
+            ], 
+            "text": "261.7", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=261&section=7&titlenum=40&year=mostrecent"
+        }, 
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "260", 
+                "section": "10"
+            }, 
+            "locations": [
+                0, 
+                1
+            ], 
+            "text": "40 CFR 260.10", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=260&section=10&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-71-d": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "262"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR part 262", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=262&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-71-f-1": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "262", 
+                "section": "25"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR 262.25", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=262&section=25&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-72-a-3": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "p1": "b", 
+                "part": "261", 
+                "section": "7"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR 261.7(b)", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=261&section=7&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-72-d-1": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "p1": "b", 
+                "part": "261", 
+                "section": "7"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR 261.7(b)", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=261&section=7&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-72-g": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "p1": "b", 
+                "part": "261", 
+                "section": "7"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR 261.7(b)", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=261&section=7&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-90-f": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "264", 
+                "section": "90"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR 264.90", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=264&section=90&titlenum=40&year=mostrecent"
+        }, 
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "p1": "c", 
+                "p2": "7", 
+                "part": "270", 
+                "section": "1"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR 270.1(c)(7)", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=270&section=1&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-90-f-2": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "p1": "a", 
+                "part": "264", 
+                "section": "101"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR 264.101(a)", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=264&section=101&titlenum=40&year=mostrecent"
+        }
+    ], 
+    "265-I-p3-3-h1-h3-p98": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "40", 
+                "part": "260", 
+                "section": "10"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "40 CFR 260.10", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=260&section=10&titlenum=40&year=mostrecent"
+        }
+    ]
+}

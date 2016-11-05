@@ -1,0 +1,314 @@
+{
+    "104": [
+        {
+            "index": [
+                "104", 
+                "1"
+            ], 
+            "title": "\u00a7 104.1 Scope (52 U.S.C. 30104(a))."
+        }, 
+        {
+            "index": [
+                "104", 
+                "2"
+            ], 
+            "title": "\u00a7 104.2 Forms."
+        }, 
+        {
+            "index": [
+                "104", 
+                "3"
+            ], 
+            "title": "\u00a7 104.3 Contents of reports (52 U.S.C. 30104(b), 30114)."
+        }, 
+        {
+            "index": [
+                "104", 
+                "4"
+            ], 
+            "title": "\u00a7 104.4 Independent expenditures by political committees (52 U.S.C. 30104(b), (d), and (g))."
+        }, 
+        {
+            "index": [
+                "104", 
+                "5"
+            ], 
+            "title": "\u00a7 104.5 Filing dates (52 U.S.C. 30104(a)(2))."
+        }, 
+        {
+            "index": [
+                "104", 
+                "6"
+            ], 
+            "title": "\u00a7 104.6 Form and content of internal communications reports (52 U.S.C. 30101(9)(B)(iii))."
+        }, 
+        {
+            "index": [
+                "104", 
+                "7"
+            ], 
+            "title": "\u00a7 104.7 Best efforts (52 U.S.C. 30102(i))."
+        }, 
+        {
+            "index": [
+                "104", 
+                "8"
+            ], 
+            "title": "\u00a7 104.8 Uniform reporting of receipts."
+        }, 
+        {
+            "index": [
+                "104", 
+                "9"
+            ], 
+            "title": "\u00a7 104.9 Uniform reporting of disbursements."
+        }, 
+        {
+            "index": [
+                "104", 
+                "10"
+            ], 
+            "title": "\u00a7 104.10 Reporting by separate segregated funds and nonconnected committees of expenses allocated among candidates and activities."
+        }, 
+        {
+            "index": [
+                "104", 
+                "11"
+            ], 
+            "title": "\u00a7 104.11 Continuous reporting of debts and obligations."
+        }, 
+        {
+            "index": [
+                "104", 
+                "12"
+            ], 
+            "title": "\u00a7 104.12 Beginning cash on hand for political committees."
+        }, 
+        {
+            "index": [
+                "104", 
+                "13"
+            ], 
+            "title": "\u00a7 104.13 Disclosure of receipt and consumption of in-kind contributions."
+        }, 
+        {
+            "index": [
+                "104", 
+                "14"
+            ], 
+            "title": "\u00a7 104.14 Formal requirements regarding reports and statements."
+        }, 
+        {
+            "index": [
+                "104", 
+                "15"
+            ], 
+            "title": "\u00a7 104.15 Sale or use restriction (52 U.S.C. 30111(a)(4))."
+        }, 
+        {
+            "index": [
+                "104", 
+                "16"
+            ], 
+            "title": "\u00a7 104.16 Audits (52 U.S.C. 30111(b))."
+        }, 
+        {
+            "index": [
+                "104", 
+                "17"
+            ], 
+            "title": "\u00a7 104.17 Reporting of allocable expenses by party committees."
+        }, 
+        {
+            "index": [
+                "104", 
+                "18"
+            ], 
+            "title": "\u00a7 104.18 Electronic filing of reports (52 U.S.C. 30102(d) and 30104(a)(11))."
+        }, 
+        {
+            "index": [
+                "104", 
+                "19"
+            ], 
+            "title": "\u00a7 104.19 [Reserved]"
+        }, 
+        {
+            "index": [
+                "104", 
+                "20"
+            ], 
+            "title": "\u00a7 104.20 Reporting electioneering communications (52 U.S.C. 30104(f))."
+        }, 
+        {
+            "index": [
+                "104", 
+                "21"
+            ], 
+            "title": "\u00a7 104.21 Reporting by inaugural committees."
+        }, 
+        {
+            "index": [
+                "104", 
+                "22"
+            ], 
+            "title": "\u00a7 104.22 Disclosure of bundling by Lobbyist/Registrants and Lobbyist/Registrant PACs (52 U.S.C. 30104(i))."
+        }
+    ], 
+    "104-Subpart": [
+        {
+            "index": [
+                "104", 
+                "1"
+            ], 
+            "title": "\u00a7 104.1 Scope (52 U.S.C. 30104(a))."
+        }, 
+        {
+            "index": [
+                "104", 
+                "2"
+            ], 
+            "title": "\u00a7 104.2 Forms."
+        }, 
+        {
+            "index": [
+                "104", 
+                "3"
+            ], 
+            "title": "\u00a7 104.3 Contents of reports (52 U.S.C. 30104(b), 30114)."
+        }, 
+        {
+            "index": [
+                "104", 
+                "4"
+            ], 
+            "title": "\u00a7 104.4 Independent expenditures by political committees (52 U.S.C. 30104(b), (d), and (g))."
+        }, 
+        {
+            "index": [
+                "104", 
+                "5"
+            ], 
+            "title": "\u00a7 104.5 Filing dates (52 U.S.C. 30104(a)(2))."
+        }, 
+        {
+            "index": [
+                "104", 
+                "6"
+            ], 
+            "title": "\u00a7 104.6 Form and content of internal communications reports (52 U.S.C. 30101(9)(B)(iii))."
+        }, 
+        {
+            "index": [
+                "104", 
+                "7"
+            ], 
+            "title": "\u00a7 104.7 Best efforts (52 U.S.C. 30102(i))."
+        }, 
+        {
+            "index": [
+                "104", 
+                "8"
+            ], 
+            "title": "\u00a7 104.8 Uniform reporting of receipts."
+        }, 
+        {
+            "index": [
+                "104", 
+                "9"
+            ], 
+            "title": "\u00a7 104.9 Uniform reporting of disbursements."
+        }, 
+        {
+            "index": [
+                "104", 
+                "10"
+            ], 
+            "title": "\u00a7 104.10 Reporting by separate segregated funds and nonconnected committees of expenses allocated among candidates and activities."
+        }, 
+        {
+            "index": [
+                "104", 
+                "11"
+            ], 
+            "title": "\u00a7 104.11 Continuous reporting of debts and obligations."
+        }, 
+        {
+            "index": [
+                "104", 
+                "12"
+            ], 
+            "title": "\u00a7 104.12 Beginning cash on hand for political committees."
+        }, 
+        {
+            "index": [
+                "104", 
+                "13"
+            ], 
+            "title": "\u00a7 104.13 Disclosure of receipt and consumption of in-kind contributions."
+        }, 
+        {
+            "index": [
+                "104", 
+                "14"
+            ], 
+            "title": "\u00a7 104.14 Formal requirements regarding reports and statements."
+        }, 
+        {
+            "index": [
+                "104", 
+                "15"
+            ], 
+            "title": "\u00a7 104.15 Sale or use restriction (52 U.S.C. 30111(a)(4))."
+        }, 
+        {
+            "index": [
+                "104", 
+                "16"
+            ], 
+            "title": "\u00a7 104.16 Audits (52 U.S.C. 30111(b))."
+        }, 
+        {
+            "index": [
+                "104", 
+                "17"
+            ], 
+            "title": "\u00a7 104.17 Reporting of allocable expenses by party committees."
+        }, 
+        {
+            "index": [
+                "104", 
+                "18"
+            ], 
+            "title": "\u00a7 104.18 Electronic filing of reports (52 U.S.C. 30102(d) and 30104(a)(11))."
+        }, 
+        {
+            "index": [
+                "104", 
+                "19"
+            ], 
+            "title": "\u00a7 104.19 [Reserved]"
+        }, 
+        {
+            "index": [
+                "104", 
+                "20"
+            ], 
+            "title": "\u00a7 104.20 Reporting electioneering communications (52 U.S.C. 30104(f))."
+        }, 
+        {
+            "index": [
+                "104", 
+                "21"
+            ], 
+            "title": "\u00a7 104.21 Reporting by inaugural committees."
+        }, 
+        {
+            "index": [
+                "104", 
+                "22"
+            ], 
+            "title": "\u00a7 104.22 Disclosure of bundling by Lobbyist/Registrants and Lobbyist/Registrant PACs (52 U.S.C. 30104(i))."
+        }
+    ]
+}

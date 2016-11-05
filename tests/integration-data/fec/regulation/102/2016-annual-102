@@ -1,0 +1,2514 @@
+{
+    "children": [
+        {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "102", 
+                                "1", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) Principal campaign committees. Each principal campaign committee shall file a Statement of Organization in accordance with 11 CFR 102.2 no later than 10 days after designation pursuant to 11 CFR 101.1. In addition, each principal campaign committee shall file all designations, statements and reports which are filed with such committee at the place of filing specified at 11 CFR part 105."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "102", 
+                                "1", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) Authorized committees. Each authorized committee(s) shall file only one Statement of Organization in accordance with 11 CFR 102.2 no later than 10 days after designation pursuant to 11 CFR 101.1. Such Statement(s) shall be filed with the principal campaign committee of the authorizing candidate."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "102", 
+                                "1", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) Separate segregated funds. Each separate segregated fund established under 52 U.S.C. 30118(b)(2)(C) shall file a Statement of Organization with the Federal Election Commission no later than 10 days after establishment. This requirement shall not apply to a fund established solely for the purpose of financing political activity in connection with State or local elections. Examples of establishment events after which a fund would be required to register include, but are not limited to: A vote by the board of directors or comparable governing body of an organization to create a separate segregated fund to be used wholly or in part for federal elections; selection of initial officers to administer such a fund; or payment of the initial operating expenses of such a fund."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "102", 
+                                "1", 
+                                "d"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(d) Other political committees. All other committees shall file a Statement of Organization no later than 10 days after becoming a political committee within the meaning of 11 CFR 100.5. Such statement(s) shall be filed at the place of filing specified at 11 CFR part 105."
+                        }
+                    ], 
+                    "label": [
+                        "102", 
+                        "1"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 102.1 Registration of political committees (52 U.S.C. 30103(a))."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "102", 
+                                                "2", 
+                                                "a", 
+                                                "1", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) The name, address, and type of committee;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "102", 
+                                                "2", 
+                                                "a", 
+                                                "1", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) The name, address, relationship, and type of any connected organization or affiliated committee in accordance with 11 CFR 102.2(b);"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "102", 
+                                                "2", 
+                                                "a", 
+                                                "1", 
+                                                "iii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iii) The name, address, and committee position of the custodian of books and accounts of the committee;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "102", 
+                                                "2", 
+                                                "a", 
+                                                "1", 
+                                                "iv"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iv) The name and address of the treasurer of the committee;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "102", 
+                                                "2", 
+                                                "a", 
+                                                "1", 
+                                                "v"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(v) If the committee is authorized by a candidate, the name, office sought (including State and Congressional district, when applicable) and party affiliation of the candidate; and the address to which communications should be sent;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "102", 
+                                                "2", 
+                                                "a", 
+                                                "1", 
+                                                "vi"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(vi) A listing of all banks, safe deposit boxes, or other depositories used by the committee;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "102", 
+                                                "2", 
+                                                "a", 
+                                                "1", 
+                                                "vii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(vii) The Internet address of the committee's official web site, if such a web site exists. If the committee is required to file electronically under 11 CFR 104.18, its electronic mail address, if such an address exists; and"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "102", 
+                                                "2", 
+                                                "a", 
+                                                "1", 
+                                                "viii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(viii) If the committee is a principal campaign committee of a candidate for the Senate or the House of Representatives, the principal campaign committee's electronic mail address."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "102", 
+                                        "2", 
+                                        "a", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) The Statement of Organization shall be filed in accordance with 11 CFR part 105 on Federal Election Commission Form 1, which may be obtained from the Federal Election Commission, 999 E Street, NW., Washington, DC 20463. The Statement shall be signed by the treasurer and shall include the following information:"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "102", 
+                                        "2", 
+                                        "a", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Any change or correction in the information previously filed in the Statement of Organization shall be reported no later than 10 days following the date of the change or correction by filing an amended Statement of Organization or, if the political committee is not required to file electronically under 11 CFR 104.18, by filing a letter noting the change(s). The amendment need list only the name of the political committee and the change or correction."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "102", 
+                                        "2", 
+                                        "a", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) A committee shall certify to the Commission that it has satisfied the criteria for becoming a multicandidate committee set forth at 11 CFR 100.5(e)(3) by filing FEC Form 1M no later than ten (10) calendar days after qualifying for multicandidate committee status."
+                                }
+                            ], 
+                            "label": [
+                                "102", 
+                                "2", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) Forms."
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "102", 
+                                                "2", 
+                                                "b", 
+                                                "1", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) A principal campaign committee is required to disclose the names and addresses of all other authorized committees that have been authorized by its candidate. Authorized committees need only disclose the name of their principal campaign committee."
+                                        }, 
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "102", 
+                                                        "2", 
+                                                        "b", 
+                                                        "1", 
+                                                        "ii", 
+                                                        "A"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(A) Political committees established by a single parent corporation, a single national or international union, a single organization or federation of national or international unions, a single national membership organization or trade association, or any other similar group of persons (other than political party organizations) are required to disclose the names and addresses of all political committees established by any subsidiary, or by any State, local, or other subordinate unit of a national or international union or federation thereof, or by any subordinate units of a national membership organization, trade association, or other group of persons (other than political party organizations)."
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "102", 
+                                                        "2", 
+                                                        "b", 
+                                                        "1", 
+                                                        "ii", 
+                                                        "B"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(B) Political committees established by subsidiaries, or by State, local, or other subordinate units are only required to disclose the name and address of each political committee established by their parent or superior body, e.g., parent corporation, national or international union or organization or federation of such unions, or national organization or trade association."
+                                                }
+                                            ], 
+                                            "label": [
+                                                "102", 
+                                                "2", 
+                                                "b", 
+                                                "1", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii)"
+                                        }
+                                    ], 
+                                    "label": [
+                                        "102", 
+                                        "2", 
+                                        "b", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Affiliated committee includes any committee defined in 11 CFR 100.5(g), 110.3(a) or (b), or 110.14(j) or (k)."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "102", 
+                                        "2", 
+                                        "b", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Connected organization includes any organization defined at 11 CFR 100.6."
+                                }
+                            ], 
+                            "label": [
+                                "102", 
+                                "2", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) For purposes of 11 CFR 102.2(a)(1)(ii), political committees shall disclose the names of any connected organization(s) or affiliated committee(s) in accordance with 11 CFR 102.2(b) (1) and (2)."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "102", 
+                                "2", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) Committee identification number. Upon receipt of a Statement of Organization under 11 CFR part 102 by the Commission, an identification number shall be assigned to the committee, receipt shall be acknowledged, and the political committee shall be notified of the number assigned. This identification number shall be entered by the political committee on all subsequent reports or statements filed under the Act, as well as on all communications concerning reports and statements."
+                        }
+                    ], 
+                    "label": [
+                        "102", 
+                        "2"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 102.2 Statement of organization: Forms and committee identification number (52 U.S.C. 30103(b), (c))."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "102", 
+                                        "3", 
+                                        "a", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) A political committee (other than a principal campaign committee) may terminate only upon filing a termination report on the appropriate FEC Form or upon filing a written statement containing the same information at the place of filing specified at 11 CFR part 105. Except as provided in 11 CFR 102.4(c), only a committee which will no longer receive any contributions or make any disbursements that would otherwise qualify it as a political committee may terminate, provided that such committee has no outstanding debts and obligations. In addition to the Notice, the committee shall also provide a final report of receipts and disbursements, which report shall include a statement as to the purpose for which such residual funds will be used, including a statement as to whether such residual funds will be used to defray expenses incurred in connection with an individual's duties as a holder of federal office."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "102", 
+                                        "3", 
+                                        "a", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) An authorized committee of a qualified Member, as defined at 11 CFR 113.1(f), shall comply with the requirements of 11 CFR 113.2 before any excess funds are converted to such Member's personal use. All other authorized committees shall include in their termination reports a statement signed by the treasurer, stating that no noncash committee assets will be converted to personal use."
+                                }
+                            ], 
+                            "label": [
+                                "102", 
+                                "3", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a)"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "102", 
+                                "3", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) Except as provided at 11 CFR 102.4, a principal campaign committee may not terminate until it has met the requirements of 11 CFR 102.3(a) and until all debts of any other authorized committee(s) of the candidate have been extinguished."
+                        }
+                    ], 
+                    "label": [
+                        "102", 
+                        "3"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 102.3 Termination of registration (52 U.S.C. 30103(d)(1))."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "102", 
+                                        "4", 
+                                        "a", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) The committee's aggregate reported financial activity in one year is less than $5000;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "102", 
+                                        "4", 
+                                        "a", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) The committee's reports disclose no receipt of contributions for the previous year;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "102", 
+                                        "4", 
+                                        "a", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) The committee's last report disclosed minimal expenditures;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "102", 
+                                        "4", 
+                                        "a", 
+                                        "4"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(4) The committee's primary purpose for filing its reports has been to disclose outstanding debts and obligations;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "102", 
+                                        "4", 
+                                        "a", 
+                                        "5"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(5) The committee has failed to file reports for the previous year;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "102", 
+                                        "4", 
+                                        "a", 
+                                        "6"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(6) The committee's last report disclosed that the committee's outstanding debts and obligations do not appear to present a possible violation of the prohibitions and limitations of 11 CFR parts 110 and 114;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "102", 
+                                        "4", 
+                                        "a", 
+                                        "7"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(7) The committee's last report disclosed that the Committee does not have substantial outstanding accounts receivable;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "102", 
+                                        "4", 
+                                        "a", 
+                                        "8"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(8) The committee's outstanding debts and obligations exceed the total of the committee's reported cash on hand balance."
+                                }
+                            ], 
+                            "label": [
+                                "102", 
+                                "4", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) The Commission, on its own initiative or upon the request of the political committee itself, may administratively terminate a political committee's reporting obligation on the basis of the following factors:"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "102", 
+                                "4", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) The Commission shall send a notification to the committee treasurer of its intent to administratively terminate that committee and may request the treasurer to submit information with regard to the factors set forth at 11 CFR 102.4(a). The treasurer shall respond, in writing, within 30 days of receipt of the Commission's notice or request and if the committee objects to such termination, the committee's response shall so state."
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "102", 
+                                        "4", 
+                                        "c", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) The committee has complied with the debt settlement procedures set forth at 11 CFR part 116."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "102", 
+                                        "4", 
+                                        "c", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) The Commission has approved the forgiveness of any loan(s) owed the committee which would have otherwise been considered a contribution under the Act in violation of 11 CFR part 110;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "102", 
+                                        "4", 
+                                        "c", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) It does not appear from evidence available that a contribution in violation of 11 CFR parts 110 and 114 will result."
+                                }
+                            ], 
+                            "label": [
+                                "102", 
+                                "4", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) The Commission shall administratively terminate a committee if such committee fails to object to the Commission's action under 11 CFR 102.4(b) and the Commission determines that either:"
+                        }
+                    ], 
+                    "label": [
+                        "102", 
+                        "4"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 102.4 Administrative termination (52 U.S.C. 30103(d)(2))."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "102", 
+                                                "5", 
+                                                "a", 
+                                                "1", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) Establish a separate Federal account in a depository in accordance with 11 CFR part 103. Such account shall be treated as a separate Federal political committee that must comply with the requirements of the Act including the registration and reporting requirements of 11 CFR parts 102 and 104. Only funds subject to the prohibitions and limitations of the Act shall be deposited in such separate Federal account. See 11 CFR 103.3. All disbursements, contributions, expenditures, and transfers by the committee in connection with any Federal election shall be made from its Federal account, except as otherwise permitted for State, district and local party committees by 11 CFR part 300 and paragraph (a)(5) of this section. No transfers may be made to such Federal account from any other account(s) maintained by such organization for the purpose of financing activity in connection with non-Federal elections, except as provided by 11 CFR 300.33, 300.34, 106.6(c), 106.6(f), and 106.7(f). Administrative expenses for political committees other than party committees shall be allocated pursuant to 11 CFR 106.6(c) between such Federal account and any other account maintained by such committee for the purpose for financing activity in connection with non-Federal elections. Administrative expenses for State, district, and local party committees are subject to 11 CFR 106.7 and 11 CFR part 300; or"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "102", 
+                                                "5", 
+                                                "a", 
+                                                "1", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) Establish a political committee that shall receive only contributions subject to the prohibitions and limitations of the Act, regardless of whether such contributions are for use in connection with Federal or non-Federal elections. Such organization shall register as a political committee and comply with the requirements of the Act."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "102", 
+                                        "5", 
+                                        "a", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Each organization, including a State, district, or local party committee, that finances political activity in connection with both Federal and non-Federal elections and that qualifies as a political committee under 11 CFR 100.5 shall either:"
+                                }, 
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "102", 
+                                                "5", 
+                                                "a", 
+                                                "2", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) Contributions designated for the Federal account;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "102", 
+                                                "5", 
+                                                "a", 
+                                                "2", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) Contributions that result from a solicitation which expressly states that the contribution will be used in connection with a Federal election; or"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "102", 
+                                                "5", 
+                                                "a", 
+                                                "2", 
+                                                "iii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iii) Contributions from contributors who are informed that all contributions are subject to the prohibitions and limitations of the Act."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "102", 
+                                        "5", 
+                                        "a", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Only contributions meeting any of the conditions set forth in paragraphs (a)(2)(i), (ii), or (iii) of this section may be deposited in a Federal account established under paragraph (a)(1)(i) of this section, see 11 CFR 103.3, or may be received by a political committee established under paragraph (a)(1)(ii) of this section:"
+                                }, 
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "102", 
+                                                "5", 
+                                                "a", 
+                                                "3", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) Establish one or more separate Levin accounts pursuant to 11 CFR 300.30(c)(2); or"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "102", 
+                                                "5", 
+                                                "a", 
+                                                "3", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) Demonstrate through a reasonable accounting method approved by the Commission (including any method embedded in software provided or approved by the Commission) that whenever such organization makes a payment that organization has received sufficient funds subject to the limitations and prohibitions of the Act or the requirements of 11 CFR 300.30(c)(1) or (3) to make such payment. Such organization shall keep records of amounts received or expended under this paragraph and, upon request, shall make such records available for examination by the Commission."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "102", 
+                                        "5", 
+                                        "a", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) State, district, and local party committees that intend to expend Levin funds raised pursuant to 11 CFR 300.31 for activities identified in 11 CFR 300.32(b)(1) must either:"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "102", 
+                                        "5", 
+                                        "a", 
+                                        "4"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(4) Solicitations by Federal candidates and Federal officeholders for State, district, and local party committees are subject to the restrictions in 11 CFR 300.31(e) and 11 CFR part 300, subpart D."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "102", 
+                                        "5", 
+                                        "a", 
+                                        "5"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(5) State, district, and local party committees and organizations may establish one or more separate allocation accounts to be used for activities allocable pursuant to 11 CFR 106.7 and 11 CFR 300.33."
+                                }
+                            ], 
+                            "label": [
+                                "102", 
+                                "5", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) Organizations that are political committees under the Act, other than national party committees."
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "102", 
+                                        "5", 
+                                        "b", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Any organization that makes contributions, expenditures, and exempted payments under 11 CFR 100.80, 100.87 and 100.89 and 11 CFR 100.140, 100.147 and 100.149, but that does not qualify as a political committee under 11 CFR 100.5, must keep records of receipts and disbursements and, upon request, must make such records available for examination by the Commission. The organization must demonstrate through a reasonable accounting method that, whenever such an organization makes a contribution or expenditure, or payment, the organization has received sufficient funds subject to the limitations and prohibitions of the Act to make such contribution, expenditure, or payment."
+                                }, 
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "102", 
+                                                "5", 
+                                                "b", 
+                                                "2", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) Establish one or more Levin accounts pursuant to 11 CFR 300.30(b) into which only funds solicited pursuant to 11 CFR 300.31 may be deposited and from which payments must be made pursuant to 11 CFR 300.32 and 300.33. See 11 CFR 300.30(c)(2)(i); or"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "102", 
+                                                "5", 
+                                                "b", 
+                                                "2", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) Demonstrate through a reasonable accounting method approved by the Commission (including any method embedded in software provided or approved by the Commission) that whenever such organization makes a payment that organization has received sufficient funds subject to the limitations and prohibitions of the Act or the requirements of 11 CFR 300.31 to make such payment. Such organization shall keep records of amounts received or expended under this paragraph and, upon request, shall make such records available for examination by the Commission. See 11 CFR 300.30(c)(2)(ii)."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "102", 
+                                        "5", 
+                                        "b", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Any State, district, or local party organization that makes payments for certain Federal election activities under 11 CFR 300.32(b) must either:"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "102", 
+                                        "5", 
+                                        "b", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) All such party organizations shall keep records of deposits to and disbursements from such Federal and Levin accounts, and upon request, shall make such records available for examination by the Commission."
+                                }
+                            ], 
+                            "label": [
+                                "102", 
+                                "5", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) Organizations that are not political committees under the Act."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "102", 
+                                "5", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) National party committees. Between November 6, 2002, and December 31, 2002, paragraphs (a) and (b) of this section apply to national party committees. After December 31, 2002, national party committees are prohibited from raising and spending non-Federal funds. Therefore, this section does not apply to national party committees after December 31, 2002."
+                        }
+                    ], 
+                    "label": [
+                        "102", 
+                        "5"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 102.5 Organizations financing political activity in connection with Federal and non-Federal elections, other than through transfers and joint fundraisers: Accounts and accounting."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "102", 
+                                                "6", 
+                                                "a", 
+                                                "1", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) Transfers of funds may be made without limit on amount between affiliated committees whether or not they are political committees under 11 CFR 100.5."
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "102", 
+                                                "6", 
+                                                "a", 
+                                                "1", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) Subject to the restrictions set forth at 11 CFR 300.10(a), 300.31 and 300.34(a) and (b), transfers of funds may be made without limit on amount between or among a national party committee, a State party committee and/or any subordinate party committee whether or not they are political committees under 11 CFR 100.5 and whether or not such committees are affiliated."
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "102", 
+                                                "6", 
+                                                "a", 
+                                                "1", 
+                                                "iii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iii) Transfers of joint fundraising proceeds may be made without limit on amount between organizations or committees participating in the joint fundraising activity provided that no participating committee or organization governed by 11 CFR 102.17 received more than its allocated share of the funds raised."
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "102", 
+                                                "6", 
+                                                "a", 
+                                                "1", 
+                                                "iv"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iv) Transfers under paragraphs (a)(1) (i) through (iii) shall be made only from funds which are permissible under the Act. See 11 CFR parts 110, 114 and 115."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "102", 
+                                        "6", 
+                                        "a", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Who may make transfers under this section."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "102", 
+                                        "6", 
+                                        "a", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) When registration and reporting required. Except as provided in 11 CFR 102.6(b), organizations or committees making transfers under 11 CFR 102.6(a)(1) shall count such transfers against the reporting thresholds of the Act for determining whether an organization or committee is a political committee under 11 CFR 100.5."
+                                }
+                            ], 
+                            "label": [
+                                "102", 
+                                "6", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) Transfers of funds; registration and reporting required\u2014"
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "102", 
+                                                "6", 
+                                                "b", 
+                                                "1", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) A committee, whether or not it is a political committee as defined in 11 CFR 100.5, affiliated with the separate segregated fund under 11 CFR 110.3; or"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "102", 
+                                                "6", 
+                                                "b", 
+                                                "1", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) The connected organization of the separate segregated fund as defined in 11 CFR 100.6; or"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "102", 
+                                                "6", 
+                                                "b", 
+                                                "1", 
+                                                "iii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iii) A parent, subsidiary, branch, division, department, or local unit of the connected organization of the separate segregated fund; or"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "102", 
+                                                "6", 
+                                                "b", 
+                                                "1", 
+                                                "iv"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iv) A local, national or international union collecting contributions on behalf of the separate segregated fund of any federation with which the local, national or international union is affiliated. See 11 CFR 114.1(e)."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "102", 
+                                        "6", 
+                                        "b", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Definition of collecting agent. A collecting agent is an organization or committee that collects and transmits contributions to one or more separate segregated funds to which the collecting agent is related. A collecting agent may be either:"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "102", 
+                                        "6", 
+                                        "b", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Collecting agent not required to report. A collecting agent that is an unregistered organization and that follows the procedures of 11 CFR 102.6(c) is not required to register and report as a political committee under 11 CFR parts 102 and 104, provided that the organization does not engage in other activities such as making contributions or expenditures for the purpose of influencing federal elections."
+                                }, 
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "102", 
+                                                "6", 
+                                                "b", 
+                                                "3", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) Commercial fundraising firm. A separate segregated fund or a collecting agent may hire a commercial fundraising firm to assist in fundraising; however, the commercial fundraising firm shall not be considered as a collecting agent for the purpose of this section. Rather, the commercial fundraising firm shall be considered to be the agent of the separate segregated fund or collecting agent."
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "102", 
+                                                "6", 
+                                                "b", 
+                                                "3", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) Individuals. An individual who collects contributions for a separate segregated fund shall not be considered a collecting agent for the purpose of this section. Individuals who collect contributions are subject to the requirements of 11 CFR 102.8 and the provisions of 11 CFR part 110."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "102", 
+                                        "6", 
+                                        "b", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) Who is not a collecting agent\u2014"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "102", 
+                                        "6", 
+                                        "b", 
+                                        "4"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(4) Separate segregated fund may collect contributions. Nothing in this section shall preclude a separate segregated fund from soliciting and collecting contributions on its own behalf."
+                                }
+                            ], 
+                            "label": [
+                                "102", 
+                                "6", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) Fundraising by collecting agents; No reporting required\u2014"
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "102", 
+                                        "6", 
+                                        "c", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Separate segregated fund responsible for acts of collecting agent. The separate segregated fund shall be responsible for ensuring that the recordkeeping, reporting and transmittal requirements of this section are met."
+                                }, 
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "102", 
+                                                "6", 
+                                                "c", 
+                                                "2", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) The collecting agent may pay any or all of the costs incurred in soliciting and transmitting contributions to the separate segregated fund."
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "102", 
+                                                "6", 
+                                                "c", 
+                                                "2", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) If the separate segregated fund pays any solicitation or other administrative expense from its own account, which expense could be paid for as an administrative expense by the collecting agent, the collecting agent may reimburse the separate segregated fund no later than 30 calendar days after the expense was paid by the separate segregated fund."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "102", 
+                                        "6", 
+                                        "c", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Solicitation for contributions. A collecting agent may include a solicitation for voluntary contributions to a separate segregated fund in a bill for membership dues or other payments such as conference registration fees or a solicitation for contributions to the collecting agent. The collecting agent may only solicit contributions from those persons permitted to be solicited under 11 CFR part 114. The solicitation for contributions must meet all of the requirements for proper solicitations under 11 CFR 114.5."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "102", 
+                                        "6", 
+                                        "c", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) Checks combining contributions with other payments. A contributor may write a check that represents both a contribution and payment of dues or other fees. The check must be drawn on the contributor's personal checking account or on a non-repayable corporate drawing account of the individual contributor. Under a payroll deduction plan, an employer may write a check on behalf of its employees to a union or its agent, which check represents a combined payment of voluntary contributions to the union's separate segregated fund and union dues or other employee deductions."
+                                }, 
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "102", 
+                                                "6", 
+                                                "c", 
+                                                "4", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) Checks made payable to the separate segregated fund shall be transmitted by the collecting agent directly to the separate segregated fund in accordance with 11 CFR 102.8."
+                                        }, 
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "102", 
+                                                        "6", 
+                                                        "c", 
+                                                        "4", 
+                                                        "ii", 
+                                                        "A"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(A) Establish a transmittal account to be used solely for the deposit and transmittal of funds collected on behalf of the separate segregated fund. Funds deposited into this account are subject to the prohibitions and limitations of the Act. If any expenditure is made from the account, other than a transfer of funds to an affiliated committee, the account shall be considered a depository of the recipient committee and all activity of that account shall be reported; or"
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "102", 
+                                                        "6", 
+                                                        "c", 
+                                                        "4", 
+                                                        "ii", 
+                                                        "B"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(B) Deposit the contributions collected into the collecting agent's treasury account. The collecting agent shall keep separate records of all receipts and deposits that represent contributions to the separate segregated fund and, in the case of cash contributions, the collecting agent shall make separate deposits of such funds; or"
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "102", 
+                                                        "6", 
+                                                        "c", 
+                                                        "4", 
+                                                        "ii", 
+                                                        "C"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(C) Deposit the contributions collected into an account otherwise established solely for State or local election activity. The collecting agent shall keep separate records of all receipts and deposits that represent contributions to the separate segregated fund; or"
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "102", 
+                                                        "6", 
+                                                        "c", 
+                                                        "4", 
+                                                        "ii", 
+                                                        "D"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(D) In the case of cash contributions, transmit the contributions to the separate segregated fund in the form of money orders or cashier's checks."
+                                                }
+                                            ], 
+                                            "label": [
+                                                "102", 
+                                                "6", 
+                                                "c", 
+                                                "4", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) To transfer all other contributions, a collecting agent shall either:"
+                                        }
+                                    ], 
+                                    "label": [
+                                        "102", 
+                                        "6", 
+                                        "c", 
+                                        "4"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(4) Transmittal of contributions. The full amount of each contribution collected by a collecting agent on behalf of a separate segregated fund shall be transmitted to that fund within 10 or 30 days as required by 11 CFR 102.8."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "102", 
+                                        "6", 
+                                        "c", 
+                                        "5"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(5) Contributor information. The collecting agent shall comply with the requirements of 11 CFR 102.8 regarding transmittal of contributions and contributor information to the separate segregated fund, except that if contributions of $50 or less are received at a mass collection, a record shall be kept of the date, the total amount collected, and the name of the function at which the collection was made."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "102", 
+                                        "6", 
+                                        "c", 
+                                        "6"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(6) Retention of records. The collecting agent shall retain all records of contribution deposits and transmittals under this section for a period of three years and shall make these records available to the Commission on request. The separate segregated fund shall keep a record of all transmittals of contributions received from collecting agents under this section, and shall retain these records for a period of three years."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "102", 
+                                        "6", 
+                                        "c", 
+                                        "7"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(7) Reporting of funds received through collecting agents. A separate segregated fund receiving contributions collected by a collecting agent shall report the full amount of each contribution received as a contribution from the original contributor to the extent required by 11 CFR 104.3(a)."
+                                }
+                            ], 
+                            "label": [
+                                "102", 
+                                "6", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) Procedures for collecting agents\u2014"
+                        }
+                    ], 
+                    "label": [
+                        "102", 
+                        "6"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 102.6 Transfers of funds; collecting agents."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "102", 
+                                "7", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) Every political committee shall have a treasurer and may designate, on the committee's Statement of Organization, an assistant treasurer who shall assume the duties and responsibilities of the treasurer in the event of a temporary or permanent vacancy in the office or in the event the treasurer is unavailable."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "102", 
+                                "7", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) Except as provided in subsection (a), no contribution or expenditure shall be accepted or made by or on behalf of a political committee at a time when there is a vacancy in the office of the treasurer."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "102", 
+                                "7", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) No expenditure shall be made for or on behalf of a political committee without the authorization of its treasurer or of an agent authorized orally or in writing by the treasurer."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "102", 
+                                "7", 
+                                "d"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(d) Any candidate who receives a contribution, as defined at 11 CFR part 100, subparts B and D, obtains any loan or makes any disbursement in connection with his or her campaign, shall be considered as having received the contribution, obtained the loan or made the disbursement as an agent of such authorized committee(s)."
+                        }
+                    ], 
+                    "label": [
+                        "102", 
+                        "7"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 102.7 Organization of political committees (52 U.S.C. 30102(a))."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "102", 
+                                "8", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) Every person who receives a contribution for an authorized political committee shall, no later than 10 days after receipt, forward such contribution to the treasurer. If the amount of the contribution is in excess of $50, such person shall also forward to the treasurer the name and address of the contributor and the date of receipt of the contribution. If the amount of the contribution is in excess of $200, such person shall forward the contribution, the identification of the contributor in accordance with 11 CFR 100.12, and the date of receipt of the contribution. Date of receipt shall be the date such person obtains possession of the contribution."
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "102", 
+                                        "8", 
+                                        "b", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Every person who receives a contribution of $50 or less for a political committee which is not an authorized committee shall forward such contribution to the treasurer of the political committee no later than 30 days after receipt."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "102", 
+                                        "8", 
+                                        "b", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Every person who receives a contribution in excess of $50 for a political committee which is not an authorized committee shall, no later than 10 days after receipt of the contribution, forward to the treasurer of the political committee: The contribution; the name and address of the contributor; and the date of receipt of the contribution. If the amount of the contribution is in excess of $200, such person shall forward the contribution, the identification of the contributor in accordance with 11 CFR 100.12, and the date of receipt of the contribution. Date of receipt shall be the date such person obtains possession of the contribution."
+                                }
+                            ], 
+                            "label": [
+                                "102", 
+                                "8", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b)"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "102", 
+                                "8", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) The provisions of 11 CFR 102.8 concerning receipt of contributions for political committees shall also apply to earmarked contributions transmitted by an intermediary or conduit."
+                        }
+                    ], 
+                    "label": [
+                        "102", 
+                        "8"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 102.8 Receipt of contributions (52 U.S.C. 30102(b))."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "102", 
+                                        "9", 
+                                        "a", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) For contributions in excess of $50, such account shall include the name and address of the contributor and the date of receipt and amount of such contribution."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "102", 
+                                        "9", 
+                                        "a", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) For contributions from any person whose contributions aggregate more than $200 during a calendar year, such account shall include the identification of the person, and the date of receipt and amount of such contribution."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "102", 
+                                        "9", 
+                                        "a", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) For contributions from a political committee, such account shall include the identification of the political committee and the date of receipt and amount of such contribution."
+                                }, 
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "102", 
+                                                "9", 
+                                                "a", 
+                                                "4", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) A full-size photocopy of each check or written instrument; or"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "102", 
+                                                "9", 
+                                                "a", 
+                                                "4", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) A digital image of each check or written instrument. The political committee or other person shall provide the computer equipment and software needed to retrieve and read the digital images, if necessary, at no cost to the Commission."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "102", 
+                                        "9", 
+                                        "a", 
+                                        "4"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(4) In addition to the account to be kept under paragraph (a)(1) of this section, for contributions in excess of $50, the treasurer of a political committee or an agent authorized by the treasurer shall maintain:"
+                                }
+                            ], 
+                            "label": [
+                                "102", 
+                                "9", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) An account shall be kept by any reasonable accounting procedure of all contributions received by or on behalf of the political committee."
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "102", 
+                                                "9", 
+                                                "b", 
+                                                "1", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) The name and address of every person to whom any disbursement is made;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "102", 
+                                                "9", 
+                                                "b", 
+                                                "1", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) The date, amount, and purpose of the disbursement; and"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "102", 
+                                                "9", 
+                                                "b", 
+                                                "1", 
+                                                "iii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iii) If the disbursement is made for a candidate, the name and office (including State and congressional district, if any) sought by that candidate."
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "102", 
+                                                "9", 
+                                                "b", 
+                                                "1", 
+                                                "iv"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iv) For purposes of 11 CFR 102.9(b)(1), purpose has the same meaning given the term at 11 CFR 104.3(b)(3)(i)(A)."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "102", 
+                                        "9", 
+                                        "b", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) An account shall be kept of all disbursements made by or on behalf of the political committee. Such account shall consist of a record of:"
+                                }, 
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "102", 
+                                                        "9", 
+                                                        "b", 
+                                                        "2", 
+                                                        "i", 
+                                                        "A"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(A) For purposes of 11 CFR 102.9(b)(2), payee means the person who provides the goods or services to the committee or agent thereof in return for payment, except for an advance of $500 or less for travel and subsistence to an individual who will be the recipient of the goods or services."
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "102", 
+                                                        "9", 
+                                                        "b", 
+                                                        "2", 
+                                                        "i", 
+                                                        "B"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(B) For any advance of $500 or less to an individual for travel and subsistence, the expense voucher or other expense account documentation and a cancelled check to the recipient of the advance shall be obtained and kept."
+                                                }
+                                            ], 
+                                            "label": [
+                                                "102", 
+                                                "9", 
+                                                "b", 
+                                                "2", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i)"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "102", 
+                                                "9", 
+                                                "b", 
+                                                "2", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) For any credit card transaction, documentation shall include a monthly billing statement or customer receipt for each transaction and the cancelled check used to pay the credit card account."
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "102", 
+                                                "9", 
+                                                "b", 
+                                                "2", 
+                                                "iii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iii) For purposes of 11 CFR 102.9(b)(2), a carbon copy of a share draft or check drawn on a credit union account may be used as a duplicate record of such draft or check provided that the monthly account statement showing that the share draft or check was paid by the credit union is also retained."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "102", 
+                                        "9", 
+                                        "b", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) In addition to the account to be kept under 11 CFR 102.9(b)(1), a receipt or invoice from the payee or a cancelled check to the payee shall be obtained and kept for each disbursement in excess of $200 by or on behalf of, the committee, except that credit card transactions, shall be documented in accordance with 11 CFR 102.9(b)(2)(ii) and disbursements by share draft or check drawn on a credit union account shall be documented in accordance with 11 CFR 102.9(b)(2)(iii)."
+                                }
+                            ], 
+                            "label": [
+                                "102", 
+                                "9", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b)"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "102", 
+                                "9", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) The treasurer shall preserve all records and accounts required to be kept under 11 CFR 102.9 for 3 years after the report to which such records and accounts relate is filed."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "102", 
+                                "9", 
+                                "d"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(d) In performing recordkeeping duties, the treasurer or his or her authorized agent shall use his or her best efforts to obtain, maintain and submit the required information and shall keep a complete record of such efforts. If there is a showing that best efforts have been made, any records of a committee shall be deemed to be in compliance with this Act. With regard to the requirements of 11 CFR 102.9(b)(2) concerning receipts, invoices and cancelled checks, the treasurer will not be deemed to have exercised best efforts to obtain, maintain and submit the records unless he or she has made at least one written effort per transaction to obtain a duplicate copy of the invoice, receipt, or cancelled check."
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "102", 
+                                                "9", 
+                                                "e", 
+                                                "1", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) The designation of separate accounts for each election, caucus or convention; or"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "102", 
+                                                "9", 
+                                                "e", 
+                                                "1", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) The establishment of separate books and records for each election."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "102", 
+                                        "9", 
+                                        "e", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) If the candidate, or his or her authorized committee(s), receives contributions that are designated for use in connection with the general election pursuant to 11 CFR 110.1(b) prior to the date of the primary election, such candidate or such committee(s) shall use an acceptable accounting method to distinguish between contributions received for the primary election and contributions received for the general election. Acceptable accounting methods include, but are not limited to:"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "102", 
+                                        "9", 
+                                        "e", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Regardless of the method used under paragraph (e)(1) of this section, an authorized committee's records must demonstrate that, prior to the primary election, recorded cash on hand was at all times equal to or in excess of the sum of general election contributions received less the sum of general election disbursements made."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "102", 
+                                        "9", 
+                                        "e", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) If a candidate is not a candidate in the general election, any contributions made for the general election shall be refunded to the contributors, redesignated in accordance with 11 CFR 110.1(b)(5) or 110.2(b)(5), or reattributed in accordance with 11 CFR 110.1(k)(3), as appropriate."
+                                }
+                            ], 
+                            "label": [
+                                "102", 
+                                "9", 
+                                "e"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(e)"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "102", 
+                                "9", 
+                                "f"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(f) The treasurer shall maintain the documentation required by 11 CFR 110.1(l), concerning designations, redesignations, reattributions and the dates of contributions. If the treasurer does not maintain this documentation, 11 CFR 110.1(l)(5) shall apply."
+                        }
+                    ], 
+                    "label": [
+                        "102", 
+                        "9"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "The treasurer of a political committee or an agent authorized by the treasurer to receive contributions and make expenditures shall fulfill all recordkeeping duties as set forth at 11 CFR 102.9(a) through (f):", 
+                    "title": "\u00a7 102.9 Accounting for contributions and expenditures (52 U.S.C. 30102(c))."
+                }, 
+                {
+                    "children": [], 
+                    "label": [
+                        "102", 
+                        "10"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "All disbursements by a political committee, except for disbursements from the petty cash fund under 11 CFR 102.11, shall be made by check or similar draft drawn on account(s) established at the committee's campaign depository or depositories under 11 CFR part 103.", 
+                    "title": "\u00a7 102.10 Disbursement by check (52 U.S.C. 30102 (h)(1))."
+                }, 
+                {
+                    "children": [], 
+                    "label": [
+                        "102", 
+                        "11"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "A political committee may maintain a petty cash fund out of which it may make expenditures not in excess of $100 to any person per purchase or transaction. If a petty cash fund is maintained, it shall be the duty of the treasurer of the political committee to keep and maintain a written journal of all disbursements. This written journal shall include the name and address of every person to whom any disbursement is made, as well as the date, amount, and purpose of such disbursement. In addition, if any disbursement is made for a candidate, the journal shall include the name of that candidate and the office (including State and Congressional district) sought by such candidate.", 
+                    "title": "\u00a7 102.11 Petty cash fund (52 U.S.C. 30102(h)(2))."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "102", 
+                                "12", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) Each candidate for Federal office (other than a nominee of a political party to the Office of Vice President) shall designate in writing a political committee to serve as his or her principal campaign committee in accordance with 11 CFR 101.1(a) no later than 15 days after becoming a candidate. Each principal campaign committee shall register, designate a depository and report in accordance with 11 CFR parts 102, 103 and 104."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "102", 
+                                "12", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) No political committee may be designated as the principal campaign committee of more than one candidate."
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "102", 
+                                        "12", 
+                                        "c", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) No political committee which supports or has supported more than one candidate may be designated as a principal campaign committee, except that, after nomination, a candidate for the office of President of the United States nominated by a political party may designate the national committee of such political party as his or her principal campaign committee. A national committee which is so designated shall maintain separate books of account with respect to its function as a principal campaign committee."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "102", 
+                                        "12", 
+                                        "c", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) For purposes of 11 CFR 102.12(c), the term support does not include contributions by an authorized committee in amounts aggregating $2,000 or less per election to an authorized committee of any other candidate, except that the national committee of a political party which has been designated as the principal campaign committee of that party's Presidential candidate may contribute to another candidate in accordance with 11 CFR part 110."
+                                }
+                            ], 
+                            "label": [
+                                "102", 
+                                "12", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c)"
+                        }
+                    ], 
+                    "label": [
+                        "102", 
+                        "12"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 102.12 Designation of principal campaign committee (52 U.S.C. 30102(e)(1) and (3))."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "102", 
+                                        "13", 
+                                        "a", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Any political committee authorized by a candidate to receive contributions or make expenditures shall be authorized in writing by the candidate. Such authorization must be filed with the principal campaign committee in accordance with 11 CFR 102.1(b)."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "102", 
+                                        "13", 
+                                        "a", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) If an individual fails to disavow activity pursuant to 11 CFR 100.3(a)(3) and is therefore a candidate upon notice by the Commission, he or she shall authorize the committee in writing."
+                                }
+                            ], 
+                            "label": [
+                                "102", 
+                                "13", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a)"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "102", 
+                                "13", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) A candidate is not required to authorize a national, State or subordinate State party committee which solicits funds to be expended on the candidate's behalf pursuant to 11 CFR part 109, subpart D."
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "102", 
+                                        "13", 
+                                        "c", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) No political committee which supports or has supported more than one candidate may be designated as an authorized committee, except that two or more candidates may designate a political committee established solely for the purpose of joint fundraising by such candidates as an authorized committee."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "102", 
+                                        "13", 
+                                        "c", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) For purposes of 11 CFR 102.13(c), the term support does not include contributions by an authorized committee in amounts aggregating $2,000 or less per election to an authorized committee of any other candidate, except that the national committee of a political party which has been designated as the principal campaign committee of that party's Presidential candidate may contribute to another candidate in accordance with 11 CFR part 109, subpart D and 11 CFR part 110."
+                                }
+                            ], 
+                            "label": [
+                                "102", 
+                                "13", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c)"
+                        }
+                    ], 
+                    "label": [
+                        "102", 
+                        "13"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 102.13 Authorization of political committees (52 U.S.C. 30102(e)(1) and (3))."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "102", 
+                                "14", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) The name of each authorized committee shall include the name of the candidate who authorized such committee. Except as provided in paragraph (b) of this section, no unauthorized committee shall include the name of any candidate in its name. For purposes of this paragraph, \u201cname\u201d includes any name under which a committee conducts activities, such as solicitations or other communications, including a special project name or other designation."
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "102", 
+                                        "14", 
+                                        "b", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) A delegate committee, as defined at 11 CFR 100.5(e)(5), shall include the word delegate(s) in its name and may also include in its name the name of the presidential candidate which the delegate committee supports."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "102", 
+                                        "14", 
+                                        "b", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) A political committee established solely to draft an individual or to encourage him or her to become a candidate may include the name of such individual in the name of the committee provided the committee's name clearly indicates that it is a draft committee."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "102", 
+                                        "14", 
+                                        "b", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) An unauthorized political committee may include the name of a candidate in the title of a special project name or other communication if the title clearly and unambiguously shows opposition to the named candidate."
+                                }
+                            ], 
+                            "label": [
+                                "102", 
+                                "14", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b)"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "102", 
+                                "14", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) The name of a separate segregated fund established pursuant to 11 CFR 102.1(c) shall include the full name of its connected organization. Such fund may also use a clearly recognized abbreviation or acronym by which the connected organization is commonly known. Both the full name and such abbreviation or acronym shall be included on the fund's Statement of Organization, on all reports filed by the fund, and in all notices required by 11 CFR 109.11 and 110.11. The fund may make contributions using its acronym or abbreviated name. A fund established by a corporation which has a number of subsidiaries need not include the name of each subsidiary in its name. Similarly, a separate segregated fund established by a subsidiary need not include in its name the name of its parent or another subsidiary of its parent."
+                        }
+                    ], 
+                    "label": [
+                        "102", 
+                        "14"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 102.14 Names of political committees (52 U.S.C. 30102(e)(4) and (5))."
+                }, 
+                {
+                    "children": [], 
+                    "label": [
+                        "102", 
+                        "15"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "All funds of a political committee shall be segregated from, and may not be commingled with, any personal funds of officers, members or associates of that committee, or with the personal funds of any other individual. See also 11 CFR 103.3 and part 114 and 52 U.S.C. 30118.", 
+                    "title": "\u00a7 102.15 Commingled funds (52 U.S.C. 30102(b)(3))."
+                }, 
+                {
+                    "children": [], 
+                    "label": [
+                        "102", 
+                        "16"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "Each political committee shall comply with the notice requirements for solicitation of contributions set forth at 11 CFR 110.11.", 
+                    "title": "\u00a7 102.16 Notice: Solicitation of contributions (52 U.S.C. 30120)."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "102", 
+                                                "17", 
+                                                "a", 
+                                                "1", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) Political committees may engage in joint fundraising with other political committees or with unregistered committees or organizations. The participants in a joint fundraising effort under this section shall either establish a separate committee or select a participating committee, to act as fundraising representative for all participants. The fundraising representative shall be a reporting political committee and an authorized committee of each candidate for federal office participating in the joint fundraising activity. If the participants establish a separate committee to act as the fundraising representative, the separate committee shall not be a participant in any other joint fundraising effort, but the separate committee may conduct more than one joint fundraising effort for the participants."
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "102", 
+                                                "17", 
+                                                "a", 
+                                                "1", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) The participants may hire a commercial fundraising firm or other agent to assist in conducting the joint fundraising activity. In that case, however, the fundraising representative shall still be responsible for ensuring that the recordkeeping and reporting requirements set forth in this section are met."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "102", 
+                                        "17", 
+                                        "a", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1)"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "102", 
+                                        "17", 
+                                        "a", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) The procedures in 11 CFR 102.17(c) will govern all joint fundraising activity conducted under this section. The participants in joint fundraising activity may include political party committees (whether or not they are political committees under 11 CFR 100.5), candidate committees, multicandidate committees, and unregistered organizations which do not qualify as collecting agents under 11 CFR 102.6(b)."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "102", 
+                                        "17", 
+                                        "a", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) A fundraising representative conducting joint fundraising under this section is distinguished from an unregistered organization acting as a collecting agent under 11 CFR 102.6(b). If a separate segregated fund or an unregistered organization qualifies and acts as a collecting agent under 11 CFR 102.6(b), the provisions of 11 CFR 102.17 will not apply to that fundraising activity."
+                                }
+                            ], 
+                            "label": [
+                                "102", 
+                                "17", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) General. Nothing in this section shall supersede 11 CFR part 300, which prohibits any person from soliciting, receiving, directing, transferring, or spending any non-Federal funds, or from transferring Federal funds for Federal election activities."
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "102", 
+                                        "17", 
+                                        "b", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Separate fundraising committee as fundraising representative. Participating committees may establish a separate political committee to act as fundraising representative for all participants. This separate committee shall be a reporting political committee and shall collect contributions, pay fundraising costs from gross proceeds and from funds advanced by participants, and disburse net proceeds to each participant."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "102", 
+                                        "17", 
+                                        "b", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Participating committee as fundraising representative. All participating committees may select one participant to act as fundraising representative for all participants. The fundraising representative must be a political committee as defined in 11 CFR 100.5. The fundraising representative and any other participating committees may collect contributions; however, all contributions received by other participants shall be forwarded to the fundraising representative as required by 11 CFR 102.8. The fundraising representative shall pay fundraising costs from gross proceeds and from funds advanced by participants and shall disburse net proceeds to each participant."
+                                }, 
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "102", 
+                                                "17", 
+                                                "b", 
+                                                "3", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) Except as provided in 11 CFR 102.17(b) (3)(ii) and (iii), the amount of funds advanced by each participant for fundraising costs shall be in proportion to the allocation formula agreed upon under 11 CFR 102.17 (c)(1)."
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "102", 
+                                                "17", 
+                                                "b", 
+                                                "3", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) A participant may advance more than its proportionate share of the fundraising costs, however, the amount advanced which is in excess of the participant's proportionate share shall not exceed the amount that participant could legally contribute to the remaining participants. See 11 CFR 102.12(c)(2) and part 110."
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "102", 
+                                                "17", 
+                                                "b", 
+                                                "3", 
+                                                "iii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iii) If all the participants are affiliated under 11 CFR 110.3 or if the participants are all party committees of the same political party, there is no limit on the amount a participant may advance for fundraising costs on behalf of the other participants."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "102", 
+                                        "17", 
+                                        "b", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) Funds advanced for fundraising costs."
+                                }
+                            ], 
+                            "label": [
+                                "102", 
+                                "17", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) Fundraising representatives\u2014"
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "102", 
+                                        "17", 
+                                        "c", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Written agreement. The participants in a joint fundraising activity shall enter into a written agreement, whether or not all participants are political committees under 11 CFR 100.5. The written agreement shall identify the fundraising representative and shall state a formula for the allocation of fundraising proceeds. The formula shall be stated as the amount or percentage of each contribution received to be allocated to each participant. The fundraising representative shall retain the written agreement for a period of three years and shall make it available to the Commission on request."
+                                }, 
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "102", 
+                                                        "17", 
+                                                        "c", 
+                                                        "2", 
+                                                        "i", 
+                                                        "A"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(A) The names of all committees participating in the joint fundraising activity whether or not such committees are political committees under 11 CFR 100.5; and"
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "102", 
+                                                        "17", 
+                                                        "c", 
+                                                        "2", 
+                                                        "i", 
+                                                        "B"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(B) The allocation formula to be used for distributing joint fundraising proceeds; and"
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "102", 
+                                                        "17", 
+                                                        "c", 
+                                                        "2", 
+                                                        "i", 
+                                                        "C"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(C) A statement informing contributors that, notwithstanding the stated allocation formula, they may designate their contributions for a particular participant or participants; and"
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "102", 
+                                                        "17", 
+                                                        "c", 
+                                                        "2", 
+                                                        "i", 
+                                                        "D"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(D) A statement informing contributors that the allocation formula may change if a contributor makes a contribution which would exceed the amount that contributor may give to any participant."
+                                                }
+                                            ], 
+                                            "label": [
+                                                "102", 
+                                                "17", 
+                                                "c", 
+                                                "2", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) This notice shall include the following information:"
+                                        }, 
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "102", 
+                                                        "17", 
+                                                        "c", 
+                                                        "2", 
+                                                        "ii", 
+                                                        "A"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(A) If one or more participants engage in the joint fundraising activity solely to satisfy outstanding debts, a statement informing contributors that the allocation formula may change if a participant receives sufficient funds to pay its outstanding debts; and"
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "102", 
+                                                        "17", 
+                                                        "c", 
+                                                        "2", 
+                                                        "ii", 
+                                                        "B"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(B) If one or more participants can lawfully accept contributions that are prohibited under the Act, a statement informing contributors that contributions from prohibited sources will be distributed only to those participants that can accept them."
+                                                }
+                                            ], 
+                                            "label": [
+                                                "102", 
+                                                "17", 
+                                                "c", 
+                                                "2", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) In the following situations, the notice shall include the following additional information:"
+                                        }
+                                    ], 
+                                    "label": [
+                                        "102", 
+                                        "17", 
+                                        "c", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Fundraising notice. In addition to any notice required under 11 CFR 110.11, a joint fundraising notice shall be included with every solicitation for contributions."
+                                }, 
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "102", 
+                                                "17", 
+                                                "c", 
+                                                "3", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) The participants or the fundraising representative shall establish a separate depository account to be used solely for the receipt and disbursement of the joint fundraising proceeds. All contributions deposited into the separate depository account must be permissible under the Act. Each political committee shall amend its Statement of Organization to reflect the account as an additional depository. If one or more participants can lawfully accept contributions that are prohibited under the Act, the participants may either establish a second depository account for contributions received from prohibited sources or they may forward such contributions directly to the nonfederal participants."
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "102", 
+                                                "17", 
+                                                "c", 
+                                                "3", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) The fundraising representative shall deposit all joint fundraising proceeds in the separate depository account within ten days of receipt as required by 11 CFR 103.3. The fundraising representative may delay distribution of the fundraising proceeds to the participants until all contributions are received and all expenses are paid."
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "102", 
+                                                "17", 
+                                                "c", 
+                                                "3", 
+                                                "iii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iii) For contribution reporting and limitation purposes, the date of receipt of a contribution by a participating political committee is the date that the contribution is received by the fundraising representative. The fundraising representative shall report contributions in the reporting period in which they are received. Participating political committees shall report joint fundraising proceeds in accordance with 11 CFR 102.17(c)(8) when such funds are received from the fundraising representative."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "102", 
+                                        "17", 
+                                        "c", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) Separate depository account."
+                                }, 
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "102", 
+                                                "17", 
+                                                "c", 
+                                                "4", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) The fundraising representative and participating committees shall screen all contributions received to insure that the prohibitions and limitations of 11 CFR parts 110 and 114 are observed. Participating political committees shall make their contributor records available to the fundraising representative to enable the fundraising representative to carry out its duty to screen contributions."
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "102", 
+                                                "17", 
+                                                "c", 
+                                                "4", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) The fundraising representative shall collect and retain contributor information with regard to gross proceeds as required under 11 CFR 102.8 and shall also forward such information to participating political committees. The fundraising representative shall also keep a record of the total amount of contributions received from prohibited sources, if any, and of all transfers of prohibited contributions to participants that can accept them."
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "102", 
+                                                "17", 
+                                                "c", 
+                                                "4", 
+                                                "iii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iii) The fundraising representative shall retain the records required under 11 CFR 102.9 regarding fundraising disbursements for a period of three years. Commercial fundraising firms or agents shall forward such information to the fundraising representative."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "102", 
+                                        "17", 
+                                        "c", 
+                                        "4"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(4) Recordkeeping requirements."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "102", 
+                                        "17", 
+                                        "c", 
+                                        "5"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(5) Contribution limitations. Except to the extent that the contributor has previously contributed to any of the participants, a contributor may make a contribution to the joint fundraising effort which contribution represents the total amount that the contributor could contribute to all of the participants under the applicable limits of 11 CFR 110.1 and 110.2."
+                                }, 
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "102", 
+                                                "17", 
+                                                "c", 
+                                                "6", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) The fundraising representative shall allocate proceeds according to the formula stated in the fundraising agreement. If distribution according to the allocation formula extinguishes the debts of one or more participants and results in a surplus for those participants or if distribution under the formula results in a violation of the contribution limits of 11 CFR 110.1(a), the fundraising representative may reallocate the excess funds. Reallocation shall be based upon the remaining participants' proportionate shares under the allocation formula. If reallocation results in a violation of a contributor's limit under 11 CFR 110.1, the fundraising representative shall return to the contributor the amount of the contribution that exceeds the limit."
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "102", 
+                                                "17", 
+                                                "c", 
+                                                "6", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) Designated contributions which exceed the contributor's limit to the designated participant under 11 CFR part 110 may not be reallocated by the fundraising representative absent the prior written permission of the contributor."
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "102", 
+                                                "17", 
+                                                "c", 
+                                                "6", 
+                                                "iii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iii) If any participants can lawfully accept contributions from sources prohibited under the Act, any such contributions that are received are not required to be distributed according to the allocation formula."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "102", 
+                                        "17", 
+                                        "c", 
+                                        "6"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(6) Allocation of gross proceeds."
+                                }, 
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "102", 
+                                                        "17", 
+                                                        "c", 
+                                                        "7", 
+                                                        "i", 
+                                                        "A"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(A) After gross contributions are allocated among the participants under 11 CFR 102.17(c)(6), the fundraising representative shall calculate each participant's share of expenses based on the percentage of the total receipts each participant had been allocated. If contributions from sources prohibited under the Act have been received and distributed under 11 CFR 102.17(c)(6)(iii), those contributions need not be included in the total receipts for the purpose of allocating expenses under this section. To calculate each participant's net proceeds, the fundraising representative shall subtract the participant's share of expenses from the amount that participant has been allocated from gross proceeds."
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "102", 
+                                                        "17", 
+                                                        "c", 
+                                                        "7", 
+                                                        "i", 
+                                                        "B"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(B) A participant may only pay expenses on behalf of another participant subject to the contribution limits of 11 CFR part 110."
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "102", 
+                                                        "17", 
+                                                        "c", 
+                                                        "7", 
+                                                        "i", 
+                                                        "C"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(C) The expenses from a series of fundraising events or activities shall be allocated among the participants on a per-event basis regardless of whether the participants change or remain the same throughout the series."
+                                                }
+                                            ], 
+                                            "label": [
+                                                "102", 
+                                                "17", 
+                                                "c", 
+                                                "7", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) If participating committees are not affiliated as defined in 11 CFR 110.3 prior to the joint fundraising activity and are not committees of the same political party;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "102", 
+                                                "17", 
+                                                "c", 
+                                                "7", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) If participating committees are affiliated as defined in 11 CFR 110.3 prior to the joint fundraising activity or if participants are party committees of the same political party, expenses need not be allocated among those participants. Payment of such expenses by an unregistered committee or organization on behalf of an affiliated political committee may cause the unregistered organization to become a political committee."
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "102", 
+                                                "17", 
+                                                "c", 
+                                                "7", 
+                                                "iii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iii) Payment of expenses may be made from gross proceeds by the fundraising representative."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "102", 
+                                        "17", 
+                                        "c", 
+                                        "7"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(7) Allocation of expenses and distribution of net proceeds."
+                                }, 
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "102", 
+                                                        "17", 
+                                                        "c", 
+                                                        "8", 
+                                                        "i", 
+                                                        "A"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(A) The fundraising representative shall report all funds received in the reporting period in which they are received. The fundraising representative shall report the total amount of contributions received from prohibited sources during the reporting period, if any, as a memo entry. Each Schedule A filed by the fundraising representative under this section shall clearly indicate that the contributions reported on that schedule represent joint fundraising proceeds."
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "102", 
+                                                        "17", 
+                                                        "c", 
+                                                        "8", 
+                                                        "i", 
+                                                        "B"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(B) After distribution of net proceeds, each participating political committee shall report its share of net proceeds received as a transfer-in from the fundraising representative. Each participating political committee shall also file a memo Schedule A itemizing its share of gross receipts as contributions from original contributors to the extent required under 11 CFR 104.3(a)."
+                                                }
+                                            ], 
+                                            "label": [
+                                                "102", 
+                                                "17", 
+                                                "c", 
+                                                "8", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) Reporting receipts."
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "102", 
+                                                "17", 
+                                                "c", 
+                                                "8", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) Reporting disbursements. The fundraising representative shall report all disbursements in the reporting period in which they are made."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "102", 
+                                        "17", 
+                                        "c", 
+                                        "8"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(8) Reporting of receipts and disbursements\u2014"
+                                }
+                            ], 
+                            "label": [
+                                "102", 
+                                "17", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) Joint fundraising procedures. The requirements of 11 CFR 102.17(c)(1) through (8) shall govern joint fundraising activity conducted under this section."
+                        }
+                    ], 
+                    "label": [
+                        "102", 
+                        "17"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 102.17 Joint fundraising by committees other than separate segregated funds."
+                }
+            ], 
+            "label": [
+                "102", 
+                "Subpart"
+            ], 
+            "node_type": "emptypart", 
+            "text": ""
+        }
+    ], 
+    "label": [
+        "102"
+    ], 
+    "node_type": "regtext", 
+    "text": "", 
+    "title": "PART 102\u2014REGISTRATION, ORGANIZATION, AND RECORDKEEPING BY POLITICAL COMMITTEES (52 U.S.C. 30103)"
+}

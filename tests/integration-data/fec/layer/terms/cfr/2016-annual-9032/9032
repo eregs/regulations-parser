@@ -1,0 +1,508 @@
+{
+    "9032-1-a": [
+        {
+            "offsets": [
+                [
+                    257, 
+                    266
+                ], 
+                [
+                    345, 
+                    354
+                ], 
+                [
+                    399, 
+                    408
+                ], 
+                [
+                    538, 
+                    547
+                ], 
+                [
+                    631, 
+                    640
+                ]
+            ], 
+            "ref": "candidate:9032-2"
+        }, 
+        {
+            "offsets": [
+                [
+                    95, 
+                    105
+                ]
+            ], 
+            "ref": "candidate:9032-2"
+        }, 
+        {
+            "offsets": [
+                [
+                    213, 
+                    232
+                ], 
+                [
+                    489, 
+                    508
+                ], 
+                [
+                    590, 
+                    609
+                ]
+            ], 
+            "ref": "political committee:9032-8"
+        }
+    ], 
+    "9032-1-c": [
+        {
+            "offsets": [
+                [
+                    60, 
+                    69
+                ], 
+                [
+                    162, 
+                    171
+                ]
+            ], 
+            "ref": "candidate:9032-2"
+        }
+    ], 
+    "9032-1-d": [
+        {
+            "offsets": [
+                [
+                    63, 
+                    72
+                ]
+            ], 
+            "ref": "candidate:9032-2"
+        }
+    ], 
+    "9032-1-e": [
+        {
+            "offsets": [
+                [
+                    96, 
+                    105
+                ], 
+                [
+                    216, 
+                    225
+                ], 
+                [
+                    249, 
+                    258
+                ]
+            ], 
+            "ref": "candidate:9032-2"
+        }
+    ], 
+    "9032-2": [
+        {
+            "offsets": [
+                [
+                    105, 
+                    111
+                ]
+            ], 
+            "ref": "state:9032-11"
+        }
+    ], 
+    "9032-2-a": [
+        {
+            "offsets": [
+                [
+                    93, 
+                    109
+                ]
+            ], 
+            "ref": "primary election:9032-7-a"
+        }, 
+        {
+            "offsets": [
+                [
+                    50, 
+                    55
+                ]
+            ], 
+            "ref": "state:9032-11"
+        }
+    ], 
+    "9032-2-b": [
+        {
+            "offsets": [
+                [
+                    37, 
+                    64
+                ]
+            ], 
+            "ref": "qualified campaign expense:9032-9-a"
+        }
+    ], 
+    "9032-2-c": [
+        {
+            "offsets": [
+                [
+                    75, 
+                    102
+                ]
+            ], 
+            "ref": "qualified campaign expense:9032-9-a"
+        }
+    ], 
+    "9032-2-d": [
+        {
+            "offsets": [
+                [
+                    43, 
+                    53
+                ], 
+                [
+                    205, 
+                    215
+                ]
+            ], 
+            "ref": "commission:9032-3"
+        }
+    ], 
+    "9032-6-a": [
+        {
+            "offsets": [
+                [
+                    10, 
+                    19
+                ], 
+                [
+                    87, 
+                    96
+                ], 
+                [
+                    165, 
+                    174
+                ]
+            ], 
+            "ref": "candidate:9032-2"
+        }
+    ], 
+    "9032-6-b": [
+        {
+            "offsets": [
+                [
+                    10, 
+                    19
+                ]
+            ], 
+            "ref": "candidate:9032-2"
+        }
+    ], 
+    "9032-6-b-1": [
+        {
+            "offsets": [
+                [
+                    50, 
+                    59
+                ]
+            ], 
+            "ref": "candidate:9032-2"
+        }
+    ], 
+    "9032-7-a": [
+        {
+            "offsets": [
+                [
+                    49, 
+                    54
+                ]
+            ], 
+            "ref": "state:9032-11"
+        }
+    ], 
+    "9032-7-a-2": [
+        {
+            "offsets": [
+                [
+                    74, 
+                    84
+                ]
+            ], 
+            "ref": "candidate:9032-2"
+        }
+    ], 
+    "9032-7-a-4": [
+        {
+            "offsets": [
+                [
+                    31, 
+                    40
+                ]
+            ], 
+            "ref": "candidate:9032-2"
+        }
+    ], 
+    "9032-7-b": [
+        {
+            "offsets": [
+                [
+                    94, 
+                    110
+                ]
+            ], 
+            "ref": "primary election:9032-7-a"
+        }, 
+        {
+            "offsets": [
+                [
+                    16, 
+                    33
+                ]
+            ], 
+            "ref": "primary election:9032-7-a"
+        }, 
+        {
+            "offsets": [
+                [
+                    48, 
+                    53
+                ], 
+                [
+                    61, 
+                    66
+                ]
+            ], 
+            "ref": "state:9032-11"
+        }
+    ], 
+    "9032-8": [
+        {
+            "offsets": [
+                [
+                    167, 
+                    194
+                ]
+            ], 
+            "ref": "qualified campaign expense:9032-9-a"
+        }, 
+        {
+            "offsets": [
+                [
+                    342, 
+                    348
+                ]
+            ], 
+            "ref": "state:9032-11"
+        }
+    ], 
+    "9032-9-a-1": [
+        {
+            "offsets": [
+                [
+                    34, 
+                    43
+                ], 
+                [
+                    119, 
+                    128
+                ], 
+                [
+                    157, 
+                    166
+                ]
+            ], 
+            "ref": "candidate:9032-2"
+        }
+    ], 
+    "9032-9-a-3": [
+        {
+            "offsets": [
+                [
+                    125, 
+                    130
+                ], 
+                [
+                    251, 
+                    256
+                ], 
+                [
+                    274, 
+                    279
+                ], 
+                [
+                    392, 
+                    397
+                ]
+            ], 
+            "ref": "state:9032-11"
+        }, 
+        {
+            "offsets": [
+                [
+                    97, 
+                    103
+                ], 
+                [
+                    234, 
+                    240
+                ]
+            ], 
+            "ref": "state:9032-11"
+        }
+    ], 
+    "9032-9-b": [
+        {
+            "offsets": [
+                [
+                    42, 
+                    51
+                ], 
+                [
+                    83, 
+                    92
+                ]
+            ], 
+            "ref": "candidate:9032-2"
+        }
+    ], 
+    "9032-9-b-1": [
+        {
+            "offsets": [
+                [
+                    54, 
+                    63
+                ]
+            ], 
+            "ref": "candidate:9032-2"
+        }
+    ], 
+    "9032-9-b-2": [
+        {
+            "offsets": [
+                [
+                    46, 
+                    55
+                ], 
+                [
+                    88, 
+                    97
+                ], 
+                [
+                    118, 
+                    127
+                ]
+            ], 
+            "ref": "candidate:9032-2"
+        }
+    ], 
+    "9032-9-b-3": [
+        {
+            "offsets": [
+                [
+                    48, 
+                    57
+                ], 
+                [
+                    93, 
+                    102
+                ], 
+                [
+                    126, 
+                    135
+                ]
+            ], 
+            "ref": "candidate:9032-2"
+        }
+    ], 
+    "9032-9-c": [
+        {
+            "offsets": [
+                [
+                    116, 
+                    125
+                ], 
+                [
+                    153, 
+                    162
+                ]
+            ], 
+            "ref": "candidate:9032-2"
+        }, 
+        {
+            "offsets": [
+                [
+                    196, 
+                    223
+                ], 
+                [
+                    342, 
+                    369
+                ]
+            ], 
+            "ref": "qualified campaign expense:9032-9-a"
+        }
+    ], 
+    "referenced": {
+        "candidate:9032-2": {
+            "position": [
+                0, 
+                9
+            ], 
+            "reference": "9032-2", 
+            "term": "candidate"
+        }, 
+        "commission:9032-3": {
+            "position": [
+                0, 
+                10
+            ], 
+            "reference": "9032-3", 
+            "term": "commission"
+        }, 
+        "matching payment account:9032-5": {
+            "position": [
+                0, 
+                24
+            ], 
+            "reference": "9032-5", 
+            "term": "matching payment account"
+        }, 
+        "matching payment period:9032-6": {
+            "position": [
+                0, 
+                23
+            ], 
+            "reference": "9032-6", 
+            "term": "matching payment period"
+        }, 
+        "political committee:9032-8": {
+            "position": [
+                0, 
+                19
+            ], 
+            "reference": "9032-8", 
+            "term": "political committee"
+        }, 
+        "primary election:9032-7-a": {
+            "position": [
+                4, 
+                20
+            ], 
+            "reference": "9032-7-a", 
+            "term": "primary election"
+        }, 
+        "qualified campaign expense:9032-9-a": {
+            "position": [
+                4, 
+                30
+            ], 
+            "reference": "9032-9-a", 
+            "term": "qualified campaign expense"
+        }, 
+        "state:9032-11": {
+            "position": [
+                0, 
+                5
+            ], 
+            "reference": "9032-11", 
+            "term": "state"
+        }
+    }
+}

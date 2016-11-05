@@ -1,0 +1,76 @@
+{
+    "9012": [
+        {
+            "index": [
+                "9012", 
+                "1"
+            ], 
+            "title": "\u00a7 9012.1 Excessive expenses."
+        }, 
+        {
+            "index": [
+                "9012", 
+                "2"
+            ], 
+            "title": "\u00a7 9012.2 Unauthorized acceptance of contributions."
+        }, 
+        {
+            "index": [
+                "9012", 
+                "3"
+            ], 
+            "title": "\u00a7 9012.3 Unlawful use of payments received from the Fund."
+        }, 
+        {
+            "index": [
+                "9012", 
+                "4"
+            ], 
+            "title": "\u00a7 9012.4 Unlawful misrepresentations and falsification of statements, records or other evidence to the Commission; refusal to furnish books and records."
+        }, 
+        {
+            "index": [
+                "9012", 
+                "5"
+            ], 
+            "title": "\u00a7 9012.5 Kickbacks and illegal payments."
+        }
+    ], 
+    "9012-Subpart": [
+        {
+            "index": [
+                "9012", 
+                "1"
+            ], 
+            "title": "\u00a7 9012.1 Excessive expenses."
+        }, 
+        {
+            "index": [
+                "9012", 
+                "2"
+            ], 
+            "title": "\u00a7 9012.2 Unauthorized acceptance of contributions."
+        }, 
+        {
+            "index": [
+                "9012", 
+                "3"
+            ], 
+            "title": "\u00a7 9012.3 Unlawful use of payments received from the Fund."
+        }, 
+        {
+            "index": [
+                "9012", 
+                "4"
+            ], 
+            "title": "\u00a7 9012.4 Unlawful misrepresentations and falsification of statements, records or other evidence to the Commission; refusal to furnish books and records."
+        }, 
+        {
+            "index": [
+                "9012", 
+                "5"
+            ], 
+            "title": "\u00a7 9012.5 Kickbacks and illegal payments."
+        }
+    ]
+}

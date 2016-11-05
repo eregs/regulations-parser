@@ -1,0 +1,1188 @@
+{
+    "children": [
+        {
+            "children": [
+                {
+                    "children": [], 
+                    "label": [
+                        "6", 
+                        "101"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "The purpose of this part is to effectuate section 119 of the Rehabilitation, Comprehensive Services, and Developmental Disabilities Amendments of 1978, which amended section 504 of the Rehabilitation Act of 1973 to prohibit discrimination on the basis of handicap in programs or activities conducted by Executive agencies or the United States Postal Service.", 
+                    "title": "\u00a7 6.101 Purpose."
+                }, 
+                {
+                    "children": [], 
+                    "label": [
+                        "6", 
+                        "102"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "This part applies to all programs or activities conducted by the Commission.", 
+                    "title": "\u00a7 6.102 Application."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "6", 
+                                "103", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) Auxiliary aids means services, including attendant services, or devices that enable handicapped persons, including those with impaired sensory, manual, or speaking skills to have an equal opportunity to participate in, and enjoy the benefits of, programs or activities conducted by the Commission. For example, auxiliary aids useful for persons with impaired vision include readers, Brailled materials, audio recordings, and other similar services and devices. Auxiliary aids useful for persons with impaired hearing include telephone handset amplifiers, telephones compatible with hearing aids, telecommunication devices for deaf persons (TDD's), interpreters, notetakers, written materials, and other similar services and devices. Although auxiliary aids are explicitly required only by 11 CFR 6.160(a)(1), they may also be used to meet other requirements of this part."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "6", 
+                                "103", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) Commission means the Federal Election Commission, 999 E Street, NW., Washington, DC 20463."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "6", 
+                                "103", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) Complete complaint means a written statement that contains the complainant's name and address and describes the Commission's actions in sufficient detail to inform the Commission of the nature and date of the alleged violation of section 504. It shall be signed by the complainant or by someone authorized to do so on his or her behalf. Complaints filed on behalf of classes or third parties shall describe or identify (by name, if possible) the alleged victims of discrimination."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "6", 
+                                "103", 
+                                "d"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(d) Facility means all or any portion of buildings, structures, equipment, roads, walks, parking lots, rolling stock or other conveyances, or other real or personal property whether owned, leased or used on some other basis by the Commission."
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "6", 
+                                                "103", 
+                                                "e", 
+                                                "1", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) Any physiological disorder or condition, cosmetic disfigurement, or anatomical loss affecting one or more of the following body systems: Neurological; musculoskeletal; special sense organs; respiratory, including speech organs; cardiovascular; reproductive; digestive; genitourinary; hemic and lymphatic; skin; and endocrine; or"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "6", 
+                                                "103", 
+                                                "e", 
+                                                "1", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) Any mental or psychological disorder, such as mental retardation, organic brain syndrome, emotional or mental illness, and specific learning disabilities. The term physical or mental impairment includes, but is not limited to, such diseases and conditions as orthopedic, visual, speech, and hearing impairments, cerebral palsy, epilepsy, muscular dystrophy, multiple sclerosis, cancer, heart disease, diabetes, mental retardation, emotional illness, drug addiction, and alcoholism."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "6", 
+                                        "103", 
+                                        "e", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Physical or mental impairment includes\u2014"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "6", 
+                                        "103", 
+                                        "e", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Major life activities includes functions such as caring for one's self, performing manual tasks, walking, seeing, hearing, speaking, breathing, learning, and working."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "6", 
+                                        "103", 
+                                        "e", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) Has a record of such an impairment means has a history of, or has been misclassified as having, a mental or physical impairment that substantially limits one or more major life activities."
+                                }, 
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "6", 
+                                                "103", 
+                                                "e", 
+                                                "4", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) Has a physical or mental impairment that does not substantially limit major life activities but is treated by the Commission as constituting such a limitation;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "6", 
+                                                "103", 
+                                                "e", 
+                                                "4", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) Has a physical or mental impairment that substantially limits major life activities only as a result of the attitudes of others toward such impairment; or"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "6", 
+                                                "103", 
+                                                "e", 
+                                                "4", 
+                                                "iii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iii) Has none of the impairments defined in 11 CFR 6.103(e)(1) but is treated by the agency as having such an impairment."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "6", 
+                                        "103", 
+                                        "e", 
+                                        "4"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(4) Is regarded as having an impairment means\u2014"
+                                }
+                            ], 
+                            "label": [
+                                "6", 
+                                "103", 
+                                "e"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(e) Handicapped person means any person who has a physical or mental impairment that substantially limits one or more major life activities, has a record of such an impairment, or is regarded as having such an impairment. As used in this definition, the phrase:"
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "6", 
+                                        "103", 
+                                        "f", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) With respect to any Commission program or activity under which a person is required to perform services or to achieve a level of accomplishment, a handicapped person who, with reasonable accommodation, meets the essential eligibility requirements and who can achieve the purpose of the program or activity; and"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "6", 
+                                        "103", 
+                                        "f", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) With respect to any other program or activity, a handicapped person who meets the essential eligibility requirements for participation in, or receipt of benefits from, that program or activity."
+                                }
+                            ], 
+                            "label": [
+                                "6", 
+                                "103", 
+                                "f"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(f) Qualified handicapped person means\u2014"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "6", 
+                                "103", 
+                                "g"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(g) Section 504 means section 504 of the Rehabilitation Act of 1973 (Pub. L. 93-112, 87 Stat. 394 (29 U.S.C. 794)), as amended by the Rehabilitation Act Amendments of 1974 (Pub. L. 93-516, 88 Stat. 1617), and the Rehabilitation, Comprehensive Services, and Developmental Disabilities Act of 1978 (Pub. L. 95-602, 92 Stat. 2955). As used in this part, section 504 applies only to programs or activities conducted by the Commission and not to any federally assisted programs or activities that it administers."
+                        }
+                    ], 
+                    "label": [
+                        "6", 
+                        "103"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "For purposes of this part, the term\u2014", 
+                    "title": "\u00a7 6.103 Definitions."
+                }, 
+                {
+                    "children": [], 
+                    "label": [
+                        "6", 
+                        "104"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7\u00a7 6.104-109 [Reserved]"
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "6", 
+                                "110", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) Within one year of the effective date of this part, the Commission will conduct, with the assistance of interested persons, including handicapped persons and organizations representing handicapped persons, and evaluation of its compliance with section 504. This evaluation will include a determination of whether the Commission's policies and practices, and the effects thereof, meet the requirements of this part and whether modification of any such policies or practices is required to comply with section 504. If modification of any policy or practice is found to be required as a result of this evaluation, the Commission will proceed to make the necessary modifications."
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "6", 
+                                        "110", 
+                                        "b", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) A list of the interested persons consulted;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "6", 
+                                        "110", 
+                                        "b", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) A description of areas examined and any problems identified; and"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "6", 
+                                        "110", 
+                                        "b", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) A description of any modifications made."
+                                }
+                            ], 
+                            "label": [
+                                "6", 
+                                "110", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) For at least three years following completion of the evaluation required under paragraph (a), the Commission will maintain on file and make available for public inspection:"
+                        }
+                    ], 
+                    "label": [
+                        "6", 
+                        "110"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 6.110 Evaluation."
+                }, 
+                {
+                    "children": [], 
+                    "label": [
+                        "6", 
+                        "111"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "The Commission will make available to employees, applicants, participants, beneficiaries, and other interested persons information regarding the provisions of this part and its applicability to the programs or activities conducted by the Commission. The Commission will make such information available to them in a manner it finds necessary to effectively apprise such persons of the protections against discrimination assured them by section 504 and the provisions of this part.", 
+                    "title": "\u00a7 6.111 Notice."
+                }, 
+                {
+                    "children": [], 
+                    "label": [
+                        "6", 
+                        "112"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7\u00a7 6.112-129 [Reserved]"
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "6", 
+                                "130", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) No qualified handicapped person shall, on the basis of handicap, be excluded from participation in, be denied the benefits of, or otherwise be subjected to discrimination under any program or activity conducted by the Commission."
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "6", 
+                                                "130", 
+                                                "b", 
+                                                "1", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) Deny a qualified handicapped person the opportunity to participate in or benefit from the aid, benefit, or service;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "6", 
+                                                "130", 
+                                                "b", 
+                                                "1", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) Afford a qualified handicapped person an opportunity to participate in or benefit from the aid, benefit, or service that is not equal to that afforded others;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "6", 
+                                                "130", 
+                                                "b", 
+                                                "1", 
+                                                "iii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iii) Provide a qualified handicapped person with an aid, benefit, or service that is not as effective in affording equal opportunity to obtain the same result, to gain the same benefit, or to reach the same level of achievement as that provided to others;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "6", 
+                                                "130", 
+                                                "b", 
+                                                "1", 
+                                                "iv"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iv) Provide different or separate aids, benefits, or services to handicapped persons or to any class of handicapped persons than is provided to others unless such action is necessary to provide qualified handicapped persons with aids, benefits, or services that are as effective as those provided to others;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "6", 
+                                                "130", 
+                                                "b", 
+                                                "1", 
+                                                "v"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(v) Aid or perpetuate discrimination against a qualified handicapped person by providing significant assistance to an agency, organization, or person that discriminates on the basis of handicap in providing any aid, benefit, or service to beneficiaries of the recipient's program, except that this paragraph does not apply to candidates or conventions receiving public financing under title 26, United States Code;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "6", 
+                                                "130", 
+                                                "b", 
+                                                "1", 
+                                                "vi"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(vi) Deny a qualified handicapped person the opportunity to participate as a member of planning or advisory boards; or"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "6", 
+                                                "130", 
+                                                "b", 
+                                                "1", 
+                                                "vii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(vii) Otherwise limit a qualified handicapped person in the enjoyment of any right, privilege, advantage, or opportunity enjoyed by others receiving the aid, benefit, or service."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "6", 
+                                        "130", 
+                                        "b", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) The Commission, in providing any aid, benefit, or service, may not, directly or through contractual, licensing, or other arrangements, on the basis of handicap\u2014"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "6", 
+                                        "130", 
+                                        "b", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) The Commission may not deny a qualified handicapped person the opportunity to participate in programs or activities that are not separate or different, despite the existence of permissibly separate or different programs or activities."
+                                }, 
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "6", 
+                                                "130", 
+                                                "b", 
+                                                "3", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) Subject qualified handicapped persons to discrimination on the basis of handicap;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "6", 
+                                                "130", 
+                                                "b", 
+                                                "3", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) Defeat or substantially impair accomplishment of the objectives of a program or activity with respect to handicapped persons; or"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "6", 
+                                                "130", 
+                                                "b", 
+                                                "3", 
+                                                "iii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iii) Perpetuate the discrimination of another agency."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "6", 
+                                        "130", 
+                                        "b", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) The Commission may not, directly or through contractual or other arrangements, utilize criteria or methods of administration the purpose or effect of which would\u2014"
+                                }, 
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "6", 
+                                                "130", 
+                                                "b", 
+                                                "4", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) Exclude handicapped persons from, deny them the benefits of, or otherwise subject them to discrimination under any program or activity conducted by the Commission; or"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "6", 
+                                                "130", 
+                                                "b", 
+                                                "4", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) Defeat or substantially impair the accomplishment of the objectives of a program or activity with respect to handicapped persons."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "6", 
+                                        "130", 
+                                        "b", 
+                                        "4"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(4) The Commission may not, in determining the site or location of a facility, make selections the purpose or effect of which would\u2014"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "6", 
+                                        "130", 
+                                        "b", 
+                                        "5"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(5) The Commission, in the selection of procurement contractors, may not use criteria that subject qualified handicapped persons to discrimination on the basis of handicap."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "6", 
+                                        "130", 
+                                        "b", 
+                                        "6"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(6) The Commission may not administer a certification program in a manner that subjects qualified handicapped persons to discrimination on the basis of handicap, nor may the Commission establish requirements for the programs or activities of certified entities that subject qualified handicapped persons to discrimination on the basis of handicap. However, the programs or activities of entities that are certified by the Commission are not, themselves, covered by this part."
+                                }
+                            ], 
+                            "label": [
+                                "6", 
+                                "130", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b)"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "6", 
+                                "130", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) The exclusion of nonhandicapped persons from the benefits of a program limited by Federal statute or Executive order to handicapped persons or the exclusion of a specific class of handicapped persons from a program limited by Federal statute or Executive Order to a different class of handicapped persons is not prohibited by this part."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "6", 
+                                "130", 
+                                "d"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(d) The Commission will administer programs and activities in the most integrated setting appropriate to the needs of qualified handicapped persons."
+                        }
+                    ], 
+                    "label": [
+                        "6", 
+                        "130"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 6.130 General prohibitions against discrimination."
+                }, 
+                {
+                    "children": [], 
+                    "label": [
+                        "6", 
+                        "131"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7\u00a7 6.131-139 [Reserved]"
+                }, 
+                {
+                    "children": [], 
+                    "label": [
+                        "6", 
+                        "140"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "No qualified handicapped person shall, on the basis of handicap, be subjected to discrimination in employment under any program or activity conducted by the Commission. The definitions, requirements, and procedures of section 501 of the Rehabilitation Act of 1973 (29 U.S.C. 791), as established in 29 CFR part 1613, shall apply to employment in federally conducted programs or activities.", 
+                    "title": "\u00a7 6.140 Employment."
+                }, 
+                {
+                    "children": [], 
+                    "label": [
+                        "6", 
+                        "141"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7\u00a7 6.141-148 [Reserved]"
+                }, 
+                {
+                    "children": [], 
+                    "label": [
+                        "6", 
+                        "149"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "Except as otherwise provided in 11 CFR 6.150 and 11 CFR 6.151, no qualified handicapped person shall be denied the benefits of, be excluded from participation in, or otherwise be subjected to discrimination under any program or activity conducted by the Commission because its facilities are inaccessible to or unusable by handicapped persons.", 
+                    "title": "\u00a7 6.149 Program accessibility: Discrimination prohibited."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "6", 
+                                        "150", 
+                                        "a", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Necessarily require the Commission to make each of its existing facilities accessible to and usable by handicapped persons;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "6", 
+                                        "150", 
+                                        "a", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Require the Commission to take any action that it can demonstrate would result in a fundamental alteration in the nature of a program or activity or in undue financial and administrative burdens. The Commission has the burden of proving that compliance with 11 CFR 6.150(a) would result in such alterations or burdens. The decision that compliance would result in such alteration or burdens must be made by the Commission after considering all agency resources available for use in the funding and operation of the conducted program or activity, and must be accompanied by a written statement of the reasons for reaching that conclusion. If an action would result in such an alteration or such burdens, the Commission will take any other action that would not result in such an alteration or such a burden but would nevertheless ensure that handicapped persons receive the benefits and services of the program or activity."
+                                }
+                            ], 
+                            "label": [
+                                "6", 
+                                "150", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) General. The Commission will operate each program or activity so that the program or activity, when viewed in its entirety, is readily accessible to and usable by handicapped persons. This paragraph does not\u2014"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "6", 
+                                "150", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) Methods. The Commission may comply with the requirements of this section through such means as redesign of equipment, reassignment of services to accessible buildings, assignment of aides to beneficiaries, home visits, delivery of services at alternate accessible sites, alteration of existing facilities and construction of new facilities, use of accessible rolling stock, or any other methods that result in making its programs or activities readily accessible to and usable by handicapped persons. The Commission is not required to make structural changes in existing facilities where other methods are effective in achieving compliance with this section. The Commission, in making alterations to existing buildings, will meet accessibility requirements to the extent compelled by the Architectural Barriers Act of 1968, as amended (42 U.S.C. 4151-4157) and any regulations implementing it. In choosing among available methods for meeting the requirements of this section, the Commission will give priority to those methods that offer programs and activities to qualified handicapped persons in the most integrated setting appropriate."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "6", 
+                                "150", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) Time period for compliance. The Commission will comply with the obligations established under this section within sixty days of the effective date of this part except that where structural changes in facilities are undertaken, such changes will be made within three years of the effective date of this part, but in any event as expeditiously as possible."
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "6", 
+                                        "150", 
+                                        "d", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Identify physical obstacles in the Commission's facilities that limit the accessibility of its programs or activities to handicapped persons;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "6", 
+                                        "150", 
+                                        "d", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Describe in detail the methods that will be used to make the facilities accessible;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "6", 
+                                        "150", 
+                                        "d", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) Specify the schedule for taking the steps necessary to achieve compliance with this section and, if the time period of the transition plan is longer than one year, identify steps that will be taken during each year of the transition period;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "6", 
+                                        "150", 
+                                        "d", 
+                                        "4"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(4) Indicate the official responsible for implementation of the plan; and"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "6", 
+                                        "150", 
+                                        "d", 
+                                        "5"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(5) Identify the persons or groups with whose assistance the plan was prepared."
+                                }
+                            ], 
+                            "label": [
+                                "6", 
+                                "150", 
+                                "d"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(d) Transition plan. In the event that structural changes to facilities will be undertaken to achieve program accessibility, the Commission will develop, within six months of the effective date of this part, a transition plan setting forth the steps necessary to complete such changes. The plan will be developed with the assistance of interested persons, including handicapped persons and organizations representing handicapped persons. A copy of the transition plan will be made available for public inspection. The plan will, at a minimum\u2014"
+                        }
+                    ], 
+                    "label": [
+                        "6", 
+                        "150"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 6.150 Program accessibility; Existing facilities."
+                }, 
+                {
+                    "children": [], 
+                    "label": [
+                        "6", 
+                        "151"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "Each building or part of a building that is constucted or altered by, on behalf of, or for the use of the Commission shall be designed, constructed, or altered so as to be readily accessible to and usable by handicapped persons. The definitions, requirements, and standards of the Architectural Barriers Act, 42 U.S.C. 4151-4157, as established in 41 CFR 101-19.600 to 101-19.607, apply to buildings covered by this section.", 
+                    "title": "\u00a7 6.151 Program accessibility: New construction and alterations."
+                }, 
+                {
+                    "children": [], 
+                    "label": [
+                        "6", 
+                        "152"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7\u00a7 6.152-159 [Reserved]"
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "6", 
+                                                "160", 
+                                                "a", 
+                                                "1", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) In determination what type of auxiliary aid is necessary, the Commission will give primary consideration to the requests of the handicapped person."
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "6", 
+                                                "160", 
+                                                "a", 
+                                                "1", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) The Commission need not provide individually prescribed devices, readers for personal use or study, or other devices of a personal nature."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "6", 
+                                        "160", 
+                                        "a", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) The Commission will furnish appropriate auxiliary aids where necessary to afford a handicapped person an equal opportunity to participate in, and enjoy the benefits of, a program or activity conducted by the Commission."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "6", 
+                                        "160", 
+                                        "a", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Where the Commission communicates with applicants and beneficiaries by telephone, telecommunications devices for deaf persons (TDD's), or equally effective telecommunication systems will be used."
+                                }
+                            ], 
+                            "label": [
+                                "6", 
+                                "160", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) The Commission will take appropriate steps to ensure effective communication with applicants, participants, personnel of other Federal entities, and members of the public."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "6", 
+                                "160", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) The Commission will ensure that interested persons, including persons with impaired vision or hearing, can obtain information as to the existence and location of accessible services, activities, and facilities."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "6", 
+                                "160", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) The Commission will provide signage at a primary entrance to each of its inaccessible facilities, directing users to a location at which they can obtain information about accessible facilities. The international symbol for accessibility shall be used at each primary entrance of an accessible facility."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "6", 
+                                "160", 
+                                "d"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(d) The Commission will take appropriate steps to provide handicapped persons with information regarding their section 504 rights under the Commission's programs of activities."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "6", 
+                                "160", 
+                                "e"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(e) This section does not require the Commission to take any action that it can demonstrate would result in a fundamental alteration in the nature of a program or activity or in undue financial and administrative burdens. The Commission has the burden of proving that compliance with this section would result in such alterations or burdens. The decision that compliance would result in such alteration or burdens must be made by the Commission after considering all agency resources available for use in the funding and operation of the conducted program or activity, and must be accompanied by a written statement of the reasons for reaching that conclusion. If an action required to comply with this section would result in such an alteration or such burdens, the Commission will take any other action that would not result in such an alteration or such a burden but would nevertheless ensure that, to the maximum extent possible, handicapped persons receive the benefits and services of the program or activity."
+                        }
+                    ], 
+                    "label": [
+                        "6", 
+                        "160"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 6.160 Communications."
+                }, 
+                {
+                    "children": [], 
+                    "label": [
+                        "6", 
+                        "161"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7\u00a7 6.161-169 [Reserved]"
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "6", 
+                                "170", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) Except as provided in paragraph (b) of this section, this section applies to all allegations of discrimination on the basis of handicap in programs or activities conducted by the Commission."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "6", 
+                                "170", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) The Commission will process complaints alleging violations of section 504 with respect to employment according to the procedures established in 29 CFR part 1613 pursuant to section 501 of the Rehabilitation Act of 1973 (29 U.S.C. 791)."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "6", 
+                                "170", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) Responsibility for implementation and operation of this section shall be vested in the Rehabilitation Act Officer."
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "6", 
+                                                "170", 
+                                                "d", 
+                                                "1", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) Any person who believes that he or she or any specific class of persons of which he or she is a member has been subjected to discrimination prohibited by this part may file a complaint with the Rehabilitation Act Officer."
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "6", 
+                                                "170", 
+                                                "d", 
+                                                "1", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) Any person who believes that a denial of his or her services will result or has resulted in discrimination prohibited by this part may file a complaint with the Rehabilitatin Act Officer."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "6", 
+                                        "170", 
+                                        "d", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1)"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "6", 
+                                        "170", 
+                                        "d", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) All complete complaints must be filed within 180 days of the alleged act of discrimination. The Commission may extend this time period for good cause."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "6", 
+                                        "170", 
+                                        "d", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) Complaints filed under this part shall be addressed to the Rehabilitation Act Officer, 999 E Street, NW., Washington, DC 20463."
+                                }
+                            ], 
+                            "label": [
+                                "6", 
+                                "170", 
+                                "d"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(d)"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "6", 
+                                "170", 
+                                "e"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(e) The Commission will notify the Architectural and Transportation Barriers Compliance Board upon receipt of any complaint alleging that a building or facility that is subject to the Architectural Barriers Act of 1968, as amended (42 U.S.C. 4151-4157), or section 502 of the Rehabilitation Act of 1973, as amended (29 U.S.C. 792), are not readily accessible and usable to handicapped persons."
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "6", 
+                                        "170", 
+                                        "f", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) The Commission will accept and investigate a complete complaint that is filed in accordance with paragraph (d) of this section and over which it has jurisdiction. The Rehabilitation Act Officer will notify the complainant and the respondent of receipt and acceptance of the complaint."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "6", 
+                                        "170", 
+                                        "f", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) If the Rehabilitation Act Officer receives a complaint that is not complete (See 11 CFR 6.101(c)), he or she will notify the complainant within 30 days of receipt of the incomplete complaint, that additional information is needed. If the complainant fails to complete the complaint within 30 days of receipt of this notice, the Rehabilitation Act Officer will dismiss the complaint without prejudice."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "6", 
+                                        "170", 
+                                        "f", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) If the Rehabilitation Act Officer receives a complaint over which the Commission does not have jurisdiction, the Commission will promptly notify the complainant and will make reasonable efforts to refer the complaint to the appropriate governmental entity."
+                                }
+                            ], 
+                            "label": [
+                                "6", 
+                                "170", 
+                                "f"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(f)"
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "6", 
+                                        "170", 
+                                        "g", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Findings of fact and conclusions of law;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "6", 
+                                        "170", 
+                                        "g", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) A description or a remedy for each violation found; and"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "6", 
+                                        "170", 
+                                        "g", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) A notice of the right to appeal."
+                                }
+                            ], 
+                            "label": [
+                                "6", 
+                                "170", 
+                                "g"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(g) Within 180 days of receipt of a complete complaint for which it has jurisdiction, the Commission will notify the complainant of the results of the investigation in a letter containing\u2014"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "6", 
+                                "170", 
+                                "h"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(h) Appeals of the findings of fact and conclusions of law or remedies must be filed by the complainant within 90 days of receipt from the Commission of the letter required by \u00a7\u20096.170(g). The Commission may extend this time for good cause."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "6", 
+                                "170", 
+                                "i"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(i) Timely appeals to the Commission shall be addressed to the Rehabilitation Act Officer, Federal Election Commission, 999 E Street, NW., Washington, DC 20463."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "6", 
+                                "170", 
+                                "j"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(j) The Commission will notify the complainant of the results of the appeal within 60 days of the receipt of the request. If the Commission determines that it needs additional information from the complainant, it shall have 60 days from the date it receives the additional information to make its determination on the appeal."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "6", 
+                                "170", 
+                                "k"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(k) The Commission may extend the time limits in paragraphs (g) and (j) of this section for good cause."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "6", 
+                                "170", 
+                                "l"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(l) The Commission may delegate its authority for conducting complaint investigations to other Federal agencies, except that the authority for making the final determination may not be delegated."
+                        }
+                    ], 
+                    "label": [
+                        "6", 
+                        "170"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 6.170 Compliance procedures."
+                }, 
+                {
+                    "children": [], 
+                    "label": [
+                        "6", 
+                        "171"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7\u00a7 6.171-999 [Reserved]"
+                }
+            ], 
+            "label": [
+                "6", 
+                "Subpart"
+            ], 
+            "node_type": "emptypart", 
+            "text": ""
+        }
+    ], 
+    "label": [
+        "6"
+    ], 
+    "node_type": "regtext", 
+    "text": "", 
+    "title": "PART 6\u2014ENFORCEMENT OF NONDISCRIMINATION ON THE BASIS OF HANDICAP IN PROGRAMS OR ACTIVITIES CONDUCTED BY THE FEDERAL ELECTION COMMISSION"
+}

@@ -1,0 +1,28 @@
+{
+    "9031-1": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "11", 
+                "part": "100"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "11 CFR part 100", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=100&titlenum=11&year=mostrecent"
+        }, 
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "9031", 
+                "title": "26"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "26 U.S.C. 9031", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=9031&title=26&year=mostrecent"
+        }
+    ]
+}

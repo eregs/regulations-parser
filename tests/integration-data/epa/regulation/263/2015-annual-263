@@ -1,0 +1,1293 @@
+{
+    "children": [
+        {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "263", 
+                                                "10", 
+                                                "a", 
+                                                "p1", 
+                                                "p1"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "The regulations set forth in parts 262 and 263 establish the responsibilities of generators and transporters of hazardous waste in the handling, transportation, and management of that waste. In these regulations, EPA has expressly adopted certain regulations of the Department of Transportation (DOT) governing the transportation of hazardous materials. These regulations concern, among other things, labeling, marking, placarding, using proper containers, and reporting discharges. EPA has expressly adopted these regulations in order to satisfy its statutory obligation to promulgate regulations which are necessary to protect human health and the environment in the transportation of hazardous waste. EPA's adoption of these DOT regulations ensures consistency with the requirements of DOT and thus avoids the establishment of duplicative or conflicting requirements with respect to these matters. These EPA regulations which apply to both interstate and intrastate transportation of hazardous waste are enforceable by EPA."
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "263", 
+                                                "10", 
+                                                "a", 
+                                                "p1", 
+                                                "p2"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "DOT has revised its hazardous materials transportation regulations in order to encompass the transportation of hazardous waste and to regulate intrastate, as well as interstate, transportation of hazardous waste. Transporters of hazardous waste are cautioned that DOT's regulations are fully applicable to their activities and enforceable by DOT. These DOT regulations are codified in title 49, Code of Federal Regulations, subchapter C."
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "263", 
+                                                "10", 
+                                                "a", 
+                                                "p1", 
+                                                "p3"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "EPA and DOT worked together to develop standards for transporters of hazardous waste in order to avoid conflicting requirements. Except for transporters of bulk shipments of hazardous waste by water, a transporter who meets all applicable requirements of 49 CFR parts 171 through 179 and the requirements of 40 CFR 263.11 and 263.31 will be deemed in compliance with this part. Regardless of DOT's action, EPA retains its authority to enforce these regulations."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "263", 
+                                        "10", 
+                                        "a", 
+                                        "p1"
+                                    ], 
+                                    "node_type": "note", 
+                                    "text": ""
+                                }
+                            ], 
+                            "label": [
+                                "263", 
+                                "10", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) These regulations establish standards which apply to persons transporting hazardous waste within the United States if the transportation requires a manifest under 40 CFR part 262."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "263", 
+                                "10", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) These regulations do not apply to on-site transportation of hazardous waste by generators or by owners or operators of permitted hazardous waste management facilities."
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "263", 
+                                        "10", 
+                                        "c", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Transports hazardous waste into the United States from abroad; or"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "263", 
+                                        "10", 
+                                        "c", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Mixes hazardous wastes of different DOT shipping descriptions by placing them into a single container."
+                                }
+                            ], 
+                            "label": [
+                                "263", 
+                                "10", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) A transporter of hazardous waste must also comply with 40 CFR part 262, Standards Applicable to Generators of Hazardous Waste, if he:"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "263", 
+                                "10", 
+                                "d"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(d) A transporter of hazardous waste subject to the Federal manifesting requirements of 40 CFR part 262, or subject to the waste management standards of 40 CFR part 273, or subject to State requirements analogous to 40 CFR part 273, that is being imported from or exported to any of the countries listed in 40 CFR 262.58(a)(1) for purposes of recovery is subject to this Subpart and to all other relevant requirements of subpart H of 40 CFR part 262, including, but not limited to, 40 CFR 262.84 for movement documents."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "263", 
+                                "10", 
+                                "e"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(e) The regulations in this part do not apply to transportation during an explosives or munitions emergency response, conducted in accordance with 40 CFR 264.1(g)(8)(i)(D) or (iv) or 265.1(c)(11)(i)(D) or (iv), and 270.1(c)(3)(i)(D) or (iii)."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "263", 
+                                "10", 
+                                "f"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(f) Section 266.203 of this chapter identifies how the requirements of this part apply to military munitions classified as solid waste under 40 CFR 266.202."
+                        }
+                    ], 
+                    "label": [
+                        "263", 
+                        "10"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 263.10 Scope."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "263", 
+                                "11", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) A transporter must not transport hazardous wastes without having received an EPA identification number from the Administrator."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "263", 
+                                "11", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) A transporter who has not received an EPA identification number may obtain one by applying to the Administrator using EPA Form 8700-12. Upon receiving the request, the Administrator will assign an EPA identification number to the transporter."
+                        }
+                    ], 
+                    "label": [
+                        "263", 
+                        "11"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 263.11 EPA identification number."
+                }, 
+                {
+                    "children": [], 
+                    "label": [
+                        "263", 
+                        "12"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "A transporter who stores manifested shipments of hazardous waste in containers meeting the requirements of \u00a7\u2009262.30 at a transfer facility for a period of ten days or less is not subject to regulation under parts 270, 264, 265, 267, and 268 of this chapter with respect to the storage of those wastes.", 
+                    "title": "\u00a7 263.12 Transfer facility requirements."
+                }
+            ], 
+            "label": [
+                "263", 
+                "Subpart", 
+                "A"
+            ], 
+            "node_type": "subpart", 
+            "text": "", 
+            "title": "General"
+        }, 
+        {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "263", 
+                                        "20", 
+                                        "a", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Manifest requirement. A transporter may not accept hazardous waste from a generator unless the transporter is also provided with a manifest form (EPA Form 8700-22, and if necessary, EPA Form 8700-22A) signed in accordance with the requirement of \u00a7\u2009262.23, or is provided with an electronic manifest that is obtained, completed, and transmitted in accordance with \u00a7\u2009262.20(a)(3) of this chapter, and signed with a valid and enforceable electronic signature as described in 40 CFR 262.25."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "263", 
+                                        "20", 
+                                        "a", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Exports. In the case of exports other than those subject to Subpart H of 40 CFR part 262, a transporter may not accept such waste from a primary exporter or other person if he knows the shipment does not conform to the EPA Acknowledgment of Consent; and unless, in addition to a manifest signed by the generator in accordance with this section, the transporter shall also be provided with an EPA Acknowledgment of Consent which, except for shipments by rail, is attached to the manifest (or shipping paper for exports by water (bulk shipment)). For exports of hazardous waste subject to the requirements of subpart H of 40 CFR part 262, a transporter may not accept hazardous waste without a tracking document that includes all information required by 40 CFR 262.84."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "263", 
+                                        "20", 
+                                        "a", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) Compliance date for form revisions. The revised Manifest form and procedures in 40 CFR 260.10, 261.7, 263.20, and 263.21, had an effective date of September 5, 2006. The Manifest form and procedures in 40 CFR 260.10, 261.7, 263.20, and 263.21, contained in the 40 CFR, parts 260 to 265, edition revised as of July 1, 2004, were applicable until September 5, 2006."
+                                }, 
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "263", 
+                                                "20", 
+                                                "a", 
+                                                "4", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) Any requirement in these regulations to sign a manifest or manifest certification by hand, or to obtain a handwritten signature, is satisfied by signing with or obtaining a valid and enforceable electronic signature within the meaning of 40 CFR 262.25."
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "263", 
+                                                "20", 
+                                                "a", 
+                                                "4", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) Any requirement in these regulations to give, provide, send, forward, or return to another person a copy of the manifest is satisfied when a copy of an electronic manifest is transmitted to the other person by submission to the system."
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "263", 
+                                                "20", 
+                                                "a", 
+                                                "4", 
+                                                "iii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iii) Any requirement in these regulations for a manifest to accompany a hazardous waste shipment is satisfied when a copy of an electronic manifest is accessible during transportation and forwarded to the person or persons who are scheduled to receive delivery of the waste shipment, except that to the extent that the Hazardous Materials regulation on shipping papers for carriage by public highway requires transporters of hazardous materials to carry a paper document to comply with 49 CFR 177.817, a hazardous waste transporter must carry one printed copy of the electronic manifest on the transport vehicle."
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "263", 
+                                                "20", 
+                                                "a", 
+                                                "4", 
+                                                "iv"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iv) Any requirement in these regulations for a transporter to keep or retain a copy of a manifest is satisfied by the retention of an electronic manifest in the transporter's account on the e-Manifest system, provided that such copies are readily available for viewing and production if requested by any EPA or authorized state inspector."
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "263", 
+                                                "20", 
+                                                "a", 
+                                                "4", 
+                                                "v"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(v) No transporter may be held liable for the inability to produce an electronic manifest for inspection under this section if that transporter can demonstrate that the inability to produce the electronic manifest is exclusively due to a technical difficulty with the EPA system for which the transporter bears no responsibility."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "263", 
+                                        "20", 
+                                        "a", 
+                                        "4"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(4) Use of electronic manifest\u2014legal equivalence to paper forms for participating transporters. Electronic manifests that are obtained, completed, and transmitted in accordance with \u00a7\u2009262.20(a)(3) of this chapter, and used in accordance with this section in lieu of EPA Forms 8700-22 and 8700-22A, are the legal equivalent of paper manifest forms bearing handwritten signatures, and satisfy for all purposes any requirement in these regulations to obtain, complete, sign, carry, provide, give, use, or retain a manifest."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "263", 
+                                        "20", 
+                                        "a", 
+                                        "5"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(5) A transporter may participate in the electronic manifest system either by accessing the electronic manifest system from the transporter's own electronic equipment, or by accessing the electronic manifest system from the equipment provided by a participating generator, by another transporter, or by a designated facility."
+                                }, 
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "263", 
+                                                "20", 
+                                                "a", 
+                                                "6", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) The transporter in possession of the hazardous waste when the electronic manifest becomes unavailable shall reproduce sufficient copies of the printed manifest that is carried on the transport vehicle pursuant to paragraph (a)(4)(iii)(A) of this section, or obtain and complete another paper manifest for this purpose. The transporter shall reproduce sufficient copies to provide the transporter and all subsequent waste handlers with a copy for their files, plus two additional copies that will be delivered to the designated facility with the hazardous waste."
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "263", 
+                                                "20", 
+                                                "a", 
+                                                "6", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) On each printed copy, the transporter shall include a notation in the Special Handling and Additional Description space (Item 14) that the paper manifest is a replacement manifest for a manifest originated in the electronic manifest system, shall include (if not pre-printed on the replacement manifest) the manifest tracking number of the electronic manifest that is replaced by the paper manifest, and shall also include a brief explanation why the electronic manifest was not available for completing the tracking of the shipment electronically."
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "263", 
+                                                "20", 
+                                                "a", 
+                                                "6", 
+                                                "iii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iii) A transporter signing a replacement manifest to acknowledge receipt of the hazardous waste must ensure that each paper copy is individually signed and that a legible handwritten signature appears on each copy."
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "263", 
+                                                "20", 
+                                                "a", 
+                                                "6", 
+                                                "iv"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iv) From the point at which the electronic manifest is no longer available for tracking the waste shipment, the paper replacement manifest copies shall be carried, signed, retained as records, and given to a subsequent transporter or to the designated facility, following the instructions, procedures, and requirements that apply to the use of all other paper manifests."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "263", 
+                                        "20", 
+                                        "a", 
+                                        "6"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(6) Special procedures when electronic manifest is not available. If after a manifest has been originated electronically and signed electronically by the initial transporter, and the electronic manifest system should become unavailable for any reason, then:"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "263", 
+                                        "20", 
+                                        "a", 
+                                        "7"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(7) Special procedures for electronic signature methods undergoing tests. If a transporter using an electronic manifest signs this manifest electronically using an electronic signature method which is undergoing pilot or demonstration tests aimed at demonstrating the practicality or legal dependability of the signature method, then the transporter shall sign the electronic manifest electronically and also sign with an ink signature the transporter acknowledgement of receipt of materials on the printed copy of the manifest that is carried on the vehicle in accordance with paragraph (a)(4)(iii)(A) of this section. This printed copy bearing the generator's and transporter's ink signatures shall also be presented by the transporter to the designated facility to sign in ink to indicate the receipt of the waste materials or to indicate discrepancies. After the owner/operator of the designated facility has signed this printed manifest copy with its ink signature, the printed manifest copy shall be delivered to the designated facility with the waste materials."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "263", 
+                                        "20", 
+                                        "a", 
+                                        "8"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(8) Imposition of user fee for electronic manifest use. A transporter who is a user of the electronic manifest may be assessed a user fee by EPA for the origination or processing of each electronic manifest. EPA shall maintain and update from time-to-time the current schedule of electronic manifest user fees, which shall be determined based on current and projected system costs and level of use of the electronic manifest system. The current schedule of electronic manifest user fees shall be published as an appendix to part 262 of this Chapter."
+                                }
+                            ], 
+                            "label": [
+                                "263", 
+                                "20", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a)"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "263", 
+                                "20", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) Before transporting the hazardous waste, the transporter must sign and date the manifest acknowledging acceptance of the hazardous waste from the generator. The transporter must return a signed copy to the generator before leaving the generator's property."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "263", 
+                                "20", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) The transporter must ensure that the manifest accompanies the hazardous waste. In the case of exports, the transporter must ensure that a copy of the EPA Acknowledgment of Consent also accompanies the hazardous waste."
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "263", 
+                                        "20", 
+                                        "d", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Obtain the date of delivery and the handwritten signature of that transporter or of the owner or operator of the designated facility on the manifest; and"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "263", 
+                                        "20", 
+                                        "d", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Retain one copy of the manifest in accordance with \u00a7\u2009263.22; and"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "263", 
+                                        "20", 
+                                        "d", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) Give the remaining copies of the manifest to the accepting transporter or designated facility."
+                                }
+                            ], 
+                            "label": [
+                                "263", 
+                                "20", 
+                                "d"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(d) A transporter who delivers a hazardous waste to another transporter or to the designated facility must:"
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "263", 
+                                        "20", 
+                                        "e", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) The hazardous waste is delivered by water (bulk shipment) to the designated facility; and"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "263", 
+                                        "20", 
+                                        "e", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) A shipping paper containing all the information required on the manifest (excluding the EPA identification numbers, generator certification, and signatures) and, for exports, an EPA Acknowledgment of Consent accompanies the hazardous waste; and"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "263", 
+                                        "20", 
+                                        "e", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) The delivering transporter obtains the date of delivery and handwritten signature of the owner or operator of the designated facility on either the manifest or the shipping paper; and"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "263", 
+                                        "20", 
+                                        "e", 
+                                        "4"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(4) The person delivering the hazardous waste to the initial water (bulk shipment) transporter obtains the date of delivery and signature of the water (bulk shipment) transporter on the manifest and forwards it to the designated facility; and"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "263", 
+                                        "20", 
+                                        "e", 
+                                        "5"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(5) A copy of the shipping paper or manifest is retained by each water (bulk shipment) transporter in accordance with \u00a7\u2009263.22."
+                                }
+                            ], 
+                            "label": [
+                                "263", 
+                                "20", 
+                                "e"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(e) The requirements of paragraphs (c), (d) and (f) of this section do not apply to water (bulk shipment) transporters if:"
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "263", 
+                                                "20", 
+                                                "f", 
+                                                "1", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) Sign and date the manifest acknowledging acceptance of the hazardous waste;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "263", 
+                                                "20", 
+                                                "f", 
+                                                "1", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) Return a signed copy of the manifest to the non-rail transporter;"
+                                        }, 
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "263", 
+                                                        "20", 
+                                                        "f", 
+                                                        "1", 
+                                                        "iii", 
+                                                        "A"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(A) The next non-rail transporter, if any; or,"
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "263", 
+                                                        "20", 
+                                                        "f", 
+                                                        "1", 
+                                                        "iii", 
+                                                        "B"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(B) The designated facility, if the shipment is delivered to that facility by rail; or"
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "263", 
+                                                        "20", 
+                                                        "f", 
+                                                        "1", 
+                                                        "iii", 
+                                                        "C"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(C) The last rail transporter designated to handle the waste in the United States;"
+                                                }
+                                            ], 
+                                            "label": [
+                                                "263", 
+                                                "20", 
+                                                "f", 
+                                                "1", 
+                                                "iii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iii) Forward at least three copies of the manifest to:"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "263", 
+                                                "20", 
+                                                "f", 
+                                                "1", 
+                                                "iv"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iv) Retain one copy of the manifest and rail shipping paper in accordance with \u00a7\u2009263.22."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "263", 
+                                        "20", 
+                                        "f", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) When accepting hazardous waste from a non-rail transporter, the initial rail transporter must:"
+                                }, 
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "263", 
+                                                "20", 
+                                                "f", 
+                                                "2", 
+                                                "p1"
+                                            ], 
+                                            "node_type": "note", 
+                                            "text": "Intermediate rail transporters are not required to sign either the manifest or shipping paper."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "263", 
+                                        "20", 
+                                        "f", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Rail transporters must ensure that a shipping paper containing all the information required on the manifest (excluding the EPA identification numbers, generator certification, and signatures) and, for exports an EPA Acknowledgment of Consent accompanies the hazardous waste at all times."
+                                }, 
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "263", 
+                                                "20", 
+                                                "f", 
+                                                "3", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) Obtain the date of delivery and handwritten signature of the owner or operator of the designated facility on the manifest or the shipping paper (if the manifest has not been received by the facility); and"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "263", 
+                                                "20", 
+                                                "f", 
+                                                "3", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) Retain a copy of the manifest or signed shipping paper in accordance with \u00a7\u2009263.22."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "263", 
+                                        "20", 
+                                        "f", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) When delivering hazardous waste to the designated facility, a rail transporter must:"
+                                }, 
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "263", 
+                                                "20", 
+                                                "f", 
+                                                "4", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) Obtain the date of delivery and the handwritten signature of the next non-rail transporter on the manifest; and"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "263", 
+                                                "20", 
+                                                "f", 
+                                                "4", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) Retain a copy of the manifest in accordance with \u00a7\u2009263.22."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "263", 
+                                        "20", 
+                                        "f", 
+                                        "4"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(4) When delivering hazardous waste to a non-rail transporter a rail transporter must:"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "263", 
+                                        "20", 
+                                        "f", 
+                                        "5"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(5) Before accepting hazardous waste from a rail transporter, a non-rail transporter must sign and date the manifest and provide a copy to the rail transporter."
+                                }
+                            ], 
+                            "label": [
+                                "263", 
+                                "20", 
+                                "f"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(f) For shipments involving rail transportation, the requirements of paragraphs (c), (d) and (e) do not apply and the following requirements do apply:"
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "263", 
+                                        "20", 
+                                        "g", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Sign and date the manifest in the International Shipments block to indicate the date that the shipment left the United States;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "263", 
+                                        "20", 
+                                        "g", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Retain one copy in accordance with \u00a7\u2009263.22(d);"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "263", 
+                                        "20", 
+                                        "g", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) Return a signed copy of the manifest to the generator; and"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "263", 
+                                        "20", 
+                                        "g", 
+                                        "4"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(4) Give a copy of the manifest to a U.S. Customs official at the point of departure from the United States."
+                                }
+                            ], 
+                            "label": [
+                                "263", 
+                                "20", 
+                                "g"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(g) Transporters who transport hazardous waste out of the United States must:"
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "263", 
+                                        "20", 
+                                        "h", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) The waste is being transported pursuant to a reclamation agreement as provided for in \u00a7\u2009262.20(e);"
+                                }, 
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "263", 
+                                                "20", 
+                                                "h", 
+                                                "2", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) The name, address, and U.S. EPA Identification Number of the generator of the waste;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "263", 
+                                                "20", 
+                                                "h", 
+                                                "2", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) The quantity of waste accepted;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "263", 
+                                                "20", 
+                                                "h", 
+                                                "2", 
+                                                "iii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iii) All DOT-required shipping information;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "263", 
+                                                "20", 
+                                                "h", 
+                                                "2", 
+                                                "iv"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iv) The date the waste is accepted; and"
+                                        }
+                                    ], 
+                                    "label": [
+                                        "263", 
+                                        "20", 
+                                        "h", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) The transporter records, on a log or shipping paper, the following information for each shipment:"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "263", 
+                                        "20", 
+                                        "h", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) The transporter carries this record when transporting waste to the reclamation facility; and"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "263", 
+                                        "20", 
+                                        "h", 
+                                        "4"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(4) The transporter retains these records for a period of at least three years after termination or expiration of the agreement."
+                                }
+                            ], 
+                            "label": [
+                                "263", 
+                                "20", 
+                                "h"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(h) A transporter transporting hazardous waste from a generator who generates greater than 100 kilograms but less than 1000 kilograms of hazardous waste in a calendar month need not comply with the requirements of this section or those of \u00a7\u2009263.22 provided that:"
+                        }
+                    ], 
+                    "label": [
+                        "263", 
+                        "20"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 263.20 The manifest system."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "263", 
+                                        "21", 
+                                        "a", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) The designated facility listed on the manifest; or"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "263", 
+                                        "21", 
+                                        "a", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) The alternate designated facility, if the hazardous waste cannot be delivered to the designated facility because an emergency prevents delivery; or"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "263", 
+                                        "21", 
+                                        "a", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) The next designated transporter; or"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "263", 
+                                        "21", 
+                                        "a", 
+                                        "4"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(4) The place outside the United States designated by the generator."
+                                }
+                            ], 
+                            "label": [
+                                "263", 
+                                "21", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) The transporter must deliver the entire quantity of hazardous waste which he has accepted from a generator or a transporter to:"
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "263", 
+                                        "21", 
+                                        "b", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) If the hazardous waste cannot be delivered in accordance with paragraph (a) of this section because of an emergency condition other than rejection of the waste by the designated facility, then the transporter must contact the generator for further directions and must revise the manifest according to the generator's instructions."
+                                }, 
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "263", 
+                                                "21", 
+                                                "b", 
+                                                "2", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) For a partial load rejection or for regulated quantities of container residues, a copy of the original manifest that includes the facility's date and signature, and the Manifest Tracking Number of the new manifest that will accompany the shipment, and a description of the partial rejection or container residue in the discrepancy block of the original manifest. The transporter must retain a copy of this manifest in accordance with \u00a7\u2009263.22, and give the remaining copies of the original manifest to the rejecting designated facility. If the transporter is forwarding the rejected part of the shipment or a regulated container residue to an alternate facility or returning it to the generator, the transporter must obtain a new manifest to accompany the shipment, and the new manifest must include all of the information required in 40 CFR 264.72(e)(1) through (6) or (f)(1) through (6) or 40 CFR 265.72(e)(1) through (6) or (f)(1) through (6)."
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "263", 
+                                                "21", 
+                                                "b", 
+                                                "2", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) For a full load rejection that will be taken back by the transporter, a copy of the original manifest that includes the rejecting facility's signature and date attesting to the rejection, the description of the rejection in the discrepancy block of the manifest, and the name, address, phone number, and Identification Number for the alternate facility or generator to whom the shipment must be delivered. The transporter must retain a copy of the manifest in accordance with \u00a7\u2009263.22, and give a copy of the manifest containing this information to the rejecting designated facility. If the original manifest is not used, then the transporter must obtain a new manifest for the shipment and comply with 40 CFR 264.72(e)(1) through (6) or 40 CFR 265.72(e)(1) through (6)."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "263", 
+                                        "21", 
+                                        "b", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) If hazardous waste is rejected by the designated facility while the transporter is on the facility's premises, then the transporter must obtain the following:"
+                                }
+                            ], 
+                            "label": [
+                                "263", 
+                                "21", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b)"
+                        }
+                    ], 
+                    "label": [
+                        "263", 
+                        "21"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 263.21 Compliance with the manifest."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "263", 
+                                "22", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) A transporter of hazardous waste must keep a copy of the manifest signed by the generator, himself, and the next designated transporter or the owner or operator of the designated facility for a period of three years from the date the hazardous waste was accepted by the initial transporter."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "263", 
+                                "22", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) For shipments delivered to the designated facility by water (bulk shipment), each water (bulk shipment) transporter must retain a copy of the shipping paper containing all the information required in \u00a7\u2009263.20(e)(2) for a period of three years from the date the hazardous waste was accepted by the initial transporter."
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "263", 
+                                        "22", 
+                                        "c", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) The initial rail transporter must keep a copy of the manifest and shipping paper with all the information required in \u00a7\u2009263.20(f)(2) for a period of three years from the date the hazardous waste was accepted by the initial transporter; and"
+                                }, 
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "263", 
+                                                "22", 
+                                                "c", 
+                                                "2", 
+                                                "p1"
+                                            ], 
+                                            "node_type": "note", 
+                                            "text": "Intermediate rail transporters are not required to keep records pursuant to these regulations."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "263", 
+                                        "22", 
+                                        "c", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) The final rail transporter must keep a copy of the signed manifest (or the shipping paper if signed by the designated facility in lieu of the manifest) for a period of three years from the date the hazardous waste was accepted by the initial transporter."
+                                }
+                            ], 
+                            "label": [
+                                "263", 
+                                "22", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) For shipments of hazardous waste by rail within the United States:"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "263", 
+                                "22", 
+                                "d"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(d) A transporter who transports hazardous waste out of the United States must keep a copy of the manifest indicating that the hazardous waste left the United States for a period of three years from the date the hazardous waste was accepted by the initial transporter."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "263", 
+                                "22", 
+                                "e"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(e) The periods of retention referred to in this Section are extended automatically during the course of any unresolved enforcement action regarding the regulated activity or as requested by the Administrator."
+                        }
+                    ], 
+                    "label": [
+                        "263", 
+                        "22"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 263.22 Recordkeeping."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "263", 
+                                "25", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) Electronic manifest signatures shall meet the criteria described in \u00a7\u2009262.25 of this chapter."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "263", 
+                                "25", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) [Reserved]"
+                        }
+                    ], 
+                    "label": [
+                        "263", 
+                        "25"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 263.25 Electronic manifest signatures."
+                }
+            ], 
+            "label": [
+                "263", 
+                "Subpart", 
+                "B"
+            ], 
+            "node_type": "subpart", 
+            "text": "", 
+            "title": "Compliance With the Manifest System and Recordkeeping"
+        }, 
+        {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "263", 
+                                "30", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) In the event of a discharge of hazardous waste during transportation, the transporter must take appropriate immediate action to protect human health and the environment (e.g., notify local authorities, dike the discharge area)."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "263", 
+                                "30", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) If a discharge of hazardous waste occurs during transportation and an official (State or local government or a Federal Agency) acting within the scope of his official responsibilities determines that immediate removal of the waste is necessary to protect human health or the environment, that official may authorize the removal of the waste by transporters who do not have EPA identification numbers and without the preparation of a manifest."
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "263", 
+                                        "30", 
+                                        "c", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Give notice, if required by 49 CFR 171.15, to the National Response Center (800-424-8802 or 202-426-2675); and"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "263", 
+                                        "30", 
+                                        "c", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Report in writing as required by 49 CFR 171.16 to the Director, Office of Hazardous Materials Regulations, Materials Transportation Bureau, Department of Transportation, Washington, DC 20590."
+                                }
+                            ], 
+                            "label": [
+                                "263", 
+                                "30", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) An air, rail, highway, or water transporter who has discharged hazardous waste must:"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "263", 
+                                "30", 
+                                "d"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(d) A water (bulk shipment) transporter who has discharged hazardous waste must give the same notice as required by 33 CFR 153.203 for oil and hazardous substances."
+                        }
+                    ], 
+                    "label": [
+                        "263", 
+                        "30"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 263.30 Immediate action."
+                }, 
+                {
+                    "children": [], 
+                    "label": [
+                        "263", 
+                        "31"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "A transporter must clean up any hazardous waste discharge that occurs during transportation or take such action as may be required or approved by Federal, State, or local officials so that the hazardous waste discharge no longer presents a hazard to human health or the environment.", 
+                    "title": "\u00a7 263.31 Discharge clean up."
+                }
+            ], 
+            "label": [
+                "263", 
+                "Subpart", 
+                "C"
+            ], 
+            "node_type": "subpart", 
+            "text": "", 
+            "title": "Hazardous Waste Discharges"
+        }
+    ], 
+    "label": [
+        "263"
+    ], 
+    "node_type": "regtext", 
+    "text": "", 
+    "title": "PART 263\u2014STANDARDS APPLICABLE TO TRANSPORTERS OF HAZARDOUS WASTE"
+}

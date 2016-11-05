@@ -1,0 +1,140 @@
+{
+    "children": [
+        {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9411", 
+                                        "1", 
+                                        "a", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Executive Branch Financial Disclosure, Qualified Trusts, and Certificates of Divestiture as provided in 5 CFR part 2634;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9411", 
+                                        "1", 
+                                        "a", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Standards of Ethical Conduct for Employees of the Executive Branch as provided in 5 CFR part 2635;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9411", 
+                                        "1", 
+                                        "a", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) Limitations on Outside Earned Income, Employment and Affiliations for Certain Noncareer Employees as provided in 5 CFR part 2636;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9411", 
+                                        "1", 
+                                        "a", 
+                                        "4"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(4) Regulations Concerning Post-Employment Conflict of Interest as provided in 5 CFR part 2637;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9411", 
+                                        "1", 
+                                        "a", 
+                                        "5"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(5) Interpretation, Exemptions and Waiver Guidance Concerning 18 U.S.C. 208 (Acts Affecting a Personal Financial Interest) as provided in 5 CFR part 2638;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9411", 
+                                        "1", 
+                                        "a", 
+                                        "6"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(6) Post-Employment Conflict of Interest Restrictions as provided in 5 CFR part 2641;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9411", 
+                                        "1", 
+                                        "a", 
+                                        "7"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(7) Political Activities of Federal Employees as provided in 5 CFR part 734; and"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9411", 
+                                        "1", 
+                                        "a", 
+                                        "8"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(8) Employee Responsibilities and Conduct as provided in 5 CFR part 735."
+                                }
+                            ], 
+                            "label": [
+                                "9411", 
+                                "1", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) Employees of the U.S. Election Assistance Commission are subject to the following standards of conduct and ethical requirements:"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "9411", 
+                                "1", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) For purposes of this part, employee shall have the definition given to it by each standard of conduct or ethical requirement in paragraph (a) of this section."
+                        }
+                    ], 
+                    "label": [
+                        "9411", 
+                        "1"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 9411.1 Cross-reference to executive branch-wide regulations."
+                }
+            ], 
+            "label": [
+                "9411", 
+                "Subpart"
+            ], 
+            "node_type": "emptypart", 
+            "text": ""
+        }
+    ], 
+    "label": [
+        "9411"
+    ], 
+    "node_type": "regtext", 
+    "text": "", 
+    "title": "PART 9411\u2014STANDARDS OF CONDUCT"
+}

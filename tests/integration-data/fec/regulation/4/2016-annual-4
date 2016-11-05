@@ -1,0 +1,1623 @@
+{
+    "children": [
+        {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "4", 
+                                "1", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) Commission means the Federal Election Commission, established by the Federal Election Campaign Act of 1971, as amended."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "4", 
+                                "1", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) Commissioner means an individual appointed to the Federal Election Commission pursuant to 52 U.S.C. 30106(a)."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "4", 
+                                "1", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) Request means to seek the release of records under 5 U.S.C. 552."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "4", 
+                                "1", 
+                                "d"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(d) Requestor is any person who submits a request to the Commission."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "4", 
+                                "1", 
+                                "e"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(e) Act means the Federal Election Campaign Act of 1971, as amended by the Federal Election Campaign Act Amendments of 1974, 1976, and 1979, and unless specifically excluded, includes chapters 95 and 96 of the Internal Revenue Code of 1954 relating to public financing of Federal elections."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "4", 
+                                "1", 
+                                "f"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(f) Public Disclosure Division of the Commission is that division which is responsible for, among other things, the processing of requests for public access to records which are submitted to the Commission pursuant to 52 U.S.C. 30108(d), 30109(a)(4)(B)(ii), and 30111(a)."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "4", 
+                                "1", 
+                                "g"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(g) Direct costs means those expenditures which the Commission actually incurs in searching for and duplicating (and, in the case of commercial use requestors, reviewing) documents to respond to a FOIA request. Direct costs include the salary of the employee performing the work (the basic rate of pay for the employee plus 16 percent of that rate to cover benefits) and the cost of operating duplicating equipment. Direct costs do not include overhead expenses such as the cost of space and heating or lighting the facility in which the records are stored."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "4", 
+                                "1", 
+                                "h"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(h) Search means all time spent reviewing, manually or by automated means, Commission records for the purpose of locating those records that are responsive to a FOIA request, including page-by-page or line-by-line identification of material within documents. Search time does not include review of material in order to determine whether the material is exempt from disclosure."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "4", 
+                                "1", 
+                                "i"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(i) Review means the process of examining a document located in response to a commercial use request to determine whether any portion of the document located is exempt from disclosure. Review also refers to processing any document for disclosure, i.e., doing all that is necessary to excise exempt portions of the document and otherwise prepare the document for release. Review does not include time spent by the Commission resolving general legal or policy issues regarding the application of exemptions."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "4", 
+                                "1", 
+                                "j"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(j) Duplication means the process of making a copy of a document necessary to respond to a FOIA request. Examples of the form such copies can take include, but are not limited to, paper copy, microform, audio-visual materials, or machine readable documentation (e.g., magnetic tape or disk)."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "4", 
+                                "1", 
+                                "k"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(k) Commercial use means a purpose that furthers the commercial, trade, or profit interests of the requestor or the person on whose behalf the request is made. The Commission's determination as to whether documents are being requested for a commercial use will be based on the purpose for which the documents are being requested. Where the Commission has reasonable cause to doubt the use for which the requestor claims to have made the request or where that use is not clear from the request itself, the Commission will seek additional clarification before assigning the request to a specific category."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "4", 
+                                "1", 
+                                "l"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(l) Educational institution means a preschool, a public or private elementary or secondary school, an institution of graduate higher education, an institution of undergraduate higher education, an institution of professional education, and an institution of vocational education, which operates a program or programs of scholarly research."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "4", 
+                                "1", 
+                                "m"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(m) Non-commercial scientific institution means an organization that is not operated on a commercial basis, as that term is defined in paragraph (k) of this section, and which is operated solely for the purpose of conducting scientific research the results of which are not intended to promote any particular product or industry."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "4", 
+                                "1", 
+                                "n"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(n) Representative of the news media means a person actively gathering news for an entity that is organized and operated to publish or broadcast news to the public. The term news means information that is about current events or that would be of current interest to the public. Examples of news media entities include, but are not limited to, television or radio stations broadcasting to the public at large, and publishers of periodicals (but only in those instances when they can qualify as disseminators of news, as defined in this paragraph) who make their products available for purchase or subscription by the general public. A freelance journalist may be regarded as working for a news organization and therefore considered a representative of the news media if that person can demonstrate a solid basis for expecting publication by that news organization, even though that person is not actually employed by that organization. The best means by which a freelance journalist can demonstrate a solid basis for expecting publication by a news organization is by having a publication contract with that news organization. When no such contract is present, the Commission will look to the freelance journalist's past publication record in making this determination."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "4", 
+                                "1", 
+                                "o"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(o) Record and any other term used in this part in reference to information includes any information that would be a Commission record subject to the requirements of this part when maintained by the Commission in any format, including an electronic format."
+                        }
+                    ], 
+                    "label": [
+                        "4", 
+                        "1"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "As used in this part:", 
+                    "title": "\u00a7 4.1 Definitions."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "4", 
+                                "2", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) The Commission will make the fullest possible disclosure of records to the public, consistent with the rights of individuals to privacy, the rights of persons contracting with the Commission with respect to trade secret and commercial or financial information entitled to confidential treatment, and the need for the Commission to promote free internal policy deliberations and to pursue its official activities without undue disruption."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "4", 
+                                "2", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) All Commission records shall be available to the public unless they are specifically exempt under this part."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "4", 
+                                "2", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) To carry out this policy, the Commission shall designate a Freedom of Information Act Officer."
+                        }
+                    ], 
+                    "label": [
+                        "4", 
+                        "2"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 4.2 Policy on disclosure of records."
+                }, 
+                {
+                    "children": [], 
+                    "label": [
+                        "4", 
+                        "3"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "The regulations in this part implement the provisions of the Freedom of Information Act, 5 U.S.C. 552, with respect to the availability of records for inspection and copying.", 
+                    "title": "\u00a7 4.3 Scope."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "4", 
+                                        "4", 
+                                        "a", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Statements of policy and interpretation which have been adopted by the Commission;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "4", 
+                                        "4", 
+                                        "a", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Administrative staff manuals and instructions to staff that affect a member of the public;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "4", 
+                                        "4", 
+                                        "a", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) Opinions of Commissioners rendered in enforcement cases, General Counsel's Reports and non-exempt 52 U.S.C. 30109 investigatory materials shall be placed on the public record of the Agency no later than 30 days from the date on which all respondents are notified that the Commission has voted to close such an enforcement file;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "4", 
+                                        "4", 
+                                        "a", 
+                                        "4"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(4) Copies of all records, regardless of form or format, which have been released to any person under this paragraph (a) and which, because of the nature of their subject matter, the agency determines have become or are likely to become the subject of subsequent requests for substantially the same records; and"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "4", 
+                                        "4", 
+                                        "a", 
+                                        "5"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(5) A general index of the records referred to in paragraph (a)(4) of this section."
+                                }
+                            ], 
+                            "label": [
+                                "4", 
+                                "4", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) In accordance with 5 U.S.C. 552(a)(2), the Commission shall make the following materials available for public inspection and copying:"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "4", 
+                                "4", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) In accordance with 5 U.S.C. 552(a)(3), the Commission shall make available, upon proper request, all non-exempt Agency records, or portions of records, not previously made public pursuant to 5 U.S.C. 552(a)(1) and (a)(2)."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "4", 
+                                "4", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) The Commission shall maintain and make available current indexes and supplements providing identifying information regarding any matter issued, adopted or promulgated after April 15, 1975 as required by 5 U.S.C. 552(a)(2)(C) and (E).These indexes and supplements shall be published and made available on at least a quarterly basis for public distribution unless the Commission determines by Notice in the Federal Register that publication would be unnecessary, impracticable, or not feasible due to budgetary considerations. Nevertheless, copies of any index or supplement shall be made available upon request at a cost not to exceed the direct cost of duplication."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "4", 
+                                "4", 
+                                "d"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(d) The Freedom of Information Act and the provisions of this part apply only to existing records; they do not require the creation of new records."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "4", 
+                                "4", 
+                                "e"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(e) If documents or files contain both disclosable and nondisclosable information, the nondisclosable information will be deleted and the disclosable information released unless the disclosable portions cannot be reasonably segregated from the other portions in a manner which will allow meaningful information to be disclosed."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "4", 
+                                "4", 
+                                "f"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(f) All records created in the process of implementing provisions of 5 U.S.C. 552 will be maintained by the Commission in accordance with the authority granted by General Records Schedule 14, approved by the National Archives and Records Service of the General Services Administration."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "4", 
+                                "4", 
+                                "g"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(g) The Commission encourages the public to explore the information available on the Commission's World Wide Web site, located at http://www.fec.gov. The site includes a Commission publication, Availability of FEC Information, which provides a detailed listing of the types of documents available from the FEC, including those available under FOIA, and directions on how to locate and obtain them."
+                        }
+                    ], 
+                    "label": [
+                        "4", 
+                        "4"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 4.4 Availability of records."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "4", 
+                                        "5", 
+                                        "a", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Specifically authorized under criteria established by an executive order to be kept secret in the interest of national defense or foreign policy and are in fact properly classified pursuant to such Executive order;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "4", 
+                                        "5", 
+                                        "a", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Related solely to the internal personnel rules and practices of the Commission;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "4", 
+                                        "5", 
+                                        "a", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) Specifically exempted from disclosure by statute, provided that such statute (A) requires that the matters be withheld from the public in such a manner as to leave no discretion on the issue, or (B) establishes particular criteria for withholding or refers to particular types of matters to be withheld;"
+                                }, 
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "4", 
+                                                "5", 
+                                                "a", 
+                                                "4", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) A request for confidential treatment shall be addressed to the Chief FOIA Officer, Federal Election Commission, 999 E Street, NW., Washington, DC 20463, and shall indicate clearly on the envelope that it is a request for confidential treatment."
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "4", 
+                                                "5", 
+                                                "a", 
+                                                "4", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) With each submission of, or offer to submit, business information which a submitter desires to be treated as confidential under paragraph (a)(4) of this section, the submitter shall provide the following, which may be disclosed to the public: (A) A written description of the nature of the subject information, and a justification for the request for its confidential treatment, and (B) a certification in writing under oath that substantially identical information is not available to the public."
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "4", 
+                                                "5", 
+                                                "a", 
+                                                "4", 
+                                                "iii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iii) Approval or denial of requests shall be made only by the Chief FOIA Officer or his or her designees. A denial shall be in writing, shall specify the reason therefore, and shall advise the submitter of the right to appeal to the Commission."
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "4", 
+                                                "5", 
+                                                "a", 
+                                                "4", 
+                                                "iv"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iv) For good cause shown, the Commission may grant an appeal from a denial by the Chief FOIA Officer or his or her designee if the appeal is filed within fifteen (15) days after receipt of the denial. An appeal shall be addressed to the Chief FOIA Officer, Federal Election Commission, 999 E Street, NW., Washington, DC 20463 and shall clearly indicate that it is a confidential submission appeal. An appeal will be decided within twenty (20) days after its receipt (excluding Saturdays, Sundays and legal holidays) unless an extension, stated in writing with the reasons therefore, has been provided the person making the appeal."
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "4", 
+                                                "5", 
+                                                "a", 
+                                                "4", 
+                                                "v"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(v) Any business information submitted in confidence and determined to be entitled to confidential treatment shall be maintained in confidence by the Commission and not disclosed except as required by law. In the event that any business information submitted to the Commission is not entitled to confidential treatment, the submitter will be permitted to withdraw the tender unless it is the subject of a request under the Freedom of Information Act or of judicial discovery proceedings."
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "4", 
+                                                "5", 
+                                                "a", 
+                                                "4", 
+                                                "vi"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(vi) Since enforcement actions under 52 U.S.C. 30109 are confidential by statute, the procedures outlined in \u00a7\u20094.5(a)(4) (i) thru (v) are not applicable."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "4", 
+                                        "5", 
+                                        "a", 
+                                        "4"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(4) Trade secrets and commercial or financial information obtained from a person which are privileged or confidential. Such information includes confidential business information which concerns or relates to the trade secrets, processes, operations, style of work, or apparatus, or to the production, sales, shipments, purchases, transfers, identification of customers, inventories, or amount of source of income, profits, losses, or expenditures of any person, firm, partnership, corporation, or other organization, if the disclosure is likely to have the effect of either impairing the Commission's ability to obtain such information as is necessary to perform its statutory functions, or causing substantial harm to the competitive position of the person, firm, partnership, corporation, or other organization from which the information was obtained, unless the Commission is required by law to disclose such information. These procedures shall be used for submitting business information in confidence:"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "4", 
+                                        "5", 
+                                        "a", 
+                                        "5"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(5) Inter-agency or intra-agency memoranda or letters which would not be available by law to a party in litigation with the Commission."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "4", 
+                                        "5", 
+                                        "a", 
+                                        "6"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(6) Personnel and medical files and similar files, the disclosure of which would constitute a clearly unwarranted invasion of personal privacy."
+                                }, 
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "4", 
+                                                "5", 
+                                                "a", 
+                                                "7", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) Could reasonably be expected to interfere with enforcement proceedings;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "4", 
+                                                "5", 
+                                                "a", 
+                                                "7", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) Would deprive a person of a right to a fair trial or an impartial adjudication;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "4", 
+                                                "5", 
+                                                "a", 
+                                                "7", 
+                                                "iii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iii) Could reasonably be expected to constitute an unwarranted invasion of personal privacy;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "4", 
+                                                "5", 
+                                                "a", 
+                                                "7", 
+                                                "iv"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iv) Could reasonably be expected to disclose the identity of a confidential source, including a State, local, or foreign agency or authority or any private institution which furnished information on a confidential basis, and, in the case of a record or information compiled by a criminal law enforcement authority in the course of a criminal investigation, or by an agency conducting a lawful national security intelligence investigation, information furnished by a confidential source;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "4", 
+                                                "5", 
+                                                "a", 
+                                                "7", 
+                                                "v"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(v) Would disclose techniques and procedures for law enforcement investigations or prosecutions, or would disclose guidelines for law enforcement investigations or prosecutions if such disclosure could reasonably be expected to risk circumvention of the law; or"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "4", 
+                                                "5", 
+                                                "a", 
+                                                "7", 
+                                                "vi"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(vi) Could reasonably be expected to endanger the life or physical safety of any individual."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "4", 
+                                        "5", 
+                                        "a", 
+                                        "7"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(7) Records or information compiled for law enforcement purposes, but only to the extent that the production of such law enforcement records or information:"
+                                }
+                            ], 
+                            "label": [
+                                "4", 
+                                "5", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) No requests under 5 U.S.C. 552 shall be denied release unless the record contains, or its disclosure would reveal, matters that are:"
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "4", 
+                                        "5", 
+                                        "b", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) The investigation or proceeding involves a possible violation of criminal law; and"
+                                }, 
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "4", 
+                                                "5", 
+                                                "b", 
+                                                "2", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) The subject of the investigation or proceeding is not aware of its pendency; and"
+                                        }, 
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "4", 
+                                                        "5", 
+                                                        "b", 
+                                                        "2", 
+                                                        "ii", 
+                                                        "p1"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "The agency may, during only such time as that circumstance continues, treat the records as not subject to the requirements of the Freedom of Information Act."
+                                                }
+                                            ], 
+                                            "label": [
+                                                "4", 
+                                                "5", 
+                                                "b", 
+                                                "2", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) Disclosure of the existence of the records could reasonably be expected to interfere with enforcement proceedings;"
+                                        }
+                                    ], 
+                                    "label": [
+                                        "4", 
+                                        "5", 
+                                        "b", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) There is reason to believe that\u2014"
+                                }
+                            ], 
+                            "label": [
+                                "4", 
+                                "5", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) Whenever a request is made which involves access to records described in 11 CFR 4.5(a)(7); and"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "4", 
+                                "5", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) Any reasonably segregable portion of a record shall be provided to any person requesting such record after deletion of the portions which are exempt. The amount of information deleted shall be indicated on the released portion of the record, unless including that indication would harm an interest protected by an exemption in paragraph (a) of this section under which the deletion is made. If technically feasible, the amount of the information deleted shall be indicated at the place in the record where such deletion is made."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "4", 
+                                "5", 
+                                "d"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(d) If a requested record is one of another government agency or deals with subject matter to which a government agency other than the Commission has exclusive or primary responsibility, the request for such a record shall be promptly referred by the Commission to that agency for disposition or guidance as to disposition."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "4", 
+                                "5", 
+                                "e"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(e) Nothing in this part authorizes withholding of information or limiting the availability of records to the public, except as specifically provided in this part; nor is this part authority to withhold information from Congress."
+                        }
+                    ], 
+                    "label": [
+                        "4", 
+                        "5"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 4.5 Categories of exemptions."
+                }, 
+                {
+                    "children": [], 
+                    "label": [
+                        "4", 
+                        "6"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "The Commission may, in its discretion, release requested records despite the applicability of the exemptions in \u00a7\u20094.5(a), if it determines that it is in the public interest and that the rights of third parties would not be prejudiced.", 
+                    "title": "\u00a7 4.6 Discretionary release of exempt records."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "4", 
+                                "7", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) [Reserved]"
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "4", 
+                                        "7", 
+                                        "b", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Requests for copies of records pursuant to the Freedom of Information Act shall be addressed to Chief FOIA Officer, Federal Election Commission, 999 E Street, NW., Washington, DC 20463. The request shall reasonably describe the records sought with sufficient specificity with respect to names, dates, and subject matter, to permit the records to be located. A requester will be promptly advised if the records cannot be located on the basis of the description given and that further identifying information must be provided before the request can be satisfied."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "4", 
+                                        "7", 
+                                        "b", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Requests for Commission records and copies thereof shall specify the preferred form or format (including electronic formats) of the response. The Commission shall accommodate requesters as to form or format if the record is readily available in that form or format. When requesters do not specify the form or format of the response, the Commission shall respond in the form or format in which the document is most accessible to the Commission."
+                                }
+                            ], 
+                            "label": [
+                                "4", 
+                                "7", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b)"
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "4", 
+                                        "7", 
+                                        "c", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Necessary to locate records or transfer them from physically separate facilities; or"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "4", 
+                                        "7", 
+                                        "c", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Necessary to search for, collect, and appropriately examine a large quantity of separate and distinct records which are the subject of a single request; or"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "4", 
+                                        "7", 
+                                        "c", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) Necessary for consultation with another agency which has a substantial interest in the determination of the request, or with two or more components of the Commission which have a substantial subject matter interest therein."
+                                }
+                            ], 
+                            "label": [
+                                "4", 
+                                "7", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) The Commission shall determine within twenty working days after receipt of a request, or twenty working days after an appeal is granted, whether to comply with such request, unless in unusual circumstances the time is extended or subject to \u00a7\u20094.9(f)(3), which governs advance payments. In the event the time is extended, the requestor shall be notified of the reasons for the extension and the date on which a determination is expected to be made, but in no case shall the extended time exceed ten working days. An extension may be made if it is\u2014"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "4", 
+                                "7", 
+                                "d"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(d) If the Commission determines that an extension of time greater than ten working days is necessary to respond to a request satisfying the \u201cunusual circumstances\u201d specified in paragraph (c) of this section, the Commission shall so notify the requester and give the requester an opportunity to limit the scope of the request so that it may be processed within the time limit prescribed in paragraph (c) of this section, or arrange with the Commission an alternative time frame for processing the request or a modified request."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "4", 
+                                "7", 
+                                "e"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(e) The Commission may aggregate and process as a single request requests by the same requester, or a group of requesters acting in concert, if the Commission reasonably believes that the requests actually constitute a single request that would otherwise satisfy the unusual circumstances specified in paragraph (c) of this section, and the requests involve clearly related matters."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "4", 
+                                "7", 
+                                "f"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(f) The Commission uses a multitrack system to process requests under the Freedom of Information Act that is based on the amount of work and/or time involved in processing requests. Requests for records are processed in the order they are received within each track. Upon receipt of a request for records, the Commission shall determine which track is appropriate for the request. The Commission may contact requesters whose requests do not appear to qualify for the fastest tracks and provide such requesters the opportunity to limit their requests so as to qualify for a faster track. Requesters who believe that their requests qualify for the fastest tracks and who wish to be notified if the Commission disagrees may so indicate in the request and, where appropriate and feasible, shall also be given an opportunity to limit their requests."
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "4", 
+                                                "7", 
+                                                "g", 
+                                                "1", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) That a failure to obtain requested records on an expedited basis could reasonably be expected to pose an imminent threat to the life or physical safety of an individual; or"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "4", 
+                                                "7", 
+                                                "g", 
+                                                "1", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) With respect to a request made by a person primarily engaged in disseminating information, urgency to inform the public concerning actual or alleged Federal government activity."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "4", 
+                                        "7", 
+                                        "g", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) The term compelling need means:"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "4", 
+                                        "7", 
+                                        "g", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Requesters for expedited processing must include in their requests a statement setting forth the basis for the claim that a \u201ccompelling need\u201d exists for the requested information, certified by the requester to be true and correct to the best of his or her knowledge and belief."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "4", 
+                                        "7", 
+                                        "g", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) The Commission shall determine whether to grant a request for expedited processing and notify the requester of such determination within ten days of receipt of the request. Denials of requests for expedited processing may be appealed as set forth in \u00a7\u20094.8. The Commission shall expeditiously determine any such appeal. As soon as practicable, the Commission shall process the documents responsive to a request for which expedited processing is granted."
+                                }
+                            ], 
+                            "label": [
+                                "4", 
+                                "7", 
+                                "g"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(g) The Commission shall consider requests for the expedited processing of requests in cases where the requester demonstrates a compelling need for such processing."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "4", 
+                                "7", 
+                                "h"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(h) Any person denied access to records by the Commission shall be notified immediately giving reasons therefore, and notified of the right of such person to appeal such adverse determination to the Commission."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "4", 
+                                "7", 
+                                "i"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(i) The date of receipt of a request under this part shall be the date on which the FOIA Officer actually receives the request."
+                        }
+                    ], 
+                    "label": [
+                        "4", 
+                        "7"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 4.7 Requests for records."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "4", 
+                                "8", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) Any person who has been notified pursuant to \u00a7\u20094.7(h) of this part that his/her request for inspection of a record or for a copy has been denied, or who has received no response within ten working days (or within such extended period as is permitted under \u00a7\u20094.7(c) of this part) after the request has been received by the Commission, may appeal the adverse determination or the failure to respond by requesting the Commission to direct that the record be made available."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "4", 
+                                "8", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) The appeal request shall be in writing, shall clearly and prominently state on the envelope or other cover and at the top of the first page \u201cFOIA Appeal\u201d, and shall identify the record in the form in which it was originally requested."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "4", 
+                                "8", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) The appeal request should be delivered or addressed to the Chief FOIA Officer, Federal Election Commission, 999 E Street, NW., Washington, DC 20463."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "4", 
+                                "8", 
+                                "d"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(d) The requestor may state facts and cite legal or other authorities as he/she deems appropriate in support of the appeal request."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "4", 
+                                "8", 
+                                "e"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(e) For good cause shown, the Commission may disclose a record which is subject to one of the exemptions listed in \u00a7\u20094.5 of this part."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "4", 
+                                "8", 
+                                "f"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(f) The Commission will make a determination with respect to any appeal within twenty days (excluding Saturdays, Sundays and legal holidays) after receipt of the appeal (or within such extended period as is permitted under \u00a7\u20094.7(c) of this part). If on appeal, the denial of the request for a record or a copy is in whole or in part upheld, the Commission shall advise the requestor of the denial and shall notify him/her of the provisions for judicial review of that determination as set forth in 5 U.S.C. 552(a)(4)."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "4", 
+                                "8", 
+                                "g"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(g) Because of the risk of misunderstanding inherent in oral communications, the Commission will not entertain any appeal from an alleged denial or failure to comply with an oral request. Any person who has orally requested a copy of a record that he/she believes to have been improperly denied should resubmit the request in writing as set forth in \u00a7\u20094.7."
+                        }
+                    ], 
+                    "label": [
+                        "4", 
+                        "8"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 4.8 Appeal of denial."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "4", 
+                                        "9", 
+                                        "a", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) General. Except for a commercial use requester, the Commission will not charge a fee to any requester for the first two hours of search time and the first 100 pages of duplication in response to any FOIA request."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "4", 
+                                        "9", 
+                                        "a", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Free computer search time. For purposes of this paragraph, the term search time is based on the concept of a manual search. To apply this to a search conducted by a computer, the Commission will provide the equivalent dollar value of two hours of professional staff time, calculated according to paragraph (c)(4) of this section, in computer search time. Computer search time is determined by adding the cost of the computer connect time actually used for the search, calculated at the rate of $25.00 per hour, to the cost of the operator's salary for the time spent conducting the computer search, calculated at the professional staff time rate set forth at paragraph (c)(4) of this section."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "4", 
+                                        "9", 
+                                        "a", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) Definition of pages. For purposes of this paragraph, the word pages refers to paper copies of a standard agency size which will normally be 8 1/2 \u2033 \u00d7 11\u2033 or 8 1/2 \u2033 \u00d7 14\u2033. Thus, while a requester would not be entitled to 100 free computer disks, for example, a requester would be entitled to 100 free pages of a computer printout."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "4", 
+                                        "9", 
+                                        "a", 
+                                        "4"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(4) Minimum charge. The Commission will not charge a fee to any requester when the allowable direct cost of that FOIA request is equal to or less than the Commission's cost of routinely collecting and processing a FOIA request fee."
+                                }
+                            ], 
+                            "label": [
+                                "4", 
+                                "9", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) Exceptions to fee charges\u2014"
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "4", 
+                                        "9", 
+                                        "b", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) The Commission will consider requests for the reduction or waiver of any fees assessed pursuant to paragraph (c)(1) of this section if it determines, either as a result of its own motion or in response to a written submission by the requester, that disclosure of the information is in the public interest because it is likely to contribute significantly to public understanding of the operations or activities of the government and that disclosure of the information is not primarily in the commercial interest of the requester."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "4", 
+                                        "9", 
+                                        "b", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) A request for a reduction or waiver of fees shall be made in writing by the FOIA requestor; shall accompany the relevant FOIA request so as to be considered timely; and shall include a specific explanation as to why the fee for that FOIA request should be reduced or waived, applying the standard stated in paragraph (b)(1) of this section to the facts of that particular request. In addition, the explanation shall include: the requester's (and user's, if the requester and the user are different persons or entities) identity, qualifications and expertise in the subject area, and ability and intention to disseminate the information to the public; and a discussion of any commercial or personal benefit that the requestor (and user, if the requestor and user are different persons or entities) expects as a result of disclosure, including whether the information disclosed would be resold in any form at a fee above actual cost."
+                                }
+                            ], 
+                            "label": [
+                                "4", 
+                                "9", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) Fee reduction or waiver\u2014"
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "4", 
+                                                "9", 
+                                                "c", 
+                                                "1", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) Commercial use requestors. A requestor of documents for commercial use will be assessed reasonable standard charges for the full allowable direct costs of searching for, reviewing for release and duplicating the records sought, according to the Commission's schedule of fees for those services as set forth at paragraph (c)(4) of this section. A commercial use requestor is not entitled to two hours of free search time nor 100 free pages of duplication of documents."
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "4", 
+                                                "9", 
+                                                "c", 
+                                                "1", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) Educational and non-commercial scientific institution requestors. The Commission will provide documents to requestors in this category for the cost of duplication of the records provided by the Commission in response to the request, according to the Commission's schedule of fees as set forth at paragraph (c)(4) of this section, excluding charges for the first 100 pages of duplication. Requestors in this category will not be charged for search time. To be eligible for inclusion in this category, requestors must show that the request is being made as authorized by and under the auspices of a qualifying institution and that the records are not sought for a commercial use, but are sought in furtherance of scholarly (if the request is from an educational institution) or scientific (if the request is from a non-commercial scientific institution) research."
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "4", 
+                                                "9", 
+                                                "c", 
+                                                "1", 
+                                                "iii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iii) Requestors who are representatives of the news media. The Commission will provide documents to requestors in this category for the cost of duplication of the records provided by the Commission in response to the request, according to the Commission's schedule of fees as set forth at paragraph (c)(4) of this section, excluding charges for the first 100 pages of duplication. Requestors in this category will not be charged for search time. To be eligible for inclusion in this category, the requestor must meet the criteria listed at 11 CFR 4.1(n) and his or her request must not be made for a commercial use. A request for records supporting the news dissemination function of the requestor shall not be considered to be a request that is for a commercial use."
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "4", 
+                                                "9", 
+                                                "c", 
+                                                "1", 
+                                                "iv"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iv) All other requestors. The Commission will charge requestors who do not fit into any of the categories listed in paragraph (c)(1)(i), (ii) or (iii) of this section the full direct costs of searching for and duplicating records in response to the request, according to the Commission's schedule of fees as set forth at paragraph (c)(4) of this section, excluding charges for the first two hours of search time and the first 100 pages of duplication. Requests from persons for records about themselves will continue to be treated under the fee provisions of the Privacy Act of 1974, which permit fees only for duplication."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "4", 
+                                        "9", 
+                                        "c", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) The FOIA services provided by the Commission in response to a FOIA request for which the requestor will be charged will depend upon the category of the requestor. The categories of FOIA requestors are as follows:"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "4", 
+                                        "9", 
+                                        "c", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) The Commission may assess fees for the full allowable direct costs of searching for documents in response to a request even if the Commission fails to locate any documents which are responsive to that request and, in the case of commercial use requestors, of reviewing documents located in response to a request which the Commission determines are exempt from disclosure."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "4", 
+                                        "9", 
+                                        "c", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) If the Commission estimates that search or duplication charges are likely to exceed $25.00, it will notify the requestor of the estimated amount of the fee unless the requestor has indicated in advance a willingness to pay a fee as high as that estimated by the Commission. Through this notification, the Commission will offer the requestor the opportunity to confer with Commission staff to reformulate the original request in order to meet the requestor's needs at a lower cost."
+                                }, 
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "4", 
+                                                        "9", 
+                                                        "c", 
+                                                        "4", 
+                                                        "p1", 
+                                                        "p1"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "", 
+                                                    "title": "Photocopying"
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "4", 
+                                                        "9", 
+                                                        "c", 
+                                                        "4", 
+                                                        "p1", 
+                                                        "p2"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "Photocopying from photocopying machines\u2014$.07 per page"
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "4", 
+                                                        "9", 
+                                                        "c", 
+                                                        "4", 
+                                                        "p1", 
+                                                        "p3"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "Photocopying from microfilm reader-printer\u2014$.15 per page"
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "4", 
+                                                        "9", 
+                                                        "c", 
+                                                        "4", 
+                                                        "p1", 
+                                                        "p4"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "Paper copies from microfilm-paper print machine\u2014$.05 per frame page"
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "4", 
+                                                        "9", 
+                                                        "c", 
+                                                        "4", 
+                                                        "p1", 
+                                                        "p5"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "", 
+                                                    "title": "Reels of Microfilm"
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "4", 
+                                                        "9", 
+                                                        "c", 
+                                                        "4", 
+                                                        "p1", 
+                                                        "p6"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "Daily film (partial or complete roll)\u2014$2.85 per roll"
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "4", 
+                                                        "9", 
+                                                        "c", 
+                                                        "4", 
+                                                        "p1", 
+                                                        "p7"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "Other film (partial or complete roll)\u2014$5.00 per roll"
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "4", 
+                                                        "9", 
+                                                        "c", 
+                                                        "4", 
+                                                        "p1", 
+                                                        "p8"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "", 
+                                                    "title": "Publications: (new or not from available stocks)"
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "4", 
+                                                        "9", 
+                                                        "c", 
+                                                        "4", 
+                                                        "p1", 
+                                                        "p9"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "Cost of photocopying document\u2014$.07 per page"
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "4", 
+                                                        "9", 
+                                                        "c", 
+                                                        "4", 
+                                                        "p1", 
+                                                        "p10"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "Cost of binding document\u2014$.30 per inch"
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "4", 
+                                                        "9", 
+                                                        "c", 
+                                                        "4", 
+                                                        "p1", 
+                                                        "p11"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "", 
+                                                    "title": "Publications: (available stock)"
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "4", 
+                                                        "9", 
+                                                        "c", 
+                                                        "4", 
+                                                        "p1", 
+                                                        "p12"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "If available from stock on hand, cost is based on previously calculated cost as stated in the publication (based on actual cost per copy, including reproduction and binding). Commission publications for which fees will be charged include, but are not limited to, the following: Advisory Opinion Index, Report on Financial Activity, Financial Control and Compliance Manual, MUR Index, and Guideline for Presentation in Good Order."
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "4", 
+                                                        "9", 
+                                                        "c", 
+                                                        "4", 
+                                                        "p1", 
+                                                        "p13"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "", 
+                                                    "title": "Computer Tapes"
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "4", 
+                                                        "9", 
+                                                        "c", 
+                                                        "4", 
+                                                        "p1", 
+                                                        "p14"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "Cost to process the request at the rate of $25.00 per hour connect time plus the cost of the computer tape ($25.00) and professional staff time (see Staff Time)."
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "4", 
+                                                        "9", 
+                                                        "c", 
+                                                        "4", 
+                                                        "p1", 
+                                                        "p15"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "", 
+                                                    "title": "Computer Indexes (including Name Searches)"
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "4", 
+                                                        "9", 
+                                                        "c", 
+                                                        "4", 
+                                                        "p1", 
+                                                        "p16"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "Cost to process the request at the rate of $25.00 per hour connect time plus the cost of professional staff time (see Staff Time)."
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "4", 
+                                                        "9", 
+                                                        "c", 
+                                                        "4", 
+                                                        "p1", 
+                                                        "p17"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "", 
+                                                    "title": "Staff Time"
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "4", 
+                                                        "9", 
+                                                        "c", 
+                                                        "4", 
+                                                        "p1", 
+                                                        "p18"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "Clerical: $4.50 per each half hour (agency average of staff below a GS-11) for each request."
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "4", 
+                                                        "9", 
+                                                        "c", 
+                                                        "4", 
+                                                        "p1", 
+                                                        "p19"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "Professional: $12.40 per each half hour (agency average of staff at GS-11 and above) for each request."
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "4", 
+                                                        "9", 
+                                                        "c", 
+                                                        "4", 
+                                                        "p1", 
+                                                        "p20"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "", 
+                                                    "title": "Other Charges"
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "4", 
+                                                        "9", 
+                                                        "c", 
+                                                        "4", 
+                                                        "p1", 
+                                                        "p21"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "Certification of a Document: $7.35 per quarter hour."
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "4", 
+                                                        "9", 
+                                                        "c", 
+                                                        "4", 
+                                                        "p1", 
+                                                        "p22"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "Transcripts of Commission meetings not previously transcribed: $7.50 per half hour (equivalent of a GS-11 executive secretary)."
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "4", 
+                                                        "9", 
+                                                        "c", 
+                                                        "4", 
+                                                        "p1", 
+                                                        "p23"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "The Commission will not charge a fee for ordinary packaging and mailing of records requested. When a request for special mailing or delivery services is received the Commission will package the records requested. The requestor will make all arrangements for pick-up and delivery of the requested materials. The requestor shall pay all costs associated with special mailing or delivery services directly to the courier or mail service."
+                                                }
+                                            ], 
+                                            "label": [
+                                                "4", 
+                                                "9", 
+                                                "c", 
+                                                "4", 
+                                                "p1"
+                                            ], 
+                                            "node_type": "extract", 
+                                            "text": ""
+                                        }
+                                    ], 
+                                    "label": [
+                                        "4", 
+                                        "9", 
+                                        "c", 
+                                        "4"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(4) The following is the schedule of the Commission's standard fees. The cost of staff time will be added to all of the following fees, generally at the Professional rate listed below, except for the cost of Photocopying from photocopying machines which has been calculated to include staff time."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "4", 
+                                        "9", 
+                                        "c", 
+                                        "5"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(5) Upon receipt of any request for the production of computer tape or microfilm, the Commission will advise the requestor of the identity of the private contractor who will perform the duplication services. If fees are charged for the production of computer tape or microfilm, they shall be made payable to that private contractor and shall be forwarded to the Commission."
+                                }
+                            ], 
+                            "label": [
+                                "4", 
+                                "9", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) Fees to be charged."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "4", 
+                                "9", 
+                                "d"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(d) Interest charges. FOIA requestors should pay fees within 30 days following the day on which the invoice for that request was sent to the requestor. If the invoice is unpaid on the 31st day following the day on which the invoice was sent, the Commission will begin assessing interest charges, which will accrue from the date the invoice was mailed. Interest will be charged at a rate that is equal to the average investment rate for the Treasury tax and loan accounts for the 12-month period ending on September 30 of each year, rounded to the nearest whole percentage point, pursuant to 31 U.S.C. 3717. The accrual of interest will be stayed by the Commission's receipt of the fee, even if the fee has not yet been processed."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "4", 
+                                "9", 
+                                "e"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(e) Aggregating requests. A requestor may not file multiple requests, each seeking portions of a document or documents, in order to avoid payment of fees. When the Commission reasonably believes that a FOIA requestor or group of requestors acting in concert is attempting to break a request down into a series of requests for the purpose of evading the assessment of fees, the Commission will aggregate any such requests and charge the appropriate fees. In making this determination, the Commission will consider the time period in which the requests have occurred, the relationship of the requestors, and the subject matter of the requests."
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "4", 
+                                        "9", 
+                                        "f", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) The Commission estimates or determines that allowable charges that a requestor may be required to pay are likely to exceed $250. In such a case, the Commission will notify the requestor of the likely cost and, where the requestor has a history of prompt payment of FOIA fees, obtain satisfactory assurance of full payment, or in the case of a requestor with no FOIA fee payment history, the Commission will require an advance payment of an amount up to the full estimated charges; or"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "4", 
+                                        "9", 
+                                        "f", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) A requestor has previously failed to pay a fee in a timely fashion (i.e., within 30 days of the date of the billing). In such a case, the Commission may require that the requestor pay the full amount owed plus any applicable interest or demonstrate that the fee has been paid and make an advance payment of the full amount of the estimated fee before the Commission begins to process a new request or a pending request from that requestor."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "4", 
+                                        "9", 
+                                        "f", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) If the provisions of paragraph (f) (1) or (2) of this section apply, the administrative time limits prescribed in 11 CFR 4.7(c) will begin only after the Commission has received the payments or the requestor has made acceptable arrangements to make the payments required by paragraph (f) (1) or (2) of this section."
+                                }
+                            ], 
+                            "label": [
+                                "4", 
+                                "9", 
+                                "f"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(f) Advance payments. The Commission will require a requestor to make an advance payment, i.e., a payment before work is commenced or continued on a request, when:"
+                        }
+                    ], 
+                    "label": [
+                        "4", 
+                        "9"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 4.9 Fees."
+                }
+            ], 
+            "label": [
+                "4", 
+                "Subpart"
+            ], 
+            "node_type": "emptypart", 
+            "text": ""
+        }
+    ], 
+    "label": [
+        "4"
+    ], 
+    "node_type": "regtext", 
+    "text": "", 
+    "title": "PART 4\u2014PUBLIC RECORDS AND THE FREEDOM OF INFORMATION ACT"
+}

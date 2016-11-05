@@ -1,0 +1,431 @@
+{
+    "children": [
+        {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "9032", 
+                                "1", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) Notwithstanding the definition at 11 CFR 100.5, authorized committee means with respect to candidates (as defined at 11 CFR 9032.2) seeking the nomination of a political party for the office of President, any political committee that is authorized by a candidate to solicit or receive contributions or to incur expenditures on behalf of the candidate. The term authorized committee includes the candidate's principal campaign committee designated in accordance with 11 CFR 102.12, any political committee authorized in writing by the candidate in accordance with 11 CFR 102.13, and any political committee not disavowed by the candidate in writing pursuant to 11 CFR 100.3(a)(3)."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "9032", 
+                                "1", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) Any withdrawal of an authorization shall be in writing and shall be addressed and filed in the same manner provided for at 11 CFR 102.12 or 102.13."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "9032", 
+                                "1", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) For the purposes of this subchapter, references to the \u201ccandidate\u201d and his or her responsibilities under this subchapter shall also be deemed to refer to the candidate's authorized committee(s)."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "9032", 
+                                "1", 
+                                "d"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(d) An expenditure by an authorized committee on behalf of the candidate who authorized the committee cannot qualify as an independent expenditure."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "9032", 
+                                "1", 
+                                "e"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(e) A delegate committee, as defined in 11 CFR 100.5(e)(5), is not an authorized committee of a candidate unless it also meets the requirements of 11 CFR 9032.1(a). Expenditures by delegate committees on behalf of a candidate may count against that candidate's expenditure limitation under the circumstances set forth in 11 CFR 110.14."
+                        }
+                    ], 
+                    "label": [
+                        "9032", 
+                        "1"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 9032.1 Authorized committee."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "9032", 
+                                "2", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) Takes the action necessary under the law of a State to qualify for a caucus, convention, primary election or run-off election;"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "9032", 
+                                "2", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) Receives contributions or incurs qualified campaign expenses;"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "9032", 
+                                "2", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) Gives consent to any other person to receive contributions or to incur qualified campaign expenses on his or her behalf; or"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "9032", 
+                                "2", 
+                                "d"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(d) Receives written notification from the Commission that any other person is receiving contributions or making expenditures on the individual's behalf and fails to disavow that activity by letter to the Commission within 30 calendar days after receipt of notification."
+                        }
+                    ], 
+                    "label": [
+                        "9032", 
+                        "2"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "Candidate means an individual who seeks nomination for election to the office of President of the United States. An individual is considered to seek nomination for election if he or she\u2014", 
+                    "title": "\u00a7 9032.2 Candidate."
+                }, 
+                {
+                    "children": [], 
+                    "label": [
+                        "9032", 
+                        "3"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "Commission means the Federal Election Commission, 999 E Street NW., Washington, DC 20463.", 
+                    "title": "\u00a7 9032.3 Commission."
+                }, 
+                {
+                    "children": [], 
+                    "label": [
+                        "9032", 
+                        "4"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "For purposes of this subchapter, contribution has the same meaning given the term under 52 U.S.C. 30101(8)(A) and 11 CFR part 100, subparts B and C, except as provided at 11 CFR 9034.4(b)(4).", 
+                    "title": "\u00a7 9032.4 Contribution."
+                }, 
+                {
+                    "children": [], 
+                    "label": [
+                        "9032", 
+                        "5"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "Matching payment account means the Presidential Primary Matching Payment Account established by the Secretary of the Treasury under 26 U.S.C. 9037(a).", 
+                    "title": "\u00a7 9032.5 Matching payment account."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "9032", 
+                                "6", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) For a candidate seeking the nomination of a party which nominates its Presidential candidate at a national convention, the date on which the party nominates its candidate."
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9032", 
+                                        "6", 
+                                        "b", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) The date the party nominates its Presidential candidate, or"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9032", 
+                                        "6", 
+                                        "b", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) The last day of the last national convention held by a major party in the calendar year."
+                                }
+                            ], 
+                            "label": [
+                                "9032", 
+                                "6", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) For a candidate seeking the nomination of a party which does not make its nomination at a national convention, the earlier of\u2014"
+                        }
+                    ], 
+                    "label": [
+                        "9032", 
+                        "6"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "Matching payment period means the period beginning January 1 of the calendar year in which a Presidential general election is held and may not exceed one of the following dates:", 
+                    "title": "\u00a7 9032.6 Matching payment period."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9032", 
+                                        "7", 
+                                        "a", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) For the selection of delegates to a national nominating convention of a political party;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9032", 
+                                        "7", 
+                                        "a", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) For the expression of a preference for the nomination of Presidential candidates;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9032", 
+                                        "7", 
+                                        "a", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) For the purposes stated in both paragraphs (a) (1) and (2) of this section; or"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9032", 
+                                        "7", 
+                                        "a", 
+                                        "4"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(4) To nominate a Presidential candidate."
+                                }
+                            ], 
+                            "label": [
+                                "9032", 
+                                "7", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) Primary election means an election held by a State or a political party, including a run-off election, or a nominating convention or a caucus\u2014"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "9032", 
+                                "7", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) If separate primary elections are held in a State by the State and a political party, the primary election for the purposes of this subchapter will be the election held by the political party."
+                        }
+                    ], 
+                    "label": [
+                        "9032", 
+                        "7"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 9032.7 Primary election."
+                }, 
+                {
+                    "children": [], 
+                    "label": [
+                        "9032", 
+                        "8"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "Political committee means any committee, club, association, organization or other group of persons (whether or not incorporated) which accepts contributions or incurs qualified campaign expenses for the purpose of influencing, or attempting to influence, the nomination of any individual for election to the office of President of the United States.", 
+                    "title": "\u00a7 9032.8 Political committee."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9032", 
+                                        "9", 
+                                        "a", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Incurred by or on behalf of a candidate or his or her authorized committees from the date the individual becomes a candidate through the last day of the candidate's eligibility as determined under 11 CFR 9033.5;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9032", 
+                                        "9", 
+                                        "a", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Made in connection with his or her campaign for nomination; and"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9032", 
+                                        "9", 
+                                        "a", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) Neither the incurrence nor payment of which constitutes a violation of any law of the United States or of any law of any State in which the expense is incurred or paid, or of any regulation prescribed under such law of the United States or of any State, except that any State law which has been preempted by the Federal Election Campaign Act of 1971, as amended, will not be considered a State law for purposes of this subchapter."
+                                }
+                            ], 
+                            "label": [
+                                "9032", 
+                                "9", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) Qualified campaign expense means a purchase, payment, distribution, loan, advance, deposit, or gift of money or anything of value\u2014"
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9032", 
+                                        "9", 
+                                        "b", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) An authorized committee or any other agent of the candidate for purposes of making an expenditure;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9032", 
+                                        "9", 
+                                        "b", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Any person authorized or requested by the candidate, an authorized committee of the candidate, or an agent of the candidate to make the expenditure; or"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9032", 
+                                        "9", 
+                                        "b", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) A committee which has been requested by the candidate, by an authorized committee of the candidate, or by an agent of the candidate to make the expenditure, even though such committee is not authorized in writing."
+                                }
+                            ], 
+                            "label": [
+                                "9032", 
+                                "9", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) An expenditure is made on behalf of a candidate, including a Vice Presidential candidate, if it is made by\u2014"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "9032", 
+                                "9", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) Except as provided in 11 CFR 9034.4(e), expenditures incurred either prior to the date the individual becomes a candidate or after the last day of a candidate's eligibility will be considered qualified campaign expenses if they meet the provisions of 11 CFR 9034.4(a). Expenditures described under 11 CFR 9034.4(b) will not be considered qualified campaign expenses."
+                        }
+                    ], 
+                    "label": [
+                        "9032", 
+                        "9"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 9032.9 Qualified campaign expense."
+                }, 
+                {
+                    "children": [], 
+                    "label": [
+                        "9032", 
+                        "10"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "For purposes of this subchapter, Secretary means the Secretary of the Treasury.", 
+                    "title": "\u00a7 9032.10 Secretary."
+                }, 
+                {
+                    "children": [], 
+                    "label": [
+                        "9032", 
+                        "11"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "State means each State of the United States, Puerto Rico, American Samoa, the Virgin Islands, the District of Columbia, and Guam.", 
+                    "title": "\u00a7 9032.11 State."
+                }
+            ], 
+            "label": [
+                "9032", 
+                "Subpart"
+            ], 
+            "node_type": "emptypart", 
+            "text": ""
+        }
+    ], 
+    "label": [
+        "9032"
+    ], 
+    "node_type": "regtext", 
+    "text": "", 
+    "title": "PART 9032\u2014DEFINITIONS"
+}

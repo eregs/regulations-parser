@@ -1,0 +1,679 @@
+{
+    "104-13-b-2": [
+        {
+            "offsets": [
+                [
+                    360, 
+                    374
+                ]
+            ], 
+            "ref": "identification:104-20-a-4"
+        }
+    ], 
+    "104-18-a-1": [
+        {
+            "offsets": [
+                [
+                    60, 
+                    67
+                ], 
+                [
+                    140, 
+                    147
+                ]
+            ], 
+            "ref": "report:104-18-c"
+        }
+    ], 
+    "104-18-a-2": [
+        {
+            "offsets": [
+                [
+                    238, 
+                    245
+                ], 
+                [
+                    339, 
+                    346
+                ], 
+                [
+                    443, 
+                    450
+                ]
+            ], 
+            "ref": "report:104-18-c"
+        }
+    ], 
+    "104-18-b": [
+        {
+            "offsets": [
+                [
+                    63, 
+                    70
+                ], 
+                [
+                    231, 
+                    238
+                ], 
+                [
+                    369, 
+                    376
+                ], 
+                [
+                    418, 
+                    425
+                ], 
+                [
+                    602, 
+                    609
+                ]
+            ], 
+            "ref": "report:104-18-c"
+        }
+    ], 
+    "104-18-d": [
+        {
+            "offsets": [
+                [
+                    27, 
+                    34
+                ]
+            ], 
+            "ref": "report:104-18-c"
+        }
+    ], 
+    "104-18-e": [
+        {
+            "offsets": [
+                [
+                    18, 
+                    25
+                ]
+            ], 
+            "ref": "report:104-18-c"
+        }
+    ], 
+    "104-18-e-1": [
+        {
+            "offsets": [
+                [
+                    71, 
+                    77
+                ], 
+                [
+                    94, 
+                    100
+                ], 
+                [
+                    306, 
+                    312
+                ]
+            ], 
+            "ref": "report:104-18-c"
+        }
+    ], 
+    "104-18-e-2": [
+        {
+            "offsets": [
+                [
+                    6, 
+                    12
+                ], 
+                [
+                    179, 
+                    185
+                ], 
+                [
+                    305, 
+                    311
+                ]
+            ], 
+            "ref": "report:104-18-c"
+        }
+    ], 
+    "104-18-f": [
+        {
+            "offsets": [
+                [
+                    86, 
+                    92
+                ], 
+                [
+                    300, 
+                    306
+                ], 
+                [
+                    358, 
+                    364
+                ]
+            ], 
+            "ref": "report:104-18-c"
+        }, 
+        {
+            "offsets": [
+                [
+                    12, 
+                    19
+                ]
+            ], 
+            "ref": "report:104-18-c"
+        }
+    ], 
+    "104-18-g": [
+        {
+            "offsets": [
+                [
+                    134, 
+                    140
+                ], 
+                [
+                    194, 
+                    200
+                ], 
+                [
+                    551, 
+                    557
+                ], 
+                [
+                    822, 
+                    828
+                ]
+            ], 
+            "ref": "report:104-18-c"
+        }
+    ], 
+    "104-18-h-2": [
+        {
+            "offsets": [
+                [
+                    24, 
+                    30
+                ]
+            ], 
+            "ref": "report:104-18-c"
+        }
+    ], 
+    "104-18-h-3": [
+        {
+            "offsets": [
+                [
+                    24, 
+                    30
+                ]
+            ], 
+            "ref": "report:104-18-c"
+        }
+    ], 
+    "104-18-i": [
+        {
+            "offsets": [
+                [
+                    37, 
+                    43
+                ], 
+                [
+                    142, 
+                    148
+                ], 
+                [
+                    207, 
+                    213
+                ], 
+                [
+                    327, 
+                    333
+                ]
+            ], 
+            "ref": "report:104-18-c"
+        }, 
+        {
+            "offsets": [
+                [
+                    20, 
+                    27
+                ]
+            ], 
+            "ref": "report:104-18-c"
+        }
+    ], 
+    "104-20-a-1-i": [
+        {
+            "offsets": [
+                [
+                    63, 
+                    83
+                ]
+            ], 
+            "ref": "publicly distributed:104-20-a-5"
+        }
+    ], 
+    "104-20-a-1-ii": [
+        {
+            "offsets": [
+                [
+                    418, 
+                    433
+                ]
+            ], 
+            "ref": "disclosure date:104-20-a-1"
+        }, 
+        {
+            "offsets": [
+                [
+                    94, 
+                    114
+                ]
+            ], 
+            "ref": "publicly distributed:104-20-a-5"
+        }
+    ], 
+    "104-20-b": [
+        {
+            "offsets": [
+                [
+                    289, 
+                    304
+                ]
+            ], 
+            "ref": "disclosure date:104-20-a-1"
+        }
+    ], 
+    "104-20-c-1": [
+        {
+            "offsets": [
+                [
+                    8, 
+                    22
+                ]
+            ], 
+            "ref": "identification:104-20-a-4"
+        }
+    ], 
+    "104-20-c-2": [
+        {
+            "offsets": [
+                [
+                    8, 
+                    22
+                ]
+            ], 
+            "ref": "identification:104-20-a-4"
+        }
+    ], 
+    "104-20-c-3": [
+        {
+            "offsets": [
+                [
+                    8, 
+                    22
+                ]
+            ], 
+            "ref": "identification:104-20-a-4"
+        }
+    ], 
+    "104-20-c-4": [
+        {
+            "offsets": [
+                [
+                    194, 
+                    208
+                ]
+            ], 
+            "ref": "identification:104-20-a-4"
+        }
+    ], 
+    "104-20-c-6": [
+        {
+            "offsets": [
+                [
+                    8, 
+                    23
+                ]
+            ], 
+            "ref": "disclosure date:104-20-a-1"
+        }
+    ], 
+    "104-21-b-2": [
+        {
+            "offsets": [
+                [
+                    106, 
+                    120
+                ], 
+                [
+                    212, 
+                    226
+                ]
+            ], 
+            "ref": "identification:104-20-a-4"
+        }
+    ], 
+    "104-22-a-4": [
+        {
+            "offsets": [
+                [
+                    4, 
+                    27
+                ]
+            ], 
+            "ref": "established or controls:104-22-a-3"
+        }
+    ], 
+    "104-22-a-4-i": [
+        {
+            "offsets": [
+                [
+                    61, 
+                    84
+                ]
+            ], 
+            "ref": "established or controls:104-22-a-3"
+        }
+    ], 
+    "104-22-g-1": [
+        {
+            "offsets": [
+                [
+                    352, 
+                    363
+                ]
+            ], 
+            "ref": "base period:104-22-g-3"
+        }
+    ], 
+    "104-3-a-4": [
+        {
+            "offsets": [
+                [
+                    111, 
+                    125
+                ]
+            ], 
+            "ref": "identification:104-20-a-4"
+        }
+    ], 
+    "104-3-a-4-iv": [
+        {
+            "offsets": [
+                [
+                    165, 
+                    179
+                ]
+            ], 
+            "ref": "identification:104-20-a-4"
+        }
+    ], 
+    "104-4-b-2": [
+        {
+            "offsets": [
+                [
+                    546, 
+                    566
+                ], 
+                [
+                    961, 
+                    981
+                ]
+            ], 
+            "ref": "publicly distributed:104-20-a-5"
+        }
+    ], 
+    "104-4-c": [
+        {
+            "offsets": [
+                [
+                    469, 
+                    489
+                ], 
+                [
+                    918, 
+                    938
+                ]
+            ], 
+            "ref": "publicly distributed:104-20-a-5"
+        }
+    ], 
+    "104-4-f": [
+        {
+            "offsets": [
+                [
+                    384, 
+                    404
+                ], 
+                [
+                    538, 
+                    558
+                ]
+            ], 
+            "ref": "publicly distributed:104-20-a-5"
+        }
+    ], 
+    "104-5-f": [
+        {
+            "offsets": [
+                [
+                    547, 
+                    561
+                ]
+            ], 
+            "ref": "identification:104-20-a-4"
+        }
+    ], 
+    "104-5-g-1": [
+        {
+            "offsets": [
+                [
+                    317, 
+                    337
+                ]
+            ], 
+            "ref": "publicly distributed:104-20-a-5"
+        }
+    ], 
+    "104-5-g-2": [
+        {
+            "offsets": [
+                [
+                    315, 
+                    335
+                ]
+            ], 
+            "ref": "publicly distributed:104-20-a-5"
+        }
+    ], 
+    "104-5-j": [
+        {
+            "offsets": [
+                [
+                    160, 
+                    225
+                ]
+            ], 
+            "ref": "direct costs of producing or airing electioneering communications:104-20-a-2"
+        }, 
+        {
+            "offsets": [
+                [
+                    425, 
+                    440
+                ]
+            ], 
+            "ref": "disclosure date:104-20-a-1"
+        }
+    ], 
+    "104-7-b": [
+        {
+            "offsets": [
+                [
+                    33, 
+                    47
+                ]
+            ], 
+            "ref": "identification:104-20-a-4"
+        }
+    ], 
+    "104-7-b-1-i": [
+        {
+            "offsets": [
+                [
+                    269, 
+                    284
+                ]
+            ], 
+            "ref": "identification:104-20-a-4"
+        }
+    ], 
+    "104-7-b-3": [
+        {
+            "offsets": [
+                [
+                    201, 
+                    216
+                ]
+            ], 
+            "ref": "identification:104-20-a-4"
+        }
+    ], 
+    "104-7-b-4-i-A": [
+        {
+            "offsets": [
+                [
+                    126, 
+                    141
+                ]
+            ], 
+            "ref": "identification:104-20-a-4"
+        }
+    ], 
+    "104-7-b-4-i-B": [
+        {
+            "offsets": [
+                [
+                    168, 
+                    183
+                ]
+            ], 
+            "ref": "identification:104-20-a-4"
+        }
+    ], 
+    "104-8-a": [
+        {
+            "offsets": [
+                [
+                    55, 
+                    69
+                ], 
+                [
+                    187, 
+                    201
+                ]
+            ], 
+            "ref": "identification:104-20-a-4"
+        }
+    ], 
+    "104-8-b": [
+        {
+            "offsets": [
+                [
+                    330, 
+                    344
+                ], 
+                [
+                    1030, 
+                    1044
+                ]
+            ], 
+            "ref": "identification:104-20-a-4"
+        }
+    ], 
+    "referenced": {
+        "base period:104-22-g-3": {
+            "position": [
+                49, 
+                60
+            ], 
+            "reference": "104-22-g-3", 
+            "term": "base period"
+        }, 
+        "designations or other means of recognizing bundled contributions:104-22-a-6-ii-A-p2357146577": {
+            "position": [
+                0, 
+                64
+            ], 
+            "reference": "104-22-a-6-ii-A-p2357146577", 
+            "term": "designations or other means of recognizing bundled contributions"
+        }, 
+        "direct costs of producing or airing electioneering communications:104-20-a-2": {
+            "position": [
+                4, 
+                69
+            ], 
+            "reference": "104-20-a-2", 
+            "term": "direct costs of producing or airing electioneering communications"
+        }, 
+        "disclosure date:104-20-a-1": {
+            "position": [
+                4, 
+                19
+            ], 
+            "reference": "104-20-a-1", 
+            "term": "disclosure date"
+        }, 
+        "established or controls:104-22-a-3": {
+            "position": [
+                111, 
+                134
+            ], 
+            "reference": "104-22-a-3", 
+            "term": "established or controls"
+        }, 
+        "forwarded contribution:104-22-a-6-i": {
+            "position": [
+                4, 
+                26
+            ], 
+            "reference": "104-22-a-6-i", 
+            "term": "forwarded contribution"
+        }, 
+        "identification:104-20-a-4": {
+            "position": [
+                4, 
+                18
+            ], 
+            "reference": "104-20-a-4", 
+            "term": "identification"
+        }, 
+        "persons sharing or exercising direction or control:104-20-a-3": {
+            "position": [
+                4, 
+                54
+            ], 
+            "reference": "104-20-a-3", 
+            "term": "persons sharing or exercising direction or control"
+        }, 
+        "publicly distributed:104-20-a-5": {
+            "position": [
+                4, 
+                24
+            ], 
+            "reference": "104-20-a-5", 
+            "term": "publicly distributed"
+        }, 
+        "received and credited contribution:104-22-a-6-ii": {
+            "position": [
+                5, 
+                39
+            ], 
+            "reference": "104-22-a-6-ii", 
+            "term": "received and credited contribution"
+        }, 
+        "report:104-18-c": {
+            "position": [
+                56, 
+                62
+            ], 
+            "reference": "104-18-c", 
+            "term": "report"
+        }
+    }
+}

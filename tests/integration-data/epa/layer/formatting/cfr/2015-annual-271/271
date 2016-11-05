@@ -1,0 +1,1248 @@
+{
+    "271-1-j-2-p2": [
+        {
+            "locations": [
+                0
+            ], 
+            "table_data": {
+                "caption": "Table 1\u2014Regulations Implementing the Hazardous and Solid Waste Amendments of 1984", 
+                "header": [
+                    [
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Promulgation date"
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Title of regulation"
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Federal Register reference"
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Effective date"
+                        }
+                    ]
+                ], 
+                "rows": [
+                    [
+                        "Jan. 14, 1985", 
+                        "Dioxin-containing wastes", 
+                        "50 FR 1978-2006", 
+                        "July 15, 1985."
+                    ], 
+                    [
+                        "Apr. 30, 1985", 
+                        "Paint filter liquids test", 
+                        "50 FR 18370-5", 
+                        "June 14, 1985."
+                    ], 
+                    [
+                        "July 15, 1985", 
+                        "Codification rule [as corrected in 51 FR 2702, 1/21/86]", 
+                        "50 FR 28702-55", 
+                        "July 15, 1985."
+                    ], 
+                    [
+                        "Oct. 23, 1985", 
+                        "Listing wastes from the production of dinitrotoluene, toluenediamine, and toluene diisocyanate", 
+                        "50 FR 42936-43", 
+                        "Oct. 23, 1985."
+                    ], 
+                    [
+                        "Nov. 29, 1985", 
+                        "Standards for the management of the burning of specific wastes in specific types of facilities", 
+                        "50 FR 49164-212", 
+                        "Dec. 9, 1985. Mar. 31, 1986.\n              May 29, 1986."
+                    ], 
+                    [
+                        "Dec. 31, 1985", 
+                        "Amendment of spent solvent listings to include solvent mixtures [as corrected in 51 FR 19176, 5/28/86]", 
+                        "50 FR 53315-20", 
+                        "Jan. 30, 1986."
+                    ], 
+                    [
+                        "Feb. 13, 1986", 
+                        "Listing wastes from the production of ethylene dibromide (EDB)", 
+                        "51FR 5327-31", 
+                        "Aug. 13, 1986."
+                    ], 
+                    [
+                        "Feb. 25, 1986", 
+                        "Listing of four spent solvents and the still bottoms from their recovery", 
+                        "51 FR 6537-42", 
+                        "Aug. 25, 1986."
+                    ], 
+                    [
+                        "Mar. 24, 1986", 
+                        "Regulations for generators of 100-1000 kg/mo of hazardous waste", 
+                        "51 FR 10146-76", 
+                        "Sept. 22, 1986."
+                    ], 
+                    [
+                        "July 14, 1986", 
+                        "Hazardous Waste Tank Regulations:\u2009[^1](These regulations implement HSWA only to the extent that they apply to tank systems owned or operated by small quantity generators, establish leak detection requirements for all new underground tank systems, and establish permitting standards for underground tank systems that cannot be entered for inspection.) 260.10; 262.34(a)(1); 264.110; 264.140; 264.190-264.199; 265.110; 265.140; 265.190-265.200; 270.14(b); 270.16; and 270.72 (e)", 
+                        "51 FR 25422-86", 
+                        "Jan. 12, 1987. Mar. 24, 1987."
+                    ], 
+                    [
+                        "Aug. 8, 1986", 
+                        "Exports of hazardous waste", 
+                        "51 FR 28664-86", 
+                        "Nov. 8, 1986."
+                    ], 
+                    [
+                        "Oct. 24, 1986", 
+                        "Listing Wastes from the Production and Formulation of Ethylenebisdithiocarbamic Acid (EBDC) and its Salts", 
+                        "51 FR 37725", 
+                        "Apr. 24, 1987."
+                    ], 
+                    [
+                        "Nov. 7, 1986", 
+                        "Land disposal restrictions for solvents and dioxins", 
+                        "51 FR 40572", 
+                        "Nov. 8, 1986."
+                    ], 
+                    [
+                        "July 8, 1987", 
+                        "Land disposal restrictions for California list wastes", 
+                        "52 FR 25760", 
+                        "July 8, 1987."
+                    ], 
+                    [
+                        "Sept. 23, 1987", 
+                        "Exception Reporting for Small Quantity Generators of Hazardous Waste", 
+                        "52 FR 35899", 
+                        "Mar. 23, 1988."
+                    ], 
+                    [
+                        "Dec. 1, 1987", 
+                        "Codification rule for the 1984 RCRA Amendments", 
+                        "52 FR 45799", 
+                        "Dec. 31, 1987."
+                    ], 
+                    [
+                        "Aug. 17, 1988", 
+                        "Land disposal restrictions for First Third wastes", 
+                        "53 FR 31138-222", 
+                        "Aug. 8, 1988."
+                    ], 
+                    [
+                        "June 23, 1989", 
+                        "Land Disposal Restrictions for Second Third wastes", 
+                        "54 FR 26594-652", 
+                        "June 8, 1989."
+                    ], 
+                    [
+                        "Oct. 6, 1989", 
+                        "Listing Wastes from the Production of Methyl Bromide", 
+                        "54 FR 41402-408", 
+                        "Apr. 6, 1990."
+                    ], 
+                    [
+                        "Dec. 11, 1989", 
+                        "Listing Certain Hydrocarbons Produced by Free Radical Catalyzed Processes", 
+                        "54 FR 50968-978", 
+                        "June 11, 1990."
+                    ], 
+                    [
+                        "Mar. 29, 1990", 
+                        "Toxicity characteristic", 
+                        "55 FR 11798-877", 
+                        "Sept. 25, 1990."
+                    ], 
+                    [
+                        "May 1, 1990", 
+                        "Listing Wastes from the Production of UDMH from Carboxylic Acid Hydrazides", 
+                        "55 FR 18496-506", 
+                        "Nov. 2, 1990."
+                    ], 
+                    [
+                        "June 1, 1990", 
+                        "Land Disposal Restrictions for Third Third wastes", 
+                        "55 FR 22520-720", 
+                        "May 8, 1990."
+                    ], 
+                    [
+                        "June 21, 1990", 
+                        "Process Vent and Equipment Leak Organic Air Emission Standards for Owners and Operators of Hazardous Waste Treatment, Storage, and Disposal Facilities", 
+                        "55 FR 25454-519", 
+                        "Dec. 21, 1990."
+                    ], 
+                    [
+                        "Nov. 2, 1990", 
+                        "Petroleum refinery primary and secondary oil/water/solids separation sludge listings", 
+                        "55 FR 46354-397", 
+                        "May 2, 1991."
+                    ], 
+                    [
+                        "Dec. 6, 1990", 
+                        "The listing of wastes from wood preserving processes.\u2009[^2](These regulations, including test methods for benzo\\(k\\)fluoranthene and technical standards for drip pads, implement HSWA only to the extent that they apply to the listing of Hazardous Waste No. F032, and wastes that are hazardous because they exhibit the Toxicity Characteristic. These regulations, including test methods for benzo\\(k\\)fluoranthene and technical standards for drip pads, do not implement HSWA to the extent that they apply to the listings of Hazardous Waste Nos. F034 and F035.)", 
+                        "55 FR 50450-490", 
+                        "June 6, 1991."
+                    ], 
+                    [
+                        "Dec. 31, 1990", 
+                        "Burning of Hazardous Waste in Boilers and Industrial Furnaces", 
+                        "56 FR 7134-7240", 
+                        "Aug. 21, 1991."
+                    ], 
+                    [
+                        "May 13, 1991", 
+                        "Petroleum refinery primary and secondary oil/water/solids separation sludge listings", 
+                        "56 FR 21959", 
+                        "May 2, 1991."
+                    ], 
+                    [
+                        "Aug. 19, 1991", 
+                        "Land disposal restrictions & generic exclusion for K061 nonwastewaters & conditional exclusion for K061 HTMR splash condenser dross residue", 
+                        "56 FR 41178", 
+                        "Aug. 8, 1991."
+                    ], 
+                    [
+                        "Jan. 29, 1992", 
+                        "Liners and Leak Detection for Hazardous Waste Land Disposal Units\u2009[^3](The following portions of this rule are not HSWA regulations: \u00a7\u00a7\u2009264.19 and 265.19 for final covers.)", 
+                        "57 FR 3497", 
+                        "July 29, 1992."
+                    ], 
+                    [
+                        "June 22, 1992", 
+                        "Exclusion from the definition of solid waste for the recycling of hazardous wastes in the coke by-products industry", 
+                        "57 FR 27888", 
+                        "June 22, 1992."
+                    ], 
+                    [
+                        "Aug. 18, 1992", 
+                        "Land disposal restrictions for newly listed wastes in \u00a7\u2009268.36 (b)-(g)", 
+                        "57 FR 37282", 
+                        "June 30, 1992."
+                    ], 
+                    [
+                        "Do", 
+                        "Land disposal restrictions for newly listed wastes in \u00a7\u2009268.36(a), hazardous debris, and generic exclusion for K062 and F006 nonwaste-waters", 
+                        "......Do", 
+                        "Nov. 9, 1992."
+                    ], 
+                    [
+                        "Aug. 18, 1992", 
+                        "The listing of wastes from the production, recovery, and refining of coke by-products produced from coal", 
+                        "57 FR 37306", 
+                        "Feb. 18, 1993"
+                    ], 
+                    [
+                        "Oct. 15, 1992", 
+                        "Listing Wastes from the Production of Chlorinated Toluenes", 
+                        "57 FR 47386", 
+                        "Apr. 15, 1993."
+                    ], 
+                    [
+                        "Nov. 18, 1992", 
+                        "Containerized Liquids in Landfills", 
+                        "57 FR 54461", 
+                        "May 18, 1992."
+                    ], 
+                    [
+                        "Nov. 24, 1992", 
+                        "Toxicity Characteristic Revision", 
+                        "57 FR 55117", 
+                        "Nov. 24, 1992."
+                    ], 
+                    [
+                        "Feb. 16, 1993", 
+                        "Corrective Action Management Units and Temporary Units; Corrective Action Provisions under Subtitle C", 
+                        "58 FR 8685", 
+                        "Apr. 19, 1993."
+                    ], 
+                    [
+                        "May 24, 1993", 
+                        "Land disposal restrictions for characteristic wastes whose treatment standards were vacated", 
+                        "58 FR 29887", 
+                        "Aug. 9, 1993."
+                    ], 
+                    [
+                        "Nov. 9, 1993", 
+                        "Burning of hazardous waste in boilers and industrial furnaces", 
+                        "58 FR 59603", 
+                        "Oct. 15, 1993."
+                    ], 
+                    [
+                        "Sept. 19, 1994", 
+                        "Land Disposal Restrictions Phase II\u2014Universal Treatment Standards, and Treatment Standards for Organic Toxicity Characteristic Wastes and Newly Listed Wastes\u2009[^4](The following portions of this rule are not HSWA regulations: \u00a7\u00a7\u2009260.30, 260.31, 261.2.) in \u00a7\u2009268.38", 
+                        "47982-48110", 
+                        "Dec. 19, 1994."
+                    ], 
+                    [
+                        "Dec. 6, 1994", 
+                        "Air Emission Standards for Tanks, Surface Impoundments, and Containers", 
+                        "59 FR 62896-62953", 
+                        "Dec. 6, 1996."
+                    ], 
+                    [
+                        "Feb. 9, 1995", 
+                        "Listing Wastes from the Production of Carbamates", 
+                        "60 FR 7856", 
+                        "Aug. 9, 1995."
+                    ], 
+                    [
+                        "July 11, 1995", 
+                        "Containerized Liquids in Landfills", 
+                        "60 FR 35706", 
+                        "Sept. 11, 1995."
+                    ], 
+                    [
+                        "Apr. 8, 1996", 
+                        "Land Disposal Restrictions Phase III\u2014Decharacterized Wastewaters, Carbamate Wastes, and Spent Aluminum Potliners in \u00a7\u2009268.39", 
+                        "61 FR 15660", 
+                        "July 8, 1996."
+                    ], 
+                    [
+                        "July 1, 1996", 
+                        "Revisions to Criteria applicable to solid waste facilities that may accept CESQG hazardous wastes, excluding MSWLF's", 
+                        "61 FR 34278", 
+                        "Jan. 1, 1998."
+                    ], 
+                    [
+                        "Aug. 26, 1996", 
+                        "Emergency Revision of the Land Disposal Restrictions (LDR) Phase III Treatment Standards for Listed Hazardous Wastes from Carbamate Production", 
+                        "61 FR 43931.", 
+                        "Aug. 26, 1996 until Aug. 26, 1997."
+                    ], 
+                    [
+                        "May 12, 1997", 
+                        "Land Disposal Restrictions for Wood Preserving Wastes and Paperwork Reductions", 
+                        "62 FR 26040", 
+                        "Aug. 11, 1997."
+                    ], 
+                    [
+                        "June 17, 1997", 
+                        "Vacated Carbamate wastes", 
+                        "62 FR 32979", 
+                        "Aug. 9, 1995."
+                    ], 
+                    [
+                        "Aug. 28, 1997", 
+                        "Second Emergency Revision of the Land Disposal Restrictions (LDR) Phase III Treatment Standards for Listed Hazardous Wastes from Carbamate Production.", 
+                        "62 FR 45572", 
+                        "Aug. 26, 1997 until Aug. 26, 1998."
+                    ], 
+                    [
+                        "May 4, 1998", 
+                        "Listing of Organobromine Production Wastes", 
+                        "63 FR 24627", 
+                        "Nov. 4, 1998."
+                    ], 
+                    [
+                        "May 26, 1998", 
+                        "Land Disposal Restrictions Phase IV Final Rule", 
+                        "63 FR 28753", 
+                        "Aug. 24, 1998."
+                    ], 
+                    [
+                        "Aug. 6, 1998", 
+                        "Petroleum Refining Process Wastes", 
+                        "63 FR 42188", 
+                        "Feb. 8, 1999."
+                    ], 
+                    [
+                        "Sept. 4, 1998", 
+                        "Emergency Revision of the Land Disposal Restrictions (LDR) Phase III Treatment Standards for Listed Hazardous Wastes from Carbamate Production", 
+                        "63 FR 47418", 
+                        "Sept. 4, 1998."
+                    ], 
+                    [
+                        "Sept. 21, 1998", 
+                        "Treatment Standards for Hazardous Waste K088", 
+                        "63 FR 51267", 
+                        "Sept. 21, 1998."
+                    ], 
+                    [
+                        "Nov. 30, 1998", 
+                        "Hazardous Remediation Waste Management Requirements\u2009[^5](These regulations implement HSWA only to the extent that they apply to the standards for staging piles and to \u00a7\u00a7\u2009264.1\\(j\\) and 264.101\\(d\\) of this chapter.)", 
+                        "63 FR 65947", 
+                        "June 1, 1999."
+                    ], 
+                    [
+                        "Sept. 30, 1999", 
+                        "Standards for Hazardous Air Pollutants for Hazardous Waste Combustors", 
+                        "64 FR 53077", 
+                        "Sept. 30, 1999."
+                    ], 
+                    [
+                        "Mar. 17, 2000", 
+                        "Vacated Organobromine wastes", 
+                        "65 FR 14475", 
+                        "Nov. 4, 1998."
+                    ], 
+                    [
+                        "Sept. 29, 2000", 
+                        "Listing of Hazardous Wastes K174 and K175", 
+                        "65 FR 67132", 
+                        "May 7, 2001."
+                    ], 
+                    [
+                        "Oct. 31, 2001", 
+                        "Listing of Inorganic Chemical Manufacturing Wastes", 
+                        "67 FR 58299", 
+                        "May 20, 2002."
+                    ], 
+                    [
+                        "Feb. 13, 2002", 
+                        "Interim Standards for Hazardous Air Pollutants for Hazardous Waste Combustors", 
+                        "67 FR 6818, Feb. 13, 2002", 
+                        "Feb. 13, 2002."
+                    ], 
+                    [
+                        "Sept. 30, 2002", 
+                        "Land Disposal Restrictions: National Treatment Variance to Designate New Treatment Subcategories for Radioactively Contaminated Cadmium-, Mercury-, and Silver-Containing Batteries", 
+                        "67 FR 62624, Oct. 7, 2002", 
+                        "Nov. 21, 2002"
+                    ], 
+                    [
+                        "Jan. 22, 2002", 
+                        "Corrective Action Management Unit\n              Standards\n              Amendments", 
+                        "67 FR 3029, Jan. 22, 2002", 
+                        "April 22, 2002."
+                    ], 
+                    [
+                        "July 15, 2002", 
+                        "Elimination of LDR Treatment Standards Exemption for K061-Derived Fertilizers", 
+                        "July 24, 2002", 
+                        "Jan. 24, 2003."
+                    ], 
+                    [
+                        "Feb. 15, 2005", 
+                        "Listing of Hazards Waste K181", 
+                        "70 FR 9179", 
+                        "Aug. 23, 2005"
+                    ], 
+                    [
+                        "Mar. 4, 2005", 
+                        "Waste Minimization Certification in the Revised Manifest Rule", 
+                        "70 FR 10825", 
+                        "Sept. 6, 2005."
+                    ], 
+                    [
+                        "July 14, 2005", 
+                        "Process Vent and Equipment Leak Organic Air Emission Standards for Owners and of Operators of Hazardous Waste Treatment, Storage, and Disposal Facilities", 
+                        "70 FR 34538", 
+                        "July 14, 2005."
+                    ], 
+                    [
+                        "July 14, 2005", 
+                        "Burning of Hazardous Waste in Boilers and Industrial Furnaces", 
+                        "70 FR 34538", 
+                        "July 14, 2005"
+                    ], 
+                    [
+                        "July 14, 2005", 
+                        "Air Emission Standards Tanks, Surface Impoundments, Containers", 
+                        "70 FR 34538", 
+                        "July 14, 2005."
+                    ], 
+                    [
+                        "Oct. 12, 2005", 
+                        "Standards for Hazardous Air Pollutants for Hazardous Waste Combustors", 
+                        "70 FR 59402", 
+                        "Oct. 12, 2005."
+                    ], 
+                    [
+                        "May 4, 2006", 
+                        "Office of Resource Conservation and Recovery Burden Reduction Project", 
+                        "71 FR 16862-16915", 
+                        "May 4, 2006."
+                    ], 
+                    [
+                        "July 28, 2006", 
+                        "Final Rule for Cathode Ray Tubes", 
+                        "71 FR 42949", 
+                        "Jan. 29, 2007."
+                    ], 
+                    [
+                        "Jan. 8, 2010", 
+                        "Exports of hazardous waste", 
+                        "75 FR 1262", 
+                        "July 7, 2010."
+                    ], 
+                    [
+                        "June 13, 2011", 
+                        "Land Disposal Restrictions: Revision of the Treatment Standards for Carbamate Hazardous Wastes", 
+                        "76 FR [Insert page number]", 
+                        "8/12/11."
+                    ]
+                ]
+            }, 
+            "text": "|Table 1\u2014Regulations Implementing the Hazardous and Solid Waste Amendments of 1984|Promulgation date|Title of regulation|Federal Register reference|Effective date|\n|---|---|---|---|---|\n|Jan. 14, 1985|Dioxin-containing wastes|50 FR 1978-2006|July 15, 1985.|\n|Apr. 30, 1985|Paint filter liquids test|50 FR 18370-5|June 14, 1985.|\n|July 15, 1985|Codification rule [as corrected in 51 FR 2702, 1/21/86]|50 FR 28702-55|July 15, 1985.|\n|Oct. 23, 1985|Listing wastes from the production of dinitrotoluene, toluenediamine, and toluene diisocyanate|50 FR 42936-43|Oct. 23, 1985.|\n|Nov. 29, 1985|Standards for the management of the burning of specific wastes in specific types of facilities|50 FR 49164-212|Dec. 9, 1985. Mar. 31, 1986.\n              May 29, 1986.|\n|Dec. 31, 1985|Amendment of spent solvent listings to include solvent mixtures [as corrected in 51 FR 19176, 5/28/86]|50 FR 53315-20|Jan. 30, 1986.|\n|Feb. 13, 1986|Listing wastes from the production of ethylene dibromide (EDB)|51FR 5327-31|Aug. 13, 1986.|\n|Feb. 25, 1986|Listing of four spent solvents and the still bottoms from their recovery|51 FR 6537-42|Aug. 25, 1986.|\n|Mar. 24, 1986|Regulations for generators of 100-1000 kg/mo of hazardous waste|51 FR 10146-76|Sept. 22, 1986.|\n|July 14, 1986|Hazardous Waste Tank Regulations:\u2009[^1](These regulations implement HSWA only to the extent that they apply to tank systems owned or operated by small quantity generators, establish leak detection requirements for all new underground tank systems, and establish permitting standards for underground tank systems that cannot be entered for inspection.) 260.10; 262.34(a)(1); 264.110; 264.140; 264.190-264.199; 265.110; 265.140; 265.190-265.200; 270.14(b); 270.16; and 270.72 (e)|51 FR 25422-86|Jan. 12, 1987. Mar. 24, 1987.|\n|Aug. 8, 1986|Exports of hazardous waste|51 FR 28664-86|Nov. 8, 1986.|\n|Oct. 24, 1986|Listing Wastes from the Production and Formulation of Ethylenebisdithiocarbamic Acid (EBDC) and its Salts|51 FR 37725|Apr. 24, 1987.|\n|Nov. 7, 1986|Land disposal restrictions for solvents and dioxins|51 FR 40572|Nov. 8, 1986.|\n|July 8, 1987|Land disposal restrictions for California list wastes|52 FR 25760|July 8, 1987.|\n|Sept. 23, 1987|Exception Reporting for Small Quantity Generators of Hazardous Waste|52 FR 35899|Mar. 23, 1988.|\n|Dec. 1, 1987|Codification rule for the 1984 RCRA Amendments|52 FR 45799|Dec. 31, 1987.|\n|Aug. 17, 1988|Land disposal restrictions for First Third wastes|53 FR 31138-222|Aug. 8, 1988.|\n|June 23, 1989|Land Disposal Restrictions for Second Third wastes|54 FR 26594-652|June 8, 1989.|\n|Oct. 6, 1989|Listing Wastes from the Production of Methyl Bromide|54 FR 41402-408|Apr. 6, 1990.|\n|Dec. 11, 1989|Listing Certain Hydrocarbons Produced by Free Radical Catalyzed Processes|54 FR 50968-978|June 11, 1990.|\n|Mar. 29, 1990|Toxicity characteristic|55 FR 11798-877|Sept. 25, 1990.|\n|May 1, 1990|Listing Wastes from the Production of UDMH from Carboxylic Acid Hydrazides|55 FR 18496-506|Nov. 2, 1990.|\n|June 1, 1990|Land Disposal Restrictions for Third Third wastes|55 FR 22520-720|May 8, 1990.|\n|June 21, 1990|Process Vent and Equipment Leak Organic Air Emission Standards for Owners and Operators of Hazardous Waste Treatment, Storage, and Disposal Facilities|55 FR 25454-519|Dec. 21, 1990.|\n|Nov. 2, 1990|Petroleum refinery primary and secondary oil/water/solids separation sludge listings|55 FR 46354-397|May 2, 1991.|\n|Dec. 6, 1990|The listing of wastes from wood preserving processes.\u2009[^2](These regulations, including test methods for benzo\\(k\\)fluoranthene and technical standards for drip pads, implement HSWA only to the extent that they apply to the listing of Hazardous Waste No. F032, and wastes that are hazardous because they exhibit the Toxicity Characteristic. These regulations, including test methods for benzo\\(k\\)fluoranthene and technical standards for drip pads, do not implement HSWA to the extent that they apply to the listings of Hazardous Waste Nos. F034 and F035.)|55 FR 50450-490|June 6, 1991.|\n|Dec. 31, 1990|Burning of Hazardous Waste in Boilers and Industrial Furnaces|56 FR 7134-7240|Aug. 21, 1991.|\n|May 13, 1991|Petroleum refinery primary and secondary oil/water/solids separation sludge listings|56 FR 21959|May 2, 1991.|\n|Aug. 19, 1991|Land disposal restrictions & generic exclusion for K061 nonwastewaters & conditional exclusion for K061 HTMR splash condenser dross residue|56 FR 41178|Aug. 8, 1991.|\n|Jan. 29, 1992|Liners and Leak Detection for Hazardous Waste Land Disposal Units\u2009[^3](The following portions of this rule are not HSWA regulations: \u00a7\u00a7\u2009264.19 and 265.19 for final covers.)|57 FR 3497|July 29, 1992.|\n|June 22, 1992|Exclusion from the definition of solid waste for the recycling of hazardous wastes in the coke by-products industry|57 FR 27888|June 22, 1992.|\n|Aug. 18, 1992|Land disposal restrictions for newly listed wastes in \u00a7\u2009268.36 (b)-(g)|57 FR 37282|June 30, 1992.|\n|Do|Land disposal restrictions for newly listed wastes in \u00a7\u2009268.36(a), hazardous debris, and generic exclusion for K062 and F006 nonwaste-waters|......Do|Nov. 9, 1992.|\n|Aug. 18, 1992|The listing of wastes from the production, recovery, and refining of coke by-products produced from coal|57 FR 37306|Feb. 18, 1993|\n|Oct. 15, 1992|Listing Wastes from the Production of Chlorinated Toluenes|57 FR 47386|Apr. 15, 1993.|\n|Nov. 18, 1992|Containerized Liquids in Landfills|57 FR 54461|May 18, 1992.|\n|Nov. 24, 1992|Toxicity Characteristic Revision|57 FR 55117|Nov. 24, 1992.|\n|Feb. 16, 1993|Corrective Action Management Units and Temporary Units; Corrective Action Provisions under Subtitle C|58 FR 8685|Apr. 19, 1993.|\n|May 24, 1993|Land disposal restrictions for characteristic wastes whose treatment standards were vacated|58 FR 29887|Aug. 9, 1993.|\n|Nov. 9, 1993|Burning of hazardous waste in boilers and industrial furnaces|58 FR 59603|Oct. 15, 1993.|\n|Sept. 19, 1994|Land Disposal Restrictions Phase II\u2014Universal Treatment Standards, and Treatment Standards for Organic Toxicity Characteristic Wastes and Newly Listed Wastes\u2009[^4](The following portions of this rule are not HSWA regulations: \u00a7\u00a7\u2009260.30, 260.31, 261.2.) in \u00a7\u2009268.38|47982-48110|Dec. 19, 1994.|\n|Dec. 6, 1994|Air Emission Standards for Tanks, Surface Impoundments, and Containers|59 FR 62896-62953|Dec. 6, 1996.|\n|Feb. 9, 1995|Listing Wastes from the Production of Carbamates|60 FR 7856|Aug. 9, 1995.|\n|July 11, 1995|Containerized Liquids in Landfills|60 FR 35706|Sept. 11, 1995.|\n|Apr. 8, 1996|Land Disposal Restrictions Phase III\u2014Decharacterized Wastewaters, Carbamate Wastes, and Spent Aluminum Potliners in \u00a7\u2009268.39|61 FR 15660|July 8, 1996.|\n|July 1, 1996|Revisions to Criteria applicable to solid waste facilities that may accept CESQG hazardous wastes, excluding MSWLF's|61 FR 34278|Jan. 1, 1998.|\n|Aug. 26, 1996|Emergency Revision of the Land Disposal Restrictions (LDR) Phase III Treatment Standards for Listed Hazardous Wastes from Carbamate Production|61 FR 43931.|Aug. 26, 1996 until Aug. 26, 1997.|\n|May 12, 1997|Land Disposal Restrictions for Wood Preserving Wastes and Paperwork Reductions|62 FR 26040|Aug. 11, 1997.|\n|June 17, 1997|Vacated Carbamate wastes|62 FR 32979|Aug. 9, 1995.|\n|Aug. 28, 1997|Second Emergency Revision of the Land Disposal Restrictions (LDR) Phase III Treatment Standards for Listed Hazardous Wastes from Carbamate Production.|62 FR 45572|Aug. 26, 1997 until Aug. 26, 1998.|\n|May 4, 1998|Listing of Organobromine Production Wastes|63 FR 24627|Nov. 4, 1998.|\n|May 26, 1998|Land Disposal Restrictions Phase IV Final Rule|63 FR 28753|Aug. 24, 1998.|\n|Aug. 6, 1998|Petroleum Refining Process Wastes|63 FR 42188|Feb. 8, 1999.|\n|Sept. 4, 1998|Emergency Revision of the Land Disposal Restrictions (LDR) Phase III Treatment Standards for Listed Hazardous Wastes from Carbamate Production|63 FR 47418|Sept. 4, 1998.|\n|Sept. 21, 1998|Treatment Standards for Hazardous Waste K088|63 FR 51267|Sept. 21, 1998.|\n|Nov. 30, 1998|Hazardous Remediation Waste Management Requirements\u2009[^5](These regulations implement HSWA only to the extent that they apply to the standards for staging piles and to \u00a7\u00a7\u2009264.1\\(j\\) and 264.101\\(d\\) of this chapter.)|63 FR 65947|June 1, 1999.|\n|Sept. 30, 1999|Standards for Hazardous Air Pollutants for Hazardous Waste Combustors|64 FR 53077|Sept. 30, 1999.|\n|Mar. 17, 2000|Vacated Organobromine wastes|65 FR 14475|Nov. 4, 1998.|\n|Sept. 29, 2000|Listing of Hazardous Wastes K174 and K175|65 FR 67132|May 7, 2001.|\n|Oct. 31, 2001|Listing of Inorganic Chemical Manufacturing Wastes|67 FR 58299|May 20, 2002.|\n|Feb. 13, 2002|Interim Standards for Hazardous Air Pollutants for Hazardous Waste Combustors|67 FR 6818, Feb. 13, 2002|Feb. 13, 2002.|\n|Sept. 30, 2002|Land Disposal Restrictions: National Treatment Variance to Designate New Treatment Subcategories for Radioactively Contaminated Cadmium-, Mercury-, and Silver-Containing Batteries|67 FR 62624, Oct. 7, 2002|Nov. 21, 2002|\n|Jan. 22, 2002|Corrective Action Management Unit\n              Standards\n              Amendments|67 FR 3029, Jan. 22, 2002|April 22, 2002.|\n|July 15, 2002|Elimination of LDR Treatment Standards Exemption for K061-Derived Fertilizers|July 24, 2002|Jan. 24, 2003.|\n|Feb. 15, 2005|Listing of Hazards Waste K181|70 FR 9179|Aug. 23, 2005|\n|Mar. 4, 2005|Waste Minimization Certification in the Revised Manifest Rule|70 FR 10825|Sept. 6, 2005.|\n|July 14, 2005|Process Vent and Equipment Leak Organic Air Emission Standards for Owners and of Operators of Hazardous Waste Treatment, Storage, and Disposal Facilities|70 FR 34538|July 14, 2005.|\n|July 14, 2005|Burning of Hazardous Waste in Boilers and Industrial Furnaces|70 FR 34538|July 14, 2005|\n|July 14, 2005|Air Emission Standards Tanks, Surface Impoundments, Containers|70 FR 34538|July 14, 2005.|\n|Oct. 12, 2005|Standards for Hazardous Air Pollutants for Hazardous Waste Combustors|70 FR 59402|Oct. 12, 2005.|\n|May 4, 2006|Office of Resource Conservation and Recovery Burden Reduction Project|71 FR 16862-16915|May 4, 2006.|\n|July 28, 2006|Final Rule for Cathode Ray Tubes|71 FR 42949|Jan. 29, 2007.|\n|Jan. 8, 2010|Exports of hazardous waste|75 FR 1262|July 7, 2010.|\n|June 13, 2011|Land Disposal Restrictions: Revision of the Treatment Standards for Carbamate Hazardous Wastes|76 FR [Insert page number]|8/12/11.|"
+        }, 
+        {
+            "footnote_data": {
+                "note": "These regulations implement HSWA only to the extent that they apply to tank systems owned or operated by small quantity generators, establish leak detection requirements for all new underground tank systems, and establish permitting standards for underground tank systems that cannot be entered for inspection.", 
+                "ref": "1"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "[^1](These regulations implement HSWA only to the extent that they apply to tank systems owned or operated by small quantity generators, establish leak detection requirements for all new underground tank systems, and establish permitting standards for underground tank systems that cannot be entered for inspection.)"
+        }, 
+        {
+            "footnote_data": {
+                "note": "These regulations, including test methods for benzo(k)fluoranthene and technical standards for drip pads, implement HSWA only to the extent that they apply to the listing of Hazardous Waste No. F032, and wastes that are hazardous because they exhibit the Toxicity Characteristic. These regulations, including test methods for benzo(k)fluoranthene and technical standards for drip pads, do not implement HSWA to the extent that they apply to the listings of Hazardous Waste Nos. F034 and F035.", 
+                "ref": "2"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "[^2](These regulations, including test methods for benzo\\(k\\)fluoranthene and technical standards for drip pads, implement HSWA only to the extent that they apply to the listing of Hazardous Waste No. F032, and wastes that are hazardous because they exhibit the Toxicity Characteristic. These regulations, including test methods for benzo\\(k\\)fluoranthene and technical standards for drip pads, do not implement HSWA to the extent that they apply to the listings of Hazardous Waste Nos. F034 and F035.)"
+        }, 
+        {
+            "footnote_data": {
+                "note": "The following portions of this rule are not HSWA regulations: \u00a7\u00a7\u2009264.19 and 265.19 for final covers.", 
+                "ref": "3"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "[^3](The following portions of this rule are not HSWA regulations: \u00a7\u00a7\u2009264.19 and 265.19 for final covers.)"
+        }, 
+        {
+            "footnote_data": {
+                "note": "The following portions of this rule are not HSWA regulations: \u00a7\u00a7\u2009260.30, 260.31, 261.2.", 
+                "ref": "4"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "[^4](The following portions of this rule are not HSWA regulations: \u00a7\u00a7\u2009260.30, 260.31, 261.2.)"
+        }, 
+        {
+            "footnote_data": {
+                "note": "These regulations implement HSWA only to the extent that they apply to the standards for staging piles and to \u00a7\u00a7\u2009264.1(j) and 264.101(d) of this chapter.", 
+                "ref": "5"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "[^5](These regulations implement HSWA only to the extent that they apply to the standards for staging piles and to \u00a7\u00a7\u2009264.1\\(j\\) and 264.101\\(d\\) of this chapter.)"
+        }
+    ], 
+    "271-1-j-2-p3": [
+        {
+            "locations": [
+                0
+            ], 
+            "table_data": {
+                "caption": "Table 2\u2014Self-Implementing Provisions of the Hazardous and Solid Waste Amendments of 1984", 
+                "header": [
+                    [
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Effective date"
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Self-implementing provision"
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "RCRA citation"
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Federal Register reference"
+                        }
+                    ]
+                ], 
+                "rows": [
+                    [
+                        "Nov. 8, 1984", 
+                        "Delisting procedures", 
+                        "3001(f)", 
+                        "July 15, 1985, 50 FR 28702-55."
+                    ], 
+                    [
+                        "Do", 
+                        "Waste disposal for small quantity generators prior to March 31, 1986", 
+                        "3001(d)(5)", 
+                        "Do."
+                    ], 
+                    [
+                        "Do", 
+                        "Prohibition of disposal in salt domes, salt beds and underground mines and caves", 
+                        "3004(b)", 
+                        "Do."
+                    ], 
+                    [
+                        "Do", 
+                        "Land disposal prohibition not applicable to contaminated soil or debris from a CERCLA response action or a RCRA corrective action prior to November 8, 1988", 
+                        "3004(d)(3)", 
+                        "Do."
+                    ], 
+                    [
+                        "Do", 
+                        "Loss of interim status", 
+                        "3005(c)(2)(C) & (e)(2)-(3)", 
+                        "Do."
+                    ], 
+                    [
+                        "Do", 
+                        "Storage of wastes prohibited from land disposal", 
+                        "3004(j) & 3005(j)(11)", 
+                        "Do."
+                    ], 
+                    [
+                        "Do", 
+                        "Prohibition of waste and used oil as dust suppressant", 
+                        "3004(l)", 
+                        "Do."
+                    ], 
+                    [
+                        "Do", 
+                        "Minimum technological requirements for new and expanding surface impoundments, landfills and incinerators", 
+                        "3004(o)", 
+                        "Do."
+                    ], 
+                    [
+                        "Do", 
+                        "Ground water monitoring", 
+                        "3004(p)", 
+                        "Do."
+                    ], 
+                    [
+                        "Do", 
+                        "Prohibition for burning fuels containing hazardous waste in any cement kilns", 
+                        "3004(q)(2)(C)", 
+                        "Do."
+                    ], 
+                    [
+                        "Do", 
+                        "Financial responsibility for liability of guarantor when owner/operator is in bankruptcy", 
+                        "3004(t)(2)-(3)", 
+                        "Do."
+                    ], 
+                    [
+                        "Do", 
+                        "Corrective action", 
+                        "3004(u)", 
+                        "Do."
+                    ], 
+                    [
+                        "Do", 
+                        "Review of land disposal permits every 5 years", 
+                        "3005(c)(3)", 
+                        "Do."
+                    ], 
+                    [
+                        "Do", 
+                        "Permit terms and conditions necessary to protect human health and the environment", 
+                        "3005(c)(3)", 
+                        "Do."
+                    ], 
+                    [
+                        "Do", 
+                        "Research, development, and demonstration permits", 
+                        "3005(g)", 
+                        "Do."
+                    ], 
+                    [
+                        "Do", 
+                        "Interim status facilities receiving waste after July 26, 1982", 
+                        "3005(i)", 
+                        "Do."
+                    ], 
+                    [
+                        "Do", 
+                        "Deadline for surface impoundment retrofit exemption application", 
+                        "3005(j)(5)", 
+                        "Do."
+                    ], 
+                    [
+                        "Feb. 7, 1985", 
+                        "Fuel labeling requirements", 
+                        "3004(r)", 
+                        "Do."
+                    ], 
+                    [
+                        "May 8, 1985", 
+                        "Prohibition of liquids in landfills", 
+                        "3004(c)(1)", 
+                        "Do."
+                    ], 
+                    [
+                        "Do", 
+                        "Expansions during interim status for waste piles", 
+                        "3015(a)", 
+                        "Do."
+                    ], 
+                    [
+                        "Do", 
+                        "Expansions during interim status for landfills and surface impoundments", 
+                        "3015(b)", 
+                        "Do."
+                    ], 
+                    [
+                        "Do", 
+                        "Interim control of hazardous waste disposed of by underground injection", 
+                        "7010(a)", 
+                        "Do."
+                    ], 
+                    [
+                        "Aug. 5, 1985", 
+                        "Small quantity generator manifest requirements", 
+                        "3001(d)(3)", 
+                        "Do."
+                    ], 
+                    [
+                        "Aug. 8, 1985", 
+                        "Exposure assessments to accompany landfill and surface impoundment permit applications", 
+                        "3019(a)", 
+                        "Do."
+                    ], 
+                    [
+                        "Sept. 1, 1985", 
+                        "Waste minimization certification on manifest", 
+                        "3002(b)", 
+                        "Do."
+                    ], 
+                    [
+                        "Do", 
+                        "Waste minimization permit condition", 
+                        "3005(h)", 
+                        "Do."
+                    ], 
+                    [
+                        "Nov. 8, 1985", 
+                        "Prohibition of non-hazardous liquids in landfills", 
+                        "3004(c)(3)", 
+                        "Do."
+                    ], 
+                    [
+                        "Do", 
+                        "Notification of hazardous waste export", 
+                        "3017(c)", 
+                        "Do."
+                    ], 
+                    [
+                        "Feb. 8, 1986\u2009[^1](Note that the effective date was changed to Jan. 29, 1986 by the Nov. 29, 1985 rule.)", 
+                        "Notification requirements for producers, burners, blenders, distributors and marketers of waste derived fuel", 
+                        "3010(a)", 
+                        "Nov. 29, 1985, 50 FR 49164-211."
+                    ], 
+                    [
+                        "Mar. 31, 1986\u2009[^2](Note that the effective date was changed to Sept. 22, 1986 by the Mar. 24, 1986 rule.)", 
+                        "Small quantity generator requirements", 
+                        "3001(d)(8)", 
+                        "Mar. 24, 1986, 51 FR 10146-78."
+                    ], 
+                    [
+                        "Nov. 8, 1986", 
+                        "Land disposal prohibitions on dioxins and F001-F005 solvents", 
+                        "3004(e)", 
+                        "Nov. 7, 1986, 51 FR 40572."
+                    ], 
+                    [
+                        "Do", 
+                        "Temporary granting of exclusion petitions ceases", 
+                        "3001(f)(2)(B)", 
+                        ""
+                    ], 
+                    [
+                        "Do", 
+                        "Export of hazardous waste", 
+                        "3017(a)", 
+                        "Aug. 8, 1986, 51 FR 28664-86."
+                    ], 
+                    [
+                        "July 8, 1987", 
+                        "Land disposal restrictions for California list wastes", 
+                        "3004(d)", 
+                        "July 8, 1987, 52 FR 25760."
+                    ], 
+                    [
+                        "Sept. 23, 1987", 
+                        "Exception reporting for small quantity generators of hazardous waste", 
+                        "52 FR 35899", 
+                        "Mar. 23, 1988."
+                    ], 
+                    [
+                        "Aug. 8, 1988", 
+                        "Prohibition on California wastes, dioxins, and solvents in deep injection wells", 
+                        "3004(f)(3)", 
+                        ""
+                    ], 
+                    [
+                        "Do", 
+                        "Land disposal restrictions of 1/3 of listed wastes", 
+                        "3004(g)(6)(A)", 
+                        "Aug. 17, 1988, 53 FR 31138-222."
+                    ], 
+                    [
+                        "Nov. 8, 1988", 
+                        "Prohibition on wastes in existing surface impoundments unless double lined", 
+                        "3005(j)", 
+                        ""
+                    ], 
+                    [
+                        "June 8, 1989", 
+                        "Prohibition on land disposal of 2/3 of listed wastes", 
+                        "3004(g)(6)(B)", 
+                        "June 23, 1989, 54 FR 26594-652."
+                    ], 
+                    [
+                        "May 8, 1990", 
+                        "Prohibition on land disposal of 3/3 of listed wastes", 
+                        "3004(g)(6)(C)", 
+                        "June 1, 1990, 55 FR 22520-720."
+                    ], 
+                    [
+                        "Aug. 8, 1991", 
+                        "Prohibition on land disposal of K061 high zinc nonwastewaters", 
+                        "3004(g)(6)(A)", 
+                        "Aug. 19, 1991, 56 FR 41178."
+                    ], 
+                    [
+                        "June 30, 1992", 
+                        "Surface Impoundment Retrofit", 
+                        "37282", 
+                        "Aug. 18, 1992, 57 FR 37282."
+                    ], 
+                    [
+                        "Nov. 9, 1992", 
+                        "Prohibition on land disposal of hazardous debris and newly listed wastes", 
+                        "......Do", 
+                        "Aug. 18, 1992, 57 FR 37282."
+                    ], 
+                    [
+                        "Feb. 18, 1993", 
+                        "Containment buildings", 
+                        "......Do", 
+                        "Aug. 18, 1992, 57 FR 37282."
+                    ], 
+                    [
+                        "Aug. 9, 1993", 
+                        "Prohibition on land disposal of characteristic wastes whose treatment standards were vacated", 
+                        "3004(g)(6)(c)", 
+                        "May 24, 1993, 58 FR 29887."
+                    ], 
+                    [
+                        "Dec. 19, 1994", 
+                        "Prohibition on land disposal of newly listed and identified wastes", 
+                        "3004(g)(4)(C) and 3004(m)", 
+                        "Sept. 19, 1994, 59 FR 47982-48110."
+                    ], 
+                    [
+                        "Sept. 19, 1995", 
+                        "Establishment of treatment standards for D001 and D012-D017 wastes injected into nonhazardous deep wells", 
+                        "3004(m)", 
+                        "Do."
+                    ], 
+                    [
+                        "Apr. 8, 1996", 
+                        "Prohibition on land disposal of K088 wastes", 
+                        "3004(m)", 
+                        "Apr. 8, 1996, 61 FR 15660."
+                    ], 
+                    [
+                        "July 8, 1996", 
+                        "Prohibition on land disposal of carbamate wastes", 
+                        "3004(m)", 
+                        "Apr. 8, 1996, 61 FR 15660."
+                    ], 
+                    [
+                        "July 8, 1996", 
+                        "Prohibition on land disposal of carbamate wastes (Vacated wastes)", 
+                        "3004(m)", 
+                        "June 17, 1997, 62 FR 32979."
+                    ], 
+                    [
+                        "Sept. 6, 1996", 
+                        "Prohibition on land disposal of radioactive waste mixed with the newly listed or identified wastes, including soil and debris", 
+                        "3004(g)(4)(C) and 3004(m)", 
+                        "Sept. 19, 1994, 59 FR 47982-48110."
+                    ], 
+                    [
+                        "Oct. 8, 1996", 
+                        "Prohibition on land disposal of K088 wastes", 
+                        "3004(m)", 
+                        "Apr. 8, 1998, 61 FR 15660."
+                    ], 
+                    [
+                        "Dec. 6, 1996", 
+                        "Air Emission Standards for Tanks, Surface Impoundments, and Containers", 
+                        "3004(n)", 
+                        "Dec. 6, 1994, 59 FR 62896-62953."
+                    ], 
+                    [
+                        "Aug. 11, 1997", 
+                        "Prohibition on land disposal of wood preserving wastes", 
+                        "3004(g)(4)(c) and 3004 (m)", 
+                        "May 12, 1997, 62 FR 26040."
+                    ], 
+                    [
+                        "Apr. 8, 1998", 
+                        "Prohibition on disposal of radioactive waste mixed with newly listed or identified wastes, including soil and debris (Vacated carbamate wastes)", 
+                        "3304(g)(4)(c) and 3004(m)", 
+                        "June 17, 1997, 62 FR 32979."
+                    ], 
+                    [
+                        "Aug. 24, 1998", 
+                        "Prohibition on land disposal of newly identified wastes, including TC metal wastes and characteristic mineral processing wastes; treatment standards for contaminated soil.", 
+                        "3004(m)", 
+                        "May 26, 1998, 63 FR 28753."
+                    ], 
+                    [
+                        "Sept. 4, 1998", 
+                        "Emergency Revision of the Land Disposal Restrictions (LDR) Phase III Treatment Standards for Listed Hazardous Wastes from Carbamate Production", 
+                        "3004(m)", 
+                        "Sept. 4, 1998, 63 FR 47418."
+                    ], 
+                    [
+                        "Sept. 21, 1998", 
+                        "Prohibition on land disposal of K088 wastes, and prohibition on land disposal of radioactive waste mixed with K088 wastes, including soil and debris", 
+                        "3004(g)(4)(C) and 3004(m)", 
+                        "Sept. 24, 1998, 63 FR 51267."
+                    ], 
+                    [
+                        "Nov. 4, 1998", 
+                        "Prohibition on land disposal of newly listed and identified wastes.", 
+                        "3004(g)(4)(C) and 3004(m)", 
+                        "May 4, 1998, 63 FR 24596."
+                    ], 
+                    [
+                        "Nov. 4, 1998", 
+                        "Prohibition on land disposal of radioactive waste mixed with the newly listed and identified wastes, including soil and debris", 
+                        "3004(m) 3004(g)(4)(C) and 3004(m)", 
+                        "May 4, 1998, 63 FR 24596."
+                    ], 
+                    [
+                        "Nov. 4, 1998", 
+                        "Prohibition on land disposal of organobromine waste (Vacated wastes)", 
+                        "3004(g)(4)(c) and 3004(m)", 
+                        "Mar. 17, 2000, 65 FR 14475."
+                    ], 
+                    [
+                        "Nov. 4, 1998", 
+                        "Prohibition on land disposal of radioactive waste mixed with the newly listed and identified wastes, including soil and debris (Vacated organobromine wastes)", 
+                        "3004(m) and 3004(g)(4)(c)", 
+                        "Mar. 17, 2000, 65 FR 14475."
+                    ], 
+                    [
+                        "Feb. 8, 1999", 
+                        "Prohibition on land disposal of newly listed and identified wastes; and prohibition on land disposal of radioactive waste mixed with the newly listed or identified wastes, including soil and debris", 
+                        "3004(g)(4)(C) and 3004(m)", 
+                        "Aug. 6, 1998, 63 FR 42188."
+                    ], 
+                    [
+                        "May 12, 1999", 
+                        "Prohibition on land disposal of radioactive waste and soil and debris mixed with wood preserving wastes", 
+                        "3004(m)", 
+                        "May 12, 1997, 62 FR 26040."
+                    ], 
+                    [
+                        "May 26, 2000", 
+                        "Prohibition on land disposal of newly identified wastes from elemental phosphorus processing and mixed radioactive and newly identified TC metal/mineral processing wastes (including soil and debris). Prohibition on underground injection of newly identified mineral processing wastes from titanium dioxide production.", 
+                        "3004(m)", 
+                        "May 26, 1998, 63 FR 28753."
+                    ], 
+                    [
+                        "May 7, 2001", 
+                        "Prohibition on land disposal of K174 and K175 wastes, and prohibition on land disposal of radioactive waste mixed with K174 and K175 wastes, including soil and debris.", 
+                        "3004(g)(4)(C) and 3004(m)", 
+                        "Nov. 8, 2000, 65 FR 67132."
+                    ], 
+                    [
+                        "May 20, 2002", 
+                        "Prohibition on land disposal of K176, K177, and K178 wastes, and prohibition on land disposal of radioactive waste mixed with K176, K177, and K178 wastes, including soil and debris", 
+                        "3004(g)(4)(C) and 3004(m)", 
+                        "Nov. 20, 2002, 66 FR 28299."
+                    ], 
+                    [
+                        "Jan. 24, 2003", 
+                        "Elimination of LDR Treatment Standards Exemption for K061 Derived Fertilizers", 
+                        "3004(g)(6)", 
+                        "July 24, 2002, 66 FR 48414."
+                    ], 
+                    [
+                        "Aug. 23, 2005", 
+                        "Prohibition on land disposal of K181 waste, and prohibition on land disposal of radioactive waste mixed with K181 wastes, including soil and debris", 
+                        "3004(g)(4)(C) and 3004(m)", 
+                        "Feb. 24, 2005, 70 FR 9179."
+                    ], 
+                    [
+                        "July 7, 2010", 
+                        "Exports of hazardous waste", 
+                        "3017(a)", 
+                        "75 FR 1262"
+                    ], 
+                    [
+                        "August 12, 2011", 
+                        "Land Disposal Restrictions: Revision of the Treatment Standards for Carbamate Hazardous Wastes", 
+                        "3004(m)", 
+                        "76 FR [Insert Page Numbers]"
+                    ]
+                ]
+            }, 
+            "text": "|Table 2\u2014Self-Implementing Provisions of the Hazardous and Solid Waste Amendments of 1984|Effective date|Self-implementing provision|RCRA citation|Federal Register reference|\n|---|---|---|---|---|\n|Nov. 8, 1984|Delisting procedures|3001(f)|July 15, 1985, 50 FR 28702-55.|\n|Do|Waste disposal for small quantity generators prior to March 31, 1986|3001(d)(5)|Do.|\n|Do|Prohibition of disposal in salt domes, salt beds and underground mines and caves|3004(b)|Do.|\n|Do|Land disposal prohibition not applicable to contaminated soil or debris from a CERCLA response action or a RCRA corrective action prior to November 8, 1988|3004(d)(3)|Do.|\n|Do|Loss of interim status|3005(c)(2)(C) & (e)(2)-(3)|Do.|\n|Do|Storage of wastes prohibited from land disposal|3004(j) & 3005(j)(11)|Do.|\n|Do|Prohibition of waste and used oil as dust suppressant|3004(l)|Do.|\n|Do|Minimum technological requirements for new and expanding surface impoundments, landfills and incinerators|3004(o)|Do.|\n|Do|Ground water monitoring|3004(p)|Do.|\n|Do|Prohibition for burning fuels containing hazardous waste in any cement kilns|3004(q)(2)(C)|Do.|\n|Do|Financial responsibility for liability of guarantor when owner/operator is in bankruptcy|3004(t)(2)-(3)|Do.|\n|Do|Corrective action|3004(u)|Do.|\n|Do|Review of land disposal permits every 5 years|3005(c)(3)|Do.|\n|Do|Permit terms and conditions necessary to protect human health and the environment|3005(c)(3)|Do.|\n|Do|Research, development, and demonstration permits|3005(g)|Do.|\n|Do|Interim status facilities receiving waste after July 26, 1982|3005(i)|Do.|\n|Do|Deadline for surface impoundment retrofit exemption application|3005(j)(5)|Do.|\n|Feb. 7, 1985|Fuel labeling requirements|3004(r)|Do.|\n|May 8, 1985|Prohibition of liquids in landfills|3004(c)(1)|Do.|\n|Do|Expansions during interim status for waste piles|3015(a)|Do.|\n|Do|Expansions during interim status for landfills and surface impoundments|3015(b)|Do.|\n|Do|Interim control of hazardous waste disposed of by underground injection|7010(a)|Do.|\n|Aug. 5, 1985|Small quantity generator manifest requirements|3001(d)(3)|Do.|\n|Aug. 8, 1985|Exposure assessments to accompany landfill and surface impoundment permit applications|3019(a)|Do.|\n|Sept. 1, 1985|Waste minimization certification on manifest|3002(b)|Do.|\n|Do|Waste minimization permit condition|3005(h)|Do.|\n|Nov. 8, 1985|Prohibition of non-hazardous liquids in landfills|3004(c)(3)|Do.|\n|Do|Notification of hazardous waste export|3017(c)|Do.|\n|Feb. 8, 1986\u2009[^1](Note that the effective date was changed to Jan. 29, 1986 by the Nov. 29, 1985 rule.)|Notification requirements for producers, burners, blenders, distributors and marketers of waste derived fuel|3010(a)|Nov. 29, 1985, 50 FR 49164-211.|\n|Mar. 31, 1986\u2009[^2](Note that the effective date was changed to Sept. 22, 1986 by the Mar. 24, 1986 rule.)|Small quantity generator requirements|3001(d)(8)|Mar. 24, 1986, 51 FR 10146-78.|\n|Nov. 8, 1986|Land disposal prohibitions on dioxins and F001-F005 solvents|3004(e)|Nov. 7, 1986, 51 FR 40572.|\n|Do|Temporary granting of exclusion petitions ceases|3001(f)(2)(B)||\n|Do|Export of hazardous waste|3017(a)|Aug. 8, 1986, 51 FR 28664-86.|\n|July 8, 1987|Land disposal restrictions for California list wastes|3004(d)|July 8, 1987, 52 FR 25760.|\n|Sept. 23, 1987|Exception reporting for small quantity generators of hazardous waste|52 FR 35899|Mar. 23, 1988.|\n|Aug. 8, 1988|Prohibition on California wastes, dioxins, and solvents in deep injection wells|3004(f)(3)||\n|Do|Land disposal restrictions of 1/3 of listed wastes|3004(g)(6)(A)|Aug. 17, 1988, 53 FR 31138-222.|\n|Nov. 8, 1988|Prohibition on wastes in existing surface impoundments unless double lined|3005(j)||\n|June 8, 1989|Prohibition on land disposal of 2/3 of listed wastes|3004(g)(6)(B)|June 23, 1989, 54 FR 26594-652.|\n|May 8, 1990|Prohibition on land disposal of 3/3 of listed wastes|3004(g)(6)(C)|June 1, 1990, 55 FR 22520-720.|\n|Aug. 8, 1991|Prohibition on land disposal of K061 high zinc nonwastewaters|3004(g)(6)(A)|Aug. 19, 1991, 56 FR 41178.|\n|June 30, 1992|Surface Impoundment Retrofit|37282|Aug. 18, 1992, 57 FR 37282.|\n|Nov. 9, 1992|Prohibition on land disposal of hazardous debris and newly listed wastes|......Do|Aug. 18, 1992, 57 FR 37282.|\n|Feb. 18, 1993|Containment buildings|......Do|Aug. 18, 1992, 57 FR 37282.|\n|Aug. 9, 1993|Prohibition on land disposal of characteristic wastes whose treatment standards were vacated|3004(g)(6)(c)|May 24, 1993, 58 FR 29887.|\n|Dec. 19, 1994|Prohibition on land disposal of newly listed and identified wastes|3004(g)(4)(C) and 3004(m)|Sept. 19, 1994, 59 FR 47982-48110.|\n|Sept. 19, 1995|Establishment of treatment standards for D001 and D012-D017 wastes injected into nonhazardous deep wells|3004(m)|Do.|\n|Apr. 8, 1996|Prohibition on land disposal of K088 wastes|3004(m)|Apr. 8, 1996, 61 FR 15660.|\n|July 8, 1996|Prohibition on land disposal of carbamate wastes|3004(m)|Apr. 8, 1996, 61 FR 15660.|\n|July 8, 1996|Prohibition on land disposal of carbamate wastes (Vacated wastes)|3004(m)|June 17, 1997, 62 FR 32979.|\n|Sept. 6, 1996|Prohibition on land disposal of radioactive waste mixed with the newly listed or identified wastes, including soil and debris|3004(g)(4)(C) and 3004(m)|Sept. 19, 1994, 59 FR 47982-48110.|\n|Oct. 8, 1996|Prohibition on land disposal of K088 wastes|3004(m)|Apr. 8, 1998, 61 FR 15660.|\n|Dec. 6, 1996|Air Emission Standards for Tanks, Surface Impoundments, and Containers|3004(n)|Dec. 6, 1994, 59 FR 62896-62953.|\n|Aug. 11, 1997|Prohibition on land disposal of wood preserving wastes|3004(g)(4)(c) and 3004 (m)|May 12, 1997, 62 FR 26040.|\n|Apr. 8, 1998|Prohibition on disposal of radioactive waste mixed with newly listed or identified wastes, including soil and debris (Vacated carbamate wastes)|3304(g)(4)(c) and 3004(m)|June 17, 1997, 62 FR 32979.|\n|Aug. 24, 1998|Prohibition on land disposal of newly identified wastes, including TC metal wastes and characteristic mineral processing wastes; treatment standards for contaminated soil.|3004(m)|May 26, 1998, 63 FR 28753.|\n|Sept. 4, 1998|Emergency Revision of the Land Disposal Restrictions (LDR) Phase III Treatment Standards for Listed Hazardous Wastes from Carbamate Production|3004(m)|Sept. 4, 1998, 63 FR 47418.|\n|Sept. 21, 1998|Prohibition on land disposal of K088 wastes, and prohibition on land disposal of radioactive waste mixed with K088 wastes, including soil and debris|3004(g)(4)(C) and 3004(m)|Sept. 24, 1998, 63 FR 51267.|\n|Nov. 4, 1998|Prohibition on land disposal of newly listed and identified wastes.|3004(g)(4)(C) and 3004(m)|May 4, 1998, 63 FR 24596.|\n|Nov. 4, 1998|Prohibition on land disposal of radioactive waste mixed with the newly listed and identified wastes, including soil and debris|3004(m) 3004(g)(4)(C) and 3004(m)|May 4, 1998, 63 FR 24596.|\n|Nov. 4, 1998|Prohibition on land disposal of organobromine waste (Vacated wastes)|3004(g)(4)(c) and 3004(m)|Mar. 17, 2000, 65 FR 14475.|\n|Nov. 4, 1998|Prohibition on land disposal of radioactive waste mixed with the newly listed and identified wastes, including soil and debris (Vacated organobromine wastes)|3004(m) and 3004(g)(4)(c)|Mar. 17, 2000, 65 FR 14475.|\n|Feb. 8, 1999|Prohibition on land disposal of newly listed and identified wastes; and prohibition on land disposal of radioactive waste mixed with the newly listed or identified wastes, including soil and debris|3004(g)(4)(C) and 3004(m)|Aug. 6, 1998, 63 FR 42188.|\n|May 12, 1999|Prohibition on land disposal of radioactive waste and soil and debris mixed with wood preserving wastes|3004(m)|May 12, 1997, 62 FR 26040.|\n|May 26, 2000|Prohibition on land disposal of newly identified wastes from elemental phosphorus processing and mixed radioactive and newly identified TC metal/mineral processing wastes (including soil and debris). Prohibition on underground injection of newly identified mineral processing wastes from titanium dioxide production.|3004(m)|May 26, 1998, 63 FR 28753.|\n|May 7, 2001|Prohibition on land disposal of K174 and K175 wastes, and prohibition on land disposal of radioactive waste mixed with K174 and K175 wastes, including soil and debris.|3004(g)(4)(C) and 3004(m)|Nov. 8, 2000, 65 FR 67132.|\n|May 20, 2002|Prohibition on land disposal of K176, K177, and K178 wastes, and prohibition on land disposal of radioactive waste mixed with K176, K177, and K178 wastes, including soil and debris|3004(g)(4)(C) and 3004(m)|Nov. 20, 2002, 66 FR 28299.|\n|Jan. 24, 2003|Elimination of LDR Treatment Standards Exemption for K061 Derived Fertilizers|3004(g)(6)|July 24, 2002, 66 FR 48414.|\n|Aug. 23, 2005|Prohibition on land disposal of K181 waste, and prohibition on land disposal of radioactive waste mixed with K181 wastes, including soil and debris|3004(g)(4)(C) and 3004(m)|Feb. 24, 2005, 70 FR 9179.|\n|July 7, 2010|Exports of hazardous waste|3017(a)|75 FR 1262|\n|August 12, 2011|Land Disposal Restrictions: Revision of the Treatment Standards for Carbamate Hazardous Wastes|3004(m)|76 FR [Insert Page Numbers]|"
+        }, 
+        {
+            "footnote_data": {
+                "note": "Note that the effective date was changed to Jan. 29, 1986 by the Nov. 29, 1985 rule.", 
+                "ref": "1"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "[^1](Note that the effective date was changed to Jan. 29, 1986 by the Nov. 29, 1985 rule.)"
+        }, 
+        {
+            "footnote_data": {
+                "note": "Note that the effective date was changed to Sept. 22, 1986 by the Mar. 24, 1986 rule.", 
+                "ref": "2"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "[^2](Note that the effective date was changed to Sept. 22, 1986 by the Mar. 24, 1986 rule.)"
+        }
+    ], 
+    "271-21-h-5-p1": [
+        {
+            "locations": [
+                0
+            ], 
+            "table_data": {
+                "caption": "Table 1 to \u00a7\u2009271.21", 
+                "header": [
+                    [
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Title of regulation"
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Promulgation date"
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Federal Register reference"
+                        }
+                    ]
+                ], 
+                "rows": [
+                    [
+                        "Land Disposal Restrictions Phase II\u2014the Universal Treatment Standards in \u00a7\u00a7\u2009268.40 and 268.48 of this chapter only", 
+                        "Sept. 19, 1994", 
+                        "59 FR 47982"
+                    ], 
+                    [
+                        "Office of Resource Conservation and Recovery Testing and Monitoring Activities, Methods Innovation Rule", 
+                        "July 14, 2005", 
+                        "70 FR 34538, June 14, 2005"
+                    ], 
+                    [
+                        "Process Vent and Equipment Leak Organic Air Emission Standards for Owners and Operators of Hazardous Waste Treatment, Storage, and Disposal Facilities", 
+                        "July 14, 2005", 
+                        "70 FR 34538, June 14, 2005"
+                    ], 
+                    [
+                        "Burning of hazardous waste in boilers and industrial furnaces", 
+                        "July 14, 2005", 
+                        "70 FR 34538, June 14, 2005"
+                    ], 
+                    [
+                        "Air Emissions Standards for Tanks, Surface Impoundments, and Containers", 
+                        "July 14, 2005", 
+                        "70 FR 34538, June 14, 2005"
+                    ]
+                ]
+            }, 
+            "text": "|Table 1 to \u00a7\u2009271.21|Title of regulation|Promulgation date|Federal Register reference|\n|---|---|---|---|\n|Land Disposal Restrictions Phase II\u2014the Universal Treatment Standards in \u00a7\u00a7\u2009268.40 and 268.48 of this chapter only|Sept. 19, 1994|59 FR 47982|\n|Office of Resource Conservation and Recovery Testing and Monitoring Activities, Methods Innovation Rule|July 14, 2005|70 FR 34538, June 14, 2005|\n|Process Vent and Equipment Leak Organic Air Emission Standards for Owners and Operators of Hazardous Waste Treatment, Storage, and Disposal Facilities|July 14, 2005|70 FR 34538, June 14, 2005|\n|Burning of hazardous waste in boilers and industrial furnaces|July 14, 2005|70 FR 34538, June 14, 2005|\n|Air Emissions Standards for Tanks, Surface Impoundments, and Containers|July 14, 2005|70 FR 34538, June 14, 2005|"
+        }
+    ], 
+    "271-26-h-1-p1": [
+        {
+            "locations": [
+                0
+            ], 
+            "table_data": {
+                "caption": "Table 1\u2014Regulations Adopted November 29, 1985 Regarding the Burning of Used Oil for Energy Recovery", 
+                "header": [
+                    [
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Former provisions of 40 CFR part 266, subpart E (1992)"
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Recodified provisions within 40 CFR part 279"
+                        }
+                    ]
+                ], 
+                "rows": [
+                    [
+                        "Sec. 266.40(a)", 
+                        "Sec. 279.60(a)"
+                    ], 
+                    [
+                        "Sec. 266.40(b)", 
+                        "Sec. 279.1\u2009[^1](Contains additional new definitions that were not included in the 1985 rule.)"
+                    ], 
+                    [
+                        "Sec. 266.40(c) [rebuttable presumption]", 
+                        "Sec. 279.63(a), (b) and (c)\u2009[^2](Paragraphs \\(c\\)\\(1\\) and \\(2\\) of \u00a7\u2009279.63 contain new exemptions from the rebuttable presumption that were not part of the 1985 rule.)"
+                    ], 
+                    [
+                        "Sec. 266.40(d)(1) and (2)", 
+                        "Sec. 279.10(b)(2) and (3)"
+                    ], 
+                    [
+                        "Sec. 266.40(e)", 
+                        "Sec. 279.11"
+                    ], 
+                    [
+                        "", 
+                        "Sec. 279.60(c)"
+                    ], 
+                    [
+                        "Sec. 266.41(a)(1) and (2)", 
+                        "Sec. 279.71"
+                    ], 
+                    [
+                        "266.41(b)(1) and (2)", 
+                        "Sec. 279.61(a)"
+                    ], 
+                    [
+                        "", 
+                        "279.23(a)"
+                    ], 
+                    [
+                        "Sec. 266.42(a)", 
+                        "Sec. 279.60(a)"
+                    ], 
+                    [
+                        "Sec. 266.42(b)", 
+                        "Sec. 279.70(a)"
+                    ], 
+                    [
+                        "Sec. 266.42(c)", 
+                        "Sec. 279.60(a)"
+                    ], 
+                    [
+                        "Sec. 266.43(a)(1)", 
+                        "Sec. 279.70(a) and (b)(1)"
+                    ], 
+                    [
+                        "Sec. 266.43(a)(2)", 
+                        "Sec. 279.70(b)(2)"
+                    ], 
+                    [
+                        "Sec. 266.43(b)(1)", 
+                        "Sec. 279.72(a)"
+                    ], 
+                    [
+                        "Sec. 266.43(b)(2)", 
+                        "Sec. 279.71"
+                    ], 
+                    [
+                        "Sec. 266.43(b)(3)", 
+                        "Sec. 279.73(a)"
+                    ], 
+                    [
+                        "Sec. 266.43(b)(4)(i-v)", 
+                        "Sec. 279.74(a)"
+                    ], 
+                    [
+                        "Sec. 266.43(b)(4)(vi)", 
+                        "not included"
+                    ], 
+                    [
+                        "Sec. 266.43(b)(5)(i) and (ii)", 
+                        "Sec. 279.75(a)"
+                    ], 
+                    [
+                        "Sec. 266.43(b)(6)(i)", 
+                        "Sec. 279.74(b) and (c)"
+                    ], 
+                    [
+                        "", 
+                        "279.72(b)"
+                    ], 
+                    [
+                        "Sec. 266.43(b)(6)(ii)", 
+                        "Sec. 279.74(a)"
+                    ], 
+                    [
+                        "", 
+                        "Sec. 279.75(b)"
+                    ], 
+                    [
+                        "Sec. 266.44(a)", 
+                        "Sec. 279.61(a)"
+                    ], 
+                    [
+                        "", 
+                        "Sec. 279.23(a)"
+                    ], 
+                    [
+                        "Sec. 266.44(b)", 
+                        "Sec. 279.62(a)"
+                    ], 
+                    [
+                        "Sec. 266.44(c)", 
+                        "Sec. 279.66(a)"
+                    ], 
+                    [
+                        "Sec. 266.44(d)", 
+                        "Sec. 279.72(a)"
+                    ], 
+                    [
+                        "Sec. 266.44(e)", 
+                        "Sec. 279.65(a) and (b)"
+                    ], 
+                    [
+                        "", 
+                        "Sec. 279.66(b)"
+                    ], 
+                    [
+                        "", 
+                        "Sec. 279.72(b)"
+                    ]
+                ]
+            }, 
+            "text": "|Table 1\u2014Regulations Adopted November 29, 1985 Regarding the Burning of Used Oil for Energy Recovery|Former provisions of 40 CFR part 266, subpart E (1992)|Recodified provisions within 40 CFR part 279|\n|---|---|---|\n|Sec. 266.40(a)|Sec. 279.60(a)|\n|Sec. 266.40(b)|Sec. 279.1\u2009[^1](Contains additional new definitions that were not included in the 1985 rule.)|\n|Sec. 266.40(c) [rebuttable presumption]|Sec. 279.63(a), (b) and (c)\u2009[^2](Paragraphs \\(c\\)\\(1\\) and \\(2\\) of \u00a7\u2009279.63 contain new exemptions from the rebuttable presumption that were not part of the 1985 rule.)|\n|Sec. 266.40(d)(1) and (2)|Sec. 279.10(b)(2) and (3)|\n|Sec. 266.40(e)|Sec. 279.11|\n||Sec. 279.60(c)|\n|Sec. 266.41(a)(1) and (2)|Sec. 279.71|\n|266.41(b)(1) and (2)|Sec. 279.61(a)|\n||279.23(a)|\n|Sec. 266.42(a)|Sec. 279.60(a)|\n|Sec. 266.42(b)|Sec. 279.70(a)|\n|Sec. 266.42(c)|Sec. 279.60(a)|\n|Sec. 266.43(a)(1)|Sec. 279.70(a) and (b)(1)|\n|Sec. 266.43(a)(2)|Sec. 279.70(b)(2)|\n|Sec. 266.43(b)(1)|Sec. 279.72(a)|\n|Sec. 266.43(b)(2)|Sec. 279.71|\n|Sec. 266.43(b)(3)|Sec. 279.73(a)|\n|Sec. 266.43(b)(4)(i-v)|Sec. 279.74(a)|\n|Sec. 266.43(b)(4)(vi)|not included|\n|Sec. 266.43(b)(5)(i) and (ii)|Sec. 279.75(a)|\n|Sec. 266.43(b)(6)(i)|Sec. 279.74(b) and (c)|\n||279.72(b)|\n|Sec. 266.43(b)(6)(ii)|Sec. 279.74(a)|\n||Sec. 279.75(b)|\n|Sec. 266.44(a)|Sec. 279.61(a)|\n||Sec. 279.23(a)|\n|Sec. 266.44(b)|Sec. 279.62(a)|\n|Sec. 266.44(c)|Sec. 279.66(a)|\n|Sec. 266.44(d)|Sec. 279.72(a)|\n|Sec. 266.44(e)|Sec. 279.65(a) and (b)|\n||Sec. 279.66(b)|\n||Sec. 279.72(b)|"
+        }, 
+        {
+            "footnote_data": {
+                "note": "Contains additional new definitions that were not included in the 1985 rule.", 
+                "ref": "1"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "[^1](Contains additional new definitions that were not included in the 1985 rule.)"
+        }, 
+        {
+            "footnote_data": {
+                "note": "Paragraphs (c)(1) and (2) of \u00a7\u2009279.63 contain new exemptions from the rebuttable presumption that were not part of the 1985 rule.", 
+                "ref": "2"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "[^2](Paragraphs \\(c\\)\\(1\\) and \\(2\\) of \u00a7\u2009279.63 contain new exemptions from the rebuttable presumption that were not part of the 1985 rule.)"
+        }
+    ]
+}

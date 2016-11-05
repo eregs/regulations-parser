@@ -1,0 +1,363 @@
+{
+    "111": [
+        {
+            "index": [
+                "111", 
+                "Subpart", 
+                "A"
+            ], 
+            "title": "Enforcement"
+        }, 
+        {
+            "index": [
+                "111", 
+                "Subpart", 
+                "B"
+            ], 
+            "title": "Administrative Fines"
+        }, 
+        {
+            "index": [
+                "111", 
+                "Subpart", 
+                "C"
+            ], 
+            "title": "Collection of Debts Arising From Enforcement and Administration of Campaign Finance Laws"
+        }
+    ], 
+    "111-Subpart-A": [
+        {
+            "index": [
+                "111", 
+                "1"
+            ], 
+            "title": "\u00a7 111.1 Scope (52 U.S.C. 30109)."
+        }, 
+        {
+            "index": [
+                "111", 
+                "2"
+            ], 
+            "title": "\u00a7 111.2 Computation of time."
+        }, 
+        {
+            "index": [
+                "111", 
+                "3"
+            ], 
+            "title": "\u00a7 111.3 Initiation of compliance matters (52 U.S.C. 30109(a)(1), (2))."
+        }, 
+        {
+            "index": [
+                "111", 
+                "4"
+            ], 
+            "title": "\u00a7 111.4 Complaints (52 U.S.C. 30109(a)(1))."
+        }, 
+        {
+            "index": [
+                "111", 
+                "5"
+            ], 
+            "title": "\u00a7 111.5 Initial complaint processing; notification (52 U.S.C. 30109(a)(1))."
+        }, 
+        {
+            "index": [
+                "111", 
+                "6"
+            ], 
+            "title": "\u00a7 111.6 Opportunity to demonstrate that no action should be taken on complaint-generated matters (52 U.S.C. 30109 (a)(1))."
+        }, 
+        {
+            "index": [
+                "111", 
+                "7"
+            ], 
+            "title": "\u00a7 111.7 General Counsel's recommendation on complaint-generated matters (52 U.S.C. 30109(a)(1)."
+        }, 
+        {
+            "index": [
+                "111", 
+                "8"
+            ], 
+            "title": "\u00a7 111.8 Internally generated matters; referrals (52 U.S.C. 30109(a)(2))."
+        }, 
+        {
+            "index": [
+                "111", 
+                "9"
+            ], 
+            "title": "\u00a7 111.9 The reason to believe finding; notification (52 U.S.C. 30109(a)(2))."
+        }, 
+        {
+            "index": [
+                "111", 
+                "10"
+            ], 
+            "title": "\u00a7 111.10 Investigation (52 U.S.C. 30109 (a)(2))."
+        }, 
+        {
+            "index": [
+                "111", 
+                "11"
+            ], 
+            "title": "\u00a7 111.11 Written questions under order (52 U.S.C. 30107(a)(1))."
+        }, 
+        {
+            "index": [
+                "111", 
+                "12"
+            ], 
+            "title": "\u00a7 111.12 Subpoenas and subpoenas duces tecum; depositions (52 U.S.C. 30107(a)(3), (4))."
+        }, 
+        {
+            "index": [
+                "111", 
+                "13"
+            ], 
+            "title": "\u00a7 111.13 Service of subpoenas, orders and notifications (52 U.S.C. 30107(a)(3), (4))."
+        }, 
+        {
+            "index": [
+                "111", 
+                "14"
+            ], 
+            "title": "\u00a7 111.14 Witness fees and mileage (52 U.S.C. 30107 (a)(5))."
+        }, 
+        {
+            "index": [
+                "111", 
+                "15"
+            ], 
+            "title": "\u00a7 111.15 Motions to quash or modify a subpoena (52 U.S.C. 30107(a)(3), (4))."
+        }, 
+        {
+            "index": [
+                "111", 
+                "16"
+            ], 
+            "title": "\u00a7 111.16 The probable cause to believe recommendation; briefing procedures (52 U.S.C. 30109 (a)(3))."
+        }, 
+        {
+            "index": [
+                "111", 
+                "17"
+            ], 
+            "title": "\u00a7 111.17 The probable cause to believe finding; notification (52 U.S.C. 30109(a)(4))."
+        }, 
+        {
+            "index": [
+                "111", 
+                "18"
+            ], 
+            "title": "\u00a7 111.18 Conciliation (52 U.S.C. 30109(a)(4))."
+        }, 
+        {
+            "index": [
+                "111", 
+                "19"
+            ], 
+            "title": "\u00a7 111.19 Civil proceedings (52 U.S.C. 30109(a)(6))."
+        }, 
+        {
+            "index": [
+                "111", 
+                "20"
+            ], 
+            "title": "\u00a7 111.20 Public disclosure of Commission action (52 U.S.C. 30109(a)(4))."
+        }, 
+        {
+            "index": [
+                "111", 
+                "21"
+            ], 
+            "title": "\u00a7 111.21 Confidentiality (52 U.S.C. 30109(a)(12))."
+        }, 
+        {
+            "index": [
+                "111", 
+                "22"
+            ], 
+            "title": "\u00a7 111.22 Ex parte communications."
+        }, 
+        {
+            "index": [
+                "111", 
+                "23"
+            ], 
+            "title": "\u00a7 111.23 Representation by counsel; notification."
+        }, 
+        {
+            "index": [
+                "111", 
+                "24"
+            ], 
+            "title": "\u00a7 111.24 Civil Penalties (52 U.S.C. 30109(a)(5), (6), (12), 28 U.S.C. 2461 nt.)."
+        }
+    ], 
+    "111-Subpart-B": [
+        {
+            "index": [
+                "111", 
+                "30"
+            ], 
+            "title": "\u00a7 111.30 When will subpart B apply?"
+        }, 
+        {
+            "index": [
+                "111", 
+                "31"
+            ], 
+            "title": "\u00a7 111.31 Does this subpart replace subpart A of this part for violations of the reporting requirements of 52 U.S.C. 30104(a)?"
+        }, 
+        {
+            "index": [
+                "111", 
+                "32"
+            ], 
+            "title": "\u00a7 111.32 How will the Commission notify respondents of a reason to believe finding and a proposed civil money penalty?"
+        }, 
+        {
+            "index": [
+                "111", 
+                "33"
+            ], 
+            "title": "\u00a7 111.33 What are the respondent's choices upon receiving the reason to believe finding and the proposed civil money penalty?"
+        }, 
+        {
+            "index": [
+                "111", 
+                "34"
+            ], 
+            "title": "\u00a7 111.34 If the respondent decides to pay the civil money penalty and not to challenge the reason to believe finding, what should the respondent do?"
+        }, 
+        {
+            "index": [
+                "111", 
+                "35"
+            ], 
+            "title": "\u00a7 111.35 If the respondent decides to challenge the alleged violation or proposed civil money penalty, what should the respondent do?"
+        }, 
+        {
+            "index": [
+                "111", 
+                "36"
+            ], 
+            "title": "\u00a7 111.36 Who will review the respondent's written response?"
+        }, 
+        {
+            "index": [
+                "111", 
+                "37"
+            ], 
+            "title": "\u00a7 111.37 What will the Commission do once it receives the respondent's written response and the reviewing officer's recommendation?"
+        }, 
+        {
+            "index": [
+                "111", 
+                "38"
+            ], 
+            "title": "\u00a7 111.38 Can the respondent appeal the Commission's final determination?"
+        }, 
+        {
+            "index": [
+                "111", 
+                "39"
+            ], 
+            "title": "\u00a7 111.39 When must the respondent pay the civil money penalty?"
+        }, 
+        {
+            "index": [
+                "111", 
+                "40"
+            ], 
+            "title": "\u00a7 111.40 What happens if the respondent does not pay the civil money penalty pursuant to 11 CFR 111.34 and does not submit a written response to the reason to believe finding pursuant to 11 CFR 111.35?"
+        }, 
+        {
+            "index": [
+                "111", 
+                "41"
+            ], 
+            "title": "\u00a7 111.41 [Reserved]"
+        }, 
+        {
+            "index": [
+                "111", 
+                "42"
+            ], 
+            "title": "\u00a7 111.42 Will the enforcement file be made available to the public?"
+        }, 
+        {
+            "index": [
+                "111", 
+                "43"
+            ], 
+            "title": "\u00a7 111.43 What are the schedules of penalties?"
+        }, 
+        {
+            "index": [
+                "111", 
+                "44"
+            ], 
+            "title": "\u00a7 111.44 What is the schedule of penalties for 48-hour notices that are not filed or are filed late?"
+        }, 
+        {
+            "index": [
+                "111", 
+                "45"
+            ], 
+            "title": "\u00a7 111.45 [Reserved]"
+        }, 
+        {
+            "index": [
+                "111", 
+                "46"
+            ], 
+            "title": "\u00a7 111.46 How will the respondent be notified of actions taken by the Commission and the reviewing officer?"
+        }
+    ], 
+    "111-Subpart-C": [
+        {
+            "index": [
+                "111", 
+                "50"
+            ], 
+            "title": "\u00a7 111.50 Purpose and scope."
+        }, 
+        {
+            "index": [
+                "111", 
+                "51"
+            ], 
+            "title": "\u00a7 111.51 Debts that are covered."
+        }, 
+        {
+            "index": [
+                "111", 
+                "52"
+            ], 
+            "title": "\u00a7 111.52 Administrative collection of claims."
+        }, 
+        {
+            "index": [
+                "111", 
+                "53"
+            ], 
+            "title": "\u00a7 111.53 Litigation by the Commission."
+        }, 
+        {
+            "index": [
+                "111", 
+                "54"
+            ], 
+            "title": "\u00a7 111.54 Bankruptcy claims."
+        }, 
+        {
+            "index": [
+                "111", 
+                "55"
+            ], 
+            "title": "\u00a7 111.55 Interest, penalties, and administrative costs."
+        }
+    ]
+}

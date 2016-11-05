@@ -1,0 +1,59 @@
+{
+    "271-23-b-2-i": [
+        {
+            "offsets": [
+                [
+                    68, 
+                    74
+                ]
+            ], 
+            "ref": "person:271-23-b-2-ii"
+        }, 
+        {
+            "offsets": [
+                [
+                    20, 
+                    30
+                ]
+            ], 
+            "ref": "petitioner:271-23-b-2-iii"
+        }
+    ], 
+    "271-23-b-2-iii": [
+        {
+            "offsets": [
+                [
+                    27, 
+                    33
+                ]
+            ], 
+            "ref": "person:271-23-b-2-ii"
+        }
+    ], 
+    "referenced": {
+        "party:271-23-b-2-i": {
+            "position": [
+                4, 
+                9
+            ], 
+            "reference": "271-23-b-2-i", 
+            "term": "party"
+        }, 
+        "person:271-23-b-2-ii": {
+            "position": [
+                5, 
+                11
+            ], 
+            "reference": "271-23-b-2-ii", 
+            "term": "person"
+        }, 
+        "petitioner:271-23-b-2-iii": {
+            "position": [
+                6, 
+                16
+            ], 
+            "reference": "271-23-b-2-iii", 
+            "term": "petitioner"
+        }
+    }
+}

@@ -1,0 +1,113 @@
+{
+    "9004-9-a-2-ii": [
+        {
+            "offsets": [
+                [
+                    30, 
+                    44
+                ]
+            ], 
+            "ref": "capital asset:9004-9-d-1-i"
+        }, 
+        {
+            "offsets": [
+                [
+                    49, 
+                    61
+                ]
+            ], 
+            "ref": "other assets:9004-9-d-1-i"
+        }
+    ], 
+    "9004-9-d-1": [
+        {
+            "offsets": [
+                [
+                    4, 
+                    18
+                ]
+            ], 
+            "ref": "capital asset:9004-9-d-1-i"
+        }
+    ], 
+    "9004-9-d-1-ii": [
+        {
+            "offsets": [
+                [
+                    8, 
+                    22
+                ], 
+                [
+                    373, 
+                    387
+                ]
+            ], 
+            "ref": "capital asset:9004-9-d-1-i"
+        }
+    ], 
+    "9004-9-d-1-iii": [
+        {
+            "offsets": [
+                [
+                    71, 
+                    85
+                ]
+            ], 
+            "ref": "capital asset:9004-9-d-1-i"
+        }, 
+        {
+            "offsets": [
+                [
+                    104, 
+                    116
+                ]
+            ], 
+            "ref": "other assets:9004-9-d-1-i"
+        }
+    ], 
+    "9004-9-d-2": [
+        {
+            "offsets": [
+                [
+                    4, 
+                    16
+                ], 
+                [
+                    27, 
+                    39
+                ], 
+                [
+                    650, 
+                    662
+                ]
+            ], 
+            "ref": "other assets:9004-9-d-1-i"
+        }
+    ], 
+    "referenced": {
+        "capital asset:9004-9-d-1-i": {
+            "position": [
+                43, 
+                56
+            ], 
+            "reference": "9004-9-d-1-i", 
+            "term": "capital asset"
+        }, 
+        "other assets:9004-9-d-1-i": {
+            "position": [
+                437, 
+                449
+            ], 
+            "reference": "9004-9-d-1-i", 
+            "term": "other assets"
+        }, 
+        "other assets:9004-9-d-2": {
+            "position": [
+                148, 
+                160
+            ], 
+            "reference": "9004-9-d-2", 
+            "term": "other assets"
+        }
+    }
+}

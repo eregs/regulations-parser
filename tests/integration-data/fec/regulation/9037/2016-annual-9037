@@ -1,0 +1,60 @@
+{
+    "children": [
+        {
+            "children": [
+                {
+                    "children": [], 
+                    "label": [
+                        "9037", 
+                        "1"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "Upon receipt of a written certification from the Commission, but not before the beginning of the matching payment period, the Secretary will promptly transfer the amount certified from the matching payment account to the candidate. A matching fund certification may not result in full payment by the Secretary in the case of a shortfall in the matching payment account. See 26 CFR 702.9037-1 and 702.9037-2.", 
+                    "title": "\u00a7 9037.1 Payments of Presidential primary matching funds."
+                }, 
+                {
+                    "children": [], 
+                    "label": [
+                        "9037", 
+                        "2"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "In making such transfers to candidates of the same political party, the Secretary will seek to achieve an equitable distribution of funds available in the matching payment account, and the Secretary will take into account, in seeking to achieve an equitable distribution of funds available in the matching payment account, the sequence in which such certifications are received. See 26 CFR 702.9037-2(c) regarding partial payments to candidates in the case of a shortfall in the matching payment account.", 
+                    "title": "\u00a7 9037.2 Equitable distribution of funds."
+                }, 
+                {
+                    "children": [], 
+                    "label": [
+                        "9037", 
+                        "3"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "Upon receipt of any matching funds, the candidate shall deposit the full amount received into a checking account maintained by the candidate's principal campaign committee in the depository designated by the candidate. The account(s) shall be maintained at a State bank, federally chartered depository institution or other depository institution, the deposits of which are insured by the Federal Deposit Insurance Corporation.", 
+                    "title": "\u00a7 9037.3 Deposits of Presidential primary matching funds."
+                }, 
+                {
+                    "children": [], 
+                    "label": [
+                        "9037", 
+                        "4"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "If the authorized committee(s) of a candidate file a schedule of itemized receipts, disbursements, or debts and obligations pursuant to 11 CFR 104.3 that was generated directly or indirectly from computerized files or records, the schedule shall list in alphabetical order the sources of the receipts, the payees or the creditors, as appropriate. In the case of individuals, such schedule shall list all contributors, payees, and creditors in alphabetical order by surname.", 
+                    "title": "\u00a7 9037.4 Alphabetized schedules."
+                }
+            ], 
+            "label": [
+                "9037", 
+                "Subpart"
+            ], 
+            "node_type": "emptypart", 
+            "text": ""
+        }
+    ], 
+    "label": [
+        "9037"
+    ], 
+    "node_type": "regtext", 
+    "text": "", 
+    "title": "PART 9037\u2014PAYMENTS AND REPORTING"
+}
