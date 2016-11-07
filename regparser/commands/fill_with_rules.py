@@ -10,6 +10,18 @@ from regparser.notice.compiler import compile_regulation
 logger = logging.getLogger(__name__)
 
 
+def drop_initial_orphans(versions_with_parents, existing):
+    """We can only build a version if there's a complete tree before it to
+    build from. As such, we need to drop any orphaned versions from the
+    beginning of our list"""
+    for idx, (version, parent) in enumerate(versions_with_parents):
+        if version.identifier in existing:
+            return versions_with_parents[idx:]
+        logger.warning("No previous annual edition to version %s; ignoring",
+                       version.identifier)
+    return []
+
+
 def dependencies(tree_dir, version_dir, versions_with_parents):
     """Set up the dependency graph for this regulation. First calculates
     "gaps" -- versions for which there is no existing tree. In this
@@ -17,8 +29,9 @@ def dependencies(tree_dir, version_dir, versions_with_parents):
     anything for it. Add dependencies for any gaps, tying the output tree to
     the preceding tree, the version info and the parsed rule"""
     existing_tree_ids = set(tree.path[-1] for tree in tree_dir.sub_entries())
-    versions_with_parents = versions_with_parents[1:]
-    gaps = [(version, parent) for (version, parent) in versions_with_parents
+    version_pairs = drop_initial_orphans(
+        versions_with_parents, existing_tree_ids)
+    gaps = [(version, parent) for (version, parent) in version_pairs
             if version.identifier not in existing_tree_ids]
 
     deps = dependency.Graph()

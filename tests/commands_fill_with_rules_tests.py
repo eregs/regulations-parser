@@ -103,3 +103,14 @@ class CommandsFillWithRulesTests(TestCase):
             self.assertEqual(changes, {
                 "1000-2-b": ["2b changes"], "1000-2-c": ["2c changes"],
                 "1000-4-a": ["4a changes"]})
+
+
+def test_drop_initial_orphan_versions():
+    version_list = [Version(letter, None, None) for letter in 'abcdef']
+    version_pairs = list(zip(version_list, [None] + version_list[1:]))
+    existing = {'c', 'e'}
+
+    result = fill_with_rules.drop_initial_orphans(version_pairs, existing)
+    result = [pair[0].identifier for pair in result]
+
+    assert result == ['c', 'd', 'e', 'f']
