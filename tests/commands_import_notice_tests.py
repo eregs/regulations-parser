@@ -1,5 +1,3 @@
-from unittest import TestCase
-
 from regparser.commands import import_notice
 from regparser.notice.xml import NoticeXML
 from regparser.test_utils.xml_builder import XMLBuilder
