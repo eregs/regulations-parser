@@ -49,8 +49,13 @@ class CommandsWriteToTests(TestCase):
 
     def add_notices(self):
         """Adds an uneven assortment of notices"""
-        with XMLBuilder("ROOT", **{"eregs-version-id": "v0"}) as ctx:
-            ctx.PRTPAGE(P=1, **{"eregs-fr-volume": 1})
+        root_attrs = {
+            "eregs-version-id": "v0",
+            "fr-volume": 1,
+            "fr-start-page": 2,
+            "fr-end-page": 3
+        }
+        with XMLBuilder("ROOT", **root_attrs) as ctx:
             ctx.AGENCY("Agency")
             ctx.SUBJECT("Subj")
             ctx.DATES(**{'eregs-published-date': '2001-01-01'})

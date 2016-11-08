@@ -28,8 +28,9 @@ def has_requirements(notice_xml):
         logger.error("Missing publish date (eregs-published-date attribute "
                      "on the DATES tag)")
     elif not notice_xml.fr_volume:
-        logger.error("Missing volume (eregs-fr-volume attribute on the first "
-                     "PRTPAGE tag)")
+        logger.error("Missing volume (fr-volume attribute on root)")
+    elif not notice_xml.start_page:
+        logger.error("Missing volume (fr-start-page attribute on root)")
     else:
         return True
 
