@@ -152,7 +152,7 @@ class DepthInterpretationTreeTest(TestCase):
              (len(text+s22), len(text+s22+s23)),
              (len(text+s22+s23), len(text+s22+s23+s25)),
              (len(text+s22+s23+s25), len(text+s22+s23+s25+sb))],
-            interpretation.segment_by_header(text + s22 + s23 + s25 + sb, 87))
+            interpretation.segment_by_header(text + s22 + s23 + s25 + sb))
 
     def test_segment_by_header_ten(self):
         text = "Interp interp\n"
@@ -162,7 +162,7 @@ class DepthInterpretationTreeTest(TestCase):
 
         self.assertEqual(
             3, len(interpretation.segment_by_header(
-                text + s10a + s10a1 + s10b, 0)))
+                text + s10a + s10a1 + s10b)))
 
     def test_text_to_labels(self):
         text = u"9(c)(2)(iii) Charges not Covered by § 1026.6(b)(1) and "

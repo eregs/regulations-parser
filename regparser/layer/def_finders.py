@@ -81,7 +81,7 @@ class SmartQuotes(FinderBase):
         for node in self.stack.lineage():
             lower_text = node.text.lower()
             in_text = 'Definition' in node.text
-            in_title = 'Definition' in node.title or ''
+            in_title = 'Definition' in (node.title or '')
             pattern1 = re.search('the term .* (means|refers to)', lower_text)
             pattern2 = re.search(u'“[^”]+” (means|refers to)', lower_text)
             if in_text or in_title or pattern1 or pattern2:

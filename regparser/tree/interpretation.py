@@ -24,7 +24,7 @@ def build(text, part):
     """Create a tree representing the whole interpretation."""
     part = str(part)
     title, body = title_body(text)
-    segments = segment_by_header(body, part)
+    segments = segment_by_header(body)
 
     if segments:
         children = [segment_tree(body[s:e], part, [part]) for s, e in segments]
@@ -37,7 +37,7 @@ def build(text, part):
             Node.INTERP)
 
 
-def segment_by_header(text, part):
+def segment_by_header(text):
     """Return a list of headers (section, appendices, paragraphs) and their
     offsets."""
     starts = [start for _, start, _ in grammar.parser.scanString(text)]
