@@ -68,6 +68,17 @@ class AppendixProcessor(object):
     #   identifier when determining which depth elements should be placed
     filler_regex = re.compile(r"[ph]\d+")
 
+    def __init__(self, part):
+        self.m_stack = tree_utils.NodeStack()
+
+        self.part = part
+        self.paragraph_counter = 0
+        self.header_count = 0
+        self.depth = 0
+        self.appendix_letter = None
+        # holds collections of nodes until their depth is determined
+        self.nodes = []
+
     def set_letter(self, appendix):
         """Find (and set) the appendix letter"""
         for node in (c for c in appendix.getchildren()
@@ -255,17 +266,7 @@ class AppendixProcessor(object):
                     self.m_stack.add(self.depth, node)
             self.nodes = []
 
-    def process(self, appendix, part):
-        self.m_stack = tree_utils.NodeStack()
-
-        self.part = part
-        self.paragraph_counter = 0
-        self.header_count = 0
-        self.depth = None
-        self.appendix_letter = None
-        # holds collections of nodes until their depth is determined
-        self.nodes = []
-
+    def process(self, appendix):
         self.set_letter(appendix)
         remove_toc(appendix, self.appendix_letter)
 
@@ -280,7 +281,7 @@ class AppendixProcessor(object):
             if ((child.tag == 'HD' and child.attrib['SOURCE'] == 'HED') or
                     child.tag == 'RESERVED'):
                 self.end_group()
-                self.hed(part, text)
+                self.hed(self.part, text)
             elif is_subhead(child.tag, text):
                 self.end_group()
                 self.subheader(child, text)
@@ -333,7 +334,7 @@ def split_paragraph_text(text):
 
 
 def process_appendix(appendix, part):
-    return AppendixProcessor().process(appendix, part)
+    return AppendixProcessor(part).process(appendix)
 
 
 def parsed_title(text, appendix_letter):

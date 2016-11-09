@@ -3,7 +3,7 @@ from unittest import TestCase
 from lxml import etree
 
 from regparser.tree.struct import Node
-from regparser.tree.xml_parser import appendices, tree_utils
+from regparser.tree.xml_parser import appendices
 
 
 class AppendicesTest(TestCase):
@@ -405,11 +405,7 @@ class AppendicesTest(TestCase):
 
 class AppendixProcessorTest(TestCase):
     def setUp(self):
-        self.ap = appendices.AppendixProcessor()
-        self.ap.paragraph_counter = 0
-        self.ap.depth = 0
-        self.ap.m_stack = tree_utils.NodeStack()
-        self.ap.nodes = []
+        self.ap = appendices.AppendixProcessor(1111)
 
     def result(self):
         return self.ap.m_stack.peek_last()
@@ -539,7 +535,7 @@ class AppendixProcessorTest(TestCase):
             <P>A. Content</P>
         </APPENDIX>
         """
-        appendix = self.ap.process(etree.fromstring(xml), 1111)
+        appendix = self.ap.process(etree.fromstring(xml))
         self.assertEqual(1, len(appendix.children))
         aI = appendix.children[0]
 
@@ -556,7 +552,7 @@ class AppendixProcessorTest(TestCase):
             <P>(ii) ii ii ii</P>
         </APPENDIX>
         """
-        appendix = self.ap.process(etree.fromstring(xml), 1111)
+        appendix = self.ap.process(etree.fromstring(xml))
         self.assertEqual(1, len(appendix.children))
         Aa = appendix.children[0]
 
@@ -576,7 +572,7 @@ class AppendixProcessorTest(TestCase):
             <P>A. Content</P>
         </APPENDIX>
         """
-        appendix = self.ap.process(etree.fromstring(xml), 1111)
+        appendix = self.ap.process(etree.fromstring(xml))
         self.assertEqual(2, len(appendix.children))
         a1, a2 = appendix.children
 
@@ -593,7 +589,7 @@ class AppendixProcessorTest(TestCase):
             <P>(2) Something else</P>
         </APPENDIX>
         """
-        appendix = self.ap.process(etree.fromstring(xml), 1111)
+        appendix = self.ap.process(etree.fromstring(xml))
         self.assertEqual(1, len(appendix.children))
         aI = appendix.children[0]
         self.assertEqual(1, len(aI.children))
@@ -613,7 +609,7 @@ class AppendixProcessorTest(TestCase):
             <P>(a) <E T="03">Keyterm</E> (1) Content</P>
         </APPENDIX>
         """
-        appendix = self.ap.process(etree.fromstring(xml), 1111)
+        appendix = self.ap.process(etree.fromstring(xml))
         self.assertEqual(1, len(appendix.children))
         a = appendix.children[0]
         self.assertEqual(['1111', 'A', 'a'], a.label)
@@ -634,7 +630,7 @@ class AppendixProcessorTest(TestCase):
             <P>Markerless</P>
         </APPENDIX>
         """
-        appendix = self.ap.process(etree.fromstring(xml), 1111)
+        appendix = self.ap.process(etree.fromstring(xml))
         self.assertEqual(1, len(appendix.children))
         a = appendix.children[0]
         self.assertEqual(['1111', 'A', 'a'], a.label)
