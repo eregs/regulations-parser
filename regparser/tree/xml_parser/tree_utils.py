@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from copy import deepcopy
+from functools import wraps
 from itertools import chain
 
 from lxml import etree
@@ -82,34 +83,45 @@ def replace_xml_node_with_text(node, text):
     parent.remove(node)
 
 
-def _subscript_to_text(node, add_spaces):
-    for e in node.xpath(".//E[@T='52' or @T='54']"):
-        text = _combine_with_space("_{" + e.text + "}", e.tail, add_spaces)
-        replace_xml_node_with_text(e, text)
+def replace_xpath(xpath):
+    """Decorator to convert all elements matching the provided xpath in to
+    plain text. This'll convert the wrapped function into a new function which
+    will search for the provided xpath and replace all matches"""
+    def decorator(fn):
+        @wraps(fn)
+        def wrapped(node, add_spaces):
+            for element in node.xpath(xpath):
+                text = fn(element)
+                text = _combine_with_space(text, element.tail, add_spaces)
+                replace_xml_node_with_text(element, text)
+        return wrapped
+    return decorator
 
 
-def _superscript_to_text(node, add_spaces):
-    for e in node.xpath(".//E[@T='51' or @T='53']|.//SU[not(@footnote)]"):
-        text = _combine_with_space("^{" + e.text + "}", e.tail, add_spaces)
-        replace_xml_node_with_text(e, text)
+@replace_xpath(".//E[@T='52' or @T='54']")
+def subscript_to_plaintext(element):
+    return "_{%s}" % element.text
 
 
-def _footnotes_to_text(node, add_spaces):
-    for su in node.xpath(".//SU[@footnote]"):
-        footnote = su.attrib['footnote']
-        footnote = footnote.replace('(', r'\(').replace(')', r'\)')
-        text = u"[^{}]({})".format(su.text, footnote)
-        text = _combine_with_space(text, su.tail, add_spaces)
-        replace_xml_node_with_text(su, text)
+@replace_xpath(".//E[@T='51' or @T='53']|.//SU[not(@footnote)]")
+def superscript_to_plaintext(element):
+    return "^{%s}" % element.text
+
+
+@replace_xpath(".//SU[@footnote]")
+def footnotes_to_plaintext(element):
+    footnote = element.attrib['footnote']
+    footnote = footnote.replace('(', r'\(').replace(')', r'\)')
+    return u"[^{}]({})".format(element.text, footnote)
 
 
 def get_node_text(node, add_spaces=False):
     """ Extract all the text from an XML node (including the text of it's
     children). """
     node = deepcopy(node)
-    _subscript_to_text(node, add_spaces)
-    _superscript_to_text(node, add_spaces)
-    _footnotes_to_text(node, add_spaces)
+    subscript_to_plaintext(node, add_spaces)
+    superscript_to_plaintext(node, add_spaces)
+    footnotes_to_plaintext(node, add_spaces)
 
     parts = [node.text] + list(
         chain(*([c.text, c.tail] for c in node.getchildren())))
