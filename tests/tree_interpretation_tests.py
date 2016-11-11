@@ -41,15 +41,6 @@ class DepthInterpretationTreeTest(TestCase):
         self.assertTrue(1, len(tree.children))
         self.assertEqual(text, tree.children[0].text)
 
-    def test_build_without_subs(self):
-        title = "Something here"
-        body = "\nAnd then more\nSome more\nAnd yet another line"
-        result = interpretation.build(title + body, '100')
-        self.assertEqual(body, result.text)
-        self.assertEqual(['100', Node.INTERP_MARK], result.label)
-        self.assertEqual(title, result.title)
-        self.assertEqual(0, len(result.children))
-
     def test_build_with_appendices(self):
         title = "Awesome Interpretations"
         sec1 = "Section 199.22 Interps"
@@ -64,25 +55,6 @@ class DepthInterpretationTreeTest(TestCase):
         self.assertEqual(sec2, node.children[1].title)
         self.assertEqual(app1, node.children[2].title)
         self.assertEqual(app2, node.children[3].title)
-
-    def test_build_with_subs(self):
-        text = "Something here\nSection 100.22\nmore more\nSection 100.5\n"
-        text += "and more"
-        result = interpretation.build(text, "100")
-        self.assertEqual("", result.text.strip())
-        self.assertEqual(["100", "Interp"], result.label)
-        self.assertEqual("Something here", result.title)
-        self.assertEqual(2, len(result.children))
-
-        node = result.children[0]
-        self.assertEqual("\nmore more\n", node.text)
-        self.assertEqual(['100', '22', Node.INTERP_MARK], node.label)
-        self.assertEqual(0, len(node.children))
-
-        node = result.children[1]
-        self.assertEqual("\nand more", node.text)
-        self.assertEqual(['100', '5', Node.INTERP_MARK], node.label)
-        self.assertEqual(0, len(node.children))
 
     def test_build_interp_headers(self):
         text = "\nSection 876.2 Definitions\n\n2(r) Def1\n\n2(r)(4) SubSub"
@@ -152,39 +124,6 @@ class DepthInterpretationTreeTest(TestCase):
                          node.label)
         self.assertEqual(depth2iii, node.text)
         self.assertEqual(0, len(node.children))
-
-    def test_segment_tree(self):
-        title = "Section 105.11 This is a section title"
-        body = "1. Some contents\n2. Other data\ni. Hello hello"
-        non_title = "\n" + body
-        result = interpretation.segment_tree(title + non_title, '105', ['105'])
-        self.assertEqual("\n", result.text)
-        self.assertEqual(2, len(result.children))
-
-        child = result.children[0]
-        self.assertEqual("1. Some contents\n", child.text)
-        self.assertEqual([], child.children)
-        self.assertEqual(['105', '11', Node.INTERP_MARK, '1'], child.label)
-
-        child = result.children[1]
-        self.assertEqual("2. Other data\n", child.text)
-        self.assertEqual(1, len(child.children))
-        self.assertEqual(['105', '11', Node.INTERP_MARK, '2'], child.label)
-
-        child = result.children[1].children[0]
-        self.assertEqual("i. Hello hello", child.text)
-        self.assertEqual([], child.children)
-        self.assertEqual(['105', '11', Node.INTERP_MARK, '2', 'i'],
-                         child.label)
-
-    def test_segment_tree_no_children(self):
-        title = "Section 105.11 This is a section title"
-        body = "Body of the interpretation's section"
-        non_title = "\n" + body
-        result = interpretation.segment_tree(title + non_title, '105', ['105'])
-        self.assertEqual(non_title, result.text)
-        self.assertEqual(['105', '11', Node.INTERP_MARK], result.label)
-        self.assertEqual(0, len(result.children))
 
     def test_segment_tree_label(self):
         """The section tree should include the section header as label"""
@@ -259,3 +198,76 @@ class DepthInterpretationTreeTest(TestCase):
         labels = [['1021', 'A', '1'], ['1021', 'A', '2']]
         self.assertEqual(['1021', 'A', '1_2'],
                          interpretation.merge_labels(labels))
+
+
+def test_build_with_subs():
+    text = "Something here\nSection 100.22\nmore more\nSection 100.5\n"
+    text += "and more"
+    result = interpretation.build(text, "100")
+    assert result.text == ""
+    assert result.label == ["100", "Interp"]
+    assert result.title == "Something here"
+    assert len(result.children) == 2
+
+    node = result.children[0]
+    assert node.text == "more more\n"
+    assert node.label == ['100', '22', Node.INTERP_MARK]
+    assert node.children == []
+
+    node = result.children[1]
+    assert node.text == "and more"
+    assert node.label == ['100', '5', Node.INTERP_MARK]
+    assert node.children == []
+
+
+def test_build_without_subs():
+    title = "Something here"
+    body = "And then more\nSome more\nAnd yet another line"
+    result = interpretation.build(title + "\n" + body, '100')
+    assert result.text == body
+    assert result.label == ['100', Node.INTERP_MARK]
+    assert result.title == title
+    assert result.children == []
+
+
+def test_segment_tree():
+    title = "Section 105.11 This is a section title"
+    body = "1. Some contents\n2. Other data\ni. Hello hello"
+    result = interpretation.segment_tree(title + "\n" + body, '105', ['105'])
+    assert result.text == ""
+    assert len(result.children) == 2
+
+    child = result.children[0]
+    assert child.text == "1. Some contents\n"
+    assert child.children == []
+    assert child.label == ['105', '11', Node.INTERP_MARK, '1']
+
+    child = result.children[1]
+    assert child.text == "2. Other data\n"
+    assert len(child.children) == 1
+    assert child.label == ['105', '11', Node.INTERP_MARK, '2']
+
+    child = result.children[1].children[0]
+    assert child.text == "i. Hello hello"
+    assert child.children == []
+    assert child.label == ['105', '11', Node.INTERP_MARK, '2', 'i']
+
+
+def test_segment_tree_no_children():
+    title = "Section 105.11 This is a section title"
+    body = "Body of the interpretation's section"
+    result = interpretation.segment_tree(title + "\n" + body, '105', ['105'])
+    assert result.text == body
+    assert result.label == ['105', '11', Node.INTERP_MARK]
+    assert result.children == []
+
+
+def test_title_body_title_only():
+    text = "This is some long, long title with no body"
+    assert [text, ""] == interpretation.title_body(text)
+
+
+def test_title_body_normal_case():
+    title = "This is a title"
+    body = "Here is text that follows\nnewlines\n\n\nabout in the body"
+    assert [title, body] == interpretation.title_body(title + "\n" + body)

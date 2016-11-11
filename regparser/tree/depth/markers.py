@@ -1,9 +1,7 @@
 """Namespace for collecting the various types of markers"""
-
-import itertools
 import string
 
-from regparser.utils import roman_nums
+from roman import toRoman
 
 
 def emphasize(marker):
@@ -26,8 +24,8 @@ lower = (tuple(string.ascii_lowercase) +
 upper = (tuple(string.ascii_uppercase) +
          tuple(a + a for a in string.ascii_uppercase))
 ints = tuple(str(i) for i in range(1, 999))
-roman = tuple(itertools.islice(roman_nums(), 0, 50))
-upper_roman = tuple(r.upper() for r in roman)
+upper_roman = tuple(toRoman(i) for i in range(1, 50))
+roman = tuple(r.lower() for r in upper_roman)
 em_ints = tuple(emphasize(i) for i in ints)
 em_roman = tuple(emphasize(i) for i in roman)
 

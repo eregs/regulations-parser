@@ -1,6 +1,4 @@
 from constraint import Problem
-import six
-
 from regparser.tree.depth import markers, rules
 from regparser.tree.depth.pair_rules import pair_rules
 from regparser.tree.struct import Node
@@ -41,9 +39,6 @@ class Solution(object):
     def pretty_str(self):
         return "\n".join(" " * 4 * par.depth + par.typ[par.idx]
                          for par in self.assignment)
-
-    def pretty_print(self):
-        six.print_(self.pretty_str())
 
 
 def _compress_markerless(marker_list):

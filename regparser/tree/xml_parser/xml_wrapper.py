@@ -24,12 +24,6 @@ class XMLWrapper(object):
             raise ValueError("xml should be either binary or an lxml node")
         self.source = source
 
-    @property
-    def source_is_local(self):
-        """Determine whether or not `self.source` refers to a local file"""
-        protocol = (self.source or '').split('://')[0]
-        return protocol not in ('http', 'https')
-
     def preprocess(self):
         """Unfortunately, the notice xml is often inaccurate. This function
         attempts to fix some of those (general) flaws. For specific issues, we

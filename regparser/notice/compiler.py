@@ -4,14 +4,14 @@ module contains code to compile a regulation from a notice's changes. """
 from bisect import bisect
 from collections import defaultdict
 import copy
-import itertools
 import logging
 import re
+
+from roman import fromRoman
 
 from regparser.grammar.tokens import Verb
 from regparser.tree.struct import Node, find, find_parent
 from regparser.tree.xml_parser import interpretations, reg_text
-from regparser.utils import roman_nums
 
 
 logger = logging.getLogger(__name__)
@@ -45,8 +45,7 @@ def make_label_sortable(label, roman=False):
     Also, appendices have labels that look like 30(a), we make those
     appropriately sortable. """
     if roman:
-        romans = list(itertools.islice(roman_nums(), 0, 50))
-        return (1 + romans.index(label),)
+        return (fromRoman(label.upper()),)
     segments = _component_re.findall(label)
     return tuple(int(seg) if seg.isdigit() else seg for seg in segments)
 

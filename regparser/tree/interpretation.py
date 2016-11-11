@@ -1,7 +1,6 @@
 from itertools import takewhile
 import logging
 
-from regparser import utils
 from regparser.citations import internal_citations, Label
 from regparser.grammar import unified
 import regparser.grammar.interpretation_headers as grammar
@@ -14,10 +13,17 @@ logger = logging.getLogger(__name__)
 interpParser = ParagraphParser(r"(?<![^\s])%s\.", Node.INTERP)
 
 
+def title_body(text):
+    """Split text into its first line (the title) and the rest."""
+    components = text.split("\n", 1)
+    components.append("")   # ensure we always have 2+ components
+    return components[:2]
+
+
 def build(text, part):
     """Create a tree representing the whole interpretation."""
     part = str(part)
-    title, body = utils.title_body(text)
+    title, body = title_body(text)
     segments = segment_by_header(body, part)
 
     if segments:
@@ -56,7 +62,7 @@ def merge_labels(labels):
 def segment_tree(text, part, parent_label):
     """Build a tree representing the interpretation of a section, paragraph,
     or appendix."""
-    title, body = utils.title_body(text)
+    title, body = title_body(text)
     exclude = [(pc.full_start, pc.full_end) for pc in
                internal_citations(body, Label(part=parent_label[0]))]
 

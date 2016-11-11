@@ -115,11 +115,3 @@ class Graph(object):
     def is_stale(self, entry):
         """Determine if a file needs to be rebuilt"""
         return bool(self.node(str(entry)).get('stale'))
-
-    def clear_for(self, entry):
-        """Remove all dependencies for a particular entry"""
-        key = str(entry)
-        for dependency in self.dependencies(key):
-            return self._graph.remove_edge(dependency, key)
-        self.rebuild()
-        self.serialize()    # @todo: incremental

@@ -268,31 +268,6 @@ def flatten_tree(node_list, node):
     node_list.append(no_kids)
 
 
-def pretty_change(change):
-    """Pretty print output for a change"""
-    node = change.get('node')
-    field = change.get('field')
-    if change['action'] == Verb.PUT and field:
-        return '%s changed to: %s' % (field.strip('[]').title(),
-                                      node.get('title', node['text']))
-    elif change['action'] in (Verb.PUT, Verb.POST):
-        verb = 'Modified' if change['action'] == Verb.PUT else 'Added'
-        if node.get('title'):
-            return verb + ' (title: %s): %s' % (node['title'], node['text'])
-        else:
-            return verb + ": " + node['text']
-    elif change['action'] == Verb.DELETE:
-        return 'Deleted'
-    elif change['action'] == Verb.DESIGNATE:
-        return 'Moved to ' + '-'.join(change['destination'])
-    elif change['action'] == Verb.RESERVE:
-        return 'Reserved'
-    elif change['action'] == Verb.KEEP:
-        return 'Mentioned but not modified'
-    else:
-        return change['action']
-
-
 class NoticeChanges(object):
     """ Notice changes. """
     def __init__(self):
