@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import pytest
 
+from regparser.test_utils.node_accessor import NodeAccessor
 from regparser.test_utils.xml_builder import XMLBuilder
 from regparser.tree.struct import Node
 from regparser.tree.xml_parser import appendices
@@ -45,38 +46,35 @@ def test_process_appendix():
         ctx.P("Content A-4")
 
     appendix = appendices.process_appendix(ctx.xml, 1111)
-    assert len(appendix.children) == 5
-    intro, h1, h2, a3, a4 = appendix.children
+    appendix = NodeAccessor(appendix)
+    assert appendix.child_labels == ['p1', 'h1', 'h3', '3', '4']
 
-    assert intro.children == []
-    assert intro.text.strip() == "Intro text"
+    assert appendix['p1'].children == []
+    assert appendix['p1'].text == "Intro text"
 
-    assert len(h1.children) == 3
-    assert h1.title == 'Header 1'
-    c1, c2, sub = h1.children
-    assert c1.children == []
-    assert c1.text.strip() == 'Content H1-1'
-    assert c2.children == []
-    assert c2.text.strip() == 'Content H1-2'
+    assert appendix['h1'].child_labels == ['p2', 'p3', 'h2']
+    assert appendix['h1'].title == 'Header 1'
+    assert appendix['h1']['p2'].children == []
+    assert appendix['h1']['p2'].text == 'Content H1-1'
+    assert appendix['h1']['p3'].children == []
+    assert appendix['h1']['p3'].text == 'Content H1-2'
+    assert appendix['h1']['h2'].child_labels == ['p4']
+    assert appendix['h1']['h2'].title == 'Subheader'
+    assert appendix['h1']['h2']['p4'].text == 'Subheader content'
 
-    assert len(sub.children) == 1
-    assert sub.title == 'Subheader'
-    assert sub.children[0].text.strip() == 'Subheader content'
-
-    assert len(h2.children) == 4
-    assert h2.title == 'Header 2'
-    assert h2.children[0].text.strip() == 'www.example.com'
-    assert h2.children[0].label
-    assert h2.children[1].text.strip() == 'Final Content'
-    assert h2.children[2].text.strip() == '![](MYGID)'
-    table_lines = h2.children[3].text.strip().split('\n')
+    assert appendix['h3'].child_labels == ['p5', 'p6', 'p7', 'p8']
+    assert appendix['h3'].title == 'Header 2'
+    assert appendix['h3']['p5'].text == 'www.example.com'
+    assert appendix['h3']['p6'].text == 'Final Content'
+    assert appendix['h3']['p7'].text == '![](MYGID)'
+    table_lines = appendix['h3']['p8'].text.split('\n')
     assert table_lines[0] == '|For some reason lis|column two|a third column|'
     assert table_lines[1] == '|---|---|---|'
     assert table_lines[2] == '|0||Content3|'
     assert table_lines[3] == '|Cell 1|Cell 2|Cell 3|'
 
-    assert a3.title == 'A-3 Some header here'
-    assert a4.title == 'A-4 Another header'
+    assert appendix['3'].title == 'A-3 Some header here'
+    assert appendix['4'].title == 'A-4 Another header'
 
 
 def test_process_appendix_fp_dash():
@@ -100,16 +98,15 @@ def test_process_appendix_header_depth():
         ctx.P("Moo")
         ctx.P("2. More content")
     appendix = appendices.process_appendix(ctx.xml, 1111)
-    assert len(appendix.children) == 2
-    a1, a2 = appendix.children
+    appendix = NodeAccessor(appendix)
+    assert appendix.label == ['1111', 'A']
+    assert appendix.child_labels == ['1', '2']
 
-    assert a1.label == ['1111', 'A', '1']
-    assert len(a1.children) == 1
-    assert a1.text.strip() == '1. Some content'
+    assert appendix['1'].child_labels == ['h1']
+    assert appendix['1'].text == '1. Some content'
 
-    assert a2.label == ['1111', 'A', '2']
-    assert a2.children == []
-    assert a2.text.strip() == '2. More content'
+    assert appendix['2'].children == []
+    assert appendix['2'].text == '2. More content'
 
 
 def test_process_appendix_header_is_paragraph():
@@ -124,31 +121,22 @@ def test_process_appendix_header_is_paragraph():
         ctx.HD("I. Remains Header", SOURCE='HD3')
         ctx.P("1. Content tent")
     appendix = appendices.process_appendix(ctx.xml, 1111)
-    assert len(appendix.children) == 1
-    a1 = appendix.children[0]
+    appendix = NodeAccessor(appendix)
+    assert appendix.label == ['1111', 'A']
+    assert appendix.child_labels == ['1']
 
-    assert a1.label == ['1111', 'A', '1']
-    assert len(a1.children) == 2
-    assert a1.title.strip() == 'A-1 - First kind of awesome'
-    a1a, a1B = a1.children
-
-    assert a1a.label == ['1111', 'A', '1', 'A']
-    assert len(a1a.children) == 1
-    assert a1a.text.strip() == '(A) First Subkind'
-    assert a1a.children[0].text.strip() == '1. Content'
-
-    assert a1B.label == ['1111', 'A', '1', 'B']
-    assert len(a1B.children) == 1
-    assert a1B.text.strip() == '(B) Next Subkind'
-    assert a1B.children[0].text.strip() == '1. Moar Contents'
-
-    assert len(a1B.children) == 1
-    a1B1 = a1B.children[0]
-    assert len(a1B1.children) == 1
-    a1B1h = a1B1.children[0]
-    assert a1B1h.title.strip() == 'I. Remains Header'
-    assert len(a1B1h.children) == 1
-    assert a1B1h.children[0].text.strip() == '1. Content tent'
+    assert appendix['1'].child_labels == ['A', 'B']
+    assert appendix['1'].title == 'A-1 - First kind of awesome'
+    assert appendix['1']['A'].child_labels == ['1']
+    assert appendix['1']['A'].text == '(A) First Subkind'
+    assert appendix['1']['A']['1'].text == '1. Content'
+    assert appendix['1']['B'].child_labels == ['1']
+    assert appendix['1']['B'].text == '(B) Next Subkind'
+    assert appendix['1']['B']['1'].text == '1. Moar Contents'
+    assert appendix['1']['B']['1'].child_labels == ['h1']
+    assert appendix['1']['B']['1']['h1'].title == 'I. Remains Header'
+    assert appendix['1']['B']['1']['h1'].child_labels == ['1']
+    assert appendix['1']['B']['1']['h1']['1'].text == '1. Content tent'
 
 
 def test_process_spaces():
@@ -164,28 +152,15 @@ def test_process_spaces():
         with ctx.P("And"):
             ctx.E("et seq.", T="03")
     appendix = appendices.process_appendix(ctx.xml, 1111)
-    assert len(appendix.children) == 5
-    a1, a2, a3, a4, a5 = appendix.children
-
-    assert a1.text.strip() == '1. For example'
-    assert a1.label == ['1111', 'A', '1']
-    assert a1.children == []
-
-    assert a2.text.strip() == '2. And et seq.'
-    assert a2.label == ['1111', 'A', '2']
-    assert a2.children == []
-
-    assert a3.text.strip() == '3. And et seq.'
-    assert a3.label == ['1111', 'A', '3']
-    assert a3.children == []
-
-    assert a4.text.strip() == 'More content'
-    assert a4.label == ['1111', 'A', 'p1']
-    assert a4.children == []
-
-    assert a5.text.strip() == 'And et seq.'
-    assert a5.label == ['1111', 'A', 'p2']
-    assert a5.children == []
+    appendix = NodeAccessor(appendix)
+    assert appendix.child_labels == ['1', '2', '3', 'p1', 'p2']
+    for child in appendix.children:
+        assert child.children == []
+    assert appendix['1'].text == '1. For example'
+    assert appendix['2'].text == '2. And et seq.'
+    assert appendix['3'].text == '3. And et seq.'
+    assert appendix['p1'].text == 'More content'
+    assert appendix['p2'].text == 'And et seq.'
 
 
 def test_header_ordering():
@@ -199,21 +174,12 @@ def test_header_ordering():
         ctx.HD("A-1(A) More Content", SOURCE='HD1')
         ctx.P("A1A Paragraph")
     appendix = appendices.process_appendix(ctx.xml, 1111)
-    assert len(appendix.children) == 2
-    a1, a1A = appendix.children
-
-    assert len(a1A.children) == 1
-
-    assert a1.label == ['1111', 'A', '1']
-    assert len(a1.children) == 1
-    a1_1 = a1.children[0]
-
-    assert a1_1.label == ['1111', 'A', '1', 'h1']
-    assert len(a1_1.children) == 1
-    a1_1_1 = a1_1.children[0]
-
-    assert a1_1_1.label == ['1111', 'A', '1', 'h1', 'h2']
-    assert len(a1_1_1.children) == 1
+    appendix = NodeAccessor(appendix)
+    assert appendix.child_labels == ['1', '1(A)']
+    assert appendix['1'].child_labels == ['h1']
+    assert appendix['1']['h1'].child_labels == ['h2']
+    assert appendix['1']['h1']['h2'].child_labels == ['p1']
+    assert appendix['1']['h1']['h2']['p1'].children == []
 
 
 def test_process_same_sub_level():
@@ -236,34 +202,14 @@ def test_process_same_sub_level():
         ctx.P("d. 2aiid 2aiid 2aiid")
         ctx.P("b. 2b 2b 2b")
     appendix = appendices.process_appendix(ctx.xml, 1111)
-    assert appendix.label == ['1111', 'A']
-    assert len(appendix.children) == 2
-    a1, a2 = appendix.children
-
-    assert a1.label == ['1111', 'A', '1']
-    assert len(a1.children) == 6
-    for i in range(6):
-        assert a1.children[i].label == ['1111', 'A', '1', chr(i + ord('a'))]
-
-    assert a2.label == ['1111', 'A', '2']
-    assert len(a2.children) == 2
-    a2a, a2b = a2.children
-
-    assert a2a.label == ['1111', 'A', '2', 'a']
-    assert len(a2a.children) == 2
-    a2ai, a2aii = a2a.children
-
-    assert a2ai.label == ['1111', 'A', '2', 'a', 'i']
-    assert a2ai.children == []
-
-    assert a2aii.label == ['1111', 'A', '2', 'a', 'ii']
-    assert len(a2aii.children) == 4
-    for i in range(4):
-        assert a2aii.children[i].label == ['1111', 'A', '2', 'a', 'ii',
-                                           chr(i + ord('a'))]
-
-    assert a2b.label == ['1111', 'A', '2', 'b']
-    assert a2b.children == []
+    appendix = NodeAccessor(appendix)
+    assert appendix.child_labels == ['1', '2']
+    assert appendix['1'].child_labels == ['a', 'b', 'c', 'd', 'e', 'f']
+    assert appendix['2'].child_labels == ['a', 'b']
+    assert appendix['2']['a'].child_labels == ['i', 'ii']
+    assert appendix['2']['a']['i'].children == []
+    assert appendix['2']['a']['ii'].child_labels == ['a', 'b', 'c', 'd']
+    assert appendix['2']['b'].children == []
 
 
 def test_process_notes():
@@ -536,10 +482,10 @@ def test_process_header_depth():
         ctx.HD("Title 2", SOURCE="HD1")
         ctx.P("A. Content")
     appendix = appendices.AppendixProcessor(1111).process(ctx.xml)
-    assert len(appendix.children) == 2
-    a1, a2 = appendix.children
-    assert len(a1.children) == 2
-    assert len(a2.children) == 1
+    appendix = NodeAccessor(appendix)
+    assert appendix.child_labels == ['h1', 'h2']
+    assert appendix['h1'].child_labels == ['1', '2']
+    assert appendix['h2'].child_labels == ['A']
 
 
 def test_process_collapsed():
@@ -550,16 +496,12 @@ def test_process_collapsed():
         ctx.P(u"(a) Something referencing § 999.2(a)(1). (1) Content")
         ctx.P("(2) Something else")
     appendix = appendices.AppendixProcessor(1111).process(ctx.xml)
-    assert len(appendix.children) == 1
-    aI = appendix.children[0]
-    assert len(aI.children) == 1
-    aIa = aI.children[0]
-    assert len(aIa.children) == 2
-    aIa1, aIa2 = aIa.children
-    assert aIa1.label == ['1111', 'A', 'I', 'a', '1']
-    assert aIa1.text == '(1) Content'
-    assert aIa2.label == ['1111', 'A', 'I', 'a', '2']
-    assert aIa2.text == '(2) Something else'
+    appendix = NodeAccessor(appendix)
+    assert appendix.child_labels == ['I']
+    assert appendix['I'].child_labels == ['a']
+    assert appendix['I']['a'].child_labels == ['1', '2']
+    assert appendix['I']['a']['1'].text == '(1) Content'
+    assert appendix['I']['a']['2'].text == '(2) Something else'
 
 
 def test_process_collapsed_keyterm():
@@ -568,13 +510,10 @@ def test_process_collapsed_keyterm():
         ctx.HD("Appendix A to Part 1111-Awesome", SOURCE="HED")
         ctx.child_from_string('<P>(a) <E T="03">Keyterm</E> (1) Content</P>')
     appendix = appendices.AppendixProcessor(1111).process(ctx.xml)
-    assert len(appendix.children) == 1
-    a = appendix.children[0]
-    assert a.label == ['1111', 'A', 'a']
-    assert len(a.children) == 1
-    a1 = a.children[0]
-    assert a1.label == ['1111', 'A', 'a', '1']
-    assert a1.children == []
+    appendix = NodeAccessor(appendix)
+    assert appendix.child_labels == ['a']
+    assert appendix['a'].child_labels == ['1']
+    assert appendix['a']['1'].children == []
 
 
 def test_process_separated_by_header():
@@ -587,17 +526,9 @@ def test_process_separated_by_header():
         ctx.P('(2) 222222')
         ctx.P('Markerless')
     appendix = appendices.AppendixProcessor(1111).process(ctx.xml)
-    assert len(appendix.children) == 1
-    a = appendix.children[0]
-    assert a.label == ['1111', 'A', 'a']
-    assert len(a.children) == 3
-    a1, a2, amarkerless = a.children
-    assert a1.label == ['1111', 'A', 'a', '1']
-    assert len(a1.children) == 1
-    aheader = a1.children[0]
-    assert aheader.label == ['1111', 'A', 'a', '1', 'h1']
-    assert aheader.children == []
-    assert a2.label == ['1111', 'A', 'a', '2']
-    assert a2.children == []
-    assert amarkerless.label == ['1111', 'A', 'a', 'p1']
-    assert amarkerless.children == []
+    appendix = NodeAccessor(appendix)
+    assert appendix.child_labels == ['a']
+    assert appendix['a'].child_labels == ['1', '2', 'p1']
+    assert appendix['a']['1'].child_labels == ['h1']
+    assert appendix['a']['2'].children == []
+    assert appendix['a']['p1'].children == []
