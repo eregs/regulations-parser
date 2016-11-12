@@ -290,8 +290,8 @@ def build_from_section(reg_part, section_xml):
 
         sect_node = Node(
             section_text, label=[reg_part, section_number],
-            title=section_title)
-        sect_node.tagged_text = tagged_section_text
+            title=section_title, tagged_text=tagged_section_text
+        )
 
         section_nodes.append(
             RegtextParagraphProcessor().process(section_xml, sect_node)
@@ -344,10 +344,10 @@ class ParagraphMatcher(paragraph_processor.BaseMatcher):
         nodes = []
         plain_text = ''
         for marker, plain_text, tagged_text in split_by_markers(xml):
-            node = Node(text=plain_text.strip(), label=[marker],
-                        source_xml=xml)
-            node.tagged_text = six.text_type(tagged_text.strip())
-            nodes.append(node)
+            nodes.append(Node(
+                text=plain_text.strip(), label=[marker], source_xml=xml,
+                tagged_text=six.text_type(tagged_text.strip())
+            ))
 
         if plain_text.endswith('* * *'):    # last in loop
             nodes.append(Node(label=[mtypes.INLINE_STARS]))

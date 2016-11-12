@@ -157,9 +157,10 @@ class AppendixProcessor(object):
         """The paragraph has a marker, like (a) or a. etc."""
         # To aid in determining collapsed paragraphs, replace any
         # keyterms present
-        node_for_keyterms = Node(text, node_type=Node.APPENDIX)
-        node_for_keyterms.tagged_text = tagged_text
-        node_for_keyterms.label = [initial_marker(text)[0]]
+        node_for_keyterms = Node(
+            text, node_type=Node.APPENDIX, tagged_text=tagged_text,
+            label=[initial_marker(text)[0]]
+        )
         keyterm = KeyTerms.keyterm_in_node(node_for_keyterms)
         if keyterm:
             mtext = text.replace(keyterm, '.' * len(keyterm))

@@ -82,7 +82,7 @@ def node_text_equality(left, right):
         left and right and
         left.text == right.text and
         left.title == right.title and
-        getattr(left, 'tagged_text', '') == getattr(right, 'tagged_text', '')
+        left.tagged_text == right.tagged_text
     )
 
 
@@ -302,8 +302,7 @@ class RegulationTree(object):
         elif existing and is_interp_placeholder(existing):
             existing.title = node.title
             existing.text = node.text
-            if hasattr(node, 'tagged_text'):
-                existing.tagged_text = node.tagged_text
+            existing.tagged_text = node.tagged_text
         # Proceed only if we're not re-adding an existing node (common in our
         # messy data)
         elif not node_text_equality(existing, node):
@@ -361,7 +360,7 @@ class RegulationTree(object):
         node = find(self.tree, label)
         node.text = replace_first_sentence(node.text, change['node']['text'])
 
-        if hasattr(node, 'tagged_text') and 'tagged_text' in change['node']:
+        if node.tagged_text and 'tagged_text' in change['node']:
             node.tagged_text = replace_first_sentence(
                 node.tagged_text, change['node']['tagged_text'])
 

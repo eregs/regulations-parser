@@ -120,7 +120,7 @@ class XMLTermMeans(FinderBase):
 
     def find(self, node):
         refs = []
-        tagged_text = getattr(node, 'tagged_text', '')
+        tagged_text = node.tagged_text
         for match, _, _ in grammar.xml_term_parser.scanString(tagged_text):
             """Position in match reflects XML tags, so its dropped in
             preference of new values based on node.text."""
@@ -177,7 +177,7 @@ class DefinitionKeyterm(object):
 
     def find(self, node):
         if self.title_matches:
-            tagged_text = getattr(node, 'tagged_text', '')
+            tagged_text = node.tagged_text
             try:
                 match = grammar.key_term_parser.parseString(tagged_text)
                 phrase = node.tagged_text[match.term.pos[0]:match.term.pos[1]]

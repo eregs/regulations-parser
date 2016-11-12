@@ -55,9 +55,10 @@ def collapsed_markers_matches(node_text, tagged_text):
     text but takes cues from the tagged text. @todo: streamline logic"""
     # In addition to the regex above, keyterms are an acceptable prefix. We
     # therefore convert keyterms to satisfy the above regex
-    node_for_keyterms = Node(node_text, node_type=Node.INTERP,
-                             label=[get_first_interp_marker(node_text)])
-    node_for_keyterms.tagged_text = tagged_text
+    node_for_keyterms = Node(
+        node_text, node_type=Node.INTERP, tagged_text=tagged_text,
+        label=[get_first_interp_marker(node_text)]
+    )
     keyterm = KeyTerms.keyterm_in_node(node_for_keyterms)
     if keyterm:
         node_text = node_text.replace(keyterm, '.' * len(keyterm))
@@ -145,7 +146,7 @@ def process_inner_children(inner_stack, xml_node):
                            "previous paragraph: %s", node_text)
             previous = nodes[-1]
             previous.text += "\n\n" + node_text
-            if hasattr(previous, 'tagged_text'):
+            if previous.tagged_text:
                 previous.tagged_text += "\n\n" + text_with_tags
             else:
                 previous.tagged_text = text_with_tags
@@ -173,8 +174,7 @@ def nodes_from_interp_p(xml_node):
 
     #   Node for this paragraph
     n = Node(node_text[0:starts[0]], label=[first_marker],
-             node_type=Node.INTERP)
-    n.tagged_text = text_with_tags
+             node_type=Node.INTERP, tagged_text=text_with_tags)
     yield n
     if n.text.endswith('* * *'):
         yield Node(label=[mtypes.INLINE_STARS])
