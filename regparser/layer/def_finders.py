@@ -123,7 +123,7 @@ class XMLTermMeans(FinderBase):
         tagged_text = getattr(node, 'tagged_text', '')
         for match, _, _ in grammar.xml_term_parser.scanString(tagged_text):
             # Position in match reflects XML tags, so its dropped in
-            # preference of new values based on node.text."""
+            # preference of new values based on node.text.
             for match in chain([match.head], match.tail):
                 pos_start = self.pos_start(match.term[0], node.text)
                 term = node.tagged_text[match.term.pos[0]:match.term.pos[1]]
