@@ -79,5 +79,6 @@ class FileUploadSerializer(serializers.ModelSerializer):
     hexhash = serializers.CharField(read_only=True)
     url = serializers.URLField(read_only=True)
 
-    def get_contents(self, obj):
+    @staticmethod
+    def get_contents(obj):
         return "File contents not shown."

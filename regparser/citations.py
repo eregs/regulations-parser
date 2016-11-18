@@ -28,9 +28,8 @@ class Label(object):
         determine which schema to follow. Node labels aren't as expressive as
         Label objects"""
         if (node.node_type == Node.APPENDIX or
-            (node.node_type == Node.INTERP and
-                len(node.label) > 2 and
-                node.label[1].isalpha())):
+                (node.node_type == Node.INTERP and len(node.label) > 2 and
+                 node.label[1].isalpha())):
             if len(node.label) > 2 and node.label[2].isdigit():
                 schema = cls.app_sect_schema
             else:
@@ -89,7 +88,7 @@ class Label(object):
             new_settings = {}
 
         found_start = False
-        for field in (schema + Label.comment_schema):
+        for field in schema + Label.comment_schema:
             if field in kwargs:
                 found_start = True
                 new_settings[field] = kwargs[field]
@@ -121,7 +120,7 @@ class Label(object):
 
     def __eq__(self, other):
         """Equality if types match and fields match"""
-        return (type(other) == type(self) and
+        return (isinstance(other, Label) and
                 self.using_default_schema == other.using_default_schema and
                 self.settings == other.settings and
                 self.schema == other.schema and
@@ -270,8 +269,8 @@ def internal_citations(text, initial_label=None,
         full_start = start
         if match.marker is not '':
             start = match.marker.pos[1]
-        label = filter(lambda l: l != '.', list(match)[3:])
-        label = dict(zip(['p1', 'p2', 'p3'], label))
+        label_parts = filter(lambda l: l != '.', list(match)[3:])
+        label = dict(zip(['p1', 'p2', 'p3'], label_parts))
         citations.append(ParagraphCitation(
             start, end, initial_label.copy(
                 appendix=match.appendix, appendix_section=match.a1,

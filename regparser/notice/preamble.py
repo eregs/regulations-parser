@@ -47,8 +47,7 @@ class PreambleProcessor(ParagraphProcessor):
                 # FTNT's are already converted; we can ignore the original
                 IgnoreTagMatcher('FTNT', 'PRTPAGE'), GraphicsMatcher(),
                 FlatsubtreeMatcher(tags=['EXTRACT'], node_type=Node.EXTRACT),
-                TableMatcher()
-                ]
+                TableMatcher()]
 
     DEPTH_HEURISTICS = OrderedDict(ParagraphProcessor.DEPTH_HEURISTICS)
     DEPTH_HEURISTICS[heuristics.prefer_diff_types_diff_levels] = 0.2

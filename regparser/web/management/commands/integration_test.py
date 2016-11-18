@@ -92,8 +92,7 @@ def uninstall():
 
 @integration_test.command()
 @click.argument('target')
-@click.pass_context
-def build(ctx, target):
+def build(target):
     config = targets[target]
     paths = get_paths(target)
 

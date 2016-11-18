@@ -1,6 +1,8 @@
 """We need to modify content from time to time, e.g. image overrides and xml
 macros. To provide flexibility in future expansion, we provide a layer of
-indirection here."""
+indirection here.
+
+TODO: Delete and replace with plugins."""
 import itertools
 import logging
 
@@ -32,7 +34,8 @@ class Macros(object):
 
 
 class ImageOverrides(object):
-    def get(self, key, default=None):
+    @staticmethod
+    def get(key, default=None):
         for source in settings.OVERRIDES_SOURCES:
             source = _try_to_load(source, 'overrides')
             if source and key in source:

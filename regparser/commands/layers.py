@@ -1,5 +1,6 @@
-import click
 import logging
+
+import click
 
 from regparser.commands import utils
 from regparser.index import dependency, entry
@@ -7,14 +8,20 @@ from regparser.plugins import classes_by_shorthand
 import settings
 
 
-LAYER_CLASSES = {
-    doc_type: classes_by_shorthand(class_string_list)
-    for doc_type, class_string_list in settings.LAYERS.items()}
-# Also add in the "ALL" layers
-for doc_type in LAYER_CLASSES:
-    for layer_name, cls in LAYER_CLASSES['ALL'].items():
-        LAYER_CLASSES[doc_type][layer_name] = cls
 logger = logging.getLogger(__name__)
+
+
+def _init_classes():
+    """Avoid leaking state variables by wrapping `LAYER_CLASSES` construction
+    in a function"""
+    classes = {doc_type: classes_by_shorthand(class_string_list)
+               for doc_type, class_string_list in settings.LAYERS.items()}
+    # Also add in the "ALL" layers
+    for doc_type in classes:
+        for layer_name, cls in classes['ALL'].items():
+            classes[doc_type][layer_name] = cls
+    return classes
+LAYER_CLASSES = _init_classes()
 
 
 def stale_layers(doc_entry, doc_type):
@@ -29,11 +36,13 @@ def stale_layers(doc_entry, doc_type):
         # Meta layer also depends on the version info
         deps.add(layer_dir / 'meta', entry.Version(*doc_entry.path))
 
+    stale = []
     for layer_name in LAYER_CLASSES[doc_type]:
         layer_entry = layer_dir / layer_name
         deps.validate_for(layer_entry)
         if deps.is_stale(layer_entry):
-            yield layer_name
+            stale.append(layer_name)
+    return stale
 
 
 def process_cfr_layers(stale_names, cfr_title, version_entry):

@@ -9,7 +9,7 @@ ADDED = 'added'
 MODIFIED = 'modified'
 DELETED = 'deleted'
 
-_whitespace = re.compile(u'\s', re.UNICODE)    # aware of "thin" spaces, etc.
+_whitespace = re.compile(u'\\s', re.UNICODE)    # aware of "thin" spaces, etc.
 
 
 def _local_text_changes(lhs, rhs):

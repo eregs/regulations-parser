@@ -149,10 +149,11 @@ def is_child_of(child_xml, header_xml, cfr_part, header_citations=None):
         if header_citations is None:
             header_citations = parse_into_labels(header_xml.text, cfr_part)
         child_citations = parse_into_labels(child_xml.text, cfr_part)
-        if (child_xml.get('SOURCE') > header_xml.get('SOURCE') or
-            (header_citations and not child_citations) or
-            (header_citations and
-             header_citations[-1] == child_citations[0])):
+        deeper_source = child_xml.get('SOURCE') > header_xml.get('SOURCE')
+        no_child_cites = header_citations and not child_citations
+        matching_child = header_citations and child_citations and (
+            header_citations[-1] == child_citations[0])
+        if deeper_source or no_child_cites or matching_child:
             return True
         elif header_citations and child_citations:
             return is_backtrack(header_citations[-1].split('-'),

@@ -1,7 +1,5 @@
 from regparser import plugins
 
-OUTPUT_DIR = ''
-API_BASE = ''
 META = {}
 
 #   All current, US CFR titles

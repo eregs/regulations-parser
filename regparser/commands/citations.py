@@ -14,14 +14,14 @@ def citations(input_files, unique):
     """Find all CFR citations in a file (or stdin)"""
     if not input_files:
         input_files = [codecs.getreader('utf8')(sys.stdin)]
-    for f in input_files:
-        text = f.read()
-        citations = cfr_citations(text, include_fill=True)
+    for file_ in input_files:
+        text = file_.read()
+        cits = cfr_citations(text, include_fill=True)
         if unique:
-            labels = {citation.label for citation in citations}
+            labels = {citation.label for citation in cits}
             for label in sorted(labels):
                 click.echo(label)
         else:
-            for citation in sorted(citations, key=lambda c: c.start):
+            for citation in sorted(cits, key=lambda c: c.start):
                 click.echo(u"{}: {}\n".format(
                     text[citation.start:citation.end], citation.label))

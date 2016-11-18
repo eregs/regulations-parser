@@ -30,7 +30,7 @@ class Delayed:
 
 effective_date = (
     utils.Marker("effective") + utils.Marker("date")
-).setParseAction(lambda: EffectiveDate())
+).setParseAction(EffectiveDate)
 
 
 notice_citation = (
@@ -40,7 +40,7 @@ notice_citation = (
 ).setParseAction(lambda m: Notice(int(m[0]), int(m[1])))
 
 
-delayed = utils.Marker("delayed").setParseAction(lambda: Delayed())
+delayed = utils.Marker("delayed").setParseAction(Delayed)
 
 
 def int2Month(m):

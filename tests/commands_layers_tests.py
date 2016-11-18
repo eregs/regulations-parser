@@ -26,13 +26,12 @@ class CommandsLayersTests(TestCase):
             version_entry = entry.Version(111, 22, 'aaa')
             version_entry.write(Version('aaa', date.today(), date.today()))
             tree_entry = entry.Tree(111, 22, 'aaa')
-            # Use list() to instantiate
-            self.assertRaises(dependency.Missing,
-                              list, layers.stale_layers(tree_entry, 'cfr'))
+            self.assertRaises(dependency.Missing, layers.stale_layers,
+                              tree_entry, 'cfr')
 
             entry.Entry('tree', 111, 22, 'bbb').write(b'')    # wrong version
-            self.assertRaises(dependency.Missing,
-                              list, layers.stale_layers(tree_entry, 'cfr'))
+            self.assertRaises(dependency.Missing, layers.stale_layers,
+                              tree_entry, 'cfr')
 
             entry.Entry('tree', 111, 22, 'aaa').write(b'')
             six.assertCountEqual(

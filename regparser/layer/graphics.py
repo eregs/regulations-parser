@@ -38,6 +38,7 @@ def gid_to_url(gid):
     default = settings.DEFAULT_IMAGE_URL
     png = settings.DEFAULT_IMAGE_URL.replace('.gif', '.png')
     urls = [default % gid, default % gid.lower(), png % gid, png % gid.lower()]
+    url = ""    # ensure variable is always defined
     for url in urls:
         if check_url(url):
             return url

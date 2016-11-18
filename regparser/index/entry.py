@@ -41,9 +41,10 @@ class Entry(object):
         dep, _ = DependencyNode.objects.update_or_create(label=str(self))
         DBEntry.objects.update_or_create(label=dep, defaults={
             'contents': self.serialize(content)})
-        logger.info("Wrote {}".format(str(self)))
+        logger.info("Wrote %s", self)
 
-    def serialize(self, content):
+    @staticmethod
+    def serialize(content):
         """Default implementation; treat content as bytes"""
         return content
 
@@ -52,7 +53,8 @@ class Entry(object):
         # load it all into memory -- @todo optimization point
         return self.deserialize(bytes(buffered_contents))
 
-    def deserialize(self, content):
+    @staticmethod
+    def deserialize(content):
         """Default implementation; treat the content as bytes"""
         return content
 

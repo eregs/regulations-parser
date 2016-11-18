@@ -1,5 +1,6 @@
-import click
 import logging
+
+import click
 
 from regparser.diff.tree import changes_between
 from regparser.index import dependency, entry

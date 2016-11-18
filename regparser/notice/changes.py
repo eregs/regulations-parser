@@ -47,10 +47,8 @@ def bad_label(node):
 
 def impossible_label(n, amended_labels):
     """ Return True if n is not in the same family as amended_labels. """
-    for l in amended_labels:
-        if n.label_id().startswith(l):
-            return False
-    return True
+    test = n.label_id().startswith
+    return not any(filter(test, amended_labels))
 
 
 def find_candidate(root, label_last, amended_labels):
@@ -268,31 +266,6 @@ def flatten_tree(node_list, node):
     node_list.append(no_kids)
 
 
-def pretty_change(change):
-    """Pretty print output for a change"""
-    node = change.get('node')
-    field = change.get('field')
-    if change['action'] == Verb.PUT and field:
-        return '%s changed to: %s' % (field.strip('[]').title(),
-                                      node.get('title', node['text']))
-    elif change['action'] in (Verb.PUT, Verb.POST):
-        verb = 'Modified' if change['action'] == Verb.PUT else 'Added'
-        if node.get('title'):
-            return verb + ' (title: %s): %s' % (node['title'], node['text'])
-        else:
-            return verb + ": " + node['text']
-    elif change['action'] == Verb.DELETE:
-        return 'Deleted'
-    elif change['action'] == Verb.DESIGNATE:
-        return 'Moved to ' + '-'.join(change['destination'])
-    elif change['action'] == Verb.RESERVE:
-        return 'Reserved'
-    elif change['action'] == Verb.KEEP:
-        return 'Mentioned but not modified'
-    else:
-        return change['action']
-
-
 class NoticeChanges(object):
     """ Notice changes. """
     def __init__(self):
@@ -339,4 +312,4 @@ def new_subpart_added(amendment):
     new_subpart = amendment.action == 'POST'
     label = amendment.original_label
     m = [t for t, _, _ in amdpar.subpart_label.scanString(label)]
-    return (len(m) > 0 and new_subpart)
+    return m and new_subpart

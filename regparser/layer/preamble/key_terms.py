@@ -7,7 +7,7 @@ class KeyTerms(BaseKeyTerms):
     """The CFR KeyTerms layer does _almost_ exactly what we want."""
 
     @classmethod
-    def keyterm_in_node(cls, node):
+    def keyterm_in_node(cls, node, ignore_definitions=True):
         """Find the keyterm in a node. Requires a paragraph marker be present
         (to limit false positives)"""
         marker = marker_of(node)

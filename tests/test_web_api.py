@@ -5,9 +5,9 @@ from six.moves.urllib.parse import urlparse
 from random import choice
 from regparser.web.jobs.models import job_status_values
 from regparser.web.jobs.utils import (
+    create_status_url,
     eregs_site_api_url,
     file_url,
-    status_url
 )
 from regparser.web.jobs.views import FileUploadView as PatchedFileUploadView
 from rest_framework.test import APITestCase
@@ -80,7 +80,8 @@ class PipelineJobTestCase(APITestCase):
 
         expected = dict(self.defaults)
         expected.update({k: data[k] for k in data})
-        expected["url"] = status_url(fake_pipeline_id, sub_path="regulations/")
+        expected["url"] = create_status_url(
+            fake_pipeline_id, sub_path="regulations/")
         self._stock_response_check(expected, response.data)
         return expected
 
@@ -97,7 +98,8 @@ class PipelineJobTestCase(APITestCase):
         # Even if the input is a str, the return values should be ints:
         expected["cfr_title"] = int(expected["cfr_title"])
         expected["cfr_part"] = int(expected["cfr_part"])
-        expected["url"] = status_url(fake_pipeline_id, sub_path="regulations/")
+        expected["url"] = create_status_url(
+            fake_pipeline_id, sub_path="regulations/")
         self._stock_response_check(expected, response.data)
 
     def test_create_with_missing_fields(self):
@@ -278,7 +280,8 @@ class ProposalPipelineTestCase(APITestCase):
 
         expected = dict(self.defaults)
         expected.update({k: data[k] for k in data})
-        expected["url"] = status_url(fake_pipeline_id, sub_path="notices/")
+        expected["url"] = create_status_url(
+            fake_pipeline_id, sub_path="notices/")
         self._stock_response_check(expected, response.data)
         return expected
 
@@ -312,14 +315,14 @@ class ProposalPipelineTestCase(APITestCase):
 
 
 @patch.object(settings, "CANONICAL_HOSTNAME", "http://domain.tld")
-def test_status_url():
+def test_create_status_url():
     domain = "http://domain.tld"
     urlpath = "/rp/jobs/"
     hexes = ["".join([choice(hexdigits) for i in range(32)]) for j in range(6)]
 
     def _check(port=None):
         for hx in hexes:
-            url = urlparse(status_url(hx))
+            url = urlparse(create_status_url(hx))
             assert domain == "%s://%s" % (url.scheme, url.hostname)
             if port is None:
                 assert url.port is port
@@ -327,7 +330,7 @@ def test_status_url():
                 assert url.port == port
             assert "%s%s/" % (urlpath, hx) == url.path
 
-            url = urlparse(status_url(hx, sub_path="%s/" % hx[:10]))
+            url = urlparse(create_status_url(hx, sub_path="%s/" % hx[:10]))
             assert domain == "%s://%s" % (url.scheme, url.hostname)
             if port is None:
                 assert url.port is port
@@ -343,7 +346,7 @@ def test_status_url():
             _check()
 
     with pytest.raises(ValueError) as err:
-        status_url("something", "something-without-a-slash")
+        create_status_url("something", "something-without-a-slash")
 
     assert isinstance(err.value, ValueError)
 

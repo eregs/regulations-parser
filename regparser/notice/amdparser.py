@@ -50,10 +50,10 @@ def parse_amdpar(par, initial_context):
         return make_instructions(tokenized), final_context
 
 
-def matching(tokens, *types, **fields):
+def matching(token_list, *types, **fields):
     """We have a recurring need to find all elements in a list that "match".
     This shorthand method helps"""
-    return [t for t in tokens if t.match(*types, **fields)]
+    return [t for t in token_list if t.match(*types, **fields)]
 
 
 def compress(lhs_label, rhs_label):
@@ -66,8 +66,8 @@ def compress(lhs_label, rhs_label):
     label.extend([None] * len(rhs_label))
     label = label[:len(rhs_label)]
 
-    for i in range(len(rhs_label)):
-        label[i] = rhs_label[i] or label[i]
+    for idx, rhs_part in enumerate(rhs_label):
+        label[idx] = rhs_part or label[idx]
     return label
 
 
@@ -96,15 +96,16 @@ def resolve_confused_context(tokenized, initial_context):
     if initial_context[1:2] == ['Interpretations']:
         final_tokens = []
         for token in tokenized:
-            if (token.match(tokens.Context, tokens.Paragraph) and
-                    len(token.label) > 1 and token.label[1] is None):
+            par_with_label = (
+                token.match(tokens.Context, tokens.Paragraph) and
+                len(token.label) > 1
+            )
+            if par_with_label and token.label[1] is None:
                 final_tokens.append(token.copy(
                     label=[token.label[0], 'Interpretations', token.label[2],
                            '(' + ')('.join(l for l in token.label[3:] if l) +
                            ')']))
-            elif (token.match(tokens.Context, tokens.Paragraph) and
-                  len(token.label) > 1 and
-                    token.label[1].startswith('Appendix:')):
+            elif par_with_label and token.label[1].startswith('Appendix:'):
                 final_tokens.append(token.copy(
                     label=[token.label[0], 'Interpretations',
                            token.label[1][len('Appendix:'):],
@@ -129,15 +130,15 @@ def paragraph_in_context_moved(tokenized, initial_context):
     final_tokens = []
     idx = 0
     while idx < len(tokenized) - 4:
-        par1, cont1, verb, par2, cont2 = tokenized[idx:idx + 5]
-        if (par1.match(tokens.Paragraph) and
-            cont1.match(tokens.Context) and
-            verb.match(tokens.Verb,
-                       verb=tokens.Verb.MOVE, active=False) and
-            par2.match(tokens.Paragraph) and
-            cont2.match(tokens.Context) and
-            all(tok.label[1:2] == ['Interpretations']
-                for tok in (par1, cont1, par2, cont2))):
+        par1 = tokenized[idx].match(tokens.Paragraph)
+        cont1 = tokenized[idx + 1].match(tokens.Context)
+        verb = tokenized[idx + 2].match(tokens.Verb, verb=tokens.Verb.MOVE,
+                                        active=False)
+        par2 = tokenized[idx + 3].match(tokens.Paragraph)
+        cont2 = tokenized[idx + 4].match(tokens.Context)
+        if (all([par1, cont1, verb, par2, cont2]) and
+                all(tok.label[1:2] == ['Interpretations']
+                    for tok in (par1, cont1, par2, cont2))):
             batch, initial_context = compress_context(
                 [cont1, par1, verb, cont2, par2], initial_context)
             final_tokens.extend(batch)
@@ -172,10 +173,11 @@ def multiple_moves(tokenized):
             skip -= 1
         elif idx < len(tokenized) - 2:
             el1, el2 = tokenized[idx + 1:idx + 3]
-            if (el0.match(tokens.TokenList) and el2.match(tokens.TokenList) and
-                el1.match(tokens.Verb, verb=tokens.Verb.MOVE,
-                          active=False) and
-                    len(el0.tokens) == len(el2.tokens)):
+            if (el0.match(tokens.TokenList)
+                    and el2.match(tokens.TokenList)
+                    and el1.match(tokens.Verb, verb=tokens.Verb.MOVE,
+                                  active=False)
+                    and len(el0.tokens) == len(el2.tokens)):
                 skip = 2
                 for tidx in range(len(el0.tokens)):
                     converted.append(el1.copy(active=True))
@@ -238,9 +240,10 @@ def and_token_resolution(tokenized):
     idx = 0
     while idx < len(tokenized) - 3:
         t1, t2, t3, t4 = tokenized[idx:idx + 4]
-        if (t1.match(tokens.Verb) and t2.match(tokens.Context) and
-            t3.match(tokens.AndToken) and
-                t4.match(tokens.Paragraph, tokens.TokenList)):
+        if (t1.match(tokens.Verb)
+                and t2.match(tokens.Context)
+                and t3.match(tokens.AndToken)
+                and t4.match(tokens.Paragraph, tokens.TokenList)):
             final_tokens.append(t1)
             final_tokens.append(tokens.Paragraph(t2.label))
             final_tokens.append(t4)
@@ -288,17 +291,16 @@ def context_to_paragraph(tokenized):
         if isinstance(token, tokens.Paragraph):
             return tokenized
         elif (isinstance(token, tokens.TokenList) and
-                any(isinstance(t, tokens.Paragraph) for t in token.tokens)):
+              any(isinstance(t, tokens.Paragraph) for t in token.tokens)):
             return tokenized
     # copy
     converted = list(tokenized)
     verb_seen = False
-    for i in range(len(converted)):
-        token = converted[i]
+    for idx, token in enumerate(converted):
         if isinstance(token, tokens.Verb):
             verb_seen = True
         elif verb_seen and token.match(tokens.Context, certain=False):
-            converted[i] = tokens.Paragraph(token.label)
+            converted[idx] = tokens.Paragraph(token.label)
     return converted
 
 
@@ -310,11 +312,11 @@ def move_then_modify(tokenized):
     idx = 0
     while idx < len(tokenized) - 3:
         move, p1, p2, edit = tokenized[idx:idx + 4]
-        if (move.match(tokens.Verb, verb=tokens.Verb.MOVE, active=True) and
-            p1.match(tokens.Paragraph) and
-            p2.match(tokens.Paragraph) and
-            edit.match(tokens.Verb, verb=tokens.Verb.PUT, active=True,
-                       and_prefix=True)):
+        if (move.match(tokens.Verb, verb=tokens.Verb.MOVE, active=True)
+                and p1.match(tokens.Paragraph)
+                and p2.match(tokens.Paragraph)
+                and edit.match(tokens.Verb, verb=tokens.Verb.PUT, active=True,
+                               and_prefix=True)):
             final_tokens.append(tokens.Verb(tokens.Verb.DELETE, active=True))
             final_tokens.append(p1)
             final_tokens.append(tokens.Verb(tokens.Verb.POST, active=True))
@@ -384,9 +386,9 @@ def compress_context(tokenized, initial_context):
     for token in tokenized:
         if isinstance(token, tokens.Context):
             # Interpretations of appendices
-            if (len(context) > 1 and len(token.label) > 1 and
-                context[1] == 'Interpretations' and
-                    (token.label[1] or '').startswith('Appendix')):
+            if (len(context) > 1 and len(token.label) > 1
+                    and context[1] == 'Interpretations'
+                    and (token.label[1] or '').startswith('Appendix')):
                 context = compress(
                     context,
                     [token.label[0], None, token.label[1]] + token.label[2:])
@@ -455,17 +457,16 @@ def make_instructions(tokenized):
     handle subpart designations"""
     instructions = etree.Element('EREGS_INSTRUCTIONS')
     verb = None
-    for i in range(len(tokenized)):
-        token = tokenized[i]
+    for idx, token in enumerate(tokenized):
         if token.match(tokens.Verb):
             assert token.active
             verb = token.verb
         # MOVEs must have _two_ paragraphs
         elif (verb == tokens.Verb.MOVE and
-                not tokenized[i - 1].match(tokens.Paragraph)):
+              not tokenized[idx - 1].match(tokens.Paragraph)):
             continue
         elif verb == tokens.Verb.MOVE and token.match(tokens.Paragraph):
-            origin = tokenized[i - 1].label_text()
+            origin = tokenized[idx - 1].label_text()
             etree.SubElement(instructions, verb, label=origin,
                              destination=token.label_text())
         elif verb and token.match(tokens.Paragraph):

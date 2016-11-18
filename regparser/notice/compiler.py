@@ -4,14 +4,14 @@ module contains code to compile a regulation from a notice's changes. """
 from bisect import bisect
 from collections import defaultdict
 import copy
-import itertools
 import logging
 import re
+
+from roman import fromRoman
 
 from regparser.grammar.tokens import Verb
 from regparser.tree.struct import Node, find, find_parent
 from regparser.tree.xml_parser import interpretations, reg_text
-from regparser.utils import roman_nums
 
 
 logger = logging.getLogger(__name__)
@@ -45,8 +45,7 @@ def make_label_sortable(label, roman=False):
     Also, appendices have labels that look like 30(a), we make those
     appropriately sortable. """
     if roman:
-        romans = list(itertools.islice(roman_nums(), 0, 50))
-        return (1 + romans.index(label),)
+        return (fromRoman(label.upper()),)
     segments = _component_re.findall(label)
     return tuple(int(seg) if seg.isdigit() else seg for seg in segments)
 
@@ -110,7 +109,7 @@ def is_reserved_node(node):
     """ Return true if the node is reserved. """
     reserved_title = node.title and '[Reserved]' in node.title
     reserved_text = node.text and '[Reserved]' in node.text
-    return (reserved_title or reserved_text)
+    return reserved_title or reserved_text
 
 
 def is_interp_placeholder(node):
@@ -162,7 +161,8 @@ class RegulationTree(object):
         for c in self.tree.children:
             del c.sortable
 
-    def add_child(self, children, node, order=None):
+    @staticmethod
+    def add_child(children, node, order=None):
         """ Add a child to the children, and sort appropriately. This is used
         for non-root nodes. """
         if order is None:
@@ -298,7 +298,7 @@ class RegulationTree(object):
         placeholders, reserved nodes, """
         existing = find(self.tree, node.label_id())
         if existing and is_reserved_node(existing):
-            logger.warning('Replacing reserved node: %s' % node.label_id())
+            logger.warning('Replacing reserved node: %s', node.label_id())
             return self.replace_node_and_subtree(node)
         elif existing and is_interp_placeholder(existing):
             existing.title = node.title
@@ -310,7 +310,7 @@ class RegulationTree(object):
         elif not node_text_equality(existing, node):
             if existing:
                 logger.warning(
-                    'Adding a node that already exists: %s' % node.label_id())
+                    'Adding a node that already exists: %s', node.label_id())
 
             if ((node.node_type == Node.APPENDIX and len(node.label) == 2) or
                     node.node_type == Node.SUBPART):
@@ -421,7 +421,7 @@ def dict_to_node(node_dict):
 
 def sort_labels(labels):
     """ Deal with higher up elements first. """
-    sorted_labels = sorted(labels, key=lambda x: len(x))
+    sorted_labels = sorted(labels, key=len)
 
     # The length of a Subpart label doesn't indicate it's level in the tree
     subparts = [l for l in sorted_labels if 'Subpart' in l]

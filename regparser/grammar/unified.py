@@ -39,8 +39,6 @@ part_section_paragraph = QuickSearchable(
     atomic.part + Suppress(".") + atomic.section + depth1_p)
 
 
-part_section + Optional(depth1_p)
-
 m_section_paragraph = QuickSearchable(
     keep_pos(atomic.paragraph_marker).setResultsName("marker") +
     atomic.section +

@@ -21,8 +21,12 @@ class Node(object):
 
     MARKERLESS_REGEX = re.compile(r'p\d+')
 
-    def __init__(self, text='', children=[], label=[], title=None,
+    def __init__(self, text='', children=None, label=None, title=None,
                  node_type=REGTEXT, source_xml=None, tagged_text=None):
+        if children is None:
+            children = []
+        if label is None:
+            label = []
 
         self.text = six.text_type(text)
 
@@ -41,9 +45,11 @@ class Node(object):
             self.tagged_text = tagged_text
 
     def __repr__(self):
-        return (("Node( text = %s, children = %s, label = %s, title = %s, " +
-                 "node_type = %s)") % (repr(self.text), repr(self.children),
-                repr(self.label), repr(self.title), repr(self.node_type)))
+        text = "Node(text={}, children={}, label={}, title={}, node_type={})"
+        return text.format(
+            repr(self.text), repr(self.children), repr(self.label),
+            repr(self.title), repr(self.node_type)
+        )
 
     def __lt__(self, other):
         return repr(self) < repr(other)
@@ -118,20 +124,11 @@ class FullNodeEncoder(JSONEncoder):
         return super(FullNodeEncoder, self).default(obj)
 
 
-def node_decode_hook(d):
-    """Convert a JSON object into a Node"""
-    if all(field in d for field in ('text', 'children', 'label', 'node_type')):
-        return Node(d['text'], d['children'], d['label'], d.get('title'),
-                    d['node_type'])
-    else:
-        return d
-
-
 def full_node_decode_hook(d):
     """Convert a JSON object into a full Node"""
     if set(d.keys()) == FullNodeEncoder.FIELDS:
         params = dict(d)
-        del(params['tagged_text'])  # Ugly, but this field is set separately
+        del params['tagged_text']   # Ugly, but this field is set separately
         node = Node(**params)
         if d['tagged_text']:
             node.tagged_text = d['tagged_text']
@@ -145,7 +142,7 @@ def frozen_node_decode_hook(d):
     """Convert a JSON object into a FrozenNode"""
     if set(d.keys()) == FullNodeEncoder.FIELDS:
         params = dict(d)
-        del(params['source_xml'])
+        del params['source_xml']
         fresh = FrozenNode(**params)
         return fresh.prototype()
     return d

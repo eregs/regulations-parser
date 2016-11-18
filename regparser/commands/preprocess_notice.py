@@ -58,8 +58,7 @@ def preprocess_notice(document_number):
             "start_page",
             "volume"
         ])
-    notice_xmls = list(notice_xmls_for_url(document_number,
-                                           meta['full_text_xml_url']))
+    notice_xmls = list(notice_xmls_for_url(meta['full_text_xml_url']))
     for notice_xml in notice_xmls:
         notice_xml.published = meta['publication_date']
         notice_xml.fr_volume = meta['volume']

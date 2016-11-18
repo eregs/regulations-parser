@@ -24,12 +24,6 @@ class PriorityStack(object):
                 return [node for _, node in layer]
         return []
 
-    def peek_level_last(self, level):
-        """Get the last from a level of nodes in the stack"""
-        found = self.peek_level(level)
-        if found:
-            return found[-1]
-
     def lineage(self):
         """Fetch the last element of each level of priorities. When the
         stack is used to keep track of a tree, this list includes a list of
@@ -45,9 +39,6 @@ class PriorityStack(object):
             return list(reversed([els[-1] for els in self.m_stack]))
         else:
             return []
-
-    def add_to_bottom(self, m):
-        self.m_stack = [[m]] + self.m_stack
 
     def size(self):
         return len(self.m_stack)
