@@ -1,5 +1,6 @@
-import click
 import logging
+
+import click
 
 from regparser.index import dependency, entry
 from regparser.layer.section_by_section import SectionBySection
@@ -41,13 +42,12 @@ def sxs_layers(cfr_title, cfr_part):
     """Build SxS layers for all known versions."""
     logger.info("Build SxS layers - %s CFR %s", cfr_title, cfr_part)
 
-    tree_dir = entry.Tree(cfr_title, cfr_part)
-    for version_id in tree_dir:
+    for tree_entry in entry.Tree(cfr_title, cfr_part).sub_entries():
+        version_id = tree_entry.path[-1]
         if is_stale(cfr_title, cfr_part, version_id):
-            tree = (tree_dir / version_id).read()
+            tree = tree_entry.read()
             notices = [sxs.read() for sxs in previous_sxs(
                 cfr_title, cfr_part, version_id)]
             layer_json = SectionBySection(tree, notices).build()
-            entry.Layer.cfr(
-                cfr_title, cfr_part, version_id, 'analyses').write(
+            entry.Layer.cfr(cfr_title, cfr_part, version_id, 'analyses').write(
                 layer_json)

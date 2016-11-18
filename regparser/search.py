@@ -22,10 +22,11 @@ def find_offsets(text, search_fn):
         return (start, len(text))
 
 
-def segments(text, offsets_fn, exclude=[]):
+def segments(text, offsets_fn, exclude=None):
     """Split a block of text into a list of its sub parts. Often this means
     calling the offsets function repeatedly until there is no more text to
     process."""
+    exclude = exclude or []
     segs = []
     seg_id = 0
     remaining_text = text

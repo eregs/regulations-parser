@@ -21,7 +21,7 @@ def delays_in_sentence(sent):
     ... "effective date" ... FRNotices ... "delayed" ... (UntilDate)"""
     tokens = [token[0] for token, _, _ in delay_tokenizer.scanString(sent)]
     tokens = list(dropwhile(lambda t: not isinstance(t, EffectiveDate),
-                  tokens))
+                            tokens))
     if not tokens:
         return []
     #   Remove the "effective date"

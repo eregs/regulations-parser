@@ -159,7 +159,7 @@ def stars_occupy_space(*all_vars):
                     last_idx += 1
             # sequences must be increasing. Exception for markerless
             elif (last_idx >= idx and
-                    markers.markerless not in (last_typ, typ)):
+                  markers.markerless not in (last_typ, typ)):
                 return False
             else:
                 last_idx = idx

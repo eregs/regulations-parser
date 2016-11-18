@@ -109,7 +109,8 @@ def parse_interp(cfr_part, parent_xml):
     xml_nodes = []
 
     def contains_supp(n):
-        return 'supplement i' in (n.text.lower() or '')
+        text = (n.text or '').lower()
+        return 'supplement i' in text
 
     for child in parent_xml:
         # SECTION shouldn't be in this part of the XML, but often is. Expand
@@ -128,7 +129,7 @@ def parse_interp(cfr_part, parent_xml):
         else:
             if child.tag == 'HD' and contains_supp(child):
                 seen_header = True
-            for hd in filter(contains_supp, child.xpath(".//HD")):
+            if any(contains_supp(c) for c in child.xpath(".//HD")):
                 seen_header = True
 
     root = Node(label=[cfr_part, Node.INTERP_MARK], node_type=Node.INTERP)
@@ -244,18 +245,18 @@ def fetch_amendments(notice_xml):
 
     amendments = []
     for amdpar_xml in notice_xml.xpath('.//AMDPAR'):
-        amendment = {"instruction": amdpar_xml.text}
+        amendment_dict = {"instruction": amdpar_xml.text}
         # There'll be at most one
         for inst_xml in amdpar_xml.xpath('./EREGS_INSTRUCTIONS'):
             context = inst_xml.get('final_context', '')
-            amendment['cfr_part'] = context.split('-')[0]
+            amendment_dict['cfr_part'] = context.split('-')[0]
         relevant_changes = notice_changes.changes_by_xml[amdpar_xml]
         if relevant_changes:
-            amendment['changes'] = list(relevant_changes.items())
+            amendment_dict['changes'] = list(relevant_changes.items())
         if amdpar_xml in authority_by_xml:
-            amendment['authority'] = authority_by_xml[amdpar_xml]
+            amendment_dict['authority'] = authority_by_xml[amdpar_xml]
 
-        amendments.append(amendment)
+        amendments.append(amendment_dict)
 
     return amendments
 

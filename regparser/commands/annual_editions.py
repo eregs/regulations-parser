@@ -23,7 +23,7 @@ def last_versions(cfr_title, cfr_part):
         version = subpath.read()
         pub_date = annual.date_of_annual_after(cfr_title, version.effective)
         have_annual_edition[pub_date.year] = version.identifier
-    for year in sorted(have_annual_edition.keys()):
+    for year in sorted(have_annual_edition):
         if annual.find_volume(year, cfr_title, cfr_part):
             yield LastVersionInYear(have_annual_edition[year], year)
         else:
@@ -31,7 +31,7 @@ def last_versions(cfr_title, cfr_part):
                            year, cfr_title, cfr_part)
 
 
-def process_if_needed(cfr_title, cfr_part, last_versions):
+def process_if_needed(cfr_title, cfr_part, last_version_list):
     """Calculate dependencies between input and output files for these annual
     editions. If an output is missing or out of date, process it"""
     annual_path = entry.Annual(cfr_title, cfr_part)
@@ -39,13 +39,13 @@ def process_if_needed(cfr_title, cfr_part, last_versions):
     version_path = entry.Version(cfr_title, cfr_part)
     deps = dependency.Graph()
 
-    for last_version in last_versions:
+    for last_version in last_version_list:
         deps.add(tree_path / last_version.version_id,
                  version_path / last_version.version_id)
         deps.add(tree_path / last_version.version_id,
                  annual_path / last_version.year)
 
-    for last_version in last_versions:
+    for last_version in last_version_list:
         tree_entry = tree_path / last_version.version_id
         deps.validate_for(tree_entry)
         if deps.is_stale(tree_entry):

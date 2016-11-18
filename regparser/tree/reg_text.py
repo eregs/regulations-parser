@@ -33,21 +33,10 @@ def subjgrp_label(starting_title, letter_list):
     candidate_title = ""
     suffixes = [""] + list(string.ascii_lowercase)
     if len(words) == 1:
-        """
-        E.g. if the word is "Penalties" the progression is:
-
-        Pe
-        Pe.
-        Pen
-        Pen.
-        Pena
-        Pena.
-        <etc.>
-        Penalties.
-        Penalties-b.
-        Penalties-c.
-        <etc.>
-        """
+        # E.g. if the word is "Penalties" the progression is:
+        #
+        # Pe    Pe.     Pen     Pen.    Pena    Pena.   <etc.>
+        # Penalties.    Penalties-b.    Penalties-c.    <etc.>
         word = words[0]
         terminator = ""
         suffix_pos = 0
@@ -67,17 +56,10 @@ def subjgrp_label(starting_title, letter_list):
 
         return candidate_title
     else:
-        """
-        E.g. if the title is "Change of Ownership" the progression is:
-
-        CoO
-        C.o.O.
-        C_o_O
-        ChofOw
-        Ch.of.Ow.
-        <etc.>
-        ChangeofOwnership-a
-        """
+        # E.g. if the title is "Change of Ownership" the progression is:
+        #
+        # CoO   C.o.O.  C_o_O   ChofOw  Ch.of.Ow.   <etc.>
+        # ChangeofOwnership-a
         separators = ("", ".", "_")
         separator_pos, suffix_pos = 0, 0
         num_letters = 1

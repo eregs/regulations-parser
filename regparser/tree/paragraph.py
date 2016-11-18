@@ -47,7 +47,8 @@ class ParagraphParser():
         self.p_regex = p_regex
         self.node_type = node_type
 
-    def matching_subparagraph_ids(self, p_level, paragraph):
+    @staticmethod
+    def matching_subparagraph_ids(p_level, paragraph):
         """Return a list of matches if this paragraph id matches one of the
         subparagraph ids (e.g.  letter (i) and roman numeral (i)."""
         matches = []
@@ -57,12 +58,14 @@ class ParagraphParser():
                     matches.append((depth, sub_id))
         return matches
 
-    def best_start(self, text, p_level, paragraph, starts, exclude=[]):
+    def best_start(self, text, p_level, paragraph, starts, exclude=None):
         """Given a list of potential paragraph starts, pick the best based
         on knowledge of subparagraph structure. Do this by checking if the
         id following the subparagraph (e.g. ii) is between the first match
         and the second. If so, skip it, as that implies the first match was
         a subparagraph."""
+        if exclude is None:
+            exclude = []
         subparagraph_hazards = self.matching_subparagraph_ids(
             p_level, paragraph)
         starts = starts + [(len(text), len(text))]
@@ -81,11 +84,14 @@ class ParagraphParser():
             if not is_subparagraph:
                 return starts[i - 1]
 
-    def find_paragraph_start_match(self, text, p_level, paragraph, exclude=[]):
+    def find_paragraph_start_match(self, text, p_level, paragraph,
+                                   exclude=None):
         """Find the positions for the start and end of the requested label.
         p_Level is one of 0,1,2,3; paragraph is the index within that label.
         Return None if not present. Does not return results in the exclude
         list (a list of start/stop indices). """
+        if exclude is None:
+            exclude = []
         if len(p_levels) <= p_level or len(p_levels[p_level]) <= paragraph:
             return None
         match_starts = [(m.start(), m.end()) for m in re.finditer(
@@ -102,9 +108,11 @@ class ParagraphParser():
             return self.best_start(
                 text, p_level, paragraph, match_starts, exclude)
 
-    def paragraph_offsets(self, text, p_level, paragraph, exclude=[]):
+    def paragraph_offsets(self, text, p_level, paragraph, exclude=None):
         """Find the start/end of the requested paragraph. Assumes the text
         does not just up a p_level -- see build_paragraph_tree below."""
+        if exclude is None:
+            exclude = []
         start = self.find_paragraph_start_match(
             text, p_level, paragraph, exclude)
         if start is None:
@@ -112,26 +120,30 @@ class ParagraphParser():
         id_start, id_end = start
         end = self.find_paragraph_start_match(
             text[id_end:], p_level, paragraph + 1,
-            [(e_start - id_end, e_end - id_end)
-                for e_start, e_end in exclude])
+            [(e_start - id_end, e_end - id_end) for e_start, e_end in exclude]
+        )
         if end is None:
             end = len(text)
         else:
             end = end[0] + id_end
         return (id_start, end)
 
-    def paragraphs(self, text, p_level, exclude=[]):
+    def paragraphs(self, text, p_level, exclude=None):
         """Return a list of paragraph offsets defined by the level param."""
+        if exclude is None:
+            exclude = []
+
         def offsets_fn(remaining_text, p_idx, exclude):
             return self.paragraph_offsets(
                 remaining_text, p_level, p_idx, exclude)
         return segments(text, offsets_fn, exclude)
 
-    def build_tree(self, text, p_level=0, exclude=[], label=[],
-                   title=''):
-        """
-        Build a dict to represent the text hierarchy.
-        """
+    def build_tree(self, text, p_level=0, exclude=None, label=None, title=''):
+        """Build a dict to represent the text hierarchy."""
+        if exclude is None:
+            exclude = []
+        if label is None:
+            label = []
         subparagraphs = self.paragraphs(text, p_level, exclude)
         if subparagraphs:
             body_text = text[0:subparagraphs[0][0]]

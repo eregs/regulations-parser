@@ -147,7 +147,8 @@ class ApprovalsFP(PreProcessorBase):
                 fp.tag = 'APPRO'
         self.strip_extracts(xml)
 
-    def strip_extracts(self, xml):
+    @staticmethod
+    def strip_extracts(xml):
         """APPROs should not be alone in an EXTRACT"""
         for appro in xml.xpath(".//APPRO"):
             parent = appro.getparent()
@@ -188,7 +189,8 @@ class ExtractTags(PreProcessorBase):
                 return True
         return False
 
-    def strip_root_tag(self, string):
+    @staticmethod
+    def strip_root_tag(string):
         first_tag_ends_at = string.find('>')
         last_tag_starts_at = string.rfind('<')
         return string[first_tag_ends_at + 1:last_tag_starts_at]
@@ -270,7 +272,8 @@ class Footnotes(PreProcessorBase):
                 node.tail = tail
                 parent.insert(idx_in_parent + idx, node)
 
-    def _tails_corresponding_to(self, su, refs):
+    @staticmethod
+    def _tails_corresponding_to(su, refs):
         """Given an <SU> element and a list of texts it should be broken into,
         return a list of the "tail" texts, that is, the text which will be
         between <SU>s"""
@@ -397,7 +400,8 @@ class ImportCategories(PreProcessorBase):
             category_headers = section.xpath(self.CATEGORY_HD)
             self.split_categories(category_headers)
 
-    def remove_extract(self, section):
+    @staticmethod
+    def remove_extract(section):
         """The XML currently (though this may change) contains a semantically
         meaningless EXTRACT. Remove it"""
         for extract in section.xpath('./EXTRACT'):
@@ -408,7 +412,8 @@ class ImportCategories(PreProcessorBase):
                 parent.insert(idx, child)
             parent.remove(extract)
 
-    def split_categories(self, category_headers):
+    @staticmethod
+    def split_categories(category_headers):
         """We now have a big chunk of flat XML with headers and paragraphs.
         We'll make it semantic by converting these into bundles and wrapping
         them in IMPORTCATEGORY tags"""

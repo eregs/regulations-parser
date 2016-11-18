@@ -26,10 +26,10 @@ class Meta(Layer):
 
         if node.title:
             # up till the paren
-            match = re.search('part \d+[^\w]*([^\(]*)', node.title, re.I)
+            match = re.search(r'part \d+[^\w]*([^\(]*)', node.title, re.I)
             if match:
                 layer['statutory_name'] = match.group(1).strip()
-            match = re.search('\(regulation (\w+)\)', node.title, re.I)
+            match = re.search(r'\(regulation (\w+)\)', node.title, re.I)
             if match:
                 layer['reg_letter'] = match.group(1)
 

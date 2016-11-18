@@ -131,7 +131,7 @@ class NoticeXML(XMLWrapper):
             # The FR Notice XML doesn't tend to have all the metadata we need
             # contained within it, so don't try to parse that, just log an
             # error.
-            logger.warn("Preprocessing notice: no agency metadata.")
+            logger.warning("Preprocessing notice: no agency metadata.")
             return {}
 
         # We need turn turn the references to parent_ids into a tree of dicts
@@ -453,7 +453,7 @@ def local_copies(url):
     return []
 
 
-def notice_xmls_for_url(doc_num, notice_url):
+def notice_xmls_for_url(notice_url):
     """Find, preprocess, and return the XML(s) associated with a particular FR
     notice url"""
     local_notices = local_copies(notice_url)
@@ -477,5 +477,4 @@ def notice_xmls_for_url(doc_num, notice_url):
 
 def xmls_for_url(notice_url):
     # @todo: remove the need for this function
-    return [notice_xml.xml
-            for notice_xml in notice_xmls_for_url('N/A', notice_url)]
+    return [notice_xml.xml for notice_xml in notice_xmls_for_url(notice_url)]

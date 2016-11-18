@@ -8,7 +8,7 @@ from regparser.tree.xml_parser import (
 
 class IgnoreNotesHeader(paragraph_processor.BaseMatcher):
     """We don't want to include "Note:" and "Notes:" headers"""
-    REGEX = re.compile('notes?:?\s*$', re.IGNORECASE)
+    REGEX = re.compile(r'notes?:?\s*$', re.IGNORECASE)
 
     def matches(self, xml):
         return xml.tag == 'HD' and self.REGEX.match(xml.text or '')

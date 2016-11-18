@@ -1,4 +1,14 @@
+import abc
+import hashlib
+
 from django.http import HttpResponse
+from rest_framework.parsers import FileUploadParser, MultiPartParser
+from rest_framework.renderers import BrowsableAPIRenderer, JSONRenderer
+from rest_framework.response import Response
+from rest_framework import generics
+from rest_framework import mixins
+from rest_framework import status
+
 from regparser.web.jobs.models import (
     PipelineJob,
     ProposalPipelineJob,
@@ -11,22 +21,14 @@ from regparser.web.jobs.serializers import (
 )
 from regparser.web.jobs.utils import (
     add_redis_data_to_job_data,
+    create_status_url,
     delete_eregs_job,
     eregs_site_api_url,
     file_url,
     queue_eregs_job,
     queue_notification_email,
-    status_url
 )
-from rest_framework.parsers import FileUploadParser, MultiPartParser
-from rest_framework.renderers import BrowsableAPIRenderer, JSONRenderer
-from rest_framework.response import Response
-from rest_framework import generics
-from rest_framework import mixins
-from rest_framework import status
 
-import abc
-import hashlib
 
 renderer_classes = (
     JSONRenderer,
@@ -84,7 +86,7 @@ class BaseViewList(object):
         job_id = job.id
         for validator in serialized.get_fields()["job_id"].validators:
             validator(job_id)
-        statusurl = status_url(job_id, sub_path=self.sub_path)
+        statusurl = create_status_url(job_id, sub_path=self.sub_path)
         for validator in serialized.get_fields()["url"].validators:
             validator(statusurl)
 
@@ -95,17 +97,15 @@ class BaseViewList(object):
         serialized.save(job_id=job_id, url=statusurl,
                         destination=eregs_site_api_url)
         headers = self.get_success_headers(serialized.data)
-        """
-        Adding the Refresh header here so that the browser does the
-        user-friendly thing of redirecting the user to the page for the
-        newly-created object, even though use of the Refresh header is
-        frowned upon in some circles.
-
-        Not using redirect via 302 or 303 so that non-browser users get the
-        201 status code they expect upon a successful POST.
-
-        I'm open to debate on this decision.
-        """
+        # Adding the Refresh header here so that the browser does the
+        # user-friendly thing of redirecting the user to the page for the
+        # newly-created object, even though use of the Refresh header is
+        # frowned upon in some circles.
+        #
+        # Not using redirect via 302 or 303 so that non-browser users get the
+        # 201 status code they expect upon a successful POST.
+        #
+        # I'm open to debate on this decision.
         headers["Refresh"] = "0;url=%s" % statusurl
         return Response(serialized.data, status=status.HTTP_201_CREATED,
                         headers=headers)
