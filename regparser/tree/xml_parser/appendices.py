@@ -55,7 +55,7 @@ def is_appendix_header(node):
             (node.tag == 'HD' and node.attrib['SOURCE'] == 'HED'))
 
 
-_first_markers = [re.compile(r'[\)\.|,|;|-|—]\s*\(' + lvl[0] + '\)')
+_first_markers = [re.compile(r'[\)\.|,|;|-|—]\s*\(' + lvl[0] + r'\)')
                   for lvl in p_levels]
 
 
@@ -67,6 +67,17 @@ class AppendixProcessor(object):
     #   Placeholder text/headers have the label p1 or h1; use that as an
     #   identifier when determining which depth elements should be placed
     filler_regex = re.compile(r"[ph]\d+")
+
+    def __init__(self, part):
+        self.m_stack = tree_utils.NodeStack()
+
+        self.part = part
+        self.paragraph_counter = 0
+        self.header_count = 0
+        self.depth = 0
+        self.appendix_letter = None
+        # holds collections of nodes until their depth is determined
+        self.nodes = []
 
     def set_letter(self, appendix):
         """Find (and set) the appendix letter"""
@@ -97,7 +108,7 @@ class AppendixProcessor(object):
         def not_known_depth_header(pair):
             """Hitting a know-depth header (see above) means we've gone too
             far"""
-            lvl, parent = pair
+            _, parent = pair
             return (not parent.title or
                     not title_label_pair(
                         parent.title, self.appendix_letter, self.part))
@@ -145,7 +156,8 @@ class AppendixProcessor(object):
 
         self.m_stack.add(self.depth, n)
 
-    def insert_dashes(self, xml_node, text):
+    @staticmethod
+    def insert_dashes(xml_node, text):
         """ If paragraph has a SOURCE attribute with a value of
             FP-DASH it fills out with dashes, like Foo_____. """
         mtext = text
@@ -229,10 +241,10 @@ class AppendixProcessor(object):
         heap accordingly"""
         if self.nodes:
             nodes = list(reversed(self.nodes))
-            markers = [n.label[-1] for n in self.nodes if not
-                       AppendixProcessor.filler_regex.match(n.label[-1])]
-            if markers:
-                results = derive_depths(markers)
+            marker_list = [n.label[-1] for n in self.nodes if not
+                           AppendixProcessor.filler_regex.match(n.label[-1])]
+            if marker_list:
+                results = derive_depths(marker_list)
                 # currently no heuristics applied
                 depths = list(reversed(
                     [a.depth for a in results[0].assignment]))
@@ -255,17 +267,7 @@ class AppendixProcessor(object):
                     self.m_stack.add(self.depth, node)
             self.nodes = []
 
-    def process(self, appendix, part):
-        self.m_stack = tree_utils.NodeStack()
-
-        self.part = part
-        self.paragraph_counter = 0
-        self.header_count = 0
-        self.depth = None
-        self.appendix_letter = None
-        # holds collections of nodes until their depth is determined
-        self.nodes = []
-
+    def process(self, appendix):
         self.set_letter(appendix)
         remove_toc(appendix, self.appendix_letter)
 
@@ -280,7 +282,7 @@ class AppendixProcessor(object):
             if ((child.tag == 'HD' and child.attrib['SOURCE'] == 'HED') or
                     child.tag == 'RESERVED'):
                 self.end_group()
-                self.hed(part, text)
+                self.hed(self.part, text)
             elif is_subhead(child.tag, text):
                 self.end_group()
                 self.subheader(child, text)
@@ -333,7 +335,7 @@ def split_paragraph_text(text):
 
 
 def process_appendix(appendix, part):
-    return AppendixProcessor().process(appendix, part)
+    return AppendixProcessor(part).process(appendix)
 
 
 def parsed_title(text, appendix_letter):
@@ -366,10 +368,10 @@ def title_label_pair(text, appendix_letter, reg_part):
         elif match.aI:
             pair = (match.aI, 2)
 
-        if pair is not None and \
-                reg_part in APPENDIX_IGNORE_SUBHEADER_LABEL and \
-                pair[0] in APPENDIX_IGNORE_SUBHEADER_LABEL[reg_part][
-                    appendix_letter]:
+        if (pair is not None
+                and reg_part in APPENDIX_IGNORE_SUBHEADER_LABEL
+                and pair[0] in APPENDIX_IGNORE_SUBHEADER_LABEL[reg_part][
+                    appendix_letter]):
             logger.warning("Ignoring subheader label %s of appendix %s",
                            pair[0], appendix_letter)
             pair = None

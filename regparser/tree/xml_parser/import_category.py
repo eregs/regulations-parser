@@ -17,7 +17,7 @@ class ImportCategoryMatcher(paragraph_processor.BaseMatcher):
     def matches(self, xml):
         return xml.tag == 'IMPORTCATEGORY'
 
-    def derive_nodes(self, xml, processor):
+    def derive_nodes(self, xml, processor=None):
         """Finds and deletes the category header before recursing. Adds this
         header as a title."""
         xml = deepcopy(xml)     # we'll be modifying this
@@ -38,5 +38,5 @@ class ImportCategoryMatcher(paragraph_processor.BaseMatcher):
         if match:
             return 'p{}'.format(hash_for_paragraph(match.group('category')))
         else:
-            logging.warn("Couldn't derive category: %s", header_text)
+            logging.warning("Couldn't derive category: %s", header_text)
             return mtypes.MARKERLESS

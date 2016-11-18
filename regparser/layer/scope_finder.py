@@ -19,23 +19,23 @@ class ScopeFinder(object):
     def __init__(self):
         #   subpart -> list[section]
         self.subpart_map = defaultdict(list)
+        self._current_subpart = None
 
     def add_subparts(self, root):
         """Document the relationship between sections and subparts"""
-        # Need a reference for maintaining state
-        self.__current_subpart = None
+        self._current_subpart = None
         struct.walk(root, self._subpart_per_node)
 
     def _subpart_per_node(self, node):
         if node.node_type == struct.Node.SUBPART:
-            self.__current_subpart = node.label[2]
+            self._current_subpart = node.label[2]
         elif node.node_type == struct.Node.EMPTYPART:
-            self.__current_subpart = None
+            self._current_subpart = None
         if (node.node_type in (struct.Node.REGTEXT, struct.Node.APPENDIX) and
                 len(node.label) == 2):
             # Subparts
             section = node.label[-1]
-            self.subpart_map[self.__current_subpart].append(section)
+            self.subpart_map[self._current_subpart].append(section)
 
     def scope_of_text(self, text, label_struct, verify_prefix=True):
         """Given specific text, try to determine the definition scope it
@@ -82,10 +82,14 @@ class ScopeFinder(object):
         return []
 
     def determine_scope(self, stack):
-        for node in stack.lineage():
+        nodes = stack.lineage()
+        for node in nodes:
             scopes = self.scope_of_text(node.text, Label.from_node(node))
             if scopes:
                 return [tuple(s) for s in scopes]
 
         #   Couldn't determine scope; default to the entire reg
-        return [tuple(node.label[:1])]
+        if nodes:
+            return [tuple(nodes[-1].label[:1])]
+        else:
+            return []

@@ -114,7 +114,7 @@ def get_host():
     return "%s%s" % (hostname, hostport)
 
 
-def status_url(job_id, sub_path=""):
+def create_status_url(job_id, sub_path=""):
     """
     Returns a URL for checking the status of a job.
 

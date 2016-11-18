@@ -22,11 +22,12 @@ class Token(object):
     def match(self, *types, **fields):
         """Pattern match. self must be one of the types provided (if they
         were provided) and all of the fields must match (if fields were
-        provided)"""
-        return ((not types or any(isinstance(self, typ) for typ in types)) and
-                (not fields or all(hasattr(self, f) for f in fields)) and
-                (not fields or all(getattr(self, f) ==
-                                   v for f, v in fields.items())))
+        provided). If a successful match, returns self"""
+        type_match = not types or any(isinstance(self, typ) for typ in types)
+        has_fields = not fields or all(hasattr(self, f) for f in fields)
+        fields_match = not has_fields or all(
+            getattr(self, f) == v for f, v in fields.items())
+        return type_match and has_fields and fields_match and self
 
     def copy(self, **fields):
         """Helper method to create a new instance of this token with the

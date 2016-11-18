@@ -181,11 +181,11 @@ def _continues_collapsed(first, second):
     return False
 
 
-def get_markers(text, next_marker=None):
+def get_markers(text, following_marker=None):
     """ Extract all the paragraph markers from text. Do some checks on the
     collapsed markers."""
     initial = initial_markers(text)
-    if next_marker is None:
+    if following_marker is None:
         collapsed = []
     else:
         collapsed = collapsed_markers(text)
@@ -196,7 +196,7 @@ def get_markers(text, next_marker=None):
     if initial and collapsed:
         collapsed = [c for c in collapsed if _deeper_level(initial[-1], c)]
         for marker in reversed(collapsed):
-            if _continues_collapsed(marker, next_marker):
+            if _continues_collapsed(marker, following_marker):
                 break
             else:
                 collapsed.pop()
@@ -227,7 +227,7 @@ def initial_markers(text):
 
 _collapsed_grammar = QuickSearchable(
     # A guard to reduce false positives
-    pyparsing.Suppress(pyparsing.Regex(u',|\.|-|—|>|means ')) +
+    pyparsing.Suppress(pyparsing.Regex(u',|\\.|-|—|>|means ')) +
     any_depth_p)
 
 
@@ -264,7 +264,8 @@ def build_from_section(reg_part, section_xml):
 
     #  Merge spans longer than 3 sections
     section_span_end = None
-    if u'§§' == section_no[:2] and '-' in section_no:
+    if (len(section_nums) == 2 and section_no[:2] == u'§§'
+            and '-' in section_no):
         first, last = section_nums
         if last - first + 1 > 3:
             section_span_end = str(last)
@@ -371,9 +372,10 @@ class RegtextParagraphProcessor(paragraph_processor.ParagraphProcessor):
                     'PRTPAGE', 'EAR', 'RESERVED')]
 
     def additional_constraints(self):
-        return [optional_rules.depth_type_inverses,
-                optional_rules.limit_sequence_gap(3)
-                ] + self.relaxed_constraints()
+        return [
+            optional_rules.depth_type_inverses,
+            optional_rules.limit_sequence_gap(3)
+        ] + self.relaxed_constraints()
 
     def relaxed_constraints(self):
         return [optional_rules.star_new_level,

@@ -236,7 +236,12 @@ class Dashes(PlaintextFormatData):
 
 
 class Footnotes(PlaintextFormatData):
-    """E.g.     [^4](Contents of footnote with escaped parens: \(\)s)"""
+    """E.g.     [^4](Contents of footnote)
+       The footnote may also contain parens if they are escaped with a
+       backslash"""
+    # Note: we don't want to use \(\) is the example in the docstring as we'd
+    # need to double-escape or mark the docstring as raw.
+
     _ref_regex = r"\[\^(?P<ref>[^\]]*)\]"   # [^\]]* = take until hitting a ]
     _begin_note_regex = r"\((?P<note>.*?)"
     _close_paren = r"(?<!\\)\)"     # neg lookbehind for skipping escaped \)

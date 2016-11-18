@@ -32,7 +32,8 @@ class HttpMixin(object):
         kwargs['content_type'] = 'text/xml'
         self.expect_http(**kwargs)
 
-    def expect_http(self, **kwargs):
+    @staticmethod
+    def expect_http(**kwargs):
         """Wraps httpretty.register_uri with some defaults"""
         kwargs['body'] = kwargs.get('body', b'')
         kwargs['content_type'] = kwargs.get('content_type',
@@ -42,13 +43,16 @@ class HttpMixin(object):
         kwargs['uri'] = kwargs.get('uri', re.compile(".*"))
         httpretty.register_uri(**kwargs)
 
-    def last_http_params(self):
+    @staticmethod
+    def last_http_params():
         return httpretty.last_request().querystring
 
-    def last_http_headers(self):
+    @staticmethod
+    def last_http_headers():
         return httpretty.last_request().headers
 
-    def last_http_body(self):
+    @staticmethod
+    def last_http_body():
         return httpretty.last_request().parsed_body
 
 

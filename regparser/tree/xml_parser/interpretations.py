@@ -44,7 +44,7 @@ def get_first_interp_marker(text):
         return text[:text.find('*')].strip()        # up to star
 
 
-_first_markers = [re.compile(r'[\.|,|;|:|\-|—]\s*(' + marker + ')\.')
+_first_markers = [re.compile(r'[\.|,|;|:|\-|—]\s*(' + marker + r')\.')
                   for marker in ['i', 'A', '1']]
 
 

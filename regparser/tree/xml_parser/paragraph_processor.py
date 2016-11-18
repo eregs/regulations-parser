@@ -78,11 +78,12 @@ class ParagraphProcessor(object):
     def carry_label_to_children(self, node):
         """Takes a node and recursively processes its children to add the
         appropriate label prefix to them."""
-        for idx, child in enumerate(node.children):
+        for child in node.children:
             child.label = node.label + child.label[-1:]
             self.carry_label_to_children(child)
 
-    def replace_markerless(self, stack, node, depth):
+    @staticmethod
+    def replace_markerless(stack, node, depth):
         """Assign a unique index to all of the MARKERLESS paragraphs"""
         if node.label[-1] == mtypes.MARKERLESS:
             keyterm = KeyTerms.keyterm_in_node(node, ignore_definitions=False)
@@ -94,7 +95,8 @@ class ParagraphProcessor(object):
                             for n in stack.peek_level(depth)) + 1
             node.label[-1] = 'p{}'.format(p_num)
 
-    def separate_intro(self, nodes):
+    @staticmethod
+    def separate_intro(nodes):
         """In many situations the first unlabeled paragraph is the "intro"
         text for a section. We separate that out here"""
         labels = [n.label[0] for n in nodes]    # label is only one part long
@@ -155,11 +157,13 @@ class ParagraphProcessor(object):
         else:
             return root
 
-    def additional_constraints(self):
+    @staticmethod
+    def additional_constraints():
         """Hook for subtypes to add additional constraints"""
         return []
 
-    def relaxed_constraints(self):
+    @staticmethod
+    def relaxed_constraints():
         """Hook for subtypes to add relaxed constraints for retry
            logic"""
         return []

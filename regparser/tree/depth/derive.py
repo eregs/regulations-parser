@@ -1,15 +1,14 @@
+from collections import namedtuple
+
 from constraint import Problem
+
 from regparser.tree.depth import markers, rules
 from regparser.tree.depth.pair_rules import pair_rules
 from regparser.tree.struct import Node
 
 
-class ParAssignment(object):
-    """A paragraph's type, index, depth assignment"""
-    def __init__(self, typ, idx, depth):
-        self.typ = typ
-        self.idx = idx
-        self.depth = depth
+# A paragraph's type, index, depth assignment
+ParAssignment = namedtuple('ParAssignment', ('typ', 'idx', 'depth'))
 
 
 class Solution(object):
@@ -75,12 +74,14 @@ def _decompress_markerless(assignment, marker_list):
     return result
 
 
-def derive_depths(original_markers, additional_constraints=[]):
+def derive_depths(original_markers, additional_constraints=None):
     """Use constraint programming to derive the paragraph depths associated
     with a list of paragraph markers. Additional constraints (e.g. expected
     marker types, etc.) can also be added. Such constraints are functions of
     two parameters, the constraint function (problem.addConstraint) and a
     list of all variables"""
+    if additional_constraints is None:
+        additional_constraints = []
     if not original_markers:
         return []
     problem = Problem()
@@ -142,14 +143,16 @@ def derive_depths(original_markers, additional_constraints=[]):
     return solutions
 
 
-def debug_idx(markers, constraints=[]):
+def debug_idx(marker_list, constraints=None):
     """Binary search through the markers to find the point at which
     derive_depths no longer works"""
-    working, not_working = -1, len(markers)
+    if constraints is None:
+        constraints = []
+    working, not_working = -1, len(marker_list)
 
     while working != not_working - 1:
         midpoint = (working + not_working) // 2
-        solutions = derive_depths(markers[:midpoint + 1], constraints)
+        solutions = derive_depths(marker_list[:midpoint + 1], constraints)
         if solutions:
             working = midpoint
         else:

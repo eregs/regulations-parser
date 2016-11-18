@@ -4,12 +4,6 @@ from collections import defaultdict
 import re
 
 import inflection
-try:
-    key = ('(?i)(p)erson$', '\\1eople')
-    del inflection.PLURALS[inflection.PLURALS.index(key)]
-except ValueError:
-    pass
-
 
 from regparser.layer import def_finders
 from regparser.layer.scope_finder import ScopeFinder
@@ -17,6 +11,13 @@ from regparser.layer.layer import Layer
 from regparser.tree import struct
 from regparser.tree.priority_stack import PriorityStack
 import settings
+
+
+try:
+    key = ('(?i)(p)erson$', '\\1eople')
+    del inflection.PLURALS[inflection.PLURALS.index(key)]
+except ValueError:
+    pass
 
 
 MAX_TERM_LENGTH = 100
@@ -37,8 +38,8 @@ class ParentStack(PriorityStack):
 
 class Terms(Layer):
     shorthand = 'terms'
-    STARTS_WITH_WORDCHAR = re.compile('^\w.*$')
-    ENDS_WITH_WORDCHAR = re.compile('^.*\w$')
+    STARTS_WITH_WORDCHAR = re.compile(r'^\w.*$')
+    ENDS_WITH_WORDCHAR = re.compile(r'^.*\w$')
 
     def __init__(self, *args, **kwargs):
         Layer.__init__(self, *args, **kwargs)
@@ -143,7 +144,7 @@ class Terms(Layer):
 
         matches = self.calculate_offsets(node.text, term_list, exclusions)
         matches = sorted(matches, key=lambda triplet: triplet[0])
-        for term, ref, offsets in matches:
+        for _, ref, offsets in matches:
             layer_el.append({
                 "ref": ref.term + ':' + ref.label,
                 "offsets": offsets
@@ -185,15 +186,16 @@ class Terms(Layer):
         exclusions.extend(self.ignored_offsets(node.label[0], node.text))
         return exclusions
 
-    def calculate_offsets(self, text, applicable_terms, exclusions=[],
-                          inclusions=[]):
+    @staticmethod
+    def calculate_offsets(text, applicable_terms, exclusions=None,
+                          inclusions=None):
         """Search for defined terms in this text, including singular and
         plural forms of these terms, with a preference for all larger
         (i.e. containing) terms."""
 
         # don't modify the original
-        exclusions = list(exclusions)
-        inclusions = list(inclusions)
+        exclusions = list(exclusions or [])
+        inclusions = list(inclusions or [])
 
         # add singulars and plurals to search terms
         search_terms = set((inflection.singularize(t[0]), t[1])

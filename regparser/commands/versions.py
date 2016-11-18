@@ -36,24 +36,24 @@ Delay = namedtuple('Delay', ['by', 'until'])
 def delays(xmls):
     """Find all changes to effective dates. Return the latest change to each
     version of the regulation"""
-    delays = {}
+    delay_map = {}
     # Sort so that later modifications override earlier ones
     for delayer in sorted(xmls, key=attrgetter('published')):
         for delay in delayer.delays():
             for delayed in filter(delay.modifies_notice_xml, xmls):
-                delays[delayed.version_id] = Delay(delayer.version_id,
-                                                   delay.delayed_until)
-    return delays
+                delay_map[delayed.version_id] = Delay(delayer.version_id,
+                                                      delay.delayed_until)
+    return delay_map
 
 
-def generate_dependencies(version_dir, version_ids, delays):
+def generate_dependencies(version_dir, version_ids, delays_by_version):
     """Creates a dependency graph and adds all dependencies for input xml and
     delays between notices"""
     notice_dir = entry.Notice()
     deps = dependency.Graph()
     for version_id in version_ids:
         deps.add(version_dir / version_id, notice_dir / version_id)
-    for delayed, delay in delays.items():
+    for delayed, delay in delays_by_version.items():
         deps.add(version_dir / delayed, notice_dir / delay.by)
     return deps
 
@@ -75,18 +75,18 @@ def write_to_disk(xml, version_entry, delay=None):
     version_entry.write(version)
 
 
-def write_if_needed(cfr_title, cfr_part, version_ids, xmls, delays):
+def write_if_needed(cfr_title, cfr_part, version_ids, xmls, delays_by_version):
     """All versions which are stale (either because they were never create or
     because their dependency has been updated) are written to disk. If any
     dependency is missing, an exception is raised"""
     version_dir = entry.FinalVersion(cfr_title, cfr_part)
-    deps = generate_dependencies(version_dir, version_ids, delays)
+    deps = generate_dependencies(version_dir, version_ids, delays_by_version)
     for version_id in version_ids:
         version_entry = version_dir / version_id
         deps.validate_for(version_entry)
         if deps.is_stale(version_entry):
             write_to_disk(xmls[version_id], version_entry,
-                          delays.get(version_id))
+                          delays_by_version.get(version_id))
 
 
 @click.command()

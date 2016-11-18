@@ -1,5 +1,6 @@
-import click
 import logging
+
+import click
 
 from regparser.api_writer import Client
 from regparser.commands import utils
@@ -14,7 +15,7 @@ logger = logging.getLogger(__name__)
 def write_trees(client, only_title, only_part):
     for tree_entry in utils.relevant_paths(entry.Tree(), only_title,
                                            only_part):
-        cfr_title, cfr_part, version_id = tree_entry.path
+        _, cfr_part, version_id = tree_entry.path
         content = tree_entry.read()
         client.regulation(cfr_part, version_id).write(content)
 
@@ -25,7 +26,7 @@ def write_layers(client, only_title, only_part):
     layers."""
     for layer_entry in utils.relevant_paths(entry.Layer.cfr(), only_title,
                                             only_part):
-        _, cfr_title, cfr_part, version_id, layer_name = layer_entry.path
+        _, _, cfr_part, version_id, layer_name = layer_entry.path
         layer = layer_entry.read()
         doc_id = version_id + '/' + cfr_part
         client.layer(layer_name, 'cfr', doc_id).write(layer)
@@ -80,7 +81,7 @@ def write_notices(client, only_title, only_part):
 def write_diffs(client, only_title, only_part):
     for diff_entry in utils.relevant_paths(entry.Diff(), only_title,
                                            only_part):
-        cfr_title, cfr_part, lhs_id, rhs_id = diff_entry.path
+        _, cfr_part, lhs_id, rhs_id = diff_entry.path
         diff = diff_entry.read()
         client.diff(cfr_part, lhs_id, rhs_id).write(diff)
 

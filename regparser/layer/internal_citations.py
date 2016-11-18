@@ -1,4 +1,4 @@
-# vim: set encoding=utf-8
+# -*- coding: utf-8 -*-
 import logging
 
 from regparser.citations import internal_citations, Label
@@ -41,7 +41,7 @@ class InternalCitationParser(Layer):
             else:
                 logger.warning("Missing citation? %s %r",
                                text[c.start:c.end], c.label)
-                logger.debug("Context: %s" % text)
+                logger.debug("Context: %s", text)
         return final
 
     def parse(self, text, label, title=None):
@@ -60,7 +60,8 @@ class InternalCitationParser(Layer):
 
         return self.strip_whitespace(text, all_citations)
 
-    def strip_whitespace(self, text, citations):
+    @staticmethod
+    def strip_whitespace(text, citations):
         """Modifies the offsets to exclude any trailing whitespace. Modifies
         the offsets in place."""
         for citation in citations:

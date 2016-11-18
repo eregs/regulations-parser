@@ -136,8 +136,8 @@ comment_context_without_section = (
 ).setParseAction(
     lambda m: tokens.Context(
         [None, 'Interpretations', None,
-         _paren_join([m.p2, m.p3, m.p4, m.plaintext_p5, m.plaintext_p6])
-         ], bool(m.certain)))
+         _paren_join([m.p2, m.p3, m.p4, m.plaintext_p5, m.plaintext_p6])],
+        bool(m.certain)))
 appendix = (
     context_certainty +
     unified.marker_appendix +

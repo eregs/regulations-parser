@@ -39,7 +39,7 @@ def compare(local_path, remote_url, prompt=True):
     diff"""
     remote = path_to_json(remote_url)
     if remote is None:
-        logger.warn("Nonexistent: %s", remote_url)
+        logger.warning("Nonexistent: %s", remote_url)
         return None
 
     with open(local_path) as fp:

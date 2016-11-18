@@ -70,7 +70,7 @@ class CommandsCompareToTests(HttpMixin, TestCase):
         self.expect_json_http(status=404)
         with patch('regparser.commands.compare_to.logger') as logger:
             self.run_compare('local_file', 'http://example.com/remote')
-        self.assertEqual(logger.warn.call_args[0],
+        self.assertEqual(logger.warning.call_args[0],
                          ('Nonexistent: %s', 'http://example.com/remote'))
 
     def test_compare_no_diff(self):
