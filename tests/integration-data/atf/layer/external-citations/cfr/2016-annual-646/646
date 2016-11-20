@@ -1,0 +1,30 @@
+{
+    "646-143-p4077413163-b": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "1311", 
+                "title": "19"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "19 U.S.C. 1311", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=1311&title=19&year=mostrecent"
+        }
+    ], 
+    "646-155-b": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "781", 
+                "title": "49"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "49 U.S.C. 781", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=781&title=49&year=mostrecent"
+        }
+    ]
+}

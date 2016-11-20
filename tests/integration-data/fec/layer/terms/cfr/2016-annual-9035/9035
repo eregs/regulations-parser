@@ -1,0 +1,27 @@
+{
+    "9035-2-a-1": [
+        {
+            "offsets": [
+                [
+                    138, 
+                    154
+                ], 
+                [
+                    363, 
+                    379
+                ]
+            ], 
+            "ref": "immediate family:9035-2-b"
+        }
+    ], 
+    "referenced": {
+        "immediate family:9035-2-b": {
+            "position": [
+                43, 
+                59
+            ], 
+            "reference": "9035-2-b", 
+            "term": "immediate family"
+        }
+    }
+}

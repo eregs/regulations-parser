@@ -1,0 +1,90 @@
+{
+    "479-32-a-p1": [
+        {
+            "locations": [
+                0
+            ], 
+            "table_data": {
+                "header": [
+                    [
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": ""
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Per year or fraction thereof"
+                        }
+                    ]
+                ], 
+                "rows": [
+                    [
+                        "Class 1\u2014Importer of firearms", 
+                        "$500"
+                    ], 
+                    [
+                        "Class 2\u2014Manufacturer of firearms", 
+                        "500"
+                    ], 
+                    [
+                        "Class 3\u2014Dealer in firearms", 
+                        "200"
+                    ], 
+                    [
+                        "Class 4\u2014Importer only of weapons classified as \u201cany other weapon\u201d", 
+                        "25"
+                    ], 
+                    [
+                        "Class 5\u2014Manufacturer only of weapons classified as \u201cany other weapon\u201d", 
+                        "25"
+                    ], 
+                    [
+                        "Class 6\u2014Dealer only in weapons classified as \u201cany other weapon\u201d", 
+                        "10"
+                    ]
+                ]
+            }, 
+            "text": "||Per year or fraction thereof|\n|---|---|\n|Class 1\u2014Importer of firearms|$500|\n|Class 2\u2014Manufacturer of firearms|500|\n|Class 3\u2014Dealer in firearms|200|\n|Class 4\u2014Importer only of weapons classified as \u201cany other weapon\u201d|25|\n|Class 5\u2014Manufacturer only of weapons classified as \u201cany other weapon\u201d|25|\n|Class 6\u2014Dealer only in weapons classified as \u201cany other weapon\u201d|10|"
+        }
+    ], 
+    "479-32-b-p1": [
+        {
+            "locations": [
+                0
+            ], 
+            "table_data": {
+                "header": [
+                    [
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": ""
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Per year or fraction thereof"
+                        }
+                    ]
+                ], 
+                "rows": [
+                    [
+                        "Class 1\u2014Importer of firearms (including an importer only of weapons classified as \u201cany other weapon\u201d)", 
+                        "$1,000"
+                    ], 
+                    [
+                        "Class 2\u2014Manufacturer of firearms (including a manufacturer only of weapons classified as \u201cany other weapon\u201d)", 
+                        "1,000"
+                    ], 
+                    [
+                        "Class 3\u2014Dealer in firearms (including a dealer only of weapons classified as \u201cany other weapon\u201d)", 
+                        "500"
+                    ]
+                ]
+            }, 
+            "text": "||Per year or fraction thereof|\n|---|---|\n|Class 1\u2014Importer of firearms (including an importer only of weapons classified as \u201cany other weapon\u201d)|$1,000|\n|Class 2\u2014Manufacturer of firearms (including a manufacturer only of weapons classified as \u201cany other weapon\u201d)|1,000|\n|Class 3\u2014Dealer in firearms (including a dealer only of weapons classified as \u201cany other weapon\u201d)|500|"
+        }
+    ]
+}

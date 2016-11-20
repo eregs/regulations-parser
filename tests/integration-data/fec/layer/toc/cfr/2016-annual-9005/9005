@@ -1,0 +1,34 @@
+{
+    "9005": [
+        {
+            "index": [
+                "9005", 
+                "1"
+            ], 
+            "title": "\u00a7 9005.1 Certification of payments for candidates."
+        }, 
+        {
+            "index": [
+                "9005", 
+                "2"
+            ], 
+            "title": "\u00a7 9005.2 Payments to eligible candidates from the Fund."
+        }
+    ], 
+    "9005-Subpart": [
+        {
+            "index": [
+                "9005", 
+                "1"
+            ], 
+            "title": "\u00a7 9005.1 Certification of payments for candidates."
+        }, 
+        {
+            "index": [
+                "9005", 
+                "2"
+            ], 
+            "title": "\u00a7 9005.2 Payments to eligible candidates from the Fund."
+        }
+    ]
+}

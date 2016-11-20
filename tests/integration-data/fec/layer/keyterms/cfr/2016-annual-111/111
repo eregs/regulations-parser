@@ -1,0 +1,42 @@
+{
+    "111-2-a": [
+        {
+            "key_term": "General rule.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "111-2-b": [
+        {
+            "key_term": "Special rule for periods less than seven days.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "111-2-c": [
+        {
+            "key_term": "Special rule for service by mail.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "111-24-a-2": [
+        {
+            "key_term": "Knowing and willful violations.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "111-43-d": [
+        {
+            "key_term": "Definitions.", 
+            "locations": [
+                0
+            ]
+        }
+    ]
+}

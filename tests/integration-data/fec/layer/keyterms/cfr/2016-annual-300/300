@@ -1,0 +1,818 @@
+{
+    "300-10-a": [
+        {
+            "key_term": "Prohibitions.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-10-b": [
+        {
+            "key_term": "Fundraising costs.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-10-c": [
+        {
+            "key_term": "Application.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-11-a": [
+        {
+            "key_term": "Prohibitions.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-11-b": [
+        {
+            "key_term": "Application.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-11-c": [
+        {
+            "key_term": "Determining whether a section 501(c) organization makes expenditures or disbursements in connection with Federal elections.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-11-d": [
+        {
+            "key_term": "Certification.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-12-a": [
+        {
+            "key_term": "Permissible uses of excess non-Federal funds.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-12-b": [
+        {
+            "key_term": "Prohibited uses of non-Federal funds.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-12-d": [
+        {
+            "key_term": "National party committee office building or facility accounts.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-12-e": [
+        {
+            "key_term": "Application.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-12-f": [
+        {
+            "key_term": "Treatment of Federal and non-Federal accounts during transition period.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-13-a": [
+        {
+            "key_term": "In general.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-13-b": [
+        {
+            "key_term": "Termination report for non-Federal accounts.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-13-c": [
+        {
+            "key_term": "Transitional reporting rules.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-30-a": [
+        {
+            "key_term": "Scope and introduction.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-30-b": [
+        {
+            "key_term": "Types of accounts.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-30-b-1": [
+        {
+            "key_term": "Non-Federal accounts.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-30-b-2": [
+        {
+            "key_term": "Levin account.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-30-b-3": [
+        {
+            "key_term": "Federal account.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-30-b-4": [
+        {
+            "key_term": "Allocation accounts.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-30-c": [
+        {
+            "key_term": "Required account or accounts.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-30-d": [
+        {
+            "key_term": "Recordkeeping.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-31-a": [
+        {
+            "key_term": "General rule.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-31-b": [
+        {
+            "key_term": "Compliance with State law.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-31-c": [
+        {
+            "key_term": "Donations from sources permitted by State law but prohibited by the Act.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-31-d": [
+        {
+            "key_term": "Donation amount limitation\u2014", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-31-d-1": [
+        {
+            "key_term": "General rule.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-31-d-2": [
+        {
+            "key_term": "Effect of different State limitations.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-31-d-3": [
+        {
+            "key_term": "No affiliation of committees for purposes of this paragraph.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-31-e": [
+        {
+            "key_term": "No Levin funds from a national party committee or a Federal candidate or officeholder.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-31-f": [
+        {
+            "key_term": "Certain joint fundraising prohibited.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-31-g": [
+        {
+            "key_term": "Safe Harbor.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-32-a": [
+        {
+            "key_term": "Federal funds.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-32-b": [
+        {
+            "key_term": "Levin funds.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-32-c": [
+        {
+            "key_term": "Conditions and restrictions on spending Levin funds.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-32-d": [
+        {
+            "key_term": "Non-Federal activities.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-33-a": [
+        {
+            "key_term": "Costs of Federal election activity allocable by State, district, and local party committees and organizations\u2014", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-33-a-1": [
+        {
+            "key_term": "Costs of voter registration.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-33-a-2": [
+        {
+            "key_term": "Costs of voter identification, get-out-the-vote activity, or generic campaign activities within certain time periods.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-33-b": [
+        {
+            "key_term": "Allocation percentages.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-33-b-1": [
+        {
+            "key_term": "Presidential election years.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-33-b-2": [
+        {
+            "key_term": "Presidential and Senate election year.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-33-b-3": [
+        {
+            "key_term": "Senate election year.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-33-b-4": [
+        {
+            "key_term": "Non-Presidential and non-Senate year.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-33-c": [
+        {
+            "key_term": "Costs of public communications.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-33-d": [
+        {
+            "key_term": "Costs of salaries, wages, and fringe benefits.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-33-e": [
+        {
+            "key_term": "Transfers between accounts to cover allocable expenses.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-33-e-1": [
+        {
+            "key_term": "Payments from Federal accounts or from allocation accounts.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-33-e-2": [
+        {
+            "key_term": "Timing.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-34-a": [
+        {
+            "key_term": "Federal funds.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-34-b": [
+        {
+            "key_term": "Levin funds.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-34-c": [
+        {
+            "key_term": "Allocation transfers.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-35-a": [
+        {
+            "key_term": "General provision.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-35-b": [
+        {
+            "key_term": "Application of State law.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-35-b-1": [
+        {
+            "key_term": "Non-Federal account.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-35-b-2": [
+        {
+            "key_term": "Levin funds.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-35-c": [
+        {
+            "key_term": "Leasing a portion of the party office building.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-35-d": [
+        {
+            "key_term": "Transitional Provisions for State Party Building or Facility Account.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-36-a": [
+        {
+            "key_term": "Requirements for a State, district, or local committee of a political party, or an association or similar group of candidates for State or local office or of individuals holding State or local office, that is not a political committee.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-36-b": [
+        {
+            "key_term": "Requirements for a State, district, or local committee of a political party, or an association or similar group of candidates for State or local office or of individuals holding State or local office, that is a political committee\u2014", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-36-b-1": [
+        {
+            "key_term": "Requirements for a State, district, or local committee of a political party that has less than $5,000 of aggregate receipts and disbursements for Federal election activity in a calendar year, and for an association or similar group of candidates for State or local office or of individuals holding State or local office at all times.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-36-b-2": [
+        {
+            "key_term": "Requirements for a State, district, or local committee of a political party that has $5,000 or more of aggregate receipts and disbursements for Federal election activity in a calendar year.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-36-b-2-i": [
+        {
+            "key_term": "Reporting of allocation of expenses between Federal funds and Levin funds.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-36-b-2-ii": [
+        {
+            "key_term": "Reporting of allocation transfers.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-36-b-2-iii": [
+        {
+            "key_term": "Reporting of allocated disbursements.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-36-b-2-iv": [
+        {
+            "key_term": "Itemization.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-36-b-3": [
+        {
+            "key_term": "Reporting of disbursements allocated between Federal funds and non-Federal funds, other than Levin funds.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-36-c": [
+        {
+            "key_term": "Filing\u2014", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-36-c-1": [
+        {
+            "key_term": "Schedule.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-36-c-2": [
+        {
+            "key_term": "Electronic filing.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-36-d": [
+        {
+            "key_term": "Recordkeeping.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-37-a": [
+        {
+            "key_term": "Prohibitions.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-37-b": [
+        {
+            "key_term": "Application.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-37-c": [
+        {
+            "key_term": "Determining whether an organization makes expenditures or disbursements in connection with a Federal election.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-37-d": [
+        {
+            "key_term": "Certification.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-50-a": [
+        {
+            "key_term": "Prohibitions on fundraising and donations.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-50-b": [
+        {
+            "key_term": "Application.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-50-c": [
+        {
+            "key_term": "Determining whether a section 501(c) organization makes expenditures or disbursements in connection with Federal elections.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-50-d": [
+        {
+            "key_term": "Certification.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-50-e": [
+        {
+            "key_term": "Reliance on false certification.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-50-f": [
+        {
+            "key_term": "Requests for information.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-51-a": [
+        {
+            "key_term": "Prohibitions.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-51-b": [
+        {
+            "key_term": "Application.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-51-c": [
+        {
+            "key_term": "Determining whether an organization makes expenditures or disbursements in connection with a Federal election.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-51-d": [
+        {
+            "key_term": "Certification.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-52-a": [
+        {
+            "key_term": "General solicitations.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-52-b": [
+        {
+            "key_term": "Specific solicitations.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-52-c": [
+        {
+            "key_term": "Voter registration, voter identification, get-out-the-vote activity and generic campaign activity.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-52-d": [
+        {
+            "key_term": "Prohibited solicitations.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-52-e": [
+        {
+            "key_term": "Safe Harbor.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-64-a": [
+        {
+            "key_term": "Scope.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-64-b": [
+        {
+            "key_term": "Participation at non-Federal fundraising events.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-64-c": [
+        {
+            "key_term": "Publicity for non-Federal fundraising events.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-64-c-1": [
+        {
+            "key_term": "Publicity not containing a solicitation.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-64-c-2": [
+        {
+            "key_term": "Publicity containing a solicitation limited to funds that comply with the amount limitations and source prohibitions of the Act.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-64-c-3": [
+        {
+            "key_term": "Publicity containing a solicitation of funds outside the amount limitations and source prohibitions of the Act.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-65-a": [
+        {
+            "key_term": "General solicitations.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-65-b": [
+        {
+            "key_term": "Specific solicitations.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-65-c": [
+        {
+            "key_term": "Voter registration, voter identification, get-out-the-vote activity and generic campaign activity.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-65-d": [
+        {
+            "key_term": "Prohibited solicitations.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-65-e": [
+        {
+            "key_term": "Safe Harbor.", 
+            "locations": [
+                0
+            ]
+        }
+    ]
+}

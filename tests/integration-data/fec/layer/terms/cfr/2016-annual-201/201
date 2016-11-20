@@ -1,0 +1,215 @@
+{
+    "201-1": [
+        {
+            "offsets": [
+                [
+                    45, 
+                    68
+                ]
+            ], 
+            "ref": "ex parte communication:201-2-a"
+        }
+    ], 
+    "201-2-a": [
+        {
+            "offsets": [
+                [
+                    107, 
+                    119
+                ], 
+                [
+                    139, 
+                    151
+                ]
+            ], 
+            "ref": "commissioner:201-2-c"
+        }
+    ], 
+    "201-2-b": [
+        {
+            "offsets": [
+                [
+                    4, 
+                    27
+                ]
+            ], 
+            "ref": "ex parte communication:201-2-a"
+        }
+    ], 
+    "201-2-d": [
+        {
+            "offsets": [
+                [
+                    4, 
+                    16
+                ], 
+                [
+                    91, 
+                    103
+                ]
+            ], 
+            "ref": "commissioner:201-2-c"
+        }
+    ], 
+    "201-3-a": [
+        {
+            "offsets": [
+                [
+                    322, 
+                    334
+                ], 
+                [
+                    356, 
+                    368
+                ], 
+                [
+                    711, 
+                    723
+                ], 
+                [
+                    741, 
+                    753
+                ]
+            ], 
+            "ref": "commissioner:201-2-c"
+        }, 
+        {
+            "offsets": [
+                [
+                    381, 
+                    403
+                ]
+            ], 
+            "ref": "ex parte communication:201-2-a"
+        }, 
+        {
+            "offsets": [
+                [
+                    781, 
+                    804
+                ]
+            ], 
+            "ref": "ex parte communication:201-2-a"
+        }
+    ], 
+    "201-3-c-1": [
+        {
+            "offsets": [
+                [
+                    6, 
+                    18
+                ], 
+                [
+                    34, 
+                    46
+                ], 
+                [
+                    269, 
+                    281
+                ]
+            ], 
+            "ref": "commissioner:201-2-c"
+        }, 
+        {
+            "offsets": [
+                [
+                    76, 
+                    98
+                ]
+            ], 
+            "ref": "ex parte communication:201-2-a"
+        }
+    ], 
+    "201-3-c-2": [
+        {
+            "offsets": [
+                [
+                    6, 
+                    18
+                ], 
+                [
+                    34, 
+                    46
+                ]
+            ], 
+            "ref": "commissioner:201-2-c"
+        }, 
+        {
+            "offsets": [
+                [
+                    78, 
+                    100
+                ]
+            ], 
+            "ref": "ex parte communication:201-2-a"
+        }
+    ], 
+    "201-4-a": [
+        {
+            "offsets": [
+                [
+                    6, 
+                    18
+                ], 
+                [
+                    34, 
+                    46
+                ], 
+                [
+                    654, 
+                    666
+                ]
+            ], 
+            "ref": "commissioner:201-2-c"
+        }, 
+        {
+            "offsets": [
+                [
+                    71, 
+                    93
+                ]
+            ], 
+            "ref": "ex parte communication:201-2-a"
+        }
+    ], 
+    "201-4-b-1": [
+        {
+            "offsets": [
+                [
+                    101, 
+                    114
+                ]
+            ], 
+            "ref": "commissioner:201-2-c"
+        }
+    ], 
+    "201-4-b-2": [
+        {
+            "offsets": [
+                [
+                    105, 
+                    117
+                ]
+            ], 
+            "ref": "commissioner:201-2-c"
+        }
+    ], 
+    "referenced": {
+        "commissioner:201-2-c": {
+            "position": [
+                4, 
+                16
+            ], 
+            "reference": "201-2-c", 
+            "term": "commissioner"
+        }, 
+        "ex parte communication:201-2-a": {
+            "position": [
+                4, 
+                26
+            ], 
+            "reference": "201-2-a", 
+            "term": "ex parte communication"
+        }
+    }
+}

@@ -1,0 +1,47 @@
+{
+    "9037-1": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "26", 
+                "part": "702", 
+                "section": "9037"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "26 CFR 702.9037", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=702&section=9037&titlenum=26&year=mostrecent"
+        }
+    ], 
+    "9037-2": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "26", 
+                "part": "702", 
+                "section": "9037"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "26 CFR 702.9037", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=702&section=9037&titlenum=26&year=mostrecent"
+        }
+    ], 
+    "9037-4": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "11", 
+                "part": "104", 
+                "section": "3"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "11 CFR 104.3", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=104&section=3&titlenum=11&year=mostrecent"
+        }
+    ]
+}

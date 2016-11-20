@@ -1,0 +1,26 @@
+{
+    "9005-1-a": [
+        {
+            "key_term": "Certification of payments for major party candidates.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "9005-1-b": [
+        {
+            "key_term": "Certification of pre-election payments for minor and new party candidates.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "9005-1-c": [
+        {
+            "key_term": "Certification of minor and new party candidates for post-election payments.", 
+            "locations": [
+                0
+            ]
+        }
+    ]
+}

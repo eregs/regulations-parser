@@ -1,0 +1,122 @@
+{
+    "children": [
+        {
+            "children": [
+                {
+                    "children": [], 
+                    "label": [
+                        "105", 
+                        "1"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "All designations, statements, reports, and notices, as well as any modification(s) or amendment(s) thereto, required to be filed under 11 CFR parts 101, 102, and 104 by a candidate for nomination or election to the office of Representative in, or Delegate or Resident Commissioner to, the Congress, by his or her authorized committee(s), shall be filed in original form with, and received by, the Federal Election Commission.", 
+                    "title": "\u00a7 105.1 Place of filing; House candidates and their authorized committees (52 U.S.C. 30102(g)(1))."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "105", 
+                                "2", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) General Rule. Except as provided in paragraph (b) of this section, all designations, statements, reports, and notices as well as any modification(s) or amendment(s) thereto, required to be filed under 11 CFR parts 101, 102, and 104 by a candidate for nomination or election to the office of United States Senator, by his or her principal campaign committee or by any other political committee(s) that supports only candidates for nomination for election or election to the Senate of the United States shall be filed in original form with, and received by, the Secretary of the Senate, as custodian for the Federal Election Commission."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "105", 
+                                "2", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) Exceptions. 24-hour and 48-hour reports of independent expenditures must be filed with the Commission and not with the Secretary of the Senate, even if the communication refers to a Senate candidate."
+                        }
+                    ], 
+                    "label": [
+                        "105", 
+                        "2"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 105.2 Place of filing; Senate candidates, their principal campaign committees, and committees supporting only Senate candidates (52 U.S.C. 30102(g), 30104(g)(3))."
+                }, 
+                {
+                    "children": [], 
+                    "label": [
+                        "105", 
+                        "3"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "All designations, statements, reports, and notices, as well as any modification(s) or amendment(s) thereto, required to be filed under 11 CFR parts 101, 102 and 104 by a candidate for nomination for election or election to the office of President or Vice President of the United States or by his or her principal campaign committee shall be filed in original form with the Federal Election Commission.", 
+                    "title": "\u00a7 105.3 Place of filing; Presidential candidates and their principal campaign committees (52 U.S.C. 30102(g)(4))."
+                }, 
+                {
+                    "children": [], 
+                    "label": [
+                        "105", 
+                        "4"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "All designations, statements, reports, and notices, as well as any modifications or amendments thereto, required to be filed under 11 CFR parts 101, 102, and 104 by a political committee other than any principal campaign committee or any committee referred to in 11 CFR 105.2 or 105.3, by persons other than political committees making independent expenditures under 11 CFR part 109, and by persons required to report the cost of communications under 11 CFR 104.6, shall be filed in original form with the Federal Election Commission.", 
+                    "title": "\u00a7 105.4 Place of filing; political committees and other persons (52 U.S.C. 30102(g)(4))."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "105", 
+                                "5", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) Either a microfilmed copy or photocopy of all original designations, statements, reports, modifications or amendments required to be filed pursuant to 11 CFR 105.2 shall be transmitted by the Secretary of the Senate to the Commission as soon as possible, but in any case no later than two (2) working days after receiving such designations, statements, reports, modifications, or amendments."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "105", 
+                                "5", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) The Secretary of the Senate shall then forward to the Commission a microfilm copy and a photocopy of each designation, statement, and report, or any modification or amendment thereto, filed with the Secretary pursuant to 11 CFR 105.2."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "105", 
+                                "5", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) The Secretary of the Senate shall place a time and date stamp on each original designation, statement, report, modification or amendment received."
+                        }
+                    ], 
+                    "label": [
+                        "105", 
+                        "5"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 105.5 Transmittal of microfilm copies and photocopies of original reports filed with the Secretary of the Senate to the Commission (52 U.S.C. 30102(g)(3))."
+                }
+            ], 
+            "label": [
+                "105", 
+                "Subpart"
+            ], 
+            "node_type": "emptypart", 
+            "text": ""
+        }
+    ], 
+    "label": [
+        "105"
+    ], 
+    "node_type": "regtext", 
+    "text": "", 
+    "title": "PART 105\u2014DOCUMENT FILING (52 U.S.C. 30102(g))"
+}

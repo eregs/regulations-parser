@@ -1,0 +1,983 @@
+{
+    "children": [
+        {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "113", 
+                                "1", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) Funds donated. Funds donated means all funds, including, but not limited to, gifts, loans, advances, credits or deposits of money which are donated for the purpose of supporting the activities of a Federal or State officeholder; but does not mean funds appropriated by Congress, a State legislature, or another similar public appropriating body, or personal funds of the officeholder donated to an account containing only those personal funds."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "113", 
+                                "1", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) Office account. Office account means an account established for the purposes of supporting the activities of a Federal or State officeholder which contains campaign funds and funds donated, but does not include an account used exclusively for funds appropriated by Congress, a State legislature, or another similar public appropriating body, or an account of the officeholder which contains only the personal funds of the officeholder."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "113", 
+                                "1", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) Federal officeholder. Federal officeholder means an individual elected to or serving in the office of President or Vice President of the United States; or a Senator or a Representative in, or Delegate or Resident Commissioner to, the Congress of the United States."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "113", 
+                                "1", 
+                                "d"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(d) State officeholder. State officeholder means an individual elected to or serving in any elected public office within a State of the United States, the District of Columbia, the Commonwealth of Puerto Rico or any subdivision thereof."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "113", 
+                                "1", 
+                                "e"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(e) [Reserved]"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "113", 
+                                "1", 
+                                "f"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(f) Qualified Member. Qualified Member means an individual who was serving as a Senator or Representative in, or Delegate or Resident Commissioner to, Congress, on January 8, 1980."
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "113", 
+                                                        "1", 
+                                                        "g", 
+                                                        "1", 
+                                                        "i", 
+                                                        "A"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(A) Household food items or supplies."
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "113", 
+                                                        "1", 
+                                                        "g", 
+                                                        "1", 
+                                                        "i", 
+                                                        "B"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(B) Funeral, cremation or burial expenses except those incurred for a candidate (as defined in 11 CFR 100.3) or an employee or volunteer of an authorized committee whose death arises out of, or in the course of, campaign activity."
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "113", 
+                                                        "1", 
+                                                        "g", 
+                                                        "1", 
+                                                        "i", 
+                                                        "C"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(C) Clothing, other than items of de minimis value that are used in the campaign, such as campaign \u201cT-shirts\u201d or caps with campaign slogans."
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "113", 
+                                                        "1", 
+                                                        "g", 
+                                                        "1", 
+                                                        "i", 
+                                                        "D"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(D) Tuition payments, other than those associated with training campaign staff."
+                                                }, 
+                                                {
+                                                    "children": [
+                                                        {
+                                                            "children": [], 
+                                                            "label": [
+                                                                "113", 
+                                                                "1", 
+                                                                "g", 
+                                                                "1", 
+                                                                "i", 
+                                                                "E", 
+                                                                "1"
+                                                            ], 
+                                                            "node_type": "regtext", 
+                                                            "text": "(1) For any part of any personal residence of the candidate or a member of the candidate's family; or"
+                                                        }, 
+                                                        {
+                                                            "children": [], 
+                                                            "label": [
+                                                                "113", 
+                                                                "1", 
+                                                                "g", 
+                                                                "1", 
+                                                                "i", 
+                                                                "E", 
+                                                                "2"
+                                                            ], 
+                                                            "node_type": "regtext", 
+                                                            "text": "(2) For real or personal property that is owned by the candidate or a member of the candidate's family and used for campaign purposes, to the extent the payments exceed the fair market value of the property usage."
+                                                        }
+                                                    ], 
+                                                    "label": [
+                                                        "113", 
+                                                        "1", 
+                                                        "g", 
+                                                        "1", 
+                                                        "i", 
+                                                        "E"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(E) Mortgage, rent or utility payments\u2014"
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "113", 
+                                                        "1", 
+                                                        "g", 
+                                                        "1", 
+                                                        "i", 
+                                                        "F"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(F) Admission to a sporting event, concert, theater or other form of entertainment, unless part of a specific campaign or officeholder activity."
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "113", 
+                                                        "1", 
+                                                        "g", 
+                                                        "1", 
+                                                        "i", 
+                                                        "G"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(G) Dues, fees or gratuities at a country club, health club, recreational facility or other nonpolitical organization, unless they are part of the costs of a specific fundraising event that takes place on the organization's premises."
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "113", 
+                                                        "1", 
+                                                        "g", 
+                                                        "1", 
+                                                        "i", 
+                                                        "H"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(H) Salary payments to a member of the candidate's family, unless the family member is providing bona fide services to the campaign. If a family member provides bona fide services to the campaign, any salary payment in excess of the fair market value of the services provided is personal use."
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "113", 
+                                                        "1", 
+                                                        "g", 
+                                                        "1", 
+                                                        "i", 
+                                                        "I"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(I) Salary payments by a candidate's principal campaign to a candidate in excess of the lesser of: the minimum salary paid to a Federal officeholder holding the Federal office that the candidate seeks; or the earned income that the candidate received during the year prior to becoming a candidate. Any earned income that a candidate receives from salaries or wages from any other source shall count against the foregoing limit of the minimum salary paid to a Federal officeholder holding the Federal office that the candidate seeks. The candidate must provide income tax records from the relevant years and other evidence of earned income upon the request of the Commission. Salary shall not be paid to a candidate before the filing deadline for access to the primary election ballot for the Federal office that the candidate seeks, as determined by State law, or in those states that do not conduct primaries, on January 1 of each even-numbered year. See 11 CFR 100.24(a)(1)(i). If the candidate wins the primary election, his or her principal campaign committee may pay him or her a salary from campaign funds through the date of the general election, up to and including the date of any general election runoff. If the candidate loses the primary, withdraws from the race, or otherwise ceases to be a candidate, no salary payments may be paid beyond the date he or she is no longer a candidate. In odd-numbered years in which a special election for a Federal office occurs, the principal campaign committee of a candidate for that office may pay him or her a salary from campaign funds starting on the date the special election is set and ending on the day of the special election. See 11 CFR 100.24(a)(1)(ii). During the time period in which a principal campaign committee may pay a salary to a candidate under this paragraph, such payment must be computed on a pro-rata basis. A Federal officeholder, as defined in 11 CFR 100.5(f)(1), must not receive salary payments as a candidate from campaign funds."
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "113", 
+                                                        "1", 
+                                                        "g", 
+                                                        "1", 
+                                                        "i", 
+                                                        "J"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(J) A vacation."
+                                                }
+                                            ], 
+                                            "label": [
+                                                "113", 
+                                                "1", 
+                                                "g", 
+                                                "1", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) Personal use includes but is not limited to the use of funds in a campaign account for any item listed in paragraphs (g)(1)(i)(A) through (J) of this section:"
+                                        }, 
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "113", 
+                                                        "1", 
+                                                        "g", 
+                                                        "1", 
+                                                        "ii", 
+                                                        "A"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(A) Legal expenses;"
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "113", 
+                                                        "1", 
+                                                        "g", 
+                                                        "1", 
+                                                        "ii", 
+                                                        "B"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(B) Meal expenses;"
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "113", 
+                                                        "1", 
+                                                        "g", 
+                                                        "1", 
+                                                        "ii", 
+                                                        "C"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(C) Travel expenses, including subsistence expenses incurred during travel. If a committee uses campaign funds to pay expenses associated with travel that involves both personal activities and campaign or officeholder-related activities, the incremental expenses that result from the personal activities are personal use, unless the person(s) benefiting from this use reimburse(s) the campaign account within thirty days for the amount of the incremental expenses, and"
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "113", 
+                                                        "1", 
+                                                        "g", 
+                                                        "1", 
+                                                        "ii", 
+                                                        "D"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(D) Vehicle expenses, unless they are a de minimis amount. If a committee uses campaign funds to pay expenses associated with a vehicle that is used for both personal activities beyond a de minimis amount and campaign or officeholder-related activities, the portion of the vehicle expenses associated with the personal activities is personal use, unless the person(s) using the vehicle for personal activities reimburse(s) the campaign account within thirty days for the expenses associated with the personal activities."
+                                                }
+                                            ], 
+                                            "label": [
+                                                "113", 
+                                                "1", 
+                                                "g", 
+                                                "1", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) The Commission will determine, on a case-by-case basis, whether other uses of funds in a campaign account fulfill a commitment, obligation or expense that would exist irrespective of the candidate's campaign or duties as a Federal officeholder, and therefore are personal use. Examples of such other uses include:"
+                                        }
+                                    ], 
+                                    "label": [
+                                        "113", 
+                                        "1", 
+                                        "g", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1)"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "113", 
+                                        "1", 
+                                        "g", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Charitable donations. Donations of campaign funds or assets to an organization described in section 170(c) of Title 26 of the United States Code are not personal use, unless the candidate receives compensation from the organization before the organization has expended the entire amount donated for purposes unrelated to his or her personal benefit."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "113", 
+                                        "1", 
+                                        "g", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) Transfers of campaign assets. The transfer of a campaign committee asset is not personal use so long as the transfer is for fair market value. Any depreciation that takes place before the transfer must be allocated between the committee and the purchaser based on the useful life of the asset."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "113", 
+                                        "1", 
+                                        "g", 
+                                        "4"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(4) Gifts. Gifts of nominal value and donations of a nominal amount made on a special occasion such as a holiday, graduation, marriage, retirement, or death are not personal use, unless made to a member of the candidate's family."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "113", 
+                                        "1", 
+                                        "g", 
+                                        "5"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(5) Political or officially connected expenses. The use of campaign funds for an expense that would be a political expense under the rules of the United States House of Representatives or an officially connected expense under the rules of the United States Senate is not personal use to the extent that the expense is an expenditure under subpart D of part 100 or an ordinary and necessary expense incurred in connection with the duties of a holder of Federal office. Any use of funds that would be personal use under paragraph (g)(1) of this section will not be considered an expenditure under subpart D of part 100 or an ordinary and necessary expense incurred in connection with the duties of a holder of Federal office."
+                                }, 
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "113", 
+                                                "1", 
+                                                "g", 
+                                                "6", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) The payment is a donation to a legal expense trust fund established in accordance with the rules of the United States Senate or the United States House of Representatives;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "113", 
+                                                "1", 
+                                                "g", 
+                                                "6", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) The payment is made from funds that are the candidate's personal funds as defined in 11 CFR 100.33, including an account jointly held by the candidate and a member of the candidate's family;"
+                                        }, 
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "113", 
+                                                        "1", 
+                                                        "g", 
+                                                        "6", 
+                                                        "iii", 
+                                                        "A"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(A) The compensation results from bona fide employment that is genuinely independent of the candidacy;"
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "113", 
+                                                        "1", 
+                                                        "g", 
+                                                        "6", 
+                                                        "iii", 
+                                                        "B"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(B) The compensation is exclusively in consideration of services provided by the employee as part of this employment; and"
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "113", 
+                                                        "1", 
+                                                        "g", 
+                                                        "6", 
+                                                        "iii", 
+                                                        "C"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(C) The compensation does not exceed the amount of compensation which would be paid to any other similarly qualified person for the same work over the same period of time."
+                                                }
+                                            ], 
+                                            "label": [
+                                                "113", 
+                                                "1", 
+                                                "g", 
+                                                "6", 
+                                                "iii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iii) Payments for that expense were made by the person making the payment before the candidate became a candidate. Payments that are compensation shall be considered contributions unless\u2014"
+                                        }
+                                    ], 
+                                    "label": [
+                                        "113", 
+                                        "1", 
+                                        "g", 
+                                        "6"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(6) Third party payments. Notwithstanding that the use of funds for a particular expense would be a personal use under this section, payment of that expense by any person other than the candidate or the campaign committee shall be a contribution under subpart B of part 100 to the candidate unless the payment would have been made irrespective of the candidacy. Examples of payments considered to be irrespective of the candidacy include, but are not limited to, situations where\u2014"
+                                }, 
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "113", 
+                                                "1", 
+                                                "g", 
+                                                "7", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) The spouse of the candidate;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "113", 
+                                                "1", 
+                                                "g", 
+                                                "7", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) Any child, step-child, parent, grandparent, sibling, half-sibling or step-sibling of the candidate or the candidate's spouse;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "113", 
+                                                "1", 
+                                                "g", 
+                                                "7", 
+                                                "iii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iii) The spouse of any child, step-child, parent, grandparent, sibling, half-sibling or step-sibling of the candidate; and"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "113", 
+                                                "1", 
+                                                "g", 
+                                                "7", 
+                                                "iv"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iv) A person who shares a residence with the candidate."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "113", 
+                                        "1", 
+                                        "g", 
+                                        "7"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(7) Members of the candidate's family. For the purposes of paragraph (g) of this section, the candidate's family includes:"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "113", 
+                                        "1", 
+                                        "g", 
+                                        "8"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(8) Recordkeeping. For those uses of campaign funds described in paragraphs (g)(1)(i) and (g)(1)(ii) of this section that involve both personal use and either campaign or office-holder use, a contemporaneous log or other record must be kept to document the dates and expenses related to the personal use of the campaign funds. The log must be updated whenever campaign funds are used for personal expenses, as described in paragraph (g)(1) of this section, rather than for campaign or office-holder expenses. The log or other record must also be maintained and preserved for 3 years after the report disclosing the disbursement is filed, pursuant to 11 CFR 102.9 and 104.14(b)."
+                                }
+                            ], 
+                            "label": [
+                                "113", 
+                                "1", 
+                                "g"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(g) Personal use. Personal use means any use of funds in a campaign account of a present or former candidate to fulfill a commitment, obligation or expense of any person that would exist irrespective of the candidate's campaign or duties as a Federal officeholder."
+                        }
+                    ], 
+                    "label": [
+                        "113", 
+                        "1"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "When used in this part\u2014", 
+                    "title": "\u00a7 113.1 Definitions (52 U.S.C. 30114)."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "113", 
+                                        "2", 
+                                        "a", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) The costs of travel by the recipient Federal officeholder and an accompanying spouse to participate in a function directly connected to bona fide official responsibilities, such as a fact-finding meeting or an event at which the officeholder's services are provided through a speech or appearance in an official capacity; and"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "113", 
+                                        "2", 
+                                        "a", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) The costs of winding down the office of a former Federal officeholder for a period of 6 months after he or she leaves office; or"
+                                }
+                            ], 
+                            "label": [
+                                "113", 
+                                "2", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) May be used to defray any ordinary and necessary expenses incurred in connection with the recipient's duties as a holder of Federal office, if applicable, including:"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "113", 
+                                "2", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) May be contributed to any organization described in section 170(c) of Title 26, of the United States Code; or"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "113", 
+                                "2", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) May be transferred without limitation to any national, State, or local committee of any political party; or"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "113", 
+                                "2", 
+                                "d"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(d) May be donated to State and local candidates subject to the provisions of State law; or"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "113", 
+                                "2", 
+                                "e"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(e) May be used for any other lawful purpose, unless such use is personal use under 11 CFR 113.1(g)."
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "113", 
+                                                "2", 
+                                                "f", 
+                                                "1", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) Cash assets the Member may convert any excess campaign or donated funds in an amount up to the Member's authorized committee(s)' cash on hand, determined under 11 CFR 104.3(a)(1), as of November 30, 1989, less the committee(s)' total outstanding debts as of that date."
+                                        }, 
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "113", 
+                                                        "2", 
+                                                        "f", 
+                                                        "1", 
+                                                        "ii", 
+                                                        "A"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(A) The Member may convert unliquidated committee assets held by his or her authorized committee(s) on November 30, 1989; or the value of such assets may be added to the value of the committee(s)' cash assets under paragraph (f)(1)(i) of this section to determine the amount which is eligible for conversion. In either case, prior to conversion, the committee shall amend its 1989 year end reports to indicate, as memo entries to Schedule A, the assets to be converted. These amendments shall list each asset, give its date of acquisition, its fair market value as of November 30, 1989, and a brief narrative description of how this value was ascertained. The committee shall also disclose the disposition made of each such asset, including its fair market value on the date of sale or other disposition, in its termination report, unless the asset was sold or otherwise disposed of during an earlier period and included in the report covering that period."
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "113", 
+                                                        "2", 
+                                                        "f", 
+                                                        "1", 
+                                                        "ii", 
+                                                        "B"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(B) The Member may add the value of debts and loans reported as owed to the Member's authorized committee(s) as of November 30, 1989, and itemized on the committee(s)' year end reports for 1989, to the unobligated balance, provided that such receivables are actually collected by the committee(s) prior to their termination."
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "113", 
+                                                        "2", 
+                                                        "f", 
+                                                        "1", 
+                                                        "ii", 
+                                                        "C"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(C) The Member may add to the unobligated balance the value of vendor credits and deposit refunds to which authorized campaign committee(s) are entitled, if these receivables are itemized on Schedule C or D of the committee(s)' 1989 year end reports or in amendment(s) thereto."
+                                                }
+                                            ], 
+                                            "label": [
+                                                "113", 
+                                                "2", 
+                                                "f", 
+                                                "1", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) Cash Plus Nonliquid Assets."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "113", 
+                                        "2", 
+                                        "f", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Except as limited by paragraph (f)(5) of this section, a qualified Member who serves in the 102d or an earlier Congress may convert to personal use no more than the unobligated balance of excess funds as of November 30, 1989. This unobligated balance shall be calculated under either paragraph (f)(1)(i) or (ii) of this section."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "113", 
+                                        "2", 
+                                        "f", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) If the unobligated balance subsequently falls below its November 30, 1989, level, a qualified Member may use contributions lawfully received or other lawful committee income received after that date to restore the account up to that level."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "113", 
+                                        "2", 
+                                        "f", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) A qualified Member may convert committee assets which were not held on November 30, 1989, to personal use; however, the fair market value of such assets at the time of conversion shall be counted against the unobligated balance."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "113", 
+                                        "2", 
+                                        "f", 
+                                        "4"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(4) Under no circumstances may an amount greater than the unobligated balance on November 30, 1989, be converted to personal use. Should money from subsequent contributions, other committee income, and/or the sale of campaign assets exceed the amount needed to restore the unobligated balance to its November 30, 1989, level, such additional funds shall not be converted to personal use but may be used for the purposes set forth in paragraphs (a), (b), and (c) of this section."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "113", 
+                                        "2", 
+                                        "f", 
+                                        "5"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(5) 103d Congress or later Congress: A qualified Member who serves in the 103d Congress or a later Congress may not convert to personal use any campaign or donated funds, as of the first day of such service."
+                                }
+                            ], 
+                            "label": [
+                                "113", 
+                                "2", 
+                                "f"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(f)"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "113", 
+                                "2", 
+                                "g"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(g) Nothing in this section modifies or supersedes other Federal statutory restrictions or relevant State laws that may apply to the use of campaign or donated funds by candidates or Federal officeholders."
+                        }
+                    ], 
+                    "label": [
+                        "113", 
+                        "2"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "In addition to defraying expenses in connection with a campaign for federal office, funds in a campaign account or an account described in 11 CFR 113.3:", 
+                    "title": "\u00a7 113.2 Permissible non-campaign use of funds (52 U.S.C. 30114)."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "113", 
+                                "3", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) An account of the officeholder's principal campaign committee or other authorized committee pursuant to 11 CFR part 103;"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "113", 
+                                "3", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) An account to which only funds donated to an individual to support his or her activities as a holder of federal office are deposited (including an office account)."
+                        }
+                    ], 
+                    "label": [
+                        "113", 
+                        "3"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "All funds donated to a federal officeholder, or State officeholder who is a candidate for federal office, shall be deposited into one of the following accounts:", 
+                    "title": "\u00a7 113.3 Deposits of funds donated to a Federal or State officeholder (52 U.S.C. 30102(h))."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "113", 
+                                "4", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) Any contributions to, or expenditures from an office account which are made for the purpose of influencing a federal election shall be subject to 52 U.S.C. 30116 and 11 CFR part 110 of these regulations."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "113", 
+                                "4", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) If any treasury funds of a corporation or labor organization are donated to an office account, no funds from that office account may be transferred to a political committee account or otherwise used in connection with a federal election."
+                        }
+                    ], 
+                    "label": [
+                        "113", 
+                        "4"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 113.4 Contribution and expenditure limitations (52 U.S.C. 30116)."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "113", 
+                                        "5", 
+                                        "a", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Commercial travel as provided in 11 CFR 100.93(a)(3)(iv);"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "113", 
+                                        "5", 
+                                        "a", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Noncommercial travel as provided in 11 CFR 100.93(a)(3)(v), and the pro rata share per campaign traveler of the normal and usual charter fare or rental charge for travel on a comparable aircraft of comparable size, as provided in 11 CFR 100.93(c), is paid by the candidate, the authorized committee, or other political committee on whose behalf the travel is conducted, to the owner, lessee, or other person who provides the aircraft within seven calendar days after the date the flight began, except as provided in 11 CFR 100.93(b)(3); or"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "113", 
+                                        "5", 
+                                        "a", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) Provided by the Federal government or by a State or local government."
+                                }
+                            ], 
+                            "label": [
+                                "113", 
+                                "5", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) Presidential, vice-presidential and Senate candidates. Notwithstanding any other provision of the Act or Commission regulations, a presidential, vice-presidential, or Senate candidate, and any authorized committee of such candidate, shall not make any expenditure for travel on an aircraft unless the flight is:"
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "113", 
+                                        "5", 
+                                        "b", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Commercial travel as provided in 11 CFR 100.93(a)(3)(iv); or"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "113", 
+                                        "5", 
+                                        "b", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Provided by the Federal government or by a State or local government."
+                                }
+                            ], 
+                            "label": [
+                                "113", 
+                                "5", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) House candidates and their leadership PACs. Notwithstanding any other provision of the Act or Commission regulations, a candidate for the office of Representative in, or Delegate or Resident Commissioner to, the Congress, and any authorized committee or leadership PAC of such candidate, shall not make any expenditures, or receive any in-kind contribution, for travel on an aircraft unless the flight is:"
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "113", 
+                                        "5", 
+                                        "c", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Paragraphs (a) and (b) of this section do not apply to flights on aircraft owned or leased by the candidate, or by an immediate family member of the candidate, provided that the candidate does not use the aircraft more than the candidate's or immediate family member's proportional share of ownership, as defined by 11 CFR 100.93(g)(3), allows."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "113", 
+                                        "5", 
+                                        "c", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) A candidate, or an immediate family member of the candidate, will be considered to own or lease an aircraft under the conditions described in 11 CFR 100.93(g)(2)."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "113", 
+                                        "5", 
+                                        "c", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) An \u201cimmediate family member\u201d is defined in 11 CFR 100.93(g)(4)."
+                                }
+                            ], 
+                            "label": [
+                                "113", 
+                                "5", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) Exception for aircraft owned or leased by candidates and immediate family members of candidates."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "113", 
+                                "5", 
+                                "d"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(d) In-kind contribution. Except as provided in 11 CFR 100.79, the unreimbursed value of transportation provided to any campaign traveler is an in-kind contribution from the service provider to the candidate or political committee on whose behalf, or with whom, the campaign traveler traveled. Such contributions are subject to the reporting requirements, limitations and prohibitions of the Act."
+                        }
+                    ], 
+                    "label": [
+                        "113", 
+                        "5"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 113.5 Restrictions on use of campaign funds for flights on noncommercial aircraft (52 U.S.C. 30114(c))."
+                }
+            ], 
+            "label": [
+                "113", 
+                "Subpart"
+            ], 
+            "node_type": "emptypart", 
+            "text": ""
+        }
+    ], 
+    "label": [
+        "113"
+    ], 
+    "node_type": "regtext", 
+    "text": "", 
+    "title": "PART 113\u2014PERMITTED AND PROHIBITED USES OF CAMPAIGN ACCOUNTS"
+}

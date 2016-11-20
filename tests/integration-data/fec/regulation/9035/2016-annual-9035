@@ -1,0 +1,362 @@
+{
+    "children": [
+        {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9035", 
+                                        "1", 
+                                        "a", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) No candidate or his or her authorized committee(s) shall knowingly incur expenditures in connection with the candidate's campaign for nomination, which expenditures, in the aggregate, exceed $10,000,000 (as adjusted under 52 U.S.C. 30116(c)), except that the aggregate expenditures by a candidate in any one State shall not exceed the greater of: 16 cents (as adjusted under 52 U.S.C. 30116(c)) multiplied by the voting age population of the State (as certified under 52 U.S.C. 30116(e)); or $200,000 (as adjusted under 52 U.S.C. 30116(c))."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9035", 
+                                        "1", 
+                                        "a", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) The Commission will calculate the amount of expenditures attributable to the overall expenditure limit or to a particular state using the full amounts originally charged for goods and services rendered to the committee and not the amounts for which such obligations were settled and paid, unless the committee can demonstrate that the lower amount paid reflects a reasonable settlement of a bona fide dispute with the creditor."
+                                }, 
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9035", 
+                                                "1", 
+                                                "a", 
+                                                "3", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) Coordinated expenditures under 11 CFR 109.20;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9035", 
+                                                "1", 
+                                                "a", 
+                                                "3", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) Coordinated communications under 11 CFR 109.21 that are in-kind contributions received or accepted by the candidate, the candidate's authorized committee(s), or agents, under 11 CFR 109.21(b);"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9035", 
+                                                "1", 
+                                                "a", 
+                                                "3", 
+                                                "iii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iii) Coordinated party expenditures, including party coordinated communications pursuant to 11 CFR 109.37 that are in-kind contributions received or accepted by the candidate, the candidate's authorized committee(s), or agents under 11 CFR 109.37(a)(3), and that exceed the coordinated party expenditure limitation for the Presidential general election at 11 CFR 109.32(a); and"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9035", 
+                                                "1", 
+                                                "a", 
+                                                "3", 
+                                                "iv"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iv) Other in-kind contributions received or accepted by the candidate or the candidate's authorized committee(s) or agents."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "9035", 
+                                        "1", 
+                                        "a", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) In addition to expenditures made by a candidate or the candidate's authorized committee(s) using campaign funds, the Commission will attribute to the candidate's overall expenditure limitation and to the expenditure limitations of particular states under 11 CFR 110.8 the total amount of all:"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9035", 
+                                        "1", 
+                                        "a", 
+                                        "4"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(4) The amount of each in-kind contribution attributed to the expenditure limitations under this section is the usual and normal charge for the goods or services provided to the candidate or the candidate's authorized committee(s) as an in-kind contribution."
+                                }
+                            ], 
+                            "label": [
+                                "9035", 
+                                "1", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) Spending limit."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "9035", 
+                                "1", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) Allocation of expenditures. Each candidate receiving or expecting to receive matching funds under this subchapter shall also allocate his or her expenditures in accordance with the provisions of 11 CFR 106.2."
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9035", 
+                                        "1", 
+                                        "c", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) A candidate may exclude from the overall expenditure limitation set forth in paragraph (a) of this section an amount equal to 15% of the overall expenditure limitation as exempt legal and accounting compliance costs under 11 CFR 100.146. In the case of a candidate who does not run in the general election, for purposes of the expenditure limitations set forth in this section, 100% of salary, overhead and computer expenses incurred after a candidate's date of ineligibility may be treated as exempt legal and accounting compliance expenses beginning with the first full reporting period after the candidate's date of ineligibility. Candidates who continue to campaign or re-establish eligibility may not treat 100% of salary, overhead and computer expenses incurred during the period between the date of ineligibility and the date on which the candidate either re-establishes eligibility or ceases to continue to campaign as exempt legal and accounting compliance expenses. For purposes of the expenditure limitations set forth in this section, candidates who run in the general election, regardless of whether they receive public funds, must wait until 31 days after the general election before they may treat 100% of salary, overhead and computer expenses as exempt legal and accounting compliance expenses."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9035", 
+                                        "1", 
+                                        "c", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) A candidate may exclude from the overall expenditure limitation of 11 CFR 9035.1 the amount of exempt fundraising costs specified in 11 CFR 100.152(c)."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9035", 
+                                        "1", 
+                                        "c", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) If any matching funds to which the candidate is entitled are not paid to the candidate, or are paid after the date on which payment is due, the candidate may exclude from the overall expenditure limitation in paragraph (a) of this section the amount of all interest charges that accrued during the shortfall period on all loans obtained by the candidate or authorized committee that are guaranteed or secured with matching funds, provided the candidate submits documentation as to the amount of all interest charges on such loans. The shortfall period begins on the first regularly scheduled payment date on which the candidate does not receive the entire amount of matching funds and ends on the payment date when the candidate receives the previously certified matching funds or the date on which the Commission revises the amount previously certified to eliminate the entitlement to the previously certified matching funds."
+                                }
+                            ], 
+                            "label": [
+                                "9035", 
+                                "1", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) Compliance, fundraising and shortfall bridge loan exemptions."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "9035", 
+                                "1", 
+                                "d"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(d) Candidates not receiving matching funds. The expenditure limitations of 11 CFR 9035.1 shall not apply to a candidate who does not receive matching funds at any time during the matching payment period."
+                        }
+                    ], 
+                    "label": [
+                        "9035", 
+                        "1"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 9035.1 Campaign expenditure limitation; compliance and fundraising exemptions."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9035", 
+                                        "2", 
+                                        "a", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) No candidate who has accepted matching funds shall knowingly make expenditures from his or her personal funds, or funds of his or her immediate family, in connection with his or her campaign for nomination for election to the office of President which exceed $50,000, in the aggregate. This section shall not operate to prohibit any member of the candidate's immediate family from contributing his or her personal funds to the candidate, subject to the limitations of 11 CFR part 110. The provisions of this section also shall not limit the candidate's liability for, nor the candidate's ability to pay, any repayments required under 11 CFR part 9038. If the candidate or his or her committee knowingly incurs expenditures in excess of the limitations of 11 CFR 110.8(a), the Commission may seek civil penalties under 11 CFR part 111 in addition to any repayment determinations made on the basis of such excessive expenditures."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9035", 
+                                        "2", 
+                                        "a", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Expenditures made using a credit card for which the candidate is jointly or solely liable will count against the limits of this section to the extent that the full amount due, including any finance charge, is not paid by the committee within 60 days after the closing date of the billing statement on which the charges first appear. For purposes of this section, the closing date shall be the date indicated on the billing statement which serves as the cutoff date for determining which charges are included on that billing statement."
+                                }
+                            ], 
+                            "label": [
+                                "9035", 
+                                "2", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a)"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "9035", 
+                                "2", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) For purposes of this section, the term immediate family means a candidate, spouse, and any child, parent, grandparent, brother, half-brother, sister, or half-sister of the candidate, and the spouses of such persons."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "9035", 
+                                "2", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) For purposes of this section, personal funds has the same meaning as specified in 11 CFR 9003.2."
+                        }
+                    ], 
+                    "label": [
+                        "9035", 
+                        "2"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 9035.2 Limitation on expenditures from personal or family funds."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9035", 
+                                        "3", 
+                                        "a", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) The Presidential or Vice Presidential candidate publicly indicates that the two candidates intend to run on the same ticket;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9035", 
+                                        "3", 
+                                        "a", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) The candidate for the office of Vice President accepts an offer by the publicly funded primary candidate for the office of President, or by the Presidential candidate's agent(s), to run on the same ticket; or"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9035", 
+                                        "3", 
+                                        "a", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) The Presidential and Vice Presidential committees become affiliated pursuant to 11 CFR 100.5(g)(4)(i) or (ii)."
+                                }
+                            ], 
+                            "label": [
+                                "9035", 
+                                "3", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) Aggregation of contributions and expenditures. For purposes of the limitations on contributions and expenditures of this part and part 110, contributions to, and expenditures by, the authorized committee of a candidate who becomes the nominee of a political party for the office of Vice President of the United States shall be aggregated with contributions to and expenditures by the publicly funded primary candidate who obtains that political party's nomination for the office of President of the United States, provided that the contributions to or expenditures by the authorized committee of the Vice Presidential candidate were made on or after the date on which\u2014"
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9035", 
+                                        "3", 
+                                        "b", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) The cost of attendance by the candidate, the candidate's family, and the candidate's authorized committee's staff at a political party's national nominating convention, including the cost of transportation, lodging, and subsistence;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9035", 
+                                        "3", 
+                                        "b", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) The cost of legal and accounting services associated with background checks during the Vice Presidential selection process; and"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9035", 
+                                        "3", 
+                                        "b", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) The cost of raising funds for the expenses listed in paragraphs (b)(1) and (b)(2) of this section."
+                                }
+                            ], 
+                            "label": [
+                                "9035", 
+                                "3", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) Exceptions. The following expenditures, if incurred by the authorized committee of a candidate who subsequently becomes the nominee of a political party for the office of Vice President of the United States, will not be aggregated under paragraph (a) of this section:"
+                        }
+                    ], 
+                    "label": [
+                        "9035", 
+                        "3"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 9035.3 Contributions to and expenditures by Vice Presidential candidates."
+                }
+            ], 
+            "label": [
+                "9035", 
+                "Subpart"
+            ], 
+            "node_type": "emptypart", 
+            "text": ""
+        }
+    ], 
+    "label": [
+        "9035"
+    ], 
+    "node_type": "regtext", 
+    "text": "", 
+    "title": "PART 9035\u2014EXPENDITURE LIMITATIONS"
+}

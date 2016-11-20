@@ -1,0 +1,208 @@
+{
+    "262-10-j-1-p1": [
+        {
+            "locations": [
+                0
+            ], 
+            "table_data": {
+                "caption": "Table 1\u2014Laboratory XL Project Participant Information", 
+                "header": [
+                    [
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Institution"
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Approx. number of labs"
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Departments participating"
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Location of current hazardous waste accumulation areas"
+                        }
+                    ]
+                ], 
+                "rows": [
+                    [
+                        "Boston College, Chestnut Hill, MA", 
+                        "120", 
+                        "Chemistry, Biology, Geology, Physics, Psychology", 
+                        "Merkert Chemistry Building, 2609 Beacon St., Boston, MA, Higgins Building, 140 Commonwealth Ave., Chestnut Hill, MA."
+                    ], 
+                    [
+                        "University of Massachusetts Boston, Boston, MA", 
+                        "150", 
+                        "Chemistry, Biology, Psychology, Anthropology, Geology and Earth Sciences, and Environmental, Coastal and Ocean Sciences", 
+                        "Science Building (Bldg. #080); McCormack Building (Bldg. #020); and Wheatley Building (Bldg. #010), 100 Morrissey Blvd., Boston, MA."
+                    ], 
+                    [
+                        "University of Vermont, Burlington, VT", 
+                        "400", 
+                        "Colleges of: Agriculture and Life Sciences, Arts and Sciences, Medicine, and Engineering and Mathematics; and Schools of: Nursing, Allied Heath Sciences, and Natural Resources", 
+                        "Given Bunker, 89 Beaumont Ave., Burlington, VT."
+                    ]
+                ]
+            }, 
+            "text": "|Table 1\u2014Laboratory XL Project Participant Information|Institution|Approx. number of labs|Departments participating|Location of current hazardous waste accumulation areas|\n|---|---|---|---|---|\n|Boston College, Chestnut Hill, MA|120|Chemistry, Biology, Geology, Physics, Psychology|Merkert Chemistry Building, 2609 Beacon St., Boston, MA, Higgins Building, 140 Commonwealth Ave., Chestnut Hill, MA.|\n|University of Massachusetts Boston, Boston, MA|150|Chemistry, Biology, Psychology, Anthropology, Geology and Earth Sciences, and Environmental, Coastal and Ocean Sciences|Science Building (Bldg. #080); McCormack Building (Bldg. #020); and Wheatley Building (Bldg. #010), 100 Morrissey Blvd., Boston, MA.|\n|University of Vermont, Burlington, VT|400|Colleges of: Agriculture and Life Sciences, Arts and Sciences, Medicine, and Engineering and Mathematics; and Schools of: Nursing, Allied Heath Sciences, and Natural Resources|Given Bunker, 89 Beaumont Ave., Burlington, VT.|"
+        }
+    ], 
+    "262-A-h23-h24-p31": [
+        {
+            "fence_data": {
+                "lines": [
+                    "Note:", 
+                    "Transporters carrying imports, who are acting as importers, may have responsibilities to enter information in the International Shipments Block. Transporters carrying exports may also have responsibilities to enter information in the International Shipments Block. See above instructions for Item 16."
+                ], 
+                "type": "note"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "```note\nNote:\nTransporters carrying imports, who are acting as importers, may have responsibilities to enter information in the International Shipments Block. Transporters carrying exports may also have responsibilities to enter information in the International Shipments Block. See above instructions for Item 16.\n```"
+        }
+    ], 
+    "262-A-h5-h14-p20": [
+        {
+            "fence_data": {
+                "lines": [
+                    "Note:", 
+                    "If additional space is needed for waste descriptions, enter these additional descriptions in Item 27 on the Continuation Sheet (EPA Form 8700-22A). Also, if more than one Emergency Response phone number applies to the various wastes described in either Item 9b or Item 27, enter applicable Emergency Response phone numbers immediately following the shipping descriptions for those Items."
+                ], 
+                "type": "note"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "```note\nNote:\nIf additional space is needed for waste descriptions, enter these additional descriptions in Item 27 on the Continuation Sheet (EPA Form 8700-22A). Also, if more than one Emergency Response phone number applies to the various wastes described in either Item 9b or Item 27, enter applicable Emergency Response phone numbers immediately following the shipping descriptions for those Items.\n```"
+        }
+    ], 
+    "262-A-h5-h15-p22": [
+        {
+            "locations": [
+                0
+            ], 
+            "table_data": {
+                "caption": "Table I\u2014Types of Containers", 
+                "header": [], 
+                "rows": [
+                    [
+                        "BA = Burlap, cloth, paper, or plastic bags."
+                    ], 
+                    [
+                        "CF = Fiber or plastic boxes, cartons, cases."
+                    ], 
+                    [
+                        "CM = Metal boxes, cartons, cases (including roll-offs)."
+                    ], 
+                    [
+                        "CW = Wooden boxes, cartons, cases."
+                    ], 
+                    [
+                        "CY = Cylinders."
+                    ], 
+                    [
+                        "DF = Fiberboard or plastic drums, barrels, kegs."
+                    ], 
+                    [
+                        "DM = Metal drums, barrels, kegs."
+                    ], 
+                    [
+                        "DT = Dump truck."
+                    ], 
+                    [
+                        "DW = Wooden drums, barrels, kegs."
+                    ], 
+                    [
+                        "HG = Hopper or gondola cars."
+                    ], 
+                    [
+                        "TC = Tank cars."
+                    ], 
+                    [
+                        "TP = Portable tanks."
+                    ], 
+                    [
+                        "TT = Cargo tanks (tank trucks)."
+                    ]
+                ]
+            }, 
+            "text": "|Table I\u2014Types of Containers|\n|---|\n|BA = Burlap, cloth, paper, or plastic bags.|\n|CF = Fiber or plastic boxes, cartons, cases.|\n|CM = Metal boxes, cartons, cases (including roll-offs).|\n|CW = Wooden boxes, cartons, cases.|\n|CY = Cylinders.|\n|DF = Fiberboard or plastic drums, barrels, kegs.|\n|DM = Metal drums, barrels, kegs.|\n|DT = Dump truck.|\n|DW = Wooden drums, barrels, kegs.|\n|HG = Hopper or gondola cars.|\n|TC = Tank cars.|\n|TP = Portable tanks.|\n|TT = Cargo tanks (tank trucks).|"
+        }
+    ], 
+    "262-A-h5-h17-p25": [
+        {
+            "locations": [
+                0
+            ], 
+            "table_data": {
+                "caption": "Table II\u2014Units of Measure", 
+                "header": [], 
+                "rows": [
+                    [
+                        "G = Gallons (liquids only)."
+                    ], 
+                    [
+                        "K = Kilograms."
+                    ], 
+                    [
+                        "L = Liters (liquids only)."
+                    ], 
+                    [
+                        "M = Metric Tons (1000 kilograms)."
+                    ], 
+                    [
+                        "N = Cubic Meters."
+                    ], 
+                    [
+                        "P = Pounds."
+                    ], 
+                    [
+                        "T = Tons (2000 pounds)."
+                    ], 
+                    [
+                        "Y = Cubic Yards."
+                    ]
+                ]
+            }, 
+            "text": "|Table II\u2014Units of Measure|\n|---|\n|G = Gallons (liquids only).|\n|K = Kilograms.|\n|L = Liters (liquids only).|\n|M = Metric Tons (1000 kilograms).|\n|N = Cubic Meters.|\n|P = Pounds.|\n|T = Tons (2000 pounds).|\n|Y = Cubic Yards.|"
+        }
+    ], 
+    "262-A-h5-h20-p27": [
+        {
+            "fence_data": {
+                "lines": [
+                    "Note:", 
+                    "All of the above information except the handwritten signature required in Item 15 may be pre-printed."
+                ], 
+                "type": "note"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "```note\nNote:\nAll of the above information except the handwritten signature required in Item 15 may be pre-printed.\n```"
+        }
+    ], 
+    "262-A-h5-h8-p9-p10": [
+        {
+            "fence_data": {
+                "lines": [
+                    "Note:", 
+                    "Emergency Response phone number information should only be entered in Item 3 when there is one phone number that applies to all the waste materials described in Item 9b. If a situation (e.g., consolidated shipments) arises where more than one Emergency Response phone number applies to the various wastes listed on the manifest, the phone numbers associated with each specific material should be entered after its description in Item 9b."
+                ], 
+                "type": "note"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "```note\nNote:\nEmergency Response phone number information should only be entered in Item 3 when there is one phone number that applies to all the waste materials described in Item 9b. If a situation (e.g., consolidated shipments) arises where more than one Emergency Response phone number applies to the various wastes listed on the manifest, the phone numbers associated with each specific material should be entered after its description in Item 9b.\n```"
+        }
+    ]
+}

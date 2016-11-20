@@ -6,14 +6,11 @@ fail the build. On passing builds against master, parse regulations and upload
 to cache as the current ground truth.
 """
 
-import os
+import os.path
 import sys
-import tarfile
 
-import boto3
 import djclick as click
 import pip
-import requests
 
 from regparser.commands.compare_to import compare_to
 from regparser.web.management.commands.eregs import cli as eregs_cli
@@ -48,26 +45,9 @@ targets = {
 
 def get_paths(target):
     return {
-        'cached_archive': 'cached-{}.tar.gz'.format(target),
-        'cached_dir': 'cached-{}'.format(target),
+        'cached_dir': os.path.join('tests', 'integration-data', target),
         'output_dir': 'output-{}'.format(target),
     }
-
-
-def download(target):
-    paths = get_paths(target)
-    with open(paths['cached_archive'], 'wb') as fp:
-        resp = requests.get(
-            'https://{}.s3.amazonaws.com/{}'.format(
-                os.getenv('BUCKET'),
-                paths['cached_archive'],
-            ),
-            stream=True,
-        )
-        for chunk in resp.iter_content(chunk_size=1024):
-            fp.write(chunk)
-    with tarfile.open(paths['cached_archive']) as tar:
-        tar.extractall()
 
 
 @click.group()
@@ -105,7 +85,6 @@ def build(target):
 @click.argument('target')
 @click.pass_context
 def compare(ctx, target):
-    download(target)
     paths = get_paths(target)
     diffs = ctx.invoke(
         compare_to,
@@ -115,17 +94,3 @@ def compare(ctx, target):
     )
     if diffs:
         sys.exit(1)
-
-
-@integration_test.command()
-@click.argument('target')
-def upload(target):
-    paths = get_paths(target)
-    with tarfile.open(paths['cached_archive'], 'w:gz') as tar:
-        tar.add(paths['output_dir'], arcname=paths['cached_dir'])
-    s3 = boto3.resource('s3')
-    bucket = s3.Bucket(os.getenv('BUCKET'))
-    bucket.put_object(
-        Key=paths['cached_archive'],
-        Body=open(paths['cached_archive'], 'rb'),
-    )

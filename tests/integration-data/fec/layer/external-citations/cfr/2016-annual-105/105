@@ -1,0 +1,29 @@
+{
+    "105-4": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "11", 
+                "part": "104", 
+                "section": "6"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "11 CFR 104.6", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=104&section=6&titlenum=11&year=mostrecent"
+        }, 
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "11", 
+                "part": "109"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "11 CFR part 109", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=109&titlenum=11&year=mostrecent"
+        }
+    ]
+}

@@ -1,0 +1,222 @@
+{
+    "300": [
+        {
+            "index": [
+                "300", 
+                "Subpart", 
+                "A"
+            ], 
+            "title": "National Party Committees"
+        }, 
+        {
+            "index": [
+                "300", 
+                "Subpart", 
+                "B"
+            ], 
+            "title": "State, District, and Local Party Committees and Organizations"
+        }, 
+        {
+            "index": [
+                "300", 
+                "Subpart", 
+                "C"
+            ], 
+            "title": "Tax-Exempt Organizations"
+        }, 
+        {
+            "index": [
+                "300", 
+                "Subpart", 
+                "D"
+            ], 
+            "title": "Federal Candidates and Officeholders"
+        }, 
+        {
+            "index": [
+                "300", 
+                "Subpart", 
+                "E"
+            ], 
+            "title": "State and Local Candidates"
+        }
+    ], 
+    "300-Subpart-A": [
+        {
+            "index": [
+                "300", 
+                "10"
+            ], 
+            "title": "\u00a7 300.10 General prohibitions on raising and spending non-Federal funds (52 U.S.C. 30125(a) and (c))."
+        }, 
+        {
+            "index": [
+                "300", 
+                "11"
+            ], 
+            "title": "\u00a7 300.11 Prohibitions on fundraising for and donating to certain tax-exempt organizations (52 U.S.C. 30125(d))."
+        }, 
+        {
+            "index": [
+                "300", 
+                "12"
+            ], 
+            "title": "\u00a7 300.12 Transition rules."
+        }, 
+        {
+            "index": [
+                "300", 
+                "13"
+            ], 
+            "title": "\u00a7 300.13 Reporting (52 U.S.C. 30101 note and 30104(e))."
+        }
+    ], 
+    "300-Subpart-B": [
+        {
+            "index": [
+                "300", 
+                "30"
+            ], 
+            "title": "\u00a7 300.30 Accounts."
+        }, 
+        {
+            "index": [
+                "300", 
+                "31"
+            ], 
+            "title": "\u00a7 300.31 Receipt of Levin funds."
+        }, 
+        {
+            "index": [
+                "300", 
+                "32"
+            ], 
+            "title": "\u00a7 300.32 Expenditures and disbursements."
+        }, 
+        {
+            "index": [
+                "300", 
+                "33"
+            ], 
+            "title": "\u00a7 300.33 Allocation of costs of Federal election activity."
+        }, 
+        {
+            "index": [
+                "300", 
+                "34"
+            ], 
+            "title": "\u00a7 300.34 Transfers."
+        }, 
+        {
+            "index": [
+                "300", 
+                "35"
+            ], 
+            "title": "\u00a7 300.35 Office buildings."
+        }, 
+        {
+            "index": [
+                "300", 
+                "36"
+            ], 
+            "title": "\u00a7 300.36 Reporting Federal election activity; recordkeeping."
+        }, 
+        {
+            "index": [
+                "300", 
+                "37"
+            ], 
+            "title": "\u00a7 300.37 Prohibitions on fundraising for and donating to certain tax-exempt organizations (52 U.S.C. 30125(d))."
+        }
+    ], 
+    "300-Subpart-C": [
+        {
+            "index": [
+                "300", 
+                "50"
+            ], 
+            "title": "\u00a7 300.50 Prohibited fundraising by national party committees (52 U.S.C. 30125(d))."
+        }, 
+        {
+            "index": [
+                "300", 
+                "51"
+            ], 
+            "title": "\u00a7 300.51 Prohibited fundraising by State, district, or local party committees (52 U.S.C. 30125(d))."
+        }, 
+        {
+            "index": [
+                "300", 
+                "52"
+            ], 
+            "title": "\u00a7 300.52 Fundraising by Federal candidates and Federal officeholders (52 U.S.C. 30125(e)(1) and (4))."
+        }
+    ], 
+    "300-Subpart-D": [
+        {
+            "index": [
+                "300", 
+                "60"
+            ], 
+            "title": "\u00a7 300.60 Scope (52 U.S.C. 30125(e)(1))."
+        }, 
+        {
+            "index": [
+                "300", 
+                "61"
+            ], 
+            "title": "\u00a7 300.61 Federal elections (52 U.S.C. 30125(e)(1)(A))."
+        }, 
+        {
+            "index": [
+                "300", 
+                "62"
+            ], 
+            "title": "\u00a7 300.62 Non-Federal elections (52 U.S.C. 30125(e)(1)(B))."
+        }, 
+        {
+            "index": [
+                "300", 
+                "63"
+            ], 
+            "title": "\u00a7 300.63 Exception for State candidates (52 U.S.C. 30125(e)(2))."
+        }, 
+        {
+            "index": [
+                "300", 
+                "64"
+            ], 
+            "title": "\u00a7 300.64 Participation by Federal candidates and officeholders at non-Federal fundraising events (52 U.S.C. 30125(e)(1) and (3))."
+        }, 
+        {
+            "index": [
+                "300", 
+                "65"
+            ], 
+            "title": "\u00a7 300.65 Exceptions for certain tax-exempt organizations (52 U.S.C. 30125(e)(1) and (4))."
+        }
+    ], 
+    "300-Subpart-E": [
+        {
+            "index": [
+                "300", 
+                "70"
+            ], 
+            "title": "\u00a7 300.70 Scope (52 U.S.C. 30125(f)(1))."
+        }, 
+        {
+            "index": [
+                "300", 
+                "71"
+            ], 
+            "title": "\u00a7 300.71 Federal funds required for certain public communications (52 U.S.C. 30125(f)(1))."
+        }, 
+        {
+            "index": [
+                "300", 
+                "72"
+            ], 
+            "title": "\u00a7 300.72 Federal funds not required for certain communications (52 U.S.C. 30125(f)(2))."
+        }
+    ]
+}

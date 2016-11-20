@@ -1,0 +1,28 @@
+{
+    "112-4-e": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "9009", 
+                "title": "26"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "26 U.S.C. 9009", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=9009&title=26&year=mostrecent"
+        }, 
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "30111", 
+                "title": "52"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "52 U.S.C. 30111", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=30111&title=52&year=mostrecent"
+        }
+    ]
+}

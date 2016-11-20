@@ -1,0 +1,1130 @@
+{
+    "116-1-b": [
+        {
+            "offsets": [
+                [
+                    148, 
+                    169
+                ]
+            ], 
+            "ref": "terminating committee:116-1-a"
+        }
+    ], 
+    "116-1-d": [
+        {
+            "offsets": [
+                [
+                    293, 
+                    301
+                ]
+            ], 
+            "ref": "creditor:116-1-f"
+        }
+    ], 
+    "116-1-e-1": [
+        {
+            "offsets": [
+                [
+                    30, 
+                    38
+                ], 
+                [
+                    108, 
+                    116
+                ]
+            ], 
+            "ref": "creditor:116-1-f"
+        }
+    ], 
+    "116-1-e-2": [
+        {
+            "offsets": [
+                [
+                    30, 
+                    38
+                ], 
+                [
+                    133, 
+                    141
+                ]
+            ], 
+            "ref": "creditor:116-1-f"
+        }
+    ], 
+    "116-1-e-3": [
+        {
+            "offsets": [
+                [
+                    71, 
+                    79
+                ]
+            ], 
+            "ref": "creditor:116-1-f"
+        }
+    ], 
+    "116-10-a": [
+        {
+            "offsets": [
+                [
+                    134, 
+                    142
+                ], 
+                [
+                    324, 
+                    332
+                ], 
+                [
+                    403, 
+                    411
+                ], 
+                [
+                    651, 
+                    659
+                ]
+            ], 
+            "ref": "creditor:116-1-f"
+        }, 
+        {
+            "offsets": [
+                [
+                    67, 
+                    80
+                ], 
+                [
+                    520, 
+                    533
+                ]
+            ], 
+            "ref": "disputed debt:116-1-d"
+        }, 
+        {
+            "offsets": [
+                [
+                    14, 
+                    28
+                ], 
+                [
+                    715, 
+                    729
+                ]
+            ], 
+            "ref": "disputed debt:116-1-d"
+        }
+    ], 
+    "116-10-b": [
+        {
+            "offsets": [
+                [
+                    84, 
+                    92
+                ], 
+                [
+                    506, 
+                    514
+                ]
+            ], 
+            "ref": "creditor:116-1-f"
+        }, 
+        {
+            "offsets": [
+                [
+                    227, 
+                    236
+                ]
+            ], 
+            "ref": "creditor:116-1-f"
+        }, 
+        {
+            "offsets": [
+                [
+                    123, 
+                    136
+                ]
+            ], 
+            "ref": "disputed debt:116-1-d"
+        }, 
+        {
+            "offsets": [
+                [
+                    4, 
+                    18
+                ]
+            ], 
+            "ref": "disputed debt:116-1-d"
+        }, 
+        {
+            "offsets": [
+                [
+                    56, 
+                    77
+                ], 
+                [
+                    146, 
+                    167
+                ], 
+                [
+                    242, 
+                    263
+                ], 
+                [
+                    380, 
+                    401
+                ]
+            ], 
+            "ref": "terminating committee:116-1-a"
+        }, 
+        {
+            "offsets": [
+                [
+                    27, 
+                    49
+                ]
+            ], 
+            "ref": "terminating committee:116-1-a"
+        }
+    ], 
+    "116-2-a": [
+        {
+            "offsets": [
+                [
+                    30, 
+                    51
+                ], 
+                [
+                    99, 
+                    120
+                ], 
+                [
+                    293, 
+                    314
+                ]
+            ], 
+            "ref": "terminating committee:116-1-a"
+        }, 
+        {
+            "offsets": [
+                [
+                    4, 
+                    26
+                ]
+            ], 
+            "ref": "terminating committee:116-1-a"
+        }
+    ], 
+    "116-2-b": [
+        {
+            "offsets": [
+                [
+                    267, 
+                    276
+                ]
+            ], 
+            "ref": "creditor:116-1-f"
+        }, 
+        {
+            "offsets": [
+                [
+                    231, 
+                    245
+                ]
+            ], 
+            "ref": "disputed debt:116-1-d"
+        }, 
+        {
+            "offsets": [
+                [
+                    4, 
+                    22
+                ], 
+                [
+                    24, 
+                    42
+                ], 
+                [
+                    303, 
+                    321
+                ]
+            ], 
+            "ref": "ongoing committee:116-1-b"
+        }
+    ], 
+    "116-2-c-3": [
+        {
+            "offsets": [
+                [
+                    48, 
+                    69
+                ]
+            ], 
+            "ref": "terminating committee:116-1-a"
+        }
+    ], 
+    "116-2-c-3-ii": [
+        {
+            "offsets": [
+                [
+                    759, 
+                    767
+                ]
+            ], 
+            "ref": "creditor:116-1-f"
+        }
+    ], 
+    "116-3-a": [
+        {
+            "offsets": [
+                [
+                    29, 
+                    46
+                ], 
+                [
+                    364, 
+                    381
+                ]
+            ], 
+            "ref": "commercial vendor:116-1-c"
+        }
+    ], 
+    "116-3-b": [
+        {
+            "offsets": [
+                [
+                    60, 
+                    77
+                ]
+            ], 
+            "ref": "commercial vendor:116-1-c"
+        }
+    ], 
+    "116-3-c-1": [
+        {
+            "offsets": [
+                [
+                    16, 
+                    33
+                ]
+            ], 
+            "ref": "commercial vendor:116-1-c"
+        }
+    ], 
+    "116-3-c-2": [
+        {
+            "offsets": [
+                [
+                    16, 
+                    33
+                ]
+            ], 
+            "ref": "commercial vendor:116-1-c"
+        }
+    ], 
+    "116-3-c-3": [
+        {
+            "offsets": [
+                [
+                    86, 
+                    103
+                ]
+            ], 
+            "ref": "commercial vendor:116-1-c"
+        }
+    ], 
+    "116-4-a": [
+        {
+            "offsets": [
+                [
+                    29, 
+                    46
+                ], 
+                [
+                    330, 
+                    347
+                ]
+            ], 
+            "ref": "commercial vendor:116-1-c"
+        }
+    ], 
+    "116-4-a-2": [
+        {
+            "offsets": [
+                [
+                    8, 
+                    25
+                ]
+            ], 
+            "ref": "commercial vendor:116-1-c"
+        }
+    ], 
+    "116-4-d": [
+        {
+            "offsets": [
+                [
+                    118, 
+                    135
+                ]
+            ], 
+            "ref": "commercial vendor:116-1-c"
+        }
+    ], 
+    "116-4-d-3": [
+        {
+            "offsets": [
+                [
+                    8, 
+                    25
+                ]
+            ], 
+            "ref": "commercial vendor:116-1-c"
+        }
+    ], 
+    "116-4-e": [
+        {
+            "offsets": [
+                [
+                    108, 
+                    125
+                ]
+            ], 
+            "ref": "commercial vendor:116-1-c"
+        }
+    ], 
+    "116-5-a": [
+        {
+            "offsets": [
+                [
+                    69, 
+                    87
+                ], 
+                [
+                    119, 
+                    137
+                ]
+            ], 
+            "ref": "commercial vendor:116-1-c"
+        }
+    ], 
+    "116-7-a": [
+        {
+            "offsets": [
+                [
+                    301, 
+                    310
+                ], 
+                [
+                    502, 
+                    511
+                ]
+            ], 
+            "ref": "creditor:116-1-f"
+        }, 
+        {
+            "offsets": [
+                [
+                    55, 
+                    76
+                ], 
+                [
+                    235, 
+                    256
+                ], 
+                [
+                    445, 
+                    466
+                ], 
+                [
+                    726, 
+                    747
+                ]
+            ], 
+            "ref": "terminating committee:116-1-a"
+        }, 
+        {
+            "offsets": [
+                [
+                    614, 
+                    636
+                ]
+            ], 
+            "ref": "terminating committee:116-1-a"
+        }
+    ], 
+    "116-7-a-3": [
+        {
+            "offsets": [
+                [
+                    29, 
+                    37
+                ]
+            ], 
+            "ref": "creditor:116-1-f"
+        }
+    ], 
+    "116-7-b-1": [
+        {
+            "offsets": [
+                [
+                    20, 
+                    38
+                ]
+            ], 
+            "ref": "commercial vendor:116-1-c"
+        }
+    ], 
+    "116-7-c": [
+        {
+            "offsets": [
+                [
+                    37, 
+                    51
+                ]
+            ], 
+            "ref": "disputed debt:116-1-d"
+        }
+    ], 
+    "116-7-c-2": [
+        {
+            "offsets": [
+                [
+                    4, 
+                    18
+                ]
+            ], 
+            "ref": "disputed debt:116-1-d"
+        }
+    ], 
+    "116-7-d": [
+        {
+            "offsets": [
+                [
+                    19, 
+                    40
+                ], 
+                [
+                    302, 
+                    323
+                ]
+            ], 
+            "ref": "terminating committee:116-1-a"
+        }
+    ], 
+    "116-7-e-1-i": [
+        {
+            "offsets": [
+                [
+                    96, 
+                    104
+                ]
+            ], 
+            "ref": "creditor:116-1-f"
+        }
+    ], 
+    "116-7-e-1-ii": [
+        {
+            "offsets": [
+                [
+                    63, 
+                    84
+                ]
+            ], 
+            "ref": "terminating committee:116-1-a"
+        }
+    ], 
+    "116-7-e-1-iii": [
+        {
+            "offsets": [
+                [
+                    51, 
+                    59
+                ], 
+                [
+                    150, 
+                    158
+                ]
+            ], 
+            "ref": "creditor:116-1-f"
+        }
+    ], 
+    "116-7-e-1-iv": [
+        {
+            "offsets": [
+                [
+                    75, 
+                    83
+                ]
+            ], 
+            "ref": "creditor:116-1-f"
+        }
+    ], 
+    "116-7-e-2": [
+        {
+            "offsets": [
+                [
+                    98, 
+                    106
+                ], 
+                [
+                    192, 
+                    200
+                ]
+            ], 
+            "ref": "creditor:116-1-f"
+        }
+    ], 
+    "116-7-e-3": [
+        {
+            "offsets": [
+                [
+                    73, 
+                    94
+                ], 
+                [
+                    231, 
+                    252
+                ]
+            ], 
+            "ref": "terminating committee:116-1-a"
+        }
+    ], 
+    "116-7-e-4": [
+        {
+            "offsets": [
+                [
+                    74, 
+                    95
+                ], 
+                [
+                    202, 
+                    223
+                ]
+            ], 
+            "ref": "terminating committee:116-1-a"
+        }
+    ], 
+    "116-7-e-4-i": [
+        {
+            "offsets": [
+                [
+                    241, 
+                    249
+                ]
+            ], 
+            "ref": "creditor:116-1-f"
+        }, 
+        {
+            "offsets": [
+                [
+                    16, 
+                    37
+                ]
+            ], 
+            "ref": "terminating committee:116-1-a"
+        }
+    ], 
+    "116-7-e-4-ii": [
+        {
+            "offsets": [
+                [
+                    17, 
+                    38
+                ], 
+                [
+                    183, 
+                    204
+                ]
+            ], 
+            "ref": "terminating committee:116-1-a"
+        }
+    ], 
+    "116-7-e-5": [
+        {
+            "offsets": [
+                [
+                    11, 
+                    32
+                ]
+            ], 
+            "ref": "terminating committee:116-1-a"
+        }
+    ], 
+    "116-7-e-6": [
+        {
+            "offsets": [
+                [
+                    151, 
+                    172
+                ]
+            ], 
+            "ref": "terminating committee:116-1-a"
+        }
+    ], 
+    "116-7-e-7": [
+        {
+            "offsets": [
+                [
+                    83, 
+                    91
+                ]
+            ], 
+            "ref": "creditor:116-1-f"
+        }, 
+        {
+            "offsets": [
+                [
+                    54, 
+                    75
+                ]
+            ], 
+            "ref": "terminating committee:116-1-a"
+        }
+    ], 
+    "116-7-f-1": [
+        {
+            "offsets": [
+                [
+                    66, 
+                    75
+                ]
+            ], 
+            "ref": "creditor:116-1-f"
+        }, 
+        {
+            "offsets": [
+                [
+                    36, 
+                    57
+                ]
+            ], 
+            "ref": "terminating committee:116-1-a"
+        }
+    ], 
+    "116-7-f-4": [
+        {
+            "offsets": [
+                [
+                    87, 
+                    96
+                ]
+            ], 
+            "ref": "creditor:116-1-f"
+        }, 
+        {
+            "offsets": [
+                [
+                    58, 
+                    79
+                ]
+            ], 
+            "ref": "terminating committee:116-1-a"
+        }
+    ], 
+    "116-7-f-5": [
+        {
+            "offsets": [
+                [
+                    54, 
+                    75
+                ]
+            ], 
+            "ref": "terminating committee:116-1-a"
+        }
+    ], 
+    "116-7-f-6": [
+        {
+            "offsets": [
+                [
+                    196, 
+                    205
+                ]
+            ], 
+            "ref": "creditor:116-1-f"
+        }, 
+        {
+            "offsets": [
+                [
+                    102, 
+                    123
+                ]
+            ], 
+            "ref": "terminating committee:116-1-a"
+        }
+    ], 
+    "116-7-g": [
+        {
+            "offsets": [
+                [
+                    44, 
+                    65
+                ], 
+                [
+                    159, 
+                    180
+                ], 
+                [
+                    360, 
+                    381
+                ]
+            ], 
+            "ref": "terminating committee:116-1-a"
+        }
+    ], 
+    "116-8-a": [
+        {
+            "offsets": [
+                [
+                    262, 
+                    280
+                ]
+            ], 
+            "ref": "commercial vendor:116-1-c"
+        }, 
+        {
+            "offsets": [
+                [
+                    28, 
+                    36
+                ], 
+                [
+                    119, 
+                    127
+                ]
+            ], 
+            "ref": "creditor:116-1-f"
+        }, 
+        {
+            "offsets": [
+                [
+                    94, 
+                    111
+                ], 
+                [
+                    136, 
+                    153
+                ]
+            ], 
+            "ref": "ongoing committee:116-1-b"
+        }
+    ], 
+    "116-8-a-1": [
+        {
+            "offsets": [
+                [
+                    8, 
+                    16
+                ]
+            ], 
+            "ref": "creditor:116-1-f"
+        }, 
+        {
+            "offsets": [
+                [
+                    80, 
+                    97
+                ]
+            ], 
+            "ref": "ongoing committee:116-1-b"
+        }
+    ], 
+    "116-8-a-2": [
+        {
+            "offsets": [
+                [
+                    8, 
+                    25
+                ]
+            ], 
+            "ref": "ongoing committee:116-1-b"
+        }
+    ], 
+    "116-8-a-2-i": [
+        {
+            "offsets": [
+                [
+                    53, 
+                    61
+                ]
+            ], 
+            "ref": "creditor:116-1-f"
+        }
+    ], 
+    "116-8-a-2-iv": [
+        {
+            "offsets": [
+                [
+                    62, 
+                    70
+                ]
+            ], 
+            "ref": "creditor:116-1-f"
+        }, 
+        {
+            "offsets": [
+                [
+                    25, 
+                    34
+                ]
+            ], 
+            "ref": "creditor:116-1-f"
+        }, 
+        {
+            "offsets": [
+                [
+                    106, 
+                    123
+                ]
+            ], 
+            "ref": "ongoing committee:116-1-b"
+        }
+    ], 
+    "116-8-b": [
+        {
+            "offsets": [
+                [
+                    38, 
+                    46
+                ]
+            ], 
+            "ref": "creditor:116-1-f"
+        }, 
+        {
+            "offsets": [
+                [
+                    89, 
+                    106
+                ]
+            ], 
+            "ref": "ongoing committee:116-1-b"
+        }
+    ], 
+    "116-8-b-1": [
+        {
+            "offsets": [
+                [
+                    96, 
+                    104
+                ]
+            ], 
+            "ref": "creditor:116-1-f"
+        }
+    ], 
+    "116-8-b-2": [
+        {
+            "offsets": [
+                [
+                    62, 
+                    79
+                ]
+            ], 
+            "ref": "ongoing committee:116-1-b"
+        }
+    ], 
+    "116-8-b-3": [
+        {
+            "offsets": [
+                [
+                    49, 
+                    57
+                ], 
+                [
+                    148, 
+                    156
+                ]
+            ], 
+            "ref": "creditor:116-1-f"
+        }
+    ], 
+    "116-8-b-4": [
+        {
+            "offsets": [
+                [
+                    27, 
+                    35
+                ]
+            ], 
+            "ref": "creditor:116-1-f"
+        }
+    ], 
+    "116-8-c": [
+        {
+            "offsets": [
+                [
+                    83, 
+                    91
+                ], 
+                [
+                    178, 
+                    186
+                ], 
+                [
+                    323, 
+                    331
+                ]
+            ], 
+            "ref": "creditor:116-1-f"
+        }, 
+        {
+            "offsets": [
+                [
+                    58, 
+                    75
+                ], 
+                [
+                    296, 
+                    313
+                ]
+            ], 
+            "ref": "ongoing committee:116-1-b"
+        }
+    ], 
+    "116-9-a": [
+        {
+            "offsets": [
+                [
+                    112, 
+                    120
+                ]
+            ], 
+            "ref": "creditor:116-1-f"
+        }
+    ], 
+    "116-9-a-1": [
+        {
+            "offsets": [
+                [
+                    8, 
+                    16
+                ]
+            ], 
+            "ref": "creditor:116-1-f"
+        }
+    ], 
+    "116-9-a-2": [
+        {
+            "offsets": [
+                [
+                    91, 
+                    99
+                ], 
+                [
+                    179, 
+                    187
+                ], 
+                [
+                    320, 
+                    328
+                ]
+            ], 
+            "ref": "creditor:116-1-f"
+        }
+    ], 
+    "116-9-b": [
+        {
+            "offsets": [
+                [
+                    79, 
+                    100
+                ], 
+                [
+                    106, 
+                    127
+                ], 
+                [
+                    332, 
+                    353
+                ]
+            ], 
+            "ref": "terminating committee:116-1-a"
+        }, 
+        {
+            "offsets": [
+                [
+                    4, 
+                    26
+                ]
+            ], 
+            "ref": "terminating committee:116-1-a"
+        }
+    ], 
+    "116-9-c": [
+        {
+            "offsets": [
+                [
+                    362, 
+                    370
+                ]
+            ], 
+            "ref": "creditor:116-1-f"
+        }, 
+        {
+            "offsets": [
+                [
+                    76, 
+                    93
+                ], 
+                [
+                    99, 
+                    116
+                ], 
+                [
+                    336, 
+                    353
+                ], 
+                [
+                    572, 
+                    589
+                ]
+            ], 
+            "ref": "ongoing committee:116-1-b"
+        }, 
+        {
+            "offsets": [
+                [
+                    4, 
+                    22
+                ]
+            ], 
+            "ref": "ongoing committee:116-1-b"
+        }
+    ], 
+    "referenced": {
+        "commercial vendor:116-1-c": {
+            "position": [
+                50, 
+                67
+            ], 
+            "reference": "116-1-c", 
+            "term": "commercial vendor"
+        }, 
+        "creditor:116-1-f": {
+            "position": [
+                41, 
+                49
+            ], 
+            "reference": "116-1-f", 
+            "term": "creditor"
+        }, 
+        "disputed debt:116-1-d": {
+            "position": [
+                46, 
+                59
+            ], 
+            "reference": "116-1-d", 
+            "term": "disputed debt"
+        }, 
+        "ongoing committee:116-1-b": {
+            "position": [
+                50, 
+                67
+            ], 
+            "reference": "116-1-b", 
+            "term": "ongoing committee"
+        }, 
+        "terminating committee:116-1-a": {
+            "position": [
+                54, 
+                75
+            ], 
+            "reference": "116-1-a", 
+            "term": "terminating committee"
+        }
+    }
+}

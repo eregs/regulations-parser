@@ -1,0 +1,499 @@
+{
+    "children": [
+        {
+            "children": [
+                {
+                    "children": [], 
+                    "label": [
+                        "200", 
+                        "1"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "This part prescribes the procedures for the submission, consideration, and disposition of petitions filed with the Federal Election Commission. It establishes the conditions under which the Commission may identify and respond to petitions for rulemaking, and informs the public of the procedures the agency follows in response to such petitions.", 
+                    "title": "\u00a7 200.1 Purpose and scope."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "200", 
+                                        "2", 
+                                        "a", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) The Federal Election Campaign Act of 1971, as amended, 52 U.S.C. 30101 et seq.;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "200", 
+                                        "2", 
+                                        "a", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) The Presidential Election Campaign Fund Act, as amended, 26 U.S.C. 9001 et seq.;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "200", 
+                                        "2", 
+                                        "a", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) The Presidential Primary Matching Payment Account Act, as amended, 26 U.S.C. 9031 et seq.;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "200", 
+                                        "2", 
+                                        "a", 
+                                        "4"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(4) The Freedom of Information Act, 5 U.S.C. 552; or"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "200", 
+                                        "2", 
+                                        "a", 
+                                        "5"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(5) Any other law that the Commission is required to implement and administer."
+                                }
+                            ], 
+                            "label": [
+                                "200", 
+                                "2", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) Any interested person may file with the Commission a written petition for the issuance, amendment, or repeal of a rule implementing any of the following statutes:"
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "200", 
+                                        "2", 
+                                        "b", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Include the name and address of the petitioner or agent. An authorized agent of the petitioner may submit the petition, but the agent shall disclose the identity of his or her principal;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "200", 
+                                        "2", 
+                                        "b", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Identify itself as a petition for the issuance, amendment, or repeal of a rule;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "200", 
+                                        "2", 
+                                        "b", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) Identify the specific section(s) of the regulations to be affected;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "200", 
+                                        "2", 
+                                        "b", 
+                                        "4"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(4) Set forth the factual and legal grounds on which the petitioner relies, in support of the proposed action; and"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "200", 
+                                        "2", 
+                                        "b", 
+                                        "5"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(5) Be addressed and submitted to the Federal Election Commission, Office of General Counsel, 999 E Street, NW., Washington, DC 20463."
+                                }
+                            ], 
+                            "label": [
+                                "200", 
+                                "2", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) The petition shall\u2014"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "200", 
+                                "2", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) The petition may include draft regulatory language that would effectuate the petitioner's proposal."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "200", 
+                                "2", 
+                                "d"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(d) The Commission may, in its discretion, treat a document that fails to conform to the format requirements of paragraph (b) of this section as a basis for a sua sponte rulemaking. For example, the Commission may consider whether to initiate a rulemaking project addressing issues raised in an advisory opinion request submitted under 11 CFR 112.1 or in a complaint filed under 11 CFR 111.4. However, the Commission need not follow the procedures of 11 CFR 200.3 in these instances."
+                        }
+                    ], 
+                    "label": [
+                        "200", 
+                        "2"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 200.2 Procedural requirements."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "200", 
+                                        "3", 
+                                        "a", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Publish a Notice of Availability in the Federal Register, stating that the petition is available for public inspection in the Commission's Public Records Office and that statements in support of or in opposition to the petition may be filed within a stated period after publication of the notice;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "200", 
+                                        "3", 
+                                        "a", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Send a letter to the Commissioner of Internal Revenue, pursuant to 52 U.S.C. 30111(f), seeking the IRS's comments on the petition; and"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "200", 
+                                        "3", 
+                                        "a", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) Send a letter to the petitioner, acknowledging receipt of the petition and informing the petitioner of the above actions."
+                                }
+                            ], 
+                            "label": [
+                                "200", 
+                                "3", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) If a document qualifies as a petition under 11 CFR 200.2, the Commission, upon the recommendation of the Office of General Counsel, will\u2014"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "200", 
+                                "3", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) If the petition does not comply with the requirements of 11 CFR 200.2(b), the Office of General Counsel may notify the petitioner of the nature of any discrepancies."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "200", 
+                                "3", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) If the Commission decides that a Notice of Inquiry, Advance Notice of Proposed Rulemaking, or a public hearing on the petition would contribute to its determination whether to commence a rulemaking proceeding, it will publish an appropriate notice in the Federal Register, to advise interested persons and to invite their participation."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "200", 
+                                "3", 
+                                "d"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(d) The Commission will not consider the merits of the petition before the expiration of the comment period on the Notice of Availability."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "200", 
+                                "3", 
+                                "e"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(e) The Commission will consider all comments filed within the comment period prescribed in the relevant Federal Register notice. The Commission may, at its discretion, consider comments received after the close of the comment period."
+                        }
+                    ], 
+                    "label": [
+                        "200", 
+                        "3"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 200.3 Processing of petitions."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "200", 
+                                "4", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) After considering the comments that have been filed within the comment period(s) and any other information relevant to the subject matter of the petition, the Commission will decide whether to initiate a rulemaking based on the filed petition."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "200", 
+                                "4", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) If the Commission decides not to initiate a rulemaking, it will give notice of this action by publishing a Notice of Disposition in the Federal Register and sending a letter to the petitioner. The Notice of Disposition will include a brief statement of the grounds for the Commission's decision, except in an action affirming a prior denial."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "200", 
+                                "4", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) The Commission may reconsider a petition for rulemaking previously denied if the petitioner submits a written request for reconsideration within 30 calendar days after the date of the denial and if, upon the motion of a Commissioner who voted with the majority that originally denied the petition, the Commission adopts the motion to reconsider by the affirmative vote of four members."
+                        }
+                    ], 
+                    "label": [
+                        "200", 
+                        "4"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 200.4 Disposition of petitions."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "200", 
+                                "5", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) The Commission's statutory authority;"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "200", 
+                                "5", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) Policy considerations;"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "200", 
+                                "5", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) The desirability of proceeding on a case-by-case-basis;"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "200", 
+                                "5", 
+                                "d"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(d) The necessity or desirability of statutory revision;"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "200", 
+                                "5", 
+                                "e"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(e) Available agency resources."
+                        }
+                    ], 
+                    "label": [
+                        "200", 
+                        "5"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "The Commission's decision on the petition for rulemaking may include, but will not be limited to, the following considerations\u2014", 
+                    "title": "\u00a7 200.5 Agency considerations."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "200", 
+                                        "6", 
+                                        "a", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) The petition, including all attachments on which it relies, filed by the petitioner."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "200", 
+                                        "6", 
+                                        "a", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Written comments on the petition which have been circulated to and considered by the Commission, including attachments submitted as a part of the comments."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "200", 
+                                        "6", 
+                                        "a", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) Agenda documents, in the form they are circulated to and considered by the Commission in the course of the petition process."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "200", 
+                                        "6", 
+                                        "a", 
+                                        "4"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(4) All notices published in the Federal Register, including the Notice of Availability and Notice of Disposition. If a Notice of Inquiry or Advance Notice of Proposed Rulemaking was published it will also be included."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "200", 
+                                        "6", 
+                                        "a", 
+                                        "5"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(5) The transcripts or audio tapes of any public hearing(s) on the petition."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "200", 
+                                        "6", 
+                                        "a", 
+                                        "6"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(6) All correspondence between the Commission and the petitioner, other commentators and state or federal agencies pertaining to Commission consideration of the petition."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "200", 
+                                        "6", 
+                                        "a", 
+                                        "7"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(7) The Commission's decision on the petition, including all documents identified or filed by the Commission as part of the record relied on in reaching its final decision."
+                                }
+                            ], 
+                            "label": [
+                                "200", 
+                                "6", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) The agency record for the petition process consists of the following:"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "200", 
+                                "6", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) The administrative record specified in paragraph (a) of this section is the exclusive record for the Commission's decision."
+                        }
+                    ], 
+                    "label": [
+                        "200", 
+                        "6"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 200.6 Administrative record."
+                }
+            ], 
+            "label": [
+                "200", 
+                "Subpart"
+            ], 
+            "node_type": "emptypart", 
+            "text": ""
+        }
+    ], 
+    "label": [
+        "200"
+    ], 
+    "node_type": "regtext", 
+    "text": "", 
+    "title": "PART 200\u2014PETITIONS FOR RULEMAKING"
+}

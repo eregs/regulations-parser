@@ -1,0 +1,138 @@
+{
+    "9428-1": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "1973", 
+                "title": "42"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "42 U.S.C. 1973", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=1973&title=42&year=mostrecent"
+        }, 
+        {
+            "citation_type": "STATUTES_AT_LARGE", 
+            "components": {
+                "page": "77", 
+                "volume": "97"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "97 Stat. 77", 
+            "url": "http://api.fdsys.gov/link?collection=statute&page=77&volume=97&year=mostrecent"
+        }, 
+        {
+            "citation_type": "PUBLIC_LAW", 
+            "components": {
+                "congress": "103", 
+                "lawnum": "31"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "Public Law 103-31", 
+            "url": "http://api.fdsys.gov/link?collection=plaw&congress=103&lawnum=31&lawtype=public&year=mostrecent"
+        }
+    ], 
+    "9428-2-b": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "1973", 
+                "title": "42"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "42 U.S.C. 1973", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=1973&title=42&year=mostrecent"
+        }
+    ], 
+    "9428-2-c": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "1973", 
+                "title": "42"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "42 U.S.C. 1973", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=1973&title=42&year=mostrecent"
+        }
+    ], 
+    "9428-2-d": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "1973", 
+                "title": "42"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "42 U.S.C. 1973", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=1973&title=42&year=mostrecent"
+        }
+    ], 
+    "9428-2-f": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "1973", 
+                "title": "42"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "42 U.S.C. 1973", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=1973&title=42&year=mostrecent"
+        }
+    ], 
+    "9428-4-b": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "1973", 
+                "title": "42"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "42 U.S.C. 1973", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=1973&title=42&year=mostrecent"
+        }
+    ], 
+    "9428-6-b": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "552", 
+                "title": "5"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "5 U.S.C. 552", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=552&title=5&year=mostrecent"
+        }
+    ], 
+    "9428-7-b-10": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "1973", 
+                "title": "42"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "42 U.S.C. 1973", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=1973&title=42&year=mostrecent"
+        }
+    ]
+}

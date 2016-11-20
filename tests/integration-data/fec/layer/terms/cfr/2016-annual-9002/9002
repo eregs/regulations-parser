@@ -1,0 +1,442 @@
+{
+    "9002-1-a": [
+        {
+            "offsets": [
+                [
+                    142, 
+                    157
+                ]
+            ], 
+            "ref": "political party:9002-15"
+        }
+    ], 
+    "9002-1-c": [
+        {
+            "offsets": [
+                [
+                    33, 
+                    48
+                ], 
+                [
+                    94, 
+                    109
+                ]
+            ], 
+            "ref": "political party:9002-15"
+        }
+    ], 
+    "9002-11-a-2": [
+        {
+            "offsets": [
+                [
+                    24, 
+                    49
+                ]
+            ], 
+            "ref": "expenditure report period:9002-12"
+        }
+    ], 
+    "9002-11-b-1": [
+        {
+            "offsets": [
+                [
+                    295, 
+                    310
+                ]
+            ], 
+            "ref": "political party:9002-15"
+        }
+    ], 
+    "9002-11-b-3": [
+        {
+            "offsets": [
+                [
+                    162, 
+                    189
+                ]
+            ], 
+            "ref": "qualified campaign expense:9002-11-a"
+        }
+    ], 
+    "9002-11-b-4": [
+        {
+            "offsets": [
+                [
+                    150, 
+                    177
+                ]
+            ], 
+            "ref": "qualified campaign expense:9002-11-a"
+        }
+    ], 
+    "9002-11-b-5": [
+        {
+            "offsets": [
+                [
+                    224, 
+                    228
+                ]
+            ], 
+            "ref": "fund:9002-5"
+        }, 
+        {
+            "offsets": [
+                [
+                    241, 
+                    246
+                ]
+            ], 
+            "ref": "fund:9002-5"
+        }, 
+        {
+            "offsets": [
+                [
+                    769, 
+                    778
+                ]
+            ], 
+            "ref": "new party:9002-8"
+        }, 
+        {
+            "offsets": [
+                [
+                    146, 
+                    173
+                ]
+            ], 
+            "ref": "qualified campaign expense:9002-11-a"
+        }
+    ], 
+    "9002-11-c": [
+        {
+            "offsets": [
+                [
+                    101, 
+                    126
+                ]
+            ], 
+            "ref": "expenditure report period:9002-12"
+        }, 
+        {
+            "offsets": [
+                [
+                    197, 
+                    224
+                ], 
+                [
+                    343, 
+                    370
+                ]
+            ], 
+            "ref": "qualified campaign expense:9002-11-a"
+        }
+    ], 
+    "9002-12": [
+        {
+            "offsets": [
+                [
+                    53, 
+                    74
+                ]
+            ], 
+            "ref": "presidential election:9002-10"
+        }
+    ], 
+    "9002-12-a": [
+        {
+            "offsets": [
+                [
+                    38, 
+                    63
+                ]
+            ], 
+            "ref": "expenditure report period:9002-12"
+        }, 
+        {
+            "offsets": [
+                [
+                    21, 
+                    32
+                ], 
+                [
+                    134, 
+                    145
+                ]
+            ], 
+            "ref": "major party:9002-6"
+        }, 
+        {
+            "offsets": [
+                [
+                    240, 
+                    261
+                ]
+            ], 
+            "ref": "presidential election:9002-10"
+        }
+    ], 
+    "9002-12-b": [
+        {
+            "offsets": [
+                [
+                    114, 
+                    139
+                ]
+            ], 
+            "ref": "expenditure report period:9002-12"
+        }, 
+        {
+            "offsets": [
+                [
+                    84, 
+                    95
+                ]
+            ], 
+            "ref": "major party:9002-6"
+        }, 
+        {
+            "offsets": [
+                [
+                    30, 
+                    39
+                ]
+            ], 
+            "ref": "new party:9002-8"
+        }, 
+        {
+            "offsets": [
+                [
+                    149, 
+                    170
+                ]
+            ], 
+            "ref": "presidential election:9002-10"
+        }
+    ], 
+    "9002-2-a": [
+        {
+            "offsets": [
+                [
+                    77, 
+                    98
+                ]
+            ], 
+            "ref": "presidential election:9002-10"
+        }
+    ], 
+    "9002-2-a-1": [
+        {
+            "offsets": [
+                [
+                    28, 
+                    39
+                ]
+            ], 
+            "ref": "major party:9002-6"
+        }
+    ], 
+    "9002-2-a-2": [
+        {
+            "offsets": [
+                [
+                    187, 
+                    202
+                ], 
+                [
+                    294, 
+                    309
+                ]
+            ], 
+            "ref": "political party:9002-15"
+        }
+    ], 
+    "9002-4": [
+        {
+            "offsets": [
+                [
+                    162, 
+                    166
+                ]
+            ], 
+            "ref": "fund:9002-5"
+        }
+    ], 
+    "9002-5": [
+        {
+            "offsets": [
+                [
+                    15, 
+                    36
+                ]
+            ], 
+            "ref": "presidential election:9002-10"
+        }
+    ], 
+    "9002-6": [
+        {
+            "offsets": [
+                [
+                    20, 
+                    35
+                ]
+            ], 
+            "ref": "political party:9002-15"
+        }, 
+        {
+            "offsets": [
+                [
+                    97, 
+                    118
+                ], 
+                [
+                    341, 
+                    362
+                ]
+            ], 
+            "ref": "presidential election:9002-10"
+        }
+    ], 
+    "9002-7": [
+        {
+            "offsets": [
+                [
+                    20, 
+                    35
+                ]
+            ], 
+            "ref": "political party:9002-15"
+        }, 
+        {
+            "offsets": [
+                [
+                    97, 
+                    118
+                ], 
+                [
+                    366, 
+                    387
+                ]
+            ], 
+            "ref": "presidential election:9002-10"
+        }
+    ], 
+    "9002-8": [
+        {
+            "offsets": [
+                [
+                    53, 
+                    64
+                ]
+            ], 
+            "ref": "major party:9002-6"
+        }, 
+        {
+            "offsets": [
+                [
+                    71, 
+                    82
+                ]
+            ], 
+            "ref": "minor party:9002-7"
+        }, 
+        {
+            "offsets": [
+                [
+                    18, 
+                    33
+                ]
+            ], 
+            "ref": "political party:9002-15"
+        }
+    ], 
+    "referenced": {
+        "commission:9002-3": {
+            "position": [
+                0, 
+                10
+            ], 
+            "reference": "9002-3", 
+            "term": "commission"
+        }, 
+        "eligible candidates:9002-4": {
+            "position": [
+                0, 
+                19
+            ], 
+            "reference": "9002-4", 
+            "term": "eligible candidates"
+        }, 
+        "expenditure report period:9002-12": {
+            "position": [
+                0, 
+                25
+            ], 
+            "reference": "9002-12", 
+            "term": "expenditure report period"
+        }, 
+        "fund:9002-5": {
+            "position": [
+                0, 
+                4
+            ], 
+            "reference": "9002-5", 
+            "term": "fund"
+        }, 
+        "major party:9002-6": {
+            "position": [
+                0, 
+                11
+            ], 
+            "reference": "9002-6", 
+            "term": "major party"
+        }, 
+        "minor party:9002-7": {
+            "position": [
+                0, 
+                11
+            ], 
+            "reference": "9002-7", 
+            "term": "minor party"
+        }, 
+        "new party:9002-8": {
+            "position": [
+                0, 
+                9
+            ], 
+            "reference": "9002-8", 
+            "term": "new party"
+        }, 
+        "political party:9002-15": {
+            "position": [
+                0, 
+                15
+            ], 
+            "reference": "9002-15", 
+            "term": "political party"
+        }, 
+        "presidential election:9002-10": {
+            "position": [
+                0, 
+                21
+            ], 
+            "reference": "9002-10", 
+            "term": "presidential election"
+        }, 
+        "qualified campaign expense:9002-11-a": {
+            "position": [
+                4, 
+                30
+            ], 
+            "reference": "9002-11-a", 
+            "term": "qualified campaign expense"
+        }, 
+        "secretary:9002-14": {
+            "position": [
+                0, 
+                9
+            ], 
+            "reference": "9002-14", 
+            "term": "secretary"
+        }
+    }
+}

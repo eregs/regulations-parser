@@ -1,0 +1,48 @@
+{
+    "101": [
+        {
+            "index": [
+                "101", 
+                "1"
+            ], 
+            "title": "\u00a7 101.1 Candidate designations (52 U.S.C. 30102(e)(1))."
+        }, 
+        {
+            "index": [
+                "101", 
+                "2"
+            ], 
+            "title": "\u00a7 101.2 Candidate as agent of authorized committee (52 U.S.C. 30102(e)(2))."
+        }, 
+        {
+            "index": [
+                "101", 
+                "3"
+            ], 
+            "title": "\u00a7 101.3 Funds received or expended prior to becoming a candidate (52 U.S.C. 30102(e)(2))."
+        }
+    ], 
+    "101-Subpart": [
+        {
+            "index": [
+                "101", 
+                "1"
+            ], 
+            "title": "\u00a7 101.1 Candidate designations (52 U.S.C. 30102(e)(1))."
+        }, 
+        {
+            "index": [
+                "101", 
+                "2"
+            ], 
+            "title": "\u00a7 101.2 Candidate as agent of authorized committee (52 U.S.C. 30102(e)(2))."
+        }, 
+        {
+            "index": [
+                "101", 
+                "3"
+            ], 
+            "title": "\u00a7 101.3 Funds received or expended prior to becoming a candidate (52 U.S.C. 30102(e)(2))."
+        }
+    ]
+}

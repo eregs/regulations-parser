@@ -1,0 +1,96 @@
+{
+    "2-1": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "552", 
+                "title": "5"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "5 U.S.C. 552", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=552&title=5&year=mostrecent"
+        }, 
+        {
+            "citation_type": "PUBLIC_LAW", 
+            "components": {
+                "congress": "94", 
+                "lawnum": "409"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "Public Law 94-409", 
+            "url": "http://api.fdsys.gov/link?collection=plaw&congress=94&lawnum=409&lawtype=public&year=mostrecent"
+        }
+    ], 
+    "2-2-b": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "30106", 
+                "title": "52"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "52 U.S.C. 30106", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=30106&title=52&year=mostrecent"
+        }
+    ], 
+    "2-4-a-1": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "30109", 
+                "title": "52"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "52 U.S.C. 30109", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=30109&title=52&year=mostrecent"
+        }
+    ], 
+    "2-4-a-2": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "11", 
+                "part": "111"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "11 CFR part 111", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=111&titlenum=11&year=mostrecent"
+        }, 
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "30109", 
+                "title": "52"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "52 U.S.C. 30109", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=30109&title=52&year=mostrecent"
+        }
+    ], 
+    "2-6-b-2": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "11", 
+                "part": "5"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "11 CFR part 5", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=5&titlenum=11&year=mostrecent"
+        }
+    ]
+}

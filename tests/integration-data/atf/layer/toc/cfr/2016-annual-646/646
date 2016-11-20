@@ -1,0 +1,107 @@
+{
+    "646": [
+        {
+            "index": [
+                "646", 
+                "Subjgrp", 
+                "Ge"
+            ], 
+            "title": "General"
+        }, 
+        {
+            "index": [
+                "646", 
+                "Subjgrp", 
+                "Re"
+            ], 
+            "title": "Records"
+        }, 
+        {
+            "index": [
+                "646", 
+                "Subjgrp", 
+                "OPRttDoC"
+            ], 
+            "title": "Other Provisions Relating to the Distribution of Cigarettes"
+        }, 
+        {
+            "index": [
+                "646", 
+                "Subjgrp", 
+                "PaF"
+            ], 
+            "title": "Penalties and Forfeitures"
+        }
+    ], 
+    "646-Subjgrp-Ge": [
+        {
+            "index": [
+                "646", 
+                "141"
+            ], 
+            "title": "\u00a7 646.141 Scope of part."
+        }, 
+        {
+            "index": [
+                "646", 
+                "142"
+            ], 
+            "title": "\u00a7 646.142 Territorial extent."
+        }, 
+        {
+            "index": [
+                "646", 
+                "143"
+            ], 
+            "title": "\u00a7 646.143 Meaning of terms."
+        }
+    ], 
+    "646-Subjgrp-OPRttDoC": [
+        {
+            "index": [
+                "646", 
+                "153"
+            ], 
+            "title": "\u00a7 646.153 Authority of appropriate ATF officers to enter business premises."
+        }
+    ], 
+    "646-Subjgrp-PaF": [
+        {
+            "index": [
+                "646", 
+                "154"
+            ], 
+            "title": "\u00a7 646.154 Penalties."
+        }, 
+        {
+            "index": [
+                "646", 
+                "155"
+            ], 
+            "title": "\u00a7 646.155 Forfeitures."
+        }
+    ], 
+    "646-Subjgrp-Re": [
+        {
+            "index": [
+                "646", 
+                "146"
+            ], 
+            "title": "\u00a7 646.146 General requirements."
+        }, 
+        {
+            "index": [
+                "646", 
+                "147"
+            ], 
+            "title": "\u00a7 646.147 Required information."
+        }, 
+        {
+            "index": [
+                "646", 
+                "150"
+            ], 
+            "title": "\u00a7 646.150 Retention of records."
+        }
+    ]
+}

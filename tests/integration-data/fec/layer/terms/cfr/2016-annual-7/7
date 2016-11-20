@@ -1,0 +1,547 @@
+{
+    "7-1-a": [
+        {
+            "offsets": [
+                [
+                    88, 
+                    98
+                ], 
+                [
+                    101, 
+                    111
+                ]
+            ], 
+            "ref": "commission:7-2-a"
+        }, 
+        {
+            "offsets": [
+                [
+                    54, 
+                    63
+                ]
+            ], 
+            "ref": "employee:7-2-d"
+        }
+    ], 
+    "7-1-b": [
+        {
+            "offsets": [
+                [
+                    46, 
+                    56
+                ]
+            ], 
+            "ref": "commission:7-2-a"
+        }, 
+        {
+            "offsets": [
+                [
+                    29, 
+                    38
+                ]
+            ], 
+            "ref": "employee:7-2-d"
+        }
+    ], 
+    "7-1-b-1": [
+        {
+            "offsets": [
+                [
+                    20, 
+                    28
+                ]
+            ], 
+            "ref": "employee:7-2-d"
+        }
+    ], 
+    "7-1-b-3": [
+        {
+            "offsets": [
+                [
+                    54, 
+                    63
+                ]
+            ], 
+            "ref": "employee:7-2-d"
+        }
+    ], 
+    "7-1-b-4": [
+        {
+            "offsets": [
+                [
+                    101, 
+                    111
+                ]
+            ], 
+            "ref": "commission:7-2-a"
+        }, 
+        {
+            "offsets": [
+                [
+                    67, 
+                    76
+                ]
+            ], 
+            "ref": "employee:7-2-d"
+        }
+    ], 
+    "7-2-b": [
+        {
+            "offsets": [
+                [
+                    56, 
+                    66
+                ]
+            ], 
+            "ref": "commission:7-2-a"
+        }
+    ], 
+    "7-2-c": [
+        {
+            "offsets": [
+                [
+                    75, 
+                    85
+                ], 
+                [
+                    288, 
+                    298
+                ]
+            ], 
+            "ref": "commission:7-2-a"
+        }, 
+        {
+            "offsets": [
+                [
+                    48, 
+                    56
+                ]
+            ], 
+            "ref": "employee:7-2-d"
+        }
+    ], 
+    "7-2-d": [
+        {
+            "offsets": [
+                [
+                    55, 
+                    65
+                ]
+            ], 
+            "ref": "commission:7-2-a"
+        }
+    ], 
+    "7-2-e": [
+        {
+            "offsets": [
+                [
+                    184, 
+                    194
+                ], 
+                [
+                    264, 
+                    274
+                ]
+            ], 
+            "ref": "commission:7-2-a"
+        }, 
+        {
+            "offsets": [
+                [
+                    107, 
+                    119
+                ], 
+                [
+                    141, 
+                    153
+                ]
+            ], 
+            "ref": "commissioner:7-2-b"
+        }, 
+        {
+            "offsets": [
+                [
+                    195, 
+                    203
+                ]
+            ], 
+            "ref": "employee:7-2-d"
+        }
+    ], 
+    "7-2-f": [
+        {
+            "offsets": [
+                [
+                    60, 
+                    70
+                ]
+            ], 
+            "ref": "commission:7-2-a"
+        }
+    ], 
+    "7-3-a": [
+        {
+            "offsets": [
+                [
+                    6, 
+                    18
+                ]
+            ], 
+            "ref": "commissioner:7-2-b"
+        }, 
+        {
+            "offsets": [
+                [
+                    381, 
+                    394
+                ]
+            ], 
+            "ref": "commissioner:7-2-b"
+        }, 
+        {
+            "offsets": [
+                [
+                    158, 
+                    191
+                ], 
+                [
+                    197, 
+                    230
+                ]
+            ], 
+            "ref": "designated agency ethics official:7-2-c"
+        }, 
+        {
+            "offsets": [
+                [
+                    22, 
+                    30
+                ]
+            ], 
+            "ref": "employee:7-2-d"
+        }, 
+        {
+            "offsets": [
+                [
+                    398, 
+                    407
+                ]
+            ], 
+            "ref": "employee:7-2-d"
+        }
+    ], 
+    "7-3-b": [
+        {
+            "offsets": [
+                [
+                    45, 
+                    57
+                ]
+            ], 
+            "ref": "commissioner:7-2-b"
+        }, 
+        {
+            "offsets": [
+                [
+                    8, 
+                    41
+                ]
+            ], 
+            "ref": "designated agency ethics official:7-2-c"
+        }, 
+        {
+            "offsets": [
+                [
+                    65, 
+                    73
+                ]
+            ], 
+            "ref": "employee:7-2-d"
+        }
+    ], 
+    "7-4": [
+        {
+            "offsets": [
+                [
+                    0, 
+                    13
+                ]
+            ], 
+            "ref": "commissioner:7-2-b"
+        }, 
+        {
+            "offsets": [
+                [
+                    204, 
+                    237
+                ]
+            ], 
+            "ref": "designated agency ethics official:7-2-c"
+        }, 
+        {
+            "offsets": [
+                [
+                    18, 
+                    27
+                ]
+            ], 
+            "ref": "employee:7-2-d"
+        }, 
+        {
+            "offsets": [
+                [
+                    253, 
+                    270
+                ]
+            ], 
+            "ref": "inspector general:7-2-f"
+        }
+    ], 
+    "7-5": [
+        {
+            "offsets": [
+                [
+                    77, 
+                    85
+                ]
+            ], 
+            "ref": "employee:7-2-d"
+        }
+    ], 
+    "7-6": [
+        {
+            "offsets": [
+                [
+                    17, 
+                    27
+                ], 
+                [
+                    283, 
+                    293
+                ]
+            ], 
+            "ref": "commission:7-2-a"
+        }
+    ], 
+    "7-7-a": [
+        {
+            "offsets": [
+                [
+                    4, 
+                    14
+                ]
+            ], 
+            "ref": "commission:7-2-a"
+        }, 
+        {
+            "offsets": [
+                [
+                    15, 
+                    24
+                ]
+            ], 
+            "ref": "employee:7-2-d"
+        }
+    ], 
+    "7-7-b": [
+        {
+            "offsets": [
+                [
+                    118, 
+                    128
+                ]
+            ], 
+            "ref": "commission:7-2-a"
+        }, 
+        {
+            "offsets": [
+                [
+                    102, 
+                    110
+                ], 
+                [
+                    264, 
+                    272
+                ]
+            ], 
+            "ref": "employee:7-2-d"
+        }
+    ], 
+    "7-8": [
+        {
+            "offsets": [
+                [
+                    131, 
+                    141
+                ]
+            ], 
+            "ref": "commission:7-2-a"
+        }
+    ], 
+    "7-8-a": [
+        {
+            "offsets": [
+                [
+                    189, 
+                    201
+                ], 
+                [
+                    219, 
+                    231
+                ]
+            ], 
+            "ref": "commissioner:7-2-b"
+        }, 
+        {
+            "offsets": [
+                [
+                    268, 
+                    291
+                ]
+            ], 
+            "ref": "ex parte communication:7-2-e"
+        }
+    ], 
+    "7-8-b": [
+        {
+            "offsets": [
+                [
+                    92, 
+                    102
+                ], 
+                [
+                    163, 
+                    173
+                ], 
+                [
+                    443, 
+                    453
+                ]
+            ], 
+            "ref": "commission:7-2-a"
+        }
+    ], 
+    "7-8-d": [
+        {
+            "offsets": [
+                [
+                    224, 
+                    234
+                ]
+            ], 
+            "ref": "commission:7-2-a"
+        }, 
+        {
+            "offsets": [
+                [
+                    6, 
+                    18
+                ], 
+                [
+                    36, 
+                    48
+                ], 
+                [
+                    382, 
+                    394
+                ], 
+                [
+                    658, 
+                    670
+                ], 
+                [
+                    692, 
+                    704
+                ]
+            ], 
+            "ref": "commissioner:7-2-b"
+        }, 
+        {
+            "offsets": [
+                [
+                    398, 
+                    406
+                ]
+            ], 
+            "ref": "employee:7-2-d"
+        }
+    ], 
+    "7-8-e": [
+        {
+            "offsets": [
+                [
+                    79, 
+                    89
+                ], 
+                [
+                    218, 
+                    228
+                ]
+            ], 
+            "ref": "commission:7-2-a"
+        }, 
+        {
+            "offsets": [
+                [
+                    31, 
+                    54
+                ], 
+                [
+                    154, 
+                    177
+                ]
+            ], 
+            "ref": "ex parte communication:7-2-e"
+        }
+    ], 
+    "referenced": {
+        "commission:7-2-a": {
+            "position": [
+                4, 
+                14
+            ], 
+            "reference": "7-2-a", 
+            "term": "commission"
+        }, 
+        "commissioner:7-2-b": {
+            "position": [
+                4, 
+                16
+            ], 
+            "reference": "7-2-b", 
+            "term": "commissioner"
+        }, 
+        "designated agency ethics official:7-2-c": {
+            "position": [
+                4, 
+                37
+            ], 
+            "reference": "7-2-c", 
+            "term": "designated agency ethics official"
+        }, 
+        "employee:7-2-d": {
+            "position": [
+                4, 
+                12
+            ], 
+            "reference": "7-2-d", 
+            "term": "employee"
+        }, 
+        "ex parte communication:7-2-e": {
+            "position": [
+                4, 
+                26
+            ], 
+            "reference": "7-2-e", 
+            "term": "ex parte communication"
+        }, 
+        "inspector general:7-2-f": {
+            "position": [
+                4, 
+                21
+            ], 
+            "reference": "7-2-f", 
+            "term": "inspector general"
+        }
+    }
+}

@@ -1,0 +1,97 @@
+{
+    "263": [
+        {
+            "index": [
+                "263", 
+                "Subpart", 
+                "A"
+            ], 
+            "title": "General"
+        }, 
+        {
+            "index": [
+                "263", 
+                "Subpart", 
+                "B"
+            ], 
+            "title": "Compliance With the Manifest System and Recordkeeping"
+        }, 
+        {
+            "index": [
+                "263", 
+                "Subpart", 
+                "C"
+            ], 
+            "title": "Hazardous Waste Discharges"
+        }
+    ], 
+    "263-Subpart-A": [
+        {
+            "index": [
+                "263", 
+                "10"
+            ], 
+            "title": "\u00a7 263.10 Scope."
+        }, 
+        {
+            "index": [
+                "263", 
+                "11"
+            ], 
+            "title": "\u00a7 263.11 EPA identification number."
+        }, 
+        {
+            "index": [
+                "263", 
+                "12"
+            ], 
+            "title": "\u00a7 263.12 Transfer facility requirements."
+        }
+    ], 
+    "263-Subpart-B": [
+        {
+            "index": [
+                "263", 
+                "20"
+            ], 
+            "title": "\u00a7 263.20 The manifest system."
+        }, 
+        {
+            "index": [
+                "263", 
+                "21"
+            ], 
+            "title": "\u00a7 263.21 Compliance with the manifest."
+        }, 
+        {
+            "index": [
+                "263", 
+                "22"
+            ], 
+            "title": "\u00a7 263.22 Recordkeeping."
+        }, 
+        {
+            "index": [
+                "263", 
+                "25"
+            ], 
+            "title": "\u00a7 263.25 Electronic manifest signatures."
+        }
+    ], 
+    "263-Subpart-C": [
+        {
+            "index": [
+                "263", 
+                "30"
+            ], 
+            "title": "\u00a7 263.30 Immediate action."
+        }, 
+        {
+            "index": [
+                "263", 
+                "31"
+            ], 
+            "title": "\u00a7 263.31 Discharge clean up."
+        }
+    ]
+}

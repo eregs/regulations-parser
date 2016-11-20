@@ -1,0 +1,78 @@
+{
+    "115-2-a": [
+        {
+            "offsets": [
+                [
+                    29, 
+                    49
+                ]
+            ], 
+            "ref": "a federal contractor:115-1-a"
+        }
+    ], 
+    "115-2-c": [
+        {
+            "offsets": [
+                [
+                    88, 
+                    108
+                ]
+            ], 
+            "ref": "a federal contractor:115-1-a"
+        }
+    ], 
+    "115-4-a": [
+        {
+            "offsets": [
+                [
+                    41, 
+                    61
+                ]
+            ], 
+            "ref": "a federal contractor:115-1-a"
+        }
+    ], 
+    "115-4-c": [
+        {
+            "offsets": [
+                [
+                    73, 
+                    93
+                ]
+            ], 
+            "ref": "a federal contractor:115-1-a"
+        }
+    ], 
+    "115-5": [
+        {
+            "offsets": [
+                [
+                    250, 
+                    270
+                ]
+            ], 
+            "ref": "a federal contractor:115-1-a"
+        }
+    ], 
+    "115-6": [
+        {
+            "offsets": [
+                [
+                    263, 
+                    283
+                ]
+            ], 
+            "ref": "a federal contractor:115-1-a"
+        }
+    ], 
+    "referenced": {
+        "a federal contractor:115-1-a": {
+            "position": [
+                4, 
+                24
+            ], 
+            "reference": "115-1-a", 
+            "term": "a federal contractor"
+        }
+    }
+}

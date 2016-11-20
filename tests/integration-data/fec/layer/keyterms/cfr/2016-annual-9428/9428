@@ -1,0 +1,66 @@
+{
+    "9428-4-a": [
+        {
+            "key_term": "Information about the applicant.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "9428-4-b": [
+        {
+            "key_term": "Additional information required by the Act.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "9428-4-c": [
+        {
+            "key_term": "Other information.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "9428-5-b": [
+        {
+            "key_term": "Size.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "9428-5-c": [
+        {
+            "key_term": "Layout.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "9428-5-d": [
+        {
+            "key_term": "Color.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "9428-5-e": [
+        {
+            "key_term": "Signature field.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "9428-5-f": [
+        {
+            "key_term": "Type size.", 
+            "locations": [
+                0
+            ]
+        }
+    ]
+}

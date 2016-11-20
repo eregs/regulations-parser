@@ -1,0 +1,1274 @@
+{
+    "6-102": [
+        {
+            "offsets": [
+                [
+                    65, 
+                    75
+                ]
+            ], 
+            "ref": "commission:6-103-b"
+        }
+    ], 
+    "6-103-a": [
+        {
+            "offsets": [
+                [
+                    290, 
+                    300
+                ]
+            ], 
+            "ref": "commission:6-103-b"
+        }, 
+        {
+            "offsets": [
+                [
+                    88, 
+                    107
+                ]
+            ], 
+            "ref": "handicapped person:6-103-e"
+        }
+    ], 
+    "6-103-c": [
+        {
+            "offsets": [
+                [
+                    116, 
+                    126
+                ], 
+                [
+                    172, 
+                    182
+                ]
+            ], 
+            "ref": "commission:6-103-b"
+        }
+    ], 
+    "6-103-d": [
+        {
+            "offsets": [
+                [
+                    231, 
+                    241
+                ]
+            ], 
+            "ref": "commission:6-103-b"
+        }
+    ], 
+    "6-103-e": [
+        {
+            "offsets": [
+                [
+                    141, 
+                    175
+                ]
+            ], 
+            "ref": "has a record of such an impairment:6-103-e-3"
+        }
+    ], 
+    "6-103-e-4-i": [
+        {
+            "offsets": [
+                [
+                    118, 
+                    128
+                ]
+            ], 
+            "ref": "commission:6-103-b"
+        }
+    ], 
+    "6-103-f-1": [
+        {
+            "offsets": [
+                [
+                    24, 
+                    34
+                ]
+            ], 
+            "ref": "commission:6-103-b"
+        }, 
+        {
+            "offsets": [
+                [
+                    151, 
+                    169
+                ]
+            ], 
+            "ref": "handicapped person:6-103-e"
+        }
+    ], 
+    "6-103-f-2": [
+        {
+            "offsets": [
+                [
+                    53, 
+                    71
+                ]
+            ], 
+            "ref": "handicapped person:6-103-e"
+        }
+    ], 
+    "6-103-g": [
+        {
+            "offsets": [
+                [
+                    419, 
+                    429
+                ]
+            ], 
+            "ref": "commission:6-103-b"
+        }
+    ], 
+    "6-110-a": [
+        {
+            "offsets": [
+                [
+                    60, 
+                    70
+                ], 
+                [
+                    321, 
+                    331
+                ], 
+                [
+                    619, 
+                    629
+                ]
+            ], 
+            "ref": "commission:6-103-b"
+        }, 
+        {
+            "offsets": [
+                [
+                    138, 
+                    157
+                ], 
+                [
+                    189, 
+                    208
+                ]
+            ], 
+            "ref": "handicapped person:6-103-e"
+        }
+    ], 
+    "6-110-b": [
+        {
+            "offsets": [
+                [
+                    102, 
+                    112
+                ]
+            ], 
+            "ref": "commission:6-103-b"
+        }
+    ], 
+    "6-111": [
+        {
+            "offsets": [
+                [
+                    4, 
+                    14
+                ], 
+                [
+                    238, 
+                    248
+                ], 
+                [
+                    254, 
+                    264
+                ]
+            ], 
+            "ref": "commission:6-103-b"
+        }
+    ], 
+    "6-130-a": [
+        {
+            "offsets": [
+                [
+                    222, 
+                    232
+                ]
+            ], 
+            "ref": "commission:6-103-b"
+        }, 
+        {
+            "offsets": [
+                [
+                    7, 
+                    35
+                ]
+            ], 
+            "ref": "qualified handicapped person:6-103-f"
+        }
+    ], 
+    "6-130-b-1": [
+        {
+            "offsets": [
+                [
+                    8, 
+                    18
+                ]
+            ], 
+            "ref": "commission:6-103-b"
+        }
+    ], 
+    "6-130-b-1-i": [
+        {
+            "offsets": [
+                [
+                    11, 
+                    39
+                ]
+            ], 
+            "ref": "qualified handicapped person:6-103-f"
+        }
+    ], 
+    "6-130-b-1-ii": [
+        {
+            "offsets": [
+                [
+                    14, 
+                    42
+                ]
+            ], 
+            "ref": "qualified handicapped person:6-103-f"
+        }
+    ], 
+    "6-130-b-1-iii": [
+        {
+            "offsets": [
+                [
+                    16, 
+                    44
+                ]
+            ], 
+            "ref": "qualified handicapped person:6-103-f"
+        }
+    ], 
+    "6-130-b-1-iv": [
+        {
+            "offsets": [
+                [
+                    66, 
+                    85
+                ], 
+                [
+                    105, 
+                    124
+                ]
+            ], 
+            "ref": "handicapped person:6-103-e"
+        }, 
+        {
+            "offsets": [
+                [
+                    195, 
+                    224
+                ]
+            ], 
+            "ref": "qualified handicapped person:6-103-f"
+        }
+    ], 
+    "6-130-b-1-v": [
+        {
+            "offsets": [
+                [
+                    47, 
+                    75
+                ]
+            ], 
+            "ref": "qualified handicapped person:6-103-f"
+        }
+    ], 
+    "6-130-b-1-vi": [
+        {
+            "offsets": [
+                [
+                    12, 
+                    40
+                ]
+            ], 
+            "ref": "qualified handicapped person:6-103-f"
+        }
+    ], 
+    "6-130-b-1-vii": [
+        {
+            "offsets": [
+                [
+                    24, 
+                    52
+                ]
+            ], 
+            "ref": "qualified handicapped person:6-103-f"
+        }
+    ], 
+    "6-130-b-2": [
+        {
+            "offsets": [
+                [
+                    8, 
+                    18
+                ]
+            ], 
+            "ref": "commission:6-103-b"
+        }, 
+        {
+            "offsets": [
+                [
+                    34, 
+                    62
+                ]
+            ], 
+            "ref": "qualified handicapped person:6-103-f"
+        }
+    ], 
+    "6-130-b-3": [
+        {
+            "offsets": [
+                [
+                    8, 
+                    18
+                ]
+            ], 
+            "ref": "commission:6-103-b"
+        }
+    ], 
+    "6-130-b-3-i": [
+        {
+            "offsets": [
+                [
+                    12, 
+                    41
+                ]
+            ], 
+            "ref": "qualified handicapped person:6-103-f"
+        }
+    ], 
+    "6-130-b-3-ii": [
+        {
+            "offsets": [
+                [
+                    110, 
+                    129
+                ]
+            ], 
+            "ref": "handicapped person:6-103-e"
+        }
+    ], 
+    "6-130-b-4": [
+        {
+            "offsets": [
+                [
+                    8, 
+                    18
+                ]
+            ], 
+            "ref": "commission:6-103-b"
+        }, 
+        {
+            "offsets": [
+                [
+                    69, 
+                    77
+                ]
+            ], 
+            "ref": "facility:6-103-d"
+        }
+    ], 
+    "6-130-b-4-i": [
+        {
+            "offsets": [
+                [
+                    156, 
+                    166
+                ]
+            ], 
+            "ref": "commission:6-103-b"
+        }, 
+        {
+            "offsets": [
+                [
+                    12, 
+                    31
+                ]
+            ], 
+            "ref": "handicapped person:6-103-e"
+        }
+    ], 
+    "6-130-b-4-ii": [
+        {
+            "offsets": [
+                [
+                    114, 
+                    133
+                ]
+            ], 
+            "ref": "handicapped person:6-103-e"
+        }
+    ], 
+    "6-130-b-5": [
+        {
+            "offsets": [
+                [
+                    8, 
+                    18
+                ]
+            ], 
+            "ref": "commission:6-103-b"
+        }, 
+        {
+            "offsets": [
+                [
+                    99, 
+                    128
+                ]
+            ], 
+            "ref": "qualified handicapped person:6-103-f"
+        }
+    ], 
+    "6-130-b-6": [
+        {
+            "offsets": [
+                [
+                    8, 
+                    18
+                ], 
+                [
+                    174, 
+                    184
+                ], 
+                [
+                    422, 
+                    432
+                ]
+            ], 
+            "ref": "commission:6-103-b"
+        }, 
+        {
+            "offsets": [
+                [
+                    88, 
+                    117
+                ], 
+                [
+                    274, 
+                    303
+                ]
+            ], 
+            "ref": "qualified handicapped person:6-103-f"
+        }
+    ], 
+    "6-130-c": [
+        {
+            "offsets": [
+                [
+                    124, 
+                    143
+                ], 
+                [
+                    184, 
+                    203
+                ], 
+                [
+                    289, 
+                    308
+                ]
+            ], 
+            "ref": "handicapped person:6-103-e"
+        }
+    ], 
+    "6-130-d": [
+        {
+            "offsets": [
+                [
+                    8, 
+                    18
+                ]
+            ], 
+            "ref": "commission:6-103-b"
+        }, 
+        {
+            "offsets": [
+                [
+                    118, 
+                    147
+                ]
+            ], 
+            "ref": "qualified handicapped person:6-103-f"
+        }
+    ], 
+    "6-140": [
+        {
+            "offsets": [
+                [
+                    157, 
+                    167
+                ]
+            ], 
+            "ref": "commission:6-103-b"
+        }, 
+        {
+            "offsets": [
+                [
+                    3, 
+                    31
+                ]
+            ], 
+            "ref": "qualified handicapped person:6-103-f"
+        }
+    ], 
+    "6-149": [
+        {
+            "offsets": [
+                [
+                    254, 
+                    264
+                ]
+            ], 
+            "ref": "commission:6-103-b"
+        }, 
+        {
+            "offsets": [
+                [
+                    277, 
+                    287
+                ]
+            ], 
+            "ref": "facility:6-103-d"
+        }, 
+        {
+            "offsets": [
+                [
+                    323, 
+                    342
+                ]
+            ], 
+            "ref": "handicapped person:6-103-e"
+        }, 
+        {
+            "offsets": [
+                [
+                    66, 
+                    94
+                ]
+            ], 
+            "ref": "qualified handicapped person:6-103-f"
+        }
+    ], 
+    "6-150-a": [
+        {
+            "offsets": [
+                [
+                    17, 
+                    27
+                ]
+            ], 
+            "ref": "commission:6-103-b"
+        }, 
+        {
+            "offsets": [
+                [
+                    167, 
+                    186
+                ]
+            ], 
+            "ref": "handicapped person:6-103-e"
+        }
+    ], 
+    "6-150-a-1": [
+        {
+            "offsets": [
+                [
+                    28, 
+                    38
+                ]
+            ], 
+            "ref": "commission:6-103-b"
+        }, 
+        {
+            "offsets": [
+                [
+                    68, 
+                    78
+                ]
+            ], 
+            "ref": "facility:6-103-d"
+        }, 
+        {
+            "offsets": [
+                [
+                    107, 
+                    126
+                ]
+            ], 
+            "ref": "handicapped person:6-103-e"
+        }
+    ], 
+    "6-150-a-2": [
+        {
+            "offsets": [
+                [
+                    16, 
+                    26
+                ], 
+                [
+                    204, 
+                    214
+                ], 
+                [
+                    415, 
+                    425
+                ], 
+                [
+                    711, 
+                    721
+                ]
+            ], 
+            "ref": "commission:6-103-b"
+        }, 
+        {
+            "offsets": [
+                [
+                    845, 
+                    864
+                ]
+            ], 
+            "ref": "handicapped person:6-103-e"
+        }
+    ], 
+    "6-150-b": [
+        {
+            "offsets": [
+                [
+                    17, 
+                    27
+                ], 
+                [
+                    509, 
+                    519
+                ], 
+                [
+                    667, 
+                    677
+                ], 
+                [
+                    984, 
+                    994
+                ]
+            ], 
+            "ref": "commission:6-103-b"
+        }, 
+        {
+            "offsets": [
+                [
+                    298, 
+                    308
+                ], 
+                [
+                    333, 
+                    343
+                ], 
+                [
+                    575, 
+                    585
+                ]
+            ], 
+            "ref": "facility:6-103-d"
+        }, 
+        {
+            "offsets": [
+                [
+                    484, 
+                    503
+                ]
+            ], 
+            "ref": "handicapped person:6-103-e"
+        }, 
+        {
+            "offsets": [
+                [
+                    1069, 
+                    1098
+                ]
+            ], 
+            "ref": "qualified handicapped person:6-103-f"
+        }
+    ], 
+    "6-150-c": [
+        {
+            "offsets": [
+                [
+                    36, 
+                    46
+                ]
+            ], 
+            "ref": "commission:6-103-b"
+        }, 
+        {
+            "offsets": [
+                [
+                    204, 
+                    214
+                ]
+            ], 
+            "ref": "facility:6-103-d"
+        }
+    ], 
+    "6-150-d": [
+        {
+            "offsets": [
+                [
+                    129, 
+                    139
+                ]
+            ], 
+            "ref": "commission:6-103-b"
+        }, 
+        {
+            "offsets": [
+                [
+                    61, 
+                    71
+                ]
+            ], 
+            "ref": "facility:6-103-d"
+        }, 
+        {
+            "offsets": [
+                [
+                    366, 
+                    385
+                ], 
+                [
+                    417, 
+                    436
+                ]
+            ], 
+            "ref": "handicapped person:6-103-e"
+        }
+    ], 
+    "6-150-d-1": [
+        {
+            "offsets": [
+                [
+                    39, 
+                    49
+                ]
+            ], 
+            "ref": "commission:6-103-b"
+        }, 
+        {
+            "offsets": [
+                [
+                    52, 
+                    62
+                ]
+            ], 
+            "ref": "facility:6-103-d"
+        }, 
+        {
+            "offsets": [
+                [
+                    125, 
+                    144
+                ]
+            ], 
+            "ref": "handicapped person:6-103-e"
+        }
+    ], 
+    "6-150-d-2": [
+        {
+            "offsets": [
+                [
+                    65, 
+                    75
+                ]
+            ], 
+            "ref": "facility:6-103-d"
+        }
+    ], 
+    "6-151": [
+        {
+            "offsets": [
+                [
+                    106, 
+                    116
+                ]
+            ], 
+            "ref": "commission:6-103-b"
+        }, 
+        {
+            "offsets": [
+                [
+                    208, 
+                    227
+                ]
+            ], 
+            "ref": "handicapped person:6-103-e"
+        }
+    ], 
+    "6-160-a": [
+        {
+            "offsets": [
+                [
+                    8, 
+                    18
+                ]
+            ], 
+            "ref": "commission:6-103-b"
+        }
+    ], 
+    "6-160-a-1": [
+        {
+            "offsets": [
+                [
+                    44, 
+                    58
+                ]
+            ], 
+            "ref": "auxiliary aids:6-103-a"
+        }, 
+        {
+            "offsets": [
+                [
+                    8, 
+                    18
+                ], 
+                [
+                    212, 
+                    222
+                ]
+            ], 
+            "ref": "commission:6-103-b"
+        }, 
+        {
+            "offsets": [
+                [
+                    87, 
+                    105
+                ]
+            ], 
+            "ref": "handicapped person:6-103-e"
+        }
+    ], 
+    "6-160-a-1-i": [
+        {
+            "offsets": [
+                [
+                    34, 
+                    47
+                ]
+            ], 
+            "ref": "auxiliary aids:6-103-a"
+        }, 
+        {
+            "offsets": [
+                [
+                    66, 
+                    76
+                ]
+            ], 
+            "ref": "commission:6-103-b"
+        }, 
+        {
+            "offsets": [
+                [
+                    132, 
+                    150
+                ]
+            ], 
+            "ref": "handicapped person:6-103-e"
+        }
+    ], 
+    "6-160-a-1-ii": [
+        {
+            "offsets": [
+                [
+                    9, 
+                    19
+                ]
+            ], 
+            "ref": "commission:6-103-b"
+        }
+    ], 
+    "6-160-a-2": [
+        {
+            "offsets": [
+                [
+                    14, 
+                    24
+                ]
+            ], 
+            "ref": "commission:6-103-b"
+        }
+    ], 
+    "6-160-b": [
+        {
+            "offsets": [
+                [
+                    8, 
+                    18
+                ]
+            ], 
+            "ref": "commission:6-103-b"
+        }, 
+        {
+            "offsets": [
+                [
+                    203, 
+                    213
+                ]
+            ], 
+            "ref": "facility:6-103-d"
+        }
+    ], 
+    "6-160-c": [
+        {
+            "offsets": [
+                [
+                    8, 
+                    18
+                ]
+            ], 
+            "ref": "commission:6-103-b"
+        }, 
+        {
+            "offsets": [
+                [
+                    90, 
+                    100
+                ], 
+                [
+                    186, 
+                    196
+                ]
+            ], 
+            "ref": "facility:6-103-d"
+        }, 
+        {
+            "offsets": [
+                [
+                    297, 
+                    305
+                ]
+            ], 
+            "ref": "facility:6-103-d"
+        }
+    ], 
+    "6-160-d": [
+        {
+            "offsets": [
+                [
+                    8, 
+                    18
+                ], 
+                [
+                    140, 
+                    150
+                ]
+            ], 
+            "ref": "commission:6-103-b"
+        }, 
+        {
+            "offsets": [
+                [
+                    58, 
+                    77
+                ]
+            ], 
+            "ref": "handicapped person:6-103-e"
+        }
+    ], 
+    "6-160-e": [
+        {
+            "offsets": [
+                [
+                    38, 
+                    48
+                ], 
+                [
+                    226, 
+                    236
+                ], 
+                [
+                    434, 
+                    444
+                ], 
+                [
+                    767, 
+                    777
+                ]
+            ], 
+            "ref": "commission:6-103-b"
+        }, 
+        {
+            "offsets": [
+                [
+                    934, 
+                    953
+                ]
+            ], 
+            "ref": "handicapped person:6-103-e"
+        }
+    ], 
+    "6-170-a": [
+        {
+            "offsets": [
+                [
+                    183, 
+                    193
+                ]
+            ], 
+            "ref": "commission:6-103-b"
+        }
+    ], 
+    "6-170-b": [
+        {
+            "offsets": [
+                [
+                    8, 
+                    18
+                ]
+            ], 
+            "ref": "commission:6-103-b"
+        }
+    ], 
+    "6-170-d-2": [
+        {
+            "offsets": [
+                [
+                    100, 
+                    110
+                ]
+            ], 
+            "ref": "commission:6-103-b"
+        }, 
+        {
+            "offsets": [
+                [
+                    8, 
+                    27
+                ]
+            ], 
+            "ref": "complete complaint:6-103-c"
+        }
+    ], 
+    "6-170-e": [
+        {
+            "offsets": [
+                [
+                    8, 
+                    18
+                ]
+            ], 
+            "ref": "commission:6-103-b"
+        }, 
+        {
+            "offsets": [
+                [
+                    152, 
+                    160
+                ]
+            ], 
+            "ref": "facility:6-103-d"
+        }, 
+        {
+            "offsets": [
+                [
+                    373, 
+                    392
+                ]
+            ], 
+            "ref": "handicapped person:6-103-e"
+        }
+    ], 
+    "6-170-f-1": [
+        {
+            "offsets": [
+                [
+                    8, 
+                    18
+                ]
+            ], 
+            "ref": "commission:6-103-b"
+        }, 
+        {
+            "offsets": [
+                [
+                    49, 
+                    67
+                ]
+            ], 
+            "ref": "complete complaint:6-103-c"
+        }
+    ], 
+    "6-170-f-3": [
+        {
+            "offsets": [
+                [
+                    74, 
+                    84
+                ], 
+                [
+                    117, 
+                    127
+                ]
+            ], 
+            "ref": "commission:6-103-b"
+        }
+    ], 
+    "6-170-g": [
+        {
+            "offsets": [
+                [
+                    90, 
+                    100
+                ]
+            ], 
+            "ref": "commission:6-103-b"
+        }, 
+        {
+            "offsets": [
+                [
+                    36, 
+                    54
+                ]
+            ], 
+            "ref": "complete complaint:6-103-c"
+        }
+    ], 
+    "6-170-h": [
+        {
+            "offsets": [
+                [
+                    139, 
+                    149
+                ], 
+                [
+                    192, 
+                    202
+                ]
+            ], 
+            "ref": "commission:6-103-b"
+        }
+    ], 
+    "6-170-i": [
+        {
+            "offsets": [
+                [
+                    26, 
+                    36
+                ], 
+                [
+                    108, 
+                    118
+                ]
+            ], 
+            "ref": "commission:6-103-b"
+        }
+    ], 
+    "6-170-j": [
+        {
+            "offsets": [
+                [
+                    8, 
+                    18
+                ], 
+                [
+                    129, 
+                    139
+                ]
+            ], 
+            "ref": "commission:6-103-b"
+        }
+    ], 
+    "6-170-k": [
+        {
+            "offsets": [
+                [
+                    8, 
+                    18
+                ]
+            ], 
+            "ref": "commission:6-103-b"
+        }
+    ], 
+    "6-170-l": [
+        {
+            "offsets": [
+                [
+                    8, 
+                    18
+                ]
+            ], 
+            "ref": "commission:6-103-b"
+        }
+    ], 
+    "referenced": {
+        "auxiliary aids:6-103-a": {
+            "position": [
+                4, 
+                18
+            ], 
+            "reference": "6-103-a", 
+            "term": "auxiliary aids"
+        }, 
+        "commission:6-103-b": {
+            "position": [
+                4, 
+                14
+            ], 
+            "reference": "6-103-b", 
+            "term": "commission"
+        }, 
+        "complete complaint:6-103-c": {
+            "position": [
+                4, 
+                22
+            ], 
+            "reference": "6-103-c", 
+            "term": "complete complaint"
+        }, 
+        "facility:6-103-d": {
+            "position": [
+                4, 
+                12
+            ], 
+            "reference": "6-103-d", 
+            "term": "facility"
+        }, 
+        "handicapped person:6-103-e": {
+            "position": [
+                4, 
+                22
+            ], 
+            "reference": "6-103-e", 
+            "term": "handicapped person"
+        }, 
+        "has a record of such an impairment:6-103-e-3": {
+            "position": [
+                4, 
+                38
+            ], 
+            "reference": "6-103-e-3", 
+            "term": "has a record of such an impairment"
+        }, 
+        "is regarded as having an impairment:6-103-e-4": {
+            "position": [
+                4, 
+                39
+            ], 
+            "reference": "6-103-e-4", 
+            "term": "is regarded as having an impairment"
+        }, 
+        "qualified handicapped person:6-103-f": {
+            "position": [
+                4, 
+                32
+            ], 
+            "reference": "6-103-f", 
+            "term": "qualified handicapped person"
+        }
+    }
+}

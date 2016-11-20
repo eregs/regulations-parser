@@ -1,0 +1,1229 @@
+{
+    "9420-1": [
+        {
+            "offsets": [
+                [
+                    82, 
+                    92
+                ], 
+                [
+                    188, 
+                    198
+                ]
+            ], 
+            "ref": "commission:9420-2-p4047032031"
+        }
+    ], 
+    "9420-2-p3285008261-1": [
+        {
+            "offsets": [
+                [
+                    24, 
+                    34
+                ]
+            ], 
+            "ref": "commission:9420-2-p4047032031"
+        }, 
+        {
+            "offsets": [
+                [
+                    151, 
+                    169
+                ]
+            ], 
+            "ref": "handicapped person:9420-2-p3384358598"
+        }
+    ], 
+    "9420-2-p3285008261-2": [
+        {
+            "offsets": [
+                [
+                    53, 
+                    71
+                ]
+            ], 
+            "ref": "handicapped person:9420-2-p3384358598"
+        }
+    ], 
+    "9420-2-p3349285319": [
+        {
+            "offsets": [
+                [
+                    286, 
+                    296
+                ]
+            ], 
+            "ref": "commission:9420-2-p4047032031"
+        }, 
+        {
+            "offsets": [
+                [
+                    84, 
+                    103
+                ]
+            ], 
+            "ref": "handicapped person:9420-2-p3384358598"
+        }
+    ], 
+    "9420-2-p3384358598": [
+        {
+            "offsets": [
+                [
+                    46, 
+                    75
+                ]
+            ], 
+            "ref": "physical or mental impairment:9420-2-p3384358598-1-ii"
+        }
+    ], 
+    "9420-2-p3384358598-1": [
+        {
+            "offsets": [
+                [
+                    4, 
+                    33
+                ]
+            ], 
+            "ref": "physical or mental impairment:9420-2-p3384358598-1-ii"
+        }
+    ], 
+    "9420-2-p3384358598-4-i": [
+        {
+            "offsets": [
+                [
+                    119, 
+                    129
+                ]
+            ], 
+            "ref": "commission:9420-2-p4047032031"
+        }, 
+        {
+            "offsets": [
+                [
+                    10, 
+                    39
+                ]
+            ], 
+            "ref": "physical or mental impairment:9420-2-p3384358598-1-ii"
+        }
+    ], 
+    "9420-2-p3384358598-4-ii": [
+        {
+            "offsets": [
+                [
+                    11, 
+                    40
+                ]
+            ], 
+            "ref": "physical or mental impairment:9420-2-p3384358598-1-ii"
+        }
+    ], 
+    "9420-2-p3384358598-4-iii": [
+        {
+            "offsets": [
+                [
+                    101, 
+                    111
+                ]
+            ], 
+            "ref": "commission:9420-2-p4047032031"
+        }
+    ], 
+    "9420-2-p4049386677": [
+        {
+            "offsets": [
+                [
+                    398, 
+                    408
+                ]
+            ], 
+            "ref": "commission:9420-2-p4047032031"
+        }
+    ], 
+    "9420-2-p4203750693": [
+        {
+            "offsets": [
+                [
+                    227, 
+                    237
+                ]
+            ], 
+            "ref": "commission:9420-2-p4047032031"
+        }
+    ], 
+    "9420-2-p510151567": [
+        {
+            "offsets": [
+                [
+                    162, 
+                    172
+                ], 
+                [
+                    218, 
+                    228
+                ]
+            ], 
+            "ref": "commission:9420-2-p4047032031"
+        }
+    ], 
+    "9420-3-a": [
+        {
+            "offsets": [
+                [
+                    222, 
+                    232
+                ]
+            ], 
+            "ref": "commission:9420-2-p4047032031"
+        }, 
+        {
+            "offsets": [
+                [
+                    7, 
+                    35
+                ]
+            ], 
+            "ref": "qualified handicapped person:9420-2-p3285008261"
+        }
+    ], 
+    "9420-3-b-1": [
+        {
+            "offsets": [
+                [
+                    8, 
+                    18
+                ]
+            ], 
+            "ref": "commission:9420-2-p4047032031"
+        }
+    ], 
+    "9420-3-b-1-i": [
+        {
+            "offsets": [
+                [
+                    11, 
+                    39
+                ]
+            ], 
+            "ref": "qualified handicapped person:9420-2-p3285008261"
+        }
+    ], 
+    "9420-3-b-1-ii": [
+        {
+            "offsets": [
+                [
+                    14, 
+                    42
+                ]
+            ], 
+            "ref": "qualified handicapped person:9420-2-p3285008261"
+        }
+    ], 
+    "9420-3-b-1-iii": [
+        {
+            "offsets": [
+                [
+                    16, 
+                    44
+                ]
+            ], 
+            "ref": "qualified handicapped person:9420-2-p3285008261"
+        }
+    ], 
+    "9420-3-b-1-iv": [
+        {
+            "offsets": [
+                [
+                    66, 
+                    85
+                ], 
+                [
+                    105, 
+                    124
+                ]
+            ], 
+            "ref": "handicapped person:9420-2-p3384358598"
+        }, 
+        {
+            "offsets": [
+                [
+                    195, 
+                    224
+                ]
+            ], 
+            "ref": "qualified handicapped person:9420-2-p3285008261"
+        }
+    ], 
+    "9420-3-b-1-v": [
+        {
+            "offsets": [
+                [
+                    11, 
+                    39
+                ]
+            ], 
+            "ref": "qualified handicapped person:9420-2-p3285008261"
+        }
+    ], 
+    "9420-3-b-1-vi": [
+        {
+            "offsets": [
+                [
+                    23, 
+                    51
+                ]
+            ], 
+            "ref": "qualified handicapped person:9420-2-p3285008261"
+        }
+    ], 
+    "9420-3-b-2": [
+        {
+            "offsets": [
+                [
+                    8, 
+                    18
+                ]
+            ], 
+            "ref": "commission:9420-2-p4047032031"
+        }, 
+        {
+            "offsets": [
+                [
+                    34, 
+                    62
+                ]
+            ], 
+            "ref": "qualified handicapped person:9420-2-p3285008261"
+        }
+    ], 
+    "9420-3-b-3": [
+        {
+            "offsets": [
+                [
+                    8, 
+                    18
+                ]
+            ], 
+            "ref": "commission:9420-2-p4047032031"
+        }
+    ], 
+    "9420-3-b-3-i": [
+        {
+            "offsets": [
+                [
+                    12, 
+                    41
+                ]
+            ], 
+            "ref": "qualified handicapped person:9420-2-p3285008261"
+        }
+    ], 
+    "9420-3-b-3-ii": [
+        {
+            "offsets": [
+                [
+                    110, 
+                    129
+                ]
+            ], 
+            "ref": "handicapped person:9420-2-p3384358598"
+        }
+    ], 
+    "9420-3-b-4": [
+        {
+            "offsets": [
+                [
+                    8, 
+                    18
+                ]
+            ], 
+            "ref": "commission:9420-2-p4047032031"
+        }, 
+        {
+            "offsets": [
+                [
+                    69, 
+                    77
+                ]
+            ], 
+            "ref": "facility:9420-2-p4203750693"
+        }
+    ], 
+    "9420-3-b-4-i": [
+        {
+            "offsets": [
+                [
+                    156, 
+                    166
+                ]
+            ], 
+            "ref": "commission:9420-2-p4047032031"
+        }, 
+        {
+            "offsets": [
+                [
+                    12, 
+                    31
+                ]
+            ], 
+            "ref": "handicapped person:9420-2-p3384358598"
+        }
+    ], 
+    "9420-3-b-4-ii": [
+        {
+            "offsets": [
+                [
+                    110, 
+                    129
+                ]
+            ], 
+            "ref": "handicapped person:9420-2-p3384358598"
+        }
+    ], 
+    "9420-3-b-5": [
+        {
+            "offsets": [
+                [
+                    8, 
+                    18
+                ]
+            ], 
+            "ref": "commission:9420-2-p4047032031"
+        }, 
+        {
+            "offsets": [
+                [
+                    95, 
+                    124
+                ]
+            ], 
+            "ref": "qualified handicapped person:9420-2-p3285008261"
+        }
+    ], 
+    "9420-3-b-6": [
+        {
+            "offsets": [
+                [
+                    8, 
+                    18
+                ], 
+                [
+                    174, 
+                    184
+                ], 
+                [
+                    413, 
+                    423
+                ]
+            ], 
+            "ref": "commission:9420-2-p4047032031"
+        }, 
+        {
+            "offsets": [
+                [
+                    88, 
+                    117
+                ], 
+                [
+                    274, 
+                    303
+                ]
+            ], 
+            "ref": "qualified handicapped person:9420-2-p3285008261"
+        }
+    ], 
+    "9420-3-c": [
+        {
+            "offsets": [
+                [
+                    25, 
+                    44
+                ], 
+                [
+                    125, 
+                    144
+                ], 
+                [
+                    185, 
+                    204
+                ], 
+                [
+                    290, 
+                    309
+                ]
+            ], 
+            "ref": "handicapped person:9420-2-p3384358598"
+        }
+    ], 
+    "9420-3-d": [
+        {
+            "offsets": [
+                [
+                    8, 
+                    18
+                ]
+            ], 
+            "ref": "commission:9420-2-p4047032031"
+        }, 
+        {
+            "offsets": [
+                [
+                    118, 
+                    147
+                ]
+            ], 
+            "ref": "qualified handicapped person:9420-2-p3285008261"
+        }
+    ], 
+    "9420-4": [
+        {
+            "offsets": [
+                [
+                    256, 
+                    266
+                ]
+            ], 
+            "ref": "commission:9420-2-p4047032031"
+        }, 
+        {
+            "offsets": [
+                [
+                    279, 
+                    289
+                ]
+            ], 
+            "ref": "facility:9420-2-p4203750693"
+        }, 
+        {
+            "offsets": [
+                [
+                    325, 
+                    344
+                ]
+            ], 
+            "ref": "handicapped person:9420-2-p3384358598"
+        }, 
+        {
+            "offsets": [
+                [
+                    68, 
+                    96
+                ]
+            ], 
+            "ref": "qualified handicapped person:9420-2-p3285008261"
+        }
+    ], 
+    "9420-5-a": [
+        {
+            "offsets": [
+                [
+                    17, 
+                    27
+                ]
+            ], 
+            "ref": "commission:9420-2-p4047032031"
+        }, 
+        {
+            "offsets": [
+                [
+                    167, 
+                    186
+                ]
+            ], 
+            "ref": "handicapped person:9420-2-p3384358598"
+        }
+    ], 
+    "9420-5-a-1": [
+        {
+            "offsets": [
+                [
+                    28, 
+                    38
+                ]
+            ], 
+            "ref": "commission:9420-2-p4047032031"
+        }, 
+        {
+            "offsets": [
+                [
+                    68, 
+                    78
+                ]
+            ], 
+            "ref": "facility:9420-2-p4203750693"
+        }, 
+        {
+            "offsets": [
+                [
+                    107, 
+                    126
+                ]
+            ], 
+            "ref": "handicapped person:9420-2-p3384358598"
+        }
+    ], 
+    "9420-5-a-2": [
+        {
+            "offsets": [
+                [
+                    16, 
+                    26
+                ], 
+                [
+                    204, 
+                    214
+                ], 
+                [
+                    416, 
+                    426
+                ], 
+                [
+                    712, 
+                    722
+                ]
+            ], 
+            "ref": "commission:9420-2-p4047032031"
+        }, 
+        {
+            "offsets": [
+                [
+                    846, 
+                    864
+                ]
+            ], 
+            "ref": "handicapped person:9420-2-p3384358598"
+        }
+    ], 
+    "9420-5-b": [
+        {
+            "offsets": [
+                [
+                    17, 
+                    27
+                ], 
+                [
+                    509, 
+                    519
+                ], 
+                [
+                    667, 
+                    677
+                ], 
+                [
+                    983, 
+                    993
+                ]
+            ], 
+            "ref": "commission:9420-2-p4047032031"
+        }, 
+        {
+            "offsets": [
+                [
+                    298, 
+                    308
+                ], 
+                [
+                    333, 
+                    343
+                ], 
+                [
+                    575, 
+                    585
+                ]
+            ], 
+            "ref": "facility:9420-2-p4203750693"
+        }, 
+        {
+            "offsets": [
+                [
+                    484, 
+                    503
+                ]
+            ], 
+            "ref": "handicapped person:9420-2-p3384358598"
+        }, 
+        {
+            "offsets": [
+                [
+                    1068, 
+                    1097
+                ]
+            ], 
+            "ref": "qualified handicapped person:9420-2-p3285008261"
+        }
+    ], 
+    "9420-5-c": [
+        {
+            "offsets": [
+                [
+                    36, 
+                    46
+                ]
+            ], 
+            "ref": "commission:9420-2-p4047032031"
+        }, 
+        {
+            "offsets": [
+                [
+                    205, 
+                    215
+                ]
+            ], 
+            "ref": "facility:9420-2-p4203750693"
+        }
+    ], 
+    "9420-5-d": [
+        {
+            "offsets": [
+                [
+                    129, 
+                    139
+                ]
+            ], 
+            "ref": "commission:9420-2-p4047032031"
+        }, 
+        {
+            "offsets": [
+                [
+                    61, 
+                    71
+                ]
+            ], 
+            "ref": "facility:9420-2-p4203750693"
+        }, 
+        {
+            "offsets": [
+                [
+                    366, 
+                    385
+                ], 
+                [
+                    417, 
+                    436
+                ]
+            ], 
+            "ref": "handicapped person:9420-2-p3384358598"
+        }
+    ], 
+    "9420-5-d-1": [
+        {
+            "offsets": [
+                [
+                    39, 
+                    49
+                ]
+            ], 
+            "ref": "commission:9420-2-p4047032031"
+        }, 
+        {
+            "offsets": [
+                [
+                    52, 
+                    62
+                ]
+            ], 
+            "ref": "facility:9420-2-p4203750693"
+        }, 
+        {
+            "offsets": [
+                [
+                    125, 
+                    144
+                ]
+            ], 
+            "ref": "handicapped person:9420-2-p3384358598"
+        }
+    ], 
+    "9420-5-d-2": [
+        {
+            "offsets": [
+                [
+                    65, 
+                    75
+                ]
+            ], 
+            "ref": "facility:9420-2-p4203750693"
+        }
+    ], 
+    "9420-6": [
+        {
+            "offsets": [
+                [
+                    107, 
+                    117
+                ]
+            ], 
+            "ref": "commission:9420-2-p4047032031"
+        }, 
+        {
+            "offsets": [
+                [
+                    209, 
+                    228
+                ]
+            ], 
+            "ref": "handicapped person:9420-2-p3384358598"
+        }
+    ], 
+    "9420-7-a": [
+        {
+            "offsets": [
+                [
+                    8, 
+                    18
+                ]
+            ], 
+            "ref": "commission:9420-2-p4047032031"
+        }
+    ], 
+    "9420-7-a-1": [
+        {
+            "offsets": [
+                [
+                    8, 
+                    18
+                ], 
+                [
+                    211, 
+                    221
+                ]
+            ], 
+            "ref": "commission:9420-2-p4047032031"
+        }, 
+        {
+            "offsets": [
+                [
+                    86, 
+                    104
+                ]
+            ], 
+            "ref": "handicapped person:9420-2-p3384358598"
+        }
+    ], 
+    "9420-7-a-1-i": [
+        {
+            "offsets": [
+                [
+                    64, 
+                    74
+                ]
+            ], 
+            "ref": "commission:9420-2-p4047032031"
+        }, 
+        {
+            "offsets": [
+                [
+                    130, 
+                    148
+                ]
+            ], 
+            "ref": "handicapped person:9420-2-p3384358598"
+        }
+    ], 
+    "9420-7-a-1-ii": [
+        {
+            "offsets": [
+                [
+                    15, 
+                    25
+                ]
+            ], 
+            "ref": "commission:9420-2-p4047032031"
+        }
+    ], 
+    "9420-7-b": [
+        {
+            "offsets": [
+                [
+                    8, 
+                    18
+                ]
+            ], 
+            "ref": "commission:9420-2-p4047032031"
+        }, 
+        {
+            "offsets": [
+                [
+                    202, 
+                    212
+                ]
+            ], 
+            "ref": "facility:9420-2-p4203750693"
+        }
+    ], 
+    "9420-7-c": [
+        {
+            "offsets": [
+                [
+                    27, 
+                    37
+                ], 
+                [
+                    78, 
+                    88
+                ]
+            ], 
+            "ref": "commission:9420-2-p4047032031"
+        }, 
+        {
+            "offsets": [
+                [
+                    62, 
+                    72
+                ], 
+                [
+                    160, 
+                    170
+                ], 
+                [
+                    256, 
+                    266
+                ]
+            ], 
+            "ref": "facility:9420-2-p4203750693"
+        }, 
+        {
+            "offsets": [
+                [
+                    394, 
+                    402
+                ]
+            ], 
+            "ref": "facility:9420-2-p4203750693"
+        }
+    ], 
+    "9420-7-d": [
+        {
+            "offsets": [
+                [
+                    8, 
+                    18
+                ], 
+                [
+                    140, 
+                    150
+                ]
+            ], 
+            "ref": "commission:9420-2-p4047032031"
+        }, 
+        {
+            "offsets": [
+                [
+                    58, 
+                    77
+                ]
+            ], 
+            "ref": "handicapped person:9420-2-p3384358598"
+        }
+    ], 
+    "9420-7-e": [
+        {
+            "offsets": [
+                [
+                    38, 
+                    48
+                ], 
+                [
+                    226, 
+                    236
+                ], 
+                [
+                    434, 
+                    444
+                ], 
+                [
+                    767, 
+                    777
+                ]
+            ], 
+            "ref": "commission:9420-2-p4047032031"
+        }, 
+        {
+            "offsets": [
+                [
+                    934, 
+                    953
+                ]
+            ], 
+            "ref": "handicapped person:9420-2-p3384358598"
+        }
+    ], 
+    "9420-8-a": [
+        {
+            "offsets": [
+                [
+                    183, 
+                    193
+                ]
+            ], 
+            "ref": "commission:9420-2-p4047032031"
+        }
+    ], 
+    "9420-8-b": [
+        {
+            "offsets": [
+                [
+                    8, 
+                    18
+                ]
+            ], 
+            "ref": "commission:9420-2-p4047032031"
+        }
+    ], 
+    "9420-8-d-2": [
+        {
+            "offsets": [
+                [
+                    131, 
+                    141
+                ]
+            ], 
+            "ref": "commission:9420-2-p4047032031"
+        }, 
+        {
+            "offsets": [
+                [
+                    39, 
+                    58
+                ]
+            ], 
+            "ref": "complete complaint:9420-2-p510151567"
+        }
+    ], 
+    "9420-8-d-3": [
+        {
+            "offsets": [
+                [
+                    116, 
+                    126
+                ]
+            ], 
+            "ref": "commission:9420-2-p4047032031"
+        }
+    ], 
+    "9420-8-e": [
+        {
+            "offsets": [
+                [
+                    8, 
+                    18
+                ]
+            ], 
+            "ref": "commission:9420-2-p4047032031"
+        }, 
+        {
+            "offsets": [
+                [
+                    152, 
+                    160
+                ]
+            ], 
+            "ref": "facility:9420-2-p4203750693"
+        }, 
+        {
+            "offsets": [
+                [
+                    373, 
+                    392
+                ]
+            ], 
+            "ref": "handicapped person:9420-2-p3384358598"
+        }
+    ], 
+    "9420-8-f-1": [
+        {
+            "offsets": [
+                [
+                    8, 
+                    18
+                ]
+            ], 
+            "ref": "commission:9420-2-p4047032031"
+        }, 
+        {
+            "offsets": [
+                [
+                    49, 
+                    67
+                ]
+            ], 
+            "ref": "complete complaint:9420-2-p510151567"
+        }
+    ], 
+    "9420-8-f-3": [
+        {
+            "offsets": [
+                [
+                    74, 
+                    84
+                ], 
+                [
+                    117, 
+                    127
+                ]
+            ], 
+            "ref": "commission:9420-2-p4047032031"
+        }
+    ], 
+    "9420-8-g": [
+        {
+            "offsets": [
+                [
+                    90, 
+                    100
+                ]
+            ], 
+            "ref": "commission:9420-2-p4047032031"
+        }, 
+        {
+            "offsets": [
+                [
+                    36, 
+                    54
+                ]
+            ], 
+            "ref": "complete complaint:9420-2-p510151567"
+        }
+    ], 
+    "9420-8-h": [
+        {
+            "offsets": [
+                [
+                    139, 
+                    149
+                ], 
+                [
+                    191, 
+                    201
+                ]
+            ], 
+            "ref": "commission:9420-2-p4047032031"
+        }
+    ], 
+    "9420-8-i": [
+        {
+            "offsets": [
+                [
+                    26, 
+                    36
+                ], 
+                [
+                    116, 
+                    126
+                ]
+            ], 
+            "ref": "commission:9420-2-p4047032031"
+        }
+    ], 
+    "9420-8-j": [
+        {
+            "offsets": [
+                [
+                    8, 
+                    18
+                ], 
+                [
+                    129, 
+                    139
+                ]
+            ], 
+            "ref": "commission:9420-2-p4047032031"
+        }
+    ], 
+    "9420-8-k": [
+        {
+            "offsets": [
+                [
+                    8, 
+                    18
+                ]
+            ], 
+            "ref": "commission:9420-2-p4047032031"
+        }
+    ], 
+    "9420-8-l": [
+        {
+            "offsets": [
+                [
+                    8, 
+                    18
+                ]
+            ], 
+            "ref": "commission:9420-2-p4047032031"
+        }
+    ], 
+    "referenced": {
+        "auxillary aids:9420-2-p3349285319": {
+            "position": [
+                0, 
+                14
+            ], 
+            "reference": "9420-2-p3349285319", 
+            "term": "auxillary aids"
+        }, 
+        "commission:9420-2-p4047032031": {
+            "position": [
+                0, 
+                10
+            ], 
+            "reference": "9420-2-p4047032031", 
+            "term": "commission"
+        }, 
+        "complete complaint:9420-2-p510151567": {
+            "position": [
+                0, 
+                18
+            ], 
+            "reference": "9420-2-p510151567", 
+            "term": "complete complaint"
+        }, 
+        "facility:9420-2-p4203750693": {
+            "position": [
+                0, 
+                8
+            ], 
+            "reference": "9420-2-p4203750693", 
+            "term": "facility"
+        }, 
+        "handicapped person:9420-2-p3384358598": {
+            "position": [
+                0, 
+                18
+            ], 
+            "reference": "9420-2-p3384358598", 
+            "term": "handicapped person"
+        }, 
+        "has a record of such an impairment:9420-2-p3384358598-3": {
+            "position": [
+                4, 
+                38
+            ], 
+            "reference": "9420-2-p3384358598-3", 
+            "term": "has a record of such an impairment"
+        }, 
+        "is regarded as having an impairment:9420-2-p3384358598-4": {
+            "position": [
+                4, 
+                39
+            ], 
+            "reference": "9420-2-p3384358598-4", 
+            "term": "is regarded as having an impairment"
+        }, 
+        "physical or mental impairment:9420-2-p3384358598-1-ii": {
+            "position": [
+                170, 
+                199
+            ], 
+            "reference": "9420-2-p3384358598-1-ii", 
+            "term": "physical or mental impairment"
+        }, 
+        "qualified handicapped person:9420-2-p3285008261": {
+            "position": [
+                0, 
+                28
+            ], 
+            "reference": "9420-2-p3285008261", 
+            "term": "qualified handicapped person"
+        }
+    }
+}

@@ -1,0 +1,90 @@
+{
+    "2-2-a": [
+        {
+            "key_term": "Commission. Commission", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "2-2-b": [
+        {
+            "key_term": "Commissioner", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "2-2-c": [
+        {
+            "key_term": "Person. Person", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "2-2-d": [
+        {
+            "key_term": "Meeting.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "2-4-a": [
+        {
+            "key_term": "Meetings required by statute to be closed.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "2-4-b": [
+        {
+            "key_term": "Meetings closed by Commission determination.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "2-5-a": [
+        {
+            "key_term": "General.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "2-5-b": [
+        {
+            "key_term": "Certification.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "2-5-c": [
+        {
+            "key_term": "Voting procedures.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "2-5-d": [
+        {
+            "key_term": "Public statement of vote.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "2-5-e": [
+        {
+            "key_term": "Public request to close a meeting.", 
+            "locations": [
+                0
+            ]
+        }
+    ]
+}

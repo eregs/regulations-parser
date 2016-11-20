@@ -1,0 +1,104 @@
+{
+    "9007": [
+        {
+            "index": [
+                "9007", 
+                "1"
+            ], 
+            "title": "\u00a7 9007.1 Audits."
+        }, 
+        {
+            "index": [
+                "9007", 
+                "2"
+            ], 
+            "title": "\u00a7 9007.2 Repayments."
+        }, 
+        {
+            "index": [
+                "9007", 
+                "3"
+            ], 
+            "title": "\u00a7 9007.3 Extensions of time."
+        }, 
+        {
+            "index": [
+                "9007", 
+                "4"
+            ], 
+            "title": "\u00a7 9007.4 Additional audits."
+        }, 
+        {
+            "index": [
+                "9007", 
+                "5"
+            ], 
+            "title": "\u00a7 9007.5 Petitions for rehearing; stays of repayment determinations."
+        }, 
+        {
+            "index": [
+                "9007", 
+                "6"
+            ], 
+            "title": "\u00a7 9007.6 Stale-dated committee checks."
+        }, 
+        {
+            "index": [
+                "9007", 
+                "7"
+            ], 
+            "title": "\u00a7 9007.7 Administrative record."
+        }
+    ], 
+    "9007-Subpart": [
+        {
+            "index": [
+                "9007", 
+                "1"
+            ], 
+            "title": "\u00a7 9007.1 Audits."
+        }, 
+        {
+            "index": [
+                "9007", 
+                "2"
+            ], 
+            "title": "\u00a7 9007.2 Repayments."
+        }, 
+        {
+            "index": [
+                "9007", 
+                "3"
+            ], 
+            "title": "\u00a7 9007.3 Extensions of time."
+        }, 
+        {
+            "index": [
+                "9007", 
+                "4"
+            ], 
+            "title": "\u00a7 9007.4 Additional audits."
+        }, 
+        {
+            "index": [
+                "9007", 
+                "5"
+            ], 
+            "title": "\u00a7 9007.5 Petitions for rehearing; stays of repayment determinations."
+        }, 
+        {
+            "index": [
+                "9007", 
+                "6"
+            ], 
+            "title": "\u00a7 9007.6 Stale-dated committee checks."
+        }, 
+        {
+            "index": [
+                "9007", 
+                "7"
+            ], 
+            "title": "\u00a7 9007.7 Administrative record."
+        }
+    ]
+}

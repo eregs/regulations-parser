@@ -1,0 +1,2880 @@
+{
+    "264-1033-d-4-iii": [
+        {
+            "locations": [
+                0
+            ], 
+            "subscript_data": {
+                "subscript": "max"
+            }, 
+            "text": "_{max}"
+        }
+    ], 
+    "264-1033-d-5": [
+        {
+            "locations": [
+                0
+            ], 
+            "subscript_data": {
+                "subscript": "max"
+            }, 
+            "text": "_{max}"
+        }
+    ], 
+    "264-1033-e-2-p1-p2": [
+        {
+            "locations": [
+                0
+            ], 
+            "subscript_data": {
+                "subscript": "T"
+            }, 
+            "text": "_{T}"
+        }
+    ], 
+    "264-1033-e-2-p1-p3": [
+        {
+            "locations": [
+                0
+            ], 
+            "superscript_data": {
+                "superscript": "\u22127"
+            }, 
+            "text": "^{\u22127}"
+        }
+    ], 
+    "264-1033-e-2-p1-p4": [
+        {
+            "locations": [
+                0
+            ], 
+            "subscript_data": {
+                "subscript": "i"
+            }, 
+            "text": "_{i}"
+        }
+    ], 
+    "264-1033-e-2-p1-p5": [
+        {
+            "locations": [
+                0
+            ], 
+            "subscript_data": {
+                "subscript": "i"
+            }, 
+            "text": "_{i}"
+        }
+    ], 
+    "264-1033-e-4": [
+        {
+            "locations": [
+                0
+            ], 
+            "subscript_data": {
+                "subscript": "max"
+            }, 
+            "text": "_{max}"
+        }
+    ], 
+    "264-1033-e-4-p1": [
+        {
+            "locations": [
+                0
+            ], 
+            "subscript_data": {
+                "subscript": "10"
+            }, 
+            "text": "_{10}"
+        }, 
+        {
+            "locations": [
+                0
+            ], 
+            "subscript_data": {
+                "subscript": "max"
+            }, 
+            "text": "_{max}"
+        }, 
+        {
+            "locations": [
+                0
+            ], 
+            "subscript_data": {
+                "subscript": "T"
+            }, 
+            "text": "_{T}"
+        }
+    ], 
+    "264-1033-e-4-p2-p4": [
+        {
+            "locations": [
+                0
+            ], 
+            "subscript_data": {
+                "subscript": "T"
+            }, 
+            "text": "_{T}"
+        }
+    ], 
+    "264-1033-e-5": [
+        {
+            "locations": [
+                0
+            ], 
+            "subscript_data": {
+                "subscript": "max"
+            }, 
+            "text": "_{max}"
+        }
+    ], 
+    "264-1033-e-5-p1": [
+        {
+            "locations": [
+                0
+            ], 
+            "subscript_data": {
+                "subscript": "max"
+            }, 
+            "text": "_{max}"
+        }, 
+        {
+            "locations": [
+                0
+            ], 
+            "subscript_data": {
+                "subscript": "T"
+            }, 
+            "text": "_{T}"
+        }
+    ], 
+    "264-1033-e-5-p2-p4": [
+        {
+            "locations": [
+                0
+            ], 
+            "subscript_data": {
+                "subscript": "T"
+            }, 
+            "text": "_{T}"
+        }
+    ], 
+    "264-1034-c-1-iv-A-p2-p2": [
+        {
+            "locations": [
+                0
+            ], 
+            "subscript_data": {
+                "subscript": "h"
+            }, 
+            "text": "_{h}"
+        }
+    ], 
+    "264-1034-c-1-iv-A-p2-p3": [
+        {
+            "locations": [
+                0
+            ], 
+            "subscript_data": {
+                "subscript": "2sd"
+            }, 
+            "text": "_{2sd}"
+        }
+    ], 
+    "264-1034-c-1-iv-A-p2-p5": [
+        {
+            "locations": [
+                0
+            ], 
+            "subscript_data": {
+                "subscript": "i"
+            }, 
+            "text": "_{i}"
+        }
+    ], 
+    "264-1034-c-1-iv-A-p2-p6": [
+        {
+            "locations": [
+                0
+            ], 
+            "subscript_data": {
+                "subscript": "i"
+            }, 
+            "text": "_{i}"
+        }
+    ], 
+    "264-1034-c-1-iv-A-p2-p8": [
+        {
+            "locations": [
+                0
+            ], 
+            "superscript_data": {
+                "superscript": "\u22126"
+            }, 
+            "text": "^{\u22126}"
+        }
+    ], 
+    "264-1034-c-1-iv-B-p1": [
+        {
+            "locations": [
+                0
+            ], 
+            "subscript_data": {
+                "subscript": "h"
+            }, 
+            "text": "_{h}"
+        }, 
+        {
+            "locations": [
+                0
+            ], 
+            "superscript_data": {
+                "superscript": "\u22126"
+            }, 
+            "text": "^{\u22126}"
+        }
+    ], 
+    "264-1034-c-1-iv-B-p2-p2": [
+        {
+            "locations": [
+                0
+            ], 
+            "subscript_data": {
+                "subscript": "h"
+            }, 
+            "text": "_{h}"
+        }
+    ], 
+    "264-1034-c-1-iv-B-p2-p7": [
+        {
+            "locations": [
+                0
+            ], 
+            "superscript_data": {
+                "superscript": "\u22126"
+            }, 
+            "text": "^{\u22126}"
+        }
+    ], 
+    "264-1034-c-1-v-p1": [
+        {
+            "locations": [
+                0
+            ], 
+            "subscript_data": {
+                "subscript": "A"
+            }, 
+            "text": "_{A}"
+        }, 
+        {
+            "locations": [
+                0
+            ], 
+            "subscript_data": {
+                "subscript": "h"
+            }, 
+            "text": "_{h}"
+        }
+    ], 
+    "264-1034-c-1-v-p2-p2": [
+        {
+            "locations": [
+                0
+            ], 
+            "subscript_data": {
+                "subscript": "A"
+            }, 
+            "text": "_{A}"
+        }
+    ], 
+    "264-1034-c-1-v-p2-p3": [
+        {
+            "locations": [
+                0
+            ], 
+            "subscript_data": {
+                "subscript": "h"
+            }, 
+            "text": "_{h}"
+        }
+    ], 
+    "264-1034-c-1-vi": [
+        {
+            "locations": [
+                0
+            ], 
+            "subscript_data": {
+                "subscript": "h"
+            }, 
+            "text": "_{h}"
+        }, 
+        {
+            "locations": [
+                0
+            ], 
+            "subscript_data": {
+                "subscript": "A"
+            }, 
+            "text": "_{A}"
+        }
+    ], 
+    "264-1080-b-2": [
+        {
+            "locations": [
+                0
+            ], 
+            "superscript_data": {
+                "superscript": "3"
+            }, 
+            "text": "^{3}"
+        }
+    ], 
+    "264-1080-f-4-iii-B": [
+        {
+            "locations": [
+                0
+            ], 
+            "subscript_data": {
+                "subscript": "TOC"
+            }, 
+            "text": "_{TOC}"
+        }
+    ], 
+    "264-1080-f-4-iii-B-p2-p2": [
+        {
+            "locations": [
+                0
+            ], 
+            "subscript_data": {
+                "subscript": "TOC"
+            }, 
+            "text": "_{TOC}"
+        }
+    ], 
+    "264-1080-f-4-iii-B-p2-p3": [
+        {
+            "locations": [
+                0
+            ], 
+            "subscript_data": {
+                "subscript": "ji"
+            }, 
+            "text": "_{ji}"
+        }
+    ], 
+    "264-1080-f-4-iii-C-1": [
+        {
+            "locations": [
+                0
+            ], 
+            "subscript_data": {
+                "subscript": "2d"
+            }, 
+            "text": "_{2d}"
+        }
+    ], 
+    "264-1080-f-4-iii-C-2": [
+        {
+            "locations": [
+                0
+            ], 
+            "subscript_data": {
+                "subscript": "c"
+            }, 
+            "text": "_{c}"
+        }
+    ], 
+    "264-1080-f-4-iii-C-2-p2-p2": [
+        {
+            "locations": [
+                0
+            ], 
+            "subscript_data": {
+                "subscript": "c"
+            }, 
+            "text": "_{c}"
+        }
+    ], 
+    "264-1080-f-4-iii-C-2-p2-p3": [
+        {
+            "locations": [
+                0
+            ], 
+            "subscript_data": {
+                "subscript": "m"
+            }, 
+            "text": "_{m}"
+        }
+    ], 
+    "264-1080-f-4-iii-C-2-p2-p4": [
+        {
+            "locations": [
+                0
+            ], 
+            "subscript_data": {
+                "subscript": "2d"
+            }, 
+            "text": "_{2d}"
+        }
+    ], 
+    "264-1080-f-4-iv-B": [
+        {
+            "locations": [
+                0
+            ], 
+            "subscript_data": {
+                "subscript": "i"
+            }, 
+            "text": "_{i}"
+        }, 
+        {
+            "locations": [
+                0
+            ], 
+            "subscript_data": {
+                "subscript": "o"
+            }, 
+            "text": "_{o}"
+        }
+    ], 
+    "264-1080-f-4-iv-B-p2-p2": [
+        {
+            "locations": [
+                0
+            ], 
+            "subscript_data": {
+                "subscript": "ij"
+            }, 
+            "text": "_{ij}"
+        }, 
+        {
+            "locations": [
+                0
+            ], 
+            "subscript_data": {
+                "subscript": "oj"
+            }, 
+            "text": "_{oj}"
+        }
+    ], 
+    "264-1080-f-4-iv-B-p2-p3": [
+        {
+            "locations": [
+                0
+            ], 
+            "subscript_data": {
+                "subscript": "i"
+            }, 
+            "text": "_{i}"
+        }, 
+        {
+            "locations": [
+                0
+            ], 
+            "subscript_data": {
+                "subscript": "o"
+            }, 
+            "text": "_{o}"
+        }
+    ], 
+    "264-1080-f-4-iv-B-p2-p4": [
+        {
+            "locations": [
+                0
+            ], 
+            "subscript_data": {
+                "subscript": "ij"
+            }, 
+            "text": "_{ij}"
+        }, 
+        {
+            "locations": [
+                0
+            ], 
+            "subscript_data": {
+                "subscript": "oj"
+            }, 
+            "text": "_{oj}"
+        }
+    ], 
+    "264-1080-f-4-iv-B-p2-p5": [
+        {
+            "locations": [
+                0
+            ], 
+            "subscript_data": {
+                "subscript": "i"
+            }, 
+            "text": "_{i}"
+        }, 
+        {
+            "locations": [
+                0
+            ], 
+            "subscript_data": {
+                "subscript": "o"
+            }, 
+            "text": "_{o}"
+        }
+    ], 
+    "264-1080-f-4-iv-B-p2-p6": [
+        {
+            "locations": [
+                0
+            ], 
+            "subscript_data": {
+                "subscript": "2"
+            }, 
+            "text": "_{2}"
+        }, 
+        {
+            "locations": [
+                0
+            ], 
+            "superscript_data": {
+                "superscript": "\u22126"
+            }, 
+            "text": "^{\u22126}"
+        }, 
+        {
+            "locations": [
+                0
+            ], 
+            "superscript_data": {
+                "superscript": "\u22121"
+            }, 
+            "text": "^{\u22121}"
+        }
+    ], 
+    "264-1080-f-4-iv-C-p2-p3": [
+        {
+            "locations": [
+                0
+            ], 
+            "subscript_data": {
+                "subscript": "i"
+            }, 
+            "text": "_{i}"
+        }
+    ], 
+    "264-1080-f-4-iv-C-p2-p4": [
+        {
+            "locations": [
+                0
+            ], 
+            "subscript_data": {
+                "subscript": "o"
+            }, 
+            "text": "_{o}"
+        }
+    ], 
+    "264-1082-c-2-i": [
+        {
+            "locations": [
+                0
+            ], 
+            "subscript_data": {
+                "subscript": "t"
+            }, 
+            "text": "_{t}"
+        }
+    ], 
+    "264-1082-c-2-iv-A": [
+        {
+            "locations": [
+                0
+            ], 
+            "subscript_data": {
+                "subscript": "bio"
+            }, 
+            "text": "_{bio}"
+        }
+    ], 
+    "264-1082-c-2-iv-B": [
+        {
+            "locations": [
+                0
+            ], 
+            "subscript_data": {
+                "subscript": "bio"
+            }, 
+            "text": "_{bio}"
+        }
+    ], 
+    "264-1082-c-2-ix-B": [
+        {
+            "locations": [
+                0
+            ], 
+            "superscript_data": {
+                "superscript": "\u22126"
+            }, 
+            "text": "^{\u22126}"
+        }, 
+        {
+            "locations": [
+                0
+            ], 
+            "superscript_data": {
+                "superscript": "3"
+            }, 
+            "text": "^{3}"
+        }
+    ], 
+    "264-1084-b-1-i-A": [
+        {
+            "locations": [
+                0
+            ], 
+            "superscript_data": {
+                "superscript": "3"
+            }, 
+            "text": "^{3}"
+        }
+    ], 
+    "264-1084-b-1-i-B": [
+        {
+            "locations": [
+                0, 
+                1
+            ], 
+            "superscript_data": {
+                "superscript": "3"
+            }, 
+            "text": "^{3}"
+        }
+    ], 
+    "264-1084-b-1-i-C": [
+        {
+            "locations": [
+                0
+            ], 
+            "superscript_data": {
+                "superscript": "3"
+            }, 
+            "text": "^{3}"
+        }
+    ], 
+    "264-1084-f-1-ii-A": [
+        {
+            "locations": [
+                0
+            ], 
+            "superscript_data": {
+                "superscript": "2"
+            }, 
+            "text": "^{2}"
+        }
+    ], 
+    "264-1084-f-1-ii-B": [
+        {
+            "locations": [
+                0
+            ], 
+            "superscript_data": {
+                "superscript": "2"
+            }, 
+            "text": "^{2}"
+        }
+    ], 
+    "264-1086-b-1-i": [
+        {
+            "locations": [
+                0, 
+                1
+            ], 
+            "superscript_data": {
+                "superscript": "3"
+            }, 
+            "text": "^{3}"
+        }
+    ], 
+    "264-1086-b-1-ii": [
+        {
+            "locations": [
+                0
+            ], 
+            "superscript_data": {
+                "superscript": "3"
+            }, 
+            "text": "^{3}"
+        }
+    ], 
+    "264-1086-b-1-iii": [
+        {
+            "locations": [
+                0
+            ], 
+            "superscript_data": {
+                "superscript": "3"
+            }, 
+            "text": "^{3}"
+        }
+    ], 
+    "264-1086-b-2": [
+        {
+            "locations": [
+                0
+            ], 
+            "superscript_data": {
+                "superscript": "3"
+            }, 
+            "text": "^{3}"
+        }
+    ], 
+    "264-1086-c-5": [
+        {
+            "locations": [
+                0
+            ], 
+            "superscript_data": {
+                "superscript": "3"
+            }, 
+            "text": "^{3}"
+        }
+    ], 
+    "264-1101-b-3-i-B": [
+        {
+            "locations": [
+                0
+            ], 
+            "superscript_data": {
+                "superscript": "\u22122"
+            }, 
+            "text": "^{\u22122}"
+        }, 
+        {
+            "locations": [
+                0
+            ], 
+            "superscript_data": {
+                "superscript": "\u22125"
+            }, 
+            "text": "^{\u22125}"
+        }, 
+        {
+            "locations": [
+                0
+            ], 
+            "superscript_data": {
+                "superscript": "2"
+            }, 
+            "text": "^{2}"
+        }
+    ], 
+    "264-151-c-p1-p8": [
+        {
+            "dash_data": {
+                "text": "EPA Identification Number, name, address, and closure and/or post-closure amount(s) for each facility guaranteed by this bond [indicate closure and post-closure amounts separately]: ____"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "EPA Identification Number, name, address, and closure and/or post-closure amount(s) for each facility guaranteed by this bond [indicate closure and post-closure amounts separately]: _________"
+        }
+    ], 
+    "264-151-g-p1-p68": [
+        {
+            "dash_data": {
+                "text": "5. Date of issuance of bond ___"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "5. Date of issuance of bond ________"
+        }
+    ], 
+    "264-151-g-p1-p69": [
+        {
+            "dash_data": {
+                "text": "6. Date of maturity of bond ___"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "6. Date of maturity of bond ________"
+        }
+    ], 
+    "264-151-l-p1-p5": [
+        {
+            "locations": [
+                0
+            ], 
+            "table_data": {
+                "header": [
+                    [
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": ""
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Sudden accidental occurrences"
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Nonsudden accidental occurrences"
+                        }
+                    ]
+                ], 
+                "rows": [
+                    [
+                        "Penal Sum Per Occurrence", 
+                        "[insert amount]", 
+                        "[insert amount]"
+                    ], 
+                    [
+                        "Annual Aggregate", 
+                        "[insert amount]", 
+                        "[insert amount]"
+                    ]
+                ]
+            }, 
+            "text": "||Sudden accidental occurrences|Nonsudden accidental occurrences|\n|---|---|---|\n|Penal Sum Per Occurrence|[insert amount]|[insert amount]|\n|Annual Aggregate|[insert amount]|[insert amount]|"
+        }
+    ], 
+    "264-221-c-1-i-B": [
+        {
+            "locations": [
+                0
+            ], 
+            "superscript_data": {
+                "superscript": "\u22127"
+            }, 
+            "text": "^{\u22127}"
+        }
+    ], 
+    "264-221-c-2-ii": [
+        {
+            "locations": [
+                0
+            ], 
+            "superscript_data": {
+                "superscript": "\u22121"
+            }, 
+            "text": "^{\u22121}"
+        }, 
+        {
+            "locations": [
+                0
+            ], 
+            "superscript_data": {
+                "superscript": "\u22124"
+            }, 
+            "text": "^{\u22124}"
+        }, 
+        {
+            "locations": [
+                0
+            ], 
+            "superscript_data": {
+                "superscript": "2"
+            }, 
+            "text": "^{2}"
+        }
+    ], 
+    "264-251-c-1-i-B": [
+        {
+            "locations": [
+                0
+            ], 
+            "superscript_data": {
+                "superscript": "\u22127"
+            }, 
+            "text": "^{\u22127}"
+        }
+    ], 
+    "264-251-c-3-ii": [
+        {
+            "locations": [
+                0
+            ], 
+            "superscript_data": {
+                "superscript": "\u22122"
+            }, 
+            "text": "^{\u22122}"
+        }, 
+        {
+            "locations": [
+                0
+            ], 
+            "superscript_data": {
+                "superscript": "\u22125"
+            }, 
+            "text": "^{\u22125}"
+        }, 
+        {
+            "locations": [
+                0
+            ], 
+            "superscript_data": {
+                "superscript": "2"
+            }, 
+            "text": "^{2}"
+        }
+    ], 
+    "264-276-b-1-ii-p1": [
+        {
+            "locations": [
+                0
+            ], 
+            "table_data": {
+                "header": [
+                    [
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Time period"
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Annual Cd application rate (kilograms per hectare)"
+                        }
+                    ]
+                ], 
+                "rows": [
+                    [
+                        "Present to June 30, 1984", 
+                        "2.0"
+                    ], 
+                    [
+                        "July 1, 1984 to December 31, 1986", 
+                        "1.25"
+                    ], 
+                    [
+                        "Beginning January 1, 1987", 
+                        "0.5"
+                    ]
+                ]
+            }, 
+            "text": "|Time period|Annual Cd application rate (kilograms per hectare)|\n|---|---|\n|Present to June 30, 1984|2.0|\n|July 1, 1984 to December 31, 1986|1.25|\n|Beginning January 1, 1987|0.5|"
+        }
+    ], 
+    "264-301-c-1-i-B": [
+        {
+            "locations": [
+                0
+            ], 
+            "superscript_data": {
+                "superscript": "\u22127"
+            }, 
+            "text": "^{\u22127}"
+        }
+    ], 
+    "264-301-c-3-ii": [
+        {
+            "locations": [
+                0
+            ], 
+            "superscript_data": {
+                "superscript": "\u22122"
+            }, 
+            "text": "^{\u22122}"
+        }, 
+        {
+            "locations": [
+                0
+            ], 
+            "superscript_data": {
+                "superscript": "\u22125"
+            }, 
+            "text": "^{\u22125}"
+        }, 
+        {
+            "locations": [
+                0
+            ], 
+            "superscript_data": {
+                "superscript": "2"
+            }, 
+            "text": "^{2}"
+        }
+    ], 
+    "264-314-d-2-iii": [
+        {
+            "locations": [
+                0
+            ], 
+            "subscript_data": {
+                "subscript": "2"
+            }, 
+            "text": "_{2}"
+        }
+    ], 
+    "264-343-a-1-p1-p2": [
+        {
+            "locations": [
+                0
+            ], 
+            "subscript_data": {
+                "subscript": "in"
+            }, 
+            "text": "_{in}"
+        }
+    ], 
+    "264-343-a-1-p1-p4": [
+        {
+            "locations": [
+                0
+            ], 
+            "subscript_data": {
+                "subscript": "out"
+            }, 
+            "text": "_{out}"
+        }
+    ], 
+    "264-343-c-p1": [
+        {
+            "locations": [
+                0
+            ], 
+            "subscript_data": {
+                "subscript": "c"
+            }, 
+            "text": "_{c}"
+        }, 
+        {
+            "locations": [
+                0
+            ], 
+            "subscript_data": {
+                "subscript": "m"
+            }, 
+            "text": "_{m}"
+        }
+    ], 
+    "264-552-e-4-i-A-1": [
+        {
+            "locations": [
+                0
+            ], 
+            "superscript_data": {
+                "superscript": "\u22123"
+            }, 
+            "text": "^{\u22123}"
+        }
+    ], 
+    "264-573-a-4-i": [
+        {
+            "locations": [
+                0, 
+                1
+            ], 
+            "superscript_data": {
+                "superscript": "7"
+            }, 
+            "text": "^{7}"
+        }
+    ], 
+    "264-94-a-2-p1": [
+        {
+            "locations": [
+                0
+            ], 
+            "table_data": {
+                "caption": "Table 1\u2014Maximum Concentration of Constituents for Ground-water Protection", 
+                "header": [
+                    [
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Constituent"
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Maximum concentration [^1](Milligrams per liter.)"
+                        }
+                    ]
+                ], 
+                "rows": [
+                    [
+                        "Arsenic", 
+                        "0.05"
+                    ], 
+                    [
+                        "Barium", 
+                        "1.0"
+                    ], 
+                    [
+                        "Cadmium", 
+                        "0.01"
+                    ], 
+                    [
+                        "Chromium", 
+                        "0.05"
+                    ], 
+                    [
+                        "Lead", 
+                        "0.05"
+                    ], 
+                    [
+                        "Mercury", 
+                        "0.002"
+                    ], 
+                    [
+                        "Selenium", 
+                        "0.01"
+                    ], 
+                    [
+                        "Silver", 
+                        "0.05"
+                    ], 
+                    [
+                        "Endrin (1,2,3,4,10,10-hexachloro-1,7-epoxy 1,4,4a,5,6,7,8,9a-octahydro-1, 4-endo, endo-5,8-dimethano naphthalene)", 
+                        "0.0002"
+                    ], 
+                    [
+                        "Lindane (1,2,3,4,5,6-hexachlorocyclohexane, gamma isomer)", 
+                        "0.004"
+                    ], 
+                    [
+                        "Methoxychlor (1,1,1-Trichloro-2,2-bis (p-methoxyphenylethane)", 
+                        "0.1"
+                    ], 
+                    [
+                        "Toxaphene (C_{10} H_{10} Cl_{6}, Technical chlorinated camphene, 67-69 percent chlorine)", 
+                        "0.005"
+                    ], 
+                    [
+                        "2,4-D (2,4-Dichlorophenoxyacetic acid)", 
+                        "0.1"
+                    ], 
+                    [
+                        "2,4,5-TP Silvex (2,4,5-Trichlorophenoxypropionic acid)", 
+                        "0.01"
+                    ]
+                ]
+            }, 
+            "text": "|Table 1\u2014Maximum Concentration of Constituents for Ground-water Protection|Constituent|Maximum concentration [^1](Milligrams per liter.)|\n|---|---|---|\n|Arsenic|0.05|\n|Barium|1.0|\n|Cadmium|0.01|\n|Chromium|0.05|\n|Lead|0.05|\n|Mercury|0.002|\n|Selenium|0.01|\n|Silver|0.05|\n|Endrin (1,2,3,4,10,10-hexachloro-1,7-epoxy 1,4,4a,5,6,7,8,9a-octahydro-1, 4-endo, endo-5,8-dimethano naphthalene)|0.0002|\n|Lindane (1,2,3,4,5,6-hexachlorocyclohexane, gamma isomer)|0.004|\n|Methoxychlor (1,1,1-Trichloro-2,2-bis (p-methoxyphenylethane)|0.1|\n|Toxaphene (C_{10} H_{10} Cl_{6}, Technical chlorinated camphene, 67-69 percent chlorine)|0.005|\n|2,4-D (2,4-Dichlorophenoxyacetic acid)|0.1|\n|2,4,5-TP Silvex (2,4,5-Trichlorophenoxypropionic acid)|0.01|"
+        }, 
+        {
+            "locations": [
+                0, 
+                1
+            ], 
+            "subscript_data": {
+                "subscript": "10"
+            }, 
+            "text": "_{10}"
+        }, 
+        {
+            "locations": [
+                0
+            ], 
+            "subscript_data": {
+                "subscript": "6"
+            }, 
+            "text": "_{6}"
+        }, 
+        {
+            "footnote_data": {
+                "note": "Milligrams per liter.", 
+                "ref": "1"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "[^1](Milligrams per liter.)"
+        }
+    ], 
+    "264-I-p3-p5": [
+        {
+            "locations": [
+                0
+            ], 
+            "table_data": {
+                "caption": "Table 1", 
+                "header": [
+                    [
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Unit of measure"
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Code [^1](Single digit symbols are used here for data processing purposes.)"
+                        }
+                    ]
+                ], 
+                "rows": [
+                    [
+                        "Gallons", 
+                        "G"
+                    ], 
+                    [
+                        "Gallons per Hour", 
+                        "E"
+                    ], 
+                    [
+                        "Gallons per Day", 
+                        "U"
+                    ], 
+                    [
+                        "Liters", 
+                        "L"
+                    ], 
+                    [
+                        "Liters per Hour", 
+                        "H"
+                    ], 
+                    [
+                        "Liters per Day", 
+                        "V"
+                    ], 
+                    [
+                        "Short Tons per Hour", 
+                        "D"
+                    ], 
+                    [
+                        "Metric Tons per Hour", 
+                        "W"
+                    ], 
+                    [
+                        "Short Tons per Day", 
+                        "N"
+                    ], 
+                    [
+                        "Metric Tons per Day", 
+                        "S"
+                    ], 
+                    [
+                        "Pounds per Hour", 
+                        "J"
+                    ], 
+                    [
+                        "Kilograms per Hour", 
+                        "R"
+                    ], 
+                    [
+                        "Cubic Yards", 
+                        "Y"
+                    ], 
+                    [
+                        "Cubic Meters", 
+                        "C"
+                    ], 
+                    [
+                        "Acres", 
+                        "B"
+                    ], 
+                    [
+                        "Acre-feet", 
+                        "A"
+                    ], 
+                    [
+                        "Hectares", 
+                        "Q"
+                    ], 
+                    [
+                        "Hectare-meter", 
+                        "F"
+                    ], 
+                    [
+                        "Btu's per Hour", 
+                        "I"
+                    ], 
+                    [
+                        "Pounds", 
+                        "P"
+                    ], 
+                    [
+                        "Short tons", 
+                        "T"
+                    ], 
+                    [
+                        "Kilograms", 
+                        "K"
+                    ], 
+                    [
+                        "Tons", 
+                        "M"
+                    ]
+                ]
+            }, 
+            "text": "|Table 1|Unit of measure|Code [^1](Single digit symbols are used here for data processing purposes.)|\n|---|---|---|\n|Gallons|G|\n|Gallons per Hour|E|\n|Gallons per Day|U|\n|Liters|L|\n|Liters per Hour|H|\n|Liters per Day|V|\n|Short Tons per Hour|D|\n|Metric Tons per Hour|W|\n|Short Tons per Day|N|\n|Metric Tons per Day|S|\n|Pounds per Hour|J|\n|Kilograms per Hour|R|\n|Cubic Yards|Y|\n|Cubic Meters|C|\n|Acres|B|\n|Acre-feet|A|\n|Hectares|Q|\n|Hectare-meter|F|\n|Btu's per Hour|I|\n|Pounds|P|\n|Short tons|T|\n|Kilograms|K|\n|Tons|M|"
+        }, 
+        {
+            "footnote_data": {
+                "note": "Single digit symbols are used here for data processing purposes.", 
+                "ref": "1"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "[^1](Single digit symbols are used here for data processing purposes.)"
+        }
+    ], 
+    "264-IV-p1": [
+        {
+            "locations": [
+                0, 
+                1, 
+                2
+            ], 
+            "subscript_data": {
+                "subscript": "b"
+            }, 
+            "text": "_{b}"
+        }, 
+        {
+            "locations": [
+                0, 
+                1, 
+                2
+            ], 
+            "subscript_data": {
+                "subscript": "m"
+            }, 
+            "text": "_{m}"
+        }
+    ], 
+    "264-IV-p10": [
+        {
+            "locations": [
+                0, 
+                1
+            ], 
+            "subscript_data": {
+                "subscript": "m"
+            }, 
+            "text": "_{m}"
+        }
+    ], 
+    "264-IV-p11": [
+        {
+            "locations": [
+                0
+            ], 
+            "subscript_data": {
+                "subscript": "b"
+            }, 
+            "text": "_{b}"
+        }, 
+        {
+            "locations": [
+                0
+            ], 
+            "subscript_data": {
+                "subscript": "m"
+            }, 
+            "text": "_{m}"
+        }
+    ], 
+    "264-IV-p13": [
+        {
+            "locations": [
+                0
+            ], 
+            "subscript_data": {
+                "subscript": "c"
+            }, 
+            "text": "_{c}"
+        }
+    ], 
+    "264-IV-p14": [
+        {
+            "locations": [
+                0
+            ], 
+            "subscript_data": {
+                "subscript": "c"
+            }, 
+            "text": "_{c}"
+        }
+    ], 
+    "264-IV-p15": [
+        {
+            "locations": [
+                0
+            ], 
+            "subscript_data": {
+                "subscript": "c"
+            }, 
+            "text": "_{c}"
+        }
+    ], 
+    "264-IV-p16": [
+        {
+            "locations": [
+                0
+            ], 
+            "subscript_data": {
+                "subscript": "c"
+            }, 
+            "text": "_{c}"
+        }
+    ], 
+    "264-IV-p17": [
+        {
+            "locations": [
+                0, 
+                1
+            ], 
+            "subscript_data": {
+                "subscript": "c"
+            }, 
+            "text": "_{c}"
+        }
+    ], 
+    "264-IV-p19": [
+        {
+            "locations": [
+                0
+            ], 
+            "table_data": {
+                "caption": "Standard T\u2014Tables 0.05 Level of Significance", 
+                "header": [
+                    [
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Degrees of freedom"
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "t-values (one-tail)"
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "t-values (two-tail)"
+                        }
+                    ]
+                ], 
+                "rows": [
+                    [
+                        "1", 
+                        "6.314", 
+                        "12.706"
+                    ], 
+                    [
+                        "2", 
+                        "2.920", 
+                        "4.303"
+                    ], 
+                    [
+                        "3", 
+                        "2.353", 
+                        "3.182"
+                    ], 
+                    [
+                        "4", 
+                        "2.132", 
+                        "2.776"
+                    ], 
+                    [
+                        "5", 
+                        "2.015", 
+                        "2.571"
+                    ], 
+                    [
+                        "6", 
+                        "1.943", 
+                        "2.447"
+                    ], 
+                    [
+                        "7", 
+                        "1.895", 
+                        "2.365"
+                    ], 
+                    [
+                        "8", 
+                        "1.860", 
+                        "2.306"
+                    ], 
+                    [
+                        "9", 
+                        "1.833", 
+                        "2.262"
+                    ], 
+                    [
+                        "10", 
+                        "1.812", 
+                        "2.228"
+                    ], 
+                    [
+                        "11", 
+                        "1.796", 
+                        "2.201"
+                    ], 
+                    [
+                        "12", 
+                        "1.782", 
+                        "2.179"
+                    ], 
+                    [
+                        "13", 
+                        "1.771", 
+                        "2.160"
+                    ], 
+                    [
+                        "14", 
+                        "1.761", 
+                        "2.145"
+                    ], 
+                    [
+                        "15", 
+                        "1.753", 
+                        "2.131"
+                    ], 
+                    [
+                        "16", 
+                        "1.746", 
+                        "2.120"
+                    ], 
+                    [
+                        "17", 
+                        "1.740", 
+                        "2.110"
+                    ], 
+                    [
+                        "18", 
+                        "1.734", 
+                        "2.101"
+                    ], 
+                    [
+                        "19", 
+                        "1.729", 
+                        "2.093"
+                    ], 
+                    [
+                        "20", 
+                        "1.725", 
+                        "2.086"
+                    ], 
+                    [
+                        "21", 
+                        "1.721", 
+                        "2.080"
+                    ], 
+                    [
+                        "22", 
+                        "1.717", 
+                        "2.074"
+                    ], 
+                    [
+                        "23", 
+                        "1.714", 
+                        "2.069"
+                    ], 
+                    [
+                        "24", 
+                        "1.711", 
+                        "2.064"
+                    ], 
+                    [
+                        "25", 
+                        "1.708", 
+                        "2.060"
+                    ], 
+                    [
+                        "30", 
+                        "1.697", 
+                        "2.042"
+                    ], 
+                    [
+                        "40", 
+                        "1.684", 
+                        "2.021"
+                    ]
+                ]
+            }, 
+            "text": "|Standard T\u2014Tables 0.05 Level of Significance|Degrees of freedom|t-values (one-tail)|t-values (two-tail)|\n|---|---|---|---|\n|1|6.314|12.706|\n|2|2.920|4.303|\n|3|2.353|3.182|\n|4|2.132|2.776|\n|5|2.015|2.571|\n|6|1.943|2.447|\n|7|1.895|2.365|\n|8|1.860|2.306|\n|9|1.833|2.262|\n|10|1.812|2.228|\n|11|1.796|2.201|\n|12|1.782|2.179|\n|13|1.771|2.160|\n|14|1.761|2.145|\n|15|1.753|2.131|\n|16|1.746|2.120|\n|17|1.740|2.110|\n|18|1.734|2.101|\n|19|1.729|2.093|\n|20|1.725|2.086|\n|21|1.721|2.080|\n|22|1.717|2.074|\n|23|1.714|2.069|\n|24|1.711|2.064|\n|25|1.708|2.060|\n|30|1.697|2.042|\n|40|1.684|2.021|"
+        }
+    ], 
+    "264-IV-p2": [
+        {
+            "locations": [
+                0
+            ], 
+            "subscript_data": {
+                "subscript": "1"
+            }, 
+            "text": "_{1}"
+        }, 
+        {
+            "locations": [
+                0
+            ], 
+            "subscript_data": {
+                "subscript": "2"
+            }, 
+            "text": "_{2}"
+        }, 
+        {
+            "locations": [
+                0
+            ], 
+            "subscript_data": {
+                "subscript": "n"
+            }, 
+            "text": "_{n}"
+        }
+    ], 
+    "264-IV-p5": [
+        {
+            "locations": [
+                0, 
+                1
+            ], 
+            "subscript_data": {
+                "subscript": "c"
+            }, 
+            "text": "_{c}"
+        }
+    ], 
+    "264-IV-p8": [
+        {
+            "locations": [
+                0
+            ], 
+            "subscript_data": {
+                "subscript": "c"
+            }, 
+            "text": "_{c}"
+        }, 
+        {
+            "locations": [
+                0
+            ], 
+            "subscript_data": {
+                "subscript": "b"
+            }, 
+            "text": "_{b}"
+        }, 
+        {
+            "locations": [
+                0
+            ], 
+            "subscript_data": {
+                "subscript": "m"
+            }, 
+            "text": "_{m}"
+        }
+    ], 
+    "264-IV-p9": [
+        {
+            "locations": [
+                0, 
+                1
+            ], 
+            "subscript_data": {
+                "subscript": "b"
+            }, 
+            "text": "_{b}"
+        }
+    ], 
+    "264-IX-p1": [
+        {
+            "locations": [
+                0
+            ], 
+            "table_data": {
+                "caption": "Ground-Water Monitoring List", 
+                "header": [
+                    [
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Common name [^1](Common names are those widely used in government regulations, scientific publications, and commerce; synonyms exist for many chemicals.)"
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "CAS RN [^2](Chemical Abstracts Service registry number. Where \u201cTotal\u201d is entered, all species in the ground water that contain this element are included.)"
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Chemical abstracts service index name [^3](CAS index names are those used in the 9th Cumulative Index.)"
+                        }
+                    ]
+                ], 
+                "rows": [
+                    [
+                        "Acenaphthene", 
+                        "83-32-9", 
+                        "Acenaphthylene, 1,2-dihydro-"
+                    ], 
+                    [
+                        "Acenaphthylene", 
+                        "208-96-8", 
+                        "Acenaphthylene"
+                    ], 
+                    [
+                        "Acetone", 
+                        "67-64-1", 
+                        "2-Propanone"
+                    ], 
+                    [
+                        "Acetophenone", 
+                        "98-86-2", 
+                        "Ethanone, 1-phenyl-"
+                    ], 
+                    [
+                        "Acetonitrile; Methyl cyanide", 
+                        "75-05-8", 
+                        "Acetonitrile"
+                    ], 
+                    [
+                        "2-Acetylaminofluorene; 2-AAF", 
+                        "53-96-3", 
+                        "Acetamide, N-9H-fluoren-2-yl-"
+                    ], 
+                    [
+                        "Acrolein", 
+                        "107-02-8", 
+                        "2-Propenal"
+                    ], 
+                    [
+                        "Acrylonitrile", 
+                        "107-13-1", 
+                        "2-Propenenitrile"
+                    ], 
+                    [
+                        "Aldrin", 
+                        "309-00-2", 
+                        "1,4:5,8-Dimethanonaphthalene, 1,2,3,4,10,10-hexachloro-1,4,4a,5,8,8a-hexahydro-(1\u03b1,4\u03b1,4a\u03b2,5\u03b1,8\u03b1,8a\u03b2)-"
+                    ], 
+                    [
+                        "Allyl chloride", 
+                        "107-05-1", 
+                        "1-Propene, 3-chloro-"
+                    ], 
+                    [
+                        "4-Aminobiphenyl", 
+                        "92-67-1", 
+                        "[1,1\u2032-Biphenyl]-4-amine"
+                    ], 
+                    [
+                        "Aniline", 
+                        "62-53-3", 
+                        "Benzenamine"
+                    ], 
+                    [
+                        "Anthracene", 
+                        "120-12-7", 
+                        "Anthracene"
+                    ], 
+                    [
+                        "Antimony", 
+                        "(Total)", 
+                        "Antimony"
+                    ], 
+                    [
+                        "Aramite", 
+                        "140-57-8", 
+                        "Sulfurous acid, 2-chloroethyl 2-[4-(1,1-dimethylethyl) phenoxy]-1-methylethyl ester"
+                    ], 
+                    [
+                        "Arsenic", 
+                        "(Total)", 
+                        "Arsenic"
+                    ], 
+                    [
+                        "Barium", 
+                        "(Total)", 
+                        "Barium"
+                    ], 
+                    [
+                        "Benzene", 
+                        "71-43-2", 
+                        "Benzene"
+                    ], 
+                    [
+                        "Benzo[a]anthracene; Benzanthracene", 
+                        "56-55-3", 
+                        "Benz[a]anthracene"
+                    ], 
+                    [
+                        "Benzo[b]fluoranthene", 
+                        "205-99-2", 
+                        "Benz[e]acephenanthrylene"
+                    ], 
+                    [
+                        "Benzo[k]fluoranthene", 
+                        "207-08-9", 
+                        "Benzo[k]fluoranthene"
+                    ], 
+                    [
+                        "Benzo[ghi]perylene", 
+                        "191-24-2", 
+                        "Benzo[ghi]perylene"
+                    ], 
+                    [
+                        "Benzo[a]pyrene", 
+                        "50-32-8", 
+                        "Benzo[a]pyrene"
+                    ], 
+                    [
+                        "Benzyl alcohol", 
+                        "100-51-6", 
+                        "Benzenemethanol"
+                    ], 
+                    [
+                        "Beryllium", 
+                        "(Total)", 
+                        "Beryllium"
+                    ], 
+                    [
+                        "alpha-BHC", 
+                        "319-84-6", 
+                        "Cyclohexane, 1,2,3,4,5,6-hexachloro-,(1\u03b1,2\u03b1,3\u03b2,4\u03b2,5\u03b2,6\u03b2)-"
+                    ], 
+                    [
+                        "beta-BHC", 
+                        "319-85-7", 
+                        "Cyclohexane, 1,2,3,4,5,6-hexachloro-,(1\u03b1,2\u03b2,3\u03b1,4\u03b2,5\u03b1,6\u03b2)-"
+                    ], 
+                    [
+                        "delta-BHC", 
+                        "319-86-8", 
+                        "Cyclohexane, 1,2,3,4,5,6-hexachloro-,(1\u03b1,2\u03b1,3\u03b1,4\u03b2,5\u03b1,6\u03b2)-"
+                    ], 
+                    [
+                        "gamma-BHC; Lindane", 
+                        "58-89-9", 
+                        "Cyclohexane, 1,2,3,4,5,6-hexachloro-,(1\u03b1,2\u03b1,3\u03b2,4\u03b1,5\u03b1,6\u03b2)-"
+                    ], 
+                    [
+                        "Bis(2-chloroethoxy)methane", 
+                        "111-91-1", 
+                        "Ethane, 1,1\u2032-[methylenebis(oxy)]bis [2-chloro-"
+                    ], 
+                    [
+                        "Bis(2-chloroethyl)ether", 
+                        "111-44-4", 
+                        "Ethane, 1,1\u2032-oxybis[2-chloro-"
+                    ], 
+                    [
+                        "Bis(2-chloro-1-methylethyl) ether; 2,2\u2032-Dichlorodiisopropyl ether", 
+                        "108-60-1", 
+                        "Propane, 2,2\u2032-oxybis[1-chloro-"
+                    ], 
+                    [
+                        "Bis(2-ethylhexyl) phthalate", 
+                        "117-81-7", 
+                        "1,2-Benzenedicarboxylic acid, bis(2-ethylhexyl)ester"
+                    ], 
+                    [
+                        "Bromodichloromethane", 
+                        "75-27-4", 
+                        "Methane, bromodichloro-"
+                    ], 
+                    [
+                        "Bromoform; Tribromomethane", 
+                        "75-25-2", 
+                        "Methane, tribromo-"
+                    ], 
+                    [
+                        "4-Bromophenyl phenyl ether", 
+                        "101-55-3", 
+                        "Benzene, 1-bromo-4-phenoxy-"
+                    ], 
+                    [
+                        "Butyl benzyl phthalate; Benzyl butyl phthalate", 
+                        "85-68-7", 
+                        "1,2-Benzenedicarboxylic acid, butyl phenylmethyl ester"
+                    ], 
+                    [
+                        "Cadmium", 
+                        "(Total)", 
+                        "Cadmium"
+                    ], 
+                    [
+                        "Carbon disulfide", 
+                        "75-15-0", 
+                        "Carbon disulfide"
+                    ], 
+                    [
+                        "Carbon tetrachloride", 
+                        "56-23-5", 
+                        "Methane, tetrachloro-"
+                    ], 
+                    [
+                        "Chlordane", 
+                        "57-74-9", 
+                        "4,7-Methano-1H-indene, 1,2,4,5,6,7,8,8-octachloro-2,3,3a,4,7,7a -hexahydro-"
+                    ], 
+                    [
+                        "p-Chloroaniline", 
+                        "106-47-8", 
+                        "Benzenamine, 4-chloro-"
+                    ], 
+                    [
+                        "Chlorobenzene", 
+                        "108-90-7", 
+                        "Benzene, chloro-"
+                    ], 
+                    [
+                        "Chlorobenzilate", 
+                        "510-15-6", 
+                        "Benzeneacetic acid, 4-chloro-\u03b1-(4-chlorophenyl)-\u03b1-hydroxy-, ethyl ester"
+                    ], 
+                    [
+                        "p-Chloro-m-cresol", 
+                        "59-50-7", 
+                        "Phenol, 4-chloro-3-methyl-"
+                    ], 
+                    [
+                        "Chloroethane; Ethyl chloride", 
+                        "75-00-3", 
+                        "Ethane, chloro-"
+                    ], 
+                    [
+                        "Chloroform", 
+                        "67-66-3", 
+                        "Methane, trichloro-"
+                    ], 
+                    [
+                        "2-Chloronaphthalene", 
+                        "91-58-7", 
+                        "Naphthalene, 2-chloro-"
+                    ], 
+                    [
+                        "2-Chlorophenol", 
+                        "95-57-8", 
+                        "Phenol, 2-chloro-"
+                    ], 
+                    [
+                        "4-Chlorophenyl phenyl ether", 
+                        "7005-72-3", 
+                        "Benzene, 1-chloro-4-phenoxy-"
+                    ], 
+                    [
+                        "Chloroprene", 
+                        "126-99-8", 
+                        "1,3-Butadiene,2-chloro-"
+                    ], 
+                    [
+                        "Chromium", 
+                        "(Total)", 
+                        "Chromium"
+                    ], 
+                    [
+                        "Chrysene", 
+                        "218-01-9", 
+                        "Chrysene"
+                    ], 
+                    [
+                        "Cobalt", 
+                        "(Total)", 
+                        "Cobalt"
+                    ], 
+                    [
+                        "Copper", 
+                        "(Total)", 
+                        "Copper"
+                    ], 
+                    [
+                        "m-Cresol", 
+                        "108-39-4", 
+                        "Phenol, 3-methyl-"
+                    ], 
+                    [
+                        "o-Cresol", 
+                        "95-48-7", 
+                        "Phenol, 2-methyl-"
+                    ], 
+                    [
+                        "p-Cresol", 
+                        "106-44-5", 
+                        "Phenol, 4-methyl-"
+                    ], 
+                    [
+                        "Cyanide", 
+                        "57-12-5", 
+                        "Cyanide"
+                    ], 
+                    [
+                        "2,4-D; 2,4-Dichlorophenoxyacetic acid", 
+                        "94-75-7", 
+                        "Acetic acid, (2,4-dichlorophenoxy)-"
+                    ], 
+                    [
+                        "4,4\u2032-DDD", 
+                        "72-54-8", 
+                        "Benzene 1,1\u2032-(2,2-dichloroethylidene) bis[4-chloro-"
+                    ], 
+                    [
+                        "4,4\u2032-DDE", 
+                        "72-55-9", 
+                        "Benzene, 1,1\u2032-(dichloroethenylidene) bis[4-chloro-"
+                    ], 
+                    [
+                        "4,4\u2032-DDT", 
+                        "50-29-3", 
+                        "Benzene, 1,1\u2032-(2,2,2-trichloroethylidene) bis[4-chloro-"
+                    ], 
+                    [
+                        "Diallate", 
+                        "2303-16-4", 
+                        "Carbamothioic acid, bis(1-methylethyl)- , S- (2,3-dichloro-2-propenyl) ester"
+                    ], 
+                    [
+                        "Dibenz[a,h]anthracene", 
+                        "53-70-3", 
+                        "Dibenz[a,h]anthracene"
+                    ], 
+                    [
+                        "Dibenzofuran", 
+                        "132-64-9", 
+                        "Dibenzofuran"
+                    ], 
+                    [
+                        "Dibromochloromethane; Chlorodibromomethane", 
+                        "124-48-1", 
+                        "Methane, dibromochloro-"
+                    ], 
+                    [
+                        "1,2-Dibromo-3-chloropropane; DBCP", 
+                        "96-12-8", 
+                        "Propane, 1,2-dibromo-3-chloro-"
+                    ], 
+                    [
+                        "1,2-Dibromoethane; Ethylene dibromide", 
+                        "106-93-4", 
+                        "Ethane, 1,2-dibromo-"
+                    ], 
+                    [
+                        "Di-n-butyl phthalate", 
+                        "84-74-2", 
+                        "1,2-Benzenedicarboxylic acid, dibutyl ester"
+                    ], 
+                    [
+                        "o-Dichlorobenzene", 
+                        "95-50-1", 
+                        "Benzene, 1,2-dichloro-"
+                    ], 
+                    [
+                        "m-Dichlorobenzene", 
+                        "541-73-1", 
+                        "Benzene, 1,3-dichloro-"
+                    ], 
+                    [
+                        "p-Dichlorobenzene", 
+                        "106-46-7", 
+                        "Benzene, 1,4-dichloro-"
+                    ], 
+                    [
+                        "3,3\u2032-Dichlorobenzidine", 
+                        "91-94-1", 
+                        "[1,1\u2032-Biphenyl]-4,4\u2032-diamine, 3,3\u2032-dichloro-"
+                    ], 
+                    [
+                        "trans-1,4-Dichloro-2-butene", 
+                        "110-57-6", 
+                        "2-Butene, 1,4-dichloro-, (E)-"
+                    ], 
+                    [
+                        "Dichlorodifluoromethane", 
+                        "75-71-8", 
+                        "Methane, dichlorodifluoro-"
+                    ], 
+                    [
+                        "1,1-Dichloroethane", 
+                        "75-34-3", 
+                        "Ethane, 1,1-dichloro-"
+                    ], 
+                    [
+                        "1,2-Dichloroethane; Ethylene dichloride", 
+                        "107-06-2", 
+                        "Ethane, 1,2-dichloro-"
+                    ], 
+                    [
+                        "1,1-Dichloroethylene; Vinylidene chloride", 
+                        "75-35-4", 
+                        "Ethene, 1,1-dichloro-"
+                    ], 
+                    [
+                        "trans-1,2-Dichloroethylene", 
+                        "156-60-5", 
+                        "Ethene, 1,2-dichloro-, (E)-"
+                    ], 
+                    [
+                        "2,4-Dichlorophenol", 
+                        "120-83-2", 
+                        "Phenol, 2,4-dichloro-"
+                    ], 
+                    [
+                        "2,6-Dichlorophenol", 
+                        "87-65-0", 
+                        "Phenol, 2,6-dichloro-"
+                    ], 
+                    [
+                        "1,2-Dichloropropane", 
+                        "78-87-5", 
+                        "Propane, 1,2-dichloro-"
+                    ], 
+                    [
+                        "cis-1,3-Dichloropropene", 
+                        "10061-01-5", 
+                        "1-Propene, 1,3-dichloro-, (Z)-"
+                    ], 
+                    [
+                        "trans-1,3-Dichloropropene", 
+                        "10061-02-6", 
+                        "1-Propene, 1,3-dichloro-, (E)-"
+                    ], 
+                    [
+                        "Dieldrin", 
+                        "60-57-1", 
+                        "2,7:3,6-Dimethanonaphth [2,3-b]oxirene, 3,4,5,6,9,9-hexachloro-1a,2,2a,3,6,6a,7,7a-octahydro-, (1a\u03b1,2\u03b2,2a\u03b1,3\u03b2,6\u03b2;,6a\u03b1,7\u03b2,7a\u03b1)-"
+                    ], 
+                    [
+                        "Diethyl phthalate", 
+                        "84-66-2", 
+                        "1,2-Benzenedicarboxylic acid, diethyl ester"
+                    ], 
+                    [
+                        "O,O-Diethyl O-2-pyrazinyl phosphorothioate; Thionazin", 
+                        "297-97-2", 
+                        "Phosphorothioic acid, O,O-diethyl O-pyrazinyl ester"
+                    ], 
+                    [
+                        "Dimethoate", 
+                        "60-51-5", 
+                        "Phosphorodithioic acid, O,O-dimethyl S-[2-(methylamino)-2-oxoethyl] ester"
+                    ], 
+                    [
+                        "p-(Dimethylamino)azobenzene", 
+                        "60-11-7", 
+                        "Benzenamine, N,N-dimethyl-4-(phenylazo)-"
+                    ], 
+                    [
+                        "7,12-Dimethylbenz[a]anthracene", 
+                        "57-97-6", 
+                        "Benz[a]anthracene, 7,12-dimethyl-"
+                    ], 
+                    [
+                        "3,3\u2032-Dimethylbenzidine", 
+                        "119-93-7", 
+                        "[1,1\u2032-Biphenyl]-4,4\u2032-diamine, 3,3\u2032-dimethyl-"
+                    ], 
+                    [
+                        "alpha, alpha-Dimethylphenethylamine", 
+                        "122-09-8", 
+                        "Benzeneethanamine, \u03b1,\u03b1-dimethyl-"
+                    ], 
+                    [
+                        "2,4-Dimethylphenol", 
+                        "105-67-9", 
+                        "Phenol, 2,4-dimethyl-"
+                    ], 
+                    [
+                        "Dimethyl phthalate", 
+                        "131-11-3", 
+                        "1,2-Benzenedicarboxylic acid, dimethyl ester"
+                    ], 
+                    [
+                        "m-Dinitrobenzene", 
+                        "99-65-0", 
+                        "Benzene, 1,3-dinitro-"
+                    ], 
+                    [
+                        "4,6-Dinitro-o-cresol", 
+                        "534-52-1", 
+                        "Phenol, 2-methyl-4,6-dinitro-"
+                    ], 
+                    [
+                        "2,4-Dinitrophenol", 
+                        "51-28-5", 
+                        "Phenol, 2,4-dinitro-"
+                    ], 
+                    [
+                        "2,4-Dinitrotoluene", 
+                        "121-14-2", 
+                        "Benzene, 1-methyl-2,4-dinitro-"
+                    ], 
+                    [
+                        "2,6-Dinitrotoluene", 
+                        "606-20-2", 
+                        "Benzene, 2-methyl-1,3-dinitro-"
+                    ], 
+                    [
+                        "Dinoseb; DNBP; 2-sec-Butyl-4,6-dinitrophenol", 
+                        "88-85-7", 
+                        "Phenol, 2-(1-methylpropyl)-4,6-dinitro-"
+                    ], 
+                    [
+                        "Di-n-octyl phthalate", 
+                        "117-84-0", 
+                        "1,2-Benzenedicarboxylic acid, dioctyl ester"
+                    ], 
+                    [
+                        "1,4-Dioxane", 
+                        "123-91-1", 
+                        "1,4-Dioxane"
+                    ], 
+                    [
+                        "Diphenylamine", 
+                        "122-39-4", 
+                        "Benzenamine, N-phenyl-"
+                    ], 
+                    [
+                        "Disulfoton", 
+                        "298-04-4", 
+                        "Phosphorodithioic acid, O,O-diethyl S-[2-(ethylthio)ethyl]ester"
+                    ], 
+                    [
+                        "Endosulfan I", 
+                        "959-98-8", 
+                        "6,9-Methano-2,4,3- benzodioxathiepin, 6,7,8,9,10,10-hexachloro-1,5,5a,6,9,9a-hexahydro-, 3-oxide,(3\u03b1,5a\u03b2,6\u03b1,9\u03b1,9a\u03b2)-"
+                    ], 
+                    [
+                        "Endosulfan II", 
+                        "33213-65-9", 
+                        "6,9-Methano-2,4,3- benzodioxathiepin, 6,7,8,9,10,10-hexachloro-1,5,5a,6,9,9a-hexahydro-, 3-oxide, (3\u03b1,5a\u03b1,6\u03b2,9\u03b2,9a\u03b1)-"
+                    ], 
+                    [
+                        "Endosulfan sulfate", 
+                        "1031-07-8", 
+                        "6,9-Methano-2,4,3- benzodioxathiepin, 6,7,8,9,10,10-hexachloro-1,5,5a,6,9,9a-hexahydro-, 3,3-dioxide"
+                    ], 
+                    [
+                        "Endrin", 
+                        "72-20-8", 
+                        "2,7:3,6-Dimethanonaphth[2,3-b]oxirene, 3,4,5,6,9,9-hexachloro-,1a,2,2a,3,6,6a,7,7a-octahydro-, (1a\u03b1,2\u03b2,2a\u03b2,3\u03b1,6\u03b1,6a\u03b2,7\u03b2, 7a\u03b1)-"
+                    ], 
+                    [
+                        "Endrin aldehyde", 
+                        "7421-93-4", 
+                        "1,2,4- Methenocyclopenta[cd] pentalene-5-carboxaldehyde, 2,2a,3,3,4,7-hexachlorodecahydro-,(1\u03b1,2\u03b2,2a\u03b2,4\u03b2,4a\u03b2,5\u03b2,6a\u03b2,6b\u03b2,7R*)-"
+                    ], 
+                    [
+                        "Ethylbenzene", 
+                        "100-41-4", 
+                        "Benzene, ethyl-"
+                    ], 
+                    [
+                        "Ethyl methacrylate", 
+                        "97-63-2", 
+                        "2-Propenoic acid, 2-methyl-, ethyl ester"
+                    ], 
+                    [
+                        "Ethyl methanesulfonate", 
+                        "62-50-0", 
+                        "Methanesulfonic acid, ethyl ester"
+                    ], 
+                    [
+                        "Famphur", 
+                        "52-85-7", 
+                        "Phosphorothioic acid, O-[4-[(dimethylamino)sulfonyl]phenyl]-O,O-dimethyl ester"
+                    ], 
+                    [
+                        "Fluoranthene", 
+                        "206-44-0", 
+                        "Fluoranthene"
+                    ], 
+                    [
+                        "Fluorene", 
+                        "86-73-7", 
+                        "9H-Fluorene"
+                    ], 
+                    [
+                        "Heptachlor", 
+                        "76-44-8", 
+                        "4,7-Methano-1H-indene, 1,4,5,6,7,8,8-heptachloro-3a,4,7,7a-tetrahydro-"
+                    ], 
+                    [
+                        "Heptachlor epoxide", 
+                        "1024-57-3", 
+                        "2,5-Methano-2H-indeno[1,2-b] oxirene, 2,3,4,5,6,7,7-heptachloro-1a,1b,5,5a,6,6a,-hexahydro-, (1a\u03b1,1b\u03b2,2\u03b1,5\u03b1,5a\u03b2,6\u03b2,6a\u03b1)"
+                    ], 
+                    [
+                        "Hexachlorobenzene", 
+                        "118-74-1", 
+                        "Benzene, hexachloro-"
+                    ], 
+                    [
+                        "Hexachlorobutadiene", 
+                        "87-68-3", 
+                        "1,3-Butadiene, 1,1,2,3,4,4-hexachloro-"
+                    ], 
+                    [
+                        "Hexachlorocyclopentadiene", 
+                        "77-47-4", 
+                        "1,3-Cyclopentadiene, 1,2,3,4,5,5-hexachloro-"
+                    ], 
+                    [
+                        "Hexachloroethane", 
+                        "67-72-1", 
+                        "Ethane, hexachloro-"
+                    ], 
+                    [
+                        "Hexachlorophene", 
+                        "70-30-4", 
+                        "Phenol, 2,2\u2032-methylenebis[3,4,6-trichloro-"
+                    ], 
+                    [
+                        "Hexachloropropene", 
+                        "1888-71-7", 
+                        "1-Propene, 1,1,2,3,3,3-hexachloro-"
+                    ], 
+                    [
+                        "2-Hexanone", 
+                        "591-78-6", 
+                        "2-Hexanone"
+                    ], 
+                    [
+                        "Indeno(1,2,3-cd)pyrene", 
+                        "193-39-5", 
+                        "Indeno[1,2,3-cd]pyrene"
+                    ], 
+                    [
+                        "Isobutyl alcohol", 
+                        "78-83-1", 
+                        "1-Propanol, 2-methyl-"
+                    ], 
+                    [
+                        "Isodrin", 
+                        "465-73-6", 
+                        "1,4,5,8-Dimethanonaphthalene,1,2,3,4,1 0,10-hexachloro-1,4,4a,5,8,8a hexahydro-(1\u03b1, 4\u03b1, 4a\u03b2, 5\u03b2, 8\u03b2, 8a\u03b2)-"
+                    ], 
+                    [
+                        "Isophorone", 
+                        "78-59-1", 
+                        "2-Cyclohexen-1-one, 3,5,5-trimethyl-"
+                    ], 
+                    [
+                        "Isosafrole", 
+                        "120-58-1", 
+                        "1,3-Benzodioxole, 5-(1-propenyl)-"
+                    ], 
+                    [
+                        "Kepone", 
+                        "143-50-0", 
+                        "1,3,4-Metheno-2H-cyclobuta-[cd]pentalen-2-one, 1,1a,3,3a,4,5,5,5a,5b,6-decachlorooctahydro-"
+                    ], 
+                    [
+                        "Lead", 
+                        "(Total)", 
+                        "Lead"
+                    ], 
+                    [
+                        "Mercury", 
+                        "(Total)", 
+                        "Mercury"
+                    ], 
+                    [
+                        "Methacrylonitrile", 
+                        "126-98-7", 
+                        "2-Propenenitrile, 2-methyl-"
+                    ], 
+                    [
+                        "Methapyrilene", 
+                        "91-80-5", 
+                        "1,2,Ethanediamine,N,N-dimethyl-N\u2032-2-pyridinyl-N\u2032-(2-thienylmethyl)-"
+                    ], 
+                    [
+                        "Methoxychlor", 
+                        "72-43-5", 
+                        "Benzene, 1,1\u2032-(2,2,2,trichloroethylidene)bis [4-methoxy-"
+                    ], 
+                    [
+                        "Methyl bromide; Bromomethane", 
+                        "74-83-9", 
+                        "Methane, bromo-"
+                    ], 
+                    [
+                        "Methyl chloride; Chloromethane", 
+                        "74-87-3", 
+                        "Methane, chloro-"
+                    ], 
+                    [
+                        "3-Methylcholanthrene", 
+                        "56-49-5", 
+                        "Benz[j]aceanthrylene, 1,2-dihydro-3-methyl-"
+                    ], 
+                    [
+                        "Methylene bromide; Dibromomethane", 
+                        "74-95-3", 
+                        "Methane, dibromo-"
+                    ], 
+                    [
+                        "Methylene chloride; Dichloromethane", 
+                        "75-09-2", 
+                        "Methane, dichloro-"
+                    ], 
+                    [
+                        "Methyl ethyl ketone; MEK;", 
+                        "78-93-3", 
+                        "2-Butanone"
+                    ], 
+                    [
+                        "Methyl iodide; Iodomethane", 
+                        "74-88-4", 
+                        "Methane, iodo-"
+                    ], 
+                    [
+                        "Methyl methacrylate", 
+                        "80-62-6", 
+                        "2-Propenoic acid, 2-methyl-, methyl ester"
+                    ], 
+                    [
+                        "Methyl methanesulfonate", 
+                        "66-27-3", 
+                        "Methanesulfonic acid, methyl ester"
+                    ], 
+                    [
+                        "2-Methylnaphthalene", 
+                        "91-57-6", 
+                        "Naphthalene, 2-methyl-"
+                    ], 
+                    [
+                        "Methyl parathion; Parathion methyl", 
+                        "298-00-0", 
+                        "Phosphorothioic acid, O,O-dimethyl O-(4-nitrophenyl) ester"
+                    ], 
+                    [
+                        "4-Methyl-2-pentanone; Methyl isobutyl ketone", 
+                        "108-10-1", 
+                        "2-Pentanone, 4-methyl-"
+                    ], 
+                    [
+                        "Naphthalene", 
+                        "91-20-3", 
+                        "Naphthalene"
+                    ], 
+                    [
+                        "1,4-Naphthoquinone", 
+                        "130-15-4", 
+                        "1,4-Naphthalenedione"
+                    ], 
+                    [
+                        "1-Naphthylamine", 
+                        "134-32-7", 
+                        "1-Naphthalenamine"
+                    ], 
+                    [
+                        "2-Naphthylamine", 
+                        "91-59-8", 
+                        "2-Naphthalenamine"
+                    ], 
+                    [
+                        "Nickel", 
+                        "(Total)", 
+                        "Nickel"
+                    ], 
+                    [
+                        "o-Nitroaniline", 
+                        "88-74-4", 
+                        "Benzenamine, 2-nitro-"
+                    ], 
+                    [
+                        "m-Nitroaniline", 
+                        "99-09-2", 
+                        "Benzenamine, 3-nitro-"
+                    ], 
+                    [
+                        "p-Nitroaniline", 
+                        "100-01-6", 
+                        "Benzenamine, 4-nitro-"
+                    ], 
+                    [
+                        "Nitrobenzene", 
+                        "98-95-3", 
+                        "Benzene, nitro-"
+                    ], 
+                    [
+                        "o-Nitrophenol", 
+                        "88-75-5", 
+                        "Phenol, 2-nitro-"
+                    ], 
+                    [
+                        "p-Nitrophenol", 
+                        "100-02-7", 
+                        "Phenol, 4-nitro-"
+                    ], 
+                    [
+                        "4-Nitroquinoline 1-oxide", 
+                        "56-57-5", 
+                        "Quinoline, 4-nitro, 1-oxide"
+                    ], 
+                    [
+                        "N-Nitrosodi-n-butylamine", 
+                        "924-16-3", 
+                        "1-Butanamine, N-butyl-N-nitroso-"
+                    ], 
+                    [
+                        "N-Nitrosodiethylamine", 
+                        "55-18-5", 
+                        "Ethanamine, N-ethyl-N-nitroso-"
+                    ], 
+                    [
+                        "N-Nitrosodimethylamine", 
+                        "62-75-9", 
+                        "Methanamine, N-methyl-N-nitroso-"
+                    ], 
+                    [
+                        "N-Nitrosodiphenylamine", 
+                        "86-30-6", 
+                        "Benzenamine, N-nitroso-N-phenyl-"
+                    ], 
+                    [
+                        "N-Nitrosodipropylamine;Di-n-propylnitrosamine", 
+                        "621-64-7", 
+                        "1-Propanamine, N-nitroso-N-propyl-"
+                    ], 
+                    [
+                        "N-Nitrosomethylethalamine", 
+                        "10595-95-6", 
+                        "Ethanamine, N-methyl-N-nitroso-"
+                    ], 
+                    [
+                        "N-Nitrosomorpholine", 
+                        "59-89-2", 
+                        "Morpholine, 4-nitroso-"
+                    ], 
+                    [
+                        "N-Nitrosopiperidine", 
+                        "100-75-4", 
+                        "Piperidine, 1-nitroso-"
+                    ], 
+                    [
+                        "N-Nitrosopyrrolidine", 
+                        "930-55-2", 
+                        "Pyrrolidine, 1-nitroso-"
+                    ], 
+                    [
+                        "5-Nitro-o-toluidine", 
+                        "99-55-8", 
+                        "Benzenamine, 2-methyl-5-nitro-"
+                    ], 
+                    [
+                        "Parathion", 
+                        "56-38-2", 
+                        "Phosphorothioic acid, O,O-diethyl-O-(4-nitrophenyl) ester"
+                    ], 
+                    [
+                        "Polychlorinated biphenyls; PCBs", 
+                        "See footnote 4", 
+                        "1,1\u2032-Biphenyl, chloro derivatives"
+                    ], 
+                    [
+                        "Polychlorinated dibenzo-p-dioxins; PCDDs", 
+                        "See footnote 5", 
+                        "Dibenzo[b,e][1,4]dioxin, chloro derivatives"
+                    ], 
+                    [
+                        "Polychlorinated dibenzofurans; PCDFs", 
+                        "See footnote 6", 
+                        "Dibenzofuran, chloro derivatives"
+                    ], 
+                    [
+                        "Pentachlorobenzene", 
+                        "608-93-5", 
+                        "Benzene, pentachloro-"
+                    ], 
+                    [
+                        "Pentachloroethane", 
+                        "76-01-7", 
+                        "Ethane, pentachloro-"
+                    ], 
+                    [
+                        "Pentachloronitrobenzene", 
+                        "82-68-8", 
+                        "Benzene, pentachloronitro-"
+                    ], 
+                    [
+                        "Pentachlorophenol", 
+                        "87-86-5", 
+                        "Phenol, pentachloro-"
+                    ], 
+                    [
+                        "Phenacetin", 
+                        "62-44-2", 
+                        "Acetamide, N-(4-ethoxyphenyl)"
+                    ], 
+                    [
+                        "Phenanthrene", 
+                        "85-01-8", 
+                        "Phenanthrene"
+                    ], 
+                    [
+                        "Phenol", 
+                        "108-95-2", 
+                        "Phenol"
+                    ], 
+                    [
+                        "p-Phenylenediamine", 
+                        "106-50-3", 
+                        "1,4-Benzenediamine"
+                    ], 
+                    [
+                        "Phorate", 
+                        "298-02-2", 
+                        "Phosphorodithioic acid, O,O-diethyl S- [(ethylthio)methyl] ester"
+                    ], 
+                    [
+                        "2-Picoline", 
+                        "109-06-8", 
+                        "Pyridine, 2-methyl-"
+                    ], 
+                    [
+                        "Pronamide", 
+                        "23950-58-5", 
+                        "Benzamide, 3,5-dichloro-N-(1,1-dimethyl-2-propynyl)-"
+                    ], 
+                    [
+                        "Propionitrile; Ethyl cyanide", 
+                        "107-12-0", 
+                        "Propanenitrile"
+                    ], 
+                    [
+                        "Pyrene", 
+                        "129-00-0", 
+                        "Pyrene"
+                    ], 
+                    [
+                        "Pyridine", 
+                        "110-86-1", 
+                        "Pyridine"
+                    ], 
+                    [
+                        "Safrole", 
+                        "94-59-7", 
+                        "1,3-Benzodioxole, 5-(2-propenyl)-"
+                    ], 
+                    [
+                        "Selenium", 
+                        "(Total)", 
+                        "Selenium"
+                    ], 
+                    [
+                        "Silver", 
+                        "(Total)", 
+                        "Silver"
+                    ], 
+                    [
+                        "Silvex; 2,4,5-TP", 
+                        "93-72-1", 
+                        "Propanoic acid, 2-(2,4,5- trichlorophenoxy)-"
+                    ], 
+                    [
+                        "Styrene", 
+                        "100-42-5", 
+                        "Benzene, ethenyl-"
+                    ], 
+                    [
+                        "Sulfide", 
+                        "18496-25-8", 
+                        "Sulfide"
+                    ], 
+                    [
+                        "2,4,5-T; 2,4,5-Trichlorophenoxyacetic acid", 
+                        "93-76-5", 
+                        "Acetic acid, (2,4,5-trichlorophenoxy)-"
+                    ], 
+                    [
+                        "2,3,7,8-TCDD; 2,3,7,8-Tetrachlorodibenzo-p-dioxin", 
+                        "1746-01-6", 
+                        "Dibenzo[b,e][1,4]dioxin, 2,3,7,8-tetrachloro-"
+                    ], 
+                    [
+                        "1,2,4,5-Tetrachlorobenzene", 
+                        "95-94-3", 
+                        "Benzene, 1,2,4,5-tetrachloro-"
+                    ], 
+                    [
+                        "1,1,1,2-Tetrachloroethane", 
+                        "630-20-6", 
+                        "Ethane, 1,1,1,2-tetrachloro-"
+                    ], 
+                    [
+                        "1,1,2,2-Tetrachloroethane", 
+                        "79-34-5", 
+                        "Ethane, 1,1,2,2-tetrachloro-"
+                    ], 
+                    [
+                        "Tetrachloroethylene; Perchloroethylene; Tetrachloroethene", 
+                        "127-18-4", 
+                        "Ethene, tetrachloro-"
+                    ], 
+                    [
+                        "2,3,4,6-Tetrachlorophenol", 
+                        "58-90-2", 
+                        "Phenol, 2,3,4,6-tetrachloro-"
+                    ], 
+                    [
+                        "Tetraethyl dithiopyrophosphate; Sulfotepp", 
+                        "3689-24-5", 
+                        "Thiodiphosphoric acid ([(HO)_{2} P(S)]_{2} O), tetraethyl ester"
+                    ], 
+                    [
+                        "Thallium", 
+                        "(Total)", 
+                        "Thallium"
+                    ], 
+                    [
+                        "Tin", 
+                        "(Total)", 
+                        "Tin"
+                    ], 
+                    [
+                        "Toluene", 
+                        "108-88-3", 
+                        "Benzene, methyl-"
+                    ], 
+                    [
+                        "o-Toluidine", 
+                        "95-53-4", 
+                        "Benzenamine, 2-methyl-"
+                    ], 
+                    [
+                        "Toxaphene", 
+                        "8001-35-2", 
+                        "Toxaphene"
+                    ], 
+                    [
+                        "1,2,4-Trichlorobenzene", 
+                        "120-82-1", 
+                        "Benzene, 1,2,4-trichloro-"
+                    ], 
+                    [
+                        "1,1,1-Trichloroethane; Methylchloroform", 
+                        "71-55-6", 
+                        "Ethane, 1,1,1-trichloro-"
+                    ], 
+                    [
+                        "1,1,2-Trichloroethane", 
+                        "79-00-5", 
+                        "Ethane, 1,1,2-trichloro-"
+                    ], 
+                    [
+                        "Trichloroethylene; Trichloroethene", 
+                        "79-01-6", 
+                        "Ethene, trichloro-"
+                    ], 
+                    [
+                        "Trichlorofluoromethane", 
+                        "75-69-4", 
+                        "Methane, trichlorofluoro-"
+                    ], 
+                    [
+                        "2,4,5-Trichlorophenol", 
+                        "95-95-4", 
+                        "Phenol, 2,4,5-trichloro-"
+                    ], 
+                    [
+                        "2,4,6-Trichlorophenol", 
+                        "88-06-2", 
+                        "Phenol, 2,4,6-trichloro-"
+                    ], 
+                    [
+                        "1,2,3-Trichloropropane", 
+                        "96-18-4", 
+                        "Propane, 1,2,3-trichloro-"
+                    ], 
+                    [
+                        "O,O,O-Triethyl phosphorothioate", 
+                        "126-68-1", 
+                        "Phosphorothioic acid, O,O,O-triethyl ester"
+                    ], 
+                    [
+                        "sym-Trinitrobenzene", 
+                        "99-35-4", 
+                        "Benzene, 1,3,5-trinitro-"
+                    ], 
+                    [
+                        "Vanadium", 
+                        "(Total)", 
+                        "Vanadium"
+                    ], 
+                    [
+                        "Vinyl acetate", 
+                        "108-05-4", 
+                        "Acetic acid, ethenyl ester"
+                    ], 
+                    [
+                        "Vinyl chloride", 
+                        "75-01-4", 
+                        "Ethene, chloro-"
+                    ], 
+                    [
+                        "Xylene (total)", 
+                        "1330-20-7", 
+                        "Benzene, dimethyl-"
+                    ], 
+                    [
+                        "Zinc", 
+                        "(Total)", 
+                        "Zinc"
+                    ]
+                ]
+            }, 
+            "text": "|Ground-Water Monitoring List|Common name [^1](Common names are those widely used in government regulations, scientific publications, and commerce; synonyms exist for many chemicals.)|CAS RN [^2](Chemical Abstracts Service registry number. Where \u201cTotal\u201d is entered, all species in the ground water that contain this element are included.)|Chemical abstracts service index name [^3](CAS index names are those used in the 9th Cumulative Index.)|\n|---|---|---|---|\n|Acenaphthene|83-32-9|Acenaphthylene, 1,2-dihydro-|\n|Acenaphthylene|208-96-8|Acenaphthylene|\n|Acetone|67-64-1|2-Propanone|\n|Acetophenone|98-86-2|Ethanone, 1-phenyl-|\n|Acetonitrile; Methyl cyanide|75-05-8|Acetonitrile|\n|2-Acetylaminofluorene; 2-AAF|53-96-3|Acetamide, N-9H-fluoren-2-yl-|\n|Acrolein|107-02-8|2-Propenal|\n|Acrylonitrile|107-13-1|2-Propenenitrile|\n|Aldrin|309-00-2|1,4:5,8-Dimethanonaphthalene, 1,2,3,4,10,10-hexachloro-1,4,4a,5,8,8a-hexahydro-(1\u03b1,4\u03b1,4a\u03b2,5\u03b1,8\u03b1,8a\u03b2)-|\n|Allyl chloride|107-05-1|1-Propene, 3-chloro-|\n|4-Aminobiphenyl|92-67-1|[1,1\u2032-Biphenyl]-4-amine|\n|Aniline|62-53-3|Benzenamine|\n|Anthracene|120-12-7|Anthracene|\n|Antimony|(Total)|Antimony|\n|Aramite|140-57-8|Sulfurous acid, 2-chloroethyl 2-[4-(1,1-dimethylethyl) phenoxy]-1-methylethyl ester|\n|Arsenic|(Total)|Arsenic|\n|Barium|(Total)|Barium|\n|Benzene|71-43-2|Benzene|\n|Benzo[a]anthracene; Benzanthracene|56-55-3|Benz[a]anthracene|\n|Benzo[b]fluoranthene|205-99-2|Benz[e]acephenanthrylene|\n|Benzo[k]fluoranthene|207-08-9|Benzo[k]fluoranthene|\n|Benzo[ghi]perylene|191-24-2|Benzo[ghi]perylene|\n|Benzo[a]pyrene|50-32-8|Benzo[a]pyrene|\n|Benzyl alcohol|100-51-6|Benzenemethanol|\n|Beryllium|(Total)|Beryllium|\n|alpha-BHC|319-84-6|Cyclohexane, 1,2,3,4,5,6-hexachloro-,(1\u03b1,2\u03b1,3\u03b2,4\u03b2,5\u03b2,6\u03b2)-|\n|beta-BHC|319-85-7|Cyclohexane, 1,2,3,4,5,6-hexachloro-,(1\u03b1,2\u03b2,3\u03b1,4\u03b2,5\u03b1,6\u03b2)-|\n|delta-BHC|319-86-8|Cyclohexane, 1,2,3,4,5,6-hexachloro-,(1\u03b1,2\u03b1,3\u03b1,4\u03b2,5\u03b1,6\u03b2)-|\n|gamma-BHC; Lindane|58-89-9|Cyclohexane, 1,2,3,4,5,6-hexachloro-,(1\u03b1,2\u03b1,3\u03b2,4\u03b1,5\u03b1,6\u03b2)-|\n|Bis(2-chloroethoxy)methane|111-91-1|Ethane, 1,1\u2032-[methylenebis(oxy)]bis [2-chloro-|\n|Bis(2-chloroethyl)ether|111-44-4|Ethane, 1,1\u2032-oxybis[2-chloro-|\n|Bis(2-chloro-1-methylethyl) ether; 2,2\u2032-Dichlorodiisopropyl ether|108-60-1|Propane, 2,2\u2032-oxybis[1-chloro-|\n|Bis(2-ethylhexyl) phthalate|117-81-7|1,2-Benzenedicarboxylic acid, bis(2-ethylhexyl)ester|\n|Bromodichloromethane|75-27-4|Methane, bromodichloro-|\n|Bromoform; Tribromomethane|75-25-2|Methane, tribromo-|\n|4-Bromophenyl phenyl ether|101-55-3|Benzene, 1-bromo-4-phenoxy-|\n|Butyl benzyl phthalate; Benzyl butyl phthalate|85-68-7|1,2-Benzenedicarboxylic acid, butyl phenylmethyl ester|\n|Cadmium|(Total)|Cadmium|\n|Carbon disulfide|75-15-0|Carbon disulfide|\n|Carbon tetrachloride|56-23-5|Methane, tetrachloro-|\n|Chlordane|57-74-9|4,7-Methano-1H-indene, 1,2,4,5,6,7,8,8-octachloro-2,3,3a,4,7,7a -hexahydro-|\n|p-Chloroaniline|106-47-8|Benzenamine, 4-chloro-|\n|Chlorobenzene|108-90-7|Benzene, chloro-|\n|Chlorobenzilate|510-15-6|Benzeneacetic acid, 4-chloro-\u03b1-(4-chlorophenyl)-\u03b1-hydroxy-, ethyl ester|\n|p-Chloro-m-cresol|59-50-7|Phenol, 4-chloro-3-methyl-|\n|Chloroethane; Ethyl chloride|75-00-3|Ethane, chloro-|\n|Chloroform|67-66-3|Methane, trichloro-|\n|2-Chloronaphthalene|91-58-7|Naphthalene, 2-chloro-|\n|2-Chlorophenol|95-57-8|Phenol, 2-chloro-|\n|4-Chlorophenyl phenyl ether|7005-72-3|Benzene, 1-chloro-4-phenoxy-|\n|Chloroprene|126-99-8|1,3-Butadiene,2-chloro-|\n|Chromium|(Total)|Chromium|\n|Chrysene|218-01-9|Chrysene|\n|Cobalt|(Total)|Cobalt|\n|Copper|(Total)|Copper|\n|m-Cresol|108-39-4|Phenol, 3-methyl-|\n|o-Cresol|95-48-7|Phenol, 2-methyl-|\n|p-Cresol|106-44-5|Phenol, 4-methyl-|\n|Cyanide|57-12-5|Cyanide|\n|2,4-D; 2,4-Dichlorophenoxyacetic acid|94-75-7|Acetic acid, (2,4-dichlorophenoxy)-|\n|4,4\u2032-DDD|72-54-8|Benzene 1,1\u2032-(2,2-dichloroethylidene) bis[4-chloro-|\n|4,4\u2032-DDE|72-55-9|Benzene, 1,1\u2032-(dichloroethenylidene) bis[4-chloro-|\n|4,4\u2032-DDT|50-29-3|Benzene, 1,1\u2032-(2,2,2-trichloroethylidene) bis[4-chloro-|\n|Diallate|2303-16-4|Carbamothioic acid, bis(1-methylethyl)- , S- (2,3-dichloro-2-propenyl) ester|\n|Dibenz[a,h]anthracene|53-70-3|Dibenz[a,h]anthracene|\n|Dibenzofuran|132-64-9|Dibenzofuran|\n|Dibromochloromethane; Chlorodibromomethane|124-48-1|Methane, dibromochloro-|\n|1,2-Dibromo-3-chloropropane; DBCP|96-12-8|Propane, 1,2-dibromo-3-chloro-|\n|1,2-Dibromoethane; Ethylene dibromide|106-93-4|Ethane, 1,2-dibromo-|\n|Di-n-butyl phthalate|84-74-2|1,2-Benzenedicarboxylic acid, dibutyl ester|\n|o-Dichlorobenzene|95-50-1|Benzene, 1,2-dichloro-|\n|m-Dichlorobenzene|541-73-1|Benzene, 1,3-dichloro-|\n|p-Dichlorobenzene|106-46-7|Benzene, 1,4-dichloro-|\n|3,3\u2032-Dichlorobenzidine|91-94-1|[1,1\u2032-Biphenyl]-4,4\u2032-diamine, 3,3\u2032-dichloro-|\n|trans-1,4-Dichloro-2-butene|110-57-6|2-Butene, 1,4-dichloro-, (E)-|\n|Dichlorodifluoromethane|75-71-8|Methane, dichlorodifluoro-|\n|1,1-Dichloroethane|75-34-3|Ethane, 1,1-dichloro-|\n|1,2-Dichloroethane; Ethylene dichloride|107-06-2|Ethane, 1,2-dichloro-|\n|1,1-Dichloroethylene; Vinylidene chloride|75-35-4|Ethene, 1,1-dichloro-|\n|trans-1,2-Dichloroethylene|156-60-5|Ethene, 1,2-dichloro-, (E)-|\n|2,4-Dichlorophenol|120-83-2|Phenol, 2,4-dichloro-|\n|2,6-Dichlorophenol|87-65-0|Phenol, 2,6-dichloro-|\n|1,2-Dichloropropane|78-87-5|Propane, 1,2-dichloro-|\n|cis-1,3-Dichloropropene|10061-01-5|1-Propene, 1,3-dichloro-, (Z)-|\n|trans-1,3-Dichloropropene|10061-02-6|1-Propene, 1,3-dichloro-, (E)-|\n|Dieldrin|60-57-1|2,7:3,6-Dimethanonaphth [2,3-b]oxirene, 3,4,5,6,9,9-hexachloro-1a,2,2a,3,6,6a,7,7a-octahydro-, (1a\u03b1,2\u03b2,2a\u03b1,3\u03b2,6\u03b2;,6a\u03b1,7\u03b2,7a\u03b1)-|\n|Diethyl phthalate|84-66-2|1,2-Benzenedicarboxylic acid, diethyl ester|\n|O,O-Diethyl O-2-pyrazinyl phosphorothioate; Thionazin|297-97-2|Phosphorothioic acid, O,O-diethyl O-pyrazinyl ester|\n|Dimethoate|60-51-5|Phosphorodithioic acid, O,O-dimethyl S-[2-(methylamino)-2-oxoethyl] ester|\n|p-(Dimethylamino)azobenzene|60-11-7|Benzenamine, N,N-dimethyl-4-(phenylazo)-|\n|7,12-Dimethylbenz[a]anthracene|57-97-6|Benz[a]anthracene, 7,12-dimethyl-|\n|3,3\u2032-Dimethylbenzidine|119-93-7|[1,1\u2032-Biphenyl]-4,4\u2032-diamine, 3,3\u2032-dimethyl-|\n|alpha, alpha-Dimethylphenethylamine|122-09-8|Benzeneethanamine, \u03b1,\u03b1-dimethyl-|\n|2,4-Dimethylphenol|105-67-9|Phenol, 2,4-dimethyl-|\n|Dimethyl phthalate|131-11-3|1,2-Benzenedicarboxylic acid, dimethyl ester|\n|m-Dinitrobenzene|99-65-0|Benzene, 1,3-dinitro-|\n|4,6-Dinitro-o-cresol|534-52-1|Phenol, 2-methyl-4,6-dinitro-|\n|2,4-Dinitrophenol|51-28-5|Phenol, 2,4-dinitro-|\n|2,4-Dinitrotoluene|121-14-2|Benzene, 1-methyl-2,4-dinitro-|\n|2,6-Dinitrotoluene|606-20-2|Benzene, 2-methyl-1,3-dinitro-|\n|Dinoseb; DNBP; 2-sec-Butyl-4,6-dinitrophenol|88-85-7|Phenol, 2-(1-methylpropyl)-4,6-dinitro-|\n|Di-n-octyl phthalate|117-84-0|1,2-Benzenedicarboxylic acid, dioctyl ester|\n|1,4-Dioxane|123-91-1|1,4-Dioxane|\n|Diphenylamine|122-39-4|Benzenamine, N-phenyl-|\n|Disulfoton|298-04-4|Phosphorodithioic acid, O,O-diethyl S-[2-(ethylthio)ethyl]ester|\n|Endosulfan I|959-98-8|6,9-Methano-2,4,3- benzodioxathiepin, 6,7,8,9,10,10-hexachloro-1,5,5a,6,9,9a-hexahydro-, 3-oxide,(3\u03b1,5a\u03b2,6\u03b1,9\u03b1,9a\u03b2)-|\n|Endosulfan II|33213-65-9|6,9-Methano-2,4,3- benzodioxathiepin, 6,7,8,9,10,10-hexachloro-1,5,5a,6,9,9a-hexahydro-, 3-oxide, (3\u03b1,5a\u03b1,6\u03b2,9\u03b2,9a\u03b1)-|\n|Endosulfan sulfate|1031-07-8|6,9-Methano-2,4,3- benzodioxathiepin, 6,7,8,9,10,10-hexachloro-1,5,5a,6,9,9a-hexahydro-, 3,3-dioxide|\n|Endrin|72-20-8|2,7:3,6-Dimethanonaphth[2,3-b]oxirene, 3,4,5,6,9,9-hexachloro-,1a,2,2a,3,6,6a,7,7a-octahydro-, (1a\u03b1,2\u03b2,2a\u03b2,3\u03b1,6\u03b1,6a\u03b2,7\u03b2, 7a\u03b1)-|\n|Endrin aldehyde|7421-93-4|1,2,4- Methenocyclopenta[cd] pentalene-5-carboxaldehyde, 2,2a,3,3,4,7-hexachlorodecahydro-,(1\u03b1,2\u03b2,2a\u03b2,4\u03b2,4a\u03b2,5\u03b2,6a\u03b2,6b\u03b2,7R*)-|\n|Ethylbenzene|100-41-4|Benzene, ethyl-|\n|Ethyl methacrylate|97-63-2|2-Propenoic acid, 2-methyl-, ethyl ester|\n|Ethyl methanesulfonate|62-50-0|Methanesulfonic acid, ethyl ester|\n|Famphur|52-85-7|Phosphorothioic acid, O-[4-[(dimethylamino)sulfonyl]phenyl]-O,O-dimethyl ester|\n|Fluoranthene|206-44-0|Fluoranthene|\n|Fluorene|86-73-7|9H-Fluorene|\n|Heptachlor|76-44-8|4,7-Methano-1H-indene, 1,4,5,6,7,8,8-heptachloro-3a,4,7,7a-tetrahydro-|\n|Heptachlor epoxide|1024-57-3|2,5-Methano-2H-indeno[1,2-b] oxirene, 2,3,4,5,6,7,7-heptachloro-1a,1b,5,5a,6,6a,-hexahydro-, (1a\u03b1,1b\u03b2,2\u03b1,5\u03b1,5a\u03b2,6\u03b2,6a\u03b1)|\n|Hexachlorobenzene|118-74-1|Benzene, hexachloro-|\n|Hexachlorobutadiene|87-68-3|1,3-Butadiene, 1,1,2,3,4,4-hexachloro-|\n|Hexachlorocyclopentadiene|77-47-4|1,3-Cyclopentadiene, 1,2,3,4,5,5-hexachloro-|\n|Hexachloroethane|67-72-1|Ethane, hexachloro-|\n|Hexachlorophene|70-30-4|Phenol, 2,2\u2032-methylenebis[3,4,6-trichloro-|\n|Hexachloropropene|1888-71-7|1-Propene, 1,1,2,3,3,3-hexachloro-|\n|2-Hexanone|591-78-6|2-Hexanone|\n|Indeno(1,2,3-cd)pyrene|193-39-5|Indeno[1,2,3-cd]pyrene|\n|Isobutyl alcohol|78-83-1|1-Propanol, 2-methyl-|\n|Isodrin|465-73-6|1,4,5,8-Dimethanonaphthalene,1,2,3,4,1 0,10-hexachloro-1,4,4a,5,8,8a hexahydro-(1\u03b1, 4\u03b1, 4a\u03b2, 5\u03b2, 8\u03b2, 8a\u03b2)-|\n|Isophorone|78-59-1|2-Cyclohexen-1-one, 3,5,5-trimethyl-|\n|Isosafrole|120-58-1|1,3-Benzodioxole, 5-(1-propenyl)-|\n|Kepone|143-50-0|1,3,4-Metheno-2H-cyclobuta-[cd]pentalen-2-one, 1,1a,3,3a,4,5,5,5a,5b,6-decachlorooctahydro-|\n|Lead|(Total)|Lead|\n|Mercury|(Total)|Mercury|\n|Methacrylonitrile|126-98-7|2-Propenenitrile, 2-methyl-|\n|Methapyrilene|91-80-5|1,2,Ethanediamine,N,N-dimethyl-N\u2032-2-pyridinyl-N\u2032-(2-thienylmethyl)-|\n|Methoxychlor|72-43-5|Benzene, 1,1\u2032-(2,2,2,trichloroethylidene)bis [4-methoxy-|\n|Methyl bromide; Bromomethane|74-83-9|Methane, bromo-|\n|Methyl chloride; Chloromethane|74-87-3|Methane, chloro-|\n|3-Methylcholanthrene|56-49-5|Benz[j]aceanthrylene, 1,2-dihydro-3-methyl-|\n|Methylene bromide; Dibromomethane|74-95-3|Methane, dibromo-|\n|Methylene chloride; Dichloromethane|75-09-2|Methane, dichloro-|\n|Methyl ethyl ketone; MEK;|78-93-3|2-Butanone|\n|Methyl iodide; Iodomethane|74-88-4|Methane, iodo-|\n|Methyl methacrylate|80-62-6|2-Propenoic acid, 2-methyl-, methyl ester|\n|Methyl methanesulfonate|66-27-3|Methanesulfonic acid, methyl ester|\n|2-Methylnaphthalene|91-57-6|Naphthalene, 2-methyl-|\n|Methyl parathion; Parathion methyl|298-00-0|Phosphorothioic acid, O,O-dimethyl O-(4-nitrophenyl) ester|\n|4-Methyl-2-pentanone; Methyl isobutyl ketone|108-10-1|2-Pentanone, 4-methyl-|\n|Naphthalene|91-20-3|Naphthalene|\n|1,4-Naphthoquinone|130-15-4|1,4-Naphthalenedione|\n|1-Naphthylamine|134-32-7|1-Naphthalenamine|\n|2-Naphthylamine|91-59-8|2-Naphthalenamine|\n|Nickel|(Total)|Nickel|\n|o-Nitroaniline|88-74-4|Benzenamine, 2-nitro-|\n|m-Nitroaniline|99-09-2|Benzenamine, 3-nitro-|\n|p-Nitroaniline|100-01-6|Benzenamine, 4-nitro-|\n|Nitrobenzene|98-95-3|Benzene, nitro-|\n|o-Nitrophenol|88-75-5|Phenol, 2-nitro-|\n|p-Nitrophenol|100-02-7|Phenol, 4-nitro-|\n|4-Nitroquinoline 1-oxide|56-57-5|Quinoline, 4-nitro, 1-oxide|\n|N-Nitrosodi-n-butylamine|924-16-3|1-Butanamine, N-butyl-N-nitroso-|\n|N-Nitrosodiethylamine|55-18-5|Ethanamine, N-ethyl-N-nitroso-|\n|N-Nitrosodimethylamine|62-75-9|Methanamine, N-methyl-N-nitroso-|\n|N-Nitrosodiphenylamine|86-30-6|Benzenamine, N-nitroso-N-phenyl-|\n|N-Nitrosodipropylamine;Di-n-propylnitrosamine|621-64-7|1-Propanamine, N-nitroso-N-propyl-|\n|N-Nitrosomethylethalamine|10595-95-6|Ethanamine, N-methyl-N-nitroso-|\n|N-Nitrosomorpholine|59-89-2|Morpholine, 4-nitroso-|\n|N-Nitrosopiperidine|100-75-4|Piperidine, 1-nitroso-|\n|N-Nitrosopyrrolidine|930-55-2|Pyrrolidine, 1-nitroso-|\n|5-Nitro-o-toluidine|99-55-8|Benzenamine, 2-methyl-5-nitro-|\n|Parathion|56-38-2|Phosphorothioic acid, O,O-diethyl-O-(4-nitrophenyl) ester|\n|Polychlorinated biphenyls; PCBs|See footnote 4|1,1\u2032-Biphenyl, chloro derivatives|\n|Polychlorinated dibenzo-p-dioxins; PCDDs|See footnote 5|Dibenzo[b,e][1,4]dioxin, chloro derivatives|\n|Polychlorinated dibenzofurans; PCDFs|See footnote 6|Dibenzofuran, chloro derivatives|\n|Pentachlorobenzene|608-93-5|Benzene, pentachloro-|\n|Pentachloroethane|76-01-7|Ethane, pentachloro-|\n|Pentachloronitrobenzene|82-68-8|Benzene, pentachloronitro-|\n|Pentachlorophenol|87-86-5|Phenol, pentachloro-|\n|Phenacetin|62-44-2|Acetamide, N-(4-ethoxyphenyl)|\n|Phenanthrene|85-01-8|Phenanthrene|\n|Phenol|108-95-2|Phenol|\n|p-Phenylenediamine|106-50-3|1,4-Benzenediamine|\n|Phorate|298-02-2|Phosphorodithioic acid, O,O-diethyl S- [(ethylthio)methyl] ester|\n|2-Picoline|109-06-8|Pyridine, 2-methyl-|\n|Pronamide|23950-58-5|Benzamide, 3,5-dichloro-N-(1,1-dimethyl-2-propynyl)-|\n|Propionitrile; Ethyl cyanide|107-12-0|Propanenitrile|\n|Pyrene|129-00-0|Pyrene|\n|Pyridine|110-86-1|Pyridine|\n|Safrole|94-59-7|1,3-Benzodioxole, 5-(2-propenyl)-|\n|Selenium|(Total)|Selenium|\n|Silver|(Total)|Silver|\n|Silvex; 2,4,5-TP|93-72-1|Propanoic acid, 2-(2,4,5- trichlorophenoxy)-|\n|Styrene|100-42-5|Benzene, ethenyl-|\n|Sulfide|18496-25-8|Sulfide|\n|2,4,5-T; 2,4,5-Trichlorophenoxyacetic acid|93-76-5|Acetic acid, (2,4,5-trichlorophenoxy)-|\n|2,3,7,8-TCDD; 2,3,7,8-Tetrachlorodibenzo-p-dioxin|1746-01-6|Dibenzo[b,e][1,4]dioxin, 2,3,7,8-tetrachloro-|\n|1,2,4,5-Tetrachlorobenzene|95-94-3|Benzene, 1,2,4,5-tetrachloro-|\n|1,1,1,2-Tetrachloroethane|630-20-6|Ethane, 1,1,1,2-tetrachloro-|\n|1,1,2,2-Tetrachloroethane|79-34-5|Ethane, 1,1,2,2-tetrachloro-|\n|Tetrachloroethylene; Perchloroethylene; Tetrachloroethene|127-18-4|Ethene, tetrachloro-|\n|2,3,4,6-Tetrachlorophenol|58-90-2|Phenol, 2,3,4,6-tetrachloro-|\n|Tetraethyl dithiopyrophosphate; Sulfotepp|3689-24-5|Thiodiphosphoric acid ([(HO)_{2} P(S)]_{2} O), tetraethyl ester|\n|Thallium|(Total)|Thallium|\n|Tin|(Total)|Tin|\n|Toluene|108-88-3|Benzene, methyl-|\n|o-Toluidine|95-53-4|Benzenamine, 2-methyl-|\n|Toxaphene|8001-35-2|Toxaphene|\n|1,2,4-Trichlorobenzene|120-82-1|Benzene, 1,2,4-trichloro-|\n|1,1,1-Trichloroethane; Methylchloroform|71-55-6|Ethane, 1,1,1-trichloro-|\n|1,1,2-Trichloroethane|79-00-5|Ethane, 1,1,2-trichloro-|\n|Trichloroethylene; Trichloroethene|79-01-6|Ethene, trichloro-|\n|Trichlorofluoromethane|75-69-4|Methane, trichlorofluoro-|\n|2,4,5-Trichlorophenol|95-95-4|Phenol, 2,4,5-trichloro-|\n|2,4,6-Trichlorophenol|88-06-2|Phenol, 2,4,6-trichloro-|\n|1,2,3-Trichloropropane|96-18-4|Propane, 1,2,3-trichloro-|\n|O,O,O-Triethyl phosphorothioate|126-68-1|Phosphorothioic acid, O,O,O-triethyl ester|\n|sym-Trinitrobenzene|99-35-4|Benzene, 1,3,5-trinitro-|\n|Vanadium|(Total)|Vanadium|\n|Vinyl acetate|108-05-4|Acetic acid, ethenyl ester|\n|Vinyl chloride|75-01-4|Ethene, chloro-|\n|Xylene (total)|1330-20-7|Benzene, dimethyl-|\n|Zinc|(Total)|Zinc|"
+        }, 
+        {
+            "locations": [
+                0, 
+                1
+            ], 
+            "subscript_data": {
+                "subscript": "2"
+            }, 
+            "text": "_{2}"
+        }, 
+        {
+            "footnote_data": {
+                "note": "Common names are those widely used in government regulations, scientific publications, and commerce; synonyms exist for many chemicals.", 
+                "ref": "1"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "[^1](Common names are those widely used in government regulations, scientific publications, and commerce; synonyms exist for many chemicals.)"
+        }, 
+        {
+            "footnote_data": {
+                "note": "Chemical Abstracts Service registry number. Where \u201cTotal\u201d is entered, all species in the ground water that contain this element are included.", 
+                "ref": "2"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "[^2](Chemical Abstracts Service registry number. Where \u201cTotal\u201d is entered, all species in the ground water that contain this element are included.)"
+        }, 
+        {
+            "footnote_data": {
+                "note": "CAS index names are those used in the 9th Cumulative Index.", 
+                "ref": "3"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "[^3](CAS index names are those used in the 9th Cumulative Index.)"
+        }
+    ], 
+    "264-V-h6-p46": [
+        {
+            "locations": [
+                0, 
+                1, 
+                2
+            ], 
+            "subscript_data": {
+                "subscript": "2"
+            }, 
+            "text": "_{2}"
+        }, 
+        {
+            "locations": [
+                0, 
+                1, 
+                2
+            ], 
+            "subscript_data": {
+                "subscript": "3"
+            }, 
+            "text": "_{3}"
+        }
+    ]
+}

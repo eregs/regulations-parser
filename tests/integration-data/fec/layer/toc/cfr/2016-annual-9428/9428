@@ -1,0 +1,83 @@
+{
+    "9428": [
+        {
+            "index": [
+                "9428", 
+                "Subpart", 
+                "A"
+            ], 
+            "title": "General Provisions"
+        }, 
+        {
+            "index": [
+                "9428", 
+                "Subpart", 
+                "B"
+            ], 
+            "title": "National Mail Voter Registration Form"
+        }, 
+        {
+            "index": [
+                "9428", 
+                "Subpart", 
+                "C"
+            ], 
+            "title": "Recordkeeping and Reporting"
+        }
+    ], 
+    "9428-Subpart-A": [
+        {
+            "index": [
+                "9428", 
+                "1"
+            ], 
+            "title": "\u00a7 9428.1 Purpose & scope."
+        }, 
+        {
+            "index": [
+                "9428", 
+                "2"
+            ], 
+            "title": "\u00a7 9428.2 Definitions."
+        }
+    ], 
+    "9428-Subpart-B": [
+        {
+            "index": [
+                "9428", 
+                "3"
+            ], 
+            "title": "\u00a7 9428.3 General information."
+        }, 
+        {
+            "index": [
+                "9428", 
+                "4"
+            ], 
+            "title": "\u00a7 9428.4 Contents."
+        }, 
+        {
+            "index": [
+                "9428", 
+                "5"
+            ], 
+            "title": "\u00a7 9428.5 Format."
+        }, 
+        {
+            "index": [
+                "9428", 
+                "6"
+            ], 
+            "title": "\u00a7 9428.6 Chief state election official."
+        }
+    ], 
+    "9428-Subpart-C": [
+        {
+            "index": [
+                "9428", 
+                "7"
+            ], 
+            "title": "\u00a7 9428.7 Contents of reports from the states."
+        }
+    ]
+}

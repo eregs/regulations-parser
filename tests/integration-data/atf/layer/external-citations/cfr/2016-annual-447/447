@@ -1,0 +1,259 @@
+{
+    "447-11-p3473882945": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "1934", 
+                "title": "22"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "22 U.S.C. 1934", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=1934&title=22&year=mostrecent"
+        }
+    ], 
+    "447-2-a": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "921", 
+                "title": "18"
+            }, 
+            "locations": [
+                0, 
+                1
+            ], 
+            "text": "18 U.S.C. 921", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=921&title=18&year=mostrecent"
+        }, 
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "5845", 
+                "title": "26"
+            }, 
+            "locations": [
+                0, 
+                1
+            ], 
+            "text": "26 U.S.C. 5845", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=5845&title=26&year=mostrecent"
+        }, 
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "27", 
+                "part": "478"
+            }, 
+            "locations": [
+                0, 
+                1
+            ], 
+            "text": "27 CFR Part 478", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=478&titlenum=27&year=mostrecent"
+        }, 
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "27", 
+                "part": "479"
+            }, 
+            "locations": [
+                0, 
+                1
+            ], 
+            "text": "27 CFR Part 479", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=479&titlenum=27&year=mostrecent"
+        }
+    ], 
+    "447-2-b": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "27", 
+                "part": "478"
+            }, 
+            "locations": [
+                0, 
+                1
+            ], 
+            "text": "27 CFR Part 478", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=478&titlenum=27&year=mostrecent"
+        }, 
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "27", 
+                "part": "479"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "27 CFR Part 479", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=479&titlenum=27&year=mostrecent"
+        }
+    ], 
+    "447-2-c": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "27", 
+                "part": "478"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "27 CFR Part 478", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=478&titlenum=27&year=mostrecent"
+        }
+    ], 
+    "447-2-d": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "22", 
+                "part": "129"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "22 CFR part 129", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=129&titlenum=22&year=mostrecent"
+        }
+    ], 
+    "447-21-p1": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "2778", 
+                "title": "22"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "22 U.S.C. 2778", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=2778&title=22&year=mostrecent"
+        }
+    ], 
+    "447-35-b": [
+        {
+            "citation_type": "OTHER", 
+            "components": {}, 
+            "locations": [
+                0
+            ], 
+            "text": "http://www.atf.gov", 
+            "url": "http://www.atf.gov"
+        }
+    ], 
+    "447-41-b": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "27", 
+                "part": "478", 
+                "section": "115"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "27 CFR 478.115", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=478&section=115&titlenum=27&year=mostrecent"
+        }
+    ], 
+    "447-46": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "22", 
+                "part": "123"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "22 CFR Part 123", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=123&titlenum=22&year=mostrecent"
+        }
+    ], 
+    "447-52-e": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "27", 
+                "part": "478", 
+                "section": "118"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "27 CFR 478.118", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=478&section=118&titlenum=27&year=mostrecent"
+        }, 
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "27", 
+                "part": "479"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "27 CFR Part 479", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=479&titlenum=27&year=mostrecent"
+        }
+    ], 
+    "447-53-a-3": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "921", 
+                "title": "18"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "18 U.S.C. 921", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=921&title=18&year=mostrecent"
+        }
+    ], 
+    "447-54": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "553", 
+                "title": "5"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "5 U.S.C. 553", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=553&title=5&year=mostrecent"
+        }
+    ], 
+    "447-57-b-2": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "925", 
+                "title": "18"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "18 U.S.C. 925", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=925&title=18&year=mostrecent"
+        }
+    ], 
+    "447-58": [
+        {
+            "citation_type": "OTHER", 
+            "components": {}, 
+            "locations": [
+                0
+            ], 
+            "text": "http://www.atf.gov", 
+            "url": "http://www.atf.gov"
+        }
+    ]
+}

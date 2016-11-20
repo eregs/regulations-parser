@@ -1,0 +1,126 @@
+{
+    "9411-1-a-1": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "5", 
+                "part": "2634"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "5 CFR part 2634", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=2634&titlenum=5&year=mostrecent"
+        }
+    ], 
+    "9411-1-a-2": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "5", 
+                "part": "2635"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "5 CFR part 2635", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=2635&titlenum=5&year=mostrecent"
+        }
+    ], 
+    "9411-1-a-3": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "5", 
+                "part": "2636"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "5 CFR part 2636", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=2636&titlenum=5&year=mostrecent"
+        }
+    ], 
+    "9411-1-a-4": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "5", 
+                "part": "2637"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "5 CFR part 2637", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=2637&titlenum=5&year=mostrecent"
+        }
+    ], 
+    "9411-1-a-5": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "208", 
+                "title": "18"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "18 U.S.C. 208", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=208&title=18&year=mostrecent"
+        }, 
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "5", 
+                "part": "2638"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "5 CFR part 2638", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=2638&titlenum=5&year=mostrecent"
+        }
+    ], 
+    "9411-1-a-6": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "5", 
+                "part": "2641"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "5 CFR part 2641", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=2641&titlenum=5&year=mostrecent"
+        }
+    ], 
+    "9411-1-a-7": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "5", 
+                "part": "734"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "5 CFR part 734", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=734&titlenum=5&year=mostrecent"
+        }
+    ], 
+    "9411-1-a-8": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "5", 
+                "part": "735"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "5 CFR part 735", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=735&titlenum=5&year=mostrecent"
+        }
+    ]
+}

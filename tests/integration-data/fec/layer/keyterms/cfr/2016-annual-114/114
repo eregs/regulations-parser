@@ -1,0 +1,522 @@
+{
+    "114-1-b": [
+        {
+            "key_term": "Establishment, administration, and solicitation costs", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "114-1-i": [
+        {
+            "key_term": "Voluntary contributions", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "114-1-j": [
+        {
+            "key_term": "Restricted class.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "114-10-a": [
+        {
+            "key_term": "General.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "114-10-b": [
+        {
+            "key_term": "Reporting independent expenditures and electioneering communications.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "114-10-c": [
+        {
+            "key_term": "Non-authorization notice.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "114-10-d": [
+        {
+            "key_term": "Segregated bank account.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "114-10-e": [
+        {
+            "key_term": "Activities prohibited by the Internal Revenue Code.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "114-2-f": [
+        {
+            "key_term": "Facilitating the making of contributions.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "114-3-a": [
+        {
+            "key_term": "General.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "114-3-b": [
+        {
+            "key_term": "Reporting communications containing express advocacy to the restricted class.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "114-3-c": [
+        {
+            "key_term": "Communications containing express advocacy.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "114-3-c-1": [
+        {
+            "key_term": "Publications.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "114-3-c-2": [
+        {
+            "key_term": "Candidate and party appearances.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "114-3-c-3": [
+        {
+            "key_term": "Phone banks.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "114-3-c-4": [
+        {
+            "key_term": "Registration and get-out-the-vote drives.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "114-4-a": [
+        {
+            "key_term": "General.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "114-4-b": [
+        {
+            "key_term": "Communications by a corporation or labor organization to employees beyond its restricted class\u2014", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "114-4-b-1": [
+        {
+            "key_term": "Candidate and party appearances on corporate premises or at a meeting, convention or other function.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "114-4-b-2": [
+        {
+            "key_term": "Candidate and party appearances on labor organization premises or at a meeting, convention or other function.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "114-4-c": [
+        {
+            "key_term": "Communications by a corporation or labor organization to the general public\u2014", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "114-4-c-1": [
+        {
+            "key_term": "General.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "114-4-c-2": [
+        {
+            "key_term": "Voter registration and get-out-the-vote communications.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "114-4-c-3": [
+        {
+            "key_term": "Official registration and voting information.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "114-4-c-4": [
+        {
+            "key_term": "Voting records.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "114-4-c-5": [
+        {
+            "key_term": "Voter guides.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "114-4-c-6": [
+        {
+            "key_term": "Endorsements.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "114-4-c-7": [
+        {
+            "key_term": "Candidate appearances on educational institution premises\u2014", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "114-4-c-7-i": [
+        {
+            "key_term": "Rental of facilities at usual and normal charge.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "114-4-c-7-ii": [
+        {
+            "key_term": "Use of facilities at no charge or at less than the usual and normal charge.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "114-4-d": [
+        {
+            "key_term": "Voter registration and get-out-the-vote drives\u2014", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "114-4-d-1": [
+        {
+            "key_term": "Voter registration and get-out-the-vote drives permitted.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "114-4-d-2": [
+        {
+            "key_term": "Disbursements for certain voter registration and get-out-the-vote drives not expenditures.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "114-4-e": [
+        {
+            "key_term": "Incorporated membership organizations, incorporated trade associations, incorporated cooperatives and corporations without capital stock.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "114-4-f": [
+        {
+            "key_term": "Candidate debates.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "114-5-a": [
+        {
+            "key_term": "Voluntary contributions to a separate segregated fund.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "114-5-b": [
+        {
+            "key_term": "Use of treasury monies.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "114-5-c": [
+        {
+            "key_term": "Membership in separate segregated funds.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "114-5-d": [
+        {
+            "key_term": "Control of funds.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "114-5-e": [
+        {
+            "key_term": "Disclosure.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "114-5-f": [
+        {
+            "key_term": "Contribution limits.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "114-5-g": [
+        {
+            "key_term": "Solicitations.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "114-5-h": [
+        {
+            "key_term": "Accidental or inadvertent solicitation.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "114-5-i": [
+        {
+            "key_term": "Communications paid for with voluntary contributions.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "114-5-j": [
+        {
+            "key_term": "Acceptance of contributions.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "114-5-k": [
+        {
+            "key_term": "Availability of methods.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "114-5-l": [
+        {
+            "key_term": "Methods permitted by law to labor organizations.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "114-6-c": [
+        {
+            "key_term": "Written solicitation.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "114-6-d": [
+        {
+            "key_term": "The custodial arrangement.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "114-6-e": [
+        {
+            "key_term": "Availability of methods.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "114-8-a": [
+        {
+            "key_term": "Definition.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "114-8-b": [
+        {
+            "key_term": "Prohibition.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "114-8-c": [
+        {
+            "key_term": "Limitations.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "114-8-d": [
+        {
+            "key_term": "Separate and specific approval.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "114-8-e": [
+        {
+            "key_term": "Solicitation.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "114-8-f": [
+        {
+            "key_term": "Solicitation of a subsidiary corporation.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "114-8-g": [
+        {
+            "key_term": "Federations of trade associations.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "114-8-h": [
+        {
+            "key_term": "Communications other than solicitations.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "114-8-i": [
+        {
+            "key_term": "Trade association employees.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "114-9-a": [
+        {
+            "key_term": "Use of corporate facilities for individual volunteer activity by stockholders and employees.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "114-9-a-2": [
+        {
+            "key_term": "Safe harbor.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "114-9-b": [
+        {
+            "key_term": "Use of labor organization facilities for individual volunteer activity by officials, members, and employees.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "114-9-b-2": [
+        {
+            "key_term": "Safe harbor.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "114-9-c": [
+        {
+            "key_term": "Use of corporate or labor organization facilities to produce materials.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "114-9-d": [
+        {
+            "key_term": "Use or rental of corporate or labor organization facilities by other persons.", 
+            "locations": [
+                0
+            ]
+        }
+    ]
+}

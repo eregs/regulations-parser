@@ -1,0 +1,40 @@
+{
+    "children": [
+        {
+            "children": [
+                {
+                    "children": [], 
+                    "label": [
+                        "107", 
+                        "1"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "Each convention committee established under 11 CFR 9008.3(a)(2) by a national committee of a political party and each committee or other organization, including a national committee, which represents a political party in making arrangements for that party's convention held to nominate a presidential or vice presidential candidate shall register and report in accordance with 11 CFR 9008.3(b).", 
+                    "title": "\u00a7 107.1 Registration and reports by political parties."
+                }, 
+                {
+                    "children": [], 
+                    "label": [
+                        "107", 
+                        "2"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "Each host committee and municipal fund shall register and report in accordance with 11 CFR 9008.51. The reports shall contain the information specified in 11 CFR part 104.", 
+                    "title": "\u00a7 107.2 Registration and reports by host committees and municipal funds."
+                }
+            ], 
+            "label": [
+                "107", 
+                "Subpart"
+            ], 
+            "node_type": "emptypart", 
+            "text": ""
+        }
+    ], 
+    "label": [
+        "107"
+    ], 
+    "node_type": "regtext", 
+    "text": "", 
+    "title": "PART 107\u2014PRESIDENTIAL NOMINATING CONVENTION, REGISTRATION AND REPORTS"
+}

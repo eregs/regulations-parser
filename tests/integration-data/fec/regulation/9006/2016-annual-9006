@@ -1,0 +1,155 @@
+{
+    "children": [
+        {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "9006", 
+                                "1", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) The authorized committee(s) of a candidate shall report all expenditures to further the candidate's general election campaign in reports separate from reports of any other expenditures made by such committee(s) with respect to other elections. Such reports shall be filed pursuant to the requirements of 11 CFR part 104."
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9006", 
+                                                "1", 
+                                                "b", 
+                                                "1", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) Contributions and loans received by a major party candidate pursuant to 11 CFR part 9003 to make up deficiencies in Fund payments due to the application of 11 CFR part 9005;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9006", 
+                                                "1", 
+                                                "b", 
+                                                "1", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) Contributions and loans received pursuant to 11 CFR 9003.2(b)(2) by a minor, or new party for use in the general election;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9006", 
+                                                "1", 
+                                                "b", 
+                                                "1", 
+                                                "iii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iii) Receipts for expenses incurred before the beginning of the expenditure report period pursuant to 11 CFR 9003.4;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9006", 
+                                                "1", 
+                                                "b", 
+                                                "1", 
+                                                "iv"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iv) Personal funds expended in accordance with 11 CFR 9003.2(c); and"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9006", 
+                                                "1", 
+                                                "b", 
+                                                "1", 
+                                                "v"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(v) Payments received from the Fund."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "9006", 
+                                        "1", 
+                                        "b", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) One report shall be filed which lists all receipts and disbursements of:"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9006", 
+                                        "1", 
+                                        "b", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) A second report shall be filed which lists all receipts of and disbursements from, contributions received for the candidate's legal and accounting compliance fund in accordance with 11 CFR 9003.3(a)."
+                                }
+                            ], 
+                            "label": [
+                                "9006", 
+                                "1", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) The authorized committee(s) of a candidate shall file separate reports as follows:"
+                        }
+                    ], 
+                    "label": [
+                        "9006", 
+                        "1"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 9006.1 Separate reports."
+                }, 
+                {
+                    "children": [], 
+                    "label": [
+                        "9006", 
+                        "2"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "The reports required to be filed under 11 CFR 9006.1 shall be filed during an election year on a monthly or quarterly basis as prescribed at 11 CFR 104.5(b)(1). During a non-election year, the candidate's principal campaign committee may elect to file reports either on a monthly or quarterly basis in accordance with 11 CFR 104.5(b)(2).", 
+                    "title": "\u00a7 9006.2 Filing dates."
+                }, 
+                {
+                    "children": [], 
+                    "label": [
+                        "9006", 
+                        "3"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "If the authorized committee(s) of a candidate file a schedule of itemized receipts, disbursements, or debts and obligations pursuant to 11 CFR 104.3 that was generated directly or indirectly from computerized files or records, the schedule shall list in alphabetical order the sources of the receipts, the payees or the creditors, as appropriate. In the case of individuals, such schedule shall list all contributors, payees, and creditors in alphabetical order by surname.", 
+                    "title": "\u00a7 9006.3 Alphabetized schedules."
+                }
+            ], 
+            "label": [
+                "9006", 
+                "Subpart"
+            ], 
+            "node_type": "emptypart", 
+            "text": ""
+        }
+    ], 
+    "label": [
+        "9006"
+    ], 
+    "node_type": "regtext", 
+    "text": "", 
+    "title": "PART 9006\u2014REPORTS AND RECORDKEEPING"
+}

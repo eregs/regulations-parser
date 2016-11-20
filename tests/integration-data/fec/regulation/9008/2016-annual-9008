@@ -1,0 +1,2563 @@
+{
+    "children": [
+        {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "9008", 
+                                "1", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) This part interprets 52 U.S.C. 30105 and 26 U.S.C. 9008. Under 26 U.S.C. 9008(b), the national committees of both major and minor parties are entitled to public funds to defray expenses incurred with respect to a Presidential Nominating convention. Under 26 U.S.C. 9008(d), expenditures with regard to such a convention by a national committee receiving public funds are limited to $4,000,000, as adjusted by the Consumer Price Index. New parties are not entitled to receive any public funds to defray convention expenses."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "9008", 
+                                "1", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) Under 52 U.S.C. 30105, each committee or organization which represents a national party in making arrangements for that party's presidential nominating convention is required to file disclosure reports. This reporting obligation extends to all such committees or organizations, regardless of whether or not public funds are used or available to defray convention expenses."
+                        }
+                    ], 
+                    "label": [
+                        "9008", 
+                        "1"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 9008.1 Scope."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "9008", 
+                                "2", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) Commission means the Federal Election Commission, 999 E Street, NW., Washington, DC 20463."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "9008", 
+                                "2", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) Fund means the Presidential Election Campaign Fund established by 26 U.S.C. 9006(a)."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "9008", 
+                                "2", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) Major party means, with respect to any presidential election, a political party whose candidate for the office of President in the preceding presidential election received, as the candidate of such party, 25 percent or more of the total number of popular votes received by all candidates for such office."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "9008", 
+                                "2", 
+                                "d"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(d) Minor party means, with respect to any presidential election, a political party whose candidate for the office of President in the preceding presidential election received, as the candidate of such party, 5 percent or more, but less than 25 percent, of the total number of popular votes received by all candidates for such office."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "9008", 
+                                "2", 
+                                "e"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(e) National committee means the organization which, by virtue of the by-laws of the political party, is responsible for the day to day operation of that party at the national level."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "9008", 
+                                "2", 
+                                "f"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(f) New party means, with respect to any presidential election, a political party which is neither a major party nor a minor party."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "9008", 
+                                "2", 
+                                "g"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(g) Nominating convention means a convention, caucus or other meeting which is held by a political party at the national level and which chooses the presidential nominee of the party through selection by delegates to that convention or through other similar means."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "9008", 
+                                "2", 
+                                "h"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(h) Secretary means the Secretary of the Treasury of the United States."
+                        }
+                    ], 
+                    "label": [
+                        "9008", 
+                        "2"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 9008.2 Definitions."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9008", 
+                                        "3", 
+                                        "a", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) To qualify for entitlement under 11 CFR 9008.4 and 9008.5, the national committee of a major or minor political party shall establish a convention committee pursuant to paragraph (a)(2) of this section and shall file an application statement pursuant to paragraph (a)(3) of this section. The convention committee, in conjunction with the national committee, shall file an agreement to comply with the conditions set forth at paragraph (a)(4) of this section."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9008", 
+                                        "3", 
+                                        "a", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) The national committee shall establish a convention committee which shall be responsible for conducting the day to day arrangements and operations of that party's presidential nominating convention. The convention committee shall register with the Commission as a political committee pursuant to 11 CFR part 102. The convention committee shall receive all public funds to which the national committee is entitled under 11 CFR 9008.4 and 9008.5 and all private contributions made for the purpose of defraying convention expenses. All expenditures on behalf of the national committee for convention expenses shall be made by the convention committee."
+                                }, 
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9008", 
+                                                "3", 
+                                                "a", 
+                                                "3", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) The name and address of the national committee;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9008", 
+                                                "3", 
+                                                "a", 
+                                                "3", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) The name and address of the convention committee and of the officers of that committee;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9008", 
+                                                "3", 
+                                                "a", 
+                                                "3", 
+                                                "iii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iii) The name of the city where the convention is to be held and the approximate dates;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9008", 
+                                                "3", 
+                                                "a", 
+                                                "3", 
+                                                "iv"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iv) The name, address, and position of the convention committee officers designated by the national committee to sign requests for payments; and"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9008", 
+                                                "3", 
+                                                "a", 
+                                                "3", 
+                                                "v"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(v) The name and address of the depository of the convention committee."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "9008", 
+                                        "3", 
+                                        "a", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) The national committee shall file with the Commission an application statement. Any changes in the information provided in the application statement must be reported to the Commission within 10 days following the change. The application statement shall include:"
+                                }, 
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9008", 
+                                                "3", 
+                                                "a", 
+                                                "4", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) The convention committee shall agree to comply with the applicable expenditure limitation set forth at 11 CFR 9008.8."
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9008", 
+                                                "3", 
+                                                "a", 
+                                                "4", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) The convention committee shall agree to file convention reports as required under 52 U.S.C. 30105 and 11 CFR 9008.3(b)."
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9008", 
+                                                "3", 
+                                                "a", 
+                                                "4", 
+                                                "iii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iii) The convention committee shall agree to establish one or more accounts into which all public funds received under 11 CFR 9008.4 and 9008.5 must be deposited and from which all expenditures for convention expenses must be made. Such account(s) shall contain only public funds except as provided in 11 CFR 9008.6(a)(3)."
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9008", 
+                                                "3", 
+                                                "a", 
+                                                "4", 
+                                                "iv"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iv) The convention committee shall agree to keep and furnish to the Commission all documentation of convention disbursements made by the committee as required under 11 CFR 9008.10. The convention committee has the burden of proving that disbursements by the convention committee were for purposes of defraying convention expenses as set forth at 11 CFR 9008.7(a)(4)."
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9008", 
+                                                "3", 
+                                                "a", 
+                                                "4", 
+                                                "v"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(v) The convention committee shall agree to furnish to the Commission any books, records (including bank records for all accounts), a copy of any contract which the national committee enters into with a host committee or convention city or vendor, a copy of documentation provided by commercial vendors in accordance with 11 CFR 9008.9(b), and any other information that the Commission may request. If the convention committee maintains or uses computerized information containing any of the categories of data listed in 11 CFR 9008.10(h)(1) (i) through (iv), the convention committee will provide computerized magnetic media, such as magnetic tapes or magnetic diskettes, containing the computerized information at the times specified in 11 CFR 9008.10(h)(2) that meet the requirements of 11 CFR 102.9 and 9008.10 (a) and (b). Upon request, documentation explaining the computer system's software capabilities shall be provided, and such personnel as are necessary to explain the operation of the computer system's software and the computerized information prepared or maintained by the convention committee shall also be made available."
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9008", 
+                                                "3", 
+                                                "a", 
+                                                "4", 
+                                                "vi"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(vi) The convention committee shall agree to permit an audit and examination pursuant to 26 U.S.C. 9008(g) and 11 CFR 9008.11 of all convention expenses; to facilitate such audit by making available office space, records, and such personnel as is necessary to the conduct of the audit and examination; and to pay any amounts required to be paid under 26 U.S.C. 9008(h) and 11 CFR 9008.12."
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9008", 
+                                                "3", 
+                                                "a", 
+                                                "4", 
+                                                "vii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(vii) The convention committee shall agree to comply with the applicable requirements of 52 U.S.C. 30101 et seq., 26 U.S.C. 9008, and the Commission's regulations at 11 CFR parts 100-116 and 9008."
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9008", 
+                                                "3", 
+                                                "a", 
+                                                "4", 
+                                                "viii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(viii) The convention committee shall pay any civil penalties included in a conciliation agreement or imposed under 52 U.S.C. 30109."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "9008", 
+                                        "3", 
+                                        "a", 
+                                        "4"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(4) The convention committee shall, by letter to the Commission, agree to the conditions set forth in paragraph (a)(4) (i) through (viii) of this section. This agreement shall also be binding upon the national committee."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9008", 
+                                        "3", 
+                                        "a", 
+                                        "5"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(5) The application statement and agreement may be filed at any time after June 1 of the calendar year preceding the year in which a Presidential nominating convention of the political party is held, but no later than the first day of the convention."
+                                }
+                            ], 
+                            "label": [
+                                "9008", 
+                                "3", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) Eligibility requirements."
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9008", 
+                                                "3", 
+                                                "b", 
+                                                "1", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) Each convention committee established by a national committee under paragraph (a)(2) of this section shall register with the Commission on FEC Form 1 as a political committee pursuant to 11 CFR part 102 and shall file reports with the Commission as required at paragraph (b)(2) of this section. Each report filed by the committee shall contain the information required by 11 CFR part 104."
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9008", 
+                                                "3", 
+                                                "b", 
+                                                "1", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) Each convention committee established by a national committee under paragraph (a)(2) of this section shall submit to the Commission a copy of any and all written contracts or agreements that the convention committee has entered into with the city, county, or State hosting the convention, a host committee, or a municipal fund, including subsequent written modifications to previous contracts or agreements. Each such contract, agreement or modification shall be filed with the report covering the reporting period in which the contract or agreement or modification is executed."
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9008", 
+                                                "3", 
+                                                "b", 
+                                                "1", 
+                                                "iii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iii) A State party committee or a subordinate committee of a State party committee which only assists delegates and alternates to the convention from that State with travel expenses and arrangements, or which sponsors caucuses, receptions, and similar activities at the convention site, need not register or report under this section."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "9008", 
+                                        "3", 
+                                        "b", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Registration."
+                                }, 
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9008", 
+                                                "3", 
+                                                "b", 
+                                                "2", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) The first quarterly report shall be filed on FEC Form 4 no later than 15 days following the end of the calendar quarter in which the committee either receives payment under 11 CFR 9008.6, or for parties which do not accept public funds, no later than 15 days after the calendar quarter in which the committee receives contributions or makes expenditures to defray convention expenses. The committee shall continue to file reports on a quarterly basis no later than the 15th day following the close of each calendar quarter, except that the report for the final calendar quarter of the year shall be filed on January 31 of the following calendar year. Quarterly reports shall be completed as of the close of the quarter and shall continue to be filed until the committee ceases activity in connection with that party's presidential nominating convention."
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9008", 
+                                                "3", 
+                                                "b", 
+                                                "2", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) Any quarterly report due within 20 days before or after the convention shall be suspended and the committee shall in lieu of such quarterly report file a post convention report. The post convention report shall be filed on the earlier of: 60 days following the last day the convention is officially in session; or 20 days prior to the presidential general election. The post convention report shall be complete as of 15 days prior to the date on which the report must be filed."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "9008", 
+                                        "3", 
+                                        "b", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Quarterly and post convention reports; content and time of filing. Each committee required to register under paragraph (b)(1) of this section shall file reports as follows:"
+                                }
+                            ], 
+                            "label": [
+                                "9008", 
+                                "3", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) Registration and reports by political parties\u2014"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "9008", 
+                                "3", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) Cessation of activity. A convention committee which has received payments under 11 CFR 9008.6 shall cease activity no later than 24 months after the convention, unless the committee has been granted an extension of time. The Commission may grant any extension of time it deems appropriate upon request of the committee at least 30 days prior to the close of the 24 month period."
+                        }
+                    ], 
+                    "label": [
+                        "9008", 
+                        "3"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 9008.3 Eligibility for payments; registration and reporting."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "9008", 
+                                "4", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) Major parties. Subject to the provisions of this part, the national committee of a major party shall be entitled to receive payments under 11 CFR 9008.6 with respect to any presidential nominating convention, in amounts which, in the aggregate, shall not exceed $4 million, as adjusted by the Consumer Price Index under 11 CFR 9008.5(a)."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "9008", 
+                                "4", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) Minor parties. Subject to the provisions of this part, the national committee of a minor party shall be entitled to payments under 11 CFR 9008.6 with respect to any presidential nominating convention in amounts which, in the aggregate, shall not exceed an amount which bears the same ratio to the amount which the national committee of a major party is entitled to receive under 11 CFR 9008.5 as the number of popular votes received in the preceding presidential election by that minor party's presidential candidate bears to the average number of popular votes received in the preceding presidential election by all of the major party presidential candidates."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "9008", 
+                                "4", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) Limitation on payments. Payments to the national committee of a major party or a minor party under 11 CFR 9008.6 from the account designated for such committee shall be limited to the amounts in such account at the time of payment."
+                        }
+                    ], 
+                    "label": [
+                        "9008", 
+                        "4"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 9008.4 Entitlement to payments from the fund."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "9008", 
+                                "5", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) The entitlements established by 11 CFR 9008.4 shall be adjusted on the basis of the Consumer Price Index pursuant to the provisions of 52 U.S.C. 30116(c)."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "9008", 
+                                "5", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) The entitlements established by 11 CFR 9008.4 shall be adjusted so as not to exceed the difference between the expenditure limitations of 11 CFR 9008.8(a) and the amount of private contributions received under 11 CFR 9008.6(a) by the national committee of a political party. Except as provided in 11 CFR 9008.12(b)(7), in calculating these adjustments, amounts expended by Government agencies and municipal corporations in accordance with 11 CFR 9008.53; in-kind donations by businesses to the national committee or convention committee in accordance with 11 CFR 9008.9; expenditures by host committees in accordance with 11 CFR 9008.52; expenditures to participate in or attend the convention under 11 CFR 9008.8(b)(2); and legal and accounting services rendered in accordance with 11 CFR 9008.8(b)(4) will not be considered private contributions or expenditures counting against the limitation."
+                        }
+                    ], 
+                    "label": [
+                        "9008", 
+                        "5"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 9008.5 Adjustment of entitlement."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9008", 
+                                        "6", 
+                                        "a", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) The national committee of a major or minor party may elect to receive all, part, or none of the amounts to which it is entitled under 11 CFR 9008.4 and 9008.5."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9008", 
+                                        "6", 
+                                        "a", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) If a national committee of a major or minor party elects to receive part of the amounts to which it is entitled under 11 CFR 9008.4 and 9008.5, or if the Secretary determines there is a deficiency in the Fund under 26 U.S.C. 9008(b)(4), the national committee may receive and use private contributions, so long as the sum of the contributions which are used to defray convention expenses and the amount of entitlements elected to be received does not exceed the total expenditure limitation under 11 CFR 9008.8."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9008", 
+                                        "6", 
+                                        "a", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) All private contributions received by the national committee to defray convention expenses shall be subject to all reporting requirements, limitations and prohibitions of Title 52, United States Code. The convention committee may establish a separate account for private contributions or may deposit such contributions with payments received from the Fund pursuant to paragraph (d) of this section. The account(s) shall be maintained at a State bank, federally chartered depository institution or other depository institution, the deposits or accounts of which are insured by the Federal Deposit Insurance Corporation."
+                                }
+                            ], 
+                            "label": [
+                                "9008", 
+                                "6", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) Optional payments; private contributions."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "9008", 
+                                "6", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) Increase in certified amount. If the application statement is filed before it is possible to determine the cost of living increase for the year preceding the convention, that amount determined by the increase shall be paid to the national committee promptly after the increase has been determined."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "9008", 
+                                "6", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) Availability of payments. The national committee of a major or minor party may receive payments under this section beginning on July 1 of the calendar year immediately preceding the calendar year in which a Presidential nominating convention of the political party involved is held."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "9008", 
+                                "6", 
+                                "d"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(d) Certification of payment. After a national committee has properly submitted its application statement and agreement as required under 11 CFR 9008.3(a) (3) and (4), and upon receipt of a written request, payment of the committee's entitlement will be certified by the Commission to the Secretary of the Treasury."
+                        }
+                    ], 
+                    "label": [
+                        "9008", 
+                        "6"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 9008.6 Payment and certification procedures."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9008", 
+                                        "7", 
+                                        "a", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Such payment may be used to defray convention expenses (including the payment of deposits) incurred by or on behalf of the national committee receiving such payments; or"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9008", 
+                                        "7", 
+                                        "a", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Such payment may be used to repay the principal and interest, at a commercially reasonable rate, on loans the proceeds of which were used to defray convention expenses; or"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9008", 
+                                        "7", 
+                                        "a", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) Such payment may be used to restore funds (including advances from the national committee to the convention committee), other than contributions to the committee for the purpose of defraying convention expenses, where such funds were used to defray convention expenses."
+                                }, 
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9008", 
+                                                "7", 
+                                                "a", 
+                                                "4", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) Expenses for preparing, maintaining, and dismantling the physical site of the convention, including rental of the hall, platforms and seating, decorations, telephones, security, convention hall utilities, and other related costs;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9008", 
+                                                "7", 
+                                                "a", 
+                                                "4", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) Salaries and expenses of convention committee employees, volunteers and similar personnel, whose responsibilities involve planning, management or otherwise conducting the convention;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9008", 
+                                                "7", 
+                                                "a", 
+                                                "4", 
+                                                "iii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iii) Salary or portion of the salary of any national committee employee for any period of time during which, as a major responsibility, that employee performs services related to the convention;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9008", 
+                                                "7", 
+                                                "a", 
+                                                "4", 
+                                                "iv"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iv) Expenses of national committee employees, volunteers or other similar personnel if those expenses were incurred in the performance of services for the convention in addition to the services normally rendered to the national committee by such personnel;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9008", 
+                                                "7", 
+                                                "a", 
+                                                "4", 
+                                                "v"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(v) Expenses for conducting meetings of or related to committees dealing with the conduct and operation of the convention, such as rules, credentials, platform, site, contests, call, arrangements and permanent organization committees, including printing materials and rental costs for meeting space."
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9008", 
+                                                "7", 
+                                                "a", 
+                                                "4", 
+                                                "vi"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(vi) Expenses incurred in securing a convention city and facility;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9008", 
+                                                "7", 
+                                                "a", 
+                                                "4", 
+                                                "vii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(vii) Expenses incurred in providing a transportation system in the convention city for use by delegates and other persons attending or otherwise connected with the convention;"
+                                        }, 
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "9008", 
+                                                        "7", 
+                                                        "a", 
+                                                        "4", 
+                                                        "viii", 
+                                                        "A"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(A) Entertainment activities sponsored by or on behalf of candidates for nomination to the office of President or Vice President, or State delegations;"
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "9008", 
+                                                        "7", 
+                                                        "a", 
+                                                        "4", 
+                                                        "viii", 
+                                                        "B"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(B) Entertainment activities sponsored by the national committee if the purpose of the activity is primarily for national committee business, such as fund-raising events, or selection of new national committee officers;"
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "9008", 
+                                                        "7", 
+                                                        "a", 
+                                                        "4", 
+                                                        "viii", 
+                                                        "C"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(C) Entertainment activities sponsored by persons other than the national committee; and"
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "9008", 
+                                                        "7", 
+                                                        "a", 
+                                                        "4", 
+                                                        "viii", 
+                                                        "D"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(D) Entertainment activities prohibited by law;"
+                                                }
+                                            ], 
+                                            "label": [
+                                                "9008", 
+                                                "7", 
+                                                "a", 
+                                                "4", 
+                                                "viii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(viii) Expenses for entertainment activities which are part of the official convention activity sponsored by the national committee, including but not limited to dinners, concerts, and receptions; except that expenses for the following activities are excluded:"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9008", 
+                                                "7", 
+                                                "a", 
+                                                "4", 
+                                                "ix"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ix) Expenses for printing convention programs, a journal of proceedings, agendas, tickets, badges, passes, and other similar publications;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9008", 
+                                                "7", 
+                                                "a", 
+                                                "4", 
+                                                "x"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(x) Administrative and office expenses for conducting the convention, including stationery, office supplies, office machines, and telephone charges; but excluded from these expenses are the cost of any services supplied by the national committee at its headquarters or principal office if such services are incidental to the convention and not utilized primarily for the convention;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9008", 
+                                                "7", 
+                                                "a", 
+                                                "4", 
+                                                "xi"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(xi) Payment of the principal and interest, at a commercially reasonable rate, on loans the proceeds of which were used to defray convention expenses;"
+                                        }, 
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "9008", 
+                                                        "7", 
+                                                        "a", 
+                                                        "4", 
+                                                        "xii", 
+                                                        "A"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(A) Gifts for committee employees, consultants, volunteers and convention officials in recognition of convention-related activities or services do not exceed $150 total per individual and the total of all gifts does not exceed $20,000; and"
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "9008", 
+                                                        "7", 
+                                                        "a", 
+                                                        "4", 
+                                                        "xii", 
+                                                        "B"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(B) All monetary bonuses paid after the last date of the convention for committee employees and consultants in recognition of convention-related activities or services are provided for pursuant to a written contract made prior to the date of the convention and are paid no later than 30 days after the convention; and"
+                                                }
+                                            ], 
+                                            "label": [
+                                                "9008", 
+                                                "7", 
+                                                "a", 
+                                                "4", 
+                                                "xii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(xii) Expenses for monetary bonuses paid after the last date of the convention or gifts for national committee or convention committee employees, consultants, volunteers and convention officials in recognition of convention-related activities or services, provided that:"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9008", 
+                                                "7", 
+                                                "a", 
+                                                "4", 
+                                                "xiii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(xiii) Expenses for producing biographical films, or similar materials, for use at the convention, about candidates for nomination or election to the office of President or Vice President, but any other political committee(s) that use part or all of the biographical films or materials shall pay the convention committee for the reasonably allocated cost of the biographical films or materials used."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "9008", 
+                                        "7", 
+                                        "a", 
+                                        "4"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(4) \u201cConvention expenses\u201d include all expenses incurred by or on behalf of a political party's national committee or convention committee with respect to and for the purpose of conducting a presidential nominating convention or convention-related activities. Such expenses include, but are not limited to:"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9008", 
+                                        "7", 
+                                        "a", 
+                                        "5"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(5) Any investment of public funds or any other use of public funds to generate income is permissible only if the income so generated is used to defray convention expenses. Such income, less any tax paid on it, shall be repaid to the United States Treasury as provided under 11 CFR 9008.12(b)(6)."
+                                }
+                            ], 
+                            "label": [
+                                "9008", 
+                                "7", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) Permissible uses. Any payment made under 11 CFR 9008.6 shall be used only for the following purposes:"
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9008", 
+                                        "7", 
+                                        "b", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) No part of any payment made under 11 CFR 9008.6 shall be used to defray the expenses of any candidate, delegate, or alternate delegate who is participating in any presidential nominating convention except that the expenses of a person participating in the convention as official personnel of the national party may be defrayed with public funds even though that person is simultaneously participating as a delegate or candidate to the convention. This part shall not prohibit candidates, delegates or alternate delegates who are participating in a presidential nominating convention from attending official party convention activities including but not limited to dinners, concerts and receptions, where such activities are paid for with public funds."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9008", 
+                                        "7", 
+                                        "b", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Public funds shall not be used to defray any expense the incurring or payment of which violates any law of the United States or any law of the State in which such expense is incurred or paid, or any regulation prescribed under federal or State laws."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9008", 
+                                        "7", 
+                                        "b", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) Public funds shall not be used to pay civil or criminal penalties required or agreed to be paid pursuant to 52 U.S.C. 30109. Any amounts received or expended by the national committee or convention committee of a political party to pay such penalties shall not be considered contributions or expenditures, except that such amounts shall be reported in accordance with 11 CFR part 104 and shall be subject to the prohibitions of 11 CFR 110.4, 110.19(b)(2), and 110.20 and parts 114 and 115."
+                                }
+                            ], 
+                            "label": [
+                                "9008", 
+                                "7", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) Prohibited uses."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "9008", 
+                                "7", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) Lost, misplaced, or stolen items. The cost of lost, misplaced, or stolen items may not be defrayed with public funds under certain circumstances. Factors considered by the Commission in making this determination shall include, but not be limited to, whether the committee demonstrates that it made conscientious efforts to safeguard the missing equipment; whether the committee sought or obtained insurance on the items; whether the committee filed a police report; the type of equipment involved; and the number and value of items that were lost."
+                        }
+                    ], 
+                    "label": [
+                        "9008", 
+                        "7"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 9008.7 Use of funds."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9008", 
+                                        "8", 
+                                        "a", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Major parties. Except as provided by paragraph (a)(3) of this section, the national committee of a major party may not incur convention expenses with respect to a Presidential nominating convention which, in the aggregate, exceed the amount to which such committee is entitled under 11 CFR 9008.4 and 9008.5."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9008", 
+                                        "8", 
+                                        "a", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Minor parties. Except as provided by paragraph (a)(3) of this section, the national committee of a minor party may not incur convention expenses with respect to a Presidential nominating convention which, in the aggregate, exceed the amount to which the national committee of a major party is entitled under 11 CFR 9008.4 and 9008.5."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9008", 
+                                        "8", 
+                                        "a", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) Authorization to exceed limitation. The Commission may authorize the national committee of a major party or minor party to make expenditures for convention expenses, which expenditures exceed the limitation established by paragraph (a) (1) or (2) of this section. This authorization shall be based upon a determination by the Commission that, due to extraordinary and unforeseen circumstances, the expenditures are necessary to assure the effective operation of the Presidential nominating convention by the committee. Examples of \u201cextraordinary and unforeseen circumstances\u201d include, but are not limited to, a natural disaster or a catastrophic occurrence at the convention site. In no case, however, will such authorization entitle a national committee to receive public funds greater than the entitlement specified under 11 CFR 9008.4 and 9008.5. All private contributions received to defray expenditures under this paragraph shall be subject to all reporting requirements, limitations (except for limitations imposed by paragraphs (a) (1) and (2) of this section) and prohibitions of the Federal Election Campaign Act (52 U.S.C. 30101 et seq.)."
+                                }
+                            ], 
+                            "label": [
+                                "9008", 
+                                "8", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) National party limitations\u2014"
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9008", 
+                                        "8", 
+                                        "b", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Host committee expenditures. Expenditures made by the host committee shall not be considered expenditures by the national committee and shall not count against the expenditure limitations of this section provided the funds are spent in accordance with 11 CFR 9008.52."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9008", 
+                                        "8", 
+                                        "b", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Expenditures by government agencies and municipal funds. Expenditures made by government agencies and municipal funds shall not be considered expenditures by the national committee and shall not count against the expenditure limitations of this section if the funds are spent in accordance with the requirements of 11 CFR 9008.53."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9008", 
+                                        "8", 
+                                        "b", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) Expenditures to participate in or attend convention. Expenditures made by presidential candidates from campaign accounts, by delegates, or by any other individual from his or her personal funds for the purpose of attending or participating in the convention or convention related activities, including, but not limited to the costs of transportation, lodging and meals, or by State or local committees of a political party on behalf of such delegates or individuals shall not be considered expenditures made by or on behalf of the national party, and shall therefore not be subject to the overall expenditure limitations of this section."
+                                }, 
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9008", 
+                                                "8", 
+                                                "b", 
+                                                "4", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) The payment of compensation to an individual by his or her regular employer for legal and accounting services rendered to or on behalf of the national committee shall not be considered an expenditure and shall not count against the expenditure limitations of this section."
+                                        }, 
+                                        {
+                                            "children": [
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "9008", 
+                                                        "8", 
+                                                        "b", 
+                                                        "4", 
+                                                        "ii", 
+                                                        "A"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(A) The legal and accounting services relate solely to compliance with the Federal Election Campaign Act (52 U.S.C. 30101, et seq.) and the Presidential Election Campaign Fund Act (26 U.S.C. Chapter 95); and"
+                                                }, 
+                                                {
+                                                    "children": [], 
+                                                    "label": [
+                                                        "9008", 
+                                                        "8", 
+                                                        "b", 
+                                                        "4", 
+                                                        "ii", 
+                                                        "B"
+                                                    ], 
+                                                    "node_type": "regtext", 
+                                                    "text": "(B) The contributions raised to pay for the legal and accounting services comply with the limitations and prohibitions of 11 CFR parts 110, 114 and 115. These contributions, when aggregated with other contributions from the same contributor to the political committees established and maintained by the national political party, shall not exceed the amounts permitted under 11 CFR 110.1(c) and 110.2(c), as applicable."
+                                                }
+                                            ], 
+                                            "label": [
+                                                "9008", 
+                                                "8", 
+                                                "b", 
+                                                "4", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) The payment by the national committee of compensation to any individual for legal and accounting services rendered to or on behalf of the national committee in connection with the presidential nominating convention or convention-related activities shall not be considered an expenditure and shall not count against the expenditure limitations of this section provided that:"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9008", 
+                                                "8", 
+                                                "b", 
+                                                "4", 
+                                                "iii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iii) The convention committee shall report contributions received to pay for legal and accounting services on a separate Schedule A, and shall report payments for legal and accounting services on a separate Schedule B, attached to its reports."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "9008", 
+                                        "8", 
+                                        "b", 
+                                        "4"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(4) Legal and accounting services."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9008", 
+                                        "8", 
+                                        "b", 
+                                        "5"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(5) Computerized information. Payments to defray the costs of producing, delivering and explaining the computerized information and materials provided pursuant to 11 CFR 9008.10(h), and explaining the operation of the computer system's software, shall not be considered expenditures and shall not count against the expenditure limitations of this section, provided that the contributions raised to pay these expenses comply with the limitations and prohibitions of 11 CFR parts 110, 114 and 115."
+                                }
+                            ], 
+                            "label": [
+                                "9008", 
+                                "8", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) Payments not subject to limit\u2014"
+                        }
+                    ], 
+                    "label": [
+                        "9008", 
+                        "8"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 9008.8 Limitation of expenditures."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "9008", 
+                                "9", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) Standard reductions or discounts. A commercial vendor may provide reductions or discounts in the ordinary course of business. A reduction or discount shall be considered in the ordinary course of business if the commercial vendor has an established practice of providing the same reductions or discounts for the same amount of its goods or services to non-political clients, or if the reduction or discount is consistent with established practice in the commercial vendor's trade or industry. Examples of reductions or discounts made in the ordinary course of business include standard volume discounts and reduced rates for corporate, governmental or preferred customers. Reductions or discounts provided under paragraph (a) of this section need not be reported."
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9008", 
+                                        "9", 
+                                        "b", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) A commercial vendor may provide goods or services in exchange for promotional consideration provided that doing so is in the ordinary course of business."
+                                }, 
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9008", 
+                                                "9", 
+                                                "b", 
+                                                "2", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) If the commercial vendor has an established practice of providing goods or services on a similar scale and on similar terms to non-political clients, or"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9008", 
+                                                "9", 
+                                                "b", 
+                                                "2", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) If the terms and conditions under which the goods or services are provided are consistent with established practice in the commercial vendor's trade or industry in similar circumstances."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "9008", 
+                                        "9", 
+                                        "b", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) The provision of goods or services shall be considered in the ordinary course of business under this paragraph:"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9008", 
+                                        "9", 
+                                        "b", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) In all cases, the value of the goods or services provided shall not exceed the commercial benefit reasonably expected to be derived from the unique promotional opportunity presented by the national nominating convention."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9008", 
+                                        "9", 
+                                        "b", 
+                                        "4"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(4) The convention committee shall maintain documentation showing: the goods or services provided; the date(s) on which the goods or services were provided, the terms and conditions of the arrangement; and what promotional consideration was provided. In addition, the convention committee shall disclose in its report covering the period the goods or services are received, in a memo entry, a description of the goods or services provided for promotional consideration, the name and address of the commercial vendor, and the dates on which the goods or services were provided (e.g., \u201cGeneric Motor Co., Detroit, Michigan\u2014ten automobiles for use 7/15-7/20, received on 7/14\u201d, or \u201cWorkers Inc., New York, New York\u2014five temporary secretarial assistants for use 8/1-8/30, received on 8/1\u201d)."
+                                }
+                            ], 
+                            "label": [
+                                "9008", 
+                                "9", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) Items provided for promotional consideration."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "9008", 
+                                "9", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) Items of de minimis value. Commercial vendors (including banks) may sell at nominal cost, or provide at no charge, items of de minimis value, such as samples, discount coupons, maps, pens, pencils, or other items included in tote bags for those attending the convention. The items of de minimis value may be distributed by or with the help of persons employed by the commercial vendor, or employed by or volunteering for the national party or a host committee. The value of the items of de minimis value provided under this paragraph need not be reported."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "9008", 
+                                "9", 
+                                "d"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(d) Expenditure Limits. The value of goods or services provided pursuant to this section will not count toward the national party's expenditure limitation under 11 CFR 9008.8(a)."
+                        }
+                    ], 
+                    "label": [
+                        "9008", 
+                        "9"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "Commercial vendors may sell, lease, rent or provide their goods or services to the national committee with respect to a presidential nominating convention at reduced or discounted rates, or at no charge, provided that the requirements of either paragraph (a), paragraph (b), or paragraph (c) of this section are met. For purposes of this section, commercial vendor shall have the same meaning as provided in 11 CFR 116.1(c).", 
+                    "title": "\u00a7 9008.9 Receipt of goods and services from commercial vendors."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9008", 
+                                        "10", 
+                                        "a", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) A receipted bill from the payee that states the purpose of the disbursement; or"
+                                }, 
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9008", 
+                                                "10", 
+                                                "a", 
+                                                "2", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) A canceled check negotiated by the payee; plus"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9008", 
+                                                "10", 
+                                                "a", 
+                                                "2", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) One of the following documents generated by the payee\u2014a bill, invoice, voucher or contemporaneous memorandum that states the purpose of the disbursement;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9008", 
+                                                "10", 
+                                                "a", 
+                                                "2", 
+                                                "iii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iii) Where the documents specified at paragraph (a)(2)(ii) of this section are not available, a voucher or contemporaneous memorandum from the committee that states the purpose of the disbursement;"
+                                        }
+                                    ], 
+                                    "label": [
+                                        "9008", 
+                                        "10", 
+                                        "a", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) If such a receipted bill is not available, the following documents;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9008", 
+                                        "10", 
+                                        "a", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) If neither a receipted bill nor the supporting documentation specified in paragraph (a)(2) (ii) or (iii) of this section is available, a canceled check negotiated by the payee that states the purpose of the disbursement."
+                                }, 
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9008", 
+                                                "10", 
+                                                "a", 
+                                                "4", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) Evidence demonstrating that the disbursement is part of an identifiable program or project which is otherwise sufficiently documented, such as a disbursement which is one of a number of documented disbursements relating to the operation of a committee office;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9008", 
+                                                "10", 
+                                                "a", 
+                                                "4", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) Evidence that the disbursement is covered by a preestablished written committee policy, such as a daily travel expense policy."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "9008", 
+                                        "10", 
+                                        "a", 
+                                        "4"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(4) Where the supporting documentation required above is not available, the committee may present a canceled check and collateral evidence to document the convention expense. Such collateral evidence may include but is not limited to:"
+                                }
+                            ], 
+                            "label": [
+                                "9008", 
+                                "10", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) For disbursements in excess of $200 to a payee, either:"
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9008", 
+                                        "10", 
+                                        "b", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) If from the petty cash fund, a record that states the full name and mailing address of the payee and the amount, date and purpose of the disbursement; or"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9008", 
+                                        "10", 
+                                        "b", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) A canceled check which has been negotiated by the payee and states the identification of the payee, and the amount and date of the disbursement."
+                                }
+                            ], 
+                            "label": [
+                                "9008", 
+                                "10", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) For all other disbursements:"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "9008", 
+                                "10", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) For purposes of this section, payee means the person who provides the goods or services to the committee in return for the disbursement, except that an individual will be considered a payee under this section if he or she receives $2,000 or less advanced for travel and/or subsistence and if he or she is the recipient of the goods or services purchased."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "9008", 
+                                "10", 
+                                "d"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(d) For purposes of this section, the term purpose means the full name and mailing address of the payee, the date and amount of the disbursement, and a brief description of the goods or services purchased."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "9008", 
+                                "10", 
+                                "e"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(e) Upon the request of the Commission the convention committee shall supply an explanation of the connection between the disbursement and the convention."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "9008", 
+                                "10", 
+                                "f"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(f) The committee shall retain records with respect to each disbursement and receipt, including bank records, vouchers, worksheets, receipts, bills and accounts, journals, ledgers, fundraising solicitation material, accounting systems documentation, and any related material documenting campaign receipts and disbursements, for a period of three years pursuant to 11 CFR 102.9(c), and shall present these records to the Commission on request."
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9008", 
+                                                "10", 
+                                                "g", 
+                                                "1", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) All outstanding obligations for convention expenses as of 45 days after the last day of the convention; plus"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9008", 
+                                                "10", 
+                                                "g", 
+                                                "1", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) An estimate of the amount of convention expenses that will be incurred after the 45th day and before the end of the ninth month following the last day of the convention; plus"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9008", 
+                                                "10", 
+                                                "g", 
+                                                "1", 
+                                                "iii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iii) An estimate of necessary winding down costs; less"
+                                        }
+                                    ], 
+                                    "label": [
+                                        "9008", 
+                                        "10", 
+                                        "g", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) The total of:"
+                                }, 
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9008", 
+                                                "10", 
+                                                "g", 
+                                                "2", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) Cash on hand as of 45 days after the last day of the convention, including: all receipts dated on or before that date; currency; balances on deposit in banks, savings and loan institutions, and other depository institutions; traveler's checks; certificates of deposit; treasury bills; and any other committee investments valued at fair market value;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9008", 
+                                                "10", 
+                                                "g", 
+                                                "2", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) The fair market value of capital assets and other assets on hand; and"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9008", 
+                                                "10", 
+                                                "g", 
+                                                "2", 
+                                                "iii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iii) Amounts owed to the committee in the form of credits, refunds of deposits, returns, receivables, or rebates of convention expenses; or a commercially reasonable amount based on the collectibility of those credits, returns, receivables or rebates."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "9008", 
+                                        "10", 
+                                        "g", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) The total of:"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9008", 
+                                        "10", 
+                                        "g", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) The amount submitted as the total of outstanding convention obligations under paragraph (g)(1) of this section shall not include any accounts payable for non-convention expenses nor any amounts determined or anticipated to be required as a repayment under 11 CFR 9008.12 or any amounts paid to secure a surety bond under 11 CFR 9008.14(c)."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9008", 
+                                        "10", 
+                                        "g", 
+                                        "4"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(4) Capital assets. For purposes of this section, the term capital asset means any property used in the operation of the convention whose purchase price exceeded $2000 when acquired by the committee. Property that must be valued as capital assets under this section includes, but is not limited to, office equipment, furniture, vehicles and fixtures acquired for use in the operation of the convention, but does not include property defined as \u201cother assets\u201d under 11 CFR 9008.10(g)(5). A list of all capital assets shall be maintained by the committee, which shall include a brief description of each capital asset, the purchase price, the date it was acquired, the method of disposition and the amount received in disposition. The fair market value of capital assets may be considered to be the total original cost of such items when acquired less 40%, to account for depreciation. If the committee wishes to claim a higher depreciation percentage for an item, it must list that capital asset on the statement separately and demonstrate, through documentation, the fair market value of each such asset."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9008", 
+                                        "10", 
+                                        "g", 
+                                        "5"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(5) Other assets. The term other assets means any property acquired by the committee for use in raising funds or as collateral for loans. \u201cOther assets\u201d must be included on the committee's statement of net outstanding convention expenses if the aggregate value of such assets exceeds $5000. The value of \u201cother assets\u201d shall be determined by the fair market value of each item as of 45 days after the last day of the convention, unless the item is acquired after this date, in which case the item shall be valued on the date it is acquired. A list of other assets shall be maintained by the committee, which shall include a brief description of each such asset, the fair market value of each asset, the method of disposition and the amount received in disposition."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9008", 
+                                        "10", 
+                                        "g", 
+                                        "6"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(6) Collectibility of accounts receivable. If the committee determines that an account receivable of $500 or more, including any credit, refund, return or rebate, is not collectible in whole or in part, the committee shall demonstrate through documentation that the determination was commercially reasonable. The documentation shall include records showing the original amount of the account receivable, copies of correspondence and memoranda of communications with the debtor showing attempts to collect the amount due, and an explanation of how the lesser amount or full write-off was determined."
+                                }, 
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9008", 
+                                                "10", 
+                                                "g", 
+                                                "7", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) Costs associated with the termination of the convention such as complying with the post-convention requirements of the Act and other necessary administrative costs associated with winding down the convention, including office space rental, staff salaries and office supplies; and"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9008", 
+                                                "10", 
+                                                "g", 
+                                                "7", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) Costs incurred by the convention committee prior to 45 days after the last day of the convention for which written arrangements or commitment was made on or before that date."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "9008", 
+                                        "10", 
+                                        "g", 
+                                        "7"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(7) Winding down costs. The term winding down costs means:"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9008", 
+                                        "10", 
+                                        "g", 
+                                        "8"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(8) Review of convention committee statement. The Commission will review the statement filed by each convention committee under this section. The Commission may request further information with respect to statements filed pursuant to 11 CFR 9008.10 during the audit of that committee under 11 CFR 9008.11."
+                                }
+                            ], 
+                            "label": [
+                                "9008", 
+                                "10", 
+                                "g"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(g) Net outstanding convention expenses. A convention committee that is eligible to receive payments under 11 CFR 9008.3 shall file, no later than sixty days after the last day of the convention, a statement of that committee's net outstanding convention expenses. The convention committee shall file a revised statement of net outstanding convention expenses which shall reflect the financial position of the convention committee as of the end of the ninth month following the last day of the convention. The revised statement shall be filed no later than 30 calendar days after the end of the ninth month following the last day of the convention, and shall be accompanied by the interim repayment, if required under 11 CFR 9008.12(b)(5)(ii). The committee's net outstanding convention expenses under this section equal the difference between paragraphs (g) (1) and (2) of this section:"
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9008", 
+                                                "10", 
+                                                "h", 
+                                                "1", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) Information required by law to be maintained regarding the committee's receipts or disbursements;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9008", 
+                                                "10", 
+                                                "h", 
+                                                "1", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) Records used to reconcile bank statements;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9008", 
+                                                "10", 
+                                                "h", 
+                                                "1", 
+                                                "iii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iii) Records relating to the acquisition, use and disposition of capital assets; and"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9008", 
+                                                "10", 
+                                                "h", 
+                                                "1", 
+                                                "iv"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iv) Any other information that may be used during the Commission's audit to review the committee's receipts, disbursements, loans, debts, obligations, or bank reconciliations."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "9008", 
+                                        "10", 
+                                        "h", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Categories of computerized information to be provided. If the convention committee maintains or uses computerized information containing any of the categories of data listed in paragraphs (h)(1)(i) through (h)(1)(iv) of this section, the committee shall provide computerized magnetic media, such as magnetic tapes or magnetic diskettes, containing the computerized information at the times specified in paragraph (h)(2) of this section:"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9008", 
+                                        "10", 
+                                        "h", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Time for Production. If the committee maintains or uses computerized information containing any of the data listed in paragraph (h)(1) of this section, the Commission generally will request such information prior to commencement of audit fieldwork. Such request will be made in writing. The committee shall produce the computerized information no later than 15 calendar days after service of such request. During or after audit fieldwork, the Commission may request additional or updated computerized information which expands the coverage dates of computerized information previously provided. During or after audit fieldwork, the Commission may also request additional computerized information which was created by or becomes available to the committee that is of assistance in the Commission's audit. The committee shall produce the additional or updated computerized information no later than 15 calendar days after service of the Commission's request."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9008", 
+                                        "10", 
+                                        "h", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) Organization of computerized information and technical specifications. The computerized magnetic media shall be prepared and delivered at the committee's expense and shall conform to the technical specifications, including file requirements, described in the Federal Election Commission's Computerized Magnetic Media Requirements for Title 26 Candidates/Committees Receiving Federal Funding. The data contained in the computerized magnetic media provided to the Commission shall be organized in the order specified by the Computerized Magnetic Media Requirements."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9008", 
+                                        "10", 
+                                        "h", 
+                                        "4"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(4) Additional materials and assistance. Upon request, the committee shall produce documentation explaining the computer system's software capabilities, such as user guides, technical manuals, formats, layouts and other materials for processing and analyzing the information request. Upon request, the committee shall also make available such personnel as are necessary to explain the operation of the computer system's software and the computerized information prepared or maintained by the committee."
+                                }
+                            ], 
+                            "label": [
+                                "9008", 
+                                "10", 
+                                "h"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(h) Production of computer information\u2014"
+                        }
+                    ], 
+                    "label": [
+                        "9008", 
+                        "10"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "In addition to the requirements set forth at 11 CFR 102.9(b), the convention committee must include as part of the evidence of convention expenses the following documentation:", 
+                    "title": "\u00a7 9008.10 Documentation of disbursements; net outstanding convention expenses."
+                }, 
+                {
+                    "children": [], 
+                    "label": [
+                        "9008", 
+                        "11"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "The Commission shall conduct an examination and audit of the convention committee no later than December 31 of the calendar year of the convention and may at any time conduct other examinations and audits as it deems necessary. The Commission will follow the same procedures during the audit, and will afford the committee the same right to respond, as are provided for audits of publicly funded candidates under 11 CFR 9007.1 and 9038.1.", 
+                    "title": "\u00a7 9008.11 Examinations and audits."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9008", 
+                                        "12", 
+                                        "a", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) A national committee that has received payments from the Fund under 11 CFR part 9008 shall pay the United States Treasury any amounts which the Commission determines to be repayable under this section. In making repayment determinations under this section, the Commission may utilize information obtained from audits and examinations conducted pursuant to 11 CFR 9008.11 or otherwise obtained by the Commission in carrying out its responsibilities under this subchapter."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9008", 
+                                        "12", 
+                                        "a", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) The Commission will notify the committee of any repayment determinations made under this section as soon as possible, but not later than 3 years after the last day of the Presidential nominating convention. The Commission's issuance of an audit report to the committee will constitute notification for purposes of the three year period."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9008", 
+                                        "12", 
+                                        "a", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) Once the committee receives notice of the Commission's final repayment determination under this section, the committee should give preference to the repayment over all other outstanding obligations of the committee, except for any federal taxes owed by the committee."
+                                }
+                            ], 
+                            "label": [
+                                "9008", 
+                                "12", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) General."
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9008", 
+                                        "12", 
+                                        "b", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Excess payments. If the Commission determines that any portion of the payments to the national committee or convention committee under 11 CFR 9008.6(b) was in excess of the aggregate payments to which the national committee was entitled under 11 CFR 9008.4 and 9008.5, it shall so notify the national committee, and the national committee shall pay to the Secretary an amount equal to such portion."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9008", 
+                                        "12", 
+                                        "b", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Excessive expenditures. If the Commission determines that the national committee or convention committee incurred convention expenses in excess of the limitations under 11 CFR 9008.8(a), it shall notify the national committee of the amount of such excessive expenditures, and the national committee shall pay to the Secretary an amount equal to the amount specified."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9008", 
+                                        "12", 
+                                        "b", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) Excessive contributions. If the Commission determines that the national committee accepted contributions to defray convention expenses which, when added to the amount of payments received, exceeds the expenditure limitation of such party, it shall notify the national committee of the amount of the contributions so accepted, and the national committee shall pay to the Secretary an amount equal to the amount specified."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9008", 
+                                        "12", 
+                                        "b", 
+                                        "4"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(4) Improper usage or documentation. If the Commission determines that any amount of any payment to the national committee or convention committee under 11 CFR 9008.6(b) was used for any purposes other than the purposes authorized at 11 CFR 9008.7 or was not documented in accordance with 11 CFR 9008.10, it shall notify the national committee of the amount improperly used or documented and the national committee shall pay to the Secretary an amount equal to the amount specified."
+                                }, 
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9008", 
+                                                "12", 
+                                                "b", 
+                                                "5", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) If any portion of the payment under 11 CFR 9008.4 remains unspent after all convention expenses have been paid, that portion shall be returned to the Secretary of the Treasury."
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9008", 
+                                                "12", 
+                                                "b", 
+                                                "5", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) The national committee or convention committee shall make an interim repayment of unspent funds based on the financial position of the committee as of the end of the ninth month following the last day of the convention, allowing for a reasonable amount as determined by the Commission to be withheld for unanticipated contingencies. The interim repayment shall be made no later than 30 calendar days after the end of the ninth month following the last day of the convention. If, after written request by the national committee or convention committee, the Commission determines, upon review of evidence presented by either committee, that amounts previously refunded are needed to defray convention expenses, the Commission shall certify such amount for payment."
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "9008", 
+                                                "12", 
+                                                "b", 
+                                                "5", 
+                                                "iii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iii) All unspent funds shall be repaid to the U.S. Treasury no later than 24 months after the last day of the convention, unless the national committee has been granted an extension of time. The Commission may grant any extension of time it deems appropriate upon request of the national committee."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "9008", 
+                                        "12", 
+                                        "b", 
+                                        "5"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(5) Unspent funds."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9008", 
+                                        "12", 
+                                        "b", 
+                                        "6"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(6) Income on investments of payments from the Fund. If the Commission determines that the national committee or the convention committee received any income as a result of investment or other use of payments from the Fund pursuant to 11 CFR 9008.7(a)(5), it shall so notify the committee and the committee shall pay to the United States Treasury an amount equal to the amount determined to be income, less any Federal, State or local taxes on such income."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9008", 
+                                        "12", 
+                                        "b", 
+                                        "7"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(7) The Commission may seek repayment, or may initiate an enforcement action, if the convention committee knowingly helps, assists or participates in the making of a convention expenditure by the host committee, government agency or municipal fund that is not in accordance with 11 CFR 9008.52 or 9008.53, or the acceptance of a contribution by the host committee or government agency or municipal fund from an impermissible source."
+                                }
+                            ], 
+                            "label": [
+                                "9008", 
+                                "12", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) Bases for repayment. The Commission may determine that the national committee of a political party that has received payments from the Fund must repay the United States Treasury under any of the circumstances described below."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "9008", 
+                                "12", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) Repayment determination procedures. The Commission will follow the same repayment determination procedures, and the committee has the same rights and obligations as are provided for repayment determinations involving publicly funded candidates under 11 CFR 9007.2 (c) through (h)."
+                        }
+                    ], 
+                    "label": [
+                        "9008", 
+                        "12"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 9008.12 Repayments."
+                }, 
+                {
+                    "children": [], 
+                    "label": [
+                        "9008", 
+                        "13"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "In accordance with 11 CFR 104.16(c), the Commission, pursuant to 11 CFR 111.10, may upon affirmative vote of four members conduct an audit and field investigation of any committee in any case in which the Commission finds reason to believe that a violation of a statute or regulation over which the Commission has jurisdiction has occurred or is about to occur.", 
+                    "title": "\u00a7 9008.13 Additional audits."
+                }, 
+                {
+                    "children": [], 
+                    "label": [
+                        "9008", 
+                        "14"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "Petitions for rehearing following the Commission's repayment determination and requests for stays of repayment determinations will be governed by the procedures set forth at 11 CFR 9007.5 and 9038.5. The Commission will afford convention committees the same rights as are provided to publicly funded candidates under 11 CFR 9007.5 and 9038.5.", 
+                    "title": "\u00a7 9008.14 Petitions for rehearing; stays of repayment determinations."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "9008", 
+                                "15", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) It is the policy of the Commission that extensions of time under 11 CFR part 9008 will not be routinely granted."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "9008", 
+                                "15", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) Whenever a committee has a right or is required to take action within a period of time prescribed by 11 CFR part 9008 or by notice given thereunder, the committee may apply in writing to the Commission for an extension of time in which to exercise such right or take such action. The committee shall demonstrate in the application for extension that good cause exists for its request."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "9008", 
+                                "15", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) An application for extension of time shall be made at least 7 calendar days prior to the expiration of the time period for which the extension is sought. The Commission may, upon a showing of good cause, grant an extension of time to a committee that has applied for such extension in a timely manner. The length of time of any extension granted hereunder shall be decided by the Commission and may be less than the amount of time sought by the committee in its application."
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9008", 
+                                        "15", 
+                                        "d", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Permit such committee to exercise its right(s), or take such required action(s) after the expiration of the prescribed time period; and"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9008", 
+                                        "15", 
+                                        "d", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Take into consideration any information obtained in connection with the exercise of any such right or taking of any such action before making decisions or determinations under 11 CFR part 9008."
+                                }
+                            ], 
+                            "label": [
+                                "9008", 
+                                "15", 
+                                "d"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(d) If a committee fails to seek an extension of time, exercise a right or take a required action prior to the expiration of a time period prescribed by 11 CFR part 9008, the Commission may, on the committee's showing of excusable neglect:"
+                        }
+                    ], 
+                    "label": [
+                        "9008", 
+                        "15"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 9008.15 Extensions of time."
+                }, 
+                {
+                    "children": [], 
+                    "label": [
+                        "9008", 
+                        "16"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "If the committee has checks outstanding that have not been cashed, the committee shall notify the Commission. The committee shall inform the Commission of its efforts to locate the payees, if such efforts have been necessary, and its efforts to encourage the payees to cash the outstanding checks. The committee shall also submit a check for the total amount of such outstanding checks, payable to the United States Treasury.", 
+                    "title": "\u00a7 9008.16 Stale-dated committee checks."
+                }
+            ], 
+            "label": [
+                "9008", 
+                "Subpart", 
+                "A"
+            ], 
+            "node_type": "subpart", 
+            "text": "", 
+            "title": "Expenditures by National Committees and Convention Committees"
+        }, 
+        {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "9008", 
+                                "50", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) Scope. This subpart B governs registration and reporting by host committees and municipal funds representing convention cities. Unsuccessful efforts to attract a convention need not be reported by any city, committee or other organization. Subpart B also describes permissible sources of funds and other permissible donations to host committees and municipal funds. In addition, subpart B describes permissible disbursements by host committees and municipal funds to defray convention expenses and to promote the convention city and its commerce."
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9008", 
+                                        "50", 
+                                        "b", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) It is not organized for profit;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9008", 
+                                        "50", 
+                                        "b", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Its net earnings do not inure to the benefit of any private shareholder or individual; and"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9008", 
+                                        "50", 
+                                        "b", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) Its principal purpose is the encouragement of commerce in the convention city, as well as the projection of a favorable image of the city to convention attendees."
+                                }
+                            ], 
+                            "label": [
+                                "9008", 
+                                "50", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) Definition of host committee. A host committee is any local organization, such as a local civic association, business league, chamber of commerce, real estate board, board of trade, or convention bureau, that satisfies all of the following conditions:"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "9008", 
+                                "50", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) Definition of municipal fund. A municipal fund is any fund or account of a government agency, municipality, or municipal corporation whose principal purpose is the encouragement of commerce in the municipality and whose receipt and use of funds is subject to the control of officials of the State or local government."
+                        }
+                    ], 
+                    "label": [
+                        "9008", 
+                        "50"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 9008.50 Scope and definitions."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9008", 
+                                        "51", 
+                                        "a", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Each host committee and municipal fund shall register with the Commission by filing a Statement of Organization on FEC Form 1 within 10 days of the date on which such party chooses the convention city, or within 10 days after the formation of the host committee or municipal fund, whichever is later. In addition to the information already required to be provided on FEC Form 1, the following information shall be disclosed by the registering entity on FEC Form 1: The name and address; the name and address of its officers; and a list of the activities that the registering entity plans to undertake in connection with the convention."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9008", 
+                                        "51", 
+                                        "a", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Any such committee, organization or group which is unsuccessful in its efforts to attract the convention to a city need not register under this section."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9008", 
+                                        "51", 
+                                        "a", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) Each host committee and municipal fund required to register with the Commission under paragraph (a) of this section, shall submit to the Commission a copy of any and all written contracts or agreements that it has entered into with the city, county, or State hosting the convention, a host committee, a municipal fund, or a convention committee, including subsequent written modifications to previous contracts or agreements, unless such contracts, agreements or modifications have already been submitted to the Commission by the convention committee. Each such contract or agreement or modification shall be filed with the first report due under paragraph (b) of this section after the contract or agreement or modification is executed."
+                                }
+                            ], 
+                            "label": [
+                                "9008", 
+                                "51", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) Registration by host committees and municipal funds."
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9008", 
+                                        "51", 
+                                        "b", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Each host committee or municipal fund required to register with the Commission pursuant to paragraph (a) of this section shall file a post convention report on FEC Form 4. The report shall be filed on the earlier of: 60 days following the last day the convention is officially in session; or 20 days prior to the presidential general election. This report shall be complete as of 15 days prior to the date on which the report must be filed and shall disclose all the information required by 11 CFR part 104 with respect to all activities related to a presidential nominating convention."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9008", 
+                                        "51", 
+                                        "b", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) If such host committee or municipal fund has receipts or makes disbursements after the completion date of the post convention report, it shall begin to file quarterly reports no later than 15 days after the end of the following calendar quarter. This report shall disclose all transactions completed as of the close of that calendar quarter. Quarterly reports shall be filed thereafter until the host committee or municipal fund ceases all activity that must be reported under this section."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9008", 
+                                        "51", 
+                                        "b", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) Such host committee or municipal fund shall file a final report with the Commission not later than 10 days after it ceases activity that must be reported under this section, unless such status is reflected in either the post-convention report or a quarterly report."
+                                }
+                            ], 
+                            "label": [
+                                "9008", 
+                                "51", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) Post-convention and quarterly reports by host committees and municipal funds; content and time of filing."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "9008", 
+                                "51", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) Post-convention statements by State and local government agencies. Each government agency of a State, municipality, or other political subdivision that provides facilities or services related to a Presidential nominating convention shall file, by letter, a statement with the Commission reporting the total amount spent to provide facilities and services for the convention under 11 CFR 9008.52(b), a list of the categories of facilities and services the government agency provided for the convention, the total amount spent for each category of facilities and services provided, and the total amount defrayed from general revenues. This statement shall be filed on the earlier of: 60 days following the last day the convention is officially in session; or 20 days prior to the presidential general election. Categories of facilities and services may include construction, security, communications, transportation, utilities, clean up, meeting rooms and accommodations. This paragraph (c) does not apply to any activities of a State or local government agency through a municipal fund that are reported pursuant to paragraph (b) of this section."
+                        }
+                    ], 
+                    "label": [
+                        "9008", 
+                        "51"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 9008.51 Registration and reports."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "9008", 
+                                "52", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) Receipt of goods or services from commercial vendors. Host committees may accept goods or services from commercial vendors under the same terms and conditions (including reporting requirements) set forth at 11 CFR 9008.9 for convention committees."
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9008", 
+                                        "52", 
+                                        "b", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) To defray those expenses incurred for the purpose of promoting the suitability of the city as a convention site;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9008", 
+                                        "52", 
+                                        "b", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) To defray those expenses incurred for welcoming the convention attendees to the city, such as expenses for information booths, receptions, and tours;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9008", 
+                                        "52", 
+                                        "b", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) To defray those expenses incurred in facilitating commerce, such as providing the convention and attendees with shopping and entertainment guides and distributing the samples and promotional material specified in 11 CFR 9008.9(c);"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9008", 
+                                        "52", 
+                                        "b", 
+                                        "4"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(4) To defray the administrative expenses incurred by the host committee, such as salaries, rent, travel, and liability insurance;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9008", 
+                                        "52", 
+                                        "b", 
+                                        "5"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(5) To provide the national committee use of an auditorium or convention center and to provide construction and convention related services for that location such as: construction of podiums; press tables; false floors; camera platforms; additional seating; lighting, electrical, air conditioning and loudspeaker systems; offices; office equipment; and decorations;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9008", 
+                                        "52", 
+                                        "b", 
+                                        "6"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(6) To defray the costs of various local transportation services, including the provision of buses and automobiles;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9008", 
+                                        "52", 
+                                        "b", 
+                                        "7"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(7) To defray the costs of law enforcement services necessary to assure orderly conventions;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9008", 
+                                        "52", 
+                                        "b", 
+                                        "8"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(8) To defray the cost of using convention bureau personnel to provide central housing and reservation services;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9008", 
+                                        "52", 
+                                        "b", 
+                                        "9"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(9) To provide hotel rooms at no charge or a reduced rate on the basis of the number of rooms actually booked for the convention;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9008", 
+                                        "52", 
+                                        "b", 
+                                        "10"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(10) To provide accommodations and hospitality for committees of the parties responsible for choosing the sites of the conventions; and"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "9008", 
+                                        "52", 
+                                        "b", 
+                                        "11"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(11) To provide other similar convention-related facilities and services."
+                                }
+                            ], 
+                            "label": [
+                                "9008", 
+                                "52", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) Receipt of donations from businesses, organizations, and individuals. Businesses (including banks), labor organizations, and other organizations or individuals may donate funds or make in-kind donations to a host committee to be used for the following purposes:"
+                        }
+                    ], 
+                    "label": [
+                        "9008", 
+                        "52"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 9008.52 Receipts and disbursements of host committees."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "9008", 
+                                "53", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) Receipt of goods and services provided by commercial vendors. Municipal funds may accept goods or services from commercial vendors for convention uses under the same terms and conditions (including reporting requirements) set forth at 11 CFR 9008.9 for convention committees."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "9008", 
+                                "53", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) Receipt and use of donations to a municipal fund. Businesses (including banks), labor organizations, and other organizations and individuals may donate funds or make in-kind donations to a municipal fund to pay for expenses listed in 11 CFR 9008.52(b)."
+                        }
+                    ], 
+                    "label": [
+                        "9008", 
+                        "53"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 9008.53 Receipts and disbursements of municipal funds."
+                }, 
+                {
+                    "children": [], 
+                    "label": [
+                        "9008", 
+                        "54"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "The Commission shall conduct an examination and audit of each host committee registered under 11 CFR 9008.51. The Commission will follow the same procedures during the audit, and will afford the committee the same right to respond, as are provided for audits of publicly funded candidates under 11 CFR 9007.1 and 9038.1, except that the Commission will not make any repayment calculations under this section.", 
+                    "title": "\u00a7 9008.54 Examinations and audits."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "9008", 
+                                "55", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) Convention committees, including any established pursuant to 11 CFR 9008.3(a)(2), are subject to 11 CFR 300.10, except that convention committees may accept in-kind donations from host committees and municipal funds provided that the in-kind donations are in accordance with the requirements of 11 CFR 9008.52 and 9008.53."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "9008", 
+                                "55", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) Host committees and municipal funds are not \u201cagents\u201d of national committees of political parties or convention committees, unless they satisfy the prerequisites of 11 CFR 300.2(b)(1)."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "9008", 
+                                "55", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) Host committees and municipal funds are not \u201cdirectly or indirectly established, financed, maintained, or controlled\u201d by national committees of political parties or convention committees, unless they satisfy the prerequisites of 11 CFR 300.2(c)."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "9008", 
+                                "55", 
+                                "d"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(d) In accordance with 52 U.S.C. 30125(e)(4)(A), a person described in 11 CFR 300.60 may make a general solicitation of funds, without regard to source or amount limitation, for or on behalf of any host committee or municipal fund that is described in 26 U.S.C. 501(c) and exempt from taxation under 26 U.S.C. 501(a) (or has submitted an application for determination of tax exempt status under such section) where such solicitation does not specify how the funds will or should be spent."
+                        }
+                    ], 
+                    "label": [
+                        "9008", 
+                        "55"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 9008.55 Funding for convention committees, host committees and municipal funds."
+                }
+            ], 
+            "label": [
+                "9008", 
+                "Subpart", 
+                "B"
+            ], 
+            "node_type": "subpart", 
+            "text": "", 
+            "title": "Host Committees and Municipal Funds Representing a Convention City"
+        }
+    ], 
+    "label": [
+        "9008"
+    ], 
+    "node_type": "regtext", 
+    "text": "", 
+    "title": "PART 9008\u2014FEDERAL FINANCING OF PRESIDENTIAL NOMINATING CONVENTIONS"
+}

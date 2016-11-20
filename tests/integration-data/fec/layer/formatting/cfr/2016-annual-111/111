@@ -1,0 +1,254 @@
+{
+    "111-43-a-p1": [
+        {
+            "locations": [
+                0
+            ], 
+            "table_data": {
+                "header": [
+                    [
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "If the level of activity in the report was:"
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "And the report was filed late, the civil money penalty is:"
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Or the report was not filed, the civil money penalty is:"
+                        }
+                    ]
+                ], 
+                "rows": [
+                    [
+                        "$1-4,999.99\u2009[^a](The civil money penalty for a respondent who does not have any previous violations will not exceed the level of activity in the report.)", 
+                        "[$27.50 + ($5 \u00d7 Number of days late)] \u00d7 [1 + (.25 \u00d7 Number of previous violations)]", 
+                        "$275 \u00d7 [1 + (.25 \u00d7 Number of previous violations)]."
+                    ], 
+                    [
+                        "$5,000-9,999.99", 
+                        "[$55 + ($5 \u00d7 Number of days late)] \u00d7 [1 + (.25 \u00d7 Number of previous violations)]", 
+                        "$330 \u00d7 [1 + (.25 \u00d7 Number of previous violations)]."
+                    ], 
+                    [
+                        "$10,000-24,999.99", 
+                        "[$110 + ($5 \u00d7 Number of days late)] \u00d7 [1 + (.25 \u00d7 Number of previous violations)]", 
+                        "$550 \u00d7 [1 + (.25 \u00d7 Number of previous violations)]."
+                    ], 
+                    [
+                        "$25,000-49,999.99", 
+                        "[$200 + ($20 \u00d7 Number of days late)] \u00d7 [1 + (.25 \u00d7 Number of previous violations)]", 
+                        "$1090 \u00d7 [1 + (.25 \u00d7 Number of previous violations)]."
+                    ], 
+                    [
+                        "$50,000-74,999.99", 
+                        "[$330 + ($92.50 \u00d7 Number of days late)] \u00d7 [1 + (.25 \u00d7 Number of previous violations)]", 
+                        "$2970 \u00d7 [1 + (.25 \u00d7 Number of previous violations)]."
+                    ], 
+                    [
+                        "$75,000-99,999.99", 
+                        "[$440 + ($110 \u00d7 Number of days late)] \u00d7 [1 + (.25 \u00d7 Number of previous violations)]", 
+                        "$3850 \u00d7 [1 + (.25 \u00d7 Number of previous violations)]."
+                    ], 
+                    [
+                        "$100,000-149,999.99", 
+                        "[$660 + ($125 \u00d7 Number of days late)] \u00d7 [1 + (.25 \u00d7 Number of previous violations)]", 
+                        "$4950 \u00d7 [1 + (.25 \u00d7 Number of previous violations)]."
+                    ], 
+                    [
+                        "$150,000-199,999.99", 
+                        "[$980 + ($150 \u00d7 Number of days late)] \u00d7 [1 + (.25 \u00d7 Number of previous violations)]", 
+                        "$6050 \u00d7 [1 + (.25 \u00d7 Number of previous violations)]."
+                    ], 
+                    [
+                        "$200,000-249,999.99", 
+                        "[$1100 + ($175 \u00d7 Number of days late)] \u00d7 [1 + (.25 \u00d7 Number of previous violations)]", 
+                        "$7150 \u00d7 [1 + (.25 \u00d7 Number of previous violations)]."
+                    ], 
+                    [
+                        "$250,000-349,999.99", 
+                        "[$1500 + ($200 \u00d7 Number of days late)] \u00d7 [1 + (.25 \u00d7 Number of previous violations)]", 
+                        "$9800 \u00d7 [1 + (.25 \u00d7 Number of previous violations)]."
+                    ], 
+                    [
+                        "$350,000-449,999.99", 
+                        "[$2000 + ($200 \u00d7 Number of days late)] \u00d7 [1 + (.25 \u00d7 Number of previous violations)]", 
+                        "$10,900 \u00d7 [1 + (.25 \u00d7 Number of previous violations)]."
+                    ], 
+                    [
+                        "$450,000-549,999.99", 
+                        "[$2750 + ($200 \u00d7 Number of days late)] \u00d7 [1 + (.25 \u00d7 Number of previous violations)]", 
+                        "$10,450 \u00d7 [1 + (.25 \u00d7 Number of previous violations)]."
+                    ], 
+                    [
+                        "$550,000-649,999.99", 
+                        "[$3300 + ($200 \u00d7 Number of days late)] \u00d7 [1 + (.25 \u00d7 Number of previous violations)]", 
+                        "$11,000 \u00d7 [1 + (.25 \u00d7 Number of previous violations)]."
+                    ], 
+                    [
+                        "$650,000-749,999.99", 
+                        "[$3850 + ($200 \u00d7 Number of days late)] \u00d7 [1 + (.25 \u00d7 Number of previous violations)]", 
+                        "$11,550 \u00d7 [1 + (.25 \u00d7 Number of previous violations)]."
+                    ], 
+                    [
+                        "$750,000-849,999.99", 
+                        "[$4400 + ($200 \u00d7 Number of days late)] \u00d7 [1 + (.25 \u00d7 Number of previous violations)]", 
+                        "$12,100 \u00d7 [1 + (.25 \u00d7 Number of previous violations)]."
+                    ], 
+                    [
+                        "$850,000-949,999.99", 
+                        "[$4950 + ($200 \u00d7 Number of days late)] \u00d7 [1 + (.25 \u00d7 Number of previous violations)]", 
+                        "$12,650 \u00d7 [1 + (.25 \u00d7 Number of previous violations)]."
+                    ], 
+                    [
+                        "$950,000 or over", 
+                        "[$5500 + ($200 \u00d7 Number of days late)] \u00d7 [1 + (.25 \u00d7 Number of previous violations)]", 
+                        "$13,200 \u00d7 [1 + (.25 \u00d7 Number of previous violations)]."
+                    ]
+                ]
+            }, 
+            "text": "|If the level of activity in the report was:|And the report was filed late, the civil money penalty is:|Or the report was not filed, the civil money penalty is:|\n|---|---|---|\n|$1-4,999.99\u2009[^a](The civil money penalty for a respondent who does not have any previous violations will not exceed the level of activity in the report.)|[$27.50 + ($5 \u00d7 Number of days late)] \u00d7 [1 + (.25 \u00d7 Number of previous violations)]|$275 \u00d7 [1 + (.25 \u00d7 Number of previous violations)].|\n|$5,000-9,999.99|[$55 + ($5 \u00d7 Number of days late)] \u00d7 [1 + (.25 \u00d7 Number of previous violations)]|$330 \u00d7 [1 + (.25 \u00d7 Number of previous violations)].|\n|$10,000-24,999.99|[$110 + ($5 \u00d7 Number of days late)] \u00d7 [1 + (.25 \u00d7 Number of previous violations)]|$550 \u00d7 [1 + (.25 \u00d7 Number of previous violations)].|\n|$25,000-49,999.99|[$200 + ($20 \u00d7 Number of days late)] \u00d7 [1 + (.25 \u00d7 Number of previous violations)]|$1090 \u00d7 [1 + (.25 \u00d7 Number of previous violations)].|\n|$50,000-74,999.99|[$330 + ($92.50 \u00d7 Number of days late)] \u00d7 [1 + (.25 \u00d7 Number of previous violations)]|$2970 \u00d7 [1 + (.25 \u00d7 Number of previous violations)].|\n|$75,000-99,999.99|[$440 + ($110 \u00d7 Number of days late)] \u00d7 [1 + (.25 \u00d7 Number of previous violations)]|$3850 \u00d7 [1 + (.25 \u00d7 Number of previous violations)].|\n|$100,000-149,999.99|[$660 + ($125 \u00d7 Number of days late)] \u00d7 [1 + (.25 \u00d7 Number of previous violations)]|$4950 \u00d7 [1 + (.25 \u00d7 Number of previous violations)].|\n|$150,000-199,999.99|[$980 + ($150 \u00d7 Number of days late)] \u00d7 [1 + (.25 \u00d7 Number of previous violations)]|$6050 \u00d7 [1 + (.25 \u00d7 Number of previous violations)].|\n|$200,000-249,999.99|[$1100 + ($175 \u00d7 Number of days late)] \u00d7 [1 + (.25 \u00d7 Number of previous violations)]|$7150 \u00d7 [1 + (.25 \u00d7 Number of previous violations)].|\n|$250,000-349,999.99|[$1500 + ($200 \u00d7 Number of days late)] \u00d7 [1 + (.25 \u00d7 Number of previous violations)]|$9800 \u00d7 [1 + (.25 \u00d7 Number of previous violations)].|\n|$350,000-449,999.99|[$2000 + ($200 \u00d7 Number of days late)] \u00d7 [1 + (.25 \u00d7 Number of previous violations)]|$10,900 \u00d7 [1 + (.25 \u00d7 Number of previous violations)].|\n|$450,000-549,999.99|[$2750 + ($200 \u00d7 Number of days late)] \u00d7 [1 + (.25 \u00d7 Number of previous violations)]|$10,450 \u00d7 [1 + (.25 \u00d7 Number of previous violations)].|\n|$550,000-649,999.99|[$3300 + ($200 \u00d7 Number of days late)] \u00d7 [1 + (.25 \u00d7 Number of previous violations)]|$11,000 \u00d7 [1 + (.25 \u00d7 Number of previous violations)].|\n|$650,000-749,999.99|[$3850 + ($200 \u00d7 Number of days late)] \u00d7 [1 + (.25 \u00d7 Number of previous violations)]|$11,550 \u00d7 [1 + (.25 \u00d7 Number of previous violations)].|\n|$750,000-849,999.99|[$4400 + ($200 \u00d7 Number of days late)] \u00d7 [1 + (.25 \u00d7 Number of previous violations)]|$12,100 \u00d7 [1 + (.25 \u00d7 Number of previous violations)].|\n|$850,000-949,999.99|[$4950 + ($200 \u00d7 Number of days late)] \u00d7 [1 + (.25 \u00d7 Number of previous violations)]|$12,650 \u00d7 [1 + (.25 \u00d7 Number of previous violations)].|\n|$950,000 or over|[$5500 + ($200 \u00d7 Number of days late)] \u00d7 [1 + (.25 \u00d7 Number of previous violations)]|$13,200 \u00d7 [1 + (.25 \u00d7 Number of previous violations)].|"
+        }, 
+        {
+            "footnote_data": {
+                "note": "The civil money penalty for a respondent who does not have any previous violations will not exceed the level of activity in the report.", 
+                "ref": "a"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "[^a](The civil money penalty for a respondent who does not have any previous violations will not exceed the level of activity in the report.)"
+        }
+    ], 
+    "111-43-b-p1": [
+        {
+            "locations": [
+                0
+            ], 
+            "table_data": {
+                "header": [
+                    [
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "If the level of activity in the report was:"
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "And the report was filed late, the civil money penalty is:"
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Or the report was not filed, the civil money penalty is:"
+                        }
+                    ]
+                ], 
+                "rows": [
+                    [
+                        "$1-$4,999.99\u2009[^a](The civil money penalty for a respondent who does not have any previous violations will not exceed the level of activity in the report.)", 
+                        "[$55 + ($10 \u00d7 Number of days late)] \u00d7 [1 + (.25 \u00d7 Number of previous violations)]", 
+                        "$550 \u00d7 [1 + (.25 \u00d7 Number of previous violations)]."
+                    ], 
+                    [
+                        "$5,000-$9,999.99", 
+                        "[$110 + ($10 \u00d7 Number of days late)] \u00d7 [1 + (.25 \u00d7 Number of previous violations)]", 
+                        "$660 \u00d7 [1 + (.25 \u00d7 Number of previous violations)]."
+                    ], 
+                    [
+                        "$10,000-24,999.99", 
+                        "[$150 + ($10 \u00d7 Number of days late)] \u00d7 [1 + (.25 \u00d7 Number of previous violations)]", 
+                        "$1090 \u00d7 [1 + (.25 \u00d7 Number of previous violations)]."
+                    ], 
+                    [
+                        "$25,000-49,999.99", 
+                        "[$330 + ($27.50 \u00d7 Number of days late)] \u00d7 [1 + (.25 \u00d7 Number of previous violations)]", 
+                        "$1,400 \u00d7 [1 + (.25 \u00d7 Number of previous violations)]."
+                    ], 
+                    [
+                        "$50,000-74,999.99", 
+                        "[$495 + ($92.50 \u00d7 Number of days late)] \u00d7 [1 + (.25 \u00d7 Number of previous violations)]", 
+                        "$3300 \u00d7 [1 + (.25 \u00d7 Number of previous violations)]."
+                    ], 
+                    [
+                        "$75,000-99,999.99", 
+                        "[$660 + ($110 \u00d7 Number of days late)] \u00d7 [1 + (.25 \u00d7 Number of previous violations)]", 
+                        "$4400 \u00d7 [1 + (.25 \u00d7 Number of previous violations)]."
+                    ], 
+                    [
+                        "$100,000-149,999.99", 
+                        "[$1090 + ($125 \u00d7 Number of days late)] \u00d7 [1 + (.25 \u00d7 Number of previous violations)]", 
+                        "$5500 \u00d7 [1 + (.25 \u00d7 Number of previous violations)]."
+                    ], 
+                    [
+                        "$150,000-199,999.99", 
+                        "[$1200 + ($150 \u00d7 Number of days late)] \u00d7 [1 + (.25 \u00d7 Number of previous violations)]", 
+                        "$6600 \u00d7 [1 + (.25 \u00d7 Number of previous violations)]."
+                    ], 
+                    [
+                        "$200,000-249,999.99", 
+                        "[$1500 + ($175 \u00d7 Number of days late)] \u00d7 [1 + (.25 \u00d7 Number of previous violations)]", 
+                        "$9250 \u00d7 [1 + (.25 \u00d7 Number of previous violations)]."
+                    ], 
+                    [
+                        "$250,000-349,999.99", 
+                        "[$2475 + ($200 \u00d7 Number of days late)] \u00d7 [1 + (.25 \u00d7 Number of previous violations)]", 
+                        "$10,900 \u00d7 [1 + (.25 \u00d7 Number of previous violations)]."
+                    ], 
+                    [
+                        "$350,000-449,999.99", 
+                        "[$3300 + ($200 \u00d7 Number of days late)] \u00d7 [1 + (.25 \u00d7 Number of previous violations)]", 
+                        "$11,000 \u00d7 [1 + (.25 \u00d7 Number of previous violations)]."
+                    ], 
+                    [
+                        "$450,000-549,999.99", 
+                        "[$4125 + ($200 \u00d7 Number of days late)] \u00d7 [1 + (.25 \u00d7 Number of previous violations)]", 
+                        "$12,100 \u00d7 [1 + (.25 \u00d7 Number of previous violations)]."
+                    ], 
+                    [
+                        "$550,000-649,999.99", 
+                        "[$4950 + ($200 \u00d7 Number of days late)] \u00d7 [1 + (.25 \u00d7 Number of previous violations)]", 
+                        "$13,200 \u00d7 [1 + (.25 \u00d7 Number of previous violations)]."
+                    ], 
+                    [
+                        "$650,000-749,999.99", 
+                        "[$5775 + ($200 \u00d7 Number of days late)] \u00d7 [1 + (.25 \u00d7 Number of previous violations)]", 
+                        "$14,300 \u00d7 [1 + (.25 \u00d7 Number of previous violations)]."
+                    ], 
+                    [
+                        "$750,000-849,999.99", 
+                        "[$6600 + ($200 \u00d7 Number of days late)] \u00d7 [1 + (.25 \u00d7 Number of previous violations)]", 
+                        "$15,400 \u00d7 [1 + (.25 \u00d7 Number of previous violations)]."
+                    ], 
+                    [
+                        "$850,000-949,999.99", 
+                        "[$7425 + ($200 \u00d7 Number of days late)] \u00d7 [1 + (.25 \u00d7 Number of previous violations)]", 
+                        "$16,500 \u00d7 [1 + (.25 \u00d7 Number of previous violations)]."
+                    ], 
+                    [
+                        "$950,000 or over", 
+                        "[$9250 + ($200 \u00d7 Number of days late)] \u00d7 [1 + (.25 \u00d7 Number of previous violations)]", 
+                        "$17,600 \u00d7 [1 + (.25 \u00d7 Number of previous violations)]."
+                    ]
+                ]
+            }, 
+            "text": "|If the level of activity in the report was:|And the report was filed late, the civil money penalty is:|Or the report was not filed, the civil money penalty is:|\n|---|---|---|\n|$1-$4,999.99\u2009[^a](The civil money penalty for a respondent who does not have any previous violations will not exceed the level of activity in the report.)|[$55 + ($10 \u00d7 Number of days late)] \u00d7 [1 + (.25 \u00d7 Number of previous violations)]|$550 \u00d7 [1 + (.25 \u00d7 Number of previous violations)].|\n|$5,000-$9,999.99|[$110 + ($10 \u00d7 Number of days late)] \u00d7 [1 + (.25 \u00d7 Number of previous violations)]|$660 \u00d7 [1 + (.25 \u00d7 Number of previous violations)].|\n|$10,000-24,999.99|[$150 + ($10 \u00d7 Number of days late)] \u00d7 [1 + (.25 \u00d7 Number of previous violations)]|$1090 \u00d7 [1 + (.25 \u00d7 Number of previous violations)].|\n|$25,000-49,999.99|[$330 + ($27.50 \u00d7 Number of days late)] \u00d7 [1 + (.25 \u00d7 Number of previous violations)]|$1,400 \u00d7 [1 + (.25 \u00d7 Number of previous violations)].|\n|$50,000-74,999.99|[$495 + ($92.50 \u00d7 Number of days late)] \u00d7 [1 + (.25 \u00d7 Number of previous violations)]|$3300 \u00d7 [1 + (.25 \u00d7 Number of previous violations)].|\n|$75,000-99,999.99|[$660 + ($110 \u00d7 Number of days late)] \u00d7 [1 + (.25 \u00d7 Number of previous violations)]|$4400 \u00d7 [1 + (.25 \u00d7 Number of previous violations)].|\n|$100,000-149,999.99|[$1090 + ($125 \u00d7 Number of days late)] \u00d7 [1 + (.25 \u00d7 Number of previous violations)]|$5500 \u00d7 [1 + (.25 \u00d7 Number of previous violations)].|\n|$150,000-199,999.99|[$1200 + ($150 \u00d7 Number of days late)] \u00d7 [1 + (.25 \u00d7 Number of previous violations)]|$6600 \u00d7 [1 + (.25 \u00d7 Number of previous violations)].|\n|$200,000-249,999.99|[$1500 + ($175 \u00d7 Number of days late)] \u00d7 [1 + (.25 \u00d7 Number of previous violations)]|$9250 \u00d7 [1 + (.25 \u00d7 Number of previous violations)].|\n|$250,000-349,999.99|[$2475 + ($200 \u00d7 Number of days late)] \u00d7 [1 + (.25 \u00d7 Number of previous violations)]|$10,900 \u00d7 [1 + (.25 \u00d7 Number of previous violations)].|\n|$350,000-449,999.99|[$3300 + ($200 \u00d7 Number of days late)] \u00d7 [1 + (.25 \u00d7 Number of previous violations)]|$11,000 \u00d7 [1 + (.25 \u00d7 Number of previous violations)].|\n|$450,000-549,999.99|[$4125 + ($200 \u00d7 Number of days late)] \u00d7 [1 + (.25 \u00d7 Number of previous violations)]|$12,100 \u00d7 [1 + (.25 \u00d7 Number of previous violations)].|\n|$550,000-649,999.99|[$4950 + ($200 \u00d7 Number of days late)] \u00d7 [1 + (.25 \u00d7 Number of previous violations)]|$13,200 \u00d7 [1 + (.25 \u00d7 Number of previous violations)].|\n|$650,000-749,999.99|[$5775 + ($200 \u00d7 Number of days late)] \u00d7 [1 + (.25 \u00d7 Number of previous violations)]|$14,300 \u00d7 [1 + (.25 \u00d7 Number of previous violations)].|\n|$750,000-849,999.99|[$6600 + ($200 \u00d7 Number of days late)] \u00d7 [1 + (.25 \u00d7 Number of previous violations)]|$15,400 \u00d7 [1 + (.25 \u00d7 Number of previous violations)].|\n|$850,000-949,999.99|[$7425 + ($200 \u00d7 Number of days late)] \u00d7 [1 + (.25 \u00d7 Number of previous violations)]|$16,500 \u00d7 [1 + (.25 \u00d7 Number of previous violations)].|\n|$950,000 or over|[$9250 + ($200 \u00d7 Number of days late)] \u00d7 [1 + (.25 \u00d7 Number of previous violations)]|$17,600 \u00d7 [1 + (.25 \u00d7 Number of previous violations)].|"
+        }, 
+        {
+            "footnote_data": {
+                "note": "The civil money penalty for a respondent who does not have any previous violations will not exceed the level of activity in the report.", 
+                "ref": "a"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "[^a](The civil money penalty for a respondent who does not have any previous violations will not exceed the level of activity in the report.)"
+        }
+    ]
+}

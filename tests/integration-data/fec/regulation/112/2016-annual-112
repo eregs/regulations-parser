@@ -1,0 +1,392 @@
+{
+    "children": [
+        {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "112", 
+                                "1", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) Any person may request in writing an advisory opinion concerning the application of the Act, chapters 95 or 96 of the Internal Revenue Code of 1954, or any regulation prescribed by the Commission. An authorized agent of the requesting person may submit the advisory opinion request, but the agent shall disclose the identity of his or her principal."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "112", 
+                                "1", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) The written advisory opinion request shall set forth a specific transaction or activity that the requesting person plans to undertake or is presently undertaking and intends to undertake in the future. Requests presenting a general question of interpretation, or posing a hypothetical situation, or regarding the activities of third parties, do not qualify as advisory opinion requests."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "112", 
+                                "1", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) Advisory opinion requests shall include a complete description of all facts relevant to the specific transaction or activity with respect to which the request is made."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "112", 
+                                "1", 
+                                "d"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(d) The Office of General Counsel shall review all requests for advisory opinions submitted under 11 CFR 112.1. If the Office of General Counsel determines that a request for an advisory opinion is incomplete or otherwise not qualified under 11 CFR 112.1, it shall, within 10 calendar days of receipt of such request, notify the requesting person and specify the deficiencies in the request."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "112", 
+                                "1", 
+                                "e"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(e) Advisory opinion requests should be sent to the Federal Election Commission, Office of General Counsel, 999 E Street, NW., Washington, DC 20463."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "112", 
+                                "1", 
+                                "f"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(f) Upon receipt by the Commission, each request which qualifies as an advisory opinion request (AOR) under 11 CFR 112.1 shall be assigned an AOR number for reference purposes."
+                        }
+                    ], 
+                    "label": [
+                        "112", 
+                        "1"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 112.1 Requests for advisory opinions (52 U.S.C. 30108(a)(1))."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "112", 
+                                "2", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) Advisory opinion requests which qualify under 11 CFR 112.1 shall be made public at the Commission promptly upon their receipt."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "112", 
+                                "2", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) A copy of the original request and any supplements thereto, shall be available for public inspection and purchase at the Public Disclosure Division of the Commission."
+                        }
+                    ], 
+                    "label": [
+                        "112", 
+                        "2"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 112.2 Public availability of requests (52 U.S.C. 30108(d))."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "112", 
+                                "3", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) Any interested person may submit written comments concerning advisory opinion requests made public at the Commission."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "112", 
+                                "3", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) The written comments shall be submitted within 10 calendar days following the date the request is made public at the Commission. However, if the 10th calendar day falls on a Saturday, Sunday, or Federal holiday, the 10 day period ends at the close of the business day next following the weekend or holiday. Additional time for submission of written comments may be granted upon written request for an extension by the person who wishes to submit comments or may be granted by the Commission without an extension request."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "112", 
+                                "3", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) Comments on advisory opinion requests should refer to the AOR number of the request, and statutory references should be to the United States Code citations, rather than to Public Law citations."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "112", 
+                                "3", 
+                                "d"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(d) Written comments and requests for additional time to comment shall be sent to the Federal Election Commission, Office of General Counsel, 999 E Street, NW., Washington, DC 20463."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "112", 
+                                "3", 
+                                "e"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(e) Before it issues an advisory opinion the Commission shall accept and consider all written comments submitted within the 10 day comment period or any extension thereof."
+                        }
+                    ], 
+                    "label": [
+                        "112", 
+                        "3"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 112.3 Written comments on requests (52 U.S.C. 30108(d))."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "112", 
+                                "4", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) Within 60 calendar days after receiving an advisory opinion request that qualifies under 11 CFR 112.1, the Commission shall issue to the requesting person a written advisory opinion or shall issue a written response stating that the Commission was unable to approve an advisory opinion by the required affirmative vote of 4 members."
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "112", 
+                                        "4", 
+                                        "b", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Is submitted by any candidate, including any authorized committee of the candidate (or agent of either), within the 60 calendar days preceding the date of any election for Federal office in which the candidate is seeking nomination or election; and"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "112", 
+                                        "4", 
+                                        "b", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Presents a specific transaction or activity related to the election that may invoke the 20 day period if the connection is explained in the request."
+                                }
+                            ], 
+                            "label": [
+                                "112", 
+                                "4", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) The 60 calendar day period of 11 CFR 112.4(a) is reduced to 20 calendar days for an advisory opinion request qualified under 11 CFR 112.1 provided the request:"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "112", 
+                                "4", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) The 60 day and 20 day periods referred to in 11 CFR 112.4 (a) and (b) only apply when the Commission has received a qualified and complete advisory opinion request under 11 CFR 112.1, and when the 60th or 20th day occurs on a Saturday, Sunday or Federal holiday, the respective period ends at the close of the business day next following the weekend or holiday."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "112", 
+                                "4", 
+                                "d"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(d) The Commission may issue advisory opinions pertaining only to the Federal Election Campaign Act of 1971, as amended, chapters 95 or 96 of the Internal Revenue Code of 1954, or rules or regulations duly prescribed under those statutes."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "112", 
+                                "4", 
+                                "e"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(e) Any rule of law which is not stated in the Act or in chapters 95 or 96 of the Internal Revenue Code of 1954, or in a regulation duly prescribed by the Commission, may be initially proposed only as a rule or regulation pursuant to procedures established in 52 U.S.C. 30111(d) or 26 U.S.C. 9009(c) and 9039(c) as applicable."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "112", 
+                                "4", 
+                                "f"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(f) No opinion of an advisory nature may be issued by the Commission or any of its employees except in accordance with 11 CFR part 112; however, this limitation does not preclude distribution by the Commission of information consistent with the Act and chapters 95 or 96 of the Internal Revenue Code of 1954."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "112", 
+                                "4", 
+                                "g"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(g) When issued by the Commission, each advisory opinion or other response under 11 CFR 112.4(a) shall be made public and sent by mail, or personally delivered to the person who requested the opinion."
+                        }
+                    ], 
+                    "label": [
+                        "112", 
+                        "4"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 112.4 Issuance of advisory opinions (52 U.S.C. 30108(a) and (b))."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "112", 
+                                        "5", 
+                                        "a", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Any person involved in the specific transaction or activity with respect to which such advisory opinion is rendered, and"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "112", 
+                                        "5", 
+                                        "a", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Any person involved in any specific transaction or activity which is indistinguishable in all its material aspects from the transaction or activity with respect to which such advisory opinion is rendered."
+                                }
+                            ], 
+                            "label": [
+                                "112", 
+                                "5", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) An advisory opinion rendered by the Commission under 11 CFR part 112 may be relied upon by:"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "112", 
+                                "5", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) Notwithstanding any other provision of law, any person who relies upon an advisory opinion in accordance with 11 CFR 112.5(a) and who acts in good faith in accordance with that advisory opinion shall not, as a result of any such act, be subject to any sanction provided by the Federal Election Campaign Act of 1971, as amended, or by chapters 95 or 96 of the Internal Revenue Code of 1954."
+                        }
+                    ], 
+                    "label": [
+                        "112", 
+                        "5"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 112.5 Reliance on advisory opinions (52 U.S.C. 30108(c))."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "112", 
+                                "6", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) The Commission may reconsider an advisory opinion previously issued if the person to whom the opinion was issued submits a written request for reconsideration within 30 calendar days of receipt of the opinion and if, upon the motion of a Commissioner who voted with the majority that originally approved the opinion, the Commission adopts the motion to reconsider by the affirmative vote of 4 members."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "112", 
+                                "6", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) The Commission may reconsider an advisory opinion previously issued if, upon the motion of a Commissioner who voted with the majority that originally approved the opinion and within 30 calendar days after the date the Commission approved the opinion, the Commission adopts the motion to reconsider by the affirmative vote of 4 members."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "112", 
+                                "6", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) In the event an advisory opinion is reconsidered pursuant to 11 CFR 112.6(b), the action taken in good faith reliance on that advisory opinion by the person to whom the opinion was issued shall not result in any sanction provided by the Act or chapters 95 or 96 of the Internal Revenue Code of 1954. 11 CFR 112.6(c) shall not be effective after the date when the person to whom the advisory opinion was issued has received actual notice of the Commission's decision to reconsider that advisory opinion."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "112", 
+                                "6", 
+                                "d"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(d) Adoption of a motion to reconsider vacates the advisory opinion to which it relates."
+                        }
+                    ], 
+                    "label": [
+                        "112", 
+                        "6"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 112.6 Reconsideration of advisory opinions."
+                }
+            ], 
+            "label": [
+                "112", 
+                "Subpart"
+            ], 
+            "node_type": "emptypart", 
+            "text": ""
+        }
+    ], 
+    "label": [
+        "112"
+    ], 
+    "node_type": "regtext", 
+    "text": "", 
+    "title": "PART 112\u2014ADVISORY OPINIONS (52 U.S.C. 30108)"
+}

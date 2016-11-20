@@ -1,0 +1,213 @@
+{
+    "9003-2-c": [
+        {
+            "offsets": [
+                [
+                    324, 
+                    340
+                ]
+            ], 
+            "ref": "immediate family:9003-2-c-1"
+        }
+    ], 
+    "9003-2-c-3": [
+        {
+            "offsets": [
+                [
+                    92, 
+                    108
+                ]
+            ], 
+            "ref": "immediate family:9003-2-c-1"
+        }
+    ], 
+    "9003-5-b-1": [
+        {
+            "offsets": [
+                [
+                    45, 
+                    50
+                ], 
+                [
+                    115, 
+                    120
+                ]
+            ], 
+            "ref": "payee:9003-5-b-3-i"
+        }
+    ], 
+    "9003-5-b-1-i": [
+        {
+            "offsets": [
+                [
+                    30, 
+                    35
+                ]
+            ], 
+            "ref": "payee:9003-5-b-3-i"
+        }, 
+        {
+            "offsets": [
+                [
+                    53, 
+                    60
+                ]
+            ], 
+            "ref": "purpose:9003-5-b-3-ii"
+        }
+    ], 
+    "9003-5-b-1-ii-A": [
+        {
+            "offsets": [
+                [
+                    52, 
+                    57
+                ]
+            ], 
+            "ref": "payee:9003-5-b-3-i"
+        }, 
+        {
+            "offsets": [
+                [
+                    103, 
+                    110
+                ]
+            ], 
+            "ref": "purpose:9003-5-b-3-ii"
+        }
+    ], 
+    "9003-5-b-1-ii-B": [
+        {
+            "offsets": [
+                [
+                    188, 
+                    195
+                ]
+            ], 
+            "ref": "purpose:9003-5-b-3-ii"
+        }
+    ], 
+    "9003-5-b-1-iv": [
+        {
+            "offsets": [
+                [
+                    150, 
+                    155
+                ]
+            ], 
+            "ref": "payee:9003-5-b-3-i"
+        }, 
+        {
+            "offsets": [
+                [
+                    12, 
+                    19
+                ]
+            ], 
+            "ref": "purpose:9003-5-b-3-ii"
+        }
+    ], 
+    "9003-5-b-2-i": [
+        {
+            "offsets": [
+                [
+                    65, 
+                    70
+                ]
+            ], 
+            "ref": "payee:9003-5-b-3-i"
+        }, 
+        {
+            "offsets": [
+                [
+                    93, 
+                    100
+                ]
+            ], 
+            "ref": "purpose:9003-5-b-3-ii"
+        }
+    ], 
+    "9003-5-b-2-ii": [
+        {
+            "offsets": [
+                [
+                    40, 
+                    45
+                ], 
+                [
+                    99, 
+                    104
+                ]
+            ], 
+            "ref": "payee:9003-5-b-3-i"
+        }, 
+        {
+            "offsets": [
+                [
+                    131, 
+                    138
+                ]
+            ], 
+            "ref": "purpose:9003-5-b-3-ii"
+        }
+    ], 
+    "9003-5-b-3": [
+        {
+            "offsets": [
+                [
+                    8, 
+                    16
+                ]
+            ], 
+            "ref": "purpose:9003-5-b-3-ii"
+        }
+    ], 
+    "9003-5-b-3-ii": [
+        {
+            "offsets": [
+                [
+                    60, 
+                    65
+                ]
+            ], 
+            "ref": "payee:9003-5-b-3-i"
+        }
+    ], 
+    "9003-5-d-1": [
+        {
+            "offsets": [
+                [
+                    339, 
+                    347
+                ]
+            ], 
+            "ref": "purpose:9003-5-b-3-ii"
+        }
+    ], 
+    "referenced": {
+        "immediate family:9003-2-c-1": {
+            "position": [
+                43, 
+                59
+            ], 
+            "reference": "9003-2-c-1", 
+            "term": "immediate family"
+        }, 
+        "payee:9003-5-b-3-i": {
+            "position": [
+                4, 
+                9
+            ], 
+            "reference": "9003-5-b-3-i", 
+            "term": "payee"
+        }, 
+        "purpose:9003-5-b-3-ii": {
+            "position": [
+                5, 
+                12
+            ], 
+            "reference": "9003-5-b-3-ii", 
+            "term": "purpose"
+        }
+    }
+}

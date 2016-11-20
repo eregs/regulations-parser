@@ -1,0 +1,16 @@
+{
+    "9430-1": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "3701", 
+                "title": "31"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "31 U.S.C. 3701", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=3701&title=31&year=mostrecent"
+        }
+    ]
+}
