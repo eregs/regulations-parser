@@ -12,6 +12,5 @@ class KeyTerms(BaseKeyTerms):
         (to limit false positives)"""
         marker = marker_of(node)
         if marker:
-            tagged = (getattr(node, 'tagged_text', None) or '')
-            tagged = tagged.replace(marker, '', 1).strip()
+            tagged = node.tagged_text.replace(marker, '', 1).strip()
             return keyterm_in_text(tagged)

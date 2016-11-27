@@ -38,9 +38,10 @@ class USCodeParagraphMatcher(paragraph_processor.BaseMatcher):
                        tree_utils.split_text(text, with_parens),
                        tree_utils.split_text(tagged_text, with_parens))
         for m, text, tagged_text in triplets:
-            node = Node(text=text.strip(), label=[m], source_xml=xml)
-            node.tagged_text = six.text_type(tagged_text.strip())
-            nodes.append(node)
+            nodes.append(Node(
+                text=text.strip(), label=[m], source_xml=xml,
+                tagged_text=six.text_type(tagged_text.strip())
+            ))
         return nodes
 
 

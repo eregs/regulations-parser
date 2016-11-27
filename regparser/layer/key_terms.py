@@ -32,8 +32,7 @@ class KeyTerms(Layer):
 
     @classmethod
     def keyterm_in_node(cls, node, ignore_definitions=True):
-        tagged = (getattr(node, 'tagged_text', None) or '')
-        tagged = tagged.replace(marker_of(node), '', 1).strip()
+        tagged = node.tagged_text.replace(marker_of(node), '', 1).strip()
         keyterm = keyterm_in_text(tagged)
 
         if keyterm and not (ignore_definitions and
