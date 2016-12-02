@@ -58,21 +58,16 @@ def generate_dependencies(version_dir, version_ids, delays_by_version):
     return deps
 
 
-class InvalidEffectiveDate(Exception):
-    def __init__(self, version_id):
-        self.version_id = version_id
-        super(InvalidEffectiveDate, self).__init__(
-            "No effective date for this rule: {}".format(version_id))
-
-
 def write_to_disk(xml, version_entry, delay=None):
     """Serialize a Version instance to disk"""
     effective = xml.effective if delay is None else delay.until
-    if not effective:
-        raise InvalidEffectiveDate(xml.version_id)
-    version = Version(identifier=xml.version_id, effective=effective,
-                      published=xml.published)
-    version_entry.write(version)
+    if effective:
+        version = Version(identifier=xml.version_id, effective=effective,
+                          published=xml.published)
+        version_entry.write(version)
+    else:
+        logger.warning("No effective date for this rule: %s. Skipping",
+                       xml.version_id)
 
 
 def write_if_needed(cfr_title, cfr_part, version_ids, xmls, delays_by_version):

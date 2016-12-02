@@ -7,7 +7,7 @@ constraints more useful"""
 from constraint import InSetConstraint
 
 from regparser.tree.depth import markers
-from regparser.tree.depth.rules import ancestors
+from regparser.tree.depth.rules import ancestors, _level_and_children
 
 
 def depth_type_inverses(constrain, all_variables):
@@ -41,6 +41,43 @@ def star_new_level(constrain, all_variables):
         prev_typ, prev_depth = all_variables[i - 3], all_variables[i - 1]
         typ, depth = all_variables[i], all_variables[i + 2]
         constrain(inner, [prev_typ, prev_depth, typ, depth])
+
+
+def stars_occupy_space(constrain, all_variables):
+    """Star markers can't be ignored in sequence, so 1, *, 2 doesn't make
+    sense for a single level, unless it's an inline star. In the inline
+    case, we can think of it as 1, intro-text-to-1, 2"""
+
+    def per_level(elements):
+        level, grouped_children = _level_and_children(elements)
+
+        if not level:
+            return True     # Base Case
+
+        last_idx, last_typ = -1, None
+        for typ, idx, _ in level:
+            if typ == markers.stars:
+                if idx == 0:    # STARS_TAG, not INLINE_STARS
+                    last_idx += 1
+            # sequences must be increasing. Exception for markerless
+            elif (last_idx >= idx and
+                  markers.markerless not in (last_typ, typ)):
+                return False
+            else:
+                last_idx = idx
+            last_typ = typ
+
+        for children in grouped_children:           # Recurse
+            if not per_level(children):
+                return False
+        return True
+
+    def inner(*all_vars):
+        elements = [tuple(all_vars[i:i + 3])
+                    for i in range(0, len(all_vars), 3)]
+        return per_level(elements)
+
+    constrain(inner, all_variables)
 
 
 def limit_paragraph_types(*p_types):

@@ -31,7 +31,9 @@ class CommandsPreprocessNoticeTests(HttpMixin, TestCase):
         params = {'effective_on': '2008-08-08',
                   'publication_date': '2007-07-07',
                   'full_text_xml_url': 'some://url',
-                  'volume': 45}
+                  'volume': 45,
+                  'start_page': 111,
+                  'end_page': 222}
         params.update(kwargs)
         self.expect_json_http(params, uri=re.compile('.*federalregister.*'))
         # No data from regs.gov

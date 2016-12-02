@@ -517,7 +517,6 @@ class NoticeXMLTests(TestCase):
 
     def test_as_dict(self):
         with XMLBuilder("ROOT") as ctx:
-            ctx.PRTPAGE(P=44)
             ctx.AGENCY('Awesome Admin')
             ctx.SUBJECT('This is the title')
 
@@ -526,6 +525,8 @@ class NoticeXMLTests(TestCase):
             notice_xml.TitlePartsRef(title=11, parts=[234, 456])]
         notice.version_id = 'v1v1v1'
         notice.fr_volume = 33
+        notice.start_page = 44
+        notice.end_page = 55
         notice.fr_html_url = 'http://example.com'
         notice.published = date(2002, 2, 2)
         notice.comments_close_on = date(2003, 3, 3)
@@ -545,10 +546,10 @@ class NoticeXMLTests(TestCase):
             'dockets': ['d1111', 'd2222'],
             'document_number': 'v1v1v1',
             'effective_on': '2004-04-04',
-            'fr_citation': '33 FR 43',
+            'fr_citation': '33 FR 44',
             'fr_url': 'http://example.com',
             'fr_volume': 33,
-            'meta': {'start_page': 43},
+            'meta': {'start_page': 44},
             'primary_agency': 'Awesome Admin',
             'primary_docket': 'd2222',
             'publication_date': '2002-02-02',

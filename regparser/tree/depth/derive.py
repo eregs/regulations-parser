@@ -131,7 +131,6 @@ def derive_depths(original_markers, additional_constraints=None):
     # @todo: There's probably efficiency gains to making these rules over
     # prefixes (see above) rather than over the whole collection at once
     problem.addConstraint(rules.same_parent_same_type, all_vars)
-    problem.addConstraint(rules.stars_occupy_space, all_vars)
 
     for constraint in additional_constraints:
         constraint(problem.addConstraint, all_vars)

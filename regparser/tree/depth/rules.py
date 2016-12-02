@@ -140,39 +140,6 @@ def same_parent_same_type(*all_vars):
     return per_level(elements)
 
 
-def stars_occupy_space(*all_vars):
-    """Star markers can't be ignored in sequence, so 1, *, 2 doesn't make
-    sense for a single level, unless it's an inline star. In the inline
-    case, we can think of it as 1, intro-text-to-1, 2"""
-    elements = [tuple(all_vars[i:i + 3]) for i in range(0, len(all_vars), 3)]
-
-    def per_level(elements):
-        level, grouped_children = _level_and_children(elements)
-
-        if not level:
-            return True     # Base Case
-
-        last_idx, last_typ = -1, None
-        for typ, idx, _ in level:
-            if typ == markers.stars:
-                if idx == 0:    # STARS_TAG, not INLINE_STARS
-                    last_idx += 1
-            # sequences must be increasing. Exception for markerless
-            elif (last_idx >= idx and
-                  markers.markerless not in (last_typ, typ)):
-                return False
-            else:
-                last_idx = idx
-            last_typ = typ
-
-        for children in grouped_children:           # Recurse
-            if not per_level(children):
-                return False
-        return True
-
-    return per_level(elements)
-
-
 def depth_type_order(order):
     """Create a function which constrains paragraphs depths to a particular
     type sequence. For example, we know a priori what regtext and
