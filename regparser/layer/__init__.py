@@ -1,4 +1,4 @@
-defaults = {
+defaults = {    # Used by setup.py
     'cfr': [
         'regparser.layer.meta.Meta',
         'regparser.layer.internal_citations.InternalCitationParser',
@@ -6,9 +6,6 @@ defaults = {
         'regparser.layer.terms.Terms',
         'regparser.layer.paragraph_markers.ParagraphMarkers',
         'regparser.layer.key_terms.KeyTerms',
-        # CFPB specific -- these should be moved to plugins
-        'regparser.layer.interpretations.Interpretations',
-        # SectionBySection layer is a created via a separate command
     ],
     'preamble': [
         'regparser.layer.preamble.key_terms.KeyTerms',

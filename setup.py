@@ -33,6 +33,6 @@ setup(
     ],
     entry_points={
         "console_scripts": ["eregs=eregs:main"],
-        "eregs_ns.parser.layer_dict": ["default=regparser.layer:defaults"]
+        "eregs_ns.parser.layer_dict": "default=regparser.layer:defaults"
     }
 )
