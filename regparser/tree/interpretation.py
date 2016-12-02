@@ -3,7 +3,6 @@ import logging
 
 from regparser.citations import internal_citations
 from regparser.grammar import unified
-from regparser.tree.paragraph import ParagraphParser
 from regparser.tree.struct import Node
 
 
