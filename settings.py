@@ -122,31 +122,9 @@ PREPROCESSORS = plugins.extend_list('eregs_ns.parser.preprocessors', [
 
 # Which layers are to be generated, keyed by document type. The ALL key is
 # special; layers in this category automatically apply to all document types
-LAYERS = {
-    'cfr': [
-        'regparser.layer.meta.Meta',
-        'regparser.layer.internal_citations.InternalCitationParser',
-        'regparser.layer.table_of_contents.TableOfContentsLayer',
-        'regparser.layer.terms.Terms',
-        'regparser.layer.paragraph_markers.ParagraphMarkers',
-        'regparser.layer.key_terms.KeyTerms',
-        # CFPB specific -- these should be moved to plugins
-        'regparser.layer.interpretations.Interpretations',
-        # SectionBySection layer is a created via a separate command
-    ],
-    'preamble': [
-        'regparser.layer.preamble.key_terms.KeyTerms',
-        'regparser.layer.preamble.internal_citations.InternalCitations',
-        'regparser.layer.preamble.paragraph_markers.ParagraphMarkers'
-    ],
-    # It probably makes more sense to use plugins.update_dictionary, but we're
-    # keeping this for backwards compatibility
-    'ALL': plugins.extend_list('eregs_ns.parser.layers', [
-        'regparser.layer.external_citations.ExternalCitationParser',
-        'regparser.layer.formatting.Formatting',
-        'regparser.layer.graphics.Graphics',
-    ]),
-}
+LAYERS = plugins.update_dictionary('eregs_ns.parser.layer_dict', {'ALL': []})
+# Kept for backwards compatibility
+LAYERS['ALL'] = plugins.extend_list('eregs_ns.parser.layers', LAYERS['ALL'])
 
 # Regulations.gov settings. The demo key is rate limited by IP; sign up for
 # your own key at

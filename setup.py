@@ -31,5 +31,8 @@ setup(
         "six",
         "stevedore"
     ],
-    entry_points={"console_scripts": ["eregs=eregs:main"]}
+    entry_points={
+        "console_scripts": ["eregs=eregs:main"],
+        "eregs_ns.parser.layer_dict": ["default=regparser.layer:defaults"]
+    }
 )
