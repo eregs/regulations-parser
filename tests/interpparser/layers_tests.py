@@ -1,6 +1,7 @@
-from regparser.layer.interpretations import Interpretations
-from regparser.tree.struct import Node
 from unittest import TestCase
+
+from regparser.tree.struct import Node
+from interpparser.layers import Interpretations
 
 
 class LayerInterpretationTest(TestCase):
