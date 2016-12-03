@@ -17,7 +17,7 @@ from regparser.tree.paragraph import p_level_of, p_levels
 from regparser.tree.xml_parser import (
     flatsubtree_processor, import_category, note_processor,
     paragraph_processor, tree_utils)
-from regparser.tree.xml_parser.appendices import build_non_reg_text
+from regparser.tree.gpo_cfr.appendices import build_non_reg_text
 
 
 logger = logging.getLogger(__name__)

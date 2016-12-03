@@ -8,8 +8,8 @@ from mock import patch
 from regparser.test_utils.node_accessor import NodeAccessor
 from regparser.test_utils.xml_builder import XMLBuilder
 from regparser.tree.depth import markers as mtypes
+from regparser.tree.gpo_cfr import builder
 from regparser.tree.struct import Node
-from regparser.tree.xml_parser import reg_text
 
 
 class RegTextTest(TestCase):
@@ -25,7 +25,7 @@ class RegTextTest(TestCase):
         with self.section() as ctx:
             ctx.P("Some content about this section.")
             ctx.P("(a) something something")
-        node = reg_text.build_from_section('8675', ctx.xml)[0]
+        node = builder.build_from_section('8675', ctx.xml)[0]
         node = NodeAccessor(node)
         self.assertEqual('Some content about this section.', node.text.strip())
         self.assertEqual(['a'], node.child_labels)
@@ -42,7 +42,7 @@ class RegTextTest(TestCase):
             ctx.child_from_string(
                 '<P>(b) <E T="03">Contents</E> (1) Here</P>')
             ctx.P("(2) More text")
-        node = reg_text.build_from_section('8675', ctx.xml)[0]
+        node = builder.build_from_section('8675', ctx.xml)[0]
         node = NodeAccessor(node)
         self.assertEqual(['a', 'b'], node.child_labels)
         self.assertEqual(['1', '2'], node['a'].child_labels)
@@ -55,7 +55,7 @@ class RegTextTest(TestCase):
             ctx.P("(i) iiii")
             ctx.child_from_string(u'<P>(A) AAA—(<E T="03">1</E>) eeee</P>')
             ctx.STARS()
-        node = reg_text.build_from_section('8675', ctx.xml)[0]
+        node = builder.build_from_section('8675', ctx.xml)[0]
         node = NodeAccessor(node)
         a1iA = node['a']['1']['i']['A']
         self.assertEqual(u"(A) AAA—", a1iA.text)
@@ -67,7 +67,7 @@ class RegTextTest(TestCase):
             ctx.child_from_string(
                 u'<P>(a) <E T="03">Keyterm</E>—(1)(i) Content</P>')
             ctx.P("(ii) Content2")
-        node = reg_text.build_from_section('8675', ctx.xml)[0]
+        node = builder.build_from_section('8675', ctx.xml)[0]
         node = NodeAccessor(node)
         self.assertEqual(['a'], node.child_labels)
         self.assertEqual(['1'], node['a'].child_labels)
@@ -77,7 +77,7 @@ class RegTextTest(TestCase):
         with XMLBuilder("SECTION") as ctx:
             ctx.SECTNO(u"§ 8675.309")
             ctx.RESERVED("[Reserved]")
-        node = reg_text.build_from_section('8675', ctx.xml)[0]
+        node = builder.build_from_section('8675', ctx.xml)[0]
         self.assertEqual(node.label, ['8675', '309'])
         self.assertEqual(u'§ 8675.309 [Reserved]', node.title)
         self.assertEqual([], node.children)
@@ -86,7 +86,7 @@ class RegTextTest(TestCase):
         with XMLBuilder("SECTION") as ctx:
             ctx.SECTNO(u"§§ 8675.309-8675.311")
             ctx.RESERVED("[Reserved]")
-        n309, n310, n311 = reg_text.build_from_section('8675', ctx.xml)
+        n309, n310, n311 = builder.build_from_section('8675', ctx.xml)
         self.assertEqual(n309.label, ['8675', '309'])
         self.assertEqual(n310.label, ['8675', '310'])
         self.assertEqual(n311.label, ['8675', '311'])
@@ -98,7 +98,7 @@ class RegTextTest(TestCase):
         with XMLBuilder("SECTION") as ctx:
             ctx.SECTNO(u"§§ 8675.309-8675.312")
             ctx.RESERVED("[Reserved]")
-        n309 = reg_text.build_from_section('8675', ctx.xml)[0]
+        n309 = builder.build_from_section('8675', ctx.xml)[0]
         self.assertEqual(n309.label, ['8675', '309'])
         self.assertEqual(u'§§ 8675.309-312 [Reserved]', n309.title)
 
@@ -110,7 +110,7 @@ class RegTextTest(TestCase):
             ctx.P("(2) H-2")
             ctx.P("(i) Is this 8675-309-h-2-i or 8675-309-i")
             ctx.P(final_par)
-        node = reg_text.build_from_section('8675', ctx.xml)[0]
+        node = builder.build_from_section('8675', ctx.xml)[0]
         return NodeAccessor(node)
 
     def test_build_from_section_ambiguous_ii(self):
@@ -142,7 +142,7 @@ class RegTextTest(TestCase):
             ctx.P("(1) 111")
             ctx.child_from_string(u'<P>(2) 222—(i) iii. (A) AAA</P>')
             ctx.P("(B) BBB")
-        n309 = reg_text.build_from_section('8675', ctx.xml)[0]
+        n309 = builder.build_from_section('8675', ctx.xml)[0]
         n309 = NodeAccessor(n309)
         self.assertEqual(['a'], n309.child_labels)
         self.assertEqual(['1', '2'], n309['a'].child_labels)
@@ -157,7 +157,7 @@ class RegTextTest(TestCase):
             ctx.P("(A) AAA")
             ctx.child_from_string('<P>(<E T="03">1</E>) i1i1i1</P>')
             ctx.child_from_string('<P>\n(<E T="03">2</E>) i2i2i2</P>')
-        node = reg_text.build_from_section('8675', ctx.xml)[0]
+        node = builder.build_from_section('8675', ctx.xml)[0]
         node = NodeAccessor(node)
         self.assertEqual(['a'], node.child_labels)
         self.assertEqual(['1'], node['a'].child_labels)
@@ -170,7 +170,7 @@ class RegTextTest(TestCase):
             ctx.STARS()
             ctx.child_from_string(
                 '<P>(b)<E T="03">General.</E>Content Content.</P>')
-        node = reg_text.build_from_section('8675', ctx.xml)[0]
+        node = builder.build_from_section('8675', ctx.xml)[0]
         node = NodeAccessor(node)
         self.assertEqual(['8675', '16'], node.label)
         self.assertEqual(['b'], node.child_labels)
@@ -180,7 +180,7 @@ class RegTextTest(TestCase):
     def test_build_from_section_section_with_nondigits(self):
         with self.section(section="309a") as ctx:
             ctx.P("Intro content here")
-        node = reg_text.build_from_section('8675', ctx.xml)[0]
+        node = builder.build_from_section('8675', ctx.xml)[0]
         self.assertEqual(node.label, ['8675', '309a'])
         self.assertEqual(0, len(node.children))
 
@@ -190,7 +190,7 @@ class RegTextTest(TestCase):
             ctx.P("(b) bbb")
             ctx.FP("fpfpfp")
             ctx.P("(c) ccc")
-        node = reg_text.build_from_section('8675', ctx.xml)[0]
+        node = builder.build_from_section('8675', ctx.xml)[0]
         node = NodeAccessor(node)
         self.assertEqual(['a', 'b', 'c'], node.child_labels)
         self.assertEqual([], node['a'].child_labels)
@@ -209,7 +209,7 @@ class RegTextTest(TestCase):
                 with ctx.ROW():
                     ctx.ENT("Left content", I="01")
                     ctx.ENT("Right content")
-        node = reg_text.build_from_section('8675', ctx.xml)[0]
+        node = builder.build_from_section('8675', ctx.xml)[0]
         node = NodeAccessor(node)
         self.assertEqual(['a'], node.child_labels)
         self.assertEqual(['p1'], node['a'].child_labels)
@@ -254,7 +254,7 @@ class RegTextTest(TestCase):
           </SECTION>
         """ % (subject, railroad))
 
-        nodes = reg_text.build_from_section('555', xml)
+        nodes = builder.build_from_section('555', xml)
         node = nodes[0]
         self.assertEqual(u'§ 555.219 %s' % subject, node.title)
         self.assertEqual('regtext', node.node_type)
@@ -315,7 +315,7 @@ class RegTextTest(TestCase):
             </EXTRACT>
           </SECTION>
         """ % (subject, table_first_header_text, table_second_header_text))
-        nodes = reg_text.build_from_section('555', xml)
+        nodes = builder.build_from_section('555', xml)
         node = nodes[0]
         self.assertEqual(u'§ 555.219 %s' % subject, node.title)
         self.assertEqual('regtext', node.node_type)
@@ -355,7 +355,7 @@ class RegTextTest(TestCase):
                 ctx.P("1. Some content")
                 ctx.P("2. Other content")
                 ctx.P("(3) This paragraph has parens for some reason")
-        nodes = reg_text.build_from_section('8675', ctx.xml)
+        nodes = builder.build_from_section('8675', ctx.xml)
 
         root_node = nodes[0]
         self.assertEqual(['8675', '309'], root_node.label)
@@ -398,7 +398,7 @@ class RegTextTest(TestCase):
                 ctx.P("You do not need a form if:")
                 ctx.P("1. Some content")
                 ctx.P("2. Other content")
-        node = reg_text.build_from_section('8675', ctx.xml)[0]
+        node = builder.build_from_section('8675', ctx.xml)[0]
 
         a = node.children[0]
         self.assertEqual(u'(a) aaaa', a.text)
@@ -439,7 +439,7 @@ class RegTextTest(TestCase):
                 ctx.PRTPAGE(P="8")
                 ctx.P("1. Some content")
                 ctx.P("2. Other content")
-        node = NodeAccessor(reg_text.build_from_section('8675', ctx.xml)[0])
+        node = NodeAccessor(builder.build_from_section('8675', ctx.xml)[0])
 
         self.assertEqual(['a'], node.child_labels)
         self.assertEqual(['p1'], node['a'].child_labels)
@@ -456,7 +456,7 @@ class RegTextTest(TestCase):
             ctx.P("(a) aaa")
             ctx.P("(b) bbb")
 
-        node = reg_text.build_from_section('8675', ctx.xml)[0]
+        node = builder.build_from_section('8675', ctx.xml)[0]
         self.assertEqual(node.text, "Some \n content")
 
     def test_build_from_section_image(self):
@@ -469,7 +469,7 @@ class RegTextTest(TestCase):
                 ctx.GID("a-gid")
             ctx.P("(b) bbb")
 
-        node = NodeAccessor(reg_text.build_from_section('8675', ctx.xml)[0])
+        node = NodeAccessor(builder.build_from_section('8675', ctx.xml)[0])
         self.assertEqual(['a', 'b'], node.child_labels)
         self.assertEqual(['p1'], node['a'].child_labels)
         self.assertEqual('![](a-gid)', node['a']['p1'].text)
@@ -477,7 +477,7 @@ class RegTextTest(TestCase):
     def test_get_title(self):
         with XMLBuilder("PART") as ctx:
             ctx.HD("regulation title")
-        title = reg_text.get_title(ctx.xml)
+        title = builder.get_title(ctx.xml)
         self.assertEqual(u'regulation title', title)
 
     def test_get_reg_part(self):
@@ -488,13 +488,13 @@ class RegTextTest(TestCase):
         xmls.append(u"<FDSYS><HEADING>PART 204</HEADING></FDSYS>")
         xmls.append(u"<FDSYS><GRANULENUM>204</GRANULENUM></FDSYS>")
         for xml_str in xmls:
-            part = reg_text.get_reg_part(etree.fromstring(xml_str))
+            part = builder.get_reg_part(etree.fromstring(xml_str))
             self.assertEqual(part, '204')
 
     def test_get_reg_part_fr_notice_style(self):
         with XMLBuilder("REGTEXT", PART=204) as ctx:
             ctx.SECTION("\n")
-        part = reg_text.get_reg_part(ctx.xml)
+        part = builder.get_reg_part(ctx.xml)
         self.assertEqual(part, '204')
 
     def test_build_subpart(self):
@@ -510,7 +510,7 @@ class RegTextTest(TestCase):
                 ctx.SUBJECT("Definitions.")
                 ctx.P("Some content about this section.")
                 ctx.P("(a) something something")
-        subpart = reg_text.build_subpart('8675', ctx.xml)
+        subpart = builder.build_subpart('8675', ctx.xml)
         self.assertEqual(subpart.node_type, 'subpart')
         self.assertEqual(len(subpart.children), 2)
         self.assertEqual(subpart.label, ['8675', 'Subpart', 'A'])
@@ -529,7 +529,7 @@ class RegTextTest(TestCase):
                 ctx.SUBJECT("Changes through bankruptcy of owner.")
                 ctx.P(u"A receiver or referee in bankruptcy may […] paid.")
                 ctx.P("(a) something something")
-        subpart = reg_text.build_subjgrp('479', ctx.xml, [])
+        subpart = builder.build_subjgrp('479', ctx.xml, [])
         self.assertEqual(subpart.node_type, 'subpart')
         self.assertEqual(len(subpart.children), 2)
         self.assertEqual(subpart.label, ['479', 'Subjgrp', 'CoO'])
@@ -538,14 +538,14 @@ class RegTextTest(TestCase):
 
     def test_get_markers(self):
         text = u'(a) <E T="03">Transfer </E>—(1) <E T="03">Notice.</E> follow'
-        markers = reg_text.get_markers(text, mtypes.STARS_TAG)
+        markers = builder.get_markers(text, mtypes.STARS_TAG)
         self.assertEqual(markers, [u'a', u'1'])
 
     def _split_by_markers_results(self, text):
         """DRY conversion between a paragraph text and corresponding
         (markers, text, tagged)"""
         xml = etree.fromstring(u'<ROOT><P>{}</P><STARS/></ROOT>'.format(text))
-        results = reg_text.split_by_markers(xml[0])
+        results = builder.split_by_markers(xml[0])
         return list(zip(*results))    # unzips...
 
     def test_split_by_markers(self):
@@ -577,21 +577,21 @@ class RegTextTest(TestCase):
         text += 'paragraphs (a)(2), (a)(4)(iii), (a)(5), (b) through (d), '
         text += '(f), and (g) with respect to something, (i), (j), (l) '
         text += 'through (p), (q)(1), and (r) with respect to something.'
-        self.assertEqual(['vi'], reg_text.get_markers(text))
+        self.assertEqual(['vi'], builder.get_markers(text))
 
     def test_get_markers_collapsed(self):
         """Only find collapsed markers if they are followed by a marker in
         sequence"""
         text = u'(a) <E T="03">aaa</E>—(1) 111. (i) iii'
-        self.assertEqual(reg_text.get_markers(text), ['a'])
-        self.assertEqual(reg_text.get_markers(text, 'b'), ['a'])
-        self.assertEqual(reg_text.get_markers(text, 'A'), ['a', '1', 'i'])
-        self.assertEqual(reg_text.get_markers(text, 'ii'), ['a', '1', 'i'])
-        self.assertEqual(reg_text.get_markers(text, mtypes.STARS_TAG),
+        self.assertEqual(builder.get_markers(text), ['a'])
+        self.assertEqual(builder.get_markers(text, 'b'), ['a'])
+        self.assertEqual(builder.get_markers(text, 'A'), ['a', '1', 'i'])
+        self.assertEqual(builder.get_markers(text, 'ii'), ['a', '1', 'i'])
+        self.assertEqual(builder.get_markers(text, mtypes.STARS_TAG),
                          ['a', '1', 'i'])
-        self.assertEqual(reg_text.get_markers(text, '2'), ['a', '1'])
+        self.assertEqual(builder.get_markers(text, '2'), ['a', '1'])
 
-    @patch('regparser.tree.xml_parser.reg_text.content')
+    @patch('regparser.tree.gpo_cfr.builder.content')
     def test_preprocess_xml(self, content):
         with XMLBuilder("CFRGRANULE") as ctx:
             with ctx.PART():
@@ -603,7 +603,7 @@ class RegTextTest(TestCase):
             ("//GID[./text()='ABCD.0123']/..",
              """<HD SOURCE="HD1">Some Title</HD><GPH DEEP="453" SPAN="2">"""
              """<GID>EFGH.0123</GID></GPH>""")]
-        reg_text.preprocess_xml(ctx.xml)
+        builder.preprocess_xml(ctx.xml)
 
         with XMLBuilder("CFRGRANULE") as ctx2:
             with ctx2.PART():
@@ -620,7 +620,7 @@ class RegTextTest(TestCase):
             ctx.SECTNO(u"§ 8675.309")
             ctx.SUBJECT("Definitions.")
             ctx.P("(aa) This is what things mean:")
-        node = reg_text.build_from_section('8675', ctx.xml)[0]
+        node = builder.build_from_section('8675', ctx.xml)[0]
         child = node.children[0]
         self.assertEqual('(aa) This is what things mean:', child.text.strip())
         self.assertEqual(['8675', '309', 'aa'], child.label)
@@ -639,7 +639,7 @@ class RegTextTest(TestCase):
                     ctx.HD(u"Subpart B—First subpart")
                 with ctx.SUBJGRP():
                     ctx.HD(u"Another Top Level")
-        node = reg_text.build_tree(ctx.xml)
+        node = builder.build_tree(ctx.xml)
         self.assertEqual(node.label, ['123'])
         self.assertEqual(4, len(node.children))
         subpart_a, subjgrp_1, subpart_b, subjgrp_2 = node.children
@@ -652,11 +652,11 @@ class RegTextTest(TestCase):
         """Should not find any collapsed markers and should find all of the
         markers at the beginning of the text"""
         text = '(k)(2)(iii) abc (j)'
-        result = [m for m in reg_text.initial_markers(text)]
+        result = [m for m in builder.initial_markers(text)]
         self.assertEqual(['k', '2', 'iii'], result)
 
         text = '(i)(A) The minimum period payment'
-        result = [m for m in reg_text.initial_markers(text)]
+        result = [m for m in builder.initial_markers(text)]
         self.assertEqual(['i', 'A'], result)
 
     def test_collapsed_markers(self):
@@ -664,26 +664,26 @@ class RegTextTest(TestCase):
         prefixes, but not when they are part of a citation or do not have the
         appropriate prefix"""
         text = u'(a) <E T="03">Transfer </E>—(1) <E T="03">Notice.</E> follow'
-        self.assertEqual([u'1'], reg_text.collapsed_markers(text))
+        self.assertEqual([u'1'], builder.collapsed_markers(text))
 
         text = u'(a) <E T="03">Blah </E>means (1) <E T="03">Notice.</E> follow'
-        self.assertEqual([u'1'], reg_text.collapsed_markers(text))
+        self.assertEqual([u'1'], builder.collapsed_markers(text))
 
         text = '(1) See paragraph (a) for more'
-        self.assertEqual([], reg_text.collapsed_markers(text))
+        self.assertEqual([], builder.collapsed_markers(text))
 
         text = '(a) (1) More content'
-        self.assertEqual([], reg_text.collapsed_markers(text))
+        self.assertEqual([], builder.collapsed_markers(text))
 
         text = u'(a) <E T="03">Transfer—</E>(1) <E T="03">Notice.</E> follow'
-        self.assertEqual([u'1'], reg_text.collapsed_markers(text))
+        self.assertEqual([u'1'], builder.collapsed_markers(text))
 
         text = u'(a) <E T="03">Keyterm</E>—(1)(i) Content'
-        self.assertEqual(['1', 'i'], reg_text.collapsed_markers(text))
+        self.assertEqual(['1', 'i'], builder.collapsed_markers(text))
 
         text = "(C) The information required by paragraphs (a)(2), "
         text += "(a)(4)(iii), (a)(5), (b) through (d), (i), (l) through (p)"
-        self.assertEqual([], reg_text.collapsed_markers(text))
+        self.assertEqual([], builder.collapsed_markers(text))
 
     def test_next_marker_found(self):
         """Find the first paragraph marker following a paragraph"""
@@ -692,7 +692,7 @@ class RegTextTest(TestCase):
             ctx.PRTPART()
             ctx.P("(d) ddd")
             ctx.P("(1) 111")
-        self.assertEqual(reg_text.next_marker(ctx.xml[0]), 'd')
+        self.assertEqual(builder.next_marker(ctx.xml[0]), 'd')
 
     def test_next_marker_stars(self):
         """STARS tag has special significance."""
@@ -702,7 +702,7 @@ class RegTextTest(TestCase):
             ctx.STARS()
             ctx.P("(d) ddd")
             ctx.P("(1) 111")
-        self.assertEqual(reg_text.next_marker(ctx.xml[0]), mtypes.STARS_TAG)
+        self.assertEqual(builder.next_marker(ctx.xml[0]), mtypes.STARS_TAG)
 
     def test_next_marker_none(self):
         """If no marker is present, return None"""
@@ -710,7 +710,7 @@ class RegTextTest(TestCase):
             ctx.P("(1) 111")
             ctx.P("Content")
             ctx.P("(i) iii")
-        self.assertIsNone(reg_text.next_marker(ctx.xml[0]))
+        self.assertIsNone(builder.next_marker(ctx.xml[0]))
 
 
 class RegtextParagraphProcessorTests(TestCase):
@@ -723,7 +723,7 @@ class RegtextParagraphProcessorTests(TestCase):
                 '<P><E T="03">Some term.</E> (a) First definition</P>')
             ctx.P("(b) Second definition")
         root = Node(label=['111', '22'])
-        root = reg_text.RegtextParagraphProcessor().process(ctx.xml, root)
+        root = builder.RegtextParagraphProcessor().process(ctx.xml, root)
         root = NodeAccessor(root)
 
         self.assertEqual(['111', '22'], root.label)
@@ -742,7 +742,7 @@ class RegtextParagraphProcessorTests(TestCase):
                     ctx.P("(x)(1) Some content")
                     ctx.P("(A) Sub-sub-paragraph")
                     ctx.P("(i)(I) Even more nested")
-        root = reg_text.RegtextParagraphProcessor().process(ctx.xml, Node())
+        root = builder.RegtextParagraphProcessor().process(ctx.xml, Node())
         root = NodeAccessor(root)
 
         self.assertEqual(root['p1'].text, "Some intro")
@@ -760,14 +760,14 @@ class RegtextParagraphProcessorTests(TestCase):
 def test_get_subpart_group_title():
     with XMLBuilder("SUBPART") as ctx:
         ctx.HD(u"Subpart A—First subpart")
-    subpart_title = reg_text.get_subpart_group_title(ctx.xml)
+    subpart_title = builder.get_subpart_group_title(ctx.xml)
     assert subpart_title == u'Subpart A—First subpart'
 
 
 def test_get_subpart_group_title_reserved():
     with XMLBuilder("SUBPART") as ctx:
         ctx.RESERVED("Subpart J [Reserved]")
-    subpart_title = reg_text.get_subpart_group_title(ctx.xml)
+    subpart_title = builder.get_subpart_group_title(ctx.xml)
     assert subpart_title == u'Subpart J [Reserved]'
 
 
@@ -775,5 +775,5 @@ def test_get_subpart_group_title_em():
     with XMLBuilder("SUBPART") as ctx:
         ctx.child_from_string(
             u'<HD SOURCE="HED">Subpart B—<E T="0714">Partes</E> Review</HD>')
-    subpart_title = reg_text.get_subpart_group_title(ctx.xml)
+    subpart_title = builder.get_subpart_group_title(ctx.xml)
     assert subpart_title == u'Subpart B—Partes Review'

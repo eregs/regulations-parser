@@ -11,7 +11,7 @@ from roman import fromRoman
 
 from regparser.grammar.tokens import Verb
 from regparser.tree.struct import Node, find, find_parent
-from regparser.tree.xml_parser import interpretations, reg_text
+from regparser.tree.gpo_cfr import interpretations, builder as reg_text
 
 
 logger = logging.getLogger(__name__)
