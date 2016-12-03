@@ -24,12 +24,12 @@ class CommandsCurrentVersionTests(TestCase):
 
     def test_process_creation(self):
         """If no tree is present, we should build one"""
-        to_patch = 'regparser.commands.current_version.xml_parser'
-        with CliRunner().isolated_filesystem(), patch(to_patch) as xml_parser:
+        to_patch = 'regparser.commands.current_version.gpo_cfr'
+        with CliRunner().isolated_filesystem(), patch(to_patch) as gpo_cfr:
             entry.Entry('annual', self.title, self.part, self.year).write(
                 b'<ROOT />')
 
-            xml_parser.reg_text.build_tree.return_value = {'my': 'tree'}
+            gpo_cfr.builder.build_tree.return_value = {'my': 'tree'}
             current_version.process_if_needed(self.volume, self.part)
             tree = entry.Entry('tree', self.title, self.part,
                                self.version_id).read()
