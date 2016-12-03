@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from itertools import takewhile
 import logging
@@ -19,7 +18,7 @@ from regparser.tree.depth.derive import derive_depths
 from regparser.tree.paragraph import p_levels
 from regparser.tree.struct import Node
 from regparser.tree.xml_parser import tree_utils
-from regparser.tree.xml_parser.interpretations import build_supplement_tree
+from regparser.tree.gpo_cfr.interpretations import build_supplement_tree
 
 from settings import APPENDIX_IGNORE_SUBHEADER_LABEL
 

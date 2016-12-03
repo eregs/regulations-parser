@@ -9,10 +9,9 @@ from lxml import etree
 from regparser.notice import changes, util
 from regparser.notice.amdparser import amendment_from_xml
 from regparser.tree.struct import Node, walk
-from regparser.tree.xml_parser import interpretations
-from regparser.tree.xml_parser.appendices import process_appendix
-from regparser.tree.xml_parser.reg_text import (
-    build_from_section, build_subpart)
+from regparser.tree.gpo_cfr import interpretations
+from regparser.tree.gpo_cfr.appendices import process_appendix
+from regparser.tree.gpo_cfr.builder import build_from_section, build_subpart
 
 
 logger = logging.getLogger(__name__)
