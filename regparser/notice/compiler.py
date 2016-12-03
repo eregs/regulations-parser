@@ -11,7 +11,7 @@ from roman import fromRoman
 
 from regparser.grammar.tokens import Verb
 from regparser.tree.struct import Node, find, find_parent
-from regparser.tree.gpo_cfr import interpretations, builder as reg_text
+from regparser.tree.gpo_cfr import interpretations, section
 
 
 logger = logging.getLogger(__name__)
@@ -91,7 +91,7 @@ def overwrite_marker(origin, new_label):
     new one (new_label). This is necessary during node moves.  """
 
     if origin.node_type == Node.REGTEXT:
-        marker_list = reg_text.initial_markers(origin.text)
+        marker_list = section.initial_markers(origin.text)
         if len(marker_list) > 0:
             marker = '(%s)' % marker_list[0]
             new_marker = '(%s)' % new_label

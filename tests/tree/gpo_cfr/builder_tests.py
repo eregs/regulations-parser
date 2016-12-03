@@ -1,4 +1,4 @@
-# vim: set encoding=utf-8
+# -*- coding: utf-8 -*-
 from contextlib import contextmanager
 from unittest import TestCase
 
@@ -7,7 +7,6 @@ from mock import patch
 
 from regparser.test_utils.node_accessor import NodeAccessor
 from regparser.test_utils.xml_builder import XMLBuilder
-from regparser.tree.depth import markers as mtypes
 from regparser.tree.gpo_cfr import builder
 from regparser.tree.struct import Node
 
@@ -536,61 +535,6 @@ class RegTextTest(TestCase):
         child_labels = [c.label for c in subpart.children]
         self.assertEqual([['479', '42'], ['479', '43']], child_labels)
 
-    def test_get_markers(self):
-        text = u'(a) <E T="03">Transfer </E>—(1) <E T="03">Notice.</E> follow'
-        markers = builder.get_markers(text, mtypes.STARS_TAG)
-        self.assertEqual(markers, [u'a', u'1'])
-
-    def _split_by_markers_results(self, text):
-        """DRY conversion between a paragraph text and corresponding
-        (markers, text, tagged)"""
-        xml = etree.fromstring(u'<ROOT><P>{}</P><STARS/></ROOT>'.format(text))
-        results = builder.split_by_markers(xml[0])
-        return list(zip(*results))    # unzips...
-
-    def test_split_by_markers(self):
-        text = u'(a) <E T="03">Transfer </E>—(1) <E T="03">Notice.</E> follow'
-        markers, text, tagged = self._split_by_markers_results(text)
-        self.assertEqual(markers, (u'a', u'1'))
-        self.assertEqual(text, (u'(a) Transfer —', u'(1) Notice. follow'))
-        self.assertEqual(tagged, (u'(a) <E T="03">Transfer </E>—',
-                                  u'(1) <E T="03">Notice.</E> follow'))
-
-    def test_split_by_markers_emph(self):
-        text = '(A) aaaa. (<E T="03">1</E>) 1111'
-        markers, text, tagged = self._split_by_markers_results(text)
-        self.assertEqual(markers, ('A', '<E T="03">1</E>'))
-        self.assertEqual(text, ('(A) aaaa. ', '(1) 1111'))
-        self.assertEqual(tagged, ('(A) aaaa. ', '(<E T="03">1</E>) 1111'))
-
-    def test_split_by_markers_deceptive_single(self):
-        """Don't treat a single marker differently than multiple, there might
-        be prefix text"""
-        text = 'Words then. (a) a subparagraph'
-        markers, text, tagged = self._split_by_markers_results(text)
-        self.assertEqual(markers, (mtypes.MARKERLESS, 'a'))
-        self.assertEqual(text, ('Words then. ', '(a) a subparagraph'))
-        self.assertEqual(tagged, text)
-
-    def test_get_markers_bad_citation(self):
-        text = '(vi)<E T="03">Keyterm.</E>The information required by '
-        text += 'paragraphs (a)(2), (a)(4)(iii), (a)(5), (b) through (d), '
-        text += '(f), and (g) with respect to something, (i), (j), (l) '
-        text += 'through (p), (q)(1), and (r) with respect to something.'
-        self.assertEqual(['vi'], builder.get_markers(text))
-
-    def test_get_markers_collapsed(self):
-        """Only find collapsed markers if they are followed by a marker in
-        sequence"""
-        text = u'(a) <E T="03">aaa</E>—(1) 111. (i) iii'
-        self.assertEqual(builder.get_markers(text), ['a'])
-        self.assertEqual(builder.get_markers(text, 'b'), ['a'])
-        self.assertEqual(builder.get_markers(text, 'A'), ['a', '1', 'i'])
-        self.assertEqual(builder.get_markers(text, 'ii'), ['a', '1', 'i'])
-        self.assertEqual(builder.get_markers(text, mtypes.STARS_TAG),
-                         ['a', '1', 'i'])
-        self.assertEqual(builder.get_markers(text, '2'), ['a', '1'])
-
     @patch('regparser.tree.gpo_cfr.builder.content')
     def test_preprocess_xml(self, content):
         with XMLBuilder("CFRGRANULE") as ctx:
@@ -647,114 +591,6 @@ class RegTextTest(TestCase):
         self.assertEqual(subpart_b.label, ['123', 'Subpart', 'B'])
         self.assertEqual(subjgrp_1.label, ['123', 'Subjgrp', 'CoO'])
         self.assertEqual(subjgrp_2.label, ['123', 'Subjgrp', 'ATL'])
-
-    def test_initial_markers(self):
-        """Should not find any collapsed markers and should find all of the
-        markers at the beginning of the text"""
-        text = '(k)(2)(iii) abc (j)'
-        result = [m for m in builder.initial_markers(text)]
-        self.assertEqual(['k', '2', 'iii'], result)
-
-        text = '(i)(A) The minimum period payment'
-        result = [m for m in builder.initial_markers(text)]
-        self.assertEqual(['i', 'A'], result)
-
-    def test_collapsed_markers(self):
-        """We're expecting to find collapsed markers when they have certain
-        prefixes, but not when they are part of a citation or do not have the
-        appropriate prefix"""
-        text = u'(a) <E T="03">Transfer </E>—(1) <E T="03">Notice.</E> follow'
-        self.assertEqual([u'1'], builder.collapsed_markers(text))
-
-        text = u'(a) <E T="03">Blah </E>means (1) <E T="03">Notice.</E> follow'
-        self.assertEqual([u'1'], builder.collapsed_markers(text))
-
-        text = '(1) See paragraph (a) for more'
-        self.assertEqual([], builder.collapsed_markers(text))
-
-        text = '(a) (1) More content'
-        self.assertEqual([], builder.collapsed_markers(text))
-
-        text = u'(a) <E T="03">Transfer—</E>(1) <E T="03">Notice.</E> follow'
-        self.assertEqual([u'1'], builder.collapsed_markers(text))
-
-        text = u'(a) <E T="03">Keyterm</E>—(1)(i) Content'
-        self.assertEqual(['1', 'i'], builder.collapsed_markers(text))
-
-        text = "(C) The information required by paragraphs (a)(2), "
-        text += "(a)(4)(iii), (a)(5), (b) through (d), (i), (l) through (p)"
-        self.assertEqual([], builder.collapsed_markers(text))
-
-    def test_next_marker_found(self):
-        """Find the first paragraph marker following a paragraph"""
-        with XMLBuilder("ROOT") as ctx:
-            ctx.P("(A) AAA")
-            ctx.PRTPART()
-            ctx.P("(d) ddd")
-            ctx.P("(1) 111")
-        self.assertEqual(builder.next_marker(ctx.xml[0]), 'd')
-
-    def test_next_marker_stars(self):
-        """STARS tag has special significance."""
-        with XMLBuilder("ROOT") as ctx:
-            ctx.P("(A) AAA")
-            ctx.PRTPART()
-            ctx.STARS()
-            ctx.P("(d) ddd")
-            ctx.P("(1) 111")
-        self.assertEqual(builder.next_marker(ctx.xml[0]), mtypes.STARS_TAG)
-
-    def test_next_marker_none(self):
-        """If no marker is present, return None"""
-        with XMLBuilder("ROOT") as ctx:
-            ctx.P("(1) 111")
-            ctx.P("Content")
-            ctx.P("(i) iii")
-        self.assertIsNone(builder.next_marker(ctx.xml[0]))
-
-
-class RegtextParagraphProcessorTests(TestCase):
-    def test_process_markerless_collapsed(self):
-        """Should be able to find collapsed markers in a markerless
-        paragraph"""
-        with XMLBuilder("ROOT") as ctx:
-            ctx.P("Intro text")
-            ctx.child_from_string(
-                '<P><E T="03">Some term.</E> (a) First definition</P>')
-            ctx.P("(b) Second definition")
-        root = Node(label=['111', '22'])
-        root = builder.RegtextParagraphProcessor().process(ctx.xml, root)
-        root = NodeAccessor(root)
-
-        self.assertEqual(['111', '22'], root.label)
-        self.assertEqual(2, len(root.child_labels))
-        self.assertTrue(all(c.is_markerless for c in root.children))
-        keyterm_label = root.child_labels[1]
-        self.assertTrue(len(keyterm_label) > 5)
-        self.assertEqual(['a', 'b'], root[keyterm_label].child_labels)
-
-    def test_process_nested_uscode(self):
-        with XMLBuilder("ROOT") as ctx:
-            ctx.P("Some intro")
-            with ctx.EXTRACT():
-                ctx.HD("The U.S. Code!")
-                with ctx.USCODE():
-                    ctx.P("(x)(1) Some content")
-                    ctx.P("(A) Sub-sub-paragraph")
-                    ctx.P("(i)(I) Even more nested")
-        root = builder.RegtextParagraphProcessor().process(ctx.xml, Node())
-        root = NodeAccessor(root)
-
-        self.assertEqual(root['p1'].text, "Some intro")
-        self.assertEqual(root['p2']['p1'].title, 'The U.S. Code!')
-        code = root['p2']['p2']
-        self.assertEqual(code.source_xml.tag, 'USCODE')
-        self.assertEqual(code['x'].text, '(x)')
-        self.assertEqual(code['x']['1'].text, '(1) Some content')
-        self.assertEqual(code['x']['1']['A'].text, '(A) Sub-sub-paragraph')
-        self.assertEqual(code['x']['1']['A']['i'].text, '(i)')
-        self.assertEqual(code['x']['1']['A']['i']['I'].text,
-                         '(I) Even more nested')
 
 
 def test_get_subpart_group_title():
