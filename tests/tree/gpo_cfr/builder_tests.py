@@ -496,45 +496,6 @@ class RegTextTest(TestCase):
         part = builder.get_reg_part(ctx.xml)
         self.assertEqual(part, '204')
 
-    def test_build_subpart(self):
-        with XMLBuilder("SUBPART") as ctx:
-            ctx.HD(u"Subpart A—First subpart")
-            with ctx.SECTION():
-                ctx.SECTNO(u"§ 8675.309")
-                ctx.SUBJECT("Definitions.")
-                ctx.P("Some content about this section.")
-                ctx.P("(a) something something")
-            with ctx.SECTION():
-                ctx.SECTNO(u"§ 8675.310")
-                ctx.SUBJECT("Definitions.")
-                ctx.P("Some content about this section.")
-                ctx.P("(a) something something")
-        subpart = builder.build_subpart('8675', ctx.xml)
-        self.assertEqual(subpart.node_type, 'subpart')
-        self.assertEqual(len(subpart.children), 2)
-        self.assertEqual(subpart.label, ['8675', 'Subpart', 'A'])
-        child_labels = [c.label for c in subpart.children]
-        self.assertEqual([['8675', '309'], ['8675', '310']], child_labels)
-
-    def test_build_subjgrp(self):
-        with XMLBuilder("SUBJGRP") as ctx:
-            ctx.HD(u"Changes of Ownership")
-            with ctx.SECTION():
-                ctx.SECTNO(u"§ 479.42")
-                ctx.SUBJECT("Changes through death of owner.")
-                ctx.P(u"Whenever any person who has paid […] conditions.")
-            with ctx.SECTION():
-                ctx.SECTNO(u"§ 479.43")
-                ctx.SUBJECT("Changes through bankruptcy of owner.")
-                ctx.P(u"A receiver or referee in bankruptcy may […] paid.")
-                ctx.P("(a) something something")
-        subpart = builder.build_subjgrp('479', ctx.xml, [])
-        self.assertEqual(subpart.node_type, 'subpart')
-        self.assertEqual(len(subpart.children), 2)
-        self.assertEqual(subpart.label, ['479', 'Subjgrp', 'CoO'])
-        child_labels = [c.label for c in subpart.children]
-        self.assertEqual([['479', '42'], ['479', '43']], child_labels)
-
     @patch('regparser.tree.gpo_cfr.builder.content')
     def test_preprocess_xml(self, content):
         with XMLBuilder("CFRGRANULE") as ctx:
@@ -591,25 +552,3 @@ class RegTextTest(TestCase):
         self.assertEqual(subpart_b.label, ['123', 'Subpart', 'B'])
         self.assertEqual(subjgrp_1.label, ['123', 'Subjgrp', 'CoO'])
         self.assertEqual(subjgrp_2.label, ['123', 'Subjgrp', 'ATL'])
-
-
-def test_get_subpart_group_title():
-    with XMLBuilder("SUBPART") as ctx:
-        ctx.HD(u"Subpart A—First subpart")
-    subpart_title = builder.get_subpart_group_title(ctx.xml)
-    assert subpart_title == u'Subpart A—First subpart'
-
-
-def test_get_subpart_group_title_reserved():
-    with XMLBuilder("SUBPART") as ctx:
-        ctx.RESERVED("Subpart J [Reserved]")
-    subpart_title = builder.get_subpart_group_title(ctx.xml)
-    assert subpart_title == u'Subpart J [Reserved]'
-
-
-def test_get_subpart_group_title_em():
-    with XMLBuilder("SUBPART") as ctx:
-        ctx.child_from_string(
-            u'<HD SOURCE="HED">Subpart B—<E T="0714">Partes</E> Review</HD>')
-    subpart_title = builder.get_subpart_group_title(ctx.xml)
-    assert subpart_title == u'Subpart B—Partes Review'
