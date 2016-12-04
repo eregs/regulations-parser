@@ -120,12 +120,6 @@ PREPROCESSORS = plugins.extend_list('eregs_ns.parser.preprocessors', [
     "regparser.tree.xml_parser.preprocessors.ImportCategories",
 ])
 
-# Which layers are to be generated, keyed by document type. The ALL key is
-# special; layers in this category automatically apply to all document types
-LAYERS = plugins.update_dictionary('eregs_ns.parser.layer_dict', {'ALL': []})
-# Kept for backwards compatibility
-LAYERS['ALL'] = plugins.extend_list('eregs_ns.parser.layers', LAYERS['ALL'])
-
 # Regulations.gov settings. The demo key is rate limited by IP; sign up for
 # your own key at
 # http://regulationsgov.github.io/developers/key/
