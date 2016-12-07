@@ -19,8 +19,7 @@ from regparser.tree.depth.derive import derive_depths
 from regparser.tree.paragraph import p_levels
 from regparser.tree.struct import Node
 from regparser.tree.xml_parser import tree_utils
-from regparser.tree.gpo_cfr.interpretations import (
-    build_supplement_tree, get_app_title)
+from regparser.tree.gpo_cfr.interpretations import build_supplement_tree
 
 from settings import APPENDIX_IGNORE_SUBHEADER_LABEL
 
@@ -402,16 +401,9 @@ def build_non_reg_text(reg_xml, reg_part):
         doc_root = etree.fromstring(reg_xml)
     else:
         doc_root = reg_xml
-    non_reg_sects = doc_root.xpath('//PART//APPENDIX')
-    logger.debug("Non Reg sections: %r", non_reg_sects)
     children = []
-
-    for non_reg_sect in non_reg_sects:
-        section_title = get_app_title(non_reg_sect)
-        logger.debug("Building non reg sect: %s", section_title)
-        if 'Supplement' in section_title and 'Part' in section_title:
-            children.append(build_supplement_tree(reg_part, non_reg_sect))
-        else:
-            children.append(process_appendix(non_reg_sect, reg_part))
-
+    children.extend(process_appendix(appendix, reg_part)
+                    for appendix in doc_root.xpath('//PART//APPENDIX'))
+    children.extend(build_supplement_tree(reg_part, interp)
+                    for interp in doc_root.xpath('//PART//INTERP'))
     return children
