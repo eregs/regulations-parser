@@ -48,36 +48,6 @@ def test_move_last_amdpar_trick_location_diff_parts():
     assert amd2.getparent().get("ID") == "RT1"
 
 
-class SupplementAMDParTests(TestCase):
-    def test_incorrect_ps(self):
-        """Supplement I AMDPARs are not always labeled as should be"""
-        with XMLBuilder("PART") as ctx:
-            with ctx.REGTEXT():
-                ctx.AMDPAR(u"1. In § 105.1, revise paragraph (b):")
-                with ctx.SECTION():
-                    ctx.STARS()
-                    ctx.P("(b) Content")
-                ctx.P("2. In Supplement I to Part 105,")
-                ctx.P("A. Under Section 105.1, 1(b), paragraph 2 is revised")
-                ctx.P("The revisions are as follows")
-                ctx.HD("Supplement I to Part 105", SOURCE="HD1")
-                ctx.STARS()
-                with ctx.P():
-                    ctx.E("1(b) Heading", T="03")
-                ctx.STARS()
-                ctx.P("2. New Context")
-
-        preprocessors.SupplementAMDPar().transform(ctx.xml)
-
-        # Note that the SECTION paragraphs were not converted
-        self.assertEqual(
-            [amd.text for amd in ctx.xml.xpath("//AMDPAR")],
-            [u"1. In § 105.1, revise paragraph (b):",
-             "2. In Supplement I to Part 105,",
-             "A. Under Section 105.1, 1(b), paragraph 2 is revised",
-             "The revisions are as follows"])
-
-
 @pytest.mark.parametrize('original,new_text', [
     ('(<E T="03">a</E>) Content', '(<E T="03">a</E>) Content'),
     ('(<E T="03">a)</E> Content', '(<E T="03">a</E>) Content'),

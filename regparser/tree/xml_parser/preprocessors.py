@@ -67,31 +67,6 @@ def move_last_amdpar(xml):
             aunt.insert(0, amdpar)
 
 
-class SupplementAMDPar(PreProcessorBase):
-    """Supplement I AMDPARs are often incorrect (labelled as Ps)"""
-    CONTAINS_SUPPLEMENT = "contains(., 'Supplement I')"
-    SUPPLEMENT_HD = "//REGTEXT//HD[@SOURCE='HD1' and {}]".format(
-        CONTAINS_SUPPLEMENT)
-    SUPPLEMENT_AMD_OR_P = "./AMDPAR[{0}]|./P[{0}]".format(
-        CONTAINS_SUPPLEMENT)
-
-    def transform(self, xml):
-        for supp_header in xml.xpath(self.SUPPLEMENT_HD):
-            parent = supp_header.getparent()
-            if parent.xpath(self.SUPPLEMENT_AMD_OR_P):
-                self.set_prev_to_amdpar(supp_header.getprevious())
-
-    def set_prev_to_amdpar(self, xml_node):
-        """Set the tag to AMDPAR on all previous siblings until we hit the
-        Supplement I header"""
-        if xml_node is not None and xml_node.tag in ('P', 'AMDPAR'):
-            xml_node.tag = 'AMDPAR'
-            if 'supplement i' not in xml_node.text.lower():     # not done
-                self.set_prev_to_amdpar(xml_node.getprevious())
-        elif xml_node is not None:
-            self.set_prev_to_amdpar(xml_node.getprevious())
-
-
 def parentheses_cleanup(xml):
     """Clean up where parentheses exist between paragraph an emphasis tags"""
     # We want to treat None's as blank strings
