@@ -61,8 +61,6 @@ setup(
         "eregs_ns.parser.preprocessors": [
             ("move-last-amdpar = "
              "regparser.tree.xml_parser.preprocessors:move_last_amdpar"),
-            ("supplement-amd-par = "
-             "regparser.tree.xml_parser.preprocessors:SupplementAMDPar"),
             ("parenthesis-cleanup = "
              "regparser.tree.xml_parser.preprocessors:parentheses_cleanup"),
             ("move-adjoining-chars = "

@@ -11,6 +11,8 @@ setup(
     ],
     entry_points={
         'eregs_ns.parser.layer.cfr':
-            'interpretations = interpparser.layers:Interpretations'
+            'interpretations = interpparser.layers:Interpretations',
+        'eregs_ns.parser.preprocessors':
+            'supplement-amdpar = interpparser.preprocessors:supplement_amdpar',
     }
 )
