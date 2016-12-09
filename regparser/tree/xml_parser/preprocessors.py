@@ -409,3 +409,14 @@ class ImportCategories(PreProcessorBase):
                 next_el = iterator.getnext()
                 category_el.append(iterator)
                 iterator = next_el
+
+
+def promote_nested_subjgrp(xml):
+    """We don't currently support subject groups nested inside subparts, so
+    promote such subject groups one level"""
+    # Reversed to account for the order of insertion
+    for subjgrp_xml in reversed(xml.xpath('.//SUBPART/SUBJGRP')):
+        subpart_xml = subjgrp_xml.getparent()
+        subpart_parent = subpart_xml.getparent()
+        idx = subpart_parent.index(subpart_xml) + 1
+        subpart_parent.insert(idx, subjgrp_xml)

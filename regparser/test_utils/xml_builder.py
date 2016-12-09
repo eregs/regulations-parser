@@ -19,7 +19,8 @@ class XMLBuilder(object):
             </SECT>
         </ROOT>"""
     def __init__(self, *args, **kwargs):
-        self.cursor = etree.Element('ROOT')
+        self.cursor = etree.Element('SUPER_ROOT')
+        args = args or ['ROOT']
         self.child(*args, **kwargs)
 
     def child(self, tag, _text=None, **kwargs):

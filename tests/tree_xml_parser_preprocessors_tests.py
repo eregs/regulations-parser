@@ -349,3 +349,18 @@ def test_replace_html_entities():
     expected = u"text <with field='&apos;'> But ” and &gt; + 2¢s"
     expected = expected.encode('utf-8')
     assert preprocessors.replace_html_entities(xml_str) == expected
+
+
+def test_promote_nested_subjgrp():
+    with XMLBuilder("ROOT") as ctx:
+        ctx.SUBJGRP("A")
+        ctx.SUBPART("B")
+        with ctx.SUBPART("C"):
+            ctx.SUBJGRP("D")
+            ctx.SUBJGRP("E")
+        ctx.SUBJGRP("F")
+        ctx.SUBPART("G")
+    assert "ABCFG" == "".join(child.text for child in ctx.xml.getchildren())
+
+    preprocessors.promote_nested_subjgrp(ctx.xml)
+    assert "ABCDEFG" == "".join(child.text for child in ctx.xml.getchildren())
