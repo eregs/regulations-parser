@@ -77,12 +77,7 @@ def build_tree(reg_xml):
     part = reg_xml.xpath('//PART')[0]
 
     # Build a list of SUBPARTs, then pull SUBJGRPs into that list:
-    subpart_and_subjgrp_xmls = []
-    for subpart in part.xpath('./SUBPART|./SUBJGRP'):
-        subpart_and_subjgrp_xmls.append(subpart)
-        # SUBJGRPS can be nested, particularly inside SUBPARTs
-        for subjgrp in subpart.xpath('./SUBJGRP'):
-            subpart_and_subjgrp_xmls.append(subjgrp)
+    subpart_and_subjgrp_xmls = part.xpath('./SUBPART|./SUBJGRP')
 
     if len(subpart_and_subjgrp_xmls) > 0:
         subthings = []
