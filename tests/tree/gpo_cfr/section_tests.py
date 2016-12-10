@@ -4,6 +4,7 @@ from collections import namedtuple
 from contextlib import contextmanager
 
 from lxml import etree
+from mock import Mock
 import pytest
 
 from regparser.test_utils.node_accessor import NodeAccessor
@@ -594,3 +595,22 @@ def test_build_from_section_double_alpha():
     child = node.children[0]
     assert child.text == '(aa) This is what things mean:'
     assert child.label == ['8675', '309', 'aa']
+
+
+def test_ParseEmptyPart(monkeypatch):
+    """Verify that ParseEmptyPart creates the empty part if no children are
+    present, but then appends to the last child"""
+    monkeypatch.setattr(section, 'build_from_section',
+                        Mock(side_effect=[['A', 'B'], ['C']]))
+    root = Node(label=['111'])
+    assert root.children == []
+
+    section.ParseEmptyPart()(root, Mock())
+    assert len(root.children) == 1
+    assert root.children[0].label == ['111', 'Subpart']
+    assert root.children[0].children == ['A', 'B']   # Not realistic
+
+    section.ParseEmptyPart()(root, Mock())
+    assert len(root.children) == 1
+    assert root.children[0].label == ['111', 'Subpart']
+    assert root.children[0].children == ['A', 'B', 'C']   # Not realistic

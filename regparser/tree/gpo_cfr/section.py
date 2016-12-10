@@ -254,7 +254,7 @@ class ParseEmptyPart(matchers.Parser):
         return xml_node.tag == 'SECTION' and len(parent.label) == 1
 
     def __call__(self, parent, xml_node):
-        section = build_from_section(parent.cfr_part, xml_node)
+        sections = build_from_section(parent.cfr_part, xml_node)
         if not parent.children:
             parent.children.append(build_empty_part(parent.cfr_part))
-        parent.children[-1].append(section)
+        parent.children[-1].children.extend(sections)
