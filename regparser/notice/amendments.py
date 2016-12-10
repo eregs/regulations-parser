@@ -11,7 +11,8 @@ from regparser.notice.amdparser import amendment_from_xml
 from regparser.tree.struct import Node, walk
 from regparser.tree.gpo_cfr import interpretations
 from regparser.tree.gpo_cfr.appendices import process_appendix
-from regparser.tree.gpo_cfr.builder import build_from_section, build_subpart
+from regparser.tree.gpo_cfr.section import build_from_section
+from regparser.tree.gpo_cfr.subpart import build_subpart
 
 
 logger = logging.getLogger(__name__)
