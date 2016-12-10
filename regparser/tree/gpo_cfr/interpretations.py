@@ -10,7 +10,7 @@ from regparser.tree.depth import heuristics, rules, markers as mtypes
 from regparser.tree.depth.derive import derive_depths
 from regparser.tree.interpretation import merge_labels, text_to_labels
 from regparser.tree.struct import Node, treeify
-from regparser.tree.xml_parser import tree_utils
+from regparser.tree.xml_parser import matchers, tree_utils
 
 
 logger = logging.getLogger(__name__)
@@ -297,6 +297,11 @@ def build_supplement_tree(reg_part, node):
         title=title)
 
     return parse_from_xml(root, node.getchildren())
+
+
+@matchers.match_tag('INTERP')
+def parse_interp(parent, xml_node):
+    parent.children.append(build_supplement_tree(parent.cfr_part, xml_node))
 
 
 def get_app_title(node):

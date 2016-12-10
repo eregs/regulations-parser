@@ -1,6 +1,6 @@
 from regparser.tree import reg_text
 from regparser.tree.gpo_cfr.section import build_from_section
-from regparser.tree.xml_parser import tree_utils
+from regparser.tree.xml_parser import matchers, tree_utils
 
 
 def get_subpart_group_title(subpart_xml):
@@ -37,3 +37,24 @@ def build_subpart(reg_part, subpart_xml):
 
     subpart.children = sections
     return subpart
+
+
+@matchers.match_tag('SUBPART')
+def parse_subpart(parent, xml_node):
+    subpart = build_subpart(parent.cfr_part, xml_node)
+    parent.children.append(subpart)
+
+
+class ParseSubjectGroup(matchers.Parser):
+    """We use a class here as we want to carry around the letter_list in
+    between parses"""
+    def __init__(self):
+        self.letter_list = []
+
+    def matches(self, parent, xml_node):
+        return xml_node.tag == 'SUBJGRP'
+
+    def __call__(self, parent, xml_node):
+        subjgrp = build_subjgrp(parent.cfr_part, xml_node, self.letter_list)
+        self.letter_list.append(subjgrp.label[-1])
+        parent.children.append(subjgrp)

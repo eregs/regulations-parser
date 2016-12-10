@@ -4,11 +4,11 @@ import logging
 from lxml import etree
 
 from regparser import content
-from regparser.tree import reg_text
 from regparser.tree.struct import Node
-from regparser.tree.gpo_cfr.appendices import build_non_reg_text
-from regparser.tree.gpo_cfr.section import build_from_section
-from regparser.tree.gpo_cfr.subpart import build_subjgrp, build_subpart
+from regparser.tree.gpo_cfr.appendices import parse_appendix
+from regparser.tree.gpo_cfr.interpretations import parse_interp
+from regparser.tree.gpo_cfr.section import ParseEmptyPart
+from regparser.tree.gpo_cfr.subpart import parse_subpart, ParseSubjectGroup
 
 
 logger = logging.getLogger(__name__)
@@ -75,32 +75,12 @@ def build_tree(reg_xml):
     tree = Node("", [], [reg_part], title)
 
     part = reg_xml.xpath('//PART')[0]
+    matchers = [ParseEmptyPart(), parse_subpart, ParseSubjectGroup(),
+                parse_appendix, parse_interp]
 
-    # Build a list of SUBPARTs, then pull SUBJGRPs into that list:
-    subpart_and_subjgrp_xmls = part.xpath('./SUBPART|./SUBJGRP')
-
-    if len(subpart_and_subjgrp_xmls) > 0:
-        subthings = []
-        letter_list = []
-        for subthing in subpart_and_subjgrp_xmls:
-            if subthing.tag == "SUBPART":
-                subthings.append(build_subpart(reg_part, subthing))
-            elif subthing.tag == "SUBJGRP":
-                built_subjgrp = build_subjgrp(reg_part, subthing, letter_list)
-                letter_list.append(built_subjgrp.label[-1])
-                subthings.append(built_subjgrp)
-
-        tree.children = subthings
-    else:
-        section_xmls = [c for c in part.getchildren() if c.tag == 'SECTION']
-        sections = []
-        for section_xml in section_xmls:
-            sections.extend(build_from_section(reg_part, section_xml))
-        empty_part = reg_text.build_empty_part(reg_part)
-        empty_part.children = sections
-        tree.children = [empty_part]
-
-    non_reg_sections = build_non_reg_text(reg_xml, reg_part)
-    tree.children += non_reg_sections
+    for xml_node in part.getchildren():
+        for plugin in matchers:
+            if plugin.matches(tree, xml_node):
+                plugin(tree, xml_node)
 
     return tree
