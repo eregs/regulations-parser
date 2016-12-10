@@ -53,6 +53,11 @@ class Node(object):
     def __eq__(self, other):
         return repr(self) == repr(other)
 
+    @property
+    def cfr_part(self):
+        if self.label:
+            return self.label[0]
+
     def label_id(self):
         return '-'.join(self.label)
 

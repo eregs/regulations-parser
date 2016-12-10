@@ -4,9 +4,7 @@ from itertools import takewhile
 import logging
 import re
 
-from lxml import etree
 from pyparsing import LineStart, Optional, Suppress
-import six
 
 from regparser.citations import internal_citations
 from regparser.grammar import appendix as grammar
@@ -18,8 +16,7 @@ from regparser.tree.depth import markers
 from regparser.tree.depth.derive import derive_depths
 from regparser.tree.paragraph import p_levels
 from regparser.tree.struct import Node
-from regparser.tree.xml_parser import tree_utils
-from regparser.tree.gpo_cfr.interpretations import build_supplement_tree
+from regparser.tree.xml_parser import matchers, tree_utils
 
 from settings import APPENDIX_IGNORE_SUBHEADER_LABEL
 
@@ -337,6 +334,11 @@ def process_appendix(appendix, part):
     return AppendixProcessor(part).process(appendix)
 
 
+@matchers.match_tag('APPENDIX')
+def parse_appendix(parent, xml_node):
+    parent.children.append(process_appendix(xml_node, parent.cfr_part))
+
+
 def parsed_title(text, appendix_letter):
     digit_str_parser = (Marker(appendix_letter) +
                         Suppress('-') +
@@ -392,20 +394,3 @@ def initial_marker(text):
                   match.period_lower or match.period_digit)
         if len(marker) < 3 or all(char in 'ivxlcdm' for char in marker):
             return marker, text[:end]
-
-
-def build_non_reg_text(reg_xml, reg_part):
-    """ This builds the tree for the non-regulation text such as Appendices
-    and the Supplement section """
-    if isinstance(reg_xml, six.string_types):
-        doc_root = etree.fromstring(reg_xml)
-    else:
-        doc_root = reg_xml
-    children = []
-
-    children.extend(process_appendix(appendix, reg_part)
-                    for appendix in doc_root.xpath('//PART//APPENDIX'))
-    children.extend(build_supplement_tree(reg_part, interp)
-                    for interp in doc_root.xpath('//PART//INTERP'))
-
-    return children

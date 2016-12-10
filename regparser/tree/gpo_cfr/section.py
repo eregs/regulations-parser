@@ -9,9 +9,10 @@ from regparser.grammar import unified
 from regparser.grammar.utils import QuickSearchable
 from regparser.tree.depth import markers as mtypes, optional_rules
 from regparser.tree.paragraph import p_level_of, p_levels
+from regparser.tree.reg_text import build_empty_part
 from regparser.tree.struct import Node
 from regparser.tree.xml_parser import (
-    flatsubtree_processor, import_category, note_processor,
+    flatsubtree_processor, import_category, matchers, note_processor,
     paragraph_processor, tree_utils)
 
 
@@ -244,3 +245,16 @@ class RegtextParagraphProcessor(paragraph_processor.ParagraphProcessor):
                     mtypes.ints, mtypes.roman,
                     mtypes.em_ints, mtypes.em_roman,
                     mtypes.stars, mtypes.markerless)]
+
+
+class ParseEmptyPart(matchers.Parser):
+    """Create an EmptyPart (a subpart with no name) if we encounter a SECTION
+    at the top level"""
+    def matches(self, parent, xml_node):
+        return xml_node.tag == 'SECTION' and len(parent.label) == 1
+
+    def __call__(self, parent, xml_node):
+        section = build_from_section(parent.cfr_part, xml_node)
+        if not parent.children:
+            parent.children.append(build_empty_part(parent.cfr_part))
+        parent.children[-1].append(section)
