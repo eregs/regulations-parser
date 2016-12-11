@@ -1,0 +1,138 @@
+{
+    "478-125-e-p1": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    81, 
+                    109
+                ], 
+                [
+                    "insert", 
+                    81, 
+                    "and importer (if any)|Model|Serial"
+                ]
+            ]
+        ]
+    }, 
+    "478-125-f-2-p1": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    92, 
+                    120
+                ], 
+                [
+                    "insert", 
+                    92, 
+                    "and importer (if any)|Model|Serial"
+                ]
+            ]
+        ]
+    }, 
+    "478-125a-a-4-p1": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    77, 
+                    105
+                ], 
+                [
+                    "insert", 
+                    77, 
+                    "and importer (if any)|Model|Serial"
+                ]
+            ]
+        ]
+    }, 
+    "478-72": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                682, 
+                "During the hearing the applicant will have the opportunity to submit facts and arguments for review and consideration; offers of settlement will not be entertained at the hearing but may be made before or after the hearing. "
+            ]
+        ]
+    }, 
+    "478-73-a": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    226, 
+                    227
+                ], 
+                [
+                    "insert", 
+                    226, 
+                    "pursuant to 18 U.S.C. 922(t)(5) and 18 U.S.C. 924(p), a"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    841, 
+                    845
+                ], 
+                [
+                    "insert", 
+                    841, 
+                    "law; or that a licensee has violated 18 U.S.C. 922(z)(1) by selling, delivering, or transferring any handgun to any person other than a licensee, unless the transferee was provided with a secure gun storage or safety device for that handgun."
+                ]
+            ]
+        ]
+    }, 
+    "478-74": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    1054, 
+                    1064
+                ], 
+                [
+                    "insert", 
+                    1054, 
+                    "922(t)(5) or 924(p),"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    1114, 
+                    1120
+                ], 
+                [
+                    "insert", 
+                    1114, 
+                    "or"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    1414, 
+                    1424
+                ], 
+                [
+                    "insert", 
+                    1414, 
+                    "922(t)(5) or 924(p),"
+                ]
+            ], 
+            [
+                "insert", 
+                1560, 
+                " During the hearing the licensee will have the opportunity to submit facts and arguments for review and consideration; offers of settlement will not be entertained at the hearing but may be made before or after the hearing."
+            ]
+        ]
+    }
+}

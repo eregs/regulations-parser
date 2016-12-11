@@ -1,0 +1,43 @@
+{
+    "478-39a": {
+        "child_ops": [
+            [
+                "delete", 
+                0, 
+                6
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                0, 
+                "Each licensee shall report the theft or loss of a firearm from the licensee's inventory (including any firearm which has been transferred from the licensee's inventory to a personal collection and held as a personal firearm for at least 1 year), or from the collection of a licensed collector, within 48 hours after the theft or loss is discovered. Licensees shall report thefts or losses by telephoning 1-888-930-9275 (nationwide toll free number) and by preparing ATF Form 3310.11, Federal Firearms Licensee Theft/Loss Report, in accordance with the instructions on the form. The original of the report shall be forwarded to the office specified thereon, and Copy 1 shall be retained by the licensee as part of the licensee's permanent records. Theft or loss of any firearm shall also be reported to the appropriate local authorities."
+            ]
+        ]
+    }, 
+    "478-39a-a": {
+        "op": "deleted"
+    }, 
+    "478-39a-a-1": {
+        "op": "deleted"
+    }, 
+    "478-39a-a-2": {
+        "op": "deleted"
+    }, 
+    "478-39a-b": {
+        "op": "deleted"
+    }, 
+    "478-39a-c": {
+        "op": "deleted"
+    }, 
+    "478-39a-d": {
+        "op": "deleted"
+    }, 
+    "478-39a-e": {
+        "op": "deleted"
+    }, 
+    "478-39a-f": {
+        "op": "deleted"
+    }
+}

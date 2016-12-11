@@ -1,0 +1,120 @@
+{
+    "amendments": [
+        {
+            "authority": "5 U.S.C. 552(a); 18 U.S.C. 847, 921-930; 44 U.S.C. 3504(h).", 
+            "cfr_part": "478", 
+            "instruction": "1. The authority citation for 27 CFR part 478 continues to read as follows:"
+        }, 
+        {
+            "cfr_part": "", 
+            "changes": [
+                [
+                    "478-72", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "72"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n             If the applicant for an original or renewal license desires a hearing to review the denial of his application, he shall file a request therefor, in duplicate, with the Director of Industry Operations within 15 days after receipt of the notice of denial.The request should include a statement of the reasons therefor. On receipt of the request, the Director of Industry Operations shall, as expeditiously as possible, make the necessary arrangements for the hearing and advise the applicant of the date, time, location, and the name of the officer before whom the hearing will be held.Such notification shall be made not less than 10 days in advance of the date set for the hearing. During the hearing the applicant will have the opportunity to submit facts and arguments for review and consideration; offers of settlement will not be entertained at the hearing but may be made before or after the hearing. On conclusion of the hearing and consideration of all relevant facts and circumstances presented by the applicant or his representative, the Director shall render his decision confirming or reversing the denial of the application. If the decision is that the denial should stand, a certified copy of the Director's findings and conclusions shall be furnished to the applicant with a final notice of denial, Form 5300.13. A copy of the application, marked \u201cDisapproved,\u201d will be returned to the applicant. If the decision is that the license applied for should be issued, the applicant shall be so notified, in writing, and the license shall be issued as provided by \u00a7\u2009478.47.", 
+                                "text": "If the applicant for an original or renewal license desires a hearing to review the denial of his application, he shall file a request therefor, in duplicate, with the Director of Industry Operations within 15 days after receipt of the notice of denial.The request should include a statement of the reasons therefor. On receipt of the request, the Director of Industry Operations shall, as expeditiously as possible, make the necessary arrangements for the hearing and advise the applicant of the date, time, location, and the name of the officer before whom the hearing will be held.Such notification shall be made not less than 10 days in advance of the date set for the hearing. During the hearing the applicant will have the opportunity to submit facts and arguments for review and consideration; offers of settlement will not be entertained at the hearing but may be made before or after the hearing. On conclusion of the hearing and consideration of all relevant facts and circumstances presented by the applicant or his representative, the Director shall render his decision confirming or reversing the denial of the application. If the decision is that the denial should stand, a certified copy of the Director's findings and conclusions shall be furnished to the applicant with a final notice of denial, Form 5300.13. A copy of the application, marked \u201cDisapproved,\u201d will be returned to the applicant. If the decision is that the license applied for should be issued, the applicant shall be so notified, in writing, and the license shall be issued as provided by \u00a7\u2009478.47.", 
+                                "title": "\u00a7 478.72 Hearing after application denial."
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "2. In \u00a7\u2009478.72, add a new fifth sentence to read as follows:\n            "
+        }, 
+        {
+            "cfr_part": "478", 
+            "changes": [
+                [
+                    "478-73-a", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "73", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) <E T=\"03\">Basis for action.</E> Whenever the Director has reason to believe that a licensee has willfully violated any provision of the Act or this part, a notice of revocation of the license, ATF Form 4500, may be issued. In addition, pursuant to 18 U.S.C. 922(t)(5) and 18 U.S.C. 924(p), a notice of revocation, suspension, or imposition of a civil fine may be issued on ATF Form 4500 whenever the Director has reason to believe that a licensee has knowingly transferred a firearm to an unlicensed person and knowingly failed to comply with the requirements of 18 U.S.C. 922(t)(1) with respect to the transfer and, at the time that the transferee most recently proposed the transfer, the national instant criminal background check system was operating and information was available to the system demonstrating that the transferee's receipt of a firearm would violate 18 U.S.C. 922(g) or 922(n) or State law; or that a licensee has violated 18 U.S.C. 922(z)(1) by selling, delivering, or transferring any handgun to any person other than a licensee, unless the transferee was provided with a secure gun storage or safety device for that handgun.", 
+                                "text": "(a) Basis for action. Whenever the Director has reason to believe that a licensee has willfully violated any provision of the Act or this part, a notice of revocation of the license, ATF Form 4500, may be issued. In addition, pursuant to 18 U.S.C. 922(t)(5) and 18 U.S.C. 924(p), a notice of revocation, suspension, or imposition of a civil fine may be issued on ATF Form 4500 whenever the Director has reason to believe that a licensee has knowingly transferred a firearm to an unlicensed person and knowingly failed to comply with the requirements of 18 U.S.C. 922(t)(1) with respect to the transfer and, at the time that the transferee most recently proposed the transfer, the national instant criminal background check system was operating and information was available to the system demonstrating that the transferee's receipt of a firearm would violate 18 U.S.C. 922(g) or 922(n) or State law; or that a licensee has violated 18 U.S.C. 922(z)(1) by selling, delivering, or transferring any handgun to any person other than a licensee, unless the transferee was provided with a secure gun storage or safety device for that handgun.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "3. In \u00a7\u2009478.73, revise the last sentence of paragraph (a) to read as follows:"
+        }, 
+        {
+            "cfr_part": "", 
+            "changes": [
+                [
+                    "478-74", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "74"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n             If a licensee desires a hearing after receipt of a notice of suspension or revocation of a license, or imposition of a civil fine, the licensee shall file a request, in duplicate, with the Director of Industry Operations within 15 days after receipt of the notice of suspension or revocation of a license, or imposition of a civil fine. On receipt of such request, the Director of Industry Operations shall, as expeditiously as possible, make necessary arrangements for the hearing and advise the licensee of the date, time, location and the name of the officer before whom the hearing will be held. Such notification shall be made no less than 10 days in advance of the date set for the hearing. On conclusion of the hearing and consideration of all the relevant presentations made by the licensee or the licensee's representative, the Director shall render a decision and shall prepare a brief summary of the findings and conclusions on which the decision is based. If the decision is that the license should be revoked, or, in actions under 18 U.S.C. 922(t)(5) or 924(p), that the license should be revoked or suspended, or that a civil fine should be imposed, a certified copy of the summary shall be furnished to the licensee with the final notice of revocation, suspension, or imposition of a civil fine on ATF Form 5300.13. If the decision is that the license should not be revoked, or in actions under 18 U.S.C. 922(t)(5) or 924(p), that the license should not be revoked or suspended, and a civil fine should not be imposed, the licensee shall be notified in writing. During the hearing the licensee will have the opportunity to submit facts and arguments for review and consideration; offers of settlement will not be entertained at the hearing but may be made before or after the hearing.", 
+                                "text": "If a licensee desires a hearing after receipt of a notice of suspension or revocation of a license, or imposition of a civil fine, the licensee shall file a request, in duplicate, with the Director of Industry Operations within 15 days after receipt of the notice of suspension or revocation of a license, or imposition of a civil fine. On receipt of such request, the Director of Industry Operations shall, as expeditiously as possible, make necessary arrangements for the hearing and advise the licensee of the date, time, location and the name of the officer before whom the hearing will be held. Such notification shall be made no less than 10 days in advance of the date set for the hearing. On conclusion of the hearing and consideration of all the relevant presentations made by the licensee or the licensee's representative, the Director shall render a decision and shall prepare a brief summary of the findings and conclusions on which the decision is based. If the decision is that the license should be revoked, or, in actions under 18 U.S.C. 922(t)(5) or 924(p), that the license should be revoked or suspended, or that a civil fine should be imposed, a certified copy of the summary shall be furnished to the licensee with the final notice of revocation, suspension, or imposition of a civil fine on ATF Form 5300.13. If the decision is that the license should not be revoked, or in actions under 18 U.S.C. 922(t)(5) or 924(p), that the license should not be revoked or suspended, and a civil fine should not be imposed, the licensee shall be notified in writing. During the hearing the licensee will have the opportunity to submit facts and arguments for review and consideration; offers of settlement will not be entertained at the hearing but may be made before or after the hearing.", 
+                                "title": "\u00a7 478.74 Request for hearing after notice of suspension, revocation, or imposition of civil fine."
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "4. In \u00a7\u2009478.74, revise the fifth and sixth sentences and add a seventh sentence to read as follows:\n            "
+        }
+    ], 
+    "cfr_parts": [
+        "478"
+    ], 
+    "cfr_title": 27, 
+    "dockets": [
+        "Docket No. ATF 2008R-15P", 
+        "AG Order No. 3670-2016"
+    ], 
+    "document_number": "2016-12100", 
+    "effective_on": "2016-07-22", 
+    "footnotes": {
+        "1": "ATF Form 5300.13 was previously referred to as ATF Form 4501.", 
+        "2": "The notice does not require that an applicant or licensee submit supporting facts, arguments, or evidence along with the request for a hearing within the 15-day period. Instead, the hearing notice merely requires a response from the applicant or licensee stating the request for an administrative hearing."
+    }, 
+    "fr_citation": "81 FR 32230", 
+    "fr_url": "https://www.federalregister.gov/documents/2016/05/23/2016-12100/federal-firearms-license-proceedings-hearings", 
+    "fr_volume": 81, 
+    "meta": {
+        "start_page": 32230
+    }, 
+    "primary_agency": "DEPARTMENT OF JUSTICE", 
+    "primary_docket": null, 
+    "publication_date": "2016-05-23", 
+    "regulation_id_numbers": [
+        "1140-AA38"
+    ], 
+    "section_by_section": [], 
+    "supporting_documents": [], 
+    "title": "Federal Firearms License Proceedings\u2014Hearings", 
+    "versions": {
+        "478": {
+            "left": "2016-13878", 
+            "right": "2016-12100"
+        }
+    }
+}

@@ -1,0 +1,89 @@
+{
+    "555-11-p2162297120": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                32, 
+                "U.S. Customs and Border Protection, any commissioned, warrant, or petty officer of "
+            ], 
+            [
+                [
+                    "delete", 
+                    36, 
+                    51
+                ], 
+                [
+                    "insert", 
+                    36, 
+                    "Coast Guard,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    59, 
+                    81
+                ], 
+                [
+                    "insert", 
+                    59, 
+                    "agent"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    85, 
+                    98
+                ], 
+                [
+                    "insert", 
+                    85, 
+                    "other person authorized by law to perform the duties"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    102, 
+                    218
+                ], 
+                [
+                    "insert", 
+                    102, 
+                    "a customs officer."
+                ]
+            ]
+        ]
+    }, 
+    "555-11-p670455814": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    30, 
+                    42
+                ], 
+                [
+                    "insert", 
+                    30, 
+                    "thebusiness"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    69, 
+                    81
+                ], 
+                [
+                    "insert", 
+                    69, 
+                    "materialsat"
+                ]
+            ]
+        ]
+    }
+}

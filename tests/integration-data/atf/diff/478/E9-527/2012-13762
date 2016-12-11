@@ -1,0 +1,618 @@
+{
+    "478-11": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                55
+            ], 
+            [
+                "insert", 
+                55, 
+                [
+                    "478-11-p242755046"
+                ]
+            ], 
+            [
+                "equal", 
+                55, 
+                79
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "478-11-p242755046": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "11", 
+                "p242755046"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "<E T=\"03\">Nonimmigrant visa.</E>A visa properly issued to an alien as an eligible nonimmigrant by a competent officer as provided in the Immigration and Nationality Act, 8 U.S.C. 1101<E T=\"03\">et seq.</E>", 
+            "text": "Nonimmigrant visa. A visa properly issued to an alien as an eligible nonimmigrant by a competent officer as provided in the Immigration and Nationality Act, 8 U.S.C. 1101 et seq.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-120-a": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    4, 
+                    7
+                ], 
+                [
+                    "insert", 
+                    4, 
+                    "General. A"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    27, 
+                    40
+                ], 
+                [
+                    "insert", 
+                    27, 
+                    "temporarily importing or bringing firearms or ammunition into the United States for lawful hunting or sporting purposes must first obtain"
+                ]
+            ], 
+            [
+                "insert", 
+                44, 
+                "approved "
+            ], 
+            [
+                [
+                    "delete", 
+                    53, 
+                    477
+                ], 
+                [
+                    "insert", 
+                    53, 
+                    "6NIA (5330.3D)."
+                ]
+            ]
+        ]
+    }, 
+    "478-120-b": {
+        "child_ops": [
+            [
+                "insert", 
+                0, 
+                [
+                    "478-120-b-1", 
+                    "478-120-b-2"
+                ]
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    4, 
+                    73
+                ], 
+                [
+                    "insert", 
+                    4, 
+                    "Aliens admitted to"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    92, 
+                    175
+                ], 
+                [
+                    "insert", 
+                    92, 
+                    "under"
+                ]
+            ], 
+            [
+                "delete", 
+                178, 
+                267
+            ], 
+            [
+                [
+                    "delete", 
+                    280, 
+                    560
+                ], 
+                [
+                    "insert", 
+                    280, 
+                    "visa."
+                ]
+            ]
+        ]
+    }, 
+    "478-120-b-1": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "120", 
+                "b", 
+                "1"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(1) Any alien lawfully admitted to the United States under a nonimmigrant visa who completes an ATF Form 6NIA to import firearms or ammunition into the United States, or any licensee who completes an ATF Form 6 to import firearms or ammunition for such nonimmigrant alien, must attach applicable documentation to the Form 6NIA or Form 6 establishing the nonimmigrant alien falls within an exception specified in 18 U.S.C. 922(y)(2) (e.g., a hunting license or permit lawfully issued in the United States) or has obtained a waiver as specified in 18 U.S.C. 922(y)(3).", 
+            "text": "(1) Any alien lawfully admitted to the United States under a nonimmigrant visa who completes an ATF Form 6NIA to import firearms or ammunition into the United States, or any licensee who completes an ATF Form 6 to import firearms or ammunition for such nonimmigrant alien, must attach applicable documentation to the Form 6NIA or Form 6 establishing the nonimmigrant alien falls within an exception specified in 18 U.S.C. 922(y)(2) (e.g., a hunting license or permit lawfully issued in the United States) or has obtained a waiver as specified in 18 U.S.C. 922(y)(3).", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-120-b-2": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "120", 
+                "b", 
+                "2"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(2) Aliens admitted to the United States under a nonimmigrant visa importing or bringing firearms or ammunition into the United States must provide the United States Customs and Border Protection with applicable documentation (e.g., a hunting license or permit lawfully issued in the United States) establishing the nonimmigrant alien falls within an exception specified in 18 U.S.C. 922(y)(2) or has obtained a waiver as specified in 18 U.S.C. 922(y)(3) before the firearm or ammunition may be imported. This provision applies in all cases, whether or not a Form 6 is needed to bring the firearms or ammunition into the United States.", 
+            "text": "(2) Aliens admitted to the United States under a nonimmigrant visa importing or bringing firearms or ammunition into the United States must provide the United States Customs and Border Protection with applicable documentation (e.g., a hunting license or permit lawfully issued in the United States) establishing the nonimmigrant alien falls within an exception specified in 18 U.S.C. 922(y)(2) or has obtained a waiver as specified in 18 U.S.C. 922(y)(3) before the firearm or ammunition may be imported. This provision applies in all cases, whether or not a Form 6 is needed to bring the firearms or ammunition into the United States.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-124-c-3-iii": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                47, 
+                "an alien admitted to the United States under "
+            ], 
+            [
+                [
+                    "delete", 
+                    62, 
+                    67
+                ], 
+                [
+                    "insert", 
+                    62, 
+                    "visa"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    150, 
+                    181
+                ], 
+                [
+                    "insert", 
+                    150, 
+                    "prohibition in section 922(g)(5)(B) of the Act,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    382, 
+                    387
+                ], 
+                [
+                    "insert", 
+                    382, 
+                    "4473; and"
+                ]
+            ]
+        ]
+    }, 
+    "478-32-a-5-ii": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    58, 
+                    60
+                ], 
+                [
+                    "insert", 
+                    58, 
+                    "has been admitted to the United States under"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    76, 
+                    82
+                ], 
+                [
+                    "insert", 
+                    76, 
+                    "visa:"
+                ]
+            ], 
+            [
+                "insert", 
+                162, 
+                "alien who has been lawfully admitted to the United States under a "
+            ], 
+            [
+                "insert", 
+                175, 
+                "visa, if that "
+            ], 
+            [
+                [
+                    "delete", 
+                    181, 
+                    198
+                ], 
+                [
+                    "insert", 
+                    181, 
+                    "is\u2014"
+                ]
+            ]
+        ]
+    }, 
+    "478-32-d-5-ii": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    58, 
+                    60
+                ], 
+                [
+                    "insert", 
+                    58, 
+                    "has been admitted to the United States under"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    76, 
+                    82
+                ], 
+                [
+                    "insert", 
+                    76, 
+                    "visa:"
+                ]
+            ], 
+            [
+                "insert", 
+                162, 
+                "alien who has been lawfully admitted to the United States under a "
+            ], 
+            [
+                "insert", 
+                175, 
+                "visa, if that "
+            ], 
+            [
+                [
+                    "delete", 
+                    181, 
+                    198
+                ], 
+                [
+                    "insert", 
+                    181, 
+                    "is\u2014"
+                ]
+            ]
+        ]
+    }, 
+    "478-32-f": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                41, 
+                "individual who has been admitted to the United States under a "
+            ], 
+            [
+                [
+                    "delete", 
+                    54, 
+                    59
+                ], 
+                [
+                    "insert", 
+                    54, 
+                    "visa"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    144, 
+                    152
+                ], 
+                [
+                    "insert", 
+                    144, 
+                    "section"
+                ]
+            ]
+        ]
+    }, 
+    "478-44-a-1-iii": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                271, 
+                "an alien who has been admitted to the United States under "
+            ], 
+            [
+                [
+                    "delete", 
+                    286, 
+                    292
+                ], 
+                [
+                    "insert", 
+                    286, 
+                    "visa,"
+                ]
+            ], 
+            [
+                "delete", 
+                341, 
+                354
+            ], 
+            [
+                [
+                    "delete", 
+                    386, 
+                    388
+                ], 
+                [
+                    "insert", 
+                    386, 
+                    "specified in 18 U.S.C. 922(y)(2) (e.g., a hunting license"
+                ]
+            ], 
+            [
+                "insert", 
+                392, 
+                "permit lawfully issued in the United States) or "
+            ], 
+            [
+                [
+                    "delete", 
+                    414, 
+                    502
+                ], 
+                [
+                    "insert", 
+                    414, 
+                    "as specified"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    506, 
+                    533
+                ], 
+                [
+                    "insert", 
+                    506, 
+                    "18 U.S.C. 922(y)(3);"
+                ]
+            ]
+        ]
+    }, 
+    "478-44-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    316, 
+                    317
+                ], 
+                [
+                    "insert", 
+                    316, 
+                    "  "
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    582, 
+                    583
+                ], 
+                [
+                    "insert", 
+                    582, 
+                    "an alien who has been admitted to the United States under a"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    597, 
+                    607
+                ], 
+                [
+                    "insert", 
+                    597, 
+                    "visa, the"
+                ]
+            ], 
+            [
+                "delete", 
+                680, 
+                693
+            ], 
+            [
+                "insert", 
+                726, 
+                "specified in 18 U.S.C. 922(y)(2) (e.g., a hunting license or permit lawfully issued in the United States) or has obtained a waiver as specified in 18 U.S.C. 922(y)(3).The application must be executed under the penalties of perjury and the penalties imposed by 18 U.S.C. 924. The application shall include the appropriate fee in the form of a money order or check made payable "
+            ], 
+            [
+                [
+                    "delete", 
+                    729, 
+                    735
+                ], 
+                [
+                    "insert", 
+                    729, 
+                    "the Bureau of Alcohol, Tobacco, Firearms, and Explosives. ATF Form 7CR (Curios and Relics) may be"
+                ]
+            ], 
+            [
+                "delete", 
+                745, 
+                964
+            ], 
+            [
+                [
+                    "delete", 
+                    967, 
+                    1143
+                ], 
+                [
+                    "insert", 
+                    967, 
+                    "contacting the"
+                ]
+            ], 
+            [
+                "delete", 
+                1148, 
+                1215
+            ]
+        ]
+    }, 
+    "478-45": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    465, 
+                    466
+                ], 
+                [
+                    "insert", 
+                    465, 
+                    "an alien who has been admitted to the United States under a"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    480, 
+                    490
+                ], 
+                [
+                    "insert", 
+                    480, 
+                    "visa, the"
+                ]
+            ], 
+            [
+                "delete", 
+                563, 
+                576
+            ], 
+            [
+                "insert", 
+                609, 
+                "specified in 18 U.S.C. 922(y)(2) (e.g., a hunting license or permit lawfully issued in the United States) or has obtained a waiver as specified in 18 U.S.C. 922(y)(3).The Chief, Federal Firearms Licensing Center may, in writing, require the applicant for license renewal "
+            ], 
+            [
+                [
+                    "delete", 
+                    612, 
+                    760
+                ], 
+                [
+                    "insert", 
+                    612, 
+                    "also file completed ATF Form 7 or ATF Form 7CR in the manner required by \u00a7 478.44. In the event the licensee does not timely file an ATF Form 8 Part II, the licensee must file an ATF Form 7 or ATF Form 7CR as required by \u00a7 478.44, and obtain the required license before continuing business or collecting activity. If an ATF Form 8 Part II is not timely received through the mails, the licensee should so notify the"
+                ]
+            ], 
+            [
+                "delete", 
+                795, 
+                1313
+            ]
+        ]
+    }, 
+    "478-76": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    703, 
+                    715
+                ], 
+                [
+                    "insert", 
+                    703, 
+                    "Director , in"
+                ]
+            ]
+        ]
+    }, 
+    "478-99-c-5": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                103, 
+                "an alien who has been admitted to the United States under "
+            ], 
+            [
+                [
+                    "delete", 
+                    118, 
+                    124
+                ], 
+                [
+                    "insert", 
+                    118, 
+                    "visa:"
+                ]
+            ], 
+            [
+                "insert", 
+                200, 
+                "alien who has been lawfully admitted to the United States under a "
+            ], 
+            [
+                "insert", 
+                213, 
+                "visa if that "
+            ], 
+            [
+                "delete", 
+                219, 
+                233
+            ]
+        ]
+    }
+}

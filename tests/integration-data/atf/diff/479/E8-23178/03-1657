@@ -1,0 +1,100 @@
+{
+    "479": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                10
+            ], 
+            [
+                "delete", 
+                10, 
+                11
+            ], 
+            [
+                "insert", 
+                10, 
+                [
+                    "479-Subjgrp-AtMaF"
+                ]
+            ], 
+            [
+                "equal", 
+                11, 
+                30
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "479-21-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    72, 
+                    94
+                ], 
+                [
+                    "insert", 
+                    72, 
+                    "7943 Angus Court,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    117, 
+                    123
+                ], 
+                [
+                    "insert", 
+                    117, 
+                    "22153."
+                ]
+            ]
+        ]
+    }, 
+    "479-90-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    2135, 
+                    2144
+                ], 
+                [
+                    "insert", 
+                    2135, 
+                    "tranfer,"
+                ]
+            ]
+        ]
+    }, 
+    "479-Subjgrp-ATMaF": {
+        "op": "deleted"
+    }, 
+    "479-Subjgrp-AtMaF": {
+        "node": {
+            "child_labels": [
+                "479-62", 
+                "479-63", 
+                "479-64", 
+                "479-65", 
+                "479-66", 
+                "479-67"
+            ], 
+            "label": [
+                "479", 
+                "Subjgrp", 
+                "AtMaF"
+            ], 
+            "node_type": "subpart", 
+            "tagged_text": null, 
+            "text": "", 
+            "title": "Application to Make a Firearm"
+        }, 
+        "op": "added"
+    }
+}

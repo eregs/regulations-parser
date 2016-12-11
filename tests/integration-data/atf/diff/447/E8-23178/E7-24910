@@ -1,0 +1,53 @@
+{
+    "447-32-c": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    322, 
+                    344
+                ], 
+                [
+                    "insert", 
+                    322, 
+                    "Washington, DC 20226,"
+                ]
+            ]
+        ]
+    }, 
+    "447-35-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    143, 
+                    163
+                ], 
+                [
+                    "insert", 
+                    143, 
+                    "http://www.atf.treas.gov/."
+                ]
+            ]
+        ]
+    }, 
+    "447-58": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    432, 
+                    452
+                ], 
+                [
+                    "insert", 
+                    432, 
+                    "http://www.atf.treas.gov/."
+                ]
+            ]
+        ]
+    }
+}

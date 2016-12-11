@@ -1,0 +1,203 @@
+{
+    "478-103-e": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                1
+            ], 
+            [
+                "delete", 
+                1, 
+                2
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "478-103-e-p1-p5": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    337, 
+                    343
+                ], 
+                [
+                    "insert", 
+                    337, 
+                    "submitted"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    368, 
+                    424
+                ], 
+                [
+                    "insert", 
+                    368, 
+                    "Center (http://www.atf.gov) or made by calling (202) 648-6420."
+                ]
+            ]
+        ]
+    }, 
+    "478-103-e-p2": {
+        "op": "deleted"
+    }, 
+    "478-124a": {
+        "op": "deleted"
+    }, 
+    "478-124a-a": {
+        "op": "deleted"
+    }, 
+    "478-124a-b": {
+        "op": "deleted"
+    }, 
+    "478-124a-c": {
+        "op": "deleted"
+    }, 
+    "478-124a-d": {
+        "op": "deleted"
+    }, 
+    "478-124a-e": {
+        "op": "deleted"
+    }, 
+    "478-124a-e-1": {
+        "op": "deleted"
+    }, 
+    "478-124a-e-2": {
+        "op": "deleted"
+    }, 
+    "478-124a-e-3": {
+        "op": "deleted"
+    }, 
+    "478-124a-f": {
+        "op": "deleted"
+    }, 
+    "478-125-e": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    49, 
+                    55
+                ], 
+                [
+                    "insert", 
+                    49, 
+                    "Each licensed dealer shall enter into a record each receipt and disposition of firearms. In addition, before commencing or continuing a firearms business, each licensed dealer shall inventory the firearms possessed for such business and shall record same in the record required by this paragraph. The record required by this paragraph shall be maintained in bound form under the format prescribed below. The purchase or other acquisition of a firearm shall, except"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    71, 
+                    94
+                ], 
+                [
+                    "insert", 
+                    71, 
+                    "paragraph (g) of this section, be recorded not later than the close of the next business day following the date of such purchase or acquisition. The record shall show the date of receipt, the name and address or the name and license number of the person from whom received, the name of the manufacturer and importer (if any), the model, serial number, type, and the caliber or gauge of the firearm. The sale or other disposition of a firearm shall be recorded by the licensed dealer not later than 7 days following the date of such transaction. When such disposition is made"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    98, 
+                    115
+                ], 
+                [
+                    "insert", 
+                    98, 
+                    "a nonlicensee, the firearms transaction record, Form 4473, obtained by the licensed dealer shall be retained, until the transaction is recorded, separate from the licensee's Form 4473 file and be readily available"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    120, 
+                    123
+                ], 
+                [
+                    "insert", 
+                    120, 
+                    "inspection. When such disposition is made to a licensee, the commercial record of the transaction shall be retained, until the transaction is recorded, separate from other commercial documents maintained by the licensed dealer, and be readily available for inspection. The record shall show the date of the sale or other disposition of each firearm, the name and address of the person to whom the firearm is transferred, or the name and license number of the person to whom transferred if such person is a licensee, or the firearms transaction record, Form 4473, serial number if the licensed dealer transferring the firearm serially numbers the Forms 4473 and files them numerically. The format required for the record of"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    160, 
+                    636
+                ], 
+                [
+                    "insert", 
+                    160, 
+                    "is"
+                ]
+            ], 
+            [
+                "delete", 
+                640, 
+                2213
+            ]
+        ]
+    }, 
+    "478-44-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    928, 
+                    941
+                ], 
+                [
+                    "insert", 
+                    928, 
+                    "922(y)(3). The"
+                ]
+            ]
+        ]
+    }, 
+    "478-45": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    810, 
+                    823
+                ], 
+                [
+                    "insert", 
+                    810, 
+                    "922(y)(3). The"
+                ]
+            ]
+        ]
+    }, 
+    "478-Subpart-H": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                4
+            ], 
+            [
+                "delete", 
+                4, 
+                5
+            ], 
+            [
+                "equal", 
+                5, 
+                16
+            ]
+        ], 
+        "op": "modified"
+    }
+}

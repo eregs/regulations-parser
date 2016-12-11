@@ -1,0 +1,381 @@
+{
+    "478-103-e": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                1
+            ], 
+            [
+                "insert", 
+                1, 
+                [
+                    "478-103-e-p2"
+                ]
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "478-103-e-p2": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "103", 
+                "e", 
+                "p2"
+            ], 
+            "node_type": "note", 
+            "tagged_text": "ATF I 5300.2 provides the complete language of the statutory prohibitions and exceptions provided in 18 U.S.C. 922(x) and the penalty provisions of 18 U.S.C. 924(a)(6). The Federal firearms licensee posting this sign will provide you with a copy of this publication upon request. Requests for additional copies of ATF I 5300.2 should be submitted to the ATF Distribution Center (<E T=\"03\">http://www.atf.gov</E>) or made by calling (202) 648-6420.", 
+            "text": "ATF I 5300.2 provides the complete language of the statutory prohibitions and exceptions provided in 18 U.S.C. 922(x) and the penalty provisions of 18 U.S.C. 924(a)(6). The Federal firearms licensee posting this sign will provide you with a copy of this publication upon request. Requests for additional copies of ATF I 5300.2 should be submitted to the ATF Distribution Center (http://www.atf.gov) or made by calling (202) 648-6420.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-11-p1339644464": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    31, 
+                    38
+                ], 
+                [
+                    "insert", 
+                    31, 
+                    "Tobacco, Firearms,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    43, 
+                    51
+                ], 
+                [
+                    "insert", 
+                    43, 
+                    "Explosives"
+                ]
+            ]
+        ]
+    }, 
+    "478-11-p2162297120": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                32, 
+                "U.S. Customs and Border Protection, any commissioned, warrant, or petty officer of "
+            ], 
+            [
+                [
+                    "delete", 
+                    36, 
+                    51
+                ], 
+                [
+                    "insert", 
+                    36, 
+                    "Coast Guard,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    59, 
+                    81
+                ], 
+                [
+                    "insert", 
+                    59, 
+                    "agent"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    85, 
+                    98
+                ], 
+                [
+                    "insert", 
+                    85, 
+                    "other person authorized by law to perform the duties"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    102, 
+                    272
+                ], 
+                [
+                    "insert", 
+                    102, 
+                    "a customs officer."
+                ]
+            ]
+        ]
+    }, 
+    "478-11-p2757219296": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    62, 
+                    69
+                ], 
+                [
+                    "insert", 
+                    62, 
+                    "Tobacco, Firearms,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    74, 
+                    82
+                ], 
+                [
+                    "insert", 
+                    74, 
+                    "Explosives"
+                ]
+            ]
+        ]
+    }, 
+    "478-11-p593154015": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    43, 
+                    50
+                ], 
+                [
+                    "insert", 
+                    43, 
+                    "Tobacco, Firearms,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    55, 
+                    64
+                ], 
+                [
+                    "insert", 
+                    55, 
+                    "Explosives,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    83, 
+                    96
+                ], 
+                [
+                    "insert", 
+                    83, 
+                    "Justice,"
+                ]
+            ]
+        ]
+    }, 
+    "478-126-a": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    174, 
+                    179
+                ], 
+                [
+                    "insert", 
+                    174, 
+                    "5300.5,"
+                ]
+            ]
+        ]
+    }, 
+    "478-21-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    33, 
+                    39
+                ], 
+                [
+                    "insert", 
+                    33, 
+                    "submitted"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    64, 
+                    123
+                ], 
+                [
+                    "insert", 
+                    64, 
+                    "Center (http://www.atf.gov) or made by calling (202) 648-6420."
+                ]
+            ]
+        ]
+    }, 
+    "478-56-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    225, 
+                    233
+                ], 
+                [
+                    "insert", 
+                    225, 
+                    "Center,"
+                ]
+            ]
+        ]
+    }, 
+    "478-72": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    1094, 
+                    1100
+                ], 
+                [
+                    "insert", 
+                    1094, 
+                    "5300.13. A"
+                ]
+            ]
+        ]
+    }, 
+    "478-73-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    548, 
+                    553
+                ], 
+                [
+                    "insert", 
+                    548, 
+                    "5300.13,"
+                ]
+            ]
+        ]
+    }, 
+    "478-74": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    1316, 
+                    1321
+                ], 
+                [
+                    "insert", 
+                    1316, 
+                    "5300.13."
+                ]
+            ]
+        ]
+    }, 
+    "478-76": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                158, 
+                "Tobacco, Firearms, and Explosives as provided in 31 CFR Part 8 (Practice Before the Bureau of Alcohol, "
+            ], 
+            [
+                [
+                    "delete", 
+                    170, 
+                    178
+                ], 
+                [
+                    "insert", 
+                    170, 
+                    "Firearms), if he has otherwise complied with the applicable requirements of 26 CFR 601.521 through 601.527 (conference and practice requirements for alcohol, tobacco, and firearms activities) of this chapter. The Director may be represented in proceedings by an attorney in the office of Chief Counsel who is authorized to execute and file motions, briefs and other papers in the proceeding, on behalf of the Director, in his own name"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    182, 
+                    404
+                ], 
+                [
+                    "insert", 
+                    182, 
+                    "\u201cAttorney"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    409, 
+                    750
+                ], 
+                [
+                    "insert", 
+                    409, 
+                    "the"
+                ]
+            ]
+        ]
+    }, 
+    "478-78": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    106, 
+                    113
+                ], 
+                [
+                    "insert", 
+                    106, 
+                    "Tobacco, Firearms,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    118, 
+                    130
+                ], 
+                [
+                    "insert", 
+                    118, 
+                    "Explosives, or"
+                ]
+            ]
+        ]
+    }
+}

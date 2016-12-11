@@ -1,0 +1,225 @@
+{
+    "555-11-p4152419405": {
+        "child_ops": [
+            [
+                "insert", 
+                0, 
+                [
+                    "555-11-p4152419405-a", 
+                    "555-11-p4152419405-b"
+                ]
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                "delete", 
+                27, 
+                187
+            ]
+        ]
+    }, 
+    "555-11-p4152419405-a": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "555", 
+                "11", 
+                "p4152419405", 
+                "a"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(a) Any tool or special mechanized device or gas generator system that is actuated by a propellant or which releases and directs work through a propellant charge.", 
+            "text": "(a) Any tool or special mechanized device or gas generator system that is actuated by a propellant or which releases and directs work through a propellant charge.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "555-11-p4152419405-b": {
+        "node": {
+            "child_labels": [
+                "555-11-p4152419405-b-1", 
+                "555-11-p4152419405-b-2"
+            ], 
+            "label": [
+                "555", 
+                "11", 
+                "p4152419405", 
+                "b"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(b) The term does not include\u2014", 
+            "text": "(b) The term does not include\u2014", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "555-11-p4152419405-b-1": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "555", 
+                "11", 
+                "p4152419405", 
+                "b", 
+                "1"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(1) Hobby rocket motors consisting of ammonium perchlorate composite propellant, black powder, or other similar low explosives, regardless of amount; and", 
+            "text": "(1) Hobby rocket motors consisting of ammonium perchlorate composite propellant, black powder, or other similar low explosives, regardless of amount; and", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "555-11-p4152419405-b-2": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "555", 
+                "11", 
+                "p4152419405", 
+                "b", 
+                "2"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(2) Rocket-motor reload kits that can be used to assemble hobby rocket motors containing ammonium perchlorate composite propellant, black powder, or other similar low explosives, regardless of amount.", 
+            "text": "(2) Rocket-motor reload kits that can be used to assemble hobby rocket motors containing ammonium perchlorate composite propellant, black powder, or other similar low explosives, regardless of amount.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "555-127": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                36, 
+                "\u00a7\u00a7 555.122, 555.123, 555.124, and 555.125, a licensee or permittee shall enter the inventory in a record of daily summary transactions to be kept at each magazine of an approved storage facility; however, these records may be kept at one central location on the business premises if separate records of daily transactions are kept for each magazine. Not later than the close of the next business day, each licensee and permittee shall record by manufacturer's name or brand name, the total quantity received in and removed from each magazine during the day, and the total remaining on hand at the end of the day. Quantity entries for display fireworks may be expressed as the number and size of individual display fireworks in a finished state or as the number of packaged display segments or packaged displays. Information as to the number and size of display fireworks contained in any one packaged display segment or packaged display shall be provided to any ATF officer on request. Any discrepancy which might indicate a theft or loss of explosive materials is to be reported in accordance with "
+            ], 
+            [
+                "delete", 
+                38, 
+                1138
+            ]
+        ]
+    }, 
+    "555-128": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    544, 
+                    609
+                ], 
+                [
+                    "insert", 
+                    544, 
+                    "244 Needy Road, Martinsburg,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    624, 
+                    630
+                ], 
+                [
+                    "insert", 
+                    624, 
+                    "25405."
+                ]
+            ]
+        ]
+    }, 
+    "555-201-d": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    33, 
+                    36
+                ], 
+                [
+                    "insert", 
+                    33, 
+                    "\u00a7\u00a7"
+                ]
+            ]
+        ]
+    }, 
+    "555-21-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    72, 
+                    89
+                ], 
+                [
+                    "insert", 
+                    72, 
+                    "7664 K Fullerton Road,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    112, 
+                    118
+                ], 
+                [
+                    "insert", 
+                    112, 
+                    "22150."
+                ]
+            ]
+        ]
+    }, 
+    "555-213-b-1": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                114, 
+                "shock tube, "
+            ]
+        ]
+    }, 
+    "555-220-p1-p7": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    166, 
+                    191
+                ], 
+                [
+                    "insert", 
+                    166, 
+                    "Institute. [^1](Definition"
+                ]
+            ]
+        ]
+    }, 
+    "555-23": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    260, 
+                    314
+                ], 
+                [
+                    "insert", 
+                    260, 
+                    "Center (See \u00a7 555.21)."
+                ]
+            ]
+        ]
+    }
+}

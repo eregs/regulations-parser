@@ -1,0 +1,266 @@
+{
+    "amendments": [
+        {
+            "authority": "22 U.S.C. 2778; E.O. 13637, 78 FR 16129 (Mar. 8, 2013).", 
+            "cfr_part": "447", 
+            "instruction": "1. The authority citation for 27 CFR Part 447 is revised to read as follows:"
+        }, 
+        {
+            "cfr_part": "447", 
+            "changes": [
+                [
+                    "447-1", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n             The regulations in this part relate to that portion of section 38 of the Arms Export Control Act of 1976, as amended, authorizing the President to designate defense articles and defense services as part of the United States Munitions List (USML) for purposes of import and export controls. To distinguish the list of defense articles and defense services controlled in this part for purposes of permanent import from the list of defense articles and defense services controlled by the Secretary of State for purposes of export and temporary import, this part shall refer to the defense articles and defense services controlled for purposes of permanent import as the U.S. Munitions Import List (USMIL) and shall refer to the export and temporary import control list set out by the Department of State in its International Traffic in Arms Regulations as the USML. Part 447 contains the USMIL and includes procedural and administrative requirements relating to registration of importers, permits, articles in transit, import certification, delivery verification, import restrictions applicable to certain countries, exemptions, U.S. military firearms and ammunition, penalties, seizures, and forfeitures. The President's delegation of permanent import control authorities to the Attorney General provides the Attorney General the authority to assess whether controls are justified, but in designating the defense articles and defense services set out in the USMIL the Attorney General shall be guided by the views of the Secretary of State on matters affecting world peace and the external security and foreign policy of the United States. All designations and changes in designations of defense articles and defense services subject to permanent import control under this part must have the concurrence of the Secretary of State and the Secretary of Defense, with notice given to the Secretary of Commerce.", 
+                                "text": "The regulations in this part relate to that portion of section 38 of the Arms Export Control Act of 1976, as amended, authorizing the President to designate defense articles and defense services as part of the United States Munitions List (USML) for purposes of import and export controls. To distinguish the list of defense articles and defense services controlled in this part for purposes of permanent import from the list of defense articles and defense services controlled by the Secretary of State for purposes of export and temporary import, this part shall refer to the defense articles and defense services controlled for purposes of permanent import as the U.S. Munitions Import List (USMIL) and shall refer to the export and temporary import control list set out by the Department of State in its International Traffic in Arms Regulations as the USML. Part 447 contains the USMIL and includes procedural and administrative requirements relating to registration of importers, permits, articles in transit, import certification, delivery verification, import restrictions applicable to certain countries, exemptions, U.S. military firearms and ammunition, penalties, seizures, and forfeitures. The President's delegation of permanent import control authorities to the Attorney General provides the Attorney General the authority to assess whether controls are justified, but in designating the defense articles and defense services set out in the USMIL the Attorney General shall be guided by the views of the Secretary of State on matters affecting world peace and the external security and foreign policy of the United States. All designations and changes in designations of defense articles and defense services subject to permanent import control under this part must have the concurrence of the Secretary of State and the Secretary of Defense, with notice given to the Secretary of Commerce.", 
+                                "title": "\u00a7 447.1 General."
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "2. Revise \u00a7\u2009447.1 to read as follows:"
+        }, 
+        {
+            "cfr_part": "447", 
+            "changes": [
+                [
+                    "447-11-p1448930519", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "11", 
+                                    "p1448930519"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "<E T=\"03\">Article.</E> Any of the defense articles enumerated in the U.S. Munitions Import List (USMIL).", 
+                                "text": "Article. Any of the defense articles enumerated in the U.S. Munitions Import List (USMIL).", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "3. Amend \u00a7\u2009447.11 by revising the definition of the term \u201cArticle\u201d to read as follows:"
+        }, 
+        {
+            "cfr_part": "447", 
+            "instruction": "4. Amend \u00a7\u2009447.21 as follows:"
+        }, 
+        {
+            "cfr_part": "447", 
+            "changes": [
+                [
+                    "447-21", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "field": "[text]", 
+                            "node": {
+                                "child_labels": [
+                                    "447-21-p1", 
+                                    "447-21-p2", 
+                                    "447-21-p3", 
+                                    "447-21-p4", 
+                                    "447-21-p5", 
+                                    "447-21-p6", 
+                                    "447-21-p7", 
+                                    "447-21-p8", 
+                                    "447-21-p9"
+                                ], 
+                                "label": [
+                                    "447", 
+                                    "21"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n            ", 
+                                "text": "", 
+                                "title": "\u00a7 447.21 The U.S. Munitions Import List."
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "a. Revise the introductory text."
+        }, 
+        {
+            "cfr_part": "447", 
+            "instruction": "b. Remove the second \u201cNote\u201d in Category IV."
+        }, 
+        {
+            "cfr_part": "447", 
+            "changes": [
+                [
+                    "447-21", 
+                    [
+                        {
+                            "action": "RESERVE", 
+                            "field": "[title]", 
+                            "node": {
+                                "child_labels": [
+                                    "447-21-p1", 
+                                    "447-21-p2", 
+                                    "447-21-p3", 
+                                    "447-21-p4", 
+                                    "447-21-p5", 
+                                    "447-21-p6", 
+                                    "447-21-p7", 
+                                    "447-21-p8", 
+                                    "447-21-p9"
+                                ], 
+                                "label": [
+                                    "447", 
+                                    "21"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n            ", 
+                                "text": "", 
+                                "title": "\u00a7 447.21 The U.S. Munitions Import List."
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "c. Add and reserve after Category IV a heading \u201cCategory V\u201d."
+        }, 
+        {
+            "cfr_part": "447", 
+            "changes": [
+                [
+                    "447-21-c", 
+                    [
+                        {
+                            "action": "DELETE"
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-d", 
+                    [
+                        {
+                            "action": "RESERVE", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "d"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(d) [Reserved]", 
+                                "text": "(d) [Reserved]", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-e", 
+                    [
+                        {
+                            "action": "RESERVE", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "e"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(e) [Reserved]", 
+                                "text": "(e) [Reserved]", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "d. In Category VII, remove the \u201cNote\u201d after paragraph (c) and add and reserve paragraphs (d) and (e)."
+        }, 
+        {
+            "cfr_part": "447", 
+            "changes": [
+                [
+                    "447-21-a", 
+                    [
+                        {
+                            "action": "DELETE"
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "e. In Category VIII, revise the title and remove the first \u201cNote\u201d after paragraph (a) and in its place add and reserve paragraph (b)."
+        }, 
+        {
+            "cfr_part": "447", 
+            "instruction": "f. Add and reserve after Category VIII a heading \u201cCategories IX through XIII\u201d."
+        }, 
+        {
+            "cfr_part": "447", 
+            "changes": [
+                [
+                    "447-21-b", 
+                    [
+                        {
+                            "action": "DELETE"
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "g. Remove the \u201cNote\u201d after paragraph (b) in Category XVI."
+        }, 
+        {
+            "cfr_part": "447", 
+            "instruction": "h. Add and reserve after Category XVI a heading \u201cCategories XVII through XIX\u201d."
+        }, 
+        {
+            "cfr_part": "447", 
+            "instruction": "i. Revise Category XXI."
+        }
+    ], 
+    "cfr_parts": [
+        "447"
+    ], 
+    "cfr_title": 27, 
+    "dockets": [
+        "Docket No. ATF-50F", 
+        "AG Order No. 3383-2013"
+    ], 
+    "document_number": "2013-09392", 
+    "effective_on": "2013-04-22", 
+    "footnotes": {}, 
+    "fr_citation": "78 FR 23675", 
+    "fr_url": "https://www.federalregister.gov/documents/2013/04/22/2013-09392/importation-of-defense-articles-and-defense-services-us-munitions-import-list-2011r-20p", 
+    "fr_volume": 78, 
+    "meta": {
+        "start_page": 23675
+    }, 
+    "primary_agency": "DEPARTMENT OF JUSTICE", 
+    "primary_docket": null, 
+    "publication_date": "2013-04-22", 
+    "regulation_id_numbers": [
+        "1140-AA46"
+    ], 
+    "section_by_section": [], 
+    "supporting_documents": [], 
+    "title": "Importation of Defense Articles and Defense Services\u2014U.S. Munitions Import List (2011R-20P)", 
+    "versions": {
+        "447": {
+            "left": "E8-23178", 
+            "right": "2013-09392"
+        }
+    }
+}

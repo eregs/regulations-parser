@@ -1,0 +1,182 @@
+{
+    "555-128": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    544, 
+                    609
+                ], 
+                [
+                    "insert", 
+                    544, 
+                    "244 Needy Road, Martinsburg,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    624, 
+                    630
+                ], 
+                [
+                    "insert", 
+                    624, 
+                    "25405."
+                ]
+            ]
+        ]
+    }, 
+    "555-141-a": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                9
+            ], 
+            [
+                "insert", 
+                9, 
+                [
+                    "555-141-a-10"
+                ]
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "555-141-a-10": {
+        "node": {
+            "child_labels": [
+                "555-141-a-10-i", 
+                "555-141-a-10-ii", 
+                "555-141-a-10-iii"
+            ], 
+            "label": [
+                "555", 
+                "141", 
+                "a", 
+                "10"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(10) Model rocket motors that meet all of the following criteria\u2014", 
+            "text": "(10) Model rocket motors that meet all of the following criteria\u2014", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "555-141-a-10-i": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "555", 
+                "141", 
+                "a", 
+                "10", 
+                "i"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(i) Consist of ammonium perchlorate composite propellant, black powder, or other similar low explosives;", 
+            "text": "(i) Consist of ammonium perchlorate composite propellant, black powder, or other similar low explosives;", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "555-141-a-10-ii": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "555", 
+                "141", 
+                "a", 
+                "10", 
+                "ii"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(ii) Contain no more than 62.5 grams of total propellant weight; and", 
+            "text": "(ii) Contain no more than 62.5 grams of total propellant weight; and", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "555-141-a-10-iii": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "555", 
+                "141", 
+                "a", 
+                "10", 
+                "iii"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(iii) Are designed as single-use motors or as reload kits capable of reloading no more than 62.5 grams of propellant into a reusable motor casing.", 
+            "text": "(iii) Are designed as single-use motors or as reload kits capable of reloading no more than 62.5 grams of propellant into a reusable motor casing.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "555-21-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    72, 
+                    89
+                ], 
+                [
+                    "insert", 
+                    72, 
+                    "7664 K Fullerton Road,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    112, 
+                    118
+                ], 
+                [
+                    "insert", 
+                    112, 
+                    "22150."
+                ]
+            ]
+        ]
+    }, 
+    "555-23": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    260, 
+                    314
+                ], 
+                [
+                    "insert", 
+                    260, 
+                    "Center (See \u00a7 555.21)."
+                ]
+            ]
+        ]
+    }, 
+    "555-78": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    285, 
+                    287
+                ], 
+                [
+                    "insert", 
+                    285, 
+                    " "
+                ]
+            ]
+        ]
+    }
+}

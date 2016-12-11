@@ -1,0 +1,53 @@
+{
+    "478-125-e-p1": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    81, 
+                    109
+                ], 
+                [
+                    "insert", 
+                    81, 
+                    "and importer (if any)|Model|Serial"
+                ]
+            ]
+        ]
+    }, 
+    "478-125-f-2-p1": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    92, 
+                    120
+                ], 
+                [
+                    "insert", 
+                    92, 
+                    "and importer (if any)|Model|Serial"
+                ]
+            ]
+        ]
+    }, 
+    "478-125a-a-4-p1": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    77, 
+                    105
+                ], 
+                [
+                    "insert", 
+                    77, 
+                    "and importer (if any)|Model|Serial"
+                ]
+            ]
+        ]
+    }
+}

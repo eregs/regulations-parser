@@ -1,0 +1,1145 @@
+{
+    "478-103-e-p1-p5": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    337, 
+                    343
+                ], 
+                [
+                    "insert", 
+                    337, 
+                    "submitted"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    368, 
+                    424
+                ], 
+                [
+                    "insert", 
+                    368, 
+                    "Center (http://www.atf.gov) or made by calling (202) 648-6420."
+                ]
+            ]
+        ]
+    }, 
+    "478-11": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                77
+            ], 
+            [
+                "insert", 
+                77, 
+                [
+                    "478-11-p6"
+                ]
+            ], 
+            [
+                "equal", 
+                77, 
+                80
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "478-11-p1339644464": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    31, 
+                    38
+                ], 
+                [
+                    "insert", 
+                    31, 
+                    "Tobacco, Firearms,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    43, 
+                    51
+                ], 
+                [
+                    "insert", 
+                    43, 
+                    "Explosives"
+                ]
+            ]
+        ]
+    }, 
+    "478-11-p2162297120": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                32, 
+                "U.S. Customs and Border Protection, any commissioned, warrant, or petty officer of "
+            ], 
+            [
+                [
+                    "delete", 
+                    36, 
+                    51
+                ], 
+                [
+                    "insert", 
+                    36, 
+                    "Coast Guard,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    59, 
+                    81
+                ], 
+                [
+                    "insert", 
+                    59, 
+                    "agent"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    85, 
+                    98
+                ], 
+                [
+                    "insert", 
+                    85, 
+                    "other person authorized by law to perform the duties"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    102, 
+                    272
+                ], 
+                [
+                    "insert", 
+                    102, 
+                    "a customs officer."
+                ]
+            ]
+        ]
+    }, 
+    "478-11-p2685568514": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    513, 
+                    521
+                ], 
+                [
+                    "insert", 
+                    513, 
+                    "appendix"
+                ]
+            ]
+        ]
+    }, 
+    "478-11-p2757219296": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    62, 
+                    69
+                ], 
+                [
+                    "insert", 
+                    62, 
+                    "Tobacco, Firearms,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    74, 
+                    82
+                ], 
+                [
+                    "insert", 
+                    74, 
+                    "Explosives"
+                ]
+            ]
+        ]
+    }, 
+    "478-11-p3121846411": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    344, 
+                    376
+                ], 
+                [
+                    "insert", 
+                    344, 
+                    "located, as stated"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    380, 
+                    602
+                ], 
+                [
+                    "insert", 
+                    380, 
+                    "18 U.S.C. 921(b)."
+                ]
+            ]
+        ]
+    }, 
+    "478-11-p4-p2": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                2, 
+                "maintains a home in State X and a home in State Y. A resides in State X except for weekends or the summer months of the year and in State Y for the weekends or the summer months of the year. During the time that A actually resides in State X, A "
+            ], 
+            [
+                [
+                    "delete", 
+                    7, 
+                    19
+                ], 
+                [
+                    "insert", 
+                    7, 
+                    "resident of State X,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    24, 
+                    33
+                ], 
+                [
+                    "insert", 
+                    24, 
+                    "during the time that A actually resides in State Y, A is"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    36, 
+                    43
+                ], 
+                [
+                    "insert", 
+                    36, 
+                    "resident of"
+                ]
+            ], 
+            [
+                "delete", 
+                50, 
+                72
+            ], 
+            [
+                "delete", 
+                74, 
+                378
+            ]
+        ]
+    }, 
+    "478-11-p5-p2": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                21, 
+                "to the United States "
+            ], 
+            [
+                "insert", 
+                24, 
+                "a three-week "
+            ], 
+            [
+                [
+                    "delete", 
+                    33, 
+                    35
+                ], 
+                [
+                    "insert", 
+                    33, 
+                    "to State X. A does not have a state of residence in State X because A does not have the intention of making a home in State X while"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    39, 
+                    77
+                ], 
+                [
+                    "insert", 
+                    39, 
+                    "vacation. This is true regardless"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    95, 
+                    265
+                ], 
+                [
+                    "insert", 
+                    95, 
+                    "the vacation."
+                ]
+            ]
+        ]
+    }, 
+    "478-11-p593154015": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    43, 
+                    50
+                ], 
+                [
+                    "insert", 
+                    43, 
+                    "Tobacco, Firearms,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    55, 
+                    64
+                ], 
+                [
+                    "insert", 
+                    55, 
+                    "Explosives,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    83, 
+                    96
+                ], 
+                [
+                    "insert", 
+                    83, 
+                    "Justice,"
+                ]
+            ]
+        ]
+    }, 
+    "478-11-p6": {
+        "node": {
+            "child_labels": [
+                "478-11-p6-p1", 
+                "478-11-p6-p2"
+            ], 
+            "label": [
+                "478", 
+                "11", 
+                "p6"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": null, 
+            "text": "", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-11-p6-p1": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "11", 
+                "p6", 
+                "p1"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": null, 
+            "text": "", 
+            "title": "Example 4."
+        }, 
+        "op": "added"
+    }, 
+    "478-11-p6-p2": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "11", 
+                "p6", 
+                "p2"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "A, an alien, travels to the United States to work for three years in State X. A rents a home in State X, moves his personal possessions into the home, and his family resides with him in the home. A intends to reside in State X during the 3-year period of his employment. A is a resident of State X.", 
+            "text": "A, an alien, travels to the United States to work for three years in State X. A rents a home in State X, moves his personal possessions into the home, and his family resides with him in the home. A intends to reside in State X during the 3-year period of his employment. A is a resident of State X.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-119-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    500, 
+                    508
+                ], 
+                [
+                    "insert", 
+                    500, 
+                    "appendix"
+                ]
+            ]
+        ]
+    }, 
+    "478-124-c-3-ii": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    5, 
+                    533
+                ], 
+                [
+                    "insert", 
+                    5, 
+                    "[Reserved]"
+                ]
+            ]
+        ]
+    }, 
+    "478-124-d": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    355, 
+                    829
+                ], 
+                [
+                    "insert", 
+                    355, 
+                    "section."
+                ]
+            ]
+        ]
+    }, 
+    "478-124-e": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    453, 
+                    512
+                ], 
+                [
+                    "insert", 
+                    453, 
+                    "section."
+                ]
+            ]
+        ]
+    }, 
+    "478-124-f": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    1021, 
+                    1031
+                ], 
+                [
+                    "insert", 
+                    1021, 
+                    "residence; the transferee is not prohibited by the provisions of the Act from shipping or transporting a firearm in interstate or foreign commerce or receiving a firearm which has been shipped or transported in interstate or foreign commerce or possessing a firearm in or affecting commerce;"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    1036, 
+                    1052
+                ], 
+                [
+                    "insert", 
+                    1036, 
+                    "the transferee's receipt of the firearm would not be in violation of any statute of the State or published ordinance applicable to the locality in which the"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    1064, 
+                    1113
+                ], 
+                [
+                    "insert", 
+                    1064, 
+                    "resides. Upon receipt of such Forms 4473, the licensee shall identify the firearm to be transferred by listing in the Forms 4473 the name of the manufacturer, the name of the importer (if any), the type, model, caliber or gauge, and the serial number of the firearm to be transferred. The licensee shall prior to shipment or delivery of the firearm to such transferee, forward by registered or certified mail (return receipt requested) a copy of the Form 4473 to the principal law enforcement officer named in the Form 4473 by the transferee, and shall delay shipment or delivery of the firearm to the"
+                ]
+            ], 
+            [
+                "delete", 
+                1125, 
+                1164
+            ], 
+            [
+                "insert", 
+                1168, 
+                "a period of "
+            ], 
+            [
+                [
+                    "delete", 
+                    1177, 
+                    1179
+                ], 
+                [
+                    "insert", 
+                    1177, 
+                    "7"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    1185, 
+                    1255
+                ], 
+                [
+                    "insert", 
+                    1185, 
+                    "following receipt"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    1263, 
+                    1503
+                ], 
+                [
+                    "insert", 
+                    1263, 
+                    "licensee of the return receipt evidencing delivery of the copy of the Form 4473 to such principal law enforcement officer, or the return of the copy of the Form 4473 to the licensee due to the refusal of such principal law enforcement officer to accept same in accordance with U.S. Postal Service regulations. The original Form 4473,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    1508, 
+                    1524
+                ], 
+                [
+                    "insert", 
+                    1508, 
+                    "evidence of"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    1533, 
+                    1557
+                ], 
+                [
+                    "insert", 
+                    1533, 
+                    "or rejection of delivery of the copy of the Form 4473 sent to the principal law enforcement officer, shall"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    1561, 
+                    1721
+                ], 
+                [
+                    "insert", 
+                    1561, 
+                    "retained by the"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    1731, 
+                    1760
+                ], 
+                [
+                    "insert", 
+                    1731, 
+                    "as a part of the records required to"
+                ]
+            ], 
+            [
+                "delete", 
+                1764, 
+                2879
+            ]
+        ]
+    }, 
+    "478-124a": {
+        "op": "deleted"
+    }, 
+    "478-124a-a": {
+        "op": "deleted"
+    }, 
+    "478-124a-b": {
+        "op": "deleted"
+    }, 
+    "478-124a-c": {
+        "op": "deleted"
+    }, 
+    "478-124a-d": {
+        "op": "deleted"
+    }, 
+    "478-124a-e": {
+        "op": "deleted"
+    }, 
+    "478-124a-e-1": {
+        "op": "deleted"
+    }, 
+    "478-124a-e-2": {
+        "op": "deleted"
+    }, 
+    "478-124a-e-3": {
+        "op": "deleted"
+    }, 
+    "478-124a-f": {
+        "op": "deleted"
+    }, 
+    "478-125-e": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    49, 
+                    55
+                ], 
+                [
+                    "insert", 
+                    49, 
+                    "Each licensed dealer shall enter into a record each receipt and disposition of firearms. In addition, before commencing or continuing a firearms business, each licensed dealer shall inventory the firearms possessed for such business and shall record same in the record required by this paragraph. The record required by this paragraph shall be maintained in bound form under the format prescribed below. The purchase or other acquisition of a firearm shall, except"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    71, 
+                    94
+                ], 
+                [
+                    "insert", 
+                    71, 
+                    "paragraph (g) of this section, be recorded not later than the close of the next business day following the date of such purchase or acquisition. The record shall show the date of receipt, the name and address or the name and license number of the person from whom received, the name of the manufacturer and importer (if any), the model, serial number, type, and the caliber or gauge of the firearm. The sale or other disposition of a firearm shall be recorded by the licensed dealer not later than 7 days following the date of such transaction. When such disposition is made"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    98, 
+                    115
+                ], 
+                [
+                    "insert", 
+                    98, 
+                    "a nonlicensee, the firearms transaction record, Form 4473, obtained by the licensed dealer shall be retained, until the transaction is recorded, separate from the licensee's Form 4473 file and be readily available"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    120, 
+                    123
+                ], 
+                [
+                    "insert", 
+                    120, 
+                    "inspection. When such disposition is made to a licensee, the commercial record of the transaction shall be retained, until the transaction is recorded, separate from other commercial documents maintained by the licensed dealer, and be readily available for inspection. The record shall show the date of the sale or other disposition of each firearm, the name and address of the person to whom the firearm is transferred, or the name and license number of the person to whom transferred if such person is a licensee, or the firearms transaction record, Form 4473, serial number if the licensed dealer transferring the firearm serially numbers the Forms 4473 and files them numerically. The format required for the record of"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    160, 
+                    636
+                ], 
+                [
+                    "insert", 
+                    160, 
+                    "is"
+                ]
+            ], 
+            [
+                "delete", 
+                640, 
+                2213
+            ]
+        ]
+    }, 
+    "478-125-f": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                2
+            ], 
+            [
+                "delete", 
+                2, 
+                3
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                "delete", 
+                60, 
+                1561
+            ]
+        ]
+    }, 
+    "478-125-f-1": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    4, 
+                    13
+                ], 
+                [
+                    "insert", 
+                    4, 
+                    "Each licensed collector shall enter into a record each receipt and disposition of firearms curios or relics. The record required by this paragraph shall be maintained in bound form under the format prescribed below. The purchase or other acquisition of a curio or relic shall, except as provided in paragraph (g) of this section, be recorded not later than the close of the next business day following the date of such purchase or other acquisition. The record shall show the date of receipt, the name and address or the name and license number of the person from whom received, the name of the manufacturer and importer (if any), the model, serial number, type, and the caliber or gauge of the firearm curio or relic. The sale or other disposition of a curio or relic shall be recorded by the licensed collector not later than 7 days following the date of such transaction. When such disposition is made to a licensee, the commercial record of the transaction shall be retained, until the transaction is recorded, separate from other commercial documents maintained by the licensee, and be readily available for inspection. The record shall show the date of the sale or other disposition of each firearm curio or relic, the name and address of the person to whom the firearm curio or relic is transferred, or the name and license number of the person to whom transferred if such person is a licensee, and the date of birth of the transferee if other than a licensee. In addition, the licensee shall cause the"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    189, 
+                    198
+                ], 
+                [
+                    "insert", 
+                    189, 
+                    "used."
+                ]
+            ]
+        ]
+    }, 
+    "478-125-f-2": {
+        "child_ops": [
+            [
+                "delete", 
+                0, 
+                2
+            ], 
+            [
+                "insert", 
+                0, 
+                [
+                    "478-125-f-2-p1"
+                ]
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    4, 
+                    6
+                ], 
+                [
+                    "insert", 
+                    4, 
+                    "The format required for"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    11, 
+                    15
+                ], 
+                [
+                    "insert", 
+                    11, 
+                    "record"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    19, 
+                    35
+                ], 
+                [
+                    "insert", 
+                    19, 
+                    "receipt and disposition of firearms by collectors"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    39, 
+                    110
+                ], 
+                [
+                    "insert", 
+                    39, 
+                    "as follows:"
+                ]
+            ]
+        ]
+    }, 
+    "478-125-f-2-i": {
+        "op": "deleted"
+    }, 
+    "478-125-f-2-ii": {
+        "op": "deleted"
+    }, 
+    "478-125-f-2-p1": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "125", 
+                "f", 
+                "2", 
+                "p1"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "<GPOTABLE xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" CDEF=\"s8,6,6,6,6,6,10,6,10,10,10\" COLS=\"11\" OPTS=\"L2,p6,6/7\">\n          <TTITLE>Firearms Collectors Acquisition and Disposition Record</TTITLE>\n          <BOXHD>\n            <CHED H=\"1\">Description of firearm</CHED>\n            <CHED H=\"2\">Manufacturer and/or importer</CHED>\n            <CHED H=\"2\">Model</CHED>\n            <CHED H=\"2\">Serial No.</CHED>\n            <CHED H=\"2\">Type</CHED>\n            <CHED H=\"2\">Caliber or gauge</CHED>\n            <CHED H=\"1\">Receipt</CHED>\n            <CHED H=\"2\">Date</CHED>\n            <CHED H=\"2\">Name and address or name and license No.</CHED>\n            <CHED H=\"1\">Disposition</CHED>\n            <CHED H=\"2\">Date</CHED>\n            <CHED H=\"2\">Name and address or name and license No.</CHED>\n            <CHED H=\"2\">Date of birth if non-licensee</CHED>\n            <CHED H=\"2\">Driver's license No. or other identification if non-licensee</CHED>\n          </BOXHD>\n          <ROW>\n            <ENT I=\"22\">\u2003</ENT>\n          </ROW>\n        </GPOTABLE>", 
+            "text": "|Firearms Collectors Acquisition and Disposition Record|Description of firearm|Manufacturer and/or importer|Model|Serial No.|Type|Caliber or gauge|Receipt|Date|Name and address or name and license No.|Disposition|Date|Name and address or name and license No.|Date of birth if non-licensee|Driver's license No. or other identification if non-licensee|\n|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|\n||", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-125-f-3": {
+        "op": "deleted"
+    }, 
+    "478-125-f-3-p1": {
+        "op": "deleted"
+    }, 
+    "478-125-g": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    846, 
+                    858
+                ], 
+                [
+                    "insert", 
+                    846, 
+                    " "
+                ]
+            ]
+        ]
+    }, 
+    "478-126-a": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    174, 
+                    179
+                ], 
+                [
+                    "insert", 
+                    174, 
+                    "5300.5,"
+                ]
+            ]
+        ]
+    }, 
+    "478-21-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    33, 
+                    39
+                ], 
+                [
+                    "insert", 
+                    33, 
+                    "submitted"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    64, 
+                    123
+                ], 
+                [
+                    "insert", 
+                    64, 
+                    "Center (http://www.atf.gov) or made by calling (202) 648-6420."
+                ]
+            ]
+        ]
+    }, 
+    "478-40-b-2": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    96, 
+                    104
+                ], 
+                [
+                    "insert", 
+                    96, 
+                    "appendix"
+                ]
+            ]
+        ]
+    }, 
+    "478-44-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    928, 
+                    941
+                ], 
+                [
+                    "insert", 
+                    928, 
+                    "922(y)(3). The"
+                ]
+            ]
+        ]
+    }, 
+    "478-45": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    810, 
+                    823
+                ], 
+                [
+                    "insert", 
+                    810, 
+                    "922(y)(3). The"
+                ]
+            ]
+        ]
+    }, 
+    "478-56-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    225, 
+                    233
+                ], 
+                [
+                    "insert", 
+                    225, 
+                    "Center,"
+                ]
+            ]
+        ]
+    }, 
+    "478-72": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    1094, 
+                    1100
+                ], 
+                [
+                    "insert", 
+                    1094, 
+                    "5300.13. A"
+                ]
+            ]
+        ]
+    }, 
+    "478-73-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    548, 
+                    553
+                ], 
+                [
+                    "insert", 
+                    548, 
+                    "5300.13,"
+                ]
+            ]
+        ]
+    }, 
+    "478-74": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    1316, 
+                    1321
+                ], 
+                [
+                    "insert", 
+                    1316, 
+                    "5300.13."
+                ]
+            ]
+        ]
+    }, 
+    "478-76": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                158, 
+                "Tobacco, Firearms, and Explosives as provided in 31 CFR Part 8 (Practice Before the Bureau of Alcohol, "
+            ], 
+            [
+                [
+                    "delete", 
+                    170, 
+                    178
+                ], 
+                [
+                    "insert", 
+                    170, 
+                    "Firearms), if he has otherwise complied with the applicable requirements of 26 CFR 601.521 through 601.527 (conference and practice requirements for alcohol, tobacco, and firearms activities) of this chapter. The Director may be represented in proceedings by an attorney in the office of Chief Counsel who is authorized to execute and file motions, briefs and other papers in the proceeding, on behalf of the Director, in his own name"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    182, 
+                    404
+                ], 
+                [
+                    "insert", 
+                    182, 
+                    "\u201cAttorney"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    409, 
+                    750
+                ], 
+                [
+                    "insert", 
+                    409, 
+                    "the"
+                ]
+            ]
+        ]
+    }, 
+    "478-78": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    106, 
+                    113
+                ], 
+                [
+                    "insert", 
+                    106, 
+                    "Tobacco, Firearms,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    118, 
+                    130
+                ], 
+                [
+                    "insert", 
+                    118, 
+                    "Explosives, or"
+                ]
+            ]
+        ]
+    }, 
+    "478-Subpart-H": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                4
+            ], 
+            [
+                "delete", 
+                4, 
+                5
+            ], 
+            [
+                "equal", 
+                5, 
+                16
+            ]
+        ], 
+        "op": "modified"
+    }
+}

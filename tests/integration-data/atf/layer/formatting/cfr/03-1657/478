@@ -1,0 +1,460 @@
+{
+    "478-122-b-p1": [
+        {
+            "locations": [
+                0
+            ], 
+            "table_data": {
+                "caption": "Importer's Firearms Disposition Record", 
+                "header": [
+                    [
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Quantity"
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Type"
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Manufacturer"
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Country of manufacture"
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Caliber or gauge"
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Model"
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Serial No."
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Name and license No. of licensee to whom transferred"
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Date of the transaction"
+                        }
+                    ]
+                ], 
+                "rows": [
+                    [
+                        ""
+                    ]
+                ]
+            }, 
+            "text": "|Importer's Firearms Disposition Record|Quantity|Type|Manufacturer|Country of manufacture|Caliber or gauge|Model|Serial No.|Name and license No. of licensee to whom transferred|Date of the transaction|\n|---|---|---|---|---|---|---|---|---|---|\n||"
+        }
+    ], 
+    "478-122-b-p2": [
+        {
+            "locations": [
+                0
+            ], 
+            "table_data": {
+                "caption": "Importer's Armor Piercing Ammunition Disposition Record", 
+                "header": [
+                    [
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Date"
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Manufacturer"
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Calibur or gauge"
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Quantity of projectiles"
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Purchaser\u2014Name and address"
+                        }
+                    ]
+                ], 
+                "rows": [
+                    [
+                        ""
+                    ]
+                ]
+            }, 
+            "text": "|Importer's Armor Piercing Ammunition Disposition Record|Date|Manufacturer|Calibur or gauge|Quantity of projectiles|Purchaser\u2014Name and address|\n|---|---|---|---|---|---|\n||"
+        }
+    ], 
+    "478-125-a-6-p2": [
+        {
+            "locations": [
+                0
+            ], 
+            "table_data": {
+                "caption": "Disposition Record of Armor Piercing Ammunition", 
+                "header": [
+                    [
+                        {
+                            "colspan": 1, 
+                            "rowspan": 2, 
+                            "text": "Date"
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 2, 
+                            "text": "Manufacturer"
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 2, 
+                            "text": "Caliber or gauge"
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 2, 
+                            "text": "Quantity of projectiles"
+                        }, 
+                        {
+                            "colspan": 2, 
+                            "rowspan": 1, 
+                            "text": "Purchaser"
+                        }, 
+                        {
+                            "colspan": 3, 
+                            "rowspan": 1, 
+                            "text": "Enter a (x) in the \u201cknown\u201d column if purchaser is personally known to you. Otherwise, establish the purchaser's identification"
+                        }
+                    ], 
+                    [
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Name and address"
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Date of birth"
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Known"
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Driver's license"
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Other type (specify)"
+                        }
+                    ]
+                ], 
+                "rows": [
+                    [
+                        ""
+                    ]
+                ]
+            }, 
+            "text": "|Disposition Record of Armor Piercing Ammunition|Date|Manufacturer|Caliber or gauge|Quantity of projectiles|Purchaser|Name and address|Date of birth|Enter a (x) in the \u201cknown\u201d column if purchaser is personally known to you. Otherwise, establish the purchaser's identification|Known|Driver's license|Other type (specify)|\n|---|---|---|---|---|---|---|---|---|---|---|---|\n||"
+        }
+    ], 
+    "478-125-e-p1": [
+        {
+            "locations": [
+                0
+            ], 
+            "table_data": {
+                "caption": "FIREARMS ACQUISITION AND DISPOSITION RECORD", 
+                "header": [
+                    [
+                        {
+                            "colspan": 5, 
+                            "rowspan": 1, 
+                            "text": "Description of firearm"
+                        }, 
+                        {
+                            "colspan": 2, 
+                            "rowspan": 1, 
+                            "text": "Receipt"
+                        }, 
+                        {
+                            "colspan": 3, 
+                            "rowspan": 1, 
+                            "text": "Disposition"
+                        }
+                    ], 
+                    [
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Manufacturer and/or Importer"
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Model"
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Serial No."
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Type"
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Caliber or gauge"
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Date"
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Name and address or name and license No."
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Date"
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Name"
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Address or license No. if licensee, or Form 4473 Serial No. if Forms 4473 filed numerically"
+                        }
+                    ]
+                ], 
+                "rows": [
+                    [
+                        ""
+                    ]
+                ]
+            }, 
+            "text": "|FIREARMS ACQUISITION AND DISPOSITION RECORD|Description of firearm|Manufacturer and/or Importer|Model|Serial No.|Type|Caliber or gauge|Receipt|Date|Name and address or name and license No.|Disposition|Date|Name|Address or license No. if licensee, or Form 4473 Serial No. if Forms 4473 filed numerically|\n|---|---|---|---|---|---|---|---|---|---|---|---|---|---|\n||"
+        }
+    ], 
+    "478-125-f-3-p1": [
+        {
+            "locations": [
+                0
+            ], 
+            "table_data": {
+                "caption": "Firearms Collectors Acquisition and Disposition Record", 
+                "header": [
+                    [
+                        {
+                            "colspan": 5, 
+                            "rowspan": 1, 
+                            "text": "Description of firearm"
+                        }, 
+                        {
+                            "colspan": 2, 
+                            "rowspan": 1, 
+                            "text": "Receipt"
+                        }, 
+                        {
+                            "colspan": 5, 
+                            "rowspan": 1, 
+                            "text": "Disposition"
+                        }
+                    ], 
+                    [
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Manufacturer and/or importer"
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Model"
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Serial No."
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Type"
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Caliber or gauge"
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Date"
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Name and address or name and license No."
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Date"
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Name and address or name and license No."
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Date of birth if nonlicensee"
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Driver's license No. or other identification if nonlicensee"
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "For transfers to aliens, documentation used to establish residency"
+                        }
+                    ]
+                ], 
+                "rows": [
+                    [
+                        ""
+                    ], 
+                    [
+                        ""
+                    ], 
+                    [
+                        ""
+                    ], 
+                    [
+                        ""
+                    ], 
+                    [
+                        ""
+                    ], 
+                    [
+                        ""
+                    ]
+                ]
+            }, 
+            "text": "|Firearms Collectors Acquisition and Disposition Record|Description of firearm|Manufacturer and/or importer|Model|Serial No.|Type|Caliber or gauge|Receipt|Date|Name and address or name and license No.|Disposition|Date|Name and address or name and license No.|Date of birth if nonlicensee|Driver's license No. or other identification if nonlicensee|For transfers to aliens, documentation used to establish residency|\n|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|\n||\n||\n||\n||\n||\n||"
+        }
+    ], 
+    "478-125a-a-4-p1": [
+        {
+            "locations": [
+                0
+            ], 
+            "table_data": {
+                "caption": "Disposition Record of Personal Firearms", 
+                "header": [
+                    [
+                        {
+                            "colspan": 5, 
+                            "rowspan": 1, 
+                            "text": "Description of firearm"
+                        }, 
+                        {
+                            "colspan": 3, 
+                            "rowspan": 1, 
+                            "text": "Disposition"
+                        }
+                    ], 
+                    [
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Manufacturer and/or importer"
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Model"
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Serial No."
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Type"
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Caliber or gauge"
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Date"
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Name and address (business address if licensee)"
+                        }, 
+                        {
+                            "colspan": 1, 
+                            "rowspan": 1, 
+                            "text": "Date of birth if nonlicensee"
+                        }
+                    ]
+                ], 
+                "rows": [
+                    [
+                        ""
+                    ]
+                ]
+            }, 
+            "text": "|Disposition Record of Personal Firearms|Description of firearm|Manufacturer and/or importer|Model|Serial No.|Type|Caliber or gauge|Disposition|Date|Name and address (business address if licensee)|Date of birth if nonlicensee|\n|---|---|---|---|---|---|---|---|---|---|---|\n||"
+        }
+    ]
+}

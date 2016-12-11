@@ -1,0 +1,258 @@
+{
+    "447-11-p4250035813": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    74, 
+                    81
+                ], 
+                [
+                    "insert", 
+                    74, 
+                    "Tobacco, Firearms,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    86, 
+                    94
+                ], 
+                [
+                    "insert", 
+                    86, 
+                    "Explosives"
+                ]
+            ]
+        ]
+    }, 
+    "447-11-p4263687456": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    27, 
+                    34
+                ], 
+                [
+                    "insert", 
+                    27, 
+                    "Tobacco, Firearms,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    39, 
+                    48
+                ], 
+                [
+                    "insert", 
+                    39, 
+                    "Explosives,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    67, 
+                    80
+                ], 
+                [
+                    "insert", 
+                    67, 
+                    "Justice."
+                ]
+            ]
+        ]
+    }, 
+    "447-11-p593154015": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    43, 
+                    50
+                ], 
+                [
+                    "insert", 
+                    43, 
+                    "Tobacco, Firearms,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    55, 
+                    64
+                ], 
+                [
+                    "insert", 
+                    55, 
+                    "Explosives,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    83, 
+                    96
+                ], 
+                [
+                    "insert", 
+                    83, 
+                    "Justice,"
+                ]
+            ]
+        ]
+    }, 
+    "447-32-c": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    300, 
+                    307
+                ], 
+                [
+                    "insert", 
+                    300, 
+                    "Tobacco, Firearms,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    312, 
+                    321
+                ], 
+                [
+                    "insert", 
+                    312, 
+                    "Explosives,"
+                ]
+            ]
+        ]
+    }, 
+    "447-35-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    53, 
+                    109
+                ], 
+                [
+                    "insert", 
+                    53, 
+                    "Center (http://www.atf.gov)"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    116, 
+                    163
+                ], 
+                [
+                    "insert", 
+                    116, 
+                    "calling (202) 648-6420."
+                ]
+            ]
+        ]
+    }, 
+    "447-43-a": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    68, 
+                    69
+                ], 
+                [
+                    "insert", 
+                    68, 
+                    "  "
+                ]
+            ]
+        ]
+    }, 
+    "447-52-b-2": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    209, 
+                    218
+                ], 
+                [
+                    "insert", 
+                    209, 
+                    "7.62 \u00d7 25mm"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    242, 
+                    251
+                ], 
+                [
+                    "insert", 
+                    242, 
+                    "7.63 \u00d7 25mm"
+                ]
+            ]
+        ]
+    }, 
+    "447-58": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    308, 
+                    315
+                ], 
+                [
+                    "insert", 
+                    308, 
+                    "submitting"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    350, 
+                    398
+                ], 
+                [
+                    "insert", 
+                    350, 
+                    "Center (http://www.atf.gov)"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    405, 
+                    452
+                ], 
+                [
+                    "insert", 
+                    405, 
+                    "calling (202) 648-6420"
+                ]
+            ]
+        ]
+    }
+}

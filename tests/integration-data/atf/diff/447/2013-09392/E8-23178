@@ -1,0 +1,606 @@
+{
+    "447-1": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    55, 
+                    72
+                ], 
+                [
+                    "insert", 
+                    55, 
+                    "Section 38,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    118, 
+                    164
+                ], 
+                [
+                    "insert", 
+                    118, 
+                    "which is concerned with the importation of arms, ammunition and implements of war. This part contains the U.S. Munitions Import List and includes procedural and administrative requirements and provisions relating to registration of importers, permits,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    174, 
+                    194
+                ], 
+                [
+                    "insert", 
+                    174, 
+                    "in transit, import certification, delivery verification, import restrictions applicable to certain countries, exemptions, U.S. military firearms or ammunition, penalties, seizures, and forfeitures. All designations and changes in designation of articles subject to import control under Section 414 of the Mutual Security Act of 1954,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    198, 
+                    484
+                ], 
+                [
+                    "insert", 
+                    198, 
+                    "amended, have the concurrence of the"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    504, 
+                    1518
+                ], 
+                [
+                    "insert", 
+                    504, 
+                    "and the"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    1532, 
+                    1905
+                ], 
+                [
+                    "insert", 
+                    1532, 
+                    "Defense."
+                ]
+            ]
+        ]
+    }, 
+    "447-11-p1448930519": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    20, 
+                    36
+                ], 
+                [
+                    "insert", 
+                    20, 
+                    "arms, ammunition, and implements of war"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    77, 
+                    90
+                ], 
+                [
+                    "insert", 
+                    77, 
+                    "List."
+                ]
+            ]
+        ]
+    }, 
+    "447-21": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                6
+            ], 
+            [
+                "delete", 
+                6, 
+                7
+            ], 
+            [
+                "equal", 
+                7, 
+                10
+            ], 
+            [
+                "delete", 
+                10, 
+                11
+            ], 
+            [
+                "equal", 
+                11, 
+                14
+            ], 
+            [
+                "delete", 
+                14, 
+                15
+            ], 
+            [
+                "equal", 
+                15, 
+                17
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "447-21-p1": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    4, 
+                    13
+                ], 
+                [
+                    "insert", 
+                    4, 
+                    "U.S. Munitions List compiled by the Department of State, Office of Defense Trade Controls, and published at 22 CFR 121.1, with the deletions indicated, has been adopted as an enumeration of the"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    31, 
+                    72
+                ], 
+                [
+                    "insert", 
+                    31, 
+                    "subject"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    76, 
+                    89
+                ], 
+                [
+                    "insert", 
+                    76, 
+                    "controls under this part. The expurgated list, set out below, shall, for the purposes"
+                ]
+            ], 
+            [
+                "insert", 
+                93, 
+                "this part, be known as "
+            ], 
+            [
+                "delete", 
+                97, 
+                255
+            ], 
+            [
+                [
+                    "delete", 
+                    277, 
+                    290
+                ], 
+                [
+                    "insert", 
+                    277, 
+                    "List:"
+                ]
+            ]
+        ]
+    }, 
+    "447-21-p1443292809": {
+        "op": "deleted"
+    }, 
+    "447-21-p2050545867": {
+        "op": "deleted"
+    }, 
+    "447-21-p2815177088": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                1
+            ], 
+            [
+                "delete", 
+                1, 
+                2
+            ]
+        ], 
+        "op": "modified", 
+        "title": [
+            [
+                [
+                    "delete", 
+                    9, 
+                    22
+                ], 
+                [
+                    "insert", 
+                    9, 
+                    "viii\u2014aircraft, spacecraft,"
+                ]
+            ]
+        ]
+    }, 
+    "447-21-p2815177088-a": {
+        "child_ops": [
+            [
+                "insert", 
+                0, 
+                [
+                    "447-21-p2815177088-a-p1", 
+                    "447-21-p2815177088-a-p2"
+                ]
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "447-21-p2815177088-a-p1": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "447", 
+                "21", 
+                "p2815177088", 
+                "a", 
+                "p1"
+            ], 
+            "node_type": "note", 
+            "tagged_text": "Category VIII (b) through (j) and Categories IX, X, XI, XII and XIII of \u201cMunitions List\u201d deleted as inapplicable to imports.", 
+            "text": "Category VIII (b) through (j) and Categories IX, X, XI, XII and XIII of \u201cMunitions List\u201d deleted as inapplicable to imports.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "447-21-p2815177088-a-p2": {
+        "node": {
+            "child_labels": [
+                "447-21-p2815177088-a-p2-a", 
+                "447-21-p2815177088-a-p2-b", 
+                "447-21-p2815177088-a-p2-c", 
+                "447-21-p2815177088-a-p2-d", 
+                "447-21-p2815177088-a-p2-e"
+            ], 
+            "label": [
+                "447", 
+                "21", 
+                "p2815177088", 
+                "a", 
+                "p2"
+            ], 
+            "node_type": "note", 
+            "tagged_text": "In Category VIII, \u201caircraft\u201d means aircraft designed, modified, or equipped for a military purpose, including aircraft described as \u201cdemilitarized.\u201d All aircraft bearing an original military designation are included in Category VIII. However, the following aircraft are not so included so long as they have not been specifically equipped, reequipped, or modified for military operations:", 
+            "text": "In Category VIII, \u201caircraft\u201d means aircraft designed, modified, or equipped for a military purpose, including aircraft described as \u201cdemilitarized.\u201d All aircraft bearing an original military designation are included in Category VIII. However, the following aircraft are not so included so long as they have not been specifically equipped, reequipped, or modified for military operations:", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "447-21-p2815177088-a-p2-a": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "447", 
+                "21", 
+                "p2815177088", 
+                "a", 
+                "p2", 
+                "a"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(a) Cargo aircraft bearing \u201cC\u201d designations and numbered C-45 through C-118 inclusive, and C-121 through C-125 inclusive, and C-131, using reciprocating engines only.", 
+            "text": "(a) Cargo aircraft bearing \u201cC\u201d designations and numbered C-45 through C-118 inclusive, and C-121 through C-125 inclusive, and C-131, using reciprocating engines only.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "447-21-p2815177088-a-p2-b": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "447", 
+                "21", 
+                "p2815177088", 
+                "a", 
+                "p2", 
+                "b"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(b) Trainer aircraft bearing \u201cT\u201d designations and using reciprocating engines or turboprop engines with less than 600 horsepower (s.h.p.).", 
+            "text": "(b) Trainer aircraft bearing \u201cT\u201d designations and using reciprocating engines or turboprop engines with less than 600 horsepower (s.h.p.).", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "447-21-p2815177088-a-p2-c": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "447", 
+                "21", 
+                "p2815177088", 
+                "a", 
+                "p2", 
+                "c"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(c) Utility aircraft bearing \u201cU\u201d designations and using reciprocating engines only.", 
+            "text": "(c) Utility aircraft bearing \u201cU\u201d designations and using reciprocating engines only.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "447-21-p2815177088-a-p2-d": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "447", 
+                "21", 
+                "p2815177088", 
+                "a", 
+                "p2", 
+                "d"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(d) All liaison aircraft bearing an \u201cL\u201d designation.", 
+            "text": "(d) All liaison aircraft bearing an \u201cL\u201d designation.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "447-21-p2815177088-a-p2-e": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "447", 
+                "21", 
+                "p2815177088", 
+                "a", 
+                "p2", 
+                "e"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(e) All observation aircraft bearing \u201cO\u201d designations and using reciprocating engines.", 
+            "text": "(e) All observation aircraft bearing \u201cO\u201d designations and using reciprocating engines.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "447-21-p2815177088-b": {
+        "op": "deleted"
+    }, 
+    "447-21-p2815177088-b-p1": {
+        "op": "deleted"
+    }, 
+    "447-21-p2815177088-b-p1-a": {
+        "op": "deleted"
+    }, 
+    "447-21-p2815177088-b-p1-b": {
+        "op": "deleted"
+    }, 
+    "447-21-p2815177088-b-p1-c": {
+        "op": "deleted"
+    }, 
+    "447-21-p2815177088-b-p1-d": {
+        "op": "deleted"
+    }, 
+    "447-21-p2815177088-b-p1-e": {
+        "op": "deleted"
+    }, 
+    "447-21-p3572827857": {
+        "op": "deleted"
+    }, 
+    "447-21-p60809944-b": {
+        "child_ops": [
+            [
+                "insert", 
+                0, 
+                [
+                    "447-21-p60809944-b-p1"
+                ]
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "447-21-p60809944-b-p1": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "447", 
+                "21", 
+                "p60809944", 
+                "b", 
+                "p1"
+            ], 
+            "node_type": "note", 
+            "tagged_text": "Categories XVII, XVIII, and XIX of \u201cMunitions List\u201d deleted as inapplicable to imports.", 
+            "text": "Categories XVII, XVIII, and XIX of \u201cMunitions List\u201d deleted as inapplicable to imports.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "447-21-p657734979": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                3
+            ], 
+            [
+                "delete", 
+                3, 
+                4
+            ], 
+            [
+                "equal", 
+                4, 
+                7
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "447-21-p657734979-c": {
+        "child_ops": [
+            [
+                "insert", 
+                0, 
+                [
+                    "447-21-p657734979-c-p1"
+                ]
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "447-21-p657734979-c-p1": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "447", 
+                "21", 
+                "p657734979", 
+                "c", 
+                "p1"
+            ], 
+            "node_type": "note", 
+            "tagged_text": "Category VII (d) and (e) of \u201cMunitions List\u201d deleted as inapplicable to imports.", 
+            "text": "Category VII (d) and (e) of \u201cMunitions List\u201d deleted as inapplicable to imports.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "447-21-p657734979-d": {
+        "op": "deleted"
+    }, 
+    "447-21-p731147738-h": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                1
+            ], 
+            [
+                "insert", 
+                1, 
+                [
+                    "447-21-p731147738-h-p2"
+                ]
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "447-21-p731147738-h-p2": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "447", 
+                "21", 
+                "p731147738", 
+                "h", 
+                "p2"
+            ], 
+            "node_type": "note", 
+            "tagged_text": "Category V of \u201cMunitions List\u201d deleted as inapplicable to imports.", 
+            "text": "Category V of \u201cMunitions List\u201d deleted as inapplicable to imports.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "447-21-p96906372": {
+        "op": "modified", 
+        "text": [
+            [
+                "delete", 
+                4, 
+                12
+            ], 
+            [
+                "insert", 
+                20, 
+                "not specifically enumerated in the other categories of the U.S. Munitions List which has substantial military applicability and which has been specifically designed "
+            ], 
+            [
+                [
+                    "delete", 
+                    23, 
+                    66
+                ], 
+                [
+                    "insert", 
+                    23, 
+                    "modified for military purposes. The decision on whether any article may be included"
+                ]
+            ], 
+            [
+                "insert", 
+                70, 
+                "this category shall be made by "
+            ], 
+            [
+                [
+                    "delete", 
+                    74, 
+                    90
+                ], 
+                [
+                    "insert", 
+                    74, 
+                    "Director, Office"
+                ]
+            ], 
+            [
+                "insert", 
+                94, 
+                "Defense Trade Controls, Department of State, with "
+            ], 
+            [
+                [
+                    "delete", 
+                    98, 
+                    311
+                ], 
+                [
+                    "insert", 
+                    98, 
+                    "concurrence of"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    316, 
+                    353
+                ], 
+                [
+                    "insert", 
+                    316, 
+                    "Department"
+                ]
+            ], 
+            [
+                "delete", 
+                357, 
+                401
+            ]
+        ]
+    }
+}

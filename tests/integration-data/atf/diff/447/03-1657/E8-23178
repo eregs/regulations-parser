@@ -1,0 +1,245 @@
+{
+    "447-11-p2275123666": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    308, 
+                    310
+                ], 
+                [
+                    "insert", 
+                    308, 
+                    "______"
+                ]
+            ]
+        ]
+    }, 
+    "447-11-p2998377869": {
+        "op": "modified", 
+        "text": [
+            [
+                "delete", 
+                190, 
+                287
+            ]
+        ]
+    }, 
+    "447-21": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                14
+            ], 
+            [
+                "delete", 
+                14, 
+                15
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "447-21-p306685262": {
+        "op": "deleted"
+    }, 
+    "447-21-p306685262-a": {
+        "op": "deleted"
+    }, 
+    "447-21-p306685262-b": {
+        "op": "deleted"
+    }, 
+    "447-21-p306685262-b-p1": {
+        "op": "deleted"
+    }, 
+    "447-21-p306685262-b-p2": {
+        "op": "deleted"
+    }, 
+    "447-21-p306685262-b-p2-1": {
+        "op": "deleted"
+    }, 
+    "447-21-p306685262-b-p2-2": {
+        "op": "deleted"
+    }, 
+    "447-21-p306685262-b-p2-3": {
+        "op": "deleted"
+    }, 
+    "447-21-p731147738-c": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    556, 
+                    580
+                ], 
+                [
+                    "insert", 
+                    556, 
+                    "devices, intervalometers,"
+                ]
+            ]
+        ]
+    }, 
+    "447-32-c": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    322, 
+                    343
+                ], 
+                [
+                    "insert", 
+                    322, 
+                    "Martinsburg, WV 25405,"
+                ]
+            ]
+        ]
+    }, 
+    "447-35-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    143, 
+                    169
+                ], 
+                [
+                    "insert", 
+                    143, 
+                    "http://www.atf.gov/."
+                ]
+            ]
+        ]
+    }, 
+    "447-52-a": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                198, 
+                " Afghanistan, Belarus (one of the states composing the former Soviet Union),"
+            ], 
+            [
+                [
+                    "delete", 
+                    261, 
+                    379
+                ], 
+                [
+                    "insert", 
+                    261, 
+                    "and Vietnam."
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    513, 
+                    520
+                ], 
+                [
+                    "insert", 
+                    513, 
+                    "Democratic"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    533, 
+                    568
+                ], 
+                [
+                    "insert", 
+                    533, 
+                    "the Congo,"
+                ]
+            ], 
+            [
+                "insert", 
+                609, 
+                "and "
+            ], 
+            [
+                [
+                    "delete", 
+                    615, 
+                    636
+                ], 
+                [
+                    "insert", 
+                    615, 
+                    "(Angola))."
+                ]
+            ]
+        ]
+    }, 
+    "447-52-a-p1": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    222, 
+                    236
+                ], 
+                [
+                    "insert", 
+                    222, 
+                    "(304) 616-4550"
+                ]
+            ]
+        ]
+    }, 
+    "447-52-b-2": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    209, 
+                    218
+                ], 
+                [
+                    "insert", 
+                    209, 
+                    "7.62\u00d725mm"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    242, 
+                    251
+                ], 
+                [
+                    "insert", 
+                    242, 
+                    "7.63\u00d725mm"
+                ]
+            ]
+        ]
+    }, 
+    "447-58": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    432, 
+                    458
+                ], 
+                [
+                    "insert", 
+                    432, 
+                    "http://www.atf.gov/."
+                ]
+            ]
+        ]
+    }
+}

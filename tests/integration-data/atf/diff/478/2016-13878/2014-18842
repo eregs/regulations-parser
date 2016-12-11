@@ -1,0 +1,557 @@
+{
+    "478-103-e": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                1
+            ], 
+            [
+                "insert", 
+                1, 
+                [
+                    "478-103-e-p2"
+                ]
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "478-103-e-p1-p5": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    337, 
+                    346
+                ], 
+                [
+                    "insert", 
+                    337, 
+                    "mailed"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    371, 
+                    433
+                ], 
+                [
+                    "insert", 
+                    371, 
+                    "Center, P.O. Box 5950, Springfield, Virginia 22150-5950."
+                ]
+            ]
+        ]
+    }, 
+    "478-103-e-p2": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "103", 
+                "e", 
+                "p2"
+            ], 
+            "node_type": "note", 
+            "tagged_text": "ATF I 5300.2 provides the complete language of the statutory prohibitions and exceptions provided in 18 U.S.C. 922(x) and the penalty provisions of 18 U.S.C. 924(a)(6). The Federal firearms licensee posting this sign will provide you with a copy of this publication upon request. Requests for additional copies of ATF I 5300.2 should be submitted to the ATF Distribution Center (<E T=\"03\">http://www.atf.gov</E>) or made by calling (202) 648-6420.", 
+            "text": "ATF I 5300.2 provides the complete language of the statutory prohibitions and exceptions provided in 18 U.S.C. 922(x) and the penalty provisions of 18 U.S.C. 924(a)(6). The Federal firearms licensee posting this sign will provide you with a copy of this publication upon request. Requests for additional copies of ATF I 5300.2 should be submitted to the ATF Distribution Center (http://www.atf.gov) or made by calling (202) 648-6420.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-124a": {
+        "node": {
+            "child_labels": [
+                "478-124a-a", 
+                "478-124a-b", 
+                "478-124a-c", 
+                "478-124a-d", 
+                "478-124a-e", 
+                "478-124a-f"
+            ], 
+            "label": [
+                "478", 
+                "124a"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "\n        ", 
+            "text": "", 
+            "title": "\u00a7 478.124a Firearms transaction record in lieu of record of receipt and disposition."
+        }, 
+        "op": "added"
+    }, 
+    "478-124a-a": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "124a", 
+                "a"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(a) A licensed dealer acquiring firearms after August 1, 1988 and contemplating the disposition of not more than 50 firearms within a succeeding 12-month period to licensees or nonlicensees may maintain a record of the acquisition and disposition of such firearms on a firearms transaction record, Form 4473(LV), Part I or II, in lieu of the records prescribed by \u00a7 478.125. Such 12-month period shall commence from the date the licensed dealer first records the purchase or other acquisition of a firearm on Form 4473(LV) pursuant to this section. A licensed dealer who maintains records pursuant to this section, but whose firearms dispositions exceed 50 firearms within such 12-month period, shall make and maintain the acquisition and disposition records required by \u00a7 478.125 with respect to each firearm exceeding 50.", 
+            "text": "(a) A licensed dealer acquiring firearms after August 1, 1988 and contemplating the disposition of not more than 50 firearms within a succeeding 12-month period to licensees or nonlicensees may maintain a record of the acquisition and disposition of such firearms on a firearms transaction record, Form 4473(LV), Part I or II, in lieu of the records prescribed by \u00a7 478.125. Such 12-month period shall commence from the date the licensed dealer first records the purchase or other acquisition of a firearm on Form 4473(LV) pursuant to this section. A licensed dealer who maintains records pursuant to this section, but whose firearms dispositions exceed 50 firearms within such 12-month period, shall make and maintain the acquisition and disposition records required by \u00a7 478.125 with respect to each firearm exceeding 50.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-124a-b": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "124a", 
+                "b"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(b) Each licensed dealer maintaining firearms acquisition and disposition records pursuant to this section shall record the purchase or other acquisition of a firearm on Form 4473(LV), Part I or II, in accordance with the instructions on the form not later than the close of the next business day following the date of such purchase or acquisition. However, when disposition is made of a firearm before the close of the next business day after the receipt of that firearm, the licensed dealer making such disposition shall enter all required acquisition information regarding the firearm on the Form 4473(LV) at the time such transfer or disposition is made. The record on Form 4473(LV) shall show the date of receipt, the name and address or the name and license number of the person from whom received, the name of the manufacturer and importer (if any), the model, serial number, type, and caliber or gauge of the firearm.", 
+            "text": "(b) Each licensed dealer maintaining firearms acquisition and disposition records pursuant to this section shall record the purchase or other acquisition of a firearm on Form 4473(LV), Part I or II, in accordance with the instructions on the form not later than the close of the next business day following the date of such purchase or acquisition. However, when disposition is made of a firearm before the close of the next business day after the receipt of that firearm, the licensed dealer making such disposition shall enter all required acquisition information regarding the firearm on the Form 4473(LV) at the time such transfer or disposition is made. The record on Form 4473(LV) shall show the date of receipt, the name and address or the name and license number of the person from whom received, the name of the manufacturer and importer (if any), the model, serial number, type, and caliber or gauge of the firearm.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-124a-c": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "124a", 
+                "c"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(c) Each licensed dealer maintaining firearms acquisition and disposition records pursuant to this section shall retain Form 4473(LV), Part I or II, reflecting firearms possessed by such business in chronological (by date of receipt) or numerical (by transaction serial number) order. Forms 4473(LV) reflecting the licensee's sale or disposition of firearms shall be retained in alphabetical (by name of purchaser), chronological (by date of disposition) or numerical (by transaction serial number) order.", 
+            "text": "(c) Each licensed dealer maintaining firearms acquisition and disposition records pursuant to this section shall retain Form 4473(LV), Part I or II, reflecting firearms possessed by such business in chronological (by date of receipt) or numerical (by transaction serial number) order. Forms 4473(LV) reflecting the licensee's sale or disposition of firearms shall be retained in alphabetical (by name of purchaser), chronological (by date of disposition) or numerical (by transaction serial number) order.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-124a-d": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "124a", 
+                "d"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(d) A licensed dealer maintaining records pursuant to this section shall record the sale or other disposition of a firearm to another licensee by entering on the Form 4473(LV), Part I, associated with such firearm, the name and license number of the person to whom transferred and by signing and dating the form.", 
+            "text": "(d) A licensed dealer maintaining records pursuant to this section shall record the sale or other disposition of a firearm to another licensee by entering on the Form 4473(LV), Part I, associated with such firearm, the name and license number of the person to whom transferred and by signing and dating the form.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-124a-e": {
+        "node": {
+            "child_labels": [
+                "478-124a-e-1", 
+                "478-124a-e-2", 
+                "478-124a-e-3"
+            ], 
+            "label": [
+                "478", 
+                "124a", 
+                "e"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(e) A licensed dealer shall obtain the Form 4473(LV), Part I, associated with the firearm in lieu of a Form 4473 and comply with the requirements specified in \u00a7 478.124(c) prior to making an over-the-counter transfer of a firearm to a nonlicensee:", 
+            "text": "(e) A licensed dealer shall obtain the Form 4473(LV), Part I, associated with the firearm in lieu of a Form 4473 and comply with the requirements specified in \u00a7 478.124(c) prior to making an over-the-counter transfer of a firearm to a nonlicensee:", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-124a-e-1": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "124a", 
+                "e", 
+                "1"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(1) Who is a resident of the State in which the licensee's business premises is located,", 
+            "text": "(1) Who is a resident of the State in which the licensee's business premises is located,", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-124a-e-2": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "124a", 
+                "e", 
+                "2"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(2) Who is not a resident of the State in which the licensee's business premises is located and the firearm is a shotgun or rifle and the transfer is under the provisions of \u00a7 478.96(c), or", 
+            "text": "(2) Who is not a resident of the State in which the licensee's business premises is located and the firearm is a shotgun or rifle and the transfer is under the provisions of \u00a7 478.96(c), or", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-124a-e-3": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "124a", 
+                "e", 
+                "3"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(3) Who is not a resident of the State in which the licensee's business premises is located and who is acquiring the firearm by loan or rental for temporary use for lawful sporting purposes.", 
+            "text": "(3) Who is not a resident of the State in which the licensee's business premises is located and who is acquiring the firearm by loan or rental for temporary use for lawful sporting purposes.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-124a-f": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "124a", 
+                "f"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(f) A licensed dealer shall obtain the Form 4473(LV), Part II, associated with the firearm in lieu of a Form 4473 and comply with the requirements specified in \u00a7 478.124(f) prior to making a disposition of a firearm to a nonlicensee who is purchasing or otherwise acquiring a firearm by other than an over-the-counter transaction and who is a resident of the State in which the licensee's business premises is located. If the licensee's record of the acquisition of the firearm is, at the time of the disposition, being maintained on a Form 4473(LV), Part I, for over-the-counter transactions, the licensee shall transfer the information relative to the receipt of the firearm, as required by paragraph (b) of this section, to Form 4473(LV), Part II. The corresponding form 4473(LV), Part I, may then be destroyed.", 
+            "text": "(f) A licensed dealer shall obtain the Form 4473(LV), Part II, associated with the firearm in lieu of a Form 4473 and comply with the requirements specified in \u00a7 478.124(f) prior to making a disposition of a firearm to a nonlicensee who is purchasing or otherwise acquiring a firearm by other than an over-the-counter transaction and who is a resident of the State in which the licensee's business premises is located. If the licensee's record of the acquisition of the firearm is, at the time of the disposition, being maintained on a Form 4473(LV), Part I, for over-the-counter transactions, the licensee shall transfer the information relative to the receipt of the firearm, as required by paragraph (b) of this section, to Form 4473(LV), Part II. The corresponding form 4473(LV), Part I, may then be destroyed.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-125-e": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    49, 
+                    53
+                ], 
+                [
+                    "insert", 
+                    49, 
+                    "Except as provided in \u00a7 478.124a with respect to alternate records for the receipt and disposition of firearms by dealers, each"
+                ]
+            ]
+        ]
+    }, 
+    "478-125-e-p1": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                81, 
+                "and/or Importer|Model|Serial No.|Type|Caliber or gauge|Receipt|Date|Name "
+            ], 
+            [
+                [
+                    "delete", 
+                    85, 
+                    132
+                ], 
+                [
+                    "insert", 
+                    85, 
+                    "address"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    136, 
+                    159
+                ], 
+                [
+                    "insert", 
+                    136, 
+                    "name"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    164, 
+                    171
+                ], 
+                [
+                    "insert", 
+                    164, 
+                    "license No.|Disposition|Date|Name|Address"
+                ]
+            ], 
+            [
+                "delete", 
+                175, 
+                184
+            ], 
+            [
+                [
+                    "delete", 
+                    192, 
+                    225
+                ], 
+                [
+                    "insert", 
+                    192, 
+                    "No. if licensee,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    229, 
+                    236
+                ], 
+                [
+                    "insert", 
+                    229, 
+                    "Form 4473 Serial"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    244, 
+                    261
+                ], 
+                [
+                    "insert", 
+                    244, 
+                    "Forms"
+                ]
+            ], 
+            [
+                "delete", 
+                267, 
+                292
+            ]
+        ]
+    }, 
+    "478-125-f-2-p1": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                92, 
+                "and/or importer|Model|Serial No.|Type|Caliber or gauge|Receipt|Date|Name "
+            ], 
+            [
+                [
+                    "delete", 
+                    96, 
+                    143
+                ], 
+                [
+                    "insert", 
+                    96, 
+                    "address"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    147, 
+                    170
+                ], 
+                [
+                    "insert", 
+                    147, 
+                    "name"
+                ]
+            ], 
+            [
+                "insert", 
+                175, 
+                "license No.|Disposition|Date|Name and "
+            ], 
+            [
+                [
+                    "delete", 
+                    203, 
+                    240
+                ], 
+                [
+                    "insert", 
+                    203, 
+                    "No.|Date of birth if non-licensee|Driver's license No."
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    244, 
+                    278
+                ], 
+                [
+                    "insert", 
+                    244, 
+                    "other identification"
+                ]
+            ], 
+            [
+                "delete", 
+                282, 
+                343
+            ]
+        ]
+    }, 
+    "478-125a-a-4-p1": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                77, 
+                "and/or importer|Model|Serial No.|Type|Caliber or gauge|Disposition|Date|Name "
+            ], 
+            [
+                "delete", 
+                81, 
+                164
+            ]
+        ]
+    }, 
+    "478-39a": {
+        "child_ops": [
+            [
+                "delete", 
+                0, 
+                6
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                0, 
+                "Each licensee shall report the theft or loss of a firearm from the licensee's inventory (including any firearm which has been transferred from the licensee's inventory to a personal collection and held as a personal firearm for at least 1 year), or from the collection of a licensed collector, within 48 hours after the theft or loss is discovered. Licensees shall report thefts or losses by telephoning 1-888-930-9275 (nationwide toll free number) and by preparing ATF Form 3310.11, Federal Firearms Licensee Theft/Loss Report, in accordance with the instructions on the form. The original of the report shall be forwarded to the office specified thereon, and Copy 1 shall be retained by the licensee as part of the licensee's permanent records. Theft or loss of any firearm shall also be reported to the appropriate local authorities."
+            ]
+        ]
+    }, 
+    "478-39a-a": {
+        "op": "deleted"
+    }, 
+    "478-39a-a-1": {
+        "op": "deleted"
+    }, 
+    "478-39a-a-2": {
+        "op": "deleted"
+    }, 
+    "478-39a-b": {
+        "op": "deleted"
+    }, 
+    "478-39a-c": {
+        "op": "deleted"
+    }, 
+    "478-39a-d": {
+        "op": "deleted"
+    }, 
+    "478-39a-e": {
+        "op": "deleted"
+    }, 
+    "478-39a-f": {
+        "op": "deleted"
+    }, 
+    "478-44-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    928, 
+                    938
+                ], 
+                [
+                    "insert", 
+                    928, 
+                    "922(y)(3).The application must be executed under the penalties of perjury and the penalties imposed by 18 U.S.C. 924."
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    955, 
+                    959
+                ], 
+                [
+                    "insert", 
+                    955, 
+                    "shall include the appropriate fee in the form of a money order or check made payable to the Bureau of Alcohol, Tobacco, Firearms, and Explosives. ATF Form 7CR (Curios and Relics) may"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    963, 
+                    1028
+                ], 
+                [
+                    "insert", 
+                    963, 
+                    "obtained"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    1032, 
+                    1208
+                ], 
+                [
+                    "insert", 
+                    1032, 
+                    "contacting the"
+                ]
+            ], 
+            [
+                "delete", 
+                1213, 
+                1280
+            ]
+        ]
+    }, 
+    "478-45": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    810, 
+                    824
+                ], 
+                [
+                    "insert", 
+                    810, 
+                    "922(y)(3).The"
+                ]
+            ]
+        ]
+    }, 
+    "478-Subpart-H": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                4
+            ], 
+            [
+                "insert", 
+                4, 
+                [
+                    "478-124a"
+                ]
+            ], 
+            [
+                "equal", 
+                4, 
+                15
+            ]
+        ], 
+        "op": "modified"
+    }
+}

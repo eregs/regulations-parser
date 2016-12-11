@@ -1,0 +1,1346 @@
+{
+    "478-11": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                11
+            ], 
+            [
+                "delete", 
+                11, 
+                12
+            ], 
+            [
+                "insert", 
+                11, 
+                [
+                    "478-11-p3465012724"
+                ]
+            ], 
+            [
+                "equal", 
+                12, 
+                79
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "478-11-p3465012724": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "11", 
+                "p3465012724"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "<E T=\"03\">Chief, National Licensing Center.</E> The ATF official responsible for the issuance and renewal of licenses under this part.", 
+            "text": "Chief, National Licensing Center. The ATF official responsible for the issuance and renewal of licenses under this part.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-11-p3841034136": {
+        "op": "deleted"
+    }, 
+    "478-114-a-1-vi": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    47, 
+                    50
+                ], 
+                [
+                    "insert", 
+                    47, 
+                    "is \u2014"
+                ]
+            ]
+        ]
+    }, 
+    "478-124-i": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    203, 
+                    225
+                ], 
+                [
+                    "insert", 
+                    203, 
+                    "Center, 7943 Angus Court, Springfield, Virginia 22153."
+                ]
+            ]
+        ]
+    }, 
+    "478-124a-a": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                481, 
+                "acuisition of a firearm on Form 4473(LV) pursuant to this section. A licensed dealer who maintains records pursuant to this section, but whose firearms dispositions exceed 50 firearms within such 12-month period, shall make and maintain the "
+            ], 
+            [
+                [
+                    "delete", 
+                    493, 
+                    497
+                ], 
+                [
+                    "insert", 
+                    493, 
+                    "and disposition records required by \u00a7 478.125 with respect to each"
+                ]
+            ], 
+            [
+                "delete", 
+                506, 
+                810
+            ]
+        ]
+    }, 
+    "478-125-e-p1": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    0, 
+                    21
+                ], 
+                [
+                    "insert", 
+                    0, 
+                    "|FIREARMS ACQUISITION AND DISPOSITION RECORD|Description of firearm|Manufacturer and/or Importer|Model|Serial No.|Type|Caliber or gauge|Receipt|Date|Name"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    26, 
+                    126
+                ], 
+                [
+                    "insert", 
+                    26, 
+                    "address"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    130, 
+                    153
+                ], 
+                [
+                    "insert", 
+                    130, 
+                    "name"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    158, 
+                    165
+                ], 
+                [
+                    "insert", 
+                    158, 
+                    "license No.|Disposition|Date|Name|Address"
+                ]
+            ], 
+            [
+                "delete", 
+                169, 
+                178
+            ], 
+            [
+                [
+                    "delete", 
+                    186, 
+                    219
+                ], 
+                [
+                    "insert", 
+                    186, 
+                    "No. if licensee,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    223, 
+                    230
+                ], 
+                [
+                    "insert", 
+                    223, 
+                    "Form 4473 Serial"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    238, 
+                    255
+                ], 
+                [
+                    "insert", 
+                    238, 
+                    "Forms"
+                ]
+            ], 
+            [
+                "delete", 
+                261, 
+                286
+            ]
+        ]
+    }, 
+    "478-125-f": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                1555, 
+                "shall cause the transferee, if other than a licensee, to be identified in any manner customarily used in commercial transactions (e.g., a driver's license), and shall note on the record the method used. In addition, the licensee "
+            ]
+        ]
+    }, 
+    "478-125-g": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    846, 
+                    858
+                ], 
+                [
+                    "insert", 
+                    846, 
+                    " "
+                ]
+            ]
+        ]
+    }, 
+    "478-127": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    371, 
+                    399
+                ], 
+                [
+                    "insert", 
+                    371, 
+                    "Spring Mills Office Park, 2029 Stonewall Jackson Drive, Falling Waters,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    414, 
+                    420
+                ], 
+                [
+                    "insert", 
+                    414, 
+                    "25419,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    623, 
+                    639
+                ], 
+                [
+                    "insert", 
+                    623, 
+                    "National"
+                ]
+            ]
+        ]
+    }, 
+    "478-21-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    72, 
+                    94
+                ], 
+                [
+                    "insert", 
+                    72, 
+                    "7943 Angus Court,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    117, 
+                    123
+                ], 
+                [
+                    "insert", 
+                    117, 
+                    "22153."
+                ]
+            ]
+        ]
+    }, 
+    "478-24-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    309, 
+                    380
+                ], 
+                [
+                    "insert", 
+                    309, 
+                    "Office of"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    385, 
+                    397
+                ], 
+                [
+                    "insert", 
+                    385, 
+                    "Federal Register, 800 North Capitol Street, NW., suite 700, Washington, DC. This incorporation by reference was approved by the Director"
+                ]
+            ], 
+            [
+                "delete", 
+                401, 
+                590
+            ], 
+            [
+                "delete", 
+                594, 
+                610
+            ]
+        ]
+    }, 
+    "478-25a": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    711, 
+                    726
+                ], 
+                [
+                    "insert", 
+                    711, 
+                    "1-800-578-7223."
+                ]
+            ]
+        ]
+    }, 
+    "478-39a": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    404, 
+                    418
+                ], 
+                [
+                    "insert", 
+                    404, 
+                    "1-800-800-3855"
+                ]
+            ]
+        ]
+    }, 
+    "478-41-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    352, 
+                    368
+                ], 
+                [
+                    "insert", 
+                    352, 
+                    "National"
+                ]
+            ]
+        ]
+    }, 
+    "478-41-c": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    267, 
+                    283
+                ], 
+                [
+                    "insert", 
+                    267, 
+                    "National"
+                ]
+            ]
+        ]
+    }, 
+    "478-44-a-1": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                4
+            ], 
+            [
+                "insert", 
+                4, 
+                [
+                    "478-44-a-1-v"
+                ]
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "478-44-a-1-iii": {
+        "op": "modified", 
+        "text": [
+            [
+                "delete", 
+                533, 
+                537
+            ]
+        ]
+    }, 
+    "478-44-a-1-iv": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    5, 
+                    44
+                ], 
+                [
+                    "insert", 
+                    5, 
+                    "Be accompanied by a completed ATF Form 5300.37 (Certification"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    48, 
+                    81
+                ], 
+                [
+                    "insert", 
+                    48, 
+                    "Compliance with State and Local Law) and ATF Form 5300.36 (Notification of Intent"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    85, 
+                    127
+                ], 
+                [
+                    "insert", 
+                    85, 
+                    "Apply for a Federal Firearms License);"
+                ]
+            ], 
+            [
+                "delete", 
+                131, 
+                144
+            ]
+        ]
+    }, 
+    "478-44-a-1-v": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "44", 
+                "a", 
+                "1", 
+                "v"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(v) Include the appropriate fee in the form of money order or check made payable to the Bureau of Alcohol, Tobacco and Firearms.", 
+            "text": "(v) Include the appropriate fee in the form of money order or check made payable to the Bureau of Alcohol, Tobacco and Firearms.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-44-a-2": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    8, 
+                    12
+                ], 
+                [
+                    "insert", 
+                    8, 
+                    "Forms"
+                ]
+            ], 
+            [
+                "insert", 
+                15, 
+                "(Firearms), ATF Forms 5300.37, and ATF Forms 5300.36 "
+            ], 
+            [
+                [
+                    "delete", 
+                    45, 
+                    48
+                ], 
+                [
+                    "insert", 
+                    45, 
+                    "any"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    53, 
+                    88
+                ], 
+                [
+                    "insert", 
+                    53, 
+                    "office."
+                ]
+            ]
+        ]
+    }, 
+    "478-44-b": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                1004, 
+                "be accompanied by a completed ATF Form 5300.37 and ATF Form 5300.36 and shall "
+            ], 
+            [
+                [
+                    "delete", 
+                    1109, 
+                    1152
+                ], 
+                [
+                    "insert", 
+                    1109, 
+                    "Tobacco and Firearms. ATF Forms"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    1169, 
+                    1176
+                ], 
+                [
+                    "insert", 
+                    1169, 
+                    "Relics), ATF Forms 5300.37, and ATF Forms 5300.36"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    1207, 
+                    1250
+                ], 
+                [
+                    "insert", 
+                    1207, 
+                    "any ATF office."
+                ]
+            ]
+        ]
+    }, 
+    "478-45": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    216, 
+                    232
+                ], 
+                [
+                    "insert", 
+                    216, 
+                    "National"
+                ]
+            ], 
+            [
+                "insert", 
+                374, 
+                "accompanied by a completed ATF Form 5300.37 and ATF Form 5300.36, "
+            ], 
+            [
+                [
+                    "delete", 
+                    417, 
+                    422
+                ], 
+                [
+                    "insert", 
+                    417, 
+                    "forms,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    768, 
+                    784
+                ], 
+                [
+                    "insert", 
+                    768, 
+                    "National"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    795, 
+                    801
+                ], 
+                [
+                    "insert", 
+                    795, 
+                    "Center,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    1286, 
+                    1302
+                ], 
+                [
+                    "insert", 
+                    1286, 
+                    "National"
+                ]
+            ]
+        ]
+    }, 
+    "478-47-a": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    129, 
+                    145
+                ], 
+                [
+                    "insert", 
+                    129, 
+                    "National"
+                ]
+            ]
+        ]
+    }, 
+    "478-47-b": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                5
+            ], 
+            [
+                "insert", 
+                5, 
+                [
+                    "478-47-b-6"
+                ]
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    15, 
+                    31
+                ], 
+                [
+                    "insert", 
+                    15, 
+                    "National"
+                ]
+            ]
+        ]
+    }, 
+    "478-47-b-4": {
+        "op": "modified", 
+        "text": [
+            [
+                "delete", 
+                186, 
+                190
+            ]
+        ]
+    }, 
+    "478-47-b-5": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    395, 
+                    400
+                ], 
+                [
+                    "insert", 
+                    395, 
+                    "time; and"
+                ]
+            ]
+        ]
+    }, 
+    "478-47-b-6": {
+        "node": {
+            "child_labels": [
+                "478-47-b-6-i", 
+                "478-47-b-6-ii", 
+                "478-47-b-6-iii", 
+                "478-47-b-6-iv"
+            ], 
+            "label": [
+                "478", 
+                "47", 
+                "b", 
+                "6"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(6) The applicant has filed an ATF Form 5300.37 (Certification of Compliance with State and Local Law) with ATF in accordance with the instructions on the form certifying under the penalties of perjury that\u2014", 
+            "text": "(6) The applicant has filed an ATF Form 5300.37 (Certification of Compliance with State and Local Law) with ATF in accordance with the instructions on the form certifying under the penalties of perjury that\u2014", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-47-b-6-i": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "47", 
+                "b", 
+                "6", 
+                "i"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(i) The business to be conducted under the license is not prohibited by State or local law in the place where the licensed premises are located;", 
+            "text": "(i) The business to be conducted under the license is not prohibited by State or local law in the place where the licensed premises are located;", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-47-b-6-ii": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "47", 
+                "b", 
+                "6", 
+                "ii"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(ii) Within 30 days after the application is approved the business will comply with the requirements of State and local law applicable to the conduct of business;", 
+            "text": "(ii) Within 30 days after the application is approved the business will comply with the requirements of State and local law applicable to the conduct of business;", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-47-b-6-iii": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "47", 
+                "b", 
+                "6", 
+                "iii"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(iii) The business will not be conducted under the license until the requirements of State and local law applicable to the business have been met; and", 
+            "text": "(iii) The business will not be conducted under the license until the requirements of State and local law applicable to the business have been met; and", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-47-b-6-iv": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "47", 
+                "b", 
+                "6", 
+                "iv"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(iv) The applicant has completed and sent or delivered ATF F 5300.36 (Notification of Intent to Apply for a Federal Firearms License) to the chief law enforcement officer of the locality in which the premises are located, which indicates that the applicant intends to apply for a Federal firearms license. For purposes of this paragraph, the \u201cchief law enforcement officer\u201d is the chief of police, the sheriff, or an equivalent officer.", 
+            "text": "(iv) The applicant has completed and sent or delivered ATF F 5300.36 (Notification of Intent to Apply for a Federal Firearms License) to the chief law enforcement officer of the locality in which the premises are located, which indicates that the applicant intends to apply for a Federal firearms license. For purposes of this paragraph, the \u201cchief law enforcement officer\u201d is the chief of police, the sheriff, or an equivalent officer.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-47-c": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    15, 
+                    31
+                ], 
+                [
+                    "insert", 
+                    15, 
+                    "National"
+                ]
+            ]
+        ]
+    }, 
+    "478-47-d": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    59, 
+                    75
+                ], 
+                [
+                    "insert", 
+                    59, 
+                    "National"
+                ]
+            ]
+        ]
+    }, 
+    "478-48-a": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    248, 
+                    282
+                ], 
+                [
+                    "insert", 
+                    248, 
+                    "National Licensing Center,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    344, 
+                    384
+                ], 
+                [
+                    "insert", 
+                    344, 
+                    "National Licensing Center, shall"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    581, 
+                    621
+                ], 
+                [
+                    "insert", 
+                    581, 
+                    "National Licensing Center, shall"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    875, 
+                    915
+                ], 
+                [
+                    "insert", 
+                    875, 
+                    "National Licensing Center, shall"
+                ]
+            ]
+        ]
+    }, 
+    "478-48-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    20, 
+                    54
+                ], 
+                [
+                    "insert", 
+                    20, 
+                    "National Licensing Center,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    169, 
+                    203
+                ], 
+                [
+                    "insert", 
+                    169, 
+                    "National Licensing Center,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    409, 
+                    443
+                ], 
+                [
+                    "insert", 
+                    409, 
+                    "National Licensing Center,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    619, 
+                    653
+                ], 
+                [
+                    "insert", 
+                    619, 
+                    "National Licensing Center,"
+                ]
+            ]
+        ]
+    }, 
+    "478-52-a": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    338, 
+                    354
+                ], 
+                [
+                    "insert", 
+                    338, 
+                    "National"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    650, 
+                    666
+                ], 
+                [
+                    "insert", 
+                    650, 
+                    "National"
+                ]
+            ], 
+            [
+                "delete", 
+                677, 
+                684
+            ]
+        ]
+    }, 
+    "478-52-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    87, 
+                    103
+                ], 
+                [
+                    "insert", 
+                    87, 
+                    "National"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    403, 
+                    419
+                ], 
+                [
+                    "insert", 
+                    403, 
+                    "National"
+                ]
+            ]
+        ]
+    }, 
+    "478-53": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    294, 
+                    310
+                ], 
+                [
+                    "insert", 
+                    294, 
+                    "National"
+                ]
+            ]
+        ]
+    }, 
+    "478-54": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    477, 
+                    493
+                ], 
+                [
+                    "insert", 
+                    477, 
+                    "National"
+                ]
+            ]
+        ]
+    }, 
+    "478-56-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    198, 
+                    214
+                ], 
+                [
+                    "insert", 
+                    198, 
+                    "National"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    225, 
+                    233
+                ], 
+                [
+                    "insert", 
+                    225, 
+                    "Center,"
+                ]
+            ]
+        ]
+    }, 
+    "478-57-a": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    198, 
+                    214
+                ], 
+                [
+                    "insert", 
+                    198, 
+                    "National"
+                ]
+            ]
+        ]
+    }, 
+    "478-60": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    51, 
+                    67
+                ], 
+                [
+                    "insert", 
+                    51, 
+                    "National"
+                ]
+            ]
+        ]
+    }, 
+    "478-71": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                22, 
+                "of Industry Operations "
+            ]
+        ]
+    }, 
+    "478-72": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    246, 
+                    256
+                ], 
+                [
+                    "insert", 
+                    246, 
+                    "denial. The"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    579, 
+                    588
+                ], 
+                [
+                    "insert", 
+                    579, 
+                    "held. Such"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    832, 
+                    837
+                ], 
+                [
+                    "insert", 
+                    832, 
+                    "of Industry Operations shall"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    986, 
+                    996
+                ], 
+                [
+                    "insert", 
+                    986, 
+                    "Director of Industry Operations"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    1094, 
+                    1100
+                ], 
+                [
+                    "insert", 
+                    1094, 
+                    "4501. A"
+                ]
+            ]
+        ]
+    }, 
+    "478-73-a": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    44, 
+                    47
+                ], 
+                [
+                    "insert", 
+                    44, 
+                    "of Industry Operations has"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    345, 
+                    348
+                ], 
+                [
+                    "insert", 
+                    345, 
+                    "of Industry Operations has"
+                ]
+            ]
+        ]
+    }, 
+    "478-73-b": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                188, 
+                "of Industry Operations "
+            ], 
+            [
+                "insert", 
+                447, 
+                "of Industry Operations "
+            ]
+        ]
+    }, 
+    "478-74": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                846, 
+                "of Industry Operations "
+            ]
+        ]
+    }, 
+    "478-76": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                482, 
+                "of Industry Operations "
+            ], 
+            [
+                [
+                    "delete", 
+                    703, 
+                    715
+                ], 
+                [
+                    "insert", 
+                    703, 
+                    "Director of Industry Operations, in"
+                ]
+            ]
+        ]
+    }, 
+    "478-78": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                1207, 
+                "of Industry Operations "
+            ]
+        ]
+    }, 
+    "478-95": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    492, 
+                    508
+                ], 
+                [
+                    "insert", 
+                    492, 
+                    "National"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    872, 
+                    890
+                ], 
+                [
+                    "insert", 
+                    872, 
+                    "Tobacco"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    895, 
+                    906
+                ], 
+                [
+                    "insert", 
+                    895, 
+                    "Firearms."
+                ]
+            ]
+        ]
+    }, 
+    "478-96-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    433, 
+                    441
+                ], 
+                [
+                    "insert", 
+                    433, 
+                    "478.424."
+                ]
+            ]
+        ]
+    }
+}

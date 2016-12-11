@@ -1,0 +1,806 @@
+{
+    "479": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                10
+            ], 
+            [
+                "delete", 
+                10, 
+                11
+            ], 
+            [
+                "insert", 
+                10, 
+                [
+                    "479-Subjgrp-AtMaF"
+                ]
+            ], 
+            [
+                "equal", 
+                11, 
+                30
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "479-11": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                8
+            ], 
+            [
+                "delete", 
+                8, 
+                9
+            ], 
+            [
+                "equal", 
+                9, 
+                27
+            ], 
+            [
+                "delete", 
+                27, 
+                28
+            ], 
+            [
+                "insert", 
+                27, 
+                [
+                    "479-11-p2792822644"
+                ]
+            ], 
+            [
+                "equal", 
+                28, 
+                35
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "479-11-p2162297120": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    32, 
+                    36
+                ], 
+                [
+                    "insert", 
+                    32, 
+                    "the"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    45, 
+                    67
+                ], 
+                [
+                    "insert", 
+                    45, 
+                    "Service or"
+                ]
+            ], 
+            [
+                "insert", 
+                179, 
+                "or designated by the Secretary of the Treasury "
+            ], 
+            [
+                "insert", 
+                190, 
+                "any duties of an officer of "
+            ], 
+            [
+                [
+                    "delete", 
+                    194, 
+                    222
+                ], 
+                [
+                    "insert", 
+                    194, 
+                    "Customs Service."
+                ]
+            ]
+        ]
+    }, 
+    "479-11-p22033228": {
+        "op": "deleted"
+    }, 
+    "479-11-p2757219296": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    62, 
+                    80
+                ], 
+                [
+                    "insert", 
+                    62, 
+                    "Tobacco"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    85, 
+                    95
+                ], 
+                [
+                    "insert", 
+                    85, 
+                    "Firearms"
+                ]
+            ]
+        ]
+    }, 
+    "479-11-p2792822644": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "479", 
+                "11", 
+                "p2792822644"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "<E T=\"03\">Regional director (compliance).</E> The principal ATF regional official responsible for administering regulations in this part.", 
+            "text": "Regional director (compliance). The principal ATF regional official responsible for administering regulations in this part.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "479-11-p3550103376": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                52, 
+                "estate, or "
+            ], 
+            [
+                [
+                    "delete", 
+                    65, 
+                    159
+                ], 
+                [
+                    "insert", 
+                    65, 
+                    "as well as a natural person."
+                ]
+            ]
+        ]
+    }, 
+    "479-11-p3934219073": {
+        "op": "deleted"
+    }, 
+    "479-11-p593154015": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                52, 
+                "and "
+            ], 
+            [
+                "delete", 
+                62, 
+                78
+            ], 
+            [
+                [
+                    "delete", 
+                    96, 
+                    104
+                ], 
+                [
+                    "insert", 
+                    96, 
+                    "the Treasury,"
+                ]
+            ]
+        ]
+    }, 
+    "479-111-a-3-p1": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    1260, 
+                    1269
+                ], 
+                [
+                    "insert", 
+                    1260, 
+                    "one year"
+                ]
+            ]
+        ]
+    }, 
+    "479-172": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    551, 
+                    586
+                ], 
+                [
+                    "insert", 
+                    551, 
+                    "regional director (compliance)"
+                ]
+            ]
+        ]
+    }, 
+    "479-21-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    33, 
+                    42
+                ], 
+                [
+                    "insert", 
+                    33, 
+                    "mailed"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    67, 
+                    129
+                ], 
+                [
+                    "insert", 
+                    67, 
+                    "Center, 7943 Angus Court, Springfield, Virginia 22153."
+                ]
+            ]
+        ]
+    }, 
+    "479-22": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    54, 
+                    87
+                ], 
+                [
+                    "insert", 
+                    54, 
+                    "Tobacco and Firearms"
+                ]
+            ]
+        ]
+    }, 
+    "479-26-a-3": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                327, 
+                "regional director (compliance), for transmittal to the Director. The application shall specifically describe the proposed alternate method or procedure and shall set forth the reasons for it. Alternate methods or procedures may not be employed until the application is approved by the Director. Such person shall, during the period of authorization of an alternate method or procedure, comply with the terms of the approved application. Authorization of any alternate method or procedure may be withdrawn whenever, in the judgment of the "
+            ], 
+            [
+                [
+                    "delete", 
+                    337, 
+                    591
+                ], 
+                [
+                    "insert", 
+                    337, 
+                    "the effective administration of this part"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    595, 
+                    603
+                ], 
+                [
+                    "insert", 
+                    595, 
+                    "hindered"
+                ]
+            ], 
+            [
+                "delete", 
+                610, 
+                934
+            ]
+        ]
+    }, 
+    "479-26-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    1162, 
+                    1191
+                ], 
+                [
+                    "insert", 
+                    1162, 
+                    "regional director (compliance)"
+                ]
+            ]
+        ]
+    }, 
+    "479-34-e": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    889, 
+                    899
+                ], 
+                [
+                    "insert", 
+                    889, 
+                    "(5310.12) (12-93 edition),"
+                ]
+            ]
+        ]
+    }, 
+    "479-37": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    101, 
+                    136
+                ], 
+                [
+                    "insert", 
+                    101, 
+                    "regional director (compliance) Center"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    314, 
+                    349
+                ], 
+                [
+                    "insert", 
+                    314, 
+                    "regional director (compliance)"
+                ]
+            ]
+        ]
+    }, 
+    "479-38": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    862, 
+                    905
+                ], 
+                [
+                    "insert", 
+                    862, 
+                    "regional director (compliance) for the"
+                ]
+            ]
+        ]
+    }, 
+    "479-46": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    426, 
+                    441
+                ], 
+                [
+                    "insert", 
+                    426, 
+                    "regional director (compliance), upon approval of the application, shall return the special tax stamp, amended to show the new business location."
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    451, 
+                    467
+                ], 
+                [
+                    "insert", 
+                    451, 
+                    "operations shall not be commenced at the new business location by the taxpayer prior to the required"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    480, 
+                    565
+                ], 
+                [
+                    "insert", 
+                    480, 
+                    "his application to so change his business"
+                ]
+            ], 
+            [
+                "delete", 
+                575, 
+                749
+            ]
+        ]
+    }, 
+    "479-47": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    332, 
+                    347
+                ], 
+                [
+                    "insert", 
+                    332, 
+                    "regional director (compliance), upon approval of the application, shall return the special tax stamp, amended to show the new trade name."
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    357, 
+                    373
+                ], 
+                [
+                    "insert", 
+                    357, 
+                    "operations shall not be commenced under the new trade name by the taxpayer prior to the required"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    386, 
+                    468
+                ], 
+                [
+                    "insert", 
+                    386, 
+                    "his application to so change the trade"
+                ]
+            ], 
+            [
+                "delete", 
+                474, 
+                637
+            ]
+        ]
+    }, 
+    "479-50": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    328, 
+                    367
+                ], 
+                [
+                    "insert", 
+                    328, 
+                    "regional director (compliance), to"
+                ]
+            ]
+        ]
+    }, 
+    "479-62": {
+        "child_ops": [
+            [
+                "delete", 
+                0, 
+                4
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                0, 
+                "No person shall make a firearm unless the person has filed with the Director a written application on Form 1 (Firearms), Application to Make and Register a Firearm, in duplicate, executed under the penalties of perjury, to make and register the firearm and has received the approval of the Director to make the firearm which approval shall effectuate registration of the weapon to the applicant. The application shall identify the firearm to be made by serial number, type, model, caliber or gauge, length of barrel, other marks of identification, and the name and address of original manufacturer (if the applicant is not the original manufacturer). The applicant must be identified on the Form 1 (Firearms) by name and address and, if other than a natural person, the name and address of the principal officer or authorized representative and the employer identification number and, if an individual, the identification must include the date and place of birth and the information prescribed in \u00a7 479.63. Each applicant shall identify the Federal firearms license and special (occupational) tax stamp issued to the applicant, if any. The applicant shall also show required information evidencing that making or possession of the firearm would not be in violation of law. If the making is taxable, a remittance in the amount of $200 shall be submitted with the application in accordance with the instructions on the form. If the making is taxable and the application is approved, the Director will affix a National Firearms Act stamp to the original application in the space provided therefor and properly cancel the stamp (see \u00a7 479.67). The approved application will be returned to the applicant. If the making of the firearm is tax exempt under this part, an explanation of the basis of the exemption shall be attached to the Form 1 (Firearms)."
+            ]
+        ]
+    }, 
+    "479-62-a": {
+        "op": "deleted"
+    }, 
+    "479-62-b": {
+        "op": "deleted"
+    }, 
+    "479-62-b-1": {
+        "op": "deleted"
+    }, 
+    "479-62-b-2": {
+        "op": "deleted"
+    }, 
+    "479-62-b-3": {
+        "op": "deleted"
+    }, 
+    "479-62-b-4": {
+        "op": "deleted"
+    }, 
+    "479-62-b-5": {
+        "op": "deleted"
+    }, 
+    "479-62-b-6": {
+        "op": "deleted"
+    }, 
+    "479-62-c": {
+        "op": "deleted"
+    }, 
+    "479-62-d": {
+        "op": "deleted"
+    }, 
+    "479-63": {
+        "child_ops": [
+            [
+                "delete", 
+                0, 
+                3
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                0, 
+                "If the applicant is an individual, the applicant shall securely attach to each copy of the Form 1 (Firearms), in the space provided on the form, a photograph of the applicant 2 \u00d7 2 inches in size, clearly showing a full front view of the features of the applicant with head bare, with the distance from the top of the head to the point of the chin approximately 1 1/4 inches, and which shall have been taken within 1 year prior to the date of the application. The applicant shall attach two properly completed FBI Forms FD-258 (Fingerprint Card) to the application. The fingerprints must be clear for accurate classification and should be taken by someone properly equipped to take them. A certificate of the local chief of police, sheriff of the county, head of the State police, State or local district attorney or prosecutor, or such other person whose certificate may in a particular case be acceptable to the Director, shall be completed on each copy of the Form 1 (Firearms). The certificate shall state that the certifying official is satisfied that the fingerprints and photograph accompanying the application are those of the applicant and that the certifying official has no information indicating that possession of the firearm by the maker would be in violation of State or local law or that the maker will use the firearm for other than lawful purposes."
+            ]
+        ]
+    }, 
+    "479-63-a": {
+        "op": "deleted"
+    }, 
+    "479-63-a-1": {
+        "op": "deleted"
+    }, 
+    "479-63-a-2": {
+        "op": "deleted"
+    }, 
+    "479-63-b": {
+        "op": "deleted"
+    }, 
+    "479-63-b-1": {
+        "op": "deleted"
+    }, 
+    "479-63-b-2": {
+        "op": "deleted"
+    }, 
+    "479-63-b-2-i": {
+        "op": "deleted"
+    }, 
+    "479-63-b-2-ii": {
+        "op": "deleted"
+    }, 
+    "479-63-b-2-iii": {
+        "op": "deleted"
+    }, 
+    "479-63-b-2-iv": {
+        "op": "deleted"
+    }, 
+    "479-63-c": {
+        "op": "deleted"
+    }, 
+    "479-84": {
+        "child_ops": [
+            [
+                "delete", 
+                0, 
+                4
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                0, 
+                "Except as otherwise provided in this subpart, no firearm may be transferred in the United States unless an application, Form 4 (Firearms), Application for Transfer and Registration of Firearm, in duplicate, executed under the penalties of perjury to transfer the firearm and register it to the transferee has been filed with and approved by the Director. The application, Form 4 (Firearms), shall be filed by the transferor and shall identify the firearm to be transferred by type; serial number; name and address of the manufacturer and importer, if known; model; caliber, gauge or size; in the case of a short-barreled shotgun or a short-barreled rifle, the length of the barrel; in the case of a weapon made from a rifle or shotgun, the overall length of the weapon and the length of the barrel; and any other identifying marks on the firearm. In the event the firearm does not bear a serial number, the applicant shall obtain a serial number from the Regional director (compliance) and shall stamp (impress) or otherwise conspicuously place such serial number on the firearm in a manner not susceptible of being readily obliterated, altered or removed. The application, Form 4 (Firearms), shall identify the transferor by name and address; shall identify the transferor's Federal firearms license and special (occupational) Chapter tax stamp, if any; and if the transferor is other than a natural person, shall show the title or status of the person executing the application. The application also shall identify the transferee by name and address, and, if the transferee is a natural person not qualified as a manufacturer, importer or dealer under this part, he shall be further identified in the manner prescribed in \u00a7 479.85. The application also shall identify the special (occupational) tax stamp and Federal firearms license of the transferee, if any. Any tax payable on the transfer must be represented by an adhesive stamp of proper denomination being affixed to the application, Form 4 (Firearms), properly cancelled."
+            ]
+        ]
+    }, 
+    "479-84-a": {
+        "op": "deleted"
+    }, 
+    "479-84-b": {
+        "op": "deleted"
+    }, 
+    "479-84-b-1": {
+        "op": "deleted"
+    }, 
+    "479-84-b-2": {
+        "op": "deleted"
+    }, 
+    "479-84-b-3": {
+        "op": "deleted"
+    }, 
+    "479-84-b-4": {
+        "op": "deleted"
+    }, 
+    "479-84-b-5": {
+        "op": "deleted"
+    }, 
+    "479-84-b-6": {
+        "op": "deleted"
+    }, 
+    "479-84-b-7": {
+        "op": "deleted"
+    }, 
+    "479-84-b-8": {
+        "op": "deleted"
+    }, 
+    "479-84-b-9": {
+        "op": "deleted"
+    }, 
+    "479-84-c": {
+        "op": "deleted"
+    }, 
+    "479-84-d": {
+        "op": "deleted"
+    }, 
+    "479-85": {
+        "child_ops": [
+            [
+                "delete", 
+                0, 
+                3
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                0, 
+                "If the transferee is an individual, such person shall securely attach to each copy of the application, Form 4 (Firearms), in the space provided on the form, a photograph of the applicant 2 \u00d7 2 inches in size, clearly showing a full front view of the features of the applicant with head bare, with the distance from the top of the head to the point of the chin approximately 1 1/4 inches, and which shall have been taken within 1 year prior to the date of the application. The transferee shall attach two properly completed FBI Forms FD-258 (Fingerprint Card) to the application. The fingerprints must be clear for accurate classification and should be taken by someone properly equipped to take them. A certificate of the local chief of police, sheriff of the county, head of the State police, State or local district attorney or prosecutor, or such other person whose certificate may in a particular case be acceptable to the Director, shall be completed on each copy of the Form 4 (Firearms). The certificate shall state that the certifying official is satisfied that the fingerprints and photograph accompanying the application are those of the applicant and that the certifying official has no information indicating that the receipt or possession of the firearm would place the transferee in violation of State or local law or that the transferee will use the firearm for other than lawful purposes."
+            ]
+        ]
+    }, 
+    "479-85-a": {
+        "op": "deleted"
+    }, 
+    "479-85-a-1": {
+        "op": "deleted"
+    }, 
+    "479-85-a-2": {
+        "op": "deleted"
+    }, 
+    "479-85-b": {
+        "op": "deleted"
+    }, 
+    "479-85-b-1": {
+        "op": "deleted"
+    }, 
+    "479-85-b-2": {
+        "op": "deleted"
+    }, 
+    "479-85-b-2-i": {
+        "op": "deleted"
+    }, 
+    "479-85-b-2-ii": {
+        "op": "deleted"
+    }, 
+    "479-85-b-2-iii": {
+        "op": "deleted"
+    }, 
+    "479-85-b-2-iv": {
+        "op": "deleted"
+    }, 
+    "479-85-c": {
+        "op": "deleted"
+    }, 
+    "479-90-b": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                1087, 
+                " natural"
+            ], 
+            [
+                [
+                    "delete", 
+                    2127, 
+                    2136
+                ], 
+                [
+                    "insert", 
+                    2127, 
+                    "tranfer,"
+                ]
+            ]
+        ]
+    }, 
+    "479-90a": {
+        "op": "deleted"
+    }, 
+    "479-90a-a": {
+        "op": "deleted"
+    }, 
+    "479-90a-b": {
+        "op": "deleted"
+    }, 
+    "479-90a-c": {
+        "op": "deleted"
+    }, 
+    "479-Subjgrp-ATMaF": {
+        "op": "deleted"
+    }, 
+    "479-Subjgrp-AtMaF": {
+        "node": {
+            "child_labels": [
+                "479-62", 
+                "479-63", 
+                "479-64", 
+                "479-65", 
+                "479-66", 
+                "479-67"
+            ], 
+            "label": [
+                "479", 
+                "Subjgrp", 
+                "AtMaF"
+            ], 
+            "node_type": "subpart", 
+            "tagged_text": null, 
+            "text": "", 
+            "title": "Application to Make a Firearm"
+        }, 
+        "op": "added"
+    }, 
+    "479-Subjgrp-ERtToF": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                3
+            ], 
+            [
+                "delete", 
+                3, 
+                4
+            ], 
+            [
+                "equal", 
+                4, 
+                6
+            ]
+        ], 
+        "op": "modified"
+    }
+}

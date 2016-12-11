@@ -1,0 +1,19 @@
+{
+    "447-43-a": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    59, 
+                    67
+                ], 
+                [
+                    "insert", 
+                    59, 
+                    "two years"
+                ]
+            ]
+        ]
+    }
+}

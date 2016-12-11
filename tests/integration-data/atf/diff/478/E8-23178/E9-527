@@ -1,0 +1,273 @@
+{
+    "478-114-a-1-vi": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    47, 
+                    51
+                ], 
+                [
+                    "insert", 
+                    47, 
+                    "is\u2014"
+                ]
+            ]
+        ]
+    }, 
+    "478-124a-a": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    481, 
+                    496
+                ], 
+                [
+                    "insert", 
+                    481, 
+                    "acquisition of a"
+                ]
+            ]
+        ]
+    }, 
+    "478-125-e-p1": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    0, 
+                    56
+                ], 
+                [
+                    "insert", 
+                    0, 
+                    "|Firearms Acquisition and Disposition Record|Description"
+                ]
+            ]
+        ]
+    }, 
+    "478-125-g": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    846, 
+                    847
+                ], 
+                [
+                    "insert", 
+                    846, 
+                    "            "
+                ]
+            ]
+        ]
+    }, 
+    "478-24-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    309, 
+                    315
+                ], 
+                [
+                    "insert", 
+                    309, 
+                    "National Archives and Records Administration (NARA). For information on the availability"
+                ]
+            ], 
+            [
+                "insert", 
+                319, 
+                "this material at NARA, call 202-741-6030, or go to: http://www.archives.gov/federal_register/code_of_federal_regulations/ibr_locations.html. This incorporation by reference was approved by "
+            ], 
+            [
+                "insert", 
+                323, 
+                "Director of the "
+            ], 
+            [
+                "delete", 
+                331, 
+                475
+            ]
+        ]
+    }, 
+    "478-52-a": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                677, 
+                "Center "
+            ]
+        ]
+    }, 
+    "478-71": {
+        "op": "modified", 
+        "text": [
+            [
+                "delete", 
+                22, 
+                45
+            ]
+        ]
+    }, 
+    "478-72": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    246, 
+                    257
+                ], 
+                [
+                    "insert", 
+                    246, 
+                    "denial.The"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    580, 
+                    590
+                ], 
+                [
+                    "insert", 
+                    580, 
+                    "held.Such"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    834, 
+                    862
+                ], 
+                [
+                    "insert", 
+                    834, 
+                    "shall"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    1011, 
+                    1042
+                ], 
+                [
+                    "insert", 
+                    1011, 
+                    "Director's"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    1140, 
+                    1147
+                ], 
+                [
+                    "insert", 
+                    1140, 
+                    "4501.A"
+                ]
+            ]
+        ]
+    }, 
+    "478-73-a": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    44, 
+                    70
+                ], 
+                [
+                    "insert", 
+                    44, 
+                    "has"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    368, 
+                    394
+                ], 
+                [
+                    "insert", 
+                    368, 
+                    "has"
+                ]
+            ]
+        ]
+    }, 
+    "478-73-b": {
+        "op": "modified", 
+        "text": [
+            [
+                "delete", 
+                188, 
+                211
+            ], 
+            [
+                "delete", 
+                470, 
+                493
+            ]
+        ]
+    }, 
+    "478-74": {
+        "op": "modified", 
+        "text": [
+            [
+                "delete", 
+                846, 
+                869
+            ]
+        ]
+    }, 
+    "478-76": {
+        "op": "modified", 
+        "text": [
+            [
+                "delete", 
+                482, 
+                505
+            ], 
+            [
+                [
+                    "delete", 
+                    726, 
+                    761
+                ], 
+                [
+                    "insert", 
+                    726, 
+                    "Director, in"
+                ]
+            ]
+        ]
+    }, 
+    "478-78": {
+        "op": "modified", 
+        "text": [
+            [
+                "delete", 
+                1207, 
+                1230
+            ]
+        ]
+    }
+}

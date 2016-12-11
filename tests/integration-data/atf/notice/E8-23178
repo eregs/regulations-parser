@@ -1,0 +1,1218 @@
+{
+    "amendments": [
+        {
+            "cfr_part": "447", 
+            "instruction": "Accordingly, for the reasons discussed in the preamble, 27 CFR parts 447, 478, 479, and 555 are amended as follows:"
+        }, 
+        {
+            "authority": "22 U.S.C. 2778.", 
+            "cfr_part": "447", 
+            "instruction": "1. The authority citation for 27 CFR Part 447 continues to read as follows:"
+        }, 
+        {
+            "cfr_part": "447", 
+            "changes": [
+                [
+                    "447-32-c", 
+                    [
+                        {
+                            "action": "DELETE"
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "2. Section 447.32 is amended by removing \u201cWashington, DC 20226,\u201d in paragraph (c) and adding in its place \u201cMartinsburg, WV 25405,\u201d and by removing \u201c1512-0021\u201d in the parenthetical text at the end of the section and adding in its place  \u201c1140-0009\u201d."
+        }, 
+        {
+            "cfr_part": "447", 
+            "instruction": "3. Section 447.33 is amended by removing \u201c1512-0021\u201d in the parenthetical text at the end of the section and adding in its place \u201c1140-0009\u201d."
+        }, 
+        {
+            "cfr_part": "447", 
+            "instruction": "4. Section 447.34 is amended by removing \u201c1512-0387\u201d in the parenthetical text at the end of the section and adding in its place \u201c1140-0032\u201d."
+        }, 
+        {
+            "cfr_part": "447", 
+            "instruction": "5. Section 447.35(b) is amended by removing \u201c"
+        }, 
+        {
+            "cfr_part": "447", 
+            "instruction": "6. Section 447.42 is amended by removing \u201c1512-0017\u201d in the parenthetical text at the end of the section and adding in its place \u201c1140-0005\u201d."
+        }, 
+        {
+            "cfr_part": "447", 
+            "instruction": "7. Section 447.45 is amended by removing \u201c1512-0019\u201d in the parenthetical text at the end of the section and adding in its place \u201c1140-0007\u201d."
+        }, 
+        {
+            "cfr_part": "447", 
+            "instruction": "8. Section 447.57 is amended by removing \u201c1512-0017\u201d in the parenthetical text at the end of the section and adding in its place \u201c1140-0005\u201d."
+        }, 
+        {
+            "cfr_part": "447", 
+            "instruction": "9. Section 447.58 is amended by removing \u201c"
+        }, 
+        {
+            "authority": "5 U.S.C. 552(a); 18 U.S.C. 847, 921-930; 44 U.S.C. 3504(h).", 
+            "cfr_part": "478", 
+            "instruction": "10. The authority citation for 27 CFR Part 478 continues to read as follows:"
+        }, 
+        {
+            "cfr_part": "478", 
+            "changes": [
+                [
+                    "478-11-p3465012724", 
+                    [
+                        {
+                            "action": "DELETE"
+                        }
+                    ]
+                ], 
+                [
+                    "478-11-p3841034136", 
+                    [
+                        {
+                            "action": "INSERT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "11", 
+                                    "p3841034136"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "<E T=\"03\">Chief, Federal Firearms Licensing Center (FFLC).</E> The ATF official responsible for the issuance and renewal of licenses under this part.", 
+                                "text": "Chief, Federal Firearms Licensing Center (FFLC). The ATF official responsible for the issuance and renewal of licenses under this part.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "11. [label:478-11-keyterm(Chief, National Licensing Center)] is removed. [insert-in-order] [label:478-11-keyterm(Chief, Federal Firearms Licensing Center FFLC)]"
+        }, 
+        {
+            "cfr_part": "478", 
+            "changes": [
+                [
+                    "478-21-b", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "21", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) Requests for forms should be mailed to the ATF Distribution Center, 7664 K Fullerton Road, Springfield, Virginia 22150.", 
+                                "text": "(b) Requests for forms should be mailed to the ATF Distribution Center, 7664 K Fullerton Road, Springfield, Virginia 22150.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "12. Section 478.21 is amended by revising paragraph (b)"
+        }, 
+        {
+            "cfr_part": "478", 
+            "changes": [
+                [
+                    "478-25a", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "25a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n             Each licensee shall respond immediately to, and in no event later than 24 hours after the receipt of, a request by an ATF officer at the National Tracing Center for information contained in the records required to be kept by this part for determining the disposition of one or more firearms in the course of a bona fide criminal investigation. The requested information shall be provided orally to the ATF officer within the 24-hour period. Verification of the identity and employment of National Tracing Center personnel requesting information may be established at the time the requested information is provided by telephoning the toll-free number 1-800-788-7132 or using the toll-free facsimile (FAX) number 1-800-788-7133.", 
+                                "text": "Each licensee shall respond immediately to, and in no event later than 24 hours after the receipt of, a request by an ATF officer at the National Tracing Center for information contained in the records required to be kept by this part for determining the disposition of one or more firearms in the course of a bona fide criminal investigation. The requested information shall be provided orally to the ATF officer within the 24-hour period. Verification of the identity and employment of National Tracing Center personnel requesting information may be established at the time the requested information is provided by telephoning the toll-free number 1-800-788-7132 or using the toll-free facsimile (FAX) number 1-800-788-7133.", 
+                                "title": "\u00a7 478.25a Responses to requests for information."
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "13. Section 478.25a is revised"
+        }, 
+        {
+            "cfr_part": "478", 
+            "changes": [
+                [
+                    "478-39a", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "39a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n             Each licensee shall report the theft or loss of a firearm from the licensee's inventory (including any firearm which has been transferred from the licensee's inventory to a personal collection and held as a personal firearm for at least 1 year), or from the collection of a licensed collector, within 48 hours after the theft or loss is discovered. Licensees shall report thefts or losses by telephoning 1-888-930-9275 (nationwide toll free number) and by preparing ATF Form 3310.11, Federal Firearms Licensee Theft/Loss Report, in accordance with the instructions on the form. The original of the report shall be forwarded to the office specified thereon, and Copy 1 shall be retained by the licensee as part of the licensee's permanent records. Theft or loss of any firearm shall also be reported to the appropriate local authorities.", 
+                                "text": "Each licensee shall report the theft or loss of a firearm from the licensee's inventory (including any firearm which has been transferred from the licensee's inventory to a personal collection and held as a personal firearm for at least 1 year), or from the collection of a licensed collector, within 48 hours after the theft or loss is discovered. Licensees shall report thefts or losses by telephoning 1-888-930-9275 (nationwide toll free number) and by preparing ATF Form 3310.11, Federal Firearms Licensee Theft/Loss Report, in accordance with the instructions on the form. The original of the report shall be forwarded to the office specified thereon, and Copy 1 shall be retained by the licensee as part of the licensee's permanent records. Theft or loss of any firearm shall also be reported to the appropriate local authorities.", 
+                                "title": "\u00a7 478.39a Reporting theft or loss of firearms."
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "14. Section 478.39a is revised"
+        }, 
+        {
+            "cfr_part": "478", 
+            "instruction": "15. Section 478.40 is amended by removing \u201c1512-0526\u201d in the parenthetical text at the end of the section and adding in its place \u201c1140-0041\u201d."
+        }, 
+        {
+            "cfr_part": "478", 
+            "instruction": "16. Section 478.40a is amended by removing \u201c1512-0526\u201d in the parenthetical text at the end of the section and adding in its place \u201c1140-0041\u201d."
+        }, 
+        {
+            "cfr_part": "478", 
+            "changes": [
+                [
+                    "478-41-b", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "41", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) Each person intending to engage in business as a firearms or ammunition importer or manufacturer, or dealer in firearms shall file an application, with the required fee (see \u00a7 478.42), with ATF in accordance with the instructions on the form (see \u00a7 478.44), and, pursuant to \u00a7 478.47, receive the license required for such business from the Chief, Federal Firearms Licensing Center. Except as provided in \u00a7 478.50, a license must be obtained for each business and each place at which the applicant is to do business. A license as an importer or manufacturer of firearms or ammunition, or a dealer in firearms shall, subject to the provisions of the Act and other applicable provisions of law, entitle the licensee to transport, ship, and receive firearms and ammunition covered by such license in interstate or foreign commerce and to engage in the business specified by the license, at the location described on the license, and for the period stated on the license. However, it shall not be necessary for a licensed importer or a licensed manufacturer to also obtain a dealer's license in order to engage in business on the licensed premises as a dealer in the same type of firearms authorized by the license to be imported or manufactured. Payment of the license fee as an importer or manufacturer of destructive devices, ammunition for destructive devices or armor piercing ammunition or as a dealer in destructive devices includes the privilege of importing or manufacturing firearms other than destructive devices and ammunition for other than destructive devices or ammunition other than armor piercing ammunition, or dealing in firearms other than destructive devices, as the case may be, by such a licensee at the licensed premises.", 
+                                "text": "(b) Each person intending to engage in business as a firearms or ammunition importer or manufacturer, or dealer in firearms shall file an application, with the required fee (see \u00a7 478.42), with ATF in accordance with the instructions on the form (see \u00a7 478.44), and, pursuant to \u00a7 478.47, receive the license required for such business from the Chief, Federal Firearms Licensing Center. Except as provided in \u00a7 478.50, a license must be obtained for each business and each place at which the applicant is to do business. A license as an importer or manufacturer of firearms or ammunition, or a dealer in firearms shall, subject to the provisions of the Act and other applicable provisions of law, entitle the licensee to transport, ship, and receive firearms and ammunition covered by such license in interstate or foreign commerce and to engage in the business specified by the license, at the location described on the license, and for the period stated on the license. However, it shall not be necessary for a licensed importer or a licensed manufacturer to also obtain a dealer's license in order to engage in business on the licensed premises as a dealer in the same type of firearms authorized by the license to be imported or manufactured. Payment of the license fee as an importer or manufacturer of destructive devices, ammunition for destructive devices or armor piercing ammunition or as a dealer in destructive devices includes the privilege of importing or manufacturing firearms other than destructive devices and ammunition for other than destructive devices or ammunition other than armor piercing ammunition, or dealing in firearms other than destructive devices, as the case may be, by such a licensee at the licensed premises.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "478-41-c", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "41", 
+                                    "c"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(c) Each person seeking the privileges of a collector licensed under this part shall file an application, with the required fee (see \u00a7 478.42), with ATF in accordance with the instructions on the form (see \u00a7 478.44), and pursuant to \u00a7 478.47, receive from the Chief, Federal Firearms Licensing Center, the license covering the collection of curios and relics. A separate license may be obtained for each collection premises, and such license shall, subject to the provisions of the Act and other applicable provisions of law, entitle the licensee to transport, ship, receive, and acquire curios and relics in interstate or foreign commerce, and to make disposition of curios and relics in interstate or foreign commerce, to any other person licensed under the provisions of this part, for the period stated on the license.", 
+                                "text": "(c) Each person seeking the privileges of a collector licensed under this part shall file an application, with the required fee (see \u00a7 478.42), with ATF in accordance with the instructions on the form (see \u00a7 478.44), and pursuant to \u00a7 478.47, receive from the Chief, Federal Firearms Licensing Center, the license covering the collection of curios and relics. A separate license may be obtained for each collection premises, and such license shall, subject to the provisions of the Act and other applicable provisions of law, entitle the licensee to transport, ship, receive, and acquire curios and relics in interstate or foreign commerce, and to make disposition of curios and relics in interstate or foreign commerce, to any other person licensed under the provisions of this part, for the period stated on the license.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "17. Section 478.41 is amended by revising paragraphs (b) and (c)"
+        }, 
+        {
+            "cfr_part": "478", 
+            "changes": [
+                [
+                    "478-44-a-1-v", 
+                    [
+                        {
+                            "action": "DELETE"
+                        }
+                    ]
+                ], 
+                [
+                    "478-44-a-1-iii", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "44", 
+                                    "a", 
+                                    "1", 
+                                    "iii"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(iii) If the applicant (including, in the case of a corporation, partnership, or association, any individual possessing, directly or indirectly, the power to direct or cause the direction of the management and policies of the corporation, partnership, or association) is a nonimmigrant alien, applicable documentation demonstrating that the nonimmigrant alien falls within an exception to or has obtained a waiver from the nonimmigrant alien provision (e.g., a hunting license or permit lawfully issued in the United States; waiver); and", 
+                                "text": "(iii) If the applicant (including, in the case of a corporation, partnership, or association, any individual possessing, directly or indirectly, the power to direct or cause the direction of the management and policies of the corporation, partnership, or association) is a nonimmigrant alien, applicable documentation demonstrating that the nonimmigrant alien falls within an exception to or has obtained a waiver from the nonimmigrant alien provision (e.g., a hunting license or permit lawfully issued in the United States; waiver); and", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "478-44-a-1-iv", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "44", 
+                                    "a", 
+                                    "1", 
+                                    "iv"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(iv) Include the appropriate fee in the form of money order or check made payable to the \u201cBureau of Alcohol, Tobacco, Firearms, and Explosives\u201d.", 
+                                "text": "(iv) Include the appropriate fee in the form of money order or check made payable to the \u201cBureau of Alcohol, Tobacco, Firearms, and Explosives\u201d.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "478-44-a-2", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "44", 
+                                    "a", 
+                                    "2"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(2) ATF Form 7 may be obtained by contacting the ATF Distribution Center (See \u00a7 478.21).", 
+                                "text": "(2) ATF Form 7 may be obtained by contacting the ATF Distribution Center (See \u00a7 478.21).", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "478-44-b", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "44", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) Any person who desires to obtain a license as a collector under the Act and this part, or who has not timely submitted an application for renewal of the previous license issued under this part, shall file an application, ATF Form 7CR (Curios and Relics), with ATF in accordance with the instructions on the form. If the applicant (including, in the case of a corporation, partnership, or association, any individual possessing, directly or indirectly, the power to direct or cause the direction of the management and policies of the corporation, partnership, or association) is a nonimmigrant alien, the application must include applicable documentation demonstrating that the nonimmigrant alien falls within an exception to or has obtained a waiver from the nonimmigrant alien provision (e.g., a hunting license or permit lawfully issued in the United States; waiver). The application must be executed under the penalties of perjury and the penalties imposed by 18 U.S.C. 924. The application shall include the appropriate fee in the form of a money order or check made payable to the Bureau of Alcohol, Tobacco, Firearms, and Explosives. ATF Form 7CR (Curios and Relics) may beobtained by contacting the ATF Distribution Center (See \u00a7 478.21).", 
+                                "text": "(b) Any person who desires to obtain a license as a collector under the Act and this part, or who has not timely submitted an application for renewal of the previous license issued under this part, shall file an application, ATF Form 7CR (Curios and Relics), with ATF in accordance with the instructions on the form. If the applicant (including, in the case of a corporation, partnership, or association, any individual possessing, directly or indirectly, the power to direct or cause the direction of the management and policies of the corporation, partnership, or association) is a nonimmigrant alien, the application must include applicable documentation demonstrating that the nonimmigrant alien falls within an exception to or has obtained a waiver from the nonimmigrant alien provision (e.g., a hunting license or permit lawfully issued in the United States; waiver). The application must be executed under the penalties of perjury and the penalties imposed by 18 U.S.C. 924. The application shall include the appropriate fee in the form of a money order or check made payable to the Bureau of Alcohol, Tobacco, Firearms, and Explosives. ATF Form 7CR (Curios and Relics) may be obtained by contacting the ATF Distribution Center (See \u00a7 478.21).", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "18. Section 478.44 is amended by revising paragraph (a)(1)(iii), revising paragraph (a)(1)(iv), removing paragraph (a)(1)(v), revising paragraph (a)(2), and revising paragraph (b)"
+        }, 
+        {
+            "cfr_part": "478", 
+            "changes": [
+                [
+                    "478-45", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "45"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n             If a licensee intends to continue the business or activity described on a license issued under this part during any portion of the ensuing year, the licensee shall, unless otherwise notified in writing by the Chief, Federal Firearms Licensing Center, execute and file with ATF prior to the expiration of the license an application for a license renewal, ATF Form 8 Part II, in accordance with the instructions on the form, and the required fee. If the applicant is a nonimmigrant alien, the application must include applicable documentation demonstrating that the nonimmigrant alien falls within an exception to or has obtained a waiver from the nonimmigrant alien provision (e.g., a hunting license or permit lawfully issued in the United States; waiver). The Chief, Federal Firearms Licensing Center may, in writing, require the applicant for license renewal to also file completed ATF Form 7 or ATF Form 7CR in the manner required by \u00a7 478.44. In the event the licensee does not timely file an ATF Form 8 Part II, the licensee must file an ATF Form 7 or ATF Form 7CR as required by \u00a7 478.44, and obtain the required license before continuing business or collecting activity. If an ATF Form 8 Part II is not timely received through the mails, the licensee should so notify the Chief, Federal Firearms Licensing Center.", 
+                                "text": "If a licensee intends to continue the business or activity described on a license issued under this part during any portion of the ensuing year, the licensee shall, unless otherwise notified in writing by the Chief, Federal Firearms Licensing Center, execute and file with ATF prior to the expiration of the license an application for a license renewal, ATF Form 8 Part II, in accordance with the instructions on the form, and the required fee. If the applicant is a nonimmigrant alien, the application must include applicable documentation demonstrating that the nonimmigrant alien falls within an exception to or has obtained a waiver from the nonimmigrant alien provision (e.g., a hunting license or permit lawfully issued in the United States; waiver). The Chief, Federal Firearms Licensing Center may, in writing, require the applicant for license renewal to also file completed ATF Form 7 or ATF Form 7CR in the manner required by \u00a7 478.44. In the event the licensee does not timely file an ATF Form 8 Part II, the licensee must file an ATF Form 7 or ATF Form 7CR as required by \u00a7 478.44, and obtain the required license before continuing business or collecting activity. If an ATF Form 8 Part II is not timely received through the mails, the licensee should so notify the Chief, Federal Firearms Licensing Center.", 
+                                "title": "\u00a7 478.45 Renewal of license."
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "19. Section 478.45 is revised to read as follows:"
+        }, 
+        {
+            "cfr_part": "478", 
+            "changes": [
+                [
+                    "478-47-a", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "47", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) Upon receipt of a properly executed application for a license on ATF Form 7, ATF Form 7CR, or ATF Form 8 Part II, the Chief, Federal Firearms Licensing Center, shall, upon finding through further inquiry or investigation, or otherwise, that the applicant is qualified, issue the appropriate license. Each license shall bear a serial number and such number may be assigned to the licensee to whom issued for so long as the licensee maintains continuity of renewal in the same location (State).", 
+                                "text": "(a) Upon receipt of a properly executed application for a license on ATF Form 7, ATF Form 7CR, or ATF Form 8 Part II, the Chief, Federal Firearms Licensing Center, shall, upon finding through further inquiry or investigation, or otherwise, that the applicant is qualified, issue the appropriate license. Each license shall bear a serial number and such number may be assigned to the licensee to whom issued for so long as the licensee maintains continuity of renewal in the same location (State).", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "478-47-b-1", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "47", 
+                                    "b", 
+                                    "1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(1) The applicant is 21 years of age or over;", 
+                                "text": "(1) The applicant is 21 years of age or over;", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "478-47-b-2", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "47", 
+                                    "b", 
+                                    "2"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(2) The applicant (including, in the case of a corporation, partnership, or association, any individual possessing, directly or indirectly, the power to direct or cause the direction of the management and policies of the corporation, partnership, or association) is not prohibited under the provisions of the Act from shipping or transporting in interstate or foreign commerce, or possessing in or affecting commerce, any firearm or ammunition, or from receiving any firearm or ammunition which has been shipped or transported in interstate or foreign commerce;", 
+                                "text": "(2) The applicant (including, in the case of a corporation, partnership, or association, any individual possessing, directly or indirectly, the power to direct or cause the direction of the management and policies of the corporation, partnership, or association) is not prohibited under the provisions of the Act from shipping or transporting in interstate or foreign commerce, or possessing in or affecting commerce, any firearm or ammunition, or from receiving any firearm or ammunition which has been shipped or transported in interstate or foreign commerce;", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "478-47-b-3", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "47", 
+                                    "b", 
+                                    "3"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(3) The applicant has not willfully violated any of the provisions of the Act or this part;", 
+                                "text": "(3) The applicant has not willfully violated any of the provisions of the Act or this part;", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "478-47-b-4", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "47", 
+                                    "b", 
+                                    "4"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(4) The applicant has not willfully failed to disclose any material information required, or has not made any false statement as to any material fact, in connection with his application; and", 
+                                "text": "(4) The applicant has not willfully failed to disclose any material information required, or has not made any false statement as to any material fact, in connection with his application; and", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "478-47-b-5", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "47", 
+                                    "b", 
+                                    "5"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(5) The applicant has in a State (i) premises from which he conducts business subject to license under the Act or from which he intends to conduct such business within a reasonable period of time, or (ii) in the case of a collector, premises from which he conducts his collecting subject to license under the Act or from which he intends to conduct such collecting within a reasonable period of time.", 
+                                "text": "(5) The applicant has in a State (i) premises from which he conducts business subject to license under the Act or from which he intends to conduct such business within a reasonable period of time, or (ii) in the case of a collector, premises from which he conducts his collecting subject to license under the Act or from which he intends to conduct such collecting within a reasonable period of time.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "478-47-b", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "478-47-b-1", 
+                                    "478-47-b-2", 
+                                    "478-47-b-3", 
+                                    "478-47-b-4", 
+                                    "478-47-b-5"
+                                ], 
+                                "label": [
+                                    "478", 
+                                    "47", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) The Chief, Federal Firearms Licensing Center, shall approve a properly executed application for license on ATF Form 7, ATF Form 7CR, or ATF Form 8 Part II, if:", 
+                                "text": "(b) The Chief, Federal Firearms Licensing Center, shall approve a properly executed application for license on ATF Form 7, ATF Form 7CR, or ATF Form 8 Part II, if:", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "478-47-c", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "47", 
+                                    "c"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(c) The Chief, Federal Firearms Licensing Center, shall approve or the Director of Industry Operations shall deny an application for a license within the 60-day period beginning on the date the properly executed application was received: <E T=\"03\">Provided,</E> That when an applicant for license renewal is a person who is, pursuant to the provisions of \u00a7 478.78, \u00a7 478.143, or \u00a7 478.144, conducting business or collecting activity under a previously issued license, action regarding the application will be held in abeyance pending the completion of the proceedings against the applicant's existing license or license application, final determination of the applicant's criminal case, or final action by the Director on an application for relief submitted pursuant to \u00a7 478.144, as the case may be.", 
+                                "text": "(c) The Chief, Federal Firearms Licensing Center, shall approve or the Director of Industry Operations shall deny an application for a license within the 60-day period beginning on the date the properly executed application was received: Provided, That when an applicant for license renewal is a person who is, pursuant to the provisions of \u00a7 478.78, \u00a7 478.143, or \u00a7 478.144, conducting business or collecting activity under a previously issued license, action regarding the application will be held in abeyance pending the completion of the proceedings against the applicant's existing license or license application, final determination of the applicant's criminal case, or final action by the Director on an application for relief submitted pursuant to \u00a7 478.144, as the case may be.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "478-47-d", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "47", 
+                                    "d"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(d) When the Director of Industry Operations or the Chief, Federal Firearms Licensing Center fails to act on an application for a license within the 60-day period prescribed by paragraph (c) of this section, the applicant may file an action under section 1361 of title 28, United States Code, to compel ATF to act upon the application.", 
+                                "text": "(d) When the Director of Industry Operations or the Chief, Federal Firearms Licensing Center fails to act on an application for a license within the 60-day period prescribed by paragraph (c) of this section, the applicant may file an action under section 1361 of title 28, United States Code, to compel ATF to act upon the application.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "478-47", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "478-47-a", 
+                                    "478-47-b", 
+                                    "478-47-c", 
+                                    "478-47-d"
+                                ], 
+                                "label": [
+                                    "478", 
+                                    "47"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n            ", 
+                                "text": "", 
+                                "title": "\u00a7 478.47 Issuance of license."
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "20. Section 478.47 is revised"
+        }, 
+        {
+            "cfr_part": "478", 
+            "changes": [
+                [
+                    "478-48-a", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "48", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) Upon receipt of a license issued under the provisions of this part, each licensee shall examine same to ensure that the information contained thereon is accurate. If the license is incorrect, the licensee shall return the license to the Chief, Federal Firearms Licensing Center, with a statement showing the nature of the error. The Chief, Federal Firearms Licensing Center, shall correct the error, if the error was made in his office, and return the license. However, if the error resulted from information contained in the licensee's application for the license, the Chief, Federal Firearms Licensing Center, shall require the licensee to file an amended application setting forth the correct information and a statement explaining the error contained in the application. Upon receipt of the amended application and a satisfactory explanation of the error, the Chief, Federal Firearms Licensing Center, shall make the correction on the license and return same to the licensee.", 
+                                "text": "(a) Upon receipt of a license issued under the provisions of this part, each licensee shall examine same to ensure that the information contained thereon is accurate. If the license is incorrect, the licensee shall return the license to the Chief, Federal Firearms Licensing Center, with a statement showing the nature of the error. The Chief, Federal Firearms Licensing Center, shall correct the error, if the error was made in his office, and return the license. However, if the error resulted from information contained in the licensee's application for the license, the Chief, Federal Firearms Licensing Center, shall require the licensee to file an amended application setting forth the correct information and a statement explaining the error contained in the application. Upon receipt of the amended application and a satisfactory explanation of the error, the Chief, Federal Firearms Licensing Center, shall make the correction on the license and return same to the licensee.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "478-48-b", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "48", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) When the Chief, Federal Firearms Licensing Center, finds through any means other than notice from the licensee that an incorrect license has been issued, the Chief, Federal Firearms Licensing Center, may require the holder of the incorrect license to (1) return the license for correction, and (2) if the error resulted from information contained in the licensee's application for the license, the Chief, Federal Firearms Licensing Center, shall require the licensee to file an amended application setting forth the correct information, and a statement explaining the error contained in the application. The Chief, Federal Firearms Licensing Center, then shall make the correction on the license and return same to the licensee.", 
+                                "text": "(b) When the Chief, Federal Firearms Licensing Center, finds through any means other than notice from the licensee that an incorrect license has been issued, the Chief, Federal Firearms Licensing Center, may require the holder of the incorrect license to (1) return the license for correction, and (2) if the error resulted from information contained in the licensee's application for the license, the Chief, Federal Firearms Licensing Center, shall require the licensee to file an amended application setting forth the correct information, and a statement explaining the error contained in the application. The Chief, Federal Firearms Licensing Center, then shall make the correction on the license and return same to the licensee.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "478-48", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "478-48-a", 
+                                    "478-48-b"
+                                ], 
+                                "label": [
+                                    "478", 
+                                    "48"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n            ", 
+                                "text": "", 
+                                "title": "\u00a7 478.48 Correction of error on license."
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "21. Section 478.48 is revised"
+        }, 
+        {
+            "cfr_part": "478", 
+            "changes": [
+                [
+                    "478-52-a", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "52", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) Licensees may during the term of their current license remove their business or activity to a new location at which they intend regularly to carry on such business or activity by filing an Application for an Amended Federal Firearms License, ATF Form 5300.38, in duplicate, not less than 30 days prior to such removal with the Chief, Federal Firearms Licensing Center. The ATF Form 5300.38 shall be completed in accordance with the instructions on the form. The application must be executed under the penalties of perjury and penalties imposed by 18 U.S.C. 924. The application shall be accompanied by the licensee's original license. The Chief, Federal Firearms Licensing Center, may, in writing, require the applicant for an amended license to also file completed ATF Form 7 or ATF Form 7CR, or portions thereof, in the manner required by \u00a7 478.44.", 
+                                "text": "(a) Licensees may during the term of their current license remove their business or activity to a new location at which they intend regularly to carry on such business or activity by filing an Application for an Amended Federal Firearms License, ATF Form 5300.38, in duplicate, not less than 30 days prior to such removal with the Chief, Federal Firearms Licensing Center. The ATF Form 5300.38 shall be completed in accordance with the instructions on the form. The application must be executed under the penalties of perjury and penalties imposed by 18 U.S.C. 924. The application shall be accompanied by the licensee's original license. The Chief, Federal Firearms Licensing Center, may, in writing, require the applicant for an amended license to also file completed ATF Form 7 or ATF Form 7CR, or portions thereof, in the manner required by \u00a7 478.44.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "478-52-b", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "52", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) Upon receipt of a properly executed application for an amended license, the Chief, Federal Firearms Licensing Center, shall, upon finding through further inquiry or investigation, or otherwise, that the applicant is qualified at the new location, issue the amended license, and return it to the applicant. The license shall be valid for the remainder of the term of the original license. The Chief, Federal Firearms Licensing Center, shall, if the applicant is not qualified, refer the application for amended license to the Director of Industry Operations for denial in accordance with \u00a7 478.71.", 
+                                "text": "(b) Upon receipt of a properly executed application for an amended license, the Chief, Federal Firearms Licensing Center, shall, upon finding through further inquiry or investigation, or otherwise, that the applicant is qualified at the new location, issue the amended license, and return it to the applicant. The license shall be valid for the remainder of the term of the original license. The Chief, Federal Firearms Licensing Center, shall, if the applicant is not qualified, refer the application for amended license to the Director of Industry Operations for denial in accordance with \u00a7 478.71.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "478-52", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "478-52-a", 
+                                    "478-52-b"
+                                ], 
+                                "label": [
+                                    "478", 
+                                    "52"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n            ", 
+                                "text": "", 
+                                "title": "\u00a7 478.52 Change of address."
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "22. Section 478.52 is revised"
+        }, 
+        {
+            "cfr_part": "478", 
+            "changes": [
+                [
+                    "478-53", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "53"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n             A licensee continuing to conduct business at the location shown on his license is not required to obtain a new license by reason of a mere change in trade name under which he conducts his business: <E T=\"03\">Provided,</E> That such licensee furnishes his license for endorsement of such change to the Chief, Federal Firearms Licensing Center within 30 days from the date the licensee begins his business under the new trade name.", 
+                                "text": "A licensee continuing to conduct business at the location shown on his license is not required to obtain a new license by reason of a mere change in trade name under which he conducts his business: Provided, That such licensee furnishes his license for endorsement of such change to the Chief, Federal Firearms Licensing Center within 30 days from the date the licensee begins his business under the new trade name.", 
+                                "title": "\u00a7 478.53 Change in trade name."
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "23. Section 478.53 is revised"
+        }, 
+        {
+            "cfr_part": "478", 
+            "changes": [
+                [
+                    "478-54", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "54"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n             In the case of a corporation or association holding a license under this part, if actual or legal control of the corporation or association changes, directly or indirectly, whether by reason of change in stock ownership or control (in the licensed corporation or in any other corporation), by operations of law, or in any other manner, the licensee shall, within 30 days of such change, give written notification thereof, executed under the penalties of perjury, to the Chief, Federal Firearms Licensing Center. Upon expiration of the license, the corporation or association must file a Form 7 (Firearms) as required by \u00a7 478.44.", 
+                                "text": "In the case of a corporation or association holding a license under this part, if actual or legal control of the corporation or association changes, directly or indirectly, whether by reason of change in stock ownership or control (in the licensed corporation or in any other corporation), by operations of law, or in any other manner, the licensee shall, within 30 days of such change, give written notification thereof, executed under the penalties of perjury, to the Chief, Federal Firearms Licensing Center. Upon expiration of the license, the corporation or association must file a Form 7 (Firearms) as required by \u00a7 478.44.", 
+                                "title": "\u00a7 478.54 Change of control."
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "24. Section 478.54 is revised"
+        }, 
+        {
+            "cfr_part": "478", 
+            "changes": [
+                [
+                    "478-56-b", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "56", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) In order to secure the right provided by this section, the person or persons continuing the business shall furnish the license for that business for endorsement of such succession to the Chief, Federal Firearms Licensing Center , within 30 days from the date on which the successor begins to carry on the business.", 
+                                "text": "(b) In order to secure the right provided by this section, the person or persons continuing the business shall furnish the license for that business for endorsement of such succession to the Chief, Federal Firearms Licensing Center , within 30 days from the date on which the successor begins to carry on the business.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "25. Section 478.56 is amended by revising paragraph (b)"
+        }, 
+        {
+            "cfr_part": "478", 
+            "changes": [
+                [
+                    "478-57-a", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "57", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) Where a firearm or ammunition business is either discontinued or succeeded by a new owner, the owner of the business discontinued or succeeded shall within 30 days thereof furnish to the Chief, Federal Firearms Licensing Center notification of the discontinuance or succession. (See also \u00a7 478.127.)", 
+                                "text": "(a) Where a firearm or ammunition business is either discontinued or succeeded by a new owner, the owner of the business discontinued or succeeded shall within 30 days thereof furnish to the Chief, Federal Firearms Licensing Center notification of the discontinuance or succession. (See also \u00a7 478.127.)", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "26. Section 478.57 is amended by revising paragraph (a)"
+        }, 
+        {
+            "cfr_part": "478", 
+            "changes": [
+                [
+                    "478-60", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "60"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n             A licensee who furnishes his license to the Chief, Federal Firearms Licensing Center for correction or endorsement in compliance with the provisions contained in this subpart may continue his operations while awaiting its return.", 
+                                "text": "A licensee who furnishes his license to the Chief, Federal Firearms Licensing Center for correction or endorsement in compliance with the provisions contained in this subpart may continue his operations while awaiting its return.", 
+                                "title": "\u00a7 478.60 Certain continuances of business."
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "27. Section 478.60 is revised"
+        }, 
+        {
+            "cfr_part": "478", 
+            "instruction": "28. Section 478.92 is amended by removing \u201c1512-0550\u201d in the parenthetical text at the end of the section and adding in its place \u201c1140-0050\u201d."
+        }, 
+        {
+            "cfr_part": "478", 
+            "instruction": "29. Section 478.94 is amended by removing \u201c1512-0387\u201d in the parenthetical text at the end of the section and adding in its place \u201c1140-0032\u201d."
+        }, 
+        {
+            "cfr_part": "478", 
+            "changes": [
+                [
+                    "478-95", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "95"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n             The license furnished to each person licensed under the provisions of this part contains a purchasing certification statement. This original license may be reproduced and the reproduction then certified by the licensee for use pursuant to \u00a7 178.94. If the licensee desires an additional copy of the license for certification (instead of making a reproduction of the original license), the licensee may submit a request, in writing, for a certified copy or copies of the license to the Chief, Federal Firearms Licensing Center. The request must set forth the name, trade name (if any) and address of the licensee, and the number of license copies desired. There is a charge of $1 for each copy. The fee paid for copies of the license must accompany the request for copies. The fee may be paid by (a) cash, or (b) money order or check made payable to the Bureau of Alcohol, Tobacco, Firearms, and Explosives.", 
+                                "text": "The license furnished to each person licensed under the provisions of this part contains a purchasing certification statement. This original license may be reproduced and the reproduction then certified by the licensee for use pursuant to \u00a7 178.94. If the licensee desires an additional copy of the license for certification (instead of making a reproduction of the original license), the licensee may submit a request, in writing, for a certified copy or copies of the license to the Chief, Federal Firearms Licensing Center. The request must set forth the name, trade name (if any) and address of the licensee, and the number of license copies desired. There is a charge of $1 for each copy. The fee paid for copies of the license must accompany the request for copies. The fee may be paid by (a) cash, or (b) money order or check made payable to the Bureau of Alcohol, Tobacco, Firearms, and Explosives.", 
+                                "title": "\u00a7 478.95 Certified copy of license."
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "30. Section 478.95 is revised"
+        }, 
+        {
+            "cfr_part": "478", 
+            "changes": [
+                [
+                    "478-96-b", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "96", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) A licensed importer, licensed manufacturer, or licensed dealer may sell a firearm that is not subject to the provisions of \u00a7 478.102(a) to a nonlicensee who does not appear in person at the licensee's business premises if the nonlicensee is a resident of the same State in which the licensee's business premises are located, and the nonlicensee furnishes to the licensee the firearms transaction record, Form 4473, required by \u00a7 478.124. The nonlicensee shall attach to such record a true copy of any permit or other information required pursuant to any statute of the State and published ordinance applicable to the locality in which he resides. The licensee shall prior to shipment or delivery of the firearm, forward by registered or certified mail (return receipt requested) a copy of the record, Form 4473, to the chief law enforcement officer named on such record, and delay shipment or delivery of the firearm for a period of at least 7 days following receipt by the licensee of the return receipt evidencing delivery of the copy of the record to such chief law enforcement officer, or the return of the copy of the record to him due to the refusal of such chief law enforcement officer to accept same in accordance with U.S. Postal Service regulations. The original Form 4473, and evidence of receipt or rejection of delivery of the copy of the Form 4473 sent to the chief law enforcement officer shall be retained by the licensee as a part of the records required of him to be kept under the provisions of subpart H of this part.", 
+                                "text": "(b) A licensed importer, licensed manufacturer, or licensed dealer may sell a firearm that is not subject to the provisions of \u00a7 478.102(a) to a nonlicensee who does not appear in person at the licensee's business premises if the nonlicensee is a resident of the same State in which the licensee's business premises are located, and the nonlicensee furnishes to the licensee the firearms transaction record, Form 4473, required by \u00a7 478.124. The nonlicensee shall attach to such record a true copy of any permit or other information required pursuant to any statute of the State and published ordinance applicable to the locality in which he resides. The licensee shall prior to shipment or delivery of the firearm, forward by registered or certified mail (return receipt requested) a copy of the record, Form 4473, to the chief law enforcement officer named on such record, and delay shipment or delivery of the firearm for a period of at least 7 days following receipt by the licensee of the return receipt evidencing delivery of the copy of the record to such chief law enforcement officer, or the return of the copy of the record to him due to the refusal of such chief law enforcement officer to accept same in accordance with U.S. Postal Service regulations. The original Form 4473, and evidence of receipt or rejection of delivery of the copy of the Form 4473 sent to the chief law enforcement officer shall be retained by the licensee as a part of the records required of him to be kept under the provisions of subpart H of this part.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "31. Section 478.96 is amended by revising paragraph (b)"
+        }, 
+        {
+            "cfr_part": "478", 
+            "instruction": "32. Section 478.102 is amended by removing \u201c1512-0544\u201d in the parenthetical text at the end of the section and adding in its place \u201c1140-0045\u201d."
+        }, 
+        {
+            "cfr_part": "478", 
+            "instruction": "33. Section 478.112 is amended by removing \u201c1512-0017\u201d and \u201c1512-0019\u201d in the parenthetical text at the end of the section and adding in their place \u201c1140-0005\u201d and \u201c1140-0007\u201d, respectively."
+        }, 
+        {
+            "cfr_part": "478", 
+            "instruction": "34. Section 478.113 is amended by removing \u201c1512-0017\u201d and \u201c1512-0019\u201d in the parenthetical text at the end of the section and adding in their place \u201c1140-0005\u201d and \u201c1140-0007\u201d, respectively."
+        }, 
+        {
+            "cfr_part": "478", 
+            "instruction": "35. Section 478.113a is amended by removing \u201c1512-0017\u201d and \u201c1512-0019\u201d in the parenthetical text at the end of the section and adding in their place \u201c1140-0005\u201d and \u201c1140-0007\u201d, respectively."
+        }, 
+        {
+            "cfr_part": "478", 
+            "instruction": "36. Section 478.114 is amended by removing \u201c1512-0018\u201d and \u201c1512-0019\u201d in the parenthetical text at the end of the section and adding in their place \u201c1140-0006\u201d and \u201c1140-0007\u201d, respectively."
+        }, 
+        {
+            "cfr_part": "478", 
+            "instruction": "37. Section 478.119 is amended by removing \u201c1512-0017\u201d, \u201c1512-0018\u201d, and \u201c1512-0019\u201d in the parenthetical text at the end of the section and adding in their place \u201c1140-0005\u201d, \u201c1140-0006\u201d, and \u201c1140-0007\u201d, respectively."
+        }, 
+        {
+            "cfr_part": "478", 
+            "instruction": "38. Section 478.120 is amended by removing \u201c1512-0570\u201d in the parenthetical text at the end of the section and adding in its place \u201c1140-0060\u201d."
+        }, 
+        {
+            "cfr_part": "478", 
+            "instruction": "39. Section 478.121 is amended by removing \u201c1512-0129\u201d and \u201c1512-0387\u201d in the parenthetical text at the end of the section and adding in their place \u201c1140-0020\u201dand \u201c1140-0032\u201d, respectively."
+        }, 
+        {
+            "cfr_part": "478", 
+            "instruction": "40. Section 478.122 is amended by removing \u201c1512-0387\u201d in the parenthetical text at the end of the section and adding in its place \u201c1140-0032\u201d."
+        }, 
+        {
+            "cfr_part": "478", 
+            "instruction": "41. Section 478.123 is amended by removing \u201c1512-0369\u201d in the parenthetical text at the end of the section and adding in its place \u201c1140-0067\u201d."
+        }, 
+        {
+            "cfr_part": "478", 
+            "changes": [
+                [
+                    "478-124-i", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "124", 
+                                    "i"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(i) A licensee may obtain, upon request, an emergency supply of Forms 4473 from any Director of Industry Operations. For normal usage, a licensee should request a year's supply from the ATF Distribution Center (See \u00a7 478.21).", 
+                                "text": "(i) A licensee may obtain, upon request, an emergency supply of Forms 4473 from any Director of Industry Operations. For normal usage, a licensee should request a year's supply from the ATF Distribution Center (See \u00a7 478.21).", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "42. Section 478.124 is amended by revising paragraph (i)"
+        }, 
+        {
+            "cfr_part": "478", 
+            "changes": [
+                [
+                    "478-125-f", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "field": "[text]", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "125", 
+                                    "f"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(f) <E T=\"03\">Firearms receipt and disposition by licensed collectors.</E> Each licensed collector shall enter into a record each receipt and disposition of firearms curios or relics. The record required by this paragraph shall be maintained in bound form under the format prescribed below. The purchase or other acquisition of a curio or relic shall, except as provided in paragraph (g) of this section, be recorded not later than the close of the next business day following the date of such purchase or other acquisition. The record shall show the date of receipt, the name and address or the name and license number of the person from whom received, the name of the manufacturer and importer (if any), the model, serial number, type, and the caliber or gauge of the firearm curio or relic. The sale or other disposition of a curio or relic shall be recorded by the licensed collector not later than 7 days following the date of such transaction. When such disposition is made to a licensee, the commercial record of the transaction shall be retained, until the transaction is recorded, separate from other commercial documents maintained by the licensee, and be readily available for inspection. The record shall show the date of the sale or other disposition of each firearm curio or relic, the name and address of the person to whom the firearm curio or relic is transferred, or the name and license number of the person to whom transferred if such person is a licensee, and the date of birth of the transferee if other than a licensee. In addition, the licensee shall\u2014", 
+                                "text": "(f) Firearms receipt and disposition by licensed collectors. Each licensed collector shall enter into a record each receipt and disposition of firearms curios or relics. The record required by this paragraph shall be maintained in bound form under the format prescribed below. The purchase or other acquisition of a curio or relic shall, except as provided in paragraph (g) of this section, be recorded not later than the close of the next business day following the date of such purchase or other acquisition. The record shall show the date of receipt, the name and address or the name and license number of the person from whom received, the name of the manufacturer and importer (if any), the model, serial number, type, and the caliber or gauge of the firearm curio or relic. The sale or other disposition of a curio or relic shall be recorded by the licensed collector not later than 7 days following the date of such transaction. When such disposition is made to a licensee, the commercial record of the transaction shall be retained, until the transaction is recorded, separate from other commercial documents maintained by the licensee, and be readily available for inspection. The record shall show the date of the sale or other disposition of each firearm curio or relic, the name and address of the person to whom the firearm curio or relic is transferred, or the name and license number of the person to whom transferred if such person is a licensee, and the date of birth of the transferee if other than a licensee. In addition, the licensee shall\u2014", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "43. Section 478.125 is amended by revising the introductory text of paragraph (f)"
+        }, 
+        {
+            "cfr_part": "478", 
+            "instruction": "44. Section 478.125a is amended by removing \u201c1512-0387\u201d in the parenthetical text at the end of the section and adding in its place \u201c1140-0032\u201d."
+        }, 
+        {
+            "cfr_part": "478", 
+            "instruction": "45. Section 478.126 is amended by removing \u201c1512-0387\u201d in the parenthetical text at the end of the section and adding in its place \u201c1140-0032\u201d."
+        }, 
+        {
+            "cfr_part": "478", 
+            "instruction": "46. Section 478.126a is amended by removing \u201c1512-0006\u201d in the parenthetical text at the end of the section and adding in its place \u201c1140-0003\u201d."
+        }, 
+        {
+            "cfr_part": "478", 
+            "changes": [
+                [
+                    "478-127", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "127"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n             Where a licensed business is discontinued and succeeded by a new licensee, the records prescribed by this subpart shall appropriately reflect such facts and shall be delivered to the successor. Where discontinuance of the business is absolute, the records shall be delivered within 30 days following the business discontinuance to the ATF Out-of-Business Records Center, 244 Needy Road, Martinsburg, West Virginia 25405, or to any ATF office in the division in which the business was located: <E T=\"03\">Provided, however</E>, Where State law or local ordinance requires the delivery of records to other responsible authority, the Chief, Federal Firearms Licensing Center may arrange for the delivery of the records required by this subpart to such authority: <E T=\"03\">Provided further</E>, That where a licensed business is discontinued and succeeded by a new licensee, the records may be delivered within 30 days following the business discontinuance to the ATF Out-of-Business Records Center or to any ATF office in the division in which the business was located.", 
+                                "text": "Where a licensed business is discontinued and succeeded by a new licensee, the records prescribed by this subpart shall appropriately reflect such facts and shall be delivered to the successor. Where discontinuance of the business is absolute, the records shall be delivered within 30 days following the business discontinuance to the ATF Out-of-Business Records Center, 244 Needy Road, Martinsburg, West Virginia 25405, or to any ATF office in the division in which the business was located: Provided, however, Where State law or local ordinance requires the delivery of records to other responsible authority, the Chief, Federal Firearms Licensing Center may arrange for the delivery of the records required by this subpart to such authority: Provided further, That where a licensed business is discontinued and succeeded by a new licensee, the records may be delivered within 30 days following the business discontinuance to the ATF Out-of-Business Records Center or to any ATF office in the division in which the business was located.", 
+                                "title": "\u00a7 478.127 Discontinuance of business."
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "47. Section 478.127 is revised"
+        }, 
+        {
+            "cfr_part": "478", 
+            "instruction": "48. Section 478.131 is amended by removing \u201c1512-0544\u201d in the parenthetical text at the end of the section and adding in its place \u201c1140-0045\u201d."
+        }, 
+        {
+            "cfr_part": "478", 
+            "instruction": "49. Section 478.132 is amended by removing \u201c1512-0526\u201d in the parenthetical text at the end of the section and adding in its place \u201c1140-0041\u201d."
+        }, 
+        {
+            "cfr_part": "478", 
+            "instruction": "50. Section 478.133 is amended by removing \u201c1512-0526\u201d in the parenthetical text at the end of the section and adding in its place \u201c1140-0041\u201d."
+        }, 
+        {
+            "cfr_part": "478", 
+            "instruction": "51. Section 478.150 is amended by removing \u201c1512-0544\u201d in the parenthetical text at the end of the section and adding in its place \u201c1140-0045\u201d."
+        }, 
+        {
+            "cfr_part": "478", 
+            "instruction": "52. Section 478.151 is amended by adding a parenthetical text at the end of the section to read as follows:"
+        }, 
+        {
+            "authority": "26 U.S.C. 7805.", 
+            "cfr_part": "479", 
+            "instruction": "53. The authority citation for 27 CFR Part 479 continues to read as follows:"
+        }, 
+        {
+            "cfr_part": "479", 
+            "instruction": "54. Section 479.21(b) is amended by removing \u201c7943 Angus Court, Springfield, Virginia 22153\u201d and adding in its place \u201c7664 K Fullerton Road, Springfield, Virginia 22150\u201d."
+        }, 
+        {
+            "cfr_part": "479", 
+            "instruction": "55. Section 479.102 is amended by removing \u201c1512-0550\u201d in the parenthetical text at the end of the section and adding in its place \u201c1140-0050\u201d."
+        }, 
+        {
+            "cfr_part": "479", 
+            "instruction": "56. Section 479.131 is amended by removing \u201c1512-0387\u201d in the parenthetical text at the end of the section and adding in its place \u201c1140-0032\u201d."
+        }, 
+        {
+            "authority": "18 U.S.C. 847.", 
+            "cfr_part": "555", 
+            "instruction": "57. The authority citation for 27 CFR Part 555 continues to read as follows:"
+        }, 
+        {
+            "cfr_part": "555", 
+            "changes": [
+                [
+                    "555-21-b", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "555", 
+                                    "21", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) Requests for forms should be mailed to the ATF Distribution Center, 7664 K Fullerton Road, Springfield, Virginia 22150.", 
+                                "text": "(b) Requests for forms should be mailed to the ATF Distribution Center, 7664 K Fullerton Road, Springfield, Virginia 22150.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "58. Section 555.21(b) is revised to read"
+        }, 
+        {
+            "cfr_part": "555", 
+            "changes": [
+                [
+                    "555-23", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "555", 
+                                    "23"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n             The Director shall compile a list of explosive materials, which shall be published and revised at least annually in the <E T=\"04\">Federal Register.</E> The \u201cList of Explosive Materials\u201d (ATF Publication 5400.8) is available at no cost upon request from the ATF Distribution Center (See \u00a7 555.21).", 
+                                "text": "The Director shall compile a list of explosive materials, which shall be published and revised at least annually in the Federal Register. The \u201cList of Explosive Materials\u201d (ATF Publication 5400.8) is available at no cost upon request from the ATF Distribution Center (See \u00a7 555.21).", 
+                                "title": "\u00a7 555.23 List of explosive materials."
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "59. Section 555.23 is revised to read"
+        }, 
+        {
+            "cfr_part": "555", 
+            "instruction": "60. Section 555.109 is amended by removing the parenthetical text at the end of the section and adding in its place \u201c(Approved by the Office of Management and Budget under control numbers 1140-0055 and 1140-0062)\u201d."
+        }, 
+        {
+            "cfr_part": "555", 
+            "instruction": "61. Section 555.121 is amended by removing \u201c1512-0373\u201d in the parenthetical text at the end of the section and adding in its place \u201c1140-0030\u201d."
+        }, 
+        {
+            "cfr_part": "555", 
+            "instruction": "62. Section 555.122 is amended by removing \u201c1512-0373\u201d in the parenthetical text at the end of the section and adding in its place \u201c1140-0030\u201d."
+        }, 
+        {
+            "cfr_part": "555", 
+            "instruction": "63. Section 555.123 is amended by removing \u201c1512-0373\u201d in the parenthetical text at the end of the section and adding in its place \u201c1140-0030\u201d."
+        }, 
+        {
+            "cfr_part": "555", 
+            "instruction": "64. Section 555.124 is amended by removing \u201c1512-0373\u201d in the parenthetical text at the end of the section and adding in its place \u201c1140-0030\u201d."
+        }, 
+        {
+            "cfr_part": "555", 
+            "changes": [
+                [
+                    "555-128", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "555", 
+                                    "128"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n             Where an explosive materials business or operations is discontinued and succeeded by a new licensee or new permittee, the records prescribed by this subpart shall appropriately reflect such facts and shall be delivered to the successor. Where discontinuance of the business or operations is absolute, the records required by this subpart must be delivered within 30 days following the business or operations discontinuance to any ATF office located in the region in which the business was located, or to the ATF Out-of-Business Records Center, 244 Needy Road, Martinsburg, West Virginia 25405. Where State law or local ordinance requires the delivery of records to other responsible authority, the Chief, Firearms and Explosives Licensing Center may arrange for the delivery of the records required by this subpart to such authority. (See also, \u00a7 555.61.)", 
+                                "text": "Where an explosive materials business or operations is discontinued and succeeded by a new licensee or new permittee, the records prescribed by this subpart shall appropriately reflect such facts and shall be delivered to the successor. Where discontinuance of the business or operations is absolute, the records required by this subpart must be delivered within 30 days following the business or operations discontinuance to any ATF office located in the region in which the business was located, or to the ATF Out-of-Business Records Center, 244 Needy Road, Martinsburg, West Virginia 25405. Where State law or local ordinance requires the delivery of records to other responsible authority, the Chief, Firearms and Explosives Licensing Center may arrange for the delivery of the records required by this subpart to such authority. (See also, \u00a7 555.61.)", 
+                                "title": "\u00a7 555.128 Discontinuance of business."
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "65. Section 555.128 is revised to read"
+        }, 
+        {
+            "cfr_part": "555", 
+            "instruction": "66. Section 555.181 is amended by removing the parenthetical text at the end of section."
+        }, 
+        {
+            "cfr_part": "555", 
+            "instruction": "67. Section 555.184 is amended by removing \u201c1512-0539\u201d in the parenthetical text at the end of the section and adding in its place \u201c1140-0042\u201d."
+        }, 
+        {
+            "cfr_part": "555", 
+            "instruction": "68. Section 555.201 is amended by removing \u201c1512-0536\u201d in the parenthetical text at the end of the section and adding in its place \u201c1140-0071\u201d."
+        }
+    ], 
+    "cfr_parts": [
+        "447", 
+        "478", 
+        "479", 
+        "555"
+    ], 
+    "cfr_title": 27, 
+    "dockets": [
+        "Docket No. ATF 11F", 
+        "AG Order No. 3006-2008"
+    ], 
+    "document_number": "E8-23178", 
+    "effective_on": "2008-10-02", 
+    "footnotes": {}, 
+    "fr_citation": "73 FR 57239", 
+    "fr_url": "https://www.federalregister.gov/documents/2008/10/02/E8-23178/technical-amendments-to-regulations-in-title-27-chapter-ii-2006r-6p", 
+    "fr_volume": 73, 
+    "meta": {
+        "start_page": 57239
+    }, 
+    "primary_agency": "DEPARTMENT OF JUSTICE", 
+    "primary_docket": null, 
+    "publication_date": "2008-10-02", 
+    "regulation_id_numbers": [
+        "1140-AA32"
+    ], 
+    "section_by_section": [], 
+    "supporting_documents": [], 
+    "title": "Technical Amendments to Regulations in Title 27, Chapter II (2006R-6P)", 
+    "versions": {
+        "447": {
+            "left": "E7-24910", 
+            "right": "E8-23178"
+        }, 
+        "478": {
+            "left": "03-1657", 
+            "right": "E8-23178"
+        }, 
+        "479": {
+            "left": "03-1657", 
+            "right": "E8-23178"
+        }, 
+        "555": {
+            "left": "06-6862", 
+            "right": "E8-23178"
+        }
+    }
+}

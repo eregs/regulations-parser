@@ -1,0 +1,487 @@
+{
+    "479": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                10
+            ], 
+            [
+                "delete", 
+                10, 
+                11
+            ], 
+            [
+                "insert", 
+                10, 
+                [
+                    "479-Subjgrp-ATMaF"
+                ]
+            ], 
+            [
+                "equal", 
+                11, 
+                30
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "479-11": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                8
+            ], 
+            [
+                "insert", 
+                8, 
+                [
+                    "479-11-p22033228"
+                ]
+            ], 
+            [
+                "equal", 
+                8, 
+                26
+            ], 
+            [
+                "delete", 
+                26, 
+                27
+            ], 
+            [
+                "equal", 
+                27, 
+                34
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "479-11-p2162297120": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                32, 
+                "U.S. Customs and Border Protection, any commissioned, warrant, or petty officer of "
+            ], 
+            [
+                [
+                    "delete", 
+                    36, 
+                    51
+                ], 
+                [
+                    "insert", 
+                    36, 
+                    "Coast Guard,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    59, 
+                    81
+                ], 
+                [
+                    "insert", 
+                    59, 
+                    "agent"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    85, 
+                    98
+                ], 
+                [
+                    "insert", 
+                    85, 
+                    "other person authorized by law to perform the duties"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    102, 
+                    272
+                ], 
+                [
+                    "insert", 
+                    102, 
+                    "a customs officer."
+                ]
+            ]
+        ]
+    }, 
+    "479-11-p22033228": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "479", 
+                "11", 
+                "p22033228"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "<E T=\"03\">Director, Industry Operations.</E> The principal regional official responsible for administering regulations in this part.", 
+            "text": "Director, Industry Operations. The principal regional official responsible for administering regulations in this part.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "479-11-p2757219296": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    62, 
+                    69
+                ], 
+                [
+                    "insert", 
+                    62, 
+                    "Tobacco, Firearms,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    74, 
+                    82
+                ], 
+                [
+                    "insert", 
+                    74, 
+                    "Explosives"
+                ]
+            ]
+        ]
+    }, 
+    "479-11-p2792822644": {
+        "op": "deleted"
+    }, 
+    "479-11-p593154015": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                52, 
+                "Firearms, "
+            ], 
+            [
+                [
+                    "delete", 
+                    56, 
+                    65
+                ], 
+                [
+                    "insert", 
+                    56, 
+                    "Explosives,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    84, 
+                    97
+                ], 
+                [
+                    "insert", 
+                    84, 
+                    "Justice,"
+                ]
+            ]
+        ]
+    }, 
+    "479-111-a-3-p1": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    1260, 
+                    1268
+                ], 
+                [
+                    "insert", 
+                    1260, 
+                    "two years"
+                ]
+            ]
+        ]
+    }, 
+    "479-172": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    551, 
+                    581
+                ], 
+                [
+                    "insert", 
+                    551, 
+                    "Chief, National Firearms Act Branch"
+                ]
+            ]
+        ]
+    }, 
+    "479-21-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    33, 
+                    39
+                ], 
+                [
+                    "insert", 
+                    33, 
+                    "submitted"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    64, 
+                    118
+                ], 
+                [
+                    "insert", 
+                    64, 
+                    "Center (http://www.atf.gov) or made by calling (202) 648-6420."
+                ]
+            ]
+        ]
+    }, 
+    "479-22": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    54, 
+                    74
+                ], 
+                [
+                    "insert", 
+                    54, 
+                    "Tobacco, Firearms, and Explosives"
+                ]
+            ]
+        ]
+    }, 
+    "479-26-a-3": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    327, 
+                    358
+                ], 
+                [
+                    "insert", 
+                    327, 
+                    "Director, Industry Operations,"
+                ]
+            ]
+        ]
+    }, 
+    "479-26-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    1162, 
+                    1192
+                ], 
+                [
+                    "insert", 
+                    1162, 
+                    "Director, Industry Operations"
+                ]
+            ]
+        ]
+    }, 
+    "479-34-e": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    889, 
+                    915
+                ], 
+                [
+                    "insert", 
+                    889, 
+                    "(5310.12),"
+                ]
+            ]
+        ]
+    }, 
+    "479-37": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    101, 
+                    138
+                ], 
+                [
+                    "insert", 
+                    101, 
+                    "Chief, National Firearms Act Branch"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    316, 
+                    346
+                ], 
+                [
+                    "insert", 
+                    316, 
+                    "Chief, National Firearms Act Branch"
+                ]
+            ]
+        ]
+    }, 
+    "479-38": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    862, 
+                    900
+                ], 
+                [
+                    "insert", 
+                    862, 
+                    "Chief, National Firearms Act Branch for the"
+                ]
+            ]
+        ]
+    }, 
+    "479-46": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    426, 
+                    457
+                ], 
+                [
+                    "insert", 
+                    426, 
+                    "Chief, National Firearms Act Branch,"
+                ]
+            ]
+        ]
+    }, 
+    "479-47": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    332, 
+                    363
+                ], 
+                [
+                    "insert", 
+                    332, 
+                    "Chief, National Firearms Act Branch,"
+                ]
+            ]
+        ]
+    }, 
+    "479-50": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    328, 
+                    362
+                ], 
+                [
+                    "insert", 
+                    328, 
+                    "Chief, National Firearms Act Branch, to"
+                ]
+            ]
+        ]
+    }, 
+    "479-84": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    955, 
+                    995
+                ], 
+                [
+                    "insert", 
+                    955, 
+                    "Special Agent in Charge and shall"
+                ]
+            ]
+        ]
+    }, 
+    "479-90-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    2135, 
+                    2143
+                ], 
+                [
+                    "insert", 
+                    2135, 
+                    "transfer,"
+                ]
+            ]
+        ]
+    }, 
+    "479-Subjgrp-ATMaF": {
+        "node": {
+            "child_labels": [
+                "479-62", 
+                "479-63", 
+                "479-64", 
+                "479-65", 
+                "479-66", 
+                "479-67"
+            ], 
+            "label": [
+                "479", 
+                "Subjgrp", 
+                "ATMaF"
+            ], 
+            "node_type": "subpart", 
+            "tagged_text": null, 
+            "text": "", 
+            "title": "Application To Make a Firearm"
+        }, 
+        "op": "added"
+    }, 
+    "479-Subjgrp-AtMaF": {
+        "op": "deleted"
+    }
+}
