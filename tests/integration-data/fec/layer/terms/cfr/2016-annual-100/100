@@ -1,37 +1,4 @@
 {
-    "100-1": [
-        {
-            "offsets": [
-                [
-                    104, 
-                    107
-                ]
-            ], 
-            "ref": "act:100-18"
-        }, 
-        {
-            "offsets": [
-                [
-                    50, 
-                    60
-                ]
-            ], 
-            "ref": "commission:100-9"
-        }, 
-        {
-            "offsets": [
-                [
-                    41, 
-                    49
-                ], 
-                [
-                    86, 
-                    94
-                ]
-            ], 
-            "ref": "election:100-2-a"
-        }
-    ], 
     "100-111-a": [
         {
             "offsets": [
@@ -81,17 +48,6 @@
                 ]
             ], 
             "ref": "political committee:100-5"
-        }
-    ], 
-    "100-111-d": [
-        {
-            "offsets": [
-                [
-                    81, 
-                    87
-                ]
-            ], 
-            "ref": "state:100-11"
         }
     ], 
     "100-111-e-1": [
@@ -908,10 +864,6 @@
     "100-14-c": [
         {
             "offsets": [
-                [
-                    31, 
-                    36
-                ], 
                 [
                     195, 
                     200
@@ -1799,17 +1751,6 @@
             "ref": "political party:100-15"
         }
     ], 
-    "100-18": [
-        {
-            "offsets": [
-                [
-                    22, 
-                    30
-                ]
-            ], 
-            "ref": "election:100-2-a"
-        }
-    ], 
     "100-19": [
         {
             "offsets": [
@@ -1834,15 +1775,6 @@
         {
             "offsets": [
                 [
-                    174, 
-                    184
-                ]
-            ], 
-            "ref": "commission:100-9"
-        }, 
-        {
-            "offsets": [
-                [
                     111, 
                     119
                 ]
@@ -1857,24 +1789,6 @@
                 ]
             ], 
             "ref": "document:100-19"
-        }, 
-        {
-            "offsets": [
-                [
-                    165, 
-                    173
-                ]
-            ], 
-            "ref": "election:100-2-a"
-        }, 
-        {
-            "offsets": [
-                [
-                    258, 
-                    264
-                ]
-            ], 
-            "ref": "state:100-11"
         }
     ], 
     "100-19-b-1": [
@@ -1927,29 +1841,11 @@
         {
             "offsets": [
                 [
-                    151, 
-                    161
-                ]
-            ], 
-            "ref": "commission:100-9"
-        }, 
-        {
-            "offsets": [
-                [
                     68, 
                     76
                 ]
             ], 
             "ref": "document:100-19"
-        }, 
-        {
-            "offsets": [
-                [
-                    142, 
-                    150
-                ]
-            ], 
-            "ref": "election:100-2-a"
         }
     ], 
     "100-19-d-1": [
@@ -2218,15 +2114,6 @@
                 ]
             ], 
             "ref": "person:100-10"
-        }, 
-        {
-            "offsets": [
-                [
-                    149, 
-                    155
-                ]
-            ], 
-            "ref": "state:100-11"
         }
     ], 
     "100-2-c-3": [
@@ -3192,15 +3079,6 @@
                 ]
             ], 
             "ref": "occupation:100-20"
-        }, 
-        {
-            "offsets": [
-                [
-                    39, 
-                    45
-                ]
-            ], 
-            "ref": "state:100-11"
         }
     ], 
     "100-28": [
@@ -3342,15 +3220,6 @@
                 ]
             ], 
             "ref": "person:100-10"
-        }, 
-        {
-            "offsets": [
-                [
-                    69, 
-                    75
-                ]
-            ], 
-            "ref": "state:100-11"
         }
     ], 
     "100-29-b-4": [
@@ -3414,10 +3283,6 @@
                     279
                 ], 
                 [
-                    369, 
-                    379
-                ], 
-                [
                     442, 
                     452
                 ], 
@@ -3427,15 +3292,6 @@
                 ]
             ], 
             "ref": "commission:100-9"
-        }, 
-        {
-            "offsets": [
-                [
-                    360, 
-                    368
-                ]
-            ], 
-            "ref": "election:100-2-a"
         }, 
         {
             "offsets": [
@@ -4068,21 +3924,6 @@
             "ref": "election:100-2-a"
         }
     ], 
-    "100-4": [
-        {
-            "offsets": [
-                [
-                    77, 
-                    83
-                ], 
-                [
-                    183, 
-                    189
-                ]
-            ], 
-            "ref": "state:100-11"
-        }
-    ], 
     "100-5-a": [
         {
             "offsets": [
@@ -4539,17 +4380,6 @@
                 ]
             ], 
             "ref": "political committee:100-5"
-        }
-    ], 
-    "100-52-c": [
-        {
-            "offsets": [
-                [
-                    81, 
-                    87
-                ]
-            ], 
-            "ref": "state:100-11"
         }
     ], 
     "100-52-d-1": [
@@ -5623,17 +5453,6 @@
                 ]
             ], 
             "ref": "state:100-11"
-        }
-    ], 
-    "100-9": [
-        {
-            "offsets": [
-                [
-                    29, 
-                    37
-                ]
-            ], 
-            "ref": "election:100-2-a"
         }
     ], 
     "100-91": [
@@ -7091,6 +6910,14 @@
             ], 
             "reference": "100-134-c", 
             "term": "stockholder"
+        }, 
+        "subordinate committee of a state, district, or local committee:100-14-c": {
+            "position": [
+                4, 
+                66
+            ], 
+            "reference": "100-14-c", 
+            "term": "subordinate committee of a state, district, or local committee"
         }, 
         "support the democratic nominee:100-22-a": {
             "position": [

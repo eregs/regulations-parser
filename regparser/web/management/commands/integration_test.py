@@ -35,6 +35,9 @@ targets = {
             list(range(9001, 9009)) + [9012] + list(range(9031, 9040)) +
             [9405, 9407, 9409, 9410, 9411, 9420, 9428, 9430]
         ),
+        reqs={
+            'fec_regparser': '-e git+https://github.com/18F/fec-eregs.git#egg=fec_regparser&subdirectory=eregs_extensions',  # noqa
+        },
         flags='--only-latest'
     ),
     'atf': Target(
