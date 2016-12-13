@@ -47,6 +47,20 @@ class Terms(Layer):
         #   scope -> List[(term, definition_ref)]
         self.scoped_terms = defaultdict(list)
         self.scope_finder = ScopeFinder()
+        self.singulars = {}
+        self.plurals = {}
+
+    def singularize(self, term):
+        """Check the memoized singular version of the provided term"""
+        if term not in self.singulars:
+            self.singulars[term] = inflection.singularize(term)
+        return self.singulars[term]
+
+    def pluralize(self, term):
+        """Check the memoized plural version of the provided term"""
+        if term not in self.plurals:
+            self.plurals[term] = inflection.pluralize(term)
+        return self.plurals[term]
 
     def look_for_defs(self, node, stack=None):
         """Check a node and recursively check its children for terms which are
@@ -186,8 +200,7 @@ class Terms(Layer):
         exclusions.extend(self.ignored_offsets(node.label[0], node.text))
         return exclusions
 
-    @staticmethod
-    def calculate_offsets(text, applicable_terms, exclusions=None,
+    def calculate_offsets(self, text, applicable_terms, exclusions=None,
                           inclusions=None):
         """Search for defined terms in this text, including singular and
         plural forms of these terms, with a preference for all larger
@@ -198,9 +211,9 @@ class Terms(Layer):
         inclusions = list(inclusions or [])
 
         # add singulars and plurals to search terms
-        search_terms = set((inflection.singularize(t[0]), t[1])
+        search_terms = set((self.singularize(t[0]), t[1])
                            for t in applicable_terms)
-        search_terms |= set((inflection.pluralize(t[0]), t[1])
+        search_terms |= set((self.pluralize(t[0]), t[1])
                             for t in applicable_terms)
 
         # longer terms first
