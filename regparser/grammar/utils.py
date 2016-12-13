@@ -138,9 +138,10 @@ class QuickSearchable(pyparsing.ParseElementEnhance):
         elif isinstance(grammar, (pyparsing.MatchFirst, pyparsing.Or)):
             return reduce(lambda so_far, expr: so_far | recurse(expr),
                           grammar.exprs, set())
-        elif isinstance(grammar, (pyparsing.Suppress, QuickSearchable)):
+        elif isinstance(grammar, pyparsing.Suppress):
             return recurse(grammar.expr)
-        elif isinstance(grammar, (pyparsing.Regex, pyparsing.Word)):
+        elif isinstance(grammar, (pyparsing.Regex, pyparsing.Word,
+                                  QuickSearchable)):
             return set([grammar.reString])
         elif isinstance(grammar, pyparsing.LineStart):
             return set(['^'])
