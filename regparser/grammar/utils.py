@@ -62,16 +62,20 @@ class QuickSearchable(pyparsing.ParseElementEnhance):
     flexibility, it is rather slow for our needs. This enhanced grammar type
     wraps other grammars, deriving from them a first regular expression to use
     when `scanString`ing. This cuts search time considerably."""
-    def __init__(self, expr):
+    def __init__(self, expr, force_regex_str=None):
         super(QuickSearchable, self).__init__(expr)
         regex_strs = []
-        for regex_str in QuickSearchable.initial_regex(expr):
-            if '|' in regex_str:
-                # If the regex includes an "or", we need to wrap it in parens
-                regex_str = '(' + regex_str + ')'
-            regex_strs.append(regex_str)
-        # Combine all potential initial_regexes with an "or". Match
-        # Pyparsing's naming convention
+        if force_regex_str is not None:
+            regex_strs.append(force_regex_str)
+        else:
+            for regex_str in QuickSearchable.initial_regex(expr):
+                if '|' in regex_str:
+                    # If the regex includes an "or", we need to wrap it in
+                    # parens
+                    regex_str = '(' + regex_str + ')'
+                regex_strs.append(regex_str)
+            # Combine all potential initial_regexes with an "or". Match
+            # Pyparsing's naming convention
         self.reString = '|'.join(regex_strs)
         self.re = re.compile(
             self.reString,

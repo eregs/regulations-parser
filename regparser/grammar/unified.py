@@ -69,7 +69,9 @@ appendix_with_section = QuickSearchable(
     (atomic.appendix_digit +
      ZeroOrMore(atomic.lower_p | atomic.roman_p | atomic.digit_p |
                 atomic.upper_p)).setParseAction(
-                    appendix_section).setResultsName("appendix_section"))
+                    appendix_section).setResultsName("appendix_section"),
+    # optimization: encode the regex
+    force_regex_str=r"[A-Z]+[0-9]*\b\s*-")
 
 appendix_with_part = QuickSearchable(
     keep_pos(atomic.appendix_marker).setResultsName("marker") +
