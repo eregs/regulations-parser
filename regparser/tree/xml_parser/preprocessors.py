@@ -4,6 +4,7 @@ in the XML"""
 from __future__ import unicode_literals
 import abc
 from copy import deepcopy
+import functools
 import logging
 import re
 
@@ -411,12 +412,16 @@ class ImportCategories(PreProcessorBase):
                 iterator = next_el
 
 
-def promote_nested_subjgrp(xml):
-    """We don't currently support subject groups nested inside subparts, so
-    promote such subject groups one level"""
+def promote_nested_tags(tag, xml):
+    """We don't currently support certain tags nested inside subparts, so
+    promote each up one level"""
     # Reversed to account for the order of insertion
-    for subjgrp_xml in reversed(xml.xpath('.//SUBPART/SUBJGRP')):
+    for subjgrp_xml in reversed(xml.xpath('.//SUBPART/' + tag)):
         subpart_xml = subjgrp_xml.getparent()
         subpart_parent = subpart_xml.getparent()
         idx = subpart_parent.index(subpart_xml) + 1
         subpart_parent.insert(idx, subjgrp_xml)
+
+
+promote_nested_subjgrp = functools.partial(promote_nested_tags, 'SUBJGRP')
+promote_nested_appendix = functools.partial(promote_nested_tags, 'APPENDIX')

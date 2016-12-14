@@ -79,6 +79,8 @@ setup(
              "ImportCategories"),
             ("promote-nested-subjgrp = regparser.tree.xml_parser."
              "preprocessors:promote_nested_subjgrp"),
+            ("promote-nested-appendix = regparser.tree.xml_parser."
+             "preprocessors:promote_nested_appendix"),
         ]
     }
 )
