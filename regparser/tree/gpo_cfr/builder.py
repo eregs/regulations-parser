@@ -3,12 +3,8 @@ import logging
 
 from lxml import etree
 
-from regparser import content
+from regparser import content, plugins
 from regparser.tree.struct import Node
-from regparser.tree.gpo_cfr.appendices import parse_appendix
-from regparser.tree.gpo_cfr.interpretations import parse_interp
-from regparser.tree.gpo_cfr.section import ParseEmptyPart
-from regparser.tree.gpo_cfr.subpart import parse_subpart, ParseSubjectGroup
 
 
 logger = logging.getLogger(__name__)
@@ -75,8 +71,8 @@ def build_tree(reg_xml):
     tree = Node("", [], [reg_part], title)
 
     part = reg_xml.xpath('//PART')[0]
-    matchers = [ParseEmptyPart(), parse_subpart, ParseSubjectGroup(),
-                parse_appendix, parse_interp]
+    matchers = list(plugins.instatiate_if_possible(
+        'eregs_ns.parser.xml_matchers.gpo_cfr.PART'))
 
     for xml_node in part.getchildren():
         for plugin in matchers:
