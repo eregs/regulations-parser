@@ -10,8 +10,8 @@ import re
 from roman import fromRoman
 
 from regparser.grammar.tokens import Verb
+from regparser.layer.paragraph_markers import marker_of
 from regparser.tree.struct import Node, find, find_parent
-from regparser.tree.gpo_cfr import interpretations, section
 
 
 logger = logging.getLogger(__name__)
@@ -89,18 +89,13 @@ def node_text_equality(left, right):
 def overwrite_marker(origin, new_label):
     """ The node passed in has a label, but we're going to give it a
     new one (new_label). This is necessary during node moves.  """
-
-    if origin.node_type == Node.REGTEXT:
-        marker_list = section.initial_markers(origin.text)
-        if len(marker_list) > 0:
-            marker = '(%s)' % marker_list[0]
-            new_marker = '(%s)' % new_label
-            origin.text = origin.text.replace(marker, new_marker, 1)
-    elif origin.node_type == Node.INTERP:
-        marker = interpretations.get_first_interp_marker(origin.text)
-        marker = marker + '.'
-        new_marker = new_label + '.'
-        origin.text = origin.text.replace(marker, new_marker, 1)
+    marker = marker_of(origin)
+    if '(' in marker:
+        origin.text = origin.text.replace(marker, '({})'.format(new_label), 1)
+    elif marker:
+        origin.text = origin.text.replace(marker, '{}.'.format(new_label), 1)
+    else:
+        logger.warning("Cannot replace marker in %s", origin.text)
 
     return origin
 
