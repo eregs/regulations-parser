@@ -4,7 +4,8 @@ from unittest import TestCase
 from mock import patch
 import six
 
-from regparser.notice import amendments, changes
+from regparser.notice import changes
+from regparser.notice.amendments import fetch
 from regparser.notice.amdparser import Amendment
 from regparser.test_utils.xml_builder import XMLBuilder
 from regparser.tree.struct import Node
@@ -12,7 +13,7 @@ from regparser.tree.xml_parser.preprocessors import preprocess_amdpars
 
 
 class NoticeAmendmentsTest(TestCase):
-    @patch('regparser.notice.amendments.process_appendix')
+    @patch('regparser.notice.amendments.fetch.process_appendix')
     def test_parse_appendix(self, process):
         with XMLBuilder("ROOT") as ctx:
             ctx.AMDPAR("1. Adding Appendix R and S")
@@ -25,19 +26,19 @@ class NoticeAmendmentsTest(TestCase):
                 ctx.P("S1")
                 ctx.P("S2")
 
-        amendments.parse_appendix(ctx.xml, '1234', 'S')
+        fetch.parse_appendix(ctx.xml, '1234', 'S')
         self.assertEqual(process.call_count, 1)
         extract = process.call_args[0][0]
         self.assertEqual(['Appendix S to Part 1234', 'S1', 'S2'],
                          [n.text for n in extract])
 
-        amendments.parse_appendix(ctx.xml, '1234', 'R')
+        fetch.parse_appendix(ctx.xml, '1234', 'R')
         self.assertEqual(process.call_count, 2)
         extract = process.call_args[0][0]
         self.assertEqual(['Appendix R to Part 1234', 'R1', 'R2'],
                          [n.text for n in extract])
 
-    @patch('regparser.notice.amendments.interpretations')
+    @patch('regparser.notice.amendments.fetch.interpretations')
     def test_parse_interp(self, interpretations):
         xmls = []
         with XMLBuilder("REGTEXT") as ctx:
@@ -83,7 +84,7 @@ class NoticeAmendmentsTest(TestCase):
         xmls.append(ctx.xml)
 
         for xml in xmls:
-            amendments.parse_interp('111', xml)
+            fetch.parse_interp('111', xml)
             root, nodes = interpretations.parse_from_xml.call_args[0]
             self.assertEqual(root.label, ['111', 'Interp'])
             self.assertEqual(['HD', 'T1', 'P'], [n.tag for n in nodes])
@@ -99,7 +100,7 @@ class NoticeAmendmentsTest(TestCase):
                     ctx.SUBJECT("Stubby Subby")
                     ctx.STARS()
                     ctx.P("5. Some Content")
-        interp = amendments.parse_interp('111', ctx.xml)
+        interp = fetch.parse_interp('111', ctx.xml)
         self.assertEqual(1, len(interp.children))
         c33 = interp.children[0]
         self.assertEqual(c33.label, ['111', '33', 'Interp'])
@@ -121,7 +122,7 @@ class NoticeAmendmentsTest(TestCase):
                 ctx.P(" (b)(1) Define a term here. ")
 
         amdpar_xml = ctx.xml.xpath('//AMDPAR')[0]
-        section = amendments.find_section(amdpar_xml)
+        section = fetch.find_section(amdpar_xml)
         self.assertEqual(section.tag, 'SECTION')
 
         sectno_xml = section.xpath('./SECTNO')[0]
@@ -137,7 +138,7 @@ class NoticeAmendmentsTest(TestCase):
             ctx.P("(b) paragraph 1")
 
         amdpar = ctx.xml.xpath('//AMDPAR')[0]
-        section = amendments.find_section(amdpar)
+        section = fetch.find_section(amdpar)
         self.assertNotEqual(None, section)
         paragraphs = [p for p in section if p.tag == 'P']
         self.assertEqual(paragraphs[0].text, '(b) paragraph 1')
@@ -152,7 +153,7 @@ class NoticeAmendmentsTest(TestCase):
                     ctx.SECTNO(" 205.4 ")
                     ctx.SUBJECT("[Corrected]")
         amdpar = ctx.xml.xpath('//AMDPAR')[0]
-        section = amendments.find_lost_section(amdpar)
+        section = fetch.find_lost_section(amdpar)
         self.assertNotEqual(None, section)
 
     def test_find_section_lost(self):
@@ -165,14 +166,14 @@ class NoticeAmendmentsTest(TestCase):
                     ctx.SECTNO(" 205.4 ")
                     ctx.SUBJECT("[Corrected]")
         amdpar = ctx.xml.xpath('//AMDPAR')[0]
-        section = amendments.find_section(amdpar)
+        section = fetch.find_section(amdpar)
         self.assertNotEqual(None, section)
 
     def test_process_designate_subpart(self):
         amended_label = Amendment('MOVE_INTO_SUBPART', '200-?-1-a',
                                   '205-Subpart:A')
 
-        subpart_changes = amendments.process_designate_subpart(amended_label)
+        subpart_changes = fetch.process_designate_subpart(amended_label)
 
         six.assertCountEqual(self, ['200-1-a'], subpart_changes.keys())
         change = subpart_changes['200-1-a']
@@ -188,7 +189,7 @@ class NoticeAmendmentsTest(TestCase):
             ctx.AMDPAR(amdpar)
         preprocess_amdpars(ctx.xml)
 
-        amendment = amendments.fetch_amendments(ctx.xml)[0]
+        amendment = fetch.fetch_amendments(ctx.xml)[0]
         changes = dict(amendment['changes'])
 
         self.assertEqual(amendment['instruction'], amdpar)
@@ -211,7 +212,7 @@ class NoticeAmendmentsTest(TestCase):
                 ctx.P("(b) This part carries out.")
         preprocess_amdpars(ctx.xml)
 
-        amendment = amendments.fetch_amendments(ctx.xml)[0]
+        amendment = fetch.fetch_amendments(ctx.xml)[0]
         changes = dict(amendment['changes'])
 
         self.assertEqual(amendment['instruction'], amdpar)
@@ -237,7 +238,7 @@ class NoticeAmendmentsTest(TestCase):
                 ctx.P("(c) More stuff")
         preprocess_amdpars(ctx.xml)
 
-        amd1, amd2 = amendments.fetch_amendments(ctx.xml)
+        amd1, amd2 = fetch.fetch_amendments(ctx.xml)
         changes1, changes2 = dict(amd1['changes']), dict(amd2['changes'])
         self.assertEqual(amd1['instruction'], amdpar1)
         self.assertEqual(amd1['cfr_part'], '105')
@@ -273,7 +274,7 @@ class NoticeAmendmentsTest(TestCase):
                     ctx.P("(b) This part carries out.")
         preprocess_amdpars(ctx.xml)
 
-        amd1, amd2 = amendments.fetch_amendments(ctx.xml)
+        amd1, amd2 = fetch.fetch_amendments(ctx.xml)
         changes1, changes2 = dict(amd1['changes']), dict(amd2['changes'])
         self.assertEqual(amd1['instruction'], amdpar1)
         self.assertEqual(amd1['cfr_part'], '104')
@@ -292,7 +293,7 @@ class NoticeAmendmentsTest(TestCase):
                 ctx.AMDPAR(amdpar)
         preprocess_amdpars(ctx.xml)
 
-        amendment = amendments.fetch_amendments(ctx.xml)[0]
+        amendment = fetch.fetch_amendments(ctx.xml)[0]
         changes = dict(amendment['changes'])
 
         self.assertEqual(amendment['instruction'], amdpar)
@@ -311,7 +312,7 @@ class NoticeAmendmentsTest(TestCase):
                 ctx.P("Some text here")
         preprocess_amdpars(ctx.xml)
 
-        amendment = amendments.fetch_amendments(ctx.xml)[0]
+        amendment = fetch.fetch_amendments(ctx.xml)[0]
         changes = dict(amendment['changes'])
 
         self.assertEqual(amendment['instruction'], amdpar)
@@ -339,7 +340,7 @@ class NoticeAmendmentsTest(TestCase):
                 ctx.P("(c) Revised third paragraph")
         preprocess_amdpars(ctx.xml)
 
-        amd1, amd2 = amendments.fetch_amendments(ctx.xml)
+        amd1, amd2 = fetch.fetch_amendments(ctx.xml)
         self.assertEqual(amd1['instruction'], amdpar1)
         self.assertEqual(amd1['cfr_part'], '111')
         six.assertCountEqual(self,
@@ -377,7 +378,7 @@ class NoticeAmendmentsTest(TestCase):
 
         preprocess_amdpars(ctx.xml)
 
-        subpart_amendment = amendments.fetch_amendments(ctx.xml)[1]
+        subpart_amendment = fetch.fetch_amendments(ctx.xml)[1]
         changes = dict(subpart_amendment['changes'])
 
         self.assertTrue('105-Subpart-B' in changes)
@@ -404,7 +405,7 @@ class NoticeAmendmentsTest(TestCase):
                     ctx.P("(b) Content")
         preprocess_amdpars(ctx.xml)
 
-        amd1, amd2 = amendments.fetch_amendments(ctx.xml)
+        amd1, amd2 = fetch.fetch_amendments(ctx.xml)
         self.assertEqual(amd1['instruction'], amdpar1)
         self.assertEqual(amd1['cfr_part'], '105')
         self.assertEqual(amd2['instruction'], amdpar2)
@@ -432,7 +433,7 @@ class NoticeAmendmentsTest(TestCase):
                     ctx.P("Text")
         preprocess_amdpars(ctx.xml)
 
-        amd1, amd2 = amendments.fetch_amendments(ctx.xml)
+        amd1, amd2 = fetch.fetch_amendments(ctx.xml)
         self.assertEqual(amd1['instruction'], amdpar1)
         self.assertEqual(amd1['cfr_part'], '106')
         self.assertEqual(amd2['instruction'], amdpar2)
@@ -456,7 +457,7 @@ class NoticeAmendmentsTest(TestCase):
                     ctx.STARS()
         preprocess_amdpars(ctx.xml)
 
-        amendment = amendments.fetch_amendments(ctx.xml)[0]
+        amendment = fetch.fetch_amendments(ctx.xml)[0]
         changes = dict(amendment['changes'])
 
         self.assertEqual(amendment['instruction'], amdpar)
@@ -476,7 +477,7 @@ class NoticeAmendmentsTest(TestCase):
                     ctx.P(auth)
         preprocess_amdpars(ctx.xml)
 
-        amendment = amendments.fetch_amendments(ctx.xml)[0]
+        amendment = fetch.fetch_amendments(ctx.xml)[0]
         self.assertEqual(amendment['instruction'], amdpar)
         self.assertEqual(amendment['cfr_part'], '555')
         self.assertEqual(amendment['authority'], auth)
@@ -493,7 +494,7 @@ class NoticeAmendmentsTest(TestCase):
                 ctx.P(" Except as otherwise provided, the following apply. ")
         preprocess_amdpars(ctx.xml)
 
-        amendment = amendments.fetch_amendments(ctx.xml)[0]
+        amendment = fetch.fetch_amendments(ctx.xml)[0]
         change = dict(amendment['changes'])['106-2'][0]
         self.assertEqual('[text]', change.get('field'))
 
@@ -514,7 +515,7 @@ class NoticeAmendmentsTest(TestCase):
                           "apply. ")
         preprocess_amdpars(ctx.xml)
 
-        amd1, amd2 = amendments.fetch_amendments(ctx.xml)
+        amd1, amd2 = fetch.fetch_amendments(ctx.xml)
         changes1, changes2 = dict(amd1['changes']), dict(amd2['changes'])
         self.assertEqual(amd1['instruction'], amdpar1)
         self.assertEqual(amd1['cfr_part'], '106')
@@ -528,7 +529,7 @@ class NoticeAmendmentsTest(TestCase):
                           Amendment('MOVE', '200-?-2-b', '200-?-2-c')]
         notice_changes = changes.NoticeChanges()
         for amendment in labels_amended:
-            amendments.create_xmlless_change(amendment, notice_changes)
+            fetch.create_xmlless_change(amendment, notice_changes)
 
         delete = notice_changes.changes_by_xml[None]['200-2-a'][0]
         move = notice_changes.changes_by_xml[None]['200-2-b'][0]
@@ -544,7 +545,7 @@ class NoticeAmendmentsTest(TestCase):
         root = Node('root', label=['200'], children=[n2])
 
         notice_changes = changes.NoticeChanges()
-        amendments.create_xml_changes(labels_amended, root, notice_changes)
+        fetch.create_xml_changes(labels_amended, root, notice_changes)
 
         reserve = notice_changes.changes_by_xml[None]['200-2-a'][0]
         self.assertEqual(reserve['action'], 'RESERVE')
@@ -559,7 +560,7 @@ class NoticeAmendmentsTest(TestCase):
         root = Node('root', label=['200'], children=[n2])
 
         notice_changes = changes.NoticeChanges()
-        amendments.create_xml_changes(labels_amended, root, notice_changes)
+        fetch.create_xml_changes(labels_amended, root, notice_changes)
         data = notice_changes.changes_by_xml[None]
 
         for label in ('200-2-a-1', '200-2-a-2'):
@@ -584,7 +585,7 @@ class NoticeAmendmentsTest(TestCase):
         root = Node('root', label=['200'], children=[n2])
 
         notice_changes = changes.NoticeChanges()
-        amendments.create_xml_changes(labels_amended, root, notice_changes)
+        fetch.create_xml_changes(labels_amended, root, notice_changes)
 
         data = notice_changes.changes_by_xml[None]
         for label in ('200-2-a', '200-2-a-2'):
@@ -612,7 +613,7 @@ class NoticeAmendmentsTest(TestCase):
         root = Node('root', label=['200'], children=[n2])
 
         notice_changes = changes.NoticeChanges()
-        amendments.create_xml_changes(labels_amended, root, notice_changes)
+        fetch.create_xml_changes(labels_amended, root, notice_changes)
         data = notice_changes.changes_by_xml[None]
 
         self.assertIn('200-2-a', data)
@@ -625,7 +626,7 @@ class NoticeAmendmentsTest(TestCase):
         n2a.source_xml.text = n2a.source_xml.text + ":"
 
         notice_changes = changes.NoticeChanges()
-        amendments.create_xml_changes(labels_amended, root, notice_changes)
+        fetch.create_xml_changes(labels_amended, root, notice_changes)
         data = notice_changes.changes_by_xml[None]
 
         self.assertIn('200-2-a', data)
