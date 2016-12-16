@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from collections import namedtuple
 from copy import deepcopy
+import functools
 import logging
 from itertools import dropwhile
 
@@ -39,37 +40,70 @@ class ContentCache(object):
         instruction and attempts to derive a related Node"""
         is_editing = instruction_xml.tag in ('POST', 'PUT', 'INSERT',
                                              'RESERVE')
-        label = instruction_xml.get('label', '')
-        label_parts = label.split('-')
-        cfr_part = label_parts[0]
-
-        # <AMDPAR><EREGS_INSTRUCTIONS><INSTRUCTION>...
-        amdpar = instruction_xml.getparent().getparent()
-        new_subpart = (instruction_xml.tag == 'POST' and
-                       len(label_parts) == 2 and 'Subpart:' in label_parts[1])
 
         if not is_editing:
             return None
-        elif new_subpart:
-            xml = find_subpart(amdpar)
-            return self.fetch(xml, build_subpart, cfr_part, xml)
-        elif 'Appendix' in label:
-            xml = amdpar.getparent()
-            letter = label_parts[1][len('Appendix:'):]
-            return self.fetch(xml, parse_appendix, xml, cfr_part, letter)
-        elif 'Interpretations' in label:
-            xml = amdpar.getparent()
-            return self.fetch(xml, parse_interp, cfr_part, xml)
-        else:
-            xml = find_section(amdpar)
-            return self.fetch(xml, parse_regtext, xml, cfr_part)
+
+        parsers = (content_for_new_subpart, content_for_appendix,
+                   content_for_interpretations, content_for_regtext)
+        for parser in parsers:
+            result = parser(instruction_xml)
+            if result:
+                key, fn = result
+                if key is not None and key not in self.by_xml:
+                    self.by_xml[key] = Content(fn(), [])
+                return self.by_xml.get(key)
 
 
-def parse_regtext(xml, cfr_part):
-    """Small wrapper around build_from_section that returns only one section"""
-    sections = build_from_section(cfr_part, xml)
-    if sections:
-        return sections[0]
+def label_amdpar_from(instruction_xml):
+    label_parts = instruction_xml.get('label', '').split('-')
+    # <AMDPAR><EREGS_INSTRUCTIONS><INSTRUCTION>...
+    amdpar = instruction_xml.getparent().getparent()
+    return label_parts, amdpar
+
+
+def content_for_new_subpart(instruction_xml):
+    """Return a chunk of XML (which serves as a unique key) and a think for
+    parsing that XML as a subpart"""
+    label_parts, amdpar = label_amdpar_from(instruction_xml)
+    if (instruction_xml.tag == 'POST' and len(label_parts) == 2
+            and 'Subpart:' in label_parts[1]):
+        xml = find_subpart(amdpar)
+        return xml, functools.partial(build_subpart, label_parts[0], xml)
+
+
+def content_for_appendix(instruction_xml):
+    """Return a chunk of XML (which serves as a unique key) and a think for
+    parsing that XML as an appendix"""
+    label_parts, amdpar = label_amdpar_from(instruction_xml)
+    if len(label_parts) > 0 and 'Appendix' in label_parts[1]:
+        xml = amdpar.getparent()
+        letter = label_parts[1][len('Appendix:'):]
+        return xml, functools.partial(parse_appendix, xml, label_parts[0],
+                                      letter)
+
+
+def content_for_interpretations(instruction_xml):
+    """Return a chunk of XML (which serves as a unique key) and a think for
+    parsing that XML as an interpretation"""
+    label_parts, amdpar = label_amdpar_from(instruction_xml)
+    if len(label_parts) > 0 and 'Interpretations' in label_parts[1]:
+        xml = amdpar.getparent()
+        return xml, functools.partial(parse_interp, label_parts[0], xml)
+
+
+def content_for_regtext(instruction_xml):
+    """Return a chunk of XML (which serves as a unique key) and a think for
+    parsing that XML as a section"""
+    label_parts, amdpar = label_amdpar_from(instruction_xml)
+    xml = find_section(amdpar)
+
+    def parse_regtext():
+        sections = build_from_section(label_parts[0], xml)
+        if sections:
+            return sections[0]
+
+    return xml, parse_regtext
 
 
 def parse_appendix(xml, cfr_part, letter):
@@ -98,11 +132,11 @@ def parse_appendix(xml, cfr_part, letter):
         logger.warning("Bad format for whole appendix")
 
 
-def parse_interp(cfr_part, parent_xml):
+def parse_interp(cfr_part, xml):
     """Figure out which parts of the parent_xml are relevant to
     interpretations. Pass those on to interpretations.parse_from_xml and
     return the results"""
-    parent_xml = standardize_interp_xml(parent_xml)
+    parent_xml = standardize_interp_xml(xml)
 
     # Skip over everything until 'Supplement I' in a header
     seen_header = False
