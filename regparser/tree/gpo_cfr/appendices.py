@@ -8,7 +8,6 @@ from pyparsing import LineStart, Optional, Suppress
 
 from regparser.citations import internal_citations
 from regparser.grammar import appendix as grammar
-from regparser.grammar.interpretation_headers import parser as headers
 from regparser.grammar.utils import Marker, QuickSearchable
 from regparser.layer.formatting import table_xml_to_plaintext
 from regparser.layer.key_terms import KeyTerms
@@ -83,7 +82,7 @@ class AppendixProcessor(object):
             if self.appendix_letter:
                 logger.warning("Found two appendix headers: %s and %s",
                                self.appendix_letter, text)
-            self.appendix_letter = headers.parseString(text).appendix
+            self.appendix_letter = grammar.headers.parseString(text).appendix
         return self.appendix_letter
 
     def hed(self, part, text):
