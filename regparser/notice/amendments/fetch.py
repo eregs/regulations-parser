@@ -1,19 +1,13 @@
 # -*- coding: utf-8 -*-
-import functools
 import logging
 from collections import namedtuple
-from copy import deepcopy
-from itertools import dropwhile
 
-from lxml import etree
+from stevedore.extension import ExtensionManager
 
-from regparser.notice import changes, util
+from regparser.notice import changes
 from regparser.notice.amdparser import amendment_from_xml
-from regparser.tree.gpo_cfr import interpretations
-from regparser.tree.gpo_cfr.appendices import process_appendix
-from regparser.tree.gpo_cfr.section import build_from_section
-from regparser.tree.gpo_cfr.subpart import build_subpart
-from regparser.tree.struct import Node, walk
+from regparser.notice.amendments.subpart import process_designate_subpart
+from regparser.tree.struct import walk
 
 logger = logging.getLogger(__name__)
 Content = namedtuple('Content', ['struct', 'amends'])
@@ -43,204 +37,13 @@ class ContentCache(object):
         if not is_editing:
             return None
 
-        parsers = (content_for_new_subpart, content_for_appendix,
-                   content_for_interpretations, content_for_regtext)
-        for parser in parsers:
-            result = parser(instruction_xml)
+        for extension in ExtensionManager('eregs_ns.parser.amendment.content'):
+            result = extension.plugin(instruction_xml)
             if result:
                 key, fn = result
                 if key is not None and key not in self.by_xml:
                     self.by_xml[key] = Content(fn(), [])
                 return self.by_xml.get(key)
-
-
-def label_amdpar_from(instruction_xml):
-    label_parts = instruction_xml.get('label', '').split('-')
-    # <AMDPAR><EREGS_INSTRUCTIONS><INSTRUCTION>...
-    amdpar = instruction_xml.getparent().getparent()
-    return label_parts, amdpar
-
-
-def content_for_new_subpart(instruction_xml):
-    """Return a chunk of XML (which serves as a unique key) and a think for
-    parsing that XML as a subpart"""
-    label_parts, amdpar = label_amdpar_from(instruction_xml)
-    if (instruction_xml.tag == 'POST' and len(label_parts) == 2
-            and 'Subpart:' in label_parts[1]):
-        xml = find_subpart(amdpar)
-        return xml, functools.partial(build_subpart, label_parts[0], xml)
-
-
-def content_for_appendix(instruction_xml):
-    """Return a chunk of XML (which serves as a unique key) and a think for
-    parsing that XML as an appendix"""
-    label_parts, amdpar = label_amdpar_from(instruction_xml)
-    if len(label_parts) > 0 and 'Appendix' in label_parts[1]:
-        xml = amdpar.getparent()
-        letter = label_parts[1][len('Appendix:'):]
-        return xml, functools.partial(parse_appendix, xml, label_parts[0],
-                                      letter)
-
-
-def content_for_interpretations(instruction_xml):
-    """Return a chunk of XML (which serves as a unique key) and a think for
-    parsing that XML as an interpretation"""
-    label_parts, amdpar = label_amdpar_from(instruction_xml)
-    if len(label_parts) > 0 and 'Interpretations' in label_parts[1]:
-        xml = amdpar.getparent()
-        return xml, functools.partial(parse_interp, label_parts[0], xml)
-
-
-def content_for_regtext(instruction_xml):
-    """Return a chunk of XML (which serves as a unique key) and a think for
-    parsing that XML as a section"""
-    label_parts, amdpar = label_amdpar_from(instruction_xml)
-    xml = find_section(amdpar)
-
-    def parse_regtext():
-        sections = build_from_section(label_parts[0], xml)
-        if sections:
-            return sections[0]
-
-    return xml, parse_regtext
-
-
-def parse_appendix(xml, cfr_part, letter):
-    """Attempt to parse an appendix. Used when the entire appendix has been
-    replaced/added or when we can use the section headers to determine our
-    place. If the format isn't what we expect, display a warning."""
-    xml = deepcopy(xml)
-    hds = xml.xpath('//HD[contains(., "Appendix {0} to Part {1}")]'.format(
-        letter, cfr_part))
-    if len(hds) == 0:
-        logger.warning("Could not find Appendix %s to part %s",
-                       letter, cfr_part)
-    elif len(hds) > 1:
-        logger.warning("Too many headers for %s to part %s",
-                       letter, cfr_part)
-    else:
-        hd = hds[0]
-        hd.set('SOURCE', 'HED')
-        extract = hd.getnext()
-        if extract is not None and extract.tag == 'EXTRACT':
-            extract.insert(0, hd)
-            for trailing in dropwhile(lambda n: n.tag != 'AMDPAR',
-                                      extract.getchildren()):
-                extract.remove(trailing)
-            return process_appendix(extract, cfr_part)
-        logger.warning("Bad format for whole appendix")
-
-
-def parse_interp(cfr_part, xml):
-    """Figure out which parts of the parent_xml are relevant to
-    interpretations. Pass those on to interpretations.parse_from_xml and
-    return the results"""
-    parent_xml = standardize_interp_xml(xml)
-
-    # Skip over everything until 'Supplement I' in a header
-    seen_header = False
-    xml_nodes = []
-
-    def contains_supp(n):
-        text = (n.text or '').lower()
-        return 'supplement i' in text
-
-    for child in parent_xml:
-        # SECTION shouldn't be in this part of the XML, but often is. Expand
-        # it to proceed
-        if seen_header and child.tag == 'SECTION':
-            sectno = child.xpath('./SECTNO')[0]
-            subject = child.xpath('./SUBJECT')[0]
-            header = etree.Element("HD", SOURCE="HD2")
-            header.text = sectno.text + u'—' + subject.text
-            child.insert(child.index(sectno), header)
-            child.remove(sectno)
-            child.remove(subject)
-            xml_nodes.extend(child.getchildren())
-        elif seen_header:
-            xml_nodes.append(child)
-        else:
-            if child.tag == 'HD' and contains_supp(child):
-                seen_header = True
-            if any(contains_supp(c) for c in child.xpath(".//HD")):
-                seen_header = True
-
-    root = Node(label=[cfr_part, Node.INTERP_MARK], node_type=Node.INTERP)
-    root = interpretations.parse_from_xml(root, xml_nodes)
-    if not root.children:
-        return None
-    else:
-        return root
-
-
-def standardize_interp_xml(xml):
-    """We will assume a format of Supplement I header followed by HDs,
-    STARS, and Ps, so move anything in an EXTRACT up a level"""
-    xml = util.spaces_then_remove(deepcopy(xml), 'PRTPAGE')
-    for extract in xml.xpath(".//EXTRACT|.//APPENDIX|.//SUBPART"):
-        ex_parent = extract.getparent()
-        idx = ex_parent.index(extract)
-        for child in extract:
-            ex_parent.insert(idx, child)
-            idx += 1
-        ex_parent.remove(extract)
-    return xml
-
-
-def fix_section_node(paragraphs, amdpar_xml):
-    """ When notices are corrected, the XML for notices doesn't follow the
-    normal syntax. Namely, pargraphs aren't inside section tags. We fix that
-    here, by finding the preceding section tag and appending paragraphs to it.
-    """
-
-    sections = [s for s in amdpar_xml.itersiblings(preceding=True)
-                if s.tag == 'SECTION']
-
-    # Let's only do this if we find one section tag.
-    if len(sections) == 1:
-        section = deepcopy(sections[0])
-        for paragraph in paragraphs:
-            section.append(deepcopy(paragraph))
-        return section
-
-
-def find_lost_section(amdpar_xml):
-    """ This amdpar doesn't have any following siblings, so we
-    look in the next regtext """
-    reg_text = amdpar_xml.getparent()
-    reg_text_siblings = [s for s in reg_text.itersiblings()
-                         if s.tag == 'REGTEXT']
-    if len(reg_text_siblings) > 0:
-        candidate_reg_text = reg_text_siblings[0]
-        amdpars = [a for a in candidate_reg_text if a.tag == 'AMDPAR']
-        if len(amdpars) == 0:
-            # Only do this if there are not AMDPARS
-            for c in candidate_reg_text:
-                if c.tag == 'SECTION':
-                    return c
-
-
-def find_section(amdpar_xml):
-    """ With an AMDPAR xml, return the first section sibling """
-    siblings = [s for s in amdpar_xml.itersiblings()]
-
-    if len(siblings) == 0:
-        return find_lost_section(amdpar_xml)
-
-    for sibling in siblings:
-        if sibling.tag == 'SECTION':
-            return sibling
-
-    paragraphs = [s for s in siblings if s.tag == 'P']
-    if len(paragraphs) > 0:
-        return fix_section_node(paragraphs, amdpar_xml)
-
-
-def find_subpart(amdpar_tag):
-    """ Look amongst an amdpar tag's siblings to find a subpart. """
-    for sibling in amdpar_tag.itersiblings():
-        if sibling.tag == 'SUBPART':
-            return sibling
 
 
 def fetch_amendments(notice_xml):
@@ -292,13 +95,6 @@ def fetch_amendments(notice_xml):
         amendments.append(amendment_dict)
 
     return amendments
-
-
-def process_designate_subpart(amendment):
-    """ Process the designate amendment if it adds a subpart. """
-    label_id = '-'.join(amendment.label)
-    return {label_id: {'action': 'DESIGNATE',
-                       'destination': amendment.destination}}
 
 
 def create_xmlless_change(amendment, notice_changes):
