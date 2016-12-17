@@ -35,14 +35,12 @@ setup(
     entry_points={
         "console_scripts": "eregs=eregs:main",
         "eregs_ns.parser.amendment.content": [
-            ("new_subpart = regparser.notice.amendments.subpart."
+            ("new_subpart = regparser.notice.amendments.subpart:"
              "content_for_new_subpart"),
-            ("regtext = regparser.notice.amendments.section."
+            ("regtext = regparser.notice.amendments.section:"
              "content_for_regtext"),
-            ("appendix = regparser.notice.amendments.appendix."
+            ("appendix = regparser.notice.amendments.appendix:"
              "content_for_appendix"),
-            ("interpretations = regparser.notice.amendments.interpretations."
-             "content_for_interpretations"),
         ],
         "eregs_ns.parser.layer.cfr": [
             "meta = regparser.layer.meta:Meta",
