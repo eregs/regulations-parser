@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+from __future__ import unicode_literals
 from copy import deepcopy
 import functools
 
@@ -39,7 +41,7 @@ def parse_interp(cfr_part, xml):
             sectno = child.xpath('./SECTNO')[0]
             subject = child.xpath('./SUBJECT')[0]
             header = etree.Element("HD", SOURCE="HD2")
-            header.text = sectno.text + u'—' + subject.text
+            header.text = sectno.text + '—' + subject.text
             child.insert(child.index(sectno), header)
             child.remove(sectno)
             child.remove(subject)
