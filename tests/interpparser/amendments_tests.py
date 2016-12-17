@@ -10,7 +10,7 @@ from regparser.tree.xml_parser.preprocessors import preprocess_amdpars
 
 def test_parse_interp(monkeypatch):
     interp_lib = Mock()
-    monkeypatch.setattr(amendments, 'interpretations', interp_lib)
+    monkeypatch.setattr(amendments, 'gpo_cfr', interp_lib)
     xmls = []
     with XMLBuilder("REGTEXT") as ctx:
         with ctx.EXTRACT():

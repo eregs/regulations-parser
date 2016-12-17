@@ -1,4 +1,4 @@
-from regparser.tree.gpo_cfr.interpretations import get_app_title
+from interpparser.gpo_cfr import get_app_title
 
 
 _CONTAINS_SUPPLEMENT = "contains(., 'Supplement I')"
