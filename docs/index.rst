@@ -19,6 +19,7 @@ Contents:
    dev_tasks
    deeper
    new_rules
+   extension_points
    regparser
 
 
