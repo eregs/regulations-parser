@@ -2,14 +2,15 @@
 from __future__ import unicode_literals
 from mock import Mock
 
-from regparser.notice.amendments import fetch, interpretations, section
+from interpparser import amendments
+from regparser.notice.amendments import fetch, section
 from regparser.test_utils.xml_builder import XMLBuilder
 from regparser.tree.xml_parser.preprocessors import preprocess_amdpars
 
 
 def test_parse_interp(monkeypatch):
     interp_lib = Mock()
-    monkeypatch.setattr(interpretations, 'interpretations', interp_lib)
+    monkeypatch.setattr(amendments, 'interpretations', interp_lib)
     xmls = []
     with XMLBuilder("REGTEXT") as ctx:
         with ctx.EXTRACT():
@@ -54,7 +55,7 @@ def test_parse_interp(monkeypatch):
     xmls.append(ctx.xml)
 
     for xml in xmls:
-        interpretations.parse_interp('111', xml)
+        amendments.parse_interp('111', xml)
         root, nodes = interp_lib.parse_from_xml.call_args[0]
         assert root.label == ['111', 'Interp']
         assert [n.tag for n in nodes] == ['HD', 'T1', 'P']
@@ -71,7 +72,7 @@ def test_parse_interp_subpart_confusion():
                 ctx.SUBJECT("Stubby Subby")
                 ctx.STARS()
                 ctx.P("5. Some Content")
-    interp = interpretations.parse_interp('111', ctx.xml)
+    interp = amendments.parse_interp('111', ctx.xml)
     assert len(interp.children) == 1
     c33 = interp.children[0]
     assert c33.label == ['111', '33', 'Interp']
@@ -83,7 +84,7 @@ def test_parse_interp_subpart_confusion():
 def test_process_amendments_restart_new_section(monkeypatch):
     # turn on the interpretations plugin
     monkeypatch.setattr(fetch, 'ExtensionManager', Mock(return_value=[
-        Mock(plugin=interpretations.content_for_interpretations),
+        Mock(plugin=amendments.content_for_interpretations),
         Mock(plugin=section.content_for_regtext)
     ]))
 
