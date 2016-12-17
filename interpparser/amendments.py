@@ -3,9 +3,9 @@ from copy import deepcopy
 
 from lxml import etree
 
+from interpparser import gpo_cfr
 from regparser.notice.amendments.utils import label_amdpar_from
 from regparser.notice.util import spaces_then_remove
-from regparser.tree.gpo_cfr import interpretations
 from regparser.tree.struct import Node
 
 
@@ -53,7 +53,7 @@ def parse_interp(cfr_part, xml):
                 seen_header = True
 
     root = Node(label=[cfr_part, Node.INTERP_MARK], node_type=Node.INTERP)
-    root = interpretations.parse_from_xml(root, xml_nodes)
+    root = gpo_cfr.parse_from_xml(root, xml_nodes)
     if not root.children:
         return None
     else:

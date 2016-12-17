@@ -95,7 +95,6 @@ setup(
             "subpart = regparser.tree.gpo_cfr.subpart:parse_subpart",
             "subjgrp = regparser.tree.gpo_cfr.subpart:ParseSubjectGroup",
             "appendix = regparser.tree.gpo_cfr.appendices:parse_appendix",
-            "interp = regparser.tree.gpo_cfr.interpretations:parse_interp",
         ]
     }
 )

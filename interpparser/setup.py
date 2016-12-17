@@ -19,5 +19,8 @@ setup(
             ('appendix-to-interp = interpparser.preprocessors:'
              'appendix_to_interp'),
             ],
+        "eregs_ns.parser.xml_matchers.gpo_cfr.PART": [
+            "interpretations = interpparser.gpo_cfr:parse_interp",
+            ]
     }
 )
