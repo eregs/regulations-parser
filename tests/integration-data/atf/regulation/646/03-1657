@@ -1,0 +1,677 @@
+{
+    "children": [
+        {
+            "children": [
+                {
+                    "children": [], 
+                    "label": [
+                        "646", 
+                        "141"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "The regulations in this subpart relate to the distribution of cigarettes in excess of 60,000 in a single transaction.", 
+                    "title": "\u00a7 646.141 Scope of part."
+                }, 
+                {
+                    "children": [], 
+                    "label": [
+                        "646", 
+                        "142"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "The provisions of the regulations in this part apply in the several States of the United States, the District of Columbia, the Commonwealth of Puerto Rico, and the Virgin Islands.", 
+                    "title": "\u00a7 646.142 Territorial extent."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "646", 
+                                "143", 
+                                "p1"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "When used in this part, terms are defined as follows in this section. Words in the plural shall include the singular, and vice versa. Words indicating the masculine gender shall include the feminine. The terms \u201cincludes\u201d and \u201cincluding\u201d do not exclude other things not named which are in the same general class or are otherwise within the scope of the term defined."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "646", 
+                                "143", 
+                                "p4250035813"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "Appropriate ATF officer. An officer or employee of the Bureau of Alcohol, Tobacco and Firearms (ATF) authorized to perform any functions relating to the administration or enforcement of this part by ATF Order 1130.28, Delegation of the Director's Authorities in 27 CFR Parts 45 and 646."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "646", 
+                                "143", 
+                                "p800452226"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "Business premises. When used with respect to a distributor, the property on which the cigarettes are kept or stored. The business premises includes the property where the records of a distributor are kept."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "646", 
+                                "143", 
+                                "p982752374"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "Common or contract carrier. A carrier holding a certificate of convenience and necessity, a permit for contract carrier by motor vehicle, or other valid operating authority under the Interstate Commerce Act, or under equivalent operating authority from a regulatory agency of the United States or of any State."
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "646", 
+                                        "143", 
+                                        "p2827969139", 
+                                        "a"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(a) The cigarettes bear no evidence of the payment of applicable State cigarette taxes in the State where the cigarettes are found;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "646", 
+                                        "143", 
+                                        "p2827969139", 
+                                        "b"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(b) The State in which the cigarettes are found requires a stamp, impression, or other indication to be placed on packages or other containers of cigarettes to evidence payment of cigarette taxes; and"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "646", 
+                                        "143", 
+                                        "p2827969139", 
+                                        "c"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(c) The cigarettes are in the possession of any person other than an exempted person."
+                                }
+                            ], 
+                            "label": [
+                                "646", 
+                                "143", 
+                                "p2827969139"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "Contraband cigarettes. Any quantity of cigarettes in excess of 60,000, if\u2014"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "646", 
+                                "143", 
+                                "p2421551309"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "Disposition. The movement of cigarettes from a person's business premises, wherever situated, by shipment or other means of distribution."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "646", 
+                                "143", 
+                                "p3645209320"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "Distribute. To sell, ship, issue, give, transfer, or otherwise dispose of."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "646", 
+                                "143", 
+                                "p1610250017"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "Distributor. Any person who distributes more than 60,000 cigarettes in a single transaction."
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "646", 
+                                        "143", 
+                                        "p4077413163", 
+                                        "a"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(a) Holding a permit issued pursuant to Chapter 52 of the Internal Revenue Code of 1954 as a manufacturer of tobacco products or as an export warehouse proprietor;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "646", 
+                                        "143", 
+                                        "p4077413163", 
+                                        "b"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(b) Operating a customs bonded warehouse pursuant to section 311 or 555 of the Tariff Act of 1930 (19 U.S.C. 1311 or 1555);"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "646", 
+                                        "143", 
+                                        "p4077413163", 
+                                        "c"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(c) An agent of a tobacco products manufacturer, an export warehouse proprietor, or an operator of a customs bonded warehouse;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "646", 
+                                        "143", 
+                                        "p4077413163", 
+                                        "d"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(d) A common or contract carrier transporting the cigarettes involved under a proper bill of lading or freight bill which states the quantity, source, and destination of the cigarettes;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "646", 
+                                        "143", 
+                                        "p4077413163", 
+                                        "e"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(e) Licensed or otherwise authorized by the State, in which he possesses cigarettes, to account for and pay cigarette taxes imposed by that State; and who has complied with the accounting and payment requirements relating to his license or authorization with respect to the cigarettes involved; or"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "646", 
+                                        "143", 
+                                        "p4077413163", 
+                                        "f"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(f) An agent of the United States, of an individual State, or of a political subdivision of a State and having possession of cigarettes in connection with the performance of official duties."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "646", 
+                                        "143", 
+                                        "p4077413163", 
+                                        "g"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(g) Operating within a foreign-trade zone established under 19 U.S.C., section 81b, when the cigarettes involved have been entered into the zone under zone-restricted status or, in respect to foreign cigarettes, have been admitted into the zone but have not been entered in the United States."
+                                }
+                            ], 
+                            "label": [
+                                "646", 
+                                "143", 
+                                "p4077413163"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "Exempted person. Any person who is\u2014"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "646", 
+                                "143", 
+                                "p3550103376"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "Person. Any individual, corporation, company, association, firm, partnership, society, or joint stock company."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "646", 
+                                "143", 
+                                "p2857000833"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "State. A State of the United States, the District of Columbia, the Commonwealth of Puerto Rico, or the Virgin Islands."
+                        }
+                    ], 
+                    "label": [
+                        "646", 
+                        "143"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 646.143 Meaning of terms."
+                }
+            ], 
+            "label": [
+                "646", 
+                "Subjgrp", 
+                "Ge"
+            ], 
+            "node_type": "subpart", 
+            "text": "", 
+            "title": "General"
+        }, 
+        {
+            "children": [
+                {
+                    "children": [], 
+                    "label": [
+                        "646", 
+                        "146"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "Each distributor of cigarettes shall keep copies of invoices, bills of lading, or other suitable commercial records relating to each disposition of more than 60,000 cigarettes. Dividing a single agreement for the disposition of more than 60,000 cigarettes into the delivery of smaller components of 60,000 cigarettes or less does not exempt the distributor from the recordkeeping requirements of this part. The distributor shall include the information prescribed in \u00a7 646.147 in his commercial records of disposition.", 
+                    "title": "\u00a7 646.146 General requirements."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "646", 
+                                                "147", 
+                                                "a", 
+                                                "1", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) The full name of the purchaser (or the recipient if there is no purchaser);"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "646", 
+                                                "147", 
+                                                "a", 
+                                                "1", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) The street address (including city and state) to which the cigarettes are destined; and"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "646", 
+                                                "147", 
+                                                "a", 
+                                                "1", 
+                                                "iii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iii) The quantity of cigarettes disposed of."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "646", 
+                                        "147", 
+                                        "a", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) For each disposition of more than 60,000 cigarettes to an exempted person; or for each disposition of more than 60,000 cigarettes to a person who is not an exempted person and which is delivered by the distributor to the recipient's place of business, the distributor shall show on dated records\u2014"
+                                }, 
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "646", 
+                                                "147", 
+                                                "a", 
+                                                "2", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) The full name of the purchaser (if any);"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "646", 
+                                                "147", 
+                                                "a", 
+                                                "2", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) The name, address (including city and state), and signature of the person receiving the cigarettes;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "646", 
+                                                "147", 
+                                                "a", 
+                                                "2", 
+                                                "iii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iii) The street address (including city and state) to which the cigarettes are destined;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "646", 
+                                                "147", 
+                                                "a", 
+                                                "2", 
+                                                "iv"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iv) The quantity of cigarettes disposed of;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "646", 
+                                                "147", 
+                                                "a", 
+                                                "2", 
+                                                "v"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(v) The driver's license number of the individual receiving the cigarettes;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "646", 
+                                                "147", 
+                                                "a", 
+                                                "2", 
+                                                "vi"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(vi) The license number of the vehicle in which the cigarettes are removed from the distributor's business premises;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "646", 
+                                                "147", 
+                                                "a", 
+                                                "2", 
+                                                "vii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(vii) A declaration by the individual receiving the cigarettes of the specific purpose of receipt (such as personal use, resale, delivery to another person, etc.); and"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "646", 
+                                                "147", 
+                                                "a", 
+                                                "2", 
+                                                "viii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(viii) A declaration by the person receiving the cigarettes of the name and address of his principal when he is acting as an agent."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "646", 
+                                        "147", 
+                                        "a", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) For each disposition of more than 60,000 cigarettes, other than the dispositions specified in paragraph (a)(1) of this section, the distributor shall show on dated records\u2014"
+                                }
+                            ], 
+                            "label": [
+                                "646", 
+                                "147", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) Distributors who are exempted persons. Each distributor who is an exempted person as defined in \u00a7 646.143 shall show the following information in his commercial records."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "646", 
+                                "147", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) Distributors who are not exempted persons. Each distributor who is not an exempted person as defined in \u00a7 646.143 shall show on dated commercial records the information specified in paragraphs (a)(2) (i) through (viii) of this section for each disposition of more than 60,000 cigarettes."
+                        }
+                    ], 
+                    "label": [
+                        "646", 
+                        "147"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 646.147 Required information."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "646", 
+                                "150", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) General. Each distributor of cigarettes shall retain the records required by \u00a7\u00a7 646.146 and 646.147 for three years following the close of the year in which the records are made. The distributor shall keep the required records on his business premises."
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "646", 
+                                        "150", 
+                                        "b", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) The distributor requesting the shorter retention period is an agent of a tobacco products manufacturer;"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "646", 
+                                        "150", 
+                                        "b", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) The tobacco products manufacturer will keep the required record for each disposition of more than 60,000 cigarettes from the agent's premises for the full retention period specified in paragraph (a) of this section; and"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "646", 
+                                        "150", 
+                                        "b", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) The approval of a shorter retention period will not unduly hinder the administration of enforcement of this subpart."
+                                }
+                            ], 
+                            "label": [
+                                "646", 
+                                "150", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) Shorter retention periods. The appropriate ATF officer may, pursuant to an application submitted by a distributor, approve a shorter retention period where\u2014"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "646", 
+                                "150", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) Application requirements. Each distributor proposing to employ a shorter retention period shall submit a written application, in duplicate, to the appropriate ATF officer. A distributor may not employ a shorter retention period until approval is received from the appropriate ATF officer. Each application should indicate the duration of the proposed retention period and should include the information required by paragraph (b) of this section."
+                        }
+                    ], 
+                    "label": [
+                        "646", 
+                        "150"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 646.150 Retention of records."
+                }
+            ], 
+            "label": [
+                "646", 
+                "Subjgrp", 
+                "Re"
+            ], 
+            "node_type": "subpart", 
+            "text": "", 
+            "title": "Records"
+        }, 
+        {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "646", 
+                                "153", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) Pursuant to duly issued search warrant or an administrative inspection warrant; or"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "646", 
+                                "153", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) Upon the consent of the distributor to enter his premises."
+                        }
+                    ], 
+                    "label": [
+                        "646", 
+                        "153"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "Any appropriate ATF officer may enter the business premises of any distributor of cigarettes to inspect the records required by \u00a7\u00a7 646.146 through 646.147 or to inspect any cigarettes stored on the premises\u2014", 
+                    "title": "\u00a7 646.153 Authority of appropriate ATF officers to enter business premises."
+                }
+            ], 
+            "label": [
+                "646", 
+                "Subjgrp", 
+                "OPRttDoC"
+            ], 
+            "node_type": "subpart", 
+            "text": "", 
+            "title": "Other Provisions Relating to the Distribution of Cigarettes"
+        }, 
+        {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "646", 
+                                "154", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) Any person who knowingly ships, transports, receives, possesses, sells, distributes, or purchases contraband cigarettes shall be fined not more than $100,000 or imprisoned not more than five years, or both."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "646", 
+                                "154", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) Any person who knowingly violates any regulation contained in this part or makes any false statement or misrepresentation with respect to the information required to be recorded by this part shall be fined not more than $5,000 or imprisoned not more than three years, or both."
+                        }
+                    ], 
+                    "label": [
+                        "646", 
+                        "154"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 646.154 Penalties."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [], 
+                            "label": [
+                                "646", 
+                                "155", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) Any contraband cigarettes involved in any violation of the provisions of 18 U.S.C. chapter 114 shall be subject to seizure and forfeiture. All provisions of the Internal Revenue Code of 1954 (title 26 U.S.C.) relating to the seizure, forfeiture, and disposition of firearms, as defined in section 5845(a) of that Code, shall, so far as applicable, extend to seizures and forfeitures of contraband cigarettes under the provisions of 18 U.S.C. chapter 114."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "646", 
+                                "155", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) Any vessel, vehicle or aircraft used to transport, carry, convey, or conceal or possess any contraband cigarettes with respect to which there has been committed any violation of any provision of 18 U.S.C. chapter 114 or the regulations in this subpart shall be subject to seizure and forfeiture under the Customs laws, as provided by the Act of August 9, 1939 (49 U.S.C. 781-788)."
+                        }
+                    ], 
+                    "label": [
+                        "646", 
+                        "155"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 646.155 Forfeitures."
+                }
+            ], 
+            "label": [
+                "646", 
+                "Subjgrp", 
+                "PaF"
+            ], 
+            "node_type": "subpart", 
+            "text": "", 
+            "title": "Penalties and Forfeitures"
+        }
+    ], 
+    "label": [
+        "646"
+    ], 
+    "node_type": "regtext", 
+    "text": "", 
+    "title": "PART 646\u2014CONTRABAND CIGARETTES"
+}

@@ -1,0 +1,324 @@
+{
+    "447-11-p2275123666": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    308, 
+                    314
+                ], 
+                [
+                    "insert", 
+                    308, 
+                    "\u2014\u2014"
+                ]
+            ]
+        ]
+    }, 
+    "447-11-p2998377869": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                190, 
+                " For purposes of Category XXII, any item enumerated on the U.S. Munitions List (22 CFR Part 121)."
+            ]
+        ]
+    }, 
+    "447-21": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                14
+            ], 
+            [
+                "insert", 
+                14, 
+                [
+                    "447-21-p306685262"
+                ]
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "447-21-p306685262": {
+        "node": {
+            "child_labels": [
+                "447-21-p306685262-a", 
+                "447-21-p306685262-b"
+            ], 
+            "label": [
+                "447", 
+                "21", 
+                "p306685262"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": null, 
+            "text": "", 
+            "title": "category xxii\u2014south africa"
+        }, 
+        "op": "added"
+    }, 
+    "447-21-p306685262-a": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "447", 
+                "21", 
+                "p306685262", 
+                "a"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(a) Defense articles enumerated on the U.S. Munitions List (22 CFR Part 121).", 
+            "text": "(a) Defense articles enumerated on the U.S. Munitions List (22 CFR Part 121).", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "447-21-p306685262-b": {
+        "node": {
+            "child_labels": [
+                "447-21-p306685262-b-p1", 
+                "447-21-p306685262-b-p2"
+            ], 
+            "label": [
+                "447", 
+                "21", 
+                "p306685262", 
+                "b"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(b) Technical data relating to defense articles enumerated on the U.S. Munitions List.", 
+            "text": "(b) Technical data relating to defense articles enumerated on the U.S. Munitions List.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "447-21-p306685262-b-p1": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "447", 
+                "21", 
+                "p306685262", 
+                "b", 
+                "p1"
+            ], 
+            "node_type": "note", 
+            "tagged_text": "This category is applicable only to South Africa.", 
+            "text": "This category is applicable only to South Africa.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "447-21-p306685262-b-p2": {
+        "node": {
+            "child_labels": [
+                "447-21-p306685262-b-p2-1", 
+                "447-21-p306685262-b-p2-2", 
+                "447-21-p306685262-b-p2-3"
+            ], 
+            "label": [
+                "447", 
+                "21", 
+                "p306685262", 
+                "b", 
+                "p2"
+            ], 
+            "node_type": "note", 
+            "tagged_text": "\u201cTechnical data\u201d means, for purposes of this category:", 
+            "text": "\u201cTechnical data\u201d means, for purposes of this category:", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "447-21-p306685262-b-p2-1": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "447", 
+                "21", 
+                "p306685262", 
+                "b", 
+                "p2", 
+                "1"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(1) Classified information relating to defense articles and defense services;", 
+            "text": "(1) Classified information relating to defense articles and defense services;", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "447-21-p306685262-b-p2-2": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "447", 
+                "21", 
+                "p306685262", 
+                "b", 
+                "p2", 
+                "2"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(2) Information covered by an invention secrecy order;", 
+            "text": "(2) Information covered by an invention secrecy order;", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "447-21-p306685262-b-p2-3": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "447", 
+                "21", 
+                "p306685262", 
+                "b", 
+                "p2", 
+                "3"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(3) Information which is directly related to the design, engineering, development, production, processing, manufacture, use, operation, overhaul, repair, maintenance, modification, or reconstruction of defense articles. This includes, for example, information in the form of blueprints, drawings, photographs, plans, instructions, computer software and documentation. This also includes information which advances the state of the art of articles on the U.S. Munitions List. This does not include information concerning general scientific, mathematical or engineering principles.", 
+            "text": "(3) Information which is directly related to the design, engineering, development, production, processing, manufacture, use, operation, overhaul, repair, maintenance, modification, or reconstruction of defense articles. This includes, for example, information in the form of blueprints, drawings, photographs, plans, instructions, computer software and documentation. This also includes information which advances the state of the art of articles on the U.S. Munitions List. This does not include information concerning general scientific, mathematical or engineering principles.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "447-21-p731147738-c": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    556, 
+                    581
+                ], 
+                [
+                    "insert", 
+                    556, 
+                    "devices,intervalometers,"
+                ]
+            ]
+        ]
+    }, 
+    "447-52-a": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    199, 
+                    231
+                ], 
+                [
+                    "insert", 
+                    199, 
+                    "Cuba, Iran, Iraq, Libya, Mongolia, North Korea, Sudan, Syria, Vietnam, and some of the"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    239, 
+                    252
+                ], 
+                [
+                    "insert", 
+                    239, 
+                    "that comprised the"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    267, 
+                    322
+                ], 
+                [
+                    "insert", 
+                    267, 
+                    "Union (Armenia, Azerbaijan, Belarus, and Tajikistan). This policy applies to countries or areas with respect to which the United States maintains an arms embargo (e.g., Burma, China, the Federal Republic of Yugoslavia (Serbia and Montenegro), Haiti, Liberia, Rwanda, Somalia,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    330, 
+                    361
+                ], 
+                [
+                    "insert", 
+                    330, 
+                    "UNITA (Angola), and Zaire). It also"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    370, 
+                    417
+                ], 
+                [
+                    "insert", 
+                    370, 
+                    "when an import would not be in furtherance of world peace and the security and foreign policy of the"
+                ]
+            ], 
+            [
+                "delete", 
+                425, 
+                702
+            ]
+        ]
+    }, 
+    "447-52-a-p1": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    222, 
+                    236
+                ], 
+                [
+                    "insert", 
+                    222, 
+                    "(202) 927-8320"
+                ]
+            ]
+        ]
+    }, 
+    "447-52-b-2": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    209, 
+                    218
+                ], 
+                [
+                    "insert", 
+                    209, 
+                    "7.62X25mm"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    242, 
+                    251
+                ], 
+                [
+                    "insert", 
+                    242, 
+                    "7.63X25mm"
+                ]
+            ]
+        ]
+    }
+}

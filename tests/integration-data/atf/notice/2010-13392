@@ -1,0 +1,33 @@
+{
+    "amendments": [], 
+    "cfr_parts": [
+        "478"
+    ], 
+    "cfr_title": 27, 
+    "dockets": [
+        "Docket No. ATF 17F", 
+        "AG Order No. 3160-2010 (2008R-10P)"
+    ], 
+    "document_number": "2010-13392", 
+    "effective_on": "2010-08-02", 
+    "footnotes": {}, 
+    "fr_citation": "75 FR 31285", 
+    "fr_url": "https://www.federalregister.gov/documents/2010/06/03/2010-13392/decision-making-authority-regarding-the-denial-suspension-or-revocation-of-a-federal-firearms", 
+    "fr_volume": 75, 
+    "meta": {
+        "start_page": 31285
+    }, 
+    "primary_agency": "DEPARTMENT OF JUSTICE", 
+    "primary_docket": null, 
+    "publication_date": "2010-06-03", 
+    "regulation_id_numbers": [], 
+    "section_by_section": [], 
+    "supporting_documents": [], 
+    "title": "Decision-Making Authority Regarding the Denial, Suspension, or Revocation of a Federal Firearms License, or Imposition of a Civil Fine", 
+    "versions": {
+        "478": {
+            "left": "E9-527", 
+            "right": "2010-13392"
+        }
+    }
+}

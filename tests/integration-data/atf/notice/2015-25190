@@ -1,0 +1,65 @@
+{
+    "amendments": [
+        {
+            "authority": "18 U.S.C. 847.", 
+            "cfr_part": "555", 
+            "instruction": "1. The authority citation for 27 CFR part 555 continues to read as follows:"
+        }, 
+        {
+            "cfr_part": "555", 
+            "changes": [
+                [
+                    "555-?-p2162297120", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "555", 
+                                    "?", 
+                                    "p2162297120"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "<E T=\"03\">Customs officer.</E> Any officer of U.S. Customs and Border Protection, any commissioned, warrant, or petty officer of the Coast Guard, or any agent or other person authorized by law to perform the duties of a customs officer.", 
+                                "text": "Customs officer. Any officer of U.S. Customs and Border Protection, any commissioned, warrant, or petty officer of the Coast Guard, or any agent or other person authorized by law to perform the duties of a customs officer.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "2. Revise the definition of \u201cCustoms officer\u201d in \u00a7\u2009555.11 to read as follows:"
+        }
+    ], 
+    "cfr_parts": [
+        "555"
+    ], 
+    "cfr_title": 27, 
+    "dockets": [
+        "Docket No. ATF 2013R-9F", 
+        "AG Order No. 3566-2015"
+    ], 
+    "document_number": "2015-25190", 
+    "effective_on": "2015-10-02", 
+    "footnotes": {}, 
+    "fr_citation": "80 FR 59580", 
+    "fr_url": "https://www.federalregister.gov/documents/2015/10/02/2015-25190/technical-amendments-to-regulations-correction", 
+    "fr_volume": 80, 
+    "meta": {
+        "start_page": 59580
+    }, 
+    "primary_agency": "DEPARTMENT OF JUSTICE", 
+    "primary_docket": null, 
+    "publication_date": "2015-10-02", 
+    "regulation_id_numbers": [], 
+    "section_by_section": [], 
+    "supporting_documents": [], 
+    "title": "Technical Amendments to Regulations; Correction", 
+    "versions": {
+        "555": {
+            "left": "2014-18842", 
+            "right": "2015-25190"
+        }
+    }
+}

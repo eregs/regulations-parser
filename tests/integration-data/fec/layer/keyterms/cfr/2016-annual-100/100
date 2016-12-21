@@ -135,14 +135,6 @@
             ]
         }
     ], 
-    "100-14-c": [
-        {
-            "key_term": "Subordinate committee of a State, district, or local committee", 
-            "locations": [
-                0
-            ]
-        }
-    ], 
     "100-142-a": [
         {
             "key_term": "General provisions.", 
@@ -425,7 +417,7 @@
     ], 
     "100-2-d": [
         {
-            "key_term": "Runoff election. Runoff election", 
+            "key_term": "Runoff election.", 
             "locations": [
                 0
             ]
@@ -441,7 +433,7 @@
     ], 
     "100-2-f": [
         {
-            "key_term": "Special election. Special election", 
+            "key_term": "Special election.", 
             "locations": [
                 0
             ]
@@ -545,7 +537,7 @@
     ], 
     "100-5-e-1": [
         {
-            "key_term": "Principal campaign committee. Principal campaign committee", 
+            "key_term": "Principal campaign committee.", 
             "locations": [
                 0
             ]
@@ -553,7 +545,7 @@
     ], 
     "100-5-e-2": [
         {
-            "key_term": "Single candidate committee. Single candidate committee", 
+            "key_term": "Single candidate committee.", 
             "locations": [
                 0
             ]
@@ -561,7 +553,7 @@
     ], 
     "100-5-e-3": [
         {
-            "key_term": "Multi-candidate committee. Multi-candidate committee", 
+            "key_term": "Multi-candidate committee.", 
             "locations": [
                 0
             ]
@@ -569,7 +561,7 @@
     ], 
     "100-5-e-4": [
         {
-            "key_term": "Party committee. Party committee", 
+            "key_term": "Party committee.", 
             "locations": [
                 0
             ]
@@ -585,7 +577,7 @@
     ], 
     "100-5-e-6": [
         {
-            "key_term": "Leadership PAC. Leadership PAC", 
+            "key_term": "Leadership PAC.", 
             "locations": [
                 0
             ]

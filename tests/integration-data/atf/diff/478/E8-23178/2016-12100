@@ -1,0 +1,2107 @@
+{
+    "478-103-e-p1-p5": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    337, 
+                    343
+                ], 
+                [
+                    "insert", 
+                    337, 
+                    "submitted"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    368, 
+                    424
+                ], 
+                [
+                    "insert", 
+                    368, 
+                    "Center (http://www.atf.gov) or made by calling (202) 648-6420."
+                ]
+            ]
+        ]
+    }, 
+    "478-11": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                55
+            ], 
+            [
+                "insert", 
+                55, 
+                [
+                    "478-11-p242755046"
+                ]
+            ], 
+            [
+                "equal", 
+                55, 
+                76
+            ], 
+            [
+                "insert", 
+                76, 
+                [
+                    "478-11-p6"
+                ]
+            ], 
+            [
+                "equal", 
+                76, 
+                79
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "478-11-p1339644464": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    31, 
+                    38
+                ], 
+                [
+                    "insert", 
+                    31, 
+                    "Tobacco, Firearms,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    43, 
+                    51
+                ], 
+                [
+                    "insert", 
+                    43, 
+                    "Explosives"
+                ]
+            ]
+        ]
+    }, 
+    "478-11-p2162297120": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                32, 
+                "U.S. Customs and Border Protection, any commissioned, warrant, or petty officer of "
+            ], 
+            [
+                [
+                    "delete", 
+                    36, 
+                    51
+                ], 
+                [
+                    "insert", 
+                    36, 
+                    "Coast Guard,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    59, 
+                    81
+                ], 
+                [
+                    "insert", 
+                    59, 
+                    "agent"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    85, 
+                    98
+                ], 
+                [
+                    "insert", 
+                    85, 
+                    "other person authorized by law to perform the duties"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    102, 
+                    272
+                ], 
+                [
+                    "insert", 
+                    102, 
+                    "a customs officer."
+                ]
+            ]
+        ]
+    }, 
+    "478-11-p242755046": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "11", 
+                "p242755046"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "<E T=\"03\">Nonimmigrant visa.</E> A visa properly issued to an alien as an eligible nonimmigrant by a competent officer as provided in the Immigration and Nationality Act, 8 U.S.C. 1101 <E T=\"03\">et seq.</E>", 
+            "text": "Nonimmigrant visa. A visa properly issued to an alien as an eligible nonimmigrant by a competent officer as provided in the Immigration and Nationality Act, 8 U.S.C. 1101 et seq.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-11-p2685568514": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    513, 
+                    521
+                ], 
+                [
+                    "insert", 
+                    513, 
+                    "appendix"
+                ]
+            ]
+        ]
+    }, 
+    "478-11-p2757219296": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    62, 
+                    69
+                ], 
+                [
+                    "insert", 
+                    62, 
+                    "Tobacco, Firearms,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    74, 
+                    82
+                ], 
+                [
+                    "insert", 
+                    74, 
+                    "Explosives"
+                ]
+            ]
+        ]
+    }, 
+    "478-11-p3121846411": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    344, 
+                    376
+                ], 
+                [
+                    "insert", 
+                    344, 
+                    "located, as stated"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    380, 
+                    602
+                ], 
+                [
+                    "insert", 
+                    380, 
+                    "18 U.S.C. 921(b)."
+                ]
+            ]
+        ]
+    }, 
+    "478-11-p4-p2": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                2, 
+                "maintains a home in State X and a home in State Y. A resides in State X except for weekends or the summer months of the year and in State Y for the weekends or the summer months of the year. During the time that A actually resides in State X, A "
+            ], 
+            [
+                [
+                    "delete", 
+                    7, 
+                    19
+                ], 
+                [
+                    "insert", 
+                    7, 
+                    "resident of State X,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    24, 
+                    33
+                ], 
+                [
+                    "insert", 
+                    24, 
+                    "during the time that A actually resides in State Y, A is"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    36, 
+                    43
+                ], 
+                [
+                    "insert", 
+                    36, 
+                    "resident of"
+                ]
+            ], 
+            [
+                "delete", 
+                50, 
+                72
+            ], 
+            [
+                "delete", 
+                74, 
+                378
+            ]
+        ]
+    }, 
+    "478-11-p5-p2": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                21, 
+                "to the United States "
+            ], 
+            [
+                "insert", 
+                24, 
+                "a three-week "
+            ], 
+            [
+                [
+                    "delete", 
+                    33, 
+                    35
+                ], 
+                [
+                    "insert", 
+                    33, 
+                    "to State X. A does not have a state of residence in State X because A does not have the intention of making a home in State X while"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    39, 
+                    77
+                ], 
+                [
+                    "insert", 
+                    39, 
+                    "vacation. This is true regardless"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    95, 
+                    265
+                ], 
+                [
+                    "insert", 
+                    95, 
+                    "the vacation."
+                ]
+            ]
+        ]
+    }, 
+    "478-11-p593154015": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    43, 
+                    50
+                ], 
+                [
+                    "insert", 
+                    43, 
+                    "Tobacco, Firearms,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    55, 
+                    64
+                ], 
+                [
+                    "insert", 
+                    55, 
+                    "Explosives,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    83, 
+                    96
+                ], 
+                [
+                    "insert", 
+                    83, 
+                    "Justice,"
+                ]
+            ]
+        ]
+    }, 
+    "478-11-p6": {
+        "node": {
+            "child_labels": [
+                "478-11-p6-p1", 
+                "478-11-p6-p2"
+            ], 
+            "label": [
+                "478", 
+                "11", 
+                "p6"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": null, 
+            "text": "", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-11-p6-p1": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "11", 
+                "p6", 
+                "p1"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": null, 
+            "text": "", 
+            "title": "Example 4."
+        }, 
+        "op": "added"
+    }, 
+    "478-11-p6-p2": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "11", 
+                "p6", 
+                "p2"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "A, an alien, travels to the United States to work for three years in State X. A rents a home in State X, moves his personal possessions into the home, and his family resides with him in the home. A intends to reside in State X during the 3-year period of his employment. A is a resident of State X.", 
+            "text": "A, an alien, travels to the United States to work for three years in State X. A rents a home in State X, moves his personal possessions into the home, and his family resides with him in the home. A intends to reside in State X during the 3-year period of his employment. A is a resident of State X.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-114-a-1-vi": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    47, 
+                    51
+                ], 
+                [
+                    "insert", 
+                    47, 
+                    "is\u2014"
+                ]
+            ]
+        ]
+    }, 
+    "478-119-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    500, 
+                    508
+                ], 
+                [
+                    "insert", 
+                    500, 
+                    "appendix"
+                ]
+            ]
+        ]
+    }, 
+    "478-120-a": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    4, 
+                    7
+                ], 
+                [
+                    "insert", 
+                    4, 
+                    "General. A"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    27, 
+                    40
+                ], 
+                [
+                    "insert", 
+                    27, 
+                    "temporarily importing or bringing firearms or ammunition into the United States for lawful hunting or sporting purposes must first obtain"
+                ]
+            ], 
+            [
+                "insert", 
+                44, 
+                "approved "
+            ], 
+            [
+                [
+                    "delete", 
+                    53, 
+                    477
+                ], 
+                [
+                    "insert", 
+                    53, 
+                    "6NIA (5330.3D)."
+                ]
+            ]
+        ]
+    }, 
+    "478-120-b": {
+        "child_ops": [
+            [
+                "insert", 
+                0, 
+                [
+                    "478-120-b-1", 
+                    "478-120-b-2"
+                ]
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    4, 
+                    73
+                ], 
+                [
+                    "insert", 
+                    4, 
+                    "Aliens admitted to"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    92, 
+                    175
+                ], 
+                [
+                    "insert", 
+                    92, 
+                    "under"
+                ]
+            ], 
+            [
+                "delete", 
+                178, 
+                267
+            ], 
+            [
+                [
+                    "delete", 
+                    280, 
+                    560
+                ], 
+                [
+                    "insert", 
+                    280, 
+                    "visa."
+                ]
+            ]
+        ]
+    }, 
+    "478-120-b-1": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "120", 
+                "b", 
+                "1"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(1) Any alien lawfully admitted to the United States under a nonimmigrant visa who completes an ATF Form 6NIA to import firearms or ammunition into the United States, or any licensee who completes an ATF Form 6 to import firearms or ammunition for such nonimmigrant alien, must attach applicable documentation to the Form 6NIA or Form 6 establishing the nonimmigrant alien falls within an exception specified in 18 U.S.C. 922(y)(2) (e.g., a hunting license or permit lawfully issued in the United States) or has obtained a waiver as specified in 18 U.S.C. 922(y)(3).", 
+            "text": "(1) Any alien lawfully admitted to the United States under a nonimmigrant visa who completes an ATF Form 6NIA to import firearms or ammunition into the United States, or any licensee who completes an ATF Form 6 to import firearms or ammunition for such nonimmigrant alien, must attach applicable documentation to the Form 6NIA or Form 6 establishing the nonimmigrant alien falls within an exception specified in 18 U.S.C. 922(y)(2) (e.g., a hunting license or permit lawfully issued in the United States) or has obtained a waiver as specified in 18 U.S.C. 922(y)(3).", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-120-b-2": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "120", 
+                "b", 
+                "2"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(2) Aliens admitted to the United States under a nonimmigrant visa importing or bringing firearms or ammunition into the United States must provide the United States Customs and Border Protection with applicable documentation (e.g., a hunting license or permit lawfully issued in the United States) establishing the nonimmigrant alien falls within an exception specified in 18 U.S.C. 922(y)(2) or has obtained a waiver as specified in 18 U.S.C. 922(y)(3) before the firearm or ammunition may be imported. This provision applies in all cases, whether or not a Form 6 is needed to bring the firearms or ammunition into the United States.", 
+            "text": "(2) Aliens admitted to the United States under a nonimmigrant visa importing or bringing firearms or ammunition into the United States must provide the United States Customs and Border Protection with applicable documentation (e.g., a hunting license or permit lawfully issued in the United States) establishing the nonimmigrant alien falls within an exception specified in 18 U.S.C. 922(y)(2) or has obtained a waiver as specified in 18 U.S.C. 922(y)(3) before the firearm or ammunition may be imported. This provision applies in all cases, whether or not a Form 6 is needed to bring the firearms or ammunition into the United States.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-124-c-3-ii": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    5, 
+                    533
+                ], 
+                [
+                    "insert", 
+                    5, 
+                    "[Reserved]"
+                ]
+            ]
+        ]
+    }, 
+    "478-124-c-3-iii": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                47, 
+                "an alien admitted to the United States under "
+            ], 
+            [
+                [
+                    "delete", 
+                    62, 
+                    67
+                ], 
+                [
+                    "insert", 
+                    62, 
+                    "visa"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    150, 
+                    181
+                ], 
+                [
+                    "insert", 
+                    150, 
+                    "prohibition in section 922(g)(5)(B) of the Act,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    382, 
+                    387
+                ], 
+                [
+                    "insert", 
+                    382, 
+                    "4473; and"
+                ]
+            ]
+        ]
+    }, 
+    "478-124-d": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    355, 
+                    829
+                ], 
+                [
+                    "insert", 
+                    355, 
+                    "section."
+                ]
+            ]
+        ]
+    }, 
+    "478-124-e": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    453, 
+                    512
+                ], 
+                [
+                    "insert", 
+                    453, 
+                    "section."
+                ]
+            ]
+        ]
+    }, 
+    "478-124-f": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    1021, 
+                    1031
+                ], 
+                [
+                    "insert", 
+                    1021, 
+                    "residence; the transferee is not prohibited by the provisions of the Act from shipping or transporting a firearm in interstate or foreign commerce or receiving a firearm which has been shipped or transported in interstate or foreign commerce or possessing a firearm in or affecting commerce;"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    1036, 
+                    1052
+                ], 
+                [
+                    "insert", 
+                    1036, 
+                    "the transferee's receipt of the firearm would not be in violation of any statute of the State or published ordinance applicable to the locality in which the"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    1064, 
+                    1113
+                ], 
+                [
+                    "insert", 
+                    1064, 
+                    "resides. Upon receipt of such Forms 4473, the licensee shall identify the firearm to be transferred by listing in the Forms 4473 the name of the manufacturer, the name of the importer (if any), the type, model, caliber or gauge, and the serial number of the firearm to be transferred. The licensee shall prior to shipment or delivery of the firearm to such transferee, forward by registered or certified mail (return receipt requested) a copy of the Form 4473 to the principal law enforcement officer named in the Form 4473 by the transferee, and shall delay shipment or delivery of the firearm to the"
+                ]
+            ], 
+            [
+                "delete", 
+                1125, 
+                1164
+            ], 
+            [
+                "insert", 
+                1168, 
+                "a period of "
+            ], 
+            [
+                [
+                    "delete", 
+                    1177, 
+                    1179
+                ], 
+                [
+                    "insert", 
+                    1177, 
+                    "7"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    1185, 
+                    1255
+                ], 
+                [
+                    "insert", 
+                    1185, 
+                    "following receipt"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    1263, 
+                    1503
+                ], 
+                [
+                    "insert", 
+                    1263, 
+                    "licensee of the return receipt evidencing delivery of the copy of the Form 4473 to such principal law enforcement officer, or the return of the copy of the Form 4473 to the licensee due to the refusal of such principal law enforcement officer to accept same in accordance with U.S. Postal Service regulations. The original Form 4473,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    1508, 
+                    1524
+                ], 
+                [
+                    "insert", 
+                    1508, 
+                    "evidence of"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    1533, 
+                    1557
+                ], 
+                [
+                    "insert", 
+                    1533, 
+                    "or rejection of delivery of the copy of the Form 4473 sent to the principal law enforcement officer, shall"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    1561, 
+                    1721
+                ], 
+                [
+                    "insert", 
+                    1561, 
+                    "retained by the"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    1731, 
+                    1760
+                ], 
+                [
+                    "insert", 
+                    1731, 
+                    "as a part of the records required to"
+                ]
+            ], 
+            [
+                "delete", 
+                1764, 
+                2879
+            ]
+        ]
+    }, 
+    "478-124a": {
+        "op": "deleted"
+    }, 
+    "478-124a-a": {
+        "op": "deleted"
+    }, 
+    "478-124a-b": {
+        "op": "deleted"
+    }, 
+    "478-124a-c": {
+        "op": "deleted"
+    }, 
+    "478-124a-d": {
+        "op": "deleted"
+    }, 
+    "478-124a-e": {
+        "op": "deleted"
+    }, 
+    "478-124a-e-1": {
+        "op": "deleted"
+    }, 
+    "478-124a-e-2": {
+        "op": "deleted"
+    }, 
+    "478-124a-e-3": {
+        "op": "deleted"
+    }, 
+    "478-124a-f": {
+        "op": "deleted"
+    }, 
+    "478-125-e": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    49, 
+                    55
+                ], 
+                [
+                    "insert", 
+                    49, 
+                    "Each licensed dealer shall enter into a record each receipt and disposition of firearms. In addition, before commencing or continuing a firearms business, each licensed dealer shall inventory the firearms possessed for such business and shall record same in the record required by this paragraph. The record required by this paragraph shall be maintained in bound form under the format prescribed below. The purchase or other acquisition of a firearm shall, except"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    71, 
+                    94
+                ], 
+                [
+                    "insert", 
+                    71, 
+                    "paragraph (g) of this section, be recorded not later than the close of the next business day following the date of such purchase or acquisition. The record shall show the date of receipt, the name and address or the name and license number of the person from whom received, the name of the manufacturer and importer (if any), the model, serial number, type, and the caliber or gauge of the firearm. The sale or other disposition of a firearm shall be recorded by the licensed dealer not later than 7 days following the date of such transaction. When such disposition is made"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    98, 
+                    115
+                ], 
+                [
+                    "insert", 
+                    98, 
+                    "a nonlicensee, the firearms transaction record, Form 4473, obtained by the licensed dealer shall be retained, until the transaction is recorded, separate from the licensee's Form 4473 file and be readily available"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    120, 
+                    123
+                ], 
+                [
+                    "insert", 
+                    120, 
+                    "inspection. When such disposition is made to a licensee, the commercial record of the transaction shall be retained, until the transaction is recorded, separate from other commercial documents maintained by the licensed dealer, and be readily available for inspection. The record shall show the date of the sale or other disposition of each firearm, the name and address of the person to whom the firearm is transferred, or the name and license number of the person to whom transferred if such person is a licensee, or the firearms transaction record, Form 4473, serial number if the licensed dealer transferring the firearm serially numbers the Forms 4473 and files them numerically. The format required for the record of"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    160, 
+                    636
+                ], 
+                [
+                    "insert", 
+                    160, 
+                    "is"
+                ]
+            ], 
+            [
+                "delete", 
+                640, 
+                2213
+            ]
+        ]
+    }, 
+    "478-125-e-p1": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    0, 
+                    56
+                ], 
+                [
+                    "insert", 
+                    0, 
+                    "|Firearms Acquisition and Disposition Record|Description"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    81, 
+                    109
+                ], 
+                [
+                    "insert", 
+                    81, 
+                    "and importer (if any)|Model|Serial"
+                ]
+            ]
+        ]
+    }, 
+    "478-125-f": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                2
+            ], 
+            [
+                "delete", 
+                2, 
+                3
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                "delete", 
+                60, 
+                1561
+            ]
+        ]
+    }, 
+    "478-125-f-1": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    4, 
+                    13
+                ], 
+                [
+                    "insert", 
+                    4, 
+                    "Each licensed collector shall enter into a record each receipt and disposition of firearms curios or relics. The record required by this paragraph shall be maintained in bound form under the format prescribed below. The purchase or other acquisition of a curio or relic shall, except as provided in paragraph (g) of this section, be recorded not later than the close of the next business day following the date of such purchase or other acquisition. The record shall show the date of receipt, the name and address or the name and license number of the person from whom received, the name of the manufacturer and importer (if any), the model, serial number, type, and the caliber or gauge of the firearm curio or relic. The sale or other disposition of a curio or relic shall be recorded by the licensed collector not later than 7 days following the date of such transaction. When such disposition is made to a licensee, the commercial record of the transaction shall be retained, until the transaction is recorded, separate from other commercial documents maintained by the licensee, and be readily available for inspection. The record shall show the date of the sale or other disposition of each firearm curio or relic, the name and address of the person to whom the firearm curio or relic is transferred, or the name and license number of the person to whom transferred if such person is a licensee, and the date of birth of the transferee if other than a licensee. In addition, the licensee shall cause the"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    189, 
+                    198
+                ], 
+                [
+                    "insert", 
+                    189, 
+                    "used."
+                ]
+            ]
+        ]
+    }, 
+    "478-125-f-2": {
+        "child_ops": [
+            [
+                "delete", 
+                0, 
+                2
+            ], 
+            [
+                "insert", 
+                0, 
+                [
+                    "478-125-f-2-p1"
+                ]
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    4, 
+                    6
+                ], 
+                [
+                    "insert", 
+                    4, 
+                    "The format required for"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    11, 
+                    15
+                ], 
+                [
+                    "insert", 
+                    11, 
+                    "record"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    19, 
+                    35
+                ], 
+                [
+                    "insert", 
+                    19, 
+                    "receipt and disposition of firearms by collectors"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    39, 
+                    110
+                ], 
+                [
+                    "insert", 
+                    39, 
+                    "as follows:"
+                ]
+            ]
+        ]
+    }, 
+    "478-125-f-2-i": {
+        "op": "deleted"
+    }, 
+    "478-125-f-2-ii": {
+        "op": "deleted"
+    }, 
+    "478-125-f-2-p1": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "125", 
+                "f", 
+                "2", 
+                "p1"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "<GPOTABLE CDEF=\"s8,6,6,6,6,6,10,6,10,10,10\" COLS=\"11\" OPTS=\"L2,p6,6/7\">\n              <TTITLE>Firearms Collectors Acquisition and Disposition Record</TTITLE>\n              <BOXHD>\n                <CHED H=\"1\">Description of firearm</CHED>\n                <CHED H=\"2\">Manufacturer and importer (if any)</CHED>\n                <CHED H=\"2\">Model</CHED>\n                <CHED H=\"2\">Serial No.</CHED>\n                <CHED H=\"2\">Type</CHED>\n                <CHED H=\"2\">Caliber or gauge</CHED>\n                <CHED H=\"1\">Receipt</CHED>\n                <CHED H=\"2\">Date</CHED>\n                <CHED H=\"2\">Name and address or name and license No.</CHED>\n                <CHED H=\"1\">Disposition</CHED>\n                <CHED H=\"2\">Date</CHED>\n                <CHED H=\"2\">Name and address or name and license No.</CHED>\n                <CHED H=\"2\">Date of birth if non-licensee</CHED>\n                <CHED H=\"2\">Driver's license No. or other identification if non-licensee</CHED>\n              </BOXHD>\n              <ROW>\n                <ENT I=\"22\">\u2003</ENT>\n              </ROW>\n            </GPOTABLE>", 
+            "text": "|Firearms Collectors Acquisition and Disposition Record|Description of firearm|Manufacturer and importer (if any)|Model|Serial No.|Type|Caliber or gauge|Receipt|Date|Name and address or name and license No.|Disposition|Date|Name and address or name and license No.|Date of birth if non-licensee|Driver's license No. or other identification if non-licensee|\n|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|\n||", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-125-f-3": {
+        "op": "deleted"
+    }, 
+    "478-125-f-3-p1": {
+        "op": "deleted"
+    }, 
+    "478-125a-a-4-p1": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    77, 
+                    105
+                ], 
+                [
+                    "insert", 
+                    77, 
+                    "and importer (if any)|Model|Serial"
+                ]
+            ]
+        ]
+    }, 
+    "478-126-a": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    174, 
+                    179
+                ], 
+                [
+                    "insert", 
+                    174, 
+                    "5300.5,"
+                ]
+            ]
+        ]
+    }, 
+    "478-21-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    33, 
+                    39
+                ], 
+                [
+                    "insert", 
+                    33, 
+                    "submitted"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    64, 
+                    123
+                ], 
+                [
+                    "insert", 
+                    64, 
+                    "Center (http://www.atf.gov) or made by calling (202) 648-6420."
+                ]
+            ]
+        ]
+    }, 
+    "478-24-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    309, 
+                    315
+                ], 
+                [
+                    "insert", 
+                    309, 
+                    "National Archives and Records Administration (NARA). For information on the availability"
+                ]
+            ], 
+            [
+                "insert", 
+                319, 
+                "this material at NARA, call 202-741-6030, or go to: http://www.archives.gov/federal_register/code_of_federal_regulations/ibr_locations.html. This incorporation by reference was approved by "
+            ], 
+            [
+                "insert", 
+                323, 
+                "Director of the "
+            ], 
+            [
+                "delete", 
+                331, 
+                475
+            ]
+        ]
+    }, 
+    "478-32-a-5-ii": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    58, 
+                    60
+                ], 
+                [
+                    "insert", 
+                    58, 
+                    "has been admitted to the United States under"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    76, 
+                    82
+                ], 
+                [
+                    "insert", 
+                    76, 
+                    "visa:"
+                ]
+            ], 
+            [
+                "insert", 
+                162, 
+                "alien who has been lawfully admitted to the United States under a "
+            ], 
+            [
+                "insert", 
+                175, 
+                "visa, if that "
+            ], 
+            [
+                [
+                    "delete", 
+                    181, 
+                    198
+                ], 
+                [
+                    "insert", 
+                    181, 
+                    "is\u2014"
+                ]
+            ]
+        ]
+    }, 
+    "478-32-d-5-ii": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    58, 
+                    60
+                ], 
+                [
+                    "insert", 
+                    58, 
+                    "has been admitted to the United States under"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    76, 
+                    82
+                ], 
+                [
+                    "insert", 
+                    76, 
+                    "visa:"
+                ]
+            ], 
+            [
+                "insert", 
+                162, 
+                "alien who has been lawfully admitted to the United States under a "
+            ], 
+            [
+                "insert", 
+                175, 
+                "visa, if that "
+            ], 
+            [
+                [
+                    "delete", 
+                    181, 
+                    198
+                ], 
+                [
+                    "insert", 
+                    181, 
+                    "is\u2014"
+                ]
+            ]
+        ]
+    }, 
+    "478-32-f": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                41, 
+                "individual who has been admitted to the United States under a "
+            ], 
+            [
+                [
+                    "delete", 
+                    54, 
+                    59
+                ], 
+                [
+                    "insert", 
+                    54, 
+                    "visa"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    144, 
+                    152
+                ], 
+                [
+                    "insert", 
+                    144, 
+                    "section"
+                ]
+            ]
+        ]
+    }, 
+    "478-39a": {
+        "child_ops": [
+            [
+                "insert", 
+                0, 
+                [
+                    "478-39a-a", 
+                    "478-39a-b", 
+                    "478-39a-c", 
+                    "478-39a-d", 
+                    "478-39a-e", 
+                    "478-39a-f"
+                ]
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                "delete", 
+                0, 
+                836
+            ]
+        ]
+    }, 
+    "478-39a-a": {
+        "node": {
+            "child_labels": [
+                "478-39a-a-1", 
+                "478-39a-a-2"
+            ], 
+            "label": [
+                "478", 
+                "39a", 
+                "a"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(a)", 
+            "text": "(a)", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-39a-a-1": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "39a", 
+                "a", 
+                "1"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(1) Each licensee shall report the theft or loss of a firearm from the licensee's inventory (including any firearm which has been transferred from the licensee's inventory to a personal collection and held as a personal firearm for at least 1 year), or from the collection of a licensed collector, within 48 hours after the theft or loss is discovered.", 
+            "text": "(1) Each licensee shall report the theft or loss of a firearm from the licensee's inventory (including any firearm which has been transferred from the licensee's inventory to a personal collection and held as a personal firearm for at least 1 year), or from the collection of a licensed collector, within 48 hours after the theft or loss is discovered.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-39a-a-2": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "39a", 
+                "a", 
+                "2"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(2) When a firearm is stolen or lost in transit on a common or contract carrier (which for purposes of this paragraph includes the U.S. Postal Service), it is considered stolen or lost from the transferor/sender licensee's inventory for reporting purposes. Therefore, the transferor/sender of the stolen or lost firearm shall report the theft or loss of the firearm within 48 hours after the transferor/sender discovers the theft or loss.", 
+            "text": "(2) When a firearm is stolen or lost in transit on a common or contract carrier (which for purposes of this paragraph includes the U.S. Postal Service), it is considered stolen or lost from the transferor/sender licensee's inventory for reporting purposes. Therefore, the transferor/sender of the stolen or lost firearm shall report the theft or loss of the firearm within 48 hours after the transferor/sender discovers the theft or loss.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-39a-b": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "39a", 
+                "b"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(b) Each licensee shall report the theft or loss by telephoning ATF at 1-888-930-9275 (nationwide toll-free number), and by preparing and submitting to ATF a Federal Firearms Licensee Theft/Loss Report, ATF Form 3310.11, in accordance with the instructions on the form. The original of the report shall be retained by the licensee as part of the licensee's required records.", 
+            "text": "(b) Each licensee shall report the theft or loss by telephoning ATF at 1-888-930-9275 (nationwide toll-free number), and by preparing and submitting to ATF a Federal Firearms Licensee Theft/Loss Report, ATF Form 3310.11, in accordance with the instructions on the form. The original of the report shall be retained by the licensee as part of the licensee's required records.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-39a-c": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "39a", 
+                "c"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(c) When a licensee submits to ATF a Federal Firearms Licensee Theft/Loss Report, ATF Form 3310.11, for the theft or loss of a firearm registered under the National Firearms Act, this report also satisfies the notification requirement under \u00a7\u2009479.141 of this chapter.", 
+            "text": "(c) When a licensee submits to ATF a Federal Firearms Licensee Theft/Loss Report, ATF Form 3310.11, for the theft or loss of a firearm registered under the National Firearms Act, this report also satisfies the notification requirement under \u00a7\u2009479.141 of this chapter.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-39a-d": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "39a", 
+                "d"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(d) Theft or loss of any firearm shall also be reported to the appropriate local authorities. If the location of the theft or loss is known, the local law enforcement agency at that location would be the appropriate local authority. Otherwise, the report should be made to the local law enforcement authorities at the licensee's location or business premises.", 
+            "text": "(d) Theft or loss of any firearm shall also be reported to the appropriate local authorities. If the location of the theft or loss is known, the local law enforcement agency at that location would be the appropriate local authority. Otherwise, the report should be made to the local law enforcement authorities at the licensee's location or business premises.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-39a-e": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "39a", 
+                "e"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(e) Licensees shall reflect the theft or loss of a firearm as a disposition entry in the Record of Acquisition and Disposition required by subpart H of this part not later than 7 days following discovery of the theft or loss. The disposition entry shall record whether the incident is a theft or loss, the ATF-Issued Incident Number, and the Incident Number provided by the local law enforcement agency.", 
+            "text": "(e) Licensees shall reflect the theft or loss of a firearm as a disposition entry in the Record of Acquisition and Disposition required by subpart H of this part not later than 7 days following discovery of the theft or loss. The disposition entry shall record whether the incident is a theft or loss, the ATF-Issued Incident Number, and the Incident Number provided by the local law enforcement agency.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-39a-f": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "39a", 
+                "f"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(f) Licensees who report the theft or loss of a firearm and later discover its whereabouts shall advise ATF at 1-888-930-9275 (nationwide toll-free number) that the firearm has been located, and shall re-enter the firearm in the Record of Acquisition and Disposition as an acquisition or disposition entry as appropriate.", 
+            "text": "(f) Licensees who report the theft or loss of a firearm and later discover its whereabouts shall advise ATF at 1-888-930-9275 (nationwide toll-free number) that the firearm has been located, and shall re-enter the firearm in the Record of Acquisition and Disposition as an acquisition or disposition entry as appropriate.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-40-b-2": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    96, 
+                    104
+                ], 
+                [
+                    "insert", 
+                    96, 
+                    "appendix"
+                ]
+            ]
+        ]
+    }, 
+    "478-44-a-1-iii": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                271, 
+                "an alien who has been admitted to the United States under "
+            ], 
+            [
+                [
+                    "delete", 
+                    286, 
+                    292
+                ], 
+                [
+                    "insert", 
+                    286, 
+                    "visa,"
+                ]
+            ], 
+            [
+                "delete", 
+                341, 
+                354
+            ], 
+            [
+                [
+                    "delete", 
+                    386, 
+                    388
+                ], 
+                [
+                    "insert", 
+                    386, 
+                    "specified in 18 U.S.C. 922(y)(2) (e.g., a hunting license"
+                ]
+            ], 
+            [
+                "insert", 
+                392, 
+                "permit lawfully issued in the United States) or "
+            ], 
+            [
+                [
+                    "delete", 
+                    414, 
+                    502
+                ], 
+                [
+                    "insert", 
+                    414, 
+                    "as specified"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    506, 
+                    533
+                ], 
+                [
+                    "insert", 
+                    506, 
+                    "18 U.S.C. 922(y)(3);"
+                ]
+            ]
+        ]
+    }, 
+    "478-44-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    316, 
+                    317
+                ], 
+                [
+                    "insert", 
+                    316, 
+                    "  "
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    582, 
+                    583
+                ], 
+                [
+                    "insert", 
+                    582, 
+                    "an alien who has been admitted to the United States under a"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    597, 
+                    607
+                ], 
+                [
+                    "insert", 
+                    597, 
+                    "visa, the"
+                ]
+            ], 
+            [
+                "delete", 
+                680, 
+                693
+            ], 
+            [
+                "insert", 
+                726, 
+                "specified in 18 U.S.C. 922(y)(2) (e.g., a hunting license or permit lawfully issued in the United States) or has obtained a waiver as specified in 18 U.S.C. 922(y)(3). The application must be executed under the penalties of perjury and the penalties imposed by 18 U.S.C. 924. The application shall include the appropriate fee in the form of a money order or check made payable "
+            ], 
+            [
+                [
+                    "delete", 
+                    729, 
+                    735
+                ], 
+                [
+                    "insert", 
+                    729, 
+                    "the Bureau of Alcohol, Tobacco, Firearms, and Explosives. ATF Form 7CR (Curios and Relics) may be"
+                ]
+            ], 
+            [
+                "delete", 
+                745, 
+                964
+            ], 
+            [
+                [
+                    "delete", 
+                    967, 
+                    1143
+                ], 
+                [
+                    "insert", 
+                    967, 
+                    "contacting the"
+                ]
+            ], 
+            [
+                "delete", 
+                1148, 
+                1215
+            ]
+        ]
+    }, 
+    "478-45": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    465, 
+                    466
+                ], 
+                [
+                    "insert", 
+                    465, 
+                    "an alien who has been admitted to the United States under a"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    480, 
+                    490
+                ], 
+                [
+                    "insert", 
+                    480, 
+                    "visa, the"
+                ]
+            ], 
+            [
+                "delete", 
+                563, 
+                576
+            ], 
+            [
+                "insert", 
+                609, 
+                "specified in 18 U.S.C. 922(y)(2) (e.g., a hunting license or permit lawfully issued in the United States) or has obtained a waiver as specified in 18 U.S.C. 922(y)(3). The Chief, Federal Firearms Licensing Center may, in writing, require the applicant for license renewal "
+            ], 
+            [
+                [
+                    "delete", 
+                    612, 
+                    760
+                ], 
+                [
+                    "insert", 
+                    612, 
+                    "also file completed ATF Form 7 or ATF Form 7CR in the manner required by \u00a7 478.44. In the event the licensee does not timely file an ATF Form 8 Part II, the licensee must file an ATF Form 7 or ATF Form 7CR as required by \u00a7 478.44, and obtain the required license before continuing business or collecting activity. If an ATF Form 8 Part II is not timely received through the mails, the licensee should so notify the"
+                ]
+            ], 
+            [
+                "delete", 
+                795, 
+                1313
+            ]
+        ]
+    }, 
+    "478-52-a": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                677, 
+                "Center "
+            ]
+        ]
+    }, 
+    "478-56-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    225, 
+                    233
+                ], 
+                [
+                    "insert", 
+                    225, 
+                    "Center,"
+                ]
+            ]
+        ]
+    }, 
+    "478-71": {
+        "op": "modified", 
+        "text": [
+            [
+                "delete", 
+                22, 
+                45
+            ]
+        ]
+    }, 
+    "478-72": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    246, 
+                    257
+                ], 
+                [
+                    "insert", 
+                    246, 
+                    "denial.The"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    580, 
+                    590
+                ], 
+                [
+                    "insert", 
+                    580, 
+                    "held.Such"
+                ]
+            ], 
+            [
+                "insert", 
+                684, 
+                "During the hearing the applicant will have the opportunity to submit facts and arguments for review and consideration; offers of settlement will not be entertained at the hearing but may be made before or after the hearing. "
+            ], 
+            [
+                "delete", 
+                834, 
+                857
+            ], 
+            [
+                [
+                    "delete", 
+                    1011, 
+                    1042
+                ], 
+                [
+                    "insert", 
+                    1011, 
+                    "Director's"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    1140, 
+                    1145
+                ], 
+                [
+                    "insert", 
+                    1140, 
+                    "5300.13."
+                ]
+            ]
+        ]
+    }, 
+    "478-73-a": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    44, 
+                    70
+                ], 
+                [
+                    "insert", 
+                    44, 
+                    "has"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    249, 
+                    250
+                ], 
+                [
+                    "insert", 
+                    249, 
+                    "pursuant to 18 U.S.C. 922(t)(5) and 18 U.S.C. 924(p), a"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    368, 
+                    394
+                ], 
+                [
+                    "insert", 
+                    368, 
+                    "has"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    887, 
+                    891
+                ], 
+                [
+                    "insert", 
+                    887, 
+                    "law; or that a licensee has violated 18 U.S.C. 922(z)(1) by selling, delivering, or transferring any handgun to any person other than a licensee, unless the transferee was provided with a secure gun storage or safety device for that handgun."
+                ]
+            ]
+        ]
+    }, 
+    "478-73-b": {
+        "op": "modified", 
+        "text": [
+            [
+                "delete", 
+                188, 
+                211
+            ], 
+            [
+                "delete", 
+                470, 
+                493
+            ], 
+            [
+                [
+                    "delete", 
+                    594, 
+                    599
+                ], 
+                [
+                    "insert", 
+                    594, 
+                    "5300.13,"
+                ]
+            ]
+        ]
+    }, 
+    "478-74": {
+        "op": "modified", 
+        "text": [
+            [
+                "delete", 
+                846, 
+                869
+            ], 
+            [
+                [
+                    "delete", 
+                    1077, 
+                    1087
+                ], 
+                [
+                    "insert", 
+                    1077, 
+                    "922(t)(5) or 924(p),"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    1137, 
+                    1143
+                ], 
+                [
+                    "insert", 
+                    1137, 
+                    "or"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    1339, 
+                    1344
+                ], 
+                [
+                    "insert", 
+                    1339, 
+                    "5300.13."
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    1434, 
+                    1444
+                ], 
+                [
+                    "insert", 
+                    1434, 
+                    "922(t)(5) or 924(p),"
+                ]
+            ], 
+            [
+                "insert", 
+                1580, 
+                " During the hearing the licensee will have the opportunity to submit facts and arguments for review and consideration; offers of settlement will not be entertained at the hearing but may be made before or after the hearing."
+            ]
+        ]
+    }, 
+    "478-76": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                158, 
+                "Tobacco, Firearms, and Explosives as provided in 31 CFR Part 8 (Practice Before the Bureau of Alcohol, "
+            ], 
+            [
+                [
+                    "delete", 
+                    170, 
+                    178
+                ], 
+                [
+                    "insert", 
+                    170, 
+                    "Firearms), if he has otherwise complied with the applicable requirements of 26 CFR 601.521 through 601.527 (conference and practice requirements for alcohol, tobacco, and firearms activities) of this chapter. The Director may be represented in proceedings by an attorney in the office of Chief Counsel who is authorized to execute and file motions, briefs and other papers in the proceeding, on behalf of the Director, in his own name"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    182, 
+                    404
+                ], 
+                [
+                    "insert", 
+                    182, 
+                    "\u201cAttorney"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    409, 
+                    795
+                ], 
+                [
+                    "insert", 
+                    409, 
+                    "the"
+                ]
+            ]
+        ]
+    }, 
+    "478-78": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    106, 
+                    113
+                ], 
+                [
+                    "insert", 
+                    106, 
+                    "Tobacco, Firearms,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    118, 
+                    130
+                ], 
+                [
+                    "insert", 
+                    118, 
+                    "Explosives, or"
+                ]
+            ], 
+            [
+                "delete", 
+                1207, 
+                1230
+            ]
+        ]
+    }, 
+    "478-99-c-5": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                103, 
+                "an alien who has been admitted to the United States under "
+            ], 
+            [
+                [
+                    "delete", 
+                    118, 
+                    124
+                ], 
+                [
+                    "insert", 
+                    118, 
+                    "visa:"
+                ]
+            ], 
+            [
+                "insert", 
+                200, 
+                "alien who has been lawfully admitted to the United States under a "
+            ], 
+            [
+                "insert", 
+                213, 
+                "visa if that "
+            ], 
+            [
+                "delete", 
+                219, 
+                233
+            ]
+        ]
+    }, 
+    "478-Subpart-H": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                4
+            ], 
+            [
+                "delete", 
+                4, 
+                5
+            ], 
+            [
+                "equal", 
+                5, 
+                16
+            ]
+        ], 
+        "op": "modified"
+    }
+}

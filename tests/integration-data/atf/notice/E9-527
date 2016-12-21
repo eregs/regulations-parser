@@ -1,0 +1,68 @@
+{
+    "amendments": [
+        {
+            "cfr_part": "478", 
+            "instruction": "Accordingly, for the reasons discussed in the preamble, 27 CFR part 478 is amended as follows: "
+        }, 
+        {
+            "authority": "5 U.S.C. 552(a); 18 U.S.C. 847, 921-931; 44 U.S.C. 3504(h).", 
+            "cfr_part": "478", 
+            "instruction": "1. The authority citation for 27 CFR part 478 continues to read as follows: "
+        }, 
+        {
+            "cfr_part": "478", 
+            "instruction": "2. Section 478.71 is amended by removing \u201cof Industry Operations\u201d in the first sentence."
+        }, 
+        {
+            "cfr_part": "478", 
+            "instruction": "3. Section 478.72 is amended by removing \u201cof Industry Operations\u201d in the fifth sentence and by removing \u201cDirector of Industry Operations\u201d in the sixth sentence and adding in its place \u201cDirector's\u201d."
+        }, 
+        {
+            "cfr_part": "478", 
+            "instruction": "4. Section 478.73 is amended by removing \u201cof Industry Operations\u201d wherever it appears."
+        }, 
+        {
+            "cfr_part": "478", 
+            "instruction": "5. Section 478.74 is amended by removing \u201cof Industry Operations\u201d in the fourth sentence."
+        }, 
+        {
+            "cfr_part": "478", 
+            "instruction": "6. Section 478.76 is amended by removing \u201cof Industry Operations\u201d wherever it appears."
+        }, 
+        {
+            "cfr_part": "478", 
+            "instruction": "7. Section 478.78 is amended by removing \u201cof Industry Operations\u201d in the last sentence."
+        }
+    ], 
+    "cfr_parts": [
+        "478"
+    ], 
+    "cfr_title": 27, 
+    "comments_close": "2009-04-14", 
+    "dockets": [
+        "Docket No. ATF 27P", 
+        "AG Order No. 3030-2009"
+    ], 
+    "document_number": "E9-527", 
+    "effective_on": "2009-01-14", 
+    "footnotes": {}, 
+    "fr_citation": "74 FR 1875", 
+    "fr_url": "https://www.federalregister.gov/documents/2009/01/14/E9-527/decision-making-authority-regarding-the-denial-suspension-or-revocation-of-a-federal-firearms", 
+    "fr_volume": 74, 
+    "meta": {
+        "start_page": 1875
+    }, 
+    "primary_agency": "DEPARTMENT OF JUSTICE ", 
+    "primary_docket": null, 
+    "publication_date": "2009-01-14", 
+    "regulation_id_numbers": [], 
+    "section_by_section": [], 
+    "supporting_documents": [], 
+    "title": "Decision-Making Authority Regarding the Denial, Suspension, or Revocation of a Federal Firearms License, or Imposition of a Civil Fine (2008R-10P) ", 
+    "versions": {
+        "478": {
+            "left": "E8-23178", 
+            "right": "E9-527"
+        }
+    }
+}

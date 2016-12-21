@@ -1,0 +1,167 @@
+{
+    "555-11-p4152419405": {
+        "child_ops": [
+            [
+                "delete", 
+                0, 
+                2
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                27, 
+                " Any tool or special mechanized device or gas generator system which is actuated by a propellant or which releases and directs work through a propellant charge."
+            ]
+        ]
+    }, 
+    "555-11-p4152419405-a": {
+        "op": "deleted"
+    }, 
+    "555-11-p4152419405-b": {
+        "op": "deleted"
+    }, 
+    "555-11-p4152419405-b-1": {
+        "op": "deleted"
+    }, 
+    "555-11-p4152419405-b-2": {
+        "op": "deleted"
+    }, 
+    "555-127": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    36, 
+                    38
+                ], 
+                [
+                    "insert", 
+                    36, 
+                    "\u00a7 \u00a7"
+                ]
+            ]
+        ]
+    }, 
+    "555-128": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    544, 
+                    572
+                ], 
+                [
+                    "insert", 
+                    544, 
+                    "Spring Mills Office Park, 882 T.J. Jackson Drive, Falling Waters,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    587, 
+                    593
+                ], 
+                [
+                    "insert", 
+                    587, 
+                    "25419."
+                ]
+            ]
+        ]
+    }, 
+    "555-201-d": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    33, 
+                    35
+                ], 
+                [
+                    "insert", 
+                    33, 
+                    "\u00a7 \u00a7"
+                ]
+            ]
+        ]
+    }, 
+    "555-21-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    72, 
+                    94
+                ], 
+                [
+                    "insert", 
+                    72, 
+                    "7943 Angus Court,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    117, 
+                    123
+                ], 
+                [
+                    "insert", 
+                    117, 
+                    "22153."
+                ]
+            ]
+        ]
+    }, 
+    "555-213-b-1": {
+        "op": "modified", 
+        "text": [
+            [
+                "delete", 
+                114, 
+                126
+            ]
+        ]
+    }, 
+    "555-220-p1-p7": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    166, 
+                    192
+                ], 
+                [
+                    "insert", 
+                    166, 
+                    "Institute.[^1](Definition"
+                ]
+            ]
+        ]
+    }, 
+    "555-23": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    260, 
+                    282
+                ], 
+                [
+                    "insert", 
+                    260, 
+                    "Center, 7943 Angus Court, Springfield, Virginia 22153."
+                ]
+            ]
+        ]
+    }
+}

@@ -1,0 +1,588 @@
+{
+    "amendments": [
+        {
+            "cfr_part": "555", 
+            "instruction": "Accordingly, for the reasons discussed in the preamble, 27 CFR Part 555 is amended as follows:"
+        }, 
+        {
+            "authority": "18 U.S.C. 847.", 
+            "cfr_part": "555", 
+            "instruction": "1. The authority citation for 27 CFR Part 555 continues to read as follows: "
+        }, 
+        {
+            "cfr_part": "555", 
+            "changes": [
+                [
+                    "555-41-a-3", 
+                    [
+                        {
+                            "action": "DELETE"
+                        }
+                    ]
+                ], 
+                [
+                    "555-41-b-3-ii", 
+                    [
+                        {
+                            "action": "DELETE"
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "2. Section 555.41 is amended by removing \u201cof the class authorized by this permit\u201d at the end of the second sentence in paragraphs (a)(3) and (b)(3)(ii)."
+        }, 
+        {
+            "cfr_part": "555", 
+            "changes": [
+                [
+                    "555-202-a", 
+                    [
+                        {
+                            "action": "DELETE"
+                        }
+                    ]
+                ], 
+                [
+                    "555-202-b", 
+                    [
+                        {
+                            "action": "DELETE"
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "3. Section 555.52 is amended by removing the phrase \u201cand class (as described in \u00a7\u2009555.202)\u201d in paragraphs (a) and (b)."
+        }, 
+        {
+            "cfr_part": "555", 
+            "changes": [
+                [
+                    "555-55", 
+                    [
+                        {
+                            "action": "DELETE"
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "4. Subpart D is amended by removing \u00a7\u2009555.55."
+        }, 
+        {
+            "cfr_part": "555", 
+            "changes": [
+                [
+                    "555-108-e", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "555", 
+                                    "108", 
+                                    "e"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(e) For requirements relating to the marking of imported explosive materials, see \u00a7\u2009555.109.", 
+                                "text": "(e) For requirements relating to the marking of imported explosive materials, see \u00a7\u2009555.109.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "5. Section 555.108 is amended by adding a new paragraph (e) to read as follows:"
+        }, 
+        {
+            "cfr_part": "555", 
+            "changes": [
+                [
+                    "555-109-a", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "555", 
+                                    "109", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) <E T=\"03\">General.</E> Explosive materials, whether manufactured in the United States or imported, must contain certain marks of identification.", 
+                                "text": "(a) General. Explosive materials, whether manufactured in the United States or imported, must contain certain marks of identification.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "555-109-b-1-i", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "555", 
+                                    "109", 
+                                    "b", 
+                                    "1", 
+                                    "i"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(i) The name of the manufacturer; and", 
+                                "text": "(i) The name of the manufacturer; and", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "555-109-b-1-ii", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "555", 
+                                    "109", 
+                                    "b", 
+                                    "1", 
+                                    "ii"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(ii) The location, date, and shift of manufacture. Where a manufacturer operates his plant for only one shift during the day, he does not need to show the shift of manufacture.", 
+                                "text": "(ii) The location, date, and shift of manufacture. Where a manufacturer operates his plant for only one shift during the day, he does not need to show the shift of manufacture.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "555-109-b-1", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "555-109-b-1-i", 
+                                    "555-109-b-1-ii"
+                                ], 
+                                "label": [
+                                    "555", 
+                                    "109", 
+                                    "b", 
+                                    "1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(1) <E T=\"03\">Licensed manufacturers.</E> Licensed manufacturers who manufacture explosive materials for sale or distribution must place the following marks of identification on explosive materials at the time of manufacture:", 
+                                "text": "(1) Licensed manufacturers. Licensed manufacturers who manufacture explosive materials for sale or distribution must place the following marks of identification on explosive materials at the time of manufacture:", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "555-109-b-2-i-A", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "555", 
+                                    "109", 
+                                    "b", 
+                                    "2", 
+                                    "i", 
+                                    "A"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(A) The name and address (city and state) of the importer; and", 
+                                "text": "(A) The name and address (city and state) of the importer; and", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "555-109-b-2-i-B", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "555", 
+                                    "109", 
+                                    "b", 
+                                    "2", 
+                                    "i", 
+                                    "B"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(B) The location (city and country) where the explosive materials were manufactured, date, and shift of manufacture. Where the foreign manufacturer operates his plant for only one shift during the day, he does not need to show the shift of manufacture.", 
+                                "text": "(B) The location (city and country) where the explosive materials were manufactured, date, and shift of manufacture. Where the foreign manufacturer operates his plant for only one shift during the day, he does not need to show the shift of manufacture.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "555-109-b-2-i", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "555-109-b-2-i-A", 
+                                    "555-109-b-2-i-B"
+                                ], 
+                                "label": [
+                                    "555", 
+                                    "109", 
+                                    "b", 
+                                    "2", 
+                                    "i"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(i) Licensed importers who import explosive materials for sale or distribution must place the following marks of identification on the explosive materials they import:", 
+                                "text": "(i) Licensed importers who import explosive materials for sale or distribution must place the following marks of identification on the explosive materials they import:", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "555-109-b-2-ii", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "555", 
+                                    "109", 
+                                    "b", 
+                                    "2", 
+                                    "ii"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(ii) Licensed importers must place the required marks on all explosive materials imported prior to distribution or shipment for use, and in no event later than 15 days after the date of release from Customs custody.", 
+                                "text": "(ii) Licensed importers must place the required marks on all explosive materials imported prior to distribution or shipment for use, and in no event later than 15 days after the date of release from Customs custody.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "555-109-b-2", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "555-109-b-2-i", 
+                                    "555-109-b-2-ii"
+                                ], 
+                                "label": [
+                                    "555", 
+                                    "109", 
+                                    "b", 
+                                    "2"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(2) <E T=\"03\">Licensed importers.</E>", 
+                                "text": "(2) Licensed importers.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "555-109-b", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "555-109-b-1", 
+                                    "555-109-b-2"
+                                ], 
+                                "label": [
+                                    "555", 
+                                    "109", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) <E T=\"03\">Required marks.</E>", 
+                                "text": "(b) Required marks.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "555-109-c-1", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "555", 
+                                    "109", 
+                                    "c", 
+                                    "1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(1) The required marks prescribed in this section must be permanent and legible.", 
+                                "text": "(1) The required marks prescribed in this section must be permanent and legible.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "555-109-c-2", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "555", 
+                                    "109", 
+                                    "c", 
+                                    "2"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(2) The required marks prescribed in this section must be in the English language, using Roman letters and Arabic numerals.", 
+                                "text": "(2) The required marks prescribed in this section must be in the English language, using Roman letters and Arabic numerals.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "555-109-c-3", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "555", 
+                                    "109", 
+                                    "c", 
+                                    "3"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(3) Licensed manufacturers and licensed importers must place the required marks on each cartridge, bag, or other immediate container of explosive materials that they manufacture or import, as well as on any outside container used for the packaging of such explosive materials.", 
+                                "text": "(3) Licensed manufacturers and licensed importers must place the required marks on each cartridge, bag, or other immediate container of explosive materials that they manufacture or import, as well as on any outside container used for the packaging of such explosive materials.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "555-109-c-4", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "555", 
+                                    "109", 
+                                    "c", 
+                                    "4"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(4) Licensed manufacturers and licensed importers may use any method, or combination of methods, to affix the required marks to the immediate container of explosive materials, or outside containers used for the packaging thereof, provided the identifying marks are legible, permanent, show all the required information, and are not rendered unreadable by extended periods of storage.", 
+                                "text": "(4) Licensed manufacturers and licensed importers may use any method, or combination of methods, to affix the required marks to the immediate container of explosive materials, or outside containers used for the packaging thereof, provided the identifying marks are legible, permanent, show all the required information, and are not rendered unreadable by extended periods of storage.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "555-109-c-5", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "555", 
+                                    "109", 
+                                    "c", 
+                                    "5"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(5) If licensed manufacturers or licensed importers desire to use a coding system and omit printed markings on the container that show all the required information specified in paragraphs (b)(1) and (2) of this section, they must file with ATF a letterhead application displaying the coding that they plan to use and explaining the manner of its application. The Director must approve the application before the proposed coding can be used.", 
+                                "text": "(5) If licensed manufacturers or licensed importers desire to use a coding system and omit printed markings on the container that show all the required information specified in paragraphs (b)(1) and (2) of this section, they must file with ATF a letterhead application displaying the coding that they plan to use and explaining the manner of its application. The Director must approve the application before the proposed coding can be used.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "555-109-c", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "555-109-c-1", 
+                                    "555-109-c-2", 
+                                    "555-109-c-3", 
+                                    "555-109-c-4", 
+                                    "555-109-c-5"
+                                ], 
+                                "label": [
+                                    "555", 
+                                    "109", 
+                                    "c"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(c) <E T=\"03\">General requirements.</E>", 
+                                "text": "(c) General requirements.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "555-109-d-1", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "555", 
+                                    "109", 
+                                    "d", 
+                                    "1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(1) <E T=\"03\">Blasting caps.</E> Licensed manufacturers or licensed importers are only required to place the identification marks prescribed in this section on the containers used for the packaging of blasting caps.", 
+                                "text": "(1) Blasting caps. Licensed manufacturers or licensed importers are only required to place the identification marks prescribed in this section on the containers used for the packaging of blasting caps.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "555-109-d-2", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "555", 
+                                    "109", 
+                                    "d", 
+                                    "2"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(2) <E T=\"03\">Alternate means of identification.</E> The Director may authorize other means of identifying explosive materials, including fireworks, upon receipt of a letter application from the licensed manufacturer or licensed importer showing that such other identification is reasonable and will not hinder the effective administration of this part.", 
+                                "text": "(2) Alternate means of identification. The Director may authorize other means of identifying explosive materials, including fireworks, upon receipt of a letter application from the licensed manufacturer or licensed importer showing that such other identification is reasonable and will not hinder the effective administration of this part.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "555-109-d", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "555-109-d-1", 
+                                    "555-109-d-2"
+                                ], 
+                                "label": [
+                                    "555", 
+                                    "109", 
+                                    "d"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(d) <E T=\"03\">Exceptions.</E>", 
+                                "text": "(d) Exceptions.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "555-109", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "555-109-a", 
+                                    "555-109-b", 
+                                    "555-109-c", 
+                                    "555-109-d"
+                                ], 
+                                "label": [
+                                    "555", 
+                                    "109"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n            ", 
+                                "text": "", 
+                                "title": "\u00a7 555.109 Identification of explosive materials."
+                            }, 
+                            "parent_label": [
+                                "555", 
+                                "Subpart", 
+                                "F"
+                            ]
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "6. Subpart F is amended by revising \u00a7\u2009555.109 and by adding a parenthetical text at the end of the section to read as follows:"
+        }
+    ], 
+    "cfr_parts": [
+        "555"
+    ], 
+    "cfr_title": 27, 
+    "dockets": [
+        "Docket No. ATF 5F", 
+        "AG Order No. 2766-2005"
+    ], 
+    "document_number": "05-10618", 
+    "effective_on": "2005-07-26", 
+    "footnotes": {}, 
+    "fr_citation": "70 FR 30626", 
+    "fr_url": "https://www.federalregister.gov/documents/2005/05/27/05-10618/identification-markings-placed-on-imported-explosive-materials-and-miscellaneous-amendments", 
+    "fr_volume": 70, 
+    "meta": {
+        "start_page": 30626
+    }, 
+    "primary_agency": "DEPARTMENT OF JUSTICE", 
+    "primary_docket": null, 
+    "publication_date": "2005-05-27", 
+    "regulation_id_numbers": [
+        "1140-AA02"
+    ], 
+    "section_by_section": [], 
+    "supporting_documents": [], 
+    "title": "Identification Markings Placed on Imported Explosive Materials and Miscellaneous Amendments (2000R-238P)", 
+    "versions": {
+        "555": {
+            "left": "03-23093", 
+            "right": "05-10618"
+        }
+    }
+}

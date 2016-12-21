@@ -1,0 +1,947 @@
+{
+    "478-11": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                55
+            ], 
+            [
+                "delete", 
+                55, 
+                56
+            ], 
+            [
+                "equal", 
+                56, 
+                80
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "478-11-p242755046": {
+        "op": "deleted"
+    }, 
+    "478-114-a-1-vi": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    47, 
+                    50
+                ], 
+                [
+                    "insert", 
+                    47, 
+                    "is \u2014"
+                ]
+            ]
+        ]
+    }, 
+    "478-120-a": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    4, 
+                    14
+                ], 
+                [
+                    "insert", 
+                    4, 
+                    "Any"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    34, 
+                    55
+                ], 
+                [
+                    "insert", 
+                    34, 
+                    "who completes an ATF Form 6 to import firearms"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    59, 
+                    67
+                ], 
+                [
+                    "insert", 
+                    59, 
+                    "ammunition into the United States, or any licensee who completes an ATF Form 6 to import"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    91, 
+                    95
+                ], 
+                [
+                    "insert", 
+                    91, 
+                    "for a nonimmigrant alien, must attach applicable documentation to"
+                ]
+            ], 
+            [
+                "insert", 
+                100, 
+                "Form 6 (e.g., a hunting license or permit lawfully issued in the "
+            ], 
+            [
+                [
+                    "delete", 
+                    107, 
+                    132
+                ], 
+                [
+                    "insert", 
+                    107, 
+                    "States; waiver) establishing the nonimmigrant alien falls within an exception to"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    136, 
+                    208
+                ], 
+                [
+                    "insert", 
+                    136, 
+                    "has obtained a waiver from the nonimmigrant alien prohibition."
+                ]
+            ]
+        ]
+    }, 
+    "478-120-b": {
+        "child_ops": [
+            [
+                "delete", 
+                0, 
+                2
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    4, 
+                    19
+                ], 
+                [
+                    "insert", 
+                    4, 
+                    "Nonimmigrant aliens importing or bringing firearms or ammunition into the United States must provide the United States Customs Service with applicable documentation (e.g., a hunting license or permit lawfully issued in the United States; waiver) establishing the nonimmigrant alien falls within an exception"
+                ]
+            ], 
+            [
+                "insert", 
+                23, 
+                "or has obtained a waiver from "
+            ], 
+            [
+                "insert", 
+                27, 
+                "nonimmigrant alien prohibition before the firearm or ammunition may be imported. This provision applies in all cases, whether or not a Form 6 is needed to bring the firearms or ammunition into the "
+            ], 
+            [
+                [
+                    "delete", 
+                    34, 
+                    67
+                ], 
+                [
+                    "insert", 
+                    34, 
+                    "States."
+                ]
+            ]
+        ]
+    }, 
+    "478-120-b-1": {
+        "op": "deleted"
+    }, 
+    "478-120-b-2": {
+        "op": "deleted"
+    }, 
+    "478-124-c-3-iii": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                47, 
+                "a nonimmigrant alien who states that he or she falls within "
+            ], 
+            [
+                "insert", 
+                50, 
+                "exception to, or has a waiver from, the nonimmigrant "
+            ], 
+            [
+                [
+                    "delete", 
+                    56, 
+                    64
+                ], 
+                [
+                    "insert", 
+                    56, 
+                    "prohibition, have the transferee present applicable documentation establishing the exception or waiver, note on the Form 4473 the type of documentation provided, and attach a copy of the documentation"
+                ]
+            ], 
+            [
+                "delete", 
+                72, 
+                345
+            ], 
+            [
+                [
+                    "delete", 
+                    350, 
+                    451
+                ], 
+                [
+                    "insert", 
+                    350, 
+                    "4473."
+                ]
+            ]
+        ]
+    }, 
+    "478-124a-a": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                481, 
+                "acuisition of a firearm on Form 4473(LV) pursuant to this section. A licensed dealer who maintains records pursuant to this section, but whose firearms dispositions exceed 50 firearms within such 12-month period, shall make and maintain the "
+            ], 
+            [
+                [
+                    "delete", 
+                    493, 
+                    497
+                ], 
+                [
+                    "insert", 
+                    493, 
+                    "and disposition records required by \u00a7 478.125 with respect to each"
+                ]
+            ], 
+            [
+                "delete", 
+                506, 
+                810
+            ]
+        ]
+    }, 
+    "478-125-e-p1": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    0, 
+                    21
+                ], 
+                [
+                    "insert", 
+                    0, 
+                    "|FIREARMS ACQUISITION AND DISPOSITION RECORD|Description of firearm|Manufacturer and/or Importer|Model|Serial No.|Type|Caliber or gauge|Receipt|Date|Name"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    26, 
+                    126
+                ], 
+                [
+                    "insert", 
+                    26, 
+                    "address"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    130, 
+                    153
+                ], 
+                [
+                    "insert", 
+                    130, 
+                    "name"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    158, 
+                    165
+                ], 
+                [
+                    "insert", 
+                    158, 
+                    "license No.|Disposition|Date|Name|Address"
+                ]
+            ], 
+            [
+                "delete", 
+                169, 
+                178
+            ], 
+            [
+                [
+                    "delete", 
+                    186, 
+                    219
+                ], 
+                [
+                    "insert", 
+                    186, 
+                    "No. if licensee,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    223, 
+                    230
+                ], 
+                [
+                    "insert", 
+                    223, 
+                    "Form 4473 Serial"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    238, 
+                    255
+                ], 
+                [
+                    "insert", 
+                    238, 
+                    "Forms"
+                ]
+            ], 
+            [
+                "delete", 
+                261, 
+                286
+            ]
+        ]
+    }, 
+    "478-125-g": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    846, 
+                    858
+                ], 
+                [
+                    "insert", 
+                    846, 
+                    " "
+                ]
+            ]
+        ]
+    }, 
+    "478-24-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    309, 
+                    380
+                ], 
+                [
+                    "insert", 
+                    309, 
+                    "Office of"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    385, 
+                    397
+                ], 
+                [
+                    "insert", 
+                    385, 
+                    "Federal Register, 800 North Capitol Street, NW., suite 700, Washington, DC. This incorporation by reference was approved by the Director"
+                ]
+            ], 
+            [
+                "delete", 
+                401, 
+                590
+            ], 
+            [
+                "delete", 
+                594, 
+                610
+            ]
+        ]
+    }, 
+    "478-32-a-5-ii": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    58, 
+                    75
+                ], 
+                [
+                    "insert", 
+                    58, 
+                    "is a nonimmigrant alien: Provided, That the provisions of this paragraph (a)(5)(ii) do not apply"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    79, 
+                    104
+                ], 
+                [
+                    "insert", 
+                    79, 
+                    "any"
+                ]
+            ], 
+            [
+                "delete", 
+                118, 
+                203
+            ], 
+            [
+                "delete", 
+                209, 
+                288
+            ], 
+            [
+                [
+                    "delete", 
+                    302, 
+                    305
+                ], 
+                [
+                    "insert", 
+                    302, 
+                    "is-"
+                ]
+            ]
+        ]
+    }, 
+    "478-32-d-5-ii": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    58, 
+                    75
+                ], 
+                [
+                    "insert", 
+                    58, 
+                    "is a nonimmigrant alien: Provided, That the provisions of this paragraph (d)(5)(ii) do not apply"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    79, 
+                    104
+                ], 
+                [
+                    "insert", 
+                    79, 
+                    "any"
+                ]
+            ], 
+            [
+                "delete", 
+                118, 
+                203
+            ], 
+            [
+                "delete", 
+                209, 
+                288
+            ], 
+            [
+                [
+                    "delete", 
+                    302, 
+                    305
+                ], 
+                [
+                    "insert", 
+                    302, 
+                    "is-"
+                ]
+            ]
+        ]
+    }, 
+    "478-32-f": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    41, 
+                    76
+                ], 
+                [
+                    "insert", 
+                    41, 
+                    "nonimmigrant alien may receive a waiver from"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    81, 
+                    100
+                ], 
+                [
+                    "insert", 
+                    81, 
+                    "prohibition contained in paragraph (a)(5)(ii) of this section, if the Attorney General approves"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    103, 
+                    146
+                ], 
+                [
+                    "insert", 
+                    103, 
+                    "petition for"
+                ]
+            ], 
+            [
+                "delete", 
+                151, 
+                265
+            ]
+        ]
+    }, 
+    "478-44-a-1-iii": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                271, 
+                "a nonimmigrant alien, applicable documentation demonstrating that the nonimmigrant alien falls within "
+            ], 
+            [
+                "insert", 
+                274, 
+                "exception to or has obtained a waiver from the nonimmigrant "
+            ], 
+            [
+                [
+                    "delete", 
+                    280, 
+                    304
+                ], 
+                [
+                    "insert", 
+                    280, 
+                    "provision (e.g., a hunting license or permit lawfully issued in"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    316, 
+                    597
+                ], 
+                [
+                    "insert", 
+                    316, 
+                    "States; waiver);"
+                ]
+            ]
+        ]
+    }, 
+    "478-44-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    316, 
+                    318
+                ], 
+                [
+                    "insert", 
+                    316, 
+                    " "
+                ]
+            ], 
+            [
+                "insert", 
+                583, 
+                "a nonimmigrant alien, the application must include applicable documentation demonstrating that the nonimmigrant alien falls within "
+            ], 
+            [
+                "insert", 
+                586, 
+                "exception to or has obtained a waiver from the nonimmigrant "
+            ], 
+            [
+                [
+                    "delete", 
+                    592, 
+                    613
+                ], 
+                [
+                    "insert", 
+                    592, 
+                    "provision (e.g., a hunting license or permit lawfully issued in the United States; waiver). The application must be executed under the penalties of perjury and the penalties imposed by 18 U.S.C. 924. The application shall include the appropriate fee in the form of a money order or check made payable"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    621, 
+                    883
+                ], 
+                [
+                    "insert", 
+                    621, 
+                    "Bureau of Alcohol, Tobacco, Firearms, and Explosives. ATF Form 7CR (Curios and Relics) may be"
+                ]
+            ], 
+            [
+                "delete", 
+                893, 
+                1028
+            ], 
+            [
+                [
+                    "delete", 
+                    1031, 
+                    1207
+                ], 
+                [
+                    "insert", 
+                    1031, 
+                    "contacting the"
+                ]
+            ], 
+            [
+                "delete", 
+                1212, 
+                1279
+            ]
+        ]
+    }, 
+    "478-45": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                465, 
+                "a nonimmigrant alien, the application must include applicable documentation demonstrating that the nonimmigrant alien falls within "
+            ], 
+            [
+                "insert", 
+                468, 
+                "exception to or has obtained a waiver from the nonimmigrant "
+            ], 
+            [
+                [
+                    "delete", 
+                    474, 
+                    495
+                ], 
+                [
+                    "insert", 
+                    474, 
+                    "provision (e.g., a hunting license or permit lawfully issued in the United States; waiver). The Chief, Federal Firearms Licensing Center may, in writing, require the applicant for license renewal"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    499, 
+                    559
+                ], 
+                [
+                    "insert", 
+                    499, 
+                    "also file completed ATF Form 7 or ATF Form 7CR in the manner required by \u00a7 478.44. In the event the licensee does not timely file an ATF Form 8 Part II, the licensee"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    565, 
+                    639
+                ], 
+                [
+                    "insert", 
+                    565, 
+                    "file"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    643, 
+                    783
+                ], 
+                [
+                    "insert", 
+                    643, 
+                    "ATF Form 7 or ATF Form 7CR"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    787, 
+                    823
+                ], 
+                [
+                    "insert", 
+                    787, 
+                    "required by \u00a7 478.44, and obtain the required license before continuing business or collecting activity. If an ATF Form 8 Part II is not timely received through the mails, the licensee should so notify the"
+                ]
+            ], 
+            [
+                "delete", 
+                858, 
+                1376
+            ]
+        ]
+    }, 
+    "478-52-a": {
+        "op": "modified", 
+        "text": [
+            [
+                "delete", 
+                677, 
+                684
+            ]
+        ]
+    }, 
+    "478-71": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                22, 
+                "of Industry Operations "
+            ]
+        ]
+    }, 
+    "478-72": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    246, 
+                    256
+                ], 
+                [
+                    "insert", 
+                    246, 
+                    "denial. The"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    579, 
+                    588
+                ], 
+                [
+                    "insert", 
+                    579, 
+                    "held. Such"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    832, 
+                    837
+                ], 
+                [
+                    "insert", 
+                    832, 
+                    "of Industry Operations shall"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    986, 
+                    996
+                ], 
+                [
+                    "insert", 
+                    986, 
+                    "Director of Industry Operations"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    1094, 
+                    1100
+                ], 
+                [
+                    "insert", 
+                    1094, 
+                    "4501. A"
+                ]
+            ]
+        ]
+    }, 
+    "478-73-a": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    44, 
+                    47
+                ], 
+                [
+                    "insert", 
+                    44, 
+                    "of Industry Operations has"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    345, 
+                    348
+                ], 
+                [
+                    "insert", 
+                    345, 
+                    "of Industry Operations has"
+                ]
+            ]
+        ]
+    }, 
+    "478-73-b": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                188, 
+                "of Industry Operations "
+            ], 
+            [
+                "insert", 
+                447, 
+                "of Industry Operations "
+            ]
+        ]
+    }, 
+    "478-74": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                846, 
+                "of Industry Operations "
+            ]
+        ]
+    }, 
+    "478-76": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                482, 
+                "of Industry Operations "
+            ], 
+            [
+                [
+                    "delete", 
+                    712, 
+                    716
+                ], 
+                [
+                    "insert", 
+                    712, 
+                    "of Industry Operations, in"
+                ]
+            ]
+        ]
+    }, 
+    "478-78": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                1207, 
+                "of Industry Operations "
+            ]
+        ]
+    }, 
+    "478-99-c-5": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    103, 
+                    105
+                ], 
+                [
+                    "insert", 
+                    103, 
+                    "a nonimmigrant alien: Provided, That the provisions of this paragraph (c)(5) do not apply to any nonimmigrant"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    112, 
+                    256
+                ], 
+                [
+                    "insert", 
+                    112, 
+                    "if that"
+                ]
+            ], 
+            [
+                "delete", 
+                263, 
+                355
+            ]
+        ]
+    }
+}

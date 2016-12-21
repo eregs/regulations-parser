@@ -1,0 +1,51 @@
+{
+    "amendments": [
+        {
+            "cfr_part": "555", 
+            "instruction": "Accordingly, for the reasons discussed in the preamble, 27 CFR Part 555 is amended as follows:"
+        }, 
+        {
+            "authority": "18 U.S.C. 847.", 
+            "cfr_part": "555", 
+            "instruction": "1. The authority citation for 27 CFR Part 555 continues to read as follows:"
+        }, 
+        {
+            "cfr_part": "555", 
+            "instruction": "2. Section 555.213 is amended by adding \u201cshock tube,\u201d after \u201csafety fuse,\u201d in paragraph (b)(1)."
+        }
+    ], 
+    "cfr_parts": [
+        "555"
+    ], 
+    "cfr_title": 27, 
+    "dockets": [
+        "Docket No. ATF 15F", 
+        "AG Order No. 3133-2010"
+    ], 
+    "document_number": "2010-891", 
+    "effective_on": "2010-03-22", 
+    "footnotes": {
+        "1": "The regulations previously codified in 27 CFR part 55 were designated as part 555 in 2003 in connection with the transfer of ATF to the Department of Justice."
+    }, 
+    "fr_citation": "75 FR 3160", 
+    "fr_url": "https://www.federalregister.gov/documents/2010/01/20/2010-891/commerce-in-explosives-storage-of-shock-tube-with-detonators-2005r-3p", 
+    "fr_volume": 75, 
+    "meta": {
+        "start_page": 3160
+    }, 
+    "primary_agency": "DEPARTMENT OF JUSTICE", 
+    "primary_docket": null, 
+    "publication_date": "2010-01-20", 
+    "regulation_id_numbers": [
+        "1140-AA30"
+    ], 
+    "section_by_section": [], 
+    "supporting_documents": [], 
+    "title": "Commerce in Explosives\u2014Storage of Shock Tube With Detonators (2005R-3P)", 
+    "versions": {
+        "555": {
+            "left": "E9-578", 
+            "right": "2010-891"
+        }
+    }
+}

@@ -1,0 +1,882 @@
+{
+    "478": [
+        {
+            "index": [
+                "478", 
+                "Subpart", 
+                "A"
+            ], 
+            "title": "Introduction"
+        }, 
+        {
+            "index": [
+                "478", 
+                "Subpart", 
+                "B"
+            ], 
+            "title": "Definitions"
+        }, 
+        {
+            "index": [
+                "478", 
+                "Subpart", 
+                "C"
+            ], 
+            "title": "Administrative and Miscellaneous Provisions"
+        }, 
+        {
+            "index": [
+                "478", 
+                "Subpart", 
+                "D"
+            ], 
+            "title": "Licenses"
+        }, 
+        {
+            "index": [
+                "478", 
+                "Subpart", 
+                "E"
+            ], 
+            "title": "License Proceedings"
+        }, 
+        {
+            "index": [
+                "478", 
+                "Subpart", 
+                "F"
+            ], 
+            "title": "Conduct of Business"
+        }, 
+        {
+            "index": [
+                "478", 
+                "Subpart", 
+                "G"
+            ], 
+            "title": "Importation"
+        }, 
+        {
+            "index": [
+                "478", 
+                "Subpart", 
+                "H"
+            ], 
+            "title": "Records"
+        }, 
+        {
+            "index": [
+                "478", 
+                "Subpart", 
+                "I"
+            ], 
+            "title": "Exemptions, Seizures, and Forfeitures"
+        }, 
+        {
+            "index": [
+                "478", 
+                "Subpart", 
+                "J"
+            ], 
+            "title": "[Reserved]"
+        }, 
+        {
+            "index": [
+                "478", 
+                "Subpart", 
+                "K"
+            ], 
+            "title": "Exportation"
+        }
+    ], 
+    "478-Subpart-A": [
+        {
+            "index": [
+                "478", 
+                "1"
+            ], 
+            "title": "\u00a7 478.1 Scope of regulations."
+        }, 
+        {
+            "index": [
+                "478", 
+                "2"
+            ], 
+            "title": "\u00a7 478.2 Relation to other provisions of law."
+        }
+    ], 
+    "478-Subpart-B": [
+        {
+            "index": [
+                "478", 
+                "11"
+            ], 
+            "title": "\u00a7 478.11 Meaning of terms."
+        }
+    ], 
+    "478-Subpart-C": [
+        {
+            "index": [
+                "478", 
+                "21"
+            ], 
+            "title": "\u00a7 478.21 Forms prescribed."
+        }, 
+        {
+            "index": [
+                "478", 
+                "22"
+            ], 
+            "title": "\u00a7 478.22 Alternate methods or procedures; emergency variations from requirements."
+        }, 
+        {
+            "index": [
+                "478", 
+                "23"
+            ], 
+            "title": "\u00a7 478.23 Right of entry and examination."
+        }, 
+        {
+            "index": [
+                "478", 
+                "24"
+            ], 
+            "title": "\u00a7 478.24 Compilation of State laws and published ordinances."
+        }, 
+        {
+            "index": [
+                "478", 
+                "25"
+            ], 
+            "title": "\u00a7 478.25 Disclosure of information."
+        }, 
+        {
+            "index": [
+                "478", 
+                "25a"
+            ], 
+            "title": "\u00a7 478.25a Responses to requests for information."
+        }, 
+        {
+            "index": [
+                "478", 
+                "26"
+            ], 
+            "title": "\u00a7 478.26 Curio and relic determination."
+        }, 
+        {
+            "index": [
+                "478", 
+                "27"
+            ], 
+            "title": "\u00a7 478.27 Destructive device determination."
+        }, 
+        {
+            "index": [
+                "478", 
+                "28"
+            ], 
+            "title": "\u00a7 478.28 Transportation of destructive devices and certain firearms."
+        }, 
+        {
+            "index": [
+                "478", 
+                "29"
+            ], 
+            "title": "\u00a7 478.29 Out-of-State acquisition of firearms by nonlicensees."
+        }, 
+        {
+            "index": [
+                "478", 
+                "29a"
+            ], 
+            "title": "\u00a7 478.29a Acquisition of firearms by nonresidents."
+        }, 
+        {
+            "index": [
+                "478", 
+                "30"
+            ], 
+            "title": "\u00a7 478.30 Out-of-State disposition of firearms by nonlicensees."
+        }, 
+        {
+            "index": [
+                "478", 
+                "31"
+            ], 
+            "title": "\u00a7 478.31 Delivery by common or contract carrier."
+        }, 
+        {
+            "index": [
+                "478", 
+                "32"
+            ], 
+            "title": "\u00a7 478.32 Prohibited shipment, transportation, possession, or receipt of firearms and ammunition by certain persons."
+        }, 
+        {
+            "index": [
+                "478", 
+                "33"
+            ], 
+            "title": "\u00a7 478.33 Stolen firearms and ammunition."
+        }, 
+        {
+            "index": [
+                "478", 
+                "33a"
+            ], 
+            "title": "\u00a7 478.33a Theft of firearms."
+        }, 
+        {
+            "index": [
+                "478", 
+                "34"
+            ], 
+            "title": "\u00a7 478.34 Removed, obliterated, or altered serial number."
+        }, 
+        {
+            "index": [
+                "478", 
+                "35"
+            ], 
+            "title": "\u00a7 478.35 Skeet, trap, target, and similar shooting activities."
+        }, 
+        {
+            "index": [
+                "478", 
+                "36"
+            ], 
+            "title": "\u00a7 478.36 Transfer or possession of machine guns."
+        }, 
+        {
+            "index": [
+                "478", 
+                "37"
+            ], 
+            "title": "\u00a7 478.37 Manufacture, importation and sale of armor piercing ammunition."
+        }, 
+        {
+            "index": [
+                "478", 
+                "38"
+            ], 
+            "title": "\u00a7 478.38 Transportation of firearms."
+        }, 
+        {
+            "index": [
+                "478", 
+                "39"
+            ], 
+            "title": "\u00a7 478.39 Assembly of semiautomatic rifles or shotguns."
+        }, 
+        {
+            "index": [
+                "478", 
+                "39a"
+            ], 
+            "title": "\u00a7 478.39a Reporting theft or loss of firearms."
+        }, 
+        {
+            "index": [
+                "478", 
+                "40"
+            ], 
+            "title": "\u00a7 478.40 Manufacture, transfer, and possession of semiautomatic assault weapons."
+        }, 
+        {
+            "index": [
+                "478", 
+                "40a"
+            ], 
+            "title": "\u00a7 478.40a Transfer and possession of large capacity ammunition feeding devices."
+        }
+    ], 
+    "478-Subpart-D": [
+        {
+            "index": [
+                "478", 
+                "41"
+            ], 
+            "title": "\u00a7 478.41 General."
+        }, 
+        {
+            "index": [
+                "478", 
+                "42"
+            ], 
+            "title": "\u00a7 478.42 License fees."
+        }, 
+        {
+            "index": [
+                "478", 
+                "43"
+            ], 
+            "title": "\u00a7 478.43 License fee not refundable."
+        }, 
+        {
+            "index": [
+                "478", 
+                "44"
+            ], 
+            "title": "\u00a7 478.44 Original license."
+        }, 
+        {
+            "index": [
+                "478", 
+                "45"
+            ], 
+            "title": "\u00a7 478.45 Renewal of license."
+        }, 
+        {
+            "index": [
+                "478", 
+                "46"
+            ], 
+            "title": "\u00a7 478.46 Insufficient fee."
+        }, 
+        {
+            "index": [
+                "478", 
+                "47"
+            ], 
+            "title": "\u00a7 478.47 Issuance of license."
+        }, 
+        {
+            "index": [
+                "478", 
+                "48"
+            ], 
+            "title": "\u00a7 478.48 Correction of error on license."
+        }, 
+        {
+            "index": [
+                "478", 
+                "49"
+            ], 
+            "title": "\u00a7 478.49 Duration of license."
+        }, 
+        {
+            "index": [
+                "478", 
+                "50"
+            ], 
+            "title": "\u00a7 478.50 Locations covered by license."
+        }, 
+        {
+            "index": [
+                "478", 
+                "51"
+            ], 
+            "title": "\u00a7 478.51 License not transferable."
+        }, 
+        {
+            "index": [
+                "478", 
+                "52"
+            ], 
+            "title": "\u00a7 478.52 Change of address."
+        }, 
+        {
+            "index": [
+                "478", 
+                "53"
+            ], 
+            "title": "\u00a7 478.53 Change in trade name."
+        }, 
+        {
+            "index": [
+                "478", 
+                "54"
+            ], 
+            "title": "\u00a7 478.54 Change of control."
+        }, 
+        {
+            "index": [
+                "478", 
+                "55"
+            ], 
+            "title": "\u00a7 478.55 Continuing partnerships."
+        }, 
+        {
+            "index": [
+                "478", 
+                "56"
+            ], 
+            "title": "\u00a7 478.56 Right of succession by certain persons."
+        }, 
+        {
+            "index": [
+                "478", 
+                "57"
+            ], 
+            "title": "\u00a7 478.57 Discontinuance of business."
+        }, 
+        {
+            "index": [
+                "478", 
+                "58"
+            ], 
+            "title": "\u00a7 478.58 State or other law."
+        }, 
+        {
+            "index": [
+                "478", 
+                "59"
+            ], 
+            "title": "\u00a7 478.59 Abandoned application."
+        }, 
+        {
+            "index": [
+                "478", 
+                "60"
+            ], 
+            "title": "\u00a7 478.60 Certain continuances of business."
+        }
+    ], 
+    "478-Subpart-E": [
+        {
+            "index": [
+                "478", 
+                "71"
+            ], 
+            "title": "\u00a7 478.71 Denial of an application for license."
+        }, 
+        {
+            "index": [
+                "478", 
+                "72"
+            ], 
+            "title": "\u00a7 478.72 Hearing after application denial."
+        }, 
+        {
+            "index": [
+                "478", 
+                "73"
+            ], 
+            "title": "\u00a7 478.73 Notice of revocation, suspension, or imposition of civil fine."
+        }, 
+        {
+            "index": [
+                "478", 
+                "74"
+            ], 
+            "title": "\u00a7 478.74 Request for hearing after notice of suspension, revocation, or imposition of civil fine."
+        }, 
+        {
+            "index": [
+                "478", 
+                "75"
+            ], 
+            "title": "\u00a7 478.75 Service on applicant or licensee."
+        }, 
+        {
+            "index": [
+                "478", 
+                "76"
+            ], 
+            "title": "\u00a7 478.76 Representation at a hearing."
+        }, 
+        {
+            "index": [
+                "478", 
+                "77"
+            ], 
+            "title": "\u00a7 478.77 Designated place of hearing."
+        }, 
+        {
+            "index": [
+                "478", 
+                "78"
+            ], 
+            "title": "\u00a7 478.78 Operations by licensee after notice."
+        }
+    ], 
+    "478-Subpart-F": [
+        {
+            "index": [
+                "478", 
+                "91"
+            ], 
+            "title": "\u00a7 478.91 Posting of license."
+        }, 
+        {
+            "index": [
+                "478", 
+                "92"
+            ], 
+            "title": "\u00a7 478.92 How must licensed manufacturers and licensed importers identify firearms, armor piercing ammunition, and large capacity ammunition feeding devices?"
+        }, 
+        {
+            "index": [
+                "478", 
+                "93"
+            ], 
+            "title": "\u00a7 478.93 Authorized operations by a licensed collector."
+        }, 
+        {
+            "index": [
+                "478", 
+                "94"
+            ], 
+            "title": "\u00a7 478.94 Sales or deliveries between licensees."
+        }, 
+        {
+            "index": [
+                "478", 
+                "95"
+            ], 
+            "title": "\u00a7 478.95 Certified copy of license."
+        }, 
+        {
+            "index": [
+                "478", 
+                "96"
+            ], 
+            "title": "\u00a7 478.96 Out-of-State and mail order sales."
+        }, 
+        {
+            "index": [
+                "478", 
+                "97"
+            ], 
+            "title": "\u00a7 478.97 Loan or rental of firearms."
+        }, 
+        {
+            "index": [
+                "478", 
+                "98"
+            ], 
+            "title": "\u00a7 478.98 Sales or deliveries of destructive devices and certain firearms."
+        }, 
+        {
+            "index": [
+                "478", 
+                "99"
+            ], 
+            "title": "\u00a7 478.99 Certain prohibited sales or deliveries."
+        }, 
+        {
+            "index": [
+                "478", 
+                "100"
+            ], 
+            "title": "\u00a7 478.100 Conduct of business away from licensed premises."
+        }, 
+        {
+            "index": [
+                "478", 
+                "101"
+            ], 
+            "title": "\u00a7 478.101 Record of transactions."
+        }, 
+        {
+            "index": [
+                "478", 
+                "102"
+            ], 
+            "title": "\u00a7 478.102 Sales or deliveries of firearms on and after November 30, 1998."
+        }, 
+        {
+            "index": [
+                "478", 
+                "103"
+            ], 
+            "title": "\u00a7 478.103 Posting of signs and written notification to purchasers of handguns."
+        }
+    ], 
+    "478-Subpart-G": [
+        {
+            "index": [
+                "478", 
+                "111"
+            ], 
+            "title": "\u00a7 478.111 General."
+        }, 
+        {
+            "index": [
+                "478", 
+                "112"
+            ], 
+            "title": "\u00a7 478.112 Importation by a licensed importer."
+        }, 
+        {
+            "index": [
+                "478", 
+                "113"
+            ], 
+            "title": "\u00a7 478.113 Importation by other licensees."
+        }, 
+        {
+            "index": [
+                "478", 
+                "113a"
+            ], 
+            "title": "\u00a7 478.113a Importation of firearm barrels by nonlicensees."
+        }, 
+        {
+            "index": [
+                "478", 
+                "114"
+            ], 
+            "title": "\u00a7 478.114 Importation by members of the U.S. Armed Forces."
+        }, 
+        {
+            "index": [
+                "478", 
+                "115"
+            ], 
+            "title": "\u00a7 478.115 Exempt importation."
+        }, 
+        {
+            "index": [
+                "478", 
+                "116"
+            ], 
+            "title": "\u00a7 478.116 Conditional importation."
+        }, 
+        {
+            "index": [
+                "478", 
+                "117"
+            ], 
+            "title": "\u00a7 478.117 Function outside a customs territory."
+        }, 
+        {
+            "index": [
+                "478", 
+                "118"
+            ], 
+            "title": "\u00a7 478.118 Importation of certain firearms classified as curios or relics."
+        }, 
+        {
+            "index": [
+                "478", 
+                "119"
+            ], 
+            "title": "\u00a7 478.119 Importation of ammunition feeding devices."
+        }, 
+        {
+            "index": [
+                "478", 
+                "120"
+            ], 
+            "title": "\u00a7 478.120 Firearms or ammunition imported by or for a nonimmigrant alien."
+        }
+    ], 
+    "478-Subpart-H": [
+        {
+            "index": [
+                "478", 
+                "121"
+            ], 
+            "title": "\u00a7 478.121 General."
+        }, 
+        {
+            "index": [
+                "478", 
+                "122"
+            ], 
+            "title": "\u00a7 478.122 Records maintained by importers."
+        }, 
+        {
+            "index": [
+                "478", 
+                "123"
+            ], 
+            "title": "\u00a7 478.123 Records maintained by manufacturers."
+        }, 
+        {
+            "index": [
+                "478", 
+                "124"
+            ], 
+            "title": "\u00a7 478.124 Firearms transaction record."
+        }, 
+        {
+            "index": [
+                "478", 
+                "124a"
+            ], 
+            "title": "\u00a7 478.124a Firearms transaction record in lieu of record of receipt and disposition."
+        }, 
+        {
+            "index": [
+                "478", 
+                "125"
+            ], 
+            "title": "\u00a7 478.125 Record of receipt and disposition."
+        }, 
+        {
+            "index": [
+                "478", 
+                "125a"
+            ], 
+            "title": "\u00a7 478.125a Personal firearms collection."
+        }, 
+        {
+            "index": [
+                "478", 
+                "126"
+            ], 
+            "title": "\u00a7 478.126 Furnishing transaction information."
+        }, 
+        {
+            "index": [
+                "478", 
+                "126a"
+            ], 
+            "title": "\u00a7 478.126a Reporting multiple sales or other disposition of pistols and revolvers."
+        }, 
+        {
+            "index": [
+                "478", 
+                "127"
+            ], 
+            "title": "\u00a7 478.127 Discontinuance of business."
+        }, 
+        {
+            "index": [
+                "478", 
+                "128"
+            ], 
+            "title": "\u00a7 478.128 False statement or representation."
+        }, 
+        {
+            "index": [
+                "478", 
+                "129"
+            ], 
+            "title": "\u00a7 478.129 Record retention."
+        }, 
+        {
+            "index": [
+                "478", 
+                "131"
+            ], 
+            "title": "\u00a7 478.131 Firearms transactions not subject to a NICS check."
+        }, 
+        {
+            "index": [
+                "478", 
+                "132"
+            ], 
+            "title": "\u00a7 478.132 Dispositions of semiautomatic assault weapons and large capacity ammunition feeding devices to law enforcement officers for official use and to employees or contractors of nuclear facilities."
+        }, 
+        {
+            "index": [
+                "478", 
+                "133"
+            ], 
+            "title": "\u00a7 478.133 Records of transactions in semiautomatic assault weapons."
+        }, 
+        {
+            "index": [
+                "478", 
+                "134"
+            ], 
+            "title": "\u00a7 478.134 Sale of firearms to law enforcement officers."
+        }
+    ], 
+    "478-Subpart-I": [
+        {
+            "index": [
+                "478", 
+                "141"
+            ], 
+            "title": "\u00a7 478.141 General."
+        }, 
+        {
+            "index": [
+                "478", 
+                "142"
+            ], 
+            "title": "\u00a7 478.142 Effect of pardons and expunctions of convictions."
+        }, 
+        {
+            "index": [
+                "478", 
+                "143"
+            ], 
+            "title": "\u00a7 478.143 Relief from disabilities incurred by indictment."
+        }, 
+        {
+            "index": [
+                "478", 
+                "144"
+            ], 
+            "title": "\u00a7 478.144 Relief from disabilities under the Act."
+        }, 
+        {
+            "index": [
+                "478", 
+                "145"
+            ], 
+            "title": "\u00a7 478.145 Research organizations."
+        }, 
+        {
+            "index": [
+                "478", 
+                "146"
+            ], 
+            "title": "\u00a7 478.146 Deliveries by mail to certain persons."
+        }, 
+        {
+            "index": [
+                "478", 
+                "147"
+            ], 
+            "title": "\u00a7 478.147 Return of firearm."
+        }, 
+        {
+            "index": [
+                "478", 
+                "148"
+            ], 
+            "title": "\u00a7 478.148 Armor piercing ammunition intended for sporting or industrial purposes."
+        }, 
+        {
+            "index": [
+                "478", 
+                "149"
+            ], 
+            "title": "\u00a7 478.149 Armor piercing ammunition manufactured or imported for the purpose of testing or experimentation."
+        }, 
+        {
+            "index": [
+                "478", 
+                "150"
+            ], 
+            "title": "\u00a7 478.150 Alternative to NICS in certain geographical locations."
+        }, 
+        {
+            "index": [
+                "478", 
+                "151"
+            ], 
+            "title": "\u00a7 478.151 Semiautomatic rifles or shotguns for testing or experimentation."
+        }, 
+        {
+            "index": [
+                "478", 
+                "152"
+            ], 
+            "title": "\u00a7 478.152 Seizure and forfeiture."
+        }, 
+        {
+            "index": [
+                "478", 
+                "153"
+            ], 
+            "title": "\u00a7 478.153 Semiautomatic assault weapons and large capacity ammunition feeding devices manufactured or imported for the purposes of testing or experimentation."
+        }
+    ], 
+    "478-Subpart-K": [
+        {
+            "index": [
+                "478", 
+                "171"
+            ], 
+            "title": "\u00a7 478.171 Exportation."
+        }
+    ]
+}

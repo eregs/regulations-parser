@@ -1,0 +1,797 @@
+{
+    "555-102-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    29, 
+                    36
+                ], 
+                [
+                    "insert", 
+                    29, 
+                    "stocks."
+                ]
+            ]
+        ]
+    }, 
+    "555-103-a": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    61, 
+                    66
+                ], 
+                [
+                    "insert", 
+                    61, 
+                    "2003."
+                ]
+            ]
+        ]
+    }, 
+    "555-103-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    65, 
+                    70
+                ], 
+                [
+                    "insert", 
+                    65, 
+                    "2003."
+                ]
+            ]
+        ]
+    }, 
+    "555-108": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                4
+            ], 
+            [
+                "delete", 
+                4, 
+                5
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "555-108-e": {
+        "op": "deleted"
+    }, 
+    "555-109": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                2
+            ], 
+            [
+                "delete", 
+                2, 
+                4
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "555-109-a": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    4, 
+                    41
+                ], 
+                [
+                    "insert", 
+                    4, 
+                    "Each licensed manufacturer of explosive materials shall legibly identify by marking all explosive materials he manufactures for sale or distribution. The marks required by this section must identify the manufacturer and the location, date, and shift of manufacture. The licensed manufacturer shall place on each cartridge, bag, or other immediate container of explosive materials"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    55, 
+                    57
+                ], 
+                [
+                    "insert", 
+                    55, 
+                    "for sale or distribution"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    62, 
+                    134
+                ], 
+                [
+                    "insert", 
+                    62, 
+                    "required mark which shall also be placed on the outside container, if any, used for their packaging."
+                ]
+            ]
+        ]
+    }, 
+    "555-109-b": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                2
+            ], 
+            [
+                "insert", 
+                2, 
+                [
+                    "555-109-b-3"
+                ]
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    4, 
+                    19
+                ], 
+                [
+                    "insert", 
+                    4, 
+                    "Exceptions."
+                ]
+            ]
+        ]
+    }, 
+    "555-109-b-1": {
+        "child_ops": [
+            [
+                "delete", 
+                0, 
+                2
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                "delete", 
+                13, 
+                37
+            ], 
+            [
+                [
+                    "delete", 
+                    51, 
+                    86
+                ], 
+                [
+                    "insert", 
+                    51, 
+                    "of blasting caps are only required to place the identification marks prescribed in paragraph (a) on the containers used"
+                ]
+            ], 
+            [
+                "delete", 
+                91, 
+                123
+            ], 
+            [
+                [
+                    "delete", 
+                    127, 
+                    142
+                ], 
+                [
+                    "insert", 
+                    127, 
+                    "packaging"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    146, 
+                    211
+                ], 
+                [
+                    "insert", 
+                    146, 
+                    "blasting caps."
+                ]
+            ]
+        ]
+    }, 
+    "555-109-b-1-i": {
+        "op": "deleted"
+    }, 
+    "555-109-b-1-ii": {
+        "op": "deleted"
+    }, 
+    "555-109-b-2": {
+        "child_ops": [
+            [
+                "delete", 
+                0, 
+                2
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    4, 
+                    23
+                ], 
+                [
+                    "insert", 
+                    4, 
+                    "The Director may authorize other means of identifying explosive materials upon receipt of a letter application from the licensed manufacturer showing that other identification is reasonable and will not hinder the effective administration of this part."
+                ]
+            ]
+        ]
+    }, 
+    "555-109-b-2-i": {
+        "op": "deleted"
+    }, 
+    "555-109-b-2-i-A": {
+        "op": "deleted"
+    }, 
+    "555-109-b-2-i-B": {
+        "op": "deleted"
+    }, 
+    "555-109-b-2-ii": {
+        "op": "deleted"
+    }, 
+    "555-109-b-3": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "555", 
+                "109", 
+                "b", 
+                "3"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(3) The Director may authorize the use of other means of identification on fireworks instead of marks prescribed in paragraph (a) of this section.", 
+            "text": "(3) The Director may authorize the use of other means of identification on fireworks instead of marks prescribed in paragraph (a) of this section.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "555-109-c": {
+        "op": "deleted"
+    }, 
+    "555-109-c-1": {
+        "op": "deleted"
+    }, 
+    "555-109-c-2": {
+        "op": "deleted"
+    }, 
+    "555-109-c-3": {
+        "op": "deleted"
+    }, 
+    "555-109-c-4": {
+        "op": "deleted"
+    }, 
+    "555-109-c-5": {
+        "op": "deleted"
+    }, 
+    "555-109-d": {
+        "op": "deleted"
+    }, 
+    "555-109-d-1": {
+        "op": "deleted"
+    }, 
+    "555-109-d-2": {
+        "op": "deleted"
+    }, 
+    "555-11-p1563098571": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    177, 
+                    179
+                ], 
+                [
+                    "insert", 
+                    177, 
+                    "a"
+                ]
+            ]
+        ]
+    }, 
+    "555-11-p3589220758": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    25, 
+                    37
+                ], 
+                [
+                    "insert", 
+                    25, 
+                    "manu-facturer"
+                ]
+            ]
+        ]
+    }, 
+    "555-11-p4152419405": {
+        "child_ops": [
+            [
+                "delete", 
+                0, 
+                2
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                27, 
+                " Any tool or special mechanized device or gas generator system which is actuated by a propellant or which releases and directs work through a propellant charge."
+            ]
+        ]
+    }, 
+    "555-11-p4152419405-a": {
+        "op": "deleted"
+    }, 
+    "555-11-p4152419405-b": {
+        "op": "deleted"
+    }, 
+    "555-11-p4152419405-b-1": {
+        "op": "deleted"
+    }, 
+    "555-11-p4152419405-b-2": {
+        "op": "deleted"
+    }, 
+    "555-127": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    36, 
+                    38
+                ], 
+                [
+                    "insert", 
+                    36, 
+                    "\u00a7 \u00a7"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    1119, 
+                    1129
+                ], 
+                [
+                    "insert", 
+                    1119, 
+                    "acordance"
+                ]
+            ]
+        ]
+    }, 
+    "555-128": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    544, 
+                    572
+                ], 
+                [
+                    "insert", 
+                    544, 
+                    "Spring Mills Office Park, 882 T.J. Jackson Drive, Falling Waters,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    587, 
+                    593
+                ], 
+                [
+                    "insert", 
+                    587, 
+                    "25419."
+                ]
+            ]
+        ]
+    }, 
+    "555-141-a": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                9
+            ], 
+            [
+                "delete", 
+                9, 
+                10
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "555-141-a-10": {
+        "op": "deleted"
+    }, 
+    "555-141-a-10-i": {
+        "op": "deleted"
+    }, 
+    "555-141-a-10-ii": {
+        "op": "deleted"
+    }, 
+    "555-141-a-10-iii": {
+        "op": "deleted"
+    }, 
+    "555-201-d": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    33, 
+                    35
+                ], 
+                [
+                    "insert", 
+                    33, 
+                    "\u00a7 \u00a7"
+                ]
+            ]
+        ]
+    }, 
+    "555-208-a-1": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    470, 
+                    481
+                ], 
+                [
+                    "insert", 
+                    470, 
+                    "immobiliized"
+                ]
+            ]
+        ]
+    }, 
+    "555-21-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    72, 
+                    94
+                ], 
+                [
+                    "insert", 
+                    72, 
+                    "7943 Angus Court,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    117, 
+                    123
+                ], 
+                [
+                    "insert", 
+                    117, 
+                    "22153."
+                ]
+            ]
+        ]
+    }, 
+    "555-213-b-1": {
+        "op": "modified", 
+        "text": [
+            [
+                "delete", 
+                114, 
+                126
+            ]
+        ]
+    }, 
+    "555-218-p1": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    80, 
+                    120
+                ], 
+                [
+                    "insert", 
+                    80, 
+                    "buildings|Barri-caded|Unbarri-caded|Public"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    167, 
+                    213
+                ], 
+                [
+                    "insert", 
+                    167, 
+                    "vehicles/day|Barri-caded|Unbarri-caded|Passenger"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    278, 
+                    363
+                ], 
+                [
+                    "insert", 
+                    278, 
+                    "vehicles/day|Barri-caded|Unbarri-caded|Separation of magazines|Barri-caded|Unbarri-caded|"
+                ]
+            ]
+        ]
+    }, 
+    "555-220-p1-p7": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    166, 
+                    192
+                ], 
+                [
+                    "insert", 
+                    166, 
+                    "Institute.[^1](Definition"
+                ]
+            ]
+        ]
+    }, 
+    "555-224-p1": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    91, 
+                    100
+                ], 
+                [
+                    "insert", 
+                    91, 
+                    "exposive"
+                ]
+            ]
+        ]
+    }, 
+    "555-23": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    260, 
+                    282
+                ], 
+                [
+                    "insert", 
+                    260, 
+                    "Center, 7943 Angus Court, Springfield, Virginia 22153."
+                ]
+            ]
+        ]
+    }, 
+    "555-25": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                158, 
+                "politicial subdivision any information which the regional director (compliance) may obtain under the Act with respect to the identification of persons within the State or "
+            ], 
+            [
+                [
+                    "delete", 
+                    168, 
+                    201
+                ], 
+                [
+                    "insert", 
+                    168, 
+                    "subdivision, who have purchased or received explosive materials, together with a description of"
+                ]
+            ], 
+            [
+                "delete", 
+                206, 
+                382
+            ], 
+            [
+                "delete", 
+                392, 
+                448
+            ]
+        ]
+    }, 
+    "555-33-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    47, 
+                    59
+                ], 
+                [
+                    "insert", 
+                    47, 
+                    "information."
+                ]
+            ]
+        ]
+    }, 
+    "555-41-a-3": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    565, 
+                    575
+                ], 
+                [
+                    "insert", 
+                    565, 
+                    "materials of the class authorized by this permit."
+                ]
+            ]
+        ]
+    }, 
+    "555-41-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    53, 
+                    58
+                ], 
+                [
+                    "insert", 
+                    53, 
+                    "2003."
+                ]
+            ]
+        ]
+    }, 
+    "555-41-b-3-ii": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    524, 
+                    534
+                ], 
+                [
+                    "insert", 
+                    524, 
+                    "materials of the class authorized by this permit."
+                ]
+            ]
+        ]
+    }, 
+    "555-45-c": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    53, 
+                    58
+                ], 
+                [
+                    "insert", 
+                    53, 
+                    "2003."
+                ]
+            ]
+        ]
+    }, 
+    "555-52-a": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                36, 
+                "and class (as described in \u00a7 555.202) "
+            ]
+        ]
+    }, 
+    "555-52-b": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                63, 
+                "and class (as described in \u00a7 555.202) "
+            ]
+        ]
+    }, 
+    "555-55": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "555", 
+                "55"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "\n         A licensee or permittee who intends to change the class of explosive materials described in his license or permit from a lower to a higher classification (see \u00a7 555.202) shall file an application on ATF F 5400.13 or on ATF F 5400.16 with the Chief, Firearms and Explosives Licensing Center, for an amended license or permit. If the change in class of explosive materials would require a change in magazines, the amended application must include a description of the type of construction as prescribed in this part. Business or operations with respect to the new class of explosive materials may not be commenced before issuance of the amended license or amended permit. Upon receipt of the amended license or amended permit, the licensee or permittee shall submit his superseded license or superseded permit and any copies furnished with the license or permit to the Chief, Firearms and Explosives Licensing Center.", 
+            "text": "A licensee or permittee who intends to change the class of explosive materials described in his license or permit from a lower to a higher classification (see \u00a7 555.202) shall file an application on ATF F 5400.13 or on ATF F 5400.16 with the Chief, Firearms and Explosives Licensing Center, for an amended license or permit. If the change in class of explosive materials would require a change in magazines, the amended application must include a description of the type of construction as prescribed in this part. Business or operations with respect to the new class of explosive materials may not be commenced before issuance of the amended license or amended permit. Upon receipt of the amended license or amended permit, the licensee or permittee shall submit his superseded license or superseded permit and any copies furnished with the license or permit to the Chief, Firearms and Explosives Licensing Center.", 
+            "title": "\u00a7 555.55 Change in class of explosive materials."
+        }, 
+        "op": "added"
+    }, 
+    "555-78": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                285, 
+                " of"
+            ]
+        ]
+    }, 
+    "555-Subpart-D": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                14
+            ], 
+            [
+                "insert", 
+                14, 
+                [
+                    "555-55"
+                ]
+            ], 
+            [
+                "equal", 
+                14, 
+                22
+            ]
+        ], 
+        "op": "modified"
+    }
+}

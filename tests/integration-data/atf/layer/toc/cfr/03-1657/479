@@ -1,0 +1,911 @@
+{
+    "479": [
+        {
+            "index": [
+                "479", 
+                "Subpart", 
+                "A"
+            ], 
+            "title": "Scope of Regulations"
+        }, 
+        {
+            "index": [
+                "479", 
+                "Subpart", 
+                "B"
+            ], 
+            "title": "Definitions"
+        }, 
+        {
+            "index": [
+                "479", 
+                "Subpart", 
+                "C"
+            ], 
+            "title": "Administrative and Miscellaneous Provisions"
+        }, 
+        {
+            "index": [
+                "479", 
+                "Subpart", 
+                "D"
+            ], 
+            "title": "Special (Occupational) Taxes"
+        }, 
+        {
+            "index": [
+                "479", 
+                "Subjgrp", 
+                "CoO"
+            ], 
+            "title": "Change of Ownership"
+        }, 
+        {
+            "index": [
+                "479", 
+                "Subjgrp", 
+                "CoBL"
+            ], 
+            "title": "Change of Business Location"
+        }, 
+        {
+            "index": [
+                "479", 
+                "Subjgrp", 
+                "CoTN"
+            ], 
+            "title": "Change of Trade Name"
+        }, 
+        {
+            "index": [
+                "479", 
+                "Subjgrp", 
+                "PaI"
+            ], 
+            "title": "Penalties and Interest"
+        }, 
+        {
+            "index": [
+                "479", 
+                "Subjgrp", 
+                "AoSL"
+            ], 
+            "title": "Application of State Laws"
+        }, 
+        {
+            "index": [
+                "479", 
+                "Subpart", 
+                "E"
+            ], 
+            "title": "Tax on Making Firearms"
+        }, 
+        {
+            "index": [
+                "479", 
+                "Subjgrp", 
+                "AtMaF"
+            ], 
+            "title": "Application to Make a Firearm"
+        }, 
+        {
+            "index": [
+                "479", 
+                "Subjgrp", 
+                "EtToMF"
+            ], 
+            "title": "Exceptions to Tax on Making Firearms"
+        }, 
+        {
+            "index": [
+                "479", 
+                "Subjgrp", 
+                "Re"
+            ], 
+            "title": "Registration"
+        }, 
+        {
+            "index": [
+                "479", 
+                "Subpart", 
+                "F"
+            ], 
+            "title": "Transfer Tax"
+        }, 
+        {
+            "index": [
+                "479", 
+                "Subjgrp", 
+                "AaOfToF"
+            ], 
+            "title": "Application and Order for Transfer of Firearm"
+        }, 
+        {
+            "index": [
+                "479", 
+                "Subjgrp", 
+                "ERtToF"
+            ], 
+            "title": "Exemptions Relating to Transfers of Firearms"
+        }, 
+        {
+            "index": [
+                "479", 
+                "Subjgrp", 
+                "OP"
+            ], 
+            "title": "Other Provisions"
+        }, 
+        {
+            "index": [
+                "479", 
+                "Subpart", 
+                "G"
+            ], 
+            "title": "Registration and Identification of Firearms"
+        }, 
+        {
+            "index": [
+                "479", 
+                "Subjgrp", 
+                "MG"
+            ], 
+            "title": "Machine Guns"
+        }, 
+        {
+            "index": [
+                "479", 
+                "Subpart", 
+                "H"
+            ], 
+            "title": "Importation and Exportation"
+        }, 
+        {
+            "index": [
+                "479", 
+                "Subjgrp", 
+                "Im"
+            ], 
+            "title": "Importation"
+        }, 
+        {
+            "index": [
+                "479", 
+                "Subjgrp", 
+                "Ex"
+            ], 
+            "title": "Exportation"
+        }, 
+        {
+            "index": [
+                "479", 
+                "Subjgrp", 
+                "AECA"
+            ], 
+            "title": "Arms Export Control Act"
+        }, 
+        {
+            "index": [
+                "479", 
+                "Subpart", 
+                "I"
+            ], 
+            "title": "Records and Returns"
+        }, 
+        {
+            "index": [
+                "479", 
+                "Subpart", 
+                "J"
+            ], 
+            "title": "Stolen or Lost Firearms or Documents"
+        }, 
+        {
+            "index": [
+                "479", 
+                "Subpart", 
+                "K"
+            ], 
+            "title": "Examination of Books and Records"
+        }, 
+        {
+            "index": [
+                "479", 
+                "Subpart", 
+                "L"
+            ], 
+            "title": "Distribution and Sale of Stamps"
+        }, 
+        {
+            "index": [
+                "479", 
+                "Subpart", 
+                "M"
+            ], 
+            "title": "Redemption of or Allowance for Stamps or Refunds"
+        }, 
+        {
+            "index": [
+                "479", 
+                "Subpart", 
+                "N"
+            ], 
+            "title": "Penalties and Forfeitures"
+        }, 
+        {
+            "index": [
+                "479", 
+                "Subpart", 
+                "O"
+            ], 
+            "title": "Other Laws Applicable"
+        }
+    ], 
+    "479-Subjgrp-AECA": [
+        {
+            "index": [
+                "479", 
+                "122"
+            ], 
+            "title": "\u00a7 479.122 Requirements."
+        }
+    ], 
+    "479-Subjgrp-AaOfToF": [
+        {
+            "index": [
+                "479", 
+                "84"
+            ], 
+            "title": "\u00a7 479.84 Application to transfer."
+        }, 
+        {
+            "index": [
+                "479", 
+                "85"
+            ], 
+            "title": "\u00a7 479.85 Identification of transferee."
+        }, 
+        {
+            "index": [
+                "479", 
+                "86"
+            ], 
+            "title": "\u00a7 479.86 Action on application."
+        }, 
+        {
+            "index": [
+                "479", 
+                "87"
+            ], 
+            "title": "\u00a7 479.87 Cancellation of stamp."
+        }
+    ], 
+    "479-Subjgrp-AoSL": [
+        {
+            "index": [
+                "479", 
+                "52"
+            ], 
+            "title": "\u00a7 479.52 State regulations."
+        }
+    ], 
+    "479-Subjgrp-AtMaF": [
+        {
+            "index": [
+                "479", 
+                "62"
+            ], 
+            "title": "\u00a7 479.62 Application to make."
+        }, 
+        {
+            "index": [
+                "479", 
+                "63"
+            ], 
+            "title": "\u00a7 479.63 Identification of applicant."
+        }, 
+        {
+            "index": [
+                "479", 
+                "64"
+            ], 
+            "title": "\u00a7 479.64 Procedure for approval of application."
+        }, 
+        {
+            "index": [
+                "479", 
+                "65"
+            ], 
+            "title": "\u00a7 479.65 Denial of application."
+        }, 
+        {
+            "index": [
+                "479", 
+                "66"
+            ], 
+            "title": "\u00a7 479.66 Subsequent transfer of firearms."
+        }, 
+        {
+            "index": [
+                "479", 
+                "67"
+            ], 
+            "title": "\u00a7 479.67 Cancellation of stamp."
+        }
+    ], 
+    "479-Subjgrp-CoBL": [
+        {
+            "index": [
+                "479", 
+                "46"
+            ], 
+            "title": "\u00a7 479.46 Notice by taxpayer."
+        }
+    ], 
+    "479-Subjgrp-CoO": [
+        {
+            "index": [
+                "479", 
+                "42"
+            ], 
+            "title": "\u00a7 479.42 Changes through death of owner."
+        }, 
+        {
+            "index": [
+                "479", 
+                "43"
+            ], 
+            "title": "\u00a7 479.43 Changes through bankruptcy of owner."
+        }, 
+        {
+            "index": [
+                "479", 
+                "44"
+            ], 
+            "title": "\u00a7 479.44 Change in partnership or unincorporated association."
+        }, 
+        {
+            "index": [
+                "479", 
+                "45"
+            ], 
+            "title": "\u00a7 479.45 Changes in corporation."
+        }
+    ], 
+    "479-Subjgrp-CoTN": [
+        {
+            "index": [
+                "479", 
+                "47"
+            ], 
+            "title": "\u00a7 479.47 Notice by taxpayer."
+        }
+    ], 
+    "479-Subjgrp-ERtToF": [
+        {
+            "index": [
+                "479", 
+                "88"
+            ], 
+            "title": "\u00a7 479.88 Special (occupational) taxpayers."
+        }, 
+        {
+            "index": [
+                "479", 
+                "89"
+            ], 
+            "title": "\u00a7 479.89 Transfers to the United States."
+        }, 
+        {
+            "index": [
+                "479", 
+                "90"
+            ], 
+            "title": "\u00a7 479.90 Certain government entities."
+        }, 
+        {
+            "index": [
+                "479", 
+                "91"
+            ], 
+            "title": "\u00a7 479.91 Unserviceable firearms."
+        }, 
+        {
+            "index": [
+                "479", 
+                "92"
+            ], 
+            "title": "\u00a7 479.92 Transportation of firearms to effect transfer."
+        }
+    ], 
+    "479-Subjgrp-EtToMF": [
+        {
+            "index": [
+                "479", 
+                "68"
+            ], 
+            "title": "\u00a7 479.68 Qualified manufacturer."
+        }, 
+        {
+            "index": [
+                "479", 
+                "69"
+            ], 
+            "title": "\u00a7 479.69 Making a firearm for the United States."
+        }, 
+        {
+            "index": [
+                "479", 
+                "70"
+            ], 
+            "title": "\u00a7 479.70 Certain government entities."
+        }
+    ], 
+    "479-Subjgrp-Ex": [
+        {
+            "index": [
+                "479", 
+                "114"
+            ], 
+            "title": "\u00a7 479.114 Application and permit for exportation of firearms."
+        }, 
+        {
+            "index": [
+                "479", 
+                "115"
+            ], 
+            "title": "\u00a7 479.115 Action by Director."
+        }, 
+        {
+            "index": [
+                "479", 
+                "116"
+            ], 
+            "title": "\u00a7 479.116 Procedure by exporter."
+        }, 
+        {
+            "index": [
+                "479", 
+                "117"
+            ], 
+            "title": "\u00a7 479.117 Action by Customs."
+        }, 
+        {
+            "index": [
+                "479", 
+                "118"
+            ], 
+            "title": "\u00a7 479.118 Proof of exportation."
+        }, 
+        {
+            "index": [
+                "479", 
+                "119"
+            ], 
+            "title": "\u00a7 479.119 Transportation of firearms to effect exportation."
+        }, 
+        {
+            "index": [
+                "479", 
+                "120"
+            ], 
+            "title": "\u00a7 479.120 Refunds."
+        }, 
+        {
+            "index": [
+                "479", 
+                "121"
+            ], 
+            "title": "\u00a7 479.121 Insular possessions."
+        }
+    ], 
+    "479-Subjgrp-Im": [
+        {
+            "index": [
+                "479", 
+                "111"
+            ], 
+            "title": "\u00a7 479.111 Procedure."
+        }, 
+        {
+            "index": [
+                "479", 
+                "112"
+            ], 
+            "title": "\u00a7 479.112 Registration of imported firearms."
+        }, 
+        {
+            "index": [
+                "479", 
+                "113"
+            ], 
+            "title": "\u00a7 479.113 Conditional importation."
+        }
+    ], 
+    "479-Subjgrp-MG": [
+        {
+            "index": [
+                "479", 
+                "105"
+            ], 
+            "title": "\u00a7 479.105 Transfer and possession of machine guns."
+        }
+    ], 
+    "479-Subjgrp-OP": [
+        {
+            "index": [
+                "479", 
+                "93"
+            ], 
+            "title": "\u00a7 479.93 Transfers of firearms to certain persons."
+        }
+    ], 
+    "479-Subjgrp-PaI": [
+        {
+            "index": [
+                "479", 
+                "48"
+            ], 
+            "title": "\u00a7 479.48 Failure to pay special (occupational) tax."
+        }, 
+        {
+            "index": [
+                "479", 
+                "49"
+            ], 
+            "title": "\u00a7 479.49 Failure to register change or removal."
+        }, 
+        {
+            "index": [
+                "479", 
+                "50"
+            ], 
+            "title": "\u00a7 479.50 Delinquency."
+        }, 
+        {
+            "index": [
+                "479", 
+                "51"
+            ], 
+            "title": "\u00a7 479.51 Fraudulent return."
+        }
+    ], 
+    "479-Subjgrp-Re": [
+        {
+            "index": [
+                "479", 
+                "71"
+            ], 
+            "title": "\u00a7 479.71 Proof of registration."
+        }
+    ], 
+    "479-Subpart-A": [
+        {
+            "index": [
+                "479", 
+                "1"
+            ], 
+            "title": "\u00a7 479.1 General."
+        }
+    ], 
+    "479-Subpart-B": [
+        {
+            "index": [
+                "479", 
+                "11"
+            ], 
+            "title": "\u00a7 479.11 Meaning of terms."
+        }
+    ], 
+    "479-Subpart-C": [
+        {
+            "index": [
+                "479", 
+                "21"
+            ], 
+            "title": "\u00a7 479.21 Forms prescribed."
+        }, 
+        {
+            "index": [
+                "479", 
+                "22"
+            ], 
+            "title": "\u00a7 479.22 Right of entry and examination."
+        }, 
+        {
+            "index": [
+                "479", 
+                "23"
+            ], 
+            "title": "\u00a7 479.23 Restrictive use of required information."
+        }, 
+        {
+            "index": [
+                "479", 
+                "24"
+            ], 
+            "title": "\u00a7 479.24 Destructive device determination."
+        }, 
+        {
+            "index": [
+                "479", 
+                "25"
+            ], 
+            "title": "\u00a7 479.25 Collector's items."
+        }, 
+        {
+            "index": [
+                "479", 
+                "26"
+            ], 
+            "title": "\u00a7 479.26 Alternate methods or procedures; emergency variations from requirements."
+        }
+    ], 
+    "479-Subpart-D": [
+        {
+            "index": [
+                "479", 
+                "31"
+            ], 
+            "title": "\u00a7 479.31 Liability for tax."
+        }, 
+        {
+            "index": [
+                "479", 
+                "32"
+            ], 
+            "title": "\u00a7 479.32 Special (occupational) tax rates."
+        }, 
+        {
+            "index": [
+                "479", 
+                "32a"
+            ], 
+            "title": "\u00a7 479.32a Reduced rate of tax for small importers and manufacturers."
+        }, 
+        {
+            "index": [
+                "479", 
+                "33"
+            ], 
+            "title": "\u00a7 479.33 Special exemption."
+        }, 
+        {
+            "index": [
+                "479", 
+                "34"
+            ], 
+            "title": "\u00a7 479.34 Special tax registration and return."
+        }, 
+        {
+            "index": [
+                "479", 
+                "35"
+            ], 
+            "title": "\u00a7 479.35 Employer identification number."
+        }, 
+        {
+            "index": [
+                "479", 
+                "36"
+            ], 
+            "title": "\u00a7 479.36 The special tax stamp, receipt for special (occupational) taxes."
+        }, 
+        {
+            "index": [
+                "479", 
+                "37"
+            ], 
+            "title": "\u00a7 479.37 Certificates in lieu of stamps lost or destroyed."
+        }, 
+        {
+            "index": [
+                "479", 
+                "38"
+            ], 
+            "title": "\u00a7 479.38 Engaging in business at more than one location."
+        }, 
+        {
+            "index": [
+                "479", 
+                "39"
+            ], 
+            "title": "\u00a7 479.39 Engaging in more than one business at the same location."
+        }, 
+        {
+            "index": [
+                "479", 
+                "40"
+            ], 
+            "title": "\u00a7 479.40 Partnership liability."
+        }, 
+        {
+            "index": [
+                "479", 
+                "41"
+            ], 
+            "title": "\u00a7 479.41 Single sale."
+        }
+    ], 
+    "479-Subpart-E": [
+        {
+            "index": [
+                "479", 
+                "61"
+            ], 
+            "title": "\u00a7 479.61 Rate of tax."
+        }
+    ], 
+    "479-Subpart-F": [
+        {
+            "index": [
+                "479", 
+                "81"
+            ], 
+            "title": "\u00a7 479.81 Scope of tax."
+        }, 
+        {
+            "index": [
+                "479", 
+                "82"
+            ], 
+            "title": "\u00a7 479.82 Rate of tax."
+        }, 
+        {
+            "index": [
+                "479", 
+                "83"
+            ], 
+            "title": "\u00a7 479.83 Transfer tax in addition to import duty."
+        }
+    ], 
+    "479-Subpart-G": [
+        {
+            "index": [
+                "479", 
+                "101"
+            ], 
+            "title": "\u00a7 479.101 Registration of firearms."
+        }, 
+        {
+            "index": [
+                "479", 
+                "102"
+            ], 
+            "title": "\u00a7 479.102 How must firearms be identified?"
+        }, 
+        {
+            "index": [
+                "479", 
+                "103"
+            ], 
+            "title": "\u00a7 479.103 Registration of firearms manufactured."
+        }, 
+        {
+            "index": [
+                "479", 
+                "104"
+            ], 
+            "title": "\u00a7 479.104 Registration of firearms by certain governmental entities."
+        }
+    ], 
+    "479-Subpart-I": [
+        {
+            "index": [
+                "479", 
+                "131"
+            ], 
+            "title": "\u00a7 479.131 Records."
+        }
+    ], 
+    "479-Subpart-J": [
+        {
+            "index": [
+                "479", 
+                "141"
+            ], 
+            "title": "\u00a7 479.141 Stolen or lost firearms."
+        }, 
+        {
+            "index": [
+                "479", 
+                "142"
+            ], 
+            "title": "\u00a7 479.142 Stolen or lost documents."
+        }
+    ], 
+    "479-Subpart-K": [
+        {
+            "index": [
+                "479", 
+                "151"
+            ], 
+            "title": "\u00a7 479.151 Failure to make returns: Substitute returns."
+        }, 
+        {
+            "index": [
+                "479", 
+                "152"
+            ], 
+            "title": "\u00a7 479.152 Penalties (records and returns)."
+        }
+    ], 
+    "479-Subpart-L": [
+        {
+            "index": [
+                "479", 
+                "161"
+            ], 
+            "title": "\u00a7 479.161 National Firearms Act stamps."
+        }, 
+        {
+            "index": [
+                "479", 
+                "162"
+            ], 
+            "title": "\u00a7 479.162 Stamps authorized."
+        }, 
+        {
+            "index": [
+                "479", 
+                "163"
+            ], 
+            "title": "\u00a7 479.163 Reuse of stamps prohibited."
+        }
+    ], 
+    "479-Subpart-M": [
+        {
+            "index": [
+                "479", 
+                "171"
+            ], 
+            "title": "\u00a7 479.171 Redemption of or allowance for stamps."
+        }, 
+        {
+            "index": [
+                "479", 
+                "172"
+            ], 
+            "title": "\u00a7 479.172 Refunds."
+        }
+    ], 
+    "479-Subpart-N": [
+        {
+            "index": [
+                "479", 
+                "181"
+            ], 
+            "title": "\u00a7 479.181 Penalties."
+        }, 
+        {
+            "index": [
+                "479", 
+                "182"
+            ], 
+            "title": "\u00a7 479.182 Forfeitures."
+        }
+    ], 
+    "479-Subpart-O": [
+        {
+            "index": [
+                "479", 
+                "191"
+            ], 
+            "title": "\u00a7 479.191 Applicability of other provisions of internal revenue laws."
+        }, 
+        {
+            "index": [
+                "479", 
+                "192"
+            ], 
+            "title": "\u00a7 479.192 Commerce in firearms and ammunition."
+        }, 
+        {
+            "index": [
+                "479", 
+                "193"
+            ], 
+            "title": "\u00a7 479.193 Arms Export Control Act."
+        }
+    ]
+}

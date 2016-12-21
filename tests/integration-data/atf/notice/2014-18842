@@ -1,0 +1,1136 @@
+{
+    "amendments": [
+        {
+            "authority": "22 U.S.C. 2778; E.O. 13637, 78 FR 16129 (Mar. 8, 2013).", 
+            "cfr_part": "447", 
+            "instruction": "1. The authority citation for 27 CFR part 447 continues to read as follows:"
+        }, 
+        {
+            "cfr_part": "447", 
+            "instruction": "2. Amend \u00a7 447.11 as follows:"
+        }, 
+        {
+            "cfr_part": "447", 
+            "changes": [
+                [
+                    "447-11-p4250035813", 
+                    [
+                        {
+                            "action": "DELETE"
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "a. Remove the words \u201cTobacco and Firearms (ATF)\u201d in the definition of \u201cAppropriate ATF Officer\u201d and add in their place the words \u201cTobacco, Firearms, and Explosives (ATF)\u201d;"
+        }, 
+        {
+            "cfr_part": "447", 
+            "changes": [
+                [
+                    "447-11-p4263687456", 
+                    [
+                        {
+                            "action": "DELETE"
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "b. Remove the words \u201cTobacco and Firearms, the Department of the Treasury\u201d in the definition of \u201cBureau\u201d and add in their place the words \u201cTobacco, Firearms, and Explosives, the Department of Justice\u201d; and"
+        }, 
+        {
+            "cfr_part": "447", 
+            "changes": [
+                [
+                    "447-11-p593154015", 
+                    [
+                        {
+                            "action": "DELETE"
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "c. Remove the words \u201cTobacco and Firearms, the Department of the Treasury\u201d in the definition of \u201cDirector\u201d and adding in their place the words \u201cTobacco, Firearms, and Explosives, the Department of Justice\u201d."
+        }, 
+        {
+            "cfr_part": "447", 
+            "changes": [
+                [
+                    "447-32-c", 
+                    [
+                        {
+                            "action": "DELETE"
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "3. Amend \u00a7 447.32 by removing the words \u201cTobacco and Firearms\u201d in paragraph (c) and adding in their place the words \u201cTobacco, Firearms, and Explosives\u201d."
+        }, 
+        {
+            "cfr_part": "447", 
+            "changes": [
+                [
+                    "447-35-b", 
+                    [
+                        {
+                            "action": "DELETE"
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "4. Amend \u00a7 447.35 by removing the words \u201cCenter, P.O. Box 5950, Springfield, Virginia 22150-5950, or by accessing the ATF Web site"
+        }, 
+        {
+            "cfr_part": "447", 
+            "instruction": "5. Amend \u00a7 447.58 by removing the words \u201cmailing a request to the ATF Distribution Center, PO Box 5950, Springfield, VA 22150-5950, or by accessing the ATF Web site"
+        }, 
+        {
+            "authority": "5 U.S.C. 552(a); 18 U.S.C. 847, 921-931; 44 U.S.C. 3504(h).", 
+            "cfr_part": "478", 
+            "instruction": "6. The authority citation for 27 CFR part 478 continues to read as follows:"
+        }, 
+        {
+            "cfr_part": "478", 
+            "instruction": "7. Amend \u00a7 478.11 as follows:"
+        }, 
+        {
+            "cfr_part": "478", 
+            "changes": [
+                [
+                    "478-11-p2757219296", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "11", 
+                                    "p2757219296"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "<E T=\"03\">ATF officer.</E> An officer or employee of the Bureau of Alcohol, Tobacco, Firearms, and Explosives (ATF) authorized to perform any function relating to the administration or enforcement of this part.", 
+                                "text": "ATF officer. An officer or employee of the Bureau of Alcohol, Tobacco, Firearms, and Explosives (ATF) authorized to perform any function relating to the administration or enforcement of this part.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "a. Revise [label:478-11-keyterm(ATF Officer)]"
+        }, 
+        {
+            "cfr_part": "478", 
+            "changes": [
+                [
+                    "478-11-p2162297120", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "11", 
+                                    "p2162297120"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "<E T=\"03\">Customs officer.</E>Any officer of U.S. Customs and Border Protection, any commissioned, warrant, or petty officer of the Coast Guard, or any agent or other person authorized by law to perform the duties of a customs officer.", 
+                                "text": "Customs officer. Any officer of U.S. Customs and Border Protection, any commissioned, warrant, or petty officer of the Coast Guard, or any agent or other person authorized by law to perform the duties of a customs officer.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "b. Revise [label:478-11-keyterm(Customs Officer)]"
+        }, 
+        {
+            "cfr_part": "478", 
+            "changes": [
+                [
+                    "478-11-p593154015", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "11", 
+                                    "p593154015"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "<E T=\"03\">Director.</E> The Director, Bureau of Alcohol, Tobacco, Firearms, and Explosives, the Department of Justice, Washington, DC.", 
+                                "text": "Director. The Director, Bureau of Alcohol, Tobacco, Firearms, and Explosives, the Department of Justice, Washington, DC.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "c. Revise [label:478-11-keyterm(Director)]"
+        }, 
+        {
+            "cfr_part": "478", 
+            "changes": [
+                [
+                    "478-11-p1339644464", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "11", 
+                                    "p1339644464"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "<E T=\"03\">Division.</E> A Bureau of Alcohol, Tobacco, Firearms, and Explosives Division.", 
+                                "text": "Division. A Bureau of Alcohol, Tobacco, Firearms, and Explosives Division.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "d. Revise [label:478-11-keyterm(Division)]"
+        }, 
+        {
+            "cfr_part": "478", 
+            "changes": [
+                [
+                    "478-21-b", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "21", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) Requests for forms should be submitted to the ATF Distribution Center (<E T=\"03\">http://www.atf.gov</E>) or made by calling (202) 648-6420.", 
+                                "text": "(b) Requests for forms should be submitted to the ATF Distribution Center (http://www.atf.gov) or made by calling (202) 648-6420.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "8. Amend \u00a7 478.21 by revising paragraph (b)"
+        }, 
+        {
+            "cfr_part": "478", 
+            "changes": [
+                [
+                    "478-56-b", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "56", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) In order to secure the right provided by this section, the person or persons continuing the business shall furnish the license for that business for endorsement of such succession to the Chief, Federal Firearms Licensing Center, within 30 days from the date on which the successor begins to carry on the business.", 
+                                "text": "(b) In order to secure the right provided by this section, the person or persons continuing the business shall furnish the license for that business for endorsement of such succession to the Chief, Federal Firearms Licensing Center, within 30 days from the date on which the successor begins to carry on the business.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "9. Amend \u00a7 478.56 by revising paragraph (b)"
+        }, 
+        {
+            "cfr_part": "478", 
+            "changes": [
+                [
+                    "478-72", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "72"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n             If the applicant for an original or renewal license desires a hearing to review the denial of his application, he shall file a request therefor, in duplicate, with the Director of Industry Operations within 15 days after receipt of the notice of denial.The request should include a statement of the reasons therefor. On receipt of the request, the Director of Industry Operations shall, as expeditiously as possible, make the necessary arrangements for the hearing and advise the applicant of the date, time, location, and the name of the officer before whom the hearing will be held.Such notification shall be made not less than 10 days in advance of the date set for the hearing. On conclusion of the hearing and consideration of all relevant facts and circumstances presented by the applicant or his representative, the Director shall render his decision confirming or reversing the denial of the application. If the decision is that the denial should stand, a certified copy of the Director's findings and conclusions shall be furnished to the applicant with a final notice of denial, Form 5300.13. A copy of the application, marked \u201cDisapproved,\u201d will be returned to the applicant. If the decision is that the license applied for should be issued, the applicant shall be so notified, in writing, and the license shall be issued as provided by \u00a7 478.47.", 
+                                "text": "If the applicant for an original or renewal license desires a hearing to review the denial of his application, he shall file a request therefor, in duplicate, with the Director of Industry Operations within 15 days after receipt of the notice of denial.The request should include a statement of the reasons therefor. On receipt of the request, the Director of Industry Operations shall, as expeditiously as possible, make the necessary arrangements for the hearing and advise the applicant of the date, time, location, and the name of the officer before whom the hearing will be held.Such notification shall be made not less than 10 days in advance of the date set for the hearing. On conclusion of the hearing and consideration of all relevant facts and circumstances presented by the applicant or his representative, the Director shall render his decision confirming or reversing the denial of the application. If the decision is that the denial should stand, a certified copy of the Director's findings and conclusions shall be furnished to the applicant with a final notice of denial, Form 5300.13. A copy of the application, marked \u201cDisapproved,\u201d will be returned to the applicant. If the decision is that the license applied for should be issued, the applicant shall be so notified, in writing, and the license shall be issued as provided by \u00a7 478.47.", 
+                                "title": "\u00a7 478.72 Hearing after application denial."
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "10. Revise \u00a7 478.72"
+        }, 
+        {
+            "cfr_part": "478", 
+            "changes": [
+                [
+                    "478-73-b", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "73", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) <E T=\"03\">Issuance of notice.</E> The notice shall set forth the matters of fact constituting the violations specified, dates, places, and the sections of law and regulations violated. The Director shall afford the licensee 15 days from the date of receipt of the notice in which to request a hearing prior to suspension or revocation of the license, or imposition of a civil fine. If the licensee does not file a timely request for a hearing, the Director shall issue a final notice of suspension or revocation and/or imposition of a civil fine on ATF Form 5300.13, as provided in \u00a7 478.74.", 
+                                "text": "(b) Issuance of notice. The notice shall set forth the matters of fact constituting the violations specified, dates, places, and the sections of law and regulations violated. The Director shall afford the licensee 15 days from the date of receipt of the notice in which to request a hearing prior to suspension or revocation of the license, or imposition of a civil fine. If the licensee does not file a timely request for a hearing, the Director shall issue a final notice of suspension or revocation and/or imposition of a civil fine on ATF Form 5300.13, as provided in \u00a7 478.74.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "11. Amend \u00a7 478.73 by revising paragraph (b)"
+        }, 
+        {
+            "cfr_part": "478", 
+            "changes": [
+                [
+                    "478-74", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "74"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n             If a licensee desires a hearing after receipt of a notice of suspension or revocation of a license, or imposition of a civil fine, the licensee shall file a request, in duplicate, with the Director of Industry Operations within 15 days after receipt of the notice of suspension or revocation of a license, or imposition of a civil fine. On receipt of such request, the Director of Industry Operations shall, as expeditiously as possible, make necessary arrangements for the hearing and advise the licensee of the date, time, location and the name of the officer before whom the hearing will be held. Such notification shall be made no less than 10 days in advance of the date set for the hearing. On conclusion of the hearing and consideration of all the relevant presentations made by the licensee or the licensee's representative, the Director shall render a decision and shall prepare a brief summary of the findings and conclusions on which the decision is based. If the decision is that the license should be revoked, or, in actions under 18 U.S.C. 922(t)(5), that the license should be revoked or suspended, and/or that a civil fine should be imposed, a certified copy of the summary shall be furnished to the licensee with the final notice of revocation, suspension, or imposition of a civil fine on ATF Form 5300.13. If the decision is that the license should not be revoked, or in actions under 18 U.S.C. 922(t)(5), that the license should not be revoked or suspended, and a civil fine should not be imposed, the licensee shall be notified in writing.", 
+                                "text": "If a licensee desires a hearing after receipt of a notice of suspension or revocation of a license, or imposition of a civil fine, the licensee shall file a request, in duplicate, with the Director of Industry Operations within 15 days after receipt of the notice of suspension or revocation of a license, or imposition of a civil fine. On receipt of such request, the Director of Industry Operations shall, as expeditiously as possible, make necessary arrangements for the hearing and advise the licensee of the date, time, location and the name of the officer before whom the hearing will be held. Such notification shall be made no less than 10 days in advance of the date set for the hearing. On conclusion of the hearing and consideration of all the relevant presentations made by the licensee or the licensee's representative, the Director shall render a decision and shall prepare a brief summary of the findings and conclusions on which the decision is based. If the decision is that the license should be revoked, or, in actions under 18 U.S.C. 922(t)(5), that the license should be revoked or suspended, and/or that a civil fine should be imposed, a certified copy of the summary shall be furnished to the licensee with the final notice of revocation, suspension, or imposition of a civil fine on ATF Form 5300.13. If the decision is that the license should not be revoked, or in actions under 18 U.S.C. 922(t)(5), that the license should not be revoked or suspended, and a civil fine should not be imposed, the licensee shall be notified in writing.", 
+                                "title": "\u00a7 478.74 Request for hearing after notice of suspension, revocation, or imposition of civil fine."
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "12. Revise \u00a7 478.74"
+        }, 
+        {
+            "cfr_part": "478", 
+            "changes": [
+                [
+                    "478-76", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "76"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n             An applicant or licensee may be represented by an attorney, certified public accountant, or other person recognized to practice before the Bureau of Alcohol, Tobacco, Firearms, and Explosives as provided in 31 CFR Part 8 (Practice Before the Bureau of Alcohol, Tobacco and Firearms), if he has otherwise complied with the applicable requirements of 26 CFR 601.521 through 601.527 (conference and practice requirements for alcohol, tobacco, and firearms activities) of this chapter. The Director may be represented in proceedings by an attorney in the office of Chief Counsel who is authorized to execute and file motions, briefs and other papers in the proceeding, on behalf of the Director, in his own name as \u201cAttorney for the Government.\u201d", 
+                                "text": "An applicant or licensee may be represented by an attorney, certified public accountant, or other person recognized to practice before the Bureau of Alcohol, Tobacco, Firearms, and Explosives as provided in 31 CFR Part 8 (Practice Before the Bureau of Alcohol, Tobacco and Firearms), if he has otherwise complied with the applicable requirements of 26 CFR 601.521 through 601.527 (conference and practice requirements for alcohol, tobacco, and firearms activities) of this chapter. The Director may be represented in proceedings by an attorney in the office of Chief Counsel who is authorized to execute and file motions, briefs and other papers in the proceeding, on behalf of the Director, in his own name as \u201cAttorney for the Government.\u201d", 
+                                "title": "\u00a7 478.76 Representation at a hearing."
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "13. Revise \u00a7 478.76 as follows:"
+        }, 
+        {
+            "cfr_part": "478", 
+            "changes": [
+                [
+                    "478-78", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "78"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n             In any case where denial, suspension, or revocation proceedings are pending before the Bureau of Alcohol, Tobacco, Firearms, and Explosives, or notice of denial, suspension, or revocation has been served on the licensee and he has filed timely request for a hearing, the license in the possession of the licensee shall remain in effect even though such license has expired, or the suspension or revocation date specified in the notice of revocation on Form 4500 served on the licensee has passed: <E T=\"03\">Provided,</E> That with respect to a license that has expired, the licensee has timely filed an application for the renewal of his license. If a licensee is dissatisfied with a posthearing decision revoking or suspending the license or denying the application or imposing a civil fine, as the case may be, he may, pursuant to 18 U.S.C. 923(f)(3), within 60 days after receipt of the final notice denying the application or revoking or suspending the license or imposing a civil fine, file a petition for judicial review of such action. Such petition should be filed with the U.S. district court for the district in which the applicant or licensee resides or has his principal place of business. In such case, when the Director finds that justice so requires, he may postpone the effective date of suspension or revocation of a license or authorize continued operations under the expired license, as applicable, pending judicial review.", 
+                                "text": "In any case where denial, suspension, or revocation proceedings are pending before the Bureau of Alcohol, Tobacco, Firearms, and Explosives, or notice of denial, suspension, or revocation has been served on the licensee and he has filed timely request for a hearing, the license in the possession of the licensee shall remain in effect even though such license has expired, or the suspension or revocation date specified in the notice of revocation on Form 4500 served on the licensee has passed: Provided, That with respect to a license that has expired, the licensee has timely filed an application for the renewal of his license. If a licensee is dissatisfied with a posthearing decision revoking or suspending the license or denying the application or imposing a civil fine, as the case may be, he may, pursuant to 18 U.S.C. 923(f)(3), within 60 days after receipt of the final notice denying the application or revoking or suspending the license or imposing a civil fine, file a petition for judicial review of such action. Such petition should be filed with the U.S. district court for the district in which the applicant or licensee resides or has his principal place of business. In such case, when the Director finds that justice so requires, he may postpone the effective date of suspension or revocation of a license or authorize continued operations under the expired license, as applicable, pending judicial review.", 
+                                "title": "\u00a7 478.78 Operations by licensee after notice."
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "14. Revise \u00a7 478.78"
+        }, 
+        {
+            "cfr_part": "478", 
+            "changes": [
+                [
+                    "478-103-e-p2", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "103", 
+                                    "e", 
+                                    "p2"
+                                ], 
+                                "node_type": "note", 
+                                "tagged_text": "ATF I 5300.2 provides the complete language of the statutory prohibitions and exceptions provided in 18 U.S.C. 922(x) and the penalty provisions of 18 U.S.C. 924(a)(6). The Federal firearms licensee posting this sign will provide you with a copy of this publication upon request. Requests for additional copies of ATF I 5300.2 should be submitted to the ATF Distribution Center (<E T=\"03\">http://www.atf.gov</E>) or made by calling (202) 648-6420.", 
+                                "text": "ATF I 5300.2 provides the complete language of the statutory prohibitions and exceptions provided in 18 U.S.C. 922(x) and the penalty provisions of 18 U.S.C. 924(a)(6). The Federal firearms licensee posting this sign will provide you with a copy of this publication upon request. Requests for additional copies of ATF I 5300.2 should be submitted to the ATF Distribution Center (http://www.atf.gov) or made by calling (202) 648-6420.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "15. Revise [label:478-103-e-p2]"
+        }, 
+        {
+            "cfr_part": "478", 
+            "changes": [
+                [
+                    "478-126-a", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "126", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) Each licensee shall, when required by letter issued by the Director of Industry Operations, and until notified to the contrary in writing by such officer, submit on Form 5300.5, Report of Firearms Transactions, for the periods and at the times specified in the letter issued by the Director of Industry Operations, all record information required by this subpart, or such lesser record information as the Director of Industry Operations in his letter may specify.", 
+                                "text": "(a) Each licensee shall, when required by letter issued by the Director of Industry Operations, and until notified to the contrary in writing by such officer, submit on Form 5300.5, Report of Firearms Transactions, for the periods and at the times specified in the letter issued by the Director of Industry Operations, all record information required by this subpart, or such lesser record information as the Director of Industry Operations in his letter may specify.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "16. Amend \u00a7 478.126 by revising paragraph (a)"
+        }, 
+        {
+            "authority": "26 U.S.C. 7805.", 
+            "cfr_part": "479", 
+            "instruction": "17. The authority citation for 27 CFR part 479 continues to read as follows:"
+        }, 
+        {
+            "cfr_part": "479", 
+            "instruction": "18. Amend \u00a7 479.11 as follows:"
+        }, 
+        {
+            "cfr_part": "479", 
+            "changes": [
+                [
+                    "479-11-p2757219296", 
+                    [
+                        {
+                            "action": "DELETE"
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "a. Remove the words \u201cTobacco and Firearms (ATF)\u201d in the definition of \u201cATF Officer\u201d and add in their place the words \u201cTobacco, Firearms, and Explosives (ATF)\u201d;"
+        }, 
+        {
+            "cfr_part": "479", 
+            "changes": [
+                [
+                    "479-11-p2162297120", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "479", 
+                                    "11", 
+                                    "p2162297120"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "<E T=\"03\">Customs officer.</E>Any officer of U.S. Customs and Border Protection, any commissioned, warrant, or petty officer of the Coast Guard, or any agent or other person authorized by law to perform the duties of a customs officer.", 
+                                "text": "Customs officer. Any officer of U.S. Customs and Border Protection, any commissioned, warrant, or petty officer of the Coast Guard, or any agent or other person authorized by law to perform the duties of a customs officer.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "b. Revise the definition of \u201cCustoms Officer\u201d to read as set forth below;"
+        }, 
+        {
+            "cfr_part": "479", 
+            "changes": [
+                [
+                    "479-11-p593154015", 
+                    [
+                        {
+                            "action": "DELETE"
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "c. Remove the words \u201cTobacco, and Firearms, the Department of the Treasury\u201d in the definition of \u201cDirector\u201d and add in their place \u201cTobacco, Firearms, and Explosives, the Department of Justice\u201d;"
+        }, 
+        {
+            "cfr_part": "479", 
+            "instruction": "d. Remove the acronym \u201cATF\u201d in the definition of Regional director (compliance);"
+        }, 
+        {
+            "cfr_part": "479", 
+            "changes": [
+                [
+                    "479-11-p2792822644", 
+                    [
+                        {
+                            "action": "DELETE"
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "e. Remove the caption \u201cRegional director (compliance)\u201d in the definition of \u201cRegional director (compliance)\u201d and add in its place \u201cDirector, Industry Operations\u201d; and"
+        }, 
+        {
+            "cfr_part": "479", 
+            "changes": [
+                [
+                    "479-11-p22033228", 
+                    [
+                        {
+                            "action": "DELETE"
+                        }
+                    ]
+                ], 
+                [
+                    "479-11-p405924764", 
+                    [
+                        {
+                            "action": "DELETE"
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "f. Remove the newly designated definition of \u201cDirector, Industry Operations\u201d from after the definition of \u201cPistol\u201d and add it after the definition of \u201cDirector\u201d."
+        }, 
+        {
+            "cfr_part": "479", 
+            "changes": [
+                [
+                    "479-21-b", 
+                    [
+                        {
+                            "action": "DELETE"
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "19. Amend \u00a7 479.21 by removing the words \u201cmailed to the ATF Distribution Center, 7664 K Fullerton Road, Springfield, Virginia, 22150\u201d in paragraph (b) and adding in their place the words \u201csubmitted to the ATF Distribution Center ("
+        }, 
+        {
+            "cfr_part": "479", 
+            "instruction": "20. Amend \u00a7 479.22 by removing the words \u201cTobacco and Firearms\u201d and adding in their place the words \u201cTobacco, Firearms, and Explosives\u201d."
+        }, 
+        {
+            "cfr_part": "479", 
+            "instruction": "21. Amend \u00a7 479.26 as follows:"
+        }, 
+        {
+            "cfr_part": "479", 
+            "changes": [
+                [
+                    "479-26-a-3", 
+                    [
+                        {
+                            "action": "DELETE"
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "a. Remove the words \u201cregional director (compliance)\u201d in paragraph (a)(3) and add in their place the words \u201cDirector, Industry Operations\u201d; and"
+        }, 
+        {
+            "cfr_part": "479", 
+            "changes": [
+                [
+                    "479-?-b", 
+                    [
+                        {
+                            "action": "DELETE"
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "b. Remove the words \u201cregional director (compliance)\u201d in paragraph (b) and add in their place the words \u201cDirector, Industry Operations\u201d."
+        }, 
+        {
+            "cfr_part": "479", 
+            "changes": [
+                [
+                    "479-34-e", 
+                    [
+                        {
+                            "action": "DELETE"
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "22. Amend \u00a7 479.34 by removing \u201c(12-93 edition)\u201d in the last sentence of paragraph (e)."
+        }, 
+        {
+            "cfr_part": "479", 
+            "instruction": "23. Amend \u00a7 479.37 as follows:"
+        }, 
+        {
+            "cfr_part": "479", 
+            "instruction": "a. Revise all references to \u201cregional director (compliance)\u201d to read \u201cChief, National Firearms Act Branch\u201d; and"
+        }, 
+        {
+            "cfr_part": "479", 
+            "instruction": "b. Remove the word \u201cCenter\u201d in the first sentence."
+        }, 
+        {
+            "cfr_part": "479", 
+            "instruction": "24. Amend \u00a7 479.38 by removing the words \u201cregional director (compliance)\u201d in the last sentence and adding in their place the words \u201cChief, National Firearms Act Branch\u201d."
+        }, 
+        {
+            "cfr_part": "479", 
+            "instruction": "25. Amend \u00a7 479.46 by removing the words \u201cregional director (compliance)\u201d in the second sentence and adding in their place the words \u201cChief, National Firearms Act Branch\u201d."
+        }, 
+        {
+            "cfr_part": "479", 
+            "instruction": "26. Amend \u00a7 479.47 by removing the words \u201cregional director (compliance)\u201d in the second sentence and adding in their place the words \u201cChief, National Firearms Act Branch\u201d."
+        }, 
+        {
+            "cfr_part": "479", 
+            "instruction": "27. Amend \u00a7 479.50 by removing the words \u201cregional director (compliance)\u201d in the first sentence and adding in their place the words \u201cChief, National Firearms Act Branch\u201d."
+        }, 
+        {
+            "cfr_part": "479", 
+            "instruction": "28. Amend \u00a7 479.84 by removing the words \u201cRegional director (compliance)\u201d in the third sentence and adding in their place the words \u201cSpecial Agent in Charge\u201d."
+        }, 
+        {
+            "cfr_part": "479", 
+            "instruction": "29. Amend \u00a7 479.172 by removing the words \u201cregional director (compliance)\u201d in the fourth sentence and adding in their place the words \u201cChief, National Firearms Act Branch\u201d."
+        }, 
+        {
+            "authority": "18 U.S.C. 847.", 
+            "cfr_part": "555", 
+            "instruction": "30. The authority citation for 27 CFR part 555 continues to read as follows:"
+        }, 
+        {
+            "cfr_part": "555", 
+            "instruction": "31. Amend \u00a7 555.11 as follows:"
+        }, 
+        {
+            "cfr_part": "555", 
+            "changes": [
+                [
+                    "555-11-p2162297120", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "555", 
+                                    "11", 
+                                    "p2162297120"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "<E T=\"03\">Customs officer.</E>Any officer of the Customs Service or any commissioned, warrant, or petty officer of the Coast Guard, or any agent or other person authorized to perform the duties of an officer of the Customs Service.", 
+                                "text": "Customs officer. Any officer of the Customs Service or any commissioned, warrant, or petty officer of the Coast Guard, or any agent or other person authorized to perform the duties of an officer of the Customs Service.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "a. Revise the definition of \u201cCustoms Officer\u201d to read as set forth below;"
+        }, 
+        {
+            "cfr_part": "555", 
+            "changes": [
+                [
+                    "555-11-p2792822644", 
+                    [
+                        {
+                            "action": "DELETE"
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "b. Remove the caption \u201cRegional director (compliance)\u201d in the definition of \u201cRegional director (compliance)\u201d and add in its place \u201cDirector, Industry Operations\u201d; and"
+        }, 
+        {
+            "cfr_part": "555", 
+            "changes": [
+                [
+                    "555-11-p22033228", 
+                    [
+                        {
+                            "action": "DELETE"
+                        }
+                    ]
+                ], 
+                [
+                    "555-11-p2840221760", 
+                    [
+                        {
+                            "action": "DELETE"
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "c. Remove the newly designated definition of \u201cDirector, Industry Operations\u201d from after the definition of \u201cRegion\u201d and add it after the definition of \u201cDirector\u201d."
+        }, 
+        {
+            "cfr_part": "555", 
+            "changes": [
+                [
+                    "555-21-b", 
+                    [
+                        {
+                            "action": "DELETE"
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "32. Amend \u00a7 555.21 by removing the words \u201cmailed to the ATF Distribution Center, 7664 K Fullerton Road, Springfield, Virginia, 22150\u201d in paragraph (b) and adding in their place the words \u201csubmitted to the ATF Distribution Center ("
+        }, 
+        {
+            "cfr_part": "555", 
+            "changes": [
+                [
+                    "555-22-a-3", 
+                    [
+                        {
+                            "action": "DELETE"
+                        }
+                    ]
+                ], 
+                [
+                    "555-22-b-3", 
+                    [
+                        {
+                            "action": "DELETE"
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "33. Amend \u00a7 555.22 by removing the words \u201cregional director (compliance)\u201d in the undesignated paragraphs following paragraphs (a)(3) and (b)(3) and adding in their place the words \u201cDirector, Industry Operations\u201d."
+        }, 
+        {
+            "cfr_part": "555", 
+            "instruction": "34. Amend \u00a7 555.25 by revising all references to \u201cregional director (compliance)\u201d to read \u201cDirector, Industry Operations\u201d."
+        }, 
+        {
+            "cfr_part": "555", 
+            "changes": [
+                [
+                    "555-45-c-3", 
+                    [
+                        {
+                            "action": "DELETE"
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "35. Amend \u00a7 555.45 by removing the words \u201cChief, Firearms and Explosives\u201d in paragraph (c)(3) and adding in their place the words \u201cChief, Federal Explosives\u201d."
+        }, 
+        {
+            "cfr_part": "555", 
+            "changes": [
+                [
+                    "555-46-a", 
+                    [
+                        {
+                            "action": "DELETE"
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "36. Amend \u00a7 555.46 by removing the words \u201cChief, Firearms and Explosives\u201d in paragraph (a), and adding in their place the words \u201cChief, Federal Explosives\u201d."
+        }, 
+        {
+            "cfr_part": "555", 
+            "instruction": "37. Amend \u00a7 555.49 as follows:"
+        }, 
+        {
+            "cfr_part": "555", 
+            "changes": [
+                [
+                    "555-49-b-1", 
+                    [
+                        {
+                            "action": "DELETE"
+                        }
+                    ]
+                ], 
+                [
+                    "555-49-b-2", 
+                    [
+                        {
+                            "action": "DELETE"
+                        }
+                    ]
+                ], 
+                [
+                    "555-49-b-3", 
+                    [
+                        {
+                            "action": "DELETE"
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "a. Remove the words \u201cChief, Firearms and Explosives \u201d in paragraphs (b)(1) introductory text, (b)(2) introductory text, and (b)(3), and add in their place the words \u201cChief, Federal Explosives\u201d; and"
+        }, 
+        {
+            "cfr_part": "555", 
+            "changes": [
+                [
+                    "555-?-b-3", 
+                    [
+                        {
+                            "action": "DELETE"
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "b. Remove the words \u201cregional director (compliance)\u201d in paragraph (b)(3) and add in their place the words \u201cDirector, Industry Operations\u201d."
+        }, 
+        {
+            "cfr_part": "555", 
+            "instruction": "38. Amend \u00a7 555.50 by revising all references to \u201cChief, Firearms and Explosives\u201d in paragraphs (a) and (b) to read \u201cChief, Federal Explosives\u201d."
+        }, 
+        {
+            "cfr_part": "555", 
+            "instruction": "39. Amend \u00a7 555.54 by revising all references to \u201cChief, Firearms and Explosives\u201d in paragraphs (a) and (b) to read \u201cChief, Federal Explosives\u201d."
+        }, 
+        {
+            "cfr_part": "555", 
+            "instruction": "40. Amend \u00a7 555.56 by removing the words \u201cChief, Firearms and Explosives\u201d and adding in their place the words \u201cChief, Federal Explosives\u201d."
+        }, 
+        {
+            "cfr_part": "555", 
+            "instruction": "41. Amend \u00a7 555.57 by revising all references to \u201cChief, Firearms and Explosives\u201d in paragraphs (a), (b), and (c) to read \u201cChief, Federal Explosives\u201d."
+        }, 
+        {
+            "cfr_part": "555", 
+            "changes": [
+                [
+                    "555-59-b", 
+                    [
+                        {
+                            "action": "DELETE"
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "42. Amend \u00a7 555.59 by removing the words \u201cChief, Firearms and Explosives\u201d in paragraph (b) and adding in their place the words \u201cChief, Federal Explosives\u201d."
+        }, 
+        {
+            "cfr_part": "555", 
+            "instruction": "43. Amend \u00a7 555.60 by removing the words \u201cChief, Firearms and Explosives\u201d and adding in their place the words \u201cChief, Federal Explosives\u201d."
+        }, 
+        {
+            "cfr_part": "555", 
+            "instruction": "44. Amend \u00a7 555.61 by removing the words \u201cChief, Firearms and Explosives\u201d and adding in their place the words \u201cChief, Federal Explosives\u201d."
+        }, 
+        {
+            "cfr_part": "555", 
+            "instruction": "45. Amend \u00a7 555.63 by revising all references to \u201cregional director (compliance)\u201d in paragraphs (a)(4), (c), and (d) to read \u201cDirector, Industry Operations\u201d."
+        }, 
+        {
+            "cfr_part": "555", 
+            "instruction": "46. Amend \u00a7 555.71 by revising all references to \u201cregional director (compliance)\u201d to read \u201cDirector, Industry Operations\u201d."
+        }, 
+        {
+            "cfr_part": "555", 
+            "instruction": "47. Amend \u00a7 555.72 by removing the words \u201cregional director (compliance)\u201d in the first sentence and adding in their place the words \u201cDirector, Industry Operations\u201d."
+        }, 
+        {
+            "cfr_part": "555", 
+            "instruction": "48. Amend \u00a7 555.73 by revising all references to \u201cregional director (compliance)\u201d to read \u201cDirector, Industry Operations\u201d."
+        }, 
+        {
+            "cfr_part": "555", 
+            "instruction": "49. Amend \u00a7 555.74 by revising all references to \u201cregional director (compliance)\u201d to read \u201cDirector, Industry Operations\u201d."
+        }, 
+        {
+            "cfr_part": "555", 
+            "instruction": "50. Amend \u00a7 555.75 by revising all references to \u201cregional director (compliance)\u201d to read \u201cDirector, Industry Operations\u201d."
+        }, 
+        {
+            "cfr_part": "555", 
+            "instruction": "51. Amend \u00a7 555.76 as follows:"
+        }, 
+        {
+            "cfr_part": "555", 
+            "changes": [
+                [
+                    "555-76", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "field": "[title]", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "555", 
+                                    "76"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n            ", 
+                                "text": "", 
+                                "title": "\u00a7 555.76 Action by Director, Industry Operations."
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "a. Revise the section heading to read as set forth below; and"
+        }, 
+        {
+            "cfr_part": "555", 
+            "instruction": "b. Revise all references to \u201cregional director (compliance)\u201d in paragraphs (a), (b), and (c) to read \u201cDirector, Industry Operations\u201d."
+        }, 
+        {
+            "cfr_part": "555", 
+            "instruction": "52. Amend \u00a7 555.78 as follows:"
+        }, 
+        {
+            "cfr_part": "555", 
+            "instruction": "a. Remove the words \u201cTobacco and Firearms\u201d and add in their place the words \u201cTobacco, Firearms, and Explosives\u201d; and"
+        }, 
+        {
+            "cfr_part": "555", 
+            "instruction": "b. Revise all references to \u201cregional director (compliance)\u201d to read \u201cDirector, Industry Operations\u201d."
+        }, 
+        {
+            "cfr_part": "555", 
+            "instruction": "53. Amend \u00a7 555.79 by revising all references to \u201cregional director (compliance)\u201d to read \u201cDirector, Industry Operations\u201d."
+        }, 
+        {
+            "cfr_part": "555", 
+            "instruction": "54. Amend \u00a7 555.80 by revising all references to \u201cregional director (compliance)\u201d to read \u201cDirector, Industry Operations\u201d."
+        }, 
+        {
+            "cfr_part": "555", 
+            "instruction": "55. Amend \u00a7 555.104 as follows:"
+        }, 
+        {
+            "cfr_part": "555", 
+            "instruction": "a. Revise all references to \u201cChief, Firearms and Explosives\u201d in paragraph (c) to read \u201cChief, Federal Explosives\u201d; and"
+        }, 
+        {
+            "cfr_part": "555", 
+            "changes": [
+                [
+                    "555-?-c", 
+                    [
+                        {
+                            "action": "DELETE"
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "b. Remove the words \u201cTobacco and Firearms\u201d in the last sentence of paragraph (c) and add in their place the words \u201cTobacco, Firearms, and Explosives\u201d."
+        }, 
+        {
+            "cfr_part": "555", 
+            "instruction": "56. Amend \u00a7 555.122 as follows:"
+        }, 
+        {
+            "cfr_part": "555", 
+            "instruction": "a. Revise all references to \u201cregional director (compliance)\u201d in paragraph (a)(4) to read \u201cDirector, Industry Operations\u201d; and"
+        }, 
+        {
+            "cfr_part": "555", 
+            "instruction": "b. Revise all references to \u201cregional director (compliance)\u201d in paragraph (d) to read \u201cChief, Explosives Industry Programs Branch\u201d."
+        }, 
+        {
+            "cfr_part": "555", 
+            "instruction": "57. Amend \u00a7 555.123 as follows:"
+        }, 
+        {
+            "cfr_part": "555", 
+            "instruction": "a. Revise all references to \u201cregional director (compliance)\u201d in paragraph (a)(4) to read \u201cDirector, Industry Operations\u201d; and"
+        }, 
+        {
+            "cfr_part": "555", 
+            "instruction": "b. Revise all references to \u201cregional director (compliance)\u201d in paragraph (e) to read \u201cChief, Explosives Industry Programs Branch\u201d."
+        }, 
+        {
+            "cfr_part": "555", 
+            "instruction": "58. Amend \u00a7 555.124 as follows:"
+        }, 
+        {
+            "cfr_part": "555", 
+            "instruction": "a. Revise all references to \u201cregional director (compliance)\u201d in paragraph (a)(4) to read \u201cDirector, Industry Operations\u201d; and"
+        }, 
+        {
+            "cfr_part": "555", 
+            "instruction": "b. Revise all references to \u201cregional director (compliance)\u201d in paragraph (e) to read \u201cChief, Explosives Industry Programs Branch\u201d."
+        }, 
+        {
+            "cfr_part": "555", 
+            "instruction": "59. Amend \u00a7 555.125 as follows:"
+        }, 
+        {
+            "cfr_part": "555", 
+            "instruction": "a. Revise all references to \u201cregional director (compliance)\u201d in paragraph (b)(1)(iv) to read \u201cDirector, Industry Operations\u201d; and"
+        }, 
+        {
+            "cfr_part": "555", 
+            "instruction": "b. Revise all references to \u201cregional director (compliance)\u201d in paragraph (b)(7) to read \u201cChief, Explosives Industry Programs Branch\u201d."
+        }, 
+        {
+            "cfr_part": "555", 
+            "changes": [
+                [
+                    "555-126-b-2", 
+                    [
+                        {
+                            "action": "DELETE"
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "60. Amend \u00a7 555.126 by removing the words \u201cidentity of the of the holder\u201d in the second sentence in paragraph (b)(2) and adding in their place the words \u201cidentity of the holder\u201d."
+        }, 
+        {
+            "cfr_part": "555", 
+            "instruction": "61. Amend \u00a7 555.128 by removing the words \u201cChief, Firearms and Explosives\u201d and adding in their place the words \u201cChief, Federal Explosives\u201d."
+        }, 
+        {
+            "cfr_part": "555", 
+            "changes": [
+                [
+                    "555-141-a-1", 
+                    [
+                        {
+                            "action": "DELETE"
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "62. Amend \u00a7 555.141 by removing the words \u201cPublic Safety Branch\u201d in the last sentence in paragraph (a)(1) and adding in their place the words \u201cExplosives Industry Program Branch\u201d."
+        }, 
+        {
+            "cfr_part": "555", 
+            "changes": [
+                [
+                    "555-142-e-4", 
+                    [
+                        {
+                            "action": "DELETE"
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "63. Amend \u00a7 555.142 by removing the words \u201cregional director (compliance)\u201d in paragraph (e)(4) and adding in their place the words \u201cDirector, Industry Operations\u201d."
+        }, 
+        {
+            "cfr_part": "555", 
+            "changes": [
+                [
+                    "555-201-b", 
+                    [
+                        {
+                            "action": "DELETE"
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "64. Amend \u00a7 555.201 by removing the words \u201cregional director (compliance)\u201d in the third sentence of paragraph (b) and adding in their place the words \u201cDirector, Industry Operations\u201d."
+        }, 
+        {
+            "authority": "18 U.S.C. 2341-2346, unless otherwise noted.", 
+            "cfr_part": "646", 
+            "instruction": "65. The authority citation for part 646 continues to read as follows:"
+        }, 
+        {
+            "cfr_part": "646", 
+            "changes": [
+                [
+                    "646-143-p4250035813", 
+                    [
+                        {
+                            "action": "DELETE"
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "66. Amend \u00a7 646.143 by removing the words \u201cTobacco and Firearms (ATF)\u201d in the definition of \u201cAppropriate ATF officer\u201d and adding in their place the words \u201cTobacco, Firearms, and Explosives (ATF)\u201d."
+        }
+    ], 
+    "cfr_parts": [
+        "447", 
+        "478", 
+        "479", 
+        "555", 
+        "646"
+    ], 
+    "cfr_title": 27, 
+    "dockets": [
+        "Docket No. ATF 2013R-9F", 
+        "AG Order No. 3439-2014"
+    ], 
+    "document_number": "2014-18842", 
+    "effective_on": "2014-08-11", 
+    "footnotes": {}, 
+    "fr_citation": "79 FR 46690", 
+    "fr_url": "https://www.federalregister.gov/documents/2014/08/11/2014-18842/technical-amendments-to-regulations", 
+    "fr_volume": 79, 
+    "meta": {
+        "start_page": 46690
+    }, 
+    "primary_agency": "DEPARTMENT OF JUSTICE", 
+    "primary_docket": null, 
+    "publication_date": "2014-08-11", 
+    "regulation_id_numbers": [], 
+    "section_by_section": [], 
+    "supporting_documents": [], 
+    "title": "Technical Amendments to Regulations", 
+    "versions": {
+        "447": {
+            "left": "2014-06778", 
+            "right": "2014-18842"
+        }, 
+        "478": {
+            "left": "2012-13770", 
+            "right": "2014-18842"
+        }, 
+        "479": {
+            "left": "2014-02580", 
+            "right": "2014-18842"
+        }, 
+        "555": {
+            "left": "2010-891", 
+            "right": "2014-18842"
+        }, 
+        "646": {
+            "left": "03-1657", 
+            "right": "2014-18842"
+        }
+    }
+}

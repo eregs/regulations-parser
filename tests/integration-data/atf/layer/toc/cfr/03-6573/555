@@ -1,0 +1,898 @@
+{
+    "555": [
+        {
+            "index": [
+                "555", 
+                "Subpart", 
+                "A"
+            ], 
+            "title": "Introduction"
+        }, 
+        {
+            "index": [
+                "555", 
+                "Subpart", 
+                "B"
+            ], 
+            "title": "Definitions"
+        }, 
+        {
+            "index": [
+                "555", 
+                "Subpart", 
+                "C"
+            ], 
+            "title": "Administrative and Miscellaneous Provisions"
+        }, 
+        {
+            "index": [
+                "555", 
+                "Subpart", 
+                "D"
+            ], 
+            "title": "Licenses and Permits"
+        }, 
+        {
+            "index": [
+                "555", 
+                "Subpart", 
+                "E"
+            ], 
+            "title": "License and Permit Proceedings"
+        }, 
+        {
+            "index": [
+                "555", 
+                "Subpart", 
+                "F"
+            ], 
+            "title": "Conduct of Business or Operations"
+        }, 
+        {
+            "index": [
+                "555", 
+                "Subpart", 
+                "G"
+            ], 
+            "title": "Records and Reports"
+        }, 
+        {
+            "index": [
+                "555", 
+                "Subpart", 
+                "H"
+            ], 
+            "title": "Exemptions"
+        }, 
+        {
+            "index": [
+                "555", 
+                "Subpart", 
+                "I"
+            ], 
+            "title": "Unlawful Acts, Penalties, Seizures and Forfeitures"
+        }, 
+        {
+            "index": [
+                "555", 
+                "Subpart", 
+                "J"
+            ], 
+            "title": "Marking of Plastic Explosives"
+        }, 
+        {
+            "index": [
+                "555", 
+                "Subpart", 
+                "K"
+            ], 
+            "title": "Storage"
+        }
+    ], 
+    "555-Subpart-A": [
+        {
+            "index": [
+                "555", 
+                "1"
+            ], 
+            "title": "\u00a7 555.1 Scope of regulations."
+        }, 
+        {
+            "index": [
+                "555", 
+                "2"
+            ], 
+            "title": "\u00a7 555.2 Relation to other provisions of law."
+        }
+    ], 
+    "555-Subpart-B": [
+        {
+            "index": [
+                "555", 
+                "11"
+            ], 
+            "title": "\u00a7 555.11 Meaning of terms."
+        }
+    ], 
+    "555-Subpart-C": [
+        {
+            "index": [
+                "555", 
+                "21"
+            ], 
+            "title": "\u00a7 555.21 Forms prescribed."
+        }, 
+        {
+            "index": [
+                "555", 
+                "22"
+            ], 
+            "title": "\u00a7 555.22 Alternate methods or procedures; emergency variations from requirements."
+        }, 
+        {
+            "index": [
+                "555", 
+                "23"
+            ], 
+            "title": "\u00a7 555.23 List of explosive materials."
+        }, 
+        {
+            "index": [
+                "555", 
+                "24"
+            ], 
+            "title": "\u00a7 555.24 Right of entry and examination."
+        }, 
+        {
+            "index": [
+                "555", 
+                "25"
+            ], 
+            "title": "\u00a7 555.25 Disclosure of information."
+        }, 
+        {
+            "index": [
+                "555", 
+                "26"
+            ], 
+            "title": "\u00a7 555.26 Prohibited shipment, transportation, receipt, possession, or distribution of explosive materials."
+        }, 
+        {
+            "index": [
+                "555", 
+                "27"
+            ], 
+            "title": "\u00a7 555.27 Out-of-State disposition of explosive materials."
+        }, 
+        {
+            "index": [
+                "555", 
+                "28"
+            ], 
+            "title": "\u00a7 555.28 Stolen explosive materials."
+        }, 
+        {
+            "index": [
+                "555", 
+                "29"
+            ], 
+            "title": "\u00a7 555.29 Unlawful storage."
+        }, 
+        {
+            "index": [
+                "555", 
+                "30"
+            ], 
+            "title": "\u00a7 555.30 Reporting theft or loss of explosive materials."
+        }, 
+        {
+            "index": [
+                "555", 
+                "31"
+            ], 
+            "title": "\u00a7 555.31 Inspection of site accidents or fires; right of entry."
+        }, 
+        {
+            "index": [
+                "555", 
+                "32"
+            ], 
+            "title": "\u00a7 555.32 Special explosive devices."
+        }, 
+        {
+            "index": [
+                "555", 
+                "33"
+            ], 
+            "title": "\u00a7 555.33 Background checks and clearances (effective May 24, 2003)."
+        }, 
+        {
+            "index": [
+                "555", 
+                "34"
+            ], 
+            "title": "\u00a7 555.34 Replacement of stolen or lost ATF Form 5400.30 (Intrastate Purchase of Explosives Coupon (IPEC))."
+        }
+    ], 
+    "555-Subpart-D": [
+        {
+            "index": [
+                "555", 
+                "41"
+            ], 
+            "title": "\u00a7 555.41 General."
+        }, 
+        {
+            "index": [
+                "555", 
+                "42"
+            ], 
+            "title": "\u00a7 555.42 License fees."
+        }, 
+        {
+            "index": [
+                "555", 
+                "43"
+            ], 
+            "title": "\u00a7 555.43 Permit fees."
+        }, 
+        {
+            "index": [
+                "555", 
+                "44"
+            ], 
+            "title": "\u00a7 555.44 License or permit fee not refundable."
+        }, 
+        {
+            "index": [
+                "555", 
+                "45"
+            ], 
+            "title": "\u00a7 555.45 Original license or permit."
+        }, 
+        {
+            "index": [
+                "555", 
+                "46"
+            ], 
+            "title": "\u00a7 555.46 Renewal of license or permit."
+        }, 
+        {
+            "index": [
+                "555", 
+                "47"
+            ], 
+            "title": "\u00a7 555.47 Insufficient fee."
+        }, 
+        {
+            "index": [
+                "555", 
+                "48"
+            ], 
+            "title": "\u00a7 555.48 Abandoned application."
+        }, 
+        {
+            "index": [
+                "555", 
+                "49"
+            ], 
+            "title": "\u00a7 555.49 Issuance of license or permit."
+        }, 
+        {
+            "index": [
+                "555", 
+                "50"
+            ], 
+            "title": "\u00a7 555.50 Correction of error on license or permit."
+        }, 
+        {
+            "index": [
+                "555", 
+                "51"
+            ], 
+            "title": "\u00a7 555.51 Duration of license or permit."
+        }, 
+        {
+            "index": [
+                "555", 
+                "52"
+            ], 
+            "title": "\u00a7 555.52 Limitations on license or permit."
+        }, 
+        {
+            "index": [
+                "555", 
+                "53"
+            ], 
+            "title": "\u00a7 555.53 License and permit not transferable."
+        }, 
+        {
+            "index": [
+                "555", 
+                "54"
+            ], 
+            "title": "\u00a7 555.54 Change of address."
+        }, 
+        {
+            "index": [
+                "555", 
+                "55"
+            ], 
+            "title": "\u00a7 555.55 Change in class of explosive materials."
+        }, 
+        {
+            "index": [
+                "555", 
+                "56"
+            ], 
+            "title": "\u00a7 555.56 Change in trade name."
+        }, 
+        {
+            "index": [
+                "555", 
+                "57"
+            ], 
+            "title": "\u00a7 555.57 Change of control, change in responsible persons, and change of employees."
+        }, 
+        {
+            "index": [
+                "555", 
+                "58"
+            ], 
+            "title": "\u00a7 555.58 Continuing partnerships."
+        }, 
+        {
+            "index": [
+                "555", 
+                "59"
+            ], 
+            "title": "\u00a7 555.59 Right of succession by certain persons."
+        }, 
+        {
+            "index": [
+                "555", 
+                "60"
+            ], 
+            "title": "\u00a7 555.60 Certain continuances of business or operations."
+        }, 
+        {
+            "index": [
+                "555", 
+                "61"
+            ], 
+            "title": "\u00a7 555.61 Discontinuance of business or operations."
+        }, 
+        {
+            "index": [
+                "555", 
+                "62"
+            ], 
+            "title": "\u00a7 555.62 State or other law."
+        }, 
+        {
+            "index": [
+                "555", 
+                "63"
+            ], 
+            "title": "\u00a7 555.63 Explosives magazine changes."
+        }
+    ], 
+    "555-Subpart-E": [
+        {
+            "index": [
+                "555", 
+                "71"
+            ], 
+            "title": "\u00a7 555.71 Opportunity for compliance."
+        }, 
+        {
+            "index": [
+                "555", 
+                "72"
+            ], 
+            "title": "\u00a7 555.72 Denial of initial application."
+        }, 
+        {
+            "index": [
+                "555", 
+                "73"
+            ], 
+            "title": "\u00a7 555.73 Hearing after initial application is denied."
+        }, 
+        {
+            "index": [
+                "555", 
+                "74"
+            ], 
+            "title": "\u00a7 555.74 Denial of renewal application or revocation of license or permit."
+        }, 
+        {
+            "index": [
+                "555", 
+                "75"
+            ], 
+            "title": "\u00a7 555.75 Hearing after denial of renewal application or revocation of license or permit."
+        }, 
+        {
+            "index": [
+                "555", 
+                "76"
+            ], 
+            "title": "\u00a7 555.76 Action by regional director (compliance)."
+        }, 
+        {
+            "index": [
+                "555", 
+                "77"
+            ], 
+            "title": "\u00a7 555.77 Designated place of hearing."
+        }, 
+        {
+            "index": [
+                "555", 
+                "78"
+            ], 
+            "title": "\u00a7 555.78 Representation at a hearing."
+        }, 
+        {
+            "index": [
+                "555", 
+                "79"
+            ], 
+            "title": "\u00a7 555.79 Appeal on petition to the Director."
+        }, 
+        {
+            "index": [
+                "555", 
+                "80"
+            ], 
+            "title": "\u00a7 555.80 Court review."
+        }, 
+        {
+            "index": [
+                "555", 
+                "81"
+            ], 
+            "title": "\u00a7 555.81 Service on applicant, licensee, or permittee."
+        }, 
+        {
+            "index": [
+                "555", 
+                "82"
+            ], 
+            "title": "\u00a7 555.82 Provisions of part 200 made applicable."
+        }, 
+        {
+            "index": [
+                "555", 
+                "83"
+            ], 
+            "title": "\u00a7 555.83 Operations by licensees or permittees after notice of denial or revocation."
+        }
+    ], 
+    "555-Subpart-F": [
+        {
+            "index": [
+                "555", 
+                "101"
+            ], 
+            "title": "\u00a7 555.101 Posting of license or user permit."
+        }, 
+        {
+            "index": [
+                "555", 
+                "102"
+            ], 
+            "title": "\u00a7 555.102 Authorized operations by permittees."
+        }, 
+        {
+            "index": [
+                "555", 
+                "103"
+            ], 
+            "title": "\u00a7 555.103 Transactions among licensees/permittees and transactions among licensees and holders of user permits."
+        }, 
+        {
+            "index": [
+                "555", 
+                "104"
+            ], 
+            "title": "\u00a7 555.104 Certified copy of license or permit."
+        }, 
+        {
+            "index": [
+                "555", 
+                "105"
+            ], 
+            "title": "\u00a7 555.105 Distributions to nonlicensees, nonpermittees, and limited permittees."
+        }, 
+        {
+            "index": [
+                "555", 
+                "106"
+            ], 
+            "title": "\u00a7 555.106 Certain prohibited distributions."
+        }, 
+        {
+            "index": [
+                "555", 
+                "107"
+            ], 
+            "title": "\u00a7 555.107 Record of transactions."
+        }, 
+        {
+            "index": [
+                "555", 
+                "108"
+            ], 
+            "title": "\u00a7 555.108 Importation."
+        }, 
+        {
+            "index": [
+                "555", 
+                "109"
+            ], 
+            "title": "\u00a7 555.109 Identification of explosive materials."
+        }, 
+        {
+            "index": [
+                "555", 
+                "110"
+            ], 
+            "title": "\u00a7 555.110 Furnishing of samples (Effective on and after January 24, 2003)."
+        }
+    ], 
+    "555-Subpart-G": [
+        {
+            "index": [
+                "555", 
+                "121"
+            ], 
+            "title": "\u00a7 555.121 General."
+        }, 
+        {
+            "index": [
+                "555", 
+                "122"
+            ], 
+            "title": "\u00a7 555.122 Records maintained by licensed importers."
+        }, 
+        {
+            "index": [
+                "555", 
+                "123"
+            ], 
+            "title": "\u00a7 555.123 Records maintained by licensed manufacturers."
+        }, 
+        {
+            "index": [
+                "555", 
+                "124"
+            ], 
+            "title": "\u00a7 555.124 Records maintained by licensed dealers."
+        }, 
+        {
+            "index": [
+                "555", 
+                "125"
+            ], 
+            "title": "\u00a7 555.125 Records maintained by permittees."
+        }, 
+        {
+            "index": [
+                "555", 
+                "126"
+            ], 
+            "title": "\u00a7 555.126 Explosives transaction record for distribution of explosive materials prior to May 24, 2003 and Limited Permittee Transaction Report for distribution of explosive materials on and after May 24, 2003."
+        }, 
+        {
+            "index": [
+                "555", 
+                "127"
+            ], 
+            "title": "\u00a7 555.127 Daily summary of magazine transactions."
+        }, 
+        {
+            "index": [
+                "555", 
+                "128"
+            ], 
+            "title": "\u00a7 555.128 Discontinuance of business."
+        }, 
+        {
+            "index": [
+                "555", 
+                "129"
+            ], 
+            "title": "\u00a7 555.129 Exportation."
+        }, 
+        {
+            "index": [
+                "555", 
+                "130"
+            ], 
+            "title": "\u00a7 555.130 [Reserved]"
+        }
+    ], 
+    "555-Subpart-H": [
+        {
+            "index": [
+                "555", 
+                "141"
+            ], 
+            "title": "\u00a7 555.141 Exemptions."
+        }, 
+        {
+            "index": [
+                "555", 
+                "142"
+            ], 
+            "title": "\u00a7 555.142 Relief from disabilities (effective January 24, 2003)."
+        }
+    ], 
+    "555-Subpart-I": [
+        {
+            "index": [
+                "555", 
+                "161"
+            ], 
+            "title": "\u00a7 555.161 Engaging in business without a license."
+        }, 
+        {
+            "index": [
+                "555", 
+                "162"
+            ], 
+            "title": "\u00a7 555.162 False statement or representation."
+        }, 
+        {
+            "index": [
+                "555", 
+                "163"
+            ], 
+            "title": "\u00a7 555.163 False entry in record."
+        }, 
+        {
+            "index": [
+                "555", 
+                "164"
+            ], 
+            "title": "\u00a7 555.164 Unlawful storage."
+        }, 
+        {
+            "index": [
+                "555", 
+                "165"
+            ], 
+            "title": "\u00a7 555.165 Failure to report theft or loss."
+        }, 
+        {
+            "index": [
+                "555", 
+                "166"
+            ], 
+            "title": "\u00a7 555.166 Seizure or forfeiture."
+        }
+    ], 
+    "555-Subpart-J": [
+        {
+            "index": [
+                "555", 
+                "180"
+            ], 
+            "title": "\u00a7 555.180 Prohibitions relating to unmarked plastic explosives."
+        }, 
+        {
+            "index": [
+                "555", 
+                "181"
+            ], 
+            "title": "\u00a7 555.181 Reporting of plastic explosives."
+        }, 
+        {
+            "index": [
+                "555", 
+                "182"
+            ], 
+            "title": "\u00a7 555.182 Exceptions."
+        }, 
+        {
+            "index": [
+                "555", 
+                "183"
+            ], 
+            "title": "\u00a7 555.183 Importation of plastic explosives on or after April 24, 1997."
+        }, 
+        {
+            "index": [
+                "555", 
+                "184"
+            ], 
+            "title": "\u00a7 555.184 Statements of process and samples."
+        }, 
+        {
+            "index": [
+                "555", 
+                "185"
+            ], 
+            "title": "\u00a7 555.185 Criminal sanctions."
+        }, 
+        {
+            "index": [
+                "555", 
+                "186"
+            ], 
+            "title": "\u00a7 555.186 Seizure or forfeiture."
+        }
+    ], 
+    "555-Subpart-K": [
+        {
+            "index": [
+                "555", 
+                "201"
+            ], 
+            "title": "\u00a7 555.201 General."
+        }, 
+        {
+            "index": [
+                "555", 
+                "202"
+            ], 
+            "title": "\u00a7 555.202 Classes of explosive materials."
+        }, 
+        {
+            "index": [
+                "555", 
+                "203"
+            ], 
+            "title": "\u00a7 555.203 Types of magazines."
+        }, 
+        {
+            "index": [
+                "555", 
+                "204"
+            ], 
+            "title": "\u00a7 555.204 Inspection of magazines."
+        }, 
+        {
+            "index": [
+                "555", 
+                "205"
+            ], 
+            "title": "\u00a7 555.205 Movement of explosive materials."
+        }, 
+        {
+            "index": [
+                "555", 
+                "206"
+            ], 
+            "title": "\u00a7 555.206 Location of magazines."
+        }, 
+        {
+            "index": [
+                "555", 
+                "207"
+            ], 
+            "title": "\u00a7 555.207 Construction of type 1 magazines."
+        }, 
+        {
+            "index": [
+                "555", 
+                "208"
+            ], 
+            "title": "\u00a7 555.208 Construction of type 2 magazines."
+        }, 
+        {
+            "index": [
+                "555", 
+                "209"
+            ], 
+            "title": "\u00a7 555.209 Construction of type 3 magazines."
+        }, 
+        {
+            "index": [
+                "555", 
+                "210"
+            ], 
+            "title": "\u00a7 555.210 Construction of type 4 magazines."
+        }, 
+        {
+            "index": [
+                "555", 
+                "211"
+            ], 
+            "title": "\u00a7 555.211 Construction of type 5 magazines."
+        }, 
+        {
+            "index": [
+                "555", 
+                "212"
+            ], 
+            "title": "\u00a7 555.212 Smoking and open flames."
+        }, 
+        {
+            "index": [
+                "555", 
+                "213"
+            ], 
+            "title": "\u00a7 555.213 Quantity and storage restrictions."
+        }, 
+        {
+            "index": [
+                "555", 
+                "214"
+            ], 
+            "title": "\u00a7 555.214 Storage within types 1, 2, 3, and 4 magazines."
+        }, 
+        {
+            "index": [
+                "555", 
+                "215"
+            ], 
+            "title": "\u00a7 555.215 Housekeeping."
+        }, 
+        {
+            "index": [
+                "555", 
+                "216"
+            ], 
+            "title": "\u00a7 555.216 Repair of magazines."
+        }, 
+        {
+            "index": [
+                "555", 
+                "217"
+            ], 
+            "title": "\u00a7 555.217 Lighting."
+        }, 
+        {
+            "index": [
+                "555", 
+                "218"
+            ], 
+            "title": "\u00a7 555.218 Table of distances for storage of explosive materials."
+        }, 
+        {
+            "index": [
+                "555", 
+                "219"
+            ], 
+            "title": "\u00a7 555.219 Table of distances for storage of low explosives."
+        }, 
+        {
+            "index": [
+                "555", 
+                "220"
+            ], 
+            "title": "\u00a7 555.220 Table of separation distances of ammonium nitrate and blasting agents from explosives or blasting agents."
+        }, 
+        {
+            "index": [
+                "555", 
+                "221"
+            ], 
+            "title": "\u00a7 555.221 Requirements for display fireworks, pyrotechnic compositions, and explosive materials used in assembling fireworks or articles pyrotechnic."
+        }, 
+        {
+            "index": [
+                "555", 
+                "222"
+            ], 
+            "title": "\u00a7 555.222 Table of distances between fireworks process buildings and between fireworks process and fireworks nonprocess buildings."
+        }, 
+        {
+            "index": [
+                "555", 
+                "223"
+            ], 
+            "title": "\u00a7 555.223 Table of distances between fireworks process buildings and other specified areas."
+        }, 
+        {
+            "index": [
+                "555", 
+                "224"
+            ], 
+            "title": "\u00a7 555.224 Table of distances for the storage of display fireworks (except bulk salutes)."
+        }
+    ]
+}

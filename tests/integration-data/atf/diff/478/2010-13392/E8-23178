@@ -1,0 +1,372 @@
+{
+    "478-114-a-1-vi": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    47, 
+                    50
+                ], 
+                [
+                    "insert", 
+                    47, 
+                    "is \u2014"
+                ]
+            ]
+        ]
+    }, 
+    "478-124a-a": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                481, 
+                "acuisition of a firearm on Form 4473(LV) pursuant to this section. A licensed dealer who maintains records pursuant to this section, but whose firearms dispositions exceed 50 firearms within such 12-month period, shall make and maintain the "
+            ], 
+            [
+                [
+                    "delete", 
+                    493, 
+                    497
+                ], 
+                [
+                    "insert", 
+                    493, 
+                    "and disposition records required by \u00a7 478.125 with respect to each"
+                ]
+            ], 
+            [
+                "delete", 
+                506, 
+                810
+            ]
+        ]
+    }, 
+    "478-125-e-p1": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    0, 
+                    21
+                ], 
+                [
+                    "insert", 
+                    0, 
+                    "|FIREARMS ACQUISITION AND DISPOSITION RECORD|Description of firearm|Manufacturer and/or Importer|Model|Serial No.|Type|Caliber or gauge|Receipt|Date|Name"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    26, 
+                    126
+                ], 
+                [
+                    "insert", 
+                    26, 
+                    "address"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    130, 
+                    153
+                ], 
+                [
+                    "insert", 
+                    130, 
+                    "name"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    158, 
+                    165
+                ], 
+                [
+                    "insert", 
+                    158, 
+                    "license No.|Disposition|Date|Name|Address"
+                ]
+            ], 
+            [
+                "delete", 
+                169, 
+                178
+            ], 
+            [
+                [
+                    "delete", 
+                    186, 
+                    219
+                ], 
+                [
+                    "insert", 
+                    186, 
+                    "No. if licensee,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    223, 
+                    230
+                ], 
+                [
+                    "insert", 
+                    223, 
+                    "Form 4473 Serial"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    238, 
+                    255
+                ], 
+                [
+                    "insert", 
+                    238, 
+                    "Forms"
+                ]
+            ], 
+            [
+                "delete", 
+                261, 
+                286
+            ]
+        ]
+    }, 
+    "478-125-g": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    846, 
+                    858
+                ], 
+                [
+                    "insert", 
+                    846, 
+                    " "
+                ]
+            ]
+        ]
+    }, 
+    "478-24-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    309, 
+                    380
+                ], 
+                [
+                    "insert", 
+                    309, 
+                    "Office of"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    385, 
+                    397
+                ], 
+                [
+                    "insert", 
+                    385, 
+                    "Federal Register, 800 North Capitol Street, NW., suite 700, Washington, DC. This incorporation by reference was approved by the Director"
+                ]
+            ], 
+            [
+                "delete", 
+                401, 
+                590
+            ], 
+            [
+                "delete", 
+                594, 
+                610
+            ]
+        ]
+    }, 
+    "478-52-a": {
+        "op": "modified", 
+        "text": [
+            [
+                "delete", 
+                677, 
+                684
+            ]
+        ]
+    }, 
+    "478-71": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                22, 
+                "of Industry Operations "
+            ]
+        ]
+    }, 
+    "478-72": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    246, 
+                    256
+                ], 
+                [
+                    "insert", 
+                    246, 
+                    "denial. The"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    579, 
+                    588
+                ], 
+                [
+                    "insert", 
+                    579, 
+                    "held. Such"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    832, 
+                    837
+                ], 
+                [
+                    "insert", 
+                    832, 
+                    "of Industry Operations shall"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    986, 
+                    996
+                ], 
+                [
+                    "insert", 
+                    986, 
+                    "Director of Industry Operations"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    1094, 
+                    1100
+                ], 
+                [
+                    "insert", 
+                    1094, 
+                    "4501. A"
+                ]
+            ]
+        ]
+    }, 
+    "478-73-a": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    44, 
+                    47
+                ], 
+                [
+                    "insert", 
+                    44, 
+                    "of Industry Operations has"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    345, 
+                    348
+                ], 
+                [
+                    "insert", 
+                    345, 
+                    "of Industry Operations has"
+                ]
+            ]
+        ]
+    }, 
+    "478-73-b": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                188, 
+                "of Industry Operations "
+            ], 
+            [
+                "insert", 
+                447, 
+                "of Industry Operations "
+            ]
+        ]
+    }, 
+    "478-74": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                846, 
+                "of Industry Operations "
+            ]
+        ]
+    }, 
+    "478-76": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                482, 
+                "of Industry Operations "
+            ], 
+            [
+                [
+                    "delete", 
+                    712, 
+                    716
+                ], 
+                [
+                    "insert", 
+                    712, 
+                    "of Industry Operations, in"
+                ]
+            ]
+        ]
+    }, 
+    "478-78": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                1207, 
+                "of Industry Operations "
+            ]
+        ]
+    }
+}

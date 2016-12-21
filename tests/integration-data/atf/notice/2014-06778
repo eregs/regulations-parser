@@ -1,0 +1,4134 @@
+{
+    "amendments": [
+        {
+            "authority": "22 U.S.C. 2778.", 
+            "cfr_part": "447", 
+            "instruction": "1. The authority citation for 27 CFR part 447 continues to read as follows:"
+        }, 
+        {
+            "cfr_part": "447", 
+            "changes": [
+                [
+                    "447-21-p1", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "The following defense articles and defense services, designated pursuant to section 38(a) of the Arms Export Control Act, 22 U.S.C. 2778(a), and E.O. 13637 are subject to controls under this part. For purposes of this part, the list shall be known as the U.S. Munitions Import List (USMIL):", 
+                                "text": "The following defense articles and defense services, designated pursuant to section 38(a) of the Arms Export Control Act, 22 U.S.C. 2778(a), and E.O. 13637 are subject to controls under this part. For purposes of this part, the list shall be known as the U.S. Munitions Import List (USMIL):", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "", 
+                                "text": "", 
+                                "title": "The U.S. Munitions Import List"
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p70108241-a", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p70108241", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) Nonautomatic and semiautomatic firearms, to caliber .50 inclusive, combat shotguns, and shotguns with barrels less than 18 inches in length, and all components and parts for such firearms.", 
+                                "text": "(a) Nonautomatic and semiautomatic firearms, to caliber .50 inclusive, combat shotguns, and shotguns with barrels less than 18 inches in length, and all components and parts for such firearms.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p70108241-b", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p70108241", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) Automatic firearms and all components and parts for such firearms to caliber .50 inclusive.", 
+                                "text": "(b) Automatic firearms and all components and parts for such firearms to caliber .50 inclusive.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p70108241-c", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p70108241", 
+                                    "c"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(c) Insurgency-counterinsurgency type firearms of other weapons having a special military application (e.g. close assault weapons systems) regardless of caliber and all components and parts for such firearms.", 
+                                "text": "(c) Insurgency-counterinsurgency type firearms of other weapons having a special military application (e.g. close assault weapons systems) regardless of caliber and all components and parts for such firearms.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p70108241-d", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p70108241", 
+                                    "d"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(d) Firearms silencers and suppressors, including flash suppressors.", 
+                                "text": "(d) Firearms silencers and suppressors, including flash suppressors.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p70108241-e-p1", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p70108241", 
+                                    "e", 
+                                    "p1"
+                                ], 
+                                "node_type": "note", 
+                                "tagged_text": "Rifles, carbines, revolvers, and pistols, to caliber .50 inclusive, combat shotguns, and shotguns with barrels less than 18 inches in length are included under Category I(a). Machineguns, submachineguns, machine pistols and fully automatic rifles to caliber .50 inclusive are included under Category I(b).", 
+                                "text": "Rifles, carbines, revolvers, and pistols, to caliber .50 inclusive, combat shotguns, and shotguns with barrels less than 18 inches in length are included under Category I(a). Machineguns, submachineguns, machine pistols and fully automatic rifles to caliber .50 inclusive are included under Category I(b).", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p70108241-e", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "447-21-p70108241-e-p1"
+                                ], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p70108241", 
+                                    "e"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(e) [Reserved]", 
+                                "text": "(e) [Reserved]", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p70108241", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "447-21-p70108241-a", 
+                                    "447-21-p70108241-b", 
+                                    "447-21-p70108241-c", 
+                                    "447-21-p70108241-d", 
+                                    "447-21-p70108241-e"
+                                ], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p70108241"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "", 
+                                "text": "", 
+                                "title": "category i\u2014firearms"
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p957888316-a", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p957888316", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) Guns over caliber .50, howitzers, mortars, and recoiless rifles.", 
+                                "text": "(a) Guns over caliber .50, howitzers, mortars, and recoiless rifles.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p957888316-b", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p957888316", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) Military flamethrowers and projectors.", 
+                                "text": "(b) Military flamethrowers and projectors.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p957888316-c", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p957888316", 
+                                    "c"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(c) Components, parts, accessories, and attachments for the articles in paragraphs (a) and (b) of this category, including but not limited to mounts and carriages for these articles.", 
+                                "text": "(c) Components, parts, accessories, and attachments for the articles in paragraphs (a) and (b) of this category, including but not limited to mounts and carriages for these articles.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p957888316", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "447-21-p957888316-a", 
+                                    "447-21-p957888316-b", 
+                                    "447-21-p957888316-c"
+                                ], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p957888316"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "", 
+                                "text": "", 
+                                "title": "category ii\u2014artillery projectors"
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p1113586708-a", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p1113586708", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) Ammunition for the arms in Categories I and II of this section.", 
+                                "text": "(a) Ammunition for the arms in Categories I and II of this section.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p1113586708-b", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p1113586708", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) Components, parts, accessories, and attachments for articles in paragraph (a) of this category, including but not limited to cartridge cases, powder bags, bullets, jackets, cores, shells (excluding shotgun shells), projectiles, boosters, fuzes and components therefor, primers, and other detonating devices for such ammunition.", 
+                                "text": "(b) Components, parts, accessories, and attachments for articles in paragraph (a) of this category, including but not limited to cartridge cases, powder bags, bullets, jackets, cores, shells (excluding shotgun shells), projectiles, boosters, fuzes and components therefor, primers, and other detonating devices for such ammunition.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p1113586708-c", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p1113586708", 
+                                    "c"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(c) [Reserved]", 
+                                "text": "(c) [Reserved]", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p1113586708-d-p1", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p1113586708", 
+                                    "d", 
+                                    "p1"
+                                ], 
+                                "node_type": "note", 
+                                "tagged_text": "Cartridge and shell casings are included under Category III unless, prior to their importation, they have been rendered useless beyond the possibility of restoration for use as a cartridge or shell casing by means of heating, flame treatment, mangling, crushing, cutting, or popping.", 
+                                "text": "Cartridge and shell casings are included under Category III unless, prior to their importation, they have been rendered useless beyond the possibility of restoration for use as a cartridge or shell casing by means of heating, flame treatment, mangling, crushing, cutting, or popping.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p1113586708-d", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "447-21-p1113586708-d-p1"
+                                ], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p1113586708", 
+                                    "d"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(d) [Reserved]", 
+                                "text": "(d) [Reserved]", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p1113586708", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "447-21-p1113586708-a", 
+                                    "447-21-p1113586708-b", 
+                                    "447-21-p1113586708-c", 
+                                    "447-21-p1113586708-d"
+                                ], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p1113586708"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "", 
+                                "text": "", 
+                                "title": "category iii\u2014ammunition"
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p731147738-a", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p731147738", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) Rockets (including but not limited to meteorological and other sounding rockets), bombs, grenades, torpedoes, depth charges, land and naval mines, as well as launchers for such defense articles, and demolition blocks and blasting caps.", 
+                                "text": "(a) Rockets (including but not limited to meteorological and other sounding rockets), bombs, grenades, torpedoes, depth charges, land and naval mines, as well as launchers for such defense articles, and demolition blocks and blasting caps.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p731147738-b", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p731147738", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) Launch vehicles and missile and anti-missile systems including but not limited to guided, tactical and strategic missiles, launchers, and systems.", 
+                                "text": "(b) Launch vehicles and missile and anti-missile systems including but not limited to guided, tactical and strategic missiles, launchers, and systems.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p731147738-c", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p731147738", 
+                                    "c"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(c) Apparatus, devices, and materials for the handling, control, activation, monitoring, detection, protection, discharge, or detonation of the articles in paragraphs (a) and (b) of this category. Articles in this category include, but are not limited to, the following: Fuses and components for the items in this category, bomb racks and shackles, bomb shackle release units, bomb ejectors, torpedo tubes, torpedo and guided missile boosters, guidance system equipment and parts, launching racks and projectors, pistols (exploders), igniters, fuze arming devices, intervalometers, guided missile launchers and specialized handling equipment, and hardened missile launching facilities.", 
+                                "text": "(c) Apparatus, devices, and materials for the handling, control, activation, monitoring, detection, protection, discharge, or detonation of the articles in paragraphs (a) and (b) of this category. Articles in this category include, but are not limited to, the following: Fuses and components for the items in this category, bomb racks and shackles, bomb shackle release units, bomb ejectors, torpedo tubes, torpedo and guided missile boosters, guidance system equipment and parts, launching racks and projectors, pistols (exploders), igniters, fuze arming devices, intervalometers, guided missile launchers and specialized handling equipment, and hardened missile launching facilities.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p731147738-d", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p731147738", 
+                                    "d"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(d) Missile and space vehicle powerplants.", 
+                                "text": "(d) Missile and space vehicle powerplants.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p731147738-e", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p731147738", 
+                                    "e"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(e) Military explosive excavating devices.", 
+                                "text": "(e) Military explosive excavating devices.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p731147738-f", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p731147738", 
+                                    "f"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(f) [Reserved]", 
+                                "text": "(f) [Reserved]", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p731147738-g", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p731147738", 
+                                    "g"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(g) Non/nuclear warheads for rockets and guided missiles.", 
+                                "text": "(g) Non/nuclear warheads for rockets and guided missiles.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p731147738-h-p1-a", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p731147738", 
+                                    "h", 
+                                    "p1", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) Electric squibs.", 
+                                "text": "(a) Electric squibs.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p731147738-h-p1-b", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p731147738", 
+                                    "h", 
+                                    "p1", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) No. 6 and No. 8 blasting caps, including electric ones.", 
+                                "text": "(b) No. 6 and No. 8 blasting caps, including electric ones.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p731147738-h-p1-c", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p731147738", 
+                                    "h", 
+                                    "p1", 
+                                    "c"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(c) Delay electric blasting caps (including No. 6 and No. 8 millisecond ones).", 
+                                "text": "(c) Delay electric blasting caps (including No. 6 and No. 8 millisecond ones).", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p731147738-h-p1-d", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p731147738", 
+                                    "h", 
+                                    "p1", 
+                                    "d"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(d) Seismograph electric blasting caps (including SSS, Static-Master, Vibrocap SR, and SEISMO SR).", 
+                                "text": "(d) Seismograph electric blasting caps (including SSS, Static-Master, Vibrocap SR, and SEISMO SR).", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p731147738-h-p1-e", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p731147738", 
+                                    "h", 
+                                    "p1", 
+                                    "e"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(e) Oil well perforating devices.", 
+                                "text": "(e) Oil well perforating devices.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p731147738-h-p1", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "447-21-p731147738-h-p1-a", 
+                                    "447-21-p731147738-h-p1-b", 
+                                    "447-21-p731147738-h-p1-c", 
+                                    "447-21-p731147738-h-p1-d", 
+                                    "447-21-p731147738-h-p1-e"
+                                ], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p731147738", 
+                                    "h", 
+                                    "p1"
+                                ], 
+                                "node_type": "note", 
+                                "tagged_text": "Military demolition blocks and blasting caps referred to in Category IV(a) do not include the following articles:", 
+                                "text": "Military demolition blocks and blasting caps referred to in Category IV(a) do not include the following articles:", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p731147738-h", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "447-21-p731147738-h-p1"
+                                ], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p731147738", 
+                                    "h"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(h) All specifically designed components or modified components, parts, accessories, attachments, and associated equipment for the articles in this category.", 
+                                "text": "(h) All specifically designed components or modified components, parts, accessories, attachments, and associated equipment for the articles in this category.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p731147738", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "447-21-p731147738-a", 
+                                    "447-21-p731147738-b", 
+                                    "447-21-p731147738-c", 
+                                    "447-21-p731147738-d", 
+                                    "447-21-p731147738-e", 
+                                    "447-21-p731147738-f", 
+                                    "447-21-p731147738-g", 
+                                    "447-21-p731147738-h"
+                                ], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p731147738"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "", 
+                                "text": "", 
+                                "title": "category iv\u2014launch vehicles, guided missiles, ballistic missiles, rockets, torpedoes, bombs and mines"
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2050545867", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2050545867"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "", 
+                                "text": "", 
+                                "title": "category v [Reserved]"
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2201854344-a", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2201854344", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) Vessels of War, if they are armed and equipped with offensive or defensive weapon systems, including but not limited to amphibious warfare vessels, landing craft, mine warfare vessels, patrol vessels, auxiliary vessels, service craft, experimental types of naval ships, and any vessels specifically designed or modified for military purposes or other surface vessels equipped with offensive or defensive military systems.", 
+                                "text": "(a) Vessels of War, if they are armed and equipped with offensive or defensive weapon systems, including but not limited to amphibious warfare vessels, landing craft, mine warfare vessels, patrol vessels, auxiliary vessels, service craft, experimental types of naval ships, and any vessels specifically designed or modified for military purposes or other surface vessels equipped with offensive or defensive military systems.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2201854344-b", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2201854344", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) Turrets and gun mounts, special weapons systems, protective systems, and other components, parts, attachments, and accessories specifically designed or modified for such articles on combatant vessels.", 
+                                "text": "(b) Turrets and gun mounts, special weapons systems, protective systems, and other components, parts, attachments, and accessories specifically designed or modified for such articles on combatant vessels.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2201854344-c", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2201854344", 
+                                    "c"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(c)-(d)[Reserved]", 
+                                "text": "(c)-(d)[Reserved]", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2201854344-e-p1-a-1-i", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2201854344", 
+                                    "e", 
+                                    "p1", 
+                                    "a", 
+                                    "1", 
+                                    "i"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(i) Aircraft carriers (CV, CVN)", 
+                                "text": "(i) Aircraft carriers (CV, CVN)", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2201854344-e-p1-a-1-ii", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2201854344", 
+                                    "e", 
+                                    "p1", 
+                                    "a", 
+                                    "1", 
+                                    "ii"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(ii) Battleships (BB)", 
+                                "text": "(ii) Battleships (BB)", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2201854344-e-p1-a-1-iii", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2201854344", 
+                                    "e", 
+                                    "p1", 
+                                    "a", 
+                                    "1", 
+                                    "iii"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(iii) Cruisers (CA, CG, CGN)", 
+                                "text": "(iii) Cruisers (CA, CG, CGN)", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2201854344-e-p1-a-1-iv", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2201854344", 
+                                    "e", 
+                                    "p1", 
+                                    "a", 
+                                    "1", 
+                                    "iv"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(iv) Destroyers (DD, DDG)", 
+                                "text": "(iv) Destroyers (DD, DDG)", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2201854344-e-p1-a-1-v", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2201854344", 
+                                    "e", 
+                                    "p1", 
+                                    "a", 
+                                    "1", 
+                                    "v"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(v) Frigates (FF, FFG)", 
+                                "text": "(v) Frigates (FF, FFG)", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2201854344-e-p1-a-1-vi", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2201854344", 
+                                    "e", 
+                                    "p1", 
+                                    "a", 
+                                    "1", 
+                                    "vi"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(vi) Submarines (SS, SSN, SSBN, SSG, SSAG).", 
+                                "text": "(vi) Submarines (SS, SSN, SSBN, SSG, SSAG).", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2201854344-e-p1-a-1", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "447-21-p2201854344-e-p1-a-1-i", 
+                                    "447-21-p2201854344-e-p1-a-1-ii", 
+                                    "447-21-p2201854344-e-p1-a-1-iii", 
+                                    "447-21-p2201854344-e-p1-a-1-iv", 
+                                    "447-21-p2201854344-e-p1-a-1-v", 
+                                    "447-21-p2201854344-e-p1-a-1-vi"
+                                ], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2201854344", 
+                                    "e", 
+                                    "p1", 
+                                    "a", 
+                                    "1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(1) Warships (including nuclear-powered versions):", 
+                                "text": "(1) Warships (including nuclear-powered versions):", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2201854344-e-p1-a-2-i", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2201854344", 
+                                    "e", 
+                                    "p1", 
+                                    "a", 
+                                    "2", 
+                                    "i"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(i) Patrol Combatants (PC, PHM)", 
+                                "text": "(i) Patrol Combatants (PC, PHM)", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2201854344-e-p1-a-2-ii", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2201854344", 
+                                    "e", 
+                                    "p1", 
+                                    "a", 
+                                    "2", 
+                                    "ii"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(ii) Amphibious Helicopter/Landing Craft Carriers (LHA, LPD, LPH)", 
+                                "text": "(ii) Amphibious Helicopter/Landing Craft Carriers (LHA, LPD, LPH)", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2201854344-e-p1-a-2-iii", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2201854344", 
+                                    "e", 
+                                    "p1", 
+                                    "a", 
+                                    "2", 
+                                    "iii"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(iii) Amphibious Landing Craft Carriers (LKA, LPA, LSD, LST)", 
+                                "text": "(iii) Amphibious Landing Craft Carriers (LKA, LPA, LSD, LST)", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2201854344-e-p1-a-2-iv", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2201854344", 
+                                    "e", 
+                                    "p1", 
+                                    "a", 
+                                    "2", 
+                                    "iv"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(iv) Amphibious Command Ships (LCC)", 
+                                "text": "(iv) Amphibious Command Ships (LCC)", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2201854344-e-p1-a-2-v", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2201854344", 
+                                    "e", 
+                                    "p1", 
+                                    "a", 
+                                    "2", 
+                                    "v"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(v) Mine Warfare Ships (MSO).", 
+                                "text": "(v) Mine Warfare Ships (MSO).", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2201854344-e-p1-a-2", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "447-21-p2201854344-e-p1-a-2-i", 
+                                    "447-21-p2201854344-e-p1-a-2-ii", 
+                                    "447-21-p2201854344-e-p1-a-2-iii", 
+                                    "447-21-p2201854344-e-p1-a-2-iv", 
+                                    "447-21-p2201854344-e-p1-a-2-v"
+                                ], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2201854344", 
+                                    "e", 
+                                    "p1", 
+                                    "a", 
+                                    "2"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(2) Other Combatant Classifications:", 
+                                "text": "(2) Other Combatant Classifications:", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2201854344-e-p1-a", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "447-21-p2201854344-e-p1-a-1", 
+                                    "447-21-p2201854344-e-p1-a-2"
+                                ], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2201854344", 
+                                    "e", 
+                                    "p1", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) Combatant vessels:", 
+                                "text": "(a) Combatant vessels:", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2201854344-e-p1-b-1-i", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2201854344", 
+                                    "e", 
+                                    "p1", 
+                                    "b", 
+                                    "1", 
+                                    "i"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(i) Under way Replenishment (AD, AF, AFS, AO, AOE, AOR)", 
+                                "text": "(i) Under way Replenishment (AD, AF, AFS, AO, AOE, AOR)", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2201854344-e-p1-b-1-ii", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2201854344", 
+                                    "e", 
+                                    "p1", 
+                                    "b", 
+                                    "1", 
+                                    "ii"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(ii) Material Support (AD, AR, AS).", 
+                                "text": "(ii) Material Support (AD, AR, AS).", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2201854344-e-p1-b-1", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "447-21-p2201854344-e-p1-b-1-i", 
+                                    "447-21-p2201854344-e-p1-b-1-ii"
+                                ], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2201854344", 
+                                    "e", 
+                                    "p1", 
+                                    "b", 
+                                    "1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(1) Mobile Logistics Support:", 
+                                "text": "(1) Mobile Logistics Support:", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2201854344-e-p1-b-2-i", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2201854344", 
+                                    "e", 
+                                    "p1", 
+                                    "b", 
+                                    "2", 
+                                    "i"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(i) Fleet Support Ships (ARS, ASR, ATA, ATF, ATS)", 
+                                "text": "(i) Fleet Support Ships (ARS, ASR, ATA, ATF, ATS)", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2201854344-e-p1-b-2-ii", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2201854344", 
+                                    "e", 
+                                    "p1", 
+                                    "b", 
+                                    "2", 
+                                    "ii"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(ii) Other Auxiliaries (AG, AGDS, AGF, AGM, AGOR, AGOS, AGS, AH, AK, AKR, AOG, AOT, AP, APB, ARC, ARL, AVM, AVT).", 
+                                "text": "(ii) Other Auxiliaries (AG, AGDS, AGF, AGM, AGOR, AGOS, AGS, AH, AK, AKR, AOG, AOT, AP, APB, ARC, ARL, AVM, AVT).", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2201854344-e-p1-b-2", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "447-21-p2201854344-e-p1-b-2-i", 
+                                    "447-21-p2201854344-e-p1-b-2-ii"
+                                ], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2201854344", 
+                                    "e", 
+                                    "p1", 
+                                    "b", 
+                                    "2"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(2) Support Ships:", 
+                                "text": "(2) Support Ships:", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2201854344-e-p1-b", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "447-21-p2201854344-e-p1-b-1", 
+                                    "447-21-p2201854344-e-p1-b-2"
+                                ], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2201854344", 
+                                    "e", 
+                                    "p1", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) Auxiliaries:", 
+                                "text": "(b) Auxiliaries:", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2201854344-e-p1-c-1-i", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2201854344", 
+                                    "e", 
+                                    "p1", 
+                                    "c", 
+                                    "1", 
+                                    "i"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(i) Coastal Patrol Combatants (PB, PCF, PCH, PTF)", 
+                                "text": "(i) Coastal Patrol Combatants (PB, PCF, PCH, PTF)", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2201854344-e-p1-c-1-ii", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2201854344", 
+                                    "e", 
+                                    "p1", 
+                                    "c", 
+                                    "1", 
+                                    "ii"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(ii) River, Roadstead Craft (ATC, PBR).", 
+                                "text": "(ii) River, Roadstead Craft (ATC, PBR).", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2201854344-e-p1-c-1", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "447-21-p2201854344-e-p1-c-1-i", 
+                                    "447-21-p2201854344-e-p1-c-1-ii"
+                                ], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2201854344", 
+                                    "e", 
+                                    "p1", 
+                                    "c", 
+                                    "1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(1) Patrol Craft:", 
+                                "text": "(1) Patrol Craft:", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2201854344-e-p1-c-2-i", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2201854344", 
+                                    "e", 
+                                    "p1", 
+                                    "c", 
+                                    "2", 
+                                    "i"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(i) Landing Craft (AALC, LCAC, LCM, LCPL, LCPR, LCU, LWT, SLWT)", 
+                                "text": "(i) Landing Craft (AALC, LCAC, LCM, LCPL, LCPR, LCU, LWT, SLWT)", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2201854344-e-p1-c-2-ii", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2201854344", 
+                                    "e", 
+                                    "p1", 
+                                    "c", 
+                                    "2", 
+                                    "ii"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(ii) Special Warfare Craft (LSSC, MSSC, SDV, SWCL, SWCM).", 
+                                "text": "(ii) Special Warfare Craft (LSSC, MSSC, SDV, SWCL, SWCM).", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2201854344-e-p1-c-2", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "447-21-p2201854344-e-p1-c-2-i", 
+                                    "447-21-p2201854344-e-p1-c-2-ii"
+                                ], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2201854344", 
+                                    "e", 
+                                    "p1", 
+                                    "c", 
+                                    "2"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(2) Amphibious Warfare Craft:", 
+                                "text": "(2) Amphibious Warfare Craft:", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2201854344-e-p1-c-3-i", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2201854344", 
+                                    "e", 
+                                    "p1", 
+                                    "c", 
+                                    "3", 
+                                    "i"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(i) Mine Countermeasures Craft (MSB, MSD, MSI, MSM, MSR).", 
+                                "text": "(i) Mine Countermeasures Craft (MSB, MSD, MSI, MSM, MSR).", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2201854344-e-p1-c-3", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "447-21-p2201854344-e-p1-c-3-i"
+                                ], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2201854344", 
+                                    "e", 
+                                    "p1", 
+                                    "c", 
+                                    "3"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(3) Mine Warfare Craft:", 
+                                "text": "(3) Mine Warfare Craft:", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2201854344-e-p1-c", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "447-21-p2201854344-e-p1-c-1", 
+                                    "447-21-p2201854344-e-p1-c-2", 
+                                    "447-21-p2201854344-e-p1-c-3"
+                                ], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2201854344", 
+                                    "e", 
+                                    "p1", 
+                                    "c"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(c) Combatant Craft:", 
+                                "text": "(c) Combatant Craft:", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2201854344-e-p1-d-1", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2201854344", 
+                                    "e", 
+                                    "p1", 
+                                    "d", 
+                                    "1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(1) Tugs (YTB, YTL, YTM)", 
+                                "text": "(1) Tugs (YTB, YTL, YTM)", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2201854344-e-p1-d-2", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2201854344", 
+                                    "e", 
+                                    "p1", 
+                                    "d", 
+                                    "2"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(2) Tankers (YO, YOG, YW)", 
+                                "text": "(2) Tankers (YO, YOG, YW)", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2201854344-e-p1-d-3", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2201854344", 
+                                    "e", 
+                                    "p1", 
+                                    "d", 
+                                    "3"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(3) Lighters (YC, YCF, YCV, YF, YFN, YFNB, YFNX, YFR, YFRN, YFU, YG, YGN, YOGN, YON, YOS, YSR, YWN)", 
+                                "text": "(3) Lighters (YC, YCF, YCV, YF, YFN, YFNB, YFNX, YFR, YFRN, YFU, YG, YGN, YOGN, YON, YOS, YSR, YWN)", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2201854344-e-p1-d-4", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2201854344", 
+                                    "e", 
+                                    "p1", 
+                                    "d", 
+                                    "4"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(4) Floating Dry Docks (AFDB, AFDL, AFDM, ARD, ARDM, YFD)", 
+                                "text": "(4) Floating Dry Docks (AFDB, AFDL, AFDM, ARD, ARDM, YFD)", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2201854344-e-p1-d-5", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2201854344", 
+                                    "e", 
+                                    "p1", 
+                                    "d", 
+                                    "5"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(5) Miscellaneous (APL, DSRV, DSV, IX, NR, YAG, YD, YDT, YFB, YFND, YEP, YFRT, YHLC, YM, YNG, YP, YPD, YR, YRB, YRBN, YRDH, YRDM, YRR, YRST, YSD).", 
+                                "text": "(5) Miscellaneous (APL, DSRV, DSV, IX, NR, YAG, YD, YDT, YFB, YFND, YEP, YFRT, YHLC, YM, YNG, YP, YPD, YR, YRB, YRBN, YRDH, YRDM, YRR, YRST, YSD).", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2201854344-e-p1-d", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "447-21-p2201854344-e-p1-d-1", 
+                                    "447-21-p2201854344-e-p1-d-2", 
+                                    "447-21-p2201854344-e-p1-d-3", 
+                                    "447-21-p2201854344-e-p1-d-4", 
+                                    "447-21-p2201854344-e-p1-d-5"
+                                ], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2201854344", 
+                                    "e", 
+                                    "p1", 
+                                    "d"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(d) Support and Service Craft:", 
+                                "text": "(d) Support and Service Craft:", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2201854344-e-p1-e-1", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2201854344", 
+                                    "e", 
+                                    "p1", 
+                                    "e", 
+                                    "1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(1) Coast Guard Cutters (CGC, WHEC, WMEC)", 
+                                "text": "(1) Coast Guard Cutters (CGC, WHEC, WMEC)", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2201854344-e-p1-e-2", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2201854344", 
+                                    "e", 
+                                    "p1", 
+                                    "e", 
+                                    "2"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(2) Patrol Craft (WPB)", 
+                                "text": "(2) Patrol Craft (WPB)", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2201854344-e-p1-e-3", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2201854344", 
+                                    "e", 
+                                    "p1", 
+                                    "e", 
+                                    "3"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(3) Icebreakers (WAGB)", 
+                                "text": "(3) Icebreakers (WAGB)", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2201854344-e-p1-e-4", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2201854344", 
+                                    "e", 
+                                    "p1", 
+                                    "e", 
+                                    "4"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(4) Oceanography Vessels (WAGO)", 
+                                "text": "(4) Oceanography Vessels (WAGO)", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2201854344-e-p1-e-5", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2201854344", 
+                                    "e", 
+                                    "p1", 
+                                    "e", 
+                                    "5"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(5) Special Vessels (WIX)", 
+                                "text": "(5) Special Vessels (WIX)", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2201854344-e-p1-e-6", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2201854344", 
+                                    "e", 
+                                    "p1", 
+                                    "e", 
+                                    "6"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(6) Buoy Tenders (WLB, WLM, WLI, WLR, WLIC)", 
+                                "text": "(6) Buoy Tenders (WLB, WLM, WLI, WLR, WLIC)", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2201854344-e-p1-e-7", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2201854344", 
+                                    "e", 
+                                    "p1", 
+                                    "e", 
+                                    "7"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(7) Tugs (WYTM, WYTL)", 
+                                "text": "(7) Tugs (WYTM, WYTL)", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2201854344-e-p1-e-8", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2201854344", 
+                                    "e", 
+                                    "p1", 
+                                    "e", 
+                                    "8"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(8) Light Ships (WLV).", 
+                                "text": "(8) Light Ships (WLV).", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2201854344-e-p1-e", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "447-21-p2201854344-e-p1-e-1", 
+                                    "447-21-p2201854344-e-p1-e-2", 
+                                    "447-21-p2201854344-e-p1-e-3", 
+                                    "447-21-p2201854344-e-p1-e-4", 
+                                    "447-21-p2201854344-e-p1-e-5", 
+                                    "447-21-p2201854344-e-p1-e-6", 
+                                    "447-21-p2201854344-e-p1-e-7", 
+                                    "447-21-p2201854344-e-p1-e-8"
+                                ], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2201854344", 
+                                    "e", 
+                                    "p1", 
+                                    "e"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(e) Coast Guard Patrol and Service Vessels and Craft:", 
+                                "text": "(e) Coast Guard Patrol and Service Vessels and Craft:", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2201854344-e-p1", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "447-21-p2201854344-e-p1-a", 
+                                    "447-21-p2201854344-e-p1-b", 
+                                    "447-21-p2201854344-e-p1-c", 
+                                    "447-21-p2201854344-e-p1-d", 
+                                    "447-21-p2201854344-e-p1-e"
+                                ], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2201854344", 
+                                    "e", 
+                                    "p1"
+                                ], 
+                                "node_type": "note", 
+                                "tagged_text": "The term \u201cvessels of war\u201d includes, but is not limited to, the following, if armed and equipped with offensive or defensive weapons systems:\u201d.", 
+                                "text": "The term \u201cvessels of war\u201d includes, but is not limited to, the following, if armed and equipped with offensive or defensive weapons systems:\u201d.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2201854344-e", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "447-21-p2201854344-e-p1"
+                                ], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2201854344", 
+                                    "e"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(e) Naval nuclear propulsion plants, their land prototypes and special facilities for their construction, support and maintenance. This includes any machinery, device, component, or equipment specifically developed or designed or modified for use in such plants or facilities.", 
+                                "text": "(e) Naval nuclear propulsion plants, their land prototypes and special facilities for their construction, support and maintenance. This includes any machinery, device, component, or equipment specifically developed or designed or modified for use in such plants or facilities.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2201854344", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "447-21-p2201854344-a", 
+                                    "447-21-p2201854344-b", 
+                                    "447-21-p2201854344-c", 
+                                    "447-21-p2201854344-e"
+                                ], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2201854344"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "", 
+                                "text": "", 
+                                "title": "category vi\u2014vessels of war and special naval equipment"
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p657734979-a", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p657734979", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) Military type armed or armored vehicles, military railway trains, and vehicles specifically designed or modified to accommodate mountings for arms or other specialized military equipment or fitted with such items.", 
+                                "text": "(a) Military type armed or armored vehicles, military railway trains, and vehicles specifically designed or modified to accommodate mountings for arms or other specialized military equipment or fitted with such items.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p657734979-b", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p657734979", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) Military tanks, combat engineer vehicles, bridge launching vehicles, halftracks and gun carriers.", 
+                                "text": "(b) Military tanks, combat engineer vehicles, bridge launching vehicles, halftracks and gun carriers.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p657734979-c", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p657734979", 
+                                    "c"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(c) Self-propelled guns and howitzers.", 
+                                "text": "(c) Self-propelled guns and howitzers.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p657734979-d", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p657734979", 
+                                    "d"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(d)-(e) [Reserved]", 
+                                "text": "(d)-(e) [Reserved]", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p657734979-f", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p657734979", 
+                                    "f"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(f) Amphibious vehicles.", 
+                                "text": "(f) Amphibious vehicles.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p657734979-g", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p657734979", 
+                                    "g"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(g) [Reserved]", 
+                                "text": "(g) [Reserved]", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p657734979-h-1", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p657734979", 
+                                    "h", 
+                                    "1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(1) Armored hulls, armored turrets and turret support rings;", 
+                                "text": "(1) Armored hulls, armored turrets and turret support rings;", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p657734979-h-2", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p657734979", 
+                                    "h", 
+                                    "2"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(2) Active protection systems (i.e., defensive systems that actively detect and track incoming threats and launch a ballistic, explosive, energy or electromagnetic countermeasure(s) to neutralize the threat prior to contact with a vehicle);", 
+                                "text": "(2) Active protection systems (i.e., defensive systems that actively detect and track incoming threats and launch a ballistic, explosive, energy or electromagnetic countermeasure(s) to neutralize the threat prior to contact with a vehicle);", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p657734979-h-3", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p657734979", 
+                                    "h", 
+                                    "3"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(3) Composite armor parts and components;", 
+                                "text": "(3) Composite armor parts and components;", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p657734979-h-4", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p657734979", 
+                                    "h", 
+                                    "4"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(4) Spaced armor components and parts, including slat armor parts and components;", 
+                                "text": "(4) Spaced armor components and parts, including slat armor parts and components;", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p657734979-h-5", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p657734979", 
+                                    "h", 
+                                    "5"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(5) Reactive armor and components;", 
+                                "text": "(5) Reactive armor and components;", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p657734979-h-6", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p657734979", 
+                                    "h", 
+                                    "6"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(6) Electromagnetic armor parts and components, including pulsed power;", 
+                                "text": "(6) Electromagnetic armor parts and components, including pulsed power;", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p657734979-h-7", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p657734979", 
+                                    "h", 
+                                    "7"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(7) Gun mount, stabilization, turret drive, and automatic elevating systems;", 
+                                "text": "(7) Gun mount, stabilization, turret drive, and automatic elevating systems;", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p657734979-h-8-i", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p657734979", 
+                                    "h", 
+                                    "8", 
+                                    "i"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(i) Remote or autonomous steering;", 
+                                "text": "(i) Remote or autonomous steering;", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p657734979-h-8-ii", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p657734979", 
+                                    "h", 
+                                    "8", 
+                                    "ii"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(ii) Acceleration and braking; and", 
+                                "text": "(ii) Acceleration and braking; and", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p657734979-h-8-iii", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p657734979", 
+                                    "h", 
+                                    "8", 
+                                    "iii"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(iii) A control system;", 
+                                "text": "(iii) A control system;", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p657734979-h-8", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "447-21-p657734979-h-8-i", 
+                                    "447-21-p657734979-h-8-ii", 
+                                    "447-21-p657734979-h-8-iii"
+                                ], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p657734979", 
+                                    "h", 
+                                    "8"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(8) Kits specifically designed to convert a vehicle in this category into either an unmanned or a driver-optional vehicle. For a kit to be controlled by this paragraph it must include all of the following:", 
+                                "text": "(8) Kits specifically designed to convert a vehicle in this category into either an unmanned or a driver-optional vehicle. For a kit to be controlled by this paragraph it must include all of the following:", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p657734979-h-9", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p657734979", 
+                                    "h", 
+                                    "9"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(9) Fire control computers, stored management systems, armaments control processors, vehicle weapon interface units and computers;", 
+                                "text": "(9) Fire control computers, stored management systems, armaments control processors, vehicle weapon interface units and computers;", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p657734979-h-10", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p657734979", 
+                                    "h", 
+                                    "10"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(10) Electro-optical sighting systems; and", 
+                                "text": "(10) Electro-optical sighting systems; and", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p657734979-h-11", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p657734979", 
+                                    "h", 
+                                    "11"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(11) Laser rangefinder or target designating devices.", 
+                                "text": "(11) Laser rangefinder or target designating devices.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p657734979-h", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "447-21-p657734979-h-1", 
+                                    "447-21-p657734979-h-2", 
+                                    "447-21-p657734979-h-3", 
+                                    "447-21-p657734979-h-4", 
+                                    "447-21-p657734979-h-5", 
+                                    "447-21-p657734979-h-6", 
+                                    "447-21-p657734979-h-7", 
+                                    "447-21-p657734979-h-8", 
+                                    "447-21-p657734979-h-9", 
+                                    "447-21-p657734979-h-10", 
+                                    "447-21-p657734979-h-11"
+                                ], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p657734979", 
+                                    "h"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(h) Tank and military vehicle parts, components, accessories, attachments, and associated equipment for offensive or defensive systems for the articles in this category, as follows:", 
+                                "text": "(h) Tank and military vehicle parts, components, accessories, attachments, and associated equipment for offensive or defensive systems for the articles in this category, as follows:", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p657734979-i-1", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p657734979", 
+                                    "i", 
+                                    "1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(1) Manufactured or fitted with materials or components to provide ballistic protection to level III (NIJ 0108.01, September 1985) or better;", 
+                                "text": "(1) Manufactured or fitted with materials or components to provide ballistic protection to level III (NIJ 0108.01, September 1985) or better;", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p657734979-i-2", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p657734979", 
+                                    "i", 
+                                    "2"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(2) A transmission to provide drive to both front and rear wheels simultaneously, including those vehicles having additional wheels for load bearing purposes whether driven or not;", 
+                                "text": "(2) A transmission to provide drive to both front and rear wheels simultaneously, including those vehicles having additional wheels for load bearing purposes whether driven or not;", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p657734979-i-3", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p657734979", 
+                                    "i", 
+                                    "3"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(3) Gross Vehicle Weight Rating (GVWR) greater than 4,500 kg; and", 
+                                "text": "(3) Gross Vehicle Weight Rating (GVWR) greater than 4,500 kg; and", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p657734979-i-4-p1", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p657734979", 
+                                    "i", 
+                                    "4", 
+                                    "p1"
+                                ], 
+                                "node_type": "note", 
+                                "tagged_text": "An \u201camphibious vehicle\u201d in Category VII(f) is a vehicle or chassis that is equipped to meet special military requirements, and that is designed or adapted for operation on or under water, as well as on land.", 
+                                "text": "An \u201camphibious vehicle\u201d in Category VII(f) is a vehicle or chassis that is equipped to meet special military requirements, and that is designed or adapted for operation on or under water, as well as on land.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p657734979-i-4-p2", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p657734979", 
+                                    "i", 
+                                    "4", 
+                                    "p2"
+                                ], 
+                                "node_type": "note", 
+                                "tagged_text": "Engines and engine parts are not included in paragraph (h) of Category VII.", 
+                                "text": "Engines and engine parts are not included in paragraph (h) of Category VII.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p657734979-i-4-p3", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p657734979", 
+                                    "i", 
+                                    "4", 
+                                    "p3"
+                                ], 
+                                "node_type": "note", 
+                                "tagged_text": "Paragraph (i) of Category VII does not apply to civil vehicles designed or modified for transporting money or valuables.", 
+                                "text": "Paragraph (i) of Category VII does not apply to civil vehicles designed or modified for transporting money or valuables.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p657734979-i-4", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "447-21-p657734979-i-4-p1", 
+                                    "447-21-p657734979-i-4-p2", 
+                                    "447-21-p657734979-i-4-p3"
+                                ], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p657734979", 
+                                    "i", 
+                                    "4"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(4) Designed or modified for off-road use.", 
+                                "text": "(4) Designed or modified for off-road use.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p657734979-i", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "447-21-p657734979-i-1", 
+                                    "447-21-p657734979-i-2", 
+                                    "447-21-p657734979-i-3", 
+                                    "447-21-p657734979-i-4"
+                                ], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p657734979", 
+                                    "i"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(i) Other ground vehicles having all of the following:", 
+                                "text": "(i) Other ground vehicles having all of the following:", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p657734979", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "447-21-p657734979-a", 
+                                    "447-21-p657734979-b", 
+                                    "447-21-p657734979-c", 
+                                    "447-21-p657734979-d", 
+                                    "447-21-p657734979-f", 
+                                    "447-21-p657734979-g", 
+                                    "447-21-p657734979-h", 
+                                    "447-21-p657734979-i"
+                                ], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p657734979"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "", 
+                                "text": "", 
+                                "title": "category vii\u2014tanks and military vehicles"
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2815177088-a", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2815177088", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) Aircraft, including but not limited to helicopters, non-expansive balloons, drones and lighter-than-air aircraft, which are specifically designed, modified, or equipped for military purposes. This includes but is not limited to the following military purposes: gunnery, bombing, rocket or missile launching, electronic and other surveillance, reconnaissance, refueling, aerial mapping, military liaison, cargo carrying or dropping, personnel dropping, airborne warning and control, and military training.", 
+                                "text": "(a) Aircraft, including but not limited to helicopters, non-expansive balloons, drones and lighter-than-air aircraft, which are specifically designed, modified, or equipped for military purposes. This includes but is not limited to the following military purposes: gunnery, bombing, rocket or missile launching, electronic and other surveillance, reconnaissance, refueling, aerial mapping, military liaison, cargo carrying or dropping, personnel dropping, airborne warning and control, and military training.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2815177088-b-p1-a", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2815177088", 
+                                    "b", 
+                                    "p1", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) Cargo aircraft bearing \u201cC\u201d designations and numbered C-45 through C-118 inclusive, and C-121 through C-125 inclusive, and C-131, using reciprocating engines only.", 
+                                "text": "(a) Cargo aircraft bearing \u201cC\u201d designations and numbered C-45 through C-118 inclusive, and C-121 through C-125 inclusive, and C-131, using reciprocating engines only.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2815177088-b-p1-b", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2815177088", 
+                                    "b", 
+                                    "p1", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) Trainer aircraft bearing \u201cT\u201d designations and using reciprocating engines or turboprop engines with less than 600 horsepower (s.h.p.).", 
+                                "text": "(b) Trainer aircraft bearing \u201cT\u201d designations and using reciprocating engines or turboprop engines with less than 600 horsepower (s.h.p.).", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2815177088-b-p1-c", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2815177088", 
+                                    "b", 
+                                    "p1", 
+                                    "c"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(c) Utility aircraft bearing \u201cU\u201d designations and using reciprocating engines only.", 
+                                "text": "(c) Utility aircraft bearing \u201cU\u201d designations and using reciprocating engines only.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2815177088-b-p1-d", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2815177088", 
+                                    "b", 
+                                    "p1", 
+                                    "d"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(d) All liaison aircraft bearing an \u201cL\u201d designation.", 
+                                "text": "(d) All liaison aircraft bearing an \u201cL\u201d designation.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2815177088-b-p1-e", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2815177088", 
+                                    "b", 
+                                    "p1", 
+                                    "e"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(e) All observation aircraft bearing \u201cO\u201d designations and using reciprocating engines.", 
+                                "text": "(e) All observation aircraft bearing \u201cO\u201d designations and using reciprocating engines.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2815177088-b-p1", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "447-21-p2815177088-b-p1-a", 
+                                    "447-21-p2815177088-b-p1-b", 
+                                    "447-21-p2815177088-b-p1-c", 
+                                    "447-21-p2815177088-b-p1-d", 
+                                    "447-21-p2815177088-b-p1-e"
+                                ], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2815177088", 
+                                    "b", 
+                                    "p1"
+                                ], 
+                                "node_type": "note", 
+                                "tagged_text": "In Category VIII, \u201caircraft\u201d means aircraft designed, modified, or equipped for a military purpose, including aircraft described as \u201cdemilitarized.\u201d All aircraft bearing an original military designation are included in Category VIII. However, the following aircraft are not so included so long as they have not been specifically equipped, reequipped, or modified for military operations:", 
+                                "text": "In Category VIII, \u201caircraft\u201d means aircraft designed, modified, or equipped for a military purpose, including aircraft described as \u201cdemilitarized.\u201d All aircraft bearing an original military designation are included in Category VIII. However, the following aircraft are not so included so long as they have not been specifically equipped, reequipped, or modified for military operations:", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2815177088-b", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "447-21-p2815177088-b-p1"
+                                ], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2815177088", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) [Reserved]", 
+                                "text": "(b) [Reserved]", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2815177088", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "447-21-p2815177088-a", 
+                                    "447-21-p2815177088-b"
+                                ], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2815177088"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "", 
+                                "text": "", 
+                                "title": "category viii\u2014aircraft and associated equipment"
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p3572827857", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p3572827857"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "", 
+                                "text": "", 
+                                "title": "categories ix-xiii [Reserved]"
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2689462642-a", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2689462642", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) Chemical agents, including but not limited to lung irritants, vesicants, lachrymators, and tear gases (except tear gas formulations containing 1% or less CN or CS), sternutators and irritant smoke, and nerve gases and incapacitating agents.", 
+                                "text": "(a) Chemical agents, including but not limited to lung irritants, vesicants, lachrymators, and tear gases (except tear gas formulations containing 1% or less CN or CS), sternutators and irritant smoke, and nerve gases and incapacitating agents.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2689462642-b", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2689462642", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) [Reserved]", 
+                                "text": "(b) [Reserved]", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2689462642-c", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2689462642", 
+                                    "c"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(c) All specifically designed or modified equipment, including components, parts, accessories, and attachments for disseminating the articles in paragraph (a) of this category.", 
+                                "text": "(c) All specifically designed or modified equipment, including components, parts, accessories, and attachments for disseminating the articles in paragraph (a) of this category.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2689462642-d-p1-a-1", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2689462642", 
+                                    "d", 
+                                    "p1", 
+                                    "a", 
+                                    "1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(1) Diphenylcyanoarsine (DC).", 
+                                "text": "(1) Diphenylcyanoarsine (DC).", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2689462642-d-p1-a-2", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2689462642", 
+                                    "d", 
+                                    "p1", 
+                                    "a", 
+                                    "2"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(2) Fluorine (but not fluorene).", 
+                                "text": "(2) Fluorine (but not fluorene).", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2689462642-d-p1-a-3", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2689462642", 
+                                    "d", 
+                                    "p1", 
+                                    "a", 
+                                    "3"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(3) Trichloronitro methane (chloropicrin PS).", 
+                                "text": "(3) Trichloronitro methane (chloropicrin PS).", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2689462642-d-p1-a", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "447-21-p2689462642-d-p1-a-1", 
+                                    "447-21-p2689462642-d-p1-a-2", 
+                                    "447-21-p2689462642-d-p1-a-3"
+                                ], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2689462642", 
+                                    "d", 
+                                    "p1", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) Lung irritants:", 
+                                "text": "(a) Lung irritants:", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2689462642-d-p1-b-1", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2689462642", 
+                                    "d", 
+                                    "p1", 
+                                    "b", 
+                                    "1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(1) B-Chlorovinyldichloroarsine (Lewisite, L).", 
+                                "text": "(1) B-Chlorovinyldichloroarsine (Lewisite, L).", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2689462642-d-p1-b-2", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2689462642", 
+                                    "d", 
+                                    "p1", 
+                                    "b", 
+                                    "2"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(2) Bis(dichlorethyl) sulphide (Mustard Gas, HD or H).", 
+                                "text": "(2) Bis(dichlorethyl) sulphide (Mustard Gas, HD or H).", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2689462642-d-p1-b-3", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2689462642", 
+                                    "d", 
+                                    "p1", 
+                                    "b", 
+                                    "3"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(3) Ethyldichloroarsine (ED).", 
+                                "text": "(3) Ethyldichloroarsine (ED).", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2689462642-d-p1-b-4", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2689462642", 
+                                    "d", 
+                                    "p1", 
+                                    "b", 
+                                    "4"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(4) Methyldichloroarsine (MD).", 
+                                "text": "(4) Methyldichloroarsine (MD).", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2689462642-d-p1-b", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "447-21-p2689462642-d-p1-b-1", 
+                                    "447-21-p2689462642-d-p1-b-2", 
+                                    "447-21-p2689462642-d-p1-b-3", 
+                                    "447-21-p2689462642-d-p1-b-4"
+                                ], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2689462642", 
+                                    "d", 
+                                    "p1", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) Vesicants:", 
+                                "text": "(b) Vesicants:", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2689462642-d-p1-c-1", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2689462642", 
+                                    "d", 
+                                    "p1", 
+                                    "c", 
+                                    "1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(1) A-Brombenzyl cyanide (BBC).", 
+                                "text": "(1) A-Brombenzyl cyanide (BBC).", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2689462642-d-p1-c-2", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2689462642", 
+                                    "d", 
+                                    "p1", 
+                                    "c", 
+                                    "2"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(2) Chloroacetophenone (CN).", 
+                                "text": "(2) Chloroacetophenone (CN).", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2689462642-d-p1-c-3", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2689462642", 
+                                    "d", 
+                                    "p1", 
+                                    "c", 
+                                    "3"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(3) Dibromodimethyl ether.", 
+                                "text": "(3) Dibromodimethyl ether.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2689462642-d-p1-c-4", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2689462642", 
+                                    "d", 
+                                    "p1", 
+                                    "c", 
+                                    "4"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(4) Dichlorodimethyl ether (ClCi).", 
+                                "text": "(4) Dichlorodimethyl ether (ClCi).", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2689462642-d-p1-c-5", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2689462642", 
+                                    "d", 
+                                    "p1", 
+                                    "c", 
+                                    "5"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(5) Ethyldibromoarsine.", 
+                                "text": "(5) Ethyldibromoarsine.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2689462642-d-p1-c-6", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2689462642", 
+                                    "d", 
+                                    "p1", 
+                                    "c", 
+                                    "6"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(6) Phenylcarbylamine chloride.", 
+                                "text": "(6) Phenylcarbylamine chloride.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2689462642-d-p1-c-7", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2689462642", 
+                                    "d", 
+                                    "p1", 
+                                    "c", 
+                                    "7"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(7) Tear gas solutions (CNB and CNS).", 
+                                "text": "(7) Tear gas solutions (CNB and CNS).", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2689462642-d-p1-c-8", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2689462642", 
+                                    "d", 
+                                    "p1", 
+                                    "c", 
+                                    "8"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(8) Tear gas orthochlorobenzalmalononitrile (CS).", 
+                                "text": "(8) Tear gas orthochlorobenzalmalononitrile (CS).", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2689462642-d-p1-c", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "447-21-p2689462642-d-p1-c-1", 
+                                    "447-21-p2689462642-d-p1-c-2", 
+                                    "447-21-p2689462642-d-p1-c-3", 
+                                    "447-21-p2689462642-d-p1-c-4", 
+                                    "447-21-p2689462642-d-p1-c-5", 
+                                    "447-21-p2689462642-d-p1-c-6", 
+                                    "447-21-p2689462642-d-p1-c-7", 
+                                    "447-21-p2689462642-d-p1-c-8"
+                                ], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2689462642", 
+                                    "d", 
+                                    "p1", 
+                                    "c"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(c) Lachrymators and tear gases:", 
+                                "text": "(c) Lachrymators and tear gases:", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2689462642-d-p1-d-1", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2689462642", 
+                                    "d", 
+                                    "p1", 
+                                    "d", 
+                                    "1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(1) Diphenylamine chloroarsine (Adamsite, DM).", 
+                                "text": "(1) Diphenylamine chloroarsine (Adamsite, DM).", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2689462642-d-p1-d-2", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2689462642", 
+                                    "d", 
+                                    "p1", 
+                                    "d", 
+                                    "2"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(2) Diphenylchloroarsine (BA).", 
+                                "text": "(2) Diphenylchloroarsine (BA).", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2689462642-d-p1-d-3", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2689462642", 
+                                    "d", 
+                                    "p1", 
+                                    "d", 
+                                    "3"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(3) Liquid pepper.", 
+                                "text": "(3) Liquid pepper.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2689462642-d-p1-d", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "447-21-p2689462642-d-p1-d-1", 
+                                    "447-21-p2689462642-d-p1-d-2", 
+                                    "447-21-p2689462642-d-p1-d-3"
+                                ], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2689462642", 
+                                    "d", 
+                                    "p1", 
+                                    "d"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(d) Sternutators and irritant smokes:", 
+                                "text": "(d) Sternutators and irritant smokes:", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2689462642-d-p1-e-1", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2689462642", 
+                                    "d", 
+                                    "p1", 
+                                    "e", 
+                                    "1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(1) Dimethylaminoethoxycyanophosphine oxide (GA).", 
+                                "text": "(1) Dimethylaminoethoxycyanophosphine oxide (GA).", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2689462642-d-p1-e-2", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2689462642", 
+                                    "d", 
+                                    "p1", 
+                                    "e", 
+                                    "2"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(2) Methylisopropoxyfluorophosphine oxide (GB).", 
+                                "text": "(2) Methylisopropoxyfluorophosphine oxide (GB).", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2689462642-d-p1-e-3", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2689462642", 
+                                    "d", 
+                                    "p1", 
+                                    "e", 
+                                    "3"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(3) Methylpinacolyloxyfluoriphosphine oxide (GD).", 
+                                "text": "(3) Methylpinacolyloxyfluoriphosphine oxide (GD).", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2689462642-d-p1-e", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "447-21-p2689462642-d-p1-e-1", 
+                                    "447-21-p2689462642-d-p1-e-2", 
+                                    "447-21-p2689462642-d-p1-e-3"
+                                ], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2689462642", 
+                                    "d", 
+                                    "p1", 
+                                    "e"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(e) Nerve agents, gases, and aerosols. These are toxic compounds which affect the nervous system, such as:", 
+                                "text": "(e) Nerve agents, gases, and aerosols. These are toxic compounds which affect the nervous system, such as:", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2689462642-d-p1-f", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2689462642", 
+                                    "d", 
+                                    "p1", 
+                                    "f"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(f) Antiplant chemicals, such as: Butyl 2-chloro-4-fluorophenoxyacetate (LNF).", 
+                                "text": "(f) Antiplant chemicals, such as: Butyl 2-chloro-4-fluorophenoxyacetate (LNF).", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2689462642-d-p1", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "447-21-p2689462642-d-p1-a", 
+                                    "447-21-p2689462642-d-p1-b", 
+                                    "447-21-p2689462642-d-p1-c", 
+                                    "447-21-p2689462642-d-p1-d", 
+                                    "447-21-p2689462642-d-p1-e", 
+                                    "447-21-p2689462642-d-p1-f"
+                                ], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2689462642", 
+                                    "d", 
+                                    "p1"
+                                ], 
+                                "node_type": "note", 
+                                "tagged_text": "A chemical agent in Category XIV(a) is a substance having military application which by its ordinary and direct chemical action produces a powerful physiological effect. The term \u201cchemical agent\u201d includes, but is not limited to, the following chemical compounds:", 
+                                "text": "A chemical agent in Category XIV(a) is a substance having military application which by its ordinary and direct chemical action produces a powerful physiological effect. The term \u201cchemical agent\u201d includes, but is not limited to, the following chemical compounds:", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2689462642-d", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "447-21-p2689462642-d-p1"
+                                ], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2689462642", 
+                                    "d"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(d)-(e)[Reserved]", 
+                                "text": "(d)-(e)[Reserved]", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p2689462642", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "447-21-p2689462642-a", 
+                                    "447-21-p2689462642-b", 
+                                    "447-21-p2689462642-c", 
+                                    "447-21-p2689462642-d"
+                                ], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p2689462642"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "", 
+                                "text": "", 
+                                "title": "category xiv\u2014toxicological agents and equipment and radiological equipment"
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p71248017", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p71248017"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "", 
+                                "text": "", 
+                                "title": "category xv [Reserved]"
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p60809944-a", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p60809944", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a)[Reserved]", 
+                                "text": "(a)[Reserved]", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p60809944-b-p1", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p60809944", 
+                                    "b", 
+                                    "p1"
+                                ], 
+                                "node_type": "note", 
+                                "tagged_text": "Category XVI does not include equipment, technical data, or services controlled by the Department of Energy pursuant to the Atomic Energy Act of 1954, as amended, and the Nuclear Non-Proliferation Act of 1978, as amended, or are government transfers authorized pursuant to these Acts.", 
+                                "text": "Category XVI does not include equipment, technical data, or services controlled by the Department of Energy pursuant to the Atomic Energy Act of 1954, as amended, and the Nuclear Non-Proliferation Act of 1978, as amended, or are government transfers authorized pursuant to these Acts.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p60809944-b", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "447-21-p60809944-b-p1"
+                                ], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p60809944", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) Modeling or simulation tools that model or simulate the environments generated by nuclear detonations or the effects of these environments on systems, subsystems, components, structures, or humans.", 
+                                "text": "(b) Modeling or simulation tools that model or simulate the environments generated by nuclear detonations or the effects of these environments on systems, subsystems, components, structures, or humans.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p60809944", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "447-21-p60809944-a", 
+                                    "447-21-p60809944-b"
+                                ], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p60809944"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "", 
+                                "text": "", 
+                                "title": "category xvi\u2014nuclear weapons design and test equipment"
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p1443292809", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p1443292809"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "", 
+                                "text": "", 
+                                "title": "category xvii-xix [Reserved]"
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p3715857268-a", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p3715857268", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) Submersible vessels, manned and unmanned, designed or modified for military purposes or having independent capability to maneuver vertically or horizontally at depths below 1,000 feet, or powered by nuclear propulsion plants.", 
+                                "text": "(a) Submersible vessels, manned and unmanned, designed or modified for military purposes or having independent capability to maneuver vertically or horizontally at depths below 1,000 feet, or powered by nuclear propulsion plants.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p3715857268-b", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p3715857268", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) Submersible vessels, manned or unmanned, designed or modified in whole or in part from technology developed by or for the U.S. Armed Forces.", 
+                                "text": "(b) Submersible vessels, manned or unmanned, designed or modified in whole or in part from technology developed by or for the U.S. Armed Forces.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p3715857268-c", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p3715857268", 
+                                    "c"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(c) Any of the articles in Category VI and elsewhere in this part specifically designed or modified for use with submersible vessels, and oceanographic or associated equipment assigned a military designation.", 
+                                "text": "(c) Any of the articles in Category VI and elsewhere in this part specifically designed or modified for use with submersible vessels, and oceanographic or associated equipment assigned a military designation.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p3715857268-d", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p3715857268", 
+                                    "d"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(d) Equipment, components, parts, accessories, and attachments specifically designed for any of the articles in paragraphs (a) and (b) of this category.", 
+                                "text": "(d) Equipment, components, parts, accessories, and attachments specifically designed for any of the articles in paragraphs (a) and (b) of this category.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p3715857268", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "447-21-p3715857268-a", 
+                                    "447-21-p3715857268-b", 
+                                    "447-21-p3715857268-c", 
+                                    "447-21-p3715857268-d"
+                                ], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p3715857268"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "", 
+                                "text": "", 
+                                "title": "category xx\u2014submersible vessels, oceanographic and associated equipment"
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21-p96906372", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "21", 
+                                    "p96906372"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "Any defense article or defense service not specifically enumerated in the other categories of the USMIL that has substantial military applicability and that has been specifically designed or modified for military purposes. The decision as to whether any article may be included in this category shall be made by the Attorney General with the concurrence of the Secretary of State and the Secretary of Defense.", 
+                                "text": "Any defense article or defense service not specifically enumerated in the other categories of the USMIL that has substantial military applicability and that has been specifically designed or modified for military purposes. The decision as to whether any article may be included in this category shall be made by the Attorney General with the concurrence of the Secretary of State and the Secretary of Defense.", 
+                                "title": "category xxi\u2014miscellaneous articles"
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "447-21", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "447-21-p1", 
+                                    "447-21-p2", 
+                                    "447-21-p70108241", 
+                                    "447-21-p957888316", 
+                                    "447-21-p1113586708", 
+                                    "447-21-p731147738", 
+                                    "447-21-p2050545867", 
+                                    "447-21-p2201854344", 
+                                    "447-21-p657734979", 
+                                    "447-21-p2815177088", 
+                                    "447-21-p3572827857", 
+                                    "447-21-p2689462642", 
+                                    "447-21-p71248017", 
+                                    "447-21-p60809944", 
+                                    "447-21-p1443292809", 
+                                    "447-21-p3715857268", 
+                                    "447-21-p96906372"
+                                ], 
+                                "label": [
+                                    "447", 
+                                    "21"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n            ", 
+                                "text": "", 
+                                "title": "\u00a7 447.21 The U.S. Munitions Import List."
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "2. Revise \u00a7 447.21 as follows:"
+        }
+    ], 
+    "cfr_parts": [
+        "447"
+    ], 
+    "cfr_title": 27, 
+    "comments_close": "2014-06-25", 
+    "dockets": [
+        "Docket No. ATF-25I", 
+        "AG Order No. 3423-2014"
+    ], 
+    "document_number": "2014-06778", 
+    "effective_on": "2014-04-28", 
+    "footnotes": {}, 
+    "fr_citation": "79 FR 17024", 
+    "fr_url": "https://www.federalregister.gov/documents/2014/03/27/2014-06778/importation-of-arms-ammunition-and-defense-articles-removal-of-certain-defense-articles-currently-on", 
+    "fr_volume": 79, 
+    "meta": {
+        "start_page": 17024
+    }, 
+    "primary_agency": "DEPARTMENT OF JUSTICE", 
+    "primary_docket": null, 
+    "publication_date": "2014-03-27", 
+    "regulation_id_numbers": [
+        "1140-AA45"
+    ], 
+    "section_by_section": [], 
+    "supporting_documents": [], 
+    "title": "Importation of Arms, Ammunition and Defense Articles\u2014Removal of Certain Defense Articles Currently on the U.S. Munitions Import List That No Longer Warrant Import Control Under the Arms Export Control Act (2011R-25P)", 
+    "versions": {
+        "447": {
+            "left": "2014-02580", 
+            "right": "2014-06778"
+        }
+    }
+}

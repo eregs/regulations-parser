@@ -1,0 +1,1665 @@
+{
+    "478-11": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                11
+            ], 
+            [
+                "delete", 
+                11, 
+                12
+            ], 
+            [
+                "insert", 
+                11, 
+                [
+                    "478-11-p3841034136"
+                ]
+            ], 
+            [
+                "equal", 
+                12, 
+                55
+            ], 
+            [
+                "insert", 
+                55, 
+                [
+                    "478-11-p242755046"
+                ]
+            ], 
+            [
+                "equal", 
+                55, 
+                79
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "478-11-p242755046": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "11", 
+                "p242755046"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "<E T=\"03\">Nonimmigrant visa.</E>A visa properly issued to an alien as an eligible nonimmigrant by a competent officer as provided in the Immigration and Nationality Act, 8 U.S.C. 1101<E T=\"03\">et seq.</E>", 
+            "text": "Nonimmigrant visa. A visa properly issued to an alien as an eligible nonimmigrant by a competent officer as provided in the Immigration and Nationality Act, 8 U.S.C. 1101 et seq.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-11-p3465012724": {
+        "op": "deleted"
+    }, 
+    "478-11-p3841034136": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "11", 
+                "p3841034136"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "<E T=\"03\">Chief, Federal Firearms Licensing Center (FFLC).</E> The ATF official responsible for the issuance and renewal of licenses under this part.", 
+            "text": "Chief, Federal Firearms Licensing Center (FFLC). The ATF official responsible for the issuance and renewal of licenses under this part.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-114-a-1-vi": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    47, 
+                    51
+                ], 
+                [
+                    "insert", 
+                    47, 
+                    "is\u2014"
+                ]
+            ]
+        ]
+    }, 
+    "478-120-a": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    4, 
+                    7
+                ], 
+                [
+                    "insert", 
+                    4, 
+                    "General. A"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    27, 
+                    40
+                ], 
+                [
+                    "insert", 
+                    27, 
+                    "temporarily importing or bringing firearms or ammunition into the United States for lawful hunting or sporting purposes must first obtain"
+                ]
+            ], 
+            [
+                "insert", 
+                44, 
+                "approved "
+            ], 
+            [
+                [
+                    "delete", 
+                    53, 
+                    477
+                ], 
+                [
+                    "insert", 
+                    53, 
+                    "6NIA (5330.3D)."
+                ]
+            ]
+        ]
+    }, 
+    "478-120-b": {
+        "child_ops": [
+            [
+                "insert", 
+                0, 
+                [
+                    "478-120-b-1", 
+                    "478-120-b-2"
+                ]
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    4, 
+                    73
+                ], 
+                [
+                    "insert", 
+                    4, 
+                    "Aliens admitted to"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    92, 
+                    175
+                ], 
+                [
+                    "insert", 
+                    92, 
+                    "under"
+                ]
+            ], 
+            [
+                "delete", 
+                178, 
+                267
+            ], 
+            [
+                [
+                    "delete", 
+                    280, 
+                    560
+                ], 
+                [
+                    "insert", 
+                    280, 
+                    "visa."
+                ]
+            ]
+        ]
+    }, 
+    "478-120-b-1": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "120", 
+                "b", 
+                "1"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(1) Any alien lawfully admitted to the United States under a nonimmigrant visa who completes an ATF Form 6NIA to import firearms or ammunition into the United States, or any licensee who completes an ATF Form 6 to import firearms or ammunition for such nonimmigrant alien, must attach applicable documentation to the Form 6NIA or Form 6 establishing the nonimmigrant alien falls within an exception specified in 18 U.S.C. 922(y)(2) (e.g., a hunting license or permit lawfully issued in the United States) or has obtained a waiver as specified in 18 U.S.C. 922(y)(3).", 
+            "text": "(1) Any alien lawfully admitted to the United States under a nonimmigrant visa who completes an ATF Form 6NIA to import firearms or ammunition into the United States, or any licensee who completes an ATF Form 6 to import firearms or ammunition for such nonimmigrant alien, must attach applicable documentation to the Form 6NIA or Form 6 establishing the nonimmigrant alien falls within an exception specified in 18 U.S.C. 922(y)(2) (e.g., a hunting license or permit lawfully issued in the United States) or has obtained a waiver as specified in 18 U.S.C. 922(y)(3).", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-120-b-2": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "120", 
+                "b", 
+                "2"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(2) Aliens admitted to the United States under a nonimmigrant visa importing or bringing firearms or ammunition into the United States must provide the United States Customs and Border Protection with applicable documentation (e.g., a hunting license or permit lawfully issued in the United States) establishing the nonimmigrant alien falls within an exception specified in 18 U.S.C. 922(y)(2) or has obtained a waiver as specified in 18 U.S.C. 922(y)(3) before the firearm or ammunition may be imported. This provision applies in all cases, whether or not a Form 6 is needed to bring the firearms or ammunition into the United States.", 
+            "text": "(2) Aliens admitted to the United States under a nonimmigrant visa importing or bringing firearms or ammunition into the United States must provide the United States Customs and Border Protection with applicable documentation (e.g., a hunting license or permit lawfully issued in the United States) establishing the nonimmigrant alien falls within an exception specified in 18 U.S.C. 922(y)(2) or has obtained a waiver as specified in 18 U.S.C. 922(y)(3) before the firearm or ammunition may be imported. This provision applies in all cases, whether or not a Form 6 is needed to bring the firearms or ammunition into the United States.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-124-c-3-iii": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                47, 
+                "an alien admitted to the United States under "
+            ], 
+            [
+                [
+                    "delete", 
+                    62, 
+                    67
+                ], 
+                [
+                    "insert", 
+                    62, 
+                    "visa"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    150, 
+                    181
+                ], 
+                [
+                    "insert", 
+                    150, 
+                    "prohibition in section 922(g)(5)(B) of the Act,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    382, 
+                    387
+                ], 
+                [
+                    "insert", 
+                    382, 
+                    "4473; and"
+                ]
+            ]
+        ]
+    }, 
+    "478-124-i": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    203, 
+                    257
+                ], 
+                [
+                    "insert", 
+                    203, 
+                    "Center (See \u00a7 478.21)."
+                ]
+            ]
+        ]
+    }, 
+    "478-124a-a": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    481, 
+                    496
+                ], 
+                [
+                    "insert", 
+                    481, 
+                    "acquisition of a"
+                ]
+            ]
+        ]
+    }, 
+    "478-125-e-p1": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    0, 
+                    56
+                ], 
+                [
+                    "insert", 
+                    0, 
+                    "|Firearms Acquisition and Disposition Record|Description"
+                ]
+            ]
+        ]
+    }, 
+    "478-125-f": {
+        "op": "modified", 
+        "text": [
+            [
+                "delete", 
+                1555, 
+                1784
+            ]
+        ]
+    }, 
+    "478-125-g": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    846, 
+                    847
+                ], 
+                [
+                    "insert", 
+                    846, 
+                    "            "
+                ]
+            ]
+        ]
+    }, 
+    "478-127": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    371, 
+                    442
+                ], 
+                [
+                    "insert", 
+                    371, 
+                    "244 Needy Road, Martinsburg,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    457, 
+                    463
+                ], 
+                [
+                    "insert", 
+                    457, 
+                    "25405,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    666, 
+                    674
+                ], 
+                [
+                    "insert", 
+                    666, 
+                    "Federal Firearms"
+                ]
+            ]
+        ]
+    }, 
+    "478-21-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    72, 
+                    89
+                ], 
+                [
+                    "insert", 
+                    72, 
+                    "7664 K Fullerton Road,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    112, 
+                    118
+                ], 
+                [
+                    "insert", 
+                    112, 
+                    "22150."
+                ]
+            ]
+        ]
+    }, 
+    "478-24-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    309, 
+                    315
+                ], 
+                [
+                    "insert", 
+                    309, 
+                    "National Archives and Records Administration (NARA). For information on the availability"
+                ]
+            ], 
+            [
+                "insert", 
+                319, 
+                "this material at NARA, call 202-741-6030, or go to: http://www.archives.gov/federal_register/code_of_federal_regulations/ibr_locations.html. This incorporation by reference was approved by "
+            ], 
+            [
+                "insert", 
+                323, 
+                "Director of the "
+            ], 
+            [
+                "delete", 
+                331, 
+                475
+            ]
+        ]
+    }, 
+    "478-25a": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    711, 
+                    726
+                ], 
+                [
+                    "insert", 
+                    711, 
+                    "1-800-788-7133."
+                ]
+            ]
+        ]
+    }, 
+    "478-32-a-5-ii": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    58, 
+                    60
+                ], 
+                [
+                    "insert", 
+                    58, 
+                    "has been admitted to the United States under"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    76, 
+                    82
+                ], 
+                [
+                    "insert", 
+                    76, 
+                    "visa:"
+                ]
+            ], 
+            [
+                "insert", 
+                162, 
+                "alien who has been lawfully admitted to the United States under a "
+            ], 
+            [
+                "insert", 
+                175, 
+                "visa, if that "
+            ], 
+            [
+                [
+                    "delete", 
+                    181, 
+                    198
+                ], 
+                [
+                    "insert", 
+                    181, 
+                    "is\u2014"
+                ]
+            ]
+        ]
+    }, 
+    "478-32-d-5-ii": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    58, 
+                    60
+                ], 
+                [
+                    "insert", 
+                    58, 
+                    "has been admitted to the United States under"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    76, 
+                    82
+                ], 
+                [
+                    "insert", 
+                    76, 
+                    "visa:"
+                ]
+            ], 
+            [
+                "insert", 
+                162, 
+                "alien who has been lawfully admitted to the United States under a "
+            ], 
+            [
+                "insert", 
+                175, 
+                "visa, if that "
+            ], 
+            [
+                [
+                    "delete", 
+                    181, 
+                    198
+                ], 
+                [
+                    "insert", 
+                    181, 
+                    "is\u2014"
+                ]
+            ]
+        ]
+    }, 
+    "478-32-f": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                41, 
+                "individual who has been admitted to the United States under a "
+            ], 
+            [
+                [
+                    "delete", 
+                    54, 
+                    59
+                ], 
+                [
+                    "insert", 
+                    54, 
+                    "visa"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    144, 
+                    152
+                ], 
+                [
+                    "insert", 
+                    144, 
+                    "section"
+                ]
+            ]
+        ]
+    }, 
+    "478-39a": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    404, 
+                    418
+                ], 
+                [
+                    "insert", 
+                    404, 
+                    "1-888-930-9275"
+                ]
+            ]
+        ]
+    }, 
+    "478-41-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    352, 
+                    360
+                ], 
+                [
+                    "insert", 
+                    352, 
+                    "Federal Firearms"
+                ]
+            ]
+        ]
+    }, 
+    "478-41-c": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    267, 
+                    275
+                ], 
+                [
+                    "insert", 
+                    267, 
+                    "Federal Firearms"
+                ]
+            ]
+        ]
+    }, 
+    "478-44-a-1": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                4
+            ], 
+            [
+                "delete", 
+                4, 
+                5
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "478-44-a-1-iii": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                271, 
+                "an alien who has been admitted to the United States under "
+            ], 
+            [
+                [
+                    "delete", 
+                    286, 
+                    292
+                ], 
+                [
+                    "insert", 
+                    286, 
+                    "visa,"
+                ]
+            ], 
+            [
+                "delete", 
+                341, 
+                354
+            ], 
+            [
+                [
+                    "delete", 
+                    386, 
+                    388
+                ], 
+                [
+                    "insert", 
+                    386, 
+                    "specified in 18 U.S.C. 922(y)(2) (e.g., a hunting license"
+                ]
+            ], 
+            [
+                "insert", 
+                392, 
+                "permit lawfully issued in the United States) or "
+            ], 
+            [
+                [
+                    "delete", 
+                    414, 
+                    502
+                ], 
+                [
+                    "insert", 
+                    414, 
+                    "as specified"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    506, 
+                    533
+                ], 
+                [
+                    "insert", 
+                    506, 
+                    "18 U.S.C. 922(y)(3); and"
+                ]
+            ]
+        ]
+    }, 
+    "478-44-a-1-iv": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    5, 
+                    66
+                ], 
+                [
+                    "insert", 
+                    5, 
+                    "Include the appropriate fee in the form"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    70, 
+                    91
+                ], 
+                [
+                    "insert", 
+                    70, 
+                    "money order or check made payable to the \u201cBureau of Alcohol, Tobacco, Firearms,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    96, 
+                    197
+                ], 
+                [
+                    "insert", 
+                    96, 
+                    "Explosives\u201d."
+                ]
+            ]
+        ]
+    }, 
+    "478-44-a-1-v": {
+        "op": "deleted"
+    }, 
+    "478-44-a-2": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    8, 
+                    13
+                ], 
+                [
+                    "insert", 
+                    8, 
+                    "Form"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    16, 
+                    27
+                ], 
+                [
+                    "insert", 
+                    16, 
+                    "may be obtained by contacting the"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    32, 
+                    114
+                ], 
+                [
+                    "insert", 
+                    32, 
+                    "Distribution Center (See \u00a7 478.21)."
+                ]
+            ]
+        ]
+    }, 
+    "478-44-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    316, 
+                    317
+                ], 
+                [
+                    "insert", 
+                    316, 
+                    "  "
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    582, 
+                    583
+                ], 
+                [
+                    "insert", 
+                    582, 
+                    "an alien who has been admitted to the United States under a"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    597, 
+                    607
+                ], 
+                [
+                    "insert", 
+                    597, 
+                    "visa, the"
+                ]
+            ], 
+            [
+                "delete", 
+                680, 
+                693
+            ], 
+            [
+                "insert", 
+                726, 
+                "specified in 18 U.S.C. 922(y)(2) (e.g., a hunting license or permit lawfully issued in the United States) or has obtained a waiver as specified in 18 U.S.C. 922(y)(3).The application must be executed under the penalties of perjury and the penalties imposed by 18 U.S.C. 924. The application shall include the appropriate fee in the form of a money order or check made payable "
+            ], 
+            [
+                [
+                    "delete", 
+                    729, 
+                    735
+                ], 
+                [
+                    "insert", 
+                    729, 
+                    "the Bureau of Alcohol, Tobacco, Firearms, and Explosives. ATF Form 7CR (Curios and Relics) may be"
+                ]
+            ], 
+            [
+                "delete", 
+                745, 
+                964
+            ], 
+            [
+                [
+                    "delete", 
+                    967, 
+                    1033
+                ], 
+                [
+                    "insert", 
+                    967, 
+                    "contacting the"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    1038, 
+                    1330
+                ], 
+                [
+                    "insert", 
+                    1038, 
+                    "Distribution Center (See \u00a7 478.21)."
+                ]
+            ]
+        ]
+    }, 
+    "478-45": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    216, 
+                    224
+                ], 
+                [
+                    "insert", 
+                    216, 
+                    "Federal Firearms"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    366, 
+                    377
+                ], 
+                [
+                    "insert", 
+                    366, 
+                    "in accordance with the instructions on the form, and the required fee. If the applicant is an alien who has been admitted to the United States under a nonimmigrant visa, the application must include applicable documentation demonstrating that the alien falls within an exception specified in 18 U.S.C. 922(y)(2) (e.g., a hunting license or permit lawfully issued in the United States) or has obtained a waiver as specified in 18 U.S.C. 922(y)(3).The Chief, Federal Firearms Licensing Center may, in writing, require the applicant for license renewal to also file completed ATF Form 7 or ATF Form 7CR in the manner required"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    381, 
+                    409
+                ], 
+                [
+                    "insert", 
+                    381, 
+                    "\u00a7 478.44. In the event the licensee does not timely file an ATF Form 8 Part II, the licensee must file an ATF Form 7 or ATF Form 7CR as required by \u00a7 478.44,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    414, 
+                    489
+                ], 
+                [
+                    "insert", 
+                    414, 
+                    "obtain the"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    499, 
+                    503
+                ], 
+                [
+                    "insert", 
+                    499, 
+                    "license before continuing business or collecting activity."
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    507, 
+                    520
+                ], 
+                [
+                    "insert", 
+                    507, 
+                    "an ATF Form 8 Part II"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    524, 
+                    819
+                ], 
+                [
+                    "insert", 
+                    524, 
+                    "not timely received through the mails, the licensee should so notify the"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    827, 
+                    835
+                ], 
+                [
+                    "insert", 
+                    827, 
+                    "Federal Firearms"
+                ]
+            ], 
+            [
+                "delete", 
+                846, 
+                1357
+            ]
+        ]
+    }, 
+    "478-47-a": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    129, 
+                    137
+                ], 
+                [
+                    "insert", 
+                    129, 
+                    "Federal Firearms"
+                ]
+            ]
+        ]
+    }, 
+    "478-47-b": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                5
+            ], 
+            [
+                "delete", 
+                5, 
+                6
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    15, 
+                    23
+                ], 
+                [
+                    "insert", 
+                    15, 
+                    "Federal Firearms"
+                ]
+            ]
+        ]
+    }, 
+    "478-47-b-4": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                186, 
+                " and"
+            ]
+        ]
+    }, 
+    "478-47-b-5": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    395, 
+                    404
+                ], 
+                [
+                    "insert", 
+                    395, 
+                    "time."
+                ]
+            ]
+        ]
+    }, 
+    "478-47-b-6": {
+        "op": "deleted"
+    }, 
+    "478-47-b-6-i": {
+        "op": "deleted"
+    }, 
+    "478-47-b-6-ii": {
+        "op": "deleted"
+    }, 
+    "478-47-b-6-iii": {
+        "op": "deleted"
+    }, 
+    "478-47-b-6-iv": {
+        "op": "deleted"
+    }, 
+    "478-47-c": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    15, 
+                    23
+                ], 
+                [
+                    "insert", 
+                    15, 
+                    "Federal Firearms"
+                ]
+            ]
+        ]
+    }, 
+    "478-47-d": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    59, 
+                    67
+                ], 
+                [
+                    "insert", 
+                    59, 
+                    "Federal Firearms"
+                ]
+            ]
+        ]
+    }, 
+    "478-48-a": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    248, 
+                    256
+                ], 
+                [
+                    "insert", 
+                    248, 
+                    "Federal Firearms"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    336, 
+                    344
+                ], 
+                [
+                    "insert", 
+                    336, 
+                    "Federal Firearms"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    565, 
+                    573
+                ], 
+                [
+                    "insert", 
+                    565, 
+                    "Federal Firearms"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    851, 
+                    859
+                ], 
+                [
+                    "insert", 
+                    851, 
+                    "Federal Firearms"
+                ]
+            ]
+        ]
+    }, 
+    "478-48-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    20, 
+                    46
+                ], 
+                [
+                    "insert", 
+                    20, 
+                    "Federal Firearms Licensing Center,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    161, 
+                    187
+                ], 
+                [
+                    "insert", 
+                    161, 
+                    "Federal Firearms Licensing Center,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    393, 
+                    419
+                ], 
+                [
+                    "insert", 
+                    393, 
+                    "Federal Firearms Licensing Center,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    595, 
+                    621
+                ], 
+                [
+                    "insert", 
+                    595, 
+                    "Federal Firearms Licensing Center,"
+                ]
+            ]
+        ]
+    }, 
+    "478-52-a": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    338, 
+                    346
+                ], 
+                [
+                    "insert", 
+                    338, 
+                    "Federal Firearms"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    642, 
+                    650
+                ], 
+                [
+                    "insert", 
+                    642, 
+                    "Federal Firearms"
+                ]
+            ], 
+            [
+                "insert", 
+                661, 
+                "Center "
+            ]
+        ]
+    }, 
+    "478-52-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    87, 
+                    95
+                ], 
+                [
+                    "insert", 
+                    87, 
+                    "Federal Firearms"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    395, 
+                    403
+                ], 
+                [
+                    "insert", 
+                    395, 
+                    "Federal Firearms"
+                ]
+            ]
+        ]
+    }, 
+    "478-53": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    294, 
+                    302
+                ], 
+                [
+                    "insert", 
+                    294, 
+                    "Federal Firearms"
+                ]
+            ]
+        ]
+    }, 
+    "478-54": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    477, 
+                    485
+                ], 
+                [
+                    "insert", 
+                    477, 
+                    "Federal Firearms"
+                ]
+            ]
+        ]
+    }, 
+    "478-56-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    198, 
+                    206
+                ], 
+                [
+                    "insert", 
+                    198, 
+                    "Federal Firearms"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    217, 
+                    224
+                ], 
+                [
+                    "insert", 
+                    217, 
+                    "Center ,"
+                ]
+            ]
+        ]
+    }, 
+    "478-57-a": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    198, 
+                    206
+                ], 
+                [
+                    "insert", 
+                    198, 
+                    "Federal Firearms"
+                ]
+            ]
+        ]
+    }, 
+    "478-60": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    51, 
+                    59
+                ], 
+                [
+                    "insert", 
+                    51, 
+                    "Federal Firearms"
+                ]
+            ]
+        ]
+    }, 
+    "478-71": {
+        "op": "modified", 
+        "text": [
+            [
+                "delete", 
+                22, 
+                45
+            ]
+        ]
+    }, 
+    "478-72": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    246, 
+                    257
+                ], 
+                [
+                    "insert", 
+                    246, 
+                    "denial.The"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    580, 
+                    590
+                ], 
+                [
+                    "insert", 
+                    580, 
+                    "held.Such"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    834, 
+                    862
+                ], 
+                [
+                    "insert", 
+                    834, 
+                    "shall"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    1011, 
+                    1042
+                ], 
+                [
+                    "insert", 
+                    1011, 
+                    "Director's"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    1140, 
+                    1147
+                ], 
+                [
+                    "insert", 
+                    1140, 
+                    "4501.A"
+                ]
+            ]
+        ]
+    }, 
+    "478-73-a": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    44, 
+                    70
+                ], 
+                [
+                    "insert", 
+                    44, 
+                    "has"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    368, 
+                    394
+                ], 
+                [
+                    "insert", 
+                    368, 
+                    "has"
+                ]
+            ]
+        ]
+    }, 
+    "478-73-b": {
+        "op": "modified", 
+        "text": [
+            [
+                "delete", 
+                188, 
+                211
+            ], 
+            [
+                "delete", 
+                470, 
+                493
+            ]
+        ]
+    }, 
+    "478-74": {
+        "op": "modified", 
+        "text": [
+            [
+                "delete", 
+                846, 
+                869
+            ]
+        ]
+    }, 
+    "478-76": {
+        "op": "modified", 
+        "text": [
+            [
+                "delete", 
+                482, 
+                505
+            ], 
+            [
+                [
+                    "delete", 
+                    735, 
+                    761
+                ], 
+                [
+                    "insert", 
+                    735, 
+                    ", in"
+                ]
+            ]
+        ]
+    }, 
+    "478-78": {
+        "op": "modified", 
+        "text": [
+            [
+                "delete", 
+                1207, 
+                1230
+            ]
+        ]
+    }, 
+    "478-95": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    492, 
+                    500
+                ], 
+                [
+                    "insert", 
+                    492, 
+                    "Federal Firearms"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    864, 
+                    871
+                ], 
+                [
+                    "insert", 
+                    864, 
+                    "Tobacco, Firearms,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    876, 
+                    885
+                ], 
+                [
+                    "insert", 
+                    876, 
+                    "Explosives."
+                ]
+            ]
+        ]
+    }, 
+    "478-96-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    433, 
+                    441
+                ], 
+                [
+                    "insert", 
+                    433, 
+                    "478.124."
+                ]
+            ]
+        ]
+    }, 
+    "478-99-c-5": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                103, 
+                "an alien who has been admitted to the United States under "
+            ], 
+            [
+                [
+                    "delete", 
+                    118, 
+                    124
+                ], 
+                [
+                    "insert", 
+                    118, 
+                    "visa:"
+                ]
+            ], 
+            [
+                "insert", 
+                200, 
+                "alien who has been lawfully admitted to the United States under a "
+            ], 
+            [
+                "insert", 
+                213, 
+                "visa if that "
+            ], 
+            [
+                "delete", 
+                219, 
+                233
+            ]
+        ]
+    }
+}

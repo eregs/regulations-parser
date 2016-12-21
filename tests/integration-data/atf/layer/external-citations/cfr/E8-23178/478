@@ -1,0 +1,791 @@
+{
+    "478-1-a": [
+        {
+            "citation_type": "STATUTES_AT_LARGE", 
+            "components": {
+                "page": "449", 
+                "volume": "100"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "100 Stat. 449", 
+            "url": "http://api.fdsys.gov/link?collection=statute&page=449&volume=100&year=mostrecent"
+        }, 
+        {
+            "citation_type": "STATUTES_AT_LARGE", 
+            "components": {
+                "page": "766", 
+                "volume": "100"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "100 Stat. 766", 
+            "url": "http://api.fdsys.gov/link?collection=statute&page=766&volume=100&year=mostrecent"
+        }, 
+        {
+            "citation_type": "STATUTES_AT_LARGE", 
+            "components": {
+                "page": "920", 
+                "volume": "100"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "100 Stat. 920", 
+            "url": "http://api.fdsys.gov/link?collection=statute&page=920&volume=100&year=mostrecent"
+        }, 
+        {
+            "citation_type": "STATUTES_AT_LARGE", 
+            "components": {
+                "page": "1536", 
+                "volume": "107"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "107 Stat. 1536", 
+            "url": "http://api.fdsys.gov/link?collection=statute&page=1536&volume=107&year=mostrecent"
+        }, 
+        {
+            "citation_type": "STATUTES_AT_LARGE", 
+            "components": {
+                "page": "1796", 
+                "volume": "108"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "108 Stat. 1796", 
+            "url": "http://api.fdsys.gov/link?collection=statute&page=1796&volume=108&year=mostrecent"
+        }, 
+        {
+            "citation_type": "STATUTES_AT_LARGE", 
+            "components": {
+                "page": "3009", 
+                "volume": "110"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "110 Stat. 3009", 
+            "url": "http://api.fdsys.gov/link?collection=statute&page=3009&volume=110&year=mostrecent"
+        }, 
+        {
+            "citation_type": "STATUTES_AT_LARGE", 
+            "components": {
+                "page": "2681", 
+                "volume": "112"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "112 Stat. 2681", 
+            "url": "http://api.fdsys.gov/link?collection=statute&page=2681&volume=112&year=mostrecent"
+        }, 
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "44", 
+                "title": "18"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "18 U.S.C. Chapter 44", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=44&title=18&year=mostrecent"
+        }, 
+        {
+            "citation_type": "STATUTES_AT_LARGE", 
+            "components": {
+                "page": "1213", 
+                "volume": "82"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "82 Stat. 1213", 
+            "url": "http://api.fdsys.gov/link?collection=statute&page=1213&volume=82&year=mostrecent"
+        }
+    ], 
+    "478-102-d-2": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "27", 
+                "part": "479"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "27 CFR part 479", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=479&titlenum=27&year=mostrecent"
+        }
+    ], 
+    "478-103-b": [
+        {
+            "citation_type": "OTHER", 
+            "components": {}, 
+            "locations": [
+                0
+            ], 
+            "text": "ATF I 5300.2", 
+            "url": "https://www.atf.gov/file/58806/download"
+        }
+    ], 
+    "478-103-b-p1-p6": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "44", 
+                "title": "18"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "18 U.S.C. Chapter 44", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=44&title=18&year=mostrecent"
+        }
+    ], 
+    "478-103-c": [
+        {
+            "citation_type": "OTHER", 
+            "components": {}, 
+            "locations": [
+                0, 
+                1, 
+                2
+            ], 
+            "text": "ATF I 5300.2", 
+            "url": "https://www.atf.gov/file/58806/download"
+        }
+    ], 
+    "478-103-e": [
+        {
+            "citation_type": "OTHER", 
+            "components": {}, 
+            "locations": [
+                0
+            ], 
+            "text": "ATF I 5300.1", 
+            "url": "https://atf-eregs.apps.cloud.gov/static/atf_eregs/5300_1.pdf"
+        }
+    ], 
+    "478-103-e-p1-p5": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "922", 
+                "title": "18"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "18 U.S.C. 922", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=922&title=18&year=mostrecent"
+        }, 
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "924", 
+                "title": "18"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "18 U.S.C. 924", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=924&title=18&year=mostrecent"
+        }, 
+        {
+            "citation_type": "OTHER", 
+            "components": {}, 
+            "locations": [
+                0, 
+                1
+            ], 
+            "text": "ATF I 5300.2", 
+            "url": "https://www.atf.gov/file/58806/download"
+        }
+    ], 
+    "478-11-p1048618300-a-1": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "1481", 
+                "title": "8"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "8 U.S.C. 1481", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=1481&title=8&year=mostrecent"
+        }
+    ], 
+    "478-11-p1048618300-a-2": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "1481", 
+                "title": "8"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "8 U.S.C. 1481", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=1481&title=8&year=mostrecent"
+        }
+    ], 
+    "478-11-p1993673923-b-2": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "850", 
+                "title": "10"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "10 U.S.C. 850", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=850&title=10&year=mostrecent"
+        }
+    ], 
+    "478-11-p1995683239": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "44", 
+                "title": "18"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "18 U.S.C. Chapter 44", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=44&title=18&year=mostrecent"
+        }
+    ], 
+    "478-11-p2056968548": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "922", 
+                "title": "18"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "18 U.S.C. 922", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=922&title=18&year=mostrecent"
+        }
+    ], 
+    "478-11-p2068244760": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "18", 
+                "title": "15"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "15 U.S.C. Chapter 18", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=18&title=15&year=mostrecent"
+        }
+    ], 
+    "478-11-p2270544587-a-1": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "25", 
+                "part": "11"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "25 CFR part 11", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=11&titlenum=25&year=mostrecent"
+        }
+    ], 
+    "478-11-p2455564399": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "53", 
+                "title": "26"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "26 U.S.C. Chapter 53", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=53&title=26&year=mostrecent"
+        }
+    ], 
+    "478-11-p2685568514": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "922", 
+                "title": "18"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "18 U.S.C. 922", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=922&title=18&year=mostrecent"
+        }
+    ], 
+    "478-11-p2963231022": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "802", 
+                "title": "21"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "21 U.S.C. 802", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=802&title=21&year=mostrecent"
+        }
+    ], 
+    "478-11-p715436957": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "1101", 
+                "title": "8"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "8 U.S.C. 1101", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=1101&title=8&year=mostrecent"
+        }
+    ], 
+    "478-118": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "5845", 
+                "title": "26"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "26 U.S.C. 5845", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=5845&title=26&year=mostrecent"
+        }, 
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "27", 
+                "part": "447"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "27 CFR part 447", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=447&titlenum=27&year=mostrecent"
+        }, 
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "27", 
+                "part": "479"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "27 CFR part 479", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=479&titlenum=27&year=mostrecent"
+        }
+    ], 
+    "478-119-b": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "922", 
+                "title": "18"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "18 U.S.C. 922", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=922&title=18&year=mostrecent"
+        }
+    ], 
+    "478-132-b-1": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "2133", 
+                "title": "42"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "42 U.S.C. 2133", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=2133&title=42&year=mostrecent"
+        }
+    ], 
+    "478-144-c-7": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "1481", 
+                "title": "8"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "8 U.S.C. 1481", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=1481&title=8&year=mostrecent"
+        }
+    ], 
+    "478-152-c-2": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "801", 
+                "title": "21"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "21 U.S.C. 801", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=801&title=21&year=mostrecent"
+        }, 
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "951", 
+                "title": "21"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "21 U.S.C. 951", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=951&title=21&year=mostrecent"
+        }
+    ], 
+    "478-171": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "2778", 
+                "title": "22"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "22 U.S.C. 2778", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=2778&title=22&year=mostrecent"
+        }
+    ], 
+    "478-2": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "1715", 
+                "title": "18"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "18 U.S.C. 1715", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=1715&title=18&year=mostrecent"
+        }, 
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "2778", 
+                "title": "22"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "22 U.S.C. 2778", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=2778&title=22&year=mostrecent"
+        }
+    ], 
+    "478-27": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "921", 
+                "title": "18"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "18 U.S.C. 921", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=921&title=18&year=mostrecent"
+        }
+    ], 
+    "478-32-a-3": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "802", 
+                "title": "21"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "21 U.S.C. 802", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=802&title=21&year=mostrecent"
+        }
+    ], 
+    "478-32-d-3": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "802", 
+                "title": "21"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "21 U.S.C. 802", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=802&title=21&year=mostrecent"
+        }
+    ], 
+    "478-32-f": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "922", 
+                "title": "18"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "18 U.S.C. 922", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=922&title=18&year=mostrecent"
+        }
+    ], 
+    "478-40-b-10": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "2778", 
+                "title": "22"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "22 U.S.C. 2778", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=2778&title=22&year=mostrecent"
+        }
+    ], 
+    "478-40-b-2": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "922", 
+                "title": "18"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "18 U.S.C. 922", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=922&title=18&year=mostrecent"
+        }
+    ], 
+    "478-40-b-7": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "2011", 
+                "title": "42"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "42 U.S.C. 2011", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=2011&title=42&year=mostrecent"
+        }
+    ], 
+    "478-40a-b-6": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "2778", 
+                "title": "22"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "22 U.S.C. 2778", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=2778&title=22&year=mostrecent"
+        }
+    ], 
+    "478-44-a-1-i": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "924", 
+                "title": "18"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "18 U.S.C. 924", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=924&title=18&year=mostrecent"
+        }
+    ], 
+    "478-44-b": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "924", 
+                "title": "18"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "18 U.S.C. 924", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=924&title=18&year=mostrecent"
+        }
+    ], 
+    "478-52-a": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "924", 
+                "title": "18"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "18 U.S.C. 924", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=924&title=18&year=mostrecent"
+        }
+    ], 
+    "478-73-a": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "922", 
+                "title": "18"
+            }, 
+            "locations": [
+                0, 
+                1
+            ], 
+            "text": "18 U.S.C. 922", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=922&title=18&year=mostrecent"
+        }
+    ], 
+    "478-74": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "922", 
+                "title": "18"
+            }, 
+            "locations": [
+                0, 
+                1
+            ], 
+            "text": "18 U.S.C. 922", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=922&title=18&year=mostrecent"
+        }
+    ], 
+    "478-76": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "26", 
+                "part": "601", 
+                "section": "521"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "26 CFR 601.521", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=601&section=521&titlenum=26&year=mostrecent"
+        }, 
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "31", 
+                "part": "8"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "31 CFR Part 8", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=8&titlenum=31&year=mostrecent"
+        }, 
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "26", 
+                "part": "601", 
+                "section": "527"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "601.527", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=601&section=527&titlenum=26&year=mostrecent"
+        }
+    ], 
+    "478-78": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "923", 
+                "title": "18"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "18 U.S.C. 923", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=923&title=18&year=mostrecent"
+        }
+    ], 
+    "478-92-a-1-ii-E": [
+        {
+            "citation_type": "CFR", 
+            "components": {
+                "cfr_title": "19", 
+                "part": "134"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "19 CFR part 134", 
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=134&titlenum=19&year=mostrecent"
+        }
+    ], 
+    "478-99-c-3": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "802", 
+                "title": "21"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "21 U.S.C. 802", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=802&title=21&year=mostrecent"
+        }
+    ], 
+    "478-99-e": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "929", 
+                "title": "18"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "18 U.S.C. 929", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=929&title=18&year=mostrecent"
+        }
+    ]
+}

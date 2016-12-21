@@ -1,0 +1,255 @@
+{
+    "amendments": [
+        {
+            "authority": "5 U.S.C. 552(a); 18 U.S.C. 921-931; 44 U.S.C. 3504(h).", 
+            "cfr_part": "478", 
+            "instruction": "1. The authority citation for 27 CFR part 478 is revised to read as follows:"
+        }, 
+        {
+            "cfr_part": "478", 
+            "changes": [
+                [
+                    "478-39a-a-1", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "39a", 
+                                    "a", 
+                                    "1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(1) Each licensee shall report the theft or loss of a firearm from the licensee's inventory (including any firearm which has been transferred from the licensee's inventory to a personal collection and held as a personal firearm for at least 1 year), or from the collection of a licensed collector, within 48 hours after the theft or loss is discovered.", 
+                                "text": "(1) Each licensee shall report the theft or loss of a firearm from the licensee's inventory (including any firearm which has been transferred from the licensee's inventory to a personal collection and held as a personal firearm for at least 1 year), or from the collection of a licensed collector, within 48 hours after the theft or loss is discovered.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "478-39a-a-2", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "39a", 
+                                    "a", 
+                                    "2"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(2) When a firearm is stolen or lost in transit on a common or contract carrier (which for purposes of this paragraph includes the U.S. Postal Service), it is considered stolen or lost from the transferor/sender licensee's inventory for reporting purposes. Therefore, the transferor/sender of the stolen or lost firearm shall report the theft or loss of the firearm within 48 hours after the transferor/sender discovers the theft or loss.", 
+                                "text": "(2) When a firearm is stolen or lost in transit on a common or contract carrier (which for purposes of this paragraph includes the U.S. Postal Service), it is considered stolen or lost from the transferor/sender licensee's inventory for reporting purposes. Therefore, the transferor/sender of the stolen or lost firearm shall report the theft or loss of the firearm within 48 hours after the transferor/sender discovers the theft or loss.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "478-39a-a", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "478-39a-a-1", 
+                                    "478-39a-a-2"
+                                ], 
+                                "label": [
+                                    "478", 
+                                    "39a", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a)", 
+                                "text": "(a)", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "478-39a-b", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "39a", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) Each licensee shall report the theft or loss by telephoning ATF at 1-888-930-9275 (nationwide toll-free number), and by preparing and submitting to ATF a Federal Firearms Licensee Theft/Loss Report, ATF Form 3310.11, in accordance with the instructions on the form. The original of the report shall be retained by the licensee as part of the licensee's required records.", 
+                                "text": "(b) Each licensee shall report the theft or loss by telephoning ATF at 1-888-930-9275 (nationwide toll-free number), and by preparing and submitting to ATF a Federal Firearms Licensee Theft/Loss Report, ATF Form 3310.11, in accordance with the instructions on the form. The original of the report shall be retained by the licensee as part of the licensee's required records.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "478-39a-c", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "39a", 
+                                    "c"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(c) When a licensee submits to ATF a Federal Firearms Licensee Theft/Loss Report, ATF Form 3310.11, for the theft or loss of a firearm registered under the National Firearms Act, this report also satisfies the notification requirement under \u00a7\u2009479.141 of this chapter.", 
+                                "text": "(c) When a licensee submits to ATF a Federal Firearms Licensee Theft/Loss Report, ATF Form 3310.11, for the theft or loss of a firearm registered under the National Firearms Act, this report also satisfies the notification requirement under \u00a7\u2009479.141 of this chapter.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "478-39a-d", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "39a", 
+                                    "d"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(d) Theft or loss of any firearm shall also be reported to the appropriate local authorities. If the location of the theft or loss is known, the local law enforcement agency at that location would be the appropriate local authority. Otherwise, the report should be made to the local law enforcement authorities at the licensee's location or business premises.", 
+                                "text": "(d) Theft or loss of any firearm shall also be reported to the appropriate local authorities. If the location of the theft or loss is known, the local law enforcement agency at that location would be the appropriate local authority. Otherwise, the report should be made to the local law enforcement authorities at the licensee's location or business premises.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "478-39a-e", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "39a", 
+                                    "e"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(e) Licensees shall reflect the theft or loss of a firearm as a disposition entry in the Record of Acquisition and Disposition required by subpart H of this part not later than 7 days following discovery of the theft or loss. The disposition entry shall record whether the incident is a theft or loss, the ATF-Issued Incident Number, and the Incident Number provided by the local law enforcement agency.", 
+                                "text": "(e) Licensees shall reflect the theft or loss of a firearm as a disposition entry in the Record of Acquisition and Disposition required by subpart H of this part not later than 7 days following discovery of the theft or loss. The disposition entry shall record whether the incident is a theft or loss, the ATF-Issued Incident Number, and the Incident Number provided by the local law enforcement agency.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "478-39a-f", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "39a", 
+                                    "f"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(f) Licensees who report the theft or loss of a firearm and later discover its whereabouts shall advise ATF at 1-888-930-9275 (nationwide toll-free number) that the firearm has been located, and shall re-enter the firearm in the Record of Acquisition and Disposition as an acquisition or disposition entry as appropriate.", 
+                                "text": "(f) Licensees who report the theft or loss of a firearm and later discover its whereabouts shall advise ATF at 1-888-930-9275 (nationwide toll-free number) that the firearm has been located, and shall re-enter the firearm in the Record of Acquisition and Disposition as an acquisition or disposition entry as appropriate.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "478-39a", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "478-39a-a", 
+                                    "478-39a-b", 
+                                    "478-39a-c", 
+                                    "478-39a-d", 
+                                    "478-39a-e", 
+                                    "478-39a-f"
+                                ], 
+                                "label": [
+                                    "478", 
+                                    "39a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n            ", 
+                                "text": "", 
+                                "title": "\u00a7 478.39a Reporting theft or loss of firearms."
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "2. Revise \u00a7\u2009478.39a to read as follows:"
+        }
+    ], 
+    "cfr_parts": [
+        "478"
+    ], 
+    "cfr_title": 27, 
+    "dockets": [
+        "Docket No. ATF 40F", 
+        "AG Order No. 3607-2016"
+    ], 
+    "document_number": "2016-00112", 
+    "effective_on": "2016-02-11", 
+    "footnotes": {
+        "1": "A crime gun is any firearm that is illegally possessed, used in a crime, or suspected by law enforcement officials of having been used in a crime or act of terrorism.", 
+        "10": "<em data-original=\"E-03\">See</em> 18 U.S.C. 923(g)(1)(A); 27 CFR 478.122(d), 478.123(d), 478.125(e).", 
+        "11": "<em data-original=\"E-03\">See</em> 18 U.S.C. 923(g)(3)(A); 27 CFR 478.126a.", 
+        "12": "The Department acknowledges its previous statements that section 923(g)(6) does not address  the reporting of thefts or losses of firearms in interstate shipments. <em data-original=\"E-03\">See</em> ATF, <em data-original=\"E-03\">Safety and Security Information for Federal Firearms Licensees,</em> ATF Pub. No. 3317.2, at 1 (rev. Feb. 2010), <em data-original=\"E-03\">https://www.atf.gov/file/58656/download; FFL or Interstate Theft Procedures and Information,</em>\n            <em data-original=\"E-03\">FFL Newsletter</em> (ATF, Washington, DC), Aug. 1998, at 5, <em data-original=\"E-03\">https://www.atf.gov/file/56391/download.</em> To the extent that the Department's prior statements, or ones like it, can be understood as the Department taking a position inconsistent with the interpretation of 923(g)(6) set forth in this final rule, the Department is \u201cat liberty to depart from its longstanding interpretation of a statute\u201d so long as it \u201cprovides a reasoned explanation for its decision.\u201d <em data-original=\"E-03\">TRT Telecomms. Corp.</em> v. <em data-original=\"E-03\">FCC,</em> 857 F.2d 1535, 1550 (D.C. Cir. 1988); <em data-original=\"E-03\">see also FCC</em> v. <em data-original=\"E-03\">Fox Television Stations, Inc.,</em> 556 U.S. 502, 514-15 (2009). The Department has explained above why it now interprets the term \u201cinventory\u201d in 923(g)(6) to encompass firearms that an FFL has shipped.", 
+        "13": "<em data-original=\"E-03\">See</em> U.C.C. 2-401(2) (\u201cUnless otherwise explicitly agreed title passes to the buyer at the time and place at which the seller completes his performance with reference to the physical delivery of the goods . . . [and] if the contract requires delivery at destination, title passes on tender there.\u201d)", 
+        "14": "For further guidance concerning the discovery and reporting of stolen and lost firearms, see ATF, <em data-original=\"E-03\">Safety and Security Information for Federal Firearms Licensees,</em> ATF Pub. No. 3317.2 (rev. Feb. 2010), <em data-original=\"E-03\">https://www.atf.gov/file/58656/download;</em> Open Letter to All Federal Firearms Licensees from Carson W. Carroll, Assistant Director, Enforcement Programs &amp; Services, ATF (Jan. 14, 2009), <em data-original=\"E-03\">https://www.atf.gov/file/60871/download.</em>", 
+        "15": "In the 2014 NPRM, the Department relied on the crime gun trace average for FY 2008 through FY 2012. In this final rule, the Department has used the more recent average from FY 2010 through FY 2014 because it believes that the updated figure more accurately reflects the actual benefits and costs of the final rule. The updated figure does not meaningfully change the Department's estimates of the rule's costs and benefits.", 
+        "16": "In the 2014 NPRM, the Department relied on BLS employee compensation data from December 2013. In this final rule, the Department has used the more recent BLS data from June 2015 because it believes that the more recent data more accurately reflects the actual benefits and costs of the final rule. The more recent BLS data does not meaningfully change the Department's estimates of the rule's costs and benefits.", 
+        "2": "For purposes of this rule, the Department considers the U.S. Postal Service a \u201ccommon or contract carrier.\u201d", 
+        "3": "Long before enactment of the Gun Control Act of 1968, Congress imposed limitations on the shipment of firearms. <em data-original=\"E-03\">See, e.g.,</em> Nonmailable Firearms Act of 1927, Public Law 69-583, 44 Stat. 1059 (codified at 18 U.S.C. 1715) (restricting mailing and delivery of concealable firearms); Federal Firearms Act of 1938, Public Law 75-785, 52 Stat. 1250 (codified at 15 U.S.C. 901 <em data-original=\"E-03\">et seq.</em>) (repealed 1968) (restricting interstate shipment of firearms).", 
+        "4": "<em data-original=\"E-03\">See District of Columbia</em> v. <em data-original=\"E-03\">Heller,</em> 554 U.S. 570, 626-27 (2008) (\u201c[N]othing in [the Supreme Court's] opinion [interpreting the Second Amendment] should be taken to cast doubt on . . . laws imposing conditions and qualifications on the commercial sale of arms.\u201d); <em data-original=\"E-03\">United States</em> v. <em data-original=\"E-03\">Decastro,</em> 682 F.3d 160, 168-69 (2d Cir. 2012) (statute prohibiting transporting into one's state of residence firearms acquired outside the state did not infringe the right to keep and bear arms under the Second Amendment).", 
+        "5": "<em data-original=\"E-03\">See Black's Law Dictionary</em> 901-02 (9th ed. 2009) (first definition: \u201c[a] detailed list of assets; esp., an executor's or administrator's detailed list of the probate-estate assets\u201d; second definition, as used in accounting: \u201c[t]he portion of a financial statement reflecting the value of a business's raw materials, works-in-progress, and finished products\u201d; third definition: \u201c[r]aw materials or goods in stock\u201d; fourth definition, as used in bankruptcy: \u201c[p]ersonal property leased or furnished, held for sale or lease, or to be furnished under a contract for service; raw materials, work in process, or materials used or consumed in a business, including farm products such as crops or livestock\u201d); <em data-original=\"E-03\">Merriam-Webster Online Dictionary</em> (definition 1a: \u201can itemized list of current assets as (1): a catalog of the property of an individual or estate [or] (2): a list of goods on hand\u201d; definition 1b: \u201ca survey of natural resources\u201d; definition 3: \u201cthe quantity of goods or materials on hand\u201d), <em data-original=\"E-03\">http://www.merriam-webster.com/dictionary/inventory;</em> 26 U.S.C. 865(i)(1), 1221(a)(1) (describing \u201cinventory property\u201d as \u201cstock in trade of the taxpayer or other property of a kind which would properly be included in the inventory of the taxpayer if on hand at the close of the taxable year, or property held by the taxpayer primarily for sale to customers in the ordinary course of his trade or business\u201d).", 
+        "6": "<em data-original=\"E-03\">See also Firearms Transaction Record,</em> ATF Rul. 76-15 (July1976) (recordkeeping requirements for pawned firearms); <em data-original=\"E-03\">Engaging in the Business of Dealing in Firearms (Auctioneers),</em> ATF Rul. 96-2 (Sept. 1996) (auctioneers must obtain a license as a dealer to take possession of firearms consigned for auction); ATF, <em data-original=\"E-03\">Federal Firearms Licensee Quick Reference and Best Practices Guide,</em> ATF Pub. No. 5300.15, at 8 (rev. Aug. 2010) (all firearms acquisitions must be documented in the A&amp;D book, including pawned and consignment firearms), <em data-original=\"E-03\">https://www.atf.gov/file/58676/download; Return of Firearms Received for Appraisal,</em>\n            <em data-original=\"E-03\">FFL Newsletter</em> (ATF, Washington, DC), Apr. 2015, at 4 (licensees must record firearms received for appraisal as a transaction on ATF Form 4473), <em data-original=\"E-03\">https://www.atf.gov/file/11691/download; Shot Show Q &amp; A,</em>\n            <em data-original=\"E-03\">FFL Newsletter</em> (ATF, Washington, DC), Jan. 2007, at 7, Q9 (licensees must treat firearms received for storage as acquisitions), <em data-original=\"E-03\">https://www.atf.gov/file/56436/download.</em>", 
+        "7": "<em data-original=\"E-03\">See</em> 18 U.S.C. 922(e) (requiring notice to the common or contract carrier of firearms being transported or shipped), 922(f) (prohibiting common or contract carriers from violating the GCA, and requiring them to obtain acknowledgment of receipt of packages containing firearms); 27 CFR 478.31 (same); Open Letter to All Common and Contract Carriers from John W. Magaw, Director, ATF (Jan. 1, 1994), <em data-original=\"E-03\">http://www.nibin.gov/press/releases/historical/010194-openletter-contract-carriers.html.</em>", 
+        "8": "<em data-original=\"E-03\">See</em> 18 U.S.C. 922(b)(5), 923(g)(1)(A); 27 CFR 478.124(c).", 
+        "9": "<em data-original=\"E-03\">See</em> 18 U.S.C. 922(t)(1); 27 CFR 478.102."
+    }, 
+    "fr_citation": "81 FR 1307", 
+    "fr_url": "https://www.federalregister.gov/documents/2016/01/12/2016-00112/commerce-in-firearms-and-ammunition-reporting-theft-or-loss-of-firearms-in-transit-2007r-9p", 
+    "fr_volume": 81, 
+    "meta": {
+        "start_page": 1307
+    }, 
+    "primary_agency": "DEPARTMENT OF JUSTICE", 
+    "primary_docket": null, 
+    "publication_date": "2016-01-12", 
+    "regulation_id_numbers": [
+        "1140-AA41"
+    ], 
+    "section_by_section": [], 
+    "supporting_documents": [], 
+    "title": "Commerce in Firearms and Ammunition\u2014Reporting Theft or Loss of Firearms in Transit (2007R-9P)", 
+    "versions": {
+        "478": {
+            "left": "2014-18392", 
+            "right": "2016-00112"
+        }
+    }
+}

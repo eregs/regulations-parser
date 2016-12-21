@@ -1,0 +1,2217 @@
+{
+    "555-104-c": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    94, 
+                    102
+                ], 
+                [
+                    "insert", 
+                    94, 
+                    "Federal Explosives Licensing Center. The request will show the name, trade name (if any),"
+                ]
+            ], 
+            [
+                "insert", 
+                107, 
+                "address of the licensee or permittee and the number of copies of the license or permit desired. There is a fee of $1 for each copy of a license or permit issued by the Chief, Federal "
+            ], 
+            [
+                [
+                    "delete", 
+                    128, 
+                    135
+                ], 
+                [
+                    "insert", 
+                    128, 
+                    "Center under this paragraph. Fee payment must accompany each request for additional copies of a license or permit."
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    140, 
+                    188
+                ], 
+                [
+                    "insert", 
+                    140, 
+                    "fee must be paid by (1) cash, or (2) money order or check made payable to the Bureau of Alcohol, Tobacco, Firearms,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    193, 
+                    639
+                ], 
+                [
+                    "insert", 
+                    193, 
+                    "Explosives."
+                ]
+            ]
+        ]
+    }, 
+    "555-11": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                28
+            ], 
+            [
+                "insert", 
+                28, 
+                [
+                    "555-11-p22033228"
+                ]
+            ], 
+            [
+                "equal", 
+                28, 
+                70
+            ], 
+            [
+                "delete", 
+                70, 
+                71
+            ], 
+            [
+                "equal", 
+                71, 
+                84
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "555-11-p22033228": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "555", 
+                "11", 
+                "p22033228"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "<E T=\"03\">Director, Industry Operations.</E> The principal regional official responsible for administering regulations in this part.", 
+            "text": "Director, Industry Operations. The principal regional official responsible for administering regulations in this part.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "555-11-p2792822644": {
+        "op": "deleted"
+    }, 
+    "555-11-p4152419405": {
+        "child_ops": [
+            [
+                "insert", 
+                0, 
+                [
+                    "555-11-p4152419405-a", 
+                    "555-11-p4152419405-b"
+                ]
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                "delete", 
+                27, 
+                187
+            ]
+        ]
+    }, 
+    "555-11-p4152419405-a": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "555", 
+                "11", 
+                "p4152419405", 
+                "a"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(a) Any tool or special mechanized device or gas generator system that is actuated by a propellant or which releases and directs work through a propellant charge.", 
+            "text": "(a) Any tool or special mechanized device or gas generator system that is actuated by a propellant or which releases and directs work through a propellant charge.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "555-11-p4152419405-b": {
+        "node": {
+            "child_labels": [
+                "555-11-p4152419405-b-1", 
+                "555-11-p4152419405-b-2"
+            ], 
+            "label": [
+                "555", 
+                "11", 
+                "p4152419405", 
+                "b"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(b) The term does not include\u2014", 
+            "text": "(b) The term does not include\u2014", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "555-11-p4152419405-b-1": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "555", 
+                "11", 
+                "p4152419405", 
+                "b", 
+                "1"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(1) Hobby rocket motors consisting of ammonium perchlorate composite propellant, black powder, or other similar low explosives, regardless of amount; and", 
+            "text": "(1) Hobby rocket motors consisting of ammonium perchlorate composite propellant, black powder, or other similar low explosives, regardless of amount; and", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "555-11-p4152419405-b-2": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "555", 
+                "11", 
+                "p4152419405", 
+                "b", 
+                "2"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(2) Rocket-motor reload kits that can be used to assemble hobby rocket motors containing ammonium perchlorate composite propellant, black powder, or other similar low explosives, regardless of amount.", 
+            "text": "(2) Rocket-motor reload kits that can be used to assemble hobby rocket motors containing ammonium perchlorate composite propellant, black powder, or other similar low explosives, regardless of amount.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "555-122-a-4": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    20, 
+                    50
+                ], 
+                [
+                    "insert", 
+                    20, 
+                    "Director, Industry Operations"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    172, 
+                    203
+                ], 
+                [
+                    "insert", 
+                    172, 
+                    "Director, Industry Operations,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    632, 
+                    663
+                ], 
+                [
+                    "insert", 
+                    632, 
+                    "Director, Industry Operations."
+                ]
+            ]
+        ]
+    }, 
+    "555-122-d": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    8, 
+                    38
+                ], 
+                [
+                    "insert", 
+                    8, 
+                    "Chief, Explosives Industry Programs Branch"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    421, 
+                    451
+                ], 
+                [
+                    "insert", 
+                    421, 
+                    "Chief, Explosives Industry Programs Branch"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    627, 
+                    658
+                ], 
+                [
+                    "insert", 
+                    627, 
+                    "Chief, Explosives Industry Programs Branch."
+                ]
+            ]
+        ]
+    }, 
+    "555-123-a-4": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    26, 
+                    56
+                ], 
+                [
+                    "insert", 
+                    26, 
+                    "Director, Industry Operations"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    178, 
+                    209
+                ], 
+                [
+                    "insert", 
+                    178, 
+                    "Director, Industry Operations,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    641, 
+                    672
+                ], 
+                [
+                    "insert", 
+                    641, 
+                    "Director, Industry Operations."
+                ]
+            ]
+        ]
+    }, 
+    "555-123-e": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    8, 
+                    38
+                ], 
+                [
+                    "insert", 
+                    8, 
+                    "Chief, Explosives Industry Programs Branch"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    440, 
+                    470
+                ], 
+                [
+                    "insert", 
+                    440, 
+                    "Chief, Explosives Industry Programs Branch"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    650, 
+                    681
+                ], 
+                [
+                    "insert", 
+                    650, 
+                    "Chief, Explosives Industry Programs Branch."
+                ]
+            ]
+        ]
+    }, 
+    "555-124-a-4": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    26, 
+                    56
+                ], 
+                [
+                    "insert", 
+                    26, 
+                    "Director, Industry Operations"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    178, 
+                    209
+                ], 
+                [
+                    "insert", 
+                    178, 
+                    "Director, Industry Operations,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    635, 
+                    666
+                ], 
+                [
+                    "insert", 
+                    635, 
+                    "Director, Industry Operations."
+                ]
+            ]
+        ]
+    }, 
+    "555-124-e": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    8, 
+                    38
+                ], 
+                [
+                    "insert", 
+                    8, 
+                    "Chief, Explosives Industry Programs Branch"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    397, 
+                    427
+                ], 
+                [
+                    "insert", 
+                    397, 
+                    "Chief, Explosives Industry Programs Branch"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    601, 
+                    632
+                ], 
+                [
+                    "insert", 
+                    601, 
+                    "Chief, Explosives Industry Programs Branch."
+                ]
+            ]
+        ]
+    }, 
+    "555-125-b-1-iv": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    27, 
+                    57
+                ], 
+                [
+                    "insert", 
+                    27, 
+                    "Director, Industry Operations"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    179, 
+                    209
+                ], 
+                [
+                    "insert", 
+                    179, 
+                    "Director, Industry Operations"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    644, 
+                    675
+                ], 
+                [
+                    "insert", 
+                    644, 
+                    "Director, Industry Operations."
+                ]
+            ]
+        ]
+    }, 
+    "555-125-b-7": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    8, 
+                    38
+                ], 
+                [
+                    "insert", 
+                    8, 
+                    "Chief, Explosives Industry Programs Branch"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    397, 
+                    427
+                ], 
+                [
+                    "insert", 
+                    397, 
+                    "Chief, Explosives Industry Programs Branch"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    594, 
+                    625
+                ], 
+                [
+                    "insert", 
+                    594, 
+                    "Chief, Explosives Industry Programs Branch."
+                ]
+            ]
+        ]
+    }, 
+    "555-126-b-2": {
+        "op": "modified", 
+        "text": [
+            [
+                "delete", 
+                479, 
+                486
+            ]
+        ]
+    }, 
+    "555-127": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                36, 
+                "\u00a7\u00a7 555.122, 555.123, 555.124, and 555.125, a licensee or permittee shall enter the inventory in a record of daily summary transactions to be kept at each magazine of an approved storage facility; however, these records may be kept at one central location on the business premises if separate records of daily transactions are kept for each magazine. Not later than the close of the next business day, each licensee and permittee shall record by manufacturer's name or brand name, the total quantity received in and removed from each magazine during the day, and the total remaining on hand at the end of the day. Quantity entries for display fireworks may be expressed as the number and size of individual display fireworks in a finished state or as the number of packaged display segments or packaged displays. Information as to the number and size of display fireworks contained in any one packaged display segment or packaged display shall be provided to any ATF officer on request. Any discrepancy which might indicate a theft or loss of explosive materials is to be reported in accordance with "
+            ], 
+            [
+                "delete", 
+                38, 
+                1138
+            ]
+        ]
+    }, 
+    "555-128": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    544, 
+                    609
+                ], 
+                [
+                    "insert", 
+                    544, 
+                    "244 Needy Road, Martinsburg,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    624, 
+                    630
+                ], 
+                [
+                    "insert", 
+                    624, 
+                    "25405."
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    742, 
+                    754
+                ], 
+                [
+                    "insert", 
+                    742, 
+                    "Federal"
+                ]
+            ]
+        ]
+    }, 
+    "555-141-a-1": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    708, 
+                    721
+                ], 
+                [
+                    "insert", 
+                    708, 
+                    "Explosives Industry Program"
+                ]
+            ]
+        ]
+    }, 
+    "555-142-e-4": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    330, 
+                    361
+                ], 
+                [
+                    "insert", 
+                    330, 
+                    "Director, Industry Operations."
+                ]
+            ]
+        ]
+    }, 
+    "555-180-d-4": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    184, 
+                    191
+                ], 
+                [
+                    "insert", 
+                    184, 
+                    "10^{\u22124}"
+                ]
+            ]
+        ]
+    }, 
+    "555-201-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    507, 
+                    537
+                ], 
+                [
+                    "insert", 
+                    507, 
+                    "Director, Industry Operations"
+                ]
+            ]
+        ]
+    }, 
+    "555-201-d": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    33, 
+                    36
+                ], 
+                [
+                    "insert", 
+                    33, 
+                    "\u00a7\u00a7"
+                ]
+            ]
+        ]
+    }, 
+    "555-21-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    33, 
+                    39
+                ], 
+                [
+                    "insert", 
+                    33, 
+                    "submitted"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    64, 
+                    118
+                ], 
+                [
+                    "insert", 
+                    64, 
+                    "Center (http://www.atf.gov) or made by calling (202) 648-6420."
+                ]
+            ]
+        ]
+    }, 
+    "555-213-b-1": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                114, 
+                "shock tube, "
+            ]
+        ]
+    }, 
+    "555-22-a-3-p1": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    129, 
+                    160
+                ], 
+                [
+                    "insert", 
+                    129, 
+                    "Director, Industry Operations,"
+                ]
+            ]
+        ]
+    }, 
+    "555-22-b-3-p1": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    766, 
+                    796
+                ], 
+                [
+                    "insert", 
+                    766, 
+                    "Director, Industry Operations"
+                ]
+            ]
+        ]
+    }, 
+    "555-220": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                1
+            ], 
+            [
+                "insert", 
+                1, 
+                [
+                    "555-220-p2"
+                ]
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "555-220-p1": {
+        "child_ops": [
+            [
+                "delete", 
+                0, 
+                10
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                0, 
+                "|Table: Department of Defense Ammunition and Explosives Standards, Table 5-4.1 Extract; 4145.27 M, March 1969|Donor weight (pounds)|Over|Not over|Minimum separation distance of acceptor from donor when barricaded (ft.)|Ammonium nitrate|Blasting agent|Minimum thickness of artificial barricades (in.)| |---|---|---|---|---|---|---|---| ||100|3|11|12| |100|300|4|14|12| |300|600|5|18|12| |600|1,000|6|22|12| |1,000|1,600|7|25|12| |1,600|2,000|8|29|12| |2,000|3,000|9|32|15| |3,000|4,000|10|36|15| |4,000|6,000|11|40|15| |6,000|8,000|12|43|20| |8,000|10,000|13|47|20| |10,000|12,000|14|50|20| |12,000|16,000|15|54|25| |16,000|20,000|16|58|25| |20,000|25,000|18|65|25| |25,000|30,000|19|68|30| |30,000|35,000|20|72|30| |35,000|40,000|21|76|30| |40,000|45,000|22|79|35| |45,000|50,000|23|83|35| |50,000|55,000|24|86|35| |55,000|60,000|25|90|35| |60,000|70,000|26|94|40| |70,000|80,000|28|101|40| |80,000|90,000|30|108|40| |90,000|100,000|32|115|40| |100,000|120,000|34|122|50| |120,000|140,000|37|133|50| |140,000|160,000|40|144|50| |160,000|180,000|44|158|50| |180,000|200,000|48|173|50| |200,000|220,000|52|187|60| |220,000|250,000|56|202|60| |250,000|275,000|60|216|60| |275,000|300,000|64|230|60|"
+            ]
+        ]
+    }, 
+    "555-220-p1-p1": {
+        "op": "deleted"
+    }, 
+    "555-220-p1-p10": {
+        "op": "deleted"
+    }, 
+    "555-220-p1-p2": {
+        "op": "deleted"
+    }, 
+    "555-220-p1-p3": {
+        "op": "deleted"
+    }, 
+    "555-220-p1-p4": {
+        "op": "deleted"
+    }, 
+    "555-220-p1-p5": {
+        "op": "deleted"
+    }, 
+    "555-220-p1-p6": {
+        "op": "deleted"
+    }, 
+    "555-220-p1-p7": {
+        "op": "deleted"
+    }, 
+    "555-220-p1-p8": {
+        "op": "deleted"
+    }, 
+    "555-220-p1-p9": {
+        "op": "deleted"
+    }, 
+    "555-220-p2": {
+        "node": {
+            "child_labels": [
+                "555-220-p2-p1", 
+                "555-220-p2-p2", 
+                "555-220-p2-p3", 
+                "555-220-p2-p4", 
+                "555-220-p2-p5", 
+                "555-220-p2-p6", 
+                "555-220-p2-p7", 
+                "555-220-p2-p8"
+            ], 
+            "label": [
+                "555", 
+                "220", 
+                "p2"
+            ], 
+            "node_type": "extract", 
+            "tagged_text": null, 
+            "text": "", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "555-220-p2-p1": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "555", 
+                "220", 
+                "p2", 
+                "p1"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": null, 
+            "text": "", 
+            "title": "Table: National Fire Protection Association (NFPA) Official Standard No. 492, 1968"
+        }, 
+        "op": "added"
+    }, 
+    "555-220-p2-p2": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "555", 
+                "220", 
+                "p2", 
+                "p2"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": null, 
+            "text": "", 
+            "title": "Notes of Table of Separation Distances of Ammonium Nitrate and Blasting Agents From Explosives or Blasting Agents"
+        }, 
+        "op": "added"
+    }, 
+    "555-220-p2-p3": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "555", 
+                "220", 
+                "p2", 
+                "p3"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(1) This table specifies separation distances to prevent explosion of ammonium nitrate and ammonium nitrate-based blasting agents by propagation from nearby stores of high explosives or blasting agents referred to in the table as the \u201cdonor.\u201d Ammonium nitrate, by itself, is not considered to be a donor when applying this table. Ammonium nitrate, ammonium nitrate-fuel oil or combinations thereof are acceptors. If stores of ammonium nitrate are located within the sympathetic detonation distance of explosives or blasting agents, one-half the mass of the ammonium nitrate is to be included in the mass of the donor.", 
+            "text": "(1) This table specifies separation distances to prevent explosion of ammonium nitrate and ammonium nitrate-based blasting agents by propagation from nearby stores of high explosives or blasting agents referred to in the table as the \u201cdonor.\u201d Ammonium nitrate, by itself, is not considered to be a donor when applying this table. Ammonium nitrate, ammonium nitrate-fuel oil or combinations thereof are acceptors. If stores of ammonium nitrate are located within the sympathetic detonation distance of explosives or blasting agents, one-half the mass of the ammonium nitrate is to be included in the mass of the donor.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "555-220-p2-p4": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "555", 
+                "220", 
+                "p2", 
+                "p4"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(2) When the ammonium nitrate and/or blasting agent is not barricaded, the distances shown in the table must be multiplied by six. These distances allow for the possibility of high velocity metal fragments from mixers, hoppers, truck bodies, sheet metal structures, metal containers, and the like which may enclose the \u201cdonor.\u201d Where explosives storage is in bullet-resistant magazines or where the storage is protected by a bullet-resistant wall, distances and barricade thicknesses in excess of those prescribed in the table in \u00a7\u2009555.218 are not required.", 
+            "text": "(2) When the ammonium nitrate and/or blasting agent is not barricaded, the distances shown in the table must be multiplied by six. These distances allow for the possibility of high velocity metal fragments from mixers, hoppers, truck bodies, sheet metal structures, metal containers, and the like which may enclose the \u201cdonor.\u201d Where explosives storage is in bullet-resistant magazines or where the storage is protected by a bullet-resistant wall, distances and barricade thicknesses in excess of those prescribed in the table in \u00a7\u2009555.218 are not required.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "555-220-p2-p5": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "555", 
+                "220", 
+                "p2", 
+                "p5"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(3) These distances apply to ammonium nitrate that passes the insensitivity test prescribed in the definition of ammonium nitrate fertilizer issued by the Fertilizer Institute.\u2009<SU footnote=\"Definition and Test Procedures for Ammonium Nitrate Fertilizer, Fertilizer Institute 1015-18th St. N.W. Washington, DC 20036.\">1</SU><FTREF/> Ammonium nitrate failing to pass the test must be stored at separation distances in accordance with the table in \u00a7\u2009555.218.", 
+            "text": "(3) These distances apply to ammonium nitrate that passes the insensitivity test prescribed in the definition of ammonium nitrate fertilizer issued by the Fertilizer Institute.\u2009[^1](Definition and Test Procedures for Ammonium Nitrate Fertilizer, Fertilizer Institute 1015-18th St. N.W. Washington, DC 20036.) Ammonium nitrate failing to pass the test must be stored at separation distances in accordance with the table in \u00a7\u2009555.218.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "555-220-p2-p6": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "555", 
+                "220", 
+                "p2", 
+                "p6"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(4) These distances apply to blasting agents which pass the insensitivity test prescribed in regulations of the U.S. Department of Transportation (49 CFR part 173).", 
+            "text": "(4) These distances apply to blasting agents which pass the insensitivity test prescribed in regulations of the U.S. Department of Transportation (49 CFR part 173).", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "555-220-p2-p7": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "555", 
+                "220", 
+                "p2", 
+                "p7"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(5) Earth or sand dikes, or enclosures filled with the prescribed minimum thickness of earth or sand are acceptable artificial barricades. Natural barricades, such as hills or timber of sufficient density that the surrounding exposures which require protection cannot be seen from the \u201cdonor\u201d when the trees are bare of leaves, are also acceptable.", 
+            "text": "(5) Earth or sand dikes, or enclosures filled with the prescribed minimum thickness of earth or sand are acceptable artificial barricades. Natural barricades, such as hills or timber of sufficient density that the surrounding exposures which require protection cannot be seen from the \u201cdonor\u201d when the trees are bare of leaves, are also acceptable.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "555-220-p2-p8": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "555", 
+                "220", 
+                "p2", 
+                "p8"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(6) For determining the distances to be maintained from inhabited buildings, passenger railways, and public highways, use the table in \u00a7\u2009555.218.", 
+            "text": "(6) For determining the distances to be maintained from inhabited buildings, passenger railways, and public highways, use the table in \u00a7\u2009555.218.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "555-23": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    260, 
+                    314
+                ], 
+                [
+                    "insert", 
+                    260, 
+                    "Center (See \u00a7 555.21)."
+                ]
+            ]
+        ]
+    }, 
+    "555-25": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    92, 
+                    122
+                ], 
+                [
+                    "insert", 
+                    92, 
+                    "Director, Industry Operations"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    206, 
+                    236
+                ], 
+                [
+                    "insert", 
+                    206, 
+                    "Director, Industry Operations"
+                ]
+            ]
+        ]
+    }, 
+    "555-45-c-3": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    15, 
+                    23
+                ], 
+                [
+                    "insert", 
+                    15, 
+                    "Federal Explosives Licensing Center, will conduct background checks on responsible persons"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    28, 
+                    56
+                ], 
+                [
+                    "insert", 
+                    28, 
+                    "employees authorized by the applicant to possess explosive materials in accordance with \u00a7 555.33. If it is determined that any responsible person or employee is described in any paragraph of section 842(i) of the Act, the applicant must submit an amended application indicating removal or reassignment of that person before the license or permit"
+                ]
+            ], 
+            [
+                "delete", 
+                62, 
+                466
+            ]
+        ]
+    }, 
+    "555-46-a": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    246, 
+                    254
+                ], 
+                [
+                    "insert", 
+                    246, 
+                    "Federal Explosives Licensing Center, execute"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    259, 
+                    295
+                ], 
+                [
+                    "insert", 
+                    259, 
+                    "file prior to the expiration of his license or permit an application for license renewal, ATF F 5400.14 (Part III), or an application for permit renewal, ATF F 5400.15 (Part III), accompanied by the required fee, with ATF in accordance with the instructions on the form. In the event the licensee or permittee does not timely file a renewal application, he shall file an original application as required by \u00a7 555.45,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    300, 
+                    310
+                ], 
+                [
+                    "insert", 
+                    300, 
+                    "obtain the required license or permit in order"
+                ]
+            ], 
+            [
+                "delete", 
+                314, 
+                771
+            ]
+        ]
+    }, 
+    "555-49-b-1": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    15, 
+                    27
+                ], 
+                [
+                    "insert", 
+                    15, 
+                    "Federal"
+                ]
+            ]
+        ]
+    }, 
+    "555-49-b-2": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    15, 
+                    27
+                ], 
+                [
+                    "insert", 
+                    15, 
+                    "Federal"
+                ]
+            ]
+        ]
+    }, 
+    "555-49-b-3": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    15, 
+                    27
+                ], 
+                [
+                    "insert", 
+                    15, 
+                    "Federal"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    77, 
+                    107
+                ], 
+                [
+                    "insert", 
+                    77, 
+                    "Director, Industry Operations"
+                ]
+            ]
+        ]
+    }, 
+    "555-50-a": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    291, 
+                    299
+                ], 
+                [
+                    "insert", 
+                    291, 
+                    "Federal Explosives Licensing Center, with a statement showing the nature of the error. The Chief, Federal Explosives Licensing Center, shall correct the error, if the error was made in his office,"
+                ]
+            ], 
+            [
+                "insert", 
+                304, 
+                "return the license or permit. However, if the error resulted from information contained in the licensee's or permittee's application for the license or permit, the Chief, Federal "
+            ], 
+            [
+                [
+                    "delete", 
+                    333, 
+                    337
+                ], 
+                [
+                    "insert", 
+                    333, 
+                    "shall require the licensee or permittee to file an amended application setting forth the correct information and"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    350, 
+                    368
+                ], 
+                [
+                    "insert", 
+                    350, 
+                    "explaining the error contained in the application. Upon receipt"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    376, 
+                    386
+                ], 
+                [
+                    "insert", 
+                    376, 
+                    "amended application and a satisfactory explanation of the error, the"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    394, 
+                    402
+                ], 
+                [
+                    "insert", 
+                    394, 
+                    "Federal Explosives Licensing Center, shall make the correction on the license or permit"
+                ]
+            ], 
+            [
+                "delete", 
+                407, 
+                502
+            ], 
+            [
+                [
+                    "delete", 
+                    509, 
+                    732
+                ], 
+                [
+                    "insert", 
+                    509, 
+                    "it to the"
+                ]
+            ], 
+            [
+                "delete", 
+                744, 
+                1112
+            ]
+        ]
+    }, 
+    "555-50-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    20, 
+                    28
+                ], 
+                [
+                    "insert", 
+                    20, 
+                    "Federal Explosives Licensing Center, finds through any means other than notice from the licensee or permittee that an incorrect license or permit has been issued, (1) the Chief, Federal Explosives Licensing Center, may require the holder of the incorrect license or permit to return the license or permit for correction,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    33, 
+                    103
+                ], 
+                [
+                    "insert", 
+                    33, 
+                    "(2) if the error resulted"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    109, 
+                    112
+                ], 
+                [
+                    "insert", 
+                    109, 
+                    "information contained in the licensee's or permittee's application for the license or permit, the Chief, Federal Explosives Licensing Center, shall require the"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    135, 
+                    139
+                ], 
+                [
+                    "insert", 
+                    135, 
+                    "to file"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    143, 
+                    211
+                ], 
+                [
+                    "insert", 
+                    143, 
+                    "amended application setting forth the correct information,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    216, 
+                    302
+                ], 
+                [
+                    "insert", 
+                    216, 
+                    "a statement satisfactorily explaining the error contained in the application. The Chief, Federal Explosives Licensing Center, then shall make the correction on the license or permit and return it"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    306, 
+                    550
+                ], 
+                [
+                    "insert", 
+                    306, 
+                    "the"
+                ]
+            ], 
+            [
+                "delete", 
+                562, 
+                866
+            ]
+        ]
+    }, 
+    "555-54-a-1": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    86, 
+                    94
+                ], 
+                [
+                    "insert", 
+                    86, 
+                    "Federal Explosives Licensing Center at least 10 days before the move;"
+                ]
+            ], 
+            [
+                "delete", 
+                98, 
+                164
+            ]
+        ]
+    }, 
+    "555-54-a-2": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    47, 
+                    59
+                ], 
+                [
+                    "insert", 
+                    47, 
+                    "Federal"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    100, 
+                    112
+                ], 
+                [
+                    "insert", 
+                    100, 
+                    "Federal"
+                ]
+            ]
+        ]
+    }, 
+    "555-54-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    86, 
+                    98
+                ], 
+                [
+                    "insert", 
+                    86, 
+                    "Federal"
+                ]
+            ]
+        ]
+    }, 
+    "555-56": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    426, 
+                    438
+                ], 
+                [
+                    "insert", 
+                    426, 
+                    "Federal"
+                ]
+            ]
+        ]
+    }, 
+    "555-57-a": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    512, 
+                    520
+                ], 
+                [
+                    "insert", 
+                    512, 
+                    "Federal Explosives Licensing Center. Upon expiration of the license or permit, the corporation or association shall file an ATF F 5400.13 or an ATF F 5400.16 as required by \u00a7 555.45,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    525, 
+                    689
+                ], 
+                [
+                    "insert", 
+                    525, 
+                    "pay the fee prescribed in"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    692, 
+                    729
+                ], 
+                [
+                    "insert", 
+                    692, 
+                    "555.42(b) or"
+                ]
+            ], 
+            [
+                "delete", 
+                732, 
+                747
+            ]
+        ]
+    }, 
+    "555-57-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    134, 
+                    142
+                ], 
+                [
+                    "insert", 
+                    134, 
+                    "Federal Explosives Licensing Center, any change in responsible persons or employees authorized to possess explosive materials. Such report must be submitted within 30 days of the change"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    147, 
+                    189
+                ], 
+                [
+                    "insert", 
+                    147, 
+                    "must include appropriate identifying information for each"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    202, 
+                    212
+                ], 
+                [
+                    "insert", 
+                    202, 
+                    "person. Reports relating to newly hired"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    255, 
+                    277
+                ], 
+                [
+                    "insert", 
+                    255, 
+                    "materials"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    296, 
+                    377
+                ], 
+                [
+                    "insert", 
+                    296, 
+                    "on ATF F 5400.28"
+                ]
+            ], 
+            [
+                "delete", 
+                387, 
+                535
+            ]
+        ]
+    }, 
+    "555-57-c": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    41, 
+                    53
+                ], 
+                [
+                    "insert", 
+                    41, 
+                    "Federal"
+                ]
+            ]
+        ]
+    }, 
+    "555-59-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    243, 
+                    255
+                ], 
+                [
+                    "insert", 
+                    243, 
+                    "Federal"
+                ]
+            ]
+        ]
+    }, 
+    "555-60": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    74, 
+                    86
+                ], 
+                [
+                    "insert", 
+                    74, 
+                    "Federal"
+                ]
+            ]
+        ]
+    }, 
+    "555-61": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    349, 
+                    361
+                ], 
+                [
+                    "insert", 
+                    349, 
+                    "Federal"
+                ]
+            ]
+        ]
+    }, 
+    "555-63-a-4": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    58, 
+                    88
+                ], 
+                [
+                    "insert", 
+                    58, 
+                    "Director, Industry Operations"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    156, 
+                    186
+                ], 
+                [
+                    "insert", 
+                    156, 
+                    "Director, Industry Operations"
+                ]
+            ]
+        ]
+    }, 
+    "555-63-c": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    147, 
+                    177
+                ], 
+                [
+                    "insert", 
+                    147, 
+                    "Director, Industry Operations"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    271, 
+                    302
+                ], 
+                [
+                    "insert", 
+                    271, 
+                    "Director, Industry Operations,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    456, 
+                    486
+                ], 
+                [
+                    "insert", 
+                    456, 
+                    "Director, Industry Operations"
+                ]
+            ]
+        ]
+    }, 
+    "555-63-d": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    171, 
+                    201
+                ], 
+                [
+                    "insert", 
+                    171, 
+                    "Director, Industry Operations"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    393, 
+                    424
+                ], 
+                [
+                    "insert", 
+                    393, 
+                    "Director, Industry Operations,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    599, 
+                    629
+                ], 
+                [
+                    "insert", 
+                    599, 
+                    "Director, Industry Operations"
+                ]
+            ]
+        ]
+    }, 
+    "555-71": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    97, 
+                    127
+                ], 
+                [
+                    "insert", 
+                    97, 
+                    "Director, Industry Operations"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    837, 
+                    867
+                ], 
+                [
+                    "insert", 
+                    837, 
+                    "Director, Industry Operations"
+                ]
+            ]
+        ]
+    }, 
+    "555-72": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    13, 
+                    43
+                ], 
+                [
+                    "insert", 
+                    13, 
+                    "Director, Industry Operations"
+                ]
+            ]
+        ]
+    }, 
+    "555-73": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    103, 
+                    133
+                ], 
+                [
+                    "insert", 
+                    103, 
+                    "Director, Industry Operations"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    288, 
+                    324
+                ], 
+                [
+                    "insert", 
+                    288, 
+                    "Director, Industry Operations shall"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    498, 
+                    528
+                ], 
+                [
+                    "insert", 
+                    498, 
+                    "Director, Industry Operations"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    1061, 
+                    1091
+                ], 
+                [
+                    "insert", 
+                    1061, 
+                    "Director, Industry Operations"
+                ]
+            ]
+        ]
+    }, 
+    "555-74": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    144, 
+                    174
+                ], 
+                [
+                    "insert", 
+                    144, 
+                    "Director, Industry Operations"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    360, 
+                    390
+                ], 
+                [
+                    "insert", 
+                    360, 
+                    "Director, Industry Operations"
+                ]
+            ]
+        ]
+    }, 
+    "555-75": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    179, 
+                    210
+                ], 
+                [
+                    "insert", 
+                    179, 
+                    "Director, Industry Operations."
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    372, 
+                    408
+                ], 
+                [
+                    "insert", 
+                    372, 
+                    "Director, Industry Operations shall"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    579, 
+                    615
+                ], 
+                [
+                    "insert", 
+                    579, 
+                    "Director, Industry Operations shall"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    801, 
+                    831
+                ], 
+                [
+                    "insert", 
+                    801, 
+                    "Director, Industry Operations"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    1023, 
+                    1059
+                ], 
+                [
+                    "insert", 
+                    1023, 
+                    "Director, Industry Operations shall"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    1709, 
+                    1740
+                ], 
+                [
+                    "insert", 
+                    1709, 
+                    "Director, Industry Operations,"
+                ]
+            ]
+        ]
+    }, 
+    "555-76": {
+        "op": "modified", 
+        "title": [
+            [
+                [
+                    "delete", 
+                    19, 
+                    50
+                ], 
+                [
+                    "insert", 
+                    19, 
+                    "Director, Industry Operations."
+                ]
+            ]
+        ]
+    }, 
+    "555-76-a": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    134, 
+                    164
+                ], 
+                [
+                    "insert", 
+                    134, 
+                    "Director, Industry Operations"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    222, 
+                    252
+                ], 
+                [
+                    "insert", 
+                    222, 
+                    "Director, Industry Operations"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    715, 
+                    746
+                ], 
+                [
+                    "insert", 
+                    715, 
+                    "Director, Industry Operations,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    983, 
+                    1013
+                ], 
+                [
+                    "insert", 
+                    983, 
+                    "Director, Industry Operations"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    1368, 
+                    1398
+                ], 
+                [
+                    "insert", 
+                    1368, 
+                    "Director, Industry Operations"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    2076, 
+                    2106
+                ], 
+                [
+                    "insert", 
+                    2076, 
+                    "Director, Industry Operations"
+                ]
+            ]
+        ]
+    }, 
+    "555-76-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    119, 
+                    149
+                ], 
+                [
+                    "insert", 
+                    119, 
+                    "Director, Industry Operations"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    604, 
+                    634
+                ], 
+                [
+                    "insert", 
+                    604, 
+                    "Director, Industry Operations"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    1311, 
+                    1341
+                ], 
+                [
+                    "insert", 
+                    1311, 
+                    "Director, Industry Operations"
+                ]
+            ]
+        ]
+    }, 
+    "555-76-c": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    217, 
+                    247
+                ], 
+                [
+                    "insert", 
+                    217, 
+                    "Director, Industry Operations"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    406, 
+                    436
+                ], 
+                [
+                    "insert", 
+                    406, 
+                    "Director, Industry Operations"
+                ]
+            ]
+        ]
+    }, 
+    "555-78": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    170, 
+                    190
+                ], 
+                [
+                    "insert", 
+                    170, 
+                    "Tobacco, Firearms, and Explosives"
+                ]
+            ], 
+            [
+                "insert", 
+                322, 
+                "Director, Industry Operations shall be represented in proceedings under \u00a7\u00a7 555.73 and 555.75 by an attorney in the office of the chief counsel or "
+            ], 
+            [
+                "delete", 
+                331, 
+                458
+            ], 
+            [
+                "delete", 
+                466, 
+                486
+            ], 
+            [
+                [
+                    "delete", 
+                    595, 
+                    629
+                ], 
+                [
+                    "insert", 
+                    595, 
+                    "Director, Industry Operations, in"
+                ]
+            ]
+        ]
+    }, 
+    "555-79": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    302, 
+                    332
+                ], 
+                [
+                    "insert", 
+                    302, 
+                    "Director, Industry Operations"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    813, 
+                    846
+                ], 
+                [
+                    "insert", 
+                    813, 
+                    "Director, Industry Operations or"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    944, 
+                    974
+                ], 
+                [
+                    "insert", 
+                    944, 
+                    "Director, Industry Operations"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    1232, 
+                    1269
+                ], 
+                [
+                    "insert", 
+                    1232, 
+                    "Director, Industry Operations or the"
+                ]
+            ]
+        ]
+    }, 
+    "555-80": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    145, 
+                    192
+                ], 
+                [
+                    "insert", 
+                    145, 
+                    "Director, Industry Operations or the Director,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    500, 
+                    547
+                ], 
+                [
+                    "insert", 
+                    500, 
+                    "Director, Industry Operations or the Director,"
+                ]
+            ]
+        ]
+    }
+}

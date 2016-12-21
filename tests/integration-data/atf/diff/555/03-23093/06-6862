@@ -1,0 +1,931 @@
+{
+    "555-102-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    29, 
+                    36
+                ], 
+                [
+                    "insert", 
+                    29, 
+                    "stocks\u2014"
+                ]
+            ]
+        ]
+    }, 
+    "555-103-a": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    61, 
+                    66
+                ], 
+                [
+                    "insert", 
+                    61, 
+                    "2003\u2014"
+                ]
+            ]
+        ]
+    }, 
+    "555-103-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    65, 
+                    70
+                ], 
+                [
+                    "insert", 
+                    65, 
+                    "2003\u2014"
+                ]
+            ]
+        ]
+    }, 
+    "555-108": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                4
+            ], 
+            [
+                "insert", 
+                4, 
+                [
+                    "555-108-e"
+                ]
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "555-108-e": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "555", 
+                "108", 
+                "e"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(e) For requirements relating to the marking of imported explosive materials, see \u00a7 555.109.", 
+            "text": "(e) For requirements relating to the marking of imported explosive materials, see \u00a7 555.109.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "555-109": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                2
+            ], 
+            [
+                "insert", 
+                2, 
+                [
+                    "555-109-c", 
+                    "555-109-d"
+                ]
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "555-109-a": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    4, 
+                    30
+                ], 
+                [
+                    "insert", 
+                    4, 
+                    "General. Explosive materials, whether manufactured in the United States or imported, must contain certain marks"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    34, 
+                    526
+                ], 
+                [
+                    "insert", 
+                    34, 
+                    "identification."
+                ]
+            ]
+        ]
+    }, 
+    "555-109-b": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                2
+            ], 
+            [
+                "delete", 
+                2, 
+                3
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    4, 
+                    15
+                ], 
+                [
+                    "insert", 
+                    4, 
+                    "Required marks\u2014"
+                ]
+            ]
+        ]
+    }, 
+    "555-109-b-1": {
+        "child_ops": [
+            [
+                "insert", 
+                0, 
+                [
+                    "555-109-b-1-i", 
+                    "555-109-b-1-ii"
+                ]
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                13, 
+                "manufacturers. Licensed "
+            ], 
+            [
+                "insert", 
+                27, 
+                "who manufacture explosive materials for sale or distribution must place the following marks "
+            ], 
+            [
+                [
+                    "delete", 
+                    30, 
+                    70
+                ], 
+                [
+                    "insert", 
+                    30, 
+                    "identification on explosive materials at"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    75, 
+                    164
+                ], 
+                [
+                    "insert", 
+                    75, 
+                    "time"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    168, 
+                    182
+                ], 
+                [
+                    "insert", 
+                    168, 
+                    "manufacture:"
+                ]
+            ]
+        ]
+    }, 
+    "555-109-b-1-i": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "555", 
+                "109", 
+                "b", 
+                "1", 
+                "i"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(i) The name of the manufacturer; and", 
+            "text": "(i) The name of the manufacturer; and", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "555-109-b-1-ii": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "555", 
+                "109", 
+                "b", 
+                "1", 
+                "ii"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(ii) The location, date, and shift of manufacture. Where a manufacturer operates his plant for only one shift during the day, he does not need to show the shift of manufacture.", 
+            "text": "(ii) The location, date, and shift of manufacture. Where a manufacturer operates his plant for only one shift during the day, he does not need to show the shift of manufacture.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "555-109-b-2": {
+        "child_ops": [
+            [
+                "insert", 
+                0, 
+                [
+                    "555-109-b-2-i", 
+                    "555-109-b-2-ii"
+                ]
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    4, 
+                    256
+                ], 
+                [
+                    "insert", 
+                    4, 
+                    "Licensed importers."
+                ]
+            ]
+        ]
+    }, 
+    "555-109-b-2-i": {
+        "node": {
+            "child_labels": [
+                "555-109-b-2-i-A", 
+                "555-109-b-2-i-B"
+            ], 
+            "label": [
+                "555", 
+                "109", 
+                "b", 
+                "2", 
+                "i"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(i) Licensed importers who import explosive materials for sale or distribution must place the following marks of identification on the explosive materials they import:", 
+            "text": "(i) Licensed importers who import explosive materials for sale or distribution must place the following marks of identification on the explosive materials they import:", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "555-109-b-2-i-A": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "555", 
+                "109", 
+                "b", 
+                "2", 
+                "i", 
+                "A"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(A) The name and address (city and state) of the importer; and", 
+            "text": "(A) The name and address (city and state) of the importer; and", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "555-109-b-2-i-B": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "555", 
+                "109", 
+                "b", 
+                "2", 
+                "i", 
+                "B"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(B) The location (city and country) where the explosive materials were manufactured, date, and shift of manufacture. Where the foreign manufacturer operates his plant for only one shift during the day, he does not need to show the shift of manufacture.", 
+            "text": "(B) The location (city and country) where the explosive materials were manufactured, date, and shift of manufacture. Where the foreign manufacturer operates his plant for only one shift during the day, he does not need to show the shift of manufacture.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "555-109-b-2-ii": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "555", 
+                "109", 
+                "b", 
+                "2", 
+                "ii"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(ii) Licensed importers must place the required marks on all explosive materials imported prior to distribution or shipment for use, and in no event later than 15 days after the date of release from Customs custody.", 
+            "text": "(ii) Licensed importers must place the required marks on all explosive materials imported prior to distribution or shipment for use, and in no event later than 15 days after the date of release from Customs custody.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "555-109-b-3": {
+        "op": "deleted"
+    }, 
+    "555-109-c": {
+        "node": {
+            "child_labels": [
+                "555-109-c-1", 
+                "555-109-c-2", 
+                "555-109-c-3", 
+                "555-109-c-4", 
+                "555-109-c-5"
+            ], 
+            "label": [
+                "555", 
+                "109", 
+                "c"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(c) <E T=\"03\">General requirements.</E>", 
+            "text": "(c) General requirements.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "555-109-c-1": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "555", 
+                "109", 
+                "c", 
+                "1"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(1) The required marks prescribed in this section must be permanent and legible.", 
+            "text": "(1) The required marks prescribed in this section must be permanent and legible.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "555-109-c-2": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "555", 
+                "109", 
+                "c", 
+                "2"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(2) The required marks prescribed in this section must be in the English language, using Roman letters and Arabic numerals.", 
+            "text": "(2) The required marks prescribed in this section must be in the English language, using Roman letters and Arabic numerals.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "555-109-c-3": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "555", 
+                "109", 
+                "c", 
+                "3"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(3) Licensed manufacturers and licensed importers must place the required marks on each cartridge, bag, or other immediate container of explosive materials that they manufacture or import, as well as on any outside container used for the packaging of such explosive materials.", 
+            "text": "(3) Licensed manufacturers and licensed importers must place the required marks on each cartridge, bag, or other immediate container of explosive materials that they manufacture or import, as well as on any outside container used for the packaging of such explosive materials.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "555-109-c-4": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "555", 
+                "109", 
+                "c", 
+                "4"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(4) Licensed manufacturers and licensed importers may use any method, or combination of methods, to affix the required marks to the immediate container of explosive materials, or outside containers used for the packaging thereof, provided the identifying marks are legible, permanent, show all the required information, and are not rendered unreadable by extended periods of storage.", 
+            "text": "(4) Licensed manufacturers and licensed importers may use any method, or combination of methods, to affix the required marks to the immediate container of explosive materials, or outside containers used for the packaging thereof, provided the identifying marks are legible, permanent, show all the required information, and are not rendered unreadable by extended periods of storage.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "555-109-c-5": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "555", 
+                "109", 
+                "c", 
+                "5"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(5) If licensed manufacturers or licensed importers desire to use a coding system and omit printed markings on the container that show all the required information specified in paragraphs (b)(1) and (2) of this section, they must file with ATF a letterhead application displaying the coding that they plan to use and explaining the manner of its application. The Director must approve the application before the proposed coding can be used.", 
+            "text": "(5) If licensed manufacturers or licensed importers desire to use a coding system and omit printed markings on the container that show all the required information specified in paragraphs (b)(1) and (2) of this section, they must file with ATF a letterhead application displaying the coding that they plan to use and explaining the manner of its application. The Director must approve the application before the proposed coding can be used.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "555-109-d": {
+        "node": {
+            "child_labels": [
+                "555-109-d-1", 
+                "555-109-d-2"
+            ], 
+            "label": [
+                "555", 
+                "109", 
+                "d"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(d) <E T=\"03\">Exceptions\u2014</E>", 
+            "text": "(d) Exceptions\u2014", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "555-109-d-1": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "555", 
+                "109", 
+                "d", 
+                "1"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(1) <E T=\"03\">Blasting caps.</E> Licensed manufacturers or licensed importers are only required to place the identification marks prescribed in this section on the containers used for the packaging of blasting caps.", 
+            "text": "(1) Blasting caps. Licensed manufacturers or licensed importers are only required to place the identification marks prescribed in this section on the containers used for the packaging of blasting caps.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "555-109-d-2": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "555", 
+                "109", 
+                "d", 
+                "2"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(2) <E T=\"03\">Alternate means of identification.</E> The Director may authorize other means of identifying explosive materials, including fireworks, upon receipt of a letter application from the licensed manufacturer or licensed importer showing that such other identification is reasonable and will not hinder the effective administration of this part.", 
+            "text": "(2) Alternate means of identification. The Director may authorize other means of identifying explosive materials, including fireworks, upon receipt of a letter application from the licensed manufacturer or licensed importer showing that such other identification is reasonable and will not hinder the effective administration of this part.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "555-11-p1563098571": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                177, 
+                "an artificial barricade. To be properly barricaded, "
+            ], 
+            [
+                "insert", 
+                179, 
+                "straight line from the top of any sidewall of the magazine containing explosive materials to the eave line of any other magazine or building, or to a point 12 feet above the center of a railway or highway, will pass through the natural or "
+            ], 
+            [
+                "delete", 
+                200, 
+                490
+            ]
+        ]
+    }, 
+    "555-11-p3589220758": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    25, 
+                    38
+                ], 
+                [
+                    "insert", 
+                    25, 
+                    "manufacturer"
+                ]
+            ]
+        ]
+    }, 
+    "555-127": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    1120, 
+                    1129
+                ], 
+                [
+                    "insert", 
+                    1120, 
+                    "accordance"
+                ]
+            ]
+        ]
+    }, 
+    "555-141-a": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                9
+            ], 
+            [
+                "insert", 
+                9, 
+                [
+                    "555-141-a-10"
+                ]
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "555-141-a-10": {
+        "node": {
+            "child_labels": [
+                "555-141-a-10-i", 
+                "555-141-a-10-ii", 
+                "555-141-a-10-iii"
+            ], 
+            "label": [
+                "555", 
+                "141", 
+                "a", 
+                "10"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(10) Model rocket motors that meet all of the following criteria\u2014", 
+            "text": "(10) Model rocket motors that meet all of the following criteria\u2014", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "555-141-a-10-i": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "555", 
+                "141", 
+                "a", 
+                "10", 
+                "i"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(i) Consist of ammonium perchlorate composite propellant, black powder, or other similar low explosives;", 
+            "text": "(i) Consist of ammonium perchlorate composite propellant, black powder, or other similar low explosives;", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "555-141-a-10-ii": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "555", 
+                "141", 
+                "a", 
+                "10", 
+                "ii"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(ii) Contain no more than 62.5 grams of total propellant weight; and", 
+            "text": "(ii) Contain no more than 62.5 grams of total propellant weight; and", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "555-141-a-10-iii": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "555", 
+                "141", 
+                "a", 
+                "10", 
+                "iii"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(iii) Are designed as single-use motors or as reload kits capable of reloading no more than 62.5 grams of propellant into a reusable motor casing.", 
+            "text": "(iii) Are designed as single-use motors or as reload kits capable of reloading no more than 62.5 grams of propellant into a reusable motor casing.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "555-208-a-1": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    470, 
+                    482
+                ], 
+                [
+                    "insert", 
+                    470, 
+                    "immobilized"
+                ]
+            ]
+        ]
+    }, 
+    "555-218-p1": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    80, 
+                    122
+                ], 
+                [
+                    "insert", 
+                    80, 
+                    "buildings|Barricaded|Unbarricaded|Public"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    169, 
+                    217
+                ], 
+                [
+                    "insert", 
+                    169, 
+                    "vehicles/day|Barricaded|Unbarricaded|Passenger"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    282, 
+                    371
+                ], 
+                [
+                    "insert", 
+                    282, 
+                    "vehicles/day|Barricaded|Unbarricaded|Separation of magazines|Barricaded|Unbarricaded|"
+                ]
+            ]
+        ]
+    }, 
+    "555-224-p1": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    91, 
+                    99
+                ], 
+                [
+                    "insert", 
+                    91, 
+                    "explosive"
+                ]
+            ]
+        ]
+    }, 
+    "555-25": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    158, 
+                    168
+                ], 
+                [
+                    "insert", 
+                    158, 
+                    "political"
+                ]
+            ]
+        ]
+    }, 
+    "555-33-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    47, 
+                    59
+                ], 
+                [
+                    "insert", 
+                    47, 
+                    "information\u2014"
+                ]
+            ]
+        ]
+    }, 
+    "555-41-a-3": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    565, 
+                    601
+                ], 
+                [
+                    "insert", 
+                    565, 
+                    "materials. Only one permit is required under"
+                ]
+            ], 
+            [
+                "delete", 
+                607, 
+                654
+            ]
+        ]
+    }, 
+    "555-41-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    53, 
+                    58
+                ], 
+                [
+                    "insert", 
+                    53, 
+                    "2003\u2014"
+                ]
+            ]
+        ]
+    }, 
+    "555-41-b-3-ii": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                523, 
+                " materials. Only one user permit per person is required under this part, irrespective of the number of locations relating to explosive"
+            ], 
+            [
+                "insert", 
+                534, 
+                "operated by the holder "
+            ], 
+            [
+                [
+                    "delete", 
+                    541, 
+                    565
+                ], 
+                [
+                    "insert", 
+                    541, 
+                    "user"
+                ]
+            ], 
+            [
+                "delete", 
+                573, 
+                749
+            ]
+        ]
+    }, 
+    "555-45-c": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    53, 
+                    58
+                ], 
+                [
+                    "insert", 
+                    53, 
+                    "2003\u2014"
+                ]
+            ]
+        ]
+    }, 
+    "555-52-a": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    36, 
+                    59
+                ], 
+                [
+                    "insert", 
+                    36, 
+                    "of explosive materials specified"
+                ]
+            ], 
+            [
+                "insert", 
+                63, 
+                "the license at the licensee's business premises (see "
+            ], 
+            [
+                "delete", 
+                65, 
+                165
+            ]
+        ]
+    }, 
+    "555-52-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    63, 
+                    86
+                ], 
+                [
+                    "insert", 
+                    63, 
+                    "of explosive materials specified"
+                ]
+            ], 
+            [
+                "delete", 
+                90, 
+                137
+            ]
+        ]
+    }, 
+    "555-55": {
+        "op": "deleted"
+    }, 
+    "555-78": {
+        "op": "modified", 
+        "text": [
+            [
+                "delete", 
+                285, 
+                288
+            ]
+        ]
+    }, 
+    "555-Subpart-D": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                14
+            ], 
+            [
+                "delete", 
+                14, 
+                15
+            ], 
+            [
+                "equal", 
+                15, 
+                23
+            ]
+        ], 
+        "op": "modified"
+    }
+}

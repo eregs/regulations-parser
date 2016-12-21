@@ -1,0 +1,128 @@
+{
+    "amendments": [
+        {
+            "authority": "5 U.S.C. 552(a); 18 U.S.C. 847, 921-931; 44 U.S.C. 3504(h).", 
+            "cfr_part": "478", 
+            "instruction": "1. The authority citation for 27 CFR part 478 continues to read as follows:"
+        }, 
+        {
+            "cfr_part": "478", 
+            "instruction": "2. Amend \u00a7\u2009478.125:"
+        }, 
+        {
+            "cfr_part": "478", 
+            "changes": [
+                [
+                    "478-125-e-p1", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "125", 
+                                    "e", 
+                                    "p1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "<GPOTABLE CDEF=\"s20,8,8,8,8,6,9,6,6,15\" COLS=\"10\" OPTS=\"L2,p6,6/1\">\n              <TTITLE>Firearms Acquisition and Disposition Record</TTITLE>\n              <BOXHD>\n                <CHED H=\"1\">Description of firearm</CHED>\n                <CHED H=\"2\">Manufacturer and importer (if any)</CHED>\n                <CHED H=\"2\">Model</CHED>\n                <CHED H=\"2\">Serial No.</CHED>\n                <CHED H=\"2\">Type</CHED>\n                <CHED H=\"2\">Caliber or gauge</CHED>\n                <CHED H=\"1\">Receipt</CHED>\n                <CHED H=\"2\">Date</CHED>\n                <CHED H=\"2\">Name and address or name and license No.</CHED>\n                <CHED H=\"1\">Disposition</CHED>\n                <CHED H=\"2\">Date</CHED>\n                <CHED H=\"2\">Name</CHED>\n                <CHED H=\"2\">Address or license No. if licensee, or Form 4473 Serial No. if Forms 4473 filed numerically</CHED>\n              </BOXHD>\n              <ROW EXPSTB=\"09\">\n                <ENT I=\"22\">\u2003</ENT>\n              </ROW>\n            </GPOTABLE>", 
+                                "text": "|Firearms Acquisition and Disposition Record|Description of firearm|Manufacturer and importer (if any)|Model|Serial No.|Type|Caliber or gauge|Receipt|Date|Name and address or name and license No.|Disposition|Date|Name|Address or license No. if licensee, or Form 4473 Serial No. if Forms 4473 filed numerically|\n|---|---|---|---|---|---|---|---|---|---|---|---|---|---|\n||", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "a. In paragraph (e) by removing the words \u201cManufacturer and/or Importer\u201d in the associated table and adding in their place the words \u201cManufacturer and importer (if any)\u201d; and\n            "
+        }, 
+        {
+            "cfr_part": "478", 
+            "changes": [
+                [
+                    "478-125-f-2-p1", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "125", 
+                                    "f", 
+                                    "2", 
+                                    "p1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "<GPOTABLE CDEF=\"s8,6,6,6,6,6,10,6,10,10,10\" COLS=\"11\" OPTS=\"L2,p6,6/7\">\n              <TTITLE>Firearms Collectors Acquisition and Disposition Record</TTITLE>\n              <BOXHD>\n                <CHED H=\"1\">Description of firearm</CHED>\n                <CHED H=\"2\">Manufacturer and importer (if any)</CHED>\n                <CHED H=\"2\">Model</CHED>\n                <CHED H=\"2\">Serial No.</CHED>\n                <CHED H=\"2\">Type</CHED>\n                <CHED H=\"2\">Caliber or gauge</CHED>\n                <CHED H=\"1\">Receipt</CHED>\n                <CHED H=\"2\">Date</CHED>\n                <CHED H=\"2\">Name and address or name and license No.</CHED>\n                <CHED H=\"1\">Disposition</CHED>\n                <CHED H=\"2\">Date</CHED>\n                <CHED H=\"2\">Name and address or name and license No.</CHED>\n                <CHED H=\"2\">Date of birth if non-licensee</CHED>\n                <CHED H=\"2\">Driver's license No. or other identification if non-licensee</CHED>\n              </BOXHD>\n              <ROW>\n                <ENT I=\"22\">\u2003</ENT>\n              </ROW>\n            </GPOTABLE>", 
+                                "text": "|Firearms Collectors Acquisition and Disposition Record|Description of firearm|Manufacturer and importer (if any)|Model|Serial No.|Type|Caliber or gauge|Receipt|Date|Name and address or name and license No.|Disposition|Date|Name and address or name and license No.|Date of birth if non-licensee|Driver's license No. or other identification if non-licensee|\n|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|\n||", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "b. In paragraph (f)(2) by removing the words \u201cManufacturer and/or importer\u201d in the associated table and adding in their place the words \u201cManufacturer and importer (if any)\u201d.\n            "
+        }, 
+        {
+            "cfr_part": "", 
+            "changes": [
+                [
+                    "478-125a-a-4-p1", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "125a", 
+                                    "a", 
+                                    "4", 
+                                    "p1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "<GPOTABLE CDEF=\"13,6,12,5,11,5,11,15\" COLS=\"8\" OPTS=\"L2(,,0),p6,6/1\">\n              <TTITLE>Disposition Record of Personal Firearms</TTITLE>\n              <BOXHD>\n                <CHED H=\"1\">Description of firearm</CHED>\n                <CHED H=\"2\">Manufacturer and importer (if any)</CHED>\n                <CHED H=\"2\">Model</CHED>\n                <CHED H=\"2\">Serial No.</CHED>\n                <CHED H=\"2\">Type</CHED>\n                <CHED H=\"2\">Caliber or gauge</CHED>\n                <CHED H=\"1\">Disposition</CHED>\n                <CHED H=\"2\">Date</CHED>\n                <CHED H=\"2\">Name and address (business address if licensee)</CHED>\n                <CHED H=\"2\">Date of birth if nonlicensee</CHED>\n              </BOXHD>\n              <ROW EXPSTB=\"07\">\n                <ENT I=\"22\">\u2003</ENT>\n              </ROW>\n            </GPOTABLE>", 
+                                "text": "|Disposition Record of Personal Firearms|Description of firearm|Manufacturer and importer (if any)|Model|Serial No.|Type|Caliber or gauge|Disposition|Date|Name and address (business address if licensee)|Date of birth if nonlicensee|\n|---|---|---|---|---|---|---|---|---|---|---|\n||", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "3. Amend \u00a7\u2009478.125a in paragraph (a)(4) by removing the words \u201cManufacturer and/or importer\u201d in the associated table and adding in their place the words \u201cManufacturer and importer (if any)\u201d.\n            "
+        }
+    ], 
+    "cfr_parts": [
+        "478"
+    ], 
+    "cfr_title": 27, 
+    "dockets": [
+        "Docket No. ATF 2015R-26", 
+        "AG Order No. 3681-2016"
+    ], 
+    "document_number": "2016-13878", 
+    "effective_on": "2016-06-13", 
+    "footnotes": {}, 
+    "fr_citation": "81 FR 38070", 
+    "fr_url": "https://www.federalregister.gov/documents/2016/06/13/2016-13878/recordkeeping-regulations", 
+    "fr_volume": 81, 
+    "meta": {
+        "start_page": 38070
+    }, 
+    "primary_agency": "DEPARTMENT OF JUSTICE", 
+    "primary_docket": null, 
+    "publication_date": "2016-06-13", 
+    "regulation_id_numbers": [
+        "1140-AA50"
+    ], 
+    "section_by_section": [], 
+    "supporting_documents": [], 
+    "title": "Recordkeeping Regulations", 
+    "versions": {
+        "478": {
+            "left": "2016-00112", 
+            "right": "2016-13878"
+        }
+    }
+}

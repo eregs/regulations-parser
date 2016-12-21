@@ -1,0 +1,113 @@
+{
+    "amendments": [
+        {
+            "cfr_part": "CHII", 
+            "instruction": "For the reasons discussed in the preamble, the Department of the Treasury and the Department of Justice amend title 27 of the Code of Federal Regulations as follows: "
+        }, 
+        {
+            "cfr_part": "CHII", 
+            "instruction": "1. Revise the title of 27 CFR chapter I to read as set forth above. "
+        }, 
+        {
+            "cfr_part": "CHII", 
+            "instruction": "2. Amend title 27 CFR by establishing chapter II and its related subchapters to read as set forth above. "
+        }, 
+        {
+            "cfr_part": "47", 
+            "instruction": "3. Transfer 27 CFR part 47 from chapter I, subchapter C, to chapter II, subchapter B and redesignate as 27 CFR part 447. "
+        }, 
+        {
+            "authority": "22 U.S.C. 2778.", 
+            "cfr_part": "447", 
+            "instruction": "4. The authority citation for the newly redesignated 27 CFR part 447 continues to read as follows: "
+        }, 
+        {
+            "cfr_part": "447", 
+            "instruction": "5. Amend the newly redesignated part 447 as follows: "
+        }, 
+        {
+            "cfr_part": "55", 
+            "instruction": "6. Transfer 27 CFR part 55 from chapter I, subchapter C, to chapter II, subchapter C and redesignate as 27 CFR part 555."
+        }, 
+        {
+            "authority": "18 U.S.C. 847.", 
+            "cfr_part": "555", 
+            "instruction": "7. The authority citation for the newly redesignated 27 CFR part 555 continues to read as follows: "
+        }, 
+        {
+            "cfr_part": "555", 
+            "instruction": "8. Amend the newly redesignated part 555 as follows:"
+        }, 
+        {
+            "cfr_part": "178", 
+            "instruction": "9. Transfer 27 CFR part 178 from chapter I, subchapter M, to chapter II, subchapter B and redesignate as 27 CFR part 478. "
+        }, 
+        {
+            "authority": "5 U.S.C. 552(a); 18 U.S.C. 847, 921-930; 44 U.S.C. 3504(h).", 
+            "cfr_part": "478", 
+            "instruction": "10. The authority citation for the newly redesignated 27 CFR part 478 continues to read as follows: "
+        }, 
+        {
+            "cfr_part": "178", 
+            "instruction": "11. Amend the newly redesignated part 478 as follows: "
+        }, 
+        {
+            "cfr_part": "179", 
+            "instruction": "12. Transfer 27 CFR part 179 from chapter I, subchapter M to chapter II, subchapter B and redesignate as 27 CFR part 479. "
+        }, 
+        {
+            "authority": "26 U.S.C. 7805.", 
+            "cfr_part": "179", 
+            "instruction": "13. The authority citation for the newly redesignated 27 CFR part 479 continues to read as follows: "
+        }, 
+        {
+            "cfr_part": "179", 
+            "instruction": "14. Amend the newly redesignated part 479 as follows: "
+        }, 
+        {
+            "cfr_part": "46", 
+            "instruction": "15. Transfer 27 CFR part 46, subpart F (\u00a7\u00a7\u200946.141-46.155), from chapter I, subchapter B, to 27 CFR, chapter II, subchapter D and redesignate as \u201cPart 646\u2014Contraband Cigarettes\u201d. "
+        }, 
+        {
+            "authority": "18 U.S.C. 2341-2346, unless otherwise noted.", 
+            "cfr_part": "646", 
+            "instruction": "16. Add an authority citation for the newly redesignated 27 CFR part 646 to read as follows: "
+        }
+    ], 
+    "cfr_parts": [
+        "46", 
+        "47", 
+        "55", 
+        "178", 
+        "179", 
+        "447", 
+        "478", 
+        "479", 
+        "555", 
+        "646"
+    ], 
+    "cfr_title": 27, 
+    "dockets": [
+        "T.D. ATF-487", 
+        "OLC No. 01-03"
+    ], 
+    "document_number": "03-1657", 
+    "effective_on": "2003-01-24", 
+    "footnotes": {}, 
+    "fr_citation": "68 FR 3743", 
+    "fr_url": "https://www.federalregister.gov/documents/2003/01/24/03-1657/reorganization-of-title-27-code-of-federal-regulations", 
+    "fr_volume": 68, 
+    "meta": {
+        "start_page": 3743
+    }, 
+    "primary_agency": "DEPARTMENT OF THE TREASURY", 
+    "primary_docket": null, 
+    "publication_date": "2003-01-24", 
+    "regulation_id_numbers": [
+        ": 1512-AD06"
+    ], 
+    "section_by_section": [], 
+    "supporting_documents": [], 
+    "title": "Reorganization of Title 27, Code of Federal Regulations", 
+    "versions": {}
+}

@@ -1,0 +1,105 @@
+{
+    "amendments": [
+        {
+            "authority": "22 U.S.C. 2778.", 
+            "cfr_part": "447", 
+            "instruction": "1. The authority citation for 27 CFR part 447 continues to read as follows:"
+        }, 
+        {
+            "cfr_part": "447", 
+            "changes": [
+                [
+                    "447-43-a", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "43", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) Import permits issued under this subpart are valid for two years from their issuance date unless a different period of validity is stated thereon. They are not transferable.", 
+                                "text": "(a) Import permits issued under this subpart are valid for two years from their issuance date unless a different period of validity is stated thereon. They are not transferable.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "2. In \u00a7 447.43, paragraph (a) is revised."
+        }, 
+        {
+            "authority": "26 U.S.C. 7805.", 
+            "cfr_part": "479", 
+            "instruction": "3. The authority citation for 27 CFR part 479 continues to read as follows:"
+        }, 
+        {
+            "cfr_part": "479", 
+            "changes": [
+                [
+                    "479-111-a-3-p1", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "479", 
+                                    "111", 
+                                    "a", 
+                                    "3", 
+                                    "p1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "The burden of proof is affirmatively on any person importing or bringing the firearm into the United States or any territory under its control or jurisdiction to show that the firearm is being imported or brought in under one of the above paragraphs. Any person desiring to import or bring a firearm into the United States under this paragraph shall file with the Director an application on Form 6 (Firearms), Application and Permit for Importation of Firearms, Ammunition and Implements of War, in triplicate, executed under the penalties of perjury. The application shall show the information required by subpart G of Part 478 of this chapter. A detailed explanation of why the importation of the firearm falls within the standards set out in this paragraph shall be attached to the application. The person seeking to import or bring in the firearm will be notified of the approval or disapproval of his application. If the application is approved, the original Form 6 (Firearms) will be returned to the applicant showing such approval and he will present the approved application, Form 6 (Firearms), to the Customs officer at the port of importation. The approval of an application to import a firearm shall be automatically terminated at the expiration of two years from the date of approval unless, upon request, it is further extended by the Director. If the firearm described in the approved application is not imported prior to the expiration of the approval, the Director shall be so notified. Customs officers will not permit release of a firearm from Customs custody, except for exportation, unless covered by an application which has been approved by the Director and which is currently effective. The importation or bringing in of a firearm not covered by an approved application may subject the person responsible to civil and criminal liabilities. (26 U.S.C. 5861, 5871, and 5872.)", 
+                                "text": "The burden of proof is affirmatively on any person importing or bringing the firearm into the United States or any territory under its control or jurisdiction to show that the firearm is being imported or brought in under one of the above paragraphs. Any person desiring to import or bring a firearm into the United States under this paragraph shall file with the Director an application on Form 6 (Firearms), Application and Permit for Importation of Firearms, Ammunition and Implements of War, in triplicate, executed under the penalties of perjury. The application shall show the information required by subpart G of Part 478 of this chapter. A detailed explanation of why the importation of the firearm falls within the standards set out in this paragraph shall be attached to the application. The person seeking to import or bring in the firearm will be notified of the approval or disapproval of his application. If the application is approved, the original Form 6 (Firearms) will be returned to the applicant showing such approval and he will present the approved application, Form 6 (Firearms), to the Customs officer at the port of importation. The approval of an application to import a firearm shall be automatically terminated at the expiration of two years from the date of approval unless, upon request, it is further extended by the Director. If the firearm described in the approved application is not imported prior to the expiration of the approval, the Director shall be so notified. Customs officers will not permit release of a firearm from Customs custody, except for exportation, unless covered by an application which has been approved by the Director and which is currently effective. The importation or bringing in of a firearm not covered by an approved application may subject the person responsible to civil and criminal liabilities. (26 U.S.C. 5861, 5871, and 5872.)", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "4. [label:479-111-a-3-p1] is revised."
+        }
+    ], 
+    "cfr_parts": [
+        "447", 
+        "479"
+    ], 
+    "cfr_title": 27, 
+    "dockets": [
+        "Docket No. ATF 26F", 
+        "AG Order No. 3417-2014"
+    ], 
+    "document_number": "2014-02580", 
+    "effective_on": "2014-04-08", 
+    "footnotes": {}, 
+    "fr_citation": "79 FR 7392", 
+    "fr_url": "https://www.federalregister.gov/documents/2014/02/07/2014-02580/importation-of-arms-ammunition-and-implements-of-war-and-machine-guns-destructive-devices-and", 
+    "fr_volume": 79, 
+    "meta": {
+        "start_page": 7392
+    }, 
+    "primary_agency": "DEPARTMENT OF JUSTICE", 
+    "primary_docket": null, 
+    "publication_date": "2014-02-07", 
+    "regulation_id_numbers": [
+        "1140-AA42"
+    ], 
+    "section_by_section": [], 
+    "supporting_documents": [], 
+    "title": "Importation of Arms, Ammunition and Implements of War and Machine Guns, Destructive Devices, and Certain Other Firearms; Extending the Term of Import Permits (2010R-26P)", 
+    "versions": {
+        "447": {
+            "left": "2013-09392", 
+            "right": "2014-02580"
+        }, 
+        "479": {
+            "left": "E8-23178", 
+            "right": "2014-02580"
+        }
+    }
+}

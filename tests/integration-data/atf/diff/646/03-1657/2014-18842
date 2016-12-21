@@ -1,0 +1,31 @@
+{
+    "646-143-p4250035813": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    74, 
+                    81
+                ], 
+                [
+                    "insert", 
+                    74, 
+                    "Tobacco, Firearms,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    86, 
+                    94
+                ], 
+                [
+                    "insert", 
+                    86, 
+                    "Explosives"
+                ]
+            ]
+        ]
+    }
+}

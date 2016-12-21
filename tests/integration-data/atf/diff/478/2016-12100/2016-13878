@@ -1,0 +1,174 @@
+{
+    "478-72": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    682, 
+                    692
+                ], 
+                [
+                    "insert", 
+                    682, 
+                    "On conclusion of the"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    701, 
+                    704
+                ], 
+                [
+                    "insert", 
+                    701, 
+                    "and consideration of all relevant facts and circumstances presented by the"
+                ]
+            ], 
+            [
+                "insert", 
+                715, 
+                "or his representative, the Director shall render his decision confirming or reversing the denial of the application. If the decision is that the denial should stand, a certified copy of the Director's findings and conclusions shall be furnished to the applicant with a final notice of denial, Form 5300.13. A copy of the application, marked \u201cDisapproved,\u201d "
+            ], 
+            [
+                [
+                    "delete", 
+                    720, 
+                    740
+                ], 
+                [
+                    "insert", 
+                    720, 
+                    "be returned"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    744, 
+                    770
+                ], 
+                [
+                    "insert", 
+                    744, 
+                    "the applicant. If the decision is that the license applied"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    775, 
+                    1002
+                ], 
+                [
+                    "insert", 
+                    775, 
+                    "should be issued, the applicant shall be so notified, in writing, and the license shall be issued as provided"
+                ]
+            ], 
+            [
+                "delete", 
+                1006, 
+                1572
+            ]
+        ]
+    }, 
+    "478-73-a": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    226, 
+                    237
+                ], 
+                [
+                    "insert", 
+                    226, 
+                    "a notice of revocation, suspension, or imposition of a civil fine may be issued on ATF Form 4500 whenever the Director has reason to believe that a licensee has knowingly transferred a firearm to an unlicensed person and knowingly failed to comply with the requirements of"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    248, 
+                    257
+                ], 
+                [
+                    "insert", 
+                    248, 
+                    "922(t)(1) with respect to the transfer and, at the time that the transferee most recently proposed the transfer, the national instant criminal background check system was operating"
+                ]
+            ], 
+            [
+                "insert", 
+                262, 
+                "information was available to the system demonstrating that the transferee's receipt of a firearm would violate "
+            ], 
+            [
+                "delete", 
+                272, 
+                869
+            ], 
+            [
+                [
+                    "delete", 
+                    895, 
+                    1136
+                ], 
+                [
+                    "insert", 
+                    895, 
+                    "law."
+                ]
+            ]
+        ]
+    }, 
+    "478-74": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    1054, 
+                    1074
+                ], 
+                [
+                    "insert", 
+                    1054, 
+                    "922(t)(5),"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    1124, 
+                    1126
+                ], 
+                [
+                    "insert", 
+                    1124, 
+                    "and/or"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    1420, 
+                    1440
+                ], 
+                [
+                    "insert", 
+                    1420, 
+                    "922(t)(5),"
+                ]
+            ], 
+            [
+                "delete", 
+                1576, 
+                1799
+            ]
+        ]
+    }
+}

@@ -1,0 +1,53 @@
+{
+    "447-32-c": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    322, 
+                    343
+                ], 
+                [
+                    "insert", 
+                    322, 
+                    "Martinsburg, WV 25405,"
+                ]
+            ]
+        ]
+    }, 
+    "447-35-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    143, 
+                    169
+                ], 
+                [
+                    "insert", 
+                    143, 
+                    "http://www.atf.gov/."
+                ]
+            ]
+        ]
+    }, 
+    "447-58": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    432, 
+                    458
+                ], 
+                [
+                    "insert", 
+                    432, 
+                    "http://www.atf.gov/."
+                ]
+            ]
+        ]
+    }
+}
