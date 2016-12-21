@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-from collections import defaultdict
+from collections import defaultdict, namedtuple
 import re
 
 import inflection
@@ -21,6 +21,7 @@ except ValueError:
 
 
 MAX_TERM_LENGTH = 100
+Inflected = namedtuple('Inflected', ['singular', 'plural'])
 
 
 class ParentStack(PriorityStack):
@@ -47,6 +48,14 @@ class Terms(Layer):
         #   scope -> List[(term, definition_ref)]
         self.scoped_terms = defaultdict(list)
         self.scope_finder = ScopeFinder()
+        self._inflected = {}
+
+    def inflected(self, term):
+        """Check the memoized Inflected version of the provided term"""
+        if term not in self._inflected:
+            self._inflected[term] = Inflected(
+                inflection.singularize(term), inflection.pluralize(term))
+        return self._inflected[term]
 
     def look_for_defs(self, node, stack=None):
         """Check a node and recursively check its children for terms which are
@@ -186,8 +195,7 @@ class Terms(Layer):
         exclusions.extend(self.ignored_offsets(node.label[0], node.text))
         return exclusions
 
-    @staticmethod
-    def calculate_offsets(text, applicable_terms, exclusions=None,
+    def calculate_offsets(self, text, applicable_terms, exclusions=None,
                           inclusions=None):
         """Search for defined terms in this text, including singular and
         plural forms of these terms, with a preference for all larger
@@ -198,10 +206,9 @@ class Terms(Layer):
         inclusions = list(inclusions or [])
 
         # add singulars and plurals to search terms
-        search_terms = set((inflection.singularize(t[0]), t[1])
-                           for t in applicable_terms)
-        search_terms |= set((inflection.pluralize(t[0]), t[1])
-                            for t in applicable_terms)
+        search_terms = set((inflected, t[1])
+                           for t in applicable_terms
+                           for inflected in self.inflected(t[0]))
 
         # longer terms first
         search_terms = sorted(search_terms, key=lambda x: len(x[0]),
