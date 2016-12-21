@@ -4,13 +4,10 @@ from itertools import takewhile
 import logging
 import re
 
-from lxml import etree
 from pyparsing import LineStart, Optional, Suppress
-import six
 
 from regparser.citations import internal_citations
 from regparser.grammar import appendix as grammar
-from regparser.grammar.interpretation_headers import parser as headers
 from regparser.grammar.utils import Marker, QuickSearchable
 from regparser.layer.formatting import table_xml_to_plaintext
 from regparser.layer.key_terms import KeyTerms
@@ -18,9 +15,7 @@ from regparser.tree.depth import markers
 from regparser.tree.depth.derive import derive_depths
 from regparser.tree.paragraph import p_levels
 from regparser.tree.struct import Node
-from regparser.tree.xml_parser import tree_utils
-from regparser.tree.xml_parser.interpretations import build_supplement_tree
-from regparser.tree.xml_parser.interpretations import get_app_title
+from regparser.tree.xml_parser import matchers, tree_utils
 
 from settings import APPENDIX_IGNORE_SUBHEADER_LABEL
 
@@ -87,7 +82,7 @@ class AppendixProcessor(object):
             if self.appendix_letter:
                 logger.warning("Found two appendix headers: %s and %s",
                                self.appendix_letter, text)
-            self.appendix_letter = headers.parseString(text).appendix
+            self.appendix_letter = grammar.headers.parseString(text).appendix
         return self.appendix_letter
 
     def hed(self, part, text):
@@ -338,6 +333,11 @@ def process_appendix(appendix, part):
     return AppendixProcessor(part).process(appendix)
 
 
+@matchers.match_tag('APPENDIX')
+def parse_appendix(parent, xml_node):
+    parent.children.append(process_appendix(xml_node, parent.cfr_part))
+
+
 def parsed_title(text, appendix_letter):
     digit_str_parser = (Marker(appendix_letter) +
                         Suppress('-') +
@@ -393,25 +393,3 @@ def initial_marker(text):
                   match.period_lower or match.period_digit)
         if len(marker) < 3 or all(char in 'ivxlcdm' for char in marker):
             return marker, text[:end]
-
-
-def build_non_reg_text(reg_xml, reg_part):
-    """ This builds the tree for the non-regulation text such as Appendices
-    and the Supplement section """
-    if isinstance(reg_xml, six.string_types):
-        doc_root = etree.fromstring(reg_xml)
-    else:
-        doc_root = reg_xml
-    non_reg_sects = doc_root.xpath('//PART//APPENDIX')
-    logger.debug("Non Reg sections: %r", non_reg_sects)
-    children = []
-
-    for non_reg_sect in non_reg_sects:
-        section_title = get_app_title(non_reg_sect)
-        logger.debug("Building non reg sect: %s", section_title)
-        if 'Supplement' in section_title and 'Part' in section_title:
-            children.append(build_supplement_tree(reg_part, non_reg_sect))
-        else:
-            children.append(process_appendix(non_reg_sect, reg_part))
-
-    return children

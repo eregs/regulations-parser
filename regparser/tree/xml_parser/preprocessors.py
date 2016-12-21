@@ -4,6 +4,7 @@ in the XML"""
 from __future__ import unicode_literals
 import abc
 from copy import deepcopy
+import functools
 import logging
 import re
 
@@ -52,85 +53,59 @@ class PreProcessorBase(object):
         raise NotImplementedError()
 
 
-class MoveLastAMDPar(PreProcessorBase):
+_AMDPAR_WITHOUT_FOLLOWING = "//AMDPAR[not(following-sibling::*)]"
+
+
+def move_last_amdpar(xml):
     """If the last element in a section is an AMDPAR, odds are the authors
     intended it to be associated with the following section"""
-    AMDPAR_WITHOUT_FOLLOWING = "//AMDPAR[not(following-sibling::*)]"
-
-    def transform(self, xml):
-        # AMDPAR with no following node
-        for amdpar in xml.xpath(self.AMDPAR_WITHOUT_FOLLOWING):
-            parent = amdpar.getparent()
-            aunt = parent.getnext()
-            if aunt is not None and parent.get('PART') == aunt.get('PART'):
-                parent.remove(amdpar)
-                aunt.insert(0, amdpar)
+    # AMDPAR with no following node
+    for amdpar in xml.xpath(_AMDPAR_WITHOUT_FOLLOWING):
+        parent = amdpar.getparent()
+        aunt = parent.getnext()
+        if aunt is not None and parent.get('PART') == aunt.get('PART'):
+            parent.remove(amdpar)
+            aunt.insert(0, amdpar)
 
 
-class SupplementAMDPar(PreProcessorBase):
-    """Supplement I AMDPARs are often incorrect (labelled as Ps)"""
-    CONTAINS_SUPPLEMENT = "contains(., 'Supplement I')"
-    SUPPLEMENT_HD = "//REGTEXT//HD[@SOURCE='HD1' and {}]".format(
-        CONTAINS_SUPPLEMENT)
-    SUPPLEMENT_AMD_OR_P = "./AMDPAR[{0}]|./P[{0}]".format(
-        CONTAINS_SUPPLEMENT)
-
-    def transform(self, xml):
-        for supp_header in xml.xpath(self.SUPPLEMENT_HD):
-            parent = supp_header.getparent()
-            if parent.xpath(self.SUPPLEMENT_AMD_OR_P):
-                self.set_prev_to_amdpar(supp_header.getprevious())
-
-    def set_prev_to_amdpar(self, xml_node):
-        """Set the tag to AMDPAR on all previous siblings until we hit the
-        Supplement I header"""
-        if xml_node is not None and xml_node.tag in ('P', 'AMDPAR'):
-            xml_node.tag = 'AMDPAR'
-            if 'supplement i' not in xml_node.text.lower():     # not done
-                self.set_prev_to_amdpar(xml_node.getprevious())
-        elif xml_node is not None:
-            self.set_prev_to_amdpar(xml_node.getprevious())
-
-
-class ParenthesesCleanup(PreProcessorBase):
+def parentheses_cleanup(xml):
     """Clean up where parentheses exist between paragraph an emphasis tags"""
-    def transform(self, xml):
-        # We want to treat None's as blank strings
-        def _str(x):
-            return x or ""
-        for par in xml.xpath("//P/*[position()=1 and name()='E']/.."):
-            em = par.getchildren()[0]   # must be an E due to the xpath
+    # We want to treat None's as blank strings
+    def _str(x):
+        return x or ""
+    for par in xml.xpath("//P/*[position()=1 and name()='E']/.."):
+        em = par.getchildren()[0]   # must be an E due to the xpath
 
-            outside_open = _str(par.text).endswith("(")
-            inside_open = _str(em.text).startswith("(")
-            has_open = outside_open or inside_open
+        outside_open = _str(par.text).endswith("(")
+        inside_open = _str(em.text).startswith("(")
+        has_open = outside_open or inside_open
 
-            inside_close = _str(em.text).endswith(")")
-            outside_close = _str(em.tail).startswith(")")
-            has_close = inside_close or outside_close
+        inside_close = _str(em.text).endswith(")")
+        outside_close = _str(em.tail).startswith(")")
+        has_close = inside_close or outside_close
 
-            if has_open and has_close:
-                if not outside_open and inside_open:    # Move '(' out
-                    par.text = _str(par.text) + "("
-                    em.text = em.text[1:]
+        if has_open and has_close:
+            if not outside_open and inside_open:    # Move '(' out
+                par.text = _str(par.text) + "("
+                em.text = em.text[1:]
 
-                if not outside_close and inside_close:  # Move ')' out
-                    em.text = em.text[:-1]
-                    em.tail = ")" + _str(em.tail)
+            if not outside_close and inside_close:  # Move ')' out
+                em.text = em.text[:-1]
+                em.tail = ")" + _str(em.tail)
 
 
-class MoveAdjoiningChars(PreProcessorBase):
-    ORPHAN_REGEX = re.compile(r"(\.|—)")
+_ORPHAN_REGEX = re.compile(r"(\.|—)")
 
-    def transform(self, xml):
-        # if an e tag has an emdash or period after it, put the
-        # char inside the e tag
-        for e in xml.xpath("//P/E"):
-            orphan = self.ORPHAN_REGEX.match(e.tail or '')
 
-            if orphan:
-                e.text = (e.text or '') + orphan.group(1)
-                e.tail = self.ORPHAN_REGEX.sub('', e.tail, 1)
+def move_adjoining_chars(xml):
+    """If an e tag has an emdash or period after it, put the char inside the e
+    tag"""
+    for e in xml.xpath("//P/E"):
+        orphan = _ORPHAN_REGEX.match(e.tail or '')
+
+        if orphan:
+            e.text = (e.text or '') + orphan.group(1)
+            e.tail = _ORPHAN_REGEX.sub('', e.tail, 1)
 
 
 class ApprovalsFP(PreProcessorBase):
@@ -317,72 +292,77 @@ class Footnotes(PreProcessorBase):
         return referencing == referenced
 
 
-class ParseAMDPARs(PreProcessorBase):
-    """Modify the AMDPAR tag to contain an <EREGS_INSTRUCTIONS> element.
-    This element contains an interpretation of the AMDPAR, as viewed as a
-    sequence of actions for how to modify the CFR. Do _not_ modify any
-    existing EREGS_INSTRUCTIONS (they've been manually created)"""
-    # parent of any AMDPAR _without_ an EREGS_INSTRUCTIONS elt
-    AMDPARENT_XPATH = '//AMDPAR[not(EREGS_INSTRUCTIONS)]/..'
-
-    def transform(self, xml):
-        has_part = xml.xpath('//*[AMDPAR and @PART]')
-        context = ['0']
-        if has_part:
-            context = [has_part[0].get('PART')]
-        elif xml.xpath('//AMDPAR'):
-            logger.warning('Could not find any PART designators.')
-
-        for amdparent in xml.xpath(self.AMDPARENT_XPATH):
-            # Always start with only the CFR part
-            context = [amdparent.get('PART') or context[0]]
-            for amdpar in amdparent.xpath('.//AMDPAR'):
-                instructions, context = parse_amdpar(amdpar, context)
-                amdpar.append(instructions)
-                instructions.set(
-                    'final_context',
-                    '-'.join('?' if l is None else l for l in context))
+# parent of any AMDPAR _without_ an EREGS_INSTRUCTIONS elt
+_AMDPARENT_XPATH = '//AMDPAR[not(EREGS_INSTRUCTIONS)]/..'
 
 
-class AtfI50032(PreProcessorBase):
+def preprocess_amdpars(xml):
+    """Modify the AMDPAR tag to contain an <EREGS_INSTRUCTIONS> element. This
+    element contains an interpretation of the AMDPAR, as viewed as a sequence
+    of actions for how to modify the CFR. Do _not_ modify any existing
+    EREGS_INSTRUCTIONS (they've been manually created)"""
+    has_part = xml.xpath('//*[AMDPAR and @PART]')
+    context = ['0']
+    if has_part:
+        context = [has_part[0].get('PART')]
+    elif xml.xpath('//AMDPAR'):
+        logger.warning('Could not find any PART designators.')
+
+    for amdparent in xml.xpath(_AMDPARENT_XPATH):
+        # Always start with only the CFR part
+        context = [amdparent.get('PART') or context[0]]
+        for amdpar in amdparent.xpath('.//AMDPAR'):
+            instructions, context = parse_amdpar(amdpar, context)
+            amdpar.append(instructions)
+            instructions.set(
+                'final_context',
+                '-'.join('?' if l is None else l for l in context))
+
+
+_MARKER_50032 = (
+    "//SECTNO[contains(., '478.103')]/.."     # In 478.103
+    # Look for a P with the appropriate key words
+    "/P[contains(., 'ATF I 5300.2') and contains(., 'shall state')]"
+)
+
+
+def atf_i50032(xml):
     """478.103 contains a chunk of text which is meant to appear in a poster
     and be easily copy-paste-able. Unfortunately, the XML post 2003 isn't
     structured to contain all of the appropriate elements within the EXTRACT
     associated with the poster. This PreProcessor moves these additional
     elements back into the appropriate EXTRACT."""
-    MARKER = ("//SECTNO[contains(., '478.103')]/.."     # In 478.103
-              # Look for a P with the appropriate key words
-              "/P[contains(., 'ATF I 5300.2') and contains(., 'shall state')]")
-
-    def transform(self, xml):
-        for p in xml.xpath(self.MARKER):
-            next_el = p.getnext()
-            to_move = []
-            while next_el is not None and next_el.tag != 'EXTRACT':
-                to_move.append(next_el)
-                next_el = next_el.getnext()
-            if next_el is not None:
-                extract = next_el
-                # reversed as we're inserting into the beginning
-                for xml_el in reversed(to_move):
-                    extract.insert(0, xml_el)
+    for p in xml.xpath(_MARKER_50032):
+        next_el = p.getnext()
+        to_move = []
+        while next_el is not None and next_el.tag != 'EXTRACT':
+            to_move.append(next_el)
+            next_el = next_el.getnext()
+        if next_el is not None:
+            extract = next_el
+            # reversed as we're inserting into the beginning
+            for xml_el in reversed(to_move):
+                extract.insert(0, xml_el)
 
 
-class AtfI50031(PreProcessorBase):
+_MARKER_50031 = (
+    "//SECTNO[contains(., '478.103')]/.."     # In 478.103
+    # Look for a P with the appropriate key words
+    "/P[contains(., 'ATF I 5300.1') and contains(., 'shall state')]"
+    # First following EXTRACT
+    "/following-sibling::EXTRACT[1]"
+)
+
+
+def atf_i50031(xml):
     """478.103 also contains a shorter form, which appears in a smaller
     poster. Unfortunately, the XML didn't include the appropriate NOTE inside
     the corresponding EXTRACT"""
-    MARKER = ("//SECTNO[contains(., '478.103')]/.."     # In 478.103
-              # Look for a P with the appropriate key words
-              "/P[contains(., 'ATF I 5300.1') and contains(., 'shall state')]"
-              "/following-sibling::EXTRACT[1]")     # First following EXTRACT
-
-    def transform(self, xml):
-        for extract in xml.xpath(self.MARKER):
+    for extract in xml.xpath(_MARKER_50031):
+        next_el = extract.getnext()
+        while next_el is not None and next_el.tag != 'P':
+            extract.append(next_el)
             next_el = extract.getnext()
-            while next_el is not None and next_el.tag != 'P':
-                extract.append(next_el)
-                next_el = extract.getnext()
 
 
 class ImportCategories(PreProcessorBase):
@@ -430,3 +410,18 @@ class ImportCategories(PreProcessorBase):
                 next_el = iterator.getnext()
                 category_el.append(iterator)
                 iterator = next_el
+
+
+def promote_nested_tags(tag, xml):
+    """We don't currently support certain tags nested inside subparts, so
+    promote each up one level"""
+    # Reversed to account for the order of insertion
+    for subjgrp_xml in reversed(xml.xpath('.//SUBPART/' + tag)):
+        subpart_xml = subjgrp_xml.getparent()
+        subpart_parent = subpart_xml.getparent()
+        idx = subpart_parent.index(subpart_xml) + 1
+        subpart_parent.insert(idx, subjgrp_xml)
+
+
+promote_nested_subjgrp = functools.partial(promote_nested_tags, 'SUBJGRP')
+promote_nested_appendix = functools.partial(promote_nested_tags, 'APPENDIX')

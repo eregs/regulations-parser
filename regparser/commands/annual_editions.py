@@ -5,7 +5,7 @@ import click
 
 from regparser.history import annual
 from regparser.index import dependency, entry
-from regparser.tree import xml_parser
+from regparser.tree import gpo_cfr
 
 
 LastVersionInYear = namedtuple('LastVersionInYear', ['version_id', 'year'])
@@ -50,7 +50,7 @@ def process_if_needed(cfr_title, cfr_part, last_version_list):
         deps.validate_for(tree_entry)
         if deps.is_stale(tree_entry):
             input_entry = annual_path / last_version.year
-            tree = xml_parser.reg_text.build_tree(input_entry.read().xml)
+            tree = gpo_cfr.builder.build_tree(input_entry.read().xml)
             tree_entry.write(tree)
 
 

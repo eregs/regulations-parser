@@ -32,5 +32,72 @@ setup(
         "six",
         "stevedore"
     ],
-    entry_points={"console_scripts": ["eregs=eregs:main"]}
+    entry_points={
+        "console_scripts": "eregs=eregs:main",
+        "eregs_ns.parser.amendment.content": [
+            ("new_subpart = regparser.notice.amendments.subpart:"
+             "content_for_new_subpart"),
+            ("regtext = regparser.notice.amendments.section:"
+             "content_for_regtext"),
+            ("appendix = regparser.notice.amendments.appendix:"
+             "content_for_appendix"),
+        ],
+        "eregs_ns.parser.layer.cfr": [
+            "meta = regparser.layer.meta:Meta",
+            ("internal-citations = "
+             "regparser.layer.internal_citations:InternalCitationParser"),
+            "toc = regparser.layer.table_of_contents:TableOfContentsLayer",
+            "terms = regparser.layer.terms:Terms",
+            ("paragraph-markers = "
+             "regparser.layer.paragraph_markers:ParagraphMarkers"),
+            "keyterms = regparser.layer.key_terms:KeyTerms",
+            ("external-citations = "
+             "regparser.layer.external_citations:ExternalCitationParser"),
+            "formatting = regparser.layer.formatting:Formatting",
+            "graphics = regparser.layer.graphics:Graphics",
+        ],
+        "eregs_ns.parser.layer.preamble": [
+            "keyterms = regparser.layer.preamble.key_terms:KeyTerms",
+            ("internal-citations = "
+             "regparser.layer.preamble.internal_citations:InternalCitations"),
+            ("paragraph-markers = "
+             "regparser.layer.preamble.paragraph_markers:ParagraphMarkers"),
+            ("external-citations = "
+             "regparser.layer.external_citations:ExternalCitationParser"),
+            "formatting = regparser.layer.formatting:Formatting",
+            "graphics = regparser.layer.graphics:Graphics",
+        ],
+        "eregs_ns.parser.preprocessors": [
+            ("move-last-amdpar = "
+             "regparser.tree.xml_parser.preprocessors:move_last_amdpar"),
+            ("parenthesis-cleanup = "
+             "regparser.tree.xml_parser.preprocessors:parentheses_cleanup"),
+            ("move-adjoining-chars = "
+             "regparser.tree.xml_parser.preprocessors:move_adjoining_chars"),
+            ("approvals-fp = "
+             "regparser.tree.xml_parser.preprocessors:ApprovalsFP"),
+            ("extract-tags = "
+             "regparser.tree.xml_parser.preprocessors:ExtractTags"),
+            ("footnotes = "
+             "regparser.tree.xml_parser.preprocessors:Footnotes"),
+            ("parse-amdpars = "
+             "regparser.tree.xml_parser.preprocessors:preprocess_amdpars"),
+            ("atf-i-50032 = "
+             "regparser.tree.xml_parser.preprocessors:atf_i50032"),
+            ("atf-i-50031 = "
+             "regparser.tree.xml_parser.preprocessors:atf_i50031"),
+            ("atf-import-categories = "
+             "regparser.tree.xml_parser.preprocessors:ImportCategories"),
+            ("promote-nested-subjgrp = "
+             "regparser.tree.xml_parser.preprocessors:promote_nested_subjgrp"),
+            ("promote-nested-appendix = regparser.tree.xml_parser."
+             "preprocessors:promote_nested_appendix"),
+        ],
+        "eregs_ns.parser.xml_matchers.gpo_cfr.PART": [
+            "empty-part = regparser.tree.gpo_cfr.section:ParseEmptyPart",
+            "subpart = regparser.tree.gpo_cfr.subpart:parse_subpart",
+            "subjgrp = regparser.tree.gpo_cfr.subpart:ParseSubjectGroup",
+            "appendix = regparser.tree.gpo_cfr.appendices:parse_appendix",
+        ]
+    }
 )

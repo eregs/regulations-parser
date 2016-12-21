@@ -8,96 +8,61 @@ from regparser.test_utils.xml_builder import XMLBuilder
 from regparser.tree.xml_parser import preprocessors
 
 
-class MoveLastAMDParTests(TestCase):
-    def test_improper_amdpar_location(self):
-        """The second AMDPAR is in the wrong parent; it should be moved"""
-        with XMLBuilder("PART") as ctx:
-            with ctx.REGTEXT(ID="RT1"):
-                ctx.AMDPAR(u"1. In § 105.1, revise paragraph (b):")
-                with ctx.SECTION():
-                    ctx.P("Some Content")
-                # Note this has the wrong parent
-                ctx.AMDPAR(u"3. In § 105.2, revise paragraph (a) to read:")
-            with ctx.REGTEXT(ID="RT2"):
-                with ctx.SECTION():
-                    ctx.P("Other Content")
+def test_move_last_amdpar_improper_location():
+    """The second AMDPAR is in the wrong parent; it should be moved"""
+    with XMLBuilder("PART") as ctx:
+        with ctx.REGTEXT(ID="RT1"):
+            ctx.AMDPAR(u"1. In § 105.1, revise paragraph (b):")
+            with ctx.SECTION():
+                ctx.P("Some Content")
+            # Note this has the wrong parent
+            ctx.AMDPAR(u"3. In § 105.2, revise paragraph (a) to read:")
+        with ctx.REGTEXT(ID="RT2"):
+            with ctx.SECTION():
+                ctx.P("Other Content")
 
-        preprocessors.MoveLastAMDPar().transform(ctx.xml)
+    preprocessors.move_last_amdpar(ctx.xml)
 
-        amd1, amd2 = ctx.xml.xpath("//AMDPAR")
-        self.assertEqual(amd1.getparent().get("ID"), "RT1")
-        self.assertEqual(amd2.getparent().get("ID"), "RT2")
-
-    def test_trick_amdpar_location_diff_parts(self):
-        """Similar situation to the above, except the regulations describe
-        different parts and hence the AMDPAR should not move"""
-        with XMLBuilder("PART") as ctx:
-            with ctx.REGTEXT(ID="RT1", PART="105"):
-                ctx.AMDPAR(u"1. In § 105.1, revise paragraph (b):")
-                with ctx.SECTION():
-                    ctx.P("Some Content")
-                ctx.AMDPAR(u"3. In § 105.2, revise paragraph (a) to read:")
-            with ctx.REGTEXT(ID="RT2", PART="107"):
-                with ctx.SECTION():
-                    ctx.P("Other Content")
-
-        preprocessors.MoveLastAMDPar().transform(ctx.xml)
-
-        amd1, amd2 = ctx.xml.xpath("//AMDPAR")
-        self.assertEqual(amd1.getparent().get("ID"), "RT1")
-        self.assertEqual(amd2.getparent().get("ID"), "RT1")
+    amd1, amd2 = ctx.xml.xpath("//AMDPAR")
+    assert amd1.getparent().get("ID") == "RT1"
+    assert amd2.getparent().get("ID") == "RT2"
 
 
-class SupplementAMDParTests(TestCase):
-    def test_incorrect_ps(self):
-        """Supplement I AMDPARs are not always labeled as should be"""
-        with XMLBuilder("PART") as ctx:
-            with ctx.REGTEXT():
-                ctx.AMDPAR(u"1. In § 105.1, revise paragraph (b):")
-                with ctx.SECTION():
-                    ctx.STARS()
-                    ctx.P("(b) Content")
-                ctx.P("2. In Supplement I to Part 105,")
-                ctx.P("A. Under Section 105.1, 1(b), paragraph 2 is revised")
-                ctx.P("The revisions are as follows")
-                ctx.HD("Supplement I to Part 105", SOURCE="HD1")
-                ctx.STARS()
-                with ctx.P():
-                    ctx.E("1(b) Heading", T="03")
-                ctx.STARS()
-                ctx.P("2. New Context")
+def test_move_last_amdpar_trick_location_diff_parts():
+    """Similar situation to the above, except the regulations describe
+    different parts and hence the AMDPAR should not move"""
+    with XMLBuilder("PART") as ctx:
+        with ctx.REGTEXT(ID="RT1", PART="105"):
+            ctx.AMDPAR(u"1. In § 105.1, revise paragraph (b):")
+            with ctx.SECTION():
+                ctx.P("Some Content")
+            ctx.AMDPAR(u"3. In § 105.2, revise paragraph (a) to read:")
+        with ctx.REGTEXT(ID="RT2", PART="107"):
+            with ctx.SECTION():
+                ctx.P("Other Content")
 
-        preprocessors.SupplementAMDPar().transform(ctx.xml)
+    preprocessors.move_last_amdpar(ctx.xml)
 
-        # Note that the SECTION paragraphs were not converted
-        self.assertEqual(
-            [amd.text for amd in ctx.xml.xpath("//AMDPAR")],
-            [u"1. In § 105.1, revise paragraph (b):",
-             "2. In Supplement I to Part 105,",
-             "A. Under Section 105.1, 1(b), paragraph 2 is revised",
-             "The revisions are as follows"])
+    amd1, amd2 = ctx.xml.xpath("//AMDPAR")
+    assert amd1.getparent().get("ID") == "RT1"
+    assert amd2.getparent().get("ID") == "RT1"
 
 
-class ParenthesesCleanupTests(TestCase):
-    def assert_transformed(self, original, new_text):
-        """Helper function to verify that the XML is transformed as
-        expected"""
-        self.setUp()
-        with XMLBuilder("PART") as ctx:
-            ctx.child_from_string(u"<P>{}</P>".format(original))
-        preprocessors.ParenthesesCleanup().transform(ctx.xml)
-        self.assertEqual("<P>{}</P>".format(new_text),
-                         etree.tounicode(ctx.xml[0]))
-
-    def test_transform(self):
-        """The parens should always move out"""
-        expected = '(<E T="03">a</E>) Content'
-        self.assert_transformed('(<E T="03">a</E>) Content', expected)
-        self.assert_transformed('(<E T="03">a)</E> Content', expected)
-        self.assert_transformed('<E T="03">(a</E>) Content', expected)
-        self.assert_transformed('<E T="03">(a)</E> Content', expected)
-        self.assert_transformed('<E T="03">Paragraph 22(a)(5)</E> Content',
-                                '<E T="03">Paragraph 22(a)(5)</E> Content')
+@pytest.mark.parametrize('original,new_text', [
+    ('(<E T="03">a</E>) Content', '(<E T="03">a</E>) Content'),
+    ('(<E T="03">a)</E> Content', '(<E T="03">a</E>) Content'),
+    ('<E T="03">(a</E>) Content', '(<E T="03">a</E>) Content'),
+    ('<E T="03">(a)</E> Content', '(<E T="03">a</E>) Content'),
+    ('<E T="03">Paragraph 22(a)(5)</E> Content',
+     '<E T="03">Paragraph 22(a)(5)</E> Content')
+])
+def test_parentheses_cleanup(original, new_text):
+    """Helper function to verify that the XML is transformed as
+    expected"""
+    with XMLBuilder("PART") as ctx:
+        ctx.child_from_string(u"<P>{}</P>".format(original))
+    preprocessors.parentheses_cleanup(ctx.xml)
+    assert etree.tounicode(ctx.xml[0]) == "<P>{}</P>".format(new_text)
 
 
 @pytest.mark.parametrize("input_xml,expected_xml", [
@@ -110,10 +75,10 @@ class ParenthesesCleanupTests(TestCase):
     ('<E T="03">Things</E>', '<E T="03">Things</E>'),
     ('<E T="03" />. Empty', '<E T="03">.</E> Empty')
 ])
-def test_MoveAdjoiningChars_transform(input_xml, expected_xml):
+def test_move_adjoining_chars(input_xml, expected_xml):
     with XMLBuilder("SECTION") as ctx:
         ctx.child_from_string(u"<P>{}</P>".format(input_xml))
-    preprocessors.MoveAdjoiningChars().transform(ctx.xml)
+    preprocessors.move_adjoining_chars(ctx.xml)
     assert etree.tounicode(ctx.xml.xpath('./P/E')[0]) == expected_xml
 
 
@@ -336,51 +301,47 @@ class FootnotesTests(TestCase):
         self.assertEqual(ctx.xml_str, ctx2.xml_str)
 
 
-class ParseAMDPARsTests(TestCase):
-    def setUp(self):
-        self.amdparser = preprocessors.ParseAMDPARs()
+def test_preprocess_amdpars_derives_part():
+    """Associates the closest PART info when parsing AMDPARs"""
+    with XMLBuilder("ROOT") as ctx:
+        with ctx.REGTEXT():
+            ctx.AMDPAR("Revise section 14(a)")
+        with ctx.REGTEXT(PART=1111):
+            ctx.AMDPAR("Revise section 15(b)")
+        with ctx.REGTEXT(PART=2222):
+            ctx.AMDPAR("Revise section 16(c)")
+        with ctx.REGTEXT():
+            ctx.AMDPAR("Revise section 17(d)")
+    preprocessors.preprocess_amdpars(ctx.xml)
+    puts = ctx.xml.xpath('//AMDPAR/EREGS_INSTRUCTIONS/PUT')
+    labels = [put.get('label') for put in puts]
+    assert labels == ['1111-?-14-a', '1111-?-15-b', '2222-?-16-c',
+                      '2222-?-17-d']
 
-    def test_derives_part(self):
-        """Associates the closest PART info when parsing AMDPARs"""
-        with XMLBuilder("ROOT") as ctx:
-            with ctx.REGTEXT():
-                ctx.AMDPAR("Revise section 14(a)")
-            with ctx.REGTEXT(PART=1111):
-                ctx.AMDPAR("Revise section 15(b)")
-            with ctx.REGTEXT(PART=2222):
-                ctx.AMDPAR("Revise section 16(c)")
-            with ctx.REGTEXT():
-                ctx.AMDPAR("Revise section 17(d)")
-        self.amdparser.transform(ctx.xml)
-        puts = ctx.xml.xpath('//AMDPAR/EREGS_INSTRUCTIONS/PUT')
-        self.assertEqual(len(puts), 4)
-        self.assertEqual(puts[0].get('label'), '1111-?-14-a')
-        self.assertEqual(puts[1].get('label'), '1111-?-15-b')
-        self.assertEqual(puts[2].get('label'), '2222-?-16-c')
-        self.assertEqual(puts[3].get('label'), '2222-?-17-d')
 
-    def test_dont_touch_manual(self):
-        """Should not modify existing instructions"""
-        with XMLBuilder("ROOT") as ctx:
-            with ctx.REGTEXT(PART=111):
-                with ctx.AMDPAR("Revise section 22(c)"):
-                    with ctx.EREGS_INSTRUCTIONS():
-                        # Completely unrelated to the AMDPAR
-                        ctx.DELETE(label='222-?-5')
-        original = ctx.xml_str
-        self.amdparser.transform(ctx.xml)
-        self.assertEqual(original, ctx.xml_str)
+def test_preprocess_amdpars_dont_touch_manual():
+    """Should not modify existing instructions"""
+    with XMLBuilder("ROOT") as ctx:
+        with ctx.REGTEXT(PART=111):
+            with ctx.AMDPAR("Revise section 22(c)"):
+                with ctx.EREGS_INSTRUCTIONS():
+                    # Completely unrelated to the AMDPAR
+                    ctx.DELETE(label='222-?-5')
+    original = ctx.xml_str
+    preprocessors.preprocess_amdpars(ctx.xml)
+    assert original == ctx.xml_str
 
-    def test_final_context(self):
-        """The "final_context" attribute should be written"""
-        with XMLBuilder("ROOT") as ctx:
-            with ctx.REGTEXT(PART=111):
-                ctx.AMDPAR("Remove section 2(b), revise section 3(c), add "
-                           "section 4(d)(3)")
-        self.amdparser.transform(ctx.xml)
-        instructions = ctx.xml.xpath('//AMDPAR/EREGS_INSTRUCTIONS')
-        self.assertEqual(1, len(instructions))
-        self.assertEqual(instructions[0].get('final_context'), '111-?-4-d-3')
+
+def test_preprocess_amdpars_final_context():
+    """The "final_context" attribute should be written"""
+    with XMLBuilder("ROOT") as ctx:
+        with ctx.REGTEXT(PART=111):
+            ctx.AMDPAR("Remove section 2(b), revise section 3(c), add "
+                       "section 4(d)(3)")
+    preprocessors.preprocess_amdpars(ctx.xml)
+    instructions = ctx.xml.xpath('//AMDPAR/EREGS_INSTRUCTIONS')
+    assert len(instructions) == 1
+    assert instructions[0].get('final_context') == '111-?-4-d-3'
 
 
 def test_replace_html_entities():
@@ -388,3 +349,18 @@ def test_replace_html_entities():
     expected = u"text <with field='&apos;'> But ” and &gt; + 2¢s"
     expected = expected.encode('utf-8')
     assert preprocessors.replace_html_entities(xml_str) == expected
+
+
+def test_promote_nested_subjgrp():
+    with XMLBuilder("ROOT") as ctx:
+        ctx.SUBJGRP("A")
+        ctx.SUBPART("B")
+        with ctx.SUBPART("C"):
+            ctx.SUBJGRP("D")
+            ctx.SUBJGRP("E")
+        ctx.SUBJGRP("F")
+        ctx.SUBPART("G")
+    assert "ABCFG" == "".join(child.text for child in ctx.xml.getchildren())
+
+    preprocessors.promote_nested_subjgrp(ctx.xml)
+    assert "ABCDEFG" == "".join(child.text for child in ctx.xml.getchildren())

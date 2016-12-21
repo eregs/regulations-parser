@@ -1,11 +1,10 @@
 import logging
 
 import click
+from stevedore.extension import ExtensionManager
 
 from regparser.commands import utils
 from regparser.index import dependency, entry
-from regparser.plugins import classes_by_shorthand
-import settings
 
 
 logger = logging.getLogger(__name__)
@@ -14,12 +13,20 @@ logger = logging.getLogger(__name__)
 def _init_classes():
     """Avoid leaking state variables by wrapping `LAYER_CLASSES` construction
     in a function"""
-    classes = {doc_type: classes_by_shorthand(class_string_list)
-               for doc_type, class_string_list in settings.LAYERS.items()}
-    # Also add in the "ALL" layers
-    for doc_type in classes:
-        for layer_name, cls in classes['ALL'].items():
-            classes[doc_type][layer_name] = cls
+    classes = {}
+    for doc_type in ('cfr', 'preamble'):    # @todo - make this dynamic
+        namespace = 'eregs_ns.parser.layer.{}'.format(doc_type)
+        classes[doc_type] = {
+            extension.name: extension.plugin
+            for extension in ExtensionManager(namespace)
+        }
+
+    # For backwards compatibility. @todo - remove in later release
+    old_namespace = 'eregs_ns.parser.layers'
+    classes['cfr'].update({
+        extension.plugin.shorthand: extension.plugin
+        for extension in ExtensionManager(old_namespace)
+    })
     return classes
 LAYER_CLASSES = _init_classes()
 

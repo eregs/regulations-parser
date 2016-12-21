@@ -1,6 +1,8 @@
 import string
 
-from pyparsing import FollowedBy, Literal, Word
+from pyparsing import FollowedBy, LineEnd, LineStart, Literal, SkipTo, Word
+
+from regparser.grammar import atomic, unified, utils
 
 
 def parenthesize(characters, name):
@@ -30,3 +32,35 @@ paren_digit = parenthesize(string.digits, "paren_digit")
 period_upper = decimalize(string.ascii_uppercase, "period_upper")
 period_lower = decimalize(string.ascii_lowercase, "period_lower")
 period_digit = decimalize(string.digits, "period_digit")
+
+
+section = (
+    atomic.section_marker.copy().leaveWhitespace() +
+    unified.part_section +
+    SkipTo(LineEnd())
+)
+
+
+par = (
+    atomic.section.copy().leaveWhitespace() +
+    unified.depth1_p +
+    SkipTo(LineEnd())
+)
+
+
+marker_par = (
+    atomic.paragraph_marker.copy().leaveWhitespace() +
+    atomic.section +
+    unified.depth1_p
+)
+
+
+appendix = (
+    atomic.appendix_marker.copy().leaveWhitespace() +
+    atomic.appendix +
+    SkipTo(LineEnd())
+)
+
+
+headers = utils.QuickSearchable(
+    LineStart() + (section | marker_par | par | appendix))

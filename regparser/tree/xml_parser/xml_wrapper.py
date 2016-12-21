@@ -3,9 +3,8 @@ from copy import deepcopy
 from lxml import etree
 import six
 
-from regparser.plugins import class_paths_to_classes
+from regparser import plugins
 from regparser.tree.xml_parser.preprocessors import replace_html_entities
-import settings
 
 
 class XMLWrapper(object):
@@ -29,8 +28,9 @@ class XMLWrapper(object):
         attempts to fix some of those (general) flaws. For specific issues, we
         tend to instead use the files in settings.LOCAL_XML_PATHS"""
 
-        for preprocessor in class_paths_to_classes(settings.PREPROCESSORS):
-            preprocessor().transform(self.xml)
+        for plugin in plugins.instatiate_if_possible(
+                'eregs_ns.parser.preprocessors', method_name='transform'):
+            plugin(self.xml)
 
         return self
 

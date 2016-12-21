@@ -106,48 +106,6 @@ CUSTOM_CITATIONS = {
     "ATF I 5300.1": "https://atf-eregs.apps.cloud.gov/static/atf_eregs/5300_1.pdf",
     "ATF I 5300.2": "https://www.atf.gov/file/58806/download"}
 
-PREPROCESSORS = plugins.extend_list('eregs_ns.parser.preprocessors', [
-    "regparser.tree.xml_parser.preprocessors.MoveLastAMDPar",
-    "regparser.tree.xml_parser.preprocessors.SupplementAMDPar",
-    "regparser.tree.xml_parser.preprocessors.ParenthesesCleanup",
-    "regparser.tree.xml_parser.preprocessors.MoveAdjoiningChars",
-    "regparser.tree.xml_parser.preprocessors.ApprovalsFP",
-    "regparser.tree.xml_parser.preprocessors.ExtractTags",
-    "regparser.tree.xml_parser.preprocessors.Footnotes",
-    "regparser.tree.xml_parser.preprocessors.ParseAMDPARs",
-    "regparser.tree.xml_parser.preprocessors.AtfI50032",
-    "regparser.tree.xml_parser.preprocessors.AtfI50031",
-    "regparser.tree.xml_parser.preprocessors.ImportCategories",
-])
-
-# Which layers are to be generated, keyed by document type. The ALL key is
-# special; layers in this category automatically apply to all document types
-LAYERS = {
-    'cfr': [
-        'regparser.layer.meta.Meta',
-        'regparser.layer.internal_citations.InternalCitationParser',
-        'regparser.layer.table_of_contents.TableOfContentsLayer',
-        'regparser.layer.terms.Terms',
-        'regparser.layer.paragraph_markers.ParagraphMarkers',
-        'regparser.layer.key_terms.KeyTerms',
-        # CFPB specific -- these should be moved to plugins
-        'regparser.layer.interpretations.Interpretations',
-        # SectionBySection layer is a created via a separate command
-    ],
-    'preamble': [
-        'regparser.layer.preamble.key_terms.KeyTerms',
-        'regparser.layer.preamble.internal_citations.InternalCitations',
-        'regparser.layer.preamble.paragraph_markers.ParagraphMarkers'
-    ],
-    # It probably makes more sense to use plugins.update_dictionary, but we're
-    # keeping this for backwards compatibility
-    'ALL': plugins.extend_list('eregs_ns.parser.layers', [
-        'regparser.layer.external_citations.ExternalCitationParser',
-        'regparser.layer.formatting.Formatting',
-        'regparser.layer.graphics.Graphics',
-    ]),
-}
-
 # Regulations.gov settings. The demo key is rate limited by IP; sign up for
 # your own key at
 # http://regulationsgov.github.io/developers/key/
