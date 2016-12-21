@@ -62,7 +62,7 @@ def write_to_disk(xml, version_entry, delay=None):
     effective = xml.effective if delay is None else delay.until
     if effective:
         version = Version(identifier=xml.version_id, effective=effective,
-                          published=xml.published)
+                          published=xml.published, volume=xml.fr_volume, page=xml.start_page)
         version_entry.write(version)
     else:
         logger.warning("No effective date for this rule: %s. Skipping",

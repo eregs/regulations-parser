@@ -36,7 +36,7 @@ def process_version_if_needed(cfr_title, cfr_part, version_id):
         notice_xml = notice_entry.read()
         version = Version(
             identifier=version_id, effective=notice_xml.effective,
-            published=notice_xml.published)
+            published=notice_xml.published, volume=notice_xml.fr_volume, page=notice_xml.start_page)
         version_entry.write(version)
 
 

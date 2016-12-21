@@ -2,8 +2,7 @@ import json
 from collections import namedtuple
 from datetime import datetime
 
-
-class Version(namedtuple('Version', ['identifier', 'published', 'effective'])):
+class Version(namedtuple('Version', ['identifier', 'published', 'effective', 'volume', 'page'])):
     @property
     def is_final(self):
         return bool(self.effective)
@@ -14,7 +13,9 @@ class Version(namedtuple('Version', ['identifier', 'published', 'effective'])):
 
     def json(self):
         result = {'identifier': self.identifier,
-                  'published': self.published.isoformat()}
+                  'published': self.published.isoformat(),
+                  'volume': self.volume,
+                  'page': self.page}
         if self.is_final:
             result['effective'] = self.effective.isoformat()
 
@@ -36,8 +37,8 @@ class Version(namedtuple('Version', ['identifier', 'published', 'effective'])):
         identifiers, but also which versions are from final rules and which
         are just proposals"""
         if self.is_final and other.is_final:
-            left = (self.effective, self.published, self.identifier)
-            right = (other.effective, other.published, other.identifier)
+            left = (self.effective, self.volume, self.page)
+            right = (other.effective, other.volume, other.page)
             return left < right
         else:   # at least one of the two is a proposal
             left = (self.published, self.identifier)
