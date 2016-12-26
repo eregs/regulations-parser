@@ -1,15 +1,15 @@
 from click.testing import CliRunner
 
-from regparser.commands.derive_depths import derive_depths
+from regparser.commands.outline_depths import outline_depths
 
 
 def test_produces_usage_message_with_no_arg():
-    result = CliRunner().invoke(derive_depths)
+    result = CliRunner().invoke(outline_depths)
     assert result.exit_code == 2
     assert 'Usage' in result.output
 
 
 def test_returns_simple_result_for_a_simple_outline():
-    result = CliRunner().invoke(derive_depths, ['a, b, c'])
+    result = CliRunner().invoke(outline_depths, ['a,b'])
+    assert result.output == "0,0\n"
     assert result.exit_code == 0
-    assert result.output == "0, 0, 0\n"
