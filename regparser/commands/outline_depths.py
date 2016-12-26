@@ -13,9 +13,11 @@ def outline_depths(markers) -> None:
     Infer an outline's structure.
     Return a list of outline depths for a given list of space-separated markers.
     """
-    depths = derive_depths(markers.split(' '), [])
-    solution = {tuple(a.depth for a in s) for s in depths}.pop()
-    formatted_output = ' '.join((str(a) for a in solution))
+    all_solutions = derive_depths(markers.split(' '), [])
+    depths = {tuple(str(a.depth) for a in s) for s in all_solutions}.pop()
+
+    # Expected output is space-separated.
+    formatted_output = ' '.join(depths)
 
     print(formatted_output)
 
