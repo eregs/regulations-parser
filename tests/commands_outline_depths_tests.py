@@ -10,6 +10,6 @@ def test_produces_usage_message_with_no_arg():
 
 
 def test_returns_simple_result_for_a_simple_outline():
-    result = CliRunner().invoke(outline_depths, ['a,b'])
-    assert result.output == "0,0\n"
+    result = CliRunner().invoke(outline_depths, ['a b'])
+    assert result.output == "0 0\n"
     assert result.exit_code == 0

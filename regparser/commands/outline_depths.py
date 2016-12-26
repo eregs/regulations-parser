@@ -11,11 +11,11 @@ logger = logging.getLogger(__name__)
 def outline_depths(markers) -> None:
     """
     Infer an outline's structure.
-    Return a list of outline depths for a given list of comma-separated markers.
+    Return a list of outline depths for a given list of space-separated markers.
     """
-    depths = derive_depths(markers.split(','), [])
+    depths = derive_depths(markers.split(' '), [])
     solution = {tuple(a.depth for a in s) for s in depths}.pop()
-    formatted_output = ','.join((str(a) for a in solution))
+    formatted_output = ' '.join((str(a) for a in solution))
 
     print(formatted_output)
 
