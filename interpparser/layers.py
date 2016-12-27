@@ -40,12 +40,10 @@ class Interpretations(Layer):
         return the associated layer information. @TODO: Right now, this only
         associates if there is a direct match. It should also associate if any
         parents match"""
-
         label = tuple(node.label)
-        if self.lookup_table[label]:    # default dict; will always be present
-            interp_labels = [n.label_id() for n in self.lookup_table[label]
-                             if not self.empty_interpretation(n)]
-            return [{'reference': l} for l in interp_labels] or None
+        non_empty = [n for n in self.lookup_table[label]
+                     if not self.empty_interpretation(n)]
+        return [{'reference': n.label_id()} for n in non_empty] or None
 
     @staticmethod
     def empty_interpretation(interp):

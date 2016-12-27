@@ -9,8 +9,8 @@ of the process for more information about the plugin system in general. Here
 we document specific extension points an example uses.
 
 
-eregs_ns.parser.layers
-======================
+eregs_ns.parser.layers (deprecated)
+===================================
 
 List of strings referencing layer classes (generally implementing the 
 abstract base class ``regparser.layer.layer:Layer``).
@@ -18,6 +18,24 @@ abstract base class ``regparser.layer.layer:Layer``).
 Examples:
 
 * `ATF <https://github.com/18F/atf-eregs/blob/c398e553164cd456d6606a78c7762ad5f9ed665b/eregs_extensions/setup.py#L6-L8>`_
+
+This has been deprecated in favor of layers applicable to specific document
+types (see below).
+
+
+eregs_ns.parser.layer.cfr
+=========================
+
+Layer classes (implementing the abstract base class
+``regparser.layer.layer:Layer``) which should apply the CFR documents.
+
+
+eregs_ns.parser.layer.preamble
+==============================
+
+Layer classes (implementing the abstract base class
+``regparser.layer.layer:Layer``) which should apply the "preamble" documents
+(i.e.  proposed rules).
 
 
 eregs_ns.parser.preprocessors
