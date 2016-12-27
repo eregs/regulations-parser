@@ -13,7 +13,8 @@ logger = logging.getLogger(__name__)
 def outline_depths(markers):
     """
     Infer an outline's structure.
-    Return a list of outline depths for a given list of space-separated markers.
+    Return a list of outline depths for a given list of space-separated
+    markers.
     """
 
     # Input is space-separated.
