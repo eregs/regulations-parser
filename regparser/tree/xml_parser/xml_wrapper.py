@@ -28,7 +28,7 @@ class XMLWrapper(object):
         attempts to fix some of those (general) flaws. For specific issues, we
         tend to instead use the files in settings.LOCAL_XML_PATHS"""
 
-        for plugin in plugins.instatiate_if_possible(
+        for plugin in plugins.instantiate_if_possible(
                 'eregs_ns.parser.preprocessors', method_name='transform'):
             plugin(self.xml)
 

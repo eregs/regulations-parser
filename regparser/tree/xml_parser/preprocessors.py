@@ -317,6 +317,7 @@ def preprocess_amdpars(xml):
             instructions.set(
                 'final_context',
                 '-'.join('?' if l is None else l for l in context))
+preprocess_amdpars.plugin_order = 10    # Must be after move_last_amdpar
 
 
 _MARKER_50032 = (
