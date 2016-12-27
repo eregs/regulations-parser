@@ -1,4 +1,6 @@
 import logging
+
+from regparser.tree.depth import optional_rules
 from regparser.tree.depth.derive import derive_depths
 
 import click
@@ -16,7 +18,10 @@ def outline_depths(markers) -> None:
 
     # Input is space-separated.
     marker_list = markers.split(' ')
-    all_solutions = derive_depths(marker_list, [])
+    all_solutions = derive_depths(
+        marker_list,
+        [optional_rules.limit_sequence_gap(1)]
+    )
     depths = {tuple(str(a.depth) for a in s) for s in all_solutions}.pop()
 
     # Expected output is space-separated.
