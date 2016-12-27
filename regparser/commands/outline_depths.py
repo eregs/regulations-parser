@@ -27,7 +27,7 @@ def outline_depths(markers) -> None:
     # Expected output is space-separated.
     formatted_output = ' '.join(depths)
 
-    print(formatted_output)
+    click.echo(formatted_output)
 
 
 if __name__ == '__main__':
