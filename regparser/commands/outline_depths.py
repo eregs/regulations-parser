@@ -10,7 +10,7 @@ logger = logging.getLogger(__name__)
 
 @click.command()
 @click.argument('markers', type=click.STRING, required=True)
-def outline_depths(markers) -> None:
+def outline_depths(markers):
     """
     Infer an outline's structure.
     Return a list of outline depths for a given list of space-separated markers.
