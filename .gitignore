@@ -13,3 +13,6 @@ docs/_build
 regparser.egg-info/
 
 .eregs_index/
+/env
+/.idea
+/.cache

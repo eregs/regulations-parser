@@ -13,7 +13,7 @@ class DeriveTests(TestCase):
 
     def assert_depth_match_extra(self, markers, extra, *depths_set):
         """Verify that the set of markers resolves to the provided set of
-        depths (in any order). Allows extra contraints."""
+        depths (in any order). Allows extra constraints."""
         solutions = derive_depths(markers, extra)
         results = {tuple(a.depth for a in s) for s in solutions}
         six.assertCountEqual(self, results, {tuple(s) for s in depths_set})
