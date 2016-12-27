@@ -5,12 +5,14 @@ from __future__ import unicode_literals
 import abc
 from copy import deepcopy
 import functools
+from itertools import takewhile
 import logging
 import re
 
 from lxml import etree
 from six.moves.html_parser import HTMLParser
 
+from regparser.grammar.tokens import uncertain_label
 from regparser.notice.amdparser import parse_amdpar
 from regparser.tree.xml_parser.tree_utils import (
     get_node_text, replace_xml_node_with_text)
@@ -73,25 +75,21 @@ def parentheses_cleanup(xml):
     # We want to treat None's as blank strings
     def _str(x):
         return x or ""
-    for par in xml.xpath("//P/*[position()=1 and name()='E']/.."):
-        em = par.getchildren()[0]   # must be an E due to the xpath
+    for em in xml.xpath("//P/*[position()=1 and name()='E']"):
+        par = em.getparent()
+        left, middle, right = _str(par.text), _str(em.text), _str(em.tail)
+        has_open = '(' in left[-1:] + middle[:1]
+        has_close = ')' in middle[-1:] + right[:1]
 
-        outside_open = _str(par.text).endswith("(")
-        inside_open = _str(em.text).startswith("(")
-        has_open = outside_open or inside_open
+        if not left.endswith('(') and middle.startswith('(') and has_close:
+            # Move '(' out
+            par.text = _str(par.text) + "("
+            em.text = em.text[1:]
 
-        inside_close = _str(em.text).endswith(")")
-        outside_close = _str(em.tail).startswith(")")
-        has_close = inside_close or outside_close
-
-        if has_open and has_close:
-            if not outside_open and inside_open:    # Move '(' out
-                par.text = _str(par.text) + "("
-                em.text = em.text[1:]
-
-            if not outside_close and inside_close:  # Move ')' out
-                em.text = em.text[:-1]
-                em.tail = ")" + _str(em.tail)
+        if middle.endswith(')') and not right.startswith(')') and has_open:
+            # Move ')' out
+            em.text = em.text[:-1]
+            em.tail = ")" + _str(em.tail)
 
 
 _ORPHAN_REGEX = re.compile(r"(\.|—)")
@@ -314,9 +312,7 @@ def preprocess_amdpars(xml):
         for amdpar in amdparent.xpath('.//AMDPAR'):
             instructions, context = parse_amdpar(amdpar, context)
             amdpar.append(instructions)
-            instructions.set(
-                'final_context',
-                '-'.join('?' if l is None else l for l in context))
+            instructions.set('final_context', uncertain_label(context))
 preprocess_amdpars.plugin_order = 10    # Must be after move_last_amdpar
 
 
@@ -334,16 +330,13 @@ def atf_i50032(xml):
     associated with the poster. This PreProcessor moves these additional
     elements back into the appropriate EXTRACT."""
     for p in xml.xpath(_MARKER_50032):
-        next_el = p.getnext()
-        to_move = []
-        while next_el is not None and next_el.tag != 'EXTRACT':
-            to_move.append(next_el)
-            next_el = next_el.getnext()
-        if next_el is not None:
-            extract = next_el
+        siblings = list(p.itersiblings())
+        to_move = list(takewhile(lambda s: s.tag != 'EXTRACT', siblings))
+        extracts = list(p.itersiblings('EXTRACT'))
+        if extracts:
             # reversed as we're inserting into the beginning
             for xml_el in reversed(to_move):
-                extract.insert(0, xml_el)
+                extracts[0].insert(0, xml_el)
 
 
 _MARKER_50031 = (

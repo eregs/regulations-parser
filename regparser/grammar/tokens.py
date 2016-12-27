@@ -8,6 +8,13 @@ from copy import copy
 import six
 
 
+def uncertain_label(label_parts):
+    """Convert a list of strings/Nones to a '-'-separated string with question
+    markers to replace the Nones. We use this format to indicate
+    uncertainty"""
+    return '-'.join(p or '?' for p in label_parts)
+
+
 def _none_str(value):
     """Shorthand for displaying a variable as a string or the text None"""
     if value is None:
@@ -125,11 +132,10 @@ class Paragraph(Token):
 
     def label_text(self):
         """Converts self.label into a string"""
-        label = [p or '?' for p in self.label]
+        label = uncertain_label(self.label)
         if self.field:
-            return '-'.join(label) + '[%s]' % self.field
-        else:
-            return '-'.join(label)
+            label += '[%s]' % self.field
+        return label
 
 
 class TokenList(Token):
