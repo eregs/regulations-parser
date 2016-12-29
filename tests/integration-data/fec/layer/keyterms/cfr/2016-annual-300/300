@@ -1,4 +1,28 @@
 {
+    "300-1-a": [
+        {
+            "key_term": "Introduction.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-1-b": [
+        {
+            "key_term": "Effective dates.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-1-c": [
+        {
+            "key_term": "Organization of part.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
     "300-10-a": [
         {
             "key_term": "Prohibitions.", 
@@ -114,6 +138,110 @@
     "300-13-c": [
         {
             "key_term": "Transitional reporting rules.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-2-a": [
+        {
+            "key_term": "501(c) organization that makes expenditures or disbursements in connection with a Federal election.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-2-b": [
+        {
+            "key_term": "Agent.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-2-c": [
+        {
+            "key_term": "Directly or indirectly establish, finance, maintain, or control.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-2-c-3": [
+        {
+            "key_term": "Safe harbor.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-2-c-4": [
+        {
+            "key_term": "Determinations by the Commission.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-2-d": [
+        {
+            "key_term": "Disbursement.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-2-e": [
+        {
+            "key_term": "Donation.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-2-f": [
+        {
+            "key_term": "Federal account.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-2-g": [
+        {
+            "key_term": "Federal Funds. Federal funds", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-2-h": [
+        {
+            "key_term": "Levin account.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-2-m": [
+        {
+            "key_term": "To solicit.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-2-n": [
+        {
+            "key_term": "To direct.", 
+            "locations": [
+                0
+            ]
+        }
+    ], 
+    "300-2-o": [
+        {
+            "key_term": "Individual holding Federal office.", 
             "locations": [
                 0
             ]
