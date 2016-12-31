@@ -8,7 +8,7 @@ from regparser.notice import amendments, changes
 from regparser.notice.amdparser import Amendment
 from regparser.test_utils.xml_builder import XMLBuilder
 from regparser.tree.struct import Node
-from regparser.tree.xml_parser.preprocessors import ParseAMDPARs
+from regparser.tree.xml_parser.preprocessors import preprocess_amdpars
 
 
 class NoticeAmendmentsTest(TestCase):
@@ -186,7 +186,7 @@ class NoticeAmendmentsTest(TestCase):
             with ctx.SUBPART():
                 ctx.HD(u"Subpart A—General", SOURCE="HED")
             ctx.AMDPAR(amdpar)
-        ParseAMDPARs().transform(ctx.xml)
+        preprocess_amdpars(ctx.xml)
 
         amendment = amendments.fetch_amendments(ctx.xml)[0]
         changes = dict(amendment['changes'])
@@ -209,7 +209,7 @@ class NoticeAmendmentsTest(TestCase):
                 ctx.SUBJECT("Purpose.")
                 ctx.STARS()
                 ctx.P("(b) This part carries out.")
-        ParseAMDPARs().transform(ctx.xml)
+        preprocess_amdpars(ctx.xml)
 
         amendment = amendments.fetch_amendments(ctx.xml)[0]
         changes = dict(amendment['changes'])
@@ -235,7 +235,7 @@ class NoticeAmendmentsTest(TestCase):
                 ctx.STARS()
                 ctx.P("(b) This part carries out.")
                 ctx.P("(c) More stuff")
-        ParseAMDPARs().transform(ctx.xml)
+        preprocess_amdpars(ctx.xml)
 
         amd1, amd2 = amendments.fetch_amendments(ctx.xml)
         changes1, changes2 = dict(amd1['changes']), dict(amd2['changes'])
@@ -271,7 +271,7 @@ class NoticeAmendmentsTest(TestCase):
                     ctx.SUBJECT("Purpose.")
                     ctx.STARS()
                     ctx.P("(b) This part carries out.")
-        ParseAMDPARs().transform(ctx.xml)
+        preprocess_amdpars(ctx.xml)
 
         amd1, amd2 = amendments.fetch_amendments(ctx.xml)
         changes1, changes2 = dict(amd1['changes']), dict(amd2['changes'])
@@ -290,7 +290,7 @@ class NoticeAmendmentsTest(TestCase):
         with XMLBuilder("ROOT") as ctx:
             with ctx.REGTEXT(PART="104", TITLE="12"):
                 ctx.AMDPAR(amdpar)
-        ParseAMDPARs().transform(ctx.xml)
+        preprocess_amdpars(ctx.xml)
 
         amendment = amendments.fetch_amendments(ctx.xml)[0]
         changes = dict(amendment['changes'])
@@ -309,7 +309,7 @@ class NoticeAmendmentsTest(TestCase):
                 ctx.SUBJECT("Purpose.")
                 ctx.STARS()
                 ctx.P("Some text here")
-        ParseAMDPARs().transform(ctx.xml)
+        preprocess_amdpars(ctx.xml)
 
         amendment = amendments.fetch_amendments(ctx.xml)[0]
         changes = dict(amendment['changes'])
@@ -337,7 +337,7 @@ class NoticeAmendmentsTest(TestCase):
                 ctx.SUBJECT("Another Subject")
                 ctx.STARS()
                 ctx.P("(c) Revised third paragraph")
-        ParseAMDPARs().transform(ctx.xml)
+        preprocess_amdpars(ctx.xml)
 
         amd1, amd2 = amendments.fetch_amendments(ctx.xml)
         self.assertEqual(amd1['instruction'], amdpar1)
@@ -375,7 +375,7 @@ class NoticeAmendmentsTest(TestCase):
                               "apply:")
                         ctx.P('(a) "Agent" means agent.')
 
-        ParseAMDPARs().transform(ctx.xml)
+        preprocess_amdpars(ctx.xml)
 
         subpart_amendment = amendments.fetch_amendments(ctx.xml)[1]
         changes = dict(subpart_amendment['changes'])
@@ -402,7 +402,7 @@ class NoticeAmendmentsTest(TestCase):
                     ctx.SECTNO(u"§ 106.3")
                     ctx.SUBJECT("106Purpose.")
                     ctx.P("(b) Content")
-        ParseAMDPARs().transform(ctx.xml)
+        preprocess_amdpars(ctx.xml)
 
         amd1, amd2 = amendments.fetch_amendments(ctx.xml)
         self.assertEqual(amd1['instruction'], amdpar1)
@@ -430,7 +430,7 @@ class NoticeAmendmentsTest(TestCase):
                 ctx.HD("Appendix C to Part 106", SOURCE="HD1")
                 with ctx.EXTRACT():
                     ctx.P("Text")
-        ParseAMDPARs().transform(ctx.xml)
+        preprocess_amdpars(ctx.xml)
 
         amd1, amd2 = amendments.fetch_amendments(ctx.xml)
         self.assertEqual(amd1['instruction'], amdpar1)
@@ -454,7 +454,7 @@ class NoticeAmendmentsTest(TestCase):
                     ctx.STARS()
                     ctx.P("This is the sixth paragraph")
                     ctx.STARS()
-        ParseAMDPARs().transform(ctx.xml)
+        preprocess_amdpars(ctx.xml)
 
         amendment = amendments.fetch_amendments(ctx.xml)[0]
         changes = dict(amendment['changes'])
@@ -474,7 +474,7 @@ class NoticeAmendmentsTest(TestCase):
                 with ctx.AUTH():
                     ctx.HD("Authority:", SOURCE="HED")
                     ctx.P(auth)
-        ParseAMDPARs().transform(ctx.xml)
+        preprocess_amdpars(ctx.xml)
 
         amendment = amendments.fetch_amendments(ctx.xml)[0]
         self.assertEqual(amendment['instruction'], amdpar)
@@ -491,7 +491,7 @@ class NoticeAmendmentsTest(TestCase):
                 ctx.SECTNO(u"§ 106.2")
                 ctx.SUBJECT(" Definitions ")
                 ctx.P(" Except as otherwise provided, the following apply. ")
-        ParseAMDPARs().transform(ctx.xml)
+        preprocess_amdpars(ctx.xml)
 
         amendment = amendments.fetch_amendments(ctx.xml)[0]
         change = dict(amendment['changes'])['106-2'][0]
@@ -512,7 +512,7 @@ class NoticeAmendmentsTest(TestCase):
                     ctx.SUBJECT(" Definitions ")
                     ctx.P(" Except as otherwise provided, the following "
                           "apply. ")
-        ParseAMDPARs().transform(ctx.xml)
+        preprocess_amdpars(ctx.xml)
 
         amd1, amd2 = amendments.fetch_amendments(ctx.xml)
         changes1, changes2 = dict(amd1['changes']), dict(amd2['changes'])

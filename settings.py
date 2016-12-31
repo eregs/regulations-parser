@@ -106,20 +106,6 @@ CUSTOM_CITATIONS = {
     "ATF I 5300.1": "https://atf-eregs.apps.cloud.gov/static/atf_eregs/5300_1.pdf",
     "ATF I 5300.2": "https://www.atf.gov/file/58806/download"}
 
-PREPROCESSORS = plugins.extend_list('eregs_ns.parser.preprocessors', [
-    "regparser.tree.xml_parser.preprocessors.MoveLastAMDPar",
-    "regparser.tree.xml_parser.preprocessors.SupplementAMDPar",
-    "regparser.tree.xml_parser.preprocessors.ParenthesesCleanup",
-    "regparser.tree.xml_parser.preprocessors.MoveAdjoiningChars",
-    "regparser.tree.xml_parser.preprocessors.ApprovalsFP",
-    "regparser.tree.xml_parser.preprocessors.ExtractTags",
-    "regparser.tree.xml_parser.preprocessors.Footnotes",
-    "regparser.tree.xml_parser.preprocessors.ParseAMDPARs",
-    "regparser.tree.xml_parser.preprocessors.AtfI50032",
-    "regparser.tree.xml_parser.preprocessors.AtfI50031",
-    "regparser.tree.xml_parser.preprocessors.ImportCategories",
-])
-
 # Regulations.gov settings. The demo key is rate limited by IP; sign up for
 # your own key at
 # http://regulationsgov.github.io/developers/key/

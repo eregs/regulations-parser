@@ -58,6 +58,29 @@ setup(
              "ExternalCitationParser"),
             "formatting = regparser.layer.formatting:Formatting",
             "graphics = regparser.layer.graphics:Graphics",
+        ],
+        "eregs_ns.parser.preprocessors": [
+            ("move-last-amdpar = regparser.tree.xml_parser.preprocessors:"
+             "move_last_amdpar"),
+            ("parentheses-cleanup = regparser.tree.xml_parser.preprocessors:"
+             "parentheses_cleanup"),
+            ("move-adjoining-chars = regparser.tree.xml_parser.preprocessors:"
+             "move_adjoining_chars"),
+            ("approvals-fp = regparser.tree.xml_parser.preprocessors:"
+             "ApprovalsFP"),
+            ("extract-tags = regparser.tree.xml_parser.preprocessors:"
+             "ExtractTags"),
+            "footnotes = regparser.tree.xml_parser.preprocessors:Footnotes",
+            ("parse-amdpars = regparser.tree.xml_parser.preprocessors:"
+             "preprocess_amdpars"),
+            "atf-i-50032 = regparser.tree.xml_parser.preprocessors:atf_i50032",
+            "atf-i-50031 = regparser.tree.xml_parser.preprocessors:atf_i50031",
+            ("atf-import-categories = regparser.tree.xml_parser.preprocessors:"
+             "ImportCategories"),
+            ("promote-nested-subjgrp = regparser.tree.xml_parser."
+             "preprocessors:promote_nested_subjgrp"),
+            ("promote-nested-appendix = regparser.tree.xml_parser."
+             "preprocessors:promote_nested_appendix"),
         ]
     }
 )

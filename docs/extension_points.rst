@@ -50,6 +50,10 @@ Examples:
 * `ATF <https://github.com/18F/atf-eregs/blob/c398e553164cd456d6606a78c7762ad5f9ed665b/eregs_extensions/setup.py#L9-L11>`_
 * `FEC <https://github.com/18F/fec-eregs/blob/88c4d7b0b0ff1aafefd68d393fdbf5f3a5be6f89/eregs_extensions/setup.py#L15-L17>`_
 
+Preprocessors may have a ``plugin_order`` attribute, an integer which defines
+the order in which the plugins are executed. Defaults to zero. Sorts
+ascending.
+
 
 eregs_ns.parser.term_definitions
 ================================
