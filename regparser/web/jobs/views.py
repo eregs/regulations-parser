@@ -8,6 +8,7 @@ from rest_framework.response import Response
 from rest_framework import generics
 from rest_framework import mixins
 from rest_framework import status
+import six
 
 from regparser.web.jobs.models import (
     PipelineJob,
@@ -36,7 +37,7 @@ renderer_classes = (
 )
 
 
-class BaseViewList(object):
+class BaseViewList(six.with_metaclass(abc.ABCMeta)):
     """
     Intended to be subclassed by classes subclassing ``JobViewList``.
     Contains the POST-related methods that are relevant to subclasses of
@@ -44,8 +45,6 @@ class BaseViewList(object):
 
     Should be in the subclass list before ``JobViewList``.
     """
-    __metaclass__ = abc.ABCMeta
-
     @abc.abstractmethod
     def build_eregs_args(self, validated_data):
         """

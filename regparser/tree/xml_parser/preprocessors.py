@@ -10,6 +10,7 @@ import logging
 import re
 
 from lxml import etree
+import six
 from six.moves.html_parser import HTMLParser
 
 from regparser.grammar.tokens import uncertain_label
@@ -43,11 +44,9 @@ def replace_html_entities(xml_bin_str):
     return xml_bin_str
 
 
-class PreProcessorBase(object):
+class PreProcessorBase(six.with_metaclass(abc.ABCMeta)):
     """Base class for all the preprocessors. Defines the interface they must
     implement"""
-    __metaclass__ = abc.ABCMeta
-
     @abc.abstractmethod
     def transform(self, xml):
         """Transform the input xml. Mutates that xml, so be sure to make a

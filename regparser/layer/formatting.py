@@ -5,6 +5,7 @@ from collections import OrderedDict
 import re
 
 from lxml import etree
+import six
 
 from regparser.layer.layer import Layer
 from regparser.tree import struct
@@ -159,11 +160,9 @@ def table_xml_to_data(xml_node):
     return table_data
 
 
-class PlaintextFormatData(object):
+class PlaintextFormatData(six.with_metaclass(abc.ABCMeta)):
     """Base class for formatting information which can be derived from the
     plaintext of a regulation node"""
-    __metaclass__ = abc.ABCMeta
-
     @abc.abstractproperty
     def REGEX(self):
         """Regular expression used to find matches in the plain text"""

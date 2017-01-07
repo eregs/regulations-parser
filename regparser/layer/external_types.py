@@ -6,6 +6,7 @@ import re
 import string
 
 from pyparsing import Optional, Suppress, Word
+import six
 from six.moves.urllib.parse import urlencode
 
 from regparser.citations import cfr_citations
@@ -16,11 +17,9 @@ import settings
 Cite = namedtuple('Cite', ['cite_type', 'start', 'end', 'components', 'url'])
 
 
-class FinderBase(object):
+class FinderBase(six.with_metaclass(abc.ABCMeta)):
     """Base class for all of the external citation parsers. Defines the
     interface they must implement."""
-    __metaclass__ = abc.ABCMeta
-
     @abc.abstractproperty
     def CITE_TYPE(self):
         """A constant to represent the citations this produces."""
@@ -58,11 +57,9 @@ class CFRFinder(FinderBase):
                            fdsys_url(collection='cfr', **fdsys_params))
 
 
-class FDSYSFinder(object):
+class FDSYSFinder(six.with_metaclass(abc.ABCMeta)):
     """Common parent class to Finders which generate an FDSYS url based on
     matching a PyParsing grammar"""
-    __metaclass__ = abc.ABCMeta
-
     @abc.abstractproperty
     def GRAMMAR(self):
         """A pyparsing grammar with relevant components labeled"""

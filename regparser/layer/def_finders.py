@@ -30,11 +30,9 @@ class Ref(namedtuple('Ref', ['term', 'label', 'start'])):
         return (self.start, self.end)
 
 
-class FinderBase(object):
+class FinderBase(six.with_metaclass(abc.ABCMeta)):
     """Base class for all of the definition finder classes. Defines the
     interface they must implement"""
-    __metaclass__ = abc.ABCMeta
-
     @abc.abstractmethod
     def find(self, node):
         """Given a Node, pull out any definitions it may contain as a list of

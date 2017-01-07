@@ -3,6 +3,7 @@ from collections import OrderedDict
 import logging
 
 from lxml import etree
+import six
 
 from regparser.layer.key_terms import KeyTerms
 from regparser.layer.formatting import table_xml_to_plaintext
@@ -169,10 +170,8 @@ class ParagraphProcessor(object):
         return []
 
 
-class BaseMatcher(object):
+class BaseMatcher(six.with_metaclass(abc.ABCMeta)):
     """Base class defining the interface of various XML node matchers"""
-    __metaclass__ = abc.ABCMeta
-
     @abc.abstractmethod
     def matches(self, xml):
         """Test the xml element -- does this matcher apply?"""

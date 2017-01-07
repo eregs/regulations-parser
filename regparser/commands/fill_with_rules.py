@@ -14,7 +14,7 @@ def drop_initial_orphans(versions_with_parents, existing):
     """We can only build a version if there's a complete tree before it to
     build from. As such, we need to drop any orphaned versions from the
     beginning of our list"""
-    for idx, (version, parent) in enumerate(versions_with_parents):
+    for idx, (version, _) in enumerate(versions_with_parents):
         if version.identifier in existing:
             return versions_with_parents[idx:]
         logger.warning("No previous annual edition to version %s; ignoring",
