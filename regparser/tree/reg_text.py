@@ -63,7 +63,7 @@ def subjgrp_label(starting_title, letter_list):
         separators = ("", ".", "_")
         separator_pos, suffix_pos = 0, 0
         num_letters = 1
-        longest = max([len(word) for word in words])
+        longest = max(len(word) for word in words)
         while candidate_title == "" or candidate_title in letter_list:
             sep = separators[separator_pos]
             suffix = suffixes[suffix_pos]

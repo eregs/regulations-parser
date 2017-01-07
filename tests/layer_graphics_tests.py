@@ -77,7 +77,7 @@ class LayerGraphicsTest(HttpMixin, TestCase):
 
         results = g.process(node)
         self.assertEqual(3, len(results))
-        results = set((r['alt'], r['url']) for r in results)
+        results = {(r['alt'], r['url']) for r in results}
         self.assertIn(('Alt1', img_url), results)
         self.assertIn(('Alt2', imgf_url), results)
         self.assertIn(('Alt3', imga_url), results)

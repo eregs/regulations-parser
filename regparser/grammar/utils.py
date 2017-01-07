@@ -154,8 +154,8 @@ def wordstart(grammar):
     boundry, next_expr = grammar.exprs[:2]
     word_chars = ''.join(re.escape(char)
                          for char in boundry.wordChars)
-    return set('(?<![{}])'.format(word_chars) + regex_str
-               for regex_str in QuickSearchable.initial_regex(next_expr))
+    return {'(?<![{}])'.format(word_chars) + regex_str
+            for regex_str in QuickSearchable.initial_regex(next_expr)}
 
 
 @QuickSearchable.and_case(pp.Optional)
@@ -190,14 +190,14 @@ def suppress(grammar):
 
 @QuickSearchable.case(pp.Regex, pp.Word, QuickSearchable)
 def has_re_string(grammar):
-    return set([grammar.reString])
+    return {grammar.reString}
 
 
 @QuickSearchable.case(pp.LineStart)
 def line_start(grammar):
-    return set(['^'])
+    return {'^'}
 
 
 @QuickSearchable.case(pp.Literal)
 def literal(grammar):
-    return set([re.escape(grammar.match)])
+    return {re.escape(grammar.match)}

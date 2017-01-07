@@ -95,4 +95,4 @@ def compare_to(api_base, paths, prompt):
         api_base += "/"
 
     pairs = local_and_remote_generator(api_base, paths)
-    return any([compare(local, remote, prompt) for local, remote in pairs])
+    return any(compare(local, remote, prompt) for local, remote in pairs)

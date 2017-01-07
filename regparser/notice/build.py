@@ -17,7 +17,7 @@ logger = logging.getLogger(__name__)
 def build_notice(cfr_title, cfr_part, fr_notice, fetch_xml=True,
                  xml_to_process=None):
     """Given JSON from the federal register, create our notice structure"""
-    cfr_parts = set(str(ref['part']) for ref in fr_notice['cfr_references'])
+    cfr_parts = {str(ref['part']) for ref in fr_notice['cfr_references']}
     if cfr_part:
         cfr_parts.add(cfr_part)
     notice = {'cfr_title': cfr_title, 'cfr_parts': list(cfr_parts)}

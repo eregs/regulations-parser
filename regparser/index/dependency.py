@@ -35,8 +35,8 @@ class Graph(object):
         """Convert the in-memory self._graph into db records"""
         Dependency.objects.all().delete()
 
-        new_vertices = set(self._graph.nodes()) - set(
-            node.label for node in DependencyNode.objects.all())
+        existing = {node.label for node in DependencyNode.objects.all()}
+        new_vertices = set(self._graph.nodes()) - existing
         DependencyNode.objects.bulk_create(
             DependencyNode(label=label) for label in new_vertices)
 

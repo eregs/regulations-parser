@@ -169,7 +169,7 @@ class RegulationTree(object):
             order = []
 
         children = children + [node]    # non-destructive
-        child_labels = set(c.label_id() for c in children)
+        child_labels = {c.label_id() for c in children}
 
         if child_labels.issubset(set(order)):
             lookup = {c.label_id(): c for c in children}

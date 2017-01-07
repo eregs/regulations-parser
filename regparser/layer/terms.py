@@ -206,9 +206,9 @@ class Terms(Layer):
         inclusions = list(inclusions or [])
 
         # add singulars and plurals to search terms
-        search_terms = set((inflected, t[1])
-                           for t in applicable_terms
-                           for inflected in self.inflected(t[0]))
+        search_terms = {(inflected, t[1])
+                        for t in applicable_terms
+                        for inflected in self.inflected(t[0])}
 
         # longer terms first
         search_terms = sorted(search_terms, key=lambda x: len(x[0]),

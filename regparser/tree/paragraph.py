@@ -98,7 +98,7 @@ class ParagraphParser():
             self.p_regex % p_levels[p_level][paragraph], text)]
         match_starts = [
             (start, end) for start, end in match_starts
-            if all([end < es or start > ee for es, ee in exclude])]
+            if all(end < es or start > ee for es, ee in exclude)]
 
         if len(match_starts) == 0:
             return None

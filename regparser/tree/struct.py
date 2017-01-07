@@ -112,8 +112,8 @@ class NodeEncoder(JSONEncoder):
 
 class FullNodeEncoder(JSONEncoder):
     """Encodes Nodes into JSON, not losing any of the fields"""
-    FIELDS = set(['text', 'children', 'label', 'title', 'node_type',
-                  'source_xml', 'tagged_text'])
+    FIELDS = {'text', 'children', 'label', 'title', 'node_type', 'source_xml',
+              'tagged_text'}
 
     def default(self, obj):
         if isinstance(obj, Node):

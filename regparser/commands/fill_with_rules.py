@@ -28,7 +28,7 @@ def dependencies(tree_dir, version_dir, versions_with_parents):
     calculation, we ignore the first version, as we won't be able to build
     anything for it. Add dependencies for any gaps, tying the output tree to
     the preceding tree, the version info and the parsed rule"""
-    existing_tree_ids = set(tree.path[-1] for tree in tree_dir.sub_entries())
+    existing_tree_ids = {tree.path[-1] for tree in tree_dir.sub_entries()}
     version_pairs = drop_initial_orphans(
         versions_with_parents, existing_tree_ids)
     gaps = [(version, parent) for (version, parent) in version_pairs
