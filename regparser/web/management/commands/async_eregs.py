@@ -58,7 +58,8 @@ def show_stats(write_fn):
 
 
 class Command(BaseCommand):
-    help = """
+    help = (    # noqa
+        """
         Asynchronous `eregs` commands. To run,
         1. pip install -r requirements_web.txt
         2. start redis. For example, with docker:
@@ -69,7 +70,8 @@ class Command(BaseCommand):
             python manage.py async_eregs pipeline 27 479 async_output_dir
         5. check the status of your jobs:
             python manage.py async_eregs    # no parameters
-    """
+        """
+    )
 
     def add_arguments(self, parser):
         parser.formatter_class = RawTextHelpFormatter

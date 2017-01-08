@@ -71,7 +71,7 @@ class FileUploadSerializer(serializers.ModelSerializer):
         )
 
     contents = serializers.SerializerMethodField()
-    file = serializers.FileField()
+    file = serializers.FileField()  # noqa
     filename = serializers.CharField(read_only=True)
     hexhash = serializers.CharField(read_only=True)
     url = serializers.URLField(read_only=True)
