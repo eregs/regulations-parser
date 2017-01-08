@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+from contextlib import contextmanager
+
 import pytest
 from lxml import etree
 
@@ -96,8 +98,7 @@ def test_compress_context_in_tokenlists():
                              paragraphs=['a', '1']),
             tokens.Paragraph(paragraphs=[None, None, 'i']),
             tokens.Paragraph(section='23', paragraph='b')])]
-    converted = amdparser.compress_context_in_tokenlists(tokenized)
-    assert converted == [
+    assert amdparser.compress_context_in_tokenlists(tokenized) == [
         tokens.Context(['123', 'Interpretations']),
         tokens.Paragraph(part='123', section='23', paragraph='a'),
         tokens.Verb(tokens.Verb.PUT, True),
@@ -127,10 +128,13 @@ def test_resolve_confused_context_appendix():
         tokens.Context([None, 'Interpretations', 'A', '(12)'])]
 
 
-def test_compress():
-    assert [1, 2, 3] == amdparser.compress([1, 2, 3], [])
-    assert [1, 6, 3] == amdparser.compress([1, 2, 3, 4, 5], [None, 6, None])
-    assert [2, 2, 5, 6] == amdparser.compress([1, 2], [2, None, 5, 6])
+@pytest.mark.parametrize('left,right,expected', [
+    ([1, 2, 3], [], [1, 2, 3]),
+    ([1, 2, 3, 4, 5], [None, 6, None], [1, 6, 3]),
+    ([1, 2], [2, None, 5, 6], [2, 2, 5, 6])
+])
+def test_compress(left, right, expected):
+    assert amdparser.compress(left, right) == expected
 
 
 def test_separate_tokenlist():
@@ -143,8 +147,7 @@ def test_separate_tokenlist():
         tokens.Paragraph(sub='3'),
         tokens.TokenList([tokens.Paragraph(section='b')])
     ]
-    converted = amdparser.separate_tokenlist(tokenized)
-    assert converted == [
+    assert amdparser.separate_tokenlist(tokenized) == [
         tokens.Context(['1']),
         tokens.Verb(tokens.Verb.MOVE, active=True),
         tokens.Context([None, '2']),
@@ -161,8 +164,7 @@ def test_context_to_paragraph():
         tokens.Context(['3'], certain=True),
         tokens.Context(['4'])
     ]
-    converted = amdparser.context_to_paragraph(tokenized)
-    assert converted == [
+    assert amdparser.context_to_paragraph(tokenized) == [
         tokens.Context(['1']),
         tokens.Verb(tokens.Verb.PUT, active=True),
         tokens.Paragraph(part='2'),
@@ -171,33 +173,34 @@ def test_context_to_paragraph():
     ]
 
 
-def test_context_to_paragraph_exceptions():
+def test_context_to_paragraph_exceptions1():
     tokenized = [
         tokens.Verb(tokens.Verb.PUT, active=True),
         tokens.Context(['2']),
         tokens.Paragraph(part='3')
     ]
-    converted = amdparser.context_to_paragraph(tokenized)
-    assert tokenized == converted
+    assert tokenized == amdparser.context_to_paragraph(tokenized)
 
+
+def test_context_to_paragraph_exceptions2():
     tokenized = [
         tokens.Verb(tokens.Verb.PUT, active=True),
         tokens.Context(['2']),
         tokens.TokenList([tokens.Paragraph(part='3')])
     ]
-    converted = amdparser.context_to_paragraph(tokenized)
-    assert tokenized == converted
+    assert tokenized == amdparser.context_to_paragraph(tokenized)
 
 
-def test_switch_passive():
+def test_switch_passive1():
     tokenized = [
         tokens.Context(['1']),
         tokens.Verb(tokens.Verb.PUT, active=True),
         tokens.Context(['2'])
     ]
-    converted = amdparser.switch_passive(tokenized)
-    assert tokenized == converted
+    assert tokenized == amdparser.switch_passive(tokenized)
 
+
+def test_switch_passive2():
     tokenized = [
         tokens.Context(['1']),
         tokens.Verb(tokens.Verb.PUT, active=False),
@@ -205,8 +208,7 @@ def test_switch_passive():
         tokens.Context(['3']),
         tokens.Verb(tokens.Verb.MOVE, active=False),
     ]
-    converted = amdparser.switch_passive(tokenized)
-    assert converted == [
+    assert amdparser.switch_passive(tokenized) == [
         tokens.Verb(tokens.Verb.PUT, active=True),
         tokens.Context(['1']),
         tokens.Verb(tokens.Verb.MOVE, active=True),
@@ -214,14 +216,15 @@ def test_switch_passive():
         tokens.Context(['3']),
     ]
 
+
+def test_switch_passive3():
     tokenized = [
         tokens.Context(['1']),
         tokens.Verb(tokens.Verb.MOVE, active=False),
         tokens.Context(['2']),
         tokens.Context(['3']),
         tokens.Verb(tokens.Verb.PUT, active=False)]
-    converted = amdparser.switch_passive(tokenized)
-    assert converted == [
+    assert amdparser.switch_passive(tokenized) == [
         tokens.Verb(tokens.Verb.MOVE, active=True),
         tokens.Context(['1']),
         tokens.Context(['2']),
@@ -348,7 +351,7 @@ def test_remove_false_deletes():
     assert new_tokenized == []
 
 
-def test_multiple_moves():
+def test_multiple_moves_success():
     tokenized = [
         tokens.TokenList([tokens.Paragraph(part='444', sub='1'),
                           tokens.Paragraph(part='444', sub='2')]),
@@ -365,7 +368,8 @@ def test_multiple_moves():
         tokens.Paragraph(part='444', sub='4')
     ]
 
-    # Not even number of elements on either side
+
+def test_multiple_moved_not_even_number_of_elements_on_either_side():
     tokenized = [
         tokens.TokenList([tokens.Paragraph(part='444', sub='1'),
                           tokens.Paragraph(part='444', sub='2')]),
@@ -373,158 +377,131 @@ def test_multiple_moves():
         tokens.TokenList([tokens.Paragraph(part='444', sub='3')])]
     assert tokenized == amdparser.multiple_moves(tokenized)
 
-    # Paragraphs on either side of a move
+
+def test_multiple_moves_paragraphs_on_either_side_of_a_move():
     tokenized = [tokens.Paragraph(part='444', sub='1'),
                  tokens.Verb(tokens.Verb.MOVE, active=False),
                  tokens.Paragraph(part='444', sub='3')]
     assert tokenized == amdparser.multiple_moves(tokenized)
 
 
+@contextmanager
+def assert_instruction_conversion(instruction_text, initial_label):
+    """We have several tests that require creating an AMDPAR with the provided
+    instruction_text, parsing, and comparing it to a built set of XML."""
+    amdpar = etree.fromstring('<AMDPAR>{0}</AMDPAR>'.format(instruction_text))
+    with XMLBuilder('EREGS_INSTRUCTIONS') as expected:
+        yield expected
+    instructions, _ = amdparser.parse_amdpar(amdpar, initial_label)
+    assert etree.tounicode(instructions) == expected.xml_str
+
+
 def test_parse_amdpar_newly_redesignated():
     text = ("Paragraphs 3.ii, 3.iii, 4 and newly redesignated paragraph "
             "10 are revised.")
-    xml = etree.fromstring('<AMDPAR>{0}</AMDPAR>'.format(text))
-    with XMLBuilder('EREGS_INSTRUCTIONS') as ctx:
-        ctx.PUT(label='1111-Interpretations-2-(a)-3-ii')
-        ctx.PUT(label='1111-Interpretations-2-(a)-3-iii')
-        ctx.PUT(label='1111-Interpretations-2-(a)-4')
-        ctx.PUT(label='1111-Interpretations-2-(a)-10')
-
-    instructions, _ = amdparser.parse_amdpar(
-        xml, ['1111', 'Interpretations', '2', '(a)'])
-    assert etree.tounicode(instructions) == ctx.xml_str
+    label = ['1111', 'Interpretations', '2', '(a)']
+    with assert_instruction_conversion(text, label) as expected_ctx:
+        expected_ctx.PUT(label='1111-Interpretations-2-(a)-3-ii')
+        expected_ctx.PUT(label='1111-Interpretations-2-(a)-3-iii')
+        expected_ctx.PUT(label='1111-Interpretations-2-(a)-4')
+        expected_ctx.PUT(label='1111-Interpretations-2-(a)-10')
 
 
 def test_parse_amdpar_interp_phrase():
-    text = ("In Supplement I to part 999, under"
-            '<E T="03">Section 999.3—Header,</E>under'
-            '<E T="03">3(b) Subheader,</E>new paragraph 1.iv is added:')
-    xml = etree.fromstring('<AMDPAR>{0}</AMDPAR>'.format(text))
-    instructions, _ = amdparser.parse_amdpar(xml, ['1111'])
-
-    with XMLBuilder('EREGS_INSTRUCTIONS') as ctx:
-        ctx.POST(label='999-Interpretations-3-(b)-1-iv')
-    assert etree.tounicode(instructions) == ctx.xml_str
+    text = ('In Supplement I to part 999, under<E T="03">Section 999.3—Header'
+            ',</E>under<E T="03">3(b) Subheader,</E>new paragraph 1.iv is '
+            'added:')
+    with assert_instruction_conversion(text, ['1111']) as expected_ctx:
+        expected_ctx.POST(label='999-Interpretations-3-(b)-1-iv')
 
 
 def test_parse_amdpar_interp_heading():
     text = "ii. The heading for 35(b) blah blah is revised."
-    xml = etree.fromstring('<AMDPAR>{0}</AMDPAR>'.format(text))
-    instructions, _ = amdparser.parse_amdpar(xml,
-                                             ['1111', 'Interpretations'])
-    with XMLBuilder('EREGS_INSTRUCTIONS') as ctx:
-        ctx.PUT(label='1111-Interpretations-35-(b)[title]')
-    assert etree.tounicode(instructions) == ctx.xml_str
+    label = ['1111', 'Interpretations']
+    with assert_instruction_conversion(text, label) as expected_ctx:
+        expected_ctx.PUT(label='1111-Interpretations-35-(b)[title]')
 
 
 def test_parse_amdpar_interp_context():
     text = "b. 35(b)(1) Some title and paragraphs 1, 2, and 3 are added."
-    xml = etree.fromstring('<AMDPAR>{0}</AMDPAR>'.format(text))
-    instructions, _ = amdparser.parse_amdpar(xml,
-                                             ['1111', 'Interpretations'])
-    with XMLBuilder('EREGS_INSTRUCTIONS') as ctx:
-        ctx.POST(label='1111-Interpretations-35-(b)(1)')
-        ctx.POST(label='1111-Interpretations-35-(b)(1)-1')
-        ctx.POST(label='1111-Interpretations-35-(b)(1)-2')
-        ctx.POST(label='1111-Interpretations-35-(b)(1)-3')
-    assert etree.tounicode(instructions) == ctx.xml_str
+    label = ['1111', 'Interpretations']
+    with assert_instruction_conversion(text, label) as expected_ctx:
+        expected_ctx.POST(label='1111-Interpretations-35-(b)(1)')
+        expected_ctx.POST(label='1111-Interpretations-35-(b)(1)-1')
+        expected_ctx.POST(label='1111-Interpretations-35-(b)(1)-2')
+        expected_ctx.POST(label='1111-Interpretations-35-(b)(1)-3')
 
 
 def test_parse_amdpar_interp_redesignated():
-    text = "Paragraph 1 under 51(b) is redesignated as paragraph 2 "
-    text += "under subheading 51(b)(1) and revised"
-    xml = etree.fromstring('<AMDPAR>{0}</AMDPAR>'.format(text))
-    instructions, _ = amdparser.parse_amdpar(xml,
-                                             ['1111', 'Interpretations'])
-    with XMLBuilder('EREGS_INSTRUCTIONS') as ctx:
-        ctx.DELETE(label='1111-Interpretations-51-(b)-1')
-        ctx.POST(label='1111-Interpretations-51-(b)(1)-2')
-    assert etree.tounicode(instructions) == ctx.xml_str
+    text = ("Paragraph 1 under 51(b) is redesignated as paragraph 2 under "
+            "subheading 51(b)(1) and revised")
+    label = ['1111', 'Interpretations']
+    with assert_instruction_conversion(text, label) as expected_ctx:
+        expected_ctx.DELETE(label='1111-Interpretations-51-(b)-1')
+        expected_ctx.POST(label='1111-Interpretations-51-(b)(1)-2')
 
 
 def test_parse_amdpar_interp_entries():
     text = "Entries for 12(c)(3)(ix)(A) and (B) are added."
-    xml = etree.fromstring('<AMDPAR>{0}</AMDPAR>'.format(text))
-    instructions, _ = amdparser.parse_amdpar(xml,
-                                             ['1111', 'Interpretations'])
-    with XMLBuilder('EREGS_INSTRUCTIONS') as ctx:
-        ctx.POST(label='1111-Interpretations-12-(c)(3)(ix)(A)')
-        ctx.POST(label='1111-Interpretations-12-(c)(3)(ix)(B)')
-    assert etree.tounicode(instructions) == ctx.xml_str
+    label = ['1111', 'Interpretations']
+    with assert_instruction_conversion(text, label) as expected_ctx:
+        expected_ctx.POST(label='1111-Interpretations-12-(c)(3)(ix)(A)')
+        expected_ctx.POST(label='1111-Interpretations-12-(c)(3)(ix)(B)')
 
 
 def test_parse_amdpar_and_and():
     text = "12(a) 'Titles and Paragraphs' and paragraph 3 are added"
-    xml = etree.fromstring('<AMDPAR>{0}</AMDPAR>'.format(text))
-    instructions, _ = amdparser.parse_amdpar(xml,
-                                             ['1111', 'Interpretations'])
-    with XMLBuilder('EREGS_INSTRUCTIONS') as ctx:
-        ctx.POST(label='1111-Interpretations-12-(a)')
-        ctx.POST(label='1111-Interpretations-12-(a)-3')
-    assert etree.tounicode(instructions) == ctx.xml_str
+    label = ['1111', 'Interpretations']
+    with assert_instruction_conversion(text, label) as expected_ctx:
+        expected_ctx.POST(label='1111-Interpretations-12-(a)')
+        expected_ctx.POST(label='1111-Interpretations-12-(a)-3')
 
 
 def test_parse_amdpar_and_in_tags():
     text = ("Under <E>Appendix A - Some phrase and another</E>, paragraph "
             "3 is added")
-    xml = etree.fromstring('<AMDPAR>{0}</AMDPAR>'.format(text))
-    instructions, _ = amdparser.parse_amdpar(xml,
-                                             ['1111', 'Interpretations'])
-    with XMLBuilder('EREGS_INSTRUCTIONS') as ctx:
-        ctx.POST(label='1111-Interpretations-A-()-3')
-    assert etree.tounicode(instructions) == ctx.xml_str
+    label = ['1111', 'Interpretations']
+    with assert_instruction_conversion(text, label) as expected_ctx:
+        expected_ctx.POST(label='1111-Interpretations-A-()-3')
 
 
 def test_parse_amdpar_verbs_ands():
     text = ("Under 45(a)(1) Title, paragraphs 1 and 2 are removed, and "
             "45(a)(1)(i) Deeper Title and paragraphs 1 and 2 are added")
-    xml = etree.fromstring('<AMDPAR>{0}</AMDPAR>'.format(text))
-    instructions, _ = amdparser.parse_amdpar(xml,
-                                             ['1111', 'Interpretations'])
-    with XMLBuilder('EREGS_INSTRUCTIONS') as ctx:
-        ctx.DELETE(label='1111-Interpretations-45-(a)(1)-1')
-        ctx.DELETE(label='1111-Interpretations-45-(a)(1)-2')
-        ctx.POST(label='1111-Interpretations-45-(a)(1)(i)')
-        ctx.POST(label='1111-Interpretations-45-(a)(1)(i)-1')
-        ctx.POST(label='1111-Interpretations-45-(a)(1)(i)-2')
-    assert etree.tounicode(instructions) == ctx.xml_str
+    label = ['1111', 'Interpretations']
+    with assert_instruction_conversion(text, label) as expected_ctx:
+        expected_ctx.DELETE(label='1111-Interpretations-45-(a)(1)-1')
+        expected_ctx.DELETE(label='1111-Interpretations-45-(a)(1)-2')
+        expected_ctx.POST(label='1111-Interpretations-45-(a)(1)(i)')
+        expected_ctx.POST(label='1111-Interpretations-45-(a)(1)(i)-1')
+        expected_ctx.POST(label='1111-Interpretations-45-(a)(1)(i)-2')
 
 
 def test_parse_amdpar_add_field():
     text = "Adding introductory text to paragraph (c)"
-    xml = etree.fromstring('<AMDPAR>{0}</AMDPAR>'.format(text))
-    instructions, _ = amdparser.parse_amdpar(xml, ['1111', None, '12'])
-
-    with XMLBuilder('EREGS_INSTRUCTIONS') as ctx:
-        ctx.PUT(label='1111-?-12-c[text]')
-    assert etree.tounicode(instructions) == ctx.xml_str
+    label = ['1111', None, '12']
+    with assert_instruction_conversion(text, label) as expected_ctx:
+        expected_ctx.PUT(label='1111-?-12-c[text]')
 
 
 def test_parse_amdpar_moved_then_modified():
     text = ("Under Paragraph 22(a), paragraph 1 is revised, paragraph "
             "2 is redesignated as paragraph 3 and revised, and new "
             "paragraph 2 is added.")
-    xml = etree.fromstring('<AMDPAR>{0}</AMDPAR>'.format(text))
-    instructions, _ = amdparser.parse_amdpar(xml,
-                                             ['1111', 'Interpretations'])
-    with XMLBuilder('EREGS_INSTRUCTIONS') as ctx:
-        ctx.PUT(label='1111-Interpretations-22-(a)-1')
-        ctx.DELETE(label='1111-Interpretations-22-(a)-2')
-        ctx.POST(label='1111-Interpretations-22-(a)-3')
-        ctx.POST(label='1111-Interpretations-22-(a)-2')
-    assert etree.tounicode(instructions) == ctx.xml_str
+    label = ['1111', 'Interpretations']
+    with assert_instruction_conversion(text, label) as expected_ctx:
+        expected_ctx.PUT(label='1111-Interpretations-22-(a)-1')
+        expected_ctx.DELETE(label='1111-Interpretations-22-(a)-2')
+        expected_ctx.POST(label='1111-Interpretations-22-(a)-3')
+        expected_ctx.POST(label='1111-Interpretations-22-(a)-2')
 
 
 def test_parse_amdpar_subject_group():
-    xml = etree.fromstring(
-        '<AMDPAR>8. Section 479.90a is added to '
-        '[subject-group(Exemptions Relating to Transfers of Firearms)] '
-        'to read as follows.</AMDPAR>')
-    instructions, _ = amdparser.parse_amdpar(xml, [])
-
-    with XMLBuilder('EREGS_INSTRUCTIONS') as ctx:
-        ctx.POST(label='479-Subjgrp:ERtToF-90a')
-    assert etree.tounicode(instructions) == ctx.xml_str
+    text = ("<AMDPAR>8. Section 479.90a is added to "
+            "[subject-group(Exemptions Relating to Transfers of Firearms)] "
+            "to read as follows.</AMDPAR>")
+    with assert_instruction_conversion(text, []) as expected_ctx:
+        expected_ctx.POST(label='479-Subjgrp:ERtToF-90a')
 
 
 def test_parse_amdpar_definition():
@@ -533,13 +510,9 @@ def test_parse_amdpar_definition():
     text = ("Section 478.11 is amended by adding a definition for the "
             "term “Nonimmigrant visa” in alphabetical order to read as "
             "follows:")
-    xml = etree.fromstring('<AMDPAR>{0}</AMDPAR>'.format(text))
-    instructions, _ = amdparser.parse_amdpar(xml, [])
-
-    with XMLBuilder('EREGS_INSTRUCTIONS') as ctx:
-        ctx.POST(label='478-?-11-p{0}'.format(hash_for_paragraph(
+    with assert_instruction_conversion(text, []) as expected_ctx:
+        expected_ctx.POST(label='478-?-11-p{0}'.format(hash_for_paragraph(
             "Nonimmigrant visa")))
-    assert etree.tounicode(instructions) == ctx.xml_str
 
 
 @pytest.mark.parametrize('in_label,out_label', [
