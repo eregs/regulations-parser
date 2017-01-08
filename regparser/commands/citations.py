@@ -23,5 +23,5 @@ def citations(input_files, unique):
                 click.echo(label)
         else:
             for citation in sorted(cits, key=lambda c: c.start):
-                click.echo(u"{}: {}\n".format(
+                click.echo(u"{0}: {1}\n".format(
                     text[citation.start:citation.end], citation.label))

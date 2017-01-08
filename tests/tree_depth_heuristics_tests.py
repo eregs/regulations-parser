@@ -10,9 +10,9 @@ class HeuristicsTests(TestCase):
         self.solution = {}
 
     def addAssignment(self, typ, char, depth):
-        self.solution['type{}'.format(self.idx_counter)] = typ
-        self.solution['idx{}'.format(self.idx_counter)] = typ.index(char)
-        self.solution['depth{}'.format(self.idx_counter)] = depth
+        self.solution['type{0}'.format(self.idx_counter)] = typ
+        self.solution['idx{0}'.format(self.idx_counter)] = typ.index(char)
+        self.solution['depth{0}'.format(self.idx_counter)] = depth
         self.idx_counter += 1
 
     def test_prefer_multiple_children(self):

@@ -1,7 +1,7 @@
 from regparser.tree.gpo_cfr.interpretations import get_app_title
 
 _CONTAINS_SUPPLEMENT = "contains(., 'Supplement I')"
-_SUPPLEMENT_HD = "//REGTEXT//HD[@SOURCE='HD1' and {}]".format(
+_SUPPLEMENT_HD = "//REGTEXT//HD[@SOURCE='HD1' and {0}]".format(
     _CONTAINS_SUPPLEMENT)
 _SUPPLEMENT_AMD_OR_P = "./AMDPAR[{0}]|./P[{0}]".format(_CONTAINS_SUPPLEMENT)
 

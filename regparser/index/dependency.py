@@ -13,7 +13,7 @@ logger = logging.getLogger(__name__)
 class Missing(Exception):
     def __init__(self, key, dependency):
         super(Missing, self).__init__(
-            "Missing dependency. {} is needed for {}".format(
+            "Missing dependency. {0} is needed for {1}".format(
                 dependency, key))
         self.dependency = dependency
         self.key = key

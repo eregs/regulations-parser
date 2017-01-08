@@ -9,7 +9,7 @@ def emphasize(marker):
     their <E> tags to distinguish them from previous levels. This function
     will wrap a marker in an <E> tag"""
     marker_plain = deemphasize(marker)
-    return u'<E T="03">{}</E>'.format(marker_plain)
+    return u'<E T="03">{0}</E>'.format(marker_plain)
 
 
 def deemphasize(marker):

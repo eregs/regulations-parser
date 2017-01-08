@@ -24,10 +24,10 @@ class LayerGraphicsTest(HttpMixin, TestCase):
                     "and ![](NOTEXT)")
         g = Graphics(None)
         for gid in ('ABCD', 'XXX', 'NOTEXT'):
-            self.expect_http(uri='http://example.com/{}.gif'.format(gid),
+            self.expect_http(uri='http://example.com/{0}.gif'.format(gid),
                              method='HEAD')
             self.expect_http(
-                uri='http://example.com/{}.thumb.gif'.format(gid),
+                uri='http://example.com/{0}.thumb.gif'.format(gid),
                 method='HEAD')
 
         result = g.process(node)

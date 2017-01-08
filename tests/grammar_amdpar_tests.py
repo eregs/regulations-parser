@@ -457,7 +457,7 @@ class GrammarAmdParTests(TestCase):
         self.assertEqual(4, len(result[0].tokens))
         self.assertEqual(
             result[0].tokens,
-            [tokens.Paragraph(appendix='A', section='30(a)({})'.format(d))
+            [tokens.Paragraph(appendix='A', section='30(a)({0})'.format(d))
              for d in '5678'])
 
     def test_example_34(self):

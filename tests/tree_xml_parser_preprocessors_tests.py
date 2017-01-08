@@ -60,9 +60,9 @@ def test_parentheses_cleanup(original, new_text):
     """Helper function to verify that the XML is transformed as
     expected"""
     with XMLBuilder("PART") as ctx:
-        ctx.child_from_string(u"<P>{}</P>".format(original))
+        ctx.child_from_string(u"<P>{0}</P>".format(original))
     preprocessors.parentheses_cleanup(ctx.xml)
-    assert etree.tounicode(ctx.xml[0]) == "<P>{}</P>".format(new_text)
+    assert etree.tounicode(ctx.xml[0]) == "<P>{0}</P>".format(new_text)
 
 
 @pytest.mark.parametrize("input_xml,expected_xml", [
@@ -77,15 +77,15 @@ def test_parentheses_cleanup(original, new_text):
 ])
 def test_move_adjoining_chars(input_xml, expected_xml):
     with XMLBuilder("SECTION") as ctx:
-        ctx.child_from_string(u"<P>{}</P>".format(input_xml))
+        ctx.child_from_string(u"<P>{0}</P>".format(input_xml))
     preprocessors.move_adjoining_chars(ctx.xml)
     assert etree.tounicode(ctx.xml.xpath('./P/E')[0]) == expected_xml
 
 
 class ApprovalsFPTests(TestCase):
     def control_number(self, number, prefix="Approved"):
-        return ("({} by the Office of Management and Budget under "
-                "control number {})".format(prefix, number))
+        return ("({0} by the Office of Management and Budget under "
+                "control number {1})".format(prefix, number))
 
     def test_transform(self):
         """Verify that FP tags get transformed, but only if they match a
@@ -147,7 +147,7 @@ class ExtractTagsTests(TestCase):
         contents = "contents1\ncontents2<TAG2/><TAG3/>"
         with XMLBuilder("ROOT") as ctx2:
             ctx2.TAG1()
-            ctx2.child_from_string('<EXTRACT>{}</EXTRACT>'.format(contents))
+            ctx2.child_from_string('<EXTRACT>{0}</EXTRACT>'.format(contents))
             ctx2.EXTRACT("contents3")  # First pass will only merge one
             ctx2.TAG4()
             ctx2.EXTRACT("contents4")
@@ -157,7 +157,7 @@ class ExtractTagsTests(TestCase):
         contents += "\ncontents3"
         with XMLBuilder("ROOT") as ctx3:
             ctx3.TAG1()
-            ctx3.child_from_string('<EXTRACT>{}</EXTRACT>'.format(contents))
+            ctx3.child_from_string('<EXTRACT>{0}</EXTRACT>'.format(contents))
             ctx3.TAG4()
             ctx3.EXTRACT("contents4")
         self.assertTrue(self.et.extract_pair(ctx.xml[1]))
@@ -227,10 +227,10 @@ class FootnotesTests(TestCase):
         a single tag. Verify that they get split"""
         def ftnt_compare(original, expected):
             with XMLBuilder("ROOT") as ctx:
-                ctx.child_from_string("<P>{}</P>".format(original))
+                ctx.child_from_string("<P>{0}</P>".format(original))
 
             with XMLBuilder("ROOT") as ctx2:
-                ctx2.child_from_string("<P>{}</P>".format(expected))
+                ctx2.child_from_string("<P>{0}</P>".format(expected))
             self.fn.split_comma_footnotes(ctx.xml)
             self.assertEqual(ctx.xml_str, ctx2.xml_str)
 

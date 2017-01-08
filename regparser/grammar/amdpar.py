@@ -451,7 +451,7 @@ def tokenize_override_ps(match):
 _keyterm_label_part = (
     Suppress(Marker("keyterm")) +
     QuotedString(quoteChar='(', endQuoteChar=')')
-).setParseAction(lambda m: "p{}".format(hash_for_paragraph(m[0])))
+).setParseAction(lambda m: "p{0}".format(hash_for_paragraph(m[0])))
 _simple_label_part = Word(string.ascii_lowercase + string.ascii_uppercase +
                           string.digits)
 _label_part = _keyterm_label_part | _simple_label_part
@@ -478,7 +478,7 @@ subject_group = (
 # Phrases like '“Nonimmigrant visa”' become 'p12345678'
 _double_quote_label = QuotedString(
     quoteChar=u'“', endQuoteChar=u'”'
-).setParseAction(lambda m: "p{}".format(hash_for_paragraph(m[0])))
+).setParseAction(lambda m: "p{0}".format(hash_for_paragraph(m[0])))
 # Phrases like "definition for the term “Nonimmigrant visa”" become a
 # paragraph token with the appropriate paragraph label set
 definition = (

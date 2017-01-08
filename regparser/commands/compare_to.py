@@ -45,7 +45,7 @@ def compare(local_path, remote_url, prompt=True):
         local = json.load(fp)
 
     if remote != local:
-        click.echo("Content differs: {} {}".format(local_path, remote_url))
+        click.echo("Content differs: {0} {1}".format(local_path, remote_url))
         if not prompt or click.confirm("Show diff?"):
             diffs_str = '\n'.join(udiff(remote, local))
             echo = click.echo_via_pager if prompt else click.echo

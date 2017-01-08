@@ -20,7 +20,7 @@ class CommandsCurrentVersionTests(TestCase):
         self.part = randint(1, 999)
         self.year = randint(2000, 2020)
         self.volume = Volume(self.year, self.title, 1)
-        self.version_id = '{}-annual-{}'.format(self.year, self.part)
+        self.version_id = '{0}-annual-{1}'.format(self.year, self.part)
 
     def test_process_creation(self):
         """If no tree is present, we should build one"""

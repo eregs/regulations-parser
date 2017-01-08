@@ -35,7 +35,7 @@ def fdsys_url(**params):
     """Generate a URL to an FDSYS redirect"""
     params['year'] = params.get('year', 'mostrecent')
     params = sorted(params.items())     # consistent encoding
-    return 'http://api.fdsys.gov/link?{}'.format(urlencode(params))
+    return 'http://api.fdsys.gov/link?{0}'.format(urlencode(params))
 
 
 class CFRFinder(FinderBase):

@@ -517,7 +517,7 @@ class NoticeAMDPARserTests(TestCase):
         instructions, _ = amdparser.parse_amdpar(xml, [])
 
         with XMLBuilder('EREGS_INSTRUCTIONS') as ctx:
-            ctx.POST(label='478-?-11-p{}'.format(hash_for_paragraph(
+            ctx.POST(label='478-?-11-p{0}'.format(hash_for_paragraph(
                 "Nonimmigrant visa")))
         self.assertEqual(etree.tounicode(instructions), ctx.xml_str)
 

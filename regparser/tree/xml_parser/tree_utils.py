@@ -112,7 +112,7 @@ def superscript_to_plaintext(element):
 def footnotes_to_plaintext(element):
     footnote = element.attrib['footnote']
     footnote = footnote.replace('(', r'\(').replace(')', r'\)')
-    return u"[^{}]({})".format(element.text, footnote)
+    return u"[^{0}]({1})".format(element.text, footnote)
 
 
 def get_node_text(node, add_spaces=False):

@@ -65,7 +65,7 @@ def transform_xml(elements, title, depth):
     :param str title: Title of the root XML node we'll generate
     :param int depth: indicates which depth headers to look for"""
     root = etree.Element("PREAMBLE_LEVEL", TITLE=title)
-    deeper_source = 'HD{}'.format(depth)
+    deeper_source = 'HD{0}'.format(depth)
     non_nested_children = takewhile(
         lambda e: e.tag != 'HD' or e.get('SOURCE') != deeper_source,
         elements)
@@ -98,11 +98,11 @@ def parse_intro(notice_xml, doc_id):
     for xml in notice_xml.xpath(xpath):
         title = xml.xpath('./HD')[0].text.strip()
         paras = [get_node_text(p) for p in xml.xpath("./P")]
-        parent_label = [doc_id, 'intro', 'p{}'.format(len(root.children) + 1)]
+        parent_label = [doc_id, 'intro', 'p{0}'.format(len(root.children) + 1)]
         children = []
         for i, para in enumerate(paras, start=1):
-            label = [doc_id, 'intro', 'p{}'.format(len(root.children) + 1),
-                     'p{}'.format(i)]
+            label = [doc_id, 'intro', 'p{0}'.format(len(root.children) + 1),
+                     'p{0}'.format(i)]
             children.append(Node(text=para, node_type='preamble', label=label))
         root.children.append(Node(node_type='preamble', label=parent_label,
                                   title=title, children=children))

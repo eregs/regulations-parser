@@ -41,7 +41,8 @@ class Node(object):
         self.tagged_text = tagged_text
 
     def __repr__(self):
-        text = "Node(text={}, children={}, label={}, title={}, node_type={})"
+        text = ("Node(text={0}, children={1}, label={2}, title={3}, "
+                "node_type={4})")
         return text.format(
             repr(self.text), repr(self.children), repr(self.label),
             repr(self.title), repr(self.node_type)

@@ -181,7 +181,7 @@ class ExtractTags(PreProcessorBase):
             else:
                 xml_str += '\n' + self.strip_root_tag(next_str)
 
-            new_el = etree.fromstring('<EXTRACT>{}</EXTRACT>'.format(xml_str))
+            new_el = etree.fromstring('<EXTRACT>{0}</EXTRACT>'.format(xml_str))
 
             parent = extract.getparent()
             parent.replace(extract, new_el)
@@ -207,10 +207,10 @@ class Footnotes(PreProcessorBase):
     # SU indicates both the reference and the content of the footnote;
     # distinguish by looking at ancestors
     IS_REF_PREDICATE = 'not(ancestor::TNOTE) and not(ancestor::FTNT)'
-    XPATH_IS_REF = './/SU[{}]'.format(IS_REF_PREDICATE)
+    XPATH_IS_REF = './/SU[{0}]'.format(IS_REF_PREDICATE)
     # Find the content of a footnote to associate with a reference
     XPATH_FIND_NOTE_TPL = \
-        "./following::SU[(ancestor::TNOTE or ancestor::FTNT) and text()='{}']"
+        "./following::SU[(ancestor::TNOTE or ancestor::FTNT) and text()='{0}']"
 
     def transform(self, xml):
         self.split_comma_footnotes(xml)

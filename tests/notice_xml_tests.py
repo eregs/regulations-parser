@@ -57,7 +57,7 @@ class NoticeXMLLocalCopiesTests(TestCase):
         os.mkdir(os.path.join(self.dir1, 'xml'))
         paths = []
         for i in range(3):
-            path = os.path.join(self.dir1, 'xml', '503-{}.xml'.format(i + 1))
+            path = os.path.join(self.dir1, 'xml', '503-{0}.xml'.format(i + 1))
             paths.append(path)
             with open(path, 'w') as f:
                 f.write(str(i)*10)

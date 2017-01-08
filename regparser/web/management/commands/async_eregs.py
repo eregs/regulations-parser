@@ -30,7 +30,7 @@ def argparse_to_click(eregs_args, **kwargs):
 def _print(write_fn, job):
     logs = job.meta.get('logs', '')
     log_length = len(logs.split('\n'))
-    write_fn("\t{}\n\t\tLogs:{}".format(job, log_length))
+    write_fn("\t{0}\n\t\tLogs:{1}".format(job, log_length))
 
 
 def show_stats(write_fn):
@@ -90,4 +90,4 @@ class Command(BaseCommand):
                                     # Run for at most half an hour
                                     # Don't delete successes
                                     timeout=60 * 30, result_ttl=-1)
-            self.stdout.write("OK: {}".format(job))
+            self.stdout.write("OK: {0}".format(job))

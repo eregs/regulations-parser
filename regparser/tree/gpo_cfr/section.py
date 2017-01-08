@@ -143,10 +143,10 @@ def build_from_section(reg_part, section_xml):
         tagged_section_text = section_xml.text
 
         if section_span_end:
-            section_title = u"§§ {}.{}-{}".format(
+            section_title = u"§§ {0}.{1}-{2}".format(
                 reg_part, section_number, section_span_end)
         else:
-            section_title = u"§ {}.{}".format(reg_part, section_number)
+            section_title = u"§ {0}.{1}".format(reg_part, section_number)
         if subject_text:
             section_title += " " + subject_text
 
@@ -187,11 +187,11 @@ def split_by_markers(xml):
     tagged_text = tree_utils.get_node_text_tags_preserved(xml).strip()
     markers_list = get_markers(tagged_text, next_marker(xml))
 
-    plain_markers = ['({})'.format(mtypes.deemphasize(m))
+    plain_markers = ['({0})'.format(mtypes.deemphasize(m))
                      for m in markers_list]
     node_texts = tree_utils.split_text(plain_text, plain_markers)
     tagged_texts = tree_utils.split_text(
-        tagged_text, ['({})'.format(m) for m in markers_list])
+        tagged_text, ['({0})'.format(m) for m in markers_list])
     if len(node_texts) > len(markers_list):     # due to initial MARKERLESS
         markers_list.insert(0, mtypes.MARKERLESS)
     return list(zip(markers_list, node_texts, tagged_texts))

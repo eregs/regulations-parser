@@ -147,7 +147,7 @@ class LayerTermTest(TestCase):
         certificate), including the documents submitted in support thereof,
         has been examined by me and, to the best of my knowledge and belief,
         is true, correct, and complete.”"""
-        node = Node(u'```extract\n{}\n```'.format(text))
+        node = Node(u'```extract\n{0}\n```'.format(text))
         included, excluded = Terms(None).node_definitions(node, stack)
         self.assertEqual([], included)
         self.assertEqual([], excluded)

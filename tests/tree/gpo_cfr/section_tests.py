@@ -120,7 +120,7 @@ Expected = namedtuple('Expected', ['markers', 'result_text', 'tagged'])
               tagged=('Words then. ', '(a) a subparagraph')))
 ])
 def test_split_by_markers(text, expected):
-    xml = etree.fromstring('<ROOT><P>{}</P><STARS/></ROOT>'.format(text))
+    xml = etree.fromstring('<ROOT><P>{0}</P><STARS/></ROOT>'.format(text))
     results = section.split_by_markers(xml[0])
     results = list(zip(*results))    # unzips...
     assert results == list(expected)
@@ -172,7 +172,7 @@ def test_process_nested_uscode():
 def section_ctx(part=8675, section=309, subject="Definitions."):
     """Many tests need a SECTION tag followed by the SECTNO and SUBJECT"""
     with XMLBuilder("SECTION") as ctx:
-        ctx.SECTNO("§ {}.{}".format(part, section))
+        ctx.SECTNO("§ {0}.{1}".format(part, section))
         ctx.SUBJECT(subject)
         yield ctx
 

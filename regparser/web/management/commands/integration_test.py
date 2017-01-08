@@ -59,7 +59,7 @@ targets = {
 
 
 _ground_truth = functools.partial(os.path.join, 'tests', 'integration-data')
-_current_output = 'output-{}'.format
+_current_output = 'output-{0}'.format
 
 
 @click.group()

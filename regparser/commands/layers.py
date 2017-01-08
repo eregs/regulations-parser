@@ -14,7 +14,7 @@ def _init_classes():
     in a function"""
     classes = {}
     for doc_type in ('cfr', 'preamble'):    # @todo - make this dynamic
-        namespace = 'eregs_ns.parser.layer.{}'.format(doc_type)
+        namespace = 'eregs_ns.parser.layer.{0}'.format(doc_type)
         classes[doc_type] = {
             extension.name: extension.plugin
             for extension in ExtensionManager(namespace)

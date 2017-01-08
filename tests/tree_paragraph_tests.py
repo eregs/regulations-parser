@@ -182,4 +182,4 @@ class DepthParagraphTest(TestCase):
                          hash_for_paragraph(' abc123 mOrE'))
         random_term = uuid.uuid4().hex
         self.assertTrue(hash_for_paragraph(random_term) > 10000,
-                        msg="Hashed too small: {}".format(random_term))
+                        msg="Hashed too small: {0}".format(random_term))

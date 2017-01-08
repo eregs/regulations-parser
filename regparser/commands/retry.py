@@ -22,7 +22,7 @@ def sub_commands():
     sub_cmds = []
     for _, command_name, _ in pkgutil.iter_modules(commands.__path__):
         # Note - this import will also discover DependencyResolvers
-        module = import_module('regparser.commands.{}'.format(command_name))
+        module = import_module('regparser.commands.{0}'.format(command_name))
         if hasattr(module, command_name):
             sub_cmds.append(
                 SubCommand(command_name, getattr(module, command_name)))

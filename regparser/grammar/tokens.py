@@ -108,7 +108,7 @@ class Paragraph(Token):
         other field becomes part of the label, offering a more legible API"""
         if sub is None and subpart:
             if isinstance(subpart, six.string_types):
-                sub = 'Subpart:{}'.format(subpart)
+                sub = 'Subpart:{0}'.format(subpart)
             else:
                 sub = 'Subpart'
         if sub is None and is_interp:

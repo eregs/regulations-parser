@@ -120,7 +120,7 @@ class QuickSearchable(pp.ParseElementEnhance):
             if case.matches(grammar):
                 return case(grammar)
         # Grammar type that we've not accounted for. Fail fast
-        raise Exception("Unknown grammar type: {}".format(grammar.__class__))
+        raise Exception("Unknown grammar type: {0}".format(grammar.__class__))
 
     @classmethod
     def case(cls, *match_classes):
@@ -153,7 +153,7 @@ def wordstart(grammar):
     boundry, next_expr = grammar.exprs[:2]
     word_chars = ''.join(re.escape(char)
                          for char in boundry.wordChars)
-    return {'(?<![{}])'.format(word_chars) + regex_str
+    return {'(?<![{0}])'.format(word_chars) + regex_str
             for regex_str in QuickSearchable.initial_regex(next_expr)}
 
 

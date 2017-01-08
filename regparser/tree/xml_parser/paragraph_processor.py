@@ -94,7 +94,7 @@ class ParagraphProcessor(object):
                 # len(n.label[-1]) < 6 filters out keyterm nodes
                 p_num = sum(n.is_markerless() and len(n.label[-1]) < 6
                             for n in stack.peek_level(depth)) + 1
-            node.label[-1] = 'p{}'.format(p_num)
+            node.label[-1] = 'p{0}'.format(p_num)
 
     @staticmethod
     def separate_intro(nodes):
@@ -266,5 +266,5 @@ class GraphicsMatcher(BaseMatcher):
     def derive_nodes(self, xml, processor=None):
         text = ''
         for gid_xml in xml.xpath('./GID'):
-            text += '![]({})'.format(gid_xml.text)
+            text += '![]({0})'.format(gid_xml.text)
         return [Node(text, label=[mtypes.MARKERLESS])]
