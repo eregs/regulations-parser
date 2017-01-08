@@ -113,10 +113,10 @@ class CommandsPreprocessNoticeTests(HttpMixin, TestCase):
             u'name': u'Environmental Protection Agency',
             u'parent_id': None,
             u'raw_name': u'ENVIRONMENTAL PROTECTION AGENCY',
-            u'url': u'%s%s' % (u'https://www.federalregister.gov/',
-                               u'agencies/environmental-protection-agency'),
-            u'json_url': u'%s%s' % (u'https://www.federalregister.gov/',
-                                    u'api/v1/agencies/145.json'),
+            u'url': ('https://www.federalregister.gov/agencies/'
+                     'environmental-protection-agency'),
+            u'json_url': ('https://www.federalregister.gov/api/v1/agencies/'
+                          '145.json'),
             u'id': 145
         }]
         self.expect_common_json(agencies=agencies_info)

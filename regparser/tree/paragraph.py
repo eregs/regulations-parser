@@ -94,7 +94,7 @@ class ParagraphParser():
         if len(p_levels) <= p_level or len(p_levels[p_level]) <= paragraph:
             return None
         match_starts = [(m.start(), m.end()) for m in re.finditer(
-            self.p_regex % p_levels[p_level][paragraph], text)]
+            self.p_regex.format(p_levels[p_level][paragraph]), text)]
         match_starts = [
             (start, end) for start, end in match_starts
             if all(end < es or start > ee for es, ee in exclude)]

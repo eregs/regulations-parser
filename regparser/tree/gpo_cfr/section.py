@@ -117,7 +117,7 @@ def build_from_section(reg_part, section_xml):
     subject_text = (subject_xml[0].text or '').strip()
 
     section_nums = []
-    for match in re.finditer(r'%s\.(\d+[a-z]*)' % reg_part, section_no):
+    for match in re.finditer(r'{0}\.(\d+[a-z]*)'.format(reg_part), section_no):
         secnum_candidate = match.group(1)
         if secnum_candidate.isdigit():
             secnum_candidate = int(secnum_candidate)

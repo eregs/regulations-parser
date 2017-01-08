@@ -92,8 +92,8 @@ def overwrite_marker(origin, new_label):
     if origin.node_type == Node.REGTEXT:
         marker_list = section.initial_markers(origin.text)
         if len(marker_list) > 0:
-            marker = '(%s)' % marker_list[0]
-            new_marker = '(%s)' % new_label
+            marker = '({0})'.format(marker_list[0])
+            new_marker = '({0})'.format(new_label)
             origin.text = origin.text.replace(marker, new_marker, 1)
     elif origin.node_type == Node.INTERP:
         marker = interpretations.get_first_interp_marker(origin.text)

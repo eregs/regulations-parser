@@ -373,7 +373,7 @@ class NoticeAMDPARserTests(TestCase):
     def test_parse_amdpar_newly_redesignated(self):
         text = "Paragraphs 3.ii, 3.iii, 4 and newly redesignated paragraph "
         text += "10 are revised."
-        xml = etree.fromstring('<AMDPAR>%s</AMDPAR>' % text)
+        xml = etree.fromstring('<AMDPAR>{0}</AMDPAR>'.format(text))
         with XMLBuilder('EREGS_INSTRUCTIONS') as ctx:
             ctx.PUT(label='1111-Interpretations-2-(a)-3-ii')
             ctx.PUT(label='1111-Interpretations-2-(a)-3-iii')
@@ -390,7 +390,7 @@ class NoticeAMDPARserTests(TestCase):
         text += u"under"
         text += u'<E T="03">3(b) Subheader,</E>'
         text += u"new paragraph 1.iv is added:"
-        xml = etree.fromstring(u'<AMDPAR>%s</AMDPAR>' % text)
+        xml = etree.fromstring(u'<AMDPAR>{0}</AMDPAR>'.format(text))
         instructions, _ = amdparser.parse_amdpar(xml, ['1111'])
 
         with XMLBuilder('EREGS_INSTRUCTIONS') as ctx:
@@ -399,7 +399,7 @@ class NoticeAMDPARserTests(TestCase):
 
     def test_parse_amdpar_interp_heading(self):
         text = "ii. The heading for 35(b) blah blah is revised."
-        xml = etree.fromstring(u'<AMDPAR>%s</AMDPAR>' % text)
+        xml = etree.fromstring(u'<AMDPAR>{0}</AMDPAR>'.format(text))
         instructions, _ = amdparser.parse_amdpar(xml,
                                                  ['1111', 'Interpretations'])
         with XMLBuilder('EREGS_INSTRUCTIONS') as ctx:
@@ -408,7 +408,7 @@ class NoticeAMDPARserTests(TestCase):
 
     def test_parse_amdpar_interp_context(self):
         text = "b. 35(b)(1) Some title and paragraphs 1, 2, and 3 are added."
-        xml = etree.fromstring(u'<AMDPAR>%s</AMDPAR>' % text)
+        xml = etree.fromstring(u'<AMDPAR>{0}</AMDPAR>'.format(text))
         instructions, _ = amdparser.parse_amdpar(xml,
                                                  ['1111', 'Interpretations'])
         with XMLBuilder('EREGS_INSTRUCTIONS') as ctx:
@@ -421,7 +421,7 @@ class NoticeAMDPARserTests(TestCase):
     def test_parse_amdpar_interp_redesignated(self):
         text = "Paragraph 1 under 51(b) is redesignated as paragraph 2 "
         text += "under subheading 51(b)(1) and revised"
-        xml = etree.fromstring(u'<AMDPAR>%s</AMDPAR>' % text)
+        xml = etree.fromstring(u'<AMDPAR>{0}</AMDPAR>'.format(text))
         instructions, _ = amdparser.parse_amdpar(xml,
                                                  ['1111', 'Interpretations'])
         with XMLBuilder('EREGS_INSTRUCTIONS') as ctx:
@@ -431,7 +431,7 @@ class NoticeAMDPARserTests(TestCase):
 
     def test_parse_amdpar_interp_entries(self):
         text = "Entries for 12(c)(3)(ix)(A) and (B) are added."
-        xml = etree.fromstring('<AMDPAR>%s</AMDPAR>' % text)
+        xml = etree.fromstring('<AMDPAR>{0}</AMDPAR>'.format(text))
         instructions, _ = amdparser.parse_amdpar(xml,
                                                  ['1111', 'Interpretations'])
         with XMLBuilder('EREGS_INSTRUCTIONS') as ctx:
@@ -441,7 +441,7 @@ class NoticeAMDPARserTests(TestCase):
 
     def test_parse_amdpar_and_and(self):
         text = "12(a) 'Titles and Paragraphs' and paragraph 3 are added"
-        xml = etree.fromstring('<AMDPAR>%s</AMDPAR>' % text)
+        xml = etree.fromstring('<AMDPAR>{0}</AMDPAR>'.format(text))
         instructions, _ = amdparser.parse_amdpar(xml,
                                                  ['1111', 'Interpretations'])
         with XMLBuilder('EREGS_INSTRUCTIONS') as ctx:
@@ -452,7 +452,7 @@ class NoticeAMDPARserTests(TestCase):
     def test_parse_amdpar_and_in_tags(self):
         text = "Under <E>Appendix A - Some phrase and another</E>, paragraph "
         text += "3 is added"
-        xml = etree.fromstring('<AMDPAR>%s</AMDPAR>' % text)
+        xml = etree.fromstring('<AMDPAR>{0}</AMDPAR>'.format(text))
         instructions, _ = amdparser.parse_amdpar(xml,
                                                  ['1111', 'Interpretations'])
         with XMLBuilder('EREGS_INSTRUCTIONS') as ctx:
@@ -462,7 +462,7 @@ class NoticeAMDPARserTests(TestCase):
     def test_parse_amdpar_verbs_ands(self):
         text = "Under 45(a)(1) Title, paragraphs 1 and 2 are removed, and "
         text += "45(a)(1)(i) Deeper Title and paragraphs 1 and 2 are added"
-        xml = etree.fromstring('<AMDPAR>%s</AMDPAR>' % text)
+        xml = etree.fromstring('<AMDPAR>{0}</AMDPAR>'.format(text))
         instructions, _ = amdparser.parse_amdpar(xml,
                                                  ['1111', 'Interpretations'])
         with XMLBuilder('EREGS_INSTRUCTIONS') as ctx:
@@ -475,7 +475,7 @@ class NoticeAMDPARserTests(TestCase):
 
     def test_parse_amdpar_add_field(self):
         text = "Adding introductory text to paragraph (c)"
-        xml = etree.fromstring('<AMDPAR>%s</AMDPAR>' % text)
+        xml = etree.fromstring('<AMDPAR>{0}</AMDPAR>'.format(text))
         instructions, _ = amdparser.parse_amdpar(xml, ['1111', None, '12'])
 
         with XMLBuilder('EREGS_INSTRUCTIONS') as ctx:
@@ -486,7 +486,7 @@ class NoticeAMDPARserTests(TestCase):
         text = "Under Paragraph 22(a), paragraph 1 is revised, paragraph "
         text += "2 is redesignated as paragraph 3 and revised, and new "
         text += "paragraph 2 is added."
-        xml = etree.fromstring('<AMDPAR>%s</AMDPAR>' % text)
+        xml = etree.fromstring('<AMDPAR>{0}</AMDPAR>'.format(text))
         instructions, _ = amdparser.parse_amdpar(xml,
                                                  ['1111', 'Interpretations'])
         with XMLBuilder('EREGS_INSTRUCTIONS') as ctx:
@@ -513,7 +513,7 @@ class NoticeAMDPARserTests(TestCase):
         text = ("Section 478.11 is amended by adding a definition for the "
                 u"term “Nonimmigrant visa” in alphabetical order to read as "
                 "follows:")
-        xml = etree.fromstring('<AMDPAR>%s</AMDPAR>' % text)
+        xml = etree.fromstring('<AMDPAR>{0}</AMDPAR>'.format(text))
         instructions, _ = amdparser.parse_amdpar(xml, [])
 
         with XMLBuilder('EREGS_INSTRUCTIONS') as ctx:

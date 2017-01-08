@@ -55,7 +55,7 @@ def split_doc_num(doc_num, effective_date):
     """ If we have a split notice, we construct a document number
     based on the original document number and the effective date. """
     effective_date = ''.join(effective_date.split('-'))
-    return '%s_%s' % (doc_num, effective_date)
+    return '{0}_{1}'.format(doc_num, effective_date)
 
 
 def set_document_numbers(notices):

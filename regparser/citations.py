@@ -173,7 +173,7 @@ class ParagraphCitation(object):
                  other.full_start != self.full_start))
 
     def __repr__(self):
-        return "ParagraphCitation( start=%s, end=%s, label=%s )" % (
+        return "ParagraphCitation(start={0}, end={1}, label={2} )".format(
             repr(self.start), repr(self.end), repr(self.label))
 
 

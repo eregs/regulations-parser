@@ -93,7 +93,7 @@ class BaseViewList(six.with_metaclass(abc.ABCMeta)):
         # 201 status code they expect upon a successful POST.
         #
         # I'm open to debate on this decision.
-        headers["Refresh"] = "0;url=%s" % statusurl
+        headers["Refresh"] = "0;url={0}".format(statusurl)
         return Response(serialized.data, status=status.HTTP_201_CREATED,
                         headers=headers)
 
@@ -297,9 +297,11 @@ class FileUploadView(mixins.ListModelMixin, mixins.CreateModelMixin,
 
         uploaded_file = request.data["file"]
         if uploaded_file.size > self.size_limit:
-            return Response(dict(error="File too large (%s-byte limit)." %
-                                 self.size_limit),
-                            status=status.HTTP_400_BAD_REQUEST)
+            return Response(
+                dict(error="File too large ({0}-byte limit).".format(
+                    self.size_limit)),
+                status=status.HTTP_400_BAD_REQUEST
+            )
         if uploaded_file.multiple_chunks():
             contents = b"".join(chunk for chunk in uploaded_file.chunks())
         else:

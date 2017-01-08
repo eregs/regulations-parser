@@ -17,8 +17,8 @@ class Notice:
         self.page = page
 
     def __repr__(self):
-        return 'Notice( volume=%s, page=%s )' % (repr(self.volume),
-                                                 repr(self.page))
+        return 'Notice(volume={0}, page={1})'.format(
+            repr(self.volume), repr(self.page))
 
     def __eq__(self, other):
         return isinstance(other, Notice) and repr(self) == repr(other)

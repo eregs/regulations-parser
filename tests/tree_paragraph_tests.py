@@ -8,7 +8,7 @@ from regparser.tree.struct import Node
 class DepthParagraphTest(TestCase):
     def setUp(self):
         """Use a parser like that used for reg text."""
-        self.regParser = ParagraphParser(r"\(%s\)", Node.REGTEXT)
+        self.regParser = ParagraphParser(r"\({0}\)", Node.REGTEXT)
 
     def test_matching_subparagraph_ids(self):
         matches = self.regParser.matching_subparagraph_ids(0, 8)    # 'i'
@@ -148,14 +148,14 @@ class DepthParagraphTest(TestCase):
     def test_build_tree_exclude(self):
         """Paragraph tree should not split on exclude areas."""
         ref = "Ref (b)(2)"
-        text = "This (a) is a good (1) %s test (2) no?" % ref
+        text = "This (a) is a good (1) {0} test (2) no?".format(ref)
         ref_pos = text.find(ref)
         self.assertEqual(
             self.regParser.build_tree(text,
                                       exclude=[(ref_pos, ref_pos+len(ref))]),
             Node("This ", children=[
                 Node("(a) is a good ", label=['a'], children=[
-                    Node("(1) %s test " % ref, label=['a', '1']),
+                    Node("(1) {0} test ".format(ref), label=['a', '1']),
                     Node("(2) no?", label=['a', '2'])
                 ])
             ])

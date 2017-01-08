@@ -69,9 +69,9 @@ class HistoryAnnualVolumeTests(HttpMixin, TestCase):
         <CFRDOC>
             <AMDDATE>Jan 1, 2001</AMDDATE>
             <PARTS>Part 111 to 222</PARTS>
-            %s
-            %s
-        </CFRDOC>""" % (pt111, pt112), uri=re.compile(r".*bulkdata.*"))
+            {0}
+            {1}
+        </CFRDOC>""".format(pt111, pt112), uri=re.compile(r".*bulkdata.*"))
 
         volume = annual.Volume(2001, 12, 2)
 

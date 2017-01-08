@@ -20,7 +20,7 @@ def _none_str(value):
     if value is None:
         return 'None'
     else:
-        return "'%s'" % value
+        return "'{0}'".format(value)
 
 
 class Token(object):
@@ -70,7 +70,7 @@ class Verb(Token):
         self.and_prefix = and_prefix
 
     def __repr__(self):
-        return "Verb( %s, active=%s, and_prefix=%s)" % (
+        return "Verb({0}, active={1}, and_prefix={2})".format(
             repr(self.verb), repr(self.active), repr(self.and_prefix))
 
 
@@ -87,7 +87,7 @@ class Context(Token):
         self.certain = certain
 
     def __repr__(self):
-        return "Context([ %s , certain=%s ])" % (
+        return "Context([{0}], certain={1})".format(
             ', '.join(_none_str(l) for l in self.label), self.certain)
 
 
@@ -127,14 +127,14 @@ class Paragraph(Token):
         self.field = field
 
     def __repr__(self):
-        return "Paragraph([ %s ], field = %s )" % (
+        return "Paragraph([{0}], field={1})".format(
             ', '.join(_none_str(l) for l in self.label), _none_str(self.field))
 
     def label_text(self):
         """Converts self.label into a string"""
         label = uncertain_label(self.label)
         if self.field:
-            label += '[%s]' % self.field
+            label += '[{0}]'.format(self.field)
         return label
 
 
@@ -146,7 +146,8 @@ class TokenList(Token):
         self.tokens = tokens
 
     def __repr__(self):
-        return "TokenList([ %s ])" % ', '.join(repr(t) for t in self.tokens)
+        return "TokenList([{0}])".format(
+            ', '.join(repr(t) for t in self.tokens))
 
     def __iter__(self):
         return iter(self.tokens)

@@ -140,10 +140,10 @@ class NoticeXMLTests(TestCase):
             u'name': u'Environmental Protection Agency',
             u'parent_id': None,
             u'raw_name': u'ENVIRONMENTAL PROTECTION AGENCY',
-            u'url': u'%s%s' % (u'https://www.federalregister.gov/',
-                               u'agencies/environmental-protection-agency'),
-            u'json_url': u'%s%s' % ('https://www.federalregister.gov/',
-                                    'api/v1/agencies/145.json'),
+            u'url': ('https://www.federalregister.gov/agencies/'
+                     'environmental-protection-agency'),
+            u'json_url': ('https://www.federalregister.gov/api/v1/agencies/'
+                          '145.json'),
             u'id': 145
         }]
         with XMLBuilder("ROOT") as ctx:
@@ -170,23 +170,22 @@ class NoticeXMLTests(TestCase):
             {
                 u'name': u'Justice Department',
                 u'parent_id': None,
-                u'url': u'%s%s' % (u'https://www.federalregister.gov/',
-                                   u'agencies/justice-department'),
+                u'url': ('https://www.federalregister.gov/agencies/'
+                         'justice-department'),
                 u'raw_name': u'DEPARTMENT OF JUSTICE',
-                u'json_url': u'%s%s' % (u'https://www.federalregister.gov/',
-                                        u'api/v1/agencies/268.json'),
+                u'json_url': ('https://www.federalregister.gov/api/v1/'
+                              'agencies/268.json'),
                 u'id': 268
             },
             {
                 u'name': u'Alcohol, Tobacco, Firearms, and Explosives Bureau',
                 u'parent_id': 268,
-                u'url': '%s%s%s' % (u'https://www.federalregister.gov/',
-                                    u'agencies/alcohol-tobacco-firearms',
-                                    u'-and-explosives-bureau'),
-                u'raw_name': '%s%s' % (u'Bureau of Alcohol, Tobacco, Firearms',
-                                       u' and Explosives'),
-                u'json_url': '%s%s' % (u'https://www.federalregister.gov/',
-                                       u'api/v1/agencies/19.json'),
+                u'url': ('https://www.federalregister.gov/agencies/'
+                         'alcohol-tobacco-firearms-and-explosives-bureau'),
+                u'raw_name': ('Bureau of Alcohol, Tobacco, Firearms and '
+                              'Explosives'),
+                u'json_url': ('https://www.federalregister.gov/api/v1/'
+                              'agencies/19.json'),
                 u'id': 19
             }
         ]
@@ -220,23 +219,22 @@ class NoticeXMLTests(TestCase):
             {
                 u'name': u'Treasury Department',
                 u'parent_id': None,
-                u'url': u'%s%s' % (u'https://www.federalregister.gov/',
-                                   u'agencies/treasury-department'),
+                u'url': ('https://www.federalregister.gov/agencies/'
+                         'treasury-department'),
                 u'raw_name': u'DEPARTMENT OF THE TREASURY',
-                u'json_url': u'%s%s' % (u'https://www.federalregister.gov/',
-                                        u'api/v1/agencies/497.json'),
+                u'json_url': ('https://www.federalregister.gov/api/v1/'
+                              'agencies/497.json'),
                 u'id': 497
             },
             {
                 u'name': u'Alcohol, Tobacco, Firearms, and Explosives Bureau',
                 u'parent_id': 268,
-                u'url': '%s%s%s' % (u'https://www.federalregister.gov/',
-                                    u'agencies/alcohol-tobacco-firearms',
-                                    u'-and-explosives-bureau'),
-                u'raw_name': '%s%s' % (u'Bureau of Alcohol, Tobacco, Firearms',
-                                       u' and Explosives'),
-                u'json_url': '%s%s' % (u'https://www.federalregister.gov/',
-                                       u'api/v1/agencies/19.json'),
+                u'url': ('https://www.federalregister.gov/agencies/'
+                         'alcohol-tobacco-firearms-and-explosives-bureau'),
+                u'raw_name': ('Bureau of Alcohol, Tobacco, Firearms and '
+                              'Explosives'),
+                u'json_url': ('https://www.federalregister.gov/api/v1/'
+                              'agencies/19.json'),
                 u'id': 19
             }
         ]
@@ -272,33 +270,32 @@ class NoticeXMLTests(TestCase):
             {
                 u'name': u'Treasury Department',
                 u'parent_id': None,
-                u'url': u'%s%s' % (u'https://www.federalregister.gov/',
-                                   u'agencies/treasury-department'),
+                u'url': ('https://www.federalregister.gov/agencies/'
+                         'treasury-department'),
                 u'raw_name': u'DEPARTMENT OF THE TREASURY',
-                u'json_url': u'%s%s' % (u'https://www.federalregister.gov/',
-                                        u'api/v1/agencies/497.json'),
+                u'json_url': ('https://www.federalregister.gov/api/v1/'
+                              'agencies/497.json'),
                 u'id': 497
             },
             {
                 u'name': u'Alcohol, Tobacco, Firearms, and Explosives Bureau',
                 u'parent_id': 268,
-                u'url': '%s%s%s' % (u'https://www.federalregister.gov/',
-                                    u'agencies/alcohol-tobacco-firearms',
-                                    u'-and-explosives-bureau'),
-                u'raw_name': '%s%s' % (u'Bureau of Alcohol, Tobacco, Firearms',
-                                       u' and Explosives'),
-                u'json_url': '%s%s' % (u'https://www.federalregister.gov/',
-                                       u'api/v1/agencies/19.json'),
+                u'url': ('https://www.federalregister.gov/agencies/'
+                         'alcohol-tobacco-firearms-and-explosives-bureau'),
+                u'raw_name': ('Bureau of Alcohol, Tobacco, Firearms and '
+                              'Explosives'),
+                u'json_url': ('https://www.federalregister.gov/api/v1/'
+                              'agencies/19.json'),
                 u'id': 19
             },
             {
                 u'name': u'Justice Department',
                 u'parent_id': None,
-                u'url': u'%s%s' % (u'https://www.federalregister.gov/',
-                                   u'agencies/justice-department'),
+                u'url': ('https://www.federalregister.gov/agencies/'
+                         'justice-department'),
                 u'raw_name': u'DEPARTMENT OF JUSTICE',
-                u'json_url': u'%s%s' % (u'https://www.federalregister.gov/',
-                                        u'api/v1/agencies/268.json'),
+                u'json_url': ('https://www.federalregister.gov/api/v1/'
+                              'agencies/268.json'),
                 u'id': 268
             }
         ]
@@ -337,43 +334,42 @@ class NoticeXMLTests(TestCase):
             {
                 u'name': u'ATF subagency',
                 u'parent_id': 19,
-                u'url': u'%s%s' % (u'https://www.federalregister.gov/',
-                                   u'agencies/atf-subagency'),
+                u'url': ('https://www.federalregister.gov/agencies/'
+                         'atf-subagency'),
                 u'raw_name': u'SUBAGENCY OF ATF',
-                u'json_url': u'%s%s' % (u'https://www.federalregister.gov/',
-                                        u'api/v1/agencies/100023.json'),
+                u'json_url': ('https://www.federalregister.gov/api/v1/'
+                              'agencies/100023.json'),
                 u'id': 100023
             },
             {
                 u'name': u'Alcohol, Tobacco, Firearms, and Explosives Bureau',
                 u'parent_id': 268,
-                u'url': '%s%s%s' % (u'https://www.federalregister.gov/',
-                                    u'agencies/alcohol-tobacco-firearms',
-                                    u'-and-explosives-bureau'),
-                u'raw_name': '%s%s' % (u'Bureau of Alcohol, Tobacco, Firearms',
-                                       u' and Explosives'),
-                u'json_url': '%s%s' % (u'https://www.federalregister.gov/',
-                                       u'api/v1/agencies/19.json'),
+                u'url': ('https://www.federalregister.gov/agencies/'
+                         'alcohol-tobacco-firearms-and-explosives-bureau'),
+                u'raw_name': ('Bureau of Alcohol, Tobacco, Firearms and '
+                              'Explosives'),
+                u'json_url': ('https://www.federalregister.gov/api/v1/'
+                              'agencies/19.json'),
                 u'id': 19
             },
             {
                 u'name': u'Justice Department',
                 u'parent_id': None,
-                u'url': u'%s%s' % (u'https://www.federalregister.gov/',
-                                   u'agencies/justice-department'),
+                u'url': ('https://www.federalregister.gov/agencies/'
+                         'justice-department'),
                 u'raw_name': u'DEPARTMENT OF JUSTICE',
-                u'json_url': u'%s%s' % (u'https://www.federalregister.gov/',
-                                        u'api/v1/agencies/268.json'),
+                u'json_url': ('https://www.federalregister.gov/api/v1/'
+                              'agencies/268.json'),
                 u'id': 268
             },
             {
                 u'name': u'ATF subsubagency',
                 u'parent_id': 100023,
-                u'url': u'%s%s' % (u'https://www.federalregister.gov/',
-                                   u'agencies/atf-subsubagency'),
+                u'url': ('https://www.federalregister.gov/agencies/'
+                         'atf-subsubagency'),
                 u'raw_name': u'SUBSUBAGENCY OF ATF',
-                u'json_url': u'%s%s' % (u'https://www.federalregister.gov/',
-                                        u'api/v1/agencies/100072.json'),
+                u'json_url': ('https://www.federalregister.gov/api/v1/'
+                              'agencies/100072.json'),
                 u'id': 100072
             },
         ]

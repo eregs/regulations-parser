@@ -258,7 +258,7 @@ def parse_from_xml(root, xml_nodes):
                 label = merge_labels(labels)
             else:   # Header without a label, like an Introduction, etc.
                 header_count += 1
-                label = root.label[:2] + ['h%d' % header_count]
+                label = root.label[:2] + ['h{0}'.format(header_count)]
 
             inner_stack = tree_utils.NodeStack()
             missing = missing_levels(last_label, label)

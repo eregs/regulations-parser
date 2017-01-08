@@ -555,9 +555,10 @@ class Amendment(object):
 
     def __repr__(self):
         if self.destination:
-            return '(%s, %s, %s)' % (self.action, self.label, self.destination)
+            return '({0}, {1}, {2})'.format(self.action, self.label,
+                                            self.destination)
         else:
-            return '(%s, %s)' % (self.action, self.label)
+            return '({0}, {1})'.format(self.action, self.label)
 
     def __eq__(self, other):
         return (isinstance(other, self.__class__) and

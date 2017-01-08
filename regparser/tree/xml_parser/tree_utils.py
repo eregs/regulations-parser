@@ -100,12 +100,12 @@ def replace_xpath(xpath):
 
 @replace_xpath(".//E[@T='52' or @T='54']")
 def subscript_to_plaintext(element):
-    return "_{%s}" % element.text
+    return "_{" + str(element.text) + "}"
 
 
 @replace_xpath(".//E[@T='51' or @T='53']|.//SU[not(@footnote)]")
 def superscript_to_plaintext(element):
-    return "^{%s}" % element.text
+    return "^{" + str(element.text) + "}"
 
 
 @replace_xpath(".//SU[@footnote]")

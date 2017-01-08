@@ -76,8 +76,8 @@ def parse_appendix(xml, cfr_part, letter):
     replaced/added or when we can use the section headers to determine our
     place. If the format isn't what we expect, display a warning."""
     xml = deepcopy(xml)
-    hds = xml.xpath('//HD[contains(., "Appendix %s to Part %s")]'
-                    % (letter, cfr_part))
+    hds = xml.xpath('//HD[contains(., "Appendix {0} to Part {1}")]'.format(
+        letter, cfr_part))
     if len(hds) == 0:
         logger.warning("Could not find Appendix %s to part %s",
                        letter, cfr_part)

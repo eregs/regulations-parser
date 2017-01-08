@@ -320,20 +320,22 @@ def test_create_status_url():
     def _check(port=None):
         for hx in hexes:
             url = urlparse(create_status_url(hx))
-            assert domain == "%s://%s" % (url.scheme, url.hostname)
+            assert domain == "{0}://{1}".format(url.scheme, url.hostname)
             if port is None:
                 assert url.port is port
             else:
                 assert url.port == port
-            assert "%s%s/" % (urlpath, hx) == url.path
+            assert "{0}{1}/".format(urlpath, hx) == url.path
 
-            url = urlparse(create_status_url(hx, sub_path="%s/" % hx[:10]))
-            assert domain == "%s://%s" % (url.scheme, url.hostname)
+            url = urlparse(create_status_url(
+                hx, sub_path="{0}/".format(hx[:10])))
+            assert domain == "{0}://{1}".format(url.scheme, url.hostname)
             if port is None:
                 assert url.port is port
             else:
                 assert url.port == port
-            assert "%s%s%s/" % (urlpath, "%s/" % hx[:10], hx) == url.path
+            assert "{0}{1}{2}/".format(
+                urlpath, "{0}/".format(hx[:10]), hx) == url.path
 
     with patch.object(settings, "CANONICAL_PORT", "2323"):
         _check(port=2323)
@@ -356,9 +358,10 @@ def test_file_url():
 
     with patch.object(settings, "CANONICAL_PORT", "2323"):
         for hx in hexes:
-            assert file_url(hx) == "%s:2323%s%s/" % (domain, urlpath, hx)
+            assert file_url(hx) == "{0}:2323{1}{2}/".format(
+                domain, urlpath, hx)
 
     for port in ("80", "443", ""):
         with patch.object(settings, "CANONICAL_PORT", port):
             for hx in hexes:
-                assert file_url(hx) == "%s%s%s/" % (domain, urlpath, hx)
+                assert file_url(hx) == "{0}{1}{2}/".format(domain, urlpath, hx)
