@@ -5,11 +5,10 @@ from lxml import etree
 from regparser.grammar.unified import notice_cfr_p
 from regparser.notice.amendments import fetch_amendments
 from regparser.notice.dates import fetch_dates
-from regparser.notice.sxs import (
-    build_section_by_section, find_section_by_section)
+from regparser.notice.sxs import (build_section_by_section,
+                                  find_section_by_section)
 from regparser.notice.util import spaces_then_remove, swap_emphasis_tags
 from regparser.notice.xml import xmls_for_url
-
 
 logger = logging.getLogger(__name__)
 

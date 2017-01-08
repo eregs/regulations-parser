@@ -1,8 +1,8 @@
 from datetime import date
 from unittest import TestCase
 
-from click.testing import CliRunner
 import pytest
+from click.testing import CliRunner
 
 from regparser.commands import sxs_layers
 from regparser.history.versions import Version

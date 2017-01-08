@@ -1,18 +1,17 @@
 """Parsers for various types of external citations. Consumed by the external
 citation layer"""
 import abc
-from collections import namedtuple
 import re
 import string
+from collections import namedtuple
 
-from pyparsing import Optional, Suppress, Word
 import six
+from pyparsing import Optional, Suppress, Word
 from six.moves.urllib.parse import urlencode
 
+import settings
 from regparser.citations import cfr_citations
 from regparser.grammar.utils import Marker, QuickSearchable
-import settings
-
 
 Cite = namedtuple('Cite', ['cite_type', 'start', 'end', 'components', 'url'])
 

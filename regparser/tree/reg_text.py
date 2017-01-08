@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
+
 import string
 
 from regparser.grammar.unified import marker_subpart_title

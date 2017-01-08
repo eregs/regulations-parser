@@ -2,22 +2,22 @@
 """Set of transforms we run on notice XML to account for common inaccuracies
 in the XML"""
 from __future__ import unicode_literals
+
 import abc
-from copy import deepcopy
 import functools
-from itertools import takewhile
 import logging
 import re
+from copy import deepcopy
+from itertools import takewhile
 
-from lxml import etree
 import six
+from lxml import etree
 from six.moves.html_parser import HTMLParser
 
 from regparser.grammar.tokens import uncertain_label
 from regparser.notice.amdparser import parse_amdpar
-from regparser.tree.xml_parser.tree_utils import (
-    get_node_text, replace_xml_node_with_text)
-
+from regparser.tree.xml_parser.tree_utils import (get_node_text,
+                                                  replace_xml_node_with_text)
 
 logger = logging.getLogger(__name__)
 

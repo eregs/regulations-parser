@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from unittest import TestCase
+
 from lxml import etree
 
 from regparser.tree.gpo_cfr import interpretations

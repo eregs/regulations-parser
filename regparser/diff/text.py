@@ -3,7 +3,6 @@ import re
 
 from regparser.layer.graphics import Graphics
 
-
 INSERT = 'insert'
 DELETE = 'delete'
 REPLACE = 'replace'

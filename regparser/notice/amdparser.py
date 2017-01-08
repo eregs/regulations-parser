@@ -1,13 +1,12 @@
 # -*- coding: utf-8 -*-
-from itertools import takewhile
 import logging
+from itertools import takewhile
 
 from lxml import etree
 
 from regparser.grammar import amdpar, tokens
 from regparser.tree.struct import Node
 from regparser.tree.xml_parser.tree_utils import get_node_text
-
 
 logger = logging.getLogger(__name__)
 

@@ -1,10 +1,9 @@
 import hashlib
 import re
 
+from regparser.search import segments
 from regparser.tree import struct
 from regparser.tree.depth import markers as mtypes
-from regparser.search import segments
-
 
 p_levels = [list(mtypes.lower), list(mtypes.ints), list(mtypes.roman),
             list(mtypes.upper), list(mtypes.em_ints), list(mtypes.em_roman)]

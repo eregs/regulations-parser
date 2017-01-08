@@ -4,7 +4,7 @@ from regparser import federalregister
 from regparser.commands.dependency_resolver import DependencyResolver
 from regparser.index import entry
 from regparser.notice.build import split_doc_num
-from regparser.notice.xml import notice_xmls_for_url, TitlePartsRef
+from regparser.notice.xml import TitlePartsRef, notice_xmls_for_url
 
 
 def convert_cfr_refs(refs=None):

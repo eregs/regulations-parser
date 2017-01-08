@@ -1,16 +1,16 @@
 """Functions for processing the xml associated with the Federal Register's
 notices"""
-from collections import namedtuple
-from datetime import date, datetime
 import logging
 import os
+from collections import namedtuple
+from datetime import date, datetime
 
+import requests
 from cached_property import cached_property
 from lxml import etree
-import requests
 from six.moves.urllib.parse import urlparse
 
-
+import settings
 from regparser import regs_gov
 from regparser.grammar.unified import notice_cfr_p
 from regparser.history.delays import delays_in_sentence
@@ -18,7 +18,6 @@ from regparser.index.http_cache import http_client
 from regparser.notice.amendments import fetch_amendments
 from regparser.notice.dates import fetch_dates
 from regparser.tree.xml_parser.xml_wrapper import XMLWrapper
-import settings
 
 logger = logging.getLogger(__name__)
 

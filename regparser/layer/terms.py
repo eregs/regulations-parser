@@ -1,17 +1,17 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-from collections import defaultdict, namedtuple
+
 import re
+from collections import defaultdict, namedtuple
 
 import inflection
 
+import settings
 from regparser.layer import def_finders
-from regparser.layer.scope_finder import ScopeFinder
 from regparser.layer.layer import Layer
+from regparser.layer.scope_finder import ScopeFinder
 from regparser.tree import struct
 from regparser.tree.priority_stack import PriorityStack
-import settings
-
 
 try:
     key = ('(?i)(p)erson$', '\\1eople')

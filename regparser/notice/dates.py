@@ -1,5 +1,5 @@
-from datetime import datetime
 import re
+from datetime import datetime
 
 from regparser.tree.xml_parser.tree_utils import get_node_text
 

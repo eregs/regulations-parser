@@ -1,9 +1,9 @@
+import hashlib
 import re
 from json import JSONEncoder
-import hashlib
 
-from lxml import etree
 import six
+from lxml import etree
 
 from regparser.tree.depth.markers import MARKERLESS
 

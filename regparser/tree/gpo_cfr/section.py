@@ -7,13 +7,14 @@ import six
 from regparser.citations import remove_citation_overlaps
 from regparser.grammar import unified
 from regparser.grammar.utils import QuickSearchable
-from regparser.tree.depth import markers as mtypes, optional_rules
+from regparser.tree.depth import markers as mtypes
+from regparser.tree.depth import optional_rules
 from regparser.tree.paragraph import p_level_of, p_levels
 from regparser.tree.reg_text import build_empty_part
 from regparser.tree.struct import Node
-from regparser.tree.xml_parser import (
-    flatsubtree_processor, import_category, matchers, note_processor,
-    paragraph_processor, tree_utils)
+from regparser.tree.xml_parser import (flatsubtree_processor, import_category,
+                                       matchers, note_processor,
+                                       paragraph_processor, tree_utils)
 
 
 def _deeper_level(first, second):

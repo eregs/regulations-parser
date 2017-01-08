@@ -1,18 +1,17 @@
 """ Notices indicate how a regulation has changed since the last version. This
 module contains code to compile a regulation from a notice's changes. """
 
-from bisect import bisect
-from collections import defaultdict
 import copy
 import logging
 import re
+from bisect import bisect
+from collections import defaultdict
 
 from roman import fromRoman
 
 from regparser.grammar.tokens import Verb
-from regparser.tree.struct import Node, find, find_parent
 from regparser.tree.gpo_cfr import interpretations, section
-
+from regparser.tree.struct import Node, find, find_parent
 
 logger = logging.getLogger(__name__)
 

@@ -3,6 +3,7 @@ works by penalizing a solution; it's then up to the caller to grab the
 solution with the least penalties."""
 from collections import defaultdict
 from itertools import takewhile
+
 from regparser.tree.depth import markers
 
 

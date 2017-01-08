@@ -1,10 +1,9 @@
-from itertools import chain
 import logging
+from itertools import chain
 
 from regparser.grammar import unified as grammar
 from regparser.tree.paragraph import p_levels
 from regparser.tree.struct import Node
-
 
 logger = logging.getLogger(__name__)
 

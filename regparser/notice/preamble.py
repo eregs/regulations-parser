@@ -1,7 +1,7 @@
+import re
 from collections import OrderedDict
 from copy import deepcopy
 from itertools import takewhile
-import re
 
 from lxml import etree
 
@@ -9,11 +9,13 @@ from regparser.tree.depth import heuristics
 from regparser.tree.depth.derive import markers as mtypes
 from regparser.tree.struct import Node
 from regparser.tree.xml_parser.flatsubtree_processor import FlatsubtreeMatcher
-from regparser.tree.xml_parser.paragraph_processor import (
-    BaseMatcher, GraphicsMatcher, IgnoreTagMatcher, ParagraphProcessor,
-    SimpleTagMatcher, TableMatcher)
+from regparser.tree.xml_parser.paragraph_processor import (BaseMatcher,
+                                                           GraphicsMatcher,
+                                                           IgnoreTagMatcher,
+                                                           ParagraphProcessor,
+                                                           SimpleTagMatcher,
+                                                           TableMatcher)
 from regparser.tree.xml_parser.tree_utils import get_node_text
-
 
 _MARKER_REGEX = re.compile(r'(?P<marker>([0-9]+)|([a-z]+)|([A-Z]+))\.')
 

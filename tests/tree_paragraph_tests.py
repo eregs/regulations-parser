@@ -1,7 +1,7 @@
 import uuid
 from unittest import TestCase
 
-from regparser.tree.paragraph import hash_for_paragraph, ParagraphParser
+from regparser.tree.paragraph import ParagraphParser, hash_for_paragraph
 from regparser.tree.struct import Node
 
 

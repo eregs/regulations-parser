@@ -1,9 +1,9 @@
 # vim: set fileencoding=utf-8
 from unittest import TestCase
 
-from regparser.tree.struct import Node
 from regparser.layer.scope_finder import ScopeFinder
 from regparser.layer.terms import ParentStack
+from regparser.tree.struct import Node
 
 
 class ScopeFinderTest(TestCase):

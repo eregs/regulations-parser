@@ -1,12 +1,11 @@
 from argparse import RawTextHelpFormatter
 
-from django.core.management.base import BaseCommand
 import django_rq
+from django.core.management.base import BaseCommand
 from rq import registry
 from rq.queue import FailedQueue
 
 from regparser.tasks import run_eregs_command
-
 
 _OPTIONS = ('cfr_title', 'cfr_part', 'xml-ttl')
 _FLAGS = ('only-latest', 'unique', 'prompt')

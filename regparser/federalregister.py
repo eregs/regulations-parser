@@ -6,7 +6,6 @@ import logging
 
 from regparser.index.http_cache import http_client
 
-
 FR_BASE = "https://www.federalregister.gov"
 API_BASE = FR_BASE + "/api/v1/"
 FULL_NOTICE_FIELDS = [

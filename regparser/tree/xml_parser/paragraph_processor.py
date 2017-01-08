@@ -1,19 +1,19 @@
 import abc
-from collections import OrderedDict
 import logging
+from collections import OrderedDict
 
-from lxml import etree
 import six
+from lxml import etree
 
-from regparser.layer.key_terms import KeyTerms
 from regparser.layer.formatting import table_xml_to_plaintext
-from regparser.tree.depth import heuristics, markers as mtypes
-from regparser.tree.depth.markers import deemphasize
+from regparser.layer.key_terms import KeyTerms
+from regparser.tree.depth import markers as mtypes
+from regparser.tree.depth import heuristics
 from regparser.tree.depth.derive import debug_idx, derive_depths
+from regparser.tree.depth.markers import deemphasize
 from regparser.tree.paragraph import hash_for_paragraph
 from regparser.tree.struct import Node
 from regparser.tree.xml_parser import tree_utils
-
 
 logger = logging.getLogger(__name__)
 

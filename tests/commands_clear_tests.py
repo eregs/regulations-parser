@@ -1,8 +1,8 @@
 import os
 
-from click.testing import CliRunner
 import httpretty
 import pytest
+from click.testing import CliRunner
 
 from regparser.commands.clear import clear
 from regparser.index import dependency, entry

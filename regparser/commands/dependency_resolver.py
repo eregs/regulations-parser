@@ -2,8 +2,8 @@ import abc
 import os
 import re
 
-from django.conf import settings
 import six
+from django.conf import settings
 
 
 class DependencyResolver(six.with_metaclass(abc.ABCMeta)):

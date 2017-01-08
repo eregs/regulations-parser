@@ -1,12 +1,11 @@
 import logging
 
+import networkx
 from django.db import transaction
 from django.utils import timezone
-import networkx
 
-from regparser.web.index.models import (
-    Dependency, DependencyNode, Entry as DBEntry)
-
+from regparser.web.index.models import Entry as DBEntry
+from regparser.web.index.models import Dependency, DependencyNode
 
 logger = logging.getLogger(__name__)
 

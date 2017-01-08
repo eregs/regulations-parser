@@ -1,17 +1,17 @@
 # -*- coding: utf-8 -*-
 """Parsers for finding a term that's being defined within a node"""
 import abc
+import re
 from collections import namedtuple
 from itertools import chain
-import re
 
-from pyparsing import ParseException
 import six
+from pyparsing import ParseException
 
+import settings
 from regparser.citations import Label
 from regparser.grammar import terms as grammar
 from regparser.tree.struct import Node
-import settings
 
 
 class Ref(namedtuple('Ref', ['term', 'label', 'start'])):

@@ -1,6 +1,6 @@
-from copy import deepcopy
 import logging
 import re
+from copy import deepcopy
 
 from regparser.tree.depth import markers as mtypes
 from regparser.tree.paragraph import hash_for_paragraph

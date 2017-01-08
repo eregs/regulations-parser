@@ -1,8 +1,9 @@
-from regparser.tasks import run_eregs_command
+import django_rq
 from django.conf import settings as django_settings
 from django.core.mail import get_connection, send_mail
-import django_rq
+
 import settings
+from regparser.tasks import run_eregs_command
 
 eregs_site_api_url = getattr(settings, "EREGS_SITE_API_URL")
 

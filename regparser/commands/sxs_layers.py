@@ -5,7 +5,6 @@ import click
 from regparser.index import dependency, entry
 from regparser.layer.section_by_section import SectionBySection
 
-
 logger = logging.getLogger(__name__)
 
 

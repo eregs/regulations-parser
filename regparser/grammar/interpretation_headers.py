@@ -2,7 +2,6 @@ from pyparsing import LineEnd, LineStart, SkipTo
 
 from regparser.grammar import atomic, unified, utils
 
-
 section = (
     atomic.section_marker.copy().leaveWhitespace() +
     unified.part_section +

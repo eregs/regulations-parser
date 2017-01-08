@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 from unittest import TestCase
 
-from lxml import etree
 import pytest
+from lxml import etree
 
 from regparser.test_utils.xml_builder import XMLBuilder
 from regparser.tree.xml_parser import preprocessors

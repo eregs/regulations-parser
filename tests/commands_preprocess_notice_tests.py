@@ -1,14 +1,14 @@
-from datetime import date
 import re
+from datetime import date
 from unittest import TestCase
 
+import pytest
 from click.testing import CliRunner
 from lxml import etree
 from mock import patch
-import pytest
 
-from regparser.commands.preprocess_notice import (
-    convert_cfr_refs, preprocess_notice)
+from regparser.commands.preprocess_notice import (convert_cfr_refs,
+                                                  preprocess_notice)
 from regparser.index import dependency, entry
 from regparser.notice.xml import NoticeXML, TitlePartsRef
 from regparser.test_utils.http_mixin import HttpMixin

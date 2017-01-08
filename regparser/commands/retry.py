@@ -1,8 +1,8 @@
-from copy import deepcopy
-from collections import namedtuple
 import logging
-from importlib import import_module
 import pkgutil
+from collections import namedtuple
+from copy import deepcopy
+from importlib import import_module
 
 import click
 import pyparsing

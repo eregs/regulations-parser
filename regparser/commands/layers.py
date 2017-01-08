@@ -6,7 +6,6 @@ from stevedore.extension import ExtensionManager
 from regparser.commands import utils
 from regparser.index import dependency, entry
 
-
 logger = logging.getLogger(__name__)
 
 

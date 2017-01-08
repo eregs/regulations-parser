@@ -1,11 +1,11 @@
 """Find and abstracts formatting information from the regulation tree. In many
 ways, this is like a markdown parser."""
 import abc
-from collections import OrderedDict
 import re
+from collections import OrderedDict
 
-from lxml import etree
 import six
+from lxml import etree
 
 from regparser.layer.layer import Layer
 from regparser.tree import struct

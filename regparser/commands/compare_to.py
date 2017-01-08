@@ -1,12 +1,11 @@
-import os
 import json
 import logging
+import os
 
 import click
-from json_delta import udiff
 import requests
+from json_delta import udiff
 from six.moves.urllib.parse import urlparse
-
 
 logger = logging.getLogger(__name__)
 

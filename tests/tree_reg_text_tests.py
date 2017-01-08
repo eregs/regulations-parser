@@ -1,7 +1,8 @@
 # vim: set encoding=utf-8
 
-from regparser.tree import reg_text
 from unittest import TestCase
+
+from regparser.tree import reg_text
 
 
 class DepthRegTextTest(TestCase):

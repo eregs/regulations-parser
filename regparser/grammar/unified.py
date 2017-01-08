@@ -1,11 +1,10 @@
-# vim: set encoding=utf-8
+# -*- coding: utf-8 -*-
 """Some common combinations"""
-from pyparsing import (
-    FollowedBy, LineEnd, Literal, OneOrMore, Optional, Suppress, SkipTo,
-    ZeroOrMore)
+from pyparsing import (FollowedBy, LineEnd, Literal, OneOrMore, Optional,
+                       SkipTo, Suppress, ZeroOrMore)
 
 from regparser.grammar import atomic
-from regparser.grammar.utils import keep_pos, Marker, QuickSearchable
+from regparser.grammar.utils import Marker, QuickSearchable, keep_pos
 
 period_section = Suppress(".") + atomic.section
 part_section = atomic.part + period_section

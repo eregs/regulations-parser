@@ -5,7 +5,6 @@ import click
 from regparser.index import dependency, entry
 from regparser.notice.preamble import convert_id, parse_preamble
 
-
 logger = logging.getLogger(__name__)
 
 

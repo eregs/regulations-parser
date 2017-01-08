@@ -3,7 +3,6 @@ from collections import defaultdict, namedtuple
 
 import six
 
-
 SearchReplace = namedtuple('SearchReplace',
                            ['text', 'locations', 'representative'])
 

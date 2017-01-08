@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
+
 from collections import namedtuple
 from contextlib import contextmanager
 
+import pytest
 from lxml import etree
 from mock import Mock
-import pytest
 
 from regparser.test_utils.node_accessor import NodeAccessor
 from regparser.test_utils.xml_builder import XMLBuilder

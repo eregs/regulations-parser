@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 from unittest import TestCase
 
-from mock import patch
 import six
+from mock import patch
 
-from regparser.layer.terms import ParentStack, Terms
-from regparser.layer.def_finders import Ref
-from regparser.tree.struct import Node
 import settings
+from regparser.layer.def_finders import Ref
+from regparser.layer.terms import ParentStack, Terms
+from regparser.tree.struct import Node
 
 
 class LayerTermTest(TestCase):

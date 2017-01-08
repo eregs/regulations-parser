@@ -1,35 +1,23 @@
 import abc
 import hashlib
 
+import six
 from django.http import HttpResponse
+from rest_framework import generics, mixins, status
 from rest_framework.parsers import FileUploadParser, MultiPartParser
 from rest_framework.renderers import BrowsableAPIRenderer, JSONRenderer
 from rest_framework.response import Response
-from rest_framework import generics
-from rest_framework import mixins
-from rest_framework import status
-import six
 
-from regparser.web.jobs.models import (
-    PipelineJob,
-    ProposalPipelineJob,
-    RegulationFile
-)
-from regparser.web.jobs.serializers import (
-    FileUploadSerializer,
-    PipelineJobSerializer,
-    ProposalPipelineJobSerializer
-)
-from regparser.web.jobs.utils import (
-    add_redis_data_to_job_data,
-    create_status_url,
-    delete_eregs_job,
-    eregs_site_api_url,
-    file_url,
-    queue_eregs_job,
-    queue_notification_email,
-)
-
+from regparser.web.jobs.models import (PipelineJob, ProposalPipelineJob,
+                                       RegulationFile)
+from regparser.web.jobs.serializers import (FileUploadSerializer,
+                                            PipelineJobSerializer,
+                                            ProposalPipelineJobSerializer)
+from regparser.web.jobs.utils import (add_redis_data_to_job_data,
+                                      create_status_url, delete_eregs_job,
+                                      eregs_site_api_url, file_url,
+                                      queue_eregs_job,
+                                      queue_notification_email)
 
 renderer_classes = (
     JSONRenderer,

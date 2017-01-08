@@ -1,15 +1,15 @@
-from datetime import date
 import json
+from datetime import date
 from random import randint
 from unittest import TestCase
 
+import pytest
 from click.testing import CliRunner
 from mock import patch
-import pytest
 
 from regparser.commands import current_version
-from regparser.index import entry
 from regparser.history.annual import Volume
+from regparser.index import entry
 from regparser.notice.xml import TitlePartsRef
 
 

@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from regparser.layer.paragraph_markers import marker_of, ParagraphMarkers
+from regparser.layer.paragraph_markers import ParagraphMarkers, marker_of
 from regparser.tree.struct import Node
 
 

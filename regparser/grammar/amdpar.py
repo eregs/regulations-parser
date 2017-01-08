@@ -1,18 +1,17 @@
-# vim: set encoding=utf-8
+# -*- coding: utf-8 -*-
 # @todo: this file is becoming too large; refactor
 import logging
 import string
 
-from pyparsing import (
-    CaselessLiteral, FollowedBy, LineEnd, Literal, OneOrMore, Optional,
-    QuotedString, Suppress, Word, ZeroOrMore)
+from pyparsing import (CaselessLiteral, FollowedBy, LineEnd, Literal,
+                       OneOrMore, Optional, QuotedString, Suppress, Word,
+                       ZeroOrMore)
 from six.moves import reduce
 
 from regparser.grammar import atomic, tokens, unified
 from regparser.grammar.utils import Marker, QuickSearchable, WordBoundaries
-from regparser.tree.paragraph import p_levels, hash_for_paragraph
+from regparser.tree.paragraph import hash_for_paragraph, p_levels
 from regparser.tree.reg_text import subjgrp_label
-
 
 logger = logging.getLogger(__name__)
 

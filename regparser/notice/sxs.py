@@ -3,9 +3,9 @@ from itertools import dropwhile, takewhile
 
 from lxml import etree
 
-from regparser.citations import internal_citations, Label
-from regparser.notice.util import body_to_string, spaces_then_remove
-from regparser.notice.util import swap_emphasis_tags
+from regparser.citations import Label, internal_citations
+from regparser.notice.util import (body_to_string, spaces_then_remove,
+                                   swap_emphasis_tags)
 
 
 def remove_extract(xml_tree):

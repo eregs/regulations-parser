@@ -2,10 +2,10 @@ from contextlib import contextmanager
 from datetime import timedelta
 from unittest import TestCase
 
-from click.testing import CliRunner
-from django.utils import timezone
 import pytest
 import six
+from click.testing import CliRunner
+from django.utils import timezone
 
 from regparser.index import dependency, entry
 from regparser.web.index.models import Entry as DBEntry

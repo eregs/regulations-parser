@@ -2,10 +2,10 @@ from datetime import date, timedelta
 from unittest import TestCase
 
 import click
+import pytest
 from click.testing import CliRunner
 from django.utils import timezone
 from mock import patch
-import pytest
 
 from regparser.commands import annual_editions
 from regparser.history.versions import Version

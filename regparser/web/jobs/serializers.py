@@ -1,10 +1,7 @@
-from regparser.web.jobs.models import (
-    ParsingJob,
-    PipelineJob,
-    ProposalPipelineJob,
-    RegulationFile
-)
 from rest_framework import serializers
+
+from regparser.web.jobs.models import (ParsingJob, PipelineJob,
+                                       ProposalPipelineJob, RegulationFile)
 
 
 class ParsingJobSerializer(serializers.ModelSerializer):

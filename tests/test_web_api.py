@@ -1,23 +1,20 @@
 from hashlib import sha256
-from mock import patch, Mock
 from os import path as ospath
-from six.moves.urllib.parse import urlparse
 from random import choice
-from regparser.web.jobs.models import job_status_values
-from regparser.web.jobs.utils import (
-    create_status_url,
-    eregs_site_api_url,
-    file_url,
-)
-from regparser.web.jobs.views import FileUploadView as PatchedFileUploadView
-from rest_framework.test import APITestCase
 from string import hexdigits
 from tempfile import NamedTemporaryFile
 from uuid import uuid4
 
 import pytest
-import settings
+from mock import Mock, patch
+from rest_framework.test import APITestCase
+from six.moves.urllib.parse import urlparse
 
+import settings
+from regparser.web.jobs.models import job_status_values
+from regparser.web.jobs.utils import (create_status_url, eregs_site_api_url,
+                                      file_url)
+from regparser.web.jobs.views import FileUploadView as PatchedFileUploadView
 
 fake_pipeline_id = uuid4()
 

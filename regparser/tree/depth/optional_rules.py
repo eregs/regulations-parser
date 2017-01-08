@@ -7,7 +7,7 @@ constraints more useful"""
 from constraint import InSetConstraint
 
 from regparser.tree.depth import markers
-from regparser.tree.depth.rules import ancestors, _level_and_children
+from regparser.tree.depth.rules import _level_and_children, ancestors
 
 
 def depth_type_inverses(constrain, all_variables):

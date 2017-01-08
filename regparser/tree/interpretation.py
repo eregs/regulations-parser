@@ -1,10 +1,9 @@
-from itertools import takewhile
 import logging
+from itertools import takewhile
 
 from regparser.citations import internal_citations
 from regparser.grammar import unified
 from regparser.tree.struct import Node
-
 
 logger = logging.getLogger(__name__)
 

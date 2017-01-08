@@ -1,19 +1,18 @@
 # -*- coding: utf-8 -*-
+import logging
 from collections import namedtuple
 from copy import deepcopy
-import logging
 from itertools import dropwhile
 
 from lxml import etree
 
 from regparser.notice import changes, util
 from regparser.notice.amdparser import amendment_from_xml
-from regparser.tree.struct import Node, walk
 from regparser.tree.gpo_cfr import interpretations
 from regparser.tree.gpo_cfr.appendices import process_appendix
 from regparser.tree.gpo_cfr.section import build_from_section
 from regparser.tree.gpo_cfr.subpart import build_subpart
-
+from regparser.tree.struct import Node, walk
 
 logger = logging.getLogger(__name__)
 Content = namedtuple('Content', ['struct', 'amends'])

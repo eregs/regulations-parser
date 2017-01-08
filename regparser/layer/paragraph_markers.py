@@ -3,7 +3,6 @@ import re
 from regparser.layer.layer import Layer
 from regparser.tree.struct import Node
 
-
 _marker_re = r'([0-9]+|[a-z]+|[A-Z]+)'
 
 

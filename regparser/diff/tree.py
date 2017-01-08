@@ -1,9 +1,8 @@
 import difflib
 import re
 
-from regparser.diff.text import get_opcodes, INSERT, DELETE, REPLACE, EQUAL
+from regparser.diff.text import DELETE, EQUAL, INSERT, REPLACE, get_opcodes
 from regparser.tree import struct
-
 
 ADDED = 'added'
 MODIFIED = 'modified'

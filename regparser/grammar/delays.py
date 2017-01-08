@@ -1,5 +1,5 @@
-from datetime import date
 import string
+from datetime import date
 
 from pyparsing import Optional, Suppress, Word
 from six.moves import reduce

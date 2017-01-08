@@ -6,7 +6,6 @@ from regparser.tree.depth import markers, rules
 from regparser.tree.depth.pair_rules import pair_rules
 from regparser.tree.struct import Node
 
-
 # A paragraph's type, index, depth assignment
 ParAssignment = namedtuple('ParAssignment', ('typ', 'idx', 'depth'))
 

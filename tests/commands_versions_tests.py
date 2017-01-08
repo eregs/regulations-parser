@@ -1,10 +1,10 @@
 from datetime import date, timedelta
 from unittest import TestCase
 
+import pytest
 from click.testing import CliRunner
 from django.utils import timezone
 from mock import Mock, patch
-import pytest
 
 from regparser.commands import versions
 from regparser.history.delays import FRDelay

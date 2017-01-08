@@ -2,10 +2,10 @@
 from datetime import date
 from unittest import TestCase
 
+import settings
 from regparser.history.versions import Version
 from regparser.layer.meta import Meta
 from regparser.tree.struct import Node
-import settings
 
 
 class LayerMetaTest(TestCase):

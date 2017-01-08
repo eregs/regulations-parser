@@ -1,6 +1,7 @@
 from django.conf.urls import url
-from regparser.web.jobs import views
 from rest_framework.urlpatterns import format_suffix_patterns
+
+from regparser.web.jobs import views
 
 urlpatterns = [
     url(r'^jobs(/)$', views.JobViewList.as_view()),

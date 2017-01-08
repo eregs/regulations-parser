@@ -1,5 +1,5 @@
-from regparser.tree.struct import Node
 from interpparser.layers import Interpretations
+from regparser.tree.struct import Node
 
 
 def test_process():

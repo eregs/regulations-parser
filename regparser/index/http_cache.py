@@ -1,8 +1,8 @@
 import os
 
-from django.conf import settings
 import django_rq
 import requests_cache
+from django.conf import settings
 
 
 def http_client():
