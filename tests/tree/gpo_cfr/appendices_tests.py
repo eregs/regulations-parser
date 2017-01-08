@@ -3,8 +3,8 @@ import pytest
 
 from regparser.test_utils.node_accessor import NodeAccessor
 from regparser.test_utils.xml_builder import XMLBuilder
+from regparser.tree.gpo_cfr import appendices
 from regparser.tree.struct import Node
-from regparser.tree.xml_parser import appendices
 
 
 def test_process_appendix():

@@ -5,6 +5,1025 @@
                 {
                     "children": [
                         {
+                            "children": [], 
+                            "label": [
+                                "300", 
+                                "1", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) Introduction. This part implements changes to the Federal Election Campaign Act of 1971, as amended (\u201cFECA\u201d or the \u201cAct\u201d), enacted by Title I of the Bipartisan Campaign Finance Reform Act of 2002 (\u201cBCRA\u201d). Public Law 107-155. Unless expressly stated to the contrary, nothing in this part alters the definitions, restrictions, liabilities, and obligations imposed by sections 30101 to 30145 of Title 52, United States Code, or regulations prescribed thereunder (11 CFR parts 100 to 116)."
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "300", 
+                                        "1", 
+                                        "b", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Except as otherwise specifically provided in this part, this part shall take effect on November 6, 2002. However, subpart B of this part shall not apply with respect to runoff elections, recounts, or election contests resulting from elections held prior to such date. See 11 CFR 300.12 for transition rules applicable to subpart A of this part."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "300", 
+                                        "1", 
+                                        "b", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) The increase in individual contribution limits to State committees of political parties, as described in 11 CFR 110.1(c)(5), shall apply to contributions made on or after January 1, 2003."
+                                }
+                            ], 
+                            "label": [
+                                "300", 
+                                "1", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) Effective dates."
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "300", 
+                                        "1", 
+                                        "c", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Subpart A of this part prescribes rules pertaining to national party committees, including general non-Federal funds prohibitions, fundraising, and donation prohibitions with regard to certain tax-exempt organizations, transition rules as BCRA takes effect, and reporting."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "300", 
+                                        "1", 
+                                        "c", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Subpart B of this part pertains to State, district, and local political party committees and organizations. Subpart B of this part focuses on \u201cLevin Amendment\u201d to BCRA; office buildings; and fundraising and donation prohibitions with regard to certain tax-exempt organizations."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "300", 
+                                        "1", 
+                                        "c", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) Subpart C of this part addresses non-Federal funds from the perspective of tax-exempt organizations, setting out rules about prohibited fundraising for certain tax-exempt organizations by national party committees, State, district, and local party committees, and Federal candidates and officeholders."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "300", 
+                                        "1", 
+                                        "c", 
+                                        "4"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(4) Subpart D of this part includes regulations pertaining to soliciting non-Federal funds from the perspective of Federal candidates and officeholders in Federal and non-Federal elections; including exceptions for those who are also State candidates and exemptions for those attending, speaking, and appearing as featured guests at fundraising events, or who solicit for certain tax-exempt organizations."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "300", 
+                                        "1", 
+                                        "c", 
+                                        "5"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(5) Subpart E of this part focuses on State and local candidates, including regulations about using Federal funds for certain public communications, and exceptions for entirely non-Federal communications."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "300", 
+                                        "1", 
+                                        "c", 
+                                        "6"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(6) For rules pertaining to convention and host committees, see 11 CFR part 9008."
+                                }
+                            ], 
+                            "label": [
+                                "300", 
+                                "1", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) Organization of part. Part 300, which generally addresses non-Federal funds and closely related topics, is organized into five subparts. Each subpart is oriented to the perspective of a category of persons facing issues related to non-Federal funds."
+                        }
+                    ], 
+                    "label": [
+                        "300", 
+                        "1"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 300.1 Scope and effective date, and organization."
+                }, 
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "300", 
+                                        "2", 
+                                        "a", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) Make expenditures or disbursements in connection with an election for Federal office including for Federal election activity; or"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "300", 
+                                        "2", 
+                                        "a", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Pay a debt incurred from the making of expenditures or disbursements in connection with an election for Federal office (including for Federal election activity) in a prior election cycle."
+                                }
+                            ], 
+                            "label": [
+                                "300", 
+                                "2", 
+                                "a"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(a) 501(c) organization that makes expenditures or disbursements in connection with a Federal election. A 501(c) organization that makes expenditures or disbursements in connection with a Federal election as that term is used in 11 CFR 300.11, 300.37, 300.50, and 300.51 includes an organization that, within the current election cycle, plans to:"
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "300", 
+                                                "2", 
+                                                "b", 
+                                                "1", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) To solicit, direct, or receive any contribution, donation, or transfer of funds; or,"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "300", 
+                                                "2", 
+                                                "b", 
+                                                "1", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) To solicit any funds for, or make or direct any donations to, an organization that is described in 26 U.S.C 501(c) and exempt from taxation under 26 U.S.C. 501(a) (or has submitted an application for determination of tax exempt status under 26 U.S.C. 501(a)), or an organization described in 26 U.S.C. 527 (other than a political committee, a State, district, or local committee of a political party, or the authorized campaign committee of a candidate for State or local office)."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "300", 
+                                        "2", 
+                                        "b", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) In the case of a national committee of a political party:"
+                                }, 
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "300", 
+                                                "2", 
+                                                "b", 
+                                                "2", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) To expend or disburse any funds for Federal election activity; or"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "300", 
+                                                "2", 
+                                                "b", 
+                                                "2", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) To transfer, or accept a transfer of, funds to make expenditures or disbursements for Federal election activity; or"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "300", 
+                                                "2", 
+                                                "b", 
+                                                "2", 
+                                                "iii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iii) To engage in joint fundraising activities with any person if any part of the funds raised are used, in whole or in part, to pay for Federal election activity; or"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "300", 
+                                                "2", 
+                                                "b", 
+                                                "2", 
+                                                "iv"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iv) To solicit any funds for, or make or direct any donations to, an organization that is described in 26 U.S.C. 501(c) and exempt from taxation under 26 U.S.C. 501(a) (or has submitted an application for determination of tax exempt status under 26 U.S.C. 501(a)), or an organization described in 26 U.S.C. 527 (other than a political committee, a State, district, or local committee of a political party, or the authorized campaign committee of a candidate for State or local office)."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "300", 
+                                        "2", 
+                                        "b", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) In the case of a State, district, or local committee of a political party:"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "300", 
+                                        "2", 
+                                        "b", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) In the case of an individual who is a Federal candidate or an individual holding Federal office, to solicit, receive, direct, transfer, or spend funds in connection with any election."
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "300", 
+                                        "2", 
+                                        "b", 
+                                        "4"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(4) In the case of an individual who is a candidate for State or local office, to spend funds for a public communication (see 11 CFR 100.26)."
+                                }
+                            ], 
+                            "label": [
+                                "300", 
+                                "2", 
+                                "b"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(b) Agent. For the purposes of part 300 of chapter I, agent means any person who has actual authority, either express or implied, to engage in any of the following activities on behalf of the specified persons:"
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "300", 
+                                        "2", 
+                                        "c", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) This paragraph (c) applies to national, State, district, and local committees of a political party, candidates, and holders of Federal office, including an officer, employee, or agent of any of the foregoing persons, which shall be referred to as \u201csponsors\u201d in this section."
+                                }, 
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "300", 
+                                                "2", 
+                                                "c", 
+                                                "2", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) Whether a sponsor, directly or through its agent, owns controlling interest in the voting stock or securities of the entity;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "300", 
+                                                "2", 
+                                                "c", 
+                                                "2", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) Whether a sponsor, directly or through its agent, has the authority or ability to direct or participate in the governance of the entity through provisions of constitutions, bylaws, contracts, or other rules, or through formal or informal practices or procedures;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "300", 
+                                                "2", 
+                                                "c", 
+                                                "2", 
+                                                "iii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iii) Whether a sponsor, directly or through its agent, has the authority or ability to hire, appoint, demote, or otherwise control the officers, or other decision-making employees or members of the entity;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "300", 
+                                                "2", 
+                                                "c", 
+                                                "2", 
+                                                "iv"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iv) Whether a sponsor has a common or overlapping membership with the entity that indicates a formal or ongoing relationship between the sponsor and the entity;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "300", 
+                                                "2", 
+                                                "c", 
+                                                "2", 
+                                                "v"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(v) Whether a sponsor has common or overlapping officers or employees with the entity that indicates a formal or ongoing relationship between the sponsor and the entity;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "300", 
+                                                "2", 
+                                                "c", 
+                                                "2", 
+                                                "vi"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(vi) Whether a sponsor has any members, officers, or employees who were members, officers or employees of the entity that indicates a formal or ongoing relationship between the sponsor and the entity, or that indicates the creation of a successor entity;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "300", 
+                                                "2", 
+                                                "c", 
+                                                "2", 
+                                                "vii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(vii) Whether a sponsor, directly or through its agent, provides funds or goods in a significant amount or on an ongoing basis to the entity, such as through direct or indirect payments for administrative, fundraising, or other costs, but not including the transfer to a committee of its allocated share of proceeds jointly raised pursuant to 11 CFR 102.17, and otherwise lawfully;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "300", 
+                                                "2", 
+                                                "c", 
+                                                "2", 
+                                                "viii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(viii) Whether a sponsor, directly or through its agent, causes or arranges for funds in a significant amount or on an ongoing basis to be provided to the entity, but not including the transfer to a committee of its allocated share of proceeds jointly raised pursuant to 11 CFR 102.17, and otherwise lawfully;"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "300", 
+                                                "2", 
+                                                "c", 
+                                                "2", 
+                                                "ix"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ix) Whether a sponsor, directly or through its agent, had an active or significant role in the formation of the entity; and"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "300", 
+                                                "2", 
+                                                "c", 
+                                                "2", 
+                                                "x"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(x) Whether the sponsor and the entity have similar patterns of receipts or disbursements that indicate a formal or ongoing relationship between the sponsor and the entity."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "300", 
+                                        "2", 
+                                        "c", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) To determine whether a sponsor directly or indirectly established, finances, maintains, or controls an entity, the factors described in paragraphs (c)(2)(i) through (x) of this section must be examined in the context of the overall relationship between sponsor and the entity to determine whether the presence of any factor or factors is evidence that the sponsor directly or indirectly established, finances, maintains, or controls the entity. Such factors include, but are not limited to:"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "300", 
+                                        "2", 
+                                        "c", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) Safe harbor. On or after November 6, 2002, an entity shall not be deemed to be directly or indirectly established, maintained, or controlled by another entity unless, based on the entities' actions and activities solely after November 6, 2002, they satisfy the requirements of this section. If an entity receives funds from another entity prior to November 6, 2002, and the recipient entity disposes of the funds prior to November 6, 2002, the receipt of such funds prior to November 6, 2002 shall have no bearing on determining whether the recipient entity is financed by the sponsoring entity within the meaning of this section."
+                                }, 
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "300", 
+                                                "2", 
+                                                "c", 
+                                                "4", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) A sponsor or entity may request an advisory opinion of the Commission to determine whether the sponsor is no longer directly or indirectly financing, maintaining, or controlling the entity for purposes of this part. The request for such an advisory opinion must meet the requirements of 11 CFR part 112 and must demonstrate that the entity is not directly or indirectly financed, maintained, or controlled by the sponsor."
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "300", 
+                                                "2", 
+                                                "c", 
+                                                "4", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) Notwithstanding the fact that a sponsor may have established an entity within the meaning of paragraph (c)(2) of this section, the sponsor or the entity may request an advisory opinion of the Commission determining that the relationship between the sponsor and the entity has been severed. The request for such an advisory opinion must meet the requirements of 11 CFR part 112, and must demonstrate that all material connections between the sponsor and the entity have been severed for two years."
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "300", 
+                                                "2", 
+                                                "c", 
+                                                "4", 
+                                                "iii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iii) Nothing in this section shall require entities that are separate organizations on November 6, 2002 to obtain an advisory opinion to operate separately from each other."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "300", 
+                                        "2", 
+                                        "c", 
+                                        "4"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(4) Determinations by the Commission."
+                                }
+                            ], 
+                            "label": [
+                                "300", 
+                                "2", 
+                                "c"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(c) Directly or indirectly establish, finance, maintain, or control."
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "300", 
+                                        "2", 
+                                        "d", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) A political committee; or"
+                                }, 
+                                {
+                                    "children": [], 
+                                    "label": [
+                                        "300", 
+                                        "2", 
+                                        "d", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) Any other person, including an organization that is not a political committee, that is subject to the Act."
+                                }
+                            ], 
+                            "label": [
+                                "300", 
+                                "2", 
+                                "d"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(d) Disbursement. Disbursement means any purchase or payment made by:"
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "300", 
+                                "2", 
+                                "e"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(e) Donation. For purposes of part 300, donation means a payment, gift, subscription, loan, advance, deposit, or anything of value given to a person, but does not include contributions."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "300", 
+                                "2", 
+                                "f"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(f) Federal account. Federal account means an account at a campaign depository that contains funds to be used in connection with a Federal election."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "300", 
+                                "2", 
+                                "g"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(g) Federal Funds. Federal funds mean funds that comply with the limitations, prohibitions, and reporting requirements of the Act."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "300", 
+                                "2", 
+                                "h"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(h) Levin account. Levin account means an account at a campaign depository established by a State, district, or local committee of a political party pursuant to 11 CFR 300.30, for purposes of making expenditures or disbursements for Federal election activity or non-Federal activity (subject to State law) under 11 CFR 300.32."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "300", 
+                                "2", 
+                                "i"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(i) Levin funds mean funds that are raised pursuant to 11 CFR 300.31 and are or will be disbursed pursuant to 11 CFR 300.32."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "300", 
+                                "2", 
+                                "j"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(j) Non-Federal account means an account that contains funds to be used in connection with a State or local election or allocable expenses under 11 CFR 106.7, 300.30, or 300.33."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "300", 
+                                "2", 
+                                "k"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(k) Non-Federal funds mean funds that are not subject to the limitations and prohibitions of the Act."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "300", 
+                                "2", 
+                                "l"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(l) [Reserved]"
+                        }, 
+                        {
+                            "children": [
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "300", 
+                                                "2", 
+                                                "m", 
+                                                "1", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) A communication that provides a method of making a contribution or donation, regardless of the communication. This includes, but is not limited to, providing a separate card, envelope, or reply device that contains an address to which funds may be sent and allows contributors or donors to indicate the dollar amount of their contribution or donation to the candidate, political committee, or other organization."
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "300", 
+                                                "2", 
+                                                "m", 
+                                                "1", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) A communication that provides instructions on how or where to send contributions or donations, including providing a phone number specifically dedicated to facilitating the making of contributions or donations. However, a communication does not, in and of itself, satisfy the definition of \u201cto solicit\u201d merely because it includes a mailing address or phone number that is not specifically dedicated to facilitating the making of contributions or donations."
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "300", 
+                                                "2", 
+                                                "m", 
+                                                "1", 
+                                                "iii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iii) A communication that identifies a Web address where the Web page displayed is specifically dedicated to facilitating the making of a contribution or donation, or automatically redirects the Internet user to such a page, or exclusively displays a link to such a page. However, a communication does not, in and of itself, satisfy the definition of \u201cto solicit\u201d merely because it includes the address of a Web page that is not specifically dedicated to facilitating the making of a contribution or donation."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "300", 
+                                        "2", 
+                                        "m", 
+                                        "1"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(1) The following types of communications constitute solicitations:"
+                                }, 
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "300", 
+                                                "2", 
+                                                "m", 
+                                                "2", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) \u201cPlease give $100,000 to Group X.\u201d"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "300", 
+                                                "2", 
+                                                "m", 
+                                                "2", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) \u201cIt is important for our State party to receive at least $100,000 from each of you in this election.\u201d"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "300", 
+                                                "2", 
+                                                "m", 
+                                                "2", 
+                                                "iii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iii) \u201cGroup X has always helped me financially in my elections. Keep them in mind this fall.\u201d"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "300", 
+                                                "2", 
+                                                "m", 
+                                                "2", 
+                                                "iv"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iv) \u201cX is an effective State party organization; it needs to obtain as many $100,000 donations as possible.\u201d"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "300", 
+                                                "2", 
+                                                "m", 
+                                                "2", 
+                                                "v"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(v) \u201cGiving $100,000 to Group X would be a very smart idea.\u201d"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "300", 
+                                                "2", 
+                                                "m", 
+                                                "2", 
+                                                "vi"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(vi) \u201cSend all contributions to the following address * * *.\u201d"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "300", 
+                                                "2", 
+                                                "m", 
+                                                "2", 
+                                                "vii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(vii) \u201cI am not permitted to ask for contributions, but unsolicited contributions will be accepted at the following address * * *.\u201d"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "300", 
+                                                "2", 
+                                                "m", 
+                                                "2", 
+                                                "viii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(viii) \u201cGroup X is having a fundraiser this week; you should go.\u201d"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "300", 
+                                                "2", 
+                                                "m", 
+                                                "2", 
+                                                "ix"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ix) \u201cYou have reached the limit of what you may contribute directly to my campaign, but you can further help my campaign by assisting the State party.\u201d"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "300", 
+                                                "2", 
+                                                "m", 
+                                                "2", 
+                                                "x"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(x) A candidate hands a potential donor a list of people who have contributed to a group and the amounts of their contributions. The candidate says, \u201cI see you are not on the list.\u201d"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "300", 
+                                                "2", 
+                                                "m", 
+                                                "2", 
+                                                "xi"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(xi) \u201cI will not forget those who contribute at this crucial stage.\u201d"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "300", 
+                                                "2", 
+                                                "m", 
+                                                "2", 
+                                                "xii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(xii) \u201cThe candidate will be very pleased if we can count on you for $10,000.\u201d"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "300", 
+                                                "2", 
+                                                "m", 
+                                                "2", 
+                                                "xiii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(xiii) \u201cYour contribution to this campaign would mean a great deal to the entire party and to me personally.\u201d"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "300", 
+                                                "2", 
+                                                "m", 
+                                                "2", 
+                                                "xiv"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(xiv) Candidate says to potential donor: \u201cThe money you will help us raise will allow us to communicate our message to the voters through Labor Day.\u201d"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "300", 
+                                                "2", 
+                                                "m", 
+                                                "2", 
+                                                "xv"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(xv) \u201cI appreciate all you've done in the past for our party in this State. Looking ahead, we face some tough elections. I'd be very happy if you could maintain the same level of financial support for our State party this year.\u201d"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "300", 
+                                                "2", 
+                                                "m", 
+                                                "2", 
+                                                "xvi"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(xvi) The head of Group X solicits a contribution from a potential donor in the presence of a candidate. The donor asks the candidate if the contribution to Group X would be a good idea and would help the candidate's campaign. The candidate nods affirmatively."
+                                        }
+                                    ], 
+                                    "label": [
+                                        "300", 
+                                        "2", 
+                                        "m", 
+                                        "2"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(2) The following statements constitute solicitations:"
+                                }, 
+                                {
+                                    "children": [
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "300", 
+                                                "2", 
+                                                "m", 
+                                                "3", 
+                                                "i"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(i) During a policy speech, the candidate says: \u201cThank you for your support of the Democratic Party.\u201d"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "300", 
+                                                "2", 
+                                                "m", 
+                                                "3", 
+                                                "ii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(ii) At a ticket-wide rally, the candidate says: \u201cThank you for your support of my campaign.\u201d"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "300", 
+                                                "2", 
+                                                "m", 
+                                                "3", 
+                                                "iii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iii) At a Labor Day rally, the candidate says: \u201cThank you for your past financial support of the Republican Party.\u201d"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "300", 
+                                                "2", 
+                                                "m", 
+                                                "3", 
+                                                "iv"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(iv) At a GOTV rally, the candidate says: \u201cThank you for your continuing support.\u201d"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "300", 
+                                                "2", 
+                                                "m", 
+                                                "3", 
+                                                "v"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(v) At a ticket-wide rally, the candidate says: \u201cIt is critical that we support the entire Democratic ticket in November.\u201d"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "300", 
+                                                "2", 
+                                                "m", 
+                                                "3", 
+                                                "vi"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(vi) A Federal officeholder says: \u201cOur Senator has done a great job for us this year. The policies she has vigorously promoted in the Senate have really helped the economy of the State.\u201d"
+                                        }, 
+                                        {
+                                            "children": [], 
+                                            "label": [
+                                                "300", 
+                                                "2", 
+                                                "m", 
+                                                "3", 
+                                                "vii"
+                                            ], 
+                                            "node_type": "regtext", 
+                                            "text": "(vii) A candidate says: \u201cThanks to your contributions we have been able to support our President, Senator and Representative during the past election cycle.\u201d"
+                                        }
+                                    ], 
+                                    "label": [
+                                        "300", 
+                                        "2", 
+                                        "m", 
+                                        "3"
+                                    ], 
+                                    "node_type": "regtext", 
+                                    "text": "(3) The following statements do not constitute solicitations:"
+                                }
+                            ], 
+                            "label": [
+                                "300", 
+                                "2", 
+                                "m"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(m) To solicit. For the purposes of part 300, to solicit means to ask, request, or recommend, explicitly or implicitly, that another person make a contribution, donation, transfer of funds, or otherwise provide anything of value. A solicitation is an oral or written communication that, construed as reasonably understood in the context in which it is made, contains a clear message asking, requesting, or recommending that another person make a contribution, donation, transfer of funds, or otherwise provide anything of value. A solicitation may be made directly or indirectly. The context includes the conduct of persons involved in the communication. A solicitation does not include mere statements of political support or mere guidance as to the applicability of a particular law or regulation."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "300", 
+                                "2", 
+                                "n"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(n) To direct. For the purposes of part 300, to direct means to guide, directly or indirectly, a person who has expressed an intent to make a contribution, donation, transfer of funds, or otherwise provide anything of value, by identifying a candidate, political committee or organization, for the receipt of such funds, or things of value. The contribution, donation, transfer, or thing of value may be made or provided directly or through a conduit or intermediary. Direction does not include merely providing information or guidance as to the applicability of a particular law or regulation."
+                        }, 
+                        {
+                            "children": [], 
+                            "label": [
+                                "300", 
+                                "2", 
+                                "o"
+                            ], 
+                            "node_type": "regtext", 
+                            "text": "(o) Individual holding Federal office. Individual holding Federal office means an individual elected to or serving in the office of President or Vice President of the United States; or a Senator or a Representative in, or Delegate or Resident Commissioner to, the Congress of the United States."
+                        }
+                    ], 
+                    "label": [
+                        "300", 
+                        "2"
+                    ], 
+                    "node_type": "regtext", 
+                    "text": "", 
+                    "title": "\u00a7 300.2 Definitions."
+                }
+            ], 
+            "label": [
+                "300", 
+                "Subpart"
+            ], 
+            "node_type": "emptypart", 
+            "text": ""
+        }, 
+        {
+            "children": [
+                {
+                    "children": [
+                        {
                             "children": [
                                 {
                                     "children": [], 

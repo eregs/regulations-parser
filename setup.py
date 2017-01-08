@@ -81,6 +81,13 @@ setup(
              "preprocessors:promote_nested_subjgrp"),
             ("promote-nested-appendix = regparser.tree.xml_parser."
              "preprocessors:promote_nested_appendix"),
+        ],
+        "eregs_ns.parser.xml_matchers.gpo_cfr.PART": [
+            "empty-part = regparser.tree.gpo_cfr.section:ParseEmptyPart",
+            "subpart = regparser.tree.gpo_cfr.subpart:parse_subpart",
+            "subjgrp = regparser.tree.gpo_cfr.subpart:ParseSubjectGroup",
+            "appendix = regparser.tree.gpo_cfr.appendices:parse_appendix",
+            "interp = regparser.tree.gpo_cfr.interpretations:parse_interp",
         ]
     }
 )

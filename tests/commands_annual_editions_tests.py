@@ -77,12 +77,12 @@ class CommandsAnnualEditionsTests(TestCase):
             with self.assertRaises(dependency.Missing):
                 annual_editions.process_if_needed('12', '1000', last_versions)
 
-    @patch("regparser.commands.annual_editions.xml_parser")
-    def test_process_if_needed_missing_writes(self, xml_parser):
+    @patch("regparser.commands.annual_editions.gpo_cfr")
+    def test_process_if_needed_missing_writes(self, gpo_cfr):
         """If output isn't already present, we should process. If it is
         present, we don't need to, unless a dependency has changed."""
         with self.cli.isolated_filesystem():
-            build_tree = xml_parser.reg_text.build_tree
+            build_tree = gpo_cfr.builder.build_tree
             build_tree.return_value = Node()
             last_versions = [annual_editions.LastVersionInYear('1111', 2000)]
             entry.Version('12', '1000', '1111').write(

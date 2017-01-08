@@ -3,6 +3,20 @@
         {
             "index": [
                 "300", 
+                "1"
+            ], 
+            "title": "\u00a7 300.1 Scope and effective date, and organization."
+        }, 
+        {
+            "index": [
+                "300", 
+                "2"
+            ], 
+            "title": "\u00a7 300.2 Definitions."
+        }, 
+        {
+            "index": [
+                "300", 
                 "Subpart", 
                 "A"
             ], 
@@ -39,6 +53,22 @@
                 "E"
             ], 
             "title": "State and Local Candidates"
+        }
+    ], 
+    "300-Subpart": [
+        {
+            "index": [
+                "300", 
+                "1"
+            ], 
+            "title": "\u00a7 300.1 Scope and effective date, and organization."
+        }, 
+        {
+            "index": [
+                "300", 
+                "2"
+            ], 
+            "title": "\u00a7 300.2 Definitions."
         }
     ], 
     "300-Subpart-A": [

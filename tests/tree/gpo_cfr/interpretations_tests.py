@@ -1,8 +1,9 @@
-# vim: set encoding=utf-8
+# -*- coding: utf-8 -*-
 from unittest import TestCase
 from lxml import etree
 
-from regparser.tree.xml_parser import interpretations, tree_utils
+from regparser.tree.gpo_cfr import interpretations
+from regparser.tree.xml_parser import tree_utils
 
 
 class InterpretationsTest(TestCase):
