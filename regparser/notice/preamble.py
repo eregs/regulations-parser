@@ -77,11 +77,11 @@ def transform_xml(elements, title, depth):
     # Pairs of [start, end) indexes, defining runs of XML elements which
     # should be grouped together. The final pair will include len(elements),
     # the end of the list
-    startXend = zip(indexes_of_next_level_headers,
-                    indexes_of_next_level_headers[1:] + [len(elements)])
-    headerXchildren = [(elements[start], elements[start + 1:end])
-                       for start, end in startXend]
-    for header, children in headerXchildren:
+    start_and_ends = zip(indexes_of_next_level_headers,
+                         indexes_of_next_level_headers[1:] + [len(elements)])
+    header_and_childrens = [(elements[start], elements[start + 1:end])
+                            for start, end in start_and_ends]
+    for header, children in header_and_childrens:
         title = header.text
         root.append(transform_xml(children, title, depth + 1))
 

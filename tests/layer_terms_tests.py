@@ -228,16 +228,16 @@ class LayerTermTest(TestCase):
 
     def test_pre_process_subpart(self):
         root = Node(label=['1212'])
-        subpartA = Node(label=['1212', 'Subpart', 'A'], title='Subpart A')
+        subpart_a = Node(label=['1212', 'Subpart', 'A'], title='Subpart A')
         section2 = Node(label=['1212', '2'], title='1212.2')
         def1 = Node(u"“totes” means in total", label=['1212', '2', 'a'])
-        subpartB = Node(label=['1212', 'Subpart', 'B'], title='Subpart B')
+        subpart_b = Node(label=['1212', 'Subpart', 'B'], title='Subpart B')
         section22 = Node("\nFor the purposes of this subpart",
                          label=['1212', '22'], title='1212.22')
         def2 = Node(u"“totes” means in extremely", label=['1212', '22', 'a'])
 
-        root.children = [subpartA, subpartB]
-        subpartA.children, subpartB.children = [section2], [section22]
+        root.children = [subpart_a, subpart_b]
+        subpart_a.children, subpart_b.children = [section2], [section22]
         section2.children, section22.children = [def1], [def2]
 
         t = Terms(root)

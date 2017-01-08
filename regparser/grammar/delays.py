@@ -1,3 +1,5 @@
+import calendar
+import operator
 import string
 from datetime import date
 
@@ -43,14 +45,13 @@ notice_citation = (
 delayed = utils.Marker("delayed").setParseAction(Delayed)
 
 
-def int2Month(m):
-    month = date(2000, m, 1)
-    month = month.strftime('%B')
-    token = utils.Marker(month)
-    return token.setParseAction(lambda: m)
+def _month_parser(month_idx):
+    """Separate function to account for lexical scoping on lambdas"""
+    month_name = calendar.month_name[month_idx]
+    return utils.Marker(month_name).setParseAction(lambda: month_idx)
 
 
-months = reduce(lambda l, r: l | r, (int2Month(i) for i in range(2, 13)))
+months = reduce(operator.ior, (_month_parser(i) for i in range(1, 13)))
 
 
 date_parser = (

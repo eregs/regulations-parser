@@ -20,7 +20,7 @@ class FinderBase(six.with_metaclass(abc.ABCMeta)):
     """Base class for all of the external citation parsers. Defines the
     interface they must implement."""
     @abc.abstractproperty
-    def CITE_TYPE(self):
+    def CITE_TYPE(self):    # noqa - this is a property
         """A constant to represent the citations this produces."""
         raise NotImplementedError()
 
@@ -60,12 +60,12 @@ class FDSYSFinder(six.with_metaclass(abc.ABCMeta)):
     """Common parent class to Finders which generate an FDSYS url based on
     matching a PyParsing grammar"""
     @abc.abstractproperty
-    def GRAMMAR(self):
+    def GRAMMAR(self):  # noqa - this is a property
         """A pyparsing grammar with relevant components labeled"""
         raise NotImplementedError()
 
     @abc.abstractproperty
-    def CONST_PARAMS(self):
+    def CONST_PARAMS(self):     # noqa - this is a property
         """Constant parameters we pass to the FDSYS url; a dict"""
         raise NotImplementedError()
 

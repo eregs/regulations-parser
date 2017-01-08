@@ -164,7 +164,7 @@ class PlaintextFormatData(six.with_metaclass(abc.ABCMeta)):
     """Base class for formatting information which can be derived from the
     plaintext of a regulation node"""
     @abc.abstractproperty
-    def REGEX(self):
+    def REGEX(self):    # noqa - this is a property
         """Regular expression used to find matches in the plain text"""
         raise NotImplementedError()
 

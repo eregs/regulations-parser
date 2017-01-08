@@ -78,11 +78,11 @@ class CommandsFillWithRulesTests(TestCase):
 
     @patch('regparser.commands.fill_with_rules.compile_regulation')
     @patch('regparser.commands.fill_with_rules.entry.Notice')
-    def test_process(self, Notice, compile_regulation):
+    def test_process(self, mock_notice, compile_regulation):
         """Verify that the correct changes are found"""
         compile_regulation.return_value = Node()
         # entry.Notice('new').read().amendments
-        Notice.return_value.read.return_value.amendments = [
+        mock_notice.return_value.read.return_value.amendments = [
             {"instruction": "Something something",
              "cfr_part": "1000",
              "authority": "USC Numbers"},

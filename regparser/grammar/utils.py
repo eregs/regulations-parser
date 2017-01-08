@@ -10,13 +10,13 @@ Position = namedtuple('Position', ['start', 'end'])
 def keep_pos(expr):
     """Transform a pyparsing grammar by inserting an attribute, "pos", on the
     match which describes position information"""
-    locMarker = pp.Empty().setParseAction(lambda s, loc, t: loc)
-    endlocMarker = locMarker.copy()
-    endlocMarker.callPreparse = False   # don't allow the cursor to move
+    loc_marker = pp.Empty().setParseAction(lambda s, loc, t: loc)
+    end_loc_marker = loc_marker.copy()
+    end_loc_marker.callPreparse = False   # don't allow the cursor to move
     return (
-        locMarker.setResultsName("pos_start") +
+        loc_marker.setResultsName("pos_start") +
         expr +
-        endlocMarker.setResultsName("pos_end")
+        end_loc_marker.setResultsName("pos_end")
     ).setParseAction(parse_position)
 
 
@@ -40,17 +40,17 @@ class DocLiteral(pp.Literal):
         self.name = ascii_text
 
 
-def WordBoundaries(grammar):
+def WordBoundaries(grammar):    # noqa - we treat this like a pyparsing class
     return (pp.WordStart(pp.alphanums) +
             grammar +
             pp.WordEnd(pp.alphanums))
 
 
-def Marker(txt):
+def Marker(txt):    # noqa - we treat this like a pyparsing class
     return pp.Suppress(WordBoundaries(pp.CaselessLiteral(txt)))
 
 
-def SuffixMarker(txt):
+def SuffixMarker(txt):  # noqa - we treat this like a pyparsing class
     return pp.Suppress(pp.CaselessLiteral(txt) + pp.WordEnd(pp.alphanums))
 
 
@@ -84,7 +84,7 @@ class QuickSearchable(pp.ParseElementEnhance):
             re.IGNORECASE | re.UNICODE | re.MULTILINE | re.DOTALL)
         self.parseImpl = expr.parseImpl
 
-    def scanString(self, instring, maxMatches=None, overlap=False):
+    def scanString(self, instring, maxMatches=None, overlap=False):     # noqa
         """Override `scanString` to attempt parsing only where there's a regex
         search match (as opposed to every index). Does not implement the full
         scanString interface."""

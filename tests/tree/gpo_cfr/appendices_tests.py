@@ -450,9 +450,9 @@ def test_process_part_cap():
         ctx.P("A. Content")
     appendix = appendices.AppendixProcessor(1111).process(ctx.xml)
     assert len(appendix.children) == 1
-    aI = appendix.children[0]
+    ai = appendix.children[0]
 
-    assert len(aI.children) == 1
+    assert len(ai.children) == 1
 
 
 def test_process_depth_look_forward():
@@ -465,9 +465,9 @@ def test_process_depth_look_forward():
         ctx.P("(ii) ii ii ii")
     appendix = appendices.AppendixProcessor(1111).process(ctx.xml)
     assert len(appendix.children) == 1
-    Aa = appendix.children[0]
+    aa = appendix.children[0]
 
-    child_labels = [child.label for child in Aa.children]
+    child_labels = [child.label for child in aa.children]
     assert ['1111', 'A', 'a', 'i'] in child_labels
     assert ['1111', 'A', 'a', 'ii'] in child_labels
 
