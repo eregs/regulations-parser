@@ -180,6 +180,6 @@ def parse(filename):
 
 if __name__ == '__main__':
     if len(sys.argv) != 2:
-        print("Usage: python doc2xml.py file.docx")
+        print("Usage: python doc2xml.py file.docx")    # noqa 
     else:
-        print(etree.tounicode(parse(sys.argv[1]), pretty_print=True))
+        print(etree.tounicode(parse(sys.argv[1]), pretty_print=True))   # noqa
