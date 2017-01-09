@@ -1,20 +1,17 @@
-from unittest import TestCase
+import pytest
 
 from regparser.grammar.tokens import Paragraph
 
 
-class ParagraphTests(TestCase):
-    def test_constructor(self):
-        """Constructor's API gives a few equivalences"""
-        self.assertEqual(Paragraph(part='111', section='22', paragraph='a'),
-                         Paragraph(['111', None, '22', 'a']))
-        self.assertEqual(
-            Paragraph(is_interp=True, paragraphs=['1', 'i', 'a']),
-            Paragraph([None, 'Interpretations', None, '1', 'i', 'a']))
-        self.assertEqual(Paragraph(part='222', appendix='C', section='5'),
-                         Paragraph(['222', 'Appendix:C', '5']))
-        self.assertEqual(Paragraph(subpart='E', section='9'),
-                         Paragraph([None, 'Subpart:E', '9']))
-        self.assertEqual(
-            Paragraph(sub='random', section='other', paragraph='p'),
-            Paragraph([None, 'random', 'other', 'p']))
+@pytest.mark.parametrize('params,paragraph', [
+    (dict(part='111', section='22', paragraph='a'), ['111', None, '22', 'a']),
+    (dict(is_interp=True, paragraphs=['1', 'i', 'a']),
+     [None, 'Interpretations', None, '1', 'i', 'a']),
+    (dict(part='222', appendix='C', section='5'), ['222', 'Appendix:C', '5']),
+    (dict(subpart='E', section='9'), [None, 'Subpart:E', '9']),
+    (dict(sub='random', section='other', paragraph='p'),
+     [None, 'random', 'other', 'p']),
+])
+def test_paragraph_make(params, paragraph):
+    """Converts keyword args appropriately"""
+    assert Paragraph.make(**params) == Paragraph(paragraph)

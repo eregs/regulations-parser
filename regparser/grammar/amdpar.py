@@ -3,6 +3,7 @@
 import logging
 import string
 
+import attr
 from pyparsing import (CaselessLiteral, FollowedBy, LineEnd, Literal,
                        OneOrMore, Optional, QuotedString, Suppress, Word,
                        ZeroOrMore)
@@ -172,8 +173,8 @@ section_heading_of = (
     Marker("heading") + of_connective +
     unified.marker_part_section
 ).setParseAction(
-    lambda m: tokens.Paragraph(part=m.part, section=m.section,
-                               field=tokens.Paragraph.HEADING_FIELD))
+    lambda m: tokens.Paragraph.make(part=m.part, section=m.section,
+                                    field=tokens.Paragraph.HEADING_FIELD))
 
 section_paragraph_heading_of = (
     Marker("heading") + of_connective +
@@ -181,7 +182,7 @@ section_paragraph_heading_of = (
     atomic.section +
     unified.depth1_p
 ).setParseAction(
-    lambda m: tokens.Paragraph(
+    lambda m: tokens.Paragraph.make(
         is_interp=True, section=m.section,
         paragraphs=[_paren_join([m.p1, m.p2, m.p3, m.p4, m.p5])],
         field=tokens.Paragraph.HEADING_FIELD))
@@ -191,7 +192,7 @@ appendix_subheading = (
     unified.marker_appendix
 ).setParseAction(
     # Use '()' to pad the label out to what's expected of interpretations
-    lambda m: tokens.Paragraph(
+    lambda m: tokens.Paragraph.make(
         is_interp=True, section=m.appendix, paragraphs=['()'],
         field=tokens.Paragraph.HEADING_FIELD))
 
@@ -200,7 +201,7 @@ paragraph_heading_of = (
     Marker("heading") + of_connective +
     unified.marker_paragraph.copy()
 ).setParseAction(
-    lambda m: tokens.Paragraph(
+    lambda m: tokens.Paragraph.make(
         paragraphs=[m.p1, m.p2, m.p3, m.p4, m.plaintext_p5, m.plaintext_p6],
         field=tokens.Paragraph.KEYTERM_FIELD))
 
@@ -210,7 +211,7 @@ comment_heading = (
     atomic.section +
     unified.depth1_p
 ).setParseAction(
-    lambda m: tokens.Paragraph(
+    lambda m: tokens.Paragraph.make(
         is_interp=True, section=m.section,
         paragraphs=[_paren_join([m.p1, m.p2, m.p3, m.p4, m.p5])],
         field=tokens.Paragraph.HEADING_FIELD))
@@ -221,7 +222,7 @@ intro_text_of = (
     atomic.paragraph_marker +
     unified.depth1_p
 ).setParseAction(
-    lambda m: tokens.Paragraph(
+    lambda m: tokens.Paragraph.make(
         paragraphs=[m.p1, m.p2, m.p3, m.p4, m.plaintext_p5, m.plaintext_p6],
         field=tokens.Paragraph.TEXT_FIELD))
 
@@ -230,7 +231,7 @@ intro_text_of_interp = (
     atomic.paragraph_marker +
     comment_p
 ).setParseAction(
-    lambda m: tokens.Paragraph(
+    lambda m: tokens.Paragraph.make(
         is_interp=True, paragraphs=[None, m.level2, m.level3, m.level4],
         field=tokens.Paragraph.TEXT_FIELD))
 
@@ -238,7 +239,7 @@ single_par = (
     unified.marker_paragraph +
     Optional(intro_text_marker)
 ).setParseAction(
-    lambda m: tokens.Paragraph(
+    lambda m: tokens.Paragraph.make(
         paragraphs=[m.p1, m.p2, m.p3, m.p4, m.plaintext_p5, m.plaintext_p6],
         field=(tokens.Paragraph.TEXT_FIELD if m[-1] == 'text' else None)))
 section_single_par = (
@@ -246,7 +247,7 @@ section_single_par = (
     unified.depth1_p +
     Optional(intro_text_marker)
 ).setParseAction(
-    lambda m: tokens.Paragraph(
+    lambda m: tokens.Paragraph.make(
         part=m.part, section=m.section,
         paragraphs=[m.p1, m.p2, m.p3, m.p4, m.plaintext_p5, m.plaintext_p6],
         field=(tokens.Paragraph.TEXT_FIELD if m[-1] == 'text' else None)))
@@ -257,7 +258,7 @@ single_par_section = (
     of_connective +
     unified.marker_part_section
 ).setParseAction(
-    lambda m: tokens.Paragraph(
+    lambda m: tokens.Paragraph.make(
         part=m.part, section=m.section,
         paragraphs=[m.p1, m.p2, m.p3, m.p4, m.plaintext_p5, m.plaintext_p6]))
 
@@ -268,14 +269,14 @@ single_comment_with_section = (
     "-" +
     Optional("(") + comment_p + Optional(")")
 ).setParseAction(
-    lambda m: tokens.Paragraph(
+    lambda m: tokens.Paragraph.make(
         is_interp=True, section=m.section,
         paragraphs=[_paren_from_match(m), m.level2, m.level3, m.level4]))
 single_comment_par = (
     atomic.paragraph_marker +
     comment_p
 ).setParseAction(
-    lambda m: tokens.Paragraph(
+    lambda m: tokens.Paragraph.make(
         is_interp=True, paragraphs=[None, m.level2, m.level3, m.level4]))
 
 
@@ -309,8 +310,8 @@ def _through_paren(prev_lab, next_lab):
             if lhs in level and rhs in level:
                 lidx, ridx = level.index(lhs), level.index(rhs)
                 if lidx < ridx:
-                    return [tokens.Paragraph(prev_lab[:-1] +
-                                             [prefix + level[i] + ')'])
+                    return [tokens.Paragraph.make(prev_lab[:-1] +
+                                                  [prefix + level[i] + ')'])
                             for i in range(lidx + 1, ridx)]
         logger.warning("Error with 'through': %s %s", prev_lab, next_lab)
         return []
@@ -318,7 +319,7 @@ def _through_paren(prev_lab, next_lab):
 
 def _through_sect(prev_lab, next_lab):
     """Expand "through" for labels ending in a section number."""
-    return [tokens.Paragraph(prev_lab[:2] + [str(i)])
+    return [tokens.Paragraph.make(prev_lab[:2] + [str(i)])
             for i in range(int(prev_lab[-1]) + 1, int(next_lab[-1]))]
 
 
@@ -327,7 +328,8 @@ def _through_paragraph(prev_lab, next_lab):
     depth = len(prev_lab)
     start = p_levels[depth - 4].index(prev_lab[-1]) + 1
     end = p_levels[depth - 4].index(next_lab[-1])
-    return [tokens.Paragraph(prev_lab[:depth - 1] + [p_levels[depth - 4][i]])
+    return [tokens.Paragraph.make(prev_lab[:depth - 1] +
+                                  [p_levels[depth - 4][i]])
             for i in range(start, end)]
 
 
@@ -338,10 +340,11 @@ def make_par_list(listify, force_text_field=False):
         matches = [match.head] + list(match.tail)
         for match in matches:
             match_as_list = listify(match)
-            next_par = tokens.Paragraph(match_as_list)
+            next_par = tokens.Paragraph.make(match_as_list)
             next_lab = next_par.label
             if match[-1] == 'text' or force_text_field:
-                next_par.field = tokens.Paragraph.TEXT_FIELD
+                next_par = attr.assoc(next_par,
+                                      field=tokens.Paragraph.TEXT_FIELD)
             if match.through:
                 #   Iterate through, creating paragraph tokens
                 prev_lab = pars[-1].label
@@ -370,14 +373,14 @@ multiple_paragraph_sections = (
 
 
 appendix_section = unified.appendix_with_section.copy().setParseAction(
-    lambda m: tokens.Paragraph(appendix=m.appendix,
-                               section=m.appendix_section))
+    lambda m: tokens.Paragraph.make(appendix=m.appendix,
+                                    section=m.appendix_section))
 
 appendix_section_heading_of = (
     Marker("heading") + of_connective +
     unified.appendix_with_section
 ).copy().setParseAction(
-    lambda m: tokens.Paragraph(
+    lambda m: tokens.Paragraph.make(
         appendix=m.appendix, section=m.appendix_section,
         field=tokens.Paragraph.HEADING_FIELD))
 
@@ -444,7 +447,7 @@ def tokenize_override_ps(match):
     for p in match_list[2:]:
         par_list[match_list.index(p)] = p
 
-    par = tokens.Paragraph(par_list)
+    par = tokens.Paragraph.make(par_list)
     return [par]
 
 
@@ -486,7 +489,7 @@ definition = (
     (Marker("of") | Marker("for")) +
     Optional(Marker("the") + Marker("term")) +
     _double_quote_label.copy().setResultsName("paragraph")
-).setParseAction(lambda m: tokens.Paragraph(paragraphs=[m.paragraph]))
+).setParseAction(lambda m: tokens.Paragraph.make(paragraphs=[m.paragraph]))
 
 #   grammar which captures all of these possibilities
 token_patterns = QuickSearchable(

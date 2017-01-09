@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 
 from contextlib import contextmanager
 
+import attr
 import pytest
 from lxml import etree
 
@@ -15,16 +16,16 @@ from regparser.tree.paragraph import hash_for_paragraph
 
 def test_make_instructions():
     tokenized = [
-        tokens.Paragraph(part='111'),
+        tokens.Paragraph.make(part='111'),
         tokens.Verb(tokens.Verb.PUT, active=True),
-        tokens.Paragraph(part='222'),
-        tokens.Paragraph(part='333'),
-        tokens.Paragraph(part='444'),
+        tokens.Paragraph.make(part='222'),
+        tokens.Paragraph.make(part='333'),
+        tokens.Paragraph.make(part='444'),
         tokens.Verb(tokens.Verb.DELETE, active=True),
-        tokens.Paragraph(part='555'),
+        tokens.Paragraph.make(part='555'),
         tokens.Verb(tokens.Verb.MOVE, active=True),
-        tokens.Paragraph(part='666'),
-        tokens.Paragraph(part='777')
+        tokens.Paragraph.make(part='666'),
+        tokens.Paragraph.make(part='777')
     ]
     with XMLBuilder("EREGS_INSTRUCTIONS") as ctx:
         ctx.PUT(label=222)
@@ -44,71 +45,71 @@ def test_compress_context_simple():
         #  section 12
         tokens.Context([None, None, '12']),
         #  12(f)(4)
-        tokens.Paragraph(paragraphs=['f', '4']),
+        tokens.Paragraph.make(paragraphs=['f', '4']),
         #  12(f)
         tokens.Context([None, None, None, 'g']),
         #  12(g)(1)
-        tokens.Paragraph(paragraphs=[None, '1']),
+        tokens.Paragraph.make(paragraphs=[None, '1']),
     ]
     converted, final_ctx = amdparser.compress_context(tokenized, [])
     assert converted == [
         tokens.Verb(tokens.Verb.PUT, active=True),
-        tokens.Paragraph(part='9876', subpart='A', section='12',
-                         paragraphs=['f', '4']),
-        tokens.Paragraph(part='9876', subpart='A', section='12',
-                         paragraphs=['g', '1']),
+        tokens.Paragraph.make(part='9876', subpart='A', section='12',
+                              paragraphs=['f', '4']),
+        tokens.Paragraph.make(part='9876', subpart='A', section='12',
+                              paragraphs=['g', '1']),
     ]
     assert ['9876', 'Subpart:A', '12', 'g', '1'] == final_ctx
 
 
 def test_compress_context_initial_context():
-    tokenized = [tokens.Paragraph(paragraph='q')]
+    tokenized = [tokens.Paragraph.make(paragraph='q')]
     converted, _ = amdparser.compress_context(
         tokenized, ['111', None, '12'])
     assert converted == [
-        tokens.Paragraph(part='111', section='12', paragraph='q')]
+        tokens.Paragraph.make(part='111', section='12', paragraph='q')]
 
 
 def test_compress_context_interpretations():
     tokenized = [
         tokens.Context(['123', 'Interpretations']),
-        tokens.Paragraph(section='12', paragraphs=['a', '2', 'iii']),
-        tokens.Paragraph(is_interp=True, paragraphs=[None, '3', 'v']),
+        tokens.Paragraph.make(section='12', paragraphs=['a', '2', 'iii']),
+        tokens.Paragraph.make(is_interp=True, paragraphs=[None, '3', 'v']),
         tokens.Context([None, 'Appendix:R']),
-        tokens.Paragraph(is_interp=True, paragraphs=[None, '5'])
+        tokens.Paragraph.make(is_interp=True, paragraphs=[None, '5'])
     ]
     converted, _ = amdparser.compress_context(tokenized, [])
     assert converted == [
-        tokens.Paragraph(part='123', is_interp=True, section='12',
-                         paragraphs=['(a)(2)(iii)', '3', 'v']),
+        tokens.Paragraph.make(part='123', is_interp=True, section='12',
+                              paragraphs=['(a)(2)(iii)', '3', 'v']),
         #   None because we are missing a layer
-        tokens.Paragraph(part='123', is_interp=True, section='Appendix:R',
-                         paragraphs=[None, '5'])
+        tokens.Paragraph.make(part='123', is_interp=True, section='Appendix:R',
+                              paragraphs=[None, '5'])
     ]
 
 
 def test_compress_context_in_tokenlists():
     tokenized = [
         tokens.Context(['123', 'Interpretations']),
-        tokens.Paragraph(part='123', section='23', paragraph='a'),
+        tokens.Paragraph.make(part='123', section='23', paragraph='a'),
         tokens.Verb(tokens.Verb.PUT, True),
         tokens.TokenList([
             tokens.Verb(tokens.Verb.POST, True),
-            tokens.Paragraph(part='123', section='23',
-                             paragraphs=['a', '1']),
-            tokens.Paragraph(paragraphs=[None, None, 'i']),
-            tokens.Paragraph(section='23', paragraph='b')])]
+            tokens.Paragraph.make(part='123', section='23',
+                                  paragraphs=['a', '1']),
+            tokens.Paragraph.make(paragraphs=[None, None, 'i']),
+            tokens.Paragraph.make(section='23', paragraph='b')])]
     assert amdparser.compress_context_in_tokenlists(tokenized) == [
         tokens.Context(['123', 'Interpretations']),
-        tokens.Paragraph(part='123', section='23', paragraph='a'),
+        tokens.Paragraph.make(part='123', section='23', paragraph='a'),
         tokens.Verb(tokens.Verb.PUT, True),
         tokens.TokenList([
             tokens.Verb(tokens.Verb.POST, True),
-            tokens.Paragraph(part='123', section='23',
-                             paragraphs=['a', '1']),
-            tokens.Paragraph(part='123', section='23',
-                             paragraphs=['a', '1', 'i']),
-            tokens.Paragraph(part='123', section='23', paragraph='b')])
+            tokens.Paragraph.make(part='123', section='23',
+                                  paragraphs=['a', '1']),
+            tokens.Paragraph.make(part='123', section='23',
+                                  paragraphs=['a', '1', 'i']),
+            tokens.Paragraph.make(part='123', section='23', paragraph='b')])
     ]
 
 
@@ -144,15 +145,15 @@ def test_separate_tokenlist():
             tokens.Verb(tokens.Verb.MOVE, active=True),
             tokens.Context([None, '2'])
         ]),
-        tokens.Paragraph(sub='3'),
-        tokens.TokenList([tokens.Paragraph(section='b')])
+        tokens.Paragraph.make(sub='3'),
+        tokens.TokenList([tokens.Paragraph.make(section='b')])
     ]
     assert amdparser.separate_tokenlist(tokenized) == [
         tokens.Context(['1']),
         tokens.Verb(tokens.Verb.MOVE, active=True),
         tokens.Context([None, '2']),
-        tokens.Paragraph(sub='3'),
-        tokens.Paragraph(section='b')
+        tokens.Paragraph.make(sub='3'),
+        tokens.Paragraph.make(section='b')
     ]
 
 
@@ -167,9 +168,9 @@ def test_context_to_paragraph():
     assert amdparser.context_to_paragraph(tokenized) == [
         tokens.Context(['1']),
         tokens.Verb(tokens.Verb.PUT, active=True),
-        tokens.Paragraph(part='2'),
+        tokens.Paragraph.make(part='2'),
         tokens.Context(['3'], certain=True),
-        tokens.Paragraph(part='4')
+        tokens.Paragraph.make(part='4')
     ]
 
 
@@ -177,7 +178,7 @@ def test_context_to_paragraph_exceptions1():
     tokenized = [
         tokens.Verb(tokens.Verb.PUT, active=True),
         tokens.Context(['2']),
-        tokens.Paragraph(part='3')
+        tokens.Paragraph.make(part='3')
     ]
     assert tokenized == amdparser.context_to_paragraph(tokenized)
 
@@ -186,7 +187,7 @@ def test_context_to_paragraph_exceptions2():
     tokenized = [
         tokens.Verb(tokens.Verb.PUT, active=True),
         tokens.Context(['2']),
-        tokens.TokenList([tokens.Paragraph(part='3')])
+        tokens.TokenList([tokens.Paragraph.make(part='3')])
     ]
     assert tokenized == amdparser.context_to_paragraph(tokenized)
 
@@ -235,8 +236,8 @@ def test_switch_passive3():
 
 def _paragraph_token_list():
     return tokens.TokenList([
-        tokens.Paragraph(part='200', sub='1', section='a'),
-        tokens.Paragraph(part='200', sub='1', section='b')
+        tokens.Paragraph.make(part='200', sub='1', section='a'),
+        tokens.Paragraph.make(part='200', sub='1', section='b')
     ])
 
 
@@ -272,7 +273,7 @@ def test_subpart_designation_no_subpart():
 
 def test_make_subpart_designation_instructions():
     token_list = _paragraph_token_list()
-    subpart_token = tokens.Paragraph(subpart='J')
+    subpart_token = tokens.Paragraph.make(subpart='J')
     tokenized = [token_list, subpart_token]
     with XMLBuilder('EREGS_INSTRUCTIONS') as ctx:
         ctx.MOVE_INTO_SUBPART(label='200-1-a', destination='200-Subpart:J')
@@ -283,14 +284,14 @@ def test_make_subpart_designation_instructions():
 
 
 def test_get_destination_normal():
-    subpart_token = tokens.Paragraph(part='205', subpart='A')
+    subpart_token = tokens.Paragraph.make(part='205', subpart='A')
     tokenized = [subpart_token]
 
     assert amdparser.get_destination(tokenized, '205') == '205-Subpart:A'
 
 
 def test_get_destination_no_reg_part():
-    subpart_token = tokens.Paragraph(subpart='J')
+    subpart_token = tokens.Paragraph.make(subpart='J')
     tokenized = [subpart_token]
 
     assert amdparser.get_destination(tokenized, '205') == '205-Subpart:J'
@@ -300,13 +301,14 @@ def test_switch_part_context():
     initial_context = ['105', '2']
 
     tokenized = [
-        tokens.Paragraph(part='203', sub='2', section='x'),
+        tokens.Paragraph.make(part='203', sub='2', section='x'),
         tokens.Verb(tokens.Verb.DESIGNATE, True)]
 
     assert amdparser.switch_part_context(tokenized, initial_context) == []
 
     tokenized = [
-        tokens.Paragraph(part='105', sub='4', section='j', paragraph='iv'),
+        tokens.Paragraph.make(part='105', sub='4', section='j',
+                              paragraph='iv'),
         tokens.Verb(tokens.Verb.DESIGNATE, True)]
 
     assert initial_context == amdparser.switch_part_context(tokenized,
@@ -333,7 +335,7 @@ def test_switch_level2_context():
     tokenized.append(context)
     assert transform(tokenized, initial) == initial
 
-    context.certain = True
+    tokenized[-1] = attr.assoc(context, certain=True)
     assert transform(tokenized, initial) == ['105', 'Subpart:G', '2']
 
     # Don't try to proceed if multiple contexts are present
@@ -343,7 +345,7 @@ def test_switch_level2_context():
 
 def test_remove_false_deletes():
     tokenized = [
-        tokens.Paragraph(part='444'),
+        tokens.Paragraph.make(part='444'),
         tokens.Verb(tokens.Verb.DELETE, active=True)]
 
     text = "Remove the semi-colong at the end of paragraph 444"
@@ -353,35 +355,35 @@ def test_remove_false_deletes():
 
 def test_multiple_moves_success():
     tokenized = [
-        tokens.TokenList([tokens.Paragraph(part='444', sub='1'),
-                          tokens.Paragraph(part='444', sub='2')]),
+        tokens.TokenList([tokens.Paragraph.make(part='444', sub='1'),
+                          tokens.Paragraph.make(part='444', sub='2')]),
         tokens.Verb(tokens.Verb.MOVE, active=False),
-        tokens.TokenList([tokens.Paragraph(part='444', sub='3'),
-                          tokens.Paragraph(part='444', sub='4')])]
+        tokens.TokenList([tokens.Paragraph.make(part='444', sub='3'),
+                          tokens.Paragraph.make(part='444', sub='4')])]
     tokenized = amdparser.multiple_moves(tokenized)
     assert tokenized == [
         tokens.Verb(tokens.Verb.MOVE, active=True),
-        tokens.Paragraph(part='444', sub='1'),
-        tokens.Paragraph(part='444', sub='3'),
+        tokens.Paragraph.make(part='444', sub='1'),
+        tokens.Paragraph.make(part='444', sub='3'),
         tokens.Verb(tokens.Verb.MOVE, active=True),
-        tokens.Paragraph(part='444', sub='2'),
-        tokens.Paragraph(part='444', sub='4')
+        tokens.Paragraph.make(part='444', sub='2'),
+        tokens.Paragraph.make(part='444', sub='4')
     ]
 
 
 def test_multiple_moved_not_even_number_of_elements_on_either_side():
     tokenized = [
-        tokens.TokenList([tokens.Paragraph(part='444', sub='1'),
-                          tokens.Paragraph(part='444', sub='2')]),
+        tokens.TokenList([tokens.Paragraph.make(part='444', sub='1'),
+                          tokens.Paragraph.make(part='444', sub='2')]),
         tokens.Verb(tokens.Verb.MOVE, active=False),
-        tokens.TokenList([tokens.Paragraph(part='444', sub='3')])]
+        tokens.TokenList([tokens.Paragraph.make(part='444', sub='3')])]
     assert tokenized == amdparser.multiple_moves(tokenized)
 
 
 def test_multiple_moves_paragraphs_on_either_side_of_a_move():
-    tokenized = [tokens.Paragraph(part='444', sub='1'),
+    tokenized = [tokens.Paragraph.make(part='444', sub='1'),
                  tokens.Verb(tokens.Verb.MOVE, active=False),
-                 tokens.Paragraph(part='444', sub='3')]
+                 tokens.Paragraph.make(part='444', sub='3')]
     assert tokenized == amdparser.multiple_moves(tokenized)
 
 
