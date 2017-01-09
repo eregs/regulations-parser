@@ -18,7 +18,7 @@ from regparser.commands.compare_to import compare_to
 from regparser.web.management.commands.eregs import cli as eregs_cli
 
 
-@attr.attrs
+@attr.attrs(slots=True, frozen=True)
 class Target(object):
     title = attr.attrib()
     parts = attr.attrib()

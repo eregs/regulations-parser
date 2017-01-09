@@ -3,31 +3,27 @@ import operator
 import string
 from datetime import date
 
+import attr
 from pyparsing import Optional, Suppress, Word
 from six.moves import reduce
 
 from regparser.grammar import utils
 
 
-class EffectiveDate:
-    pass
+@attr.attrs(slots=True, frozen=True)
+class EffectiveDate(object):
+    """Placeholder token"""
 
 
-class Notice:
-    def __init__(self, volume, page):
-        self.volume = volume
-        self.page = page
-
-    def __repr__(self):
-        return 'Notice(volume={0}, page={1})'.format(
-            repr(self.volume), repr(self.page))
-
-    def __eq__(self, other):
-        return isinstance(other, Notice) and repr(self) == repr(other)
+@attr.attrs(slots=True, frozen=True)
+class Delayed(object):
+    """Placeholder token"""
 
 
-class Delayed:
-    pass
+@attr.attrs(slots=True, frozen=True)
+class Notice(object):
+    volume = attr.attrib()
+    page = attr.attrib()
 
 
 effective_date = (
