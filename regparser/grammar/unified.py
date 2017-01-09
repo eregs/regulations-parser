@@ -62,6 +62,7 @@ def appendix_section(match):
     else:
         return None
 
+
 appendix_with_section = QuickSearchable(
     atomic.appendix +
     '-' +
@@ -120,6 +121,7 @@ def make_multiple(head, tail=None, wrap_tail=False):
     if wrap_tail:
         tail = Optional(Suppress('(')) + tail + Optional(Suppress(')'))
     return QuickSearchable(head + OneOrMore(tail))
+
 
 _inner_non_comment = (
     any_depth_p |

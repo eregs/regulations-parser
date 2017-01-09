@@ -27,6 +27,8 @@ def _init_classes():
         for extension in ExtensionManager(old_namespace)
     })
     return classes
+
+
 LAYER_CLASSES = _init_classes()
 
 

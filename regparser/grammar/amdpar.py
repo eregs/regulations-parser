@@ -45,6 +45,7 @@ def generate_verb(word_list, verb, active):
         lambda m: tokens.Verb(verb, active, bool(m.and_prefix)))
     return grammar
 
+
 put_active = generate_verb(
     ['revising', 'revise', 'correcting', 'correct'],
     tokens.Verb.PUT, active=True)
@@ -357,6 +358,7 @@ def make_par_list(listify, force_text_field=False):
             pars.append(next_par)
         return tokens.TokenList(pars)
     return curried
+
 
 multiple_sections = (
     atomic.sections_marker +

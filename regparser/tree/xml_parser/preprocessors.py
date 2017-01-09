@@ -312,6 +312,8 @@ def preprocess_amdpars(xml):
             instructions, context = parse_amdpar(amdpar, context)
             amdpar.append(instructions)
             instructions.set('final_context', uncertain_label(context))
+
+
 preprocess_amdpars.plugin_order = 10    # Must be after move_last_amdpar
 
 
