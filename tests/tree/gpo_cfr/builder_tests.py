@@ -8,9 +8,11 @@ from regparser.tree.gpo_cfr import builder
 
 
 def test_get_title():
-    with XMLBuilder("PART") as ctx:
-        ctx.HD("regulation title")
+    with XMLBuilder() as ctx:
+        with ctx.PART():
+            ctx.HD("regulation title")
     assert builder.get_title(ctx.xml) == 'regulation title'
+    assert builder.get_title(ctx.xml[0]) == 'regulation title'
 
 
 @pytest.mark.parametrize('xml_str', [
@@ -21,6 +23,8 @@ def test_get_title():
 def test_get_reg_part(xml_str):
     """Test various formats for the Regulation part to be present in a
     CFR-XML document"""
+    assert builder.get_reg_part(etree.fromstring(xml_str)) == '204'
+    xml_str = '<SOME><NESTING>{0}</NESTING></SOME>'.format(xml_str)
     assert builder.get_reg_part(etree.fromstring(xml_str)) == '204'
 
 
