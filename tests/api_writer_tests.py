@@ -4,8 +4,8 @@ import shutil
 import tempfile
 from unittest import TestCase
 
-from regparser.api_writer import (
-    APIWriteContent, Client, FSWriteContent, GitWriteContent, Repo)
+from regparser.api_writer import (APIWriteContent, Client, FSWriteContent,
+                                  GitWriteContent, Repo)
 from regparser.notice.amdparser import Amendment
 from regparser.test_utils.http_mixin import HttpMixin
 from regparser.tree.struct import Node

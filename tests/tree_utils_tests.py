@@ -1,6 +1,6 @@
 # vim: set encoding=utf-8
-from functools import partial as mk_partial_fn
 import unittest
+from functools import partial as mk_partial_fn
 
 from lxml import etree
 

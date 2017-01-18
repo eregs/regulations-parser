@@ -1,12 +1,11 @@
 import logging
 
+import networkx
 from django.db import transaction
 from django.utils import timezone
-import networkx
 
-from regparser.web.index.models import (
-    Dependency, DependencyNode, Entry as DBEntry)
-
+from regparser.web.index.models import Entry as DBEntry
+from regparser.web.index.models import Dependency, DependencyNode
 
 logger = logging.getLogger(__name__)
 
@@ -14,7 +13,7 @@ logger = logging.getLogger(__name__)
 class Missing(Exception):
     def __init__(self, key, dependency):
         super(Missing, self).__init__(
-            "Missing dependency. {} is needed for {}".format(
+            "Missing dependency. {0} is needed for {1}".format(
                 dependency, key))
         self.dependency = dependency
         self.key = key
@@ -35,8 +34,8 @@ class Graph(object):
         """Convert the in-memory self._graph into db records"""
         Dependency.objects.all().delete()
 
-        new_vertices = set(self._graph.nodes()) - set(
-            node.label for node in DependencyNode.objects.all())
+        existing = {node.label for node in DependencyNode.objects.all()}
+        new_vertices = set(self._graph.nodes()) - existing
         DependencyNode.objects.bulk_create(
             DependencyNode(label=label) for label in new_vertices)
 

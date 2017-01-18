@@ -1,12 +1,10 @@
-# vim: set encoding=utf-8
-from pyparsing import (
-    LineStart, Literal, OneOrMore, Optional, Regex, SkipTo, srange, Suppress,
-    Word, ZeroOrMore)
+# -*- coding: utf-8 -*-
+from pyparsing import (LineStart, Literal, OneOrMore, Optional, Regex, SkipTo,
+                       Suppress, Word, ZeroOrMore, srange)
 
 from regparser.grammar import atomic, unified
-from regparser.grammar.utils import (
-    DocLiteral, keep_pos, Marker, QuickSearchable)
-
+from regparser.grammar.utils import (DocLiteral, Marker, QuickSearchable,
+                                     keep_pos)
 
 smart_quotes = QuickSearchable(
     Suppress(DocLiteral(u'“', "left-smart-quote")) +

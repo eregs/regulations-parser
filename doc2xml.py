@@ -18,12 +18,14 @@ Known limitations:
     * Only processes the preamble data, not the CFR changes
 """     # noqa
 from __future__ import print_function
-from itertools import tee
+
 import re
 import sys
+from itertools import tee
+
+from lxml import etree
 
 import docx
-from lxml import etree
 
 h2_re = re.compile('[A-Z]\.')
 h3_re = re.compile('\d\d?\.')
@@ -178,6 +180,6 @@ def parse(filename):
 
 if __name__ == '__main__':
     if len(sys.argv) != 2:
-        print("Usage: python doc2xml.py file.docx")
+        print("Usage: python doc2xml.py file.docx")    # noqa 
     else:
-        print(etree.tounicode(parse(sys.argv[1]), pretty_print=True))
+        print(etree.tounicode(parse(sys.argv[1]), pretty_print=True))   # noqa

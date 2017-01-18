@@ -1,10 +1,9 @@
 import hashlib
 import re
 
+from regparser.search import segments
 from regparser.tree import struct
 from regparser.tree.depth import markers as mtypes
-from regparser.search import segments
-
 
 p_levels = [list(mtypes.lower), list(mtypes.ints), list(mtypes.roman),
             list(mtypes.upper), list(mtypes.em_ints), list(mtypes.em_roman)]
@@ -95,10 +94,10 @@ class ParagraphParser():
         if len(p_levels) <= p_level or len(p_levels[p_level]) <= paragraph:
             return None
         match_starts = [(m.start(), m.end()) for m in re.finditer(
-            self.p_regex % p_levels[p_level][paragraph], text)]
+            self.p_regex.format(p_levels[p_level][paragraph]), text)]
         match_starts = [
             (start, end) for start, end in match_starts
-            if all([end < es or start > ee for es, ee in exclude])]
+            if all(end < es or start > ee for es, ee in exclude)]
 
         if len(match_starts) == 0:
             return None

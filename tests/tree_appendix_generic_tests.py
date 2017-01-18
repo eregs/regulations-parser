@@ -1,5 +1,6 @@
-from regparser.tree.appendix import generic
 from unittest import TestCase
+
+from regparser.tree.appendix import generic
 
 
 class DepthAppendixGenericTest(TestCase):

@@ -9,8 +9,7 @@ from regparser.index import dependency, entry
 from regparser.notice.fake import build as build_fake_notice
 from regparser.tree.gpo_cfr import builder
 
-
-_version_id = '{}-annual-{}'.format
+_version_id = '{0}-annual-{1}'.format
 logger = logging.getLogger(__name__)
 
 

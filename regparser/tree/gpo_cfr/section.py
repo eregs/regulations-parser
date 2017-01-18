@@ -7,13 +7,14 @@ import six
 from regparser.citations import remove_citation_overlaps
 from regparser.grammar import unified
 from regparser.grammar.utils import QuickSearchable
-from regparser.tree.depth import markers as mtypes, optional_rules
+from regparser.tree.depth import markers as mtypes
+from regparser.tree.depth import optional_rules
 from regparser.tree.paragraph import p_level_of, p_levels
 from regparser.tree.reg_text import build_empty_part
 from regparser.tree.struct import Node
-from regparser.tree.xml_parser import (
-    flatsubtree_processor, import_category, matchers, note_processor,
-    paragraph_processor, tree_utils)
+from regparser.tree.xml_parser import (flatsubtree_processor, import_category,
+                                       matchers, note_processor,
+                                       paragraph_processor, tree_utils)
 
 
 def _deeper_level(first, second):
@@ -116,7 +117,7 @@ def build_from_section(reg_part, section_xml):
     subject_text = (subject_xml[0].text or '').strip()
 
     section_nums = []
-    for match in re.finditer(r'%s\.(\d+[a-z]*)' % reg_part, section_no):
+    for match in re.finditer(r'{0}\.(\d+[a-z]*)'.format(reg_part), section_no):
         secnum_candidate = match.group(1)
         if secnum_candidate.isdigit():
             secnum_candidate = int(secnum_candidate)
@@ -142,10 +143,10 @@ def build_from_section(reg_part, section_xml):
         tagged_section_text = section_xml.text
 
         if section_span_end:
-            section_title = u"§§ {}.{}-{}".format(
+            section_title = u"§§ {0}.{1}-{2}".format(
                 reg_part, section_number, section_span_end)
         else:
-            section_title = u"§ {}.{}".format(reg_part, section_number)
+            section_title = u"§ {0}.{1}".format(reg_part, section_number)
         if subject_text:
             section_title += " " + subject_text
 
@@ -186,11 +187,11 @@ def split_by_markers(xml):
     tagged_text = tree_utils.get_node_text_tags_preserved(xml).strip()
     markers_list = get_markers(tagged_text, next_marker(xml))
 
-    plain_markers = ['({})'.format(mtypes.deemphasize(m))
+    plain_markers = ['({0})'.format(mtypes.deemphasize(m))
                      for m in markers_list]
     node_texts = tree_utils.split_text(plain_text, plain_markers)
     tagged_texts = tree_utils.split_text(
-        tagged_text, ['({})'.format(m) for m in markers_list])
+        tagged_text, ['({0})'.format(m) for m in markers_list])
     if len(node_texts) > len(markers_list):     # due to initial MARKERLESS
         markers_list.insert(0, mtypes.MARKERLESS)
     return list(zip(markers_list, node_texts, tagged_texts))

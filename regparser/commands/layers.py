@@ -6,7 +6,6 @@ from stevedore.extension import ExtensionManager
 from regparser.commands import utils
 from regparser.index import dependency, entry
 
-
 logger = logging.getLogger(__name__)
 
 
@@ -15,7 +14,7 @@ def _init_classes():
     in a function"""
     classes = {}
     for doc_type in ('cfr', 'preamble'):    # @todo - make this dynamic
-        namespace = 'eregs_ns.parser.layer.{}'.format(doc_type)
+        namespace = 'eregs_ns.parser.layer.{0}'.format(doc_type)
         classes[doc_type] = {
             extension.name: extension.plugin
             for extension in ExtensionManager(namespace)
@@ -28,6 +27,8 @@ def _init_classes():
         for extension in ExtensionManager(old_namespace)
     })
     return classes
+
+
 LAYER_CLASSES = _init_classes()
 
 

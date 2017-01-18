@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
+
 import string
 
 from regparser.grammar.unified import marker_subpart_title
@@ -42,8 +43,9 @@ def subjgrp_label(starting_title, letter_list):
         suffix_pos = 0
         pos = min([2, len(word)])
         while candidate_title == "" or candidate_title in letter_list:
-            suffix = '-%s' % suffixes[suffix_pos] if suffix_pos else ''
-            candidate_title = '%s%s%s' % (word[:pos], terminator, suffix)
+            suffix = '-{0}'.format(suffixes[suffix_pos]) if suffix_pos else ''
+            candidate_title = '{0}{1}{2}'.format(word[:pos], terminator,
+                                                 suffix)
 
             if terminator:
                 terminator = ""
@@ -63,13 +65,13 @@ def subjgrp_label(starting_title, letter_list):
         separators = ("", ".", "_")
         separator_pos, suffix_pos = 0, 0
         num_letters = 1
-        longest = max([len(word) for word in words])
+        longest = max(len(word) for word in words)
         while candidate_title == "" or candidate_title in letter_list:
             sep = separators[separator_pos]
             suffix = suffixes[suffix_pos]
-            suffix = "-%s" % suffix if suffix else ""
-            suffix = "%s%s" % (sep, suffix) if sep == "." else suffix
-            candidate_title = "%s%s" % (sep.join(
+            suffix = "-{0}".format(suffix) if suffix else ""
+            suffix = "{0}{1}".format(sep, suffix) if sep == "." else suffix
+            candidate_title = "{0}{1}".format(sep.join(
                 word[:num_letters] for word in words), suffix)
             if separator_pos + 1 < len(separators):
                 separator_pos = separator_pos + 1

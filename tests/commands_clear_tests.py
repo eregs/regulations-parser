@@ -1,8 +1,8 @@
 import os
 
-from click.testing import CliRunner
 import httpretty
 import pytest
+from click.testing import CliRunner
 
 from regparser.commands.clear import clear
 from regparser.index import dependency, entry
@@ -76,5 +76,5 @@ def test_deletes_can_be_focused(tmpdir_setup):
 
     CliRunner().invoke(clear, ['delroot', 'root/delsub'])
 
-    assert set(os.sep.join(c.path)
-               for c in entry.Entry().sub_entries()) == set(to_keep)
+    assert {os.sep.join(c.path)
+            for c in entry.Entry().sub_entries()} == set(to_keep)

@@ -1,7 +1,7 @@
 from regparser.tree.depth import markers as mtypes
 from regparser.tree.struct import Node
-from regparser.tree.xml_parser import (
-    paragraph_processor, simple_hierarchy_processor, us_code)
+from regparser.tree.xml_parser import (paragraph_processor,
+                                       simple_hierarchy_processor, us_code)
 
 
 class FlatParagraphProcessor(paragraph_processor.ParagraphProcessor):

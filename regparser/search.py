@@ -1,9 +1,11 @@
+from __future__ import unicode_literals
+
 import re
 
 
 def find_start(text, heading, index):
     """Find the start of an appendix, supplement, etc."""
-    match = re.search(r'^%s %s' % (heading, index), text, re.MULTILINE)
+    match = re.search(r'^{0} {1}'.format(heading, index), text, re.MULTILINE)
     if match:
         return match.start()
 

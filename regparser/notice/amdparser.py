@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-from itertools import takewhile
 import logging
+from itertools import takewhile
 
+import attr
 from lxml import etree
 
 from regparser.grammar import amdpar, tokens
 from regparser.tree.struct import Node
 from regparser.tree.xml_parser.tree_utils import get_node_text
-
 
 logger = logging.getLogger(__name__)
 
@@ -81,10 +81,12 @@ def compress_context_in_tokenlists(tokenized):
             for subtoken in token.tokens:
                 if hasattr(subtoken, 'label'):
                     label_so_far = compress(label_so_far, subtoken.label)
-                    subtokens.append(subtoken.copy(label=label_so_far))
+                    subtokens.append(
+                        attr.assoc(subtoken, label=label_so_far))
                 else:
                     subtokens.append(subtoken)
-            final.append(token.copy(tokens=subtokens))
+            final.append(
+                attr.assoc(token, tokens=subtokens))
         else:
             final.append(token)
     return final
@@ -101,20 +103,24 @@ def resolve_confused_context(tokenized, initial_context):
                 len(token.label) > 1
             )
             if par_with_label and token.label[1] is None:
-                final_tokens.append(token.copy(
+                final_tokens.append(attr.assoc(
+                    token,
                     label=[token.label[0], 'Interpretations', token.label[2],
                            '(' + ')('.join(l for l in token.label[3:] if l) +
-                           ')']))
+                           ')']
+                ))
             elif par_with_label and token.label[1].startswith('Appendix:'):
-                final_tokens.append(token.copy(
+                final_tokens.append(attr.assoc(
+                    token,
                     label=[token.label[0], 'Interpretations',
                            token.label[1][len('Appendix:'):],
                            '(' + ')('.join(l for l in token.label[2:] if l) +
-                           ')']))
+                           ')']
+                ))
             elif token.match(tokens.TokenList):
                 sub_tokens = resolve_confused_context(token.tokens,
                                                       initial_context)
-                final_tokens.append(token.copy(tokens=sub_tokens))
+                final_tokens.append(attr.assoc(token, tokens=sub_tokens))
             else:
                 final_tokens.append(token)
         return final_tokens
@@ -180,7 +186,7 @@ def multiple_moves(tokenized):
                     and len(el0.tokens) == len(el2.tokens)):
                 skip = 2
                 for tidx in range(len(el0.tokens)):
-                    converted.append(el1.copy(active=True))
+                    converted.append(attr.assoc(el1, active=True))
                     converted.append(el0.tokens[tidx])
                     converted.append(el2.tokens[tidx])
             else:
@@ -201,16 +207,18 @@ def switch_passive(tokenized):
             lambda t: not isinstance(t, tokens.Verb), remaining))
         if len(to_add) < len(remaining):
             #   also take the verb
-            verb = remaining[len(to_add)].copy()
-            to_add.append(verb)
+            verb = remaining[len(to_add)]
             #   switch verb to the beginning
             if not verb.active:
+                verb = attr.assoc(verb, active=True)
+                to_add.append(verb)
                 to_add = to_add[-1:] + to_add[:-1]
-                verb.active = True
                 #   may need to grab one more if the verb is move
                 if (verb.verb == tokens.Verb.MOVE and
                         len(to_add) < len(remaining)):
                     to_add.append(remaining[len(to_add)])
+            else:
+                to_add.append(verb)
         converted.extend(to_add)
         remaining = remaining[len(to_add):]
     return converted
@@ -245,7 +253,7 @@ def and_token_resolution(tokenized):
                 and t3.match(tokens.AndToken)
                 and t4.match(tokens.Paragraph, tokens.TokenList)):
             final_tokens.append(t1)
-            final_tokens.append(tokens.Paragraph(t2.label))
+            final_tokens.append(tokens.Paragraph.make(t2.label))
             final_tokens.append(t4)
             idx += 3    # not 4 as one will appear below
         elif t1 != tokens.AndToken:
@@ -274,7 +282,7 @@ def subpart_designation(tokenized):
         token_list = []
         for token in tokenized:
             if isinstance(token, tokens.Context):
-                token_list.append(tokens.Paragraph(token.label))
+                token_list.append(tokens.Paragraph.make(token.label))
             else:
                 token_list.append(token)
         return token_list, True
@@ -300,7 +308,7 @@ def context_to_paragraph(tokenized):
         if isinstance(token, tokens.Verb):
             verb_seen = True
         elif verb_seen and token.match(tokens.Context, certain=False):
-            converted[idx] = tokens.Paragraph(token.label)
+            converted[idx] = tokens.Paragraph.make(token.label)
     return converted
 
 
@@ -406,7 +414,7 @@ def compress_context(tokenized, initial_context):
             continue
         elif isinstance(token, tokens.Paragraph):
             context = compress(context, token.label)
-            token.label = context
+            token = attr.assoc(token, label=context)
         converted.append(token)
     return converted, context
 
@@ -556,9 +564,10 @@ class Amendment(object):
 
     def __repr__(self):
         if self.destination:
-            return '(%s, %s, %s)' % (self.action, self.label, self.destination)
+            return '({0}, {1}, {2})'.format(self.action, self.label,
+                                            self.destination)
         else:
-            return '(%s, %s)' % (self.action, self.label)
+            return '({0}, {1})'.format(self.action, self.label)
 
     def __eq__(self, other):
         return (isinstance(other, self.__class__) and

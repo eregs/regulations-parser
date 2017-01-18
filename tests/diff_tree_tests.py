@@ -1,8 +1,8 @@
 # vim: set encoding=utf-8
 from unittest import TestCase
 
-from regparser.tree.struct import FrozenNode
 from regparser.diff import tree as difftree
+from regparser.tree.struct import FrozenNode
 
 
 class DiffTreeTest(TestCase):

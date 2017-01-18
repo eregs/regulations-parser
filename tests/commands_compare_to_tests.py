@@ -54,7 +54,7 @@ class CommandsCompareToTests(HttpMixin, TestCase):
         self.assertEqual(1, len(list(gen('', [os.path.join(root, 'f')]))))
         self.assertEqual(6, len(list(gen('', [root]))))
 
-    def run_compare(self, local_path, remote_url, input=None):
+    def run_compare(self, local_path, remote_url, input_val=None):
         """Our CLI library, Click, is easier to test via click.commands. So we
         create one to wrap compare_to.compare, run it, and return the
         results"""
@@ -63,7 +63,7 @@ class CommandsCompareToTests(HttpMixin, TestCase):
         def wrapper():
             compare_to.compare(local_path, remote_url)
 
-        return CliRunner().invoke(wrapper, input=input)
+        return CliRunner().invoke(wrapper, input=input_val)
 
     def test_compare_404(self):
         """If the remote file doesn't exist, we should be notified"""
@@ -93,13 +93,13 @@ class CommandsCompareToTests(HttpMixin, TestCase):
 
         # No, I do not want to see diffs
         result = self.run_compare(local_path, 'http://example.com/file.json',
-                                  input="n\n")
+                                  input_val="n\n")
         self.assertTrue('Content differs' in result.output)
         self.assertFalse('key' in result.output)
 
         # Yes, I do want to see the diffs
         result = self.run_compare(local_path, 'http://example.com/file.json',
-                                  input="Y\n")
+                                  input_val="Y\n")
         self.assertTrue('Content differs' in result.output)
         self.assertTrue('-  "a"' in result.output)
         self.assertTrue('+  "b"' in result.output)

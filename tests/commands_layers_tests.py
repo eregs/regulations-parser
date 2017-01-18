@@ -1,10 +1,10 @@
 from datetime import date
 from unittest import TestCase
 
-from click.testing import CliRunner
-from mock import patch
 import pytest
 import six
+from click.testing import CliRunner
+from mock import patch
 
 from regparser.commands import layers
 from regparser.history.versions import Version

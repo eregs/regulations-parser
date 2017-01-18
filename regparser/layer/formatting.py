@@ -1,9 +1,10 @@
 """Find and abstracts formatting information from the regulation tree. In many
 ways, this is like a markdown parser."""
 import abc
-from collections import OrderedDict
 import re
+from collections import OrderedDict
 
+import six
 from lxml import etree
 
 from regparser.layer.layer import Layer
@@ -159,13 +160,11 @@ def table_xml_to_data(xml_node):
     return table_data
 
 
-class PlaintextFormatData(object):
+class PlaintextFormatData(six.with_metaclass(abc.ABCMeta)):
     """Base class for formatting information which can be derived from the
     plaintext of a regulation node"""
-    __metaclass__ = abc.ABCMeta
-
     @abc.abstractproperty
-    def REGEX(self):
+    def REGEX(self):    # noqa - this is a property
         """Regular expression used to find matches in the plain text"""
         raise NotImplementedError()
 
@@ -261,7 +260,7 @@ def node_to_table_xml_els(node):
         # tagged_text isn't quite XML -- it's often a fragment with unescaped
         # characters. Clean it up before searching it
         tagged_text = node.tagged_text.replace('&', '&amp;')
-        tagged_text = u'<ROOT>{}</ROOT>'.format(tagged_text)
+        tagged_text = u'<ROOT>{0}</ROOT>'.format(tagged_text)
         root_xml_el = etree.fromstring(tagged_text)
 
     return root_xml_el.xpath('self::GPOTABLE|.//GPOTABLE')

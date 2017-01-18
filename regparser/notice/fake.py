@@ -1,7 +1,7 @@
 """Generate a minimal notice without hitting the FR"""
-from regparser.notice.xml import NoticeXML, TitlePartsRef
-
 from lxml import etree
+
+from regparser.notice.xml import NoticeXML, TitlePartsRef
 
 
 def build(doc_number, effective_on, cfr_title, cfr_part):

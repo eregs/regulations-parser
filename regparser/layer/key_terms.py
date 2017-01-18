@@ -1,10 +1,10 @@
 from __future__ import unicode_literals
+
 import re
 
 from regparser.layer.layer import Layer
 from regparser.layer.paragraph_markers import marker_of
 from regparser.layer.terms import Terms
-
 
 KEYTERM_RE = re.compile(r'<E T="03">(?P<keyterm>[^<]*?)</E>', re.UNICODE)
 TRIM_FROM_KEYTERM = ['See also', 'See']

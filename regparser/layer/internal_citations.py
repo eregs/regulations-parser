@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import logging
 
-from regparser.citations import internal_citations, Label
+from regparser.citations import Label, internal_citations
 from regparser.layer.layer import Layer
 from regparser.tree.struct import walk
 

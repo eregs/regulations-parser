@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 from unittest import TestCase
 
-from mock import patch
 import six
+from mock import patch
 
 from regparser.notice import amendments, changes
 from regparser.notice.amdparser import Amendment

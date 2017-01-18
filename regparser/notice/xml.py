@@ -1,16 +1,16 @@
 """Functions for processing the xml associated with the Federal Register's
 notices"""
-from collections import namedtuple
-from datetime import date, datetime
 import logging
 import os
+from collections import namedtuple
+from datetime import date, datetime
 
+import requests
 from cached_property import cached_property
 from lxml import etree
-import requests
 from six.moves.urllib.parse import urlparse
 
-
+import settings
 from regparser import regs_gov
 from regparser.grammar.unified import notice_cfr_p
 from regparser.history.delays import delays_in_sentence
@@ -18,7 +18,6 @@ from regparser.index.http_cache import http_client
 from regparser.notice.amendments import fetch_amendments
 from regparser.notice.dates import fetch_dates
 from regparser.tree.xml_parser.xml_wrapper import XMLWrapper
-import settings
 
 logger = logging.getLogger(__name__)
 
@@ -83,7 +82,7 @@ class NoticeXML(XMLWrapper):
             value = value.isoformat()
         if value is None:
             value = ''
-        dates_tag.attrib["eregs-{}-date".format(date_type)] = value
+        dates_tag.attrib["eregs-{0}-date".format(date_type)] = value
 
     def derive_rins(self):
         """Extract regulatory id numbers from the XML (in the RINs tag)"""
@@ -193,7 +192,7 @@ class NoticeXML(XMLWrapper):
     def _get_date_attr(self, date_type):
         """Pulls out the date set in `set_date_attr`, as a datetime.date. If
         not present, returns None"""
-        value = self.xpath(".//DATES")[0].get('eregs-{}-date'.format(
+        value = self.xpath(".//DATES")[0].get('eregs-{0}-date'.format(
             date_type))
         if value:
             return datetime.strptime(value, "%Y-%m-%d").date()
@@ -340,7 +339,7 @@ class NoticeXML(XMLWrapper):
 
     @property
     def fr_citation(self):
-        return '{} FR {}'.format(self.fr_volume, self.start_page)
+        return '{0} FR {1}'.format(self.fr_volume, self.start_page)
 
     @property
     def title(self):

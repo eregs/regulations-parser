@@ -1,12 +1,11 @@
-import os
 import json
 import logging
+import os
 
 import click
-from json_delta import udiff
 import requests
+from json_delta import udiff
 from six.moves.urllib.parse import urlparse
-
 
 logger = logging.getLogger(__name__)
 
@@ -46,7 +45,7 @@ def compare(local_path, remote_url, prompt=True):
         local = json.load(fp)
 
     if remote != local:
-        click.echo("Content differs: {} {}".format(local_path, remote_url))
+        click.echo("Content differs: {0} {1}".format(local_path, remote_url))
         if not prompt or click.confirm("Show diff?"):
             diffs_str = '\n'.join(udiff(remote, local))
             echo = click.echo_via_pager if prompt else click.echo
@@ -95,4 +94,4 @@ def compare_to(api_base, paths, prompt):
         api_base += "/"
 
     pairs = local_and_remote_generator(api_base, paths)
-    return any([compare(local, remote, prompt) for local, remote in pairs])
+    return any(compare(local, remote, prompt) for local, remote in pairs)

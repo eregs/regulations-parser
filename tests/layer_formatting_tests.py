@@ -396,7 +396,7 @@ def test_node_to_table_xml_els():
     can be an unescaped XML _fragment_"""
     escaped_str = '<GPOTABLE unique="id">Content &amp; stuff</GPOTABLE>'
     unescaped_str = '<GPOTABLE unique="id">Content & stuff</GPOTABLE>'
-    nested_str = '<P>Stuff <NESTED>{}</NESTED></P>'
+    nested_str = '<P>Stuff <NESTED>{0}</NESTED></P>'
     node1 = Node(source_xml=etree.fromstring(escaped_str))
     node2 = Node(source_xml=etree.fromstring(nested_str.format(escaped_str)))
     node3 = Node(tagged_text=unescaped_str)

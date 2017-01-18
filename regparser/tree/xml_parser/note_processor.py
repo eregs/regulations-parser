@@ -1,9 +1,10 @@
 import re
 
-from regparser.tree.depth import markers as mtypes, optional_rules
+from regparser.tree.depth import markers as mtypes
+from regparser.tree.depth import optional_rules
 from regparser.tree.struct import Node
-from regparser.tree.xml_parser import (
-    paragraph_processor, simple_hierarchy_processor)
+from regparser.tree.xml_parser import (paragraph_processor,
+                                       simple_hierarchy_processor)
 
 
 class IgnoreNotesHeader(paragraph_processor.BaseMatcher):

@@ -4,7 +4,7 @@
 import click
 
 from regparser.commands.dependency_resolver import DependencyResolver
-from regparser.federalregister import meta_data, FULL_NOTICE_FIELDS
+from regparser.federalregister import FULL_NOTICE_FIELDS, meta_data
 from regparser.index import dependency, entry
 from regparser.notice.build import build_notice
 

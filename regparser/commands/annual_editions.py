@@ -1,12 +1,11 @@
-from collections import namedtuple
 import logging
+from collections import namedtuple
 
 import click
 
 from regparser.history import annual
 from regparser.index import dependency, entry
 from regparser.tree import gpo_cfr
-
 
 LastVersionInYear = namedtuple('LastVersionInYear', ['version_id', 'year'])
 logger = logging.getLogger(__name__)

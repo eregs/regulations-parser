@@ -1,14 +1,14 @@
+import os
+import shutil
+import tempfile
 from contextlib import contextmanager
 from datetime import date
-import os
-import tempfile
-import shutil
 from unittest import TestCase
 
+import pytest
 from click.testing import CliRunner
 from lxml import etree
 from mock import Mock, patch
-import pytest
 
 from regparser.commands.write_to import transform_notice, write_to
 from regparser.history.versions import Version

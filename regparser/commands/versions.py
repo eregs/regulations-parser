@@ -1,14 +1,13 @@
-from collections import namedtuple
 import logging
-from operator import attrgetter, itemgetter
 import re
+from collections import namedtuple
+from operator import attrgetter, itemgetter
 
 import click
 
 from regparser.federalregister import fetch_notice_json
 from regparser.history.versions import Version
 from regparser.index import dependency, entry
-
 
 logger = logging.getLogger(__name__)
 

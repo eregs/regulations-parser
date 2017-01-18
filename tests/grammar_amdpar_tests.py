@@ -13,9 +13,9 @@ class GrammarAmdParTests(TestCase):
 
     def test_tokenlist_iteratable(self):
         token_list = tokens.TokenList([
-            tokens.Paragraph(part=1005, section=1),
-            tokens.Paragraph(part=1005, section=2),
-            tokens.Paragraph(part=1005, section=3)
+            tokens.Paragraph.make(part=1005, section=1),
+            tokens.Paragraph.make(part=1005, section=2),
+            tokens.Paragraph.make(part=1005, section=3)
         ])
 
         count = 1
@@ -30,7 +30,7 @@ class GrammarAmdParTests(TestCase):
         self.assertEqual(result, [
             tokens.Context(['9876', None, '1'], certain=True),
             tokens.Verb(tokens.Verb.PUT, active=True),
-            tokens.Paragraph(paragraph='b')
+            tokens.Paragraph.make(paragraph='b')
         ])
 
     def test_example2(self):
@@ -57,11 +57,11 @@ class GrammarAmdParTests(TestCase):
         self.assertEqual(result, [
             tokens.Verb(tokens.Verb.POST, active=True),
             tokens.TokenList([
-                tokens.Paragraph(appendix='E', section='11'),
-                tokens.Paragraph(appendix='E', section='12'),
-                tokens.Paragraph(appendix='E', section='13'),
-                tokens.Paragraph(appendix='E', section='14'),
-                tokens.Paragraph(appendix='E', section='15')
+                tokens.Paragraph.make(appendix='E', section='11'),
+                tokens.Paragraph.make(appendix='E', section='12'),
+                tokens.Paragraph.make(appendix='E', section='13'),
+                tokens.Paragraph.make(appendix='E', section='14'),
+                tokens.Paragraph.make(appendix='E', section='15')
             ])
         ])
 
@@ -81,13 +81,13 @@ class GrammarAmdParTests(TestCase):
         self.assertEqual(result, [
             tokens.Verb(tokens.Verb.POST, active=True),
             tokens.TokenList([
-                tokens.Paragraph(part='6363', section='30'),
-                tokens.Paragraph(part='6363', section='31'),
-                tokens.Paragraph(part='6363', section='32'),
-                tokens.Paragraph(part='6363', section='33'),
-                tokens.Paragraph(part='6363', section='34'),
-                tokens.Paragraph(part='6363', section='35'),
-                tokens.Paragraph(part='6363', section='36')
+                tokens.Paragraph.make(part='6363', section='30'),
+                tokens.Paragraph.make(part='6363', section='31'),
+                tokens.Paragraph.make(part='6363', section='32'),
+                tokens.Paragraph.make(part='6363', section='33'),
+                tokens.Paragraph.make(part='6363', section='34'),
+                tokens.Paragraph.make(part='6363', section='35'),
+                tokens.Paragraph.make(part='6363', section='36')
             ])
         ])
 
@@ -97,7 +97,7 @@ class GrammarAmdParTests(TestCase):
         result = parse_text(text)
         self.assertEqual(result, [
             tokens.Context([None, 'Subpart:A'], certain=True),
-            tokens.Paragraph(part='4444', section='3', paragraph='a'),
+            tokens.Paragraph.make(part='4444', section='3', paragraph='a'),
             tokens.Verb(tokens.Verb.PUT, active=False),
         ])
 
@@ -109,11 +109,11 @@ class GrammarAmdParTests(TestCase):
         self.assertEqual(result, [
             tokens.Context(['1234', 'Appendix:A'], certain=True),
             tokens.TokenList([
-                tokens.Paragraph(appendix='A', section='15'),
-                tokens.Paragraph(appendix='A', section='16'),
-                tokens.Paragraph(appendix='A', section='17'),
-                tokens.Paragraph(appendix='A', section='18'),
-                tokens.Paragraph(appendix='A', section='19')
+                tokens.Paragraph.make(appendix='A', section='15'),
+                tokens.Paragraph.make(appendix='A', section='16'),
+                tokens.Paragraph.make(appendix='A', section='17'),
+                tokens.Paragraph.make(appendix='A', section='18'),
+                tokens.Paragraph.make(appendix='A', section='19')
             ]),
             tokens.Verb(tokens.Verb.PUT, active=False),
         ])
@@ -127,15 +127,15 @@ class GrammarAmdParTests(TestCase):
             tokens.Context(['5397', None, '31']),
             tokens.Verb(tokens.Verb.PUT, active=True),
             tokens.TokenList([
-                tokens.Paragraph(paragraphs=['a', '3', 'ii']),
-                tokens.Paragraph(paragraphs=['a', '3', 'iii']),
-                tokens.Paragraph(paragraphs=['b', '3'])
+                tokens.Paragraph.make(paragraphs=['a', '3', 'ii']),
+                tokens.Paragraph.make(paragraphs=['a', '3', 'iii']),
+                tokens.Paragraph.make(paragraphs=['b', '3'])
             ]),
             tokens.Verb(tokens.Verb.POST, active=True),
             tokens.TokenList([
-                tokens.Paragraph(paragraphs=['a', '3', 'iv']),
-                tokens.Paragraph(paragraphs=['a', '5', 'iv']),
-                tokens.Paragraph(paragraphs=['b', '2', 'vii'])
+                tokens.Paragraph.make(paragraphs=['a', '3', 'iv']),
+                tokens.Paragraph.make(paragraphs=['a', '5', 'iv']),
+                tokens.Paragraph.make(paragraphs=['b', '2', 'vii'])
             ]),
         ])
 
@@ -143,9 +143,10 @@ class GrammarAmdParTests(TestCase):
         text = "paragraph (b) and the introductory text of paragraph (c)"
         result = parse_text(text)
         self.assertEqual(result, [
-            tokens.Paragraph(paragraph='b'),
+            tokens.Paragraph.make(paragraph='b'),
             tokens.AndToken(),
-            tokens.Paragraph(paragraph='c', field=tokens.Paragraph.TEXT_FIELD)
+            tokens.Paragraph.make(paragraph='c',
+                                  field=tokens.Paragraph.TEXT_FIELD)
         ])
 
     def test_example11(self):
@@ -158,11 +159,11 @@ class GrammarAmdParTests(TestCase):
             tokens.Verb(tokens.Verb.PUT, active=True),
             tokens.Paragraph([], field=tokens.Paragraph.HEADING_FIELD),
             tokens.AndToken(),
-            tokens.TokenList([tokens.Paragraph(paragraph='a'),
-                              tokens.Paragraph(paragraph='b')]),
+            tokens.TokenList([tokens.Paragraph.make(paragraph='a'),
+                              tokens.Paragraph.make(paragraph='b')]),
             tokens.AndToken(),
             tokens.Verb(tokens.Verb.POST, active=True),
-            tokens.Paragraph(paragraph='d'),
+            tokens.Paragraph.make(paragraph='d'),
         ])
 
     def test_example12(self):
@@ -174,9 +175,9 @@ class GrammarAmdParTests(TestCase):
             tokens.Context([None, 'Interpretations', '31', '(b)(2)']),
             tokens.Verb(tokens.Verb.POST, active=True),
             tokens.TokenList([
-                tokens.Paragraph(is_interp=True, paragraphs=[None, '4']),
-                tokens.Paragraph(is_interp=True, paragraphs=[None, '5']),
-                tokens.Paragraph(is_interp=True, paragraphs=[None, '6'])
+                tokens.Paragraph.make(is_interp=True, paragraphs=[None, '4']),
+                tokens.Paragraph.make(is_interp=True, paragraphs=[None, '5']),
+                tokens.Paragraph.make(is_interp=True, paragraphs=[None, '6'])
             ])
         ])
 
@@ -189,7 +190,8 @@ class GrammarAmdParTests(TestCase):
             tokens.Verb(tokens.Verb.POST, active=True),
             #   We assume that lists of comments are not context
             tokens.TokenList([
-                tokens.Paragraph(is_interp=True, section='36', paragraph=p)
+                tokens.Paragraph.make(is_interp=True, section='36',
+                                      paragraph=p)
                 for p in ('(a)', '(b)', '(d)')
             ])
         ])
@@ -200,7 +202,7 @@ class GrammarAmdParTests(TestCase):
         self.assertEqual(result, [
             tokens.AndToken(),
             tokens.Verb(tokens.Verb.DELETE, active=True),
-            tokens.Paragraph(paragraphs=['c', '5'])
+            tokens.Paragraph.make(paragraphs=['c', '5'])
         ])
 
     def test_example15(self):
@@ -209,14 +211,14 @@ class GrammarAmdParTests(TestCase):
         text += "paragraph (c)(2)(iii) as paragraph (c)(2)(iv),"
         result = parse_text(text)
         expected = [tokens.TokenList([
-            tokens.Paragraph(paragraphs=['a', '1', 'iii']),
-            tokens.Paragraph(paragraphs=['a', '1', 'iv', 'B']),
-            tokens.Paragraph(paragraphs=['c', '2'],
-                             field=tokens.Paragraph.TEXT_FIELD),
-            tokens.Paragraph(paragraphs=['c', '2', 'ii', 'A'])]),
+            tokens.Paragraph.make(paragraphs=['a', '1', 'iii']),
+            tokens.Paragraph.make(paragraphs=['a', '1', 'iv', 'B']),
+            tokens.Paragraph.make(paragraphs=['c', '2'],
+                                  field=tokens.Paragraph.TEXT_FIELD),
+            tokens.Paragraph.make(paragraphs=['c', '2', 'ii', 'A'])]),
             tokens.Verb(tokens.Verb.MOVE, active=True),
-            tokens.Paragraph(paragraphs=['c', '2', 'iii']),
-            tokens.Paragraph(paragraphs=['c', '2', 'iv'])]
+            tokens.Paragraph.make(paragraphs=['c', '2', 'iii']),
+            tokens.Paragraph.make(paragraphs=['c', '2', 'iv'])]
         self.assertEqual(result, expected)
 
     def test_example16(self):
@@ -224,10 +226,10 @@ class GrammarAmdParTests(TestCase):
         result = parse_text(text)
         self.assertEqual(result, [
             tokens.TokenList([
-                tokens.Paragraph(appendix='A', section='30(a)'),
-                tokens.Paragraph(appendix='A', section='30(b)'),
-                tokens.Paragraph(appendix='A', section='30(c)'),
-                tokens.Paragraph(appendix='A', section='30(d)')
+                tokens.Paragraph.make(appendix='A', section='30(a)'),
+                tokens.Paragraph.make(appendix='A', section='30(b)'),
+                tokens.Paragraph.make(appendix='A', section='30(c)'),
+                tokens.Paragraph.make(appendix='A', section='30(d)')
             ]),
             tokens.Verb(tokens.Verb.POST, active=False),
         ])
@@ -238,7 +240,8 @@ class GrammarAmdParTests(TestCase):
         self.assertEqual(result, [
             tokens.Context([None, 'Interpretations', '31', '(c)(4)'],
                            certain=True),
-            tokens.Paragraph(is_interp=True, paragraphs=[None, '2', 'xi']),
+            tokens.Paragraph.make(is_interp=True,
+                                  paragraphs=[None, '2', 'xi']),
             tokens.Verb(tokens.Verb.POST, active=False)
         ])
 
@@ -249,9 +252,9 @@ class GrammarAmdParTests(TestCase):
 
         self.assertEqual(result, [
             tokens.TokenList([
-                tokens.Paragraph(part='106', section='52',
-                                 paragraphs=['b', '1', 'ii', 'A']),
-                tokens.Paragraph(paragraphs=[None, None, None, 'B']),
+                tokens.Paragraph.make(part='106', section='52',
+                                      paragraphs=['b', '1', 'ii', 'A']),
+                tokens.Paragraph.make(paragraphs=[None, None, None, 'B']),
             ]),
             tokens.Verb(tokens.Verb.PUT, active=False)
         ])
@@ -266,12 +269,12 @@ class GrammarAmdParTests(TestCase):
         result = [l for l in result if isinstance(l, tokens.TokenList)]
         token_list = result[0]
 
-        iii = tokens.Paragraph(paragraphs=[None, None, 'iii'])
+        iii = tokens.Paragraph.make(paragraphs=[None, None, 'iii'])
         self.assertTrue(iii in token_list)
 
         second_token_list = result[1]
 
-        v = tokens.Paragraph(paragraphs=['a', '3', 'v'])
+        v = tokens.Paragraph.make(paragraphs=['a', '3', 'v'])
         self.assertTrue(v in second_token_list)
 
     def test_example_20(self):
@@ -282,16 +285,16 @@ class GrammarAmdParTests(TestCase):
         result = [l for l in result if isinstance(l, tokens.TokenList)]
         token_list = result[0]
 
-        b3 = tokens.Paragraph(paragraphs=['b', '3'])
+        b3 = tokens.Paragraph.make(paragraphs=['b', '3'])
         self.assertTrue(b3 in token_list)
 
-        b4 = tokens.Paragraph(paragraphs=['b', '4'])
+        b4 = tokens.Paragraph.make(paragraphs=['b', '4'])
         self.assertTrue(b4 in token_list)
 
-        b5 = tokens.Paragraph(paragraphs=['b', '5'])
+        b5 = tokens.Paragraph.make(paragraphs=['b', '5'])
         self.assertTrue(b5 in token_list)
 
-        b6 = tokens.Paragraph(paragraphs=[None, '6'])
+        b6 = tokens.Paragraph.make(paragraphs=[None, '6'])
         self.assertTrue(b6 in token_list)
 
     def test_reserving(self):
@@ -308,7 +311,7 @@ class GrammarAmdParTests(TestCase):
 
         result = parse_text(text)
         paragraph = [p for p in result if isinstance(p, tokens.Paragraph)][0]
-        p_object = tokens.Paragraph(paragraph='a', field='heading')
+        p_object = tokens.Paragraph.make(paragraph='a', field='heading')
         self.assertEqual(p_object, paragraph)
 
     def test_example_22(self):
@@ -360,8 +363,11 @@ class GrammarAmdParTests(TestCase):
             self.assertTrue(verb.match(tokens.Verb))
             self.assertEqual(
                 par,
-                tokens.Paragraph(is_interp=True, section='12', paragraph='(c)',
-                                 field=tokens.Paragraph.HEADING_FIELD))
+                tokens.Paragraph.make(
+                    is_interp=True, section='12', paragraph='(c)',
+                    field=tokens.Paragraph.HEADING_FIELD
+                )
+            )
 
     def test_example_26(self):
         text = "Entries for 15(a), (b)(3) and (4) are added."
@@ -373,9 +379,9 @@ class GrammarAmdParTests(TestCase):
 
         self.assertEqual(3, len(toklist.tokens))
         a, b3, b4 = toklist.tokens
-        self.assertEqual(a, tokens.Paragraph(section='15', paragraph='a'))
-        self.assertEqual(b3, tokens.Paragraph(paragraphs=['b', '3']))
-        self.assertEqual(b4, tokens.Paragraph(paragraphs=[None, '4']))
+        self.assertEqual(a, tokens.Paragraph.make(section='15', paragraph='a'))
+        self.assertEqual(b3, tokens.Paragraph.make(paragraphs=['b', '3']))
+        self.assertEqual(b4, tokens.Paragraph.make(paragraphs=[None, '4']))
 
     def test_example_27(self):
         text = "The heading for Section 1234.56-Toastfully Eggselent is "
@@ -385,8 +391,8 @@ class GrammarAmdParTests(TestCase):
         par, verb = result
         self.assertTrue(verb.match(tokens.Verb, verb=tokens.Verb.PUT))
         self.assertEqual(
-            par, tokens.Paragraph(part='1234', section='56',
-                                  field=tokens.Paragraph.HEADING_FIELD))
+            par, tokens.Paragraph.make(part='1234', section='56',
+                                       field=tokens.Paragraph.HEADING_FIELD))
 
     def test_example_28(self):
         text = "Section 1111.22 is amended by adding introductory text to "
@@ -400,8 +406,8 @@ class GrammarAmdParTests(TestCase):
                                       label=['1111', None, '22']))
         self.assertTrue(add.match(tokens.Verb, verb=tokens.Verb.POST))
         self.assertEqual(
-            a, tokens.Paragraph(paragraph='a',
-                                field=tokens.Paragraph.TEXT_FIELD))
+            a, tokens.Paragraph.make(paragraph='a',
+                                     field=tokens.Paragraph.TEXT_FIELD))
         self.assertTrue(andToken.match(tokens.AndToken))
         self.assertTrue(lst.match(tokens.TokenList))
 
@@ -412,8 +418,8 @@ class GrammarAmdParTests(TestCase):
         subheading, revised = result
         self.assertEqual(
             subheading,
-            tokens.Paragraph(is_interp=True, section='R', paragraph='()',
-                             field=tokens.Paragraph.HEADING_FIELD))
+            tokens.Paragraph.make(is_interp=True, section='R', paragraph='()',
+                                  field=tokens.Paragraph.HEADING_FIELD))
         self.assertTrue(revised.match(tokens.Verb, verb=tokens.Verb.PUT))
 
     def test_example_30(self):
@@ -424,7 +430,7 @@ class GrammarAmdParTests(TestCase):
             heading, revised = result
             self.assertEqual(
                 heading,
-                tokens.Paragraph(
+                tokens.Paragraph.make(
                     is_interp=True, section='29', paragraph='(r)(6)',
                     field=tokens.Paragraph.HEADING_FIELD))
             self.assertTrue(revised.match(tokens.Verb, verb=tokens.Verb.PUT))
@@ -436,8 +442,8 @@ class GrammarAmdParTests(TestCase):
         paragraph, verb = result
         self.assertEqual(
             paragraph,
-            tokens.Paragraph(is_interp=True, paragraphs=[None, '1'],
-                             field=tokens.Paragraph.TEXT_FIELD))
+            tokens.Paragraph.make(is_interp=True, paragraphs=[None, '1'],
+                                  field=tokens.Paragraph.TEXT_FIELD))
         self.assertTrue(verb.match(tokens.Verb, verb=tokens.Verb.PUT))
 
     def test_example_32(self):
@@ -446,7 +452,7 @@ class GrammarAmdParTests(TestCase):
         self.assertEqual(2, len(result))
         paragraph, verb = result
         self.assertEqual(paragraph,
-                         tokens.Paragraph(appendix='A', section='30'))
+                         tokens.Paragraph.make(appendix='A', section='30'))
         self.assertTrue(verb.match(tokens.Verb, verb=tokens.Verb.DELETE))
 
     def test_example_33(self):
@@ -457,7 +463,8 @@ class GrammarAmdParTests(TestCase):
         self.assertEqual(4, len(result[0].tokens))
         self.assertEqual(
             result[0].tokens,
-            [tokens.Paragraph(appendix='A', section='30(a)({})'.format(d))
+            [tokens.Paragraph.make(appendix='A',
+                                   section='30(a)({0})'.format(d))
              for d in '5678'])
 
     def test_example_34(self):
@@ -470,8 +477,11 @@ class GrammarAmdParTests(TestCase):
             tokens.Context, label=['1234', 'Appendix:H']))
         self.assertTrue(verb.match(tokens.Verb, verb=tokens.Verb.PUT))
         self.assertEqual(
-            heading, tokens.Paragraph(appendix='H', section='30(C)',
-                                      field=tokens.Paragraph.HEADING_FIELD))
+            heading, tokens.Paragraph.make(
+                appendix='H', section='30(C)',
+                field=tokens.Paragraph.HEADING_FIELD
+            )
+        )
 
     def test_example_35(self):
         text = "5. Section 100.94 is added to subpart C to read as follows:"
@@ -489,8 +499,8 @@ class GrammarAmdParTests(TestCase):
         paragraph, verb = result
 
         self.assertEqual(
-            paragraph, tokens.Paragraph(part='4', section='9',
-                                        paragraphs=['c', '1', 'iv']))
+            paragraph, tokens.Paragraph.make(part='4', section='9',
+                                             paragraphs=['c', '1', 'iv']))
         self.assertTrue(verb.match(
             tokens.Verb, verb=tokens.Verb.PUT))
 
@@ -501,8 +511,8 @@ class GrammarAmdParTests(TestCase):
         self.assertEqual(result, [
             tokens.Context(['1002', 'Appendix:A'], certain=True),
             tokens.Verb(tokens.Verb.PUT, active=True, and_prefix=False),
-            tokens.Paragraph(part='1002', appendix='A', section='p1',
-                             paragraphs=['2', 'd'])
+            tokens.Paragraph.make(part='1002', appendix='A', section='p1',
+                                  paragraphs=['2', 'd'])
         ])
 
     def test_insert_in_order(self):
@@ -510,10 +520,11 @@ class GrammarAmdParTests(TestCase):
                 '[insert-in-order] [label:1234-123-p987654321]')
         result = parse_text(text)
         self.assertEqual(result, [
-            tokens.Paragraph(part='1234', sub='123', section='p123456789'),
+            tokens.Paragraph.make(part='1234', sub='123',
+                                  section='p123456789'),
             tokens.Verb(tokens.Verb.DELETE, active=False, and_prefix=False),
             tokens.Verb(tokens.Verb.INSERT, active=True, and_prefix=False),
-            tokens.Paragraph(part='1234', sub='123', section='p987654321')
+            tokens.Paragraph.make(part='1234', sub='123', section='p987654321')
         ])
 
     def test_keyterm_label(self):
@@ -521,8 +532,10 @@ class GrammarAmdParTests(TestCase):
         text = '1. [label:123-45-p6] [label:111-22-a-keyterm(some term)]'
         result = parse_text(text)
         self.assertEqual(len(result), 2)
-        self.assertEqual(tokens.Paragraph(part='123', sub='45', section='p6'),
-                         result[0])
+        self.assertEqual(
+            tokens.Paragraph.make(part='123', sub='45', section='p6'),
+            result[0]
+        )
         self.assertTrue(isinstance(result[1], tokens.Paragraph))
         self.assertEqual(4, len(result[1].label))
         self.assertEqual(['111', '22', 'a'], result[1].label[:3])
@@ -536,6 +549,8 @@ class GrammarAmdParTests(TestCase):
         self.assertEqual(
             parse_text(text),
             [tokens.TokenList([
-                tokens.Paragraph(paragraphs=['a', '5', 'ii'], field='text'),
-                tokens.Paragraph(paragraphs=['d', '5', 'ii'], field='text'),
+                tokens.Paragraph.make(paragraphs=['a', '5', 'ii'],
+                                      field='text'),
+                tokens.Paragraph.make(paragraphs=['d', '5', 'ii'],
+                                      field='text'),
             ])])

@@ -2,16 +2,15 @@
 Changes are the exact details of how the pargraphs, sections etc. in a
 regulation have changed.  """
 
-import logging
 import copy
-from collections import defaultdict, OrderedDict
+import logging
+from collections import OrderedDict, defaultdict
 
 from regparser.grammar import amdpar
 from regparser.grammar.tokens import Verb
 from regparser.layer.paragraph_markers import marker_of
 from regparser.tree import struct
 from regparser.tree.paragraph import p_levels
-
 
 logger = logging.getLogger(__name__)
 

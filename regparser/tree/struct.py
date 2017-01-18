@@ -1,9 +1,9 @@
+import hashlib
 import re
 from json import JSONEncoder
-import hashlib
 
-from lxml import etree
 import six
+from lxml import etree
 
 from regparser.tree.depth.markers import MARKERLESS
 
@@ -41,7 +41,8 @@ class Node(object):
         self.tagged_text = tagged_text
 
     def __repr__(self):
-        text = "Node(text={}, children={}, label={}, title={}, node_type={})"
+        text = ("Node(text={0}, children={1}, label={2}, title={3}, "
+                "node_type={4})")
         return text.format(
             repr(self.text), repr(self.children), repr(self.label),
             repr(self.title), repr(self.node_type)
@@ -112,8 +113,8 @@ class NodeEncoder(JSONEncoder):
 
 class FullNodeEncoder(JSONEncoder):
     """Encodes Nodes into JSON, not losing any of the fields"""
-    FIELDS = set(['text', 'children', 'label', 'title', 'node_type',
-                  'source_xml', 'tagged_text'])
+    FIELDS = {'text', 'children', 'label', 'title', 'node_type', 'source_xml',
+              'tagged_text'}
 
     def default(self, obj):
         if isinstance(obj, Node):

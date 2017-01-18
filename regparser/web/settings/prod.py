@@ -1,6 +1,6 @@
 import os
 
-from regparser.web.settings.base import *   # noqa
+from regparser.web.settings.base import *  # noqa
 
 SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
 

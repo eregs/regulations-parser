@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
+
 from collections import namedtuple
 from contextlib import contextmanager
 
+import pytest
 from lxml import etree
 from mock import Mock
-import pytest
 
 from regparser.test_utils.node_accessor import NodeAccessor
 from regparser.test_utils.xml_builder import XMLBuilder
@@ -119,7 +120,7 @@ Expected = namedtuple('Expected', ['markers', 'result_text', 'tagged'])
               tagged=('Words then. ', '(a) a subparagraph')))
 ])
 def test_split_by_markers(text, expected):
-    xml = etree.fromstring('<ROOT><P>{}</P><STARS/></ROOT>'.format(text))
+    xml = etree.fromstring('<ROOT><P>{0}</P><STARS/></ROOT>'.format(text))
     results = section.split_by_markers(xml[0])
     results = list(zip(*results))    # unzips...
     assert results == list(expected)
@@ -171,7 +172,7 @@ def test_process_nested_uscode():
 def section_ctx(part=8675, section=309, subject="Definitions."):
     """Many tests need a SECTION tag followed by the SECTNO and SUBJECT"""
     with XMLBuilder("SECTION") as ctx:
-        ctx.SECTNO("§ {}.{}".format(part, section))
+        ctx.SECTNO("§ {0}.{1}".format(part, section))
         ctx.SUBJECT(subject)
         yield ctx
 
@@ -213,10 +214,10 @@ def test_build_from_section_collapsed_level_emph():
         ctx.STARS()
     node = section.build_from_section('8675', ctx.xml)[0]
     node = NodeAccessor(node)
-    a1iA = node['a']['1']['i']['A']
-    assert a1iA.text == "(A) AAA—"
-    assert a1iA.child_labels == ['1']
-    assert a1iA['1'].text == "(1) eeee"
+    a1ia = node['a']['1']['i']['A']
+    assert a1ia.text == "(A) AAA—"
+    assert a1ia.child_labels == ['1']
+    assert a1ia['1'].text == "(1) eeee"
 
 
 def test_build_from_section_double_collapsed():
@@ -282,7 +283,7 @@ def test_build_from_section_ambiguous_ii():
     assert n8675_309['h']['2'].child_labels == ['i', 'ii']
 
 
-def test_build_from_section_ambiguous_A():
+def test_build_from_section_ambiguous_a():
     n8675_309 = _setup_for_ambiguous("(A) B")
     assert n8675_309.child_labels == ['g', 'h']
     assert n8675_309['h'].child_labels == ['1', '2']
@@ -597,7 +598,7 @@ def test_build_from_section_double_alpha():
     assert child.label == ['8675', '309', 'aa']
 
 
-def test_ParseEmptyPart(monkeypatch):
+def test_parse_empty_part(monkeypatch):
     """Verify that ParseEmptyPart creates the empty part if no children are
     present, but then appends to the last child"""
     monkeypatch.setattr(section, 'build_from_section',

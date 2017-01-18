@@ -1,34 +1,23 @@
 import abc
 import hashlib
 
+import six
 from django.http import HttpResponse
+from rest_framework import generics, mixins, status
 from rest_framework.parsers import FileUploadParser, MultiPartParser
 from rest_framework.renderers import BrowsableAPIRenderer, JSONRenderer
 from rest_framework.response import Response
-from rest_framework import generics
-from rest_framework import mixins
-from rest_framework import status
 
-from regparser.web.jobs.models import (
-    PipelineJob,
-    ProposalPipelineJob,
-    RegulationFile
-)
-from regparser.web.jobs.serializers import (
-    FileUploadSerializer,
-    PipelineJobSerializer,
-    ProposalPipelineJobSerializer
-)
-from regparser.web.jobs.utils import (
-    add_redis_data_to_job_data,
-    create_status_url,
-    delete_eregs_job,
-    eregs_site_api_url,
-    file_url,
-    queue_eregs_job,
-    queue_notification_email,
-)
-
+from regparser.web.jobs.models import (PipelineJob, ProposalPipelineJob,
+                                       RegulationFile)
+from regparser.web.jobs.serializers import (FileUploadSerializer,
+                                            PipelineJobSerializer,
+                                            ProposalPipelineJobSerializer)
+from regparser.web.jobs.utils import (add_redis_data_to_job_data,
+                                      create_status_url, delete_eregs_job,
+                                      eregs_site_api_url, file_url,
+                                      queue_eregs_job,
+                                      queue_notification_email)
 
 renderer_classes = (
     JSONRenderer,
@@ -36,7 +25,7 @@ renderer_classes = (
 )
 
 
-class BaseViewList(object):
+class BaseViewList(six.with_metaclass(abc.ABCMeta)):
     """
     Intended to be subclassed by classes subclassing ``JobViewList``.
     Contains the POST-related methods that are relevant to subclasses of
@@ -44,8 +33,6 @@ class BaseViewList(object):
 
     Should be in the subclass list before ``JobViewList``.
     """
-    __metaclass__ = abc.ABCMeta
-
     @abc.abstractmethod
     def build_eregs_args(self, validated_data):
         """
@@ -106,7 +93,7 @@ class BaseViewList(object):
         # 201 status code they expect upon a successful POST.
         #
         # I'm open to debate on this decision.
-        headers["Refresh"] = "0;url=%s" % statusurl
+        headers["Refresh"] = "0;url={0}".format(statusurl)
         return Response(serialized.data, status=status.HTTP_201_CREATED,
                         headers=headers)
 
@@ -310,9 +297,11 @@ class FileUploadView(mixins.ListModelMixin, mixins.CreateModelMixin,
 
         uploaded_file = request.data["file"]
         if uploaded_file.size > self.size_limit:
-            return Response(dict(error="File too large (%s-byte limit)." %
-                                 self.size_limit),
-                            status=status.HTTP_400_BAD_REQUEST)
+            return Response(
+                dict(error="File too large ({0}-byte limit).".format(
+                    self.size_limit)),
+                status=status.HTTP_400_BAD_REQUEST
+            )
         if uploaded_file.multiple_chunks():
             contents = b"".join(chunk for chunk in uploaded_file.chunks())
         else:

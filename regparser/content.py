@@ -8,7 +8,6 @@ import logging
 
 import settings
 
-
 logger = logging.getLogger(__name__)
 
 

@@ -5,7 +5,6 @@ import click
 from regparser.index import entry
 from regparser.notice.xml import NoticeXML
 
-
 logger = logging.getLogger(__name__)
 
 

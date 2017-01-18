@@ -280,8 +280,8 @@ class ParseTest(TestCase):
         parser = internal_citations.InternalCitationParser(
             tree, cfr_title=None)
         parser.pre_process()
-        self.assertEqual(parser.known_citations, set([
-            ('1111', '2', '3'), ('222', '1', '1'), ('111', '34')]))
+        self.assertEqual(parser.known_citations, {
+            ('1111', '2', '3'), ('222', '1', '1'), ('111', '34')})
 
         parser.verify_citations = False
         text = 'Section 111.34 and paragraph (c)'

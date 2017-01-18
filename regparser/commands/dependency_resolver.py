@@ -2,12 +2,12 @@ import abc
 import os
 import re
 
+import six
 from django.conf import settings
 
 
-class DependencyResolver(object):
+class DependencyResolver(six.with_metaclass(abc.ABCMeta)):
     """Base class for objects which know how to "fix" missing dependencies."""
-    __metaclass__ = abc.ABCMeta
     # The path of dependencies which this can resolve, split into components
     # which will be combined into a regex
     PATH_PARTS = tuple()

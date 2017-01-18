@@ -1,19 +1,18 @@
 # -*- coding: utf-8 -*-
+import logging
 from collections import namedtuple
 from copy import deepcopy
-import logging
 from itertools import dropwhile
 
 from lxml import etree
 
 from regparser.notice import changes, util
 from regparser.notice.amdparser import amendment_from_xml
-from regparser.tree.struct import Node, walk
 from regparser.tree.gpo_cfr import interpretations
 from regparser.tree.gpo_cfr.appendices import process_appendix
 from regparser.tree.gpo_cfr.section import build_from_section
 from regparser.tree.gpo_cfr.subpart import build_subpart
-
+from regparser.tree.struct import Node, walk
 
 logger = logging.getLogger(__name__)
 Content = namedtuple('Content', ['struct', 'amends'])
@@ -77,8 +76,8 @@ def parse_appendix(xml, cfr_part, letter):
     replaced/added or when we can use the section headers to determine our
     place. If the format isn't what we expect, display a warning."""
     xml = deepcopy(xml)
-    hds = xml.xpath('//HD[contains(., "Appendix %s to Part %s")]'
-                    % (letter, cfr_part))
+    hds = xml.xpath('//HD[contains(., "Appendix {0} to Part {1}")]'.format(
+        letter, cfr_part))
     if len(hds) == 0:
         logger.warning("Could not find Appendix %s to part %s",
                        letter, cfr_part)

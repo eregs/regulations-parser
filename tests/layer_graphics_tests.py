@@ -2,10 +2,10 @@ from unittest import TestCase
 
 from mock import patch
 
-from regparser.layer.graphics import gid_to_url, Graphics
+import settings
+from regparser.layer.graphics import Graphics, gid_to_url
 from regparser.test_utils.http_mixin import HttpMixin
 from regparser.tree.struct import Node
-import settings
 
 
 class LayerGraphicsTest(HttpMixin, TestCase):
@@ -24,10 +24,10 @@ class LayerGraphicsTest(HttpMixin, TestCase):
                     "and ![](NOTEXT)")
         g = Graphics(None)
         for gid in ('ABCD', 'XXX', 'NOTEXT'):
-            self.expect_http(uri='http://example.com/{}.gif'.format(gid),
+            self.expect_http(uri='http://example.com/{0}.gif'.format(gid),
                              method='HEAD')
             self.expect_http(
-                uri='http://example.com/{}.thumb.gif'.format(gid),
+                uri='http://example.com/{0}.thumb.gif'.format(gid),
                 method='HEAD')
 
         result = g.process(node)
@@ -77,7 +77,7 @@ class LayerGraphicsTest(HttpMixin, TestCase):
 
         results = g.process(node)
         self.assertEqual(3, len(results))
-        results = set((r['alt'], r['url']) for r in results)
+        results = {(r['alt'], r['url']) for r in results}
         self.assertIn(('Alt1', img_url), results)
         self.assertIn(('Alt2', imgf_url), results)
         self.assertIn(('Alt3', imga_url), results)

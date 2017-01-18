@@ -4,13 +4,12 @@ import os
 import os.path
 import shutil
 
+import requests
 from git import Repo
 from git.exc import InvalidGitRepositoryError
-import requests
 
-from regparser.tree.struct import Node, NodeEncoder
 from regparser.notice.encoder import AmendmentEncoder
-
+from regparser.tree.struct import Node, NodeEncoder
 
 logger = logging.getLogger(__name__)
 

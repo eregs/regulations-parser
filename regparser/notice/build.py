@@ -5,11 +5,10 @@ from lxml import etree
 from regparser.grammar.unified import notice_cfr_p
 from regparser.notice.amendments import fetch_amendments
 from regparser.notice.dates import fetch_dates
-from regparser.notice.sxs import (
-    build_section_by_section, find_section_by_section)
+from regparser.notice.sxs import (build_section_by_section,
+                                  find_section_by_section)
 from regparser.notice.util import spaces_then_remove, swap_emphasis_tags
 from regparser.notice.xml import xmls_for_url
-
 
 logger = logging.getLogger(__name__)
 
@@ -17,7 +16,7 @@ logger = logging.getLogger(__name__)
 def build_notice(cfr_title, cfr_part, fr_notice, fetch_xml=True,
                  xml_to_process=None):
     """Given JSON from the federal register, create our notice structure"""
-    cfr_parts = set(str(ref['part']) for ref in fr_notice['cfr_references'])
+    cfr_parts = {str(ref['part']) for ref in fr_notice['cfr_references']}
     if cfr_part:
         cfr_parts.add(cfr_part)
     notice = {'cfr_title': cfr_title, 'cfr_parts': list(cfr_parts)}
@@ -56,7 +55,7 @@ def split_doc_num(doc_num, effective_date):
     """ If we have a split notice, we construct a document number
     based on the original document number and the effective date. """
     effective_date = ''.join(effective_date.split('-'))
-    return '%s_%s' % (doc_num, effective_date)
+    return '{0}_{1}'.format(doc_num, effective_date)
 
 
 def set_document_numbers(notices):

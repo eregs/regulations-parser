@@ -1,7 +1,7 @@
 import re
 
-from regparser.layer.layer import Layer
 import settings
+from regparser.layer.layer import Layer
 
 
 class Meta(Layer):

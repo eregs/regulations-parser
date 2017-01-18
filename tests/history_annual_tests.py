@@ -69,9 +69,9 @@ class HistoryAnnualVolumeTests(HttpMixin, TestCase):
         <CFRDOC>
             <AMDDATE>Jan 1, 2001</AMDDATE>
             <PARTS>Part 111 to 222</PARTS>
-            %s
-            %s
-        </CFRDOC>""" % (pt111, pt112), uri=re.compile(r".*bulkdata.*"))
+            {0}
+            {1}
+        </CFRDOC>""".format(pt111, pt112), uri=re.compile(r".*bulkdata.*"))
 
         volume = annual.Volume(2001, 12, 2)
 
@@ -139,7 +139,7 @@ class HistoryAnnualVolumeTests(HttpMixin, TestCase):
 
 class HistoryAnnualTests(TestCase):
     @patch('regparser.history.annual.Volume')
-    def test_find_volume(self, Volume):
+    def test_find_volume(self, mock_volume):
         v1 = Mock()
         v1.exists = True
         v1.should_contain.return_value = False
@@ -155,7 +155,7 @@ class HistoryAnnualTests(TestCase):
             if vol_num > 3:
                 return v2
             return v1
-        Volume.side_effect = side_effect
+        mock_volume.side_effect = side_effect
 
         self.assertEqual(annual.find_volume(2000, 11, 3), v2)
 
@@ -163,5 +163,5 @@ class HistoryAnnualTests(TestCase):
             if vol_num > 3:
                 return v3
             return v1
-        Volume.side_effect = side_effect
+        mock_volume.side_effect = side_effect
         self.assertEqual(annual.find_volume(2000, 11, 3), None)

@@ -1,18 +1,17 @@
 """ Notices indicate how a regulation has changed since the last version. This
 module contains code to compile a regulation from a notice's changes. """
 
-from bisect import bisect
-from collections import defaultdict
 import copy
 import logging
 import re
+from bisect import bisect
+from collections import defaultdict
 
 from roman import fromRoman
 
 from regparser.grammar.tokens import Verb
-from regparser.tree.struct import Node, find, find_parent
 from regparser.tree.gpo_cfr import interpretations, section
-
+from regparser.tree.struct import Node, find, find_parent
 
 logger = logging.getLogger(__name__)
 
@@ -93,8 +92,8 @@ def overwrite_marker(origin, new_label):
     if origin.node_type == Node.REGTEXT:
         marker_list = section.initial_markers(origin.text)
         if len(marker_list) > 0:
-            marker = '(%s)' % marker_list[0]
-            new_marker = '(%s)' % new_label
+            marker = '({0})'.format(marker_list[0])
+            new_marker = '({0})'.format(new_label)
             origin.text = origin.text.replace(marker, new_marker, 1)
     elif origin.node_type == Node.INTERP:
         marker = interpretations.get_first_interp_marker(origin.text)
@@ -169,7 +168,7 @@ class RegulationTree(object):
             order = []
 
         children = children + [node]    # non-destructive
-        child_labels = set(c.label_id() for c in children)
+        child_labels = {c.label_id() for c in children}
 
         if child_labels.issubset(set(order)):
             lookup = {c.label_id(): c for c in children}

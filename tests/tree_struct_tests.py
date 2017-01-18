@@ -187,7 +187,7 @@ class FrozenNodeTests(TestCase):
         left = struct.FrozenNode(**args)
         right = struct.FrozenNode(**args)
         self.assertNotEqual(id(left), id(right))
-        dict_to_set = {left: set([left])}
+        dict_to_set = {left: {left}}
         self.assertTrue(right in dict_to_set)
         self.assertTrue(right in dict_to_set[right])
         set_node = dict_to_set[right].pop()

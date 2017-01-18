@@ -8,7 +8,6 @@ from regparser.history.versions import Version
 from regparser.index import entry
 from regparser.notice.build import add_footnotes, process_sxs
 
-
 logger = logging.getLogger(__name__)
 
 

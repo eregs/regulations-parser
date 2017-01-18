@@ -1,9 +1,9 @@
 import logging
 
+import click
+
 from regparser.tree.depth import optional_rules
 from regparser.tree.depth.derive import derive_depths
-
-import click
 
 logger = logging.getLogger(__name__)
 

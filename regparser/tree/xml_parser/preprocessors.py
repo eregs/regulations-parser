@@ -2,21 +2,22 @@
 """Set of transforms we run on notice XML to account for common inaccuracies
 in the XML"""
 from __future__ import unicode_literals
+
 import abc
-from copy import deepcopy
 import functools
-from itertools import takewhile
 import logging
 import re
+from copy import deepcopy
+from itertools import takewhile
 
+import six
 from lxml import etree
 from six.moves.html_parser import HTMLParser
 
 from regparser.grammar.tokens import uncertain_label
 from regparser.notice.amdparser import parse_amdpar
-from regparser.tree.xml_parser.tree_utils import (
-    get_node_text, replace_xml_node_with_text)
-
+from regparser.tree.xml_parser.tree_utils import (get_node_text,
+                                                  replace_xml_node_with_text)
 
 logger = logging.getLogger(__name__)
 
@@ -43,11 +44,9 @@ def replace_html_entities(xml_bin_str):
     return xml_bin_str
 
 
-class PreProcessorBase(object):
+class PreProcessorBase(six.with_metaclass(abc.ABCMeta)):
     """Base class for all the preprocessors. Defines the interface they must
     implement"""
-    __metaclass__ = abc.ABCMeta
-
     @abc.abstractmethod
     def transform(self, xml):
         """Transform the input xml. Mutates that xml, so be sure to make a
@@ -182,7 +181,7 @@ class ExtractTags(PreProcessorBase):
             else:
                 xml_str += '\n' + self.strip_root_tag(next_str)
 
-            new_el = etree.fromstring('<EXTRACT>{}</EXTRACT>'.format(xml_str))
+            new_el = etree.fromstring('<EXTRACT>{0}</EXTRACT>'.format(xml_str))
 
             parent = extract.getparent()
             parent.replace(extract, new_el)
@@ -208,10 +207,10 @@ class Footnotes(PreProcessorBase):
     # SU indicates both the reference and the content of the footnote;
     # distinguish by looking at ancestors
     IS_REF_PREDICATE = 'not(ancestor::TNOTE) and not(ancestor::FTNT)'
-    XPATH_IS_REF = './/SU[{}]'.format(IS_REF_PREDICATE)
+    XPATH_IS_REF = './/SU[{0}]'.format(IS_REF_PREDICATE)
     # Find the content of a footnote to associate with a reference
     XPATH_FIND_NOTE_TPL = \
-        "./following::SU[(ancestor::TNOTE or ancestor::FTNT) and text()='{}']"
+        "./following::SU[(ancestor::TNOTE or ancestor::FTNT) and text()='{0}']"
 
     def transform(self, xml):
         self.split_comma_footnotes(xml)
@@ -313,6 +312,8 @@ def preprocess_amdpars(xml):
             instructions, context = parse_amdpar(amdpar, context)
             amdpar.append(instructions)
             instructions.set('final_context', uncertain_label(context))
+
+
 preprocess_amdpars.plugin_order = 10    # Must be after move_last_amdpar
 
 

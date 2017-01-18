@@ -35,5 +35,6 @@ def full_tests():
     errno = pytest.main(['--pyargs'] + mymods)
     sys.exit(errno)
 
+
 if __name__ == '__main__':
     full_tests()

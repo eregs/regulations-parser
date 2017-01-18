@@ -1,7 +1,9 @@
 # vim: set encoding=utf-8
-from lxml import etree
-from regparser.notice import sxs
 from unittest import TestCase
+
+from lxml import etree
+
+from regparser.notice import sxs
 
 
 class NoticeSxsTests(TestCase):
@@ -38,11 +40,11 @@ class NoticeSxsTests(TestCase):
                 <HD SOURCE="HD1">Stuff Here</HD>
                 <P>Some Content</P>
                 <HD SOURCE="HD1">X. Section-by-Section Analysis</HD>
-                %s
+                {0}
                 <HD SOURCE="HD1">Section that follows</HD>
                 <P>Following Content</P>
             </SUPLINF>
-        </ROOT>""" % sxs_xml
+        </ROOT>""".format(sxs_xml)
 
         #   Must use text field since the nodes are not directly comparable
         sxs_texts = ['Sub Section', 'Content', 'Sub sub section',
@@ -64,11 +66,11 @@ class NoticeSxsTests(TestCase):
                 <HD SOURCE="HD1">Stuff Here</HD>
                 <P>Some Content</P>
                 <HD SOURCE="HD1">X. Section-by-Section Analysis</HD>
-                %s
+                {0}
                 <HD SOURCE="HD1">Section that follows</HD>
                 <P>Following Content</P>
             </SUPLINF>
-        </ROOT>""" % sxs_xml
+        </ROOT>""".format(sxs_xml)
 
         sxs_texts = ['Section 8675.309 Stuff', 'Content']
         computed = sxs.find_section_by_section(etree.fromstring(full_xml))

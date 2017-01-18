@@ -1,12 +1,11 @@
 # vim: set fileencoding=utf-8
 import re
+from unittest import TestCase
 
 from regparser.layer import def_finders
 from regparser.layer.scope_finder import ScopeFinder
 from regparser.layer.terms import ParentStack
 from regparser.tree.struct import Node
-
-from unittest import TestCase
 
 
 class SmartQuotesTest(TestCase):

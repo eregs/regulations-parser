@@ -1,12 +1,11 @@
 from argparse import RawTextHelpFormatter
 
-from django.core.management.base import BaseCommand
 import django_rq
+from django.core.management.base import BaseCommand
 from rq import registry
 from rq.queue import FailedQueue
 
 from regparser.tasks import run_eregs_command
-
 
 _OPTIONS = ('cfr_title', 'cfr_part', 'xml-ttl')
 _FLAGS = ('only-latest', 'unique', 'prompt')
@@ -31,7 +30,7 @@ def argparse_to_click(eregs_args, **kwargs):
 def _print(write_fn, job):
     logs = job.meta.get('logs', '')
     log_length = len(logs.split('\n'))
-    write_fn("\t{}\n\t\tLogs:{}".format(job, log_length))
+    write_fn("\t{0}\n\t\tLogs:{1}".format(job, log_length))
 
 
 def show_stats(write_fn):
@@ -59,7 +58,8 @@ def show_stats(write_fn):
 
 
 class Command(BaseCommand):
-    help = """
+    help = (    # noqa
+        """
         Asynchronous `eregs` commands. To run,
         1. pip install -r requirements_web.txt
         2. start redis. For example, with docker:
@@ -70,7 +70,8 @@ class Command(BaseCommand):
             python manage.py async_eregs pipeline 27 479 async_output_dir
         5. check the status of your jobs:
             python manage.py async_eregs    # no parameters
-    """
+        """
+    )
 
     def add_arguments(self, parser):
         parser.formatter_class = RawTextHelpFormatter
@@ -89,4 +90,4 @@ class Command(BaseCommand):
                                     # Run for at most half an hour
                                     # Don't delete successes
                                     timeout=60 * 30, result_ttl=-1)
-            self.stdout.write("OK: {}".format(job))
+            self.stdout.write("OK: {0}".format(job))

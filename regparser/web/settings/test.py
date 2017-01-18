@@ -1,4 +1,4 @@
-from regparser.web.settings.base import *   # noqa
+from regparser.web.settings.base import *  # noqa
 
 REQUESTS_CACHE = {
     'backend': 'memory',

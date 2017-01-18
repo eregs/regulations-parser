@@ -7,7 +7,6 @@ from six.moves.html_parser import HTMLParser
 
 from regparser.grammar.utils import Marker, SuffixMarker, WordBoundaries
 
-
 # Set whitespace for all parsing; include unicode whitespace chars
 ParserElement.setDefaultWhitespaceChars(
     string.whitespace +

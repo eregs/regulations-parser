@@ -1,28 +1,26 @@
 """Parsers for various types of external citations. Consumed by the external
 citation layer"""
 import abc
-from collections import namedtuple
 import re
 import string
+from collections import namedtuple
 
+import six
 from pyparsing import Optional, Suppress, Word
 from six.moves.urllib.parse import urlencode
 
+import settings
 from regparser.citations import cfr_citations
 from regparser.grammar.utils import Marker, QuickSearchable
-import settings
-
 
 Cite = namedtuple('Cite', ['cite_type', 'start', 'end', 'components', 'url'])
 
 
-class FinderBase(object):
+class FinderBase(six.with_metaclass(abc.ABCMeta)):
     """Base class for all of the external citation parsers. Defines the
     interface they must implement."""
-    __metaclass__ = abc.ABCMeta
-
     @abc.abstractproperty
-    def CITE_TYPE(self):
+    def CITE_TYPE(self):    # noqa - this is a property
         """A constant to represent the citations this produces."""
         raise NotImplementedError()
 
@@ -37,7 +35,7 @@ def fdsys_url(**params):
     """Generate a URL to an FDSYS redirect"""
     params['year'] = params.get('year', 'mostrecent')
     params = sorted(params.items())     # consistent encoding
-    return 'http://api.fdsys.gov/link?{}'.format(urlencode(params))
+    return 'http://api.fdsys.gov/link?{0}'.format(urlencode(params))
 
 
 class CFRFinder(FinderBase):
@@ -58,18 +56,16 @@ class CFRFinder(FinderBase):
                            fdsys_url(collection='cfr', **fdsys_params))
 
 
-class FDSYSFinder(object):
+class FDSYSFinder(six.with_metaclass(abc.ABCMeta)):
     """Common parent class to Finders which generate an FDSYS url based on
     matching a PyParsing grammar"""
-    __metaclass__ = abc.ABCMeta
-
     @abc.abstractproperty
-    def GRAMMAR(self):
+    def GRAMMAR(self):  # noqa - this is a property
         """A pyparsing grammar with relevant components labeled"""
         raise NotImplementedError()
 
     @abc.abstractproperty
-    def CONST_PARAMS(self):
+    def CONST_PARAMS(self):     # noqa - this is a property
         """Constant parameters we pass to the FDSYS url; a dict"""
         raise NotImplementedError()
 

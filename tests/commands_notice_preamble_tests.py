@@ -1,8 +1,8 @@
 from unittest import TestCase
 
+import pytest
 from click.testing import CliRunner
 from mock import patch
-import pytest
 
 from regparser.commands.notice_preamble import notice_preamble
 from regparser.index import dependency, entry

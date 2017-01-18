@@ -1,16 +1,15 @@
 import abc
 from collections import defaultdict, namedtuple
 
+import six
 
 SearchReplace = namedtuple('SearchReplace',
                            ['text', 'locations', 'representative'])
 
 
-class Layer(object):
+class Layer(six.with_metaclass(abc.ABCMeta)):
     """Base class for all of the Layer generators. Defines the interface they
     must implement"""
-    __metaclass__ = abc.ABCMeta
-
     def __init__(self, tree, **context):
         """Different layers may need different contextual information, such as
         which version of a regulation is being processed, which CFR title is

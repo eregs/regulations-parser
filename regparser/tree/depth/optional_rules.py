@@ -7,7 +7,7 @@ constraints more useful"""
 from constraint import InSetConstraint
 
 from regparser.tree.depth import markers
-from regparser.tree.depth.rules import ancestors, _level_and_children
+from regparser.tree.depth.rules import _level_and_children, ancestors
 
 
 def depth_type_inverses(constrain, all_variables):
@@ -102,8 +102,8 @@ def limit_sequence_gap(size=0):
         if depth < len(ancestor_markers):
             # Find the previous marker at this depth
             prev_typ, prev_idx, prev_depth = ancestor_markers[depth]
-            types = set([prev_typ, typ])
-            special_types = set([markers.stars, markers.markerless])
+            types = {prev_typ, typ}
+            special_types = {markers.stars, markers.markerless}
             if not special_types & types and prev_typ == typ:
                 return idx > prev_idx and idx - prev_idx <= gap_size
         return True

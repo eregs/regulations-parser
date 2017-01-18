@@ -1,7 +1,7 @@
+import re
 from collections import OrderedDict
 from copy import deepcopy
 from itertools import takewhile
-import re
 
 from lxml import etree
 
@@ -9,11 +9,13 @@ from regparser.tree.depth import heuristics
 from regparser.tree.depth.derive import markers as mtypes
 from regparser.tree.struct import Node
 from regparser.tree.xml_parser.flatsubtree_processor import FlatsubtreeMatcher
-from regparser.tree.xml_parser.paragraph_processor import (
-    BaseMatcher, GraphicsMatcher, IgnoreTagMatcher, ParagraphProcessor,
-    SimpleTagMatcher, TableMatcher)
+from regparser.tree.xml_parser.paragraph_processor import (BaseMatcher,
+                                                           GraphicsMatcher,
+                                                           IgnoreTagMatcher,
+                                                           ParagraphProcessor,
+                                                           SimpleTagMatcher,
+                                                           TableMatcher)
 from regparser.tree.xml_parser.tree_utils import get_node_text
-
 
 _MARKER_REGEX = re.compile(r'(?P<marker>([0-9]+)|([a-z]+)|([A-Z]+))\.')
 
@@ -63,7 +65,7 @@ def transform_xml(elements, title, depth):
     :param str title: Title of the root XML node we'll generate
     :param int depth: indicates which depth headers to look for"""
     root = etree.Element("PREAMBLE_LEVEL", TITLE=title)
-    deeper_source = 'HD{}'.format(depth)
+    deeper_source = 'HD{0}'.format(depth)
     non_nested_children = takewhile(
         lambda e: e.tag != 'HD' or e.get('SOURCE') != deeper_source,
         elements)
@@ -75,11 +77,11 @@ def transform_xml(elements, title, depth):
     # Pairs of [start, end) indexes, defining runs of XML elements which
     # should be grouped together. The final pair will include len(elements),
     # the end of the list
-    startXend = zip(indexes_of_next_level_headers,
-                    indexes_of_next_level_headers[1:] + [len(elements)])
-    headerXchildren = [(elements[start], elements[start + 1:end])
-                       for start, end in startXend]
-    for header, children in headerXchildren:
+    start_and_ends = zip(indexes_of_next_level_headers,
+                         indexes_of_next_level_headers[1:] + [len(elements)])
+    header_and_childrens = [(elements[start], elements[start + 1:end])
+                            for start, end in start_and_ends]
+    for header, children in header_and_childrens:
         title = header.text
         root.append(transform_xml(children, title, depth + 1))
 
@@ -96,11 +98,11 @@ def parse_intro(notice_xml, doc_id):
     for xml in notice_xml.xpath(xpath):
         title = xml.xpath('./HD')[0].text.strip()
         paras = [get_node_text(p) for p in xml.xpath("./P")]
-        parent_label = [doc_id, 'intro', 'p{}'.format(len(root.children) + 1)]
+        parent_label = [doc_id, 'intro', 'p{0}'.format(len(root.children) + 1)]
         children = []
         for i, para in enumerate(paras, start=1):
-            label = [doc_id, 'intro', 'p{}'.format(len(root.children) + 1),
-                     'p{}'.format(i)]
+            label = [doc_id, 'intro', 'p{0}'.format(len(root.children) + 1),
+                     'p{0}'.format(i)]
             children.append(Node(text=para, node_type='preamble', label=label))
         root.children.append(Node(node_type='preamble', label=parent_label,
                                   title=title, children=children))

@@ -2,7 +2,8 @@ import re
 
 import six
 
-from regparser.tree.depth import markers as mtypes, optional_rules
+from regparser.tree.depth import markers as mtypes
+from regparser.tree.depth import optional_rules
 from regparser.tree.struct import Node
 from regparser.tree.xml_parser import paragraph_processor, tree_utils
 
@@ -12,8 +13,8 @@ class DepthParagraphMatcher(paragraph_processor.BaseMatcher):
     appropriate node. Does not know about collapsed markers nor most types of
     nodes."""
     _MARKER_STR = r'(?P<marker>[a-z]|[ivx]{1,5}|\d{1,2})'
-    _PAREN_REGEX = re.compile(r'\({}\)'.format(_MARKER_STR))
-    _PERIOD_REGEX = re.compile(r'{}\.'.format(_MARKER_STR))
+    _PAREN_REGEX = re.compile(r'\({0}\)'.format(_MARKER_STR))
+    _PERIOD_REGEX = re.compile(r'{0}\.'.format(_MARKER_STR))
 
     def matches(self, xml):
         return xml.tag == 'P'

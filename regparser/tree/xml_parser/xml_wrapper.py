@@ -1,7 +1,7 @@
 from copy import deepcopy
 
-from lxml import etree
 import six
+from lxml import etree
 
 from regparser import plugins
 from regparser.tree.xml_parser.preprocessors import replace_html_entities

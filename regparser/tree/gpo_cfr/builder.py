@@ -6,7 +6,6 @@ from lxml import etree
 from regparser import content, plugins
 from regparser.tree.struct import Node
 
-
 logger = logging.getLogger(__name__)
 
 

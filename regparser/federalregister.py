@@ -6,7 +6,6 @@ import logging
 
 from regparser.index.http_cache import http_client
 
-
 FR_BASE = "https://www.federalregister.gov"
 API_BASE = FR_BASE + "/api/v1/"
 FULL_NOTICE_FIELDS = [
@@ -44,7 +43,7 @@ def fetch_notice_json(cfr_title, cfr_part, only_final=False,
 def meta_data(document_number, fields=None):
     """Return the requested meta data for a specific Federal Register
     document. Accounts for a bad document number by throwing an exception"""
-    url = "{}articles/{}".format(API_BASE, document_number)
+    url = "{0}articles/{1}".format(API_BASE, document_number)
     params = {}     # default fields are generally good
     if fields:
         params["fields[]"] = fields

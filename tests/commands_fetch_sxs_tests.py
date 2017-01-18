@@ -3,10 +3,10 @@
 # will diverge soon
 from unittest import TestCase
 
+import pytest
 from click.testing import CliRunner
 from lxml import etree
 from mock import patch
-import pytest
 
 from regparser.commands.fetch_sxs import fetch_sxs
 from regparser.index import dependency, entry

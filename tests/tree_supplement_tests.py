@@ -1,5 +1,6 @@
-from regparser.tree import supplement
 from unittest import TestCase
+
+from regparser.tree import supplement
 
 
 class DepthSupplementTest(TestCase):

@@ -1,15 +1,15 @@
-from datetime import date
 import json
+from datetime import date
 from random import randint
 from unittest import TestCase
 
+import pytest
 from click.testing import CliRunner
 from mock import patch
-import pytest
 
 from regparser.commands import current_version
-from regparser.index import entry
 from regparser.history.annual import Volume
+from regparser.index import entry
 from regparser.notice.xml import TitlePartsRef
 
 
@@ -20,7 +20,7 @@ class CommandsCurrentVersionTests(TestCase):
         self.part = randint(1, 999)
         self.year = randint(2000, 2020)
         self.volume = Volume(self.year, self.title, 1)
-        self.version_id = '{}-annual-{}'.format(self.year, self.part)
+        self.version_id = '{0}-annual-{1}'.format(self.year, self.part)
 
     def test_process_creation(self):
         """If no tree is present, we should build one"""

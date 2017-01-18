@@ -2,7 +2,6 @@ import re
 
 from regparser.layer.layer import Layer
 
-
 _MARKER_RE = re.compile(r'^([0-9]+|[a-z]+|[A-Z]+)\.')
 
 

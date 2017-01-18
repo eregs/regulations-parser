@@ -1,17 +1,16 @@
-from itertools import chain
 import logging
+from itertools import chain
 
 from regparser.grammar import unified as grammar
 from regparser.tree.paragraph import p_levels
 from regparser.tree.struct import Node
-
 
 logger = logging.getLogger(__name__)
 
 
 class Label(object):
     #   @TODO: subparts
-    _p_markers = tuple('p{}'.format(i) for i in range(1, 10))
+    _p_markers = tuple('p{0}'.format(i) for i in range(1, 10))
 
     app_sect_schema = ('part', 'appendix', 'appendix_section') + _p_markers
     app_schema = ('part', 'appendix') + _p_markers
@@ -114,9 +113,9 @@ class Label(object):
 
     def __repr__(self):
         fields = ', '.join(
-            '{}={}'.format(field, repr(self.settings.get(field)))
+            '{0}={1}'.format(field, repr(self.settings.get(field)))
             for field in self.schema)
-        return 'Label({})'.format(fields)
+        return 'Label({0})'.format(fields)
 
     def __eq__(self, other):
         """Equality if types match and fields match"""
@@ -174,7 +173,7 @@ class ParagraphCitation(object):
                  other.full_start != self.full_start))
 
     def __repr__(self):
-        return "ParagraphCitation( start=%s, end=%s, label=%s )" % (
+        return "ParagraphCitation(start={0}, end={1}, label={2} )".format(
             repr(self.start), repr(self.end), repr(self.label))
 
 

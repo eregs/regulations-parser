@@ -2,8 +2,8 @@ from unittest import TestCase
 
 from mock import patch
 
-from regparser import content
 import settings
+from regparser import content
 
 
 class ContentTests(TestCase):

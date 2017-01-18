@@ -200,9 +200,9 @@ class ChangesTests(TestCase):
         amend_map = changes.match_labels_and_changes(
             labels_amended, self.section_node())
 
-        self.assertEqual(2, len(amend_map.keys()))
+        self.assertEqual(2, len(amend_map))
 
-        for label, amendments in amend_map.items():
+        for amendments in amend_map.values():
             amend = amendments[0]
             self.assertFalse(amend['candidate'])
             self.assertTrue(amend['action'] in ['POST', 'PUT'])

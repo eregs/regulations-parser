@@ -1,9 +1,9 @@
 from datetime import date
 from unittest import TestCase
 
+import pytest
 from click.testing import CliRunner
 from mock import patch
-import pytest
 
 from regparser.commands.proposal_versions import proposal_versions
 from regparser.history.versions import Version

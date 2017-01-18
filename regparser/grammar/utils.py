@@ -1,9 +1,8 @@
-from collections import namedtuple
 import re
+from collections import namedtuple
 
 import pyparsing as pp
 from six.moves import reduce
-
 
 Position = namedtuple('Position', ['start', 'end'])
 
@@ -11,13 +10,13 @@ Position = namedtuple('Position', ['start', 'end'])
 def keep_pos(expr):
     """Transform a pyparsing grammar by inserting an attribute, "pos", on the
     match which describes position information"""
-    locMarker = pp.Empty().setParseAction(lambda s, loc, t: loc)
-    endlocMarker = locMarker.copy()
-    endlocMarker.callPreparse = False   # don't allow the cursor to move
+    loc_marker = pp.Empty().setParseAction(lambda s, loc, t: loc)
+    end_loc_marker = loc_marker.copy()
+    end_loc_marker.callPreparse = False   # don't allow the cursor to move
     return (
-        locMarker.setResultsName("pos_start") +
+        loc_marker.setResultsName("pos_start") +
         expr +
-        endlocMarker.setResultsName("pos_end")
+        end_loc_marker.setResultsName("pos_end")
     ).setParseAction(parse_position)
 
 
@@ -41,17 +40,17 @@ class DocLiteral(pp.Literal):
         self.name = ascii_text
 
 
-def WordBoundaries(grammar):
+def WordBoundaries(grammar):    # noqa - we treat this like a pyparsing class
     return (pp.WordStart(pp.alphanums) +
             grammar +
             pp.WordEnd(pp.alphanums))
 
 
-def Marker(txt):
+def Marker(txt):    # noqa - we treat this like a pyparsing class
     return pp.Suppress(WordBoundaries(pp.CaselessLiteral(txt)))
 
 
-def SuffixMarker(txt):
+def SuffixMarker(txt):  # noqa - we treat this like a pyparsing class
     return pp.Suppress(pp.CaselessLiteral(txt) + pp.WordEnd(pp.alphanums))
 
 
@@ -85,7 +84,7 @@ class QuickSearchable(pp.ParseElementEnhance):
             re.IGNORECASE | re.UNICODE | re.MULTILINE | re.DOTALL)
         self.parseImpl = expr.parseImpl
 
-    def scanString(self, instring, maxMatches=None, overlap=False):
+    def scanString(self, instring, maxMatches=None, overlap=False):     # noqa
         """Override `scanString` to attempt parsing only where there's a regex
         search match (as opposed to every index). Does not implement the full
         scanString interface."""
@@ -121,7 +120,7 @@ class QuickSearchable(pp.ParseElementEnhance):
             if case.matches(grammar):
                 return case(grammar)
         # Grammar type that we've not accounted for. Fail fast
-        raise Exception("Unknown grammar type: {}".format(grammar.__class__))
+        raise Exception("Unknown grammar type: {0}".format(grammar.__class__))
 
     @classmethod
     def case(cls, *match_classes):
@@ -154,8 +153,8 @@ def wordstart(grammar):
     boundry, next_expr = grammar.exprs[:2]
     word_chars = ''.join(re.escape(char)
                          for char in boundry.wordChars)
-    return set('(?<![{}])'.format(word_chars) + regex_str
-               for regex_str in QuickSearchable.initial_regex(next_expr))
+    return {'(?<![{0}])'.format(word_chars) + regex_str
+            for regex_str in QuickSearchable.initial_regex(next_expr)}
 
 
 @QuickSearchable.and_case(pp.Optional)
@@ -190,14 +189,14 @@ def suppress(grammar):
 
 @QuickSearchable.case(pp.Regex, pp.Word, QuickSearchable)
 def has_re_string(grammar):
-    return set([grammar.reString])
+    return {grammar.reString}
 
 
 @QuickSearchable.case(pp.LineStart)
 def line_start(grammar):
-    return set(['^'])
+    return {'^'}
 
 
 @QuickSearchable.case(pp.Literal)
 def literal(grammar):
-    return set([re.escape(grammar.match)])
+    return {re.escape(grammar.match)}

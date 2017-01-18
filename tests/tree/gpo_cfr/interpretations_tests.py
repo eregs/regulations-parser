@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from unittest import TestCase
+
 from lxml import etree
 
 from regparser.tree.gpo_cfr import interpretations
@@ -73,9 +74,9 @@ class InterpretationsTest(TestCase):
         i51i = i51.children[0]
         self.assertEqual(['737', '5', 'Interp', '1', 'i'], i51i.label)
         self.assertEqual(1, len(i51i.children))
-        i51iA = i51i.children[0]
-        self.assertEqual(['737', '5', 'Interp', '1', 'i', 'A'], i51iA.label)
-        self.assertEqual(0, len(i51iA.children))
+        i51ia = i51i.children[0]
+        self.assertEqual(['737', '5', 'Interp', '1', 'i', 'A'], i51ia.label)
+        self.assertEqual(0, len(i51ia.children))
 
         self.assertEqual(['737', '5', 'a', 'Interp'], i5a.label)
         self.assertEqual(1, len(i5a.children))
@@ -88,23 +89,23 @@ class InterpretationsTest(TestCase):
 
         self.assertEqual(['737', '5', 'a', 'Interp', '1', 'ii'], i5a1ii.label)
         self.assertEqual(1, len(i5a1ii.children))
-        i5a1iiA = i5a1ii.children[0]
+        i5a1iia = i5a1ii.children[0]
         self.assertEqual(['737', '5', 'a', 'Interp', '1', 'ii', 'A'],
-                         i5a1iiA.label)
-        self.assertEqual(3, len(i5a1iiA.children))
-        i5a1iiA1, i5a1iiA2, i5a1iiA3 = i5a1iiA.children
+                         i5a1iia.label)
+        self.assertEqual(3, len(i5a1iia.children))
+        i5a1iia1, i5a1iia2, i5a1iia3 = i5a1iia.children
         self.assertEqual(['737', '5', 'a', 'Interp', '1', 'ii', 'A', '1'],
-                         i5a1iiA1.label)
-        self.assertEqual(i5a1iiA1.tagged_text, '<E T="03">1.</E> More info')
-        self.assertEqual(0, len(i5a1iiA1.children))
+                         i5a1iia1.label)
+        self.assertEqual(i5a1iia1.tagged_text, '<E T="03">1.</E> More info')
+        self.assertEqual(0, len(i5a1iia1.children))
         self.assertEqual(['737', '5', 'a', 'Interp', '1', 'ii', 'A', '2'],
-                         i5a1iiA2.label)
-        self.assertEqual(i5a1iiA2.tagged_text, '<E T="03">2.</E> Second info')
-        self.assertEqual(0, len(i5a1iiA2.children))
+                         i5a1iia2.label)
+        self.assertEqual(i5a1iia2.tagged_text, '<E T="03">2.</E> Second info')
+        self.assertEqual(0, len(i5a1iia2.children))
         self.assertEqual(['737', '5', 'a', 'Interp', '1', 'ii', 'A', '3'],
-                         i5a1iiA3.label)
-        self.assertEqual(i5a1iiA3.tagged_text, '<E T="03">3. Keyterms</E>')
-        self.assertEqual(0, len(i5a1iiA3.children))
+                         i5a1iia3.label)
+        self.assertEqual(i5a1iia3.tagged_text, '<E T="03">3. Keyterms</E>')
+        self.assertEqual(0, len(i5a1iia3.children))
 
     def test_build_supplement_tree_spacing(self):
         """Integration test"""
@@ -133,13 +134,13 @@ class InterpretationsTest(TestCase):
         self.assertEqual(s51i.text.strip(), "i. I like ice cream")
         self.assertEqual(1, len(s51i.children))
 
-        s51iA = s51i.children[0]
-        self.assertEqual(s51iA.text.strip(), "A. Aaaaah")
-        self.assertEqual(1, len(s51iA.children))
+        s51ia = s51i.children[0]
+        self.assertEqual(s51ia.text.strip(), "A. Aaaaah")
+        self.assertEqual(1, len(s51ia.children))
 
-        s51iA1 = s51iA.children[0]
-        self.assertEqual(s51iA1.text.strip(), "1. More info")
-        self.assertEqual(0, len(s51iA1.children))
+        s51ia1 = s51ia.children[0]
+        self.assertEqual(s51ia1.text.strip(), "1. More info")
+        self.assertEqual(0, len(s51ia1.children))
 
     def test_build_supplement_tree_repeats(self):
         """Integration test"""
@@ -212,17 +213,17 @@ class InterpretationsTest(TestCase):
         self.assertEqual(['737', 'Interp'], tree.label)
         self.assertEqual(1, len(tree.children))
 
-        iH = tree.children[0]
-        self.assertEqual(['737', 'H', 'Interp'], iH.label)
-        self.assertEqual(1, len(iH.children))
+        ih = tree.children[0]
+        self.assertEqual(['737', 'H', 'Interp'], ih.label)
+        self.assertEqual(1, len(ih.children))
 
-        iHb = iH.children[0]
-        self.assertEqual(['737', 'H', 'b', 'Interp'], iHb.label)
-        self.assertEqual(2, len(iHb.children))
+        ihb = ih.children[0]
+        self.assertEqual(['737', 'H', 'b', 'Interp'], ihb.label)
+        self.assertEqual(2, len(ihb.children))
 
-        iHb1, iHb5 = iHb.children
-        self.assertEqual(['737', 'H', 'b', 'Interp', '1'], iHb1.label)
-        self.assertEqual(['737', 'H', 'b', '5', 'Interp'], iHb5.label)
+        ihb1, ihb5 = ihb.children
+        self.assertEqual(['737', 'H', 'b', 'Interp', '1'], ihb1.label)
+        self.assertEqual(['737', 'H', 'b', '5', 'Interp'], ihb5.label)
 
     def test_build_supplement_intro_section(self):
         """Integration test"""
@@ -280,13 +281,13 @@ class InterpretationsTest(TestCase):
         self.assertEqual(n1i.text.strip(), 'i. iii')
         self.assertEqual(1, len(n1i.children))
 
-        n1iA = n1i.children[0]
-        self.assertEqual(['1', 'i', 'A'], n1iA.label)
-        self.assertEqual(1, len(n1iA.children))
+        n1ia = n1i.children[0]
+        self.assertEqual(['1', 'i', 'A'], n1ia.label)
+        self.assertEqual(1, len(n1ia.children))
 
-        n1iA1 = n1iA.children[0]
-        self.assertEqual(['1', 'i', 'A', '1'], n1iA1.label)
-        self.assertEqual(0, len(n1iA1.children))
+        n1ia1 = n1ia.children[0]
+        self.assertEqual(['1', 'i', 'A', '1'], n1ia1.label)
+        self.assertEqual(0, len(n1ia1.children))
 
     def test_process_inner_child_space(self):
         xml = """

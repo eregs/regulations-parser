@@ -1,6 +1,6 @@
-from copy import deepcopy
 import logging
 import re
+from copy import deepcopy
 
 from regparser.tree.depth import markers as mtypes
 from regparser.tree.paragraph import hash_for_paragraph
@@ -36,7 +36,7 @@ class ImportCategoryMatcher(paragraph_processor.BaseMatcher):
         (which would also re-order the categories that followed)"""
         match = cls.CATEGORY_RE.match(header_text)
         if match:
-            return 'p{}'.format(hash_for_paragraph(match.group('category')))
+            return 'p{0}'.format(hash_for_paragraph(match.group('category')))
         else:
             logging.warning("Couldn't derive category: %s", header_text)
             return mtypes.MARKERLESS

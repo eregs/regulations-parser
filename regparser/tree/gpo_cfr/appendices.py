@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-from itertools import takewhile
+
 import logging
 import re
+from itertools import takewhile
 
 from pyparsing import LineStart, Optional, Suppress
 
@@ -17,7 +18,6 @@ from regparser.tree.depth.derive import derive_depths
 from regparser.tree.paragraph import p_levels
 from regparser.tree.struct import Node
 from regparser.tree.xml_parser import matchers, tree_utils
-
 from settings import APPENDIX_IGNORE_SUBHEADER_LABEL
 
 logger = logging.getLogger(__name__)

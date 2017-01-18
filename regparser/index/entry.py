@@ -8,10 +8,11 @@ from lxml import etree
 from regparser.history.versions import Version as VersionStruct
 from regparser.notice.encoder import AmendmentEncoder
 from regparser.notice.xml import NoticeXML
-from regparser.tree.struct import (
-    frozen_node_decode_hook, full_node_decode_hook, FullNodeEncoder)
+from regparser.tree.struct import (FullNodeEncoder, frozen_node_decode_hook,
+                                   full_node_decode_hook)
 from regparser.tree.xml_parser.xml_wrapper import XMLWrapper
-from regparser.web.index.models import DependencyNode, Entry as DBEntry
+from regparser.web.index.models import Entry as DBEntry
+from regparser.web.index.models import DependencyNode
 
 logger = logging.getLogger(__name__)
 

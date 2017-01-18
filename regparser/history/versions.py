@@ -1,6 +1,6 @@
+import json
 from collections import namedtuple
 from datetime import datetime
-import json
 
 
 class Version(namedtuple('Version', ['identifier', 'published', 'effective'])):

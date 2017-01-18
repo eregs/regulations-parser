@@ -1,31 +1,29 @@
-from datetime import date
+import calendar
+import operator
 import string
+from datetime import date
 
+import attr
 from pyparsing import Optional, Suppress, Word
 from six.moves import reduce
 
 from regparser.grammar import utils
 
 
-class EffectiveDate:
-    pass
+@attr.attrs(slots=True, frozen=True)
+class EffectiveDate(object):
+    """Placeholder token"""
 
 
-class Notice:
-    def __init__(self, volume, page):
-        self.volume = volume
-        self.page = page
-
-    def __repr__(self):
-        return 'Notice( volume=%s, page=%s )' % (repr(self.volume),
-                                                 repr(self.page))
-
-    def __eq__(self, other):
-        return isinstance(other, Notice) and repr(self) == repr(other)
+@attr.attrs(slots=True, frozen=True)
+class Delayed(object):
+    """Placeholder token"""
 
 
-class Delayed:
-    pass
+@attr.attrs(slots=True, frozen=True)
+class Notice(object):
+    volume = attr.attrib()
+    page = attr.attrib()
 
 
 effective_date = (
@@ -43,14 +41,13 @@ notice_citation = (
 delayed = utils.Marker("delayed").setParseAction(Delayed)
 
 
-def int2Month(m):
-    month = date(2000, m, 1)
-    month = month.strftime('%B')
-    token = utils.Marker(month)
-    return token.setParseAction(lambda: m)
+def _month_parser(month_idx):
+    """Separate function to account for lexical scoping on lambdas"""
+    month_name = calendar.month_name[month_idx]
+    return utils.Marker(month_name).setParseAction(lambda: month_idx)
 
 
-months = reduce(lambda l, r: l | r, (int2Month(i) for i in range(2, 13)))
+months = reduce(operator.ior, (_month_parser(i) for i in range(1, 13)))
 
 
 date_parser = (

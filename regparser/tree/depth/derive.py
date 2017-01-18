@@ -6,7 +6,6 @@ from regparser.tree.depth import markers, rules
 from regparser.tree.depth.pair_rules import pair_rules
 from regparser.tree.struct import Node
 
-
 # A paragraph's type, index, depth assignment
 ParAssignment = namedtuple('ParAssignment', ('typ', 'idx', 'depth'))
 
@@ -68,9 +67,9 @@ def _decompress_markerless(assignment, marker_list):
         elif not saw_markerless:
             saw_markerless = True
             a_idx += 1
-        result['type{}'.format(m_idx)] = assignment['type{}'.format(a_idx)]
-        result['idx{}'.format(m_idx)] = assignment['idx{}'.format(a_idx)]
-        result['depth{}'.format(m_idx)] = assignment['depth{}'.format(a_idx)]
+        result['type{0}'.format(m_idx)] = assignment['type{0}'.format(a_idx)]
+        result['idx{0}'.format(m_idx)] = assignment['idx{0}'.format(a_idx)]
+        result['depth{0}'.format(m_idx)] = assignment['depth{0}'.format(a_idx)]
     return result
 
 
@@ -96,12 +95,12 @@ def derive_depths(original_markers, additional_constraints=None):
 
     all_vars = []
     for idx, marker in enumerate(marker_list):
-        type_var = "type{}".format(idx)
-        depth_var = "depth{}".format(idx)
+        type_var = "type{0}".format(idx)
+        depth_var = "depth{0}".format(idx)
         # Index within the marker list. Though this variable is redundant, it
         # makes the code easier to understand and doesn't have a significant
         # performance penalty
-        idx_var = "idx{}".format(idx)
+        idx_var = "idx{0}".format(idx)
 
         typ_opts = [t for t in markers.types if marker in t]
         idx_opts = [i for t in typ_opts for i in range(len(t))

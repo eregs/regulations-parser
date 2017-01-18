@@ -3,12 +3,11 @@ import os
 import sys
 
 import click
-from djclick.adapter import BaseRegistrator, DjangoCommandMixin
 import coloredlogs
 import ipdb
+from djclick.adapter import BaseRegistrator, DjangoCommandMixin
 
 from regparser.commands.retry import RetryingCommand
-
 
 DEFAULT_LOG_FORMAT = "%(asctime)s %(name)-40s %(message)s"
 

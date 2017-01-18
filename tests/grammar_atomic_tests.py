@@ -1,6 +1,7 @@
 from unittest import TestCase
 
 from pyparsing import ParseException
+
 from regparser.grammar import atomic
 
 

@@ -18,7 +18,7 @@ from regparser.commands.compare_to import compare_to
 from regparser.web.management.commands.eregs import cli as eregs_cli
 
 
-@attr.attrs
+@attr.attrs(slots=True, frozen=True)
 class Target(object):
     title = attr.attrib()
     parts = attr.attrib()
@@ -59,7 +59,7 @@ targets = {
 
 
 _ground_truth = functools.partial(os.path.join, 'tests', 'integration-data')
-_current_output = 'output-{}'.format
+_current_output = 'output-{0}'.format
 
 
 @click.group()

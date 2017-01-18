@@ -1,8 +1,9 @@
-from regparser.tasks import run_eregs_command
+import django_rq
 from django.conf import settings as django_settings
 from django.core.mail import get_connection, send_mail
-import django_rq
+
 import settings
+from regparser.tasks import run_eregs_command
 
 eregs_site_api_url = getattr(settings, "EREGS_SITE_API_URL")
 
@@ -31,7 +32,7 @@ def queue_eregs_job(args, timeout=60 * 30, result_ttl=-1):
 def send_notification_email(email_address, status_url):
     backend = django_settings.EMAIL_BACKEND
     connection = get_connection(backend=backend)
-    send_mail(status_url, "Job finished at %s" % status_url,
+    send_mail(status_url, "Job finished at {0}".format(status_url),
               "notifications@18F.gov", [email_address], connection=connection)
 
 
@@ -108,10 +109,10 @@ def get_host():
     hostname = getattr(settings, "CANONICAL_HOSTNAME", "")
     hostport = getattr(settings, "CANONICAL_PORT", "")
     if hostport and hostport not in ("80", "443"):
-        hostport = ":%s" % hostport
+        hostport = ":{0}".format(hostport)
     elif hostport in ("80", "443"):
         hostport = ""
-    return "%s%s" % (hostname, hostport)
+    return "{0}{1}".format(hostname, hostport)
 
 
 def create_status_url(job_id, sub_path=""):
@@ -131,7 +132,7 @@ def create_status_url(job_id, sub_path=""):
     if sub_path and not sub_path.endswith("/"):
         raise ValueError
     host = get_host()
-    return "%s/rp/jobs/%s%s/" % (host, sub_path, job_id)
+    return "{0}/rp/jobs/{1}{2}/".format(host, sub_path, job_id)
 
 
 def file_url(file_hash):
@@ -147,4 +148,4 @@ def file_url(file_hash):
     :returns: The URL for checking on the status of the job.
     """
     host = get_host()
-    return "%s/rp/jobs/files/%s/" % (host, file_hash)
+    return "{0}/rp/jobs/files/{1}/".format(host, file_hash)

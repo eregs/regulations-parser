@@ -2,7 +2,8 @@ import re
 
 import six
 
-from regparser.tree.depth import markers as mtypes, optional_rules
+from regparser.tree.depth import markers as mtypes
+from regparser.tree.depth import optional_rules
 from regparser.tree.struct import Node
 from regparser.tree.xml_parser import paragraph_processor, tree_utils
 
@@ -33,7 +34,7 @@ class USCodeParagraphMatcher(paragraph_processor.BaseMatcher):
         text = tree_utils.get_node_text(xml).strip()
         tagged_text = tree_utils.get_node_text_tags_preserved(xml).strip()
         markers_list = self.paragraph_markers(text)
-        with_parens = ['({})'.format(m) for m in markers_list]
+        with_parens = ['({0})'.format(m) for m in markers_list]
         triplets = zip(markers_list,
                        tree_utils.split_text(text, with_parens),
                        tree_utils.split_text(tagged_text, with_parens))

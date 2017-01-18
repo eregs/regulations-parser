@@ -1,5 +1,5 @@
-from regparser.tree.struct import Node
 from interpparser.layers import Interpretations
+from regparser.tree.struct import Node
 
 
 def test_process():
@@ -29,16 +29,16 @@ def test_process():
     interp11c5v = interp.process(Node(
         label=['102', '11', 'c', '5', 'v']
     ))
-    interpB5ii = interp.process(Node(label=['102', 'B', '5', 'ii']))
+    interpb5ii = interp.process(Node(label=['102', 'B', '5', 'ii']))
     interp9c1 = interp.process(Node(label=['102', '9', 'c', '1']))
 
     assert len(interp11a) == 1
     assert len(interp11c5v) == 1
-    assert len(interpB5ii) == 1
+    assert len(interpb5ii) == 1
     assert len(interp9c1) == 1
     assert interp11a[0]['reference'] == '102-11-a-Interp'
     assert interp11c5v[0]['reference'] == '102-11-c-5-v-Interp'
-    assert interpB5ii[0]['reference'] == '102-B-5-ii-Interp'
+    assert interpb5ii[0]['reference'] == '102-B-5-ii-Interp'
     assert interp9c1[0]['reference'] == '102-9-c-1-Interp'
     assert interp.process(Node(label=['102', '10', 'a'])) is None
 
@@ -108,17 +108,17 @@ def test_empty_interpretations():
 
 
 def test_pre_process_multiple_interps():
-    interpG = Node('GGGG', title='Appendix G',
+    interpg = Node('GGGG', title='Appendix G',
                    label=['1111', 'G', 'Interp'], node_type=Node.INTERP)
-    interpH = Node('HHHH', title='Appendix H',
+    interph = Node('HHHH', title='Appendix H',
                    label=['1111', 'H', 'Interp'], node_type=Node.INTERP)
-    interpGH = Node('GHGHGH', title='Appendices G and H',
+    interpgh = Node('GHGHGH', title='Appendices G and H',
                     label=['1111', 'G_H', 'Interp'],
                     node_type=Node.INTERP)
 
     tree = Node(label=['1111'], children=[
         Node(label=['1111', 'Interp'], node_type=Node.INTERP, children=[
-            interpGH, interpG, interpH])])
+            interpgh, interpg, interph])])
 
     interp = Interpretations(tree)
     interp.pre_process()
