@@ -358,3 +358,29 @@ def test_promote_nested_subjgrp():
 
     preprocessors.promote_nested_subjgrp(ctx.xml)
     assert "ABCDEFG" == "".join(child.text for child in ctx.xml.getchildren())
+
+
+def test_move_subpart_into_contents():
+    with XMLBuilder() as original:
+        original.HD("Header content", SOURCE="HED")
+        with original.SUBPART():
+            original.HD("Subpart content", SOURCE="HED")
+        with original.CONTENTS():
+            original.SECHD("Sec.")
+            original.HD("General", SOURCE="HD1")
+            original.SECTNO("42.1")
+            original.SUBJECT("Policy.")
+    modified = original.xml_copy()
+    preprocessors.move_subpart_into_contents(modified)
+
+    with XMLBuilder() as expected:
+        expected.HD("Header content", SOURCE="HED")
+        with expected.CONTENTS():
+            with expected.SUBPART():
+                expected.HD("Subpart content", SOURCE="HED")
+                expected.SECHD("Sec.")
+                expected.HD("General", SOURCE="HD1")
+                expected.SECTNO("42.1")
+                expected.SUBJECT("Policy.")
+
+    assert expected.xml_str == etree.tounicode(modified)
