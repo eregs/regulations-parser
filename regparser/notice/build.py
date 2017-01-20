@@ -3,7 +3,7 @@ import logging
 from lxml import etree
 
 from regparser.grammar.unified import notice_cfr_p
-from regparser.notice.amendments import fetch_amendments
+from regparser.notice.amendments.fetch import fetch_amendments
 from regparser.notice.dates import fetch_dates
 from regparser.notice.sxs import (build_section_by_section,
                                   find_section_by_section)

@@ -34,6 +34,14 @@ setup(
     ],
     entry_points={
         "console_scripts": "eregs=eregs:main",
+        "eregs_ns.parser.amendment.content": [
+            ("new_subpart = regparser.notice.amendments.subpart:"
+             "content_for_new_subpart"),
+            ("regtext = regparser.notice.amendments.section:"
+             "content_for_regtext"),
+            ("appendix = regparser.notice.amendments.appendix:"
+             "content_for_appendix"),
+        ],
         "eregs_ns.parser.layer.cfr": [
             "meta = regparser.layer.meta:Meta",
             ("internal-citations = regparser.layer.internal_citations:"
@@ -87,7 +95,6 @@ setup(
             "subpart = regparser.tree.gpo_cfr.subpart:parse_subpart",
             "subjgrp = regparser.tree.gpo_cfr.subpart:ParseSubjectGroup",
             "appendix = regparser.tree.gpo_cfr.appendices:parse_appendix",
-            "interp = regparser.tree.gpo_cfr.interpretations:parse_interp",
         ]
     }
 )

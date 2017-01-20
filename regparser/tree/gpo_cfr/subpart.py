@@ -26,14 +26,13 @@ def build_subjgrp(reg_part, subjgrp_xml, letter_list):
     return subjgrp
 
 
-def build_subpart(reg_part, subpart_xml):
-    subpart_title = get_subpart_group_title(subpart_xml)
-    subpart = reg_text.build_subpart(subpart_title, reg_part)
+def build_subpart(cfr_part, xml):
+    subpart_title = get_subpart_group_title(xml)
+    subpart = reg_text.build_subpart(subpart_title, cfr_part)
 
     sections = []
-    for ch in subpart_xml.getchildren():
-        if ch.tag == 'SECTION':
-            sections.extend(build_from_section(reg_part, ch))
+    for ch in xml.xpath('./SECTION'):
+        sections.extend(build_from_section(cfr_part, ch))
 
     subpart.children = sections
     return subpart

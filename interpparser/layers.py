@@ -1,9 +1,9 @@
 from collections import defaultdict
 
+from interpparser.tree import text_to_labels
 from regparser.citations import Label
 from regparser.layer.layer import Layer
 from regparser.tree import struct
-from regparser.tree.interpretation import text_to_labels
 
 
 class Interpretations(Layer):

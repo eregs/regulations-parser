@@ -15,7 +15,7 @@ from regparser import regs_gov
 from regparser.grammar.unified import notice_cfr_p
 from regparser.history.delays import delays_in_sentence
 from regparser.index.http_cache import http_client
-from regparser.notice.amendments import fetch_amendments
+from regparser.notice.amendments.fetch import fetch_amendments
 from regparser.notice.dates import fetch_dates
 from regparser.tree.xml_parser.xml_wrapper import XMLWrapper
 
