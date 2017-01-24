@@ -82,7 +82,7 @@ def fill_with_rules(cfr_title, cfr_part):
 
     derived = [(version.identifier, parent.identifier)
                for version, parent in versions_with_parents
-               if is_derived(version.identifier, deps, tree_dir)]
+               if is_derived(version.identifier, deps, tree_dir) and parent]
     for version_id, parent_id in derived:
         deps.validate_for(tree_dir / version_id)
         if deps.is_stale(tree_dir / version_id):
