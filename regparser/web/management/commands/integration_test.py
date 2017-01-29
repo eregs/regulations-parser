@@ -27,6 +27,10 @@ class Target(object):
     script = attr.attrib(default=attr.Factory(list))
 
 
+def cmd(*args):
+    return tuple(str(a) for a in args)
+
+
 targets = {
     'fec': Target(
         reqs=dict(fec_regparser=(
@@ -34,7 +38,7 @@ targets = {
             '&subdirectory=eregs_extensions'
         )),
         script=[
-            ['pipeline', '11', str(part), _output_dir('fec'), '--only-latest']
+            cmd('pipeline', 11, part, _output_dir('fec'), '--only-latest')
             for part in ([1, 2, 4, 5, 6, 7, 8] +
                          list(range(100, 117)) + [200, 201, 300] +
                          list(range(9001, 9009)) + [9012] +
@@ -48,7 +52,7 @@ targets = {
             '&subdirectory=eregs_extensions'
         )),
         script=[
-            ['pipeline', '27', str(part), _output_dir('atf')]
+            cmd('pipeline', 27, part, _output_dir('atf'))
             for part in (447, 478, 479, 555, 646)
         ]
     ),
@@ -58,9 +62,11 @@ targets = {
             '&subdirectory=eregs_extensions'
         )),
         script=[
-            ['pipeline', '40', str(part), _output_dir('epa'), '--only-latest']
+            cmd('annual_version', 40, part, '--year', 2015)
             for part in (262, 263, 264, 265, 271)
-        ]
+        ] + [cmd('layers')] + [
+            cmd('diffs', 40, part) for part in (262, 263, 264, 265, 271)
+        ] + [cmd('write_to', _output_dir('epa'))]
     ),
 }
 
