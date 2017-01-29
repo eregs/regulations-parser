@@ -46,19 +46,27 @@ def create_version_entry_if_needed(volume, cfr_part):
 @click.command()
 @click.argument('cfr_title', type=int)
 @click.argument('cfr_part', type=int)
-def annual_version(cfr_title, cfr_part):
+@click.option('--year', type=int, default=None, help="Defaults to this year")
+def annual_version(cfr_title, cfr_part, year):
     """Build a regulation tree for the most recent annual edition. This will
     also construct a corresponding, empty notice to match. The version will be
     marked as effective on the date of the last annual edition (which is not
     likely accurate)"""
-    year = date.today().year
-    vol = find_volume(year, cfr_title, cfr_part)
+    cfr_year = year or date.today().year
+    vol = find_volume(cfr_year, cfr_title, cfr_part)
+    if vol is None and year is None:
+        logger.warning(
+            "No annual edition for %s CFR %s, Year: %s. Trying %s.",
+            cfr_title, cfr_part, cfr_year, cfr_year - 1)
+        cfr_year -= 1
+        vol = find_volume(cfr_year, cfr_title, cfr_part)
+
     if vol is None:
-        year -= 1
-        vol = find_volume(year, cfr_title, cfr_part)
+        logger.error("No annual edition for %s CFR %s, Year: %s",
+                     cfr_title, cfr_part, cfr_year)
+    else:
+        logger.info("Getting annual version - %s CFR %s, Year: %s",
+                    cfr_title, cfr_part, cfr_year)
 
-    logger.info("Getting annual version - %s CFR %s, Year: %s",
-                cfr_title, cfr_part, year)
-
-    create_version_entry_if_needed(vol, cfr_part)
-    process_if_needed(vol, cfr_part)
+        create_version_entry_if_needed(vol, cfr_part)
+        process_if_needed(vol, cfr_part)
