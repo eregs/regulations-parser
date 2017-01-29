@@ -46,7 +46,7 @@ def create_version_entry_if_needed(volume, cfr_part):
 @click.command()
 @click.argument('cfr_title', type=int)
 @click.argument('cfr_part', type=int)
-def current_version(cfr_title, cfr_part):
+def annual_version(cfr_title, cfr_part):
     """Build a regulation tree for the most recent annual edition. This will
     also construct a corresponding, empty notice to match. The version will be
     marked as effective on the date of the last annual edition (which is not
@@ -57,7 +57,7 @@ def current_version(cfr_title, cfr_part):
         year -= 1
         vol = find_volume(year, cfr_title, cfr_part)
 
-    logger.info("Getting current version - %s CFR %s, Year: %s",
+    logger.info("Getting annual version - %s CFR %s, Year: %s",
                 cfr_title, cfr_part, year)
 
     create_version_entry_if_needed(vol, cfr_part)
