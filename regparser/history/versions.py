@@ -2,7 +2,8 @@ import json
 from collections import namedtuple
 from datetime import datetime
 
-class Version(namedtuple('Version', ['identifier', 'published', 'effective', 'volume', 'page'])):
+class Version(namedtuple('Version',
+                         ['identifier', 'effective', 'fr_volume', 'fr_page'])):
     @property
     def is_final(self):
         return bool(self.effective)
@@ -12,20 +13,17 @@ class Version(namedtuple('Version', ['identifier', 'published', 'effective', 'vo
         return not self.is_final
 
     def json(self):
-        result = {'identifier': self.identifier,
-                  'published': self.published.isoformat(),
-                  'volume': self.volume,
-                  'page': self.page}
+        result = self._asdict()
         if self.is_final:
             result['effective'] = self.effective.isoformat()
+        else:
+            del result['effective']
 
         return json.dumps(result)
 
     @staticmethod
     def from_json(json_str):
         json_dict = json.loads(json_str)
-        json_dict['published'] = datetime.strptime(json_dict['published'],
-                                                   '%Y-%m-%d').date()
         effective = json_dict.get('effective')
         if effective:
             effective = datetime.strptime(effective, '%Y-%m-%d').date()
@@ -37,12 +35,14 @@ class Version(namedtuple('Version', ['identifier', 'published', 'effective', 'vo
         identifiers, but also which versions are from final rules and which
         are just proposals"""
         if self.is_final and other.is_final:
-            left = (self.effective, self.volume, self.page)
-            right = (other.effective, other.volume, other.page)
+            left = (self.effective, self.fr_volume, self.fr_page,
+                    self.identifier)
+            right = (other.effective, other.fr_volume, other.fr_page,
+                     other.identifier)
             return left < right
         else:   # at least one of the two is a proposal
-            left = (self.published, self.identifier)
-            right = (other.published, other.identifier)
+            left = (self.fr_volume, self.fr_page, self.identifier)
+            right = (other.fr_volume, other.fr_page, other.identifier)
             return left < right
 
     @staticmethod

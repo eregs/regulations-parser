@@ -39,8 +39,8 @@ def create_version_entry_if_needed(volume, cfr_part):
 
     if version_id not in [c.path[-1] for c in version_dir.sub_entries()]:
         (version_dir / version_id).write(
-            Version(identifier=version_id, effective=volume.publication_date,
-                    published=volume.publication_date, volume=volume.vol_num, page=1))
+            Version(version_id, effective=volume.publication_date,
+                    fr_volume=volume.vol_num, fr_page=1))
 
 
 @click.command()
