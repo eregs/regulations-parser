@@ -13,8 +13,8 @@ def proposal_versions(doc_number):
         raise dependency.Missing(str(notice), str(notice))
 
     notice = notice.read()
-    version = Version(doc_number, effective=None, fr_volume=notice.fr_volume,
-                      fr_page=notice.start_page)
+    version = Version(doc_number, effective=None,
+                      fr_citation=notice.fr_citation)
 
     for cfr_title, cfr_part in notice.cfr_ref_pairs:
         version_entry = entry.Version(cfr_title, cfr_part, doc_number)

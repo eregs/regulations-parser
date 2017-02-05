@@ -6,6 +6,7 @@ import click
 from regparser.history.annual import find_volume
 from regparser.history.versions import Version
 from regparser.index import dependency, entry
+from regparser.notice.citation import Citation
 from regparser.notice.fake import build as build_fake_notice
 from regparser.tree.gpo_cfr import builder
 
@@ -40,7 +41,7 @@ def create_version_entry_if_needed(volume, cfr_part):
     if version_id not in [c.path[-1] for c in version_dir.sub_entries()]:
         (version_dir / version_id).write(
             Version(version_id, effective=volume.publication_date,
-                    fr_volume=volume.vol_num, fr_page=1))
+                    fr_citation=Citation(volume.vol_num, 1)))
 
 
 @click.command()
