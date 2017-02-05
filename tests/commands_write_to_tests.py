@@ -13,6 +13,7 @@ from mock import Mock, patch
 from regparser.commands.write_to import transform_notice, write_to
 from regparser.history.versions import Version
 from regparser.index import entry
+from regparser.notice.citation import Citation
 from regparser.notice.xml import NoticeXML
 from regparser.test_utils.xml_builder import XMLBuilder
 from regparser.tree.struct import Node
@@ -172,19 +173,19 @@ class CommandsWriteToTests(TestCase):
         called"""
         with CliRunner().isolated_filesystem():
             entry.Version(11, 222, 'v1').write(
-                Version('v1', date(2001, 1, 1), date(2002, 2, 2)))
+                Version('v1', date(2002, 2, 2), Citation(1, 1)))
             entry.Version(11, 222, 'v2').write(
-                Version('v2', date(2002, 2, 2), date(2003, 3, 3)))
+                Version('v2', date(2003, 3, 3), Citation(2, 2)))
             entry.Version(11, 222, 'v3').write(
-                Version('v3', date(2003, 3, 3), date(2004, 4, 4)))
+                Version('v3', date(2004, 4, 4), Citation(3, 3)))
             entry.Version(11, 223, 'v1').write(
-                Version('v1', date(2001, 1, 1), date(2002, 2, 2)))
+                Version('v1', date(2002, 2, 2), Citation(1, 1)))
             entry.Version(11, 224, 'v1').write(
-                Version('v1', date(2001, 1, 1), date(2002, 2, 2)))
+                Version('v1', date(2002, 2, 2), Citation(1, 1)))
             entry.Version(11, 222, 'proposal').write(
-                Version('proposal', date(2003, 6, 6), None))
+                Version('proposal', None, Citation(4, 4)))
             entry.Version(11, 223, 'proposal').write(
-                Version('proposal', date(2003, 6, 6), None))
+                Version('proposal', None, Citation(4, 4)))
 
             notice_xml = Mock()
             notice_xml.as_dict.return_value = {}

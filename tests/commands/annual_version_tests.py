@@ -52,10 +52,13 @@ def test_process_no_need_to_create():
 @pytest.mark.django_db
 def test_create_version():
     """Creates a version associated with the part and year"""
-    annual_version.create_version_entry_if_needed(Volume(2010, 20, 1), 1001)
+    vol_num = randint(1, 99)
+    annual_version.create_version_entry_if_needed(
+        Volume(2010, 20, vol_num), 1001)
     version = entry.Version(20, 1001, '2010-annual-1001').read()
     assert version.effective == date(2010, 4, 1)
-    assert version.published == date(2010, 4, 1)
+    assert version.fr_citation.volume == vol_num
+    assert version.fr_citation.page == 1
 
 
 @pytest.fixture

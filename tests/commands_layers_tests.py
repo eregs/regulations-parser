@@ -9,6 +9,7 @@ from mock import patch
 from regparser.commands import layers
 from regparser.history.versions import Version
 from regparser.index import dependency, entry
+from regparser.notice.citation import Citation
 from regparser.tree.struct import Node
 
 
@@ -24,7 +25,7 @@ class CommandsLayersTests(TestCase):
         with self.cli.isolated_filesystem(), patch.dict(
                 layers.LAYER_CLASSES, configured_layers):
             version_entry = entry.Version(111, 22, 'aaa')
-            version_entry.write(Version('aaa', date.today(), date.today()))
+            version_entry.write(Version('aaa', date.today(), Citation(1, 1)))
             tree_entry = entry.Tree(111, 22, 'aaa')
             self.assertRaises(dependency.Missing, layers.stale_layers,
                               tree_entry, 'cfr')
@@ -47,7 +48,7 @@ class CommandsLayersTests(TestCase):
         """All layers for a single version should get written."""
         with self.cli.isolated_filesystem():
             version_entry = entry.Version(12, 1000, '1234')
-            version_entry.write(Version('1234', date.today(), date.today()))
+            version_entry.write(Version('1234', date.today(), Citation(1, 1)))
             entry.Tree('12', '1000', '1234').write(Node())
 
             layers.process_cfr_layers(

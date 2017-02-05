@@ -10,6 +10,7 @@ from mock import patch
 from regparser.commands import annual_editions
 from regparser.history.versions import Version
 from regparser.index import dependency, entry
+from regparser.notice.citation import Citation
 from regparser.tree.struct import Node
 from regparser.web.index.models import Entry as DBEntry
 
@@ -34,11 +35,11 @@ class CommandsAnnualEditionsTests(TestCase):
         with self.cli.isolated_filesystem():
             path = entry.Version('12', '1000')
             (path / '1111').write(Version('1111', date(2000, 12, 1),
-                                          date(2000, 12, 1)))
+                                          Citation(1, 1)))
             (path / '2222').write(Version('2222', date(2000, 12, 2),
-                                          date(2000, 12, 2)))
+                                          Citation(1, 2)))
             (path / '3333').write(Version('3333', date(2001, 12, 1),
-                                          date(2001, 12, 1)))
+                                          Citation(1, 1)))
 
             results = list(annual_editions.last_versions(12, 1000))
             self.assertEqual(results, [
@@ -54,9 +55,9 @@ class CommandsAnnualEditionsTests(TestCase):
         with self.cli.isolated_filesystem():
             path = entry.Version('12', '1000')
             (path / '1111').write(Version('1111', date(2000, 12, 1),
-                                          date(2000, 12, 1)))
+                                          Citation(1, 1)))
             (path / '2222').write(Version('2222', date(2001, 12, 1),
-                                          date(2001, 12, 1)))
+                                          Citation(1, 1)))
 
             results = list(annual_editions.last_versions(12, 1000))
             self.assertEqual(results, [
@@ -72,7 +73,7 @@ class CommandsAnnualEditionsTests(TestCase):
                 annual_editions.process_if_needed('12', '1000', last_versions)
 
             entry.Version('12', '1000', '1111').write(
-                Version('1111', date(2000, 1, 1), date(2000, 1, 1)))
+                Version('1111', date(2000, 1, 1), Citation(1, 1)))
 
             with self.assertRaises(dependency.Missing):
                 annual_editions.process_if_needed('12', '1000', last_versions)
@@ -86,7 +87,7 @@ class CommandsAnnualEditionsTests(TestCase):
             build_tree.return_value = Node()
             last_versions = [annual_editions.LastVersionInYear('1111', 2000)]
             entry.Version('12', '1000', '1111').write(
-                Version('1111', date(2000, 1, 1), date(2000, 1, 1)))
+                Version('1111', date(2000, 1, 1), Citation(1, 1)))
             entry.Entry('annual', '12', '1000', 2000).write(
                 b'<ROOT></ROOT>')
 

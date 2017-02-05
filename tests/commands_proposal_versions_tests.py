@@ -1,4 +1,3 @@
-from datetime import date
 from unittest import TestCase
 
 import pytest
@@ -8,6 +7,7 @@ from mock import patch
 from regparser.commands.proposal_versions import proposal_versions
 from regparser.history.versions import Version
 from regparser.index import dependency, entry
+from regparser.notice.citation import Citation
 
 
 @pytest.mark.django_db
@@ -26,7 +26,7 @@ class CommandsProposalVersionsTests(TestCase):
     @patch('regparser.commands.proposal_versions.entry')
     def test_creates_version(self, entry):
         notice = entry.Notice.return_value.read.return_value
-        notice.published = date.today()
+        notice.fr_citation = Citation(1, 2)
         notice.cfr_ref_pairs = [(11, 111), (11, 222), (22, 222), (22, 333)]
         with self.cli.isolated_filesystem():
             result = self.cli.invoke(proposal_versions, ['dddd'])
@@ -36,4 +36,4 @@ class CommandsProposalVersionsTests(TestCase):
                              [(11, 111, 'dddd'), (11, 222, 'dddd'),
                               (22, 222, 'dddd'), (22, 333, 'dddd')])
             self.assertEqual(entry.Version.return_value.write.call_args[0][0],
-                             Version('dddd', date.today(), None))
+                             Version('dddd', None, Citation(1, 2)))

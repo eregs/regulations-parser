@@ -9,6 +9,7 @@ from mock import Mock, patch
 from regparser.commands import versions
 from regparser.history.delays import FRDelay
 from regparser.index import dependency, entry
+from regparser.notice.citation import Citation
 from regparser.web.index.models import Entry as DBEntry
 
 
@@ -87,14 +88,13 @@ class CommandsVersionsTests(TestCase):
     def test_write_to_disk(self):
         """If a version has been delayed, its effective date should be part of
         the serialized json"""
-        xml = Mock()
+        xml = Mock(effective=date(2002, 2, 2), version_id='111',
+                   fr_citation=Citation(1, 1))
         path = entry.Version('12', '1000')
         with self.cli.isolated_filesystem():
-            xml.configure_mock(effective=date(2002, 2, 2), version_id='111',
-                               published=date(2002, 1, 1))
             versions.write_to_disk(xml, path / '111')
 
-            xml.configure_mock(version_id='222')
+            xml.version_id = '222'
             versions.write_to_disk(
                 xml, path / '222',
                 versions.Delay(by='333', until=date(2004, 4, 4)))

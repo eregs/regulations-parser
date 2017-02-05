@@ -7,17 +7,18 @@ from click.testing import CliRunner
 from regparser.commands import sxs_layers
 from regparser.history.versions import Version
 from regparser.index import dependency, entry
+from regparser.notice.citation import Citation
 
 
 @pytest.mark.django_db
 class CommandsSxSLayersTests(TestCase):
     def create_versions(self):
         entry.Version(11, 222, 'aaa').write(
-            Version('aaa', date(2002, 2, 2), date(2002, 2, 2)))
+            Version('aaa', date(2002, 2, 2), Citation(2, 2)))
         entry.Version(11, 222, 'bbb').write(
-            Version('bbb', date(2001, 1, 1), date(2001, 1, 1)))
+            Version('bbb', date(2001, 1, 1), Citation(1, 1)))
         entry.Version(11, 222, 'ccc').write(
-            Version('ccc', date(2003, 3, 3), date(2003, 3, 3)))
+            Version('ccc', date(2003, 3, 3), Citation(3, 3)))
 
     def test_previous_sxs(self):
         """Should return SxS in version order; should only include SxS until

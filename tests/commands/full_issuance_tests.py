@@ -6,6 +6,7 @@ from mock import Mock
 
 from regparser.commands import full_issuance
 from regparser.index import dependency, entry
+from regparser.notice.citation import Citation
 from regparser.notice.xml import NoticeXML
 from regparser.test_utils.xml_builder import XMLBuilder
 from regparser.tree.struct import Node
@@ -51,7 +52,8 @@ def test_process_version_if_needed_success():
     """If the requirements are present we should write the version data"""
     notice_xml = NoticeXML(XMLBuilder().xml)
     notice_xml.effective = date(2001, 1, 1)
-    notice_xml.published = date(2002, 2, 2)
+    notice_xml.fr_volume = 2
+    notice_xml.start_page = 3
     entry.Notice('vvv').write(notice_xml)
 
     full_issuance.process_version_if_needed('title', 'part', 'vvv')
@@ -59,7 +61,7 @@ def test_process_version_if_needed_success():
     result = entry.Version('title', 'part', 'vvv').read()
     assert result.identifier == 'vvv'
     assert result.effective == date(2001, 1, 1)
-    assert result.published == date(2002, 2, 2)
+    assert result.fr_citation == Citation(2, 3)
 
 
 @pytest.mark.django_db
