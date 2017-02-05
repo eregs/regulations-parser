@@ -1,7 +1,7 @@
 import click
 
 from regparser.commands.annual_editions import annual_editions
-from regparser.commands.current_version import current_version
+from regparser.commands.annual_version import annual_version
 from regparser.commands.diffs import diffs
 from regparser.commands.fill_with_rules import fill_with_rules
 from regparser.commands.layers import layers
@@ -29,7 +29,7 @@ def pipeline(ctx, cfr_title, cfr_part, output, only_latest):
       repository"""
     params = {'cfr_title': cfr_title, 'cfr_part': cfr_part}
     if only_latest:
-        ctx.invoke(current_version, **params)
+        ctx.invoke(annual_version, **params)
     else:
         ctx.invoke(versions, **params)
         ctx.invoke(annual_editions, **params)

@@ -17,49 +17,58 @@ import pip
 from regparser.commands.compare_to import compare_to
 from regparser.web.management.commands.eregs import cli as eregs_cli
 
+_output_dir = 'output-{0}'.format
+_ground_truth = functools.partial(os.path.join, 'tests', 'integration-data')
+
 
 @attr.attrs(slots=True, frozen=True)
 class Target(object):
-    title = attr.attrib()
-    parts = attr.attrib()
     reqs = attr.attrib(default=attr.Factory(dict))
-    flags = attr.attrib(default=None)
+    script = attr.attrib(default=attr.Factory(list))
+
+
+def cmd(*args):
+    return tuple(str(a) for a in args)
 
 
 targets = {
     'fec': Target(
-        title=11,
-        parts=(
-            [1, 2, 4, 5, 6, 7, 8] +
-            list(range(100, 117)) + [200, 201, 300] +
-            list(range(9001, 9009)) + [9012] + list(range(9031, 9040)) +
-            [9405, 9407, 9409, 9410, 9411, 9420, 9428, 9430]
-        ),
-        reqs={
-            'fec_regparser': '-e git+https://github.com/18F/fec-eregs.git#egg=fec_regparser&subdirectory=eregs_extensions',  # noqa
-        },
-        flags='--only-latest'
+        reqs=dict(fec_regparser=(
+            '-e git+https://github.com/18F/fec-eregs.git#egg=fec_regparser'
+            '&subdirectory=eregs_extensions'
+        )),
+        script=[
+            cmd('pipeline', 11, part, _output_dir('fec'), '--only-latest')
+            for part in ([1, 2, 4, 5, 6, 7, 8] +
+                         list(range(100, 117)) + [200, 201, 300] +
+                         list(range(9001, 9009)) + [9012] +
+                         list(range(9031, 9040)) +
+                         [9405, 9407, 9409, 9410, 9411, 9420, 9428, 9430])
+        ]
     ),
     'atf': Target(
-        title=27,
-        parts=[447, 478, 479, 555, 646],
-        reqs={
-            'atf_regparser': '-e git+https://github.com/18F/atf-eregs.git#egg=atf_regparser&subdirectory=eregs_extensions',  # noqa
-        },
+        reqs=dict(atf_regparser=(
+            '-e git+https://github.com/18F/atf-eregs.git#egg=atf_regparser'
+            '&subdirectory=eregs_extensions'
+        )),
+        script=[
+            cmd('pipeline', 27, part, _output_dir('atf'))
+            for part in (447, 478, 479, 555, 646)
+        ]
     ),
     'epa': Target(
-        title=40,
-        parts=[262, 263, 264, 265, 271],
-        reqs={
-            'epa_regparser': '-e git+https://github.com/18F/epa-notice.git#egg=epa_regparser&subdirectory=eregs_extensions',  # noqa
-        },
-        flags='--only-latest'
+        reqs=dict(epa_regparser=(
+            '-e git+https://github.com/18F/epa-notice.git#egg=epa_regparser'
+            '&subdirectory=eregs_extensions'
+        )),
+        script=[
+            cmd('annual_version', 40, part, '--year', 2015)
+            for part in (262, 263, 264, 265, 271)
+        ] + [cmd('layers')] + [
+            cmd('diffs', 40, part) for part in (262, 263, 264, 265, 271)
+        ] + [cmd('write_to', _output_dir('epa'))]
     ),
 }
-
-
-_ground_truth = functools.partial(os.path.join, 'tests', 'integration-data')
-_current_output = 'output-{0}'.format
 
 
 @click.group()
@@ -85,14 +94,8 @@ def uninstall():
 @integration_test.command()
 @click.argument('target')
 def build(target):
-    config = targets[target]
-
-    for part in config.parts:
-        args = ['pipeline', str(config.title), str(part),
-                _current_output(target)]
-        if config.flags:
-            args.append(config.flags)
-        eregs_cli(*args)
+    for line in targets[target].script:
+        eregs_cli(*line)
 
 
 @integration_test.command()
@@ -102,7 +105,7 @@ def compare(ctx, target):
     diffs = ctx.invoke(
         compare_to,
         api_base=_ground_truth(target),
-        paths=[_current_output(target)],
+        paths=[_output_dir(target)],
         prompt=False,
     )
     if diffs:

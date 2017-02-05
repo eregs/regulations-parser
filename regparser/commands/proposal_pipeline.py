@@ -1,7 +1,7 @@
 import click
 
 from regparser.commands.annual_editions import annual_editions
-from regparser.commands.current_version import current_version
+from regparser.commands.annual_version import annual_version
 from regparser.commands.diffs import diffs
 from regparser.commands.fill_with_rules import fill_with_rules
 from regparser.commands.import_notice import import_notice, parse_notice
@@ -30,7 +30,7 @@ def proposal_pipeline(ctx, xml_file, output, only_latest):
 
     for title, part in notice_xml.cfr_ref_pairs:
         if only_latest:
-            ctx.invoke(current_version, cfr_title=title, cfr_part=part)
+            ctx.invoke(annual_version, cfr_title=title, cfr_part=part)
         else:
             ctx.invoke(versions, cfr_title=title, cfr_part=part)
             ctx.invoke(annual_editions, cfr_title=title, cfr_part=part)

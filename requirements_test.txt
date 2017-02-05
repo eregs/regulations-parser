@@ -9,9 +9,10 @@ flake8-pep3101==1.0
 flake8-print==2.0.2
 flake8-string-format==0.2.3
 flake8-tuple==0.2.12
+freezegun==0.3.8
 httpretty==0.8.14
 mock==2.0.0
 pep8-naming==0.4.1
-pytest==2.9.2
-pytest-cov==2.2.1
+pytest==3.0.6
+pytest-cov==2.4.0
 pytest-django==2.9.1
