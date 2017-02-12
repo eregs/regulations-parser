@@ -61,8 +61,7 @@ def write_to_disk(xml, version_entry, delay=None):
     """Serialize a Version instance to disk"""
     effective = xml.effective if delay is None else delay.until
     if effective:
-        version = Version(identifier=xml.version_id, effective=effective,
-                          published=xml.published)
+        version = Version(xml.version_id, effective, xml.fr_citation)
         version_entry.write(version)
     else:
         logger.warning("No effective date for this rule: %s. Skipping",

@@ -8,6 +8,7 @@ from pyparsing import Optional, Suppress, Word
 from six.moves import reduce
 
 from regparser.grammar import utils
+from regparser.notice.citation import Citation as NoticeCitation
 
 
 @attr.attrs(slots=True, frozen=True)
@@ -20,12 +21,6 @@ class Delayed(object):
     """Placeholder token"""
 
 
-@attr.attrs(slots=True, frozen=True)
-class Notice(object):
-    volume = attr.attrib()
-    page = attr.attrib()
-
-
 effective_date = (
     utils.Marker("effective") + utils.Marker("date")
 ).setParseAction(EffectiveDate)
@@ -35,7 +30,7 @@ notice_citation = (
     Word(string.digits) +
     utils.Marker('FR') +
     Word(string.digits)
-).setParseAction(lambda m: Notice(int(m[0]), int(m[1])))
+).setParseAction(lambda m: NoticeCitation(m[0], m[1]))
 
 
 delayed = utils.Marker("delayed").setParseAction(Delayed)

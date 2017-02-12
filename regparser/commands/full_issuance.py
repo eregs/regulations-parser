@@ -34,9 +34,8 @@ def process_version_if_needed(cfr_title, cfr_part, version_id):
 
     if deps.is_stale(version_entry):
         notice_xml = notice_entry.read()
-        version = Version(
-            identifier=version_id, effective=notice_xml.effective,
-            published=notice_xml.published)
+        version = Version(version_id, notice_xml.effective,
+                          notice_xml.fr_citation)
         version_entry.write(version)
 
 

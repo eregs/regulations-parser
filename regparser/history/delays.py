@@ -3,7 +3,8 @@ from datetime import date
 from itertools import dropwhile, takewhile
 
 from regparser.grammar.delays import tokenizer as delay_tokenizer
-from regparser.grammar.delays import Delayed, EffectiveDate, Notice
+from regparser.grammar.delays import Delayed, EffectiveDate
+from regparser.notice.citation import Citation as NoticeCitation
 
 
 class FRDelay(namedtuple('FRDelay', ['volume', 'page', 'delayed_until'])):
@@ -29,7 +30,7 @@ def delays_in_sentence(sent):
 
     frs = list(takewhile(lambda t: not isinstance(t, Delayed), tokens))
     tokens = tokens[len(frs):]
-    frs = [t for t in frs if isinstance(t, Notice)]
+    frs = [t for t in frs if isinstance(t, NoticeCitation)]
 
     if not frs or not tokens:
         return []

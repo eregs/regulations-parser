@@ -16,6 +16,7 @@ from regparser.grammar.unified import notice_cfr_p
 from regparser.history.delays import delays_in_sentence
 from regparser.index.http_cache import http_client
 from regparser.notice.amendments.fetch import fetch_amendments
+from regparser.notice.citation import Citation
 from regparser.notice.dates import fetch_dates
 from regparser.tree.xml_parser.xml_wrapper import XMLWrapper
 
@@ -339,7 +340,7 @@ class NoticeXML(XMLWrapper):
 
     @property
     def fr_citation(self):
-        return '{0} FR {1}'.format(self.fr_volume, self.start_page)
+        return Citation(self.fr_volume, self.start_page)
 
     @property
     def title(self):
@@ -397,7 +398,7 @@ class NoticeXML(XMLWrapper):
                   'cfr_title': cfr_ref.title,
                   'dockets': self.docket_ids,
                   'document_number': self.version_id,
-                  'fr_citation': self.fr_citation,
+                  'fr_citation': self.fr_citation.formatted(),
                   'fr_url': self.fr_html_url,
                   'fr_volume': self.fr_volume,
                   # @todo - SxS depends on this; we should remove soon
