@@ -68,6 +68,12 @@ targets = {
             cmd('diffs', 40, part) for part in (262, 263, 264, 265, 271)
         ] + [cmd('write_to', _output_dir('epa'))]
     ),
+    'uspto': Target(
+        script=[
+            cmd('full_issuance', 37, 42, '2012-17900'),
+            cmd('pipeline', 37, 42, _output_dir('uspto'))
+        ]
+    ),
 }
 
 

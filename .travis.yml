@@ -15,6 +15,7 @@ env:
     - INTEGRATION_TARGET=fec
     - INTEGRATION_TARGET=atf
     - INTEGRATION_TARGET=epa
+    - INTEGRATION_TARGET=uspto
 script:
   - ./test-travis.sh
 after_success:
