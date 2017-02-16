@@ -37,9 +37,8 @@ def test_parse_appendix(monkeypatch):
 def test_process_amendments_context(monkeypatch):
     """Context should carry over between REGTEXTs"""
     # turn on the interpretations plugin
-    monkeypatch.setattr(fetch, 'ExtensionManager', Mock(return_value=[
-        Mock(plugin=appendix.content_for_appendix),
-        Mock(plugin=section.content_for_regtext)
+    monkeypatch.setattr(fetch, 'instantiate_if_possible', Mock(return_value=[
+        appendix.content_for_appendix, section.content_for_regtext
     ]))
     amdpar1 = "3. In § 106.1, revise paragraph (a) to read as follows:"
     amdpar2 = "3. Add appendix C"

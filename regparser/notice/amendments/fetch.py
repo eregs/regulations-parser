@@ -2,11 +2,10 @@
 import logging
 from collections import namedtuple
 
-from stevedore.extension import ExtensionManager
-
 from regparser.notice import changes
 from regparser.notice.amdparser import amendment_from_xml
 from regparser.notice.amendments.subpart import process_designate_subpart
+from regparser.plugins import instantiate_if_possible
 from regparser.tree.struct import walk
 
 logger = logging.getLogger(__name__)
@@ -37,8 +36,9 @@ class ContentCache(object):
         if not is_editing:
             return None
 
-        for extension in ExtensionManager('eregs_ns.parser.amendment.content'):
-            result = extension.plugin(instruction_xml)
+        for extension in instantiate_if_possible(
+                'eregs_ns.parser.amendment.content'):
+            result = extension(instruction_xml)
             if result:
                 key, fn = result
                 if key is not None and key not in self.by_xml:

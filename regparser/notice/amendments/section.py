@@ -18,6 +18,9 @@ def content_for_regtext(instruction_xml):
     return xml, parse_regtext
 
 
+content_for_regtext.plugin_order = 10   # allow other finders to run first
+
+
 def find_section(amdpar_xml):
     """ With an AMDPAR xml, return the first section sibling """
     siblings = [s for s in amdpar_xml.itersiblings()]

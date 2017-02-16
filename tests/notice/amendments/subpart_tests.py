@@ -13,9 +13,8 @@ from regparser.tree.xml_parser.preprocessors import preprocess_amdpars
 @pytest.fixture
 def content_plugin_installed(monkeypatch):
     # turn on the subpart plugin
-    monkeypatch.setattr(fetch, 'ExtensionManager', Mock(return_value=[
-        Mock(plugin=subpart.content_for_new_subpart),
-        Mock(plugin=section.content_for_regtext)
+    monkeypatch.setattr(fetch, 'instantiate_if_possible', Mock(return_value=[
+        subpart.content_for_new_subpart, section.content_for_regtext
     ]))
 
 
