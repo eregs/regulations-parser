@@ -1,6 +1,7 @@
 import functools
 
 from regparser.notice.amendments.utils import label_amdpar_from
+from regparser.notice.changes import Change
 from regparser.tree.gpo_cfr.subpart import build_subpart
 
 
@@ -24,5 +25,5 @@ def find_subpart(amdpar_tag):
 def process_designate_subpart(amendment):
     """ Process the designate amendment if it adds a subpart. """
     label_id = '-'.join(amendment.label)
-    return {label_id: {'action': 'DESIGNATE',
-                       'destination': amendment.destination}}
+    return Change(label_id, {'action': 'DESIGNATE',
+                             'destination': amendment.destination})

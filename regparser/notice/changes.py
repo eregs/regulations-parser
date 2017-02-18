@@ -4,7 +4,7 @@ regulation have changed.  """
 
 import copy
 import logging
-from collections import OrderedDict, defaultdict
+from collections import OrderedDict, namedtuple
 
 from regparser.grammar import amdpar
 from regparser.grammar.tokens import Verb
@@ -13,6 +13,7 @@ from regparser.tree import struct
 from regparser.tree.paragraph import p_levels
 
 logger = logging.getLogger(__name__)
+Change = namedtuple('Change', ['label_id', 'content'])
 
 
 def node_to_dict(node):
@@ -176,7 +177,7 @@ def format_node(node, amendment, parent_label=None):
         node_as_dict['field'] = amendment['field']
     if parent_label:
         node_as_dict['parent_label'] = parent_label
-    return {node.label_id(): node_as_dict}
+    return Change(node.label_id(), node_as_dict)
 
 
 def create_field_amendment(label, amendment):
@@ -212,12 +213,8 @@ def create_add_amendment(amendment, subpart_label=None):
             parent_label = None
         changes.append(format_node(node, amendment, parent_label))
 
-    puts = [c for c in changes
-            if any(v['action'] == 'PUT' for v in c.values())]
-    for change in puts:
-        # This is awkward, but we know there will only be _one_ key in the
-        # "changes" dictionary
-        label = list(change.keys())[0]
+    puts = [c for c in changes if c.content['action'] == 'PUT']
+    for label, change in puts:
         node = struct.find(amendment['node'], label)
         text = node.text.strip()
         marker = marker_of(node)
@@ -225,7 +222,7 @@ def create_add_amendment(amendment, subpart_label=None):
         # Text is stars, but this is not the root. Explicitly try to keep
         # this node
         if text == '* * *':
-            change[label]['action'] = Verb.KEEP
+            change['action'] = Verb.KEEP
 
         # If text ends with a colon and is followed by stars, assume we are
         # only modifying the intro text
@@ -233,7 +230,7 @@ def create_add_amendment(amendment, subpart_label=None):
                 node.source_xml is not None):
             following = node.source_xml.getnext()
             if following is not None and following.tag == 'STARS':
-                change[label]['field'] = '[text]'
+                change['field'] = '[text]'
 
     return changes
 
@@ -270,18 +267,22 @@ def flatten_tree(node_list, node):
 class NoticeChanges(object):
     """ Notice changes. """
     def __init__(self):
-        self.changes_by_xml = defaultdict(OrderedDict)
+        self._changes_by_xml = OrderedDict()
 
-    def add_changes(self, amdpar_xml, changes):
-        """ Essentially add more changes into NoticeChanges. This is
-        cognizant of the fact that a single label can have more than
-        one change. Do not add the same change twice (as may occur if both
-        the parent and child are marked as added)"""
-        for label, change in changes.items():
-            existing = self.changes_by_xml[amdpar_xml].get(label, [])
-            if change not in existing:
-                existing.append(change)
-            self.changes_by_xml[amdpar_xml][label] = existing
+    def add_change(self, amdpar_xml, change):
+        """ Track another change. This is cognizant of the fact that a single
+        label can have more than one change. Do not add the same change twice
+        (as may occur if both the parent and child are marked as added)"""
+        existing = self[amdpar_xml].get(change.label_id, [])
+        if change.content not in existing:
+            existing.append(change.content)
+        self[amdpar_xml][change.label_id] = existing
+
+    def __getitem__(self, key):
+        """Fetch changes by XML"""
+        if key not in self._changes_by_xml:
+            self._changes_by_xml[key] = OrderedDict()
+        return self._changes_by_xml[key]
 
 
 def fix_section_node(paragraphs, amdpar_xml):

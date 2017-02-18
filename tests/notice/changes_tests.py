@@ -78,7 +78,7 @@ def test_create_add_amendment():
 
     amends = {}
     for a in amendments:
-        amends.update(a)
+        amends[a.label_id] = a.content
 
     for l in ['200-1-i', '200-1', '200-2', '200-3-a', '200-3', '200']:
         assert l in amends
@@ -99,7 +99,7 @@ def test_create_add_amendment_parent_label():
     assert len(amendments) == 6
     amends = {}
     for a in amendments:
-        amends.update(a)
+        amends[a.label_id] = a.content
 
     assert amends['200'].get('parent_label') == ['arbitrary']
     for label, change in amends.items():
@@ -312,14 +312,14 @@ def test_fix_section_node():
 
 def test_notice_changes_update_duplicates():
     nc = changes.NoticeChanges()
-    nc.add_changes(None, {'123-12': {'action': 'DELETE'},
-                          '123-22': {'action': 'OTHER'}})
-    nc.add_changes(None, {'123-12': {'action': 'DELETE'}})
-    nc.add_changes(None, {'123-12': {'action': 'OTHER'}})
-    nc.add_changes(None, {'123-22': {'action': 'OTHER'},
-                          '123-32': {'action': 'LAST'}})
+    nc.add_change(None, changes.Change('123-12', {'action': 'DELETE'}))
+    nc.add_change(None, changes.Change('123-22', {'action': 'OTHER'}))
+    nc.add_change(None, changes.Change('123-12', {'action': 'DELETE'}))
+    nc.add_change(None, changes.Change('123-12', {'action': 'OTHER'}))
+    nc.add_change(None, changes.Change('123-22', {'action': 'OTHER'}))
+    nc.add_change(None, changes.Change('123-32', {'action': 'LAST'}))
 
-    data = nc.changes_by_xml[None]
+    data = nc[None]
     assert '123-12' in data
     assert '123-22' in data
     assert '123-32' in data
@@ -339,22 +339,26 @@ def test_create_subpart_amendment():
                            Node(label=['111', '22', 'b'])]),
             Node(label=['111', '23'])
         ])
-    result = changes.create_subpart_amendment(subpart)
-    # each change is a dictionary with only one key
-    result = list(sorted(result, key=lambda r: list(r.keys())[0]))
+    results = changes.create_subpart_amendment(subpart)
+    results = list(sorted(results, key=lambda r: r.label_id))
 
     def empty_node(label, node_type='regtext'):
         return dict(text='', tagged_text='', title=None, node_type=node_type,
                     child_labels=[], label=label)
 
-    assert result == [
-        {'111-22': dict(parent_label=['111', 'Subpart', 'C'], action='POST',
-                        node=empty_node(['111', '22']))},
-        {'111-22-a': dict(action='POST', node=empty_node(['111', '22', 'a']))},
-        {'111-22-b': dict(action='POST', node=empty_node(['111', '22', 'b']))},
-        {'111-23': dict(parent_label=['111', 'Subpart', 'C'], action='POST',
-                        node=empty_node(['111', '23']))},
-        {'111-Subpart-C': dict(
-            action='POST',
-            node=empty_node(['111', 'Subpart', 'C'], 'subpart'))},
+    assert results == [
+        changes.Change('111-22', dict(parent_label=['111', 'Subpart', 'C'],
+                                      action='POST',
+                                      node=empty_node(['111', '22']))),
+        changes.Change('111-22-a', dict(action='POST',
+                                        node=empty_node(['111', '22', 'a']))),
+        changes.Change('111-22-b', dict(action='POST',
+                                        node=empty_node(['111', '22', 'b']))),
+        changes.Change('111-23', dict(parent_label=['111', 'Subpart', 'C'],
+                                      action='POST',
+                                      node=empty_node(['111', '23']))),
+        changes.Change(
+            '111-Subpart-C',
+            dict(action='POST',
+                 node=empty_node(['111', 'Subpart', 'C'], 'subpart'))),
     ]

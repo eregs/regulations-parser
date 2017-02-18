@@ -24,8 +24,8 @@ def test_process_designate_subpart():
 
     subpart_changes = subpart.process_designate_subpart(amended_label)
 
-    assert ['200-1-a'] == list(subpart_changes.keys())
-    change = subpart_changes['200-1-a']
+    assert '200-1-a' == subpart_changes.label_id
+    change = subpart_changes.content
     assert change['destination'] == ['205', 'Subpart', 'A']
     assert change['action'] == 'DESIGNATE'
 
