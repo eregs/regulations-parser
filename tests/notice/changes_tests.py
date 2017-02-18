@@ -327,3 +327,34 @@ def test_notice_changes_update_duplicates():
     assert data['123-12'] == [{'action': 'DELETE'}, {'action': 'OTHER'}]
     assert data['123-22'] == [{'action': 'OTHER'}]
     assert data['123-32'] == [{'action': 'LAST'}]
+
+
+def test_create_subpart_amendment():
+    """We expect the sections to include a parent_label, but not the
+    paragraphs"""
+    subpart = Node(
+        label=['111', 'Subpart', 'C'], node_type=Node.SUBPART, children=[
+            Node(label=['111', '22'],
+                 children=[Node(label=['111', '22', 'a']),
+                           Node(label=['111', '22', 'b'])]),
+            Node(label=['111', '23'])
+        ])
+    result = changes.create_subpart_amendment(subpart)
+    # each change is a dictionary with only one key
+    result = list(sorted(result, key=lambda r: list(r.keys())[0]))
+
+    def empty_node(label, node_type='regtext'):
+        return dict(text='', tagged_text='', title=None, node_type=node_type,
+                    child_labels=[], label=label)
+
+    assert result == [
+        {'111-22': dict(parent_label=['111', 'Subpart', 'C'], action='POST',
+                        node=empty_node(['111', '22']))},
+        {'111-22-a': dict(action='POST', node=empty_node(['111', '22', 'a']))},
+        {'111-22-b': dict(action='POST', node=empty_node(['111', '22', 'b']))},
+        {'111-23': dict(parent_label=['111', 'Subpart', 'C'], action='POST',
+                        node=empty_node(['111', '23']))},
+        {'111-Subpart-C': dict(
+            action='POST',
+            node=empty_node(['111', 'Subpart', 'C'], 'subpart'))},
+    ]
