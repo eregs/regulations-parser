@@ -1,0 +1,118 @@
+{
+    "42-105-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    89, 
+                    111
+                ], 
+                [
+                    "insert", 
+                    89, 
+                    "EXPRESS MAIL\u00ae"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    157, 
+                    180
+                ], 
+                [
+                    "insert", 
+                    157, 
+                    "EXPRESS MAIL\u00ae."
+                ]
+            ]
+        ]
+    }, 
+    "42-205-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    89, 
+                    111
+                ], 
+                [
+                    "insert", 
+                    89, 
+                    "EXPRESS MAIL\u00ae"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    157, 
+                    180
+                ], 
+                [
+                    "insert", 
+                    157, 
+                    "EXPRESS MAIL\u00ae."
+                ]
+            ]
+        ]
+    }, 
+    "42-406-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    89, 
+                    111
+                ], 
+                [
+                    "insert", 
+                    89, 
+                    "EXPRESS MAIL\u00ae"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    157, 
+                    180
+                ], 
+                [
+                    "insert", 
+                    157, 
+                    "EXPRESS MAIL\u00ae."
+                ]
+            ]
+        ]
+    }, 
+    "42-6-e-1": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    125, 
+                    147
+                ], 
+                [
+                    "insert", 
+                    125, 
+                    "EXPRESS MAIL\u00ae"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    193, 
+                    216
+                ], 
+                [
+                    "insert", 
+                    193, 
+                    "EXPRESS MAIL\u00ae."
+                ]
+            ]
+        ]
+    }
+}

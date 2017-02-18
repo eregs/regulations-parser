@@ -1,0 +1,837 @@
+{
+    "42-100-b": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                35, 
+                "that will not expire before a final written decision is issued "
+            ], 
+            [
+                "insert", 
+                151, 
+                " A party may request a district court-type claim construction approach to be applied if a party certifies that the involved patent will expire within 18 months from the entry of the Notice of Filing Date Accorded to Petition. The request, accompanied by a party's certification, must be made in the form of a motion under \u00a7 42.20, within 30 days from the filing of the petition."
+            ]
+        ]
+    }, 
+    "42-107-a": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    187, 
+                    191
+                ], 
+                [
+                    "insert", 
+                    187, 
+                    "314 and can include supporting evidence."
+                ]
+            ], 
+            [
+                "insert", 
+                196, 
+                "preliminary "
+            ], 
+            [
+                "delete", 
+                205, 
+                304
+            ], 
+            [
+                [
+                    "delete", 
+                    322, 
+                    333
+                ], 
+                [
+                    "insert", 
+                    322, 
+                    "word count"
+                ]
+            ]
+        ]
+    }, 
+    "42-107-c": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    4, 
+                    164
+                ], 
+                [
+                    "insert", 
+                    4, 
+                    "[Reserved]"
+                ]
+            ]
+        ]
+    }, 
+    "42-108-c": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    402, 
+                    408
+                ], 
+                [
+                    "insert", 
+                    402, 
+                    "filed, including any testimonial evidence, but a genuine issue of material fact created by such testimonial evidence will be viewed in the light most favorable to the petitioner solely for purposes of deciding whether to institute an inter partes review. A petitioner may seek leave to file a reply to the preliminary response in accordance with \u00a7\u00a7 42.23 and 42.24(c). Any such request must make a showing of good cause."
+                ]
+            ]
+        ]
+    }, 
+    "42-11": {
+        "child_ops": [
+            [
+                "insert", 
+                0, 
+                [
+                    "42-11-a", 
+                    "42-11-b", 
+                    "42-11-c", 
+                    "42-11-d"
+                ]
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                "delete", 
+                0, 
+                136
+            ]
+        ], 
+        "title": [
+            [
+                [
+                    "delete", 
+                    16, 
+                    23
+                ], 
+                [
+                    "insert", 
+                    16, 
+                    "candor; signing papers; representations to the Board; sanctions."
+                ]
+            ]
+        ]
+    }, 
+    "42-11-a": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "11", 
+                "a"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(a) <E T=\"03\">Duty of candor.</E> Parties and individuals involved in the proceeding have a duty of candor and good faith to the Office during the course of a proceeding.", 
+            "text": "(a) Duty of candor. Parties and individuals involved in the proceeding have a duty of candor and good faith to the Office during the course of a proceeding.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-11-b": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "11", 
+                "b"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(b) <E T=\"03\">Signature.</E> Every petition, response, written motion, and other paper filed in a proceeding must comply with the signature requirements set forth in \u00a7\u200911.18(a) of this chapter. The Board may expunge any unsigned submission unless the omission is promptly corrected after being called to the counsel's or party's attention.", 
+            "text": "(b) Signature. Every petition, response, written motion, and other paper filed in a proceeding must comply with the signature requirements set forth in \u00a7\u200911.18(a) of this chapter. The Board may expunge any unsigned submission unless the omission is promptly corrected after being called to the counsel's or party's attention.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-11-c": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "11", 
+                "c"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(c) <E T=\"03\">Representations to the Board.</E> By presenting to the Board a petition, response, written motion, or other paper\u2014whether by signing, filing, submitting, or later advocating it\u2014an attorney, registered practitioner, or unrepresented party attests to compliance with the certification requirements under \u00a7\u200911.18(b)(2) of this chapter.", 
+            "text": "(c) Representations to the Board. By presenting to the Board a petition, response, written motion, or other paper\u2014whether by signing, filing, submitting, or later advocating it\u2014an attorney, registered practitioner, or unrepresented party attests to compliance with the certification requirements under \u00a7\u200911.18(b)(2) of this chapter.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-11-d": {
+        "node": {
+            "child_labels": [
+                "42-11-d-1", 
+                "42-11-d-2", 
+                "42-11-d-3", 
+                "42-11-d-4", 
+                "42-11-d-5"
+            ], 
+            "label": [
+                "42", 
+                "11", 
+                "d"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(d) <E T=\"03\">Sanctions\u2014</E>", 
+            "text": "(d) Sanctions\u2014", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-11-d-1": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "11", 
+                "d", 
+                "1"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(1) <E T=\"03\">In general.</E> If, after notice and a reasonable opportunity to respond, the Board determines that paragraph (c) of this section has been violated, the Board may impose an appropriate sanction on any attorney, registered practitioner, or party that violated the rule or is responsible for the violation.", 
+            "text": "(1) In general. If, after notice and a reasonable opportunity to respond, the Board determines that paragraph (c) of this section has been violated, the Board may impose an appropriate sanction on any attorney, registered practitioner, or party that violated the rule or is responsible for the violation.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-11-d-2": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "11", 
+                "d", 
+                "2"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(2) <E T=\"03\">Motion for sanctions.</E> A motion for sanctions must be made separately from any other motion and must describe the specific conduct that allegedly violates paragraph (c) of this section. The motion must be authorized by the Board under \u00a7\u200942.20 prior to filing the motion. At least 21 days prior to seeking authorization to file a motion for sanctions, the moving party must serve the other party with the proposed motion. A motion for sanctions must not be filed or be presented to the Board if the challenged paper, claim, defense, contention, or denial is withdrawn or appropriately corrected within 21 days after service of such motion or within another time the Board sets. If warranted, the Board may award to the prevailing party the reasonable expenses, including attorney's fees, incurred for the motion.", 
+            "text": "(2) Motion for sanctions. A motion for sanctions must be made separately from any other motion and must describe the specific conduct that allegedly violates paragraph (c) of this section. The motion must be authorized by the Board under \u00a7\u200942.20 prior to filing the motion. At least 21 days prior to seeking authorization to file a motion for sanctions, the moving party must serve the other party with the proposed motion. A motion for sanctions must not be filed or be presented to the Board if the challenged paper, claim, defense, contention, or denial is withdrawn or appropriately corrected within 21 days after service of such motion or within another time the Board sets. If warranted, the Board may award to the prevailing party the reasonable expenses, including attorney's fees, incurred for the motion.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-11-d-3": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "11", 
+                "d", 
+                "3"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(3) <E T=\"03\">On the Board's initiative.</E> On its own, the Board may order an attorney, registered practitioner, or party to show cause why conduct specifically described in the order has not violated paragraph (c) of this section and why a specific sanction authorized by the Board should not be imposed.", 
+            "text": "(3) On the Board's initiative. On its own, the Board may order an attorney, registered practitioner, or party to show cause why conduct specifically described in the order has not violated paragraph (c) of this section and why a specific sanction authorized by the Board should not be imposed.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-11-d-4": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "11", 
+                "d", 
+                "4"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(4) <E T=\"03\">Nature of a sanction.</E> A sanction imposed under this rule must be limited to what suffices to deter repetition of the conduct or comparable conduct by others similarly situated and should be consistent with \u00a7\u200942.12.", 
+            "text": "(4) Nature of a sanction. A sanction imposed under this rule must be limited to what suffices to deter repetition of the conduct or comparable conduct by others similarly situated and should be consistent with \u00a7\u200942.12.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-11-d-5": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "11", 
+                "d", 
+                "5"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(5) <E T=\"03\">Requirements for an order.</E> An order imposing a sanction must describe the sanctioned conduct and explain the basis for the sanction.", 
+            "text": "(5) Requirements for an order. An order imposing a sanction must describe the sanctioned conduct and explain the basis for the sanction.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-200-b": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                35, 
+                "that will not expire before a final written decision is issued "
+            ], 
+            [
+                "insert", 
+                151, 
+                " A party may request a district court-type claim construction approach to be applied if a party certifies that the involved patent will expire within 18 months from the entry of the Notice of Filing Date Accorded to Petition. The request, accompanied by a party's certification, must be made in the form of a motion under \u00a7 42.20, within 30 days from the filing of the petition."
+            ]
+        ]
+    }, 
+    "42-207-a": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    185, 
+                    189
+                ], 
+                [
+                    "insert", 
+                    185, 
+                    "324 and can include supporting evidence."
+                ]
+            ], 
+            [
+                "insert", 
+                194, 
+                "preliminary "
+            ], 
+            [
+                "delete", 
+                203, 
+                302
+            ], 
+            [
+                [
+                    "delete", 
+                    320, 
+                    331
+                ], 
+                [
+                    "insert", 
+                    320, 
+                    "word count"
+                ]
+            ]
+        ]
+    }, 
+    "42-207-c": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    4, 
+                    164
+                ], 
+                [
+                    "insert", 
+                    4, 
+                    "[Reserved]"
+                ]
+            ]
+        ]
+    }, 
+    "42-208-c": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    82, 
+                    98
+                ], 
+                [
+                    "insert", 
+                    82, 
+                    "unpatentability"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    411, 
+                    417
+                ], 
+                [
+                    "insert", 
+                    411, 
+                    "filed, including any testimonial evidence, but a genuine issue of material fact created by such testimonial evidence will be viewed in the light most favorable to the petitioner solely for purposes of deciding whether to institute a post-grant review. A petitioner may seek leave to file a reply to the preliminary response in accordance with \u00a7\u00a7 42.23 and 42.24(c). Any such request must make a showing of good cause."
+                ]
+            ]
+        ]
+    }, 
+    "42-23-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    149, 
+                    159
+                ], 
+                [
+                    "insert", 
+                    149, 
+                    "opposition, patent owner preliminary response,"
+                ]
+            ]
+        ]
+    }, 
+    "42-24": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                3
+            ], 
+            [
+                "insert", 
+                3, 
+                [
+                    "42-24-d"
+                ]
+            ]
+        ], 
+        "op": "modified", 
+        "title": [
+            [
+                [
+                    "delete", 
+                    8, 
+                    19
+                ], 
+                [
+                    "insert", 
+                    8, 
+                    "Type-volume or page-limits"
+                ]
+            ]
+        ]
+    }, 
+    "42-24-a-1": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                18, 
+                "word counts or "
+            ], 
+            [
+                "insert", 
+                173, 
+                "word count or "
+            ], 
+            [
+                "insert", 
+                246, 
+                "grounds for standing under \u00a7 42.104, \u00a7 42.204, or \u00a7 42.304, mandatory notices under \u00a7 42.8, "
+            ], 
+            [
+                [
+                    "delete", 
+                    263, 
+                    271
+                ], 
+                [
+                    "insert", 
+                    263, 
+                    "service"
+                ]
+            ], 
+            [
+                "insert", 
+                275, 
+                "word count, or "
+            ]
+        ]
+    }, 
+    "42-24-a-1-i": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    45, 
+                    54
+                ], 
+                [
+                    "insert", 
+                    45, 
+                    "14,000 words."
+                ]
+            ]
+        ]
+    }, 
+    "42-24-a-1-ii": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    44, 
+                    53
+                ], 
+                [
+                    "insert", 
+                    44, 
+                    "18,700 words."
+                ]
+            ]
+        ]
+    }, 
+    "42-24-a-1-iii": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    65, 
+                    74
+                ], 
+                [
+                    "insert", 
+                    65, 
+                    "18,700 words."
+                ]
+            ]
+        ]
+    }, 
+    "42-24-a-1-iv": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    48, 
+                    57
+                ], 
+                [
+                    "insert", 
+                    48, 
+                    "14,000 words."
+                ]
+            ]
+        ]
+    }, 
+    "42-24-a-1-v": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    23, 
+                    30
+                ], 
+                [
+                    "insert", 
+                    23, 
+                    "motions"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    34, 
+                    41
+                ], 
+                [
+                    "insert", 
+                    34, 
+                    "amend):"
+                ]
+            ]
+        ]
+    }, 
+    "42-24-a-2": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                63, 
+                "word counts but may be accompanied by a motion to waive the word counts. The petitioner must show in the motion how a waiver of the word counts is in the interests of justice and must append a copy of proposed petition exceeding the word count to the motion. If the motion is not granted, the proposed petition exceeding the word count may be expunged or returned. Any other motion to waive word counts or "
+            ], 
+            [
+                [
+                    "delete", 
+                    75, 
+                    82
+                ], 
+                [
+                    "insert", 
+                    75, 
+                    "must"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    86, 
+                    160
+                ], 
+                [
+                    "insert", 
+                    86, 
+                    "granted"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    164, 
+                    180
+                ], 
+                [
+                    "insert", 
+                    164, 
+                    "advance of filing a motion, opposition, or reply for which the"
+                ]
+            ], 
+            [
+                "delete", 
+                188, 
+                207
+            ], 
+            [
+                "delete", 
+                210, 
+                558
+            ]
+        ]
+    }, 
+    "42-24-b": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                48, 
+                "word counts or "
+            ], 
+            [
+                "insert", 
+                88, 
+                "(b) "
+            ]
+        ]
+    }, 
+    "42-24-b-1": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    8, 
+                    19
+                ], 
+                [
+                    "insert", 
+                    8, 
+                    "word counts"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    92, 
+                    103
+                ], 
+                [
+                    "insert", 
+                    92, 
+                    "word counts"
+                ]
+            ]
+        ]
+    }, 
+    "42-24-b-2": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    8, 
+                    19
+                ], 
+                [
+                    "insert", 
+                    8, 
+                    "word counts"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    80, 
+                    91
+                ], 
+                [
+                    "insert", 
+                    80, 
+                    "word counts"
+                ]
+            ]
+        ]
+    }, 
+    "42-24-c": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                27, 
+                "word counts or "
+            ], 
+            [
+                "insert", 
+                121, 
+                "word counts or "
+            ], 
+            [
+                [
+                    "delete", 
+                    290, 
+                    298
+                ], 
+                [
+                    "insert", 
+                    290, 
+                    "service"
+                ]
+            ], 
+            [
+                "insert", 
+                302, 
+                "word count, or "
+            ]
+        ]
+    }, 
+    "42-24-c-1": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    52, 
+                    61
+                ], 
+                [
+                    "insert", 
+                    52, 
+                    "5,600 words."
+                ]
+            ]
+        ]
+    }, 
+    "42-24-c-2": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    64, 
+                    71
+                ], 
+                [
+                    "insert", 
+                    64, 
+                    "motions"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    75, 
+                    82
+                ], 
+                [
+                    "insert", 
+                    75, 
+                    "amend):"
+                ]
+            ]
+        ]
+    }, 
+    "42-24-c-3": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    30, 
+                    37
+                ], 
+                [
+                    "insert", 
+                    30, 
+                    "motions"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    41, 
+                    47
+                ], 
+                [
+                    "insert", 
+                    41, 
+                    "amend:"
+                ]
+            ]
+        ]
+    }, 
+    "42-24-d": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "24", 
+                "d"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(d) <E T=\"03\">Certification.</E> Any paper whose length is specified by type-volume limits must include a certification stating the number of words in the paper. A party may rely on the word count of the word-processing system used to prepare the paper.", 
+            "text": "(d) Certification. Any paper whose length is specified by type-volume limits must include a certification stating the number of words in the paper. A party may rely on the word count of the word-processing system used to prepare the paper.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-300-b": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                35, 
+                "that will not expire before a final written decision is issued "
+            ], 
+            [
+                "insert", 
+                151, 
+                " A party may a request a district court-type claim construction approach to be applied if a party certifies that the involved patent will expire within 18 months from the entry of the Notice of Filing Date Accorded to Petition. The request, accompanied by a party's certification, must be made in the form of a motion under \u00a7 42.20, within 30 days from the filing of the petition."
+            ]
+        ]
+    }, 
+    "42-70-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    51, 
+                    55
+                ], 
+                [
+                    "insert", 
+                    51, 
+                    "seven"
+                ]
+            ]
+        ]
+    }
+}

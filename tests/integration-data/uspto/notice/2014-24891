@@ -1,0 +1,2629 @@
+{
+    "amendments": [
+        {
+            "authority": "35 U.S.C. 2(b)(2), unless otherwise noted.", 
+            "cfr_part": "1", 
+            "instruction": "1. The authority citation for 37 CFR Part 1 continues to read as follows:"
+        }, 
+        {
+            "cfr_part": "1", 
+            "changes": [
+                [
+                    "1-5-a", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "1", 
+                                    "5", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) No correspondence relating to an application should be filed prior to receipt of the application number from the Patent and Trademark Office. When a letter directed to the Patent and Trademark Office concerns a previously filed application for a patent, it must identify on the top page in a conspicuous location, the application number (consisting of the series code and the serial number; <E T=\"03\">e.g.,</E> 07/123,456), or the serial number and filing date assigned to that application by the Patent and Trademark Office, or the international application number of the international application. Any correspondence not containing such identification will be returned to the sender where a return address is available. The returned correspondence will be accompanied with a cover letter which will indicate to the sender that if the returned correspondence is resubmitted to the Patent and Trademark Office within two weeks of the mail date on the cover letter, the original date of receipt of the correspondence will be considered by the Patent and Trademark Office as the date of receipt of the correspondence. Applicants may use either the Certificate of Mailing or Transmission procedure under \u00a7\u20091.8 or the Priority Mail Express\u00ae procedure under \u00a7\u20091.10 for resubmissions of returned correspondence if they desire to have the benefit of the date of deposit in the United States Postal Service. If the returned correspondence is not resubmitted within the two-week period, the date of receipt of the resubmission will be considered to be the date of receipt of the correspondence. The two-week period to resubmit the returned correspondence will not be extended. In addition to the application number, all letters directed to the Patent and Trademark Office concerning applications for patent should also state the name of the first listed inventor, the title of the invention, the date of filing the same, and, if known, the group art unit or other unit within the Patent and Trademark Office responsible for considering the letter and the name of the examiner or other person to which it has been assigned.", 
+                                "text": "(a) No correspondence relating to an application should be filed prior to receipt of the application number from the Patent and Trademark Office. When a letter directed to the Patent and Trademark Office concerns a previously filed application for a patent, it must identify on the top page in a conspicuous location, the application number (consisting of the series code and the serial number; e.g., 07/123,456), or the serial number and filing date assigned to that application by the Patent and Trademark Office, or the international application number of the international application. Any correspondence not containing such identification will be returned to the sender where a return address is available. The returned correspondence will be accompanied with a cover letter which will indicate to the sender that if the returned correspondence is resubmitted to the Patent and Trademark Office within two weeks of the mail date on the cover letter, the original date of receipt of the correspondence will be considered by the Patent and Trademark Office as the date of receipt of the correspondence. Applicants may use either the Certificate of Mailing or Transmission procedure under \u00a7\u20091.8 or the Priority Mail Express\u00ae procedure under \u00a7\u20091.10 for resubmissions of returned correspondence if they desire to have the benefit of the date of deposit in the United States Postal Service. If the returned correspondence is not resubmitted within the two-week period, the date of receipt of the resubmission will be considered to be the date of receipt of the correspondence. The two-week period to resubmit the returned correspondence will not be extended. In addition to the application number, all letters directed to the Patent and Trademark Office concerning applications for patent should also state the name of the first listed inventor, the title of the invention, the date of filing the same, and, if known, the group art unit or other unit within the Patent and Trademark Office responsible for considering the letter and the name of the examiner or other person to which it has been assigned.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "2. Section 1.5 is amended by revising paragraph (a) to read as follows:"
+        }, 
+        {
+            "cfr_part": "1", 
+            "changes": [
+                [
+                    "1-6-a", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "field": "[text]", 
+                            "node": {
+                                "child_labels": [
+                                    "1-6-a-2"
+                                ], 
+                                "label": [
+                                    "1", 
+                                    "6", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) <E T=\"03\">Date of receipt and Priority Mail Express\u00ae date of deposit.</E> Correspondence received in the Patent and Trademark Office is stamped with the date of receipt except as follows:", 
+                                "text": "(a) Date of receipt and Priority Mail Express\u00ae date of deposit. Correspondence received in the Patent and Trademark Office is stamped with the date of receipt except as follows:", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "1-6-a-2", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "1", 
+                                    "6", 
+                                    "a", 
+                                    "2"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(2) Correspondence filed in accordance with \u00a7\u20091.10 will be stamped with the date of deposit as Priority Mail Express\u00ae with the United States Postal Service.", 
+                                "text": "(2) Correspondence filed in accordance with \u00a7\u20091.10 will be stamped with the date of deposit as Priority Mail Express\u00ae with the United States Postal Service.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "3. Section 1.6 is amended by revising the introductory text of paragraph (a) and revising paragraph (a)(2) to read as follows:"
+        }, 
+        {
+            "cfr_part": "1", 
+            "changes": [
+                [
+                    "1-10-a-1", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "1", 
+                                    "10", 
+                                    "a", 
+                                    "1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(1) Any correspondence received by the U.S. Patent and Trademark Office (USPTO) that was delivered by the Priority Mail Express\u00ae Post Office to Addressee service of the United States Postal Service (USPS) will be considered filed with the USPTO on the date of deposit with the USPS.", 
+                                "text": "(1) Any correspondence received by the U.S. Patent and Trademark Office (USPTO) that was delivered by the Priority Mail Express\u00ae Post Office to Addressee service of the United States Postal Service (USPS) will be considered filed with the USPTO on the date of deposit with the USPS.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "1-10-a-2", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "1", 
+                                    "10", 
+                                    "a", 
+                                    "2"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(2) The date of deposit with USPS is shown by the \u201cdate accepted\u201d on the Priority Mail Express\u00ae label or other official USPS notation. If the USPS deposit date cannot be determined, the correspondence will be accorded the USPTO receipt date as the filing date. See \u00a7\u20091.6(a).", 
+                                "text": "(2) The date of deposit with USPS is shown by the \u201cdate accepted\u201d on the Priority Mail Express\u00ae label or other official USPS notation. If the USPS deposit date cannot be determined, the correspondence will be accorded the USPTO receipt date as the filing date. See \u00a7\u20091.6(a).", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "1-10-a", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "1-10-a-1", 
+                                    "1-10-a-2"
+                                ], 
+                                "label": [
+                                    "1", 
+                                    "10", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a)", 
+                                "text": "(a)", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "1-10-b", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "1", 
+                                    "10", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) Correspondence should be deposited directly with an employee of the USPS to ensure that the person depositing the correspondence receives a legible copy of the Priority Mail Express\u00ae mailing label with the \u201cdate accepted\u201d clearly marked. Persons dealing indirectly with the employees of the USPS (such as by deposit in a Priority Mail Express\u00ae drop box) do so at the risk of not receiving a copy of the Priority Mail Express\u00ae mailing label with the desired \u201cdate accepted\u201d clearly marked. The paper(s) or fee(s) that constitute the correspondence should also include the Priority Mail Express\u00ae mailing label number thereon. See paragraphs (c), (d) and (e) of this section.", 
+                                "text": "(b) Correspondence should be deposited directly with an employee of the USPS to ensure that the person depositing the correspondence receives a legible copy of the Priority Mail Express\u00ae mailing label with the \u201cdate accepted\u201d clearly marked. Persons dealing indirectly with the employees of the USPS (such as by deposit in a Priority Mail Express\u00ae drop box) do so at the risk of not receiving a copy of the Priority Mail Express\u00ae mailing label with the desired \u201cdate accepted\u201d clearly marked. The paper(s) or fee(s) that constitute the correspondence should also include the Priority Mail Express\u00ae mailing label number thereon. See paragraphs (c), (d) and (e) of this section.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "1-10-c-1", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "1", 
+                                    "10", 
+                                    "c", 
+                                    "1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(1) The petition is filed promptly after the person becomes aware that the Office has accorded, or will accord, a filing date other than the USPS deposit date;", 
+                                "text": "(1) The petition is filed promptly after the person becomes aware that the Office has accorded, or will accord, a filing date other than the USPS deposit date;", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "1-10-c-2", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "1", 
+                                    "10", 
+                                    "c", 
+                                    "2"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(2) The number of the Priority Mail Express\u00ae mailing label was placed on the paper(s) or fee(s) that constitute the correspondence prior to the original mailing by Priority Mail Express\u00ae; and", 
+                                "text": "(2) The number of the Priority Mail Express\u00ae mailing label was placed on the paper(s) or fee(s) that constitute the correspondence prior to the original mailing by Priority Mail Express\u00ae; and", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "1-10-c-3", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "1", 
+                                    "10", 
+                                    "c", 
+                                    "3"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(3) The petition includes a true copy of the Priority Mail Express\u00ae mailing label showing the \u201cdate accepted,\u201d and of any other official notation by the USPS relied upon to show the date of deposit.", 
+                                "text": "(3) The petition includes a true copy of the Priority Mail Express\u00ae mailing label showing the \u201cdate accepted,\u201d and of any other official notation by the USPS relied upon to show the date of deposit.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "1-10-c", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "1-10-c-1", 
+                                    "1-10-c-2", 
+                                    "1-10-c-3"
+                                ], 
+                                "label": [
+                                    "1", 
+                                    "10", 
+                                    "c"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(c) Any person filing correspondence under this section that was received by the Office and delivered by the Priority Mail Express\u00ae Post Office to Addressee service of the USPS, who can show that there is a discrepancy between the filing date accorded by the Office to the correspondence and the date of deposit as shown by the \u201cdate accepted\u201d on the Priority Mail Express\u00ae mailing label or other official USPS notation, may petition the Director to accord the correspondence a filing date as of the \u201cdate accepted\u201d on the Priority Mail Express\u00ae mailing label or other official USPS notation, provided that:", 
+                                "text": "(c) Any person filing correspondence under this section that was received by the Office and delivered by the Priority Mail Express\u00ae Post Office to Addressee service of the USPS, who can show that there is a discrepancy between the filing date accorded by the Office to the correspondence and the date of deposit as shown by the \u201cdate accepted\u201d on the Priority Mail Express\u00ae mailing label or other official USPS notation, may petition the Director to accord the correspondence a filing date as of the \u201cdate accepted\u201d on the Priority Mail Express\u00ae mailing label or other official USPS notation, provided that:", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "1-10-d-1", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "1", 
+                                    "10", 
+                                    "d", 
+                                    "1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(1) The petition is filed promptly after the person becomes aware that the Office has accorded, or will accord, a filing date based upon an incorrect entry by the USPS;", 
+                                "text": "(1) The petition is filed promptly after the person becomes aware that the Office has accorded, or will accord, a filing date based upon an incorrect entry by the USPS;", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "1-10-d-2", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "1", 
+                                    "10", 
+                                    "d", 
+                                    "2"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(2) The number of the Priority Mail Express\u00ae mailing label was placed on the paper(s) or fee(s) that constitute the correspondence prior to the original mailing by Priority Mail Express\u00ae; and", 
+                                "text": "(2) The number of the Priority Mail Express\u00ae mailing label was placed on the paper(s) or fee(s) that constitute the correspondence prior to the original mailing by Priority Mail Express\u00ae; and", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "1-10-d-3", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "1", 
+                                    "10", 
+                                    "d", 
+                                    "3"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(3) The petition includes a showing which establishes, to the satisfaction of the Director, that the requested filing date was the date the correspondence was deposited in the Priority Mail Express\u00ae Post Office to Addressee service prior to the last scheduled pickup for that day. Any showing pursuant to this paragraph must be corroborated by evidence from the USPS or that came into being after deposit and within one business day of the deposit of the correspondence in the Priority Mail Express\u00ae Post Office to Addressee service of the USPS.", 
+                                "text": "(3) The petition includes a showing which establishes, to the satisfaction of the Director, that the requested filing date was the date the correspondence was deposited in the Priority Mail Express\u00ae Post Office to Addressee service prior to the last scheduled pickup for that day. Any showing pursuant to this paragraph must be corroborated by evidence from the USPS or that came into being after deposit and within one business day of the deposit of the correspondence in the Priority Mail Express\u00ae Post Office to Addressee service of the USPS.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "1-10-d", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "1-10-d-1", 
+                                    "1-10-d-2", 
+                                    "1-10-d-3"
+                                ], 
+                                "label": [
+                                    "1", 
+                                    "10", 
+                                    "d"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(d) Any person filing correspondence under this section that was received by the Office and delivered by the Priority Mail Express\u00ae Post Office to Addressee service of the USPS, who can show that the \u201cdate accepted\u201d on the Priority Mail Express\u00ae mailing label or other official notation entered by the USPS was incorrectly entered or omitted by the USPS, may petition the Director to accord the correspondence a filing date as of the date the correspondence is shown to have been deposited with the USPS, provided that:", 
+                                "text": "(d) Any person filing correspondence under this section that was received by the Office and delivered by the Priority Mail Express\u00ae Post Office to Addressee service of the USPS, who can show that the \u201cdate accepted\u201d on the Priority Mail Express\u00ae mailing label or other official notation entered by the USPS was incorrectly entered or omitted by the USPS, may petition the Director to accord the correspondence a filing date as of the date the correspondence is shown to have been deposited with the USPS, provided that:", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "1-10-e-1", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "1", 
+                                    "10", 
+                                    "e", 
+                                    "1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(1) The petition is filed promptly after the person becomes aware that the Office has no evidence of receipt of the correspondence;", 
+                                "text": "(1) The petition is filed promptly after the person becomes aware that the Office has no evidence of receipt of the correspondence;", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "1-10-e-2", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "1", 
+                                    "10", 
+                                    "e", 
+                                    "2"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(2) The number of the Priority Mail Express\u00ae mailing label was placed on the paper(s) or fee(s) that constitute the correspondence prior to the original mailing by Priority Mail Express\u00ae;", 
+                                "text": "(2) The number of the Priority Mail Express\u00ae mailing label was placed on the paper(s) or fee(s) that constitute the correspondence prior to the original mailing by Priority Mail Express\u00ae;", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "1-10-e-3", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "1", 
+                                    "10", 
+                                    "e", 
+                                    "3"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(3) The petition includes a copy of the originally deposited paper(s) or fee(s) that constitute the correspondence showing the number of the Priority Mail Express\u00ae mailing label thereon, a copy of any returned postcard receipt, a copy of the Priority Mail Express\u00ae mailing label showing the \u201cdate accepted,\u201d a copy of any other official notation by the USPS relied upon to show the date of deposit, and, if the requested filing date is a date other than the \u201cdate accepted\u201d on the Priority Mail Express\u00ae mailing label or other official notation entered by the USPS, a showing pursuant to paragraph (d)(3) of this section that the requested filing date was the date the correspondence was deposited in the Priority Mail Express\u00ae Post Office to Addressee service prior to the last scheduled pickup for that day; and", 
+                                "text": "(3) The petition includes a copy of the originally deposited paper(s) or fee(s) that constitute the correspondence showing the number of the Priority Mail Express\u00ae mailing label thereon, a copy of any returned postcard receipt, a copy of the Priority Mail Express\u00ae mailing label showing the \u201cdate accepted,\u201d a copy of any other official notation by the USPS relied upon to show the date of deposit, and, if the requested filing date is a date other than the \u201cdate accepted\u201d on the Priority Mail Express\u00ae mailing label or other official notation entered by the USPS, a showing pursuant to paragraph (d)(3) of this section that the requested filing date was the date the correspondence was deposited in the Priority Mail Express\u00ae Post Office to Addressee service prior to the last scheduled pickup for that day; and", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "1-10-e-4", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "1", 
+                                    "10", 
+                                    "e", 
+                                    "4"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(4) The petition includes a statement which establishes, to the satisfaction of the Director, the original deposit of the correspondence and that the copies of the correspondence, the copy of the Priority Mail Express\u00ae mailing label, the copy of any returned postcard receipt, and any official notation entered by the USPS are true copies of the originally mailed correspondence, original Priority Mail Express\u00ae mailing label, returned postcard receipt, and official notation entered by the USPS.", 
+                                "text": "(4) The petition includes a statement which establishes, to the satisfaction of the Director, the original deposit of the correspondence and that the copies of the correspondence, the copy of the Priority Mail Express\u00ae mailing label, the copy of any returned postcard receipt, and any official notation entered by the USPS are true copies of the originally mailed correspondence, original Priority Mail Express\u00ae mailing label, returned postcard receipt, and official notation entered by the USPS.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "1-10-e", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "1-10-e-1", 
+                                    "1-10-e-2", 
+                                    "1-10-e-3", 
+                                    "1-10-e-4"
+                                ], 
+                                "label": [
+                                    "1", 
+                                    "10", 
+                                    "e"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(e) Any person mailing correspondence addressed as set out in \u00a7\u20091.1(a) to the Office with sufficient postage utilizing the Priority Mail Express\u00ae Post Office to Addressee service of the USPS but not received by the Office, may petition the Director to consider such correspondence filed in the Office on the USPS deposit date, provided that:", 
+                                "text": "(e) Any person mailing correspondence addressed as set out in \u00a7\u20091.1(a) to the Office with sufficient postage utilizing the Priority Mail Express\u00ae Post Office to Addressee service of the USPS but not received by the Office, may petition the Director to consider such correspondence filed in the Office on the USPS deposit date, provided that:", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "1-10-f", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "1", 
+                                    "10", 
+                                    "f"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(f) The Office may require additional evidence to determine if the correspondence was deposited as Priority Mail Express\u00ae with the USPS on the date in question.", 
+                                "text": "(f) The Office may require additional evidence to determine if the correspondence was deposited as Priority Mail Express\u00ae with the USPS on the date in question.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "1-10-g-1", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "1", 
+                                    "10", 
+                                    "g", 
+                                    "1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(1) The petition is filed promptly after the person becomes aware of the return of the correspondence;", 
+                                "text": "(1) The petition is filed promptly after the person becomes aware of the return of the correspondence;", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "1-10-g-2", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "1", 
+                                    "10", 
+                                    "g", 
+                                    "2"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(2) The number of the Priority Mail Express\u00ae mailing label was placed on the paper(s) or fee(s) that constitute the correspondence prior to the original mailing by Priority Mail Express\u00ae;", 
+                                "text": "(2) The number of the Priority Mail Express\u00ae mailing label was placed on the paper(s) or fee(s) that constitute the correspondence prior to the original mailing by Priority Mail Express\u00ae;", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "1-10-g-3", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "1", 
+                                    "10", 
+                                    "g", 
+                                    "3"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(3) The petition includes the original correspondence or a copy of the original correspondence showing the number of the Priority Mail Express\u00ae mailing label thereon and a copy of the Priority Mail Express\u00ae mailing label showing the \u201cdate accepted\u201d; and", 
+                                "text": "(3) The petition includes the original correspondence or a copy of the original correspondence showing the number of the Priority Mail Express\u00ae mailing label thereon and a copy of the Priority Mail Express\u00ae mailing label showing the \u201cdate accepted\u201d; and", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "1-10-g-4", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "1", 
+                                    "10", 
+                                    "g", 
+                                    "4"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(4) The petition includes a statement which establishes, to the satisfaction of the Director, the original deposit of the correspondence and that the correspondence or copy of the correspondence is the original correspondence or a true copy of the correspondence originally deposited with the USPS on the requested filing date. The Office may require additional evidence to determine if the correspondence was returned by the USPS due to an interruption or emergency in Priority Mail Express\u00ae service.", 
+                                "text": "(4) The petition includes a statement which establishes, to the satisfaction of the Director, the original deposit of the correspondence and that the correspondence or copy of the correspondence is the original correspondence or a true copy of the correspondence originally deposited with the USPS on the requested filing date. The Office may require additional evidence to determine if the correspondence was returned by the USPS due to an interruption or emergency in Priority Mail Express\u00ae service.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "1-10-g", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "1-10-g-1", 
+                                    "1-10-g-2", 
+                                    "1-10-g-3", 
+                                    "1-10-g-4"
+                                ], 
+                                "label": [
+                                    "1", 
+                                    "10", 
+                                    "g"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(g) Any person who mails correspondence addressed as set out in \u00a7\u20091.1(a) to the Office with sufficient postage utilizing the Priority Mail Express\u00ae Post Office to Addressee service of the USPS, but has the correspondence returned by the USPS due to an interruption or emergency in Priority Mail Express\u00ae service, may petition the Director to consider such correspondence as filed on a particular date in the Office, provided that:", 
+                                "text": "(g) Any person who mails correspondence addressed as set out in \u00a7\u20091.1(a) to the Office with sufficient postage utilizing the Priority Mail Express\u00ae Post Office to Addressee service of the USPS, but has the correspondence returned by the USPS due to an interruption or emergency in Priority Mail Express\u00ae service, may petition the Director to consider such correspondence as filed on a particular date in the Office, provided that:", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "1-10-h-1", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "1", 
+                                    "10", 
+                                    "h", 
+                                    "1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(1) The petition is filed promptly after the person becomes aware of the refusal of the correspondence;", 
+                                "text": "(1) The petition is filed promptly after the person becomes aware of the refusal of the correspondence;", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "1-10-h-2", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "1", 
+                                    "10", 
+                                    "h", 
+                                    "2"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(2) The number of the Priority Mail Express\u00ae mailing label was placed on the paper(s) or fee(s) that constitute the correspondence prior to the attempted mailing by Priority Mail Express\u00ae;", 
+                                "text": "(2) The number of the Priority Mail Express\u00ae mailing label was placed on the paper(s) or fee(s) that constitute the correspondence prior to the attempted mailing by Priority Mail Express\u00ae;", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "1-10-h-3", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "1", 
+                                    "10", 
+                                    "h", 
+                                    "3"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(3) The petition includes the original correspondence or a copy of the original correspondence showing the number of the Priority Mail Express\u00ae mailing label thereon; and", 
+                                "text": "(3) The petition includes the original correspondence or a copy of the original correspondence showing the number of the Priority Mail Express\u00ae mailing label thereon; and", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "1-10-h-4", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "1", 
+                                    "10", 
+                                    "h", 
+                                    "4"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(4) The petition includes a statement by the person who originally attempted to deposit the correspondence with the USPS which establishes, to the satisfaction of the Director, the original attempt to deposit the correspondence and that the correspondence or copy of the correspondence is the original correspondence or a true copy of the correspondence originally attempted to be deposited with the USPS on the requested filing date. The Office may require additional evidence to determine if the correspondence was refused by an employee of the USPS due to an interruption or emergency in Priority Mail Express\u00ae service.", 
+                                "text": "(4) The petition includes a statement by the person who originally attempted to deposit the correspondence with the USPS which establishes, to the satisfaction of the Director, the original attempt to deposit the correspondence and that the correspondence or copy of the correspondence is the original correspondence or a true copy of the correspondence originally attempted to be deposited with the USPS on the requested filing date. The Office may require additional evidence to determine if the correspondence was refused by an employee of the USPS due to an interruption or emergency in Priority Mail Express\u00ae service.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "1-10-h", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "1-10-h-1", 
+                                    "1-10-h-2", 
+                                    "1-10-h-3", 
+                                    "1-10-h-4"
+                                ], 
+                                "label": [
+                                    "1", 
+                                    "10", 
+                                    "h"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(h) Any person who attempts to mail correspondence addressed as set out in \u00a7\u20091.1(a) to the Office with sufficient postage utilizing the Priority Mail Express\u00ae Post Office to Addressee service of the USPS, but has the correspondence refused by an employee of the USPS due to an interruption or emergency in Priority Mail Express\u00ae service, may petition the Director to consider such correspondence as filed on a particular date in the Office, provided that:", 
+                                "text": "(h) Any person who attempts to mail correspondence addressed as set out in \u00a7\u20091.1(a) to the Office with sufficient postage utilizing the Priority Mail Express\u00ae Post Office to Addressee service of the USPS, but has the correspondence refused by an employee of the USPS due to an interruption or emergency in Priority Mail Express\u00ae service, may petition the Director to consider such correspondence as filed on a particular date in the Office, provided that:", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "1-10-i-1", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "1", 
+                                    "10", 
+                                    "i", 
+                                    "1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(1) The petition is filed in a manner designated by the Director promptly after the person becomes aware of the designated interruption or emergency in Priority Mail Express\u00ae service;", 
+                                "text": "(1) The petition is filed in a manner designated by the Director promptly after the person becomes aware of the designated interruption or emergency in Priority Mail Express\u00ae service;", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "1-10-i-2", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "1", 
+                                    "10", 
+                                    "i", 
+                                    "2"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(2) The petition includes the original correspondence or a copy of the original correspondence; and", 
+                                "text": "(2) The petition includes the original correspondence or a copy of the original correspondence; and", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "1-10-i-3", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "1", 
+                                    "10", 
+                                    "i", 
+                                    "3"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(3) The petition includes a statement which establishes, to the satisfaction of the Director, that the correspondence would have been deposited with the USPS but for the designated interruption or emergency in Priority Mail Express\u00ae service, and that the correspondence or copy of the correspondence is the original correspondence or a true copy of the correspondence originally attempted to be deposited with the USPS on the requested filing date.", 
+                                "text": "(3) The petition includes a statement which establishes, to the satisfaction of the Director, that the correspondence would have been deposited with the USPS but for the designated interruption or emergency in Priority Mail Express\u00ae service, and that the correspondence or copy of the correspondence is the original correspondence or a true copy of the correspondence originally attempted to be deposited with the USPS on the requested filing date.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "1-10-i", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "1-10-i-1", 
+                                    "1-10-i-2", 
+                                    "1-10-i-3"
+                                ], 
+                                "label": [
+                                    "1", 
+                                    "10", 
+                                    "i"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(i) Any person attempting to file correspondence under this section that was unable to be deposited with the USPS due to an interruption or emergency in Priority Mail Express\u00ae service which has been so designated by the Director, may petition the Director to consider such correspondence as filed on a particular date in the Office, provided that:", 
+                                "text": "(i) Any person attempting to file correspondence under this section that was unable to be deposited with the USPS due to an interruption or emergency in Priority Mail Express\u00ae service which has been so designated by the Director, may petition the Director to consider such correspondence as filed on a particular date in the Office, provided that:", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "1-10", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "1-10-a", 
+                                    "1-10-b", 
+                                    "1-10-c", 
+                                    "1-10-d", 
+                                    "1-10-e", 
+                                    "1-10-f", 
+                                    "1-10-g", 
+                                    "1-10-h", 
+                                    "1-10-i"
+                                ], 
+                                "label": [
+                                    "1", 
+                                    "10"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n            ", 
+                                "text": "", 
+                                "title": "\u00a7 1.10 Filing of correspondence by Priority Mail Express\u00ae."
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "4. Section 1.10 is revised to read as follows:"
+        }, 
+        {
+            "authority": "15 U.S.C. 1123; 35 U.S.C. 2, unless otherwise noted.", 
+            "cfr_part": "2", 
+            "instruction": "5. The authority citation for 37 CFR part 2 continues to read as follows:"
+        }, 
+        {
+            "cfr_part": "2", 
+            "changes": [
+                [
+                    "2-119-b-4", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "2", 
+                                    "119", 
+                                    "b", 
+                                    "4"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(4) Transmission by the Priority Mail Express\u00ae Post Office to Addressee service of the United States Postal Service or by first-class mail, which may also be certified or registered;", 
+                                "text": "(4) Transmission by the Priority Mail Express\u00ae Post Office to Addressee service of the United States Postal Service or by first-class mail, which may also be certified or registered;", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "2-119-c", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "2", 
+                                    "119", 
+                                    "c"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(c) When service is made by first-class mail, Priority Mail Express\u00ae, or overnight courier, the date of mailing or of delivery to the overnight courier will be considered the date of service. Whenever a party is required to take some action within a prescribed period after the service of a paper upon the party by another party and the paper is served by first-class mail, Priority Mail Express\u00ae, or overnight courier, 5 days shall be added to the prescribed period.", 
+                                "text": "(c) When service is made by first-class mail, Priority Mail Express\u00ae, or overnight courier, the date of mailing or of delivery to the overnight courier will be considered the date of service. Whenever a party is required to take some action within a prescribed period after the service of a paper upon the party by another party and the paper is served by first-class mail, Priority Mail Express\u00ae, or overnight courier, 5 days shall be added to the prescribed period.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "6. Section 2.119 is amended by revising paragraphs (b)(4) and (c) to read as follows:"
+        }, 
+        {
+            "cfr_part": "2", 
+            "changes": [
+                [
+                    "2-195-a-1", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "2", 
+                                    "195", 
+                                    "a", 
+                                    "1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(1) The Office is not open for the filing of correspondence on any day that is a Saturday, Sunday, or Federal holiday within the District of Columbia. Except for correspondence transmitted electronically under paragraph (a)(2) of this section or transmitted by facsimile under paragraph (a)(3) of this section, no correspondence is received in the Office on Saturdays, Sundays, or Federal holidays within the District of Columbia.", 
+                                "text": "(1) The Office is not open for the filing of correspondence on any day that is a Saturday, Sunday, or Federal holiday within the District of Columbia. Except for correspondence transmitted electronically under paragraph (a)(2) of this section or transmitted by facsimile under paragraph (a)(3) of this section, no correspondence is received in the Office on Saturdays, Sundays, or Federal holidays within the District of Columbia.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "2-195-a-2", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "2", 
+                                    "195", 
+                                    "a", 
+                                    "2"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(2) Trademark-related correspondence transmitted electronically will be given a filing date as of the date on which the Office receives the transmission.", 
+                                "text": "(2) Trademark-related correspondence transmitted electronically will be given a filing date as of the date on which the Office receives the transmission.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "2-195-a-3", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "2", 
+                                    "195", 
+                                    "a", 
+                                    "3"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(3) Correspondence transmitted by facsimile will be given a filing date as of the date on which the complete transmission is received in the Office unless that date is a Saturday, Sunday, or Federal holiday within the District of Columbia, in which case the filing date will be the next succeeding day that is not a Saturday, Sunday, or Federal holiday within the District of Columbia.", 
+                                "text": "(3) Correspondence transmitted by facsimile will be given a filing date as of the date on which the complete transmission is received in the Office unless that date is a Saturday, Sunday, or Federal holiday within the District of Columbia, in which case the filing date will be the next succeeding day that is not a Saturday, Sunday, or Federal holiday within the District of Columbia.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "2-195-a-4", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "2", 
+                                    "195", 
+                                    "a", 
+                                    "4"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(4) Correspondence filed in accordance with \u00a7\u20092.198 will be given a filing date as of the date of deposit as Priority Mail Express\u00ae with the United States Postal Service.", 
+                                "text": "(4) Correspondence filed in accordance with \u00a7\u20092.198 will be given a filing date as of the date of deposit as Priority Mail Express\u00ae with the United States Postal Service.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "2-195-a", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "2-195-a-1", 
+                                    "2-195-a-2", 
+                                    "2-195-a-3", 
+                                    "2-195-a-4"
+                                ], 
+                                "label": [
+                                    "2", 
+                                    "195", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) <E T=\"03\">Date of receipt and Priority Mail Express\u00ae date of deposit.</E> Trademark correspondence received in the Office is given a filing date as of the date of receipt except as follows:", 
+                                "text": "(a) Date of receipt and Priority Mail Express\u00ae date of deposit. Trademark correspondence received in the Office is given a filing date as of the date of receipt except as follows:", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "2-195-b", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "2", 
+                                    "195", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) <E T=\"03\">Correspondence delivered by hand.</E> Correspondence may be delivered by hand during hours the Office is open to receive correspondence.", 
+                                "text": "(b) Correspondence delivered by hand. Correspondence may be delivered by hand during hours the Office is open to receive correspondence.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "2-195-c", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "2", 
+                                    "195", 
+                                    "c"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(c) <E T=\"03\">Facsimile transmission.</E> Except in the cases enumerated in paragraph (d) of this section, correspondence, including authorizations to charge a deposit account, may be transmitted by facsimile. The receipt date accorded to the correspondence will be the date on which the complete transmission is received in the Office, unless that date is a Saturday, Sunday, or Federal holiday within the District of Columbia. See \u00a7\u20092.196. To facilitate proper processing, each transmission session should be limited to correspondence to be filed in a single application, registration or proceeding before the Office. The application serial number, registration number, or proceeding number should be entered as a part of the sender's identification on a facsimile cover sheet.", 
+                                "text": "(c) Facsimile transmission. Except in the cases enumerated in paragraph (d) of this section, correspondence, including authorizations to charge a deposit account, may be transmitted by facsimile. The receipt date accorded to the correspondence will be the date on which the complete transmission is received in the Office, unless that date is a Saturday, Sunday, or Federal holiday within the District of Columbia. See \u00a7\u20092.196. To facilitate proper processing, each transmission session should be limited to correspondence to be filed in a single application, registration or proceeding before the Office. The application serial number, registration number, or proceeding number should be entered as a part of the sender's identification on a facsimile cover sheet.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "2-195-d-1", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "2", 
+                                    "195", 
+                                    "d", 
+                                    "1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(1) Applications for registration of marks;", 
+                                "text": "(1) Applications for registration of marks;", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "2-195-d-2", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "2", 
+                                    "195", 
+                                    "d", 
+                                    "2"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(2) Drawings submitted under \u00a7\u20092.51, \u00a7\u20092.52, \u00a7\u20092.72, or \u00a7\u20092.173;", 
+                                "text": "(2) Drawings submitted under \u00a7\u20092.51, \u00a7\u20092.52, \u00a7\u20092.72, or \u00a7\u20092.173;", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "2-195-d-3", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "2", 
+                                    "195", 
+                                    "d", 
+                                    "3"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(3) Correspondence to be filed with the Trademark Trial and Appeal Board, except notices of ex parte appeal;", 
+                                "text": "(3) Correspondence to be filed with the Trademark Trial and Appeal Board, except notices of ex parte appeal;", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "2-195-d-4", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "2", 
+                                    "195", 
+                                    "d", 
+                                    "4"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(4) Requests for cancellation or amendment of a registration under section 7(e) of the Trademark Act; and certificates of registration surrendered for cancellation or amendment under section 7(e) of the Trademark Act; and", 
+                                "text": "(4) Requests for cancellation or amendment of a registration under section 7(e) of the Trademark Act; and certificates of registration surrendered for cancellation or amendment under section 7(e) of the Trademark Act; and", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "2-195-d-5", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "2", 
+                                    "195", 
+                                    "d", 
+                                    "5"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(5) Madrid-related correspondence submitted under \u00a7\u20097.11, \u00a7\u20097.21, \u00a7\u20097.14, \u00a7\u20097.23, \u00a7\u20097.24, or \u00a7\u20097.31.", 
+                                "text": "(5) Madrid-related correspondence submitted under \u00a7\u20097.11, \u00a7\u20097.21, \u00a7\u20097.14, \u00a7\u20097.23, \u00a7\u20097.24, or \u00a7\u20097.31.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "2-195-d", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "2-195-d-1", 
+                                    "2-195-d-2", 
+                                    "2-195-d-3", 
+                                    "2-195-d-4", 
+                                    "2-195-d-5"
+                                ], 
+                                "label": [
+                                    "2", 
+                                    "195", 
+                                    "d"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(d) Facsimile transmissions are not permitted and if submitted, will not be accorded a date of receipt, in the following situations:", 
+                                "text": "(d) Facsimile transmissions are not permitted and if submitted, will not be accorded a date of receipt, in the following situations:", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "2-195-e-1", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "2", 
+                                    "195", 
+                                    "e", 
+                                    "1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(1) If the Director designates a postal service interruption or emergency within the meaning of 35 U.S.C. 21(a), any person attempting to file correspondence by Priority Mail Express\u00ae Post Office to Addressee service who was unable to deposit the correspondence with the United States Postal Service due to the interruption or emergency may petition the Director to consider such correspondence as filed on a particular date in the Office.", 
+                                "text": "(1) If the Director designates a postal service interruption or emergency within the meaning of 35 U.S.C. 21(a), any person attempting to file correspondence by Priority Mail Express\u00ae Post Office to Addressee service who was unable to deposit the correspondence with the United States Postal Service due to the interruption or emergency may petition the Director to consider such correspondence as filed on a particular date in the Office.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "2-195-e-2-i", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "2", 
+                                    "195", 
+                                    "e", 
+                                    "2", 
+                                    "i"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(i) Be filed promptly after the ending of the designated interruption or emergency;", 
+                                "text": "(i) Be filed promptly after the ending of the designated interruption or emergency;", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "2-195-e-2-ii", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "2", 
+                                    "195", 
+                                    "e", 
+                                    "2", 
+                                    "ii"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(ii) Include the original correspondence or a copy of the original correspondence; and", 
+                                "text": "(ii) Include the original correspondence or a copy of the original correspondence; and", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "2-195-e-2-iii", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "2", 
+                                    "195", 
+                                    "e", 
+                                    "2", 
+                                    "iii"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(iii) Include a statement that the correspondence would have been deposited with the United States Postal Service on the requested filing date but for the designated interruption or emergency in Priority Mail Express\u00ae service; and that the correspondence attached to the petition is the original correspondence or a true copy of the correspondence originally attempted to be deposited as Priority Mail Express\u00ae on the requested filing date.", 
+                                "text": "(iii) Include a statement that the correspondence would have been deposited with the United States Postal Service on the requested filing date but for the designated interruption or emergency in Priority Mail Express\u00ae service; and that the correspondence attached to the petition is the original correspondence or a true copy of the correspondence originally attempted to be deposited as Priority Mail Express\u00ae on the requested filing date.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "2-195-e-2", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "2-195-e-2-i", 
+                                    "2-195-e-2-ii", 
+                                    "2-195-e-2-iii"
+                                ], 
+                                "label": [
+                                    "2", 
+                                    "195", 
+                                    "e", 
+                                    "2"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(2) The petition must:", 
+                                "text": "(2) The petition must:", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "2-195-e-3", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "2", 
+                                    "195", 
+                                    "e", 
+                                    "3"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(3) Paragraphs (e)(1) and (e)(2) of this section do not apply to correspondence that is excluded from the Priority Mail Express\u00ae procedure pursuant to \u00a7\u20092.198(a)(1).", 
+                                "text": "(3) Paragraphs (e)(1) and (e)(2) of this section do not apply to correspondence that is excluded from the Priority Mail Express\u00ae procedure pursuant to \u00a7\u20092.198(a)(1).", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "2-195-e", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "2-195-e-1", 
+                                    "2-195-e-2", 
+                                    "2-195-e-3"
+                                ], 
+                                "label": [
+                                    "2", 
+                                    "195", 
+                                    "e"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(e) <E T=\"03\">Interruptions in U.S. Postal Service.</E>", 
+                                "text": "(e) Interruptions in U.S. Postal Service.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "2-195", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "2-195-a", 
+                                    "2-195-b", 
+                                    "2-195-c", 
+                                    "2-195-d", 
+                                    "2-195-e"
+                                ], 
+                                "label": [
+                                    "2", 
+                                    "195"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n            ", 
+                                "text": "", 
+                                "title": "\u00a7 2.195 Receipt of trademark correspondence."
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "7. Section 2.195 is revised to read as follows:"
+        }, 
+        {
+            "cfr_part": "2", 
+            "changes": [
+                [
+                    "2-198-a-1-i", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "2", 
+                                    "198", 
+                                    "a", 
+                                    "1", 
+                                    "i"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(i) Applications for registration of marks;", 
+                                "text": "(i) Applications for registration of marks;", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "2-198-a-1-ii", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "2", 
+                                    "198", 
+                                    "a", 
+                                    "1", 
+                                    "ii"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(ii) Amendments to allege use under section 1(c) of the Act;", 
+                                "text": "(ii) Amendments to allege use under section 1(c) of the Act;", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "2-198-a-1-iii", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "2", 
+                                    "198", 
+                                    "a", 
+                                    "1", 
+                                    "iii"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(iii) Statements of use under section 1(d) of the Act;", 
+                                "text": "(iii) Statements of use under section 1(d) of the Act;", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "2-198-a-1-iv", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "2", 
+                                    "198", 
+                                    "a", 
+                                    "1", 
+                                    "iv"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(iv) Requests for extension of time to file a statement of use under section 1(d) of the Act;", 
+                                "text": "(iv) Requests for extension of time to file a statement of use under section 1(d) of the Act;", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "2-198-a-1-v", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "2", 
+                                    "198", 
+                                    "a", 
+                                    "1", 
+                                    "v"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(v) Affidavits of continued use under section 8 of the Act;", 
+                                "text": "(v) Affidavits of continued use under section 8 of the Act;", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "2-198-a-1-vi", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "2", 
+                                    "198", 
+                                    "a", 
+                                    "1", 
+                                    "vi"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(vi) Renewal requests under section 9 of the Act; and", 
+                                "text": "(vi) Renewal requests under section 9 of the Act; and", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "2-198-a-1-vii", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "2", 
+                                    "198", 
+                                    "a", 
+                                    "1", 
+                                    "vii"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(vii) Requests to change or correct addresses.", 
+                                "text": "(vii) Requests to change or correct addresses.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "2-198-a-1", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "2-198-a-1-i", 
+                                    "2-198-a-1-ii", 
+                                    "2-198-a-1-iii", 
+                                    "2-198-a-1-iv", 
+                                    "2-198-a-1-v", 
+                                    "2-198-a-1-vi", 
+                                    "2-198-a-1-vii"
+                                ], 
+                                "label": [
+                                    "2", 
+                                    "198", 
+                                    "a", 
+                                    "1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(1) Except for documents listed in paragraphs (a)(1)(i) through (vii) of this section, any correspondence received by the Office that was delivered by the Priority Mail Express\u00ae Post Office to Addressee service of the United States Postal Service (USPS) will be considered filed with the Office on the date of deposit with the USPS. The Priority Mail Express\u00ae procedure does not apply to:", 
+                                "text": "(1) Except for documents listed in paragraphs (a)(1)(i) through (vii) of this section, any correspondence received by the Office that was delivered by the Priority Mail Express\u00ae Post Office to Addressee service of the United States Postal Service (USPS) will be considered filed with the Office on the date of deposit with the USPS. The Priority Mail Express\u00ae procedure does not apply to:", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "2-198-a-2", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "2", 
+                                    "198", 
+                                    "a", 
+                                    "2"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(2) The date of deposit with USPS is shown by the \u201cdate accepted\u201d on the Priority Mail Express\u00ae label or other official USPS notation. If the USPS deposit date cannot be determined, the correspondence will be accorded the date of receipt in the Office as the filing date.", 
+                                "text": "(2) The date of deposit with USPS is shown by the \u201cdate accepted\u201d on the Priority Mail Express\u00ae label or other official USPS notation. If the USPS deposit date cannot be determined, the correspondence will be accorded the date of receipt in the Office as the filing date.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "2-198-a", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "2-198-a-1", 
+                                    "2-198-a-2"
+                                ], 
+                                "label": [
+                                    "2", 
+                                    "198", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a)", 
+                                "text": "(a)", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "2-198-b", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "2", 
+                                    "198", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) Correspondence should be deposited directly with an employee of the USPS to ensure that the person depositing the correspondence receives a legible copy of the Priority Mail Express\u00ae mailing label with the \u201cdate accepted\u201d clearly marked. Persons dealing indirectly with the employees of the USPS (such as by deposit in a Priority Mail Express\u00ae drop box) do so at the risk of not receiving a copy of the Priority Mail Express\u00ae mailing label with the desired \u201cdate accepted\u201d clearly marked. The paper(s) or fee(s) that constitute the correspondence should also include the Priority Mail Express\u00ae mailing label number thereon. See paragraphs (c), (d) and (e) of this section.", 
+                                "text": "(b) Correspondence should be deposited directly with an employee of the USPS to ensure that the person depositing the correspondence receives a legible copy of the Priority Mail Express\u00ae mailing label with the \u201cdate accepted\u201d clearly marked. Persons dealing indirectly with the employees of the USPS (such as by deposit in a Priority Mail Express\u00ae drop box) do so at the risk of not receiving a copy of the Priority Mail Express\u00ae mailing label with the desired \u201cdate accepted\u201d clearly marked. The paper(s) or fee(s) that constitute the correspondence should also include the Priority Mail Express\u00ae mailing label number thereon. See paragraphs (c), (d) and (e) of this section.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "2-198-c-1", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "2", 
+                                    "198", 
+                                    "c", 
+                                    "1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(1) The petition is filed within two months after the person becomes aware that the Office has accorded, or will accord, a filing date other than the USPS deposit date;", 
+                                "text": "(1) The petition is filed within two months after the person becomes aware that the Office has accorded, or will accord, a filing date other than the USPS deposit date;", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "2-198-c-2", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "2", 
+                                    "198", 
+                                    "c", 
+                                    "2"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(2) The number of the Priority Mail Express\u00ae mailing label was placed on the paper(s) or fee(s) that constitute the correspondence prior to the original mailing; and", 
+                                "text": "(2) The number of the Priority Mail Express\u00ae mailing label was placed on the paper(s) or fee(s) that constitute the correspondence prior to the original mailing; and", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "2-198-c-3", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "2", 
+                                    "198", 
+                                    "c", 
+                                    "3"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(3) The petition includes a true copy of the Priority Mail Express\u00ae mailing label showing the \u201cdate accepted,\u201d and of any other official notation by the USPS relied upon to show the date of deposit.", 
+                                "text": "(3) The petition includes a true copy of the Priority Mail Express\u00ae mailing label showing the \u201cdate accepted,\u201d and of any other official notation by the USPS relied upon to show the date of deposit.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "2-198-c", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "2-198-c-1", 
+                                    "2-198-c-2", 
+                                    "2-198-c-3"
+                                ], 
+                                "label": [
+                                    "2", 
+                                    "198", 
+                                    "c"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(c) Any person filing correspondence under this section that was received by the Office and delivered by the Priority Mail Express\u00ae Post Office to Addressee service of the USPS, who can show that there is a discrepancy between the filing date accorded by the Office to the correspondence and the date of deposit as shown by the \u201cdate accepted\u201d on the Priority Mail Express\u00ae mailing label or other official USPS notation, may petition the Director to accord the correspondence a filing date as of the \u201cdate accepted\u201d on the Priority Mail Express\u00ae mailing label or other official USPS notation, provided that:", 
+                                "text": "(c) Any person filing correspondence under this section that was received by the Office and delivered by the Priority Mail Express\u00ae Post Office to Addressee service of the USPS, who can show that there is a discrepancy between the filing date accorded by the Office to the correspondence and the date of deposit as shown by the \u201cdate accepted\u201d on the Priority Mail Express\u00ae mailing label or other official USPS notation, may petition the Director to accord the correspondence a filing date as of the \u201cdate accepted\u201d on the Priority Mail Express\u00ae mailing label or other official USPS notation, provided that:", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "2-198-d-1", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "2", 
+                                    "198", 
+                                    "d", 
+                                    "1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(1) The petition is filed within two months after the person becomes aware that the Office has accorded, or will accord, a filing date based upon an incorrect entry by the USPS;", 
+                                "text": "(1) The petition is filed within two months after the person becomes aware that the Office has accorded, or will accord, a filing date based upon an incorrect entry by the USPS;", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "2-198-d-2", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "2", 
+                                    "198", 
+                                    "d", 
+                                    "2"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(2) The number of the Priority Mail Express\u00ae mailing label was placed on the paper(s) or fee(s) prior to the original mailing; and", 
+                                "text": "(2) The number of the Priority Mail Express\u00ae mailing label was placed on the paper(s) or fee(s) prior to the original mailing; and", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "2-198-d-3", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "2", 
+                                    "198", 
+                                    "d", 
+                                    "3"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(3) The petition includes a showing that establishes, to the satisfaction of the Director, that the correspondence was deposited in the Priority Mail Express\u00ae Post Office to Addressee service prior to the last scheduled pickup on the requested filing date. Any showing pursuant to this paragraph must be corroborated by evidence from the USPS or evidence that came into being within one business day after the deposit of the correspondence in the Priority Mail Express\u00ae Post Office to Addressee service of the USPS.", 
+                                "text": "(3) The petition includes a showing that establishes, to the satisfaction of the Director, that the correspondence was deposited in the Priority Mail Express\u00ae Post Office to Addressee service prior to the last scheduled pickup on the requested filing date. Any showing pursuant to this paragraph must be corroborated by evidence from the USPS or evidence that came into being within one business day after the deposit of the correspondence in the Priority Mail Express\u00ae Post Office to Addressee service of the USPS.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "2-198-d", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "2-198-d-1", 
+                                    "2-198-d-2", 
+                                    "2-198-d-3"
+                                ], 
+                                "label": [
+                                    "2", 
+                                    "198", 
+                                    "d"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(d) Any person filing correspondence under this section that was received by the Office and delivered by the Priority Mail Express\u00ae Post Office to Addressee service of the USPS, who can show that the \u201cdate accepted\u201d on the Priority Mail Express\u00ae mailing label or other official notation entered by the USPS was incorrectly entered or omitted by the USPS, may petition the Director to accord the correspondence a filing date as of the date the correspondence is shown to have been deposited with the USPS, provided that:", 
+                                "text": "(d) Any person filing correspondence under this section that was received by the Office and delivered by the Priority Mail Express\u00ae Post Office to Addressee service of the USPS, who can show that the \u201cdate accepted\u201d on the Priority Mail Express\u00ae mailing label or other official notation entered by the USPS was incorrectly entered or omitted by the USPS, may petition the Director to accord the correspondence a filing date as of the date the correspondence is shown to have been deposited with the USPS, provided that:", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "2-198-e-1", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "2", 
+                                    "198", 
+                                    "e", 
+                                    "1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(1) The petition is filed within two months after the person becomes aware that the Office has no evidence of receipt of the correspondence;", 
+                                "text": "(1) The petition is filed within two months after the person becomes aware that the Office has no evidence of receipt of the correspondence;", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "2-198-e-2", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "2", 
+                                    "198", 
+                                    "e", 
+                                    "2"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(2) The number of the Priority Mail Express\u00ae mailing label was placed on the paper(s) or fee(s) prior to the original mailing;", 
+                                "text": "(2) The number of the Priority Mail Express\u00ae mailing label was placed on the paper(s) or fee(s) prior to the original mailing;", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "2-198-e-3", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "2", 
+                                    "198", 
+                                    "e", 
+                                    "3"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(3) The petition includes a copy of the originally deposited paper(s) or fee(s) showing the number of the Priority Mail Express\u00ae mailing label thereon, a copy of any returned postcard receipt, a copy of the Priority Mail Express\u00ae mailing label showing the \u201cdate accepted,\u201d a copy of any other official notation by the USPS relied upon to show the date of deposit, and, if the requested filing date is a date other than the \u201cdate accepted\u201d on the Priority Mail Express\u00ae mailing label or other official notation entered by the USPS, a showing pursuant to paragraph (d)(3) of this section that the correspondence was deposited in the Priority Mail Express\u00ae Post Office to Addressee service prior to the last scheduled pickup on the requested filing date; and", 
+                                "text": "(3) The petition includes a copy of the originally deposited paper(s) or fee(s) showing the number of the Priority Mail Express\u00ae mailing label thereon, a copy of any returned postcard receipt, a copy of the Priority Mail Express\u00ae mailing label showing the \u201cdate accepted,\u201d a copy of any other official notation by the USPS relied upon to show the date of deposit, and, if the requested filing date is a date other than the \u201cdate accepted\u201d on the Priority Mail Express\u00ae mailing label or other official notation entered by the USPS, a showing pursuant to paragraph (d)(3) of this section that the correspondence was deposited in the Priority Mail Express\u00ae Post Office to Addressee service prior to the last scheduled pickup on the requested filing date; and", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "2-198-e-4", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "2", 
+                                    "198", 
+                                    "e", 
+                                    "4"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(4) The petition includes a statement that establishes, to the satisfaction of the Director, the original deposit of the correspondence and that the copies of the correspondence, the copy of the Priority Mail Express\u00ae mailing label, the copy of any returned postcard receipt, and any official notation entered by the USPS are true copies of the originally mailed correspondence, original Priority Mail Express\u00ae mailing label, returned postcard receipt, and official notation entered by the USPS.", 
+                                "text": "(4) The petition includes a statement that establishes, to the satisfaction of the Director, the original deposit of the correspondence and that the copies of the correspondence, the copy of the Priority Mail Express\u00ae mailing label, the copy of any returned postcard receipt, and any official notation entered by the USPS are true copies of the originally mailed correspondence, original Priority Mail Express\u00ae mailing label, returned postcard receipt, and official notation entered by the USPS.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "2-198-e", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "2-198-e-1", 
+                                    "2-198-e-2", 
+                                    "2-198-e-3", 
+                                    "2-198-e-4"
+                                ], 
+                                "label": [
+                                    "2", 
+                                    "198", 
+                                    "e"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(e) If correspondence is properly addressed to the Office pursuant to \u00a7\u20092.190 and deposited with sufficient postage in the Priority Mail Express\u00ae Post Office to Addressee service of the USPS, but not received by the Office, the party who mailed the correspondence may petition the Director to consider such correspondence filed in the Office on the USPS deposit date, provided that:", 
+                                "text": "(e) If correspondence is properly addressed to the Office pursuant to \u00a7\u20092.190 and deposited with sufficient postage in the Priority Mail Express\u00ae Post Office to Addressee service of the USPS, but not received by the Office, the party who mailed the correspondence may petition the Director to consider such correspondence filed in the Office on the USPS deposit date, provided that:", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "2-198-f", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "2", 
+                                    "198", 
+                                    "f"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(f) The Office may require additional evidence to determine whether the correspondence was deposited as Priority Mail Express\u00ae with the USPS on the date in question.", 
+                                "text": "(f) The Office may require additional evidence to determine whether the correspondence was deposited as Priority Mail Express\u00ae with the USPS on the date in question.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "2-198", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "2-198-a", 
+                                    "2-198-b", 
+                                    "2-198-c", 
+                                    "2-198-d", 
+                                    "2-198-e", 
+                                    "2-198-f"
+                                ], 
+                                "label": [
+                                    "2", 
+                                    "198"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n            ", 
+                                "text": "", 
+                                "title": "\u00a7 2.198 Filing of correspondence by Priority Mail Express\u00ae."
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "8. Section 2.198 is revised to read as follows:"
+        }, 
+        {
+            "authority": "15 U.S.C. 1123, 35 U.S.C. 2, unless otherwise noted.", 
+            "cfr_part": "7", 
+            "instruction": "9. The authority citation for 37 CFR part 7 continues to read as follows:"
+        }, 
+        {
+            "cfr_part": "7", 
+            "changes": [
+                [
+                    "7-4-b-1", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "7", 
+                                    "4", 
+                                    "b", 
+                                    "1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(1) International applications under \u00a7\u20097.11, subsequent designations under \u00a7\u20097.21, requests to record changes in the International Register under \u00a7\u20097.23 and \u00a7\u20097.24, and petitions to the Director to review an action of the Office's Madrid Processing Unit, when filed by mail, will be accorded the date of receipt in the Office, unless they are sent by Priority Mail Express\u00ae pursuant to \u00a7\u20092.198, in which case they will be accorded the date of deposit with the United States Postal Service.", 
+                                "text": "(1) International applications under \u00a7\u20097.11, subsequent designations under \u00a7\u20097.21, requests to record changes in the International Register under \u00a7\u20097.23 and \u00a7\u20097.24, and petitions to the Director to review an action of the Office's Madrid Processing Unit, when filed by mail, will be accorded the date of receipt in the Office, unless they are sent by Priority Mail Express\u00ae pursuant to \u00a7\u20092.198, in which case they will be accorded the date of deposit with the United States Postal Service.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "10. Section 7.4 is amended by revising paragraph (b)(1) to read as follows:"
+        }, 
+        {
+            "authority": "5 U.S.C. 500, 15 U.S.C. 1123, 35 U.S.C. 2(b)(2), 32, 41.", 
+            "cfr_part": "11", 
+            "instruction": "11. The authority citation for 37 CFR part 11 continues to read as follows:"
+        }, 
+        {
+            "cfr_part": "11", 
+            "changes": [
+                [
+                    "11-35-a-2", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "field": "[text]", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "11", 
+                                    "35", 
+                                    "a", 
+                                    "2"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(2) By mailing a copy of the complaint by Priority Mail Express\u00ae, first-class mail, or any delivery service that provides ability to confirm delivery or attempted delivery to:", 
+                                "text": "(2) By mailing a copy of the complaint by Priority Mail Express\u00ae, first-class mail, or any delivery service that provides ability to confirm delivery or attempted delivery to:", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "12. Section 11.35 is amended by revising the introductory text of paragraph (a)(2) to read as follows:"
+        }, 
+        {
+            "cfr_part": "11", 
+            "changes": [
+                [
+                    "11-41-b", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "11", 
+                                    "41", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) All papers filed after entry of an initial decision by the hearing officer shall be filed with the USPTO Director. A copy of the paper shall be served on the OED Director. The hearing officer or the OED Director may provide for filing papers and other matters by hand, by Priority Mail Express\u00ae, or by other means.", 
+                                "text": "(b) All papers filed after entry of an initial decision by the hearing officer shall be filed with the USPTO Director. A copy of the paper shall be served on the OED Director. The hearing officer or the OED Director may provide for filing papers and other matters by hand, by Priority Mail Express\u00ae, or by other means.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "13. Section 11.41 is amended by revising paragraph (b) to read as follows:"
+        }, 
+        {
+            "cfr_part": "11", 
+            "changes": [
+                [
+                    "11-42-a-1", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "11", 
+                                    "42", 
+                                    "a", 
+                                    "1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(1) Delivering a copy of the paper to the office of the attorney; or", 
+                                "text": "(1) Delivering a copy of the paper to the office of the attorney; or", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "11-42-a-2", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "11", 
+                                    "42", 
+                                    "a", 
+                                    "2"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(2) Mailing a copy of the paper by first-class mail, Priority Mail Express\u00ae, or other delivery service to the attorney at the address provided by the attorney under \u00a7\u200911.40(a)(1); or", 
+                                "text": "(2) Mailing a copy of the paper by first-class mail, Priority Mail Express\u00ae, or other delivery service to the attorney at the address provided by the attorney under \u00a7\u200911.40(a)(1); or", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "11-42-a-3", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "11", 
+                                    "42", 
+                                    "a", 
+                                    "3"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(3) Any other method mutually agreeable to the attorney and a representative for the OED Director.", 
+                                "text": "(3) Any other method mutually agreeable to the attorney and a representative for the OED Director.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "11-42-a", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "11-42-a-1", 
+                                    "11-42-a-2", 
+                                    "11-42-a-3"
+                                ], 
+                                "label": [
+                                    "11", 
+                                    "42", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) All papers other than a complaint shall be served on a respondent who is represented by an attorney by:", 
+                                "text": "(a) All papers other than a complaint shall be served on a respondent who is represented by an attorney by:", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "11-42-b-1", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "11", 
+                                    "42", 
+                                    "b", 
+                                    "1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(1) Delivering a copy of the paper to the respondent; or", 
+                                "text": "(1) Delivering a copy of the paper to the respondent; or", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "11-42-b-2", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "11", 
+                                    "42", 
+                                    "b", 
+                                    "2"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(2) Mailing a copy of the paper by first-class mail, Priority Mail Express\u00ae, or other delivery service to the respondent at the address to which a complaint may be served or such other address as may be designated in writing by the respondent; or", 
+                                "text": "(2) Mailing a copy of the paper by first-class mail, Priority Mail Express\u00ae, or other delivery service to the respondent at the address to which a complaint may be served or such other address as may be designated in writing by the respondent; or", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "11-42-b-3", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "11", 
+                                    "42", 
+                                    "b", 
+                                    "3"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(3) Any other method mutually agreeable to the respondent and a representative for the OED Director.", 
+                                "text": "(3) Any other method mutually agreeable to the respondent and a representative for the OED Director.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "11-42-b", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "11-42-b-1", 
+                                    "11-42-b-2", 
+                                    "11-42-b-3"
+                                ], 
+                                "label": [
+                                    "11", 
+                                    "42", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) All papers other than a complaint shall be served on a respondent who is not represented by an attorney by:", 
+                                "text": "(b) All papers other than a complaint shall be served on a respondent who is not represented by an attorney by:", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "11-42-c-1", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "11", 
+                                    "42", 
+                                    "c", 
+                                    "1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(1) Delivering a copy of the paper to the representative; or", 
+                                "text": "(1) Delivering a copy of the paper to the representative; or", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "11-42-c-2", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "11", 
+                                    "42", 
+                                    "c", 
+                                    "2"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(2) Mailing a copy of the paper by first-class mail, Priority Mail Express\u00ae, or other delivery service to an address designated in writing by the representative; or", 
+                                "text": "(2) Mailing a copy of the paper by first-class mail, Priority Mail Express\u00ae, or other delivery service to an address designated in writing by the representative; or", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "11-42-c-3", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "11", 
+                                    "42", 
+                                    "c", 
+                                    "3"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(3) Any other method mutually agreeable to the respondent and the representative.", 
+                                "text": "(3) Any other method mutually agreeable to the respondent and the representative.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "11-42-c", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "11-42-c-1", 
+                                    "11-42-c-2", 
+                                    "11-42-c-3"
+                                ], 
+                                "label": [
+                                    "11", 
+                                    "42", 
+                                    "c"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(c) A respondent shall serve on the representative for the OED Director one copy of each paper filed with the hearing officer or the OED Director. A paper may be served on the representative for the OED Director by:", 
+                                "text": "(c) A respondent shall serve on the representative for the OED Director one copy of each paper filed with the hearing officer or the OED Director. A paper may be served on the representative for the OED Director by:", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "11-42-d-1", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "11", 
+                                    "42", 
+                                    "d", 
+                                    "1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(1) The date on which service was made; and", 
+                                "text": "(1) The date on which service was made; and", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "11-42-d-2", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "11", 
+                                    "42", 
+                                    "d", 
+                                    "2"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(2) The method by which service was made.", 
+                                "text": "(2) The method by which service was made.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "11-42-d", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "11-42-d-1", 
+                                    "11-42-d-2"
+                                ], 
+                                "label": [
+                                    "11", 
+                                    "42", 
+                                    "d"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(d) Each paper filed in a disciplinary proceeding shall contain therein a certificate of service indicating:", 
+                                "text": "(d) Each paper filed in a disciplinary proceeding shall contain therein a certificate of service indicating:", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "11-42-e", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "11", 
+                                    "42", 
+                                    "e"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(e) The hearing officer or the USPTO Director may require that a paper be served by hand or by Priority Mail Express\u00ae.", 
+                                "text": "(e) The hearing officer or the USPTO Director may require that a paper be served by hand or by Priority Mail Express\u00ae.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "11-42-f", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "11", 
+                                    "42", 
+                                    "f"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(f) Service by mail is completed when the paper mailed in the United States is placed into the custody of the U.S. Postal Service.", 
+                                "text": "(f) Service by mail is completed when the paper mailed in the United States is placed into the custody of the U.S. Postal Service.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "11-42", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "11-42-a", 
+                                    "11-42-b", 
+                                    "11-42-c", 
+                                    "11-42-d", 
+                                    "11-42-e", 
+                                    "11-42-f"
+                                ], 
+                                "label": [
+                                    "11", 
+                                    "42"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n            ", 
+                                "text": "", 
+                                "title": "\u00a7 11.42 Service of papers."
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "14. Section 11.42 is revised to read as follows:"
+        }, 
+        {
+            "cfr_part": "11", 
+            "changes": [
+                [
+                    "11-51-a", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "11", 
+                                    "51", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) Depositions for use at the hearing in lieu of personal appearance of a witness before the hearing officer may be taken by respondent or the OED Director upon a showing of good cause and with the approval of, and under such conditions as may be deemed appropriate by, the hearing officer. Depositions may be taken upon oral or written questions, upon not less than ten days' written notice to the other party, before any officer authorized to administer an oath or affirmation in the place where the deposition is to be taken. The parties may waive the requirement of ten days' notice and depositions may then be taken of a witness at a time and place mutually agreed to by the parties. When a deposition is taken upon written questions, copies of the written questions will be served upon the other party with the notice, and copies of any written cross-questions will be served by hand or Priority Mail Express\u00ae not less than five days before the date of the taking of the deposition unless the parties mutually agree otherwise. A party on whose behalf a deposition is taken shall file a copy of a transcript of the deposition signed by a court reporter with the hearing officer and shall serve one copy upon the opposing party. Expenses for a court reporter and preparing, serving, and filing depositions shall be borne by the party at whose instance the deposition is taken. Depositions may not be taken to obtain discovery, except as provided for in paragraph (b) of this section.", 
+                                "text": "(a) Depositions for use at the hearing in lieu of personal appearance of a witness before the hearing officer may be taken by respondent or the OED Director upon a showing of good cause and with the approval of, and under such conditions as may be deemed appropriate by, the hearing officer. Depositions may be taken upon oral or written questions, upon not less than ten days' written notice to the other party, before any officer authorized to administer an oath or affirmation in the place where the deposition is to be taken. The parties may waive the requirement of ten days' notice and depositions may then be taken of a witness at a time and place mutually agreed to by the parties. When a deposition is taken upon written questions, copies of the written questions will be served upon the other party with the notice, and copies of any written cross-questions will be served by hand or Priority Mail Express\u00ae not less than five days before the date of the taking of the deposition unless the parties mutually agree otherwise. A party on whose behalf a deposition is taken shall file a copy of a transcript of the deposition signed by a court reporter with the hearing officer and shall serve one copy upon the opposing party. Expenses for a court reporter and preparing, serving, and filing depositions shall be borne by the party at whose instance the deposition is taken. Depositions may not be taken to obtain discovery, except as provided for in paragraph (b) of this section.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "15. Section 11.51 is amended by revising paragraph (a) to read as follows:"
+        }, 
+        {
+            "authority": "35 U.S.C. 2(b)(2), 3(a)(2)(A), 21, 23, 32, 41, 134, 135, and Public Law 112-29.", 
+            "cfr_part": "41", 
+            "instruction": "16. The authority citation for 37 CFR part 41 continues to read as follows:"
+        }, 
+        {
+            "cfr_part": "41", 
+            "changes": [
+                [
+                    "41-106-d-1", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "41", 
+                                    "106", 
+                                    "d", 
+                                    "1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(1) <E T=\"03\">Filing by mail.</E> A paper filed using the Priority Mail Express\u00ae service of the United States Postal Service will be deemed to be filed as of \u201cdate accepted\u201d on the Priority Mail Express\u00ae mailing label; otherwise, mail will be deemed to be filed as of the stamped date of receipt at the Board.", 
+                                "text": "(1) Filing by mail. A paper filed using the Priority Mail Express\u00ae service of the United States Postal Service will be deemed to be filed as of \u201cdate accepted\u201d on the Priority Mail Express\u00ae mailing label; otherwise, mail will be deemed to be filed as of the stamped date of receipt at the Board.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "41-106-e-3", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "41", 
+                                    "106", 
+                                    "e", 
+                                    "3"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(3) Service must be by Priority Mail Express\u00ae or by means at least as fast and reliable as Priority Mail Express\u00ae. Electronic service is not permitted without Board authorization.", 
+                                "text": "(3) Service must be by Priority Mail Express\u00ae or by means at least as fast and reliable as Priority Mail Express\u00ae. Electronic service is not permitted without Board authorization.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "17. Section 41.106 is amended by revising paragraphs (d)(1) and (e)(3) to read as follows:"
+        }, 
+        {
+            "authority": "35 U.S.C. 2(b)(2), 6, 21, 23, 41, 135, 311, 312, 316, 321-326 and Public Law 112-29.", 
+            "cfr_part": "42", 
+            "instruction": "18. The authority citation for 37 CFR part 42 continues to read as follows:"
+        }, 
+        {
+            "cfr_part": "42", 
+            "changes": [
+                [
+                    "42-6-e-1", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "6", 
+                                    "e", 
+                                    "1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(1) <E T=\"03\">Electronic or other mode.</E> Service may be made electronically upon agreement of the parties. Otherwise, service may be by Priority Mail Express\u00ae or by means at least as fast and reliable as Priority Mail Express\u00ae.", 
+                                "text": "(1) Electronic or other mode. Service may be made electronically upon agreement of the parties. Otherwise, service may be by Priority Mail Express\u00ae or by means at least as fast and reliable as Priority Mail Express\u00ae.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "19. Section 42.6 is amended by revising paragraph (e)(1) to read as follows:"
+        }, 
+        {
+            "cfr_part": "42", 
+            "changes": [
+                [
+                    "42-105-b", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "105", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) Upon agreement of the parties, service may be made electronically. Service may be by Priority Mail Express\u00ae or by means at least as fast and reliable as Priority Mail Express\u00ae. Personal service is not required.", 
+                                "text": "(b) Upon agreement of the parties, service may be made electronically. Service may be by Priority Mail Express\u00ae or by means at least as fast and reliable as Priority Mail Express\u00ae. Personal service is not required.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "20. Section 42.105 is amended by revising paragraph (b) to read as follows:"
+        }, 
+        {
+            "cfr_part": "42", 
+            "changes": [
+                [
+                    "42-205-b", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "205", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) Upon agreement of the parties, service may be made electronically. Service may be by Priority Mail Express\u00ae or by means at least as fast and reliable as Priority Mail Express\u00ae. Personal service is not required.", 
+                                "text": "(b) Upon agreement of the parties, service may be made electronically. Service may be by Priority Mail Express\u00ae or by means at least as fast and reliable as Priority Mail Express\u00ae. Personal service is not required.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "21. Section 42.205 is amended by revising paragraph (b) to read as follows:"
+        }, 
+        {
+            "cfr_part": "42", 
+            "changes": [
+                [
+                    "42-406-b", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "406", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) Upon agreement of the parties, service may be made electronically. Service may be by Priority Mail Express\u00ae or by means at least as fast and reliable as Priority Mail Express\u00ae. Personal service is not required.", 
+                                "text": "(b) Upon agreement of the parties, service may be made electronically. Service may be by Priority Mail Express\u00ae or by means at least as fast and reliable as Priority Mail Express\u00ae. Personal service is not required.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "22. Section 42.406 is amended by revising paragraph (b) to read as follows:"
+        }
+    ], 
+    "cfr_parts": [
+        "1", 
+        "2", 
+        "7", 
+        "11", 
+        "41", 
+        "42"
+    ], 
+    "cfr_title": 37, 
+    "dockets": [
+        "Docket No.: PTO-P-2014-0045"
+    ], 
+    "document_number": "2014-24891", 
+    "effective_on": "2014-10-22", 
+    "footnotes": {}, 
+    "fr_citation": "79 FR 63036", 
+    "fr_url": "https://www.federalregister.gov/documents/2014/10/22/2014-24891/renaming-of-express-mail-to-priority-mail-express", 
+    "fr_volume": 79, 
+    "meta": {
+        "start_page": 63036
+    }, 
+    "primary_agency": "DEPARTMENT OF COMMERCE", 
+    "primary_docket": null, 
+    "publication_date": "2014-10-22", 
+    "regulation_id_numbers": [
+        "0651-AC98"
+    ], 
+    "section_by_section": [], 
+    "supporting_documents": [], 
+    "title": "Renaming of Express Mail\u00ae to Priority Mail Express\u00ae", 
+    "versions": {
+        "42": {
+            "left": "2013-06768", 
+            "right": "2014-24891"
+        }
+    }
+}

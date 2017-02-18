@@ -1,0 +1,630 @@
+{
+    "amendments": [
+        {
+            "authority": "35 U.S.C. 2(b)(2), 6, 21, 23, 41, 135, 311, 312, 316, 321-326 and Public Law 112-29.", 
+            "cfr_part": "42", 
+            "instruction": "1. The authority citation for 37 CFR part 42 continues to read as follows:"
+        }, 
+        {
+            "cfr_part": "42", 
+            "changes": [
+                [
+                    "42-6-a-2-ii", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "6", 
+                                    "a", 
+                                    "2", 
+                                    "ii"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(ii) 14-point, Times New Roman proportional font, with normal spacing, must be used;", 
+                                "text": "(ii) 14-point, Times New Roman proportional font, with normal spacing, must be used;", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "2. Section 42.6 is amended by revising paragraph (a)(2)(ii) to read as follows:"
+        }, 
+        {
+            "cfr_part": "42", 
+            "changes": [
+                [
+                    "42-10-a", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "10", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) If a party is represented by counsel, the party must designate a lead counsel and at least one back-up counsel who can conduct business on behalf of the lead counsel.", 
+                                "text": "(a) If a party is represented by counsel, the party must designate a lead counsel and at least one back-up counsel who can conduct business on behalf of the lead counsel.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "3. Section 42.10 is amended by revising paragraph (a) to read as follows:"
+        }, 
+        {
+            "cfr_part": "42", 
+            "changes": [
+                [
+                    "42-15-a-3", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "15", 
+                                    "a", 
+                                    "3"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(3) In addition to the <E T=\"03\">Inter Partes</E> Review request fee, for requesting review of each claim in excess of 20, including unchallenged claims from which a challenged claim depends: $200.00.", 
+                                "text": "(3) In addition to the Inter Partes Review request fee, for requesting review of each claim in excess of 20, including unchallenged claims from which a challenged claim depends: $200.00.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-15-a-4", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "15", 
+                                    "a", 
+                                    "4"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(4) In addition to the <E T=\"03\">Inter Partes</E> Post-Institution request fee, for requesting review of each claim in excess of 15, including unchallenged claims from which a challenged claim depends: $400.00.", 
+                                "text": "(4) In addition to the Inter Partes Post-Institution request fee, for requesting review of each claim in excess of 15, including unchallenged claims from which a challenged claim depends: $400.00.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-15-b-3", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "15", 
+                                    "b", 
+                                    "3"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(3) In addition to the Post-Grant or Covered Business Method Patent Review request fee, for requesting review of each claim in excess of 20, including unchallenged claims from which a challenged claim depends: $250.00.", 
+                                "text": "(3) In addition to the Post-Grant or Covered Business Method Patent Review request fee, for requesting review of each claim in excess of 20, including unchallenged claims from which a challenged claim depends: $250.00.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-15-b-4", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "15", 
+                                    "b", 
+                                    "4"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(4) In addition to the Post-Grant or Covered Business Method Patent Review Post-Institution request fee, for requesting review of each claim in excess of 15, including unchallenged claims from which a challenged claim depends: $550.00.", 
+                                "text": "(4) In addition to the Post-Grant or Covered Business Method Patent Review Post-Institution request fee, for requesting review of each claim in excess of 15, including unchallenged claims from which a challenged claim depends: $550.00.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "4. Section 42.15 is amended by revising paragraphs (a)(3), (a)(4), (b)(3), and (b)(4) to read as follows:"
+        }, 
+        {
+            "cfr_part": "42", 
+            "changes": [
+                [
+                    "42-23-a", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "23", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) Oppositions and replies must comply with the content requirements for motions and, if the paper to which the opposition or reply is responding contains a statement of material fact, must include a listing of facts that are admitted, denied, or cannot be admitted or denied. * * *", 
+                                "text": "(a) Oppositions and replies must comply with the content requirements for motions and, if the paper to which the opposition or reply is responding contains a statement of material fact, must include a listing of facts that are admitted, denied, or cannot be admitted or denied. * * *", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "5. Section 42.23 is amended by revising the first sentence of paragraph (a) to read as follows:"
+        }, 
+        {
+            "cfr_part": "42", 
+            "changes": [
+                [
+                    "42-24-a-1", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "field": "[text]", 
+                            "node": {
+                                "child_labels": [
+                                    "42-24-a-1-v", 
+                                    "42-24-a-1-vi"
+                                ], 
+                                "label": [
+                                    "42", 
+                                    "24", 
+                                    "a", 
+                                    "1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(1) The following page limits for petitions and motions apply and include any statement of material facts to be admitted or denied in support of the petition or motion. The page limit does not include a table of contents, a table of authorities, a certificate of service, or appendix of exhibits or claim listing.", 
+                                "text": "(1) The following page limits for petitions and motions apply and include any statement of material facts to be admitted or denied in support of the petition or motion. The page limit does not include a table of contents, a table of authorities, a certificate of service, or appendix of exhibits or claim listing.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-24-a-1-v", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "24", 
+                                    "a", 
+                                    "1", 
+                                    "v"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(v) Motions (excluding Motions to Amend): 15 pages.", 
+                                "text": "(v) Motions (excluding Motions to Amend): 15 pages.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-24-c", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "field": "[text]", 
+                            "node": {
+                                "child_labels": [
+                                    "42-24-c-1", 
+                                    "42-24-c-2", 
+                                    "42-24-c-3"
+                                ], 
+                                "label": [
+                                    "42", 
+                                    "24", 
+                                    "c"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(c) <E T=\"03\">Replies.</E> The following page limits for replies apply and include any statement of facts in support of the reply.  * * *", 
+                                "text": "(c) Replies. The following page limits for replies apply and include any statement of facts in support of the reply.  * * *", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-24-c-1", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "24", 
+                                    "c", 
+                                    "1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(1) Replies to patent owner responses to petitions: 25 pages.", 
+                                "text": "(1) Replies to patent owner responses to petitions: 25 pages.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-24-c-2", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "24", 
+                                    "c", 
+                                    "2"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(2) Replies to oppositions (excluding replies to oppositions to Motions to Amend): 5 pages.", 
+                                "text": "(2) Replies to oppositions (excluding replies to oppositions to Motions to Amend): 5 pages.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-24-a-1-vi", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "24", 
+                                    "a", 
+                                    "1", 
+                                    "vi"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(vi) Motions to Amend: 25 pages.", 
+                                "text": "(vi) Motions to Amend: 25 pages.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-24-c-3", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "24", 
+                                    "c", 
+                                    "3"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(3) Replies to oppositions to Motions to Amend: 12 pages.", 
+                                "text": "(3) Replies to oppositions to Motions to Amend: 12 pages.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "6. Section 42.24 is amended by revising paragraphs (a)(1) introductory text and (a)(1)(v), the first sentence of paragraph (c) introductory text, and paragraphs (c)(1) and (c)(2), and adding paragraphs (a)(1)(vi) and (c)(3) to read as follows:"
+        }, 
+        {
+            "cfr_part": "42", 
+            "changes": [
+                [
+                    "42-51-b-1-ii", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "51", 
+                                    "b", 
+                                    "1", 
+                                    "ii"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(ii) Cross examination of affidavit testimony prepared for the proceeding is authorized within such time period as the Board may set.", 
+                                "text": "(ii) Cross examination of affidavit testimony prepared for the proceeding is authorized within such time period as the Board may set.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "7. Section 42.51 is amended by revising paragraph (b)(1)(ii) to read as follows."
+        }, 
+        {
+            "cfr_part": "42", 
+            "changes": [
+                [
+                    "42-53-c-2", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "53", 
+                                    "c", 
+                                    "2"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(2) Unless stipulated by the parties or ordered by the Board, cross-examination, redirect examination, and re-cross examination for uncompelled direct testimony shall be subject to the follow time limits: Seven hours for cross-examination, four hours for redirect examination, and two hours for re-cross examination.", 
+                                "text": "(2) Unless stipulated by the parties or ordered by the Board, cross-examination, redirect examination, and re-cross examination for uncompelled direct testimony shall be subject to the follow time limits: Seven hours for cross-examination, four hours for redirect examination, and two hours for re-cross examination.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-53-f-7", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "53", 
+                                    "f", 
+                                    "7"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(7) Except where the parties agree otherwise, the proponent of the testimony must arrange for providing a copy of the transcript to all other parties. The testimony must be filed as an exhibit.", 
+                                "text": "(7) Except where the parties agree otherwise, the proponent of the testimony must arrange for providing a copy of the transcript to all other parties. The testimony must be filed as an exhibit.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "8. Section 42.53 is amended by revising paragraphs (c)(2) and (f)(7) to read as follows:"
+        }, 
+        {
+            "cfr_part": "42", 
+            "changes": [
+                [
+                    "42-64", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "field": "[title]", 
+                            "node": {
+                                "child_labels": [
+                                    "42-64-b"
+                                ], 
+                                "label": [
+                                    "42", 
+                                    "64"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n            ", 
+                                "text": "", 
+                                "title": "\u00a7 42.64 Objection; motion to exclude."
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-64-b-1", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "64", 
+                                    "b", 
+                                    "1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(1) <E T=\"03\">Objection.</E> Any objection to evidence submitted during a preliminary proceeding must be filed within ten business days of the institution of the trial. Once a trial has been instituted, any objection must be filed within five business days of service of evidence to which the objection is directed.  * * *", 
+                                "text": "(1) Objection. Any objection to evidence submitted during a preliminary proceeding must be filed within ten business days of the institution of the trial. Once a trial has been instituted, any objection must be filed within five business days of service of evidence to which the objection is directed.  * * *", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "9. Section 42.64 is amended by revising the section heading and the first two sentences of paragraph (b)(1) to read as follows."
+        }, 
+        {
+            "cfr_part": "42", 
+            "changes": [
+                [
+                    "42-71-d", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "71", 
+                                    "d"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(d) <E T=\"03\">Rehearing.</E> A party dissatisfied with a decision may file a single request for rehearing without prior authorization from the Board.  * * *", 
+                                "text": "(d) Rehearing. A party dissatisfied with a decision may file a single request for rehearing without prior authorization from the Board.  * * *", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "10. Section 42.71 is amended by revising the first sentence of paragraph (d) to read as follows:"
+        }, 
+        {
+            "cfr_part": "42", 
+            "changes": [
+                [
+                    "42-121-b", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "field": "[text]", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "121", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) <E T=\"03\">Content.</E> A motion to amend claims must include a claim listing, which claim listing may be contained in an appendix to the motion, show the changes clearly, and set forth:", 
+                                "text": "(b) Content. A motion to amend claims must include a claim listing, which claim listing may be contained in an appendix to the motion, show the changes clearly, and set forth:", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "11. Section 42.121 is amended by revising paragraph (b) introductory text to read as follows:"
+        }, 
+        {
+            "cfr_part": "42", 
+            "changes": [
+                [
+                    "42-221-b", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "field": "[text]", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "221", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) <E T=\"03\">Content.</E> A motion to amend claims must include a claim listing, which claim listing may be contained in an appendix to the motion, show the changes clearly, and set forth:", 
+                                "text": "(b) Content. A motion to amend claims must include a claim listing, which claim listing may be contained in an appendix to the motion, show the changes clearly, and set forth:", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "12. Section 42.221 is amended by revising paragraph (b) introductory text to read as follows:"
+        }, 
+        {
+            "cfr_part": "42", 
+            "changes": [
+                [
+                    "42-300-c", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "300", 
+                                    "c"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(c) A covered business method patent review proceeding shall be administered such that pendency before the Board after institution is normally no more than one year. The time can be extended by up to six months for good cause by the Chief Administrative Patent Judge, or adjusted by the Board in the case of joinder.", 
+                                "text": "(c) A covered business method patent review proceeding shall be administered such that pendency before the Board after institution is normally no more than one year. The time can be extended by up to six months for good cause by the Chief Administrative Patent Judge, or adjusted by the Board in the case of joinder.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "13. Section 42.300 is amended by revising paragraph (c) to read as follows:"
+        }, 
+        {
+            "cfr_part": "42", 
+            "changes": [
+                [
+                    "42-302-c", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "302", 
+                                    "c"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(c) A petitioner may not file a petition to institute a covered business method patent review of the patent where, before the date on which the petition is filed, the petitioner or real party-in-interest filed a civil action challenging the validity of a claim of the patent.", 
+                                "text": "(c) A petitioner may not file a petition to institute a covered business method patent review of the patent where, before the date on which the petition is filed, the petitioner or real party-in-interest filed a civil action challenging the validity of a claim of the patent.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "14. Section 42.302 is amended by adding paragraph (c) to read as follows:"
+        }
+    ], 
+    "cfr_parts": [
+        "42"
+    ], 
+    "cfr_title": 37, 
+    "dockets": [
+        "Docket No. PTO-P-2015-0032"
+    ], 
+    "document_number": "2015-12117", 
+    "effective_on": "2015-05-19", 
+    "footnotes": {}, 
+    "fr_citation": "80 FR 28561", 
+    "fr_url": "https://www.federalregister.gov/documents/2015/05/19/2015-12117/amendments-to-the-rules-of-practice-for-trials-before-the-patent-trial-and-appeal-board", 
+    "fr_volume": 80, 
+    "meta": {
+        "start_page": 28561
+    }, 
+    "primary_agency": "DEPARTMENT OF COMMERCE", 
+    "primary_docket": null, 
+    "publication_date": "2015-05-19", 
+    "regulation_id_numbers": [
+        "0651-AD00"
+    ], 
+    "section_by_section": [], 
+    "supporting_documents": [], 
+    "title": "Amendments to the Rules of Practice for Trials Before the Patent Trial and Appeal Board", 
+    "versions": {
+        "42": {
+            "left": "2014-24891", 
+            "right": "2015-12117"
+        }
+    }
+}

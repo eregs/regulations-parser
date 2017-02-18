@@ -1,0 +1,3431 @@
+{
+    "amendments": [
+        {
+            "authority": "35 U.S.C. 2(b)(2), 6, 21, 23, 41, 135, 311, 312, 316, 321-326 and the Leahy-Smith America Invents Act, Pub. L. 112-29, sections 6(c), 6(f), and 18, 125 Stat. 284, 304, 311, and 329 (2011).", 
+            "cfr_part": "42", 
+            "instruction": "1. The authority citation for 37 CFR part 42 continues to read as follows:"
+        }, 
+        {
+            "cfr_part": "42", 
+            "changes": [
+                [
+                    "42-100-a", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "100", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) An <E T=\"03\">inter partes</E> review is a trial subject to the procedures set forth in subpart A of this part.", 
+                                "text": "(a) An inter partes review is a trial subject to the procedures set forth in subpart A of this part.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-100-b", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "100", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) A claim in an unexpired patent shall be given its broadest reasonable construction in light of the specification of the patent in which it appears.", 
+                                "text": "(b) A claim in an unexpired patent shall be given its broadest reasonable construction in light of the specification of the patent in which it appears.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-100-c", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "100", 
+                                    "c"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(c) An <E T=\"03\">inter partes</E> review proceeding shall be administered such that pendency before the Board after institution is normally no more than one year. The time can be extended by up to six months for good cause by the Chief Administrative Patent Judge, or adjusted by the Board in the case of joinder.", 
+                                "text": "(c) An inter partes review proceeding shall be administered such that pendency before the Board after institution is normally no more than one year. The time can be extended by up to six months for good cause by the Chief Administrative Patent Judge, or adjusted by the Board in the case of joinder.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-100", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "100"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n                ", 
+                                "text": "", 
+                                "title": "\u00a7 42.100 Procedure; pendency."
+                            }, 
+                            "parent_label": [
+                                "42", 
+                                "Subpart", 
+                                "B"
+                            ]
+                        }
+                    ]
+                ], 
+                [
+                    "42-101-a", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "101", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) Before the date on which the petition for review is filed, the petitioner or real party-in-interest filed a civil action challenging the validity of a claim of the patent;", 
+                                "text": "(a) Before the date on which the petition for review is filed, the petitioner or real party-in-interest filed a civil action challenging the validity of a claim of the patent;", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-101-b", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "101", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) The petition requesting the proceeding is filed more than one year after the date on which the petitioner, the petitioner's real party-in-interest, or a privy of the petitioner is served with a complaint alleging infringement of the patent; or", 
+                                "text": "(b) The petition requesting the proceeding is filed more than one year after the date on which the petitioner, the petitioner's real party-in-interest, or a privy of the petitioner is served with a complaint alleging infringement of the patent; or", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-101-c", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "101", 
+                                    "c"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(c) The petitioner, the petitioner's real party-in-interest, or a privy of the petitioner is estopped from challenging the claims on the grounds identified in the petition.", 
+                                "text": "(c) The petitioner, the petitioner's real party-in-interest, or a privy of the petitioner is estopped from challenging the claims on the grounds identified in the petition.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-101", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "101"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n                 A person who is not the owner of a patent may file with the Office a petition to institute an <E T=\"03\">inter partes</E> review of the patent unless:", 
+                                "text": "A person who is not the owner of a patent may file with the Office a petition to institute an inter partes review of the patent unless:", 
+                                "title": "\u00a7 42.101 Who may petition for inter partes review."
+                            }, 
+                            "parent_label": [
+                                "42", 
+                                "Subpart", 
+                                "B"
+                            ]
+                        }
+                    ]
+                ], 
+                [
+                    "42-102-a-1", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "102", 
+                                    "a", 
+                                    "1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(1) The date that is nine months after the date of the grant of the patent or of the issuance of the reissue patent; or", 
+                                "text": "(1) The date that is nine months after the date of the grant of the patent or of the issuance of the reissue patent; or", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-102-a-2", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "102", 
+                                    "a", 
+                                    "2"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(2) If a post-grant review is instituted as set forth in subpart C of this part, the date of the termination of such post-grant review.", 
+                                "text": "(2) If a post-grant review is instituted as set forth in subpart C of this part, the date of the termination of such post-grant review.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-102-a", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "102", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) A petition for <E T=\"03\">inter partes</E> review of a patent must be filed after the later of:", 
+                                "text": "(a) A petition for inter partes review of a patent must be filed after the later of:", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-102-b", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "102", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) The Director may impose a limit on the number of <E T=\"03\">inter partes</E> reviews that may be instituted during each of the first four one-year periods in which the amendment made to chapter 31 of title 35, United States Code, is in effect by providing notice in the Office's Official Gazette or <E T=\"04\">Federal Register.</E> Petitions filed after an established limit has been reached will be deemed untimely.", 
+                                "text": "(b) The Director may impose a limit on the number of inter partes reviews that may be instituted during each of the first four one-year periods in which the amendment made to chapter 31 of title 35, United States Code, is in effect by providing notice in the Office's Official Gazette or Federal Register. Petitions filed after an established limit has been reached will be deemed untimely.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-102", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "102"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n                ", 
+                                "text": "", 
+                                "title": "\u00a7 42.102 Time for filing."
+                            }, 
+                            "parent_label": [
+                                "42", 
+                                "Subpart", 
+                                "B"
+                            ]
+                        }
+                    ]
+                ], 
+                [
+                    "42-103-a", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "103", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) An <E T=\"03\">inter partes</E> review fee set forth in \u00a7\u200942.15(a) must accompany the petition. (b) No filing date will be accorded to the petition until full payment is received.", 
+                                "text": "(a) An inter partes review fee set forth in \u00a7\u200942.15(a) must accompany the petition. (b) No filing date will be accorded to the petition until full payment is received.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-103", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "103"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n                ", 
+                                "text": "", 
+                                "title": "\u00a7 42.103"
+                            }, 
+                            "parent_label": [
+                                "42", 
+                                "Subpart", 
+                                "B"
+                            ]
+                        }
+                    ]
+                ], 
+                [
+                    "42-104-a", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "104", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) <E T=\"03\">Grounds for standing.</E> The petitioner must certify that the patent for which review is sought is available for <E T=\"03\">inter partes</E> review and that the petitioner is not barred or estopped from requesting an <E T=\"03\">inter partes</E> review challenging the patent claims on the grounds identified in the petition.", 
+                                "text": "(a) Grounds for standing. The petitioner must certify that the patent for which review is sought is available for inter partes review and that the petitioner is not barred or estopped from requesting an inter partes review challenging the patent claims on the grounds identified in the petition.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-104-b-1", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "104", 
+                                    "b", 
+                                    "1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(1) The claim;", 
+                                "text": "(1) The claim;", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-104-b-2", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "104", 
+                                    "b", 
+                                    "2"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(2) The specific statutory grounds under 35 U.S.C. 102 or 103 on which the challenge to the claim is based and the patents or printed publications relied upon for each ground;", 
+                                "text": "(2) The specific statutory grounds under 35 U.S.C. 102 or 103 on which the challenge to the claim is based and the patents or printed publications relied upon for each ground;", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-104-b-3", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "104", 
+                                    "b", 
+                                    "3"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(3) How the challenged claim is to be construed. Where the claim to be construed contains a means-plus-function or step-plus-function limitation as permitted under 35 U.S.C. 112(f), the construction of the claim must identify the specific portions of the specification that describe the structure, material, or acts corresponding to each claimed function;", 
+                                "text": "(3) How the challenged claim is to be construed. Where the claim to be construed contains a means-plus-function or step-plus-function limitation as permitted under 35 U.S.C. 112(f), the construction of the claim must identify the specific portions of the specification that describe the structure, material, or acts corresponding to each claimed function;", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-104-b-4", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "104", 
+                                    "b", 
+                                    "4"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(4) How the construed claim is unpatentable under the statutory grounds identified in paragraph (b)(2) of this section. The petition must specify where each element of the claim is found in the prior art patents or printed publications relied upon; and", 
+                                "text": "(4) How the construed claim is unpatentable under the statutory grounds identified in paragraph (b)(2) of this section. The petition must specify where each element of the claim is found in the prior art patents or printed publications relied upon; and", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-104-b-5", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "104", 
+                                    "b", 
+                                    "5"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(5) The exhibit number of the supporting evidence relied upon to support the challenge and the relevance of the evidence to the challenge raised, including identifying specific portions of the evidence that support the challenge. The Board may exclude or give no weight to the evidence where a party has failed to state its relevance or to identify specific portions of the evidence that support the challenge.", 
+                                "text": "(5) The exhibit number of the supporting evidence relied upon to support the challenge and the relevance of the evidence to the challenge raised, including identifying specific portions of the evidence that support the challenge. The Board may exclude or give no weight to the evidence where a party has failed to state its relevance or to identify specific portions of the evidence that support the challenge.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-104-b", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "104", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) <E T=\"03\">Identification of challenge.</E> Provide a statement of the precise relief requested for each claim challenged. The statement must identify the following:", 
+                                "text": "(b) Identification of challenge. Provide a statement of the precise relief requested for each claim challenged. The statement must identify the following:", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-104-c", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "104", 
+                                    "c"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(c) A motion may be filed that seeks to correct a clerical or typographical mistake in the petition. The grant of such a motion does not change the filing date of the petition.", 
+                                "text": "(c) A motion may be filed that seeks to correct a clerical or typographical mistake in the petition. The grant of such a motion does not change the filing date of the petition.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-104", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "104"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n                 In addition to the requirements of \u00a7\u00a7\u200942.6, 42.8, 42.22, and 42.24, the petition must set forth:", 
+                                "text": "In addition to the requirements of \u00a7\u00a7\u200942.6, 42.8, 42.22, and 42.24, the petition must set forth:", 
+                                "title": "\u00a7 42.104 Content of petition."
+                            }, 
+                            "parent_label": [
+                                "42", 
+                                "Subpart", 
+                                "B"
+                            ]
+                        }
+                    ]
+                ], 
+                [
+                    "42-105-a", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "105", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) The petition and supporting evidence must be served on the patent owner at the correspondence address of record for the subject patent. The petitioner may additionally serve the petition and supporting evidence on the patent owner at any other address known to the petitioner as likely to effect service.", 
+                                "text": "(a) The petition and supporting evidence must be served on the patent owner at the correspondence address of record for the subject patent. The petitioner may additionally serve the petition and supporting evidence on the patent owner at any other address known to the petitioner as likely to effect service.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-105-b", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "105", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) Upon agreement of the parties, service may be made electronically. Service may be by EXPRESS MAIL\u00ae or by means at least as fast and reliable as EXPRESS MAIL\u00ae. Personal service is not required.", 
+                                "text": "(b) Upon agreement of the parties, service may be made electronically. Service may be by EXPRESS MAIL\u00ae or by means at least as fast and reliable as EXPRESS MAIL\u00ae. Personal service is not required.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-105", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "105"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n                 In addition to the requirements of \u00a7\u200942.6, the petitioner must serve the petition and exhibits relied upon in the petition as follows:", 
+                                "text": "In addition to the requirements of \u00a7\u200942.6, the petitioner must serve the petition and exhibits relied upon in the petition as follows:", 
+                                "title": "\u00a7 42.105 Service of petition."
+                            }, 
+                            "parent_label": [
+                                "42", 
+                                "Subpart", 
+                                "B"
+                            ]
+                        }
+                    ]
+                ], 
+                [
+                    "42-106-a-1", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "106", 
+                                    "a", 
+                                    "1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(1) Complies with \u00a7\u200942.104;", 
+                                "text": "(1) Complies with \u00a7\u200942.104;", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-106-a-2", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "106", 
+                                    "a", 
+                                    "2"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(2) Effects service of the petition on the correspondence address of record as provided in \u00a7\u200942.105(a); and", 
+                                "text": "(2) Effects service of the petition on the correspondence address of record as provided in \u00a7\u200942.105(a); and", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-106-a-3", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "106", 
+                                    "a", 
+                                    "3"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(3) Is accompanied by the fee to institute required in \u00a7\u200942.15(a).", 
+                                "text": "(3) Is accompanied by the fee to institute required in \u00a7\u200942.15(a).", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-106-a", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "106", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) <E T=\"03\">Complete petition.</E> A petition to institute <E T=\"03\">inter partes</E> review will not be accorded a filing date until the petition satisfies all of the following requirements:", 
+                                "text": "(a) Complete petition. A petition to institute inter partes review will not be accorded a filing date until the petition satisfies all of the following requirements:", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-106-b", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "106", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) <E T=\"03\">Incomplete petition.</E> Where a party files an incomplete petition, no filing date will be accorded, and the Office will dismiss the petition if the deficiency in the petition is not corrected within one month from the notice of an incomplete petition.", 
+                                "text": "(b) Incomplete petition. Where a party files an incomplete petition, no filing date will be accorded, and the Office will dismiss the petition if the deficiency in the petition is not corrected within one month from the notice of an incomplete petition.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-106", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "106"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n                ", 
+                                "text": "", 
+                                "title": "\u00a7 42.106 Filing date."
+                            }, 
+                            "parent_label": [
+                                "42", 
+                                "Subpart", 
+                                "B"
+                            ]
+                        }
+                    ]
+                ], 
+                [
+                    "42-107-a", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "107", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) The patent owner may file a preliminary response to the petition. The response is limited to setting forth the reasons why no <E T=\"03\">inter partes</E> review should be instituted under 35 U.S.C. 314. The response can include evidence except as provided in paragraph (c) of this section. The preliminary response is subject to the page limits under \u00a7\u200942.24.", 
+                                "text": "(a) The patent owner may file a preliminary response to the petition. The response is limited to setting forth the reasons why no inter partes review should be instituted under 35 U.S.C. 314. The response can include evidence except as provided in paragraph (c) of this section. The preliminary response is subject to the page limits under \u00a7\u200942.24.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-107-b", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "107", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) <E T=\"03\">Due date.</E> The preliminary response must be filed no later than three months after the date of a notice indicating that the request to institute an <E T=\"03\">inter partes</E> review has been granted a filing date. A patent owner may expedite the proceeding by filing an election to waive the patent owner preliminary response.", 
+                                "text": "(b) Due date. The preliminary response must be filed no later than three months after the date of a notice indicating that the request to institute an inter partes review has been granted a filing date. A patent owner may expedite the proceeding by filing an election to waive the patent owner preliminary response.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-107-c", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "107", 
+                                    "c"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(c) <E T=\"03\">No new testimonial evidence.</E> The preliminary response shall not present new testimony evidence beyond that already of record, except as authorized by the Board.", 
+                                "text": "(c) No new testimonial evidence. The preliminary response shall not present new testimony evidence beyond that already of record, except as authorized by the Board.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-107-d", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "107", 
+                                    "d"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(d) <E T=\"03\">No amendment.</E> The preliminary response shall not include any amendment.", 
+                                "text": "(d) No amendment. The preliminary response shall not include any amendment.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-107-e-p1", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "107", 
+                                    "e", 
+                                    "p1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "", 
+                                "text": "", 
+                                "title": "Instituting Inter Partes Review"
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-107-e", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "107", 
+                                    "e"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(e) <E T=\"03\">Disclaim Patent Claims.</E> The patent owner may file a statutory disclaimer under 35 U.S.C. 253(a) in compliance with \u00a7\u20091.321(a) of this chapter, disclaiming one or more claims in the patent. No <E T=\"03\">inter partes</E> review will be instituted based on disclaimed claims.", 
+                                "text": "(e) Disclaim Patent Claims. The patent owner may file a statutory disclaimer under 35 U.S.C. 253(a) in compliance with \u00a7\u20091.321(a) of this chapter, disclaiming one or more claims in the patent. No inter partes review will be instituted based on disclaimed claims.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-107", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "107"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n                ", 
+                                "text": "", 
+                                "title": "\u00a7 42.107 Preliminary response to petition."
+                            }, 
+                            "parent_label": [
+                                "42", 
+                                "Subpart", 
+                                "B"
+                            ]
+                        }
+                    ]
+                ], 
+                [
+                    "42-108-a", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "108", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) When instituting <E T=\"03\">inter partes</E> review, the Board may authorize the review to proceed on all or some of the challenged claims and on all or some of the grounds of unpatentability asserted for each claim.", 
+                                "text": "(a) When instituting inter partes review, the Board may authorize the review to proceed on all or some of the challenged claims and on all or some of the grounds of unpatentability asserted for each claim.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-108-b", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "108", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) At any time prior to institution of <E T=\"03\">inter partes</E> review, the Board may deny some or all grounds for unpatentability for some or all of the challenged claims. Denial of a ground is a Board decision not to institute <E T=\"03\">inter partes</E> review on that ground.", 
+                                "text": "(b) At any time prior to institution of inter partes review, the Board may deny some or all grounds for unpatentability for some or all of the challenged claims. Denial of a ground is a Board decision not to institute inter partes review on that ground.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-108-c-p1", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "108", 
+                                    "c", 
+                                    "p1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "", 
+                                "text": "", 
+                                "title": "After Institution of Inter Partes Review"
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-108-c", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "108", 
+                                    "c"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(c) Sufficient grounds. <E T=\"03\">Inter partes</E> review shall not be instituted for a ground of unpatentability unless the Board decides that the petition supporting the ground would demonstrate that there is a reasonable likelihood that at least one of the claims challenged in the petition is unpatentable. The Board's decision will take into account a patent owner preliminary response where such a response is filed.", 
+                                "text": "(c) Sufficient grounds. Inter partes review shall not be instituted for a ground of unpatentability unless the Board decides that the petition supporting the ground would demonstrate that there is a reasonable likelihood that at least one of the claims challenged in the petition is unpatentable. The Board's decision will take into account a patent owner preliminary response where such a response is filed.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-108", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "108"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n                ", 
+                                "text": "", 
+                                "title": "\u00a7 42.108 Institution of"
+                            }, 
+                            "parent_label": [
+                                "42", 
+                                "Subpart", 
+                                "B"
+                            ]
+                        }
+                    ]
+                ], 
+                [
+                    "42-120-a", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "120", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) <E T=\"03\">Scope.</E> A patent owner may file a response to the petition addressing any ground for unpatentability not already denied. A patent owner response is filed as an opposition and is subject to the page limits provided in \u00a7\u200942.24.", 
+                                "text": "(a) Scope. A patent owner may file a response to the petition addressing any ground for unpatentability not already denied. A patent owner response is filed as an opposition and is subject to the page limits provided in \u00a7\u200942.24.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-120-b", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "120", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) <E T=\"03\">Due date for response.</E> If no time for filing a patent owner response to a petition is provided in a Board order, the default date for filing a patent owner response is three months from the date the <E T=\"03\">inter partes</E> review was instituted.", 
+                                "text": "(b) Due date for response. If no time for filing a patent owner response to a petition is provided in a Board order, the default date for filing a patent owner response is three months from the date the inter partes review was instituted.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-120", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "120"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n                ", 
+                                "text": "", 
+                                "title": "\u00a7 42.120 Patent owner response."
+                            }, 
+                            "parent_label": [
+                                "42", 
+                                "Subpart", 
+                                "B"
+                            ]
+                        }
+                    ]
+                ], 
+                [
+                    "42-121-a-1", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "121", 
+                                    "a", 
+                                    "1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(1) <E T=\"03\">Due date.</E> Unless a due date is provided in a Board order, a motion to amend must be filed no later than the filing of a patent owner response.", 
+                                "text": "(1) Due date. Unless a due date is provided in a Board order, a motion to amend must be filed no later than the filing of a patent owner response.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-121-a-2-i", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "121", 
+                                    "a", 
+                                    "2", 
+                                    "i"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(i) The amendment does not respond to a ground of unpatentability involved in the trial; or", 
+                                "text": "(i) The amendment does not respond to a ground of unpatentability involved in the trial; or", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-121-a-2-ii", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "121", 
+                                    "a", 
+                                    "2", 
+                                    "ii"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(ii) The amendment seeks to enlarge the scope of the claims of the patent or introduce new subject matter.", 
+                                "text": "(ii) The amendment seeks to enlarge the scope of the claims of the patent or introduce new subject matter.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-121-a-2", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "121", 
+                                    "a", 
+                                    "2"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(2) <E T=\"03\">Scope.</E> A motion to amend may be denied where:", 
+                                "text": "(2) Scope. A motion to amend may be denied where:", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-121-a-3", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "121", 
+                                    "a", 
+                                    "3"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(3) <E T=\"03\">A reasonable number of substitute claims.</E> A motion to amend may cancel a challenged claim or propose a reasonable number of substitute claims. The presumption is that only one substitute claim would be needed to replace each challenged claim, and it may be rebutted by a demonstration of need.", 
+                                "text": "(3) A reasonable number of substitute claims. A motion to amend may cancel a challenged claim or propose a reasonable number of substitute claims. The presumption is that only one substitute claim would be needed to replace each challenged claim, and it may be rebutted by a demonstration of need.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-121-a", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "121", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) <E T=\"03\">Motion to amend.</E> A patent owner may file one motion to amend a patent, but only after conferring with the Board.", 
+                                "text": "(a) Motion to amend. A patent owner may file one motion to amend a patent, but only after conferring with the Board.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-121-b-1", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "121", 
+                                    "b", 
+                                    "1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(1) The support in the original disclosure of the patent for each claim that is added or amended; and", 
+                                "text": "(1) The support in the original disclosure of the patent for each claim that is added or amended; and", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-121-b-2", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "121", 
+                                    "b", 
+                                    "2"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(2) The support in an earlier-filed disclosure for each claim for which benefit of the filing date of the earlier filed disclosure is sought.", 
+                                "text": "(2) The support in an earlier-filed disclosure for each claim for which benefit of the filing date of the earlier filed disclosure is sought.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-121-b", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "121", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) <E T=\"03\">Content.</E> A motion to amend claims must include a claim listing, show the changes clearly, and set forth:", 
+                                "text": "(b) Content. A motion to amend claims must include a claim listing, show the changes clearly, and set forth:", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-121-c", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "121", 
+                                    "c"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(c) <E T=\"03\">Additional motion to amend.</E> In addition to the requirements set forth in paragraphs (a) and (b) of this section, any additional motion to amend may not be filed without Board authorization. An additional motion to amend may be authorized when there is a good cause showing or a joint request of the petitioner and the patent owner to materially advance a settlement. In determining whether to authorize such an additional motion to amend, the Board will consider whether a petitioner has submitted supplemental information after the time period set for filing a motion to amend in paragraph (a)(1) of this section.", 
+                                "text": "(c) Additional motion to amend. In addition to the requirements set forth in paragraphs (a) and (b) of this section, any additional motion to amend may not be filed without Board authorization. An additional motion to amend may be authorized when there is a good cause showing or a joint request of the petitioner and the patent owner to materially advance a settlement. In determining whether to authorize such an additional motion to amend, the Board will consider whether a petitioner has submitted supplemental information after the time period set for filing a motion to amend in paragraph (a)(1) of this section.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-121", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "121"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n                ", 
+                                "text": "", 
+                                "title": "\u00a7 42.121 Amendment of the patent."
+                            }, 
+                            "parent_label": [
+                                "42", 
+                                "Subpart", 
+                                "B"
+                            ]
+                        }
+                    ]
+                ], 
+                [
+                    "42-122-a", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "122", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) <E T=\"03\">Multiple proceedings.</E> Where another matter involving the patent is before the Office, the Board may during the pendency of the <E T=\"03\">inter partes</E> review enter any appropriate order regarding the additional matter including providing for the stay, transfer, consolidation, or termination of any such matter.", 
+                                "text": "(a) Multiple proceedings. Where another matter involving the patent is before the Office, the Board may during the pendency of the inter partes review enter any appropriate order regarding the additional matter including providing for the stay, transfer, consolidation, or termination of any such matter.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-122-b", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "122", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) <E T=\"03\">Request for joinder.</E> Joinder may be requested by a patent owner or petitioner. Any request for joinder must be filed, as a motion under \u00a7\u200942.22, no later than one month after the institution date of any <E T=\"03\">inter partes</E> review for which joinder is requested. The time period set forth in \u00a7\u200942.101(b) shall not apply when the petition is accompanied by a request for joinder.", 
+                                "text": "(b) Request for joinder. Joinder may be requested by a patent owner or petitioner. Any request for joinder must be filed, as a motion under \u00a7\u200942.22, no later than one month after the institution date of any inter partes review for which joinder is requested. The time period set forth in \u00a7\u200942.101(b) shall not apply when the petition is accompanied by a request for joinder.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-122", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "122"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n                ", 
+                                "text": "", 
+                                "title": "\u00a7 42.122 Multiple proceedings and Joinder."
+                            }, 
+                            "parent_label": [
+                                "42", 
+                                "Subpart", 
+                                "B"
+                            ]
+                        }
+                    ]
+                ], 
+                [
+                    "42-123-a-1", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "123", 
+                                    "a", 
+                                    "1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(1) A request for the authorization to file a motion to submit supplemental information is made within one month of the date the trial is instituted.", 
+                                "text": "(1) A request for the authorization to file a motion to submit supplemental information is made within one month of the date the trial is instituted.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-123-a-2", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "123", 
+                                    "a", 
+                                    "2"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(2) The supplemental information must be relevant to a claim for which the trial has been instituted.", 
+                                "text": "(2) The supplemental information must be relevant to a claim for which the trial has been instituted.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-123-a", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "123", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) <E T=\"03\">Motion to submit supplemental information.</E> Once a trial has been instituted, a party may file a motion to submit supplemental information in accordance with the following requirements:", 
+                                "text": "(a) Motion to submit supplemental information. Once a trial has been instituted, a party may file a motion to submit supplemental information in accordance with the following requirements:", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-123-b", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "123", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) <E T=\"03\">Late submission of supplemental information.</E> A party seeking to submit supplemental information more than one month after the date the trial is instituted, must request authorization to file a motion to submit the information. The motion to submit supplemental information must show why the supplemental information reasonably could not have been obtained earlier, and that consideration of the supplemental information would be in the interests-of-justice.", 
+                                "text": "(b) Late submission of supplemental information. A party seeking to submit supplemental information more than one month after the date the trial is instituted, must request authorization to file a motion to submit the information. The motion to submit supplemental information must show why the supplemental information reasonably could not have been obtained earlier, and that consideration of the supplemental information would be in the interests-of-justice.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-123-c", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "123", 
+                                    "c"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(c) <E T=\"03\">Other supplemental information.</E> A party seeking to submit supplemental information not relevant to a claim for which the trial has been instituted must request authorization to file a motion to submit the information. The motion must show why the supplemental information reasonably could not have been obtained earlier, and that consideration of the supplemental information would be in the interests-of-justice.", 
+                                "text": "(c) Other supplemental information. A party seeking to submit supplemental information not relevant to a claim for which the trial has been instituted must request authorization to file a motion to submit the information. The motion must show why the supplemental information reasonably could not have been obtained earlier, and that consideration of the supplemental information would be in the interests-of-justice.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-123", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "123"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n                ", 
+                                "text": "", 
+                                "title": "\u00a7 42.123 Filing of supplemental information."
+                            }, 
+                            "parent_label": [
+                                "42", 
+                                "Subpart", 
+                                "B"
+                            ]
+                        }
+                    ]
+                ], 
+                [
+                    "42-Subpart-B", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "Subpart", 
+                                    "B"
+                                ], 
+                                "node_type": "subpart", 
+                                "tagged_text": "", 
+                                "text": "", 
+                                "title": "Inter Partes Review"
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "2. Add subpart B to read as follows:"
+        }, 
+        {
+            "cfr_part": "42", 
+            "changes": [
+                [
+                    "42-200-a", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "200", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) A post-grant review is a trial subject to the procedures set forth in subpart A of this part.", 
+                                "text": "(a) A post-grant review is a trial subject to the procedures set forth in subpart A of this part.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-200-b", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "200", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) A claim in an unexpired patent shall be given its broadest reasonable construction in light of the specification of the patent in which it appears.", 
+                                "text": "(b) A claim in an unexpired patent shall be given its broadest reasonable construction in light of the specification of the patent in which it appears.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-200-c", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "200", 
+                                    "c"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(c) A post-grant review proceeding shall be administered such that pendency before the Board after institution is normally no more than one year. The time can be extended by up to six months for good cause by the Chief Administrative Patent Judge, or adjusted by the Board in the case of joinder.", 
+                                "text": "(c) A post-grant review proceeding shall be administered such that pendency before the Board after institution is normally no more than one year. The time can be extended by up to six months for good cause by the Chief Administrative Patent Judge, or adjusted by the Board in the case of joinder.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-200-d", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "200", 
+                                    "d"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(d) Interferences commenced before September 16, 2012, shall proceed under part 41 of this chapter except as the Chief Administrative Patent Judge, acting on behalf of the Director, may otherwise order in the interests-of-justice.", 
+                                "text": "(d) Interferences commenced before September 16, 2012, shall proceed under part 41 of this chapter except as the Chief Administrative Patent Judge, acting on behalf of the Director, may otherwise order in the interests-of-justice.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-200", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "200"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n                ", 
+                                "text": "", 
+                                "title": "\u00a7 42.200 Procedure; pendency."
+                            }, 
+                            "parent_label": [
+                                "42", 
+                                "Subpart", 
+                                "C"
+                            ]
+                        }
+                    ]
+                ], 
+                [
+                    "42-201-a", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "201", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) Before the date on which the petition for review is filed, the petitioner or real party-in-interest filed a civil action challenging the validity of a claim of the patent; or", 
+                                "text": "(a) Before the date on which the petition for review is filed, the petitioner or real party-in-interest filed a civil action challenging the validity of a claim of the patent; or", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-201-b", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "201", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) The petitioner, the petitioner's real party-in-interest, or a privy of the petitioner is estopped from challenging the claims on the grounds identified in the petition.", 
+                                "text": "(b) The petitioner, the petitioner's real party-in-interest, or a privy of the petitioner is estopped from challenging the claims on the grounds identified in the petition.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-201", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "201"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n                 A person who is not the owner of a patent may file with the Office a petition to institute a post-grant review of the patent unless:", 
+                                "text": "A person who is not the owner of a patent may file with the Office a petition to institute a post-grant review of the patent unless:", 
+                                "title": "\u00a7 42.201 Who may petition for a post-grant review."
+                            }, 
+                            "parent_label": [
+                                "42", 
+                                "Subpart", 
+                                "C"
+                            ]
+                        }
+                    ]
+                ], 
+                [
+                    "42-202-a", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "202", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) A petition for a post-grant review of a patent must be filed no later than the date that is nine months after the date of the grant of a patent or of the issuance of a reissue patent. A petition, however, may not request a post-grant review for a claim in a reissue patent that is identical to or narrower than a claim in the original patent from which the reissue patent was issued unless the petition is filed not later than the date that is nine months after the date of the grant of the original patent.", 
+                                "text": "(a) A petition for a post-grant review of a patent must be filed no later than the date that is nine months after the date of the grant of a patent or of the issuance of a reissue patent. A petition, however, may not request a post-grant review for a claim in a reissue patent that is identical to or narrower than a claim in the original patent from which the reissue patent was issued unless the petition is filed not later than the date that is nine months after the date of the grant of the original patent.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-202-b", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "202", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) The Director may impose a limit on the number of post-grant reviews that may be instituted during each of the first four one-year periods in which 35 U.S.C. 321 is in effect by providing notice in the Office's Official Gazette or <E T=\"04\">Federal Register.</E> Petitions filed after an established limit has been reached will be deemed untimely.", 
+                                "text": "(b) The Director may impose a limit on the number of post-grant reviews that may be instituted during each of the first four one-year periods in which 35 U.S.C. 321 is in effect by providing notice in the Office's Official Gazette or Federal Register. Petitions filed after an established limit has been reached will be deemed untimely.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-202", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "202"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n                ", 
+                                "text": "", 
+                                "title": "\u00a7 42.202 Time for filing."
+                            }, 
+                            "parent_label": [
+                                "42", 
+                                "Subpart", 
+                                "C"
+                            ]
+                        }
+                    ]
+                ], 
+                [
+                    "42-203-a", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "203", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) A post-grant review fee set forth in \u00a7\u200942.15(b) must accompany the petition.", 
+                                "text": "(a) A post-grant review fee set forth in \u00a7\u200942.15(b) must accompany the petition.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-203-b", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "203", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) No filing date will be accorded to the petition until full payment is received.", 
+                                "text": "(b) No filing date will be accorded to the petition until full payment is received.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-203", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "203"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n                ", 
+                                "text": "", 
+                                "title": "\u00a7 42.203 Post-grant review fee."
+                            }, 
+                            "parent_label": [
+                                "42", 
+                                "Subpart", 
+                                "C"
+                            ]
+                        }
+                    ]
+                ], 
+                [
+                    "42-204-a", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "204", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) <E T=\"03\">Grounds for standing.</E> The petitioner must certify that the patent for which review is sought is available for post-grant review and that the petitioner is not barred or estopped from requesting a post-grant review challenging the patent claims on the grounds identified in the petition.", 
+                                "text": "(a) Grounds for standing. The petitioner must certify that the patent for which review is sought is available for post-grant review and that the petitioner is not barred or estopped from requesting a post-grant review challenging the patent claims on the grounds identified in the petition.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-204-b-1", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "204", 
+                                    "b", 
+                                    "1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(1) The claim;", 
+                                "text": "(1) The claim;", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-204-b-2", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "204", 
+                                    "b", 
+                                    "2"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(2) The specific statutory grounds permitted under 35 U.S.C. 282(b)(2) or (3) on which the challenge to the claim is based;", 
+                                "text": "(2) The specific statutory grounds permitted under 35 U.S.C. 282(b)(2) or (3) on which the challenge to the claim is based;", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-204-b-3", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "204", 
+                                    "b", 
+                                    "3"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(3) How the challenged claim is to be construed. Where the claim to be construed contains a means-plus-function or step-plus-function limitation as permitted under 35 U.S.C. 112(f), the construction of the claim must identify the specific portions of the specification that describe the structure, material, or acts corresponding to each claimed function;", 
+                                "text": "(3) How the challenged claim is to be construed. Where the claim to be construed contains a means-plus-function or step-plus-function limitation as permitted under 35 U.S.C. 112(f), the construction of the claim must identify the specific portions of the specification that describe the structure, material, or acts corresponding to each claimed function;", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-204-b-4", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "204", 
+                                    "b", 
+                                    "4"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(4) How the construed claim is unpatentable under the statutory grounds identified in paragraph (b)(2) of this section. Where the grounds for unpatentability are based on prior art, the petition must specify where each element of the claim is found in the prior art. For all other grounds of unpatentability, the petition must identify the specific part of the claim that fails to comply with the statutory grounds raised and state how the identified subject matter fails to comply with the statute; and", 
+                                "text": "(4) How the construed claim is unpatentable under the statutory grounds identified in paragraph (b)(2) of this section. Where the grounds for unpatentability are based on prior art, the petition must specify where each element of the claim is found in the prior art. For all other grounds of unpatentability, the petition must identify the specific part of the claim that fails to comply with the statutory grounds raised and state how the identified subject matter fails to comply with the statute; and", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-204-b-5", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "204", 
+                                    "b", 
+                                    "5"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(5) The exhibit number of the supporting evidence relied upon to support the challenge and the relevance of the evidence to the challenge raised, including identifying specific portions of the evidence that support the challenge. The Board may exclude or give no weight to the evidence where a party has failed to state its relevance or to identify specific portions of the evidence that support the challenge.", 
+                                "text": "(5) The exhibit number of the supporting evidence relied upon to support the challenge and the relevance of the evidence to the challenge raised, including identifying specific portions of the evidence that support the challenge. The Board may exclude or give no weight to the evidence where a party has failed to state its relevance or to identify specific portions of the evidence that support the challenge.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-204-b", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "204", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) <E T=\"03\">Identification of challenge.</E> Provide a statement of the precise relief requested for each claim challenged. The statement must identify the following:", 
+                                "text": "(b) Identification of challenge. Provide a statement of the precise relief requested for each claim challenged. The statement must identify the following:", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-204-c", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "204", 
+                                    "c"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(c) A motion may be filed that seeks to correct a clerical or typographical mistake in the petition. The grant of such a motion does not change the filing date of the petition.", 
+                                "text": "(c) A motion may be filed that seeks to correct a clerical or typographical mistake in the petition. The grant of such a motion does not change the filing date of the petition.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-204", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "204"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n                 In addition to the requirements of \u00a7\u00a7\u200942.6, 42.8, 42.22, and 42.24, the petition must set forth:", 
+                                "text": "In addition to the requirements of \u00a7\u00a7\u200942.6, 42.8, 42.22, and 42.24, the petition must set forth:", 
+                                "title": "\u00a7 42.204 Content of petition."
+                            }, 
+                            "parent_label": [
+                                "42", 
+                                "Subpart", 
+                                "C"
+                            ]
+                        }
+                    ]
+                ], 
+                [
+                    "42-205-a", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "205", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) The petition and supporting evidence must be served on the patent owner at the correspondence address of record for the subject patent. The petitioner may additionally serve the petition and supporting evidence on the patent owner at any other address known to the petitioner as likely to effect service.", 
+                                "text": "(a) The petition and supporting evidence must be served on the patent owner at the correspondence address of record for the subject patent. The petitioner may additionally serve the petition and supporting evidence on the patent owner at any other address known to the petitioner as likely to effect service.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-205-b", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "205", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) Upon agreement of the parties, service may be made electronically. Service may be by EXPRESS MAIL\u00ae or by means at least as fast and reliable as EXPRESS MAIL\u00ae. Personal service is not required.", 
+                                "text": "(b) Upon agreement of the parties, service may be made electronically. Service may be by EXPRESS MAIL\u00ae or by means at least as fast and reliable as EXPRESS MAIL\u00ae. Personal service is not required.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-205", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "205"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n                 In addition to the requirements of \u00a7\u200942.6, the petitioner must serve the petition and exhibits relied upon in the petition as follows:", 
+                                "text": "In addition to the requirements of \u00a7\u200942.6, the petitioner must serve the petition and exhibits relied upon in the petition as follows:", 
+                                "title": "\u00a7 42.205 Service of petition."
+                            }, 
+                            "parent_label": [
+                                "42", 
+                                "Subpart", 
+                                "C"
+                            ]
+                        }
+                    ]
+                ], 
+                [
+                    "42-206-a-1", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "206", 
+                                    "a", 
+                                    "1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(1) Complies with \u00a7\u200942.204 or \u00a7\u200942.304, as the case may be,", 
+                                "text": "(1) Complies with \u00a7\u200942.204 or \u00a7\u200942.304, as the case may be,", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-206-a-2", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "206", 
+                                    "a", 
+                                    "2"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(2) Effects service of the petition on the correspondence address of record as provided in \u00a7\u200942.205(a); and", 
+                                "text": "(2) Effects service of the petition on the correspondence address of record as provided in \u00a7\u200942.205(a); and", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-206-a-3", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "206", 
+                                    "a", 
+                                    "3"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(3) Is accompanied by the filing fee in \u00a7\u200942.15(b).", 
+                                "text": "(3) Is accompanied by the filing fee in \u00a7\u200942.15(b).", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-206-a", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "206", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) <E T=\"03\">Complete petition.</E> A petition to institute a post-grant review will not be accorded a filing date until the petition satisfies all of the following requirements:", 
+                                "text": "(a) Complete petition. A petition to institute a post-grant review will not be accorded a filing date until the petition satisfies all of the following requirements:", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-206-b", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "206", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) <E T=\"03\">Incomplete petition.</E> Where a party files an incomplete petition, no filing date will be accorded and the Office will dismiss the request if the deficiency in the petition is not corrected within the earlier of either one month from the notice of an incomplete petition, or the expiration of the statutory deadline in which to file a petition for post-grant review.", 
+                                "text": "(b) Incomplete petition. Where a party files an incomplete petition, no filing date will be accorded and the Office will dismiss the request if the deficiency in the petition is not corrected within the earlier of either one month from the notice of an incomplete petition, or the expiration of the statutory deadline in which to file a petition for post-grant review.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-206", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "206"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n                ", 
+                                "text": "", 
+                                "title": "\u00a7 42.206 Filing date."
+                            }, 
+                            "parent_label": [
+                                "42", 
+                                "Subpart", 
+                                "C"
+                            ]
+                        }
+                    ]
+                ], 
+                [
+                    "42-207-a", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "207", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) The patent owner may file a preliminary response to the petition. The response is limited to setting forth the reasons why no post-grant review should be instituted under 35 U.S.C. 324. The response can include evidence except as provided in paragraph (c) of this section. The preliminary response is subject to the page limits under \u00a7\u200942.24.", 
+                                "text": "(a) The patent owner may file a preliminary response to the petition. The response is limited to setting forth the reasons why no post-grant review should be instituted under 35 U.S.C. 324. The response can include evidence except as provided in paragraph (c) of this section. The preliminary response is subject to the page limits under \u00a7\u200942.24.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-207-b", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "207", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) <E T=\"03\">Due date.</E> The preliminary response must be filed no later than three months after the date of a notice indicating that the request to institute a post-grant review has been granted a filing date. A patent owner may expedite the proceeding by filing an election to waive the patent owner preliminary response.", 
+                                "text": "(b) Due date. The preliminary response must be filed no later than three months after the date of a notice indicating that the request to institute a post-grant review has been granted a filing date. A patent owner may expedite the proceeding by filing an election to waive the patent owner preliminary response.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-207-c", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "207", 
+                                    "c"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(c) <E T=\"03\">No new testimonial evidence.</E> The preliminary response shall not present new testimony evidence beyond that already of record, except as authorized by the Board.", 
+                                "text": "(c) No new testimonial evidence. The preliminary response shall not present new testimony evidence beyond that already of record, except as authorized by the Board.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-207-d", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "207", 
+                                    "d"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(d) <E T=\"03\">No amendment.</E> The preliminary response shall not include any amendment.", 
+                                "text": "(d) No amendment. The preliminary response shall not include any amendment.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-207-e-p1", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "207", 
+                                    "e", 
+                                    "p1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "", 
+                                "text": "", 
+                                "title": "Instituting Post-Grant Review"
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-207-e", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "207", 
+                                    "e"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(e) <E T=\"03\">Disclaim Patent Claims.</E> The patent owner may file a statutory disclaimer under 35 U.S.C. 253(a) in compliance with \u00a7\u20091.321(a), disclaiming one or more claims in the patent. No post-grant review will be instituted based on disclaimed claims.", 
+                                "text": "(e) Disclaim Patent Claims. The patent owner may file a statutory disclaimer under 35 U.S.C. 253(a) in compliance with \u00a7\u20091.321(a), disclaiming one or more claims in the patent. No post-grant review will be instituted based on disclaimed claims.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-207", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "207"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n                ", 
+                                "text": "", 
+                                "title": "\u00a7 42.207 Preliminary response to petition."
+                            }, 
+                            "parent_label": [
+                                "42", 
+                                "Subpart", 
+                                "C"
+                            ]
+                        }
+                    ]
+                ], 
+                [
+                    "42-208-a", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "208", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) When instituting post-grant review, the Board may authorize the review to proceed on all or some of the challenged claims and on all or some of the grounds of unpatentability asserted for each claim.", 
+                                "text": "(a) When instituting post-grant review, the Board may authorize the review to proceed on all or some of the challenged claims and on all or some of the grounds of unpatentability asserted for each claim.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-208-b", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "208", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) At any time prior to institution of post-grant review, the Board may deny some or all grounds for unpatentability for some or all of the challenged claims. Denial of a ground is a Board decision not to institute post-grant review on that ground.", 
+                                "text": "(b) At any time prior to institution of post-grant review, the Board may deny some or all grounds for unpatentability for some or all of the challenged claims. Denial of a ground is a Board decision not to institute post-grant review on that ground.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-208-c", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "208", 
+                                    "c"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(c) <E T=\"03\">Sufficient grounds.</E> Post-grant review shall not be instituted for a ground of unpatentability, unless the Board decides that the petition supporting the ground would, if unrebutted, demonstrate that it is more likely than not that at least one of the claims challenged in the petition is unpatentable. The Board's decision will take into account a patent owner preliminary response where such a response is filed.", 
+                                "text": "(c) Sufficient grounds. Post-grant review shall not be instituted for a ground of unpatentability, unless the Board decides that the petition supporting the ground would, if unrebutted, demonstrate that it is more likely than not that at least one of the claims challenged in the petition is unpatentable. The Board's decision will take into account a patent owner preliminary response where such a response is filed.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-208-d-p1", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "208", 
+                                    "d", 
+                                    "p1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "", 
+                                "text": "", 
+                                "title": "After Institution of Post-Grant Review"
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-208-d", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "208", 
+                                    "d"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(d) <E T=\"03\">Additional grounds.</E> Sufficient grounds under \u00a7\u200942.208(c) may be a showing that the petition raises a novel or unsettled legal question that is important to other patents or patent applications.", 
+                                "text": "(d) Additional grounds. Sufficient grounds under \u00a7\u200942.208(c) may be a showing that the petition raises a novel or unsettled legal question that is important to other patents or patent applications.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-208", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "208"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n                ", 
+                                "text": "", 
+                                "title": "\u00a7 42.208 Institution of post-grant review."
+                            }, 
+                            "parent_label": [
+                                "42", 
+                                "Subpart", 
+                                "C"
+                            ]
+                        }
+                    ]
+                ], 
+                [
+                    "42-220-a", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "220", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) <E T=\"03\">Scope.</E> A patent owner may file a response to the petition addressing any ground for unpatentability not already denied. A patent owner response is filed as an opposition and is subject to the page limits provided in \u00a7\u200942.24.", 
+                                "text": "(a) Scope. A patent owner may file a response to the petition addressing any ground for unpatentability not already denied. A patent owner response is filed as an opposition and is subject to the page limits provided in \u00a7\u200942.24.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-220-b", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "220", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) <E T=\"03\">Due date for response.</E> If no date for filing a patent owner response to a petition is provided in a Board order, the default date for filing a patent owner response is three months from the date the post-grant review is instituted.", 
+                                "text": "(b) Due date for response. If no date for filing a patent owner response to a petition is provided in a Board order, the default date for filing a patent owner response is three months from the date the post-grant review is instituted.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-220", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "220"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n                ", 
+                                "text": "", 
+                                "title": "\u00a7 42.220 Patent owner response."
+                            }, 
+                            "parent_label": [
+                                "42", 
+                                "Subpart", 
+                                "C"
+                            ]
+                        }
+                    ]
+                ], 
+                [
+                    "42-221-a-1", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "221", 
+                                    "a", 
+                                    "1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(1) <E T=\"03\">Due date.</E> Unless a due date is provided in a Board order, a motion to amend must be filed no later than the filing of a patent owner response.", 
+                                "text": "(1) Due date. Unless a due date is provided in a Board order, a motion to amend must be filed no later than the filing of a patent owner response.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-221-a-2-i", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "221", 
+                                    "a", 
+                                    "2", 
+                                    "i"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(i) The amendment does not respond to a ground of unpatentability involved in the trial; or", 
+                                "text": "(i) The amendment does not respond to a ground of unpatentability involved in the trial; or", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-221-a-2-ii", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "221", 
+                                    "a", 
+                                    "2", 
+                                    "ii"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(ii) The amendment seeks to enlarge the scope of the claims of the patent or introduce new subject matter.", 
+                                "text": "(ii) The amendment seeks to enlarge the scope of the claims of the patent or introduce new subject matter.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-221-a-2", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "221", 
+                                    "a", 
+                                    "2"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(2) <E T=\"03\">Scope.</E> A motion to amend may be denied where:", 
+                                "text": "(2) Scope. A motion to amend may be denied where:", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-221-a-3", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "221", 
+                                    "a", 
+                                    "3"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(3) <E T=\"03\">A reasonable number of substitute claims.</E> A motion to amend may cancel a challenged claim or propose a reasonable number of substitute claims. The presumption is that only one substitute claim would be needed to replace each challenged claim, and it may be rebutted by a demonstration of need.", 
+                                "text": "(3) A reasonable number of substitute claims. A motion to amend may cancel a challenged claim or propose a reasonable number of substitute claims. The presumption is that only one substitute claim would be needed to replace each challenged claim, and it may be rebutted by a demonstration of need.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-221-a", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "221", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) <E T=\"03\">Motion to amend.</E> A patent owner may file one motion to amend a patent, but only after conferring with the Board.", 
+                                "text": "(a) Motion to amend. A patent owner may file one motion to amend a patent, but only after conferring with the Board.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-221-b-1", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "221", 
+                                    "b", 
+                                    "1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(1) The support in the original disclosure of the patent for each claim that is added or amended; and", 
+                                "text": "(1) The support in the original disclosure of the patent for each claim that is added or amended; and", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-221-b-2", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "221", 
+                                    "b", 
+                                    "2"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(2) The support in an earlier-filed disclosure for each claim for which benefit of the filing date of the earlier filed disclosure is sought.", 
+                                "text": "(2) The support in an earlier-filed disclosure for each claim for which benefit of the filing date of the earlier filed disclosure is sought.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-221-b", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "221", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) <E T=\"03\">Content.</E> A motion to amend claims must include a claim listing, show the changes clearly, and set forth:", 
+                                "text": "(b) Content. A motion to amend claims must include a claim listing, show the changes clearly, and set forth:", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-221-c", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "221", 
+                                    "c"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(c) <E T=\"03\">Additional motion to amend.</E> In addition to the requirements set forth in paragraphs (a) and (b) of this section, any additional motion to amend may not be filed without Board authorization. An additional motion to amend may be authorized when there is a good cause showing or a joint request of the petitioner and the patent owner to materially advance a settlement. In determining whether to authorize such an additional motion to amend, the Board will consider whether a petitioner has submitted supplemental information after the time period set for filing a motion to amend in paragraph (a)(1) of this section.", 
+                                "text": "(c) Additional motion to amend. In addition to the requirements set forth in paragraphs (a) and (b) of this section, any additional motion to amend may not be filed without Board authorization. An additional motion to amend may be authorized when there is a good cause showing or a joint request of the petitioner and the patent owner to materially advance a settlement. In determining whether to authorize such an additional motion to amend, the Board will consider whether a petitioner has submitted supplemental information after the time period set for filing a motion to amend in paragraph (a)(1) of this section.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-221", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "221"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n                ", 
+                                "text": "", 
+                                "title": "\u00a7 42.221 Amendment of the patent."
+                            }, 
+                            "parent_label": [
+                                "42", 
+                                "Subpart", 
+                                "C"
+                            ]
+                        }
+                    ]
+                ], 
+                [
+                    "42-222-a", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "222", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) <E T=\"03\">Multiple proceedings.</E> Where another matter involving the patent is before the Office, the Board may during the pendency of the post-grant review enter any appropriate order regarding the additional matter including providing for the stay, transfer, consolidation, or termination of any such matter.", 
+                                "text": "(a) Multiple proceedings. Where another matter involving the patent is before the Office, the Board may during the pendency of the post-grant review enter any appropriate order regarding the additional matter including providing for the stay, transfer, consolidation, or termination of any such matter.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-222-b", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "222", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) <E T=\"03\">Request for joinder.</E> Joinder may be requested by a patent owner or petitioner. Any request for joinder must be filed, as a motion under \u00a7\u200942.22, no later than one month after the institution date of any post-grant review for which joinder is requested.", 
+                                "text": "(b) Request for joinder. Joinder may be requested by a patent owner or petitioner. Any request for joinder must be filed, as a motion under \u00a7\u200942.22, no later than one month after the institution date of any post-grant review for which joinder is requested.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-222", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "222"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n                ", 
+                                "text": "", 
+                                "title": "\u00a7 42.222 Multiple proceedings and Joinder."
+                            }, 
+                            "parent_label": [
+                                "42", 
+                                "Subpart", 
+                                "C"
+                            ]
+                        }
+                    ]
+                ], 
+                [
+                    "42-223-a-1", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "223", 
+                                    "a", 
+                                    "1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(1) A request for the authorization to file a motion to submit supplemental information is made within one month of the date the trial is instituted.", 
+                                "text": "(1) A request for the authorization to file a motion to submit supplemental information is made within one month of the date the trial is instituted.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-223-a-2", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "223", 
+                                    "a", 
+                                    "2"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(2) The supplemental information must be relevant to a claim for which the trial has been instituted.", 
+                                "text": "(2) The supplemental information must be relevant to a claim for which the trial has been instituted.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-223-a", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "223", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) <E T=\"03\">Motion to submit supplemental information.</E> Once a trial has been instituted, a party may file a motion to submit supplemental information in accordance with the following requirements:", 
+                                "text": "(a) Motion to submit supplemental information. Once a trial has been instituted, a party may file a motion to submit supplemental information in accordance with the following requirements:", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-223-b", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "223", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) <E T=\"03\">Late submission of supplemental information.</E> A party seeking to submit supplemental information more than one month after the date the trial is instituted, must request authorization to file a motion to submit the information. The motion to submit supplemental information must show why the supplemental information reasonably could not have been obtained earlier, and that consideration of the supplemental information would be in the interests-of-justice.", 
+                                "text": "(b) Late submission of supplemental information. A party seeking to submit supplemental information more than one month after the date the trial is instituted, must request authorization to file a motion to submit the information. The motion to submit supplemental information must show why the supplemental information reasonably could not have been obtained earlier, and that consideration of the supplemental information would be in the interests-of-justice.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-223-c", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "223", 
+                                    "c"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(c) <E T=\"03\">Other supplemental information.</E> A party seeking to submit supplemental information not relevant to a claim for which the trial has been instituted must request authorization to file a motion to submit the information. The motion must show why the supplemental information reasonably could not have been obtained earlier, and that consideration of the supplemental information would be in the interests-of-justice.", 
+                                "text": "(c) Other supplemental information. A party seeking to submit supplemental information not relevant to a claim for which the trial has been instituted must request authorization to file a motion to submit the information. The motion must show why the supplemental information reasonably could not have been obtained earlier, and that consideration of the supplemental information would be in the interests-of-justice.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-223", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "223"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n                ", 
+                                "text": "", 
+                                "title": "\u00a7 42.223 Filing of supplemental information."
+                            }, 
+                            "parent_label": [
+                                "42", 
+                                "Subpart", 
+                                "C"
+                            ]
+                        }
+                    ]
+                ], 
+                [
+                    "42-224-a", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "224", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) Requests for additional discovery may be granted upon a showing of good cause as to why the discovery is needed; and", 
+                                "text": "(a) Requests for additional discovery may be granted upon a showing of good cause as to why the discovery is needed; and", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-224-b", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "224", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) Discovery is limited to evidence directly related to factual assertions advanced by either party in the proceeding.", 
+                                "text": "(b) Discovery is limited to evidence directly related to factual assertions advanced by either party in the proceeding.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-224", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "224"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n                 Notwithstanding the discovery provisions of subpart A:", 
+                                "text": "Notwithstanding the discovery provisions of subpart A:", 
+                                "title": "\u00a7 42.224 Discovery."
+                            }, 
+                            "parent_label": [
+                                "42", 
+                                "Subpart", 
+                                "C"
+                            ]
+                        }
+                    ]
+                ], 
+                [
+                    "42-Subpart-C", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "Subpart", 
+                                    "C"
+                                ], 
+                                "node_type": "subpart", 
+                                "tagged_text": "", 
+                                "text": "", 
+                                "title": "Post-Grant Review"
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "3. Add subpart C to read as follows:"
+        }, 
+        {
+            "cfr_part": "42", 
+            "changes": [
+                [
+                    "42-300-a", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "300", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) A covered business method patent review is a trial subject to the procedures set forth in subpart A of this part and is also subject to the post-grant review procedures set forth in subpart C except for \u00a7\u00a7\u200942.200, 42.201, 42.202, and 42.204.", 
+                                "text": "(a) A covered business method patent review is a trial subject to the procedures set forth in subpart A of this part and is also subject to the post-grant review procedures set forth in subpart C except for \u00a7\u00a7\u200942.200, 42.201, 42.202, and 42.204.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-300-b", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "300", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) A claim in an unexpired patent shall be given its broadest reasonable construction in light of the specification of the patent in which it appears.", 
+                                "text": "(b) A claim in an unexpired patent shall be given its broadest reasonable construction in light of the specification of the patent in which it appears.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-300-c", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "300", 
+                                    "c"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(c) A covered business method patent review proceeding shall be administered such that pendency before the Board after institution is normally no more than one year. The time can be extended by up to six months for good cause by the Chief Administrative Patent Judge.", 
+                                "text": "(c) A covered business method patent review proceeding shall be administered such that pendency before the Board after institution is normally no more than one year. The time can be extended by up to six months for good cause by the Chief Administrative Patent Judge.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-300-d", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "300", 
+                                    "d"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(d) The rules in this subpart are applicable until September 15, 2020, except that the rules shall continue to apply to any petition for a covered business method patent review filed before the date of repeal.", 
+                                "text": "(d) The rules in this subpart are applicable until September 15, 2020, except that the rules shall continue to apply to any petition for a covered business method patent review filed before the date of repeal.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-300", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "300"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n                ", 
+                                "text": "", 
+                                "title": "\u00a7 42.300 Procedure; pendency."
+                            }, 
+                            "parent_label": [
+                                "42", 
+                                "Subpart", 
+                                "D"
+                            ]
+                        }
+                    ]
+                ], 
+                [
+                    "42-302-a", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "302", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) A petitioner may not file with the Office a petition to institute a covered business method patent review of the patent unless the petitioner, the petitioner's real party-in-interest, or a privy of the petitioner has been sued for infringement of the patent or has been charged with infringement under that patent. Charged with infringement means a real and substantial controversy regarding infringement of a covered business method patent exists such that the petitioner would have standing to bring a declaratory judgment action in Federal court.", 
+                                "text": "(a) A petitioner may not file with the Office a petition to institute a covered business method patent review of the patent unless the petitioner, the petitioner's real party-in-interest, or a privy of the petitioner has been sued for infringement of the patent or has been charged with infringement under that patent. Charged with infringement means a real and substantial controversy regarding infringement of a covered business method patent exists such that the petitioner would have standing to bring a declaratory judgment action in Federal court.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-302-b", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "302", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) A petitioner may not file a petition to institute a covered business method patent review of the patent where the petitioner, the petitioner's real party-in-interest, or a privy of the petitioner is estopped from challenging the claims on the grounds identified in the petition.", 
+                                "text": "(b) A petitioner may not file a petition to institute a covered business method patent review of the patent where the petitioner, the petitioner's real party-in-interest, or a privy of the petitioner is estopped from challenging the claims on the grounds identified in the petition.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-302", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "302"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n                ", 
+                                "text": "", 
+                                "title": "\u00a7 42.302 Who may petition for a covered business method patent review."
+                            }, 
+                            "parent_label": [
+                                "42", 
+                                "Subpart", 
+                                "D"
+                            ]
+                        }
+                    ]
+                ], 
+                [
+                    "42-303", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "303"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n                 A petition requesting a covered business method patent review may be filed any time except during the period in which a petition for a post-grant review of the patent would satisfy the requirements of 35 U.S.C. 321(c).", 
+                                "text": "A petition requesting a covered business method patent review may be filed any time except during the period in which a petition for a post-grant review of the patent would satisfy the requirements of 35 U.S.C. 321(c).", 
+                                "title": "\u00a7 42.303 Time for filing."
+                            }, 
+                            "parent_label": [
+                                "42", 
+                                "Subpart", 
+                                "D"
+                            ]
+                        }
+                    ]
+                ], 
+                [
+                    "42-304-a", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "304", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) <E T=\"03\">Grounds for standing.</E> The petitioner must demonstrate that the patent for which review is sought is a covered business method patent, and that the petitioner meets the eligibility requirements of \u00a7\u200942.302.", 
+                                "text": "(a) Grounds for standing. The petitioner must demonstrate that the patent for which review is sought is a covered business method patent, and that the petitioner meets the eligibility requirements of \u00a7\u200942.302.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-304-b-1", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "304", 
+                                    "b", 
+                                    "1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(1) The claim;", 
+                                "text": "(1) The claim;", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-304-b-2", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "304", 
+                                    "b", 
+                                    "2"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(2) The specific statutory grounds permitted under paragraph (2) or (3) of 35 U.S.C. 282(b), except as modified by section 18(a)(1)(C) of the Leahy-Smith America Invents Act (Pub. L. 112-29, 125 Stat. 284 (2011)), on which the challenge to the claim is based;", 
+                                "text": "(2) The specific statutory grounds permitted under paragraph (2) or (3) of 35 U.S.C. 282(b), except as modified by section 18(a)(1)(C) of the Leahy-Smith America Invents Act (Pub. L. 112-29, 125 Stat. 284 (2011)), on which the challenge to the claim is based;", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-304-b-3", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "304", 
+                                    "b", 
+                                    "3"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(3) How the challenged claim is to be construed. Where the claim to be construed contains a means-plus-function or step-plus-function limitation as permitted under 35 U.S.C. 112(f), the construction of the claim must identify the specific portions of the specification that describe the structure, material, or acts corresponding to each claimed function;", 
+                                "text": "(3) How the challenged claim is to be construed. Where the claim to be construed contains a means-plus-function or step-plus-function limitation as permitted under 35 U.S.C. 112(f), the construction of the claim must identify the specific portions of the specification that describe the structure, material, or acts corresponding to each claimed function;", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-304-b-4", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "304", 
+                                    "b", 
+                                    "4"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(4) How the construed claim is unpatentable under the statutory grounds identified in paragraph (b)(2) of this section. Where the grounds for unpatentability are based on prior art, the petition must specify where each element of the claim is found in the prior art. For all other grounds of unpatentability, the petition must identify the specific part of the claim that fails to comply with the statutory grounds raised and state how the identified subject matter fails to comply with the statute; and", 
+                                "text": "(4) How the construed claim is unpatentable under the statutory grounds identified in paragraph (b)(2) of this section. Where the grounds for unpatentability are based on prior art, the petition must specify where each element of the claim is found in the prior art. For all other grounds of unpatentability, the petition must identify the specific part of the claim that fails to comply with the statutory grounds raised and state how the identified subject matter fails to comply with the statute; and", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-304-b-5", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "304", 
+                                    "b", 
+                                    "5"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(5) The exhibit number of supporting evidence relied upon to support the challenge and the relevance of the evidence to the challenge raised, including identifying specific portions of the evidence that support the challenge. The Board may exclude or give no weight to the evidence where a party has failed to state its relevance or to identify specific portions of the evidence that support the challenge.", 
+                                "text": "(5) The exhibit number of supporting evidence relied upon to support the challenge and the relevance of the evidence to the challenge raised, including identifying specific portions of the evidence that support the challenge. The Board may exclude or give no weight to the evidence where a party has failed to state its relevance or to identify specific portions of the evidence that support the challenge.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-304-b", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "304", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) <E T=\"03\">Identification of challenge.</E> Provide a statement of the precise relief requested for each claim challenged. The statement must identify the following:", 
+                                "text": "(b) Identification of challenge. Provide a statement of the precise relief requested for each claim challenged. The statement must identify the following:", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-304-c", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "304", 
+                                    "c"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(c) A motion may be filed that seeks to correct a clerical or typographical mistake in the petition. The grant of such a motion does not change the filing date of the petition.", 
+                                "text": "(c) A motion may be filed that seeks to correct a clerical or typographical mistake in the petition. The grant of such a motion does not change the filing date of the petition.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-304", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "304"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n                 In addition to any other notices required by subparts A and C of this part, a petition must request judgment against one or more claims of a patent identified by patent number. In addition to the requirements of \u00a7\u00a7\u200942.6, 42.8, 42.22, and 42.24 the petition must set forth:", 
+                                "text": "In addition to any other notices required by subparts A and C of this part, a petition must request judgment against one or more claims of a patent identified by patent number. In addition to the requirements of \u00a7\u00a7\u200942.6, 42.8, 42.22, and 42.24 the petition must set forth:", 
+                                "title": "\u00a7 42.304 Content of petition."
+                            }, 
+                            "parent_label": [
+                                "42", 
+                                "Subpart", 
+                                "D"
+                            ]
+                        }
+                    ]
+                ], 
+                [
+                    "42-Subpart-D", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "Subpart", 
+                                    "D"
+                                ], 
+                                "node_type": "subpart", 
+                                "tagged_text": "", 
+                                "text": "", 
+                                "title": "Transitional Program for Covered Business Method Patents"
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "4. Add subpart D to read as follows:"
+        }
+    ], 
+    "cfr_parts": [
+        "42"
+    ], 
+    "cfr_title": 37, 
+    "dockets": [
+        "Docket No. PTO-P-2011-0083"
+    ], 
+    "document_number": "2012-17906", 
+    "effective_on": "2012-09-16", 
+    "footnotes": {}, 
+    "fr_citation": "77 FR 48679", 
+    "fr_url": "https://www.federalregister.gov/documents/2012/08/14/2012-17906/changes-to-implement-inter-partes-review-proceedings-post-grant-review-proceedings-and-transitional", 
+    "fr_volume": 77, 
+    "meta": {
+        "start_page": 48679
+    }, 
+    "primary_agency": "DEPARTMENT OF COMMERCE", 
+    "primary_docket": null, 
+    "publication_date": "2012-08-14", 
+    "regulation_id_numbers": [
+        "0651-AC71"
+    ], 
+    "section_by_section": [], 
+    "supporting_documents": [], 
+    "title": "Changes to Implement Inter Partes Review Proceedings, Post-Grant Review Proceedings, and Transitional Program for Covered Business Method Patents", 
+    "versions": {
+        "42": {
+            "left": "2012-17900", 
+            "right": "2012-17906"
+        }
+    }
+}

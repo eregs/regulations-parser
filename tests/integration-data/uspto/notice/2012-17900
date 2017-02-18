@@ -1,0 +1,101 @@
+{
+    "amendments": [
+        {
+            "authority": "35 U.S.C. 2(b)(2).", 
+            "cfr_part": "1", 
+            "instruction": "1. The authority citation for 37 CFR part 1 continues to read as follows:"
+        }, 
+        {
+            "cfr_part": "1", 
+            "changes": [
+                [
+                    "1-301", 
+                    [
+                        {
+                            "action": "DELETE"
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "2. Section 1.301 is removed and reserved."
+        }, 
+        {
+            "cfr_part": "1", 
+            "changes": [
+                [
+                    "1-302", 
+                    [
+                        {
+                            "action": "DELETE"
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "3. Section 1.302 is removed and reserved."
+        }, 
+        {
+            "cfr_part": "1", 
+            "changes": [
+                [
+                    "1-303", 
+                    [
+                        {
+                            "action": "DELETE"
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "4. Section 1.303 is removed and reserved."
+        }, 
+        {
+            "cfr_part": "1", 
+            "changes": [
+                [
+                    "1-304", 
+                    [
+                        {
+                            "action": "DELETE"
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "5. Section 1.304 is removed and reserved."
+        }, 
+        {
+            "cfr_part": "1", 
+            "instruction": "6. Part 42 is added to read as follows:"
+        }, 
+        {
+            "cfr_part": "90", 
+            "instruction": "7. Part 90 is added to read as follows:"
+        }
+    ], 
+    "cfr_parts": [
+        "1", 
+        "42", 
+        "90"
+    ], 
+    "cfr_title": 37, 
+    "dockets": [
+        "Docket No. PTO-P-2011-0082"
+    ], 
+    "document_number": "2012-17900", 
+    "effective_on": "2012-09-16", 
+    "footnotes": {}, 
+    "fr_citation": "77 FR 48611", 
+    "fr_url": "https://www.federalregister.gov/documents/2012/08/14/2012-17900/rules-of-practice-for-trials-before-the-patent-trial-and-appeal-board-and-judicial-review-of-patent", 
+    "fr_volume": 77, 
+    "meta": {
+        "start_page": 48611
+    }, 
+    "primary_agency": "DEPARTMENT OF COMMERCE", 
+    "primary_docket": null, 
+    "publication_date": "2012-08-14", 
+    "regulation_id_numbers": [
+        "0651-AC70"
+    ], 
+    "section_by_section": [], 
+    "supporting_documents": [], 
+    "title": "Rules of Practice for Trials Before the Patent Trial and Appeal Board and Judicial Review of Patent Trial and Appeal Board Decisions", 
+    "versions": {}
+}

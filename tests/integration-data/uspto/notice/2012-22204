@@ -1,0 +1,1598 @@
+{
+    "amendments": [
+        {
+            "authority": "35 U.S.C. 2(b)(2), 6, 21, 23, 41, 135, 311-319, 321-329 and Leahy-Smith America Invents Act, Pub. L. 112-29, sections 3(i), 6, and 18, 125 Stat. 284, 289-90, 299-313, and 329-331 (2011).", 
+            "cfr_part": "42", 
+            "instruction": "1. The authority citation for 37 CFR Part 42 is revised to read as follows:"
+        }, 
+        {
+            "cfr_part": "42", 
+            "changes": [
+                [
+                    "42-400-a", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "400", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) A derivation proceeding is a trial subject to the procedures set forth in subpart A of this part.", 
+                                "text": "(a) A derivation proceeding is a trial subject to the procedures set forth in subpart A of this part.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-400-b", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "400", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) The Board may for good cause authorize or direct the parties to address patentability issues that arise in the course of the derivation proceeding.", 
+                                "text": "(b) The Board may for good cause authorize or direct the parties to address patentability issues that arise in the course of the derivation proceeding.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-400", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "400"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n                ", 
+                                "text": "", 
+                                "title": "\u00a7 42.400 Procedure; pendency"
+                            }, 
+                            "parent_label": [
+                                "42", 
+                                "Subpart", 
+                                "E"
+                            ]
+                        }
+                    ]
+                ], 
+                [
+                    "42-401-p1", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "401", 
+                                    "p1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "In addition to the definitions in \u00a7\u200942.2, the following definitions apply to proceedings under this subpart:", 
+                                "text": "In addition to the definitions in \u00a7\u200942.2, the following definitions apply to proceedings under this subpart:", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-401-p3236262177", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "401", 
+                                    "p3236262177"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "<E T=\"03\">Agreement</E> or <E T=\"03\">understanding under 35 U.S.C. 135(e)</E> means settlement for the purposes of \u00a7\u200942.74.", 
+                                "text": "Agreement or understanding under 35 U.S.C. 135(e) means settlement for the purposes of \u00a7\u200942.74.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-401-p4087684105", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "401", 
+                                    "p4087684105"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "<E T=\"03\">Applicant</E> includes a reissue applicant.", 
+                                "text": "Applicant includes a reissue applicant.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-401-p3523239106", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "401", 
+                                    "p3523239106"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "<E T=\"03\">Application</E> includes both an application for an original patent and an application for a reissued patent.", 
+                                "text": "Application includes both an application for an original patent and an application for a reissued patent.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-401-p4195112412", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "401", 
+                                    "p4195112412"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "<E T=\"03\">First publication</E> means either a patent or an application publication under 35 U.S.C. 122(b), including a publication of an international application designating the United States as provided by 35 U.S.C. 374.", 
+                                "text": "First publication means either a patent or an application publication under 35 U.S.C. 122(b), including a publication of an international application designating the United States as provided by 35 U.S.C. 374.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-401-p2862969711", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "401", 
+                                    "p2862969711"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "<E T=\"03\">Petitioner</E> means a patent applicant who petitions for a determination that another party named in an earlier-filed patent application allegedly derived a claimed invention from an inventor named in the petitioner's application and filed the earlier application without authorization.", 
+                                "text": "Petitioner means a patent applicant who petitions for a determination that another party named in an earlier-filed patent application allegedly derived a claimed invention from an inventor named in the petitioner's application and filed the earlier application without authorization.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-401-p1169036493", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "401", 
+                                    "p1169036493"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "<E T=\"03\">Respondent</E> means a party other than the petitioner.", 
+                                "text": "Respondent means a party other than the petitioner.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-401-p858899850", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "401", 
+                                    "p858899850"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "<E T=\"03\">Same or substantially the same</E> means patentably indistinct.", 
+                                "text": "Same or substantially the same means patentably indistinct.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-401", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "401"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n                ", 
+                                "text": "", 
+                                "title": "\u00a7 42.401 Definitions."
+                            }, 
+                            "parent_label": [
+                                "42", 
+                                "Subpart", 
+                                "E"
+                            ]
+                        }
+                    ]
+                ], 
+                [
+                    "42-402", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "402"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n                 An applicant for patent may file a petition to institute a derivation proceeding in the Office.", 
+                                "text": "An applicant for patent may file a petition to institute a derivation proceeding in the Office.", 
+                                "title": "\u00a7 42.402 Who may file a petition for a derivation proceeding."
+                            }, 
+                            "parent_label": [
+                                "42", 
+                                "Subpart", 
+                                "E"
+                            ]
+                        }
+                    ]
+                ], 
+                [
+                    "42-403", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "403"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n                 A petition for a derivation proceeding must be filed within the one-year period beginning on the date of the first publication of a claim to an invention that is the same or substantially the same as the earlier application's claim to the allegedly derived invention.", 
+                                "text": "A petition for a derivation proceeding must be filed within the one-year period beginning on the date of the first publication of a claim to an invention that is the same or substantially the same as the earlier application's claim to the allegedly derived invention.", 
+                                "title": "\u00a7 42.403 Time for filing."
+                            }, 
+                            "parent_label": [
+                                "42", 
+                                "Subpart", 
+                                "E"
+                            ]
+                        }
+                    ]
+                ], 
+                [
+                    "42-404-a", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "404", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) A derivation fee set forth in \u00a7\u200942.15(c) must accompany the petition.", 
+                                "text": "(a) A derivation fee set forth in \u00a7\u200942.15(c) must accompany the petition.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-404-b", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "404", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) No filing date will be accorded to the petition until payment is complete.", 
+                                "text": "(b) No filing date will be accorded to the petition until payment is complete.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-404", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "404"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n                ", 
+                                "text": "", 
+                                "title": "\u00a7 42.404 Derivation fee."
+                            }, 
+                            "parent_label": [
+                                "42", 
+                                "Subpart", 
+                                "E"
+                            ]
+                        }
+                    ]
+                ], 
+                [
+                    "42-405-a-1", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "405", 
+                                    "a", 
+                                    "1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(1) Demonstrate compliance with \u00a7\u00a7\u200942.402 and 42.403; and", 
+                                "text": "(1) Demonstrate compliance with \u00a7\u00a7\u200942.402 and 42.403; and", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-405-a-2-i", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "405", 
+                                    "a", 
+                                    "2", 
+                                    "i"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(i) The same or substantially the same as the respondent's claimed invention; and", 
+                                "text": "(i) The same or substantially the same as the respondent's claimed invention; and", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-405-a-2-ii", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "405", 
+                                    "a", 
+                                    "2", 
+                                    "ii"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(ii) The same or substantially the same as the invention disclosed to the respondent.", 
+                                "text": "(ii) The same or substantially the same as the invention disclosed to the respondent.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-405-a-2", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "405", 
+                                    "a", 
+                                    "2"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(2) Show that the petitioner has at least one claim that is:", 
+                                "text": "(2) Show that the petitioner has at least one claim that is:", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-405-a", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "405", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) <E T=\"03\">Grounds for standing.</E> The petition must:", 
+                                "text": "(a) Grounds for standing. The petition must:", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-405-b-1", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "405", 
+                                    "b", 
+                                    "1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(1) Provide sufficient information to identify the application or patent for which the petitioner seeks a derivation proceeding;", 
+                                "text": "(1) Provide sufficient information to identify the application or patent for which the petitioner seeks a derivation proceeding;", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-405-b-2", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "405", 
+                                    "b", 
+                                    "2"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(2) Demonstrate that a claimed invention was derived from an inventor named in the petitioner's application, and that the inventor from whom the invention was derived did not authorize the filing of the earliest application claiming such invention; and", 
+                                "text": "(2) Demonstrate that a claimed invention was derived from an inventor named in the petitioner's application, and that the inventor from whom the invention was derived did not authorize the filing of the earliest application claiming such invention; and", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-405-b-3-i", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "405", 
+                                    "b", 
+                                    "3", 
+                                    "i"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(i) Show why the claimed invention is the same or substantially the same as the invention disclosed to the respondent, and", 
+                                "text": "(i) Show why the claimed invention is the same or substantially the same as the invention disclosed to the respondent, and", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-405-b-3-ii", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "405", 
+                                    "b", 
+                                    "3", 
+                                    "ii"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(ii) Identify how the claim is to be construed. Where the claim to be construed contains a means-plus-function or step-plus-function limitation as permitted under 35 U.S.C. 112(f), the construction of the claim must identify the specific portions of the specification that describe the structure, material, or acts corresponding to each claimed function.", 
+                                "text": "(ii) Identify how the claim is to be construed. Where the claim to be construed contains a means-plus-function or step-plus-function limitation as permitted under 35 U.S.C. 112(f), the construction of the claim must identify the specific portions of the specification that describe the structure, material, or acts corresponding to each claimed function.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-405-b-3", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "405", 
+                                    "b", 
+                                    "3"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(3) For each of the respondent's claims to the derived invention,", 
+                                "text": "(3) For each of the respondent's claims to the derived invention,", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-405-b", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "405", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) In addition to the requirements of \u00a7\u00a7\u200942.8 and 42.22, the petition must:", 
+                                "text": "(b) In addition to the requirements of \u00a7\u00a7\u200942.8 and 42.22, the petition must:", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-405-c", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "405", 
+                                    "c"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(c) <E T=\"03\">Sufficiency of showing.</E> A derivation showing is not sufficient unless it is supported by substantial evidence, including at least one affidavit addressing communication of the derived invention and lack of authorization that, if unrebutted, would support a determination of derivation. The showing of communication must be corroborated.", 
+                                "text": "(c) Sufficiency of showing. A derivation showing is not sufficient unless it is supported by substantial evidence, including at least one affidavit addressing communication of the derived invention and lack of authorization that, if unrebutted, would support a determination of derivation. The showing of communication must be corroborated.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-405", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "405"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n                ", 
+                                "text": "", 
+                                "title": "\u00a7 42.405 Content of petition."
+                            }, 
+                            "parent_label": [
+                                "42", 
+                                "Subpart", 
+                                "E"
+                            ]
+                        }
+                    ]
+                ], 
+                [
+                    "42-406-a", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "406", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) The petition and supporting evidence must be served on the respondent at the correspondence address of record for the earlier application or subject patent. The petitioner may additionally serve the petition and supporting evidence on the respondent at any other address known to the petitioner as likely to effect service.", 
+                                "text": "(a) The petition and supporting evidence must be served on the respondent at the correspondence address of record for the earlier application or subject patent. The petitioner may additionally serve the petition and supporting evidence on the respondent at any other address known to the petitioner as likely to effect service.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-406-b", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "406", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) Upon agreement of the parties, service may be made electronically. Service may be by EXPRESS MAIL\u00ae or by means at least as fast and reliable as EXPRESS MAIL\u00ae. Personal service is not required.", 
+                                "text": "(b) Upon agreement of the parties, service may be made electronically. Service may be by EXPRESS MAIL\u00ae or by means at least as fast and reliable as EXPRESS MAIL\u00ae. Personal service is not required.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-406", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "406"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n                 In addition to the requirements of \u00a7\u200942.6, the petitioner must serve the petition and exhibits relied upon in the petition as follows:", 
+                                "text": "In addition to the requirements of \u00a7\u200942.6, the petitioner must serve the petition and exhibits relied upon in the petition as follows:", 
+                                "title": "\u00a7 42.406 Service of petition."
+                            }, 
+                            "parent_label": [
+                                "42", 
+                                "Subpart", 
+                                "E"
+                            ]
+                        }
+                    ]
+                ], 
+                [
+                    "42-407-a-1", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "407", 
+                                    "a", 
+                                    "1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(1) Complies with \u00a7\u00a7\u200942.404 and 42.405, and", 
+                                "text": "(1) Complies with \u00a7\u00a7\u200942.404 and 42.405, and", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-407-a-2", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "407", 
+                                    "a", 
+                                    "2"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(2) Service of the petition on the correspondence address of record as provided in \u00a7\u200942.406.", 
+                                "text": "(2) Service of the petition on the correspondence address of record as provided in \u00a7\u200942.406.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-407-a", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "407", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) <E T=\"03\">Complete petition.</E> A petition to institute a derivation proceeding will not be accorded a filing date until the petition satisfies all of the following requirements:", 
+                                "text": "(a) Complete petition. A petition to institute a derivation proceeding will not be accorded a filing date until the petition satisfies all of the following requirements:", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-407-b-p1", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "407", 
+                                    "b", 
+                                    "p1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "", 
+                                "text": "", 
+                                "title": "Instituting Derivation Proceeding"
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-407-b", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "407", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) <E T=\"03\">Incomplete petition.</E> Where the petitioner files an incomplete petition, no filing date will be accorded, and the Office will dismiss the petition if the deficiency in the petition is not corrected within the earlier of either one month from notice of the incomplete petition, or the expiration of the statutory deadline in which to file a petition for derivation.", 
+                                "text": "(b) Incomplete petition. Where the petitioner files an incomplete petition, no filing date will be accorded, and the Office will dismiss the petition if the deficiency in the petition is not corrected within the earlier of either one month from notice of the incomplete petition, or the expiration of the statutory deadline in which to file a petition for derivation.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-407", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "407"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n                ", 
+                                "text": "", 
+                                "title": "\u00a7 42.407 Filing date."
+                            }, 
+                            "parent_label": [
+                                "42", 
+                                "Subpart", 
+                                "E"
+                            ]
+                        }
+                    ]
+                ], 
+                [
+                    "42-408-a", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "408", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) An administrative patent judge institutes, and may as necessary reinstitute, the derivation proceeding on behalf of the Director.", 
+                                "text": "(a) An administrative patent judge institutes, and may as necessary reinstitute, the derivation proceeding on behalf of the Director.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-408-b-p1", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "408", 
+                                    "b", 
+                                    "p1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "", 
+                                "text": "", 
+                                "title": "After Institution of Derivation Proceeding"
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-408-b", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "408", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) <E T=\"03\">Additional derivation proceeding.</E> The petitioner may suggest the addition of a patent or application to the derivation proceeding. The suggestion should make the showings required under \u00a7\u200942.405 and explain why the suggestion could not have been made in the original petition.", 
+                                "text": "(b) Additional derivation proceeding. The petitioner may suggest the addition of a patent or application to the derivation proceeding. The suggestion should make the showings required under \u00a7\u200942.405 and explain why the suggestion could not have been made in the original petition.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-408", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "408"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n                ", 
+                                "text": "", 
+                                "title": "\u00a7 42.408 Institution of derivation proceeding."
+                            }, 
+                            "parent_label": [
+                                "42", 
+                                "Subpart", 
+                                "E"
+                            ]
+                        }
+                    ]
+                ], 
+                [
+                    "42-409", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "409"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n                 An agreement or understanding under 35 U.S.C. 135(e) is a settlement for the purposes of \u00a7\u200942.74.", 
+                                "text": "An agreement or understanding under 35 U.S.C. 135(e) is a settlement for the purposes of \u00a7\u200942.74.", 
+                                "title": "\u00a7 42.409 Settlement agreements."
+                            }, 
+                            "parent_label": [
+                                "42", 
+                                "Subpart", 
+                                "E"
+                            ]
+                        }
+                    ]
+                ], 
+                [
+                    "42-410-a", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "410", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) Parties may resort to binding arbitration to determine any issue. The Office is not a party to the arbitration. The Board is not bound by, and may independently determine, any question of patentability.", 
+                                "text": "(a) Parties may resort to binding arbitration to determine any issue. The Office is not a party to the arbitration. The Board is not bound by, and may independently determine, any question of patentability.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-410-b-1", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "410", 
+                                    "b", 
+                                    "1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(1) It is to be conducted according to Title 9 of the United States Code;", 
+                                "text": "(1) It is to be conducted according to Title 9 of the United States Code;", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-410-b-2", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "410", 
+                                    "b", 
+                                    "2"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(2) The parties notify the Board in writing of their intention to arbitrate;", 
+                                "text": "(2) The parties notify the Board in writing of their intention to arbitrate;", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-410-b-3-i", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "410", 
+                                    "b", 
+                                    "3", 
+                                    "i"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(i) Is in writing;", 
+                                "text": "(i) Is in writing;", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-410-b-3-ii", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "410", 
+                                    "b", 
+                                    "3", 
+                                    "ii"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(ii) Specifies the issues to be arbitrated;", 
+                                "text": "(ii) Specifies the issues to be arbitrated;", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-410-b-3-iii", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "410", 
+                                    "b", 
+                                    "3", 
+                                    "iii"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(iii) Names the arbitrator, or provides a date not more than 30 days after the execution of the agreement for the selection of the arbitrator;", 
+                                "text": "(iii) Names the arbitrator, or provides a date not more than 30 days after the execution of the agreement for the selection of the arbitrator;", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-410-b-3-iv", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "410", 
+                                    "b", 
+                                    "3", 
+                                    "iv"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(iv) Provides that the arbitrator's award shall be binding on the parties and that judgment thereon can be entered by the Board;", 
+                                "text": "(iv) Provides that the arbitrator's award shall be binding on the parties and that judgment thereon can be entered by the Board;", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-410-b-3-v", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "410", 
+                                    "b", 
+                                    "3", 
+                                    "v"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(v) Provides that a copy of the agreement is filed within 20 days after its execution; and", 
+                                "text": "(v) Provides that a copy of the agreement is filed within 20 days after its execution; and", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-410-b-3-vi", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "410", 
+                                    "b", 
+                                    "3", 
+                                    "vi"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(vi) Provides that the arbitration is completed within the time the Board sets.", 
+                                "text": "(vi) Provides that the arbitration is completed within the time the Board sets.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-410-b-3", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "410", 
+                                    "b", 
+                                    "3"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(3) The agreement to arbitrate:", 
+                                "text": "(3) The agreement to arbitrate:", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-410-b", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "410", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) The Board will not set a time for, or otherwise modify the proceeding for, an arbitration unless:", 
+                                "text": "(b) The Board will not set a time for, or otherwise modify the proceeding for, an arbitration unless:", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-410-c", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "410", 
+                                    "c"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(c) The parties are solely responsible for the selection of the arbitrator and the conduct of the arbitration.", 
+                                "text": "(c) The parties are solely responsible for the selection of the arbitrator and the conduct of the arbitration.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-410-d", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "410", 
+                                    "d"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(d) The Board may determine issues the arbitration does not resolve.", 
+                                "text": "(d) The Board may determine issues the arbitration does not resolve.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-410-e-1", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "410", 
+                                    "e", 
+                                    "1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(1) Is binding on the parties;", 
+                                "text": "(1) Is binding on the parties;", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-410-e-2", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "410", 
+                                    "e", 
+                                    "2"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(2) Is in writing;", 
+                                "text": "(2) Is in writing;", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-410-e-3", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "410", 
+                                    "e", 
+                                    "3"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(3) States in a clear and definite manner each issue arbitrated and the disposition of each issue; and", 
+                                "text": "(3) States in a clear and definite manner each issue arbitrated and the disposition of each issue; and", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-410-e-4", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "410", 
+                                    "e", 
+                                    "4"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(4) Is filed within 20 days of the date of the award.", 
+                                "text": "(4) Is filed within 20 days of the date of the award.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-410-e", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "410", 
+                                    "e"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(e) The Board will not consider the arbitration award unless it:", 
+                                "text": "(e) The Board will not consider the arbitration award unless it:", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-410-f", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "410", 
+                                    "f"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(f) Once the award is filed, the parties to the award may not take actions inconsistent with the award. If the award is dispositive of the contested subject matter for a party, the Board may enter judgment as to that party.", 
+                                "text": "(f) Once the award is filed, the parties to the award may not take actions inconsistent with the award. If the award is dispositive of the contested subject matter for a party, the Board may enter judgment as to that party.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-410", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "410"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n                ", 
+                                "text": "", 
+                                "title": "\u00a7 42.410 Arbitration."
+                            }, 
+                            "parent_label": [
+                                "42", 
+                                "Subpart", 
+                                "E"
+                            ]
+                        }
+                    ]
+                ], 
+                [
+                    "42-411", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "411"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n                 The Board may decline to institute, or if already instituted the Board may issue judgment in, a derivation proceeding between an application and a patent or another application that are commonly owned.", 
+                                "text": "The Board may decline to institute, or if already instituted the Board may issue judgment in, a derivation proceeding between an application and a patent or another application that are commonly owned.", 
+                                "title": "\u00a7 42.411 Common interests in the invention."
+                            }, 
+                            "parent_label": [
+                                "42", 
+                                "Subpart", 
+                                "E"
+                            ]
+                        }
+                    ]
+                ], 
+                [
+                    "42-412-a-1", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "412", 
+                                    "a", 
+                                    "1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(1) <E T=\"03\">Generally.</E> Any Board decision is available for public inspection without a party's permission if rendered in a file open to the public pursuant to \u00a7\u20091.11 of this chapter or in an application that has been published in accordance with \u00a7\u00a7\u20091.211 to 1.221 of this chapter. The Office may independently publish any Board decision that is available for public inspection.", 
+                                "text": "(1) Generally. Any Board decision is available for public inspection without a party's permission if rendered in a file open to the public pursuant to \u00a7\u20091.11 of this chapter or in an application that has been published in accordance with \u00a7\u00a7\u20091.211 to 1.221 of this chapter. The Office may independently publish any Board decision that is available for public inspection.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-412-a-2", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "412", 
+                                    "a", 
+                                    "2"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(2) <E T=\"03\">Determination of special circumstances.</E> Any Board decision not publishable under paragraph (a)(1) of this section may be published or made available for public inspection if the Director believes that special circumstances warrant publication and a party does not petition within two months after being notified of the intention to make the decision public, objecting in writing on the ground that the decision discloses the objecting party's trade secret or other confidential information and stating with specificity that such information is not otherwise publicly available.", 
+                                "text": "(2) Determination of special circumstances. Any Board decision not publishable under paragraph (a)(1) of this section may be published or made available for public inspection if the Director believes that special circumstances warrant publication and a party does not petition within two months after being notified of the intention to make the decision public, objecting in writing on the ground that the decision discloses the objecting party's trade secret or other confidential information and stating with specificity that such information is not otherwise publicly available.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-412-a", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "412", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) <E T=\"03\">Publication.</E>", 
+                                "text": "(a) Publication.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-412-b-1", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "412", 
+                                    "b", 
+                                    "1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(1) The record of a Board proceeding is available to the public, unless a patent application not otherwise available to the public is involved.", 
+                                "text": "(1) The record of a Board proceeding is available to the public, unless a patent application not otherwise available to the public is involved.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-412-b-2", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "412", 
+                                    "b", 
+                                    "2"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(2) Notwithstanding paragraph (b)(1) of this section, after a final Board decision in or judgment in a Board proceeding, the record of the Board proceeding will be made available to the public if any involved file is or becomes open to the public under \u00a7\u20091.11 of this chapter or an involved application is or becomes published under \u00a7\u00a7\u20091.211 to 1.221 of this chapter.", 
+                                "text": "(2) Notwithstanding paragraph (b)(1) of this section, after a final Board decision in or judgment in a Board proceeding, the record of the Board proceeding will be made available to the public if any involved file is or becomes open to the public under \u00a7\u20091.11 of this chapter or an involved application is or becomes published under \u00a7\u00a7\u20091.211 to 1.221 of this chapter.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-412-b", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "412", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) <E T=\"03\">Record of proceeding.</E>", 
+                                "text": "(b) Record of proceeding.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-412", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "412"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n                ", 
+                                "text": "", 
+                                "title": "\u00a7 42.412 Public availability of Board records."
+                            }, 
+                            "parent_label": [
+                                "42", 
+                                "Subpart", 
+                                "E"
+                            ]
+                        }
+                    ]
+                ], 
+                [
+                    "42-Subpart-E", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "Subpart", 
+                                    "E"
+                                ], 
+                                "node_type": "subpart", 
+                                "tagged_text": "", 
+                                "text": "", 
+                                "title": "Derivation"
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "2. A new subpart E is added to read as follows:"
+        }
+    ], 
+    "cfr_parts": [
+        "42"
+    ], 
+    "cfr_title": 37, 
+    "dockets": [
+        "Docket No. PTO-P-2011-0086"
+    ], 
+    "document_number": "2012-22204", 
+    "effective_on": "2013-03-16", 
+    "footnotes": {}, 
+    "fr_citation": "77 FR 56067", 
+    "fr_url": "https://www.federalregister.gov/documents/2012/09/11/2012-22204/changes-to-implement-derivation-proceedings", 
+    "fr_volume": 77, 
+    "meta": {
+        "start_page": 56067
+    }, 
+    "primary_agency": "DEPARTMENT OF COMMERCE", 
+    "primary_docket": null, 
+    "publication_date": "2012-09-11", 
+    "regulation_id_numbers": [
+        "0651-AC74"
+    ], 
+    "section_by_section": [], 
+    "supporting_documents": [], 
+    "title": "Changes To Implement Derivation Proceedings", 
+    "versions": {
+        "42": {
+            "left": "2012-17908", 
+            "right": "2012-22204"
+        }
+    }
+}

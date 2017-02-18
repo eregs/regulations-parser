@@ -1,0 +1,1228 @@
+{
+    "42-10-a": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    86, 
+                    98
+                ], 
+                [
+                    "insert", 
+                    86, 
+                    "a"
+                ]
+            ]
+        ]
+    }, 
+    "42-100-b": {
+        "op": "modified", 
+        "text": [
+            [
+                "delete", 
+                35, 
+                98
+            ], 
+            [
+                "delete", 
+                214, 
+                592
+            ]
+        ]
+    }, 
+    "42-107-a": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    187, 
+                    194
+                ], 
+                [
+                    "insert", 
+                    187, 
+                    "314. The response"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    207, 
+                    227
+                ], 
+                [
+                    "insert", 
+                    207, 
+                    "evidence except as provided in paragraph (c) of this section."
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    271, 
+                    281
+                ], 
+                [
+                    "insert", 
+                    271, 
+                    "page limits"
+                ]
+            ]
+        ]
+    }, 
+    "42-107-c": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    4, 
+                    14
+                ], 
+                [
+                    "insert", 
+                    4, 
+                    "No new testimonial evidence. The preliminary response shall not present new testimony evidence beyond that already of record, except as authorized by the Board."
+                ]
+            ]
+        ]
+    }, 
+    "42-108-c": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    402, 
+                    822
+                ], 
+                [
+                    "insert", 
+                    402, 
+                    "filed."
+                ]
+            ]
+        ]
+    }, 
+    "42-11": {
+        "child_ops": [
+            [
+                "delete", 
+                0, 
+                4
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                0, 
+                "Parties and individuals involved in the proceeding have a duty of candor and good faith to the Office during the course of a proceeding."
+            ]
+        ], 
+        "title": [
+            [
+                [
+                    "delete", 
+                    16, 
+                    80
+                ], 
+                [
+                    "insert", 
+                    16, 
+                    "candor."
+                ]
+            ]
+        ]
+    }, 
+    "42-11-a": {
+        "op": "deleted"
+    }, 
+    "42-11-b": {
+        "op": "deleted"
+    }, 
+    "42-11-c": {
+        "op": "deleted"
+    }, 
+    "42-11-d": {
+        "op": "deleted"
+    }, 
+    "42-11-d-1": {
+        "op": "deleted"
+    }, 
+    "42-11-d-2": {
+        "op": "deleted"
+    }, 
+    "42-11-d-3": {
+        "op": "deleted"
+    }, 
+    "42-11-d-4": {
+        "op": "deleted"
+    }, 
+    "42-11-d-5": {
+        "op": "deleted"
+    }, 
+    "42-121-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    68, 
+                    122
+                ], 
+                [
+                    "insert", 
+                    68, 
+                    "show"
+                ]
+            ], 
+            [
+                "delete", 
+                127, 
+                144
+            ]
+        ]
+    }, 
+    "42-15-a-3": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    105, 
+                    177
+                ], 
+                [
+                    "insert", 
+                    105, 
+                    "20:"
+                ]
+            ]
+        ]
+    }, 
+    "42-15-a-4": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    115, 
+                    187
+                ], 
+                [
+                    "insert", 
+                    115, 
+                    "15:"
+                ]
+            ]
+        ]
+    }, 
+    "42-15-b-3": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    137, 
+                    209
+                ], 
+                [
+                    "insert", 
+                    137, 
+                    "20:"
+                ]
+            ]
+        ]
+    }, 
+    "42-15-b-4": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                75, 
+                "request fee "
+            ], 
+            [
+                [
+                    "delete", 
+                    154, 
+                    226
+                ], 
+                [
+                    "insert", 
+                    154, 
+                    "15:"
+                ]
+            ]
+        ]
+    }, 
+    "42-200-b": {
+        "op": "modified", 
+        "text": [
+            [
+                "delete", 
+                35, 
+                98
+            ], 
+            [
+                "delete", 
+                214, 
+                592
+            ]
+        ]
+    }, 
+    "42-207-a": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    185, 
+                    192
+                ], 
+                [
+                    "insert", 
+                    185, 
+                    "324. The response"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    205, 
+                    225
+                ], 
+                [
+                    "insert", 
+                    205, 
+                    "evidence except as provided in paragraph (c) of this section."
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    269, 
+                    279
+                ], 
+                [
+                    "insert", 
+                    269, 
+                    "page limits"
+                ]
+            ]
+        ]
+    }, 
+    "42-207-c": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    4, 
+                    14
+                ], 
+                [
+                    "insert", 
+                    4, 
+                    "No new testimonial evidence. The preliminary response shall not present new testimony evidence beyond that already of record, except as authorized by the Board."
+                ]
+            ]
+        ]
+    }, 
+    "42-208-c": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    82, 
+                    97
+                ], 
+                [
+                    "insert", 
+                    82, 
+                    "unpatentability,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    410, 
+                    827
+                ], 
+                [
+                    "insert", 
+                    410, 
+                    "filed."
+                ]
+            ]
+        ]
+    }, 
+    "42-221-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    68, 
+                    122
+                ], 
+                [
+                    "insert", 
+                    68, 
+                    "show"
+                ]
+            ], 
+            [
+                "delete", 
+                127, 
+                144
+            ]
+        ]
+    }, 
+    "42-23-a": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    82, 
+                    155
+                ], 
+                [
+                    "insert", 
+                    82, 
+                    "and must include"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    168, 
+                    170
+                ], 
+                [
+                    "insert", 
+                    168, 
+                    "identifying"
+                ]
+            ], 
+            [
+                "delete", 
+                180, 
+                212
+            ], 
+            [
+                [
+                    "delete", 
+                    218, 
+                    254
+                ], 
+                [
+                    "insert", 
+                    218, 
+                    "in dispute. Any material fact not specifically denied may"
+                ]
+            ], 
+            [
+                "delete", 
+                258, 
+                326
+            ]
+        ]
+    }, 
+    "42-23-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    149, 
+                    160
+                ], 
+                [
+                    "insert", 
+                    149, 
+                    "opposition or"
+                ]
+            ], 
+            [
+                "delete", 
+                174, 
+                212
+            ]
+        ]
+    }, 
+    "42-24": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                3
+            ], 
+            [
+                "delete", 
+                3, 
+                4
+            ]
+        ], 
+        "op": "modified", 
+        "title": [
+            [
+                [
+                    "delete", 
+                    8, 
+                    34
+                ], 
+                [
+                    "insert", 
+                    8, 
+                    "Page limits"
+                ]
+            ]
+        ]
+    }, 
+    "42-24-a-1": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                5
+            ], 
+            [
+                "delete", 
+                5, 
+                6
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    18, 
+                    29
+                ], 
+                [
+                    "insert", 
+                    18, 
+                    "page limits for petitions and motions apply and include any statement of material facts to be admitted"
+                ]
+            ], 
+            [
+                "insert", 
+                33, 
+                "denied in support of the petition or motion. The "
+            ], 
+            [
+                [
+                    "delete", 
+                    38, 
+                    80
+                ], 
+                [
+                    "insert", 
+                    38, 
+                    "limit does not"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    89, 
+                    102
+                ], 
+                [
+                    "insert", 
+                    89, 
+                    "a table"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    106, 
+                    135
+                ], 
+                [
+                    "insert", 
+                    106, 
+                    "contents, a table of authorities, a certificate of service,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    139, 
+                    156
+                ], 
+                [
+                    "insert", 
+                    139, 
+                    "appendix"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    160, 
+                    448
+                ], 
+                [
+                    "insert", 
+                    160, 
+                    "exhibits."
+                ]
+            ]
+        ]
+    }, 
+    "42-24-a-1-i": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    45, 
+                    58
+                ], 
+                [
+                    "insert", 
+                    45, 
+                    "60 pages."
+                ]
+            ]
+        ]
+    }, 
+    "42-24-a-1-ii": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    44, 
+                    57
+                ], 
+                [
+                    "insert", 
+                    44, 
+                    "80 pages."
+                ]
+            ]
+        ]
+    }, 
+    "42-24-a-1-iii": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    65, 
+                    78
+                ], 
+                [
+                    "insert", 
+                    65, 
+                    "80 pages."
+                ]
+            ]
+        ]
+    }, 
+    "42-24-a-1-iv": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    48, 
+                    61
+                ], 
+                [
+                    "insert", 
+                    48, 
+                    "60 pages."
+                ]
+            ]
+        ]
+    }, 
+    "42-24-a-1-v": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    4, 
+                    41
+                ], 
+                [
+                    "insert", 
+                    4, 
+                    "Motions:"
+                ]
+            ]
+        ]
+    }, 
+    "42-24-a-1-vi": {
+        "op": "deleted"
+    }, 
+    "42-24-a-2": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    63, 
+                    74
+                ], 
+                [
+                    "insert", 
+                    63, 
+                    "page limits"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    123, 
+                    135
+                ], 
+                [
+                    "insert", 
+                    123, 
+                    "page limits."
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    195, 
+                    206
+                ], 
+                [
+                    "insert", 
+                    195, 
+                    "page limits"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    296, 
+                    313
+                ], 
+                [
+                    "insert", 
+                    296, 
+                    "page limit to the"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    388, 
+                    398
+                ], 
+                [
+                    "insert", 
+                    388, 
+                    "page limit"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    454, 
+                    465
+                ], 
+                [
+                    "insert", 
+                    454, 
+                    "page limits must be granted in advance of filing a motion, opposition,"
+                ]
+            ], 
+            [
+                "delete", 
+                469, 
+                543
+            ]
+        ]
+    }, 
+    "42-24-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    48, 
+                    59
+                ], 
+                [
+                    "insert", 
+                    48, 
+                    "page limits set forth in this paragraph do not include a listing of facts which are admitted, denied,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    63, 
+                    168
+                ], 
+                [
+                    "insert", 
+                    63, 
+                    "cannot be admitted"
+                ]
+            ], 
+            [
+                "delete", 
+                172, 
+                194
+            ]
+        ]
+    }, 
+    "42-24-b-1": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    8, 
+                    19
+                ], 
+                [
+                    "insert", 
+                    8, 
+                    "page limits"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    92, 
+                    103
+                ], 
+                [
+                    "insert", 
+                    92, 
+                    "page limits"
+                ]
+            ]
+        ]
+    }, 
+    "42-24-b-2": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    8, 
+                    19
+                ], 
+                [
+                    "insert", 
+                    8, 
+                    "page limits"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    80, 
+                    91
+                ], 
+                [
+                    "insert", 
+                    80, 
+                    "page limits"
+                ]
+            ]
+        ]
+    }, 
+    "42-24-c": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                2
+            ], 
+            [
+                "delete", 
+                2, 
+                3
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    27, 
+                    38
+                ], 
+                [
+                    "insert", 
+                    27, 
+                    "page limits for replies apply and include the required statement of facts in support of the reply. The page limits do not include a table of contents, a table of authorities, a listing of facts which are admitted, denied,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    42, 
+                    97
+                ], 
+                [
+                    "insert", 
+                    42, 
+                    "cannot be admitted or denied, a certificate"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    101, 
+                    117
+                ], 
+                [
+                    "insert", 
+                    101, 
+                    "service, or appendix"
+                ]
+            ], 
+            [
+                "delete", 
+                121, 
+                358
+            ]
+        ]
+    }, 
+    "42-24-c-1": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    52, 
+                    64
+                ], 
+                [
+                    "insert", 
+                    52, 
+                    "15 pages."
+                ]
+            ]
+        ]
+    }, 
+    "42-24-c-2": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    15, 
+                    82
+                ], 
+                [
+                    "insert", 
+                    15, 
+                    "oppositions:"
+                ]
+            ]
+        ]
+    }, 
+    "42-24-c-3": {
+        "op": "deleted"
+    }, 
+    "42-24-d": {
+        "op": "deleted"
+    }, 
+    "42-300-b": {
+        "op": "modified", 
+        "text": [
+            [
+                "delete", 
+                35, 
+                98
+            ], 
+            [
+                "delete", 
+                214, 
+                594
+            ]
+        ]
+    }, 
+    "42-300-c": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    261, 
+                    316
+                ], 
+                [
+                    "insert", 
+                    261, 
+                    "Judge."
+                ]
+            ]
+        ]
+    }, 
+    "42-302": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                2
+            ], 
+            [
+                "delete", 
+                2, 
+                3
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "42-302-c": {
+        "op": "deleted"
+    }, 
+    "42-51-b-1-ii": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    46, 
+                    58
+                ], 
+                [
+                    "insert", 
+                    46, 
+                    "is authorized within such time period as"
+                ]
+            ], 
+            [
+                "delete", 
+                63, 
+                119
+            ]
+        ]
+    }, 
+    "42-53-c-2": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                151, 
+                "deposition "
+            ], 
+            [
+                [
+                    "delete", 
+                    185, 
+                    191
+                ], 
+                [
+                    "insert", 
+                    185, 
+                    "following"
+                ]
+            ]
+        ]
+    }, 
+    "42-53-f-7": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                179, 
+                "by proponent "
+            ]
+        ]
+    }, 
+    "42-6-a-2-ii": {
+        "child_ops": [
+            [
+                "insert", 
+                0, 
+                [
+                    "42-6-a-2-ii-A", 
+                    "42-6-a-2-ii-B"
+                ]
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    5, 
+                    30
+                ], 
+                [
+                    "insert", 
+                    5, 
+                    "Either a"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    44, 
+                    75
+                ], 
+                [
+                    "insert", 
+                    44, 
+                    "or monospaced font may"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    79, 
+                    84
+                ], 
+                [
+                    "insert", 
+                    79, 
+                    "used:"
+                ]
+            ]
+        ]
+    }, 
+    "42-6-a-2-ii-A": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "6", 
+                "a", 
+                "2", 
+                "ii", 
+                "A"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(A) The proportional font must be 14-point or larger, and", 
+            "text": "(A) The proportional font must be 14-point or larger, and", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-6-a-2-ii-B": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "6", 
+                "a", 
+                "2", 
+                "ii", 
+                "B"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(B) The monospaced font must not contain more than four characters per centimeter (ten characters per inch);", 
+            "text": "(B) The monospaced font must not contain more than four characters per centimeter (ten characters per inch);", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-64": {
+        "op": "modified", 
+        "title": [
+            [
+                [
+                    "delete", 
+                    29, 
+                    37
+                ], 
+                [
+                    "insert", 
+                    29, 
+                    "exclude; motion in limine."
+                ]
+            ]
+        ]
+    }, 
+    "42-64-b-1": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    91, 
+                    96
+                ], 
+                [
+                    "insert", 
+                    91, 
+                    "served"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    211, 
+                    216
+                ], 
+                [
+                    "insert", 
+                    211, 
+                    "served"
+                ]
+            ]
+        ]
+    }, 
+    "42-70-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    51, 
+                    56
+                ], 
+                [
+                    "insert", 
+                    51, 
+                    "five"
+                ]
+            ]
+        ]
+    }, 
+    "42-71-d": {
+        "op": "modified", 
+        "text": [
+            [
+                "delete", 
+                63, 
+                70
+            ], 
+            [
+                "insert", 
+                82, 
+                "rehearing, without prior authorization from the Board. The burden of showing a decision should be modified lies with the party challenging the decision. The request must specifically identify all matters the party believes the Board misapprehended or overlooked, and the place where each matter was previously addressed in a motion, an opposition, or a reply. A request for "
+            ], 
+            [
+                [
+                    "delete", 
+                    92, 
+                    175
+                ], 
+                [
+                    "insert", 
+                    92, 
+                    "does not toll times for taking action. Any request must"
+                ]
+            ], 
+            [
+                "delete", 
+                179, 
+                524
+            ]
+        ]
+    }
+}

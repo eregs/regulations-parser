@@ -1,0 +1,113 @@
+{
+    "amendments": [
+        {
+            "authority": "35 U.S.C. 2(b)(2), 6, 21, 23, 41, 135, 311, 312, 316, 321-326 and AIA, Pub. L. 112-29, \u00a7\u00a7\u20096(c), 6(f), and 18, 125 Stat. 284, 304, 311, and 329 (2011).", 
+            "cfr_part": "42", 
+            "instruction": "1. The authority citation for 37 CFR part 42 continues to read as follows:"
+        }, 
+        {
+            "cfr_part": "42", 
+            "changes": [
+                [
+                    "42-301-a", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "301", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) <E T=\"03\">Covered business method patent</E> means a patent that claims a method or corresponding apparatus for performing data processing or other operations used in the practice, administration, or management of a financial product or service, except that the term does not include patents for technological inventions.", 
+                                "text": "(a) Covered business method patent means a patent that claims a method or corresponding apparatus for performing data processing or other operations used in the practice, administration, or management of a financial product or service, except that the term does not include patents for technological inventions.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-301-b", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "301", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) <E T=\"03\">Technological invention.</E> In determining whether a patent is for a technological invention solely for purposes of the Transitional Program for Covered Business Methods (section 42.301(a)), the following will be considered on a case-by-case basis: whether the claimed subject matter as a whole recites a technological feature that is novel and unobvious over the prior art; and solves a technical problem using a technical solution.", 
+                                "text": "(b) Technological invention. In determining whether a patent is for a technological invention solely for purposes of the Transitional Program for Covered Business Methods (section 42.301(a)), the following will be considered on a case-by-case basis: whether the claimed subject matter as a whole recites a technological feature that is novel and unobvious over the prior art; and solves a technical problem using a technical solution.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-301", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [
+                                    "42-301-a", 
+                                    "42-301-b"
+                                ], 
+                                "label": [
+                                    "42", 
+                                    "301"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n               In addition to the definitions in \u00a7\u200942.2, the following definitions apply to proceedings under this subpart D:", 
+                                "text": "In addition to the definitions in \u00a7\u200942.2, the following definitions apply to proceedings under this subpart D:", 
+                                "title": "\u00a7 42.301 Definitions."
+                            }, 
+                            "parent_label": [
+                                "42", 
+                                "Subpart", 
+                                "D"
+                            ]
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "2. Add \u00a7\u200942.301 to subpart D to read as follows:"
+        }
+    ], 
+    "cfr_parts": [
+        "42"
+    ], 
+    "cfr_title": 37, 
+    "dockets": [
+        "Docket No. PTO-P-2011-0087"
+    ], 
+    "document_number": "2012-17904", 
+    "effective_on": "2012-09-16", 
+    "footnotes": {}, 
+    "fr_citation": "77 FR 48733", 
+    "fr_url": "https://www.federalregister.gov/documents/2012/08/14/2012-17904/transitional-program-for-covered-business-method-patents-definitions-of-covered-business-method", 
+    "fr_volume": 77, 
+    "meta": {
+        "start_page": 48733
+    }, 
+    "primary_agency": "DEPARTMENT OF COMMERCE", 
+    "primary_docket": null, 
+    "publication_date": "2012-08-14", 
+    "regulation_id_numbers": [
+        "0651-AC75"
+    ], 
+    "section_by_section": [], 
+    "supporting_documents": [], 
+    "title": "Transitional Program for Covered Business Method Patents\u2014Definitions of Covered Business Method Patent and Technological Invention", 
+    "versions": {
+        "42": {
+            "left": "2012-17906", 
+            "right": "2012-17904"
+        }
+    }
+}

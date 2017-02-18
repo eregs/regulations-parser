@@ -1,0 +1,265 @@
+{
+    "42": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                4
+            ], 
+            [
+                "delete", 
+                4, 
+                5
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "42-301": {
+        "op": "deleted"
+    }, 
+    "42-301-a": {
+        "op": "deleted"
+    }, 
+    "42-301-b": {
+        "op": "deleted"
+    }, 
+    "42-400": {
+        "op": "deleted"
+    }, 
+    "42-400-a": {
+        "op": "deleted"
+    }, 
+    "42-400-b": {
+        "op": "deleted"
+    }, 
+    "42-401": {
+        "op": "deleted"
+    }, 
+    "42-401-p1": {
+        "op": "deleted"
+    }, 
+    "42-401-p1169036493": {
+        "op": "deleted"
+    }, 
+    "42-401-p2862969711": {
+        "op": "deleted"
+    }, 
+    "42-401-p3236262177": {
+        "op": "deleted"
+    }, 
+    "42-401-p3523239106": {
+        "op": "deleted"
+    }, 
+    "42-401-p4087684105": {
+        "op": "deleted"
+    }, 
+    "42-401-p4195112412": {
+        "op": "deleted"
+    }, 
+    "42-401-p858899850": {
+        "op": "deleted"
+    }, 
+    "42-402": {
+        "op": "deleted"
+    }, 
+    "42-403": {
+        "op": "deleted"
+    }, 
+    "42-404": {
+        "op": "deleted"
+    }, 
+    "42-404-a": {
+        "op": "deleted"
+    }, 
+    "42-404-b": {
+        "op": "deleted"
+    }, 
+    "42-405": {
+        "op": "deleted"
+    }, 
+    "42-405-a": {
+        "op": "deleted"
+    }, 
+    "42-405-a-1": {
+        "op": "deleted"
+    }, 
+    "42-405-a-2": {
+        "op": "deleted"
+    }, 
+    "42-405-a-2-i": {
+        "op": "deleted"
+    }, 
+    "42-405-a-2-ii": {
+        "op": "deleted"
+    }, 
+    "42-405-b": {
+        "op": "deleted"
+    }, 
+    "42-405-b-1": {
+        "op": "deleted"
+    }, 
+    "42-405-b-2": {
+        "op": "deleted"
+    }, 
+    "42-405-b-3": {
+        "op": "deleted"
+    }, 
+    "42-405-b-3-i": {
+        "op": "deleted"
+    }, 
+    "42-405-b-3-ii": {
+        "op": "deleted"
+    }, 
+    "42-405-c": {
+        "op": "deleted"
+    }, 
+    "42-406": {
+        "op": "deleted"
+    }, 
+    "42-406-a": {
+        "op": "deleted"
+    }, 
+    "42-406-b": {
+        "op": "deleted"
+    }, 
+    "42-407": {
+        "op": "deleted"
+    }, 
+    "42-407-a": {
+        "op": "deleted"
+    }, 
+    "42-407-a-1": {
+        "op": "deleted"
+    }, 
+    "42-407-a-2": {
+        "op": "deleted"
+    }, 
+    "42-407-b": {
+        "op": "deleted"
+    }, 
+    "42-407-b-p1": {
+        "op": "deleted"
+    }, 
+    "42-408": {
+        "op": "deleted"
+    }, 
+    "42-408-a": {
+        "op": "deleted"
+    }, 
+    "42-408-b": {
+        "op": "deleted"
+    }, 
+    "42-408-b-p1": {
+        "op": "deleted"
+    }, 
+    "42-409": {
+        "op": "deleted"
+    }, 
+    "42-410": {
+        "op": "deleted"
+    }, 
+    "42-410-a": {
+        "op": "deleted"
+    }, 
+    "42-410-b": {
+        "op": "deleted"
+    }, 
+    "42-410-b-1": {
+        "op": "deleted"
+    }, 
+    "42-410-b-2": {
+        "op": "deleted"
+    }, 
+    "42-410-b-3": {
+        "op": "deleted"
+    }, 
+    "42-410-b-3-i": {
+        "op": "deleted"
+    }, 
+    "42-410-b-3-ii": {
+        "op": "deleted"
+    }, 
+    "42-410-b-3-iii": {
+        "op": "deleted"
+    }, 
+    "42-410-b-3-iv": {
+        "op": "deleted"
+    }, 
+    "42-410-b-3-v": {
+        "op": "deleted"
+    }, 
+    "42-410-b-3-vi": {
+        "op": "deleted"
+    }, 
+    "42-410-c": {
+        "op": "deleted"
+    }, 
+    "42-410-d": {
+        "op": "deleted"
+    }, 
+    "42-410-e": {
+        "op": "deleted"
+    }, 
+    "42-410-e-1": {
+        "op": "deleted"
+    }, 
+    "42-410-e-2": {
+        "op": "deleted"
+    }, 
+    "42-410-e-3": {
+        "op": "deleted"
+    }, 
+    "42-410-e-4": {
+        "op": "deleted"
+    }, 
+    "42-410-f": {
+        "op": "deleted"
+    }, 
+    "42-411": {
+        "op": "deleted"
+    }, 
+    "42-412": {
+        "op": "deleted"
+    }, 
+    "42-412-a": {
+        "op": "deleted"
+    }, 
+    "42-412-a-1": {
+        "op": "deleted"
+    }, 
+    "42-412-a-2": {
+        "op": "deleted"
+    }, 
+    "42-412-b": {
+        "op": "deleted"
+    }, 
+    "42-412-b-1": {
+        "op": "deleted"
+    }, 
+    "42-412-b-2": {
+        "op": "deleted"
+    }, 
+    "42-Subpart-D": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                1
+            ], 
+            [
+                "delete", 
+                1, 
+                2
+            ], 
+            [
+                "equal", 
+                2, 
+                5
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "42-Subpart-E": {
+        "op": "deleted"
+    }
+}

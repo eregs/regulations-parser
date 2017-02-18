@@ -1,0 +1,326 @@
+{
+    "42": [
+        {
+            "index": [
+                "42", 
+                "Subpart", 
+                "A"
+            ], 
+            "title": "Trial Practice and Procedure"
+        }
+    ], 
+    "42-15-f": [
+        {
+            "index": [
+                "42", 
+                "15", 
+                "f", 
+                "p1"
+            ], 
+            "title": "Petition and Motion Practice"
+        }
+    ], 
+    "42-25-b": [
+        {
+            "index": [
+                "42", 
+                "25", 
+                "b", 
+                "p1"
+            ], 
+            "title": "Testimony and Production"
+        }
+    ], 
+    "42-65-b-5": [
+        {
+            "index": [
+                "42", 
+                "65", 
+                "b", 
+                "5", 
+                "p1"
+            ], 
+            "title": "Oral Argument, Decision, and Settlement"
+        }
+    ], 
+    "42-74-c-2": [
+        {
+            "index": [
+                "42", 
+                "74", 
+                "c", 
+                "2", 
+                "p1"
+            ], 
+            "title": "Certificate"
+        }
+    ], 
+    "42-Subpart-A": [
+        {
+            "index": [
+                "42", 
+                "1"
+            ], 
+            "title": "\u00a7 42.1 Policy."
+        }, 
+        {
+            "index": [
+                "42", 
+                "2"
+            ], 
+            "title": "\u00a7 42.2 Definitions."
+        }, 
+        {
+            "index": [
+                "42", 
+                "3"
+            ], 
+            "title": "\u00a7 42.3 Jurisdiction."
+        }, 
+        {
+            "index": [
+                "42", 
+                "4"
+            ], 
+            "title": "\u00a7 42.4 Notice of trial."
+        }, 
+        {
+            "index": [
+                "42", 
+                "5"
+            ], 
+            "title": "\u00a7 42.5 Conduct of the proceeding."
+        }, 
+        {
+            "index": [
+                "42", 
+                "6"
+            ], 
+            "title": "\u00a7 42.6 Filing of documents, including exhibits; service."
+        }, 
+        {
+            "index": [
+                "42", 
+                "7"
+            ], 
+            "title": "\u00a7 42.7 Management of the record."
+        }, 
+        {
+            "index": [
+                "42", 
+                "8"
+            ], 
+            "title": "\u00a7 42.8 Mandatory notices."
+        }, 
+        {
+            "index": [
+                "42", 
+                "9"
+            ], 
+            "title": "\u00a7 42.9 Action by patent owner."
+        }, 
+        {
+            "index": [
+                "42", 
+                "10"
+            ], 
+            "title": "\u00a7 42.10 Counsel."
+        }, 
+        {
+            "index": [
+                "42", 
+                "11"
+            ], 
+            "title": "\u00a7 42.11 Duty of candor."
+        }, 
+        {
+            "index": [
+                "42", 
+                "12"
+            ], 
+            "title": "\u00a7 42.12 Sanctions."
+        }, 
+        {
+            "index": [
+                "42", 
+                "13"
+            ], 
+            "title": "\u00a7 42.13 Citation of authority."
+        }, 
+        {
+            "index": [
+                "42", 
+                "14"
+            ], 
+            "title": "\u00a7 42.14 Public availability."
+        }, 
+        {
+            "index": [
+                "42", 
+                "15"
+            ], 
+            "title": "\u00a7 42.15 Fees."
+        }, 
+        {
+            "index": [
+                "42", 
+                "20"
+            ], 
+            "title": "\u00a7 42.20 Generally."
+        }, 
+        {
+            "index": [
+                "42", 
+                "21"
+            ], 
+            "title": "\u00a7 42.21 Notice of basis for relief."
+        }, 
+        {
+            "index": [
+                "42", 
+                "22"
+            ], 
+            "title": "\u00a7 42.22 Content of petitions and motions."
+        }, 
+        {
+            "index": [
+                "42", 
+                "23"
+            ], 
+            "title": "\u00a7 42.23 Oppositions and replies."
+        }, 
+        {
+            "index": [
+                "42", 
+                "24"
+            ], 
+            "title": "\u00a7 42.24 Page limits for petitions, motions, oppositions, and replies."
+        }, 
+        {
+            "index": [
+                "42", 
+                "25"
+            ], 
+            "title": "\u00a7 42.25 Default filing times."
+        }, 
+        {
+            "index": [
+                "42", 
+                "51"
+            ], 
+            "title": "\u00a7 42.51 Discovery."
+        }, 
+        {
+            "index": [
+                "42", 
+                "52"
+            ], 
+            "title": "\u00a7 42.52 Compelling testimony and production."
+        }, 
+        {
+            "index": [
+                "42", 
+                "53"
+            ], 
+            "title": "\u00a7 42.53 Taking testimony."
+        }, 
+        {
+            "index": [
+                "42", 
+                "54"
+            ], 
+            "title": "\u00a7 42.54 Protective order."
+        }, 
+        {
+            "index": [
+                "42", 
+                "55"
+            ], 
+            "title": "\u00a7 42.55 Confidential information in a petition."
+        }, 
+        {
+            "index": [
+                "42", 
+                "56"
+            ], 
+            "title": "\u00a7 42.56 Expungement of confidential information."
+        }, 
+        {
+            "index": [
+                "42", 
+                "61"
+            ], 
+            "title": "\u00a7 42.61 Admissibility."
+        }, 
+        {
+            "index": [
+                "42", 
+                "62"
+            ], 
+            "title": "\u00a7 42.62 Applicability of the Federal rules of evidence."
+        }, 
+        {
+            "index": [
+                "42", 
+                "63"
+            ], 
+            "title": "\u00a7 42.63 Form of evidence."
+        }, 
+        {
+            "index": [
+                "42", 
+                "64"
+            ], 
+            "title": "\u00a7 42.64 Objection; motion to exclude; motion in limine."
+        }, 
+        {
+            "index": [
+                "42", 
+                "65"
+            ], 
+            "title": "\u00a7 42.65 Expert testimony; tests and data."
+        }, 
+        {
+            "index": [
+                "42", 
+                "70"
+            ], 
+            "title": "\u00a7 42.70 Oral argument."
+        }, 
+        {
+            "index": [
+                "42", 
+                "71"
+            ], 
+            "title": "\u00a7 42.71 Decision on petitions or motions."
+        }, 
+        {
+            "index": [
+                "42", 
+                "72"
+            ], 
+            "title": "\u00a7 42.72 Termination of trial."
+        }, 
+        {
+            "index": [
+                "42", 
+                "73"
+            ], 
+            "title": "\u00a7 42.73 Judgment."
+        }, 
+        {
+            "index": [
+                "42", 
+                "74"
+            ], 
+            "title": "\u00a7 42.74 Settlement."
+        }, 
+        {
+            "index": [
+                "42", 
+                "80"
+            ], 
+            "title": "\u00a7 42.80 Certificate."
+        }
+    ]
+}

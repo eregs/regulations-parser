@@ -1,0 +1,34 @@
+{
+    "amendments": [], 
+    "cfr_parts": [
+        "42"
+    ], 
+    "cfr_title": 37, 
+    "dockets": [
+        "Docket No. PTO-P-2015-0053"
+    ], 
+    "document_number": "2016-09814", 
+    "effective_on": "2016-05-02", 
+    "footnotes": {}, 
+    "fr_citation": "81 FR 24702", 
+    "fr_url": "https://www.federalregister.gov/documents/2016/04/27/2016-09814/amendments-to-the-rules-of-practice-for-trials-before-the-patent-trial-and-appeal-board-correction", 
+    "fr_volume": 81, 
+    "meta": {
+        "start_page": 24702
+    }, 
+    "primary_agency": "DEPARTMENT OF COMMERCE", 
+    "primary_docket": null, 
+    "publication_date": "2016-04-27", 
+    "regulation_id_numbers": [
+        "0651-AD01"
+    ], 
+    "section_by_section": [], 
+    "supporting_documents": [], 
+    "title": "Amendments to the Rules of Practice for Trials Before the Patent Trial and Appeal Board; Correction", 
+    "versions": {
+        "42": {
+            "left": "2016-07381", 
+            "right": "2016-09814"
+        }
+    }
+}

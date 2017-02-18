@@ -1,0 +1,468 @@
+{
+    "42": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                4
+            ], 
+            [
+                "delete", 
+                4, 
+                5
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "42-15": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                2
+            ], 
+            [
+                "delete", 
+                2, 
+                4
+            ], 
+            [
+                "insert", 
+                2, 
+                [
+                    "42-15-e", 
+                    "42-15-f"
+                ]
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "42-15-a": {
+        "child_ops": [
+            [
+                "delete", 
+                0, 
+                4
+            ], 
+            [
+                "insert", 
+                0, 
+                [
+                    "42-15-a-p1"
+                ]
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    87, 
+                    100
+                ], 
+                [
+                    "insert", 
+                    87, 
+                    "fee is due based upon the number of challenged claims:"
+                ]
+            ]
+        ]
+    }, 
+    "42-15-a-1": {
+        "op": "deleted"
+    }, 
+    "42-15-a-2": {
+        "op": "deleted"
+    }, 
+    "42-15-a-3": {
+        "op": "deleted"
+    }, 
+    "42-15-a-4": {
+        "op": "deleted"
+    }, 
+    "42-15-a-p1": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "15", 
+                "a", 
+                "p1"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "<GPOTABLE CDEF=\"s150,12\" COLS=\"02\" OPTS=\"L0,tp0,p0,8/9,g1,t1\">\n                    <TTITLE>\u2003</TTITLE>\n                    <BOXHD>\n                      <CHED H=\"1\">\u2003 </CHED>\n                      <CHED H=\"1\">\u2003</CHED>\n                    </BOXHD>\n                    <ROW>\n                      <ENT I=\"01\">(1) 1 to 20 claims </ENT>\n                      <ENT>$27,200.00</ENT>\n                    </ROW>\n                    <ROW>\n                      <ENT I=\"01\">(2) For each claim in excess of 20 claims </ENT>\n                      <ENT>600.00</ENT>\n                    </ROW>\n                  </GPOTABLE>", 
+            "text": "||||\n|---|---|---|\n|(1) 1 to 20 claims|$27,200.00|\n|(2) For each claim in excess of 20 claims|600.00|", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-15-b": {
+        "child_ops": [
+            [
+                "delete", 
+                0, 
+                4
+            ], 
+            [
+                "insert", 
+                0, 
+                [
+                    "42-15-b-p1"
+                ]
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                47, 
+                "of a patent, "
+            ], 
+            [
+                "insert", 
+                50, 
+                "a petition for review of a "
+            ], 
+            [
+                [
+                    "delete", 
+                    74, 
+                    87
+                ], 
+                [
+                    "insert", 
+                    74, 
+                    "patent, payment"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    91, 
+                    108
+                ], 
+                [
+                    "insert", 
+                    91, 
+                    "the following fee is due based upon the number"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    112, 
+                    139
+                ], 
+                [
+                    "insert", 
+                    112, 
+                    "challenged claims:"
+                ]
+            ]
+        ]
+    }, 
+    "42-15-b-1": {
+        "op": "deleted"
+    }, 
+    "42-15-b-2": {
+        "op": "deleted"
+    }, 
+    "42-15-b-3": {
+        "op": "deleted"
+    }, 
+    "42-15-b-4": {
+        "op": "deleted"
+    }, 
+    "42-15-b-p1": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "15", 
+                "b", 
+                "p1"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "<GPOTABLE CDEF=\"s150,12\" COLS=\"02\" OPTS=\"L0,tp0,p0,8/9,g1,t1\">\n                    <TTITLE>\u2003</TTITLE>\n                    <BOXHD>\n                      <CHED H=\"1\">\u2003 </CHED>\n                      <CHED H=\"1\">\u2003</CHED>\n                    </BOXHD>\n                    <ROW>\n                      <ENT I=\"01\">(1) 1 to 20 claims </ENT>\n                      <ENT>$35,800.00</ENT>\n                    </ROW>\n                    <ROW>\n                      <ENT I=\"01\">(2) For each claim in excess of 20 claims </ENT>\n                      <ENT>800.00</ENT>\n                    </ROW>\n                    <ROW>\n                      <ENT I=\"01\">(c) On the filing of a petition for a derivation proceeding a fee of: </ENT>\n                      <ENT>400.00</ENT>\n                    </ROW>\n                    <ROW>\n                      <ENT I=\"01\">(d) Any request requiring payment of a fee under this part, including a written request to make a settlement agreement available: </ENT>\n                      <ENT>400.00</ENT>\n                    </ROW>\n                  </GPOTABLE>", 
+            "text": "||||\n|---|---|---|\n|(1) 1 to 20 claims|$35,800.00|\n|(2) For each claim in excess of 20 claims|800.00|\n|(c) On the filing of a petition for a derivation proceeding a fee of:|400.00|\n|(d) Any request requiring payment of a fee under this part, including a written request to make a settlement agreement available:|400.00|", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-15-c": {
+        "op": "deleted"
+    }, 
+    "42-15-c-1": {
+        "op": "deleted"
+    }, 
+    "42-15-d": {
+        "op": "deleted"
+    }, 
+    "42-15-e": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "15", 
+                "e"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(e) For presenting each independent claim in excess of 3 and also in excess of the number of claims in independent form in the patent the fee set forth in \u00a7\u20091.16(h).", 
+            "text": "(e) For presenting each independent claim in excess of 3 and also in excess of the number of claims in independent form in the patent the fee set forth in \u00a7\u20091.16(h).", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-15-f": {
+        "node": {
+            "child_labels": [
+                "42-15-f-p1"
+            ], 
+            "label": [
+                "42", 
+                "15", 
+                "f"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(f) For presenting each claim in excess of 20 and also in excess of the number of claims in the patent the fee set forth in \u00a7\u20091.16(i).", 
+            "text": "(f) For presenting each claim in excess of 20 and also in excess of the number of claims in the patent the fee set forth in \u00a7\u20091.16(i).", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-15-f-p1": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "15", 
+                "f", 
+                "p1"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": null, 
+            "text": "", 
+            "title": "Petition and Motion Practice"
+        }, 
+        "op": "added"
+    }, 
+    "42-400": {
+        "op": "deleted"
+    }, 
+    "42-400-a": {
+        "op": "deleted"
+    }, 
+    "42-400-b": {
+        "op": "deleted"
+    }, 
+    "42-401": {
+        "op": "deleted"
+    }, 
+    "42-401-p1": {
+        "op": "deleted"
+    }, 
+    "42-401-p1169036493": {
+        "op": "deleted"
+    }, 
+    "42-401-p2862969711": {
+        "op": "deleted"
+    }, 
+    "42-401-p3236262177": {
+        "op": "deleted"
+    }, 
+    "42-401-p3523239106": {
+        "op": "deleted"
+    }, 
+    "42-401-p4087684105": {
+        "op": "deleted"
+    }, 
+    "42-401-p4195112412": {
+        "op": "deleted"
+    }, 
+    "42-401-p858899850": {
+        "op": "deleted"
+    }, 
+    "42-402": {
+        "op": "deleted"
+    }, 
+    "42-403": {
+        "op": "deleted"
+    }, 
+    "42-404": {
+        "op": "deleted"
+    }, 
+    "42-404-a": {
+        "op": "deleted"
+    }, 
+    "42-404-b": {
+        "op": "deleted"
+    }, 
+    "42-405": {
+        "op": "deleted"
+    }, 
+    "42-405-a": {
+        "op": "deleted"
+    }, 
+    "42-405-a-1": {
+        "op": "deleted"
+    }, 
+    "42-405-a-2": {
+        "op": "deleted"
+    }, 
+    "42-405-a-2-i": {
+        "op": "deleted"
+    }, 
+    "42-405-a-2-ii": {
+        "op": "deleted"
+    }, 
+    "42-405-b": {
+        "op": "deleted"
+    }, 
+    "42-405-b-1": {
+        "op": "deleted"
+    }, 
+    "42-405-b-2": {
+        "op": "deleted"
+    }, 
+    "42-405-b-3": {
+        "op": "deleted"
+    }, 
+    "42-405-b-3-i": {
+        "op": "deleted"
+    }, 
+    "42-405-b-3-ii": {
+        "op": "deleted"
+    }, 
+    "42-405-c": {
+        "op": "deleted"
+    }, 
+    "42-406": {
+        "op": "deleted"
+    }, 
+    "42-406-a": {
+        "op": "deleted"
+    }, 
+    "42-406-b": {
+        "op": "deleted"
+    }, 
+    "42-407": {
+        "op": "deleted"
+    }, 
+    "42-407-a": {
+        "op": "deleted"
+    }, 
+    "42-407-a-1": {
+        "op": "deleted"
+    }, 
+    "42-407-a-2": {
+        "op": "deleted"
+    }, 
+    "42-407-b": {
+        "op": "deleted"
+    }, 
+    "42-407-b-p1": {
+        "op": "deleted"
+    }, 
+    "42-408": {
+        "op": "deleted"
+    }, 
+    "42-408-a": {
+        "op": "deleted"
+    }, 
+    "42-408-b": {
+        "op": "deleted"
+    }, 
+    "42-408-b-p1": {
+        "op": "deleted"
+    }, 
+    "42-409": {
+        "op": "deleted"
+    }, 
+    "42-410": {
+        "op": "deleted"
+    }, 
+    "42-410-a": {
+        "op": "deleted"
+    }, 
+    "42-410-b": {
+        "op": "deleted"
+    }, 
+    "42-410-b-1": {
+        "op": "deleted"
+    }, 
+    "42-410-b-2": {
+        "op": "deleted"
+    }, 
+    "42-410-b-3": {
+        "op": "deleted"
+    }, 
+    "42-410-b-3-i": {
+        "op": "deleted"
+    }, 
+    "42-410-b-3-ii": {
+        "op": "deleted"
+    }, 
+    "42-410-b-3-iii": {
+        "op": "deleted"
+    }, 
+    "42-410-b-3-iv": {
+        "op": "deleted"
+    }, 
+    "42-410-b-3-v": {
+        "op": "deleted"
+    }, 
+    "42-410-b-3-vi": {
+        "op": "deleted"
+    }, 
+    "42-410-c": {
+        "op": "deleted"
+    }, 
+    "42-410-d": {
+        "op": "deleted"
+    }, 
+    "42-410-e": {
+        "op": "deleted"
+    }, 
+    "42-410-e-1": {
+        "op": "deleted"
+    }, 
+    "42-410-e-2": {
+        "op": "deleted"
+    }, 
+    "42-410-e-3": {
+        "op": "deleted"
+    }, 
+    "42-410-e-4": {
+        "op": "deleted"
+    }, 
+    "42-410-f": {
+        "op": "deleted"
+    }, 
+    "42-411": {
+        "op": "deleted"
+    }, 
+    "42-412": {
+        "op": "deleted"
+    }, 
+    "42-412-a": {
+        "op": "deleted"
+    }, 
+    "42-412-a-1": {
+        "op": "deleted"
+    }, 
+    "42-412-a-2": {
+        "op": "deleted"
+    }, 
+    "42-412-b": {
+        "op": "deleted"
+    }, 
+    "42-412-b-1": {
+        "op": "deleted"
+    }, 
+    "42-412-b-2": {
+        "op": "deleted"
+    }, 
+    "42-Subpart-E": {
+        "op": "deleted"
+    }
+}

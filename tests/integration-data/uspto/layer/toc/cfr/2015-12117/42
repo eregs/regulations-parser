@@ -1,0 +1,769 @@
+{
+    "42": [
+        {
+            "index": [
+                "42", 
+                "Subpart", 
+                "A"
+            ], 
+            "title": "Trial Practice and Procedure"
+        }, 
+        {
+            "index": [
+                "42", 
+                "Subjgrp", 
+                "Ge"
+            ], 
+            "title": "General"
+        }, 
+        {
+            "index": [
+                "42", 
+                "Subjgrp", 
+                "Fe"
+            ], 
+            "title": "Fees"
+        }, 
+        {
+            "index": [
+                "42", 
+                "Subjgrp", 
+                "PaMP"
+            ], 
+            "title": "Petition and Motion Practice"
+        }, 
+        {
+            "index": [
+                "42", 
+                "Subjgrp", 
+                "TaP"
+            ], 
+            "title": "Testimony and Production"
+        }, 
+        {
+            "index": [
+                "42", 
+                "Subjgrp", 
+                "OADaS"
+            ], 
+            "title": "Oral Argument, Decision, and Settlement"
+        }, 
+        {
+            "index": [
+                "42", 
+                "Subjgrp", 
+                "Ce"
+            ], 
+            "title": "Certificate"
+        }, 
+        {
+            "index": [
+                "42", 
+                "Subpart", 
+                "B"
+            ], 
+            "title": "Inter Partes Review"
+        }, 
+        {
+            "index": [
+                "42", 
+                "Subjgrp", 
+                "Ge."
+            ], 
+            "title": "General"
+        }, 
+        {
+            "index": [
+                "42", 
+                "Subjgrp", 
+                "IIPR"
+            ], 
+            "title": "Instituting Inter Partes Review"
+        }, 
+        {
+            "index": [
+                "42", 
+                "Subjgrp", 
+                "AIoIPR"
+            ], 
+            "title": "After Institution of Inter Partes Review"
+        }, 
+        {
+            "index": [
+                "42", 
+                "Subpart", 
+                "C"
+            ], 
+            "title": "Post-Grant Review"
+        }, 
+        {
+            "index": [
+                "42", 
+                "Subjgrp", 
+                "Gen"
+            ], 
+            "title": "General"
+        }, 
+        {
+            "index": [
+                "42", 
+                "Subjgrp", 
+                "IPR"
+            ], 
+            "title": "Instituting Post-Grant Review"
+        }, 
+        {
+            "index": [
+                "42", 
+                "Subjgrp", 
+                "AIoPR"
+            ], 
+            "title": "After Institution of Post-Grant Review"
+        }, 
+        {
+            "index": [
+                "42", 
+                "Subpart", 
+                "D"
+            ], 
+            "title": "Transitional Program for Covered Business Method Patents"
+        }, 
+        {
+            "index": [
+                "42", 
+                "Subpart", 
+                "E"
+            ], 
+            "title": "Derivation"
+        }, 
+        {
+            "index": [
+                "42", 
+                "Subjgrp", 
+                "IDP"
+            ], 
+            "title": "Instituting Derivation Proceeding"
+        }, 
+        {
+            "index": [
+                "42", 
+                "Subjgrp", 
+                "AIoDP"
+            ], 
+            "title": "After Institution of Derivation Proceeding"
+        }
+    ], 
+    "42-Subjgrp-AIoDP": [
+        {
+            "index": [
+                "42", 
+                "409"
+            ], 
+            "title": "\u00a7 42.409 Settlement agreements."
+        }, 
+        {
+            "index": [
+                "42", 
+                "410"
+            ], 
+            "title": "\u00a7 42.410 Arbitration."
+        }, 
+        {
+            "index": [
+                "42", 
+                "411"
+            ], 
+            "title": "\u00a7 42.411 Common interests in the invention."
+        }, 
+        {
+            "index": [
+                "42", 
+                "412"
+            ], 
+            "title": "\u00a7 42.412 Public availability of Board records."
+        }
+    ], 
+    "42-Subjgrp-AIoIPR": [
+        {
+            "index": [
+                "42", 
+                "120"
+            ], 
+            "title": "\u00a7 42.120 Patent owner response."
+        }, 
+        {
+            "index": [
+                "42", 
+                "121"
+            ], 
+            "title": "\u00a7 42.121 Amendment of the patent."
+        }, 
+        {
+            "index": [
+                "42", 
+                "122"
+            ], 
+            "title": "\u00a7 42.122 Multiple proceedings and Joinder."
+        }, 
+        {
+            "index": [
+                "42", 
+                "123"
+            ], 
+            "title": "\u00a7 42.123 Filing of supplemental information."
+        }
+    ], 
+    "42-Subjgrp-AIoPR": [
+        {
+            "index": [
+                "42", 
+                "220"
+            ], 
+            "title": "\u00a7 42.220 Patent owner response."
+        }, 
+        {
+            "index": [
+                "42", 
+                "221"
+            ], 
+            "title": "\u00a7 42.221 Amendment of the patent."
+        }, 
+        {
+            "index": [
+                "42", 
+                "222"
+            ], 
+            "title": "\u00a7 42.222 Multiple proceedings and Joinder."
+        }, 
+        {
+            "index": [
+                "42", 
+                "223"
+            ], 
+            "title": "\u00a7 42.223 Filing of supplemental information."
+        }, 
+        {
+            "index": [
+                "42", 
+                "224"
+            ], 
+            "title": "\u00a7 42.224 Discovery."
+        }
+    ], 
+    "42-Subjgrp-Ce": [
+        {
+            "index": [
+                "42", 
+                "80"
+            ], 
+            "title": "\u00a7 42.80 Certificate."
+        }
+    ], 
+    "42-Subjgrp-Fe": [
+        {
+            "index": [
+                "42", 
+                "15"
+            ], 
+            "title": "\u00a7 42.15 Fees."
+        }
+    ], 
+    "42-Subjgrp-Ge": [
+        {
+            "index": [
+                "42", 
+                "1"
+            ], 
+            "title": "\u00a7 42.1 Policy."
+        }, 
+        {
+            "index": [
+                "42", 
+                "2"
+            ], 
+            "title": "\u00a7 42.2 Definitions."
+        }, 
+        {
+            "index": [
+                "42", 
+                "3"
+            ], 
+            "title": "\u00a7 42.3 Jurisdiction."
+        }, 
+        {
+            "index": [
+                "42", 
+                "4"
+            ], 
+            "title": "\u00a7 42.4 Notice of trial."
+        }, 
+        {
+            "index": [
+                "42", 
+                "5"
+            ], 
+            "title": "\u00a7 42.5 Conduct of the proceeding."
+        }, 
+        {
+            "index": [
+                "42", 
+                "6"
+            ], 
+            "title": "\u00a7 42.6 Filing of documents, including exhibits; service."
+        }, 
+        {
+            "index": [
+                "42", 
+                "7"
+            ], 
+            "title": "\u00a7 42.7 Management of the record."
+        }, 
+        {
+            "index": [
+                "42", 
+                "8"
+            ], 
+            "title": "\u00a7 42.8 Mandatory notices."
+        }, 
+        {
+            "index": [
+                "42", 
+                "9"
+            ], 
+            "title": "\u00a7 42.9 Action by patent owner."
+        }, 
+        {
+            "index": [
+                "42", 
+                "10"
+            ], 
+            "title": "\u00a7 42.10 Counsel."
+        }, 
+        {
+            "index": [
+                "42", 
+                "11"
+            ], 
+            "title": "\u00a7 42.11 Duty of candor."
+        }, 
+        {
+            "index": [
+                "42", 
+                "12"
+            ], 
+            "title": "\u00a7 42.12 Sanctions."
+        }, 
+        {
+            "index": [
+                "42", 
+                "13"
+            ], 
+            "title": "\u00a7 42.13 Citation of authority."
+        }, 
+        {
+            "index": [
+                "42", 
+                "14"
+            ], 
+            "title": "\u00a7 42.14 Public availability."
+        }
+    ], 
+    "42-Subjgrp-Ge.": [
+        {
+            "index": [
+                "42", 
+                "100"
+            ], 
+            "title": "\u00a7 42.100 Procedure; pendency."
+        }, 
+        {
+            "index": [
+                "42", 
+                "101"
+            ], 
+            "title": "\u00a7 42.101 Who may petition for"
+        }, 
+        {
+            "index": [
+                "42", 
+                "102"
+            ], 
+            "title": "\u00a7 42.102 Time for filing."
+        }, 
+        {
+            "index": [
+                "42", 
+                "103"
+            ], 
+            "title": "\u00a7 42.103"
+        }, 
+        {
+            "index": [
+                "42", 
+                "104"
+            ], 
+            "title": "\u00a7 42.104 Content of petition."
+        }, 
+        {
+            "index": [
+                "42", 
+                "105"
+            ], 
+            "title": "\u00a7 42.105 Service of petition."
+        }, 
+        {
+            "index": [
+                "42", 
+                "106"
+            ], 
+            "title": "\u00a7 42.106 Filing date."
+        }, 
+        {
+            "index": [
+                "42", 
+                "107"
+            ], 
+            "title": "\u00a7 42.107 Preliminary response to petition."
+        }
+    ], 
+    "42-Subjgrp-Gen": [
+        {
+            "index": [
+                "42", 
+                "200"
+            ], 
+            "title": "\u00a7 42.200 Procedure; pendency."
+        }, 
+        {
+            "index": [
+                "42", 
+                "201"
+            ], 
+            "title": "\u00a7 42.201 Who may petition for a post-grant review."
+        }, 
+        {
+            "index": [
+                "42", 
+                "202"
+            ], 
+            "title": "\u00a7 42.202 Time for filing."
+        }, 
+        {
+            "index": [
+                "42", 
+                "203"
+            ], 
+            "title": "\u00a7 42.203 Post-grant review fee."
+        }, 
+        {
+            "index": [
+                "42", 
+                "204"
+            ], 
+            "title": "\u00a7 42.204 Content of petition."
+        }, 
+        {
+            "index": [
+                "42", 
+                "205"
+            ], 
+            "title": "\u00a7 42.205 Service of petition."
+        }, 
+        {
+            "index": [
+                "42", 
+                "206"
+            ], 
+            "title": "\u00a7 42.206 Filing date."
+        }, 
+        {
+            "index": [
+                "42", 
+                "207"
+            ], 
+            "title": "\u00a7 42.207 Preliminary response to petition."
+        }
+    ], 
+    "42-Subjgrp-IDP": [
+        {
+            "index": [
+                "42", 
+                "408"
+            ], 
+            "title": "\u00a7 42.408 Institution of derivation proceeding."
+        }
+    ], 
+    "42-Subjgrp-IIPR": [
+        {
+            "index": [
+                "42", 
+                "108"
+            ], 
+            "title": "\u00a7 42.108 Institution of"
+        }
+    ], 
+    "42-Subjgrp-IPR": [
+        {
+            "index": [
+                "42", 
+                "208"
+            ], 
+            "title": "\u00a7 42.208 Institution of post-grant review."
+        }
+    ], 
+    "42-Subjgrp-OADaS": [
+        {
+            "index": [
+                "42", 
+                "70"
+            ], 
+            "title": "\u00a7 42.70 Oral argument."
+        }, 
+        {
+            "index": [
+                "42", 
+                "71"
+            ], 
+            "title": "\u00a7 42.71 Decision on petitions or motions."
+        }, 
+        {
+            "index": [
+                "42", 
+                "72"
+            ], 
+            "title": "\u00a7 42.72 Termination of trial."
+        }, 
+        {
+            "index": [
+                "42", 
+                "73"
+            ], 
+            "title": "\u00a7 42.73 Judgment."
+        }, 
+        {
+            "index": [
+                "42", 
+                "74"
+            ], 
+            "title": "\u00a7 42.74 Settlement."
+        }
+    ], 
+    "42-Subjgrp-PaMP": [
+        {
+            "index": [
+                "42", 
+                "20"
+            ], 
+            "title": "\u00a7 42.20 Generally."
+        }, 
+        {
+            "index": [
+                "42", 
+                "21"
+            ], 
+            "title": "\u00a7 42.21 Notice of basis for relief."
+        }, 
+        {
+            "index": [
+                "42", 
+                "22"
+            ], 
+            "title": "\u00a7 42.22 Content of petitions and motions."
+        }, 
+        {
+            "index": [
+                "42", 
+                "23"
+            ], 
+            "title": "\u00a7 42.23 Oppositions and replies."
+        }, 
+        {
+            "index": [
+                "42", 
+                "24"
+            ], 
+            "title": "\u00a7 42.24 Page limits for petitions, motions, oppositions, and replies."
+        }, 
+        {
+            "index": [
+                "42", 
+                "25"
+            ], 
+            "title": "\u00a7 42.25 Default filing times."
+        }
+    ], 
+    "42-Subjgrp-TaP": [
+        {
+            "index": [
+                "42", 
+                "51"
+            ], 
+            "title": "\u00a7 42.51 Discovery."
+        }, 
+        {
+            "index": [
+                "42", 
+                "52"
+            ], 
+            "title": "\u00a7 42.52 Compelling testimony and production."
+        }, 
+        {
+            "index": [
+                "42", 
+                "53"
+            ], 
+            "title": "\u00a7 42.53 Taking testimony."
+        }, 
+        {
+            "index": [
+                "42", 
+                "54"
+            ], 
+            "title": "\u00a7 42.54 Protective order."
+        }, 
+        {
+            "index": [
+                "42", 
+                "55"
+            ], 
+            "title": "\u00a7 42.55 Confidential information in a petition."
+        }, 
+        {
+            "index": [
+                "42", 
+                "56"
+            ], 
+            "title": "\u00a7 42.56 Expungement of confidential information."
+        }, 
+        {
+            "index": [
+                "42", 
+                "61"
+            ], 
+            "title": "\u00a7 42.61 Admissibility."
+        }, 
+        {
+            "index": [
+                "42", 
+                "62"
+            ], 
+            "title": "\u00a7 42.62 Applicability of the Federal rules of evidence."
+        }, 
+        {
+            "index": [
+                "42", 
+                "63"
+            ], 
+            "title": "\u00a7 42.63 Form of evidence."
+        }, 
+        {
+            "index": [
+                "42", 
+                "64"
+            ], 
+            "title": "\u00a7 42.64 Objection; motion to exclude."
+        }, 
+        {
+            "index": [
+                "42", 
+                "65"
+            ], 
+            "title": "\u00a7 42.65 Expert testimony; tests and data."
+        }
+    ], 
+    "42-Subpart-D": [
+        {
+            "index": [
+                "42", 
+                "300"
+            ], 
+            "title": "\u00a7 42.300 Procedure; pendency."
+        }, 
+        {
+            "index": [
+                "42", 
+                "301"
+            ], 
+            "title": "\u00a7 42.301 Definitions."
+        }, 
+        {
+            "index": [
+                "42", 
+                "302"
+            ], 
+            "title": "\u00a7 42.302 Who may petition for a covered business method patent review."
+        }, 
+        {
+            "index": [
+                "42", 
+                "303"
+            ], 
+            "title": "\u00a7 42.303 Time for filing."
+        }, 
+        {
+            "index": [
+                "42", 
+                "304"
+            ], 
+            "title": "\u00a7 42.304 Content of petition."
+        }
+    ], 
+    "42-Subpart-E": [
+        {
+            "index": [
+                "42", 
+                "400"
+            ], 
+            "title": "\u00a7 42.400 Procedure; pendency"
+        }, 
+        {
+            "index": [
+                "42", 
+                "401"
+            ], 
+            "title": "\u00a7 42.401 Definitions."
+        }, 
+        {
+            "index": [
+                "42", 
+                "402"
+            ], 
+            "title": "\u00a7 42.402 Who may file a petition for a derivation proceeding."
+        }, 
+        {
+            "index": [
+                "42", 
+                "403"
+            ], 
+            "title": "\u00a7 42.403 Time for filing."
+        }, 
+        {
+            "index": [
+                "42", 
+                "404"
+            ], 
+            "title": "\u00a7 42.404 Derivation fee."
+        }, 
+        {
+            "index": [
+                "42", 
+                "405"
+            ], 
+            "title": "\u00a7 42.405 Content of petition."
+        }, 
+        {
+            "index": [
+                "42", 
+                "406"
+            ], 
+            "title": "\u00a7 42.406 Service of petition."
+        }, 
+        {
+            "index": [
+                "42", 
+                "407"
+            ], 
+            "title": "\u00a7 42.407 Filing date."
+        }
+    ]
+}

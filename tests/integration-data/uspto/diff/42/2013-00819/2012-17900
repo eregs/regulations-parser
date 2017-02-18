@@ -1,0 +1,957 @@
+{
+    "42": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                1
+            ], 
+            [
+                "delete", 
+                1, 
+                5
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "42-100": {
+        "op": "deleted"
+    }, 
+    "42-100-a": {
+        "op": "deleted"
+    }, 
+    "42-100-b": {
+        "op": "deleted"
+    }, 
+    "42-100-c": {
+        "op": "deleted"
+    }, 
+    "42-101": {
+        "op": "deleted"
+    }, 
+    "42-101-a": {
+        "op": "deleted"
+    }, 
+    "42-101-b": {
+        "op": "deleted"
+    }, 
+    "42-101-c": {
+        "op": "deleted"
+    }, 
+    "42-102": {
+        "op": "deleted"
+    }, 
+    "42-102-a": {
+        "op": "deleted"
+    }, 
+    "42-102-a-1": {
+        "op": "deleted"
+    }, 
+    "42-102-a-2": {
+        "op": "deleted"
+    }, 
+    "42-102-b": {
+        "op": "deleted"
+    }, 
+    "42-103": {
+        "op": "deleted"
+    }, 
+    "42-103-a": {
+        "op": "deleted"
+    }, 
+    "42-104": {
+        "op": "deleted"
+    }, 
+    "42-104-a": {
+        "op": "deleted"
+    }, 
+    "42-104-b": {
+        "op": "deleted"
+    }, 
+    "42-104-b-1": {
+        "op": "deleted"
+    }, 
+    "42-104-b-2": {
+        "op": "deleted"
+    }, 
+    "42-104-b-3": {
+        "op": "deleted"
+    }, 
+    "42-104-b-4": {
+        "op": "deleted"
+    }, 
+    "42-104-b-5": {
+        "op": "deleted"
+    }, 
+    "42-104-c": {
+        "op": "deleted"
+    }, 
+    "42-105": {
+        "op": "deleted"
+    }, 
+    "42-105-a": {
+        "op": "deleted"
+    }, 
+    "42-105-b": {
+        "op": "deleted"
+    }, 
+    "42-106": {
+        "op": "deleted"
+    }, 
+    "42-106-a": {
+        "op": "deleted"
+    }, 
+    "42-106-a-1": {
+        "op": "deleted"
+    }, 
+    "42-106-a-2": {
+        "op": "deleted"
+    }, 
+    "42-106-a-3": {
+        "op": "deleted"
+    }, 
+    "42-106-b": {
+        "op": "deleted"
+    }, 
+    "42-107": {
+        "op": "deleted"
+    }, 
+    "42-107-a": {
+        "op": "deleted"
+    }, 
+    "42-107-b": {
+        "op": "deleted"
+    }, 
+    "42-107-c": {
+        "op": "deleted"
+    }, 
+    "42-107-d": {
+        "op": "deleted"
+    }, 
+    "42-107-e": {
+        "op": "deleted"
+    }, 
+    "42-107-e-p1": {
+        "op": "deleted"
+    }, 
+    "42-108": {
+        "op": "deleted"
+    }, 
+    "42-108-a": {
+        "op": "deleted"
+    }, 
+    "42-108-b": {
+        "op": "deleted"
+    }, 
+    "42-108-c": {
+        "op": "deleted"
+    }, 
+    "42-108-c-p1": {
+        "op": "deleted"
+    }, 
+    "42-120": {
+        "op": "deleted"
+    }, 
+    "42-120-a": {
+        "op": "deleted"
+    }, 
+    "42-120-b": {
+        "op": "deleted"
+    }, 
+    "42-121": {
+        "op": "deleted"
+    }, 
+    "42-121-a": {
+        "op": "deleted"
+    }, 
+    "42-121-a-1": {
+        "op": "deleted"
+    }, 
+    "42-121-a-2": {
+        "op": "deleted"
+    }, 
+    "42-121-a-2-i": {
+        "op": "deleted"
+    }, 
+    "42-121-a-2-ii": {
+        "op": "deleted"
+    }, 
+    "42-121-a-3": {
+        "op": "deleted"
+    }, 
+    "42-121-b": {
+        "op": "deleted"
+    }, 
+    "42-121-b-1": {
+        "op": "deleted"
+    }, 
+    "42-121-b-2": {
+        "op": "deleted"
+    }, 
+    "42-121-c": {
+        "op": "deleted"
+    }, 
+    "42-122": {
+        "op": "deleted"
+    }, 
+    "42-122-a": {
+        "op": "deleted"
+    }, 
+    "42-122-b": {
+        "op": "deleted"
+    }, 
+    "42-123": {
+        "op": "deleted"
+    }, 
+    "42-123-a": {
+        "op": "deleted"
+    }, 
+    "42-123-a-1": {
+        "op": "deleted"
+    }, 
+    "42-123-a-2": {
+        "op": "deleted"
+    }, 
+    "42-123-b": {
+        "op": "deleted"
+    }, 
+    "42-123-c": {
+        "op": "deleted"
+    }, 
+    "42-15": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                2
+            ], 
+            [
+                "delete", 
+                2, 
+                4
+            ], 
+            [
+                "insert", 
+                2, 
+                [
+                    "42-15-e", 
+                    "42-15-f"
+                ]
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "42-15-a": {
+        "child_ops": [
+            [
+                "delete", 
+                0, 
+                4
+            ], 
+            [
+                "insert", 
+                0, 
+                [
+                    "42-15-a-p1"
+                ]
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    87, 
+                    100
+                ], 
+                [
+                    "insert", 
+                    87, 
+                    "fee is due based upon the number of challenged claims:"
+                ]
+            ]
+        ]
+    }, 
+    "42-15-a-1": {
+        "op": "deleted"
+    }, 
+    "42-15-a-2": {
+        "op": "deleted"
+    }, 
+    "42-15-a-3": {
+        "op": "deleted"
+    }, 
+    "42-15-a-4": {
+        "op": "deleted"
+    }, 
+    "42-15-a-p1": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "15", 
+                "a", 
+                "p1"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "<GPOTABLE CDEF=\"s150,12\" COLS=\"02\" OPTS=\"L0,tp0,p0,8/9,g1,t1\">\n                    <TTITLE>\u2003</TTITLE>\n                    <BOXHD>\n                      <CHED H=\"1\">\u2003 </CHED>\n                      <CHED H=\"1\">\u2003</CHED>\n                    </BOXHD>\n                    <ROW>\n                      <ENT I=\"01\">(1) 1 to 20 claims </ENT>\n                      <ENT>$27,200.00</ENT>\n                    </ROW>\n                    <ROW>\n                      <ENT I=\"01\">(2) For each claim in excess of 20 claims </ENT>\n                      <ENT>600.00</ENT>\n                    </ROW>\n                  </GPOTABLE>", 
+            "text": "||||\n|---|---|---|\n|(1) 1 to 20 claims|$27,200.00|\n|(2) For each claim in excess of 20 claims|600.00|", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-15-b": {
+        "child_ops": [
+            [
+                "delete", 
+                0, 
+                4
+            ], 
+            [
+                "insert", 
+                0, 
+                [
+                    "42-15-b-p1"
+                ]
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                47, 
+                "of a patent, "
+            ], 
+            [
+                "insert", 
+                50, 
+                "a petition for review of a "
+            ], 
+            [
+                [
+                    "delete", 
+                    74, 
+                    87
+                ], 
+                [
+                    "insert", 
+                    74, 
+                    "patent, payment"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    91, 
+                    108
+                ], 
+                [
+                    "insert", 
+                    91, 
+                    "the following fee is due based upon the number"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    112, 
+                    139
+                ], 
+                [
+                    "insert", 
+                    112, 
+                    "challenged claims:"
+                ]
+            ]
+        ]
+    }, 
+    "42-15-b-1": {
+        "op": "deleted"
+    }, 
+    "42-15-b-2": {
+        "op": "deleted"
+    }, 
+    "42-15-b-3": {
+        "op": "deleted"
+    }, 
+    "42-15-b-4": {
+        "op": "deleted"
+    }, 
+    "42-15-b-p1": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "15", 
+                "b", 
+                "p1"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "<GPOTABLE CDEF=\"s150,12\" COLS=\"02\" OPTS=\"L0,tp0,p0,8/9,g1,t1\">\n                    <TTITLE>\u2003</TTITLE>\n                    <BOXHD>\n                      <CHED H=\"1\">\u2003 </CHED>\n                      <CHED H=\"1\">\u2003</CHED>\n                    </BOXHD>\n                    <ROW>\n                      <ENT I=\"01\">(1) 1 to 20 claims </ENT>\n                      <ENT>$35,800.00</ENT>\n                    </ROW>\n                    <ROW>\n                      <ENT I=\"01\">(2) For each claim in excess of 20 claims </ENT>\n                      <ENT>800.00</ENT>\n                    </ROW>\n                    <ROW>\n                      <ENT I=\"01\">(c) On the filing of a petition for a derivation proceeding a fee of: </ENT>\n                      <ENT>400.00</ENT>\n                    </ROW>\n                    <ROW>\n                      <ENT I=\"01\">(d) Any request requiring payment of a fee under this part, including a written request to make a settlement agreement available: </ENT>\n                      <ENT>400.00</ENT>\n                    </ROW>\n                  </GPOTABLE>", 
+            "text": "||||\n|---|---|---|\n|(1) 1 to 20 claims|$35,800.00|\n|(2) For each claim in excess of 20 claims|800.00|\n|(c) On the filing of a petition for a derivation proceeding a fee of:|400.00|\n|(d) Any request requiring payment of a fee under this part, including a written request to make a settlement agreement available:|400.00|", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-15-c": {
+        "op": "deleted"
+    }, 
+    "42-15-c-1": {
+        "op": "deleted"
+    }, 
+    "42-15-d": {
+        "op": "deleted"
+    }, 
+    "42-15-e": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "15", 
+                "e"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(e) For presenting each independent claim in excess of 3 and also in excess of the number of claims in independent form in the patent the fee set forth in \u00a7\u20091.16(h).", 
+            "text": "(e) For presenting each independent claim in excess of 3 and also in excess of the number of claims in independent form in the patent the fee set forth in \u00a7\u20091.16(h).", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-15-f": {
+        "node": {
+            "child_labels": [
+                "42-15-f-p1"
+            ], 
+            "label": [
+                "42", 
+                "15", 
+                "f"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(f) For presenting each claim in excess of 20 and also in excess of the number of claims in the patent the fee set forth in \u00a7\u20091.16(i).", 
+            "text": "(f) For presenting each claim in excess of 20 and also in excess of the number of claims in the patent the fee set forth in \u00a7\u20091.16(i).", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-15-f-p1": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "15", 
+                "f", 
+                "p1"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": null, 
+            "text": "", 
+            "title": "Petition and Motion Practice"
+        }, 
+        "op": "added"
+    }, 
+    "42-200": {
+        "op": "deleted"
+    }, 
+    "42-200-a": {
+        "op": "deleted"
+    }, 
+    "42-200-b": {
+        "op": "deleted"
+    }, 
+    "42-200-c": {
+        "op": "deleted"
+    }, 
+    "42-200-d": {
+        "op": "deleted"
+    }, 
+    "42-201": {
+        "op": "deleted"
+    }, 
+    "42-201-a": {
+        "op": "deleted"
+    }, 
+    "42-201-b": {
+        "op": "deleted"
+    }, 
+    "42-202": {
+        "op": "deleted"
+    }, 
+    "42-202-a": {
+        "op": "deleted"
+    }, 
+    "42-202-b": {
+        "op": "deleted"
+    }, 
+    "42-203": {
+        "op": "deleted"
+    }, 
+    "42-203-a": {
+        "op": "deleted"
+    }, 
+    "42-203-b": {
+        "op": "deleted"
+    }, 
+    "42-204": {
+        "op": "deleted"
+    }, 
+    "42-204-a": {
+        "op": "deleted"
+    }, 
+    "42-204-b": {
+        "op": "deleted"
+    }, 
+    "42-204-b-1": {
+        "op": "deleted"
+    }, 
+    "42-204-b-2": {
+        "op": "deleted"
+    }, 
+    "42-204-b-3": {
+        "op": "deleted"
+    }, 
+    "42-204-b-4": {
+        "op": "deleted"
+    }, 
+    "42-204-b-5": {
+        "op": "deleted"
+    }, 
+    "42-204-c": {
+        "op": "deleted"
+    }, 
+    "42-205": {
+        "op": "deleted"
+    }, 
+    "42-205-a": {
+        "op": "deleted"
+    }, 
+    "42-205-b": {
+        "op": "deleted"
+    }, 
+    "42-206": {
+        "op": "deleted"
+    }, 
+    "42-206-a": {
+        "op": "deleted"
+    }, 
+    "42-206-a-1": {
+        "op": "deleted"
+    }, 
+    "42-206-a-2": {
+        "op": "deleted"
+    }, 
+    "42-206-a-3": {
+        "op": "deleted"
+    }, 
+    "42-206-b": {
+        "op": "deleted"
+    }, 
+    "42-207": {
+        "op": "deleted"
+    }, 
+    "42-207-a": {
+        "op": "deleted"
+    }, 
+    "42-207-b": {
+        "op": "deleted"
+    }, 
+    "42-207-c": {
+        "op": "deleted"
+    }, 
+    "42-207-d": {
+        "op": "deleted"
+    }, 
+    "42-207-e": {
+        "op": "deleted"
+    }, 
+    "42-207-e-p1": {
+        "op": "deleted"
+    }, 
+    "42-208": {
+        "op": "deleted"
+    }, 
+    "42-208-a": {
+        "op": "deleted"
+    }, 
+    "42-208-b": {
+        "op": "deleted"
+    }, 
+    "42-208-c": {
+        "op": "deleted"
+    }, 
+    "42-208-d": {
+        "op": "deleted"
+    }, 
+    "42-208-d-p1": {
+        "op": "deleted"
+    }, 
+    "42-220": {
+        "op": "deleted"
+    }, 
+    "42-220-a": {
+        "op": "deleted"
+    }, 
+    "42-220-b": {
+        "op": "deleted"
+    }, 
+    "42-221": {
+        "op": "deleted"
+    }, 
+    "42-221-a": {
+        "op": "deleted"
+    }, 
+    "42-221-a-1": {
+        "op": "deleted"
+    }, 
+    "42-221-a-2": {
+        "op": "deleted"
+    }, 
+    "42-221-a-2-i": {
+        "op": "deleted"
+    }, 
+    "42-221-a-2-ii": {
+        "op": "deleted"
+    }, 
+    "42-221-a-3": {
+        "op": "deleted"
+    }, 
+    "42-221-b": {
+        "op": "deleted"
+    }, 
+    "42-221-b-1": {
+        "op": "deleted"
+    }, 
+    "42-221-b-2": {
+        "op": "deleted"
+    }, 
+    "42-221-c": {
+        "op": "deleted"
+    }, 
+    "42-222": {
+        "op": "deleted"
+    }, 
+    "42-222-a": {
+        "op": "deleted"
+    }, 
+    "42-222-b": {
+        "op": "deleted"
+    }, 
+    "42-223": {
+        "op": "deleted"
+    }, 
+    "42-223-a": {
+        "op": "deleted"
+    }, 
+    "42-223-a-1": {
+        "op": "deleted"
+    }, 
+    "42-223-a-2": {
+        "op": "deleted"
+    }, 
+    "42-223-b": {
+        "op": "deleted"
+    }, 
+    "42-223-c": {
+        "op": "deleted"
+    }, 
+    "42-224": {
+        "op": "deleted"
+    }, 
+    "42-224-a": {
+        "op": "deleted"
+    }, 
+    "42-224-b": {
+        "op": "deleted"
+    }, 
+    "42-300": {
+        "op": "deleted"
+    }, 
+    "42-300-a": {
+        "op": "deleted"
+    }, 
+    "42-300-b": {
+        "op": "deleted"
+    }, 
+    "42-300-c": {
+        "op": "deleted"
+    }, 
+    "42-300-d": {
+        "op": "deleted"
+    }, 
+    "42-301": {
+        "op": "deleted"
+    }, 
+    "42-301-a": {
+        "op": "deleted"
+    }, 
+    "42-301-b": {
+        "op": "deleted"
+    }, 
+    "42-302": {
+        "op": "deleted"
+    }, 
+    "42-302-a": {
+        "op": "deleted"
+    }, 
+    "42-302-b": {
+        "op": "deleted"
+    }, 
+    "42-303": {
+        "op": "deleted"
+    }, 
+    "42-304": {
+        "op": "deleted"
+    }, 
+    "42-304-a": {
+        "op": "deleted"
+    }, 
+    "42-304-b": {
+        "op": "deleted"
+    }, 
+    "42-304-b-1": {
+        "op": "deleted"
+    }, 
+    "42-304-b-2": {
+        "op": "deleted"
+    }, 
+    "42-304-b-3": {
+        "op": "deleted"
+    }, 
+    "42-304-b-4": {
+        "op": "deleted"
+    }, 
+    "42-304-b-5": {
+        "op": "deleted"
+    }, 
+    "42-304-c": {
+        "op": "deleted"
+    }, 
+    "42-400": {
+        "op": "deleted"
+    }, 
+    "42-400-a": {
+        "op": "deleted"
+    }, 
+    "42-400-b": {
+        "op": "deleted"
+    }, 
+    "42-401": {
+        "op": "deleted"
+    }, 
+    "42-401-p1": {
+        "op": "deleted"
+    }, 
+    "42-401-p1169036493": {
+        "op": "deleted"
+    }, 
+    "42-401-p2862969711": {
+        "op": "deleted"
+    }, 
+    "42-401-p3236262177": {
+        "op": "deleted"
+    }, 
+    "42-401-p3523239106": {
+        "op": "deleted"
+    }, 
+    "42-401-p4087684105": {
+        "op": "deleted"
+    }, 
+    "42-401-p4195112412": {
+        "op": "deleted"
+    }, 
+    "42-401-p858899850": {
+        "op": "deleted"
+    }, 
+    "42-402": {
+        "op": "deleted"
+    }, 
+    "42-403": {
+        "op": "deleted"
+    }, 
+    "42-404": {
+        "op": "deleted"
+    }, 
+    "42-404-a": {
+        "op": "deleted"
+    }, 
+    "42-404-b": {
+        "op": "deleted"
+    }, 
+    "42-405": {
+        "op": "deleted"
+    }, 
+    "42-405-a": {
+        "op": "deleted"
+    }, 
+    "42-405-a-1": {
+        "op": "deleted"
+    }, 
+    "42-405-a-2": {
+        "op": "deleted"
+    }, 
+    "42-405-a-2-i": {
+        "op": "deleted"
+    }, 
+    "42-405-a-2-ii": {
+        "op": "deleted"
+    }, 
+    "42-405-b": {
+        "op": "deleted"
+    }, 
+    "42-405-b-1": {
+        "op": "deleted"
+    }, 
+    "42-405-b-2": {
+        "op": "deleted"
+    }, 
+    "42-405-b-3": {
+        "op": "deleted"
+    }, 
+    "42-405-b-3-i": {
+        "op": "deleted"
+    }, 
+    "42-405-b-3-ii": {
+        "op": "deleted"
+    }, 
+    "42-405-c": {
+        "op": "deleted"
+    }, 
+    "42-406": {
+        "op": "deleted"
+    }, 
+    "42-406-a": {
+        "op": "deleted"
+    }, 
+    "42-406-b": {
+        "op": "deleted"
+    }, 
+    "42-407": {
+        "op": "deleted"
+    }, 
+    "42-407-a": {
+        "op": "deleted"
+    }, 
+    "42-407-a-1": {
+        "op": "deleted"
+    }, 
+    "42-407-a-2": {
+        "op": "deleted"
+    }, 
+    "42-407-b": {
+        "op": "deleted"
+    }, 
+    "42-407-b-p1": {
+        "op": "deleted"
+    }, 
+    "42-408": {
+        "op": "deleted"
+    }, 
+    "42-408-a": {
+        "op": "deleted"
+    }, 
+    "42-408-b": {
+        "op": "deleted"
+    }, 
+    "42-408-b-p1": {
+        "op": "deleted"
+    }, 
+    "42-409": {
+        "op": "deleted"
+    }, 
+    "42-410": {
+        "op": "deleted"
+    }, 
+    "42-410-a": {
+        "op": "deleted"
+    }, 
+    "42-410-b": {
+        "op": "deleted"
+    }, 
+    "42-410-b-1": {
+        "op": "deleted"
+    }, 
+    "42-410-b-2": {
+        "op": "deleted"
+    }, 
+    "42-410-b-3": {
+        "op": "deleted"
+    }, 
+    "42-410-b-3-i": {
+        "op": "deleted"
+    }, 
+    "42-410-b-3-ii": {
+        "op": "deleted"
+    }, 
+    "42-410-b-3-iii": {
+        "op": "deleted"
+    }, 
+    "42-410-b-3-iv": {
+        "op": "deleted"
+    }, 
+    "42-410-b-3-v": {
+        "op": "deleted"
+    }, 
+    "42-410-b-3-vi": {
+        "op": "deleted"
+    }, 
+    "42-410-c": {
+        "op": "deleted"
+    }, 
+    "42-410-d": {
+        "op": "deleted"
+    }, 
+    "42-410-e": {
+        "op": "deleted"
+    }, 
+    "42-410-e-1": {
+        "op": "deleted"
+    }, 
+    "42-410-e-2": {
+        "op": "deleted"
+    }, 
+    "42-410-e-3": {
+        "op": "deleted"
+    }, 
+    "42-410-e-4": {
+        "op": "deleted"
+    }, 
+    "42-410-f": {
+        "op": "deleted"
+    }, 
+    "42-411": {
+        "op": "deleted"
+    }, 
+    "42-412": {
+        "op": "deleted"
+    }, 
+    "42-412-a": {
+        "op": "deleted"
+    }, 
+    "42-412-a-1": {
+        "op": "deleted"
+    }, 
+    "42-412-a-2": {
+        "op": "deleted"
+    }, 
+    "42-412-b": {
+        "op": "deleted"
+    }, 
+    "42-412-b-1": {
+        "op": "deleted"
+    }, 
+    "42-412-b-2": {
+        "op": "deleted"
+    }, 
+    "42-Subpart-B": {
+        "op": "deleted"
+    }, 
+    "42-Subpart-C": {
+        "op": "deleted"
+    }, 
+    "42-Subpart-D": {
+        "op": "deleted"
+    }, 
+    "42-Subpart-E": {
+        "op": "deleted"
+    }
+}

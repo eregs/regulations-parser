@@ -1,0 +1,549 @@
+{
+    "42-10-a": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    86, 
+                    87
+                ], 
+                [
+                    "insert", 
+                    86, 
+                    "at least one"
+                ]
+            ]
+        ]
+    }, 
+    "42-121-b": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                68, 
+                "which claim listing may be contained in an appendix to the motion, "
+            ]
+        ]
+    }, 
+    "42-15-a-3": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    105, 
+                    108
+                ], 
+                [
+                    "insert", 
+                    105, 
+                    "20, including unchallenged claims from which a challenged claim depends:"
+                ]
+            ]
+        ]
+    }, 
+    "42-15-a-4": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    115, 
+                    118
+                ], 
+                [
+                    "insert", 
+                    115, 
+                    "15, including unchallenged claims from which a challenged claim depends:"
+                ]
+            ]
+        ]
+    }, 
+    "42-15-b-3": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    137, 
+                    140
+                ], 
+                [
+                    "insert", 
+                    137, 
+                    "20, including unchallenged claims from which a challenged claim depends:"
+                ]
+            ]
+        ]
+    }, 
+    "42-15-b-4": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                75, 
+                "Post-Institution "
+            ], 
+            [
+                "delete", 
+                83, 
+                112
+            ], 
+            [
+                [
+                    "delete", 
+                    166, 
+                    169
+                ], 
+                [
+                    "insert", 
+                    166, 
+                    "15, including unchallenged claims from which a challenged claim depends:"
+                ]
+            ]
+        ]
+    }, 
+    "42-221-b": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                68, 
+                "which claim listing may be contained in an appendix to the motion, "
+            ]
+        ]
+    }, 
+    "42-23-a": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    82, 
+                    85
+                ], 
+                [
+                    "insert", 
+                    82, 
+                    "and, if the paper to which the opposition or reply is responding contains a statement of material fact,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    101, 
+                    122
+                ], 
+                [
+                    "insert", 
+                    101, 
+                    "listing of facts that are admitted, denied, or cannot be admitted or denied.Any"
+                ]
+            ], 
+            [
+                "delete", 
+                132, 
+                163
+            ]
+        ]
+    }, 
+    "42-24-a-1": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                5
+            ], 
+            [
+                "insert", 
+                5, 
+                [
+                    "42-24-a-1-vi"
+                ]
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    287, 
+                    296
+                ], 
+                [
+                    "insert", 
+                    287, 
+                    "exhibits or claim listing."
+                ]
+            ]
+        ]
+    }, 
+    "42-24-a-1-v": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    4, 
+                    12
+                ], 
+                [
+                    "insert", 
+                    4, 
+                    "Motions (excluding Motions to Amend):"
+                ]
+            ]
+        ]
+    }, 
+    "42-24-a-1-vi": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "24", 
+                "a", 
+                "1", 
+                "vi"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(vi) Motions to Amend: 25 pages.", 
+            "text": "(vi) Motions to Amend: 25 pages.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-24-c": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                2
+            ], 
+            [
+                "insert", 
+                2, 
+                [
+                    "42-24-c-3"
+                ]
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                69, 
+                "any statement of facts in support of "
+            ], 
+            [
+                [
+                    "delete", 
+                    73, 
+                    91
+                ], 
+                [
+                    "insert", 
+                    73, 
+                    "reply. The page limits do not include a table"
+                ]
+            ], 
+            [
+                "insert", 
+                95, 
+                "contents, a table of authorities, a listing of "
+            ], 
+            [
+                [
+                    "delete", 
+                    101, 
+                    111
+                ], 
+                [
+                    "insert", 
+                    101, 
+                    "which are admitted, denied, or cannot be admitted or denied, a certificate"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    115, 
+                    164
+                ], 
+                [
+                    "insert", 
+                    115, 
+                    "service, or appendix"
+                ]
+            ], 
+            [
+                "delete", 
+                168, 
+                323
+            ]
+        ]
+    }, 
+    "42-24-c-1": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    52, 
+                    54
+                ], 
+                [
+                    "insert", 
+                    52, 
+                    "25"
+                ]
+            ]
+        ]
+    }, 
+    "42-24-c-2": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    15, 
+                    27
+                ], 
+                [
+                    "insert", 
+                    15, 
+                    "oppositions (excluding replies to oppositions to Motions to Amend):"
+                ]
+            ]
+        ]
+    }, 
+    "42-24-c-3": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "24", 
+                "c", 
+                "3"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(3) Replies to oppositions to Motions to Amend: 12 pages.", 
+            "text": "(3) Replies to oppositions to Motions to Amend: 12 pages.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-300-c": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    261, 
+                    267
+                ], 
+                [
+                    "insert", 
+                    261, 
+                    "Judge, or adjusted by the Board in the case of joinder."
+                ]
+            ]
+        ]
+    }, 
+    "42-302": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                2
+            ], 
+            [
+                "insert", 
+                2, 
+                [
+                    "42-302-c"
+                ]
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "42-302-c": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "302", 
+                "c"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(c) A petitioner may not file a petition to institute a covered business method patent review of the patent where, before the date on which the petition is filed, the petitioner or real party-in-interest filed a civil action challenging the validity of a claim of the patent.", 
+            "text": "(c) A petitioner may not file a petition to institute a covered business method patent review of the patent where, before the date on which the petition is filed, the petitioner or real party-in-interest filed a civil action challenging the validity of a claim of the patent.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-51-b-1-ii": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                46, 
+                "prepared for the proceeding "
+            ]
+        ]
+    }, 
+    "42-53-c-2": {
+        "op": "modified", 
+        "text": [
+            [
+                "delete", 
+                151, 
+                162
+            ], 
+            [
+                [
+                    "delete", 
+                    196, 
+                    205
+                ], 
+                [
+                    "insert", 
+                    196, 
+                    "follow"
+                ]
+            ]
+        ]
+    }, 
+    "42-53-f-7": {
+        "op": "modified", 
+        "text": [
+            [
+                "delete", 
+                179, 
+                192
+            ]
+        ]
+    }, 
+    "42-6-a-2-ii": {
+        "child_ops": [
+            [
+                "delete", 
+                0, 
+                2
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    5, 
+                    13
+                ], 
+                [
+                    "insert", 
+                    5, 
+                    "14-point, Times New Roman"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    27, 
+                    49
+                ], 
+                [
+                    "insert", 
+                    27, 
+                    "font, with normal spacing, must"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    53, 
+                    58
+                ], 
+                [
+                    "insert", 
+                    53, 
+                    "used;"
+                ]
+            ]
+        ]
+    }, 
+    "42-6-a-2-ii-A": {
+        "op": "deleted"
+    }, 
+    "42-6-a-2-ii-B": {
+        "op": "deleted"
+    }, 
+    "42-64": {
+        "op": "modified", 
+        "title": [
+            [
+                [
+                    "delete", 
+                    29, 
+                    55
+                ], 
+                [
+                    "insert", 
+                    29, 
+                    "exclude."
+                ]
+            ]
+        ]
+    }, 
+    "42-64-b-1": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    91, 
+                    97
+                ], 
+                [
+                    "insert", 
+                    91, 
+                    "filed"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    212, 
+                    218
+                ], 
+                [
+                    "insert", 
+                    212, 
+                    "filed"
+                ]
+            ]
+        ]
+    }, 
+    "42-71-d": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                63, 
+                "single "
+            ], 
+            [
+                [
+                    "delete", 
+                    75, 
+                    85
+                ], 
+                [
+                    "insert", 
+                    75, 
+                    "rehearing"
+                ]
+            ]
+        ]
+    }
+}

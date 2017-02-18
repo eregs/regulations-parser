@@ -1,0 +1,77 @@
+{
+    "42-23-a": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    270, 
+                    280
+                ], 
+                [
+                    "insert", 
+                    270, 
+                    "denied. Any"
+                ]
+            ]
+        ]
+    }, 
+    "42-24-a-1": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    275, 
+                    295
+                ], 
+                [
+                    "insert", 
+                    275, 
+                    "mandatory notices"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    304, 
+                    321
+                ], 
+                [
+                    "insert", 
+                    304, 
+                    "42.8, a certificate of service"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    325, 
+                    380
+                ], 
+                [
+                    "insert", 
+                    325, 
+                    "word count, or appendix"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    384, 
+                    391
+                ], 
+                [
+                    "insert", 
+                    384, 
+                    "exhibits"
+                ]
+            ], 
+            [
+                "delete", 
+                395, 
+                434
+            ]
+        ]
+    }
+}

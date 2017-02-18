@@ -1,0 +1,963 @@
+{
+    "amendments": [
+        {
+            "authority": "35 U.S.C. 2(b)(2), 6, 21, 23, 41, 135, 311, 312, 316, 321-326; Pub. L. 112-29, 125 Stat. 284; and Pub. L. 112-274, 126 Stat. 2456.", 
+            "cfr_part": "42", 
+            "instruction": "1. The authority citation for 37 CFR part 42 is revised to read as follows:"
+        }, 
+        {
+            "cfr_part": "42", 
+            "changes": [
+                [
+                    "42-11-a", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "11", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) <E T=\"03\">Duty of candor.</E> Parties and individuals involved in the proceeding have a duty of candor and good faith to the Office during the course of a proceeding.", 
+                                "text": "(a) Duty of candor. Parties and individuals involved in the proceeding have a duty of candor and good faith to the Office during the course of a proceeding.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-11-b", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "11", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) <E T=\"03\">Signature.</E> Every petition, response, written motion, and other paper filed in a proceeding must comply with the signature requirements set forth in \u00a7\u200911.18(a) of this chapter. The Board may expunge any unsigned submission unless the omission is promptly corrected after being called to the counsel's or party's attention.", 
+                                "text": "(b) Signature. Every petition, response, written motion, and other paper filed in a proceeding must comply with the signature requirements set forth in \u00a7\u200911.18(a) of this chapter. The Board may expunge any unsigned submission unless the omission is promptly corrected after being called to the counsel's or party's attention.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-11-c", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "11", 
+                                    "c"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(c) <E T=\"03\">Representations to the Board.</E> By presenting to the Board a petition, response, written motion, or other paper\u2014whether by signing, filing, submitting, or later advocating it\u2014an attorney, registered practitioner, or unrepresented party attests to compliance with the certification requirements under \u00a7\u200911.18(b)(2) of this chapter.", 
+                                "text": "(c) Representations to the Board. By presenting to the Board a petition, response, written motion, or other paper\u2014whether by signing, filing, submitting, or later advocating it\u2014an attorney, registered practitioner, or unrepresented party attests to compliance with the certification requirements under \u00a7\u200911.18(b)(2) of this chapter.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-11-d-1", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "11", 
+                                    "d", 
+                                    "1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(1) <E T=\"03\">In general.</E> If, after notice and a reasonable opportunity to respond, the Board determines that paragraph (c) of this section has been violated, the Board may impose an appropriate sanction on any attorney, registered practitioner, or party that violated the rule or is responsible for the violation.", 
+                                "text": "(1) In general. If, after notice and a reasonable opportunity to respond, the Board determines that paragraph (c) of this section has been violated, the Board may impose an appropriate sanction on any attorney, registered practitioner, or party that violated the rule or is responsible for the violation.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-11-d-2", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "11", 
+                                    "d", 
+                                    "2"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(2) <E T=\"03\">Motion for sanctions.</E> A motion for sanctions must be made separately from any other motion and must describe the specific conduct that allegedly violates paragraph (c) of this section. The motion must be authorized by the Board under \u00a7\u200942.20 prior to filing the motion. At least 21 days prior to seeking authorization to file a motion for sanctions, the moving party must serve the other party with the proposed motion. A motion for sanctions must not be filed or be presented to the Board if the challenged paper, claim, defense, contention, or denial is withdrawn or appropriately corrected within 21 days after service of such motion or within another time the Board sets. If warranted, the Board may award to the prevailing party the reasonable expenses, including attorney's fees, incurred for the motion.", 
+                                "text": "(2) Motion for sanctions. A motion for sanctions must be made separately from any other motion and must describe the specific conduct that allegedly violates paragraph (c) of this section. The motion must be authorized by the Board under \u00a7\u200942.20 prior to filing the motion. At least 21 days prior to seeking authorization to file a motion for sanctions, the moving party must serve the other party with the proposed motion. A motion for sanctions must not be filed or be presented to the Board if the challenged paper, claim, defense, contention, or denial is withdrawn or appropriately corrected within 21 days after service of such motion or within another time the Board sets. If warranted, the Board may award to the prevailing party the reasonable expenses, including attorney's fees, incurred for the motion.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-11-d-3", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "11", 
+                                    "d", 
+                                    "3"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(3) <E T=\"03\">On the Board's initiative.</E> On its own, the Board may order an attorney, registered practitioner, or party to show cause why conduct specifically described in the order has not violated paragraph (c) of this section and why a specific sanction authorized by the Board should not be imposed.", 
+                                "text": "(3) On the Board's initiative. On its own, the Board may order an attorney, registered practitioner, or party to show cause why conduct specifically described in the order has not violated paragraph (c) of this section and why a specific sanction authorized by the Board should not be imposed.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-11-d-4", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "11", 
+                                    "d", 
+                                    "4"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(4) <E T=\"03\">Nature of a sanction.</E> A sanction imposed under this rule must be limited to what suffices to deter repetition of the conduct or comparable conduct by others similarly situated and should be consistent with \u00a7\u200942.12.", 
+                                "text": "(4) Nature of a sanction. A sanction imposed under this rule must be limited to what suffices to deter repetition of the conduct or comparable conduct by others similarly situated and should be consistent with \u00a7\u200942.12.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-11-d-5", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "11", 
+                                    "d", 
+                                    "5"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(5) <E T=\"03\">Requirements for an order.</E> An order imposing a sanction must describe the sanctioned conduct and explain the basis for the sanction.", 
+                                "text": "(5) Requirements for an order. An order imposing a sanction must describe the sanctioned conduct and explain the basis for the sanction.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-11-d", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "42-11-d-1", 
+                                    "42-11-d-2", 
+                                    "42-11-d-3", 
+                                    "42-11-d-4", 
+                                    "42-11-d-5"
+                                ], 
+                                "label": [
+                                    "42", 
+                                    "11", 
+                                    "d"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(d) <E T=\"03\">Sanctions\u2014</E>", 
+                                "text": "(d) Sanctions\u2014", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-11", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "42-11-a", 
+                                    "42-11-b", 
+                                    "42-11-c", 
+                                    "42-11-d"
+                                ], 
+                                "label": [
+                                    "42", 
+                                    "11"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n            ", 
+                                "text": "", 
+                                "title": "\u00a7 42.11 Duty of candor; signing papers; representations to the Board; sanctions."
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "2. Section 42.11 is revised to read as follows:"
+        }, 
+        {
+            "cfr_part": "42", 
+            "changes": [
+                [
+                    "42-23-b", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "23", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) All arguments for the relief requested in a motion must be made in the motion. A reply may only respond to arguments raised in the corresponding opposition, patent owner preliminary response, or patent owner response.", 
+                                "text": "(b) All arguments for the relief requested in a motion must be made in the motion. A reply may only respond to arguments raised in the corresponding opposition, patent owner preliminary response, or patent owner response.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "3. Section 42.23 is amended by revising paragraph (b) to read as follows:"
+        }, 
+        {
+            "cfr_part": "42", 
+            "changes": [
+                [
+                    "42-24-a-1-i", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "24", 
+                                    "a", 
+                                    "1", 
+                                    "i"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(i) Petition requesting <E T=\"03\">inter partes</E> review: 14,000 words.", 
+                                "text": "(i) Petition requesting inter partes review: 14,000 words.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-24-a-1-ii", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "24", 
+                                    "a", 
+                                    "1", 
+                                    "ii"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(ii) Petition requesting post-grant review: 18,700 words.", 
+                                "text": "(ii) Petition requesting post-grant review: 18,700 words.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-24-a-1-iii", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "24", 
+                                    "a", 
+                                    "1", 
+                                    "iii"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(iii) Petition requesting covered business method patent review: 18,700 words.", 
+                                "text": "(iii) Petition requesting covered business method patent review: 18,700 words.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-24-a-1-iv", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "24", 
+                                    "a", 
+                                    "1", 
+                                    "iv"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(iv) Petition requesting derivation proceeding: 14,000 words.", 
+                                "text": "(iv) Petition requesting derivation proceeding: 14,000 words.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-24-a-1-v", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "24", 
+                                    "a", 
+                                    "1", 
+                                    "v"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(v) Motions (excluding motions to amend): 15 pages.", 
+                                "text": "(v) Motions (excluding motions to amend): 15 pages.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-24-a-1-vi", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "24", 
+                                    "a", 
+                                    "1", 
+                                    "vi"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(vi) Motions to Amend: 25 pages.", 
+                                "text": "(vi) Motions to Amend: 25 pages.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-24-a-1", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "42-24-a-1-i", 
+                                    "42-24-a-1-ii", 
+                                    "42-24-a-1-iii", 
+                                    "42-24-a-1-iv", 
+                                    "42-24-a-1-v", 
+                                    "42-24-a-1-vi"
+                                ], 
+                                "label": [
+                                    "42", 
+                                    "24", 
+                                    "a", 
+                                    "1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(1) The following word counts or page limits for petitions and motions apply and include any statement of material facts to be admitted or denied in support of the petition or motion. The word count or page limit does not include a table of contents, a table of authorities, grounds for standing under \u00a7\u200942.104, \u00a7\u200942.204, or \u00a7\u200942.304, mandatory notices under \u00a7\u200942.8, a certificate of service or word count, or appendix of exhibits or claim listing.", 
+                                "text": "(1) The following word counts or page limits for petitions and motions apply and include any statement of material facts to be admitted or denied in support of the petition or motion. The word count or page limit does not include a table of contents, a table of authorities, grounds for standing under \u00a7\u200942.104, \u00a7\u200942.204, or \u00a7\u200942.304, mandatory notices under \u00a7\u200942.8, a certificate of service or word count, or appendix of exhibits or claim listing.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-24-a-2", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "24", 
+                                    "a", 
+                                    "2"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(2) Petitions to institute a trial must comply with the stated word counts but may be accompanied by a motion to waive the word counts. The petitioner must show in the motion how a waiver of the word counts is in the interests of justice and must append a copy of proposed petition exceeding the word count to the motion. If the motion is not granted, the proposed petition exceeding the word count may be expunged or returned. Any other motion to waive word counts or page limits must be granted in advance of filing a motion, opposition, or reply for which the waiver is necessary.", 
+                                "text": "(2) Petitions to institute a trial must comply with the stated word counts but may be accompanied by a motion to waive the word counts. The petitioner must show in the motion how a waiver of the word counts is in the interests of justice and must append a copy of proposed petition exceeding the word count to the motion. If the motion is not granted, the proposed petition exceeding the word count may be expunged or returned. Any other motion to waive word counts or page limits must be granted in advance of filing a motion, opposition, or reply for which the waiver is necessary.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-24-a", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "42-24-a-1", 
+                                    "42-24-a-2"
+                                ], 
+                                "label": [
+                                    "42", 
+                                    "24", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) <E T=\"03\">Petitions and motions.</E>", 
+                                "text": "(a) Petitions and motions.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-24-b-1", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "24", 
+                                    "b", 
+                                    "1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(1) The word counts for a patent owner preliminary response to petition are the same as the word counts for the petition.", 
+                                "text": "(1) The word counts for a patent owner preliminary response to petition are the same as the word counts for the petition.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-24-b-2", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "24", 
+                                    "b", 
+                                    "2"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(2) The word counts for a patent owner response to petition are the same as the word counts for the petition.", 
+                                "text": "(2) The word counts for a patent owner response to petition are the same as the word counts for the petition.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-24-b-3", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "24", 
+                                    "b", 
+                                    "3"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(3) The page limits for oppositions are the same as those for corresponding motions.", 
+                                "text": "(3) The page limits for oppositions are the same as those for corresponding motions.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-24-b", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "42-24-b-1", 
+                                    "42-24-b-2", 
+                                    "42-24-b-3"
+                                ], 
+                                "label": [
+                                    "42", 
+                                    "24", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) <E T=\"03\">Patent owner responses and oppositions.</E> The word counts or page limits set forth in this paragraph (b) do not include a listing of facts which are admitted, denied, or cannot be admitted or denied.", 
+                                "text": "(b) Patent owner responses and oppositions. The word counts or page limits set forth in this paragraph (b) do not include a listing of facts which are admitted, denied, or cannot be admitted or denied.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-24-c-1", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "24", 
+                                    "c", 
+                                    "1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(1) <E T=\"03\">Replies to patent owner responses to petitions:</E> 5,600 words.", 
+                                "text": "(1) Replies to patent owner responses to petitions: 5,600 words.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-24-c-2", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "24", 
+                                    "c", 
+                                    "2"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(2) <E T=\"03\">Replies to oppositions (excluding replies to oppositions to motions to amend):</E> 5 pages.", 
+                                "text": "(2) Replies to oppositions (excluding replies to oppositions to motions to amend): 5 pages.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-24-c-3", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "24", 
+                                    "c", 
+                                    "3"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(3) <E T=\"03\">Replies to oppositions to motions to amend:</E> 12 pages.", 
+                                "text": "(3) Replies to oppositions to motions to amend: 12 pages.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-24-c", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "42-24-c-1", 
+                                    "42-24-c-2", 
+                                    "42-24-c-3"
+                                ], 
+                                "label": [
+                                    "42", 
+                                    "24", 
+                                    "c"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(c) <E T=\"03\">Replies.</E> The following word counts or page limits for replies apply and include any statement of facts in support of the reply. The word counts or page limits do not include a table of contents, a table of authorities, a listing of facts which are admitted, denied, or cannot be admitted or denied, a certificate of service or word count, or appendix of exhibits.", 
+                                "text": "(c) Replies. The following word counts or page limits for replies apply and include any statement of facts in support of the reply. The word counts or page limits do not include a table of contents, a table of authorities, a listing of facts which are admitted, denied, or cannot be admitted or denied, a certificate of service or word count, or appendix of exhibits.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-24-d", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "24", 
+                                    "d"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(d) <E T=\"03\">Certification.</E> Any paper whose length is specified by type-volume limits must include a certification stating the number of words in the paper. A party may rely on the word count of the word-processing system used to prepare the paper.", 
+                                "text": "(d) Certification. Any paper whose length is specified by type-volume limits must include a certification stating the number of words in the paper. A party may rely on the word count of the word-processing system used to prepare the paper.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-24", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "42-24-a", 
+                                    "42-24-b", 
+                                    "42-24-c", 
+                                    "42-24-d"
+                                ], 
+                                "label": [
+                                    "42", 
+                                    "24"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n            ", 
+                                "text": "", 
+                                "title": "\u00a7 42.24 Type-volume or page-limits for petitions, motions, oppositions, and replies."
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "4. Section 42.24 is revised to read as follows:"
+        }, 
+        {
+            "cfr_part": "42", 
+            "changes": [
+                [
+                    "42-70-b", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "70", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) Demonstrative exhibits must be served at least seven business days before the oral argument and filed no later than the time of the oral argument.", 
+                                "text": "(b) Demonstrative exhibits must be served at least seven business days before the oral argument and filed no later than the time of the oral argument.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "5. Section 42.70 is amended by revising paragraph (b) to read as follows:"
+        }, 
+        {
+            "cfr_part": "42", 
+            "changes": [
+                [
+                    "42-100-b", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "100", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) A claim in an unexpired patent that will not expire before a final written decision is issued shall be given its broadest reasonable construction in light of the specification of the patent in which it appears. A party may request a district court-type claim construction approach to be applied if a party certifies that the involved patent will expire within 18 months from the entry of the Notice of Filing Date Accorded to Petition. The request, accompanied by a party's certification, must be made in the form of a motion under \u00a7\u200942.20, within 30 days from the filing of the petition.", 
+                                "text": "(b) A claim in an unexpired patent that will not expire before a final written decision is issued shall be given its broadest reasonable construction in light of the specification of the patent in which it appears. A party may request a district court-type claim construction approach to be applied if a party certifies that the involved patent will expire within 18 months from the entry of the Notice of Filing Date Accorded to Petition. The request, accompanied by a party's certification, must be made in the form of a motion under \u00a7\u200942.20, within 30 days from the filing of the petition.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "6. Section 42.100 is amended by revising paragraph (b) to read as follows:"
+        }, 
+        {
+            "cfr_part": "42", 
+            "changes": [
+                [
+                    "42-107-a", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "107", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) The patent owner may file a preliminary response to the petition. The response is limited to setting forth the reasons why no <E T=\"03\">inter partes</E> review should be instituted under 35 U.S.C. 314 and can include supporting evidence. The preliminary response is subject to the word count under \u00a7\u200942.24.", 
+                                "text": "(a) The patent owner may file a preliminary response to the petition. The response is limited to setting forth the reasons why no inter partes review should be instituted under 35 U.S.C. 314 and can include supporting evidence. The preliminary response is subject to the word count under \u00a7\u200942.24.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-107-c", 
+                    [
+                        {
+                            "action": "RESERVE", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "107", 
+                                    "c"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(c) [Reserved]", 
+                                "text": "(c) [Reserved]", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "7. Section 42.107 is amended by revising paragraph (a) and removing and reserving paragraph (c) to read as follows:"
+        }, 
+        {
+            "cfr_part": "42", 
+            "changes": [
+                [
+                    "42-108-c", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "108", 
+                                    "c"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(c) <E T=\"03\">Sufficient grounds. Inter partes</E> review shall not be instituted for a ground of unpatentability unless the Board decides that the petition supporting the ground would demonstrate that there is a reasonable likelihood that at least one of the claims challenged in the petition is unpatentable. The Board's decision will take into account a patent owner preliminary response where such a response is filed, including any testimonial evidence, but a genuine issue of material fact created by such testimonial evidence will be viewed in the light most favorable to the petitioner solely for purposes of deciding whether to institute an <E T=\"03\">inter partes</E> review. A petitioner may seek leave to file a reply to the preliminary response in accordance with \u00a7\u00a7\u200942.23 and 42.24(c). Any such request must make a showing of good cause.", 
+                                "text": "(c) Sufficient grounds. Inter partes review shall not be instituted for a ground of unpatentability unless the Board decides that the petition supporting the ground would demonstrate that there is a reasonable likelihood that at least one of the claims challenged in the petition is unpatentable. The Board's decision will take into account a patent owner preliminary response where such a response is filed, including any testimonial evidence, but a genuine issue of material fact created by such testimonial evidence will be viewed in the light most favorable to the petitioner solely for purposes of deciding whether to institute an inter partes review. A petitioner may seek leave to file a reply to the preliminary response in accordance with \u00a7\u00a7\u200942.23 and 42.24(c). Any such request must make a showing of good cause.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "8. Section 42.108 is amended by revising paragraph (c) to read as follows:"
+        }, 
+        {
+            "cfr_part": "42", 
+            "changes": [
+                [
+                    "42-200-b", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "200", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) A claim in an unexpired patent that will not expire before a final written decision is issued shall be given its broadest reasonable construction in light of the specification of the patent in which it appears. A party may request a district court-type claim construction approach to be applied if a party certifies that the involved patent will expire within 18 months from the entry of the Notice of Filing Date Accorded to Petition. The request, accompanied by a party's certification, must be made in the form of a motion under \u00a7\u200942.20, within 30 days from the filing of the petition.", 
+                                "text": "(b) A claim in an unexpired patent that will not expire before a final written decision is issued shall be given its broadest reasonable construction in light of the specification of the patent in which it appears. A party may request a district court-type claim construction approach to be applied if a party certifies that the involved patent will expire within 18 months from the entry of the Notice of Filing Date Accorded to Petition. The request, accompanied by a party's certification, must be made in the form of a motion under \u00a7\u200942.20, within 30 days from the filing of the petition.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "9. Section 42.200 is amended by revising paragraph (b) to read as follows:"
+        }, 
+        {
+            "cfr_part": "42", 
+            "changes": [
+                [
+                    "42-207-a", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "207", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) The patent owner may file a preliminary response to the petition. The response is limited to setting forth the reasons why no post-grant review should be instituted under 35 U.S.C. 324 and can include supporting evidence. The preliminary response is subject to the word count under \u00a7\u200942.24.", 
+                                "text": "(a) The patent owner may file a preliminary response to the petition. The response is limited to setting forth the reasons why no post-grant review should be instituted under 35 U.S.C. 324 and can include supporting evidence. The preliminary response is subject to the word count under \u00a7\u200942.24.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "42-207-c", 
+                    [
+                        {
+                            "action": "RESERVE", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "207", 
+                                    "c"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(c) [Reserved]", 
+                                "text": "(c) [Reserved]", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "10. Section 42.207 is amended by revising paragraph (a) and removing and reserving paragraph (c) to read as follows:"
+        }, 
+        {
+            "cfr_part": "42", 
+            "changes": [
+                [
+                    "42-208-c", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "208", 
+                                    "c"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(c) <E T=\"03\">Sufficient grounds.</E> Post-grant review shall not be instituted for a ground of unpatentability unless the Board decides that the petition supporting the ground would, if unrebutted, demonstrate that it is more likely than not that at least one of the claims challenged in the petition is unpatentable. The Board's decision will take into account a patent owner preliminary response where such a response is filed, including any testimonial evidence, but a genuine issue of material fact created by such testimonial evidence will be viewed in the light most favorable to the petitioner solely for purposes of deciding whether to institute a post-grant review. A petitioner may seek leave to file a reply to the preliminary response in accordance with \u00a7\u00a7\u200942.23 and 42.24(c). Any such request must make a showing of good cause.", 
+                                "text": "(c) Sufficient grounds. Post-grant review shall not be instituted for a ground of unpatentability unless the Board decides that the petition supporting the ground would, if unrebutted, demonstrate that it is more likely than not that at least one of the claims challenged in the petition is unpatentable. The Board's decision will take into account a patent owner preliminary response where such a response is filed, including any testimonial evidence, but a genuine issue of material fact created by such testimonial evidence will be viewed in the light most favorable to the petitioner solely for purposes of deciding whether to institute a post-grant review. A petitioner may seek leave to file a reply to the preliminary response in accordance with \u00a7\u00a7\u200942.23 and 42.24(c). Any such request must make a showing of good cause.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "11. Section 42.208 is amended by revising paragraph (c) to read as follows:"
+        }, 
+        {
+            "cfr_part": "42", 
+            "changes": [
+                [
+                    "42-300-b", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "42", 
+                                    "300", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) A claim in an unexpired patent that will not expire before a final written decision is issued shall be given its broadest reasonable construction in light of the specification of the patent in which it appears. A party may a request a district court-type claim construction approach to be applied if a party certifies that the involved patent will expire within 18 months from the entry of the Notice of Filing Date Accorded to Petition. The request, accompanied by a party's certification, must be made in the form of a motion under \u00a7\u200942.20, within 30 days from the filing of the petition.", 
+                                "text": "(b) A claim in an unexpired patent that will not expire before a final written decision is issued shall be given its broadest reasonable construction in light of the specification of the patent in which it appears. A party may a request a district court-type claim construction approach to be applied if a party certifies that the involved patent will expire within 18 months from the entry of the Notice of Filing Date Accorded to Petition. The request, accompanied by a party's certification, must be made in the form of a motion under \u00a7\u200942.20, within 30 days from the filing of the petition.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "12. Section 42.300 is amended by revising paragraph (b) to read as follows:"
+        }
+    ], 
+    "cfr_parts": [
+        "42"
+    ], 
+    "cfr_title": 37, 
+    "dockets": [
+        "Docket No. PTO-P-2015-0053"
+    ], 
+    "document_number": "2016-07381", 
+    "effective_on": "2016-05-02", 
+    "footnotes": {}, 
+    "fr_citation": "81 FR 18750", 
+    "fr_url": "https://www.federalregister.gov/documents/2016/04/01/2016-07381/amendments-to-the-rules-of-practice-for-trials-before-the-patent-trial-and-appeal-board", 
+    "fr_volume": 81, 
+    "meta": {
+        "start_page": 18750
+    }, 
+    "primary_agency": "DEPARTMENT OF COMMERCE", 
+    "primary_docket": null, 
+    "publication_date": "2016-04-01", 
+    "regulation_id_numbers": [
+        "0651-AD01"
+    ], 
+    "section_by_section": [], 
+    "supporting_documents": [], 
+    "title": "Amendments to the Rules of Practice for Trials Before the Patent Trial and Appeal Board", 
+    "versions": {
+        "42": {
+            "left": "2015-12117", 
+            "right": "2016-07381"
+        }
+    }
+}
