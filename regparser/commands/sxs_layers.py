@@ -2,8 +2,10 @@ import logging
 
 import click
 
+from regparser.federalregister import FULL_NOTICE_FIELDS, meta_data
 from regparser.index import dependency, entry
 from regparser.layer.section_by_section import SectionBySection
+from regparser.notice.build import build_notice
 
 logger = logging.getLogger(__name__)
 
@@ -14,7 +16,7 @@ def previous_sxs(cfr_title, cfr_part, stop_version):
     sub_entries = entry.FinalVersion(cfr_title, cfr_part).sub_entries()
     version_ids = [e.path[-1] for e in sub_entries]
     for previous_version in version_ids:
-        yield entry.SxS(previous_version)
+        yield entry.Notice(previous_version)
         if previous_version == stop_version:
             break
 
@@ -34,6 +36,14 @@ def is_stale(cfr_title, cfr_part, version_id):
     return deps.is_stale(layer_entry)
 
 
+def notice_dict(notice_xml):
+    """The section-by-section layer assumes a particular format for notices"""
+    meta = meta_data(notice_xml.version_id, FULL_NOTICE_FIELDS)
+    notice_dict = build_notice(notice_xml.cfr_refs[0].title, None, meta,
+                               xml_to_process=notice_xml.xml)[0]
+    return notice_dict
+
+
 @click.command()
 @click.argument('cfr_title', type=int)
 @click.argument('cfr_part', type=int)
@@ -45,8 +55,11 @@ def sxs_layers(cfr_title, cfr_part):
         version_id = tree_entry.path[-1]
         if is_stale(cfr_title, cfr_part, version_id):
             tree = tree_entry.read()
-            notices = [sxs.read() for sxs in previous_sxs(
-                cfr_title, cfr_part, version_id)]
+            notices = [
+                notice_dict(notice_entry.read())
+                for notice_entry
+                in previous_sxs(cfr_title, cfr_part, version_id)
+            ]
             layer_json = SectionBySection(tree, notices).build()
             entry.Layer.cfr(cfr_title, cfr_part, version_id, 'analyses').write(
                 layer_json)

@@ -39,8 +39,8 @@ def test_is_stale():
         sxs_layers.is_stale(11, 222, 'aaa')
 
     create_versions()
-    entry.Entry('sxs', 'aaa').write(b'')
-    entry.Entry('sxs', 'bbb').write(b'')
+    entry.Entry('notice_xml', 'aaa').write(b'')
+    entry.Entry('notice_xml', 'bbb').write(b'')
     with pytest.raises(dependency.Missing):
         sxs_layers.is_stale(11, 222, 'aaa')
 
