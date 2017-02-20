@@ -6,7 +6,6 @@ from django.conf import settings
 from lxml import etree
 
 from regparser.history.versions import Version as VersionStruct
-from regparser.notice.encoder import AmendmentEncoder
 from regparser.notice.xml import NoticeXML
 from regparser.tree.struct import (FullNodeEncoder, frozen_node_decode_hook,
                                    full_node_decode_hook)
@@ -149,12 +148,6 @@ class Tree(_JSONEntry):
 class FrozenTree(Tree):
     """Like Tree, but decodes as FrozenNodes"""
     JSON_DECODER = staticmethod(frozen_node_decode_hook)
-
-
-class SxS(_JSONEntry):
-    """Processes Section-by-Section analyses, keyed by sxs"""
-    PREFIX = 'sxs'
-    JSON_ENCODER = AmendmentEncoder
 
 
 class Layer(_JSONEntry):
