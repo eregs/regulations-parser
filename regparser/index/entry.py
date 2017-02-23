@@ -3,13 +3,10 @@ import logging
 import os
 
 from django.conf import settings
-from lxml import etree
 
 from regparser.history.versions import Version as VersionStruct
-from regparser.notice.xml import NoticeXML
 from regparser.tree.struct import (FullNodeEncoder, frozen_node_decode_hook,
                                    full_node_decode_hook)
-from regparser.tree.xml_parser.xml_wrapper import XMLWrapper
 from regparser.web.index.models import Entry as DBEntry
 from regparser.web.index.models import DependencyNode
 
@@ -78,22 +75,10 @@ class Notice(Entry):
     """Processes NoticeXMLs, keyed by notice_xml"""
     PREFIX = 'notice_xml'
 
-    def serialize(self, content):
-        return etree.tostring(content.xml, encoding='UTF-8')
-
-    def deserialize(self, content):
-        return NoticeXML(content, str(self))
-
 
 class Annual(Entry):
     """Processes XML, keyed by annual"""
     PREFIX = 'annual'
-
-    def serialize(self, content):
-        return etree.tostring(content.xml, encoding='UTF-8')
-
-    def deserialize(self, content):
-        return XMLWrapper(content, str(self))
 
 
 class Version(Entry):

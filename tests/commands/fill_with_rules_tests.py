@@ -67,12 +67,10 @@ def test_is_derived():
 @pytest.mark.django_db
 def test_process(monkeypatch):
     """Verify that the correct changes are found"""
-    compile_regulation = Mock(return_value=Node())
     monkeypatch.setattr(fill_with_rules, 'compile_regulation',
-                        compile_regulation)
-    notice_mock = Mock()
-    # entry.Notice('new').read().amendments
-    notice_mock.return_value.read.return_value.amendments = [
+                        Mock(return_value=Node()))
+    monkeypatch.setattr(fill_with_rules, 'NoticeXML', Mock())
+    fill_with_rules.NoticeXML.from_db.return_value.amendments = [
         {"instruction": "Something something",
          "cfr_part": "1000",
          "authority": "USC Numbers"},
@@ -84,13 +82,12 @@ def test_process(monkeypatch):
          "cfr_part": "1000",
          "changes": [["1000-4-a", ["4a changes"]]]}
     ]
-    monkeypatch.setattr(fill_with_rules.entry, 'Notice', notice_mock)
 
     tree_dir = entry.Tree('12', '1000')
     (tree_dir / 'old').write(Node())
     entry.Entry('notice_xml', 'new').write(b'')
     fill_with_rules.process(tree_dir, 'old', 'new')
-    changes = dict(compile_regulation.call_args[0][1])
+    changes = dict(fill_with_rules.compile_regulation.call_args[0][1])
     assert changes == {"1000-2-b": ["2b changes"],
                        "1000-2-c": ["2c changes"],
                        "1000-4-a": ["4a changes"]}

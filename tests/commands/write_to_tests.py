@@ -66,19 +66,23 @@ def add_notices():
         with ctx.EREGS_CFR_REFS():
             ctx.EREGS_CFR_TITLE_REF(title=11)
     xml = ctx.xml
-    entry.Notice('v0').write(NoticeXML(xml))
+    entry.Notice('v0').write(b'')
+    NoticeXML(xml).save()
 
     etree.SubElement(xml.xpath('//EREGS_CFR_TITLE_REF')[0],
                      'EREGS_CFR_PART_REF', part='1000')
     xml.attrib['eregs-version-id'] = 'v1'
-    entry.Notice('v1').write(NoticeXML(xml))
+    entry.Notice('v1').write(b'')
+    NoticeXML(xml).save()
 
     xml.xpath('//EREGS_CFR_TITLE_REF')[0].attrib['title'] = '12'
     xml.attrib['eregs-version-id'] = 'v2'
-    entry.Notice('v2').write(NoticeXML(xml))
+    entry.Notice('v2').write(b'')
+    NoticeXML(xml).save()
 
     xml.attrib['eregs-version-id'] = 'v3'
-    entry.Notice('v3').write(NoticeXML(xml))
+    entry.Notice('v3').write(b'')
+    NoticeXML(xml).save()
 
 
 @pytest.fixture

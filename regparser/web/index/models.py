@@ -1,6 +1,7 @@
 from enum import Enum
 
 from django.db import models
+from lxml import etree
 
 
 class DependencyNode(models.Model):
@@ -37,8 +38,11 @@ class Entry(Serialized):
 
 
 class SourceCollection(Enum):
-    notice = 'notice'
-    annual = 'annual'
+    notice = '{0}'
+    annual = '{2} Annual {0} CFR {1}'
+
+    def __init__(self, format_str):
+        self.format = format_str.format
 
 
 class DocCollection(Enum):
@@ -48,8 +52,11 @@ class DocCollection(Enum):
 
 class SourceFile(Serialized):
     collection = models.CharField(
-        max_length=32, choices=[(c.name, c.value) for c in SourceCollection])
+        max_length=32, choices=[(c.name, c.name) for c in SourceCollection])
     file_name = models.CharField(max_length=128)
+
+    def xml(self):
+        return etree.fromstring(self.contents)
 
     class Meta:
         unique_together = ('collection', 'file_name')

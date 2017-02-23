@@ -51,10 +51,12 @@ def test_process_without_notice(fn):
 def test_process_version_if_needed_success():
     """If the requirements are present we should write the version data"""
     notice_xml = NoticeXML(XMLBuilder().xml)
+    notice_xml.version_id = 'vvv'
     notice_xml.effective = date(2001, 1, 1)
     notice_xml.fr_volume = 2
     notice_xml.start_page = 3
-    entry.Notice('vvv').write(notice_xml)
+    entry.Notice('vvv').write(b'')
+    notice_xml.save()
 
     full_issuance.process_version_if_needed('title', 'part', 'vvv')
 
@@ -71,7 +73,10 @@ def test_process_tree_if_needed_success(monkeypatch):
     monkeypatch.setattr(full_issuance, 'build_tree', mock_regtext)
     with XMLBuilder() as ctx:
         ctx.REGTEXT(TITLE=1, PART=2)
-    entry.Notice('vvv').write(NoticeXML(ctx.xml))
+    entry.Notice('vvv').write(b'')
+    notice_xml = NoticeXML(ctx.xml)
+    notice_xml.version_id = 'vvv'
+    notice_xml.save()
 
     full_issuance.process_tree_if_needed('1', '2', 'vvv')
 

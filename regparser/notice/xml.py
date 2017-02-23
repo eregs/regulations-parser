@@ -19,6 +19,7 @@ from regparser.notice.amendments.fetch import fetch_amendments
 from regparser.notice.citation import Citation
 from regparser.notice.dates import fetch_dates
 from regparser.tree.xml_parser.xml_wrapper import XMLWrapper
+from regparser.web.index.models import SourceCollection, SourceFile
 
 logger = logging.getLogger(__name__)
 
@@ -68,6 +69,19 @@ def _root_property(attrib, transform=None):
 class NoticeXML(XMLWrapper):
     """Wrapper around a notice XML which provides quick access to the XML's
     encoded data fields"""
+    @classmethod
+    def from_db(cls, doc_number):
+        xml = SourceFile.objects.filter(
+            collection=SourceCollection.notice.name, file_name=doc_number
+        ).get().xml()
+        return cls(xml)
+
+    def save(self):
+        SourceFile.objects.update_or_create(
+            collection=SourceCollection.notice.name, file_name=self.version_id,
+            defaults={'contents': etree.tostring(self.xml, encoding='UTF-8')}
+        )
+
     def delays(self):
         """Pull out FRDelays found in the DATES tag"""
         dates_str = "".join(p.text for p in self.xpath(

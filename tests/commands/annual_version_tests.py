@@ -10,7 +10,8 @@ from mock import Mock, call
 from regparser.commands import annual_version
 from regparser.history.annual import Volume
 from regparser.index import entry
-from regparser.notice.xml import TitlePartsRef
+from regparser.notice.xml import NoticeXML, TitlePartsRef
+from regparser.web.index.models import SourceCollection, SourceFile
 
 
 @pytest.mark.django_db
@@ -20,14 +21,19 @@ def test_process_creation(monkeypatch):
     version_id = '{0}-annual-{1}'.format(year, part)
     monkeypatch.setattr(annual_version, 'builder', Mock())
 
-    entry.Entry('annual', title, part, year).write(b'<ROOT />')
+    entry.Entry('annual', title, part, year).write(b'')
+    SourceFile.objects.create(
+        collection=SourceCollection.annual.name,
+        file_name=SourceCollection.annual.format(title, part, year),
+        contents=b'<ROOT />'
+    )
 
     annual_version.builder.build_tree.return_value = {'my': 'tree'}
     annual_version.process_if_needed(Volume(year, title, 1), part)
     tree = entry.Entry('tree', title, part, version_id).read()
     assert json.loads(tree.decode('utf-8')) == {'my': 'tree'}
 
-    notice = entry.Notice(version_id).read()
+    notice = NoticeXML.from_db(version_id)
     assert notice.version_id == version_id
     assert notice.cfr_refs == [TitlePartsRef(title, [part])]
 

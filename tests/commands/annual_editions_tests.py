@@ -11,6 +11,7 @@ from regparser.index import dependency, entry
 from regparser.notice.citation import Citation
 from regparser.tree.struct import Node
 from regparser.web.index.models import Entry as DBEntry
+from regparser.web.index.models import SourceCollection, SourceFile
 
 
 @pytest.mark.django_db
@@ -77,7 +78,12 @@ def test_process_if_needed_missing_writes(monkeypatch):
     last_versions = [annual_editions.LastVersionInYear('1111', 2000)]
     entry.Version('12', '1000', '1111').write(
         Version('1111', date(2000, 1, 1), Citation(1, 1)))
-    entry.Entry('annual', '12', '1000', 2000).write(b'<ROOT></ROOT>')
+    entry.Entry('annual', '12', '1000', 2000).write(b'')
+    SourceFile.objects.create(
+        collection=SourceCollection.annual.name,
+        file_name=SourceCollection.annual.format(12, 1000, 2000),
+        contents=b'<ROOT/>'
+    )
 
     annual_editions.process_if_needed('12', '1000', last_versions)
     assert build_tree.called

@@ -18,7 +18,8 @@ def test_missing_notice():
 
 def test_creates_version(monkeypatch):
     monkeypatch.setattr(proposal_versions, 'entry', Mock())
-    notice = proposal_versions.entry.Notice.return_value.read.return_value
+    monkeypatch.setattr(proposal_versions, 'NoticeXML', Mock())
+    notice = proposal_versions.NoticeXML.from_db.return_value
     notice.fr_citation = Citation(1, 2)
     notice.cfr_ref_pairs = [(11, 111), (11, 222), (22, 222), (22, 333)]
 

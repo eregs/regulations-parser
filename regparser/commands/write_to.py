@@ -7,6 +7,7 @@ from regparser.commands import utils
 from regparser.history.versions import Version
 from regparser.index import entry
 from regparser.notice.build import add_footnotes, process_sxs
+from regparser.notice.xml import NoticeXML
 
 logger = logging.getLogger(__name__)
 
@@ -66,7 +67,7 @@ def write_notices(client, only_title, only_part):
     :param int or None only_part: Filter results to one part
     """
     for notice_entry in entry.Notice().sub_entries():
-        notice_xml = notice_entry.read()
+        notice_xml = NoticeXML.from_db(notice_entry.path[-1])
         title_match = only_title is None or any(ref.title == only_title
                                                 for ref in notice_xml.cfr_refs)
         # @todo - this doesn't confirm the part is within the title

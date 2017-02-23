@@ -6,6 +6,7 @@ import click
 from regparser.history import annual
 from regparser.index import dependency, entry
 from regparser.tree import gpo_cfr
+from regparser.web.index.models import SourceCollection, SourceFile
 
 LastVersionInYear = namedtuple('LastVersionInYear', ['version_id', 'year'])
 logger = logging.getLogger(__name__)
@@ -48,8 +49,13 @@ def process_if_needed(cfr_title, cfr_part, last_version_list):
         tree_entry = tree_path / last_version.version_id
         deps.validate_for(tree_entry)
         if deps.is_stale(tree_entry):
-            input_entry = annual_path / last_version.year
-            tree = gpo_cfr.builder.build_tree(input_entry.read().xml)
+            annual = SourceCollection.annual
+            annual_xml = SourceFile.objects.filter(
+                collection=SourceCollection.annual.name,
+                file_name=SourceCollection.annual.format(
+                    cfr_title, cfr_part, last_version.year)
+            ).get().xml()
+            tree = gpo_cfr.builder.build_tree(annual_xml)
             tree_entry.write(tree)
 
 

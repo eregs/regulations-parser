@@ -42,5 +42,5 @@ def import_notice(xml_file):
     validations on the XML"""
     notice_xml = parse_notice(xml_file)
     if notice_xml:
-        notice_entry = entry.Notice(notice_xml.version_id)
-        notice_entry.write(notice_xml)
+        entry.Notice(notice_xml.version_id).write(b'')
+        notice_xml.save()

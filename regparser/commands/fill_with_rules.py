@@ -6,6 +6,7 @@ import click
 from regparser.history.versions import Version
 from regparser.index import dependency, entry
 from regparser.notice.compiler import compile_regulation
+from regparser.notice.xml import NoticeXML
 
 logger = logging.getLogger(__name__)
 
@@ -56,7 +57,7 @@ def process(tree_path, previous, version_id):
     """Build and write a tree by combining the preceding tree with changes
     present in the associated rule"""
     prev_tree = (tree_path / previous).read()
-    notice = entry.Notice(version_id).read()
+    notice = NoticeXML.from_db(version_id)
     notice_changes = defaultdict(list)
     for amendment in notice.amendments:
         for label, change_list in amendment.get('changes', []):

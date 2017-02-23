@@ -2,6 +2,7 @@ import click
 
 from regparser.history.versions import Version
 from regparser.index import dependency, entry
+from regparser.notice.xml import NoticeXML
 
 
 @click.command()
@@ -12,7 +13,7 @@ def proposal_versions(doc_number):
     if not notice.exists():
         raise dependency.Missing(str(notice), str(notice))
 
-    notice = notice.read()
+    notice = NoticeXML.from_db(doc_number)
     version = Version(doc_number, effective=None,
                       fr_citation=notice.fr_citation)
 

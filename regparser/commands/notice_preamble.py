@@ -4,6 +4,7 @@ import click
 
 from regparser.index import dependency, entry
 from regparser.notice.preamble import convert_id, parse_preamble
+from regparser.notice.xml import NoticeXML
 
 logger = logging.getLogger(__name__)
 
@@ -21,5 +22,5 @@ def notice_preamble(doc_number):
     deps.validate_for(preamble_path)
 
     if deps.is_stale(preamble_path):
-        preamble = parse_preamble(notice_path.read())
+        preamble = parse_preamble(NoticeXML.from_db(doc_number))
         preamble_path.write(preamble)

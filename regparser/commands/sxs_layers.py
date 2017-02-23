@@ -6,6 +6,7 @@ from regparser.federalregister import FULL_NOTICE_FIELDS, meta_data
 from regparser.index import dependency, entry
 from regparser.layer.section_by_section import SectionBySection
 from regparser.notice.build import build_notice
+from regparser.notice.xml import NoticeXML
 
 logger = logging.getLogger(__name__)
 
@@ -55,11 +56,10 @@ def sxs_layers(cfr_title, cfr_part):
         version_id = tree_entry.path[-1]
         if is_stale(cfr_title, cfr_part, version_id):
             tree = tree_entry.read()
-            notices = [
-                notice_dict(notice_entry.read())
-                for notice_entry
-                in previous_sxs(cfr_title, cfr_part, version_id)
-            ]
+            notices = []
+            for notice_entry in previous_sxs(cfr_title, cfr_part, version_id):
+                notice_xml = NoticeXML.from_db(notice_entry.path[-1])
+                notices.append(notice_dict(notice_xml))
             layer_json = SectionBySection(tree, notices).build()
             entry.Layer.cfr(cfr_title, cfr_part, version_id, 'analyses').write(
                 layer_json)
