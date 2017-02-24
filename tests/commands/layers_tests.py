@@ -3,10 +3,9 @@ from datetime import date
 import pytest
 
 from regparser.commands import layers
-from regparser.history.versions import Version
 from regparser.index import dependency, entry
-from regparser.notice.citation import Citation
 from regparser.tree.struct import Node
+from regparser.web.index.models import CFRVersion
 
 
 @pytest.mark.django_db
@@ -17,7 +16,11 @@ def test_stale_layers(monkeypatch):
                         {'cfr': {'keyterms': None, 'other': None}})
 
     version_entry = entry.Version(111, 22, 'aaa')
-    version_entry.write(Version('aaa', date.today(), Citation(1, 1)))
+    version_entry.write(b'')
+    CFRVersion.objects.create(
+        identifier='aaa', effective=date.today(), fr_volume=1, fr_page=1,
+        cfr_title=111, cfr_part=22
+    )
     tree_entry = entry.Tree(111, 22, 'aaa')
     with pytest.raises(dependency.Missing):
         layers.stale_layers(tree_entry, 'cfr')
@@ -37,10 +40,14 @@ def test_stale_layers(monkeypatch):
 def test_process_cfr_layers():
     """All layers for a single version should get written."""
     version_entry = entry.Version(12, 1000, '1234')
-    version_entry.write(Version('1234', date.today(), Citation(1, 1)))
+    version_entry.write(b'')
+    CFRVersion.objects.create(
+        identifier='1234', effective=date.today(), fr_volume=1, fr_page=1,
+        cfr_title=12, cfr_part=1000
+    )
     entry.Tree('12', '1000', '1234').write(Node())
 
-    layers.process_cfr_layers(['keyterms', 'meta'], 12, version_entry)
+    layers.process_cfr_layers(['keyterms', 'meta'], 12, 1000, '1234')
 
     assert entry.Layer.cfr(12, 1000, '1234', 'keyterms').exists()
     assert entry.Layer.cfr(12, 1000, '1234', 'meta').exists()

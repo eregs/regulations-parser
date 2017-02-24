@@ -3,19 +3,24 @@ from datetime import date
 import pytest
 
 from regparser.commands import sxs_layers
-from regparser.history.versions import Version
 from regparser.index import dependency, entry
-from regparser.notice.citation import Citation
+from regparser.web.index.models import CFRVersion
 
 
 def create_versions():
     """Generate some dummy data"""
-    entry.Version(11, 222, 'aaa').write(
-        Version('aaa', date(2002, 2, 2), Citation(2, 2)))
-    entry.Version(11, 222, 'bbb').write(
-        Version('bbb', date(2001, 1, 1), Citation(1, 1)))
-    entry.Version(11, 222, 'ccc').write(
-        Version('ccc', date(2003, 3, 3), Citation(3, 3)))
+    entry.Version(11, 222, 'aaa').write(b'')
+    CFRVersion.objects.create(
+        identifier='aaa', effective=date(2002, 2, 2), fr_volume=2, fr_page=2,
+        cfr_title=11, cfr_part=222)
+    entry.Version(11, 222, 'bbb').write(b'')
+    CFRVersion.objects.create(
+        identifier='bbb', effective=date(2001, 1, 1), fr_volume=1, fr_page=1,
+        cfr_title=11, cfr_part=222)
+    entry.Version(11, 222, 'ccc').write(b'')
+    CFRVersion.objects.create(
+        identifier='ccc', effective=date(2003, 3, 3), fr_volume=3, fr_page=3,
+        cfr_title=11, cfr_part=222)
 
 
 @pytest.mark.django_db

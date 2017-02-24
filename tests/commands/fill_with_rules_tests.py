@@ -4,9 +4,9 @@ import pytest
 from mock import Mock
 
 from regparser.commands import fill_with_rules
-from regparser.history.versions import Version
 from regparser.index import dependency, entry
 from regparser.tree.struct import Node
+from regparser.web.index.models import CFRVersion
 
 
 @pytest.mark.django_db
@@ -14,9 +14,11 @@ def test_dependencies():
     """Expect nonexistent trees to depend on their predecessor, associated
     rule changes and version files. Shouldn't add dependencies for the
     first version, if missing"""
-    versions = [Version(str(i)*3, date(2001, i, i), date(2002, i, i))
-                for i in range(1, 7)]
-    parents = Version.parents_of(versions)
+    versions = [
+        CFRVersion(identifier=str(i)*3, effective=date(2001, i, i))
+        for i in range(1, 7)
+    ]
+    parents = CFRVersion.parents_of(versions)
     tree_dir = entry.Tree('12', '1000')
     notice_dir = entry.Notice()
     vers_dir = entry.Version('12', '1000')
@@ -94,7 +96,7 @@ def test_process(monkeypatch):
 
 
 def test_drop_initial_orphan_versions():
-    version_list = [Version(letter, None, None) for letter in 'abcdef']
+    version_list = [CFRVersion(identifier=letter) for letter in 'abcdef']
     version_pairs = list(zip(version_list, [None] + version_list[1:]))
     existing = {'c', 'e'}
 

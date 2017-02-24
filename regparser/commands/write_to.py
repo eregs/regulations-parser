@@ -4,10 +4,10 @@ import click
 
 from regparser.api_writer import Client
 from regparser.commands import utils
-from regparser.history.versions import Version
 from regparser.index import entry
 from regparser.notice.build import add_footnotes, process_sxs
 from regparser.notice.xml import NoticeXML
+from regparser.web.index.models import CFRVersion
 
 logger = logging.getLogger(__name__)
 
@@ -46,9 +46,10 @@ def transform_notice(notice_xml):
     as_dict = notice_xml.as_dict()
     as_dict['versions'] = {}
     for cfr_title, cfr_part in notice_xml.cfr_ref_pairs:
-        version_dir = entry.Version(cfr_title, cfr_part)
-        versions = [v.read() for v in version_dir.sub_entries()]
-        with_parents = zip(versions, Version.parents_of(versions))
+        query = CFRVersion.objects.filter(cfr_title=cfr_title,
+                                          cfr_part=cfr_part)
+        versions = list(sorted(query))
+        with_parents = zip(versions, CFRVersion.parents_of(versions))
         for version, parent in with_parents:
             if version.identifier == notice_xml.version_id and parent:
                 as_dict['versions'][cfr_part] = {"left": parent.identifier,

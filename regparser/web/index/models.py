@@ -81,6 +81,38 @@ class CFRVersion(models.Model):
         unique_together = ('identifier', 'cfr_title', 'cfr_part')
         index_together = unique_together
 
+    @property
+    def is_final(self):
+        return bool(self.effective)
+
+    @property
+    def is_proposal(self):
+        return not self.is_final
+
+    def __lt__(self, other):
+        """Linearizing versions requires knowing not only relevant dates and
+        identifiers, but also which versions are from final rules and which
+        are just proposals"""
+        sort_fields = ('cfr_title', 'cfr_part', 'fr_volume', 'fr_page',
+                       'identifier')
+        if self.is_final and other.is_final:
+            sort_fields = sort_fields[:2] + ('effective',) + sort_fields[2:]
+
+        left = tuple(getattr(self, field) for field in sort_fields)
+        right = tuple(getattr(other, field) for field in sort_fields)
+        return left < right
+
+    @staticmethod
+    def parents_of(versions):
+        """A "parent" of a version is the version which it builds atop.
+        Versions can only build on final versions. Assume the versions are
+        already sorted"""
+        current_parent = None
+        for version in versions:
+            yield current_parent
+            if version.is_final:
+                current_parent = version
+
 
 class Document(Serialized):
     collection = models.CharField(

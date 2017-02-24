@@ -6,12 +6,10 @@ from django.utils import timezone
 from mock import Mock
 
 from regparser.commands import annual_editions
-from regparser.history.versions import Version
 from regparser.index import dependency, entry
-from regparser.notice.citation import Citation
 from regparser.tree.struct import Node
 from regparser.web.index.models import Entry as DBEntry
-from regparser.web.index.models import SourceCollection, SourceFile
+from regparser.web.index.models import CFRVersion, SourceCollection, SourceFile
 
 
 @pytest.mark.django_db
@@ -27,10 +25,21 @@ def test_last_versions_multiple_versions(monkeypatch):
     receive the last"""
     monkeypatch.setattr(annual_editions.annual, 'find_volume', Mock())
     annual_editions.annual.find_volume.return_value = True
-    path = entry.Version('12', '1000')
-    (path / '1111').write(Version('1111', date(2000, 12, 1), Citation(1, 1)))
-    (path / '2222').write(Version('2222', date(2000, 12, 2), Citation(1, 2)))
-    (path / '3333').write(Version('3333', date(2001, 12, 1), Citation(1, 1)))
+    entry.Version('12', '1000', '1111').write(b'')
+    CFRVersion.objects.create(
+        identifier='1111', effective=date(2000, 12, 1), fr_volume=1,
+        fr_page=1, cfr_title=12, cfr_part=1000
+    )
+    entry.Version('12', '1000', '2222').write(b'')
+    CFRVersion.objects.create(
+        identifier='2222', effective=date(2000, 12, 2), fr_volume=1,
+        fr_page=2, cfr_title=12, cfr_part=1000
+    )
+    entry.Version('12', '1000', '3333').write(b'')
+    CFRVersion.objects.create(
+        identifier='3333', effective=date(2001, 12, 1), fr_volume=1,
+        fr_page=1, cfr_title=12, cfr_part=1000
+    )
 
     results = list(annual_editions.last_versions(12, 1000))
     assert results == [annual_editions.LastVersionInYear('2222', 2001),
@@ -44,9 +53,16 @@ def test_last_versions_not_printed(monkeypatch):
     # 2001 exists; no other years do
     monkeypatch.setattr(annual_editions.annual, 'find_volume', Mock())
     annual_editions.annual.find_volume = lambda year, title, part: year == 2001
-    path = entry.Version('12', '1000')
-    (path / '1111').write(Version('1111', date(2000, 12, 1), Citation(1, 1)))
-    (path / '2222').write(Version('2222', date(2001, 12, 1), Citation(1, 1)))
+    entry.Version('12', '1000', '1111').write(b'')
+    CFRVersion.objects.create(
+        identifier='1111', effective=date(2000, 12, 1), fr_volume=1,
+        fr_page=1, cfr_title=12, cfr_part=1000
+    )
+    entry.Version('12', '1000', '2222').write(b'')
+    CFRVersion.objects.create(
+        identifier='2222', effective=date(2001, 12, 1), fr_volume=1,
+        fr_page=1, cfr_title=12, cfr_part=1000
+    )
 
     results = list(annual_editions.last_versions(12, 1000))
     assert results == [annual_editions.LastVersionInYear('1111', 2001)]
@@ -61,8 +77,11 @@ def test_process_if_needed_missing_dependency_error():
     with pytest.raises(dependency.Missing):
         annual_editions.process_if_needed('12', '1000', last_versions)
 
-    entry.Version('12', '1000', '1111').write(
-        Version('1111', date(2000, 1, 1), Citation(1, 1)))
+    entry.Version('12', '1000', '1111').write(b'')
+    CFRVersion.objects.create(
+        identifier='1111', effective=date(2000, 1, 1), fr_volume=1,
+        fr_page=1, cfr_title=12, cfr_part=1000
+    )
 
     with pytest.raises(dependency.Missing):
         annual_editions.process_if_needed('12', '1000', last_versions)
@@ -76,8 +95,11 @@ def test_process_if_needed_missing_writes(monkeypatch):
     build_tree = annual_editions.gpo_cfr.builder.build_tree
     build_tree.return_value = Node()
     last_versions = [annual_editions.LastVersionInYear('1111', 2000)]
-    entry.Version('12', '1000', '1111').write(
-        Version('1111', date(2000, 1, 1), Citation(1, 1)))
+    entry.Version('12', '1000', '1111').write(b'')
+    CFRVersion.objects.create(
+        identifier='1111', effective=date(2000, 1, 1), fr_volume=1,
+        fr_page=1, cfr_title=12, cfr_part=1000
+    )
     entry.Entry('annual', '12', '1000', 2000).write(b'')
     SourceFile.objects.create(
         collection=SourceCollection.annual.name,

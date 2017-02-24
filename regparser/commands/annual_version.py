@@ -4,12 +4,10 @@ from datetime import date
 import click
 
 from regparser.history.annual import find_volume
-from regparser.history.versions import Version
 from regparser.index import dependency, entry
-from regparser.notice.citation import Citation
 from regparser.notice.fake import build as build_fake_notice
 from regparser.tree.gpo_cfr import builder
-from regparser.web.index.models import SourceCollection, SourceFile
+from regparser.web.index.models import CFRVersion, SourceCollection, SourceFile
 
 _version_id = '{0}-annual-{1}'.format
 logger = logging.getLogger(__name__)
@@ -26,29 +24,35 @@ def process_if_needed(volume, cfr_part):
     deps = dependency.Graph()
     deps.add(tree_entry, annual_entry)
     deps.validate_for(tree_entry)
+    source = SourceFile.objects.filter(
+        collection=SourceCollection.annual.name,
+        file_name=SourceCollection.annual.format(volume.title, cfr_part,
+                                                 volume.year)
+    ).get()
     if deps.is_stale(tree_entry):
-        xml = SourceFile.objects.filter(
-            collection=SourceCollection.annual.name,
-            file_name=SourceCollection.annual.format(
-                volume.title, cfr_part, volume.year)
-        ).get().xml()
-        tree = builder.build_tree(xml)
+        tree = builder.build_tree(source.xml())
         tree_entry.write(tree)
         notice_entry.write(b'')
         build_fake_notice(version_id, volume.publication_date, volume.title,
                           cfr_part).save()
+    return source
 
 
-def create_version_entry_if_needed(volume, cfr_part):
+def create_version_entry_if_needed(volume, cfr_part, source):
     """Only write the version entry if it doesn't already exist. If we
     overwrote one, we'd be invalidating all related trees, etc."""
     version_id = _version_id(volume.year, cfr_part)
-    version_dir = entry.FinalVersion(volume.title, cfr_part)
+    query = CFRVersion.objects.filter(
+        cfr_title=volume.title, cfr_part=cfr_part, effective__isnull=False)
+    known_versions = [v.identifier for v in query]
 
-    if version_id not in [c.path[-1] for c in version_dir.sub_entries()]:
-        (version_dir / version_id).write(
-            Version(version_id, effective=volume.publication_date,
-                    fr_citation=Citation(volume.vol_num, 1)))
+    if version_id not in known_versions:
+        entry.Version(volume.title, cfr_part, version_id).write(b'')
+        CFRVersion.objects.create(
+            identifier=version_id, source=source,
+            effective=volume.publication_date, fr_volume=1, fr_page=1,
+            cfr_title=volume.title, cfr_part=cfr_part
+        )
 
 
 @click.command()
@@ -76,5 +80,5 @@ def annual_version(cfr_title, cfr_part, year):
         logger.info("Getting annual version - %s CFR %s, Year: %s",
                     cfr_title, cfr_part, cfr_year)
 
-        create_version_entry_if_needed(vol, cfr_part)
-        process_if_needed(vol, cfr_part)
+        source = process_if_needed(vol, cfr_part)
+        create_version_entry_if_needed(vol, cfr_part, source)

@@ -4,7 +4,6 @@ import os
 
 from django.conf import settings
 
-from regparser.history.versions import Version as VersionStruct
 from regparser.tree.struct import (FullNodeEncoder, frozen_node_decode_hook,
                                    full_node_decode_hook)
 from regparser.web.index.models import Entry as DBEntry
@@ -84,27 +83,6 @@ class Annual(Entry):
 class Version(Entry):
     """Processes Versions, keyed by version"""
     PREFIX = 'version'
-
-    def serialize(self, content):
-        return content.json().encode('utf-8')
-
-    def deserialize(self, content):
-        return VersionStruct.from_json(content.decode('utf-8'))
-
-    def sub_entries(self):
-        """Sort children by version"""
-        versions = [path.read()
-                    for path in super(Version, self).sub_entries()]
-        for version in sorted(versions):
-            yield self / version.identifier
-
-
-class FinalVersion(Version):
-    """Like Version, but only list versions associated with final rules"""
-    def sub_entries(self):
-        for path in super(FinalVersion, self).sub_entries():
-            if path.read().is_final:
-                yield path
 
 
 class _JSONEntry(Entry):

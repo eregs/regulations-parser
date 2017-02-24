@@ -6,10 +6,10 @@ from mock import Mock
 
 from regparser.commands import full_issuance
 from regparser.index import dependency, entry
-from regparser.notice.citation import Citation
 from regparser.notice.xml import NoticeXML
 from regparser.test_utils.xml_builder import XMLBuilder
 from regparser.tree.struct import Node
+from regparser.web.index.models import CFRVersion
 
 
 def test_regtext_for_part(monkeypatch):
@@ -44,7 +44,7 @@ def test_regtext_for_part(monkeypatch):
 def test_process_without_notice(fn):
     """Processing depends on a Notice"""
     with pytest.raises(dependency.Missing):
-        fn('title', 'part', 'version')
+        fn('111', '222', 'version')
 
 
 @pytest.mark.django_db
@@ -58,12 +58,15 @@ def test_process_version_if_needed_success():
     entry.Notice('vvv').write(b'')
     notice_xml.save()
 
-    full_issuance.process_version_if_needed('title', 'part', 'vvv')
+    full_issuance.process_version_if_needed('111', '222', 'vvv')
 
-    result = entry.Version('title', 'part', 'vvv').read()
-    assert result.identifier == 'vvv'
-    assert result.effective == date(2001, 1, 1)
-    assert result.fr_citation == Citation(2, 3)
+    version = CFRVersion.objects.get()
+    assert version.identifier == 'vvv'
+    assert version.effective == date(2001, 1, 1)
+    assert version.fr_volume == 2
+    assert version.fr_page == 3
+    assert version.cfr_title == 111
+    assert version.cfr_part == 222
 
 
 @pytest.mark.django_db

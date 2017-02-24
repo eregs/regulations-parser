@@ -5,6 +5,7 @@ from stevedore.extension import ExtensionManager
 
 from regparser.commands import utils
 from regparser.index import dependency, entry
+from regparser.web.index.models import CFRVersion
 
 logger = logging.getLogger(__name__)
 
@@ -53,12 +54,13 @@ def stale_layers(doc_entry, doc_type):
     return stale
 
 
-def process_cfr_layers(stale_names, cfr_title, version_entry):
+def process_cfr_layers(stale_names, cfr_title, cfr_part, version_id):
     """Build all of the stale layers for this version, writing them into the
     index. Assumes all dependencies have already been checked"""
-    tree = entry.Tree(*version_entry.path).read()
-    version = version_entry.read()
-    layer_dir = entry.Layer.cfr(*version_entry.path)
+    tree = entry.Tree(cfr_title, cfr_part, version_id).read()
+    version = CFRVersion.objects.get(
+        identifier=version_id, cfr_title=cfr_title, cfr_part=cfr_part)
+    layer_dir = entry.Layer.cfr(cfr_title, cfr_part, version_id)
     for layer_name in stale_names:
         layer_json = LAYER_CLASSES['cfr'][layer_name](
             tree, cfr_title=int(cfr_title), version=version).build()
@@ -85,10 +87,9 @@ def layers(cfr_title, cfr_part):
 
     for tree_entry in utils.relevant_paths(entry.Tree(), cfr_title, cfr_part):
         tree_title, tree_part, version_id = tree_entry.path
-        version_entry = entry.Version(tree_title, tree_part, version_id)
         stale = stale_layers(tree_entry, 'cfr')
         if stale:
-            process_cfr_layers(stale, tree_title, version_entry)
+            process_cfr_layers(stale, tree_title, tree_part, version_id)
 
     if cfr_title is None and cfr_part is None:
         for preamble_entry in entry.Preamble().sub_entries():

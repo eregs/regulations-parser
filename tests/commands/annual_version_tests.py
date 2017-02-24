@@ -6,12 +6,13 @@ import pytest
 from click.testing import CliRunner
 from freezegun import freeze_time
 from mock import Mock, call
+from model_mommy import mommy
 
 from regparser.commands import annual_version
 from regparser.history.annual import Volume
 from regparser.index import entry
 from regparser.notice.xml import NoticeXML, TitlePartsRef
-from regparser.web.index.models import SourceCollection, SourceFile
+from regparser.web.index.models import CFRVersion, SourceCollection, SourceFile
 
 
 @pytest.mark.django_db
@@ -46,6 +47,10 @@ def test_process_no_need_to_create():
     tree = entry.Entry('tree', title, part,
                        '{0}-annual-{1}'.format(year, part))
     annual.write(b'ANNUAL')
+    SourceFile.objects.create(
+        collection=SourceCollection.annual.name,
+        file_name=SourceCollection.annual.format(title, part, year)
+    )
     tree.write(b'TREE')
 
     annual_version.process_if_needed(Volume(year, title, 1), part)
@@ -58,13 +63,14 @@ def test_process_no_need_to_create():
 @pytest.mark.django_db
 def test_create_version():
     """Creates a version associated with the part and year"""
-    vol_num = randint(1, 99)
+    source = mommy.make(SourceFile)
     annual_version.create_version_entry_if_needed(
-        Volume(2010, 20, vol_num), 1001)
-    version = entry.Version(20, 1001, '2010-annual-1001').read()
+        Volume(2010, 20, 5), 1001, source)
+    version = CFRVersion.objects.get()
     assert version.effective == date(2010, 4, 1)
-    assert version.fr_citation.volume == vol_num
-    assert version.fr_citation.page == 1
+    assert version.fr_volume == 1
+    assert version.fr_page == 1
+    assert version.source == source
 
 
 @pytest.fixture

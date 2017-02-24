@@ -3,10 +3,10 @@ from collections import defaultdict
 
 import click
 
-from regparser.history.versions import Version
 from regparser.index import dependency, entry
 from regparser.notice.compiler import compile_regulation
 from regparser.notice.xml import NoticeXML
+from regparser.web.index.models import CFRVersion
 
 logger = logging.getLogger(__name__)
 
@@ -76,9 +76,11 @@ def fill_with_rules(cfr_title, cfr_part):
     logger.info("Fill with rules - %s CFR %s", cfr_title, cfr_part)
     tree_dir = entry.Tree(cfr_title, cfr_part)
     version_dir = entry.Version(cfr_title, cfr_part)
+    query = CFRVersion.objects.filter(cfr_title=cfr_title, cfr_part=cfr_part)
 
-    versions = [c.read() for c in version_dir.sub_entries()]
-    versions_with_parents = list(zip(versions, Version.parents_of(versions)))
+    versions = [v for v in sorted(query)]
+    versions_with_parents = list(zip(versions,
+                                     CFRVersion.parents_of(versions)))
     deps = dependencies(tree_dir, version_dir, versions_with_parents)
 
     derived = [(version.identifier, parent.identifier)
