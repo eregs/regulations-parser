@@ -16,7 +16,9 @@ def test_fetch_version_ids_no_local(monkeypatch):
     """If there are no local copies, the document numbers found in the FR
     notices should be passed through"""
     monkeypatch.setattr(versions, 'fetch_notice_json', Mock(return_value=[
-        {'document_number': '1'}, {'document_number': '22'}]))
+        {'document_number': '1', 'full_text_xml_url': 'somewhere'},
+        {'document_number': '22', 'full_text_xml_url': 'somewhere'}
+    ]))
     path = entry.Entry("path")
     assert ['1', '22'] == versions.fetch_version_ids('title', 'part', path)
 
@@ -26,7 +28,9 @@ def test_fetch_version_ids_local(monkeypatch):
     """If a notice is split into multiple entries locally, a single document
     number might result in multiple version ids"""
     monkeypatch.setattr(versions, 'fetch_notice_json', Mock(return_value=[
-        {'document_number': '1'}, {'document_number': '22'}]))
+        {'document_number': '1', 'full_text_xml_url': 'somewhere'},
+        {'document_number': '22', 'full_text_xml_url': 'somewhere'}
+    ]))
     path = entry.Entry("path")
     (path / '1_20010101').write(b'v1')
     (path / '1_20020202').write(b'v2')
@@ -34,6 +38,18 @@ def test_fetch_version_ids_local(monkeypatch):
     (path / '22-3344').write(b'unrelated file')
     assert versions.fetch_version_ids('title', 'part', path) == [
         '1_20010101', '1_20020202', '22']
+
+
+@pytest.mark.django_db
+def test_fetch_version_ids_skip_no_xml(monkeypatch):
+    """We'll skip over all of the versions which don't have XML"""
+    monkeypatch.setattr(versions, 'fetch_notice_json', Mock(return_value=[
+        {'document_number': '1', 'full_text_xml_url': 'something'},
+        {'document_number': '2', 'full_text_xml_url': None},
+        {'document_number': '3', 'full_text_xml_url': 'somewhere'}
+    ]))
+    path = entry.Entry("path")
+    assert ['1', '3'] == versions.fetch_version_ids('title', 'part', path)
 
 
 def test_delays():

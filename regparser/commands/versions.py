@@ -19,12 +19,16 @@ def fetch_version_ids(cfr_title, cfr_part, notice_dir):
     final_rules = fetch_notice_json(cfr_title, cfr_part, only_final=True)
 
     version_ids = []
-    for fr_id in map(itemgetter('document_number'), final_rules):
-        # Version_id concatenated with the date
-        regex = re.compile(re.escape(fr_id) + r"_\d{8}")
-        split_entries = [vid for vid in present_ids if regex.match(vid)]
-        # Add either the split entries or the original version_id
-        version_ids.extend(split_entries or [fr_id])
+    pair_fn = itemgetter('document_number', 'full_text_xml_url')
+    for fr_id, xml_url in map(pair_fn, final_rules):
+        if xml_url:
+            # Version_id concatenated with the date
+            regex = re.compile(re.escape(fr_id) + r"_\d{8}")
+            split_entries = [vid for vid in present_ids if regex.match(vid)]
+            # Add either the split entries or the original version_id
+            version_ids.extend(split_entries or [fr_id])
+        else:
+            logger.warning("No XML for %s; skipping", fr_id)
 
     return version_ids
 
