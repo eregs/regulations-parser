@@ -128,6 +128,18 @@ def test_delays():
                             FRDelay(11, 200, date(2010, 10, 10))]
 
 
+def test_delays_empty_p():
+    """Delaying text may have an empty P tag"""
+    with XMLBuilder("ROOT") as ctx:
+        with ctx.EFFDATE():
+            ctx.P()
+            ctx.P("The effective date of 11 FR 100 has been delayed until "
+                  "April 1, 2010.")
+    xml = notice_xml.NoticeXML(ctx.xml)
+
+    assert xml.delays() == [FRDelay(11, 100, date(2010, 4, 1))]
+
+
 def test_set_agencies_simple():
     """ Test that we can properly derive agency info from the metadata or the
     XML itself, and that it's added to the XML.  """
