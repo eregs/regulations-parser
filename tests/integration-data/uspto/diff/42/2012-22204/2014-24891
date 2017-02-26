@@ -1,0 +1,2230 @@
+{
+    "42": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                1
+            ], 
+            [
+                "insert", 
+                1, 
+                [
+                    "42-Subjgrp-Ge", 
+                    "42-Subjgrp-Fe", 
+                    "42-Subjgrp-PaMP", 
+                    "42-Subjgrp-TaP", 
+                    "42-Subjgrp-OADaS", 
+                    "42-Subjgrp-Ce"
+                ]
+            ], 
+            [
+                "equal", 
+                1, 
+                2
+            ], 
+            [
+                "insert", 
+                2, 
+                [
+                    "42-Subjgrp-Ge.", 
+                    "42-Subjgrp-IIPR", 
+                    "42-Subjgrp-AIoIPR"
+                ]
+            ], 
+            [
+                "equal", 
+                2, 
+                3
+            ], 
+            [
+                "insert", 
+                3, 
+                [
+                    "42-Subjgrp-Gen", 
+                    "42-Subjgrp-IPR", 
+                    "42-Subjgrp-AIoPR"
+                ]
+            ], 
+            [
+                "equal", 
+                3, 
+                5
+            ], 
+            [
+                "insert", 
+                5, 
+                [
+                    "42-Subjgrp-IDP", 
+                    "42-Subjgrp-AIoDP"
+                ]
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "42-1": {
+        "op": "deleted"
+    }, 
+    "42-1-a": {
+        "op": "deleted"
+    }, 
+    "42-1-b": {
+        "op": "deleted"
+    }, 
+    "42-1-c": {
+        "op": "deleted"
+    }, 
+    "42-1-d": {
+        "op": "deleted"
+    }, 
+    "42-10": {
+        "op": "deleted"
+    }, 
+    "42-10-a": {
+        "op": "deleted"
+    }, 
+    "42-10-b": {
+        "op": "deleted"
+    }, 
+    "42-10-c": {
+        "op": "deleted"
+    }, 
+    "42-10-d": {
+        "op": "deleted"
+    }, 
+    "42-10-e": {
+        "op": "deleted"
+    }, 
+    "42-100": {
+        "op": "deleted"
+    }, 
+    "42-100-a": {
+        "op": "deleted"
+    }, 
+    "42-100-b": {
+        "op": "deleted"
+    }, 
+    "42-100-c": {
+        "op": "deleted"
+    }, 
+    "42-101": {
+        "op": "deleted"
+    }, 
+    "42-101-a": {
+        "op": "deleted"
+    }, 
+    "42-101-b": {
+        "op": "deleted"
+    }, 
+    "42-101-c": {
+        "op": "deleted"
+    }, 
+    "42-102": {
+        "op": "deleted"
+    }, 
+    "42-102-a": {
+        "op": "deleted"
+    }, 
+    "42-102-a-1": {
+        "op": "deleted"
+    }, 
+    "42-102-a-2": {
+        "op": "deleted"
+    }, 
+    "42-102-a-3": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "102", 
+                "a", 
+                "3"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(3) If a post-grant review is instituted as set forth in subpart C of this part, the date of the termination of such post-grant review.", 
+            "text": "(3) If a post-grant review is instituted as set forth in subpart C of this part, the date of the termination of such post-grant review.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-102-b": {
+        "op": "deleted"
+    }, 
+    "42-103": {
+        "op": "deleted"
+    }, 
+    "42-103-a": {
+        "op": "deleted"
+    }, 
+    "42-104": {
+        "op": "deleted"
+    }, 
+    "42-104-a": {
+        "op": "deleted"
+    }, 
+    "42-104-b": {
+        "op": "deleted"
+    }, 
+    "42-104-b-1": {
+        "op": "deleted"
+    }, 
+    "42-104-b-2": {
+        "op": "deleted"
+    }, 
+    "42-104-b-3": {
+        "op": "deleted"
+    }, 
+    "42-104-b-4": {
+        "op": "deleted"
+    }, 
+    "42-104-b-5": {
+        "op": "deleted"
+    }, 
+    "42-104-c": {
+        "op": "deleted"
+    }, 
+    "42-105": {
+        "op": "deleted"
+    }, 
+    "42-105-a": {
+        "op": "deleted"
+    }, 
+    "42-105-b": {
+        "op": "deleted"
+    }, 
+    "42-106": {
+        "op": "deleted"
+    }, 
+    "42-106-a": {
+        "op": "deleted"
+    }, 
+    "42-106-a-1": {
+        "op": "deleted"
+    }, 
+    "42-106-a-2": {
+        "op": "deleted"
+    }, 
+    "42-106-a-3": {
+        "op": "deleted"
+    }, 
+    "42-106-b": {
+        "op": "deleted"
+    }, 
+    "42-107": {
+        "op": "deleted"
+    }, 
+    "42-107-a": {
+        "op": "deleted"
+    }, 
+    "42-107-b": {
+        "op": "deleted"
+    }, 
+    "42-107-c": {
+        "op": "deleted"
+    }, 
+    "42-107-d": {
+        "op": "deleted"
+    }, 
+    "42-107-e": {
+        "op": "deleted"
+    }, 
+    "42-107-e-p1": {
+        "op": "deleted"
+    }, 
+    "42-108": {
+        "op": "deleted"
+    }, 
+    "42-108-a": {
+        "op": "deleted"
+    }, 
+    "42-108-b": {
+        "op": "deleted"
+    }, 
+    "42-108-c": {
+        "op": "deleted"
+    }, 
+    "42-108-c-p1": {
+        "op": "deleted"
+    }, 
+    "42-11": {
+        "op": "deleted"
+    }, 
+    "42-12": {
+        "op": "deleted"
+    }, 
+    "42-12-a": {
+        "op": "deleted"
+    }, 
+    "42-12-a-1": {
+        "op": "deleted"
+    }, 
+    "42-12-a-2": {
+        "op": "deleted"
+    }, 
+    "42-12-a-3": {
+        "op": "deleted"
+    }, 
+    "42-12-a-4": {
+        "op": "deleted"
+    }, 
+    "42-12-a-5": {
+        "op": "deleted"
+    }, 
+    "42-12-a-6": {
+        "op": "deleted"
+    }, 
+    "42-12-a-7": {
+        "op": "deleted"
+    }, 
+    "42-12-b": {
+        "op": "deleted"
+    }, 
+    "42-12-b-1": {
+        "op": "deleted"
+    }, 
+    "42-12-b-2": {
+        "op": "deleted"
+    }, 
+    "42-12-b-3": {
+        "op": "deleted"
+    }, 
+    "42-12-b-4": {
+        "op": "deleted"
+    }, 
+    "42-12-b-5": {
+        "op": "deleted"
+    }, 
+    "42-12-b-6": {
+        "op": "deleted"
+    }, 
+    "42-12-b-7": {
+        "op": "deleted"
+    }, 
+    "42-12-b-8": {
+        "op": "deleted"
+    }, 
+    "42-120": {
+        "op": "deleted"
+    }, 
+    "42-120-a": {
+        "op": "deleted"
+    }, 
+    "42-120-b": {
+        "op": "deleted"
+    }, 
+    "42-121": {
+        "op": "deleted"
+    }, 
+    "42-121-a": {
+        "op": "deleted"
+    }, 
+    "42-121-a-1": {
+        "op": "deleted"
+    }, 
+    "42-121-a-2": {
+        "op": "deleted"
+    }, 
+    "42-121-a-2-i": {
+        "op": "deleted"
+    }, 
+    "42-121-a-2-ii": {
+        "op": "deleted"
+    }, 
+    "42-121-a-3": {
+        "op": "deleted"
+    }, 
+    "42-121-b": {
+        "op": "deleted"
+    }, 
+    "42-121-b-1": {
+        "op": "deleted"
+    }, 
+    "42-121-b-2": {
+        "op": "deleted"
+    }, 
+    "42-121-c": {
+        "op": "deleted"
+    }, 
+    "42-122": {
+        "op": "deleted"
+    }, 
+    "42-122-a": {
+        "op": "deleted"
+    }, 
+    "42-122-b": {
+        "op": "deleted"
+    }, 
+    "42-123": {
+        "op": "deleted"
+    }, 
+    "42-123-a": {
+        "op": "deleted"
+    }, 
+    "42-123-a-1": {
+        "op": "deleted"
+    }, 
+    "42-123-a-2": {
+        "op": "deleted"
+    }, 
+    "42-123-b": {
+        "op": "deleted"
+    }, 
+    "42-123-c": {
+        "op": "deleted"
+    }, 
+    "42-13": {
+        "op": "deleted"
+    }, 
+    "42-13-a": {
+        "op": "deleted"
+    }, 
+    "42-13-b": {
+        "op": "deleted"
+    }, 
+    "42-13-c": {
+        "op": "deleted"
+    }, 
+    "42-13-d": {
+        "op": "deleted"
+    }, 
+    "42-14": {
+        "op": "deleted"
+    }, 
+    "42-14-p1": {
+        "op": "deleted"
+    }, 
+    "42-14-p2": {
+        "op": "deleted"
+    }, 
+    "42-15": {
+        "op": "deleted"
+    }, 
+    "42-15-a": {
+        "op": "deleted"
+    }, 
+    "42-15-a-1": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "15", 
+                "a", 
+                "1"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(1) <E T=\"03\">Inter Partes</E> Review request fee: $9,000.00.", 
+            "text": "(1) Inter Partes Review request fee: $9,000.00.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-15-a-2": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "15", 
+                "a", 
+                "2"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(2) <E T=\"03\">Inter Partes</E> Review Post-Institution fee: $14,000.00.", 
+            "text": "(2) Inter Partes Review Post-Institution fee: $14,000.00.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-15-a-3": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "15", 
+                "a", 
+                "3"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(3) In addition to the <E T=\"03\">Inter Partes</E> Review request fee, for requesting review of each claim in excess of 20: $200.00.", 
+            "text": "(3) In addition to the Inter Partes Review request fee, for requesting review of each claim in excess of 20: $200.00.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-15-a-4": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "15", 
+                "a", 
+                "4"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(4) In addition to the <E T=\"03\">Inter Partes</E> Post-Institution request fee, for requesting review of each claim in excess of 15: $400.00.", 
+            "text": "(4) In addition to the Inter Partes Post-Institution request fee, for requesting review of each claim in excess of 15: $400.00.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-15-a-p1": {
+        "op": "deleted"
+    }, 
+    "42-15-b": {
+        "op": "deleted"
+    }, 
+    "42-15-b-1": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "15", 
+                "b", 
+                "1"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(1) Post-Grant or Covered Business Method Patent Review  request fee: $12,000.00.", 
+            "text": "(1) Post-Grant or Covered Business Method Patent Review  request fee: $12,000.00.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-15-b-2": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "15", 
+                "b", 
+                "2"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(2) Post-Grant or Covered Business Method Patent Review  Post-Institution fee: $18,000.00.", 
+            "text": "(2) Post-Grant or Covered Business Method Patent Review  Post-Institution fee: $18,000.00.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-15-b-3": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "15", 
+                "b", 
+                "3"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(3) In addition to the Post-Grant or Covered Business Method Patent Review request fee, for requesting review of each claim in excess of 20: $250.00.", 
+            "text": "(3) In addition to the Post-Grant or Covered Business Method Patent Review request fee, for requesting review of each claim in excess of 20: $250.00.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-15-b-4": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "15", 
+                "b", 
+                "4"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(4) In addition to the Post-Grant or Covered Business Method Patent Review request fee Post-Institution request fee, for requesting review of each claim in excess of 15: $550.00.", 
+            "text": "(4) In addition to the Post-Grant or Covered Business Method Patent Review request fee Post-Institution request fee, for requesting review of each claim in excess of 15: $550.00.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-15-b-p1": {
+        "op": "deleted"
+    }, 
+    "42-15-c": {
+        "node": {
+            "child_labels": [
+                "42-15-c-1"
+            ], 
+            "label": [
+                "42", 
+                "15", 
+                "c"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(c) On the filing of a petition for a derivation proceeding, payment of the following fees is due:", 
+            "text": "(c) On the filing of a petition for a derivation proceeding, payment of the following fees is due:", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-15-c-1": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "15", 
+                "c", 
+                "1"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(1) Derivation petition fee: $400.00.", 
+            "text": "(1) Derivation petition fee: $400.00.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-15-d": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "15", 
+                "d"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(d) Any request requiring payment of a fee under this part, including a written request to make a settlement agreement available: $400.00.", 
+            "text": "(d) Any request requiring payment of a fee under this part, including a written request to make a settlement agreement available: $400.00.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-15-e": {
+        "op": "deleted"
+    }, 
+    "42-15-f": {
+        "op": "deleted"
+    }, 
+    "42-15-f-p1": {
+        "op": "deleted"
+    }, 
+    "42-2": {
+        "op": "deleted"
+    }, 
+    "42-2-p1": {
+        "op": "deleted"
+    }, 
+    "42-2-p111137700": {
+        "op": "deleted"
+    }, 
+    "42-2-p1296629014": {
+        "op": "deleted"
+    }, 
+    "42-2-p1488122627": {
+        "op": "deleted"
+    }, 
+    "42-2-p1883294578": {
+        "op": "deleted"
+    }, 
+    "42-2-p2086952650": {
+        "op": "deleted"
+    }, 
+    "42-2-p2227089800": {
+        "op": "deleted"
+    }, 
+    "42-2-p2661673341": {
+        "op": "deleted"
+    }, 
+    "42-2-p2661673341-1": {
+        "op": "deleted"
+    }, 
+    "42-2-p2661673341-2": {
+        "op": "deleted"
+    }, 
+    "42-2-p2714331254": {
+        "op": "deleted"
+    }, 
+    "42-2-p2862969711": {
+        "op": "deleted"
+    }, 
+    "42-2-p3412731470": {
+        "op": "deleted"
+    }, 
+    "42-2-p3583296204": {
+        "op": "deleted"
+    }, 
+    "42-2-p3596080049": {
+        "op": "deleted"
+    }, 
+    "42-2-p3863114839": {
+        "op": "deleted"
+    }, 
+    "42-2-p4032435479": {
+        "op": "deleted"
+    }, 
+    "42-2-p497300670": {
+        "op": "deleted"
+    }, 
+    "42-2-p727466738": {
+        "op": "deleted"
+    }, 
+    "42-2-p867810359": {
+        "op": "deleted"
+    }, 
+    "42-2-p883369453": {
+        "op": "deleted"
+    }, 
+    "42-20": {
+        "op": "deleted"
+    }, 
+    "42-20-a": {
+        "op": "deleted"
+    }, 
+    "42-20-b": {
+        "op": "deleted"
+    }, 
+    "42-20-c": {
+        "op": "deleted"
+    }, 
+    "42-20-d": {
+        "op": "deleted"
+    }, 
+    "42-200": {
+        "op": "deleted"
+    }, 
+    "42-200-a": {
+        "op": "deleted"
+    }, 
+    "42-200-b": {
+        "op": "deleted"
+    }, 
+    "42-200-c": {
+        "op": "deleted"
+    }, 
+    "42-200-d": {
+        "op": "deleted"
+    }, 
+    "42-201": {
+        "op": "deleted"
+    }, 
+    "42-201-a": {
+        "op": "deleted"
+    }, 
+    "42-201-b": {
+        "op": "deleted"
+    }, 
+    "42-202": {
+        "op": "deleted"
+    }, 
+    "42-202-a": {
+        "op": "deleted"
+    }, 
+    "42-202-b": {
+        "op": "deleted"
+    }, 
+    "42-203": {
+        "op": "deleted"
+    }, 
+    "42-203-a": {
+        "op": "deleted"
+    }, 
+    "42-203-b": {
+        "op": "deleted"
+    }, 
+    "42-204": {
+        "op": "deleted"
+    }, 
+    "42-204-a": {
+        "op": "deleted"
+    }, 
+    "42-204-b": {
+        "op": "deleted"
+    }, 
+    "42-204-b-1": {
+        "op": "deleted"
+    }, 
+    "42-204-b-2": {
+        "op": "deleted"
+    }, 
+    "42-204-b-3": {
+        "op": "deleted"
+    }, 
+    "42-204-b-4": {
+        "op": "deleted"
+    }, 
+    "42-204-b-5": {
+        "op": "deleted"
+    }, 
+    "42-204-c": {
+        "op": "deleted"
+    }, 
+    "42-205": {
+        "op": "deleted"
+    }, 
+    "42-205-a": {
+        "op": "deleted"
+    }, 
+    "42-205-b": {
+        "op": "deleted"
+    }, 
+    "42-206": {
+        "op": "deleted"
+    }, 
+    "42-206-a": {
+        "op": "deleted"
+    }, 
+    "42-206-a-1": {
+        "op": "deleted"
+    }, 
+    "42-206-a-2": {
+        "op": "deleted"
+    }, 
+    "42-206-a-3": {
+        "op": "deleted"
+    }, 
+    "42-206-b": {
+        "op": "deleted"
+    }, 
+    "42-207": {
+        "op": "deleted"
+    }, 
+    "42-207-a": {
+        "op": "deleted"
+    }, 
+    "42-207-b": {
+        "op": "deleted"
+    }, 
+    "42-207-c": {
+        "op": "deleted"
+    }, 
+    "42-207-d": {
+        "op": "deleted"
+    }, 
+    "42-207-e": {
+        "op": "deleted"
+    }, 
+    "42-207-e-p1": {
+        "op": "deleted"
+    }, 
+    "42-208": {
+        "op": "deleted"
+    }, 
+    "42-208-a": {
+        "op": "deleted"
+    }, 
+    "42-208-b": {
+        "op": "deleted"
+    }, 
+    "42-208-c": {
+        "op": "deleted"
+    }, 
+    "42-208-d": {
+        "op": "deleted"
+    }, 
+    "42-208-d-p1": {
+        "op": "deleted"
+    }, 
+    "42-21": {
+        "op": "deleted"
+    }, 
+    "42-21-a": {
+        "op": "deleted"
+    }, 
+    "42-21-b": {
+        "op": "deleted"
+    }, 
+    "42-21-c": {
+        "op": "deleted"
+    }, 
+    "42-21-c-1": {
+        "op": "deleted"
+    }, 
+    "42-21-c-2": {
+        "op": "deleted"
+    }, 
+    "42-21-c-3": {
+        "op": "deleted"
+    }, 
+    "42-21-d": {
+        "op": "deleted"
+    }, 
+    "42-22": {
+        "op": "deleted"
+    }, 
+    "42-22-a": {
+        "op": "deleted"
+    }, 
+    "42-22-a-1": {
+        "op": "deleted"
+    }, 
+    "42-22-a-2": {
+        "op": "deleted"
+    }, 
+    "42-22-b": {
+        "op": "deleted"
+    }, 
+    "42-22-c": {
+        "op": "deleted"
+    }, 
+    "42-22-d": {
+        "op": "deleted"
+    }, 
+    "42-220": {
+        "op": "deleted"
+    }, 
+    "42-220-a": {
+        "op": "deleted"
+    }, 
+    "42-220-b": {
+        "op": "deleted"
+    }, 
+    "42-221": {
+        "op": "deleted"
+    }, 
+    "42-221-a": {
+        "op": "deleted"
+    }, 
+    "42-221-a-1": {
+        "op": "deleted"
+    }, 
+    "42-221-a-2": {
+        "op": "deleted"
+    }, 
+    "42-221-a-2-i": {
+        "op": "deleted"
+    }, 
+    "42-221-a-2-ii": {
+        "op": "deleted"
+    }, 
+    "42-221-a-3": {
+        "op": "deleted"
+    }, 
+    "42-221-b": {
+        "op": "deleted"
+    }, 
+    "42-221-b-1": {
+        "op": "deleted"
+    }, 
+    "42-221-b-2": {
+        "op": "deleted"
+    }, 
+    "42-221-c": {
+        "op": "deleted"
+    }, 
+    "42-222": {
+        "op": "deleted"
+    }, 
+    "42-222-a": {
+        "op": "deleted"
+    }, 
+    "42-222-b": {
+        "op": "deleted"
+    }, 
+    "42-223": {
+        "op": "deleted"
+    }, 
+    "42-223-a": {
+        "op": "deleted"
+    }, 
+    "42-223-a-1": {
+        "op": "deleted"
+    }, 
+    "42-223-a-2": {
+        "op": "deleted"
+    }, 
+    "42-223-b": {
+        "op": "deleted"
+    }, 
+    "42-223-c": {
+        "op": "deleted"
+    }, 
+    "42-224": {
+        "op": "deleted"
+    }, 
+    "42-224-a": {
+        "op": "deleted"
+    }, 
+    "42-224-b": {
+        "op": "deleted"
+    }, 
+    "42-23": {
+        "op": "deleted"
+    }, 
+    "42-23-a": {
+        "op": "deleted"
+    }, 
+    "42-23-b": {
+        "op": "deleted"
+    }, 
+    "42-24": {
+        "op": "deleted"
+    }, 
+    "42-24-a": {
+        "op": "deleted"
+    }, 
+    "42-24-a-1": {
+        "op": "deleted"
+    }, 
+    "42-24-a-1-i": {
+        "op": "deleted"
+    }, 
+    "42-24-a-1-ii": {
+        "op": "deleted"
+    }, 
+    "42-24-a-1-iii": {
+        "op": "deleted"
+    }, 
+    "42-24-a-1-iv": {
+        "op": "deleted"
+    }, 
+    "42-24-a-1-v": {
+        "op": "deleted"
+    }, 
+    "42-24-a-2": {
+        "op": "deleted"
+    }, 
+    "42-24-b": {
+        "op": "deleted"
+    }, 
+    "42-24-b-1": {
+        "op": "deleted"
+    }, 
+    "42-24-b-2": {
+        "op": "deleted"
+    }, 
+    "42-24-b-3": {
+        "op": "deleted"
+    }, 
+    "42-24-c": {
+        "op": "deleted"
+    }, 
+    "42-24-c-1": {
+        "op": "deleted"
+    }, 
+    "42-24-c-2": {
+        "op": "deleted"
+    }, 
+    "42-25": {
+        "op": "deleted"
+    }, 
+    "42-25-a": {
+        "op": "deleted"
+    }, 
+    "42-25-a-1": {
+        "op": "deleted"
+    }, 
+    "42-25-a-2": {
+        "op": "deleted"
+    }, 
+    "42-25-b": {
+        "op": "deleted"
+    }, 
+    "42-25-b-p1": {
+        "op": "deleted"
+    }, 
+    "42-3": {
+        "op": "deleted"
+    }, 
+    "42-3-a": {
+        "op": "deleted"
+    }, 
+    "42-3-b": {
+        "op": "deleted"
+    }, 
+    "42-4": {
+        "op": "deleted"
+    }, 
+    "42-4-a": {
+        "op": "deleted"
+    }, 
+    "42-4-b": {
+        "op": "deleted"
+    }, 
+    "42-4-c": {
+        "op": "deleted"
+    }, 
+    "42-4-c-1": {
+        "op": "deleted"
+    }, 
+    "42-4-c-2": {
+        "op": "deleted"
+    }, 
+    "42-401": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                1
+            ], 
+            [
+                "insert", 
+                1, 
+                [
+                    "42-401-p3236262177", 
+                    "42-401-p4087684105", 
+                    "42-401-p3523239106", 
+                    "42-401-p4195112412", 
+                    "42-401-p2862969711", 
+                    "42-401-p1169036493"
+                ]
+            ], 
+            [
+                "equal", 
+                1, 
+                2
+            ], 
+            [
+                "delete", 
+                2, 
+                8
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "42-406-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    89, 
+                    102
+                ], 
+                [
+                    "insert", 
+                    89, 
+                    "Priority Mail Express\u00ae"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    148, 
+                    162
+                ], 
+                [
+                    "insert", 
+                    148, 
+                    "Priority Mail Express\u00ae."
+                ]
+            ]
+        ]
+    }, 
+    "42-407-b": {
+        "child_ops": [
+            [
+                "delete", 
+                0, 
+                1
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "42-407-b-p1": {
+        "op": "deleted"
+    }, 
+    "42-408": {
+        "op": "deleted"
+    }, 
+    "42-408-a": {
+        "op": "deleted"
+    }, 
+    "42-408-b": {
+        "op": "deleted"
+    }, 
+    "42-408-b-p1": {
+        "op": "deleted"
+    }, 
+    "42-409": {
+        "op": "deleted"
+    }, 
+    "42-410": {
+        "op": "deleted"
+    }, 
+    "42-410-a": {
+        "op": "deleted"
+    }, 
+    "42-410-b": {
+        "op": "deleted"
+    }, 
+    "42-410-b-1": {
+        "op": "deleted"
+    }, 
+    "42-410-b-2": {
+        "op": "deleted"
+    }, 
+    "42-410-b-3": {
+        "op": "deleted"
+    }, 
+    "42-410-b-3-i": {
+        "op": "deleted"
+    }, 
+    "42-410-b-3-ii": {
+        "op": "deleted"
+    }, 
+    "42-410-b-3-iii": {
+        "op": "deleted"
+    }, 
+    "42-410-b-3-iv": {
+        "op": "deleted"
+    }, 
+    "42-410-b-3-v": {
+        "op": "deleted"
+    }, 
+    "42-410-b-3-vi": {
+        "op": "deleted"
+    }, 
+    "42-410-c": {
+        "op": "deleted"
+    }, 
+    "42-410-d": {
+        "op": "deleted"
+    }, 
+    "42-410-e": {
+        "op": "deleted"
+    }, 
+    "42-410-e-1": {
+        "op": "deleted"
+    }, 
+    "42-410-e-2": {
+        "op": "deleted"
+    }, 
+    "42-410-e-3": {
+        "op": "deleted"
+    }, 
+    "42-410-e-4": {
+        "op": "deleted"
+    }, 
+    "42-410-f": {
+        "op": "deleted"
+    }, 
+    "42-411": {
+        "op": "deleted"
+    }, 
+    "42-412": {
+        "op": "deleted"
+    }, 
+    "42-412-a": {
+        "op": "deleted"
+    }, 
+    "42-412-a-1": {
+        "op": "deleted"
+    }, 
+    "42-412-a-2": {
+        "op": "deleted"
+    }, 
+    "42-412-b": {
+        "op": "deleted"
+    }, 
+    "42-412-b-1": {
+        "op": "deleted"
+    }, 
+    "42-412-b-2": {
+        "op": "deleted"
+    }, 
+    "42-5": {
+        "op": "deleted"
+    }, 
+    "42-5-a": {
+        "op": "deleted"
+    }, 
+    "42-5-b": {
+        "op": "deleted"
+    }, 
+    "42-5-c": {
+        "op": "deleted"
+    }, 
+    "42-5-c-1": {
+        "op": "deleted"
+    }, 
+    "42-5-c-2": {
+        "op": "deleted"
+    }, 
+    "42-5-c-3": {
+        "op": "deleted"
+    }, 
+    "42-5-d": {
+        "op": "deleted"
+    }, 
+    "42-51": {
+        "op": "deleted"
+    }, 
+    "42-51-a": {
+        "op": "deleted"
+    }, 
+    "42-51-a-1": {
+        "op": "deleted"
+    }, 
+    "42-51-a-1-i": {
+        "op": "deleted"
+    }, 
+    "42-51-a-1-ii": {
+        "op": "deleted"
+    }, 
+    "42-51-a-2": {
+        "op": "deleted"
+    }, 
+    "42-51-b": {
+        "op": "deleted"
+    }, 
+    "42-51-b-1": {
+        "op": "deleted"
+    }, 
+    "42-51-b-1-i": {
+        "op": "deleted"
+    }, 
+    "42-51-b-1-ii": {
+        "op": "deleted"
+    }, 
+    "42-51-b-1-iii": {
+        "op": "deleted"
+    }, 
+    "42-51-b-2": {
+        "op": "deleted"
+    }, 
+    "42-51-b-2-i": {
+        "op": "deleted"
+    }, 
+    "42-51-b-2-ii": {
+        "op": "deleted"
+    }, 
+    "42-51-c": {
+        "op": "deleted"
+    }, 
+    "42-52": {
+        "op": "deleted"
+    }, 
+    "42-52-a": {
+        "op": "deleted"
+    }, 
+    "42-52-a-1": {
+        "op": "deleted"
+    }, 
+    "42-52-a-2": {
+        "op": "deleted"
+    }, 
+    "42-52-b": {
+        "op": "deleted"
+    }, 
+    "42-52-b-1": {
+        "op": "deleted"
+    }, 
+    "42-52-b-1-i": {
+        "op": "deleted"
+    }, 
+    "42-52-b-1-ii": {
+        "op": "deleted"
+    }, 
+    "42-52-b-2": {
+        "op": "deleted"
+    }, 
+    "42-52-b-2-i": {
+        "op": "deleted"
+    }, 
+    "42-52-b-2-ii": {
+        "op": "deleted"
+    }, 
+    "42-53": {
+        "op": "deleted"
+    }, 
+    "42-53-a": {
+        "op": "deleted"
+    }, 
+    "42-53-b": {
+        "op": "deleted"
+    }, 
+    "42-53-b-1": {
+        "op": "deleted"
+    }, 
+    "42-53-b-2": {
+        "op": "deleted"
+    }, 
+    "42-53-b-3": {
+        "op": "deleted"
+    }, 
+    "42-53-c": {
+        "op": "deleted"
+    }, 
+    "42-53-c-1": {
+        "op": "deleted"
+    }, 
+    "42-53-c-2": {
+        "op": "deleted"
+    }, 
+    "42-53-d": {
+        "op": "deleted"
+    }, 
+    "42-53-d-1": {
+        "op": "deleted"
+    }, 
+    "42-53-d-2": {
+        "op": "deleted"
+    }, 
+    "42-53-d-3": {
+        "op": "deleted"
+    }, 
+    "42-53-d-3-i": {
+        "op": "deleted"
+    }, 
+    "42-53-d-3-ii": {
+        "op": "deleted"
+    }, 
+    "42-53-d-4": {
+        "op": "deleted"
+    }, 
+    "42-53-d-5": {
+        "op": "deleted"
+    }, 
+    "42-53-d-5-i": {
+        "op": "deleted"
+    }, 
+    "42-53-d-5-i-A": {
+        "op": "deleted"
+    }, 
+    "42-53-d-5-i-B": {
+        "op": "deleted"
+    }, 
+    "42-53-d-5-i-C": {
+        "op": "deleted"
+    }, 
+    "42-53-d-5-i-D": {
+        "op": "deleted"
+    }, 
+    "42-53-d-5-ii": {
+        "op": "deleted"
+    }, 
+    "42-53-d-5-iii": {
+        "op": "deleted"
+    }, 
+    "42-53-d-5-iv": {
+        "op": "deleted"
+    }, 
+    "42-53-d-6": {
+        "op": "deleted"
+    }, 
+    "42-53-e": {
+        "op": "deleted"
+    }, 
+    "42-53-f": {
+        "op": "deleted"
+    }, 
+    "42-53-f-1": {
+        "op": "deleted"
+    }, 
+    "42-53-f-2": {
+        "op": "deleted"
+    }, 
+    "42-53-f-3": {
+        "op": "deleted"
+    }, 
+    "42-53-f-4": {
+        "op": "deleted"
+    }, 
+    "42-53-f-5": {
+        "op": "deleted"
+    }, 
+    "42-53-f-5-i": {
+        "op": "deleted"
+    }, 
+    "42-53-f-5-ii": {
+        "op": "deleted"
+    }, 
+    "42-53-f-5-iii": {
+        "op": "deleted"
+    }, 
+    "42-53-f-6": {
+        "op": "deleted"
+    }, 
+    "42-53-f-6-i": {
+        "op": "deleted"
+    }, 
+    "42-53-f-6-ii": {
+        "op": "deleted"
+    }, 
+    "42-53-f-6-iii": {
+        "op": "deleted"
+    }, 
+    "42-53-f-6-iv": {
+        "op": "deleted"
+    }, 
+    "42-53-f-6-v": {
+        "op": "deleted"
+    }, 
+    "42-53-f-6-vi": {
+        "op": "deleted"
+    }, 
+    "42-53-f-6-vii": {
+        "op": "deleted"
+    }, 
+    "42-53-f-7": {
+        "op": "deleted"
+    }, 
+    "42-53-f-8": {
+        "op": "deleted"
+    }, 
+    "42-53-g": {
+        "op": "deleted"
+    }, 
+    "42-54": {
+        "op": "deleted"
+    }, 
+    "42-54-a": {
+        "op": "deleted"
+    }, 
+    "42-54-a-1": {
+        "op": "deleted"
+    }, 
+    "42-54-a-2": {
+        "op": "deleted"
+    }, 
+    "42-54-a-3": {
+        "op": "deleted"
+    }, 
+    "42-54-a-4": {
+        "op": "deleted"
+    }, 
+    "42-54-a-5": {
+        "op": "deleted"
+    }, 
+    "42-54-a-6": {
+        "op": "deleted"
+    }, 
+    "42-54-a-7": {
+        "op": "deleted"
+    }, 
+    "42-54-a-8": {
+        "op": "deleted"
+    }, 
+    "42-54-b": {
+        "op": "deleted"
+    }, 
+    "42-55": {
+        "op": "deleted"
+    }, 
+    "42-55-a": {
+        "op": "deleted"
+    }, 
+    "42-55-b": {
+        "op": "deleted"
+    }, 
+    "42-55-b-1": {
+        "op": "deleted"
+    }, 
+    "42-55-b-2": {
+        "op": "deleted"
+    }, 
+    "42-55-b-3": {
+        "op": "deleted"
+    }, 
+    "42-56": {
+        "op": "deleted"
+    }, 
+    "42-6": {
+        "op": "deleted"
+    }, 
+    "42-6-a": {
+        "op": "deleted"
+    }, 
+    "42-6-a-1": {
+        "op": "deleted"
+    }, 
+    "42-6-a-2": {
+        "op": "deleted"
+    }, 
+    "42-6-a-2-i": {
+        "op": "deleted"
+    }, 
+    "42-6-a-2-ii": {
+        "op": "deleted"
+    }, 
+    "42-6-a-2-ii-A": {
+        "op": "deleted"
+    }, 
+    "42-6-a-2-ii-B": {
+        "op": "deleted"
+    }, 
+    "42-6-a-2-iii": {
+        "op": "deleted"
+    }, 
+    "42-6-a-2-iv": {
+        "op": "deleted"
+    }, 
+    "42-6-a-3": {
+        "op": "deleted"
+    }, 
+    "42-6-a-4": {
+        "op": "deleted"
+    }, 
+    "42-6-b": {
+        "op": "deleted"
+    }, 
+    "42-6-b-1": {
+        "op": "deleted"
+    }, 
+    "42-6-b-2": {
+        "op": "deleted"
+    }, 
+    "42-6-b-2-i": {
+        "op": "deleted"
+    }, 
+    "42-6-b-2-i-A": {
+        "op": "deleted"
+    }, 
+    "42-6-b-2-i-B": {
+        "op": "deleted"
+    }, 
+    "42-6-b-2-ii": {
+        "op": "deleted"
+    }, 
+    "42-6-c": {
+        "op": "deleted"
+    }, 
+    "42-6-d": {
+        "op": "deleted"
+    }, 
+    "42-6-e": {
+        "op": "deleted"
+    }, 
+    "42-6-e-1": {
+        "op": "deleted"
+    }, 
+    "42-6-e-2": {
+        "op": "deleted"
+    }, 
+    "42-6-e-3": {
+        "op": "deleted"
+    }, 
+    "42-6-e-4": {
+        "op": "deleted"
+    }, 
+    "42-6-e-4-i": {
+        "op": "deleted"
+    }, 
+    "42-6-e-4-ii": {
+        "op": "deleted"
+    }, 
+    "42-6-e-4-iii": {
+        "op": "deleted"
+    }, 
+    "42-6-e-4-iii-A": {
+        "op": "deleted"
+    }, 
+    "42-6-e-4-iii-B": {
+        "op": "deleted"
+    }, 
+    "42-61": {
+        "op": "deleted"
+    }, 
+    "42-61-a": {
+        "op": "deleted"
+    }, 
+    "42-61-b": {
+        "op": "deleted"
+    }, 
+    "42-61-c": {
+        "op": "deleted"
+    }, 
+    "42-62": {
+        "op": "deleted"
+    }, 
+    "42-62-a": {
+        "op": "deleted"
+    }, 
+    "42-62-b": {
+        "op": "deleted"
+    }, 
+    "42-62-c": {
+        "op": "deleted"
+    }, 
+    "42-62-c-p1087019701": {
+        "op": "deleted"
+    }, 
+    "42-62-c-p111137700": {
+        "op": "deleted"
+    }, 
+    "42-62-c-p2877555302": {
+        "op": "deleted"
+    }, 
+    "42-62-c-p3413788923": {
+        "op": "deleted"
+    }, 
+    "42-62-c-p599320003": {
+        "op": "deleted"
+    }, 
+    "42-62-c-p867810359": {
+        "op": "deleted"
+    }, 
+    "42-62-d": {
+        "op": "deleted"
+    }, 
+    "42-63": {
+        "op": "deleted"
+    }, 
+    "42-63-a": {
+        "op": "deleted"
+    }, 
+    "42-63-b": {
+        "op": "deleted"
+    }, 
+    "42-63-c": {
+        "op": "deleted"
+    }, 
+    "42-63-d": {
+        "op": "deleted"
+    }, 
+    "42-63-d-1": {
+        "op": "deleted"
+    }, 
+    "42-63-d-1-i": {
+        "op": "deleted"
+    }, 
+    "42-63-d-1-ii": {
+        "op": "deleted"
+    }, 
+    "42-63-d-2": {
+        "op": "deleted"
+    }, 
+    "42-63-d-2-i": {
+        "op": "deleted"
+    }, 
+    "42-63-d-2-ii": {
+        "op": "deleted"
+    }, 
+    "42-63-e": {
+        "op": "deleted"
+    }, 
+    "42-64": {
+        "op": "deleted"
+    }, 
+    "42-64-a": {
+        "op": "deleted"
+    }, 
+    "42-64-b": {
+        "op": "deleted"
+    }, 
+    "42-64-b-1": {
+        "op": "deleted"
+    }, 
+    "42-64-b-2": {
+        "op": "deleted"
+    }, 
+    "42-64-c": {
+        "op": "deleted"
+    }, 
+    "42-65": {
+        "op": "deleted"
+    }, 
+    "42-65-a": {
+        "op": "deleted"
+    }, 
+    "42-65-b": {
+        "op": "deleted"
+    }, 
+    "42-65-b-1": {
+        "op": "deleted"
+    }, 
+    "42-65-b-2": {
+        "op": "deleted"
+    }, 
+    "42-65-b-3": {
+        "op": "deleted"
+    }, 
+    "42-65-b-4": {
+        "op": "deleted"
+    }, 
+    "42-65-b-5": {
+        "op": "deleted"
+    }, 
+    "42-65-b-5-p1": {
+        "op": "deleted"
+    }, 
+    "42-7": {
+        "op": "deleted"
+    }, 
+    "42-7-a": {
+        "op": "deleted"
+    }, 
+    "42-7-b": {
+        "op": "deleted"
+    }, 
+    "42-70": {
+        "op": "deleted"
+    }, 
+    "42-70-a": {
+        "op": "deleted"
+    }, 
+    "42-70-b": {
+        "op": "deleted"
+    }, 
+    "42-71": {
+        "op": "deleted"
+    }, 
+    "42-71-a": {
+        "op": "deleted"
+    }, 
+    "42-71-b": {
+        "op": "deleted"
+    }, 
+    "42-71-c": {
+        "op": "deleted"
+    }, 
+    "42-71-d": {
+        "op": "deleted"
+    }, 
+    "42-71-d-1": {
+        "op": "deleted"
+    }, 
+    "42-71-d-2": {
+        "op": "deleted"
+    }, 
+    "42-72": {
+        "op": "deleted"
+    }, 
+    "42-73": {
+        "op": "deleted"
+    }, 
+    "42-73-a": {
+        "op": "deleted"
+    }, 
+    "42-73-b": {
+        "op": "deleted"
+    }, 
+    "42-73-b-1": {
+        "op": "deleted"
+    }, 
+    "42-73-b-2": {
+        "op": "deleted"
+    }, 
+    "42-73-b-3": {
+        "op": "deleted"
+    }, 
+    "42-73-b-4": {
+        "op": "deleted"
+    }, 
+    "42-73-c": {
+        "op": "deleted"
+    }, 
+    "42-73-d": {
+        "op": "deleted"
+    }, 
+    "42-73-d-1": {
+        "op": "deleted"
+    }, 
+    "42-73-d-2": {
+        "op": "deleted"
+    }, 
+    "42-73-d-3": {
+        "op": "deleted"
+    }, 
+    "42-73-d-3-i": {
+        "op": "deleted"
+    }, 
+    "42-73-d-3-ii": {
+        "op": "deleted"
+    }, 
+    "42-74": {
+        "op": "deleted"
+    }, 
+    "42-74-a": {
+        "op": "deleted"
+    }, 
+    "42-74-b": {
+        "op": "deleted"
+    }, 
+    "42-74-c": {
+        "op": "deleted"
+    }, 
+    "42-74-c-1": {
+        "op": "deleted"
+    }, 
+    "42-74-c-2": {
+        "op": "deleted"
+    }, 
+    "42-74-c-2-p1": {
+        "op": "deleted"
+    }, 
+    "42-8": {
+        "op": "deleted"
+    }, 
+    "42-8-a": {
+        "op": "deleted"
+    }, 
+    "42-8-a-1": {
+        "op": "deleted"
+    }, 
+    "42-8-a-2": {
+        "op": "deleted"
+    }, 
+    "42-8-a-3": {
+        "op": "deleted"
+    }, 
+    "42-8-b": {
+        "op": "deleted"
+    }, 
+    "42-8-b-1": {
+        "op": "deleted"
+    }, 
+    "42-8-b-2": {
+        "op": "deleted"
+    }, 
+    "42-8-b-3": {
+        "op": "deleted"
+    }, 
+    "42-8-b-4": {
+        "op": "deleted"
+    }, 
+    "42-8-b-4-i": {
+        "op": "deleted"
+    }, 
+    "42-8-b-4-ii": {
+        "op": "deleted"
+    }, 
+    "42-8-b-4-iii": {
+        "op": "deleted"
+    }, 
+    "42-8-b-4-iv": {
+        "op": "deleted"
+    }, 
+    "42-8-b-4-v": {
+        "op": "deleted"
+    }, 
+    "42-80": {
+        "op": "deleted"
+    }, 
+    "42-9": {
+        "op": "deleted"
+    }, 
+    "42-9-a": {
+        "op": "deleted"
+    }, 
+    "42-9-b": {
+        "op": "deleted"
+    }, 
+    "42-Subjgrp-AIoDP": {
+        "node": {
+            "child_labels": [
+                "42-409", 
+                "42-410", 
+                "42-411", 
+                "42-412"
+            ], 
+            "label": [
+                "42", 
+                "Subjgrp", 
+                "AIoDP"
+            ], 
+            "node_type": "subpart", 
+            "tagged_text": null, 
+            "text": "", 
+            "title": "After Institution of Derivation Proceeding"
+        }, 
+        "op": "added"
+    }, 
+    "42-Subjgrp-AIoIPR": {
+        "node": {
+            "child_labels": [
+                "42-120", 
+                "42-121", 
+                "42-122", 
+                "42-123"
+            ], 
+            "label": [
+                "42", 
+                "Subjgrp", 
+                "AIoIPR"
+            ], 
+            "node_type": "subpart", 
+            "tagged_text": null, 
+            "text": "", 
+            "title": "After Institution of Inter Partes Review"
+        }, 
+        "op": "added"
+    }, 
+    "42-Subjgrp-AIoPR": {
+        "node": {
+            "child_labels": [
+                "42-220", 
+                "42-221", 
+                "42-222", 
+                "42-223", 
+                "42-224"
+            ], 
+            "label": [
+                "42", 
+                "Subjgrp", 
+                "AIoPR"
+            ], 
+            "node_type": "subpart", 
+            "tagged_text": null, 
+            "text": "", 
+            "title": "After Institution of Post-Grant Review"
+        }, 
+        "op": "added"
+    }, 
+    "42-Subjgrp-Ce": {
+        "node": {
+            "child_labels": [
+                "42-80"
+            ], 
+            "label": [
+                "42", 
+                "Subjgrp", 
+                "Ce"
+            ], 
+            "node_type": "subpart", 
+            "tagged_text": null, 
+            "text": "", 
+            "title": "Certificate"
+        }, 
+        "op": "added"
+    }, 
+    "42-Subjgrp-Fe": {
+        "node": {
+            "child_labels": [
+                "42-15"
+            ], 
+            "label": [
+                "42", 
+                "Subjgrp", 
+                "Fe"
+            ], 
+            "node_type": "subpart", 
+            "tagged_text": null, 
+            "text": "", 
+            "title": "Fees"
+        }, 
+        "op": "added"
+    }, 
+    "42-Subjgrp-Ge": {
+        "node": {
+            "child_labels": [
+                "42-1", 
+                "42-2", 
+                "42-3", 
+                "42-4", 
+                "42-5", 
+                "42-6", 
+                "42-7", 
+                "42-8", 
+                "42-9", 
+                "42-10", 
+                "42-11", 
+                "42-12", 
+                "42-13", 
+                "42-14"
+            ], 
+            "label": [
+                "42", 
+                "Subjgrp", 
+                "Ge"
+            ], 
+            "node_type": "subpart", 
+            "tagged_text": null, 
+            "text": "", 
+            "title": "General"
+        }, 
+        "op": "added"
+    }, 
+    "42-Subjgrp-Ge.": {
+        "node": {
+            "child_labels": [
+                "42-100", 
+                "42-101", 
+                "42-102", 
+                "42-103", 
+                "42-104", 
+                "42-105", 
+                "42-106", 
+                "42-107"
+            ], 
+            "label": [
+                "42", 
+                "Subjgrp", 
+                "Ge."
+            ], 
+            "node_type": "subpart", 
+            "tagged_text": null, 
+            "text": "", 
+            "title": "General"
+        }, 
+        "op": "added"
+    }, 
+    "42-Subjgrp-Gen": {
+        "node": {
+            "child_labels": [
+                "42-200", 
+                "42-201", 
+                "42-202", 
+                "42-203", 
+                "42-204", 
+                "42-205", 
+                "42-206", 
+                "42-207"
+            ], 
+            "label": [
+                "42", 
+                "Subjgrp", 
+                "Gen"
+            ], 
+            "node_type": "subpart", 
+            "tagged_text": null, 
+            "text": "", 
+            "title": "General"
+        }, 
+        "op": "added"
+    }, 
+    "42-Subjgrp-IDP": {
+        "node": {
+            "child_labels": [
+                "42-408"
+            ], 
+            "label": [
+                "42", 
+                "Subjgrp", 
+                "IDP"
+            ], 
+            "node_type": "subpart", 
+            "tagged_text": null, 
+            "text": "", 
+            "title": "Instituting Derivation Proceeding"
+        }, 
+        "op": "added"
+    }, 
+    "42-Subjgrp-IIPR": {
+        "node": {
+            "child_labels": [
+                "42-108"
+            ], 
+            "label": [
+                "42", 
+                "Subjgrp", 
+                "IIPR"
+            ], 
+            "node_type": "subpart", 
+            "tagged_text": null, 
+            "text": "", 
+            "title": "Instituting Inter Partes Review"
+        }, 
+        "op": "added"
+    }, 
+    "42-Subjgrp-IPR": {
+        "node": {
+            "child_labels": [
+                "42-208"
+            ], 
+            "label": [
+                "42", 
+                "Subjgrp", 
+                "IPR"
+            ], 
+            "node_type": "subpart", 
+            "tagged_text": null, 
+            "text": "", 
+            "title": "Instituting Post-Grant Review"
+        }, 
+        "op": "added"
+    }, 
+    "42-Subjgrp-OADaS": {
+        "node": {
+            "child_labels": [
+                "42-70", 
+                "42-71", 
+                "42-72", 
+                "42-73", 
+                "42-74"
+            ], 
+            "label": [
+                "42", 
+                "Subjgrp", 
+                "OADaS"
+            ], 
+            "node_type": "subpart", 
+            "tagged_text": null, 
+            "text": "", 
+            "title": "Oral Argument, Decision, and Settlement"
+        }, 
+        "op": "added"
+    }, 
+    "42-Subjgrp-PaMP": {
+        "node": {
+            "child_labels": [
+                "42-20", 
+                "42-21", 
+                "42-22", 
+                "42-23", 
+                "42-24", 
+                "42-25"
+            ], 
+            "label": [
+                "42", 
+                "Subjgrp", 
+                "PaMP"
+            ], 
+            "node_type": "subpart", 
+            "tagged_text": null, 
+            "text": "", 
+            "title": "Petition and Motion Practice"
+        }, 
+        "op": "added"
+    }, 
+    "42-Subjgrp-TaP": {
+        "node": {
+            "child_labels": [
+                "42-51", 
+                "42-52", 
+                "42-53", 
+                "42-54", 
+                "42-55", 
+                "42-56", 
+                "42-61", 
+                "42-62", 
+                "42-63", 
+                "42-64", 
+                "42-65"
+            ], 
+            "label": [
+                "42", 
+                "Subjgrp", 
+                "TaP"
+            ], 
+            "node_type": "subpart", 
+            "tagged_text": null, 
+            "text": "", 
+            "title": "Testimony and Production"
+        }, 
+        "op": "added"
+    }, 
+    "42-Subpart-A": {
+        "child_ops": [
+            [
+                "delete", 
+                0, 
+                38
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "42-Subpart-B": {
+        "child_ops": [
+            [
+                "delete", 
+                0, 
+                13
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "42-Subpart-C": {
+        "child_ops": [
+            [
+                "delete", 
+                0, 
+                14
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "42-Subpart-E": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                8
+            ], 
+            [
+                "delete", 
+                8, 
+                13
+            ]
+        ], 
+        "op": "modified"
+    }
+}

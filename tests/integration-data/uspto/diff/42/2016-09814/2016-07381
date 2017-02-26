@@ -1,0 +1,29 @@
+{
+    "42-23-a": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    270, 
+                    281
+                ], 
+                [
+                    "insert", 
+                    270, 
+                    "denied.Any"
+                ]
+            ]
+        ]
+    }, 
+    "42-24-a-1": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                275, 
+                "grounds for standing under \u00a7 42.104, \u00a7 42.204, or \u00a7 42.304, "
+            ]
+        ]
+    }
+}

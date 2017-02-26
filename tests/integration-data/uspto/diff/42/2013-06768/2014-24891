@@ -1,0 +1,118 @@
+{
+    "42-105-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    89, 
+                    102
+                ], 
+                [
+                    "insert", 
+                    89, 
+                    "Priority Mail Express\u00ae"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    148, 
+                    162
+                ], 
+                [
+                    "insert", 
+                    148, 
+                    "Priority Mail Express\u00ae."
+                ]
+            ]
+        ]
+    }, 
+    "42-205-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    89, 
+                    102
+                ], 
+                [
+                    "insert", 
+                    89, 
+                    "Priority Mail Express\u00ae"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    148, 
+                    162
+                ], 
+                [
+                    "insert", 
+                    148, 
+                    "Priority Mail Express\u00ae."
+                ]
+            ]
+        ]
+    }, 
+    "42-406-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    89, 
+                    102
+                ], 
+                [
+                    "insert", 
+                    89, 
+                    "Priority Mail Express\u00ae"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    148, 
+                    162
+                ], 
+                [
+                    "insert", 
+                    148, 
+                    "Priority Mail Express\u00ae."
+                ]
+            ]
+        ]
+    }, 
+    "42-6-e-1": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    125, 
+                    138
+                ], 
+                [
+                    "insert", 
+                    125, 
+                    "Priority Mail Express\u00ae"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    184, 
+                    198
+                ], 
+                [
+                    "insert", 
+                    184, 
+                    "Priority Mail Express\u00ae."
+                ]
+            ]
+        ]
+    }
+}

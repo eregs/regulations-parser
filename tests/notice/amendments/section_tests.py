@@ -76,8 +76,8 @@ def test_find_section_lost():
 @pytest.fixture
 def content_plugin_installed(monkeypatch):
     # turn on the section plugin
-    monkeypatch.setattr(fetch, 'ExtensionManager', Mock(return_value=[
-        Mock(plugin=section.content_for_regtext)
+    monkeypatch.setattr(fetch, 'instantiate_if_possible', Mock(return_value=[
+        section.content_for_regtext
     ]))
 
 

@@ -1,0 +1,31 @@
+{
+    "42-301": {
+        "op": "deleted"
+    }, 
+    "42-301-a": {
+        "op": "deleted"
+    }, 
+    "42-301-b": {
+        "op": "deleted"
+    }, 
+    "42-Subpart-D": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                1
+            ], 
+            [
+                "delete", 
+                1, 
+                2
+            ], 
+            [
+                "equal", 
+                2, 
+                5
+            ]
+        ], 
+        "op": "modified"
+    }
+}

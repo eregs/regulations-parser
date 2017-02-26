@@ -84,9 +84,8 @@ def test_parse_interp_subpart_confusion():
 
 def test_process_amendments_restart_new_section(monkeypatch):
     # turn on the interpretations plugin
-    monkeypatch.setattr(fetch, 'ExtensionManager', Mock(return_value=[
-        Mock(plugin=amendments.content_for_interpretations),
-        Mock(plugin=section.content_for_regtext)
+    monkeypatch.setattr(fetch, 'instantiate_if_possible', Mock(return_value=[
+        amendments.content_for_interpretations, section.content_for_regtext
     ]))
 
     amdpar1 = "1. In Supplement I to Part 104, comment 22(a) is added"

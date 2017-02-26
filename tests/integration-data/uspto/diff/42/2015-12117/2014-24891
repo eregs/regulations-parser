@@ -1,0 +1,556 @@
+{
+    "42-10-a": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    86, 
+                    98
+                ], 
+                [
+                    "insert", 
+                    86, 
+                    "a"
+                ]
+            ]
+        ]
+    }, 
+    "42-121-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    68, 
+                    122
+                ], 
+                [
+                    "insert", 
+                    68, 
+                    "show"
+                ]
+            ], 
+            [
+                "delete", 
+                127, 
+                144
+            ]
+        ]
+    }, 
+    "42-15-a-3": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    105, 
+                    177
+                ], 
+                [
+                    "insert", 
+                    105, 
+                    "20:"
+                ]
+            ]
+        ]
+    }, 
+    "42-15-a-4": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    115, 
+                    187
+                ], 
+                [
+                    "insert", 
+                    115, 
+                    "15:"
+                ]
+            ]
+        ]
+    }, 
+    "42-15-b-3": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    137, 
+                    209
+                ], 
+                [
+                    "insert", 
+                    137, 
+                    "20:"
+                ]
+            ]
+        ]
+    }, 
+    "42-15-b-4": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                75, 
+                "request fee "
+            ], 
+            [
+                [
+                    "delete", 
+                    154, 
+                    226
+                ], 
+                [
+                    "insert", 
+                    154, 
+                    "15:"
+                ]
+            ]
+        ]
+    }, 
+    "42-221-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    68, 
+                    122
+                ], 
+                [
+                    "insert", 
+                    68, 
+                    "show"
+                ]
+            ], 
+            [
+                "delete", 
+                127, 
+                144
+            ]
+        ]
+    }, 
+    "42-23-a": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    82, 
+                    155
+                ], 
+                [
+                    "insert", 
+                    82, 
+                    "and must include"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    168, 
+                    170
+                ], 
+                [
+                    "insert", 
+                    168, 
+                    "identifying"
+                ]
+            ], 
+            [
+                "delete", 
+                180, 
+                212
+            ], 
+            [
+                [
+                    "delete", 
+                    218, 
+                    254
+                ], 
+                [
+                    "insert", 
+                    218, 
+                    "in dispute. Any material fact not specifically denied may"
+                ]
+            ], 
+            [
+                "delete", 
+                258, 
+                326
+            ]
+        ]
+    }, 
+    "42-24-a-1": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                5
+            ], 
+            [
+                "delete", 
+                5, 
+                6
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    287, 
+                    313
+                ], 
+                [
+                    "insert", 
+                    287, 
+                    "exhibits."
+                ]
+            ]
+        ]
+    }, 
+    "42-24-a-1-v": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    4, 
+                    41
+                ], 
+                [
+                    "insert", 
+                    4, 
+                    "Motions:"
+                ]
+            ]
+        ]
+    }, 
+    "42-24-a-1-vi": {
+        "op": "deleted"
+    }, 
+    "42-24-c": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                2
+            ], 
+            [
+                "delete", 
+                2, 
+                3
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    69, 
+                    72
+                ], 
+                [
+                    "insert", 
+                    69, 
+                    "the required"
+                ]
+            ]
+        ]
+    }, 
+    "42-24-c-1": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    52, 
+                    54
+                ], 
+                [
+                    "insert", 
+                    52, 
+                    "15"
+                ]
+            ]
+        ]
+    }, 
+    "42-24-c-2": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    15, 
+                    82
+                ], 
+                [
+                    "insert", 
+                    15, 
+                    "oppositions:"
+                ]
+            ]
+        ]
+    }, 
+    "42-24-c-3": {
+        "op": "deleted"
+    }, 
+    "42-300-c": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    261, 
+                    316
+                ], 
+                [
+                    "insert", 
+                    261, 
+                    "Judge."
+                ]
+            ]
+        ]
+    }, 
+    "42-302": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                2
+            ], 
+            [
+                "delete", 
+                2, 
+                3
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "42-302-c": {
+        "op": "deleted"
+    }, 
+    "42-51-b-1-ii": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    46, 
+                    58
+                ], 
+                [
+                    "insert", 
+                    46, 
+                    "is authorized within such time period as"
+                ]
+            ], 
+            [
+                "delete", 
+                63, 
+                119
+            ]
+        ]
+    }, 
+    "42-53-c-2": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                151, 
+                "deposition "
+            ], 
+            [
+                [
+                    "delete", 
+                    185, 
+                    191
+                ], 
+                [
+                    "insert", 
+                    185, 
+                    "following"
+                ]
+            ]
+        ]
+    }, 
+    "42-53-f-7": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                179, 
+                "by proponent "
+            ]
+        ]
+    }, 
+    "42-6-a-2-ii": {
+        "child_ops": [
+            [
+                "insert", 
+                0, 
+                [
+                    "42-6-a-2-ii-A", 
+                    "42-6-a-2-ii-B"
+                ]
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    5, 
+                    30
+                ], 
+                [
+                    "insert", 
+                    5, 
+                    "Either a"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    44, 
+                    75
+                ], 
+                [
+                    "insert", 
+                    44, 
+                    "or monospaced font may"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    79, 
+                    84
+                ], 
+                [
+                    "insert", 
+                    79, 
+                    "used:"
+                ]
+            ]
+        ]
+    }, 
+    "42-6-a-2-ii-A": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "6", 
+                "a", 
+                "2", 
+                "ii", 
+                "A"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(A) The proportional font must be 14-point or larger, and", 
+            "text": "(A) The proportional font must be 14-point or larger, and", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-6-a-2-ii-B": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "6", 
+                "a", 
+                "2", 
+                "ii", 
+                "B"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(B) The monospaced font must not contain more than four characters per centimeter (ten characters per inch);", 
+            "text": "(B) The monospaced font must not contain more than four characters per centimeter (ten characters per inch);", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-64": {
+        "op": "modified", 
+        "title": [
+            [
+                [
+                    "delete", 
+                    29, 
+                    37
+                ], 
+                [
+                    "insert", 
+                    29, 
+                    "exclude; motion in limine."
+                ]
+            ]
+        ]
+    }, 
+    "42-64-b-1": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    91, 
+                    96
+                ], 
+                [
+                    "insert", 
+                    91, 
+                    "served"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    211, 
+                    216
+                ], 
+                [
+                    "insert", 
+                    211, 
+                    "served"
+                ]
+            ]
+        ]
+    }, 
+    "42-71-d": {
+        "op": "modified", 
+        "text": [
+            [
+                "delete", 
+                63, 
+                70
+            ], 
+            [
+                "insert", 
+                82, 
+                "rehearing, without prior authorization from the Board. The burden of showing a decision should be modified lies with the party challenging the decision. The request must specifically identify all matters the party believes the Board misapprehended or overlooked, and the place where each matter was previously addressed in a motion, an opposition, or a reply. A request for "
+            ], 
+            [
+                [
+                    "delete", 
+                    92, 
+                    175
+                ], 
+                [
+                    "insert", 
+                    92, 
+                    "does not toll times for taking action. Any request must"
+                ]
+            ], 
+            [
+                "delete", 
+                179, 
+                524
+            ]
+        ]
+    }
+}

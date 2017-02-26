@@ -1,0 +1,294 @@
+{
+    "42-104-b-2": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "102", 
+                "title": "35"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "35 U.S.C. 102", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=102&title=35&year=mostrecent"
+        }
+    ], 
+    "42-104-b-3": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "112", 
+                "title": "35"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "35 U.S.C. 112", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=112&title=35&year=mostrecent"
+        }
+    ], 
+    "42-107-a": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "314", 
+                "title": "35"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "35 U.S.C. 314", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=314&title=35&year=mostrecent"
+        }
+    ], 
+    "42-107-e": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "253", 
+                "title": "35"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "35 U.S.C. 253", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=253&title=35&year=mostrecent"
+        }
+    ], 
+    "42-2-p111137700": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "135", 
+                "title": "35"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "35 U.S.C. 135", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=135&title=35&year=mostrecent"
+        }
+    ], 
+    "42-2-p2661673341-2": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "135", 
+                "title": "35"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "35 U.S.C. 135", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=135&title=35&year=mostrecent"
+        }
+    ], 
+    "42-2-p3412731470": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "1746", 
+                "title": "28"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "28 U.S.C. 1746", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=1746&title=28&year=mostrecent"
+        }
+    ], 
+    "42-202-b": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "321", 
+                "title": "35"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "35 U.S.C. 321", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=321&title=35&year=mostrecent"
+        }
+    ], 
+    "42-204-b-2": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "282", 
+                "title": "35"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "35 U.S.C. 282", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=282&title=35&year=mostrecent"
+        }
+    ], 
+    "42-204-b-3": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "112", 
+                "title": "35"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "35 U.S.C. 112", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=112&title=35&year=mostrecent"
+        }
+    ], 
+    "42-207-a": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "324", 
+                "title": "35"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "35 U.S.C. 324", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=324&title=35&year=mostrecent"
+        }
+    ], 
+    "42-207-e": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "253", 
+                "title": "35"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "35 U.S.C. 253", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=253&title=35&year=mostrecent"
+        }
+    ], 
+    "42-303": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "321", 
+                "title": "35"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "35 U.S.C. 321", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=321&title=35&year=mostrecent"
+        }
+    ], 
+    "42-304-b-2": [
+        {
+            "citation_type": "STATUTES_AT_LARGE", 
+            "components": {
+                "page": "284", 
+                "volume": "125"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "125 Stat. 284", 
+            "url": "http://api.fdsys.gov/link?collection=statute&page=284&volume=125&year=mostrecent"
+        }, 
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "282", 
+                "title": "35"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "35 U.S.C. 282", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=282&title=35&year=mostrecent"
+        }
+    ], 
+    "42-304-b-3": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "112", 
+                "title": "35"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "35 U.S.C. 112", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=112&title=35&year=mostrecent"
+        }
+    ], 
+    "42-5-d": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "6", 
+                "title": "35"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "35 U.S.C. 6", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=6&title=35&year=mostrecent"
+        }
+    ], 
+    "42-53-a": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "24", 
+                "title": "35"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "35 U.S.C. 24", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=24&title=35&year=mostrecent"
+        }
+    ], 
+    "42-53-f-1": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "23", 
+                "title": "35"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "35 U.S.C. 23", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=23&title=35&year=mostrecent"
+        }
+    ], 
+    "42-72": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "317", 
+                "title": "35"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "35 U.S.C. 317", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=317&title=35&year=mostrecent"
+        }
+    ], 
+    "42-73-d-1": [
+        {
+            "citation_type": "USC", 
+            "components": {
+                "section": "317", 
+                "title": "35"
+            }, 
+            "locations": [
+                0
+            ], 
+            "text": "35 U.S.C. 317", 
+            "url": "http://api.fdsys.gov/link?collection=uscode&section=317&title=35&year=mostrecent"
+        }
+    ]
+}

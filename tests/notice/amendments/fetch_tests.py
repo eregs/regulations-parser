@@ -35,8 +35,8 @@ def test_create_xmlless_changes():
     for amendment in labels_amended:
         fetch.create_xmlless_change(amendment, notice_changes)
 
-    delete = notice_changes.changes_by_xml[None]['200-2-a'][0]
-    move = notice_changes.changes_by_xml[None]['200-2-b'][0]
+    delete = notice_changes[None]['200-2-a'][0]
+    move = notice_changes[None]['200-2-b'][0]
     assert delete == {'action': 'DELETE'}
     assert move == {'action': 'MOVE', 'destination': ['200', '2', 'c']}
 
@@ -51,7 +51,7 @@ def test_create_xml_changes_reserve():
     notice_changes = changes.NoticeChanges()
     fetch.create_xml_changes(labels_amended, root, notice_changes)
 
-    reserve = notice_changes.changes_by_xml[None]['200-2-a'][0]
+    reserve = notice_changes[None]['200-2-a'][0]
     assert reserve['action'] == 'RESERVE'
     assert reserve['node']['text'] == '[Reserved]'
 
@@ -66,7 +66,7 @@ def test_create_xml_changes_stars():
 
     notice_changes = changes.NoticeChanges()
     fetch.create_xml_changes(labels_amended, root, notice_changes)
-    data = notice_changes.changes_by_xml[None]
+    data = notice_changes[None]
 
     for label in ('200-2-a-1', '200-2-a-2'):
         assert label in data
@@ -93,7 +93,7 @@ def test_create_xml_changes_stars_hole():
     notice_changes = changes.NoticeChanges()
     fetch.create_xml_changes(labels_amended, root, notice_changes)
 
-    data = notice_changes.changes_by_xml[None]
+    data = notice_changes[None]
     for label in ('200-2-a', '200-2-a-2'):
         assert label in data
         assert len(data[label]) == 1
@@ -121,7 +121,7 @@ def test_create_xml_changes_child_stars():
 
     notice_changes = changes.NoticeChanges()
     fetch.create_xml_changes(labels_amended, root, notice_changes)
-    data = notice_changes.changes_by_xml[None]
+    data = notice_changes[None]
 
     assert '200-2-a' in data
     assert len(data['200-2-a']) == 1
@@ -134,7 +134,7 @@ def test_create_xml_changes_child_stars():
 
     notice_changes = changes.NoticeChanges()
     fetch.create_xml_changes(labels_amended, root, notice_changes)
-    data = notice_changes.changes_by_xml[None]
+    data = notice_changes[None]
 
     assert '200-2-a' in data
     assert len(data['200-2-a']) == 1

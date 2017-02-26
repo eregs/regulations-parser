@@ -13,9 +13,8 @@ from regparser.tree.xml_parser.preprocessors import preprocess_amdpars
 @pytest.fixture
 def content_plugin_installed(monkeypatch):
     # turn on the subpart plugin
-    monkeypatch.setattr(fetch, 'ExtensionManager', Mock(return_value=[
-        Mock(plugin=subpart.content_for_new_subpart),
-        Mock(plugin=section.content_for_regtext)
+    monkeypatch.setattr(fetch, 'instantiate_if_possible', Mock(return_value=[
+        subpart.content_for_new_subpart, section.content_for_regtext
     ]))
 
 
@@ -25,8 +24,8 @@ def test_process_designate_subpart():
 
     subpart_changes = subpart.process_designate_subpart(amended_label)
 
-    assert ['200-1-a'] == list(subpart_changes.keys())
-    change = subpart_changes['200-1-a']
+    assert '200-1-a' == subpart_changes.label_id
+    change = subpart_changes.content
     assert change['destination'] == ['205', 'Subpart', 'A']
     assert change['action'] == 'DESIGNATE'
 

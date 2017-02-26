@@ -1,0 +1,306 @@
+{
+    "42-15": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                2
+            ], 
+            [
+                "delete", 
+                2, 
+                4
+            ], 
+            [
+                "insert", 
+                2, 
+                [
+                    "42-15-c", 
+                    "42-15-d"
+                ]
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "42-15-a": {
+        "child_ops": [
+            [
+                "delete", 
+                0, 
+                1
+            ], 
+            [
+                "insert", 
+                0, 
+                [
+                    "42-15-a-1", 
+                    "42-15-a-2", 
+                    "42-15-a-3", 
+                    "42-15-a-4"
+                ]
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    87, 
+                    141
+                ], 
+                [
+                    "insert", 
+                    87, 
+                    "fees are due:"
+                ]
+            ]
+        ]
+    }, 
+    "42-15-a-1": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "15", 
+                "a", 
+                "1"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(1) <E T=\"03\">Inter Partes</E> Review request fee: $9,000.00.", 
+            "text": "(1) Inter Partes Review request fee: $9,000.00.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-15-a-2": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "15", 
+                "a", 
+                "2"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(2) <E T=\"03\">Inter Partes</E> Review Post-Institution fee: $14,000.00.", 
+            "text": "(2) Inter Partes Review Post-Institution fee: $14,000.00.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-15-a-3": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "15", 
+                "a", 
+                "3"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(3) In addition to the <E T=\"03\">Inter Partes</E> Review request fee, for requesting review of each claim in excess of 20: $200.00.", 
+            "text": "(3) In addition to the Inter Partes Review request fee, for requesting review of each claim in excess of 20: $200.00.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-15-a-4": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "15", 
+                "a", 
+                "4"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(4) In addition to the <E T=\"03\">Inter Partes</E> Post-Institution request fee, for requesting review of each claim in excess of 15: $400.00.", 
+            "text": "(4) In addition to the Inter Partes Post-Institution request fee, for requesting review of each claim in excess of 15: $400.00.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-15-a-p1": {
+        "op": "deleted"
+    }, 
+    "42-15-b": {
+        "child_ops": [
+            [
+                "delete", 
+                0, 
+                1
+            ], 
+            [
+                "insert", 
+                0, 
+                [
+                    "42-15-b-1", 
+                    "42-15-b-2", 
+                    "42-15-b-3", 
+                    "42-15-b-4"
+                ]
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                47, 
+                "or covered business method patent review "
+            ], 
+            [
+                [
+                    "delete", 
+                    60, 
+                    84
+                ], 
+                [
+                    "insert", 
+                    60, 
+                    "payment"
+                ]
+            ], 
+            [
+                "delete", 
+                88, 
+                133
+            ], 
+            [
+                [
+                    "delete", 
+                    147, 
+                    201
+                ], 
+                [
+                    "insert", 
+                    147, 
+                    "fees are due:"
+                ]
+            ]
+        ]
+    }, 
+    "42-15-b-1": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "15", 
+                "b", 
+                "1"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(1) Post-Grant or Covered Business Method Patent Review  request fee: $12,000.00.", 
+            "text": "(1) Post-Grant or Covered Business Method Patent Review  request fee: $12,000.00.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-15-b-2": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "15", 
+                "b", 
+                "2"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(2) Post-Grant or Covered Business Method Patent Review  Post-Institution fee: $18,000.00.", 
+            "text": "(2) Post-Grant or Covered Business Method Patent Review  Post-Institution fee: $18,000.00.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-15-b-3": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "15", 
+                "b", 
+                "3"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(3) In addition to the Post-Grant or Covered Business Method Patent Review request fee, for requesting review of each claim in excess of 20: $250.00.", 
+            "text": "(3) In addition to the Post-Grant or Covered Business Method Patent Review request fee, for requesting review of each claim in excess of 20: $250.00.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-15-b-4": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "15", 
+                "b", 
+                "4"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(4) In addition to the Post-Grant or Covered Business Method Patent Review request fee Post-Institution request fee, for requesting review of each claim in excess of 15: $550.00.", 
+            "text": "(4) In addition to the Post-Grant or Covered Business Method Patent Review request fee Post-Institution request fee, for requesting review of each claim in excess of 15: $550.00.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-15-b-p1": {
+        "op": "deleted"
+    }, 
+    "42-15-c": {
+        "node": {
+            "child_labels": [
+                "42-15-c-1"
+            ], 
+            "label": [
+                "42", 
+                "15", 
+                "c"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(c) On the filing of a petition for a derivation proceeding, payment of the following fees is due:", 
+            "text": "(c) On the filing of a petition for a derivation proceeding, payment of the following fees is due:", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-15-c-1": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "15", 
+                "c", 
+                "1"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(1) Derivation petition fee: $400.00.", 
+            "text": "(1) Derivation petition fee: $400.00.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-15-d": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "15", 
+                "d"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(d) Any request requiring payment of a fee under this part, including a written request to make a settlement agreement available: $400.00.", 
+            "text": "(d) Any request requiring payment of a fee under this part, including a written request to make a settlement agreement available: $400.00.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-15-e": {
+        "op": "deleted"
+    }, 
+    "42-15-f": {
+        "op": "deleted"
+    }, 
+    "42-15-f-p1": {
+        "op": "deleted"
+    }
+}

@@ -1,0 +1,3287 @@
+{
+    "42": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                1
+            ], 
+            [
+                "insert", 
+                1, 
+                [
+                    "42-Subjgrp-Ge", 
+                    "42-Subjgrp-Fe", 
+                    "42-Subjgrp-PaMP", 
+                    "42-Subjgrp-TaP", 
+                    "42-Subjgrp-OADaS", 
+                    "42-Subjgrp-Ce"
+                ]
+            ], 
+            [
+                "equal", 
+                1, 
+                2
+            ], 
+            [
+                "insert", 
+                2, 
+                [
+                    "42-Subjgrp-Ge.", 
+                    "42-Subjgrp-IIPR", 
+                    "42-Subjgrp-AIoIPR"
+                ]
+            ], 
+            [
+                "equal", 
+                2, 
+                3
+            ], 
+            [
+                "insert", 
+                3, 
+                [
+                    "42-Subjgrp-Gen", 
+                    "42-Subjgrp-IPR", 
+                    "42-Subjgrp-AIoPR"
+                ]
+            ], 
+            [
+                "equal", 
+                3, 
+                4
+            ], 
+            [
+                "insert", 
+                4, 
+                [
+                    "42-Subpart-E", 
+                    "42-Subjgrp-IDP", 
+                    "42-Subjgrp-AIoDP"
+                ]
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "42-1": {
+        "op": "deleted"
+    }, 
+    "42-1-a": {
+        "op": "deleted"
+    }, 
+    "42-1-b": {
+        "op": "deleted"
+    }, 
+    "42-1-c": {
+        "op": "deleted"
+    }, 
+    "42-1-d": {
+        "op": "deleted"
+    }, 
+    "42-10": {
+        "op": "deleted"
+    }, 
+    "42-10-a": {
+        "op": "deleted"
+    }, 
+    "42-10-b": {
+        "op": "deleted"
+    }, 
+    "42-10-c": {
+        "op": "deleted"
+    }, 
+    "42-10-d": {
+        "op": "deleted"
+    }, 
+    "42-10-e": {
+        "op": "deleted"
+    }, 
+    "42-100": {
+        "op": "deleted"
+    }, 
+    "42-100-a": {
+        "op": "deleted"
+    }, 
+    "42-100-b": {
+        "op": "deleted"
+    }, 
+    "42-100-c": {
+        "op": "deleted"
+    }, 
+    "42-101": {
+        "op": "deleted"
+    }, 
+    "42-101-a": {
+        "op": "deleted"
+    }, 
+    "42-101-b": {
+        "op": "deleted"
+    }, 
+    "42-101-c": {
+        "op": "deleted"
+    }, 
+    "42-102": {
+        "op": "deleted"
+    }, 
+    "42-102-a": {
+        "op": "deleted"
+    }, 
+    "42-102-a-1": {
+        "op": "deleted"
+    }, 
+    "42-102-a-2": {
+        "op": "deleted"
+    }, 
+    "42-102-a-3": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "102", 
+                "a", 
+                "3"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(3) If a post-grant review is instituted as set forth in subpart C of this part, the date of the termination of such post-grant review.", 
+            "text": "(3) If a post-grant review is instituted as set forth in subpart C of this part, the date of the termination of such post-grant review.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-102-b": {
+        "op": "deleted"
+    }, 
+    "42-103": {
+        "op": "deleted"
+    }, 
+    "42-103-a": {
+        "op": "deleted"
+    }, 
+    "42-104": {
+        "op": "deleted"
+    }, 
+    "42-104-a": {
+        "op": "deleted"
+    }, 
+    "42-104-b": {
+        "op": "deleted"
+    }, 
+    "42-104-b-1": {
+        "op": "deleted"
+    }, 
+    "42-104-b-2": {
+        "op": "deleted"
+    }, 
+    "42-104-b-3": {
+        "op": "deleted"
+    }, 
+    "42-104-b-4": {
+        "op": "deleted"
+    }, 
+    "42-104-b-5": {
+        "op": "deleted"
+    }, 
+    "42-104-c": {
+        "op": "deleted"
+    }, 
+    "42-105": {
+        "op": "deleted"
+    }, 
+    "42-105-a": {
+        "op": "deleted"
+    }, 
+    "42-105-b": {
+        "op": "deleted"
+    }, 
+    "42-106": {
+        "op": "deleted"
+    }, 
+    "42-106-a": {
+        "op": "deleted"
+    }, 
+    "42-106-a-1": {
+        "op": "deleted"
+    }, 
+    "42-106-a-2": {
+        "op": "deleted"
+    }, 
+    "42-106-a-3": {
+        "op": "deleted"
+    }, 
+    "42-106-b": {
+        "op": "deleted"
+    }, 
+    "42-107": {
+        "op": "deleted"
+    }, 
+    "42-107-a": {
+        "op": "deleted"
+    }, 
+    "42-107-b": {
+        "op": "deleted"
+    }, 
+    "42-107-c": {
+        "op": "deleted"
+    }, 
+    "42-107-d": {
+        "op": "deleted"
+    }, 
+    "42-107-e": {
+        "op": "deleted"
+    }, 
+    "42-107-e-p1": {
+        "op": "deleted"
+    }, 
+    "42-108": {
+        "op": "deleted"
+    }, 
+    "42-108-a": {
+        "op": "deleted"
+    }, 
+    "42-108-b": {
+        "op": "deleted"
+    }, 
+    "42-108-c": {
+        "op": "deleted"
+    }, 
+    "42-108-c-p1": {
+        "op": "deleted"
+    }, 
+    "42-11": {
+        "op": "deleted"
+    }, 
+    "42-12": {
+        "op": "deleted"
+    }, 
+    "42-12-a": {
+        "op": "deleted"
+    }, 
+    "42-12-a-1": {
+        "op": "deleted"
+    }, 
+    "42-12-a-2": {
+        "op": "deleted"
+    }, 
+    "42-12-a-3": {
+        "op": "deleted"
+    }, 
+    "42-12-a-4": {
+        "op": "deleted"
+    }, 
+    "42-12-a-5": {
+        "op": "deleted"
+    }, 
+    "42-12-a-6": {
+        "op": "deleted"
+    }, 
+    "42-12-a-7": {
+        "op": "deleted"
+    }, 
+    "42-12-b": {
+        "op": "deleted"
+    }, 
+    "42-12-b-1": {
+        "op": "deleted"
+    }, 
+    "42-12-b-2": {
+        "op": "deleted"
+    }, 
+    "42-12-b-3": {
+        "op": "deleted"
+    }, 
+    "42-12-b-4": {
+        "op": "deleted"
+    }, 
+    "42-12-b-5": {
+        "op": "deleted"
+    }, 
+    "42-12-b-6": {
+        "op": "deleted"
+    }, 
+    "42-12-b-7": {
+        "op": "deleted"
+    }, 
+    "42-12-b-8": {
+        "op": "deleted"
+    }, 
+    "42-120": {
+        "op": "deleted"
+    }, 
+    "42-120-a": {
+        "op": "deleted"
+    }, 
+    "42-120-b": {
+        "op": "deleted"
+    }, 
+    "42-121": {
+        "op": "deleted"
+    }, 
+    "42-121-a": {
+        "op": "deleted"
+    }, 
+    "42-121-a-1": {
+        "op": "deleted"
+    }, 
+    "42-121-a-2": {
+        "op": "deleted"
+    }, 
+    "42-121-a-2-i": {
+        "op": "deleted"
+    }, 
+    "42-121-a-2-ii": {
+        "op": "deleted"
+    }, 
+    "42-121-a-3": {
+        "op": "deleted"
+    }, 
+    "42-121-b": {
+        "op": "deleted"
+    }, 
+    "42-121-b-1": {
+        "op": "deleted"
+    }, 
+    "42-121-b-2": {
+        "op": "deleted"
+    }, 
+    "42-121-c": {
+        "op": "deleted"
+    }, 
+    "42-122": {
+        "op": "deleted"
+    }, 
+    "42-122-a": {
+        "op": "deleted"
+    }, 
+    "42-122-b": {
+        "op": "deleted"
+    }, 
+    "42-123": {
+        "op": "deleted"
+    }, 
+    "42-123-a": {
+        "op": "deleted"
+    }, 
+    "42-123-a-1": {
+        "op": "deleted"
+    }, 
+    "42-123-a-2": {
+        "op": "deleted"
+    }, 
+    "42-123-b": {
+        "op": "deleted"
+    }, 
+    "42-123-c": {
+        "op": "deleted"
+    }, 
+    "42-13": {
+        "op": "deleted"
+    }, 
+    "42-13-a": {
+        "op": "deleted"
+    }, 
+    "42-13-b": {
+        "op": "deleted"
+    }, 
+    "42-13-c": {
+        "op": "deleted"
+    }, 
+    "42-13-d": {
+        "op": "deleted"
+    }, 
+    "42-14": {
+        "op": "deleted"
+    }, 
+    "42-14-p1": {
+        "op": "deleted"
+    }, 
+    "42-14-p2": {
+        "op": "deleted"
+    }, 
+    "42-15": {
+        "op": "deleted"
+    }, 
+    "42-15-a": {
+        "op": "deleted"
+    }, 
+    "42-15-a-1": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "15", 
+                "a", 
+                "1"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(1) <E T=\"03\">Inter Partes</E> Review request fee: $9,000.00.", 
+            "text": "(1) Inter Partes Review request fee: $9,000.00.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-15-a-2": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "15", 
+                "a", 
+                "2"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(2) <E T=\"03\">Inter Partes</E> Review Post-Institution fee: $14,000.00.", 
+            "text": "(2) Inter Partes Review Post-Institution fee: $14,000.00.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-15-a-3": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "15", 
+                "a", 
+                "3"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(3) In addition to the <E T=\"03\">Inter Partes</E> Review request fee, for requesting review of each claim in excess of 20: $200.00.", 
+            "text": "(3) In addition to the Inter Partes Review request fee, for requesting review of each claim in excess of 20: $200.00.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-15-a-4": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "15", 
+                "a", 
+                "4"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(4) In addition to the <E T=\"03\">Inter Partes</E> Post-Institution request fee, for requesting review of each claim in excess of 15: $400.00.", 
+            "text": "(4) In addition to the Inter Partes Post-Institution request fee, for requesting review of each claim in excess of 15: $400.00.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-15-a-p1": {
+        "op": "deleted"
+    }, 
+    "42-15-b": {
+        "op": "deleted"
+    }, 
+    "42-15-b-1": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "15", 
+                "b", 
+                "1"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(1) Post-Grant or Covered Business Method Patent Review  request fee: $12,000.00.", 
+            "text": "(1) Post-Grant or Covered Business Method Patent Review  request fee: $12,000.00.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-15-b-2": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "15", 
+                "b", 
+                "2"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(2) Post-Grant or Covered Business Method Patent Review  Post-Institution fee: $18,000.00.", 
+            "text": "(2) Post-Grant or Covered Business Method Patent Review  Post-Institution fee: $18,000.00.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-15-b-3": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "15", 
+                "b", 
+                "3"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(3) In addition to the Post-Grant or Covered Business Method Patent Review request fee, for requesting review of each claim in excess of 20: $250.00.", 
+            "text": "(3) In addition to the Post-Grant or Covered Business Method Patent Review request fee, for requesting review of each claim in excess of 20: $250.00.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-15-b-4": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "15", 
+                "b", 
+                "4"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(4) In addition to the Post-Grant or Covered Business Method Patent Review request fee Post-Institution request fee, for requesting review of each claim in excess of 15: $550.00.", 
+            "text": "(4) In addition to the Post-Grant or Covered Business Method Patent Review request fee Post-Institution request fee, for requesting review of each claim in excess of 15: $550.00.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-15-b-p1": {
+        "op": "deleted"
+    }, 
+    "42-15-c": {
+        "node": {
+            "child_labels": [
+                "42-15-c-1"
+            ], 
+            "label": [
+                "42", 
+                "15", 
+                "c"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(c) On the filing of a petition for a derivation proceeding, payment of the following fees is due:", 
+            "text": "(c) On the filing of a petition for a derivation proceeding, payment of the following fees is due:", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-15-c-1": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "15", 
+                "c", 
+                "1"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(1) Derivation petition fee: $400.00.", 
+            "text": "(1) Derivation petition fee: $400.00.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-15-d": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "15", 
+                "d"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(d) Any request requiring payment of a fee under this part, including a written request to make a settlement agreement available: $400.00.", 
+            "text": "(d) Any request requiring payment of a fee under this part, including a written request to make a settlement agreement available: $400.00.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-15-e": {
+        "op": "deleted"
+    }, 
+    "42-15-f": {
+        "op": "deleted"
+    }, 
+    "42-15-f-p1": {
+        "op": "deleted"
+    }, 
+    "42-2": {
+        "op": "deleted"
+    }, 
+    "42-2-p1": {
+        "op": "deleted"
+    }, 
+    "42-2-p111137700": {
+        "op": "deleted"
+    }, 
+    "42-2-p1296629014": {
+        "op": "deleted"
+    }, 
+    "42-2-p1488122627": {
+        "op": "deleted"
+    }, 
+    "42-2-p1883294578": {
+        "op": "deleted"
+    }, 
+    "42-2-p2086952650": {
+        "op": "deleted"
+    }, 
+    "42-2-p2227089800": {
+        "op": "deleted"
+    }, 
+    "42-2-p2661673341": {
+        "op": "deleted"
+    }, 
+    "42-2-p2661673341-1": {
+        "op": "deleted"
+    }, 
+    "42-2-p2661673341-2": {
+        "op": "deleted"
+    }, 
+    "42-2-p2714331254": {
+        "op": "deleted"
+    }, 
+    "42-2-p2862969711": {
+        "op": "deleted"
+    }, 
+    "42-2-p3412731470": {
+        "op": "deleted"
+    }, 
+    "42-2-p3583296204": {
+        "op": "deleted"
+    }, 
+    "42-2-p3596080049": {
+        "op": "deleted"
+    }, 
+    "42-2-p3863114839": {
+        "op": "deleted"
+    }, 
+    "42-2-p4032435479": {
+        "op": "deleted"
+    }, 
+    "42-2-p497300670": {
+        "op": "deleted"
+    }, 
+    "42-2-p727466738": {
+        "op": "deleted"
+    }, 
+    "42-2-p867810359": {
+        "op": "deleted"
+    }, 
+    "42-2-p883369453": {
+        "op": "deleted"
+    }, 
+    "42-20": {
+        "op": "deleted"
+    }, 
+    "42-20-a": {
+        "op": "deleted"
+    }, 
+    "42-20-b": {
+        "op": "deleted"
+    }, 
+    "42-20-c": {
+        "op": "deleted"
+    }, 
+    "42-20-d": {
+        "op": "deleted"
+    }, 
+    "42-200": {
+        "op": "deleted"
+    }, 
+    "42-200-a": {
+        "op": "deleted"
+    }, 
+    "42-200-b": {
+        "op": "deleted"
+    }, 
+    "42-200-c": {
+        "op": "deleted"
+    }, 
+    "42-200-d": {
+        "op": "deleted"
+    }, 
+    "42-201": {
+        "op": "deleted"
+    }, 
+    "42-201-a": {
+        "op": "deleted"
+    }, 
+    "42-201-b": {
+        "op": "deleted"
+    }, 
+    "42-202": {
+        "op": "deleted"
+    }, 
+    "42-202-a": {
+        "op": "deleted"
+    }, 
+    "42-202-b": {
+        "op": "deleted"
+    }, 
+    "42-203": {
+        "op": "deleted"
+    }, 
+    "42-203-a": {
+        "op": "deleted"
+    }, 
+    "42-203-b": {
+        "op": "deleted"
+    }, 
+    "42-204": {
+        "op": "deleted"
+    }, 
+    "42-204-a": {
+        "op": "deleted"
+    }, 
+    "42-204-b": {
+        "op": "deleted"
+    }, 
+    "42-204-b-1": {
+        "op": "deleted"
+    }, 
+    "42-204-b-2": {
+        "op": "deleted"
+    }, 
+    "42-204-b-3": {
+        "op": "deleted"
+    }, 
+    "42-204-b-4": {
+        "op": "deleted"
+    }, 
+    "42-204-b-5": {
+        "op": "deleted"
+    }, 
+    "42-204-c": {
+        "op": "deleted"
+    }, 
+    "42-205": {
+        "op": "deleted"
+    }, 
+    "42-205-a": {
+        "op": "deleted"
+    }, 
+    "42-205-b": {
+        "op": "deleted"
+    }, 
+    "42-206": {
+        "op": "deleted"
+    }, 
+    "42-206-a": {
+        "op": "deleted"
+    }, 
+    "42-206-a-1": {
+        "op": "deleted"
+    }, 
+    "42-206-a-2": {
+        "op": "deleted"
+    }, 
+    "42-206-a-3": {
+        "op": "deleted"
+    }, 
+    "42-206-b": {
+        "op": "deleted"
+    }, 
+    "42-207": {
+        "op": "deleted"
+    }, 
+    "42-207-a": {
+        "op": "deleted"
+    }, 
+    "42-207-b": {
+        "op": "deleted"
+    }, 
+    "42-207-c": {
+        "op": "deleted"
+    }, 
+    "42-207-d": {
+        "op": "deleted"
+    }, 
+    "42-207-e": {
+        "op": "deleted"
+    }, 
+    "42-207-e-p1": {
+        "op": "deleted"
+    }, 
+    "42-208": {
+        "op": "deleted"
+    }, 
+    "42-208-a": {
+        "op": "deleted"
+    }, 
+    "42-208-b": {
+        "op": "deleted"
+    }, 
+    "42-208-c": {
+        "op": "deleted"
+    }, 
+    "42-208-d": {
+        "op": "deleted"
+    }, 
+    "42-208-d-p1": {
+        "op": "deleted"
+    }, 
+    "42-21": {
+        "op": "deleted"
+    }, 
+    "42-21-a": {
+        "op": "deleted"
+    }, 
+    "42-21-b": {
+        "op": "deleted"
+    }, 
+    "42-21-c": {
+        "op": "deleted"
+    }, 
+    "42-21-c-1": {
+        "op": "deleted"
+    }, 
+    "42-21-c-2": {
+        "op": "deleted"
+    }, 
+    "42-21-c-3": {
+        "op": "deleted"
+    }, 
+    "42-21-d": {
+        "op": "deleted"
+    }, 
+    "42-22": {
+        "op": "deleted"
+    }, 
+    "42-22-a": {
+        "op": "deleted"
+    }, 
+    "42-22-a-1": {
+        "op": "deleted"
+    }, 
+    "42-22-a-2": {
+        "op": "deleted"
+    }, 
+    "42-22-b": {
+        "op": "deleted"
+    }, 
+    "42-22-c": {
+        "op": "deleted"
+    }, 
+    "42-22-d": {
+        "op": "deleted"
+    }, 
+    "42-220": {
+        "op": "deleted"
+    }, 
+    "42-220-a": {
+        "op": "deleted"
+    }, 
+    "42-220-b": {
+        "op": "deleted"
+    }, 
+    "42-221": {
+        "op": "deleted"
+    }, 
+    "42-221-a": {
+        "op": "deleted"
+    }, 
+    "42-221-a-1": {
+        "op": "deleted"
+    }, 
+    "42-221-a-2": {
+        "op": "deleted"
+    }, 
+    "42-221-a-2-i": {
+        "op": "deleted"
+    }, 
+    "42-221-a-2-ii": {
+        "op": "deleted"
+    }, 
+    "42-221-a-3": {
+        "op": "deleted"
+    }, 
+    "42-221-b": {
+        "op": "deleted"
+    }, 
+    "42-221-b-1": {
+        "op": "deleted"
+    }, 
+    "42-221-b-2": {
+        "op": "deleted"
+    }, 
+    "42-221-c": {
+        "op": "deleted"
+    }, 
+    "42-222": {
+        "op": "deleted"
+    }, 
+    "42-222-a": {
+        "op": "deleted"
+    }, 
+    "42-222-b": {
+        "op": "deleted"
+    }, 
+    "42-223": {
+        "op": "deleted"
+    }, 
+    "42-223-a": {
+        "op": "deleted"
+    }, 
+    "42-223-a-1": {
+        "op": "deleted"
+    }, 
+    "42-223-a-2": {
+        "op": "deleted"
+    }, 
+    "42-223-b": {
+        "op": "deleted"
+    }, 
+    "42-223-c": {
+        "op": "deleted"
+    }, 
+    "42-224": {
+        "op": "deleted"
+    }, 
+    "42-224-a": {
+        "op": "deleted"
+    }, 
+    "42-224-b": {
+        "op": "deleted"
+    }, 
+    "42-23": {
+        "op": "deleted"
+    }, 
+    "42-23-a": {
+        "op": "deleted"
+    }, 
+    "42-23-b": {
+        "op": "deleted"
+    }, 
+    "42-24": {
+        "op": "deleted"
+    }, 
+    "42-24-a": {
+        "op": "deleted"
+    }, 
+    "42-24-a-1": {
+        "op": "deleted"
+    }, 
+    "42-24-a-1-i": {
+        "op": "deleted"
+    }, 
+    "42-24-a-1-ii": {
+        "op": "deleted"
+    }, 
+    "42-24-a-1-iii": {
+        "op": "deleted"
+    }, 
+    "42-24-a-1-iv": {
+        "op": "deleted"
+    }, 
+    "42-24-a-1-v": {
+        "op": "deleted"
+    }, 
+    "42-24-a-2": {
+        "op": "deleted"
+    }, 
+    "42-24-b": {
+        "op": "deleted"
+    }, 
+    "42-24-b-1": {
+        "op": "deleted"
+    }, 
+    "42-24-b-2": {
+        "op": "deleted"
+    }, 
+    "42-24-b-3": {
+        "op": "deleted"
+    }, 
+    "42-24-c": {
+        "op": "deleted"
+    }, 
+    "42-24-c-1": {
+        "op": "deleted"
+    }, 
+    "42-24-c-2": {
+        "op": "deleted"
+    }, 
+    "42-25": {
+        "op": "deleted"
+    }, 
+    "42-25-a": {
+        "op": "deleted"
+    }, 
+    "42-25-a-1": {
+        "op": "deleted"
+    }, 
+    "42-25-a-2": {
+        "op": "deleted"
+    }, 
+    "42-25-b": {
+        "op": "deleted"
+    }, 
+    "42-25-b-p1": {
+        "op": "deleted"
+    }, 
+    "42-3": {
+        "op": "deleted"
+    }, 
+    "42-3-a": {
+        "op": "deleted"
+    }, 
+    "42-3-b": {
+        "op": "deleted"
+    }, 
+    "42-301": {
+        "node": {
+            "child_labels": [
+                "42-301-a", 
+                "42-301-b"
+            ], 
+            "label": [
+                "42", 
+                "301"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "\n         In addition to the definitions in \u00a7 42.2, the following definitions apply to proceedings under this subpart D:", 
+            "text": "In addition to the definitions in \u00a7 42.2, the following definitions apply to proceedings under this subpart D:", 
+            "title": "\u00a7 42.301 Definitions."
+        }, 
+        "op": "added"
+    }, 
+    "42-301-a": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "301", 
+                "a"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(a) <E T=\"03\">Covered business method patent</E> means a patent that claims a method or corresponding apparatus for performing data processing or other operations used in the practice, administration, or management of a financial product or service, except that the term does not include patents for technological inventions.", 
+            "text": "(a) Covered business method patent means a patent that claims a method or corresponding apparatus for performing data processing or other operations used in the practice, administration, or management of a financial product or service, except that the term does not include patents for technological inventions.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-301-b": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "301", 
+                "b"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(b) <E T=\"03\">Technological invention.</E> In determining whether a patent is for a technological invention solely for purposes of the Transitional Program for Covered Business Methods (section 42.301(a)), the following will be considered on a case-by-case basis: whether the claimed subject matter as a whole recites a technological feature that is novel and unobvious over the prior art; and solves a technical problem using a technical solution.", 
+            "text": "(b) Technological invention. In determining whether a patent is for a technological invention solely for purposes of the Transitional Program for Covered Business Methods (section 42.301(a)), the following will be considered on a case-by-case basis: whether the claimed subject matter as a whole recites a technological feature that is novel and unobvious over the prior art; and solves a technical problem using a technical solution.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-4": {
+        "op": "deleted"
+    }, 
+    "42-4-a": {
+        "op": "deleted"
+    }, 
+    "42-4-b": {
+        "op": "deleted"
+    }, 
+    "42-4-c": {
+        "op": "deleted"
+    }, 
+    "42-4-c-1": {
+        "op": "deleted"
+    }, 
+    "42-4-c-2": {
+        "op": "deleted"
+    }, 
+    "42-400": {
+        "node": {
+            "child_labels": [
+                "42-400-a", 
+                "42-400-b"
+            ], 
+            "label": [
+                "42", 
+                "400"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "\n        ", 
+            "text": "", 
+            "title": "\u00a7 42.400 Procedure; pendency"
+        }, 
+        "op": "added"
+    }, 
+    "42-400-a": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "400", 
+                "a"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(a) A derivation proceeding is a trial subject to the procedures set forth in subpart A of this part.", 
+            "text": "(a) A derivation proceeding is a trial subject to the procedures set forth in subpart A of this part.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-400-b": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "400", 
+                "b"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(b) The Board may for good cause authorize or direct the parties to address patentability issues that arise in the course of the derivation proceeding.", 
+            "text": "(b) The Board may for good cause authorize or direct the parties to address patentability issues that arise in the course of the derivation proceeding.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-401": {
+        "node": {
+            "child_labels": [
+                "42-401-p1", 
+                "42-401-p3236262177", 
+                "42-401-p4087684105", 
+                "42-401-p3523239106", 
+                "42-401-p4195112412", 
+                "42-401-p2862969711", 
+                "42-401-p1169036493", 
+                "42-401-p858899850"
+            ], 
+            "label": [
+                "42", 
+                "401"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "\n        ", 
+            "text": "", 
+            "title": "\u00a7 42.401 Definitions."
+        }, 
+        "op": "added"
+    }, 
+    "42-401-p1": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "401", 
+                "p1"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "In addition to the definitions in \u00a7 42.2, the following definitions apply to proceedings under this subpart:", 
+            "text": "In addition to the definitions in \u00a7 42.2, the following definitions apply to proceedings under this subpart:", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-401-p1169036493": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "401", 
+                "p1169036493"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "<E T=\"03\">Respondent</E> means a party other than the petitioner.", 
+            "text": "Respondent means a party other than the petitioner.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-401-p2862969711": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "401", 
+                "p2862969711"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "<E T=\"03\">Petitioner</E> means a patent applicant who petitions for a determination that another party named in an earlier-filed patent application allegedly derived a claimed invention from an inventor named in the petitioner's application and filed the earlier application without authorization.", 
+            "text": "Petitioner means a patent applicant who petitions for a determination that another party named in an earlier-filed patent application allegedly derived a claimed invention from an inventor named in the petitioner's application and filed the earlier application without authorization.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-401-p3236262177": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "401", 
+                "p3236262177"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "<E T=\"03\">Agreement</E> or <E T=\"03\">understanding under 35 U.S.C. 135(e)</E> means settlement for the purposes of \u00a7 42.74.", 
+            "text": "Agreement or understanding under 35 U.S.C. 135(e) means settlement for the purposes of \u00a7 42.74.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-401-p3523239106": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "401", 
+                "p3523239106"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "<E T=\"03\">Application</E> includes both an application for an original patent and an application for a reissued patent.", 
+            "text": "Application includes both an application for an original patent and an application for a reissued patent.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-401-p4087684105": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "401", 
+                "p4087684105"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "<E T=\"03\">Applicant</E> includes a reissue applicant.", 
+            "text": "Applicant includes a reissue applicant.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-401-p4195112412": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "401", 
+                "p4195112412"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "<E T=\"03\">First publication</E> means either a patent or an application publication under 35 U.S.C. 122(b), including a publication of an international application designating the United States as provided by 35 U.S.C. 374.", 
+            "text": "First publication means either a patent or an application publication under 35 U.S.C. 122(b), including a publication of an international application designating the United States as provided by 35 U.S.C. 374.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-401-p858899850": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "401", 
+                "p858899850"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "<E T=\"03\">Same or substantially the same</E> means patentably indistinct.", 
+            "text": "Same or substantially the same means patentably indistinct.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-402": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "402"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "\n         An applicant for patent may file a petition to institute a derivation proceeding in the Office.", 
+            "text": "An applicant for patent may file a petition to institute a derivation proceeding in the Office.", 
+            "title": "\u00a7 42.402 Who may file a petition for a derivation proceeding."
+        }, 
+        "op": "added"
+    }, 
+    "42-403": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "403"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "\n         A petition for a derivation proceeding must be filed within the one-year period beginning on the date of the first publication of a claim to an invention that is the same or substantially the same as the earlier application's claim to the allegedly derived invention.", 
+            "text": "A petition for a derivation proceeding must be filed within the one-year period beginning on the date of the first publication of a claim to an invention that is the same or substantially the same as the earlier application's claim to the allegedly derived invention.", 
+            "title": "\u00a7 42.403 Time for filing."
+        }, 
+        "op": "added"
+    }, 
+    "42-404": {
+        "node": {
+            "child_labels": [
+                "42-404-a", 
+                "42-404-b"
+            ], 
+            "label": [
+                "42", 
+                "404"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "\n        ", 
+            "text": "", 
+            "title": "\u00a7 42.404 Derivation fee."
+        }, 
+        "op": "added"
+    }, 
+    "42-404-a": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "404", 
+                "a"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(a) A derivation fee set forth in \u00a7 42.15(c) must accompany the petition.", 
+            "text": "(a) A derivation fee set forth in \u00a7 42.15(c) must accompany the petition.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-404-b": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "404", 
+                "b"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(b) No filing date will be accorded to the petition until payment is complete.", 
+            "text": "(b) No filing date will be accorded to the petition until payment is complete.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-405": {
+        "node": {
+            "child_labels": [
+                "42-405-a", 
+                "42-405-b", 
+                "42-405-c"
+            ], 
+            "label": [
+                "42", 
+                "405"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "\n        ", 
+            "text": "", 
+            "title": "\u00a7 42.405 Content of petition."
+        }, 
+        "op": "added"
+    }, 
+    "42-405-a": {
+        "node": {
+            "child_labels": [
+                "42-405-a-1", 
+                "42-405-a-2"
+            ], 
+            "label": [
+                "42", 
+                "405", 
+                "a"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(a) <E T=\"03\">Grounds for standing.</E> The petition must:", 
+            "text": "(a) Grounds for standing. The petition must:", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-405-a-1": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "405", 
+                "a", 
+                "1"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(1) Demonstrate compliance with \u00a7\u00a7 42.402 and 42.403; and", 
+            "text": "(1) Demonstrate compliance with \u00a7\u00a7 42.402 and 42.403; and", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-405-a-2": {
+        "node": {
+            "child_labels": [
+                "42-405-a-2-i", 
+                "42-405-a-2-ii"
+            ], 
+            "label": [
+                "42", 
+                "405", 
+                "a", 
+                "2"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(2) Show that the petitioner has at least one claim that is:", 
+            "text": "(2) Show that the petitioner has at least one claim that is:", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-405-a-2-i": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "405", 
+                "a", 
+                "2", 
+                "i"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(i) The same or substantially the same as the respondent's claimed invention; and", 
+            "text": "(i) The same or substantially the same as the respondent's claimed invention; and", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-405-a-2-ii": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "405", 
+                "a", 
+                "2", 
+                "ii"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(ii) The same or substantially the same as the invention disclosed to the respondent.", 
+            "text": "(ii) The same or substantially the same as the invention disclosed to the respondent.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-405-b": {
+        "node": {
+            "child_labels": [
+                "42-405-b-1", 
+                "42-405-b-2", 
+                "42-405-b-3"
+            ], 
+            "label": [
+                "42", 
+                "405", 
+                "b"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(b) In addition to the requirements of \u00a7\u00a7 42.8 and 42.22, the petition must:", 
+            "text": "(b) In addition to the requirements of \u00a7\u00a7 42.8 and 42.22, the petition must:", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-405-b-1": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "405", 
+                "b", 
+                "1"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(1) Provide sufficient information to identify the application or patent for which the petitioner seeks a derivation proceeding;", 
+            "text": "(1) Provide sufficient information to identify the application or patent for which the petitioner seeks a derivation proceeding;", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-405-b-2": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "405", 
+                "b", 
+                "2"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(2) Demonstrate that a claimed invention was derived from an inventor named in the petitioner's application, and that the inventor from whom the invention was derived did not authorize the filing of the earliest application claiming such invention; and", 
+            "text": "(2) Demonstrate that a claimed invention was derived from an inventor named in the petitioner's application, and that the inventor from whom the invention was derived did not authorize the filing of the earliest application claiming such invention; and", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-405-b-3": {
+        "node": {
+            "child_labels": [
+                "42-405-b-3-i", 
+                "42-405-b-3-ii"
+            ], 
+            "label": [
+                "42", 
+                "405", 
+                "b", 
+                "3"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(3) For each of the respondent's claims to the derived invention,", 
+            "text": "(3) For each of the respondent's claims to the derived invention,", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-405-b-3-i": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "405", 
+                "b", 
+                "3", 
+                "i"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(i) Show why the claimed invention is the same or substantially the same as the invention disclosed to the respondent, and", 
+            "text": "(i) Show why the claimed invention is the same or substantially the same as the invention disclosed to the respondent, and", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-405-b-3-ii": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "405", 
+                "b", 
+                "3", 
+                "ii"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(ii) Identify how the claim is to be construed. Where the claim to be construed contains a means-plus-function or step-plus-function limitation as permitted under 35 U.S.C. 112(f), the construction of the claim must identify the specific portions of the specification that describe the structure, material, or acts corresponding to each claimed function.", 
+            "text": "(ii) Identify how the claim is to be construed. Where the claim to be construed contains a means-plus-function or step-plus-function limitation as permitted under 35 U.S.C. 112(f), the construction of the claim must identify the specific portions of the specification that describe the structure, material, or acts corresponding to each claimed function.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-405-c": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "405", 
+                "c"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(c) <E T=\"03\">Sufficiency of showing.</E> A derivation showing is not sufficient unless it is supported by substantial evidence, including at least one affidavit addressing communication of the derived invention and lack of authorization that, if unrebutted, would support a determination of derivation. The showing of communication must be corroborated.", 
+            "text": "(c) Sufficiency of showing. A derivation showing is not sufficient unless it is supported by substantial evidence, including at least one affidavit addressing communication of the derived invention and lack of authorization that, if unrebutted, would support a determination of derivation. The showing of communication must be corroborated.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-406": {
+        "node": {
+            "child_labels": [
+                "42-406-a", 
+                "42-406-b"
+            ], 
+            "label": [
+                "42", 
+                "406"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "\n         In addition to the requirements of \u00a7 42.6, the petitioner must serve the petition and exhibits relied upon in the petition as follows:", 
+            "text": "In addition to the requirements of \u00a7 42.6, the petitioner must serve the petition and exhibits relied upon in the petition as follows:", 
+            "title": "\u00a7 42.406 Service of petition."
+        }, 
+        "op": "added"
+    }, 
+    "42-406-a": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "406", 
+                "a"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(a) The petition and supporting evidence must be served on the respondent at the correspondence address of record for the earlier application or subject patent. The petitioner may additionally serve the petition and supporting evidence on the respondent at any other address known to the petitioner as likely to effect service.", 
+            "text": "(a) The petition and supporting evidence must be served on the respondent at the correspondence address of record for the earlier application or subject patent. The petitioner may additionally serve the petition and supporting evidence on the respondent at any other address known to the petitioner as likely to effect service.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-406-b": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "406", 
+                "b"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(b) Upon agreement of the parties, service may be made electronically. Service may be by Priority Mail Express\u00ae or by means at least as fast and reliable as Priority Mail Express\u00ae. Personal service is not required.", 
+            "text": "(b) Upon agreement of the parties, service may be made electronically. Service may be by Priority Mail Express\u00ae or by means at least as fast and reliable as Priority Mail Express\u00ae. Personal service is not required.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-407": {
+        "node": {
+            "child_labels": [
+                "42-407-a", 
+                "42-407-b"
+            ], 
+            "label": [
+                "42", 
+                "407"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "\n        ", 
+            "text": "", 
+            "title": "\u00a7 42.407 Filing date."
+        }, 
+        "op": "added"
+    }, 
+    "42-407-a": {
+        "node": {
+            "child_labels": [
+                "42-407-a-1", 
+                "42-407-a-2"
+            ], 
+            "label": [
+                "42", 
+                "407", 
+                "a"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(a) <E T=\"03\">Complete petition.</E> A petition to institute a derivation proceeding will not be accorded a filing date until the petition satisfies all of the following requirements:", 
+            "text": "(a) Complete petition. A petition to institute a derivation proceeding will not be accorded a filing date until the petition satisfies all of the following requirements:", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-407-a-1": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "407", 
+                "a", 
+                "1"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(1) Complies with \u00a7\u00a7 42.404 and 42.405, and", 
+            "text": "(1) Complies with \u00a7\u00a7 42.404 and 42.405, and", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-407-a-2": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "407", 
+                "a", 
+                "2"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(2) Service of the petition on the correspondence address of record as provided in \u00a7 42.406.", 
+            "text": "(2) Service of the petition on the correspondence address of record as provided in \u00a7 42.406.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-407-b": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "407", 
+                "b"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(b) <E T=\"03\">Incomplete petition.</E> Where the petitioner files an incomplete petition, no filing date will be accorded, and the Office will dismiss the petition if the deficiency in the petition is not corrected within the earlier of either one month from notice of the incomplete petition, or the expiration of the statutory deadline in which to file a petition for derivation.", 
+            "text": "(b) Incomplete petition. Where the petitioner files an incomplete petition, no filing date will be accorded, and the Office will dismiss the petition if the deficiency in the petition is not corrected within the earlier of either one month from notice of the incomplete petition, or the expiration of the statutory deadline in which to file a petition for derivation.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-408": {
+        "node": {
+            "child_labels": [
+                "42-408-a", 
+                "42-408-b"
+            ], 
+            "label": [
+                "42", 
+                "408"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "\n          ", 
+            "text": "", 
+            "title": "\u00a7 42.408 Institution of derivation proceeding."
+        }, 
+        "op": "added"
+    }, 
+    "42-408-a": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "408", 
+                "a"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(a) An administrative patent judge institutes, and may as necessary reinstitute, the derivation proceeding on behalf of the Director.", 
+            "text": "(a) An administrative patent judge institutes, and may as necessary reinstitute, the derivation proceeding on behalf of the Director.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-408-b": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "408", 
+                "b"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(b) <E T=\"03\">Additional derivation proceeding.</E> The petitioner may suggest the addition of a patent or application to the derivation proceeding. The suggestion should make the showings required under \u00a7 42.405 and explain why the suggestion could not have been made in the original petition.", 
+            "text": "(b) Additional derivation proceeding. The petitioner may suggest the addition of a patent or application to the derivation proceeding. The suggestion should make the showings required under \u00a7 42.405 and explain why the suggestion could not have been made in the original petition.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-409": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "409"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "\n           An agreement or understanding under 35 U.S.C. 135(e) is a settlement for the purposes of \u00a7 42.74.", 
+            "text": "An agreement or understanding under 35 U.S.C. 135(e) is a settlement for the purposes of \u00a7 42.74.", 
+            "title": "\u00a7 42.409 Settlement agreements."
+        }, 
+        "op": "added"
+    }, 
+    "42-410": {
+        "node": {
+            "child_labels": [
+                "42-410-a", 
+                "42-410-b", 
+                "42-410-c", 
+                "42-410-d", 
+                "42-410-e", 
+                "42-410-f"
+            ], 
+            "label": [
+                "42", 
+                "410"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "\n          ", 
+            "text": "", 
+            "title": "\u00a7 42.410 Arbitration."
+        }, 
+        "op": "added"
+    }, 
+    "42-410-a": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "410", 
+                "a"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(a) Parties may resort to binding arbitration to determine any issue. The Office is not a party to the arbitration. The Board is not bound by, and may independently determine, any question of patentability.", 
+            "text": "(a) Parties may resort to binding arbitration to determine any issue. The Office is not a party to the arbitration. The Board is not bound by, and may independently determine, any question of patentability.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-410-b": {
+        "node": {
+            "child_labels": [
+                "42-410-b-1", 
+                "42-410-b-2", 
+                "42-410-b-3"
+            ], 
+            "label": [
+                "42", 
+                "410", 
+                "b"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(b) The Board will not set a time for, or otherwise modify the proceeding for, an arbitration unless:", 
+            "text": "(b) The Board will not set a time for, or otherwise modify the proceeding for, an arbitration unless:", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-410-b-1": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "410", 
+                "b", 
+                "1"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(1) It is to be conducted according to Title 9 of the United States Code;", 
+            "text": "(1) It is to be conducted according to Title 9 of the United States Code;", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-410-b-2": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "410", 
+                "b", 
+                "2"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(2) The parties notify the Board in writing of their intention to arbitrate;", 
+            "text": "(2) The parties notify the Board in writing of their intention to arbitrate;", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-410-b-3": {
+        "node": {
+            "child_labels": [
+                "42-410-b-3-i", 
+                "42-410-b-3-ii", 
+                "42-410-b-3-iii", 
+                "42-410-b-3-iv", 
+                "42-410-b-3-v", 
+                "42-410-b-3-vi"
+            ], 
+            "label": [
+                "42", 
+                "410", 
+                "b", 
+                "3"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(3) The agreement to arbitrate:", 
+            "text": "(3) The agreement to arbitrate:", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-410-b-3-i": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "410", 
+                "b", 
+                "3", 
+                "i"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(i) Is in writing;", 
+            "text": "(i) Is in writing;", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-410-b-3-ii": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "410", 
+                "b", 
+                "3", 
+                "ii"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(ii) Specifies the issues to be arbitrated;", 
+            "text": "(ii) Specifies the issues to be arbitrated;", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-410-b-3-iii": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "410", 
+                "b", 
+                "3", 
+                "iii"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(iii) Names the arbitrator, or provides a date not more than 30 days after the execution of the agreement for the selection of the arbitrator;", 
+            "text": "(iii) Names the arbitrator, or provides a date not more than 30 days after the execution of the agreement for the selection of the arbitrator;", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-410-b-3-iv": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "410", 
+                "b", 
+                "3", 
+                "iv"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(iv) Provides that the arbitrator's award shall be binding on the parties and that judgment thereon can be entered by the Board;", 
+            "text": "(iv) Provides that the arbitrator's award shall be binding on the parties and that judgment thereon can be entered by the Board;", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-410-b-3-v": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "410", 
+                "b", 
+                "3", 
+                "v"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(v) Provides that a copy of the agreement is filed within 20 days after its execution; and", 
+            "text": "(v) Provides that a copy of the agreement is filed within 20 days after its execution; and", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-410-b-3-vi": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "410", 
+                "b", 
+                "3", 
+                "vi"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(vi) Provides that the arbitration is completed within the time the Board sets.", 
+            "text": "(vi) Provides that the arbitration is completed within the time the Board sets.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-410-c": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "410", 
+                "c"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(c) The parties are solely responsible for the selection of the arbitrator and the conduct of the arbitration.", 
+            "text": "(c) The parties are solely responsible for the selection of the arbitrator and the conduct of the arbitration.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-410-d": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "410", 
+                "d"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(d) The Board may determine issues the arbitration does not resolve.", 
+            "text": "(d) The Board may determine issues the arbitration does not resolve.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-410-e": {
+        "node": {
+            "child_labels": [
+                "42-410-e-1", 
+                "42-410-e-2", 
+                "42-410-e-3", 
+                "42-410-e-4"
+            ], 
+            "label": [
+                "42", 
+                "410", 
+                "e"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(e) The Board will not consider the arbitration award unless it:", 
+            "text": "(e) The Board will not consider the arbitration award unless it:", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-410-e-1": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "410", 
+                "e", 
+                "1"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(1) Is binding on the parties;", 
+            "text": "(1) Is binding on the parties;", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-410-e-2": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "410", 
+                "e", 
+                "2"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(2) Is in writing;", 
+            "text": "(2) Is in writing;", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-410-e-3": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "410", 
+                "e", 
+                "3"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(3) States in a clear and definite manner each issue arbitrated and the disposition of each issue; and", 
+            "text": "(3) States in a clear and definite manner each issue arbitrated and the disposition of each issue; and", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-410-e-4": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "410", 
+                "e", 
+                "4"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(4) Is filed within 20 days of the date of the award.", 
+            "text": "(4) Is filed within 20 days of the date of the award.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-410-f": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "410", 
+                "f"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(f) Once the award is filed, the parties to the award may not take actions inconsistent with the award. If the award is dispositive of the contested subject matter for a party, the Board may enter judgment as to that party.", 
+            "text": "(f) Once the award is filed, the parties to the award may not take actions inconsistent with the award. If the award is dispositive of the contested subject matter for a party, the Board may enter judgment as to that party.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-411": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "411"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "\n           The Board may decline to institute, or if already instituted the Board may issue judgment in, a derivation proceeding between an application and a patent or another application that are commonly owned.", 
+            "text": "The Board may decline to institute, or if already instituted the Board may issue judgment in, a derivation proceeding between an application and a patent or another application that are commonly owned.", 
+            "title": "\u00a7 42.411 Common interests in the invention."
+        }, 
+        "op": "added"
+    }, 
+    "42-412": {
+        "node": {
+            "child_labels": [
+                "42-412-a", 
+                "42-412-b"
+            ], 
+            "label": [
+                "42", 
+                "412"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "\n          ", 
+            "text": "", 
+            "title": "\u00a7 42.412 Public availability of Board records."
+        }, 
+        "op": "added"
+    }, 
+    "42-412-a": {
+        "node": {
+            "child_labels": [
+                "42-412-a-1", 
+                "42-412-a-2"
+            ], 
+            "label": [
+                "42", 
+                "412", 
+                "a"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(a) <E T=\"03\">Publication.</E>", 
+            "text": "(a) Publication.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-412-a-1": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "412", 
+                "a", 
+                "1"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(1) <E T=\"03\">Generally.</E> Any Board decision is available for public inspection without a party's permission if rendered in a file open to the public pursuant to \u00a7 1.11 of this chapter or in an application that has been published in accordance with \u00a7\u00a7 1.211 to 1.221 of this chapter. The Office may independently publish any Board decision that is available for public inspection.", 
+            "text": "(1) Generally. Any Board decision is available for public inspection without a party's permission if rendered in a file open to the public pursuant to \u00a7 1.11 of this chapter or in an application that has been published in accordance with \u00a7\u00a7 1.211 to 1.221 of this chapter. The Office may independently publish any Board decision that is available for public inspection.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-412-a-2": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "412", 
+                "a", 
+                "2"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(2) <E T=\"03\">Determination of special circumstances.</E> Any Board decision not publishable under paragraph (a)(1) of this section may be published or made available for public inspection if the Director believes that special circumstances warrant publication and a party does not petition within two months after being notified of the intention to make the decision public, objecting in writing on the ground that the decision discloses the objecting party's trade secret or other confidential information and stating with specificity that such information is not otherwise publicly available.", 
+            "text": "(2) Determination of special circumstances. Any Board decision not publishable under paragraph (a)(1) of this section may be published or made available for public inspection if the Director believes that special circumstances warrant publication and a party does not petition within two months after being notified of the intention to make the decision public, objecting in writing on the ground that the decision discloses the objecting party's trade secret or other confidential information and stating with specificity that such information is not otherwise publicly available.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-412-b": {
+        "node": {
+            "child_labels": [
+                "42-412-b-1", 
+                "42-412-b-2"
+            ], 
+            "label": [
+                "42", 
+                "412", 
+                "b"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(b) <E T=\"03\">Record of proceeding.</E>", 
+            "text": "(b) Record of proceeding.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-412-b-1": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "412", 
+                "b", 
+                "1"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(1) The record of a Board proceeding is available to the public, unless a patent application not otherwise available to the public is involved.", 
+            "text": "(1) The record of a Board proceeding is available to the public, unless a patent application not otherwise available to the public is involved.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-412-b-2": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "412", 
+                "b", 
+                "2"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(2) Notwithstanding paragraph (b)(1) of this section, after a final Board decision in or judgment in a Board proceeding, the record of the Board proceeding will be made available to the public if any involved file is or becomes open to the public under \u00a7 1.11 of this chapter or an involved application is or becomes published under \u00a7\u00a7 1.211 to 1.221 of this chapter.", 
+            "text": "(2) Notwithstanding paragraph (b)(1) of this section, after a final Board decision in or judgment in a Board proceeding, the record of the Board proceeding will be made available to the public if any involved file is or becomes open to the public under \u00a7 1.11 of this chapter or an involved application is or becomes published under \u00a7\u00a7 1.211 to 1.221 of this chapter.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-5": {
+        "op": "deleted"
+    }, 
+    "42-5-a": {
+        "op": "deleted"
+    }, 
+    "42-5-b": {
+        "op": "deleted"
+    }, 
+    "42-5-c": {
+        "op": "deleted"
+    }, 
+    "42-5-c-1": {
+        "op": "deleted"
+    }, 
+    "42-5-c-2": {
+        "op": "deleted"
+    }, 
+    "42-5-c-3": {
+        "op": "deleted"
+    }, 
+    "42-5-d": {
+        "op": "deleted"
+    }, 
+    "42-51": {
+        "op": "deleted"
+    }, 
+    "42-51-a": {
+        "op": "deleted"
+    }, 
+    "42-51-a-1": {
+        "op": "deleted"
+    }, 
+    "42-51-a-1-i": {
+        "op": "deleted"
+    }, 
+    "42-51-a-1-ii": {
+        "op": "deleted"
+    }, 
+    "42-51-a-2": {
+        "op": "deleted"
+    }, 
+    "42-51-b": {
+        "op": "deleted"
+    }, 
+    "42-51-b-1": {
+        "op": "deleted"
+    }, 
+    "42-51-b-1-i": {
+        "op": "deleted"
+    }, 
+    "42-51-b-1-ii": {
+        "op": "deleted"
+    }, 
+    "42-51-b-1-iii": {
+        "op": "deleted"
+    }, 
+    "42-51-b-2": {
+        "op": "deleted"
+    }, 
+    "42-51-b-2-i": {
+        "op": "deleted"
+    }, 
+    "42-51-b-2-ii": {
+        "op": "deleted"
+    }, 
+    "42-51-c": {
+        "op": "deleted"
+    }, 
+    "42-52": {
+        "op": "deleted"
+    }, 
+    "42-52-a": {
+        "op": "deleted"
+    }, 
+    "42-52-a-1": {
+        "op": "deleted"
+    }, 
+    "42-52-a-2": {
+        "op": "deleted"
+    }, 
+    "42-52-b": {
+        "op": "deleted"
+    }, 
+    "42-52-b-1": {
+        "op": "deleted"
+    }, 
+    "42-52-b-1-i": {
+        "op": "deleted"
+    }, 
+    "42-52-b-1-ii": {
+        "op": "deleted"
+    }, 
+    "42-52-b-2": {
+        "op": "deleted"
+    }, 
+    "42-52-b-2-i": {
+        "op": "deleted"
+    }, 
+    "42-52-b-2-ii": {
+        "op": "deleted"
+    }, 
+    "42-53": {
+        "op": "deleted"
+    }, 
+    "42-53-a": {
+        "op": "deleted"
+    }, 
+    "42-53-b": {
+        "op": "deleted"
+    }, 
+    "42-53-b-1": {
+        "op": "deleted"
+    }, 
+    "42-53-b-2": {
+        "op": "deleted"
+    }, 
+    "42-53-b-3": {
+        "op": "deleted"
+    }, 
+    "42-53-c": {
+        "op": "deleted"
+    }, 
+    "42-53-c-1": {
+        "op": "deleted"
+    }, 
+    "42-53-c-2": {
+        "op": "deleted"
+    }, 
+    "42-53-d": {
+        "op": "deleted"
+    }, 
+    "42-53-d-1": {
+        "op": "deleted"
+    }, 
+    "42-53-d-2": {
+        "op": "deleted"
+    }, 
+    "42-53-d-3": {
+        "op": "deleted"
+    }, 
+    "42-53-d-3-i": {
+        "op": "deleted"
+    }, 
+    "42-53-d-3-ii": {
+        "op": "deleted"
+    }, 
+    "42-53-d-4": {
+        "op": "deleted"
+    }, 
+    "42-53-d-5": {
+        "op": "deleted"
+    }, 
+    "42-53-d-5-i": {
+        "op": "deleted"
+    }, 
+    "42-53-d-5-i-A": {
+        "op": "deleted"
+    }, 
+    "42-53-d-5-i-B": {
+        "op": "deleted"
+    }, 
+    "42-53-d-5-i-C": {
+        "op": "deleted"
+    }, 
+    "42-53-d-5-i-D": {
+        "op": "deleted"
+    }, 
+    "42-53-d-5-ii": {
+        "op": "deleted"
+    }, 
+    "42-53-d-5-iii": {
+        "op": "deleted"
+    }, 
+    "42-53-d-5-iv": {
+        "op": "deleted"
+    }, 
+    "42-53-d-6": {
+        "op": "deleted"
+    }, 
+    "42-53-e": {
+        "op": "deleted"
+    }, 
+    "42-53-f": {
+        "op": "deleted"
+    }, 
+    "42-53-f-1": {
+        "op": "deleted"
+    }, 
+    "42-53-f-2": {
+        "op": "deleted"
+    }, 
+    "42-53-f-3": {
+        "op": "deleted"
+    }, 
+    "42-53-f-4": {
+        "op": "deleted"
+    }, 
+    "42-53-f-5": {
+        "op": "deleted"
+    }, 
+    "42-53-f-5-i": {
+        "op": "deleted"
+    }, 
+    "42-53-f-5-ii": {
+        "op": "deleted"
+    }, 
+    "42-53-f-5-iii": {
+        "op": "deleted"
+    }, 
+    "42-53-f-6": {
+        "op": "deleted"
+    }, 
+    "42-53-f-6-i": {
+        "op": "deleted"
+    }, 
+    "42-53-f-6-ii": {
+        "op": "deleted"
+    }, 
+    "42-53-f-6-iii": {
+        "op": "deleted"
+    }, 
+    "42-53-f-6-iv": {
+        "op": "deleted"
+    }, 
+    "42-53-f-6-v": {
+        "op": "deleted"
+    }, 
+    "42-53-f-6-vi": {
+        "op": "deleted"
+    }, 
+    "42-53-f-6-vii": {
+        "op": "deleted"
+    }, 
+    "42-53-f-7": {
+        "op": "deleted"
+    }, 
+    "42-53-f-8": {
+        "op": "deleted"
+    }, 
+    "42-53-g": {
+        "op": "deleted"
+    }, 
+    "42-54": {
+        "op": "deleted"
+    }, 
+    "42-54-a": {
+        "op": "deleted"
+    }, 
+    "42-54-a-1": {
+        "op": "deleted"
+    }, 
+    "42-54-a-2": {
+        "op": "deleted"
+    }, 
+    "42-54-a-3": {
+        "op": "deleted"
+    }, 
+    "42-54-a-4": {
+        "op": "deleted"
+    }, 
+    "42-54-a-5": {
+        "op": "deleted"
+    }, 
+    "42-54-a-6": {
+        "op": "deleted"
+    }, 
+    "42-54-a-7": {
+        "op": "deleted"
+    }, 
+    "42-54-a-8": {
+        "op": "deleted"
+    }, 
+    "42-54-b": {
+        "op": "deleted"
+    }, 
+    "42-55": {
+        "op": "deleted"
+    }, 
+    "42-55-a": {
+        "op": "deleted"
+    }, 
+    "42-55-b": {
+        "op": "deleted"
+    }, 
+    "42-55-b-1": {
+        "op": "deleted"
+    }, 
+    "42-55-b-2": {
+        "op": "deleted"
+    }, 
+    "42-55-b-3": {
+        "op": "deleted"
+    }, 
+    "42-56": {
+        "op": "deleted"
+    }, 
+    "42-6": {
+        "op": "deleted"
+    }, 
+    "42-6-a": {
+        "op": "deleted"
+    }, 
+    "42-6-a-1": {
+        "op": "deleted"
+    }, 
+    "42-6-a-2": {
+        "op": "deleted"
+    }, 
+    "42-6-a-2-i": {
+        "op": "deleted"
+    }, 
+    "42-6-a-2-ii": {
+        "op": "deleted"
+    }, 
+    "42-6-a-2-ii-A": {
+        "op": "deleted"
+    }, 
+    "42-6-a-2-ii-B": {
+        "op": "deleted"
+    }, 
+    "42-6-a-2-iii": {
+        "op": "deleted"
+    }, 
+    "42-6-a-2-iv": {
+        "op": "deleted"
+    }, 
+    "42-6-a-3": {
+        "op": "deleted"
+    }, 
+    "42-6-a-4": {
+        "op": "deleted"
+    }, 
+    "42-6-b": {
+        "op": "deleted"
+    }, 
+    "42-6-b-1": {
+        "op": "deleted"
+    }, 
+    "42-6-b-2": {
+        "op": "deleted"
+    }, 
+    "42-6-b-2-i": {
+        "op": "deleted"
+    }, 
+    "42-6-b-2-i-A": {
+        "op": "deleted"
+    }, 
+    "42-6-b-2-i-B": {
+        "op": "deleted"
+    }, 
+    "42-6-b-2-ii": {
+        "op": "deleted"
+    }, 
+    "42-6-c": {
+        "op": "deleted"
+    }, 
+    "42-6-d": {
+        "op": "deleted"
+    }, 
+    "42-6-e": {
+        "op": "deleted"
+    }, 
+    "42-6-e-1": {
+        "op": "deleted"
+    }, 
+    "42-6-e-2": {
+        "op": "deleted"
+    }, 
+    "42-6-e-3": {
+        "op": "deleted"
+    }, 
+    "42-6-e-4": {
+        "op": "deleted"
+    }, 
+    "42-6-e-4-i": {
+        "op": "deleted"
+    }, 
+    "42-6-e-4-ii": {
+        "op": "deleted"
+    }, 
+    "42-6-e-4-iii": {
+        "op": "deleted"
+    }, 
+    "42-6-e-4-iii-A": {
+        "op": "deleted"
+    }, 
+    "42-6-e-4-iii-B": {
+        "op": "deleted"
+    }, 
+    "42-61": {
+        "op": "deleted"
+    }, 
+    "42-61-a": {
+        "op": "deleted"
+    }, 
+    "42-61-b": {
+        "op": "deleted"
+    }, 
+    "42-61-c": {
+        "op": "deleted"
+    }, 
+    "42-62": {
+        "op": "deleted"
+    }, 
+    "42-62-a": {
+        "op": "deleted"
+    }, 
+    "42-62-b": {
+        "op": "deleted"
+    }, 
+    "42-62-c": {
+        "op": "deleted"
+    }, 
+    "42-62-c-p1087019701": {
+        "op": "deleted"
+    }, 
+    "42-62-c-p111137700": {
+        "op": "deleted"
+    }, 
+    "42-62-c-p2877555302": {
+        "op": "deleted"
+    }, 
+    "42-62-c-p3413788923": {
+        "op": "deleted"
+    }, 
+    "42-62-c-p599320003": {
+        "op": "deleted"
+    }, 
+    "42-62-c-p867810359": {
+        "op": "deleted"
+    }, 
+    "42-62-d": {
+        "op": "deleted"
+    }, 
+    "42-63": {
+        "op": "deleted"
+    }, 
+    "42-63-a": {
+        "op": "deleted"
+    }, 
+    "42-63-b": {
+        "op": "deleted"
+    }, 
+    "42-63-c": {
+        "op": "deleted"
+    }, 
+    "42-63-d": {
+        "op": "deleted"
+    }, 
+    "42-63-d-1": {
+        "op": "deleted"
+    }, 
+    "42-63-d-1-i": {
+        "op": "deleted"
+    }, 
+    "42-63-d-1-ii": {
+        "op": "deleted"
+    }, 
+    "42-63-d-2": {
+        "op": "deleted"
+    }, 
+    "42-63-d-2-i": {
+        "op": "deleted"
+    }, 
+    "42-63-d-2-ii": {
+        "op": "deleted"
+    }, 
+    "42-63-e": {
+        "op": "deleted"
+    }, 
+    "42-64": {
+        "op": "deleted"
+    }, 
+    "42-64-a": {
+        "op": "deleted"
+    }, 
+    "42-64-b": {
+        "op": "deleted"
+    }, 
+    "42-64-b-1": {
+        "op": "deleted"
+    }, 
+    "42-64-b-2": {
+        "op": "deleted"
+    }, 
+    "42-64-c": {
+        "op": "deleted"
+    }, 
+    "42-65": {
+        "op": "deleted"
+    }, 
+    "42-65-a": {
+        "op": "deleted"
+    }, 
+    "42-65-b": {
+        "op": "deleted"
+    }, 
+    "42-65-b-1": {
+        "op": "deleted"
+    }, 
+    "42-65-b-2": {
+        "op": "deleted"
+    }, 
+    "42-65-b-3": {
+        "op": "deleted"
+    }, 
+    "42-65-b-4": {
+        "op": "deleted"
+    }, 
+    "42-65-b-5": {
+        "op": "deleted"
+    }, 
+    "42-65-b-5-p1": {
+        "op": "deleted"
+    }, 
+    "42-7": {
+        "op": "deleted"
+    }, 
+    "42-7-a": {
+        "op": "deleted"
+    }, 
+    "42-7-b": {
+        "op": "deleted"
+    }, 
+    "42-70": {
+        "op": "deleted"
+    }, 
+    "42-70-a": {
+        "op": "deleted"
+    }, 
+    "42-70-b": {
+        "op": "deleted"
+    }, 
+    "42-71": {
+        "op": "deleted"
+    }, 
+    "42-71-a": {
+        "op": "deleted"
+    }, 
+    "42-71-b": {
+        "op": "deleted"
+    }, 
+    "42-71-c": {
+        "op": "deleted"
+    }, 
+    "42-71-d": {
+        "op": "deleted"
+    }, 
+    "42-71-d-1": {
+        "op": "deleted"
+    }, 
+    "42-71-d-2": {
+        "op": "deleted"
+    }, 
+    "42-72": {
+        "op": "deleted"
+    }, 
+    "42-73": {
+        "op": "deleted"
+    }, 
+    "42-73-a": {
+        "op": "deleted"
+    }, 
+    "42-73-b": {
+        "op": "deleted"
+    }, 
+    "42-73-b-1": {
+        "op": "deleted"
+    }, 
+    "42-73-b-2": {
+        "op": "deleted"
+    }, 
+    "42-73-b-3": {
+        "op": "deleted"
+    }, 
+    "42-73-b-4": {
+        "op": "deleted"
+    }, 
+    "42-73-c": {
+        "op": "deleted"
+    }, 
+    "42-73-d": {
+        "op": "deleted"
+    }, 
+    "42-73-d-1": {
+        "op": "deleted"
+    }, 
+    "42-73-d-2": {
+        "op": "deleted"
+    }, 
+    "42-73-d-3": {
+        "op": "deleted"
+    }, 
+    "42-73-d-3-i": {
+        "op": "deleted"
+    }, 
+    "42-73-d-3-ii": {
+        "op": "deleted"
+    }, 
+    "42-74": {
+        "op": "deleted"
+    }, 
+    "42-74-a": {
+        "op": "deleted"
+    }, 
+    "42-74-b": {
+        "op": "deleted"
+    }, 
+    "42-74-c": {
+        "op": "deleted"
+    }, 
+    "42-74-c-1": {
+        "op": "deleted"
+    }, 
+    "42-74-c-2": {
+        "op": "deleted"
+    }, 
+    "42-74-c-2-p1": {
+        "op": "deleted"
+    }, 
+    "42-8": {
+        "op": "deleted"
+    }, 
+    "42-8-a": {
+        "op": "deleted"
+    }, 
+    "42-8-a-1": {
+        "op": "deleted"
+    }, 
+    "42-8-a-2": {
+        "op": "deleted"
+    }, 
+    "42-8-a-3": {
+        "op": "deleted"
+    }, 
+    "42-8-b": {
+        "op": "deleted"
+    }, 
+    "42-8-b-1": {
+        "op": "deleted"
+    }, 
+    "42-8-b-2": {
+        "op": "deleted"
+    }, 
+    "42-8-b-3": {
+        "op": "deleted"
+    }, 
+    "42-8-b-4": {
+        "op": "deleted"
+    }, 
+    "42-8-b-4-i": {
+        "op": "deleted"
+    }, 
+    "42-8-b-4-ii": {
+        "op": "deleted"
+    }, 
+    "42-8-b-4-iii": {
+        "op": "deleted"
+    }, 
+    "42-8-b-4-iv": {
+        "op": "deleted"
+    }, 
+    "42-8-b-4-v": {
+        "op": "deleted"
+    }, 
+    "42-80": {
+        "op": "deleted"
+    }, 
+    "42-9": {
+        "op": "deleted"
+    }, 
+    "42-9-a": {
+        "op": "deleted"
+    }, 
+    "42-9-b": {
+        "op": "deleted"
+    }, 
+    "42-Subjgrp-AIoDP": {
+        "node": {
+            "child_labels": [
+                "42-409", 
+                "42-410", 
+                "42-411", 
+                "42-412"
+            ], 
+            "label": [
+                "42", 
+                "Subjgrp", 
+                "AIoDP"
+            ], 
+            "node_type": "subpart", 
+            "tagged_text": null, 
+            "text": "", 
+            "title": "After Institution of Derivation Proceeding"
+        }, 
+        "op": "added"
+    }, 
+    "42-Subjgrp-AIoIPR": {
+        "node": {
+            "child_labels": [
+                "42-120", 
+                "42-121", 
+                "42-122", 
+                "42-123"
+            ], 
+            "label": [
+                "42", 
+                "Subjgrp", 
+                "AIoIPR"
+            ], 
+            "node_type": "subpart", 
+            "tagged_text": null, 
+            "text": "", 
+            "title": "After Institution of Inter Partes Review"
+        }, 
+        "op": "added"
+    }, 
+    "42-Subjgrp-AIoPR": {
+        "node": {
+            "child_labels": [
+                "42-220", 
+                "42-221", 
+                "42-222", 
+                "42-223", 
+                "42-224"
+            ], 
+            "label": [
+                "42", 
+                "Subjgrp", 
+                "AIoPR"
+            ], 
+            "node_type": "subpart", 
+            "tagged_text": null, 
+            "text": "", 
+            "title": "After Institution of Post-Grant Review"
+        }, 
+        "op": "added"
+    }, 
+    "42-Subjgrp-Ce": {
+        "node": {
+            "child_labels": [
+                "42-80"
+            ], 
+            "label": [
+                "42", 
+                "Subjgrp", 
+                "Ce"
+            ], 
+            "node_type": "subpart", 
+            "tagged_text": null, 
+            "text": "", 
+            "title": "Certificate"
+        }, 
+        "op": "added"
+    }, 
+    "42-Subjgrp-Fe": {
+        "node": {
+            "child_labels": [
+                "42-15"
+            ], 
+            "label": [
+                "42", 
+                "Subjgrp", 
+                "Fe"
+            ], 
+            "node_type": "subpart", 
+            "tagged_text": null, 
+            "text": "", 
+            "title": "Fees"
+        }, 
+        "op": "added"
+    }, 
+    "42-Subjgrp-Ge": {
+        "node": {
+            "child_labels": [
+                "42-1", 
+                "42-2", 
+                "42-3", 
+                "42-4", 
+                "42-5", 
+                "42-6", 
+                "42-7", 
+                "42-8", 
+                "42-9", 
+                "42-10", 
+                "42-11", 
+                "42-12", 
+                "42-13", 
+                "42-14"
+            ], 
+            "label": [
+                "42", 
+                "Subjgrp", 
+                "Ge"
+            ], 
+            "node_type": "subpart", 
+            "tagged_text": null, 
+            "text": "", 
+            "title": "General"
+        }, 
+        "op": "added"
+    }, 
+    "42-Subjgrp-Ge.": {
+        "node": {
+            "child_labels": [
+                "42-100", 
+                "42-101", 
+                "42-102", 
+                "42-103", 
+                "42-104", 
+                "42-105", 
+                "42-106", 
+                "42-107"
+            ], 
+            "label": [
+                "42", 
+                "Subjgrp", 
+                "Ge."
+            ], 
+            "node_type": "subpart", 
+            "tagged_text": null, 
+            "text": "", 
+            "title": "General"
+        }, 
+        "op": "added"
+    }, 
+    "42-Subjgrp-Gen": {
+        "node": {
+            "child_labels": [
+                "42-200", 
+                "42-201", 
+                "42-202", 
+                "42-203", 
+                "42-204", 
+                "42-205", 
+                "42-206", 
+                "42-207"
+            ], 
+            "label": [
+                "42", 
+                "Subjgrp", 
+                "Gen"
+            ], 
+            "node_type": "subpart", 
+            "tagged_text": null, 
+            "text": "", 
+            "title": "General"
+        }, 
+        "op": "added"
+    }, 
+    "42-Subjgrp-IDP": {
+        "node": {
+            "child_labels": [
+                "42-408"
+            ], 
+            "label": [
+                "42", 
+                "Subjgrp", 
+                "IDP"
+            ], 
+            "node_type": "subpart", 
+            "tagged_text": null, 
+            "text": "", 
+            "title": "Instituting Derivation Proceeding"
+        }, 
+        "op": "added"
+    }, 
+    "42-Subjgrp-IIPR": {
+        "node": {
+            "child_labels": [
+                "42-108"
+            ], 
+            "label": [
+                "42", 
+                "Subjgrp", 
+                "IIPR"
+            ], 
+            "node_type": "subpart", 
+            "tagged_text": null, 
+            "text": "", 
+            "title": "Instituting Inter Partes Review"
+        }, 
+        "op": "added"
+    }, 
+    "42-Subjgrp-IPR": {
+        "node": {
+            "child_labels": [
+                "42-208"
+            ], 
+            "label": [
+                "42", 
+                "Subjgrp", 
+                "IPR"
+            ], 
+            "node_type": "subpart", 
+            "tagged_text": null, 
+            "text": "", 
+            "title": "Instituting Post-Grant Review"
+        }, 
+        "op": "added"
+    }, 
+    "42-Subjgrp-OADaS": {
+        "node": {
+            "child_labels": [
+                "42-70", 
+                "42-71", 
+                "42-72", 
+                "42-73", 
+                "42-74"
+            ], 
+            "label": [
+                "42", 
+                "Subjgrp", 
+                "OADaS"
+            ], 
+            "node_type": "subpart", 
+            "tagged_text": null, 
+            "text": "", 
+            "title": "Oral Argument, Decision, and Settlement"
+        }, 
+        "op": "added"
+    }, 
+    "42-Subjgrp-PaMP": {
+        "node": {
+            "child_labels": [
+                "42-20", 
+                "42-21", 
+                "42-22", 
+                "42-23", 
+                "42-24", 
+                "42-25"
+            ], 
+            "label": [
+                "42", 
+                "Subjgrp", 
+                "PaMP"
+            ], 
+            "node_type": "subpart", 
+            "tagged_text": null, 
+            "text": "", 
+            "title": "Petition and Motion Practice"
+        }, 
+        "op": "added"
+    }, 
+    "42-Subjgrp-TaP": {
+        "node": {
+            "child_labels": [
+                "42-51", 
+                "42-52", 
+                "42-53", 
+                "42-54", 
+                "42-55", 
+                "42-56", 
+                "42-61", 
+                "42-62", 
+                "42-63", 
+                "42-64", 
+                "42-65"
+            ], 
+            "label": [
+                "42", 
+                "Subjgrp", 
+                "TaP"
+            ], 
+            "node_type": "subpart", 
+            "tagged_text": null, 
+            "text": "", 
+            "title": "Testimony and Production"
+        }, 
+        "op": "added"
+    }, 
+    "42-Subpart-A": {
+        "child_ops": [
+            [
+                "delete", 
+                0, 
+                38
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "42-Subpart-B": {
+        "child_ops": [
+            [
+                "delete", 
+                0, 
+                13
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "42-Subpart-C": {
+        "child_ops": [
+            [
+                "delete", 
+                0, 
+                14
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "42-Subpart-D": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                1
+            ], 
+            [
+                "insert", 
+                1, 
+                [
+                    "42-301"
+                ]
+            ], 
+            [
+                "equal", 
+                1, 
+                4
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "42-Subpart-E": {
+        "node": {
+            "child_labels": [
+                "42-400", 
+                "42-401", 
+                "42-402", 
+                "42-403", 
+                "42-404", 
+                "42-405", 
+                "42-406", 
+                "42-407"
+            ], 
+            "label": [
+                "42", 
+                "Subpart", 
+                "E"
+            ], 
+            "node_type": "subpart", 
+            "tagged_text": null, 
+            "text": "", 
+            "title": "Derivation"
+        }, 
+        "op": "added"
+    }
+}

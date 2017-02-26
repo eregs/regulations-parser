@@ -2,11 +2,10 @@
 import logging
 from collections import namedtuple
 
-from stevedore.extension import ExtensionManager
-
 from regparser.notice import changes
 from regparser.notice.amdparser import amendment_from_xml
 from regparser.notice.amendments.subpart import process_designate_subpart
+from regparser.plugins import instantiate_if_possible
 from regparser.tree.struct import walk
 
 logger = logging.getLogger(__name__)
@@ -37,8 +36,9 @@ class ContentCache(object):
         if not is_editing:
             return None
 
-        for extension in ExtensionManager('eregs_ns.parser.amendment.content'):
-            result = extension.plugin(instruction_xml)
+        for extension in instantiate_if_possible(
+                'eregs_ns.parser.amendment.content'):
+            result = extension(instruction_xml)
             if result:
                 key, fn = result
                 if key is not None and key not in self.by_xml:
@@ -60,17 +60,13 @@ def fetch_amendments(notice_xml):
         amendment = amendment_from_xml(instruction_xml)
         content = cache.content_of_change(instruction_xml)
         if instruction_xml.tag == 'MOVE_INTO_SUBPART':
-            subpart_changes = process_designate_subpart(amendment)
-            if subpart_changes:
-                notice_changes.add_changes(amendment.amdpar_xml,
-                                           subpart_changes)
+            change = process_designate_subpart(amendment)
+            notice_changes.add_change(amendment.amdpar_xml, change)
         elif instruction_xml.tag == 'AUTHORITY':
             authority_by_xml[amendment.amdpar_xml] = instruction_xml.text
         elif changes.new_subpart_added(amendment):
-            subpart_changes = {}
             for change in changes.create_subpart_amendment(content.struct):
-                subpart_changes.update(change)
-            notice_changes.add_changes(amendment.amdpar_xml, subpart_changes)
+                notice_changes.add_change(amendment.amdpar_xml, change)
         elif content:
             content.amends.append(amendment)
         else:
@@ -86,7 +82,7 @@ def fetch_amendments(notice_xml):
         for inst_xml in amdpar_xml.xpath('./EREGS_INSTRUCTIONS'):
             context = inst_xml.get('final_context', '')
             amendment_dict['cfr_part'] = context.split('-')[0]
-        relevant_changes = notice_changes.changes_by_xml[amdpar_xml]
+        relevant_changes = notice_changes[amdpar_xml]
         if relevant_changes:
             amendment_dict['changes'] = list(relevant_changes.items())
         if amdpar_xml in authority_by_xml:
@@ -104,15 +100,15 @@ def create_xmlless_change(amendment, notice_changes):
     for label, amendments in amend_map.items():
         for amendment in amendments:
             if amendment['action'] == 'DELETE':
-                notice_changes.add_changes(
+                notice_changes.add_change(
                     amendment['amdpar_xml'],
-                    {label: {'action': amendment['action']}})
+                    changes.Change(label, {'action': amendment['action']}))
             elif amendment['action'] == 'MOVE':
                 change = {'action': amendment['action']}
                 destination = [d for d in amendment['destination'] if d != '?']
                 change['destination'] = destination
-                notice_changes.add_changes(
-                    amendment['amdpar_xml'], {label: change})
+                notice_changes.add_change(
+                    amendment['amdpar_xml'], changes.Change(label, change))
             else:
                 logger.warning("Unknown action: %s", amendment['action'])
 
@@ -135,9 +131,9 @@ def create_xml_changes(amended_labels, section, notice_changes):
                 else:
                     nodes = changes.create_add_amendment(amendment)
                 for n in nodes:
-                    notice_changes.add_changes(amendment['amdpar_xml'], n)
+                    notice_changes.add_change(amendment['amdpar_xml'], n)
             elif amendment['action'] == 'RESERVE':
                 change = changes.create_reserve_amendment(amendment)
-                notice_changes.add_changes(amendment['amdpar_xml'], change)
+                notice_changes.add_change(amendment['amdpar_xml'], change)
             else:
                 logger.warning("Unknown action: %s", amendment['action'])

@@ -420,3 +420,12 @@ def promote_nested_tags(tag, xml):
 
 promote_nested_subjgrp = functools.partial(promote_nested_tags, 'SUBJGRP')
 promote_nested_appendix = functools.partial(promote_nested_tags, 'APPENDIX')
+
+
+def move_subpart_into_contents(xml):
+    """Account for SUBPART tags being outside their intended CONTENTS"""
+    for subpart in xml.xpath('//SUBPART'):
+        following = subpart.getnext()
+        if following is not None and following.tag == 'CONTENTS':
+            subpart.extend(takewhile(lambda c: c.tag != 'SUBPART', following))
+            following.insert(0, subpart)

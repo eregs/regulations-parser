@@ -1,0 +1,71 @@
+{
+    "42-301": {
+        "node": {
+            "child_labels": [
+                "42-301-a", 
+                "42-301-b"
+            ], 
+            "label": [
+                "42", 
+                "301"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "\n               In addition to the definitions in \u00a7\u200942.2, the following definitions apply to proceedings under this subpart D:", 
+            "text": "In addition to the definitions in \u00a7\u200942.2, the following definitions apply to proceedings under this subpart D:", 
+            "title": "\u00a7 42.301 Definitions."
+        }, 
+        "op": "added"
+    }, 
+    "42-301-a": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "301", 
+                "a"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(a) <E T=\"03\">Covered business method patent</E> means a patent that claims a method or corresponding apparatus for performing data processing or other operations used in the practice, administration, or management of a financial product or service, except that the term does not include patents for technological inventions.", 
+            "text": "(a) Covered business method patent means a patent that claims a method or corresponding apparatus for performing data processing or other operations used in the practice, administration, or management of a financial product or service, except that the term does not include patents for technological inventions.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-301-b": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "42", 
+                "301", 
+                "b"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(b) <E T=\"03\">Technological invention.</E> In determining whether a patent is for a technological invention solely for purposes of the Transitional Program for Covered Business Methods (section 42.301(a)), the following will be considered on a case-by-case basis: whether the claimed subject matter as a whole recites a technological feature that is novel and unobvious over the prior art; and solves a technical problem using a technical solution.", 
+            "text": "(b) Technological invention. In determining whether a patent is for a technological invention solely for purposes of the Transitional Program for Covered Business Methods (section 42.301(a)), the following will be considered on a case-by-case basis: whether the claimed subject matter as a whole recites a technological feature that is novel and unobvious over the prior art; and solves a technical problem using a technical solution.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "42-Subpart-D": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                1
+            ], 
+            [
+                "insert", 
+                1, 
+                [
+                    "42-301"
+                ]
+            ], 
+            [
+                "equal", 
+                1, 
+                4
+            ]
+        ], 
+        "op": "modified"
+    }
+}

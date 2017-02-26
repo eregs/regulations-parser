@@ -1,0 +1,32 @@
+{
+    "amendments": [], 
+    "cfr_parts": [
+        "42"
+    ], 
+    "cfr_title": 37, 
+    "dockets": [
+        "Docket No. PTO-P-2011-0094"
+    ], 
+    "document_number": "2012-17908", 
+    "effective_on": "2013-03-16", 
+    "footnotes": {}, 
+    "fr_citation": "77 FR 48755", 
+    "fr_url": "https://www.federalregister.gov/documents/2012/08/14/2012-17908/office-patent-trial-practice-guide", 
+    "fr_volume": 77, 
+    "meta": {
+        "start_page": 48755
+    }, 
+    "primary_agency": "DEPARTMENT OF COMMERCE", 
+    "primary_docket": null, 
+    "publication_date": "2012-08-14", 
+    "regulation_id_numbers": [], 
+    "section_by_section": [], 
+    "supporting_documents": [], 
+    "title": "Office Patent Trial Practice Guide", 
+    "versions": {
+        "42": {
+            "left": "2012-17904", 
+            "right": "2012-17908"
+        }
+    }
+}
