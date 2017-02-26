@@ -11,6 +11,7 @@ from regparser.layer.key_terms import KeyTerms
 from regparser.tree.depth import markers as mtypes
 from regparser.tree.depth import heuristics, rules
 from regparser.tree.depth.derive import derive_depths
+from regparser.tree.gpo_cfr.appendices import appendix_headers
 from regparser.tree.struct import Node, treeify
 from regparser.tree.xml_parser import matchers, tree_utils
 
@@ -291,7 +292,7 @@ def parse_from_xml(root, xml_nodes):
 
 def build_supplement_tree(reg_part, node):
     """ Build the tree for the supplement section. """
-    title = get_app_title(node)
+    title = tree_utils.get_node_text(appendix_headers(node)[0])
     root = Node(
         node_type=Node.INTERP,
         label=[reg_part, Node.INTERP_MARK],

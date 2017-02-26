@@ -5,6 +5,7 @@ from regparser.test_utils.node_accessor import NodeAccessor
 from regparser.test_utils.xml_builder import XMLBuilder
 from regparser.tree.gpo_cfr import appendices
 from regparser.tree.struct import Node
+from regparser.tree.xml_parser.tree_utils import get_node_text
 
 
 def test_process_appendix():
@@ -532,3 +533,17 @@ def test_process_separated_by_header():
     assert appendix['a']['1'].child_labels == ['h1']
     assert appendix['a']['2'].children == []
     assert appendix['a']['p1'].children == []
+
+
+def test_appendix_headers():
+    with XMLBuilder('APPENDIX') as ctx:
+        ctx.EAR('1')
+        ctx.HD('2', SOURCE='HED')
+        ctx.P('3')
+        ctx.HD('4', SOURCE='HD1')
+        ctx.GPH('5')
+        ctx.RESERVED('6')
+        with ctx.WHED():
+            ctx.E('7')
+    headers = [get_node_text(h) for h in appendices.appendix_headers(ctx.xml)]
+    assert headers == ['2', '6', '7']
