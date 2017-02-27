@@ -56,7 +56,7 @@ class SourceFile(Serialized):
     file_name = models.CharField(max_length=128)
 
     def xml(self):
-        return etree.fromstring(self.contents)
+        return etree.fromstring(bytes(self.contents))
 
     class Meta:
         unique_together = ('collection', 'file_name')
