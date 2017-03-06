@@ -71,7 +71,7 @@ class NoticeXML(XMLWrapper):
     def delays(self):
         """Pull out FRDelays found in the DATES tag"""
         dates_str = "".join(p.text for p in self.xpath(
-            "(//DATES/P)|(//EFFDATE/P)"))
+            "(//DATES/P)|(//EFFDATE/P)") if p.text)
         return [delay for sent in dates_str.split('.')
                 for delay in delays_in_sentence(sent)]
 

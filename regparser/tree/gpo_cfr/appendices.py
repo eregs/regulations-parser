@@ -45,9 +45,8 @@ def remove_toc(appendix, letter):
             return
 
 
-def is_appendix_header(node):
-    return (node.tag == 'RESERVED' or
-            (node.tag == 'HD' and node.attrib['SOURCE'] == 'HED'))
+def appendix_headers(node):
+    return node.xpath('./RESERVED|./HD[@SOURCE="HED"]|./WHED')
 
 
 _first_markers = [re.compile(r'[\)\.|,|;|-|—]\s*\(' + lvl[0] + r'\)')
@@ -76,9 +75,8 @@ class AppendixProcessor(object):
 
     def set_letter(self, appendix):
         """Find (and set) the appendix letter"""
-        for node in (c for c in appendix.getchildren()
-                     if is_appendix_header(c)):
-            text = tree_utils.get_node_text(node)
+        for hd in appendix_headers(appendix):
+            text = tree_utils.get_node_text(hd)
             if self.appendix_letter:
                 logger.warning("Found two appendix headers: %s and %s",
                                self.appendix_letter, text)
