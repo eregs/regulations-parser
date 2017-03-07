@@ -1,14 +1,12 @@
-from datetime import date, timedelta
+from datetime import date
 
 import pytest
-from django.utils import timezone
-from mock import Mock
+from mock import Mock, call
 
 from regparser.commands import versions
-from regparser.index import dependency, entry
+from regparser.index import entry
 from regparser.notice.xml import NoticeXML
-from regparser.web.index.models import Entry as DBEntry
-from regparser.web.index.models import CFRVersion, SourceFile
+from regparser.web.index.models import CFRVersion, SourceCollection, SourceFile
 
 
 @pytest.mark.django_db
@@ -19,8 +17,7 @@ def test_fetch_version_ids_no_local(monkeypatch):
         {'document_number': '1', 'full_text_xml_url': 'somewhere'},
         {'document_number': '22', 'full_text_xml_url': 'somewhere'}
     ]))
-    path = entry.Entry("path")
-    assert ['1', '22'] == versions.fetch_version_ids('title', 'part', path)
+    assert ['1', '22'] == versions.fetch_version_ids('title', 'part')
 
 
 @pytest.mark.django_db
@@ -31,12 +28,12 @@ def test_fetch_version_ids_local(monkeypatch):
         {'document_number': '1', 'full_text_xml_url': 'somewhere'},
         {'document_number': '22', 'full_text_xml_url': 'somewhere'}
     ]))
-    path = entry.Entry("path")
+    path = entry.Entry("notice_xml")
     (path / '1_20010101').write(b'v1')
     (path / '1_20020202').write(b'v2')
     (path / '22').write(b'second')
     (path / '22-3344').write(b'unrelated file')
-    assert versions.fetch_version_ids('title', 'part', path) == [
+    assert versions.fetch_version_ids('title', 'part') == [
         '1_20010101', '1_20020202', '22']
 
 
@@ -48,10 +45,10 @@ def test_fetch_version_ids_skip_no_xml(monkeypatch):
         {'document_number': '2', 'full_text_xml_url': None},
         {'document_number': '3', 'full_text_xml_url': 'somewhere'}
     ]))
-    path = entry.Entry("path")
-    assert ['1', '3'] == versions.fetch_version_ids('title', 'part', path)
+    assert ['1', '3'] == versions.fetch_version_ids('title', 'part')
 
 
+@pytest.mark.django_db
 def test_delays():
     """For NoticeXMLs which cause delays to other NoticeXMLs, we'd like to get
     a dictionary of delayed -> Delay(delayer, delayed_until)"""
@@ -133,100 +130,84 @@ def test_delays_order():
 
 
 @pytest.mark.django_db
-def test_write_to_disk():
+def test_create_version():
     """If a version has been delayed, its effective date should be part of the
     serialized json"""
     notice_xml1 = NoticeXML(b'<ROOT/>')
-    notice_xml1.version_id = '111'
+    notice_xml1.version_id = 'aaa'
     notice_xml1.effective = date(2002, 2, 2)
     notice_xml1.fr_volume = 1
     notice_xml1.start_page = 1
     notice_xml1.save()
 
     notice_xml2 = NoticeXML(b'<ROOT/>')
-    notice_xml2.version_id = '222'
+    notice_xml2.version_id = 'bbb'
     notice_xml2.save()
 
-    sources = {'111': SourceFile.objects.get(file_name='111'),
-               '222': SourceFile.objects.get(file_name='222')}
+    sources = {'aaa': SourceFile.objects.get(file_name='aaa'),
+               'bbb': SourceFile.objects.get(file_name='bbb')}
 
-    versions.write_to_disk('12', '1000', sources, '111')
+    versions.create_version('12', '1000', sources, 'aaa')
     saved = CFRVersion.objects.get()
     assert saved.effective == date(2002, 2, 2)
-    assert saved.source == sources['111']
+    assert saved.source == sources['aaa']
     assert saved.delaying_source is None
+    CFRVersion.objects.all().delete()
 
-    versions.write_to_disk('12', '1000', sources, '111',
-                           versions.Delay(by='222', until=date(2004, 4, 4)))
+    versions.create_version('12', '1000', sources, 'aaa',
+                            versions.Delay(by='bbb', until=date(2004, 4, 4)))
     saved = CFRVersion.objects.get()
     assert saved.effective == date(2004, 4, 4)
-    assert saved.source == sources['111']
-    assert saved.delaying_source == sources['222']
+    assert saved.source == sources['aaa']
+    assert saved.delaying_source == sources['bbb']
 
 
 @pytest.mark.django_db
-def test_write_if_needed_raises_exception(monkeypatch):
-    """If an input file is missing, this raises an exception"""
-    with pytest.raises(dependency.Missing):
-        versions.write_if_needed(
-            'title', 'part', [SourceFile(file_name='111')], {})
+def test_generate_source_calls_preprocessor(monkeypatch):
+    """If a SourceFile is missing, we should call the preprocess function"""
+    ctx = Mock()
+
+    def create_source(*args, **kwargs):
+        SourceFile.objects.create(
+            collection=SourceCollection.notice.name, file_name='aaa')
+
+    ctx.invoke.side_effect = create_source
+    versions.generate_source('aaa', ctx)
+    assert ctx.invoke.call_args == call(versions.preprocess_notice,
+                                        document_number='aaa')
 
 
 @pytest.mark.django_db
-def test_write_if_needed_output_missing(monkeypatch):
+def test_create_if_needed_output_missing(monkeypatch):
     """If the output file is missing, we'll always write"""
-    monkeypatch.setattr(versions, 'write_to_disk', Mock())
-    entry.Entry('notice_xml', '111').write(b'content')
-    versions.write_if_needed(
-        'title', 'part', [SourceFile(file_name='111')], {})
-    assert versions.write_to_disk.called
+    monkeypatch.setattr(versions, 'create_version', Mock())
+    entry.Entry('notice_xml', 'aaa').write(b'content')
+    versions.create_if_needed(111, 22, [SourceFile(file_name='aaa')], {})
+    assert versions.create_version.called
 
 
 @pytest.mark.django_db
-def test_write_if_needed_no_need_to_recompute(monkeypatch):
-    """If all dependencies are up to date and the output is present, there's
-    no need to write anything"""
-    monkeypatch.setattr(versions, 'write_to_disk', Mock())
-    entry.Entry('notice_xml', '111').write(b'content')
-    entry.Entry('version', 'title', 'part', '111').write(b'out')
-    versions.write_if_needed(
-        'title', 'part', [SourceFile(file_name='111')], {})
-    assert not versions.write_to_disk.called
+def test_generate_source_no_need_to_recompute(monkeypatch):
+    """If the SourceFile is present, there's no need to call precompute"""
+    sf = SourceFile.objects.create(
+        collection=SourceCollection.notice.name, file_name='aaa')
+    ctx = Mock()
+    assert sf == versions.generate_source('aaa', ctx)
+    assert not ctx.invoke.called
 
 
 @pytest.mark.django_db
-def test_write_if_needed_delays(monkeypatch):
-    """Delays introduce dependencies."""
-    monkeypatch.setattr(versions, 'write_to_disk', Mock())
-    entry.Entry('notice_xml', '111').write(b'content')
-    entry.Entry('notice_xml', '222').write(b'content')
-    entry.Entry('version', 'title', 'part', '111').write(b'out')
-    entry.Entry('version', 'title', 'part', '222').write(b'out')
-    sources = [SourceFile(file_name='111'), SourceFile(file_name='222')]
-    delays = {'111': versions.Delay('222', 'until-date')}
-    versions.write_if_needed('title', 'part', sources, delays)
-    assert not versions.write_to_disk.called
-
-    # Simulate a change to an input file
-    label_id = str(entry.Notice('222'))
-    new_time = timezone.now() + timedelta(hours=1)
-    DBEntry.objects.filter(label_id=label_id).update(modified=new_time)
-    versions.write_if_needed('title', 'part', sources, delays)
-    assert versions.write_to_disk.called
-
-
-@pytest.mark.django_db
-def test_write_to_disk_no_effective(monkeypatch):
+def test_create_version_no_effective(monkeypatch):
     """If a version is somehow associated with a proposed rule (or a final
     rule has been misparsed), we should get a warning"""
     notice_xml = NoticeXML(b'<ROOT><DATES/></ROOT>')
-    notice_xml.version_id = '111'
+    notice_xml.version_id = 'aaa'
     notice_xml.save()
 
-    sources = {'111': SourceFile.objects.get(file_name='111')}
+    sources = {'aaa': SourceFile.objects.get(file_name='aaa')}
     monkeypatch.setattr(versions, 'logger', Mock())
 
-    versions.write_to_disk('not', 'used', sources, '111')
+    versions.create_version('not', 'used', sources, 'aaa')
 
     assert versions.logger.warning.called
-    assert '111' in versions.logger.warning.call_args[0]
+    assert 'aaa' in versions.logger.warning.call_args[0]
