@@ -1,6 +1,7 @@
-FROM python:2.7-alpine
+FROM python:3.5-alpine
 
 COPY ["regparser", "/app/src/regparser/"]
+COPY ["interpparser", "/app/src/interpparser/"]
 COPY ["settings.py", "eregs.py", "requirements.txt", "setup.py", "manage.py", "/app/src/"]
 VOLUME ["/app/cache", "/app/output"]
 
