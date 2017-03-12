@@ -10,12 +10,21 @@ install:
   - pip install -r requirements_test.txt
   - pip install coveralls
 env:
-  matrix:
-    - INTEGRATION_TARGET=
-    - INTEGRATION_TARGET=fec
-    - INTEGRATION_TARGET=atf
-    - INTEGRATION_TARGET=epa
-    - INTEGRATION_TARGET=uspto
+  - INTEGRATION_TARGET=
+  - INTEGRATION_TARGET=atf
+  - INTEGRATION_TARGET=epa
+  - INTEGRATION_TARGET=fec
+  - INTEGRATION_TARGET=uspto
+matrix:
+  include:
+    - python: 3.5
+      dist: trusty
+      sudo: required
+      services:
+        - docker
+      env:
+        - INTEGRATION_TARGET=uspto
+        - DOCKER_BUILD=Yep
 script:
   - ./test-travis.sh
 after_success:
