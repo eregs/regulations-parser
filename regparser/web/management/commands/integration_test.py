@@ -17,7 +17,7 @@ import pip
 from regparser.commands.compare_to import compare_to
 from regparser.web.management.commands.eregs import cli as eregs_cli
 
-_output_dir = 'output-{0}'.format
+_output_dir = functools.partial(os.path.join, 'output')
 _ground_truth = functools.partial(os.path.join, 'tests', 'integration-data')
 
 
