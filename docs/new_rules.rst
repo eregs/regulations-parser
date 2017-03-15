@@ -23,7 +23,7 @@ the relevant annual editions and final rules. It caches its results for a few
 days, so if a rule has only recently hit the Federal Register, you may need to
 run::
 
-  eregs clear --http-cache
+  eregs clear
 
 After running ``pipeline``, you should see a version associated with the new
 rule in your output. If not, verify that the final rule is present on the
@@ -96,7 +96,7 @@ inform the parser to look for your new file. To do so,
 
 Then re-run pipeline. This will alert the parser of the file's presence. You
 will only need to re-run the ``pipeline`` command on successive edits.
-  
+
 When all is said and done, we request you make a pull request to the shared
 ``fr-notices`` repository, which gets downloaded automatically by the parser.
 
