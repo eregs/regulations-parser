@@ -2,7 +2,7 @@ from setuptools import find_packages, setup
 
 setup(
     name="regparser",
-    version="4.2.0",
+    version="4.3.0",
     packages=find_packages(),
     classifiers=[
         'License :: Public Domain',
