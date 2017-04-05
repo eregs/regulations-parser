@@ -11,7 +11,7 @@ from regparser.layer.key_terms import KeyTerms
 from regparser.tree.depth import markers as mtypes
 from regparser.tree.depth import heuristics, rules
 from regparser.tree.depth.derive import derive_depths
-from regparser.tree.gpo_cfr.appendices import appendix_headers
+from regparser.tree.gpo_cfr import appendices
 from regparser.tree.struct import Node, treeify
 from regparser.tree.xml_parser import matchers, tree_utils
 
@@ -292,11 +292,10 @@ def parse_from_xml(root, xml_nodes):
 
 def build_supplement_tree(reg_part, node):
     """ Build the tree for the supplement section. """
-    title = tree_utils.get_node_text(appendix_headers(node)[0])
     root = Node(
         node_type=Node.INTERP,
         label=[reg_part, Node.INTERP_MARK],
-        title=title)
+        title=appendices.get_appendix_title(node))
 
     return parse_from_xml(root, node.getchildren())
 
@@ -304,14 +303,3 @@ def build_supplement_tree(reg_part, node):
 @matchers.match_tag('INTERP')
 def parse_interp(parent, xml_node):
     parent.children.append(build_supplement_tree(parent.cfr_part, xml_node))
-
-
-def get_app_title(node):
-    """ Appendix/Supplement sections have the title in an HD tag, or
-    if they are reserved, in a <RESERVED> tag. Extract the title. """
-
-    titles = node.xpath("./HD[@SOURCE='HED']")
-    if titles:
-        return titles[0].text
-    else:
-        return node.xpath("./RESERVED")[0]
