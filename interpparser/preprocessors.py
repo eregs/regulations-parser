@@ -1,4 +1,4 @@
-from interpparser.gpo_cfr import get_app_title
+from regparser.tree.gpo_cfr import appendices
 
 _CONTAINS_SUPPLEMENT = "contains(., 'Supplement I')"
 _SUPPLEMENT_HD = "//REGTEXT//HD[@SOURCE='HD1' and {0}]".format(
@@ -26,8 +26,8 @@ def supplement_amdpar(xml):
 
 
 def appendix_to_interp(xml):
-    """Convert Supplement I APPENDIX tags to INTERP"""
+    """Convert Supplement I APPENDIX tags to INTERP."""
     for appendix in xml.xpath('.//APPENDIX'):
-        section_title = get_app_title(appendix)
+        section_title = appendices.get_appendix_title(appendix)
         if 'Supplement' in section_title and 'Part' in section_title:
             appendix.tag = 'INTERP'
