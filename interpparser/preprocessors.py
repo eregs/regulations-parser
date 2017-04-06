@@ -26,7 +26,7 @@ def supplement_amdpar(xml):
 
 
 def appendix_to_interp(xml):
-    """Convert Supplement I APPENDIX tags to INTERP"""
+    """Convert Supplement I APPENDIX tags to INTERP."""
     for appendix in xml.xpath('.//APPENDIX'):
         section_title = appendices.get_appendix_title(appendix)
         if 'Supplement' in section_title and 'Part' in section_title:

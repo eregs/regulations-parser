@@ -291,7 +291,7 @@ def parse_from_xml(root, xml_nodes):
 
 
 def build_supplement_tree(reg_part, node):
-    """ Build the tree for the supplement section. """
+    """Build the tree for the supplement section."""
     root = Node(
         node_type=Node.INTERP,
         label=[reg_part, Node.INTERP_MARK],

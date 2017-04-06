@@ -49,6 +49,7 @@ def appendix_headers(node):
     """ Retrieve Appendix/Supplement section HD, WHED, and RESERVED tags. """
     return node.xpath('./RESERVED|./HD[@SOURCE="HED"]|./WHED')
 
+
 def get_appendix_title(node):
     """ Retrieve the first Appendix/Supplement title from its headers. """
     return tree_utils.get_node_text(appendix_headers(node)[0])
