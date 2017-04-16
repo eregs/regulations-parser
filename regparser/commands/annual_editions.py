@@ -2,12 +2,11 @@ import logging
 
 import click
 
-from regparser.commands.fetch_annual_edition import fetch_annual_edition
+from regparser.commands.fetch_annual_edition import source_file
 from regparser.history import annual
 from regparser.tree import gpo_cfr
 from regparser.tree.struct import FullNodeEncoder
-from regparser.web.index.models import (CFRVersion, DocCollection,
-                                        SourceCollection, SourceFile)
+from regparser.web.index.models import CFRVersion, DocCollection
 
 logger = logging.getLogger(__name__)
 
@@ -31,17 +30,6 @@ def last_versions(cfr_title, cfr_part):
                            year, cfr_title, cfr_part)
 
 
-def source_file(ctx, cfr_title, cfr_part, year):
-    """Retrieve the SourceFile associated with this title, part, and year. If
-    it does not exist, run the appropriate command to grab it."""
-    query = SourceFile.objects.filter(
-        collection=SourceCollection.annual.name,
-        file_name=SourceCollection.annual.format(cfr_title, cfr_part, year))
-    if not query.exists():
-        ctx.invoke(fetch_annual_edition, cfr_title, cfr_part, year)
-    return query.get()
-
-
 def encoded_tree(source):
     """Given a SourceFile, parse a Node tree and encode it into JSON bytes"""
     annual_xml = source.xml()
@@ -59,9 +47,7 @@ def create_where_needed(ctx, cfr_title, cfr_part, last_version_list):
         if not version.docs.count():
             version.docs.create(
                 collection=DocCollection.gpo_cfr.name, label=cfr_part,
-                source=source_file(ctx, cfr_title, cfr_part, year),
-                contents=encoded_tree(source)
-            )
+                source=source, contents=encoded_tree(source))
 
 
 @click.command()

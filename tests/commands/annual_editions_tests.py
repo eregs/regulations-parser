@@ -2,7 +2,7 @@ from datetime import date
 
 import click
 import pytest
-from mock import Mock, call
+from mock import Mock
 from model_mommy import mommy
 
 from regparser.commands import annual_editions
@@ -51,28 +51,6 @@ def test_last_versions_not_printed(monkeypatch):
 
     results = list(annual_editions.last_versions(12, 1000))
     assert results == [v1]
-
-
-@pytest.mark.django_db
-def test_source_file_missing_dependency():
-    """If the source XML isn't present, we should run a command to grab it"""
-    ctx = Mock()
-
-    def mock_invoke(command, cfr_title, cfr_part, year):
-        file_name = SourceCollection.annual.format(cfr_title, cfr_part, year)
-        mommy.make(SourceFile, collection=SourceCollection.annual.name,
-                   file_name=file_name)
-    ctx.invoke.side_effect = mock_invoke
-
-    assert not SourceFile.objects.exists()
-    annual_editions.source_file(ctx, 11, 222, 2010)
-
-    assert SourceFile.objects.count() == 1
-    assert ctx.invoke.call_args == call(
-        annual_editions.fetch_annual_edition, 11, 222, 2010)
-
-    annual_editions.source_file(ctx, 11, 222, 2010)
-    assert SourceFile.objects.count() == 1      # doesn't change
 
 
 @pytest.mark.django_db
