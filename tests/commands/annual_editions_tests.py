@@ -1,15 +1,14 @@
-from datetime import date, timedelta
+from datetime import date
 
 import click
 import pytest
-from django.utils import timezone
-from mock import Mock
+from mock import Mock, call
+from model_mommy import mommy
 
 from regparser.commands import annual_editions
-from regparser.index import dependency, entry
 from regparser.tree.struct import Node
-from regparser.web.index.models import Entry as DBEntry
-from regparser.web.index.models import CFRVersion, SourceCollection, SourceFile
+from regparser.web.index.models import (CFRVersion, Document, SourceCollection,
+                                        SourceFile)
 
 
 @pytest.mark.django_db
@@ -25,25 +24,17 @@ def test_last_versions_multiple_versions(monkeypatch):
     receive the last"""
     monkeypatch.setattr(annual_editions.annual, 'find_volume', Mock())
     annual_editions.annual.find_volume.return_value = True
-    entry.Version('12', '1000', '1111').write(b'')
-    CFRVersion.objects.create(
-        identifier='1111', effective=date(2000, 12, 1), fr_volume=1,
+    v1, v2, v3 = mommy.make(
+        CFRVersion, _quantity=3, effective=date(2000, 12, 1), fr_volume=1,
         fr_page=1, cfr_title=12, cfr_part=1000
     )
-    entry.Version('12', '1000', '2222').write(b'')
-    CFRVersion.objects.create(
-        identifier='2222', effective=date(2000, 12, 2), fr_volume=1,
-        fr_page=2, cfr_title=12, cfr_part=1000
-    )
-    entry.Version('12', '1000', '3333').write(b'')
-    CFRVersion.objects.create(
-        identifier='3333', effective=date(2001, 12, 1), fr_volume=1,
-        fr_page=1, cfr_title=12, cfr_part=1000
-    )
+    v2.effective = date(2000, 12, 2)
+    v2.save()
+    v3.effective = date(2001, 12, 1)
+    v3.save()
 
     results = list(annual_editions.last_versions(12, 1000))
-    assert results == [annual_editions.LastVersionInYear('2222', 2001),
-                       annual_editions.LastVersionInYear('3333', 2002)]
+    assert results == [v2, v3]
 
 
 @pytest.mark.django_db
@@ -53,71 +44,57 @@ def test_last_versions_not_printed(monkeypatch):
     # 2001 exists; no other years do
     monkeypatch.setattr(annual_editions.annual, 'find_volume', Mock())
     annual_editions.annual.find_volume = lambda year, title, part: year == 2001
-    entry.Version('12', '1000', '1111').write(b'')
-    CFRVersion.objects.create(
-        identifier='1111', effective=date(2000, 12, 1), fr_volume=1,
-        fr_page=1, cfr_title=12, cfr_part=1000
-    )
-    entry.Version('12', '1000', '2222').write(b'')
-    CFRVersion.objects.create(
-        identifier='2222', effective=date(2001, 12, 1), fr_volume=1,
-        fr_page=1, cfr_title=12, cfr_part=1000
-    )
+    v1 = mommy.make(CFRVersion, cfr_title=12, cfr_part=1000,
+                    effective=date(2000, 12, 1))
+    mommy.make(CFRVersion, cfr_title=12, cfr_part=1000,
+               effective=date(2001, 12, 1))
 
     results = list(annual_editions.last_versions(12, 1000))
-    assert results == [annual_editions.LastVersionInYear('1111', 2001)]
+    assert results == [v1]
 
 
 @pytest.mark.django_db
-def test_process_if_needed_missing_dependency_error():
-    """If the annual XML or version isn't present, we should see a dependency
-    error."""
-    last_versions = [annual_editions.LastVersionInYear('1111', 2000)]
+def test_source_file_missing_dependency():
+    """If the source XML isn't present, we should run a command to grab it"""
+    ctx = Mock()
 
-    with pytest.raises(dependency.Missing):
-        annual_editions.process_if_needed('12', '1000', last_versions)
+    def mock_invoke(command, cfr_title, cfr_part, year):
+        file_name = SourceCollection.annual.format(cfr_title, cfr_part, year)
+        mommy.make(SourceFile, collection=SourceCollection.annual.name,
+                   file_name=file_name)
+    ctx.invoke.side_effect = mock_invoke
 
-    entry.Version('12', '1000', '1111').write(b'')
-    CFRVersion.objects.create(
-        identifier='1111', effective=date(2000, 1, 1), fr_volume=1,
-        fr_page=1, cfr_title=12, cfr_part=1000
-    )
+    assert not SourceFile.objects.exists()
+    annual_editions.source_file(ctx, 11, 222, 2010)
 
-    with pytest.raises(dependency.Missing):
-        annual_editions.process_if_needed('12', '1000', last_versions)
+    assert SourceFile.objects.count() == 1
+    assert ctx.invoke.call_args == call(
+        annual_editions.fetch_annual_edition, 11, 222, 2010)
+
+    annual_editions.source_file(ctx, 11, 222, 2010)
+    assert SourceFile.objects.count() == 1      # doesn't change
 
 
 @pytest.mark.django_db
-def test_process_if_needed_missing_writes(monkeypatch):
-    """If output isn't already present, we should process. If it is present,
-    we don't need to, unless a dependency has changed."""
+def test_create_where_needed_writes(monkeypatch):
+    """If don't have an appropriate Document, we create one"""
     monkeypatch.setattr(annual_editions, 'gpo_cfr', Mock())
     build_tree = annual_editions.gpo_cfr.builder.build_tree
     build_tree.return_value = Node()
-    last_versions = [annual_editions.LastVersionInYear('1111', 2000)]
-    entry.Version('12', '1000', '1111').write(b'')
-    CFRVersion.objects.create(
-        identifier='1111', effective=date(2000, 1, 1), fr_volume=1,
-        fr_page=1, cfr_title=12, cfr_part=1000
-    )
-    entry.Entry('annual', '12', '1000', 2000).write(b'')
+    version = mommy.make(CFRVersion, effective=date(2000, 1, 1), cfr_title=12,
+                         cfr_part=1000)
     SourceFile.objects.create(
         collection=SourceCollection.annual.name,
         file_name=SourceCollection.annual.format(12, 1000, 2000),
         contents=b'<ROOT/>'
     )
 
-    annual_editions.process_if_needed('12', '1000', last_versions)
+    assert not Document.objects.exists()
+    annual_editions.create_where_needed(Mock(), '12', '1000', [version])
     assert build_tree.called
+    assert Document.objects.count() == 1
 
     build_tree.reset_mock()
-    entry.Entry('tree', '12', '1000', '1111').write(b'tree-here')
-    annual_editions.process_if_needed('12', '1000', last_versions)
+    annual_editions.create_where_needed(Mock(), '12', '1000', [version])
     assert not build_tree.called
-
-    # Simulate a change to an input file
-    label_id = str(entry.Annual(12, 1000, 2000))
-    new_time = timezone.now() + timedelta(hours=1)
-    DBEntry.objects.filter(label_id=label_id).update(modified=new_time)
-    annual_editions.process_if_needed('12', '1000', last_versions)
-    assert build_tree.called
+    assert Document.objects.count() == 1
