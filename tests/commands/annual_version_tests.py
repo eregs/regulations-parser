@@ -1,4 +1,3 @@
-import json
 from datetime import date
 from random import randint
 
@@ -10,9 +9,9 @@ from model_mommy import mommy
 
 from regparser.commands import annual_version
 from regparser.history.annual import Volume
-from regparser.index import entry
 from regparser.notice.xml import NoticeXML, TitlePartsRef
-from regparser.web.index.models import CFRVersion, SourceCollection, SourceFile
+from regparser.web.index.models import (CFRVersion, Document, SourceCollection,
+                                        SourceFile)
 
 
 @pytest.mark.django_db
@@ -20,19 +19,17 @@ def test_process_creation(monkeypatch):
     """If no tree is present, we should build one"""
     title, part, year = randint(1, 999), randint(1, 999), randint(2000, 2020)
     version_id = '{0}-annual-{1}'.format(year, part)
-    monkeypatch.setattr(annual_version, 'builder', Mock())
-
-    entry.Entry('annual', title, part, year).write(b'')
-    SourceFile.objects.create(
+    source = SourceFile.objects.create(
         collection=SourceCollection.annual.name,
         file_name=SourceCollection.annual.format(title, part, year),
         contents=b'<ROOT />'
     )
+    monkeypatch.setattr(annual_version, 'encoded_tree',
+                        Mock(return_value=b'tree-here'))
 
-    annual_version.builder.build_tree.return_value = {'my': 'tree'}
-    annual_version.process_if_needed(Volume(year, title, 1), part)
-    tree = entry.Entry('tree', title, part, version_id).read()
-    assert json.loads(tree.decode('utf-8')) == {'my': 'tree'}
+    assert Document.objects.count() == 0
+    annual_version.create_where_needed(Volume(year, title, 1), part, source)
+    assert Document.objects.count() == 1
 
     notice = NoticeXML.from_db(version_id)
     assert notice.version_id == version_id
@@ -40,32 +37,13 @@ def test_process_creation(monkeypatch):
 
 
 @pytest.mark.django_db
-def test_process_no_need_to_create():
-    """If everything is up to date, we don't need to build new versions"""
-    title, part, year = randint(1, 999), randint(1, 999), randint(2000, 2020)
-    annual = entry.Entry('annual', title, part, year)
-    tree = entry.Entry('tree', title, part,
-                       '{0}-annual-{1}'.format(year, part))
-    annual.write(b'ANNUAL')
-    SourceFile.objects.create(
-        collection=SourceCollection.annual.name,
-        file_name=SourceCollection.annual.format(title, part, year)
-    )
-    tree.write(b'TREE')
-
-    annual_version.process_if_needed(Volume(year, title, 1), part)
-
-    # didn't change
-    assert annual.read() == b'ANNUAL'
-    assert tree.read() == b'TREE'
-
-
-@pytest.mark.django_db
-def test_create_version():
+def test_create_version(monkeypatch):
     """Creates a version associated with the part and year"""
+    monkeypatch.setattr(annual_version, 'create_notice_if_needed', Mock())
+    monkeypatch.setattr(annual_version, 'create_document_if_needed', Mock())
     source = mommy.make(SourceFile)
-    annual_version.create_version_entry_if_needed(
-        Volume(2010, 20, 5), 1001, source)
+
+    annual_version.create_where_needed(Volume(2010, 20, 5), 1001, source)
     version = CFRVersion.objects.get()
     assert version.effective == date(2010, 4, 1)
     assert version.fr_volume == 1
@@ -76,9 +54,8 @@ def test_create_version():
 @pytest.fixture
 def setup_for_2001(monkeypatch):
     monkeypatch.setattr(annual_version, 'find_volume', Mock())
-    monkeypatch.setattr(annual_version, 'create_version_entry_if_needed',
-                        Mock())
-    monkeypatch.setattr(annual_version, 'process_if_needed', Mock())
+    monkeypatch.setattr(annual_version, 'source_file', Mock())
+    monkeypatch.setattr(annual_version, 'create_where_needed', Mock())
     with freeze_time('2001-01-01'):
         yield
 
