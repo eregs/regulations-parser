@@ -16,7 +16,7 @@ def content_for_interpretations(instruction_xml):
     """Return a chunk of XML (which serves as a unique key) and a think for
     parsing that XML as an interpretation"""
     label_parts, amdpar = label_amdpar_from(instruction_xml)
-    if len(label_parts) > 0 and 'Interpretations' in label_parts[1]:
+    if len(label_parts) > 1 and 'Interpretations' in label_parts[1]:
         xml = amdpar.getparent()
         return xml, functools.partial(parse_interp, label_parts[0], xml)
 

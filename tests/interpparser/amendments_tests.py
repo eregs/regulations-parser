@@ -116,3 +116,12 @@ def test_process_amendments_restart_new_section(monkeypatch):
 
     assert changes1['104-22-a-Interp'][0]['action'] == 'POST'
     assert changes2['105-1-b'][0]['action'] == 'PUT'
+
+
+def test_content_for_interpretations_regression_369():
+    """Regression test for modifications to a top-level element"""
+    with XMLBuilder('EREGS_INSTRUCTIONS', final_context='2-?-201') as ctx:
+        ctx.POST(label='2[title]')
+        ctx.POST(label='2-?-200')
+        ctx.POST(label='2-?-201')
+    assert amendments.content_for_interpretations(ctx.xml) is None
