@@ -13,7 +13,7 @@ def content_for_appendix(instruction_xml):
     """Return a chunk of XML (which serves as a unique key) and a think for
     parsing that XML as an appendix"""
     label_parts, amdpar = label_amdpar_from(instruction_xml)
-    if len(label_parts) > 0 and 'Appendix' in label_parts[1]:
+    if len(label_parts) > 1 and 'Appendix' in label_parts[1]:
         xml = amdpar.getparent()
         letter = label_parts[1][len('Appendix:'):]
         return xml, functools.partial(parse_appendix, xml, label_parts[0],

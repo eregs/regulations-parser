@@ -63,3 +63,12 @@ def test_process_amendments_context(monkeypatch):
     assert amd2['cfr_part'] == '106'
     assert ['106-1-a'] == [c[0] for c in amd1['changes']]
     assert ['106-C', '106-C-p1'] == list(sorted(c[0] for c in amd2['changes']))
+
+
+def test_content_for_appendix_regression_369():
+    """Regression test for modifications to a top-level element"""
+    with XMLBuilder('EREGS_INSTRUCTIONS', final_context='2-?-201') as ctx:
+        ctx.POST(label='2[title]')
+        ctx.POST(label='2-?-200')
+        ctx.POST(label='2-?-201')
+    assert appendix.content_for_appendix(ctx.xml) is None
