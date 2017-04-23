@@ -32,6 +32,10 @@ setup(
         "six",
         "stevedore"
     ],
+    dependency_links=[
+        "http://github.com/python-constraint/python-constraint/"
+        "archive/1.3.1.tar.gz#egg=python-constraint",
+    ],
     entry_points={
         "console_scripts": "eregs=eregs:main",
         "eregs_ns.parser.amendment.content": [

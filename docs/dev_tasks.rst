@@ -27,11 +27,11 @@ Running Tests
 =============
 As the parser is a complex beast, it has several hundred unit tests to help
 catch regressions. To run those tests, make sure you have first added all of
-the testing requirements:
+the development requirements:
 
 .. code-block:: bash
 
-  pip install -r requirements_test.txt
+  pip install -r requirements_dev.txt
 
 Then, run py.test on all of the available unit tests:
 

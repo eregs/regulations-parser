@@ -61,14 +61,13 @@ class Command(BaseCommand):
     help = (    # noqa
         """
         Asynchronous `eregs` commands. To run,
-        1. pip install -r requirements_web.txt
-        2. start redis. For example, with docker:
+        1. start redis. For example, with docker:
             docker run -p 6379:6379 -d redis
-        3. start a worker process
+        2. start a worker process
             python manage.py rqworker
-        4. run an asynchronous command
+        3. run an asynchronous command
             python manage.py async_eregs pipeline 27 479 async_output_dir
-        5. check the status of your jobs:
+        4. check the status of your jobs:
             python manage.py async_eregs    # no parameters
         """
     )

@@ -1,0 +1,20 @@
+-r requirements.txt
+
+cov-core
+coverage
+flake8
+flake8-blind-except
+flake8-builtins
+flake8-comprehensions
+flake8-isort
+flake8-pep3101
+flake8-print
+flake8-string-format
+flake8-tuple
+freezegun
+httpretty
+mock
+pep8-naming
+pytest
+pytest-cov
+pytest-django
