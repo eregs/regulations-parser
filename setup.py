@@ -13,7 +13,7 @@ setup(
         "cached-property",
         "click",
         "coloredLogs",
-        "Django==1.9.*",
+        "django",
         "dj-database-url",
         "django-click",
         "django_rq",
