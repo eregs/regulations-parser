@@ -6,7 +6,7 @@ from regparser.commands.fetch_annual_edition import source_file
 from regparser.history import annual
 from regparser.tree import gpo_cfr
 from regparser.tree.struct import FullNodeEncoder
-from regparser.web.index.models import CFRVersion, DocCollection
+from regparser.web.index.models import CFRVersion, Document
 
 logger = logging.getLogger(__name__)
 
@@ -44,10 +44,10 @@ def create_where_needed(ctx, cfr_title, cfr_part, last_version_list):
     for version in last_version_list:
         year = annual.date_of_annual_after(cfr_title, version.effective).year
         source = source_file(ctx, cfr_title, cfr_part, year)
-        if not version.docs.count():
-            version.docs.create(
-                collection=DocCollection.gpo_cfr.name, label=cfr_part,
-                source=source, contents=encoded_tree(source))
+        if not version.has_doc():
+            version.doc = Document.objects.create(
+                collection='gpo_cfr', label=cfr_part, source=source,
+                version=version, contents=encoded_tree(source))
 
 
 @click.command()

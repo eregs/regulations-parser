@@ -7,8 +7,8 @@ from regparser.commands.annual_editions import encoded_tree
 from regparser.commands.fetch_annual_edition import source_file
 from regparser.history.annual import find_volume
 from regparser.notice.fake import build as build_fake_notice
-from regparser.web.index.models import (CFRVersion, DocCollection,
-                                        SourceCollection, SourceFile)
+from regparser.web.index.models import (CFRVersion, Document, SourceCollection,
+                                        SourceFile)
 
 _version_id = '{0}-annual-{1}'.format
 logger = logging.getLogger(__name__)
@@ -23,10 +23,10 @@ def create_notice_if_needed(version_id, volume, cfr_part):
 
 
 def create_document_if_needed(version, source, cfr_part):
-    if version.docs.count() == 0:
-        version.docs.create(
-            collection=DocCollection.gpo_cfr.name, label=cfr_part,
-            source=source, contents=encoded_tree(source))
+    if not version.has_doc():
+        version.doc = Document.objects.create(
+            collection='gpo_cfr', label=cfr_part, source=source,
+            version=version, contents=encoded_tree(source))
 
 
 def create_where_needed(volume, cfr_part, source):

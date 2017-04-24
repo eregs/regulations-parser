@@ -89,6 +89,11 @@ class CFRVersion(models.Model):
     def is_proposal(self):
         return not self.is_final
 
+    def has_doc(self):
+        """We can't access self.doc directly, as that will raise an exception
+        if the doc does not exist"""
+        return Document.objects.filter(version=self).exists()
+
     def __lt__(self, other):
         """Linearizing versions requires knowing not only relevant dates and
         identifiers, but also which versions are from final rules and which
@@ -119,8 +124,8 @@ class Document(Serialized):
         max_length=32, choices=[(c.name, c.value) for c in DocCollection])
     label = models.CharField(max_length=128)
     source = models.ForeignKey(SourceFile, models.CASCADE, related_name='docs')
-    version = models.ForeignKey(
-        CFRVersion, models.CASCADE, related_name='docs', blank=True, null=True)
+    version = models.OneToOneField(
+        CFRVersion, models.CASCADE, related_name='doc', blank=True, null=True)
     previous_document = models.ForeignKey(
         'self', models.CASCADE, related_name='docs', blank=True, null=True)
 
