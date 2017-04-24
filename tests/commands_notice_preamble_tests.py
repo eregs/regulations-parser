@@ -6,6 +6,7 @@ from mock import patch
 
 from regparser.commands.notice_preamble import notice_preamble
 from regparser.index import dependency, entry
+from regparser.web.index.models import SourceCollection, SourceFile
 
 
 @pytest.mark.django_db
@@ -22,7 +23,11 @@ class CommandsNoticePreambleTests(TestCase):
             self.assertIsInstance(result.exception, dependency.Missing)
             self.assertFalse(parse_preamble.called)
 
-            entry.Entry('notice_xml', '111-222').write(b'<ROOT />')
+            entry.Entry('notice_xml', '111-222').write(b'')
+            SourceFile.objects.create(
+                collection=SourceCollection.notice.name, file_name='111-222',
+                contents=b'<ROOT />'
+            )
             result = cli.invoke(notice_preamble, ['111-222'])
             self.assertIsNone(result.exception)
             self.assertTrue(parse_preamble.called)

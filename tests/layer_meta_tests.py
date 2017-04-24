@@ -3,9 +3,9 @@ from datetime import date
 from unittest import TestCase
 
 import settings
-from regparser.history.versions import Version
 from regparser.layer.meta import Meta
 from regparser.tree.struct import Node
+from regparser.web.index.models import CFRVersion
 
 
 class LayerMetaTest(TestCase):
@@ -27,7 +27,7 @@ class LayerMetaTest(TestCase):
 
     def test_process_effective_date(self):
         """The effective date is derived from a Version object"""
-        version = Version('v1', date(2004, 4, 4), date(2004, 4, 4))
+        version = CFRVersion(identifier='v1', effective=date(2004, 4, 4))
         m = Meta(None, cfr_title=8, version=version)
         result = m.process(Node(label=['a']))
         self.assertEqual(1, len(result))

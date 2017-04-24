@@ -2,77 +2,20 @@ from datetime import date
 
 import pytest
 from mock import Mock
+from model_mommy import mommy
 
 from regparser.commands import fill_with_rules
-from regparser.history.versions import Version
-from regparser.index import dependency, entry
 from regparser.tree.struct import Node
+from regparser.web.index.models import CFRVersion, Document, SourceFile
 
 
 @pytest.mark.django_db
-def test_dependencies():
-    """Expect nonexistent trees to depend on their predecessor, associated
-    rule changes and version files. Shouldn't add dependencies for the
-    first version, if missing"""
-    versions = [Version(str(i)*3, date(2001, i, i), date(2002, i, i))
-                for i in range(1, 7)]
-    parents = Version.parents_of(versions)
-    tree_dir = entry.Tree('12', '1000')
-    notice_dir = entry.Notice()
-    vers_dir = entry.Version('12', '1000')
-    # Existing trees
-    (tree_dir / '222').write(Node())
-    (tree_dir / '555').write(Node())
-
-    deps = fill_with_rules.dependencies(tree_dir, vers_dir,
-                                        list(zip(versions, parents)))
-
-    # First is skipped, as we can't build it from a rule
-    assert str(tree_dir / '111') not in deps
-    # Second can also be skipped as a tree already exists
-    assert deps.dependencies(str(tree_dir / '222')) == []
-    # Third relies on the associated versions and the second tree
-    expected = {str(tree_dir / '222'), str(notice_dir / '333'),
-                str(vers_dir / '333')}
-    assert set(deps.dependencies(str(tree_dir / '333'))) == expected
-    # Fourth relies on the third, even though it's not been built
-    expected = {str(tree_dir / '333'), str(notice_dir / '444'),
-                str(vers_dir / '444')}
-    assert set(deps.dependencies(str(tree_dir / '444'))) == expected
-    # Fifth can be skipped as the tree already exists
-    assert deps.dependencies(str(tree_dir / '555')) == []
-    # Six relies on the fifth
-    expected = {str(tree_dir / '555'), str(notice_dir / '666'),
-                str(vers_dir / '666')}
-    assert set(deps.dependencies(str(tree_dir / '666'))) == expected
-
-
-@pytest.mark.django_db
-def test_is_derived():
-    """Should filter version ids to only those with a dependency on
-    changes derived from a rule"""
-    tree_dir = entry.Tree('12', '1000')
-
-    deps = dependency.Graph()
-    deps.add(tree_dir / 111, entry.Annual(12, 1000, 2001))
-    deps.add(tree_dir / 222, entry.Notice(222))
-    deps.add(tree_dir / 333, entry.Notice(333))
-    deps.add(tree_dir / 333, entry.Version(333))
-    assert not fill_with_rules.is_derived('111', deps, tree_dir)
-    assert fill_with_rules.is_derived('222', deps, tree_dir)
-    assert fill_with_rules.is_derived('333', deps, tree_dir)
-    assert not fill_with_rules.is_derived('444', deps, tree_dir)
-
-
-@pytest.mark.django_db
-def test_process(monkeypatch):
-    """Verify that the correct changes are found"""
-    compile_regulation = Mock(return_value=Node())
-    monkeypatch.setattr(fill_with_rules, 'compile_regulation',
-                        compile_regulation)
-    notice_mock = Mock()
-    # entry.Notice('new').read().amendments
-    notice_mock.return_value.read.return_value.amendments = [
+def test_save_tree(monkeypatch):
+    """Expect constructed trees to depend on their predecessor, associated
+    document and version files."""
+    monkeypatch.setattr(fill_with_rules, 'NoticeXML', Mock())
+    monkeypatch.setattr(fill_with_rules, 'doc_to_tree', Mock())
+    fill_with_rules.NoticeXML.return_value.amendments = [
         {"instruction": "Something something",
          "cfr_part": "1000",
          "authority": "USC Numbers"},
@@ -84,24 +27,64 @@ def test_process(monkeypatch):
          "cfr_part": "1000",
          "changes": [["1000-4-a", ["4a changes"]]]}
     ]
-    monkeypatch.setattr(fill_with_rules.entry, 'Notice', notice_mock)
+    monkeypatch.setattr(fill_with_rules, 'compile_regulation',
+                        Mock(return_value=Node(label=['1000'])))
+    version = mommy.make(CFRVersion,
+                         source=mommy.make(SourceFile, contents=b'<ROOT/>'))
+    parent = mommy.make(Document)
 
-    tree_dir = entry.Tree('12', '1000')
-    (tree_dir / 'old').write(Node())
-    entry.Entry('notice_xml', 'new').write(b'')
-    fill_with_rules.process(tree_dir, 'old', 'new')
-    changes = dict(compile_regulation.call_args[0][1])
+    fill_with_rules.save_tree(version, parent)
+    changes = dict(fill_with_rules.compile_regulation.call_args[0][1])
     assert changes == {"1000-2-b": ["2b changes"],
                        "1000-2-c": ["2c changes"],
                        "1000-4-a": ["4a changes"]}
 
+    assert version.doc is not None
+    assert version.doc.collection == 'gpo_cfr'
+    assert version.doc.label == '1000'
+    assert version.doc.source == version.source
+    assert version.doc.version == version
+    assert version.doc.previous_document == parent
+    assert len(version.doc.contents) > 0
 
-def test_drop_initial_orphan_versions():
-    version_list = [Version(letter, None, None) for letter in 'abcdef']
-    version_pairs = list(zip(version_list, [None] + version_list[1:]))
-    existing = {'c', 'e'}
 
-    result = fill_with_rules.drop_initial_orphans(version_pairs, existing)
-    result = [pair[0].identifier for pair in result]
+class VersionFactory:
+    def __init__(self):
+        self.counter = 0
 
-    assert result == ['c', 'd', 'e', 'f']
+    def __call__(self, collection):
+        self.counter += 1
+        return mommy.make(
+            CFRVersion, identifier=str(self.counter)*3, cfr_title=12,
+            cfr_part=1000, effective=date(2010, 1, self.counter),
+            source=mommy.make(SourceFile, collection=collection)
+        )
+
+
+@pytest.mark.django_db
+def test_build_pairs_only_necessary():
+    """Should filter versions to find only those that need a document"""
+    factory = VersionFactory()
+    v111 = factory('gpo_cfr')
+    mommy.make(Document, version=v111)
+    v222 = factory('notice')
+    v333 = factory('notice')
+    v444 = factory('notice')
+    mommy.make(Document, version=v444)
+
+    results = fill_with_rules.build_pairs(12, 1000)
+
+    assert results == [(v222, v111), (v333, v222)]
+
+
+@pytest.mark.django_db
+def test_build_pairs_initial_orphan_versions():
+    """We can't fill in data until we hit a version which *has* a document"""
+    factory = VersionFactory()
+    [v1, v2, v3, v4, v5, v6, v7] = [factory('notice') for _ in range(7)]
+    mommy.make(Document, version=v3)
+    mommy.make(Document, version=v5)
+
+    results = fill_with_rules.build_pairs(12, 1000)
+
+    assert results == [(v4, v3), (v6, v5), (v7, v6)]

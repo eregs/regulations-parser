@@ -50,7 +50,7 @@ class CommandsPreprocessNoticeTests(HttpMixin, TestCase):
             cli.invoke(preprocess_notice, ['1234-5678'])
             self.assertEqual(1, len(list(entry.Notice().sub_entries())))
 
-            written = entry.Notice('1234-5678').read()
+            written = NoticeXML.from_db('1234-5678')
             self.assertEqual(written.effective, date(2008, 8, 8))
 
     @patch('regparser.commands.preprocess_notice.notice_xmls_for_url')
@@ -66,7 +66,7 @@ class CommandsPreprocessNoticeTests(HttpMixin, TestCase):
             cli.invoke(preprocess_notice, ['1234-5678'])
             self.assertEqual(1, len(list(entry.Notice().sub_entries())))
 
-            written = entry.Notice('1234-5678').read()
+            written = NoticeXML.from_db('1234-5678')
             self.assertEqual(written.comments_close_on, date(2010, 10, 10))
 
     @patch('regparser.commands.preprocess_notice.notice_xmls_for_url')
@@ -83,7 +83,7 @@ class CommandsPreprocessNoticeTests(HttpMixin, TestCase):
             cli.invoke(preprocess_notice, ['1234-5678'])
             self.assertEqual(1, len(list(entry.Notice().sub_entries())))
 
-            written = entry.Notice('1234-5678').read()
+            written = NoticeXML.from_db('1234-5678')
             self.assertEqual(written.comments_close_on, date(2011, 11, 11))
 
     @patch('regparser.commands.preprocess_notice.notice_xmls_for_url')
@@ -100,7 +100,7 @@ class CommandsPreprocessNoticeTests(HttpMixin, TestCase):
             cli.invoke(preprocess_notice, ['1234-5678'])
             self.assertEqual(1, len(list(entry.Notice().sub_entries())))
 
-            written = entry.Notice('1234-5678').read()
+            written = NoticeXML.from_db('1234-5678')
             self.assertEqual(written.comments_close_on, date(2010, 10, 10))
 
     @patch('regparser.commands.preprocess_notice.notice_xmls_for_url')
@@ -125,7 +125,7 @@ class CommandsPreprocessNoticeTests(HttpMixin, TestCase):
             cli.invoke(preprocess_notice, ['1234-5678'])
             self.assertEqual(1, len(list(entry.Notice().sub_entries())))
 
-            written = entry.Notice('1234-5678').read()
+            written = NoticeXML.from_db('1234-5678')
             self.assertEqual(len(written.xpath("//EREGS_AGENCIES")), 1)
             self.assertEqual(len(written.xpath("//EREGS_AGENCY")), 1)
             epa = written.xpath("//EREGS_AGENCY")[0]
@@ -148,7 +148,7 @@ class CommandsPreprocessNoticeTests(HttpMixin, TestCase):
             cli.invoke(preprocess_notice, ['1234-5678'])
             self.assertEqual(1, len(list(entry.Notice().sub_entries())))
 
-            written = entry.Notice('1234-5678').read()
+            written = NoticeXML.from_db('1234-5678')
             self.assertEqual(len(written.xpath("//EREGS_RINS")), 1)
             self.assertEqual(len(written.xpath("//EREGS_RIN")), 1)
             rin = written.xpath("//EREGS_RIN")[0]
@@ -167,7 +167,7 @@ class CommandsPreprocessNoticeTests(HttpMixin, TestCase):
             cli.invoke(preprocess_notice, ['1234-5678'])
             self.assertEqual(1, len(list(entry.Notice().sub_entries())))
 
-            written = entry.Notice('1234-5678').read()
+            written = NoticeXML.from_db('1234-5678')
             self.assertEqual(len(written.xpath("//EREGS_DOCKET_IDS")), 1)
             self.assertEqual(len(written.xpath("//EREGS_DOCKET_ID")), 2)
             did = written.xpath("//EREGS_DOCKET_ID")[0]
@@ -185,7 +185,7 @@ class CommandsPreprocessNoticeTests(HttpMixin, TestCase):
             self.example_xml("Effective January 1, 2001")]
         with cli.isolated_filesystem():
             cli.invoke(preprocess_notice, ['1234-5678'])
-            written = entry.Notice('1234-5678').read()
+            written = NoticeXML.from_db('1234-5678')
             self.assertEqual(written.effective, date(2001, 1, 1))
 
     @patch('regparser.commands.preprocess_notice.notice_xmls_for_url')
@@ -201,12 +201,11 @@ class CommandsPreprocessNoticeTests(HttpMixin, TestCase):
             self.example_xml("Effective March 3, 2003")]
         with cli.isolated_filesystem():
             cli.invoke(preprocess_notice, ['1234-5678'])
-            notice_path = entry.Notice()
             self.assertEqual(3, len(list(entry.Notice().sub_entries())))
 
-            jan = (notice_path / '1234-5678_20010101').read()
-            feb = (notice_path / '1234-5678_20020202').read()
-            mar = (notice_path / '1234-5678_20030303').read()
+            jan = NoticeXML.from_db('1234-5678_20010101')
+            feb = NoticeXML.from_db('1234-5678_20020202')
+            mar = NoticeXML.from_db('1234-5678_20030303')
 
             self.assertEqual(jan.effective, date(2001, 1, 1))
             self.assertEqual(feb.effective, date(2002, 2, 2))
@@ -250,7 +249,7 @@ class CommandsPreprocessNoticeTests(HttpMixin, TestCase):
             cli.invoke(preprocess_notice, ['1234-5678'])
             self.assertEqual(1, len(list(entry.Notice().sub_entries())))
 
-            written = entry.Notice('1234-5678').read()
+            written = NoticeXML.from_db('1234-5678')
             self.assertEqual(len(written.xpath("//EREGS_CFR_REFS")), 1)
             self.assertEqual(len(written.xpath("//EREGS_CFR_TITLE_REF")), 1)
             title = written.xpath("//EREGS_CFR_TITLE_REF")[0]
@@ -276,7 +275,7 @@ class CommandsPreprocessNoticeTests(HttpMixin, TestCase):
             cli.invoke(preprocess_notice, ['1234-5678'])
             self.assertEqual(1, len(list(entry.Notice().sub_entries())))
 
-            written = entry.Notice('1234-5678').read()
+            written = NoticeXML.from_db('1234-5678')
             self.assertEqual(len(written.xpath("//EREGS_CFR_REFS")), 1)
             self.assertEqual(len(written.xpath("//EREGS_CFR_TITLE_REF")), 1)
             title = written.xpath("//EREGS_CFR_TITLE_REF")[0]

@@ -7,12 +7,11 @@ from lxml import etree
 from mock import Mock
 
 from regparser.commands import write_to
-from regparser.history.versions import Version
 from regparser.index import entry
-from regparser.notice.citation import Citation
 from regparser.notice.xml import NoticeXML
 from regparser.test_utils.xml_builder import XMLBuilder
 from regparser.tree.struct import Node
+from regparser.web.index.models import CFRVersion
 
 
 def file_exists(base_dir, *parts):
@@ -66,19 +65,23 @@ def add_notices():
         with ctx.EREGS_CFR_REFS():
             ctx.EREGS_CFR_TITLE_REF(title=11)
     xml = ctx.xml
-    entry.Notice('v0').write(NoticeXML(xml))
+    entry.Notice('v0').write(b'')
+    NoticeXML(xml).save()
 
     etree.SubElement(xml.xpath('//EREGS_CFR_TITLE_REF')[0],
                      'EREGS_CFR_PART_REF', part='1000')
     xml.attrib['eregs-version-id'] = 'v1'
-    entry.Notice('v1').write(NoticeXML(xml))
+    entry.Notice('v1').write(b'')
+    NoticeXML(xml).save()
 
     xml.xpath('//EREGS_CFR_TITLE_REF')[0].attrib['title'] = '12'
     xml.attrib['eregs-version-id'] = 'v2'
-    entry.Notice('v2').write(NoticeXML(xml))
+    entry.Notice('v2').write(b'')
+    NoticeXML(xml).save()
 
     xml.attrib['eregs-version-id'] = 'v3'
-    entry.Notice('v3').write(NoticeXML(xml))
+    entry.Notice('v3').write(b'')
+    NoticeXML(xml).save()
 
 
 @pytest.fixture
@@ -170,20 +173,34 @@ def test_transform_notice(monkeypatch):
     monkeypatch.setattr(write_to, 'add_footnotes', Mock())
     monkeypatch.setattr(write_to, 'process_sxs', Mock())
 
-    entry.Version(11, 222, 'v1').write(
-        Version('v1', date(2002, 2, 2), Citation(1, 1)))
-    entry.Version(11, 222, 'v2').write(
-        Version('v2', date(2003, 3, 3), Citation(2, 2)))
-    entry.Version(11, 222, 'v3').write(
-        Version('v3', date(2004, 4, 4), Citation(3, 3)))
-    entry.Version(11, 223, 'v1').write(
-        Version('v1', date(2002, 2, 2), Citation(1, 1)))
-    entry.Version(11, 224, 'v1').write(
-        Version('v1', date(2002, 2, 2), Citation(1, 1)))
-    entry.Version(11, 222, 'proposal').write(
-        Version('proposal', None, Citation(4, 4)))
-    entry.Version(11, 223, 'proposal').write(
-        Version('proposal', None, Citation(4, 4)))
+    entry.Version(11, 222, 'v1').write(b'')
+    CFRVersion.objects.create(
+        identifier='v1', cfr_title=11, cfr_part=222,
+        effective=date(2002, 2, 2), fr_volume=1, fr_page=1)
+    entry.Version(11, 222, 'v2').write(b'')
+    CFRVersion.objects.create(
+        identifier='v2', cfr_title=11, cfr_part=222,
+        effective=date(2003, 3, 3), fr_volume=2, fr_page=2)
+    entry.Version(11, 222, 'v3').write(b'')
+    CFRVersion.objects.create(
+        identifier='v3', cfr_title=11, cfr_part=222,
+        effective=date(2004, 4, 4), fr_volume=3, fr_page=3)
+    entry.Version(11, 223, 'v1').write(b'')
+    CFRVersion.objects.create(
+        identifier='v1', cfr_title=11, cfr_part=223,
+        effective=date(2002, 2, 2), fr_volume=1, fr_page=1)
+    entry.Version(11, 224, 'v1').write(b'')
+    CFRVersion.objects.create(
+        identifier='v1', cfr_title=11, cfr_part=224,
+        effective=date(2002, 2, 2), fr_volume=1, fr_page=1)
+    entry.Version(11, 222, 'proposal').write(b'')
+    CFRVersion.objects.create(
+        identifier='proposal', cfr_title=11, cfr_part=222,
+        fr_volume=4, fr_page=4)
+    entry.Version(11, 223, 'proposal').write(b'')
+    CFRVersion.objects.create(
+        identifier='proposal', cfr_title=11, cfr_part=223,
+        fr_volume=4, fr_page=4)
 
     notice_xml = Mock()
     notice_xml.as_dict.return_value = {}

@@ -79,19 +79,19 @@ def preprocess_notice(document_number):
         if cfr_refs:
             notice_xml.cfr_refs = cfr_refs
 
-        file_name = document_number
+        version_id = document_number
         if len(notice_xmls) > 1:
             effective_date = notice_xml.derive_effective_date()
-            file_name = split_doc_num(document_number,
-                                      effective_date.isoformat())
+            version_id = split_doc_num(document_number,
+                                       effective_date.isoformat())
         elif meta.get('effective_on'):
             notice_xml.effective = meta['effective_on']
 
-        notice_xml.version_id = file_name
+        notice_xml.version_id = version_id
         notice_xml.derive_where_needed()
 
-        notice_entry = entry.Notice(file_name)
-        notice_entry.write(notice_xml)
+        entry.Notice(version_id).write(b'')
+        notice_xml.save()
 
 
 class NoticeResolver(DependencyResolver):

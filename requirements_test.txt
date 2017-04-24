@@ -12,6 +12,7 @@ flake8-tuple==0.2.12
 freezegun==0.3.8
 httpretty==0.8.14
 mock==2.0.0
+model_mommy==1.3.2
 pep8-naming==0.4.1
 pytest==3.0.6
 pytest-cov==2.4.0

@@ -1,11 +1,10 @@
 import pytest
 from click.testing import CliRunner
-from mock import Mock, call
 
 from regparser.commands import proposal_versions
-from regparser.history.versions import Version
 from regparser.index import dependency, entry
-from regparser.notice.citation import Citation
+from regparser.notice.xml import NoticeXML, TitlePartsRef
+from regparser.web.index.models import CFRVersion
 
 
 @pytest.mark.django_db
@@ -16,18 +15,26 @@ def test_missing_notice():
     assert result.exception.dependency == str(entry.Notice('1111'))
 
 
-def test_creates_version(monkeypatch):
-    monkeypatch.setattr(proposal_versions, 'entry', Mock())
-    notice = proposal_versions.entry.Notice.return_value.read.return_value
-    notice.fr_citation = Citation(1, 2)
-    notice.cfr_ref_pairs = [(11, 111), (11, 222), (22, 222), (22, 333)]
+@pytest.mark.django_db
+def test_creates_version():
+    entry.Notice('dddd').write(b'')
+    notice_xml = NoticeXML(b'<ROOT/>')
+    notice_xml.version_id = 'dddd'
+    notice_xml.fr_volume = 1
+    notice_xml.start_page = 2
+    notice_xml.cfr_refs = [
+        TitlePartsRef(11, [111, 222]), TitlePartsRef(22, [222, 333]),
+    ]
+    notice_xml.save()
 
     result = CliRunner().invoke(proposal_versions.proposal_versions, ['dddd'])
     assert result.exception is None
-    assert proposal_versions.entry.Notice.call_args == call('dddd')
-    assert proposal_versions.entry.Version.call_args_list == [
-        call(11, 111, 'dddd'), call(11, 222, 'dddd'), call(22, 222, 'dddd'),
-        call(22, 333, 'dddd')
-    ]
-    write_args = proposal_versions.entry.Version.return_value.write.call_args
-    assert write_args == call(Version('dddd', None, Citation(1, 2)))
+    versions = list(CFRVersion.objects.order_by('cfr_title', 'cfr_part'))
+    assert versions[0].cfr_title == 11
+    assert versions[0].cfr_part == 111
+    assert versions[1].cfr_title == 11
+    assert versions[1].cfr_part == 222
+    assert versions[2].cfr_title == 22
+    assert versions[2].cfr_part == 222
+    assert versions[3].cfr_title == 22
+    assert versions[3].cfr_part == 333

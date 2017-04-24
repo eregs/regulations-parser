@@ -4,7 +4,7 @@ import click
 from django.conf import settings
 
 from regparser.index.http_cache import http_client
-from regparser.web.index.models import DependencyNode
+from regparser.web.index.models import CFRVersion, DependencyNode, SourceFile
 
 
 @click.command()
@@ -27,5 +27,7 @@ def clear(path):
             DependencyNode.objects.filter(pk__startswith=path).delete()
     else:
         DependencyNode.objects.all().delete()
+    SourceFile.objects.all().delete()
+    CFRVersion.objects.all().delete()
 
     http_client().cache.clear()
