@@ -13,7 +13,7 @@ setup(
         "cached-property",
         "click",
         "coloredLogs",
-        "Django==1.9.*",
+        "django",
         "dj-database-url",
         "django-click",
         "django_rq",
@@ -31,6 +31,10 @@ setup(
         "roman",
         "six",
         "stevedore"
+    ],
+    dependency_links=[
+        "http://github.com/python-constraint/python-constraint/"
+        "archive/1.3.1.tar.gz#egg=python-constraint",
     ],
     entry_points={
         "console_scripts": "eregs=eregs:main",
