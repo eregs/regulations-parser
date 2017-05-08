@@ -37,7 +37,7 @@ setup(
         "archive/1.3.1.tar.gz#egg=python-constraint",
     ],
     entry_points={
-        "console_scripts": "eregs=eregs:main",
+        "console_scripts": "eregs=regparser.web.management.runner:eregs",
         "eregs_ns.parser.amendment.content": [
             ("new_subpart = regparser.notice.amendments.subpart:"
              "content_for_new_subpart"),

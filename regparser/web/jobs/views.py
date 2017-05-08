@@ -194,7 +194,7 @@ class PipelineJobViewList(BaseViewList, JobViewList):
         arguments appropriate for the ``pipeline`` command.
 
         It returns a list of string components that can be passed to the
-        `eregs.py` task runner. For example::
+        `eregs` task runner. For example::
 
             ["pipeline", "0", "0", "http://some.url/"]
 
@@ -232,7 +232,7 @@ class ProposalPipelineJobViewList(BaseViewList, JobViewList):
         arguments appropriate for the ``proposal_pipeline`` command.
 
         It returns a list of string components that can be passed to the
-        `eregs.py` task runner. For example::
+        `eregs` task runner. For example::
 
             ["proposal_pipeline", "/tmp/tmp.xml", "http://some.url/"]
 

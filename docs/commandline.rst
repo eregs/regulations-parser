@@ -3,9 +3,7 @@ Command Line Usage
 
 Assuming you have installed ``regparser`` via ``pip`` (either directly or
 indirectly via the requirements file), you should have access to the ``eregs``
-program from the command line. If, for whatever reason, you do not, you can
-still access its functionality by using ``python eregs.py`` in place of
-``eregs`` in all of the following commands.
+program from the command line.
 
 This interface is a wrapper around our various subcommands. For a list of all
 available commands, simply execute ``eregs`` without any parameters. This will
