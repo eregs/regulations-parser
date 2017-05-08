@@ -16,6 +16,4 @@ ENV PYTHONUNBUFFERED="1" \
     EREGS_CACHE_DIR="/app/cache" \
     EREGS_OUTPUT_DIR="/app/output"
 
-RUN ./manage.py migrate
-
 ENTRYPOINT ["eregs"]
