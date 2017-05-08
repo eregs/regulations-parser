@@ -10,7 +10,6 @@ from cached_property import cached_property
 from lxml import etree
 from six.moves.urllib.parse import urlparse
 
-import settings
 from regparser import regs_gov
 from regparser.grammar.unified import notice_cfr_p
 from regparser.history.delays import delays_in_sentence
@@ -19,6 +18,7 @@ from regparser.notice.amendments.fetch import fetch_amendments
 from regparser.notice.citation import Citation
 from regparser.notice.dates import fetch_dates
 from regparser.tree.xml_parser.xml_wrapper import XMLWrapper
+from regparser.web.settings import parser as settings
 
 logger = logging.getLogger(__name__)
 

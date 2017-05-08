@@ -2,8 +2,8 @@ from unittest import TestCase
 
 from mock import patch
 
-import settings
 from regparser import content
+from regparser.web.settings import parser as settings
 
 
 class ContentTests(TestCase):

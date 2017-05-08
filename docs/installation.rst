@@ -143,8 +143,8 @@ JSON files will be written in that directory. See :ref:`output` for more.
 Settings
 ========
 
-All of the settings listed in ``settings.py`` can be overridden in a
-``local_settings.py`` file. Current settings include:
+All of the settings listed in ``regparser.web.settings.parser.py`` can be
+overridden in a ``local_settings.py`` file. Current settings include:
 
 * ``META`` - a dictionary of extra info which will be included in the
   "meta" layer. This is free-form, but could be used for copyright

@@ -6,10 +6,10 @@ from collections import defaultdict
 
 import requests
 
-import settings
 from regparser import content
 from regparser.index.http_cache import http_client
 from regparser.layer.layer import Layer
+from regparser.web.settings import parser as settings
 
 logger = logging.getLogger(__name__)
 

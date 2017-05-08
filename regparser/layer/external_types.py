@@ -9,9 +9,9 @@ import six
 from pyparsing import Optional, Suppress, Word
 from six.moves.urllib.parse import urlencode
 
-import settings
 from regparser.citations import cfr_citations
 from regparser.grammar.utils import Marker, QuickSearchable
+from regparser.web.settings import parser as settings
 
 Cite = namedtuple('Cite', ['cite_type', 'start', 'end', 'components', 'url'])
 

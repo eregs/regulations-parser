@@ -6,7 +6,7 @@ TODO: Delete and replace with plugins."""
 import itertools
 import logging
 
-import settings
+from regparser.web.settings import parser as settings
 
 logger = logging.getLogger(__name__)
 

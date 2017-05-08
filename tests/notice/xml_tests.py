@@ -5,11 +5,11 @@ from datetime import date
 import pytest
 from mock import Mock
 
-import settings
 from regparser.history.delays import FRDelay
 from regparser.notice import xml as notice_xml
 from regparser.regs_gov import RegsGovDoc
 from regparser.test_utils.xml_builder import XMLBuilder
+from regparser.web.settings import parser as settings
 
 
 @pytest.fixture
