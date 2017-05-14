@@ -31,6 +31,13 @@ def cmd(*args):
     return tuple(str(a) for a in args)
 
 
+fec_parts = [1, 2, 4, 5, 6, 7, 8] + \
+    list(range(100, 117)) + \
+    [200, 201, 300] + \
+    list(range(9001, 9009)) + \
+    [9012] + \
+    list(range(9031, 9040)) + \
+    [9405, 9407, 9409, 9410, 9411, 9420, 9428, 9430]
 targets = {
     'fec': Target(
         reqs=dict(fec_regparser=(
@@ -38,13 +45,10 @@ targets = {
             '&subdirectory=eregs_extensions'
         )),
         script=[
-            cmd('pipeline', 11, part, _output_dir('fec'), '--only-latest')
-            for part in ([1, 2, 4, 5, 6, 7, 8] +
-                         list(range(100, 117)) + [200, 201, 300] +
-                         list(range(9001, 9009)) + [9012] +
-                         list(range(9031, 9040)) +
-                         [9405, 9407, 9409, 9410, 9411, 9420, 9428, 9430])
-        ]
+            cmd('annual_version', 11, p, '--year', 2016) for p in fec_parts
+        ] + [cmd('layers')] + [
+            cmd('diffs', 11, part) for part in fec_parts
+        ] + [cmd('write_to', _output_dir('fec'))]
     ),
     'atf': Target(
         reqs=dict(atf_regparser=(
