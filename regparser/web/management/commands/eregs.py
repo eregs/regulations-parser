@@ -5,10 +5,10 @@ import sys
 import click
 import coloredlogs
 import ipdb
-from djclick.adapter import BaseRegistrator, DjangoCommandMixin
 from django.core import management
 from django.db import connections
 from django.db.migrations.loader import MigrationLoader
+from djclick.adapter import BaseRegistrator, DjangoCommandMixin
 
 from regparser.commands.retry import RetryingCommand
 
