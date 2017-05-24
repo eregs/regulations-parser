@@ -336,7 +336,16 @@ class NoticeXML(XMLWrapper):
 
     @cached_property        # rather expensive operation, so cache results
     def amendments(self):
-        return fetch_amendments(self.xml)
+        """Getter for relevent amendments.
+
+        :rtype: list of amendments
+        """
+        try:
+            amendments = fetch_amendments(self.xml)
+        except:
+            logger.error('Unable to fetch amendments for docket %s', self.version_id)
+            return []
+        return amendments
 
     @property
     def fr_citation(self):
