@@ -342,8 +342,8 @@ class NoticeXML(XMLWrapper):
         """
         try:
             amendments = fetch_amendments(self.xml)
-        except:
-            logger.error('Unable to fetch amendments for docket %s', self.version_id)
+        except:             # noqa
+            logger.error('Unable to fetch amendments for %s', self.version_id)
             return []
         return amendments
 
