@@ -4,10 +4,10 @@ from unittest import TestCase
 import six
 from mock import patch
 
-import settings
 from regparser.layer.def_finders import Ref
 from regparser.layer.terms import ParentStack, Terms
 from regparser.tree.struct import Node
+from regparser.web.settings import parser as settings
 
 
 class LayerTermTest(TestCase):

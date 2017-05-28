@@ -17,7 +17,7 @@ from regparser.tree.depth.derive import derive_depths
 from regparser.tree.paragraph import p_levels
 from regparser.tree.struct import Node
 from regparser.tree.xml_parser import matchers, tree_utils
-from settings import APPENDIX_IGNORE_SUBHEADER_LABEL
+from regparser.web.settings.parser import APPENDIX_IGNORE_SUBHEADER_LABEL
 
 logger = logging.getLogger(__name__)
 

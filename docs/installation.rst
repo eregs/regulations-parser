@@ -16,16 +16,6 @@ installed, though the installation instructions for
 `Windows <https://docs.docker.com/windows/step_one/>`_
 are relatively painless.
 
-First, we need to migrate the database to initialize it. Unfortunately, this
-is pretty painful during our transition period of supporting _some_ web
-functionality and _some_ command line functionality. Luckily, we only need to
-run it once per install. In any event, the quickest way to set up the database
-is by running
-
-.. code-block:: bash
-
-  docker run --rm -it -v eregs-cache:/app/cache --entrypoint ./manage.py eregs/parser migrate
-
 To run with Docker, there are some nasty configuration details which we'd like
 to hide behind a cleaner interface. Specifically, we want to provide a simple
 mechanism for collecting output, keep a cache around in between executions,
@@ -90,7 +80,6 @@ Get the required libraries
 
   cd regulations-parser
   pip install -r requirements.txt
-  ./manage.py migrate
 
 --------------
 Run the parser
@@ -143,8 +132,8 @@ JSON files will be written in that directory. See :ref:`output` for more.
 Settings
 ========
 
-All of the settings listed in ``settings.py`` can be overridden in a
-``local_settings.py`` file. Current settings include:
+All of the settings listed in ``regparser.web.settings.parser.py`` can be
+overridden in a ``local_settings.py`` file. Current settings include:
 
 * ``META`` - a dictionary of extra info which will be included in the
   "meta" layer. This is free-form, but could be used for copyright

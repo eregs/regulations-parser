@@ -8,10 +8,10 @@ from itertools import chain
 import six
 from pyparsing import ParseException
 
-import settings
 from regparser.citations import Label
 from regparser.grammar import terms as grammar
 from regparser.tree.struct import Node
+from regparser.web.settings import parser as settings
 
 
 class Ref(namedtuple('Ref', ['term', 'label', 'start'])):

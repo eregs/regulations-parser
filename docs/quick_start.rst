@@ -9,7 +9,6 @@ Here's an example, using CFPB's regulation H.
   git clone https://github.com/18F/regulations-parser.git
   cd regulations-parser
   pip install -r requirements.txt
-  ./manage.py migrate
   eregs pipeline 12 1008 output_dir
 
 At the end, you will have subdirectories ``regulation``, ``layer``, ``diff``,
@@ -29,7 +28,6 @@ tweaked to pass the parser.
   git clone https://github.com/micahsaul/fec_docs
   pip install -r requirements.txt
   echo "LOCAL_XML_PATHS = ['fec_docs']" >> local_settings.py
-  ./manage.py migrate
   eregs pipeline 11 110 output_dir
 
 If you review the history of the ``fec_docs`` repo, you'll see some of the

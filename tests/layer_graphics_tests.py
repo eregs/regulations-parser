@@ -2,10 +2,10 @@ from unittest import TestCase
 
 from mock import patch
 
-import settings
 from regparser.layer.graphics import Graphics, gid_to_url
 from regparser.test_utils.http_mixin import HttpMixin
 from regparser.tree.struct import Node
+from regparser.web.settings import parser as settings
 
 
 class LayerGraphicsTest(HttpMixin, TestCase):
