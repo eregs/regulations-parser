@@ -1077,7 +1077,7 @@
                 "p1"
             ], 
             "node_type": "regtext", 
-            "tagged_text": "<GPOTABLE CDEF=\"s8,6,6,6,6,6,10,6,10,10,10\" COLS=\"11\" OPTS=\"L2,p6,6/7\">\n              <TTITLE>Firearms Collectors Acquisition and Disposition Record</TTITLE>\n              <BOXHD>\n                <CHED H=\"1\">Description of firearm</CHED>\n                <CHED H=\"2\">Manufacturer and importer (if any)</CHED>\n                <CHED H=\"2\">Model</CHED>\n                <CHED H=\"2\">Serial No.</CHED>\n                <CHED H=\"2\">Type</CHED>\n                <CHED H=\"2\">Caliber or gauge</CHED>\n                <CHED H=\"1\">Receipt</CHED>\n                <CHED H=\"2\">Date</CHED>\n                <CHED H=\"2\">Name and address or name and license No.</CHED>\n                <CHED H=\"1\">Disposition</CHED>\n                <CHED H=\"2\">Date</CHED>\n                <CHED H=\"2\">Name and address or name and license No.</CHED>\n                <CHED H=\"2\">Date of birth if non-licensee</CHED>\n                <CHED H=\"2\">Driver's license No. or other identification if non-licensee</CHED>\n              </BOXHD>\n              <ROW>\n                <ENT I=\"22\">\u2003</ENT>\n              </ROW>\n            </GPOTABLE>", 
+            "tagged_text": "<GPOTABLE xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" CDEF=\"s8,6,6,6,6,6,10,6,10,10,10\" COLS=\"11\" OPTS=\"L2,p6,6/7\">\n          <TTITLE>Firearms Collectors Acquisition and Disposition Record</TTITLE>\n          <BOXHD>\n            <CHED H=\"1\">Description of firearm</CHED>\n            <CHED H=\"2\">Manufacturer and importer (if any)</CHED>\n            <CHED H=\"2\">Model</CHED>\n            <CHED H=\"2\">Serial No.</CHED>\n            <CHED H=\"2\">Type</CHED>\n            <CHED H=\"2\">Caliber or gauge</CHED>\n            <CHED H=\"1\">Receipt</CHED>\n            <CHED H=\"2\">Date</CHED>\n            <CHED H=\"2\">Name and address or name and license No.</CHED>\n            <CHED H=\"1\">Disposition</CHED>\n            <CHED H=\"2\">Date</CHED>\n            <CHED H=\"2\">Name and address or name and license No.</CHED>\n            <CHED H=\"2\">Date of birth if non-licensee</CHED>\n            <CHED H=\"2\">Driver's license No. or other identification if non-licensee</CHED>\n          </BOXHD>\n          <ROW>\n            <ENT I=\"22\">\u2003</ENT>\n          </ROW>\n        </GPOTABLE>", 
             "text": "|Firearms Collectors Acquisition and Disposition Record|Description of firearm|Manufacturer and importer (if any)|Model|Serial No.|Type|Caliber or gauge|Receipt|Date|Name and address or name and license No.|Disposition|Date|Name and address or name and license No.|Date of birth if non-licensee|Driver's license No. or other identification if non-licensee|\n|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|\n||", 
             "title": null
         }, 
@@ -1701,27 +1701,116 @@
         "op": "modified", 
         "text": [
             [
-                "insert", 
-                682, 
-                "During the hearing the applicant will have the opportunity to submit facts and arguments for review and consideration; offers of settlement will not be entertained at the hearing but may be made before or after the hearing. "
+                [
+                    "delete", 
+                    246, 
+                    256
+                ], 
+                [
+                    "insert", 
+                    246, 
+                    "denial. The"
+                ]
             ], 
             [
                 [
                     "delete", 
-                    1094, 
-                    1100
+                    307, 
+                    319
                 ], 
                 [
                     "insert", 
-                    1094, 
-                    "5300.13. A"
+                    307, 
+                    "therefor.On"
                 ]
+            ], 
+            [
+                [
+                    "delete", 
+                    682, 
+                    684
+                ], 
+                [
+                    "insert", 
+                    682, 
+                    "During the hearing the applicant will have the opportunity to submit facts and arguments for review and consideration; offers of settlement will not be entertained at the hearing but may be made before or after the hearing.On"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    900, 
+                    912
+                ], 
+                [
+                    "insert", 
+                    900, 
+                    "application.A copy of the application, marked \u201cDisapproved,\u201d will be returned to the applicant."
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    941, 
+                    947
+                ], 
+                [
+                    "insert", 
+                    941, 
+                    "license applied for"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    955, 
+                    1021
+                ], 
+                [
+                    "insert", 
+                    955, 
+                    "be issued, the applicant"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    1031, 
+                    1210
+                ], 
+                [
+                    "insert", 
+                    1031, 
+                    "so notified, in writing, and the"
+                ]
+            ], 
+            [
+                "delete", 
+                1219, 
+                1263
+            ], 
+            [
+                "delete", 
+                1271, 
+                1321
             ]
         ]
     }, 
     "478-73-a": {
         "op": "modified", 
         "text": [
+            [
+                [
+                    "delete", 
+                    205, 
+                    215
+                ], 
+                [
+                    "insert", 
+                    205, 
+                    "issued.In"
+                ]
+            ], 
             [
                 [
                     "delete", 
@@ -1771,55 +1860,36 @@
             [
                 [
                     "delete", 
-                    1054, 
-                    1064
+                    331, 
+                    339
                 ], 
                 [
                     "insert", 
-                    1054, 
-                    "922(t)(5) or 924(p),"
+                    331, 
+                    "fine.On"
                 ]
             ], 
             [
                 [
                     "delete", 
-                    1114, 
-                    1120
+                    594, 
+                    604
                 ], 
                 [
                     "insert", 
-                    1114, 
-                    "or"
-                ]
-            ], 
-            [
-                [
-                    "delete", 
-                    1316, 
-                    1321
-                ], 
-                [
-                    "insert", 
-                    1316, 
-                    "5300.13."
-                ]
-            ], 
-            [
-                [
-                    "delete", 
-                    1411, 
-                    1421
-                ], 
-                [
-                    "insert", 
-                    1411, 
-                    "922(t)(5) or 924(p),"
+                    594, 
+                    "held.Such"
                 ]
             ], 
             [
                 "insert", 
-                1557, 
-                " During the hearing the licensee will have the opportunity to submit facts and arguments for review and consideration; offers of settlement will not be entertained at the hearing but may be made before or after the hearing."
+                687, 
+                " hearing.On conclusion of the hearing and consideration of all the relevant presentations made by the licensee or the licensee's representative, the Director shall render a decision and shall prepare a brief summary of the findings and conclusions on which the decision is based.If the decision is that the license should be revoked, or, in actions under 18 U.S.C. 922(t)(5) or 924(p), that the license should be revoked or suspended, or that a civil fine should be imposed, a certified copy of the summary shall be furnished to the licensee with the final notice of revocation, suspension, or imposition of a civil fine on ATF Form 5300.13. If the decision is that the license should not be revoked, or in actions under 18 U.S.C. 922(t)(5) or 924(p), that the license should not be revoked or suspended, and a civil fine should not be imposed, the licensee shall be notified in writing. During the hearing the licensee will have the opportunity to submit facts and arguments for review and consideration; offers of settlement will not be entertained at the hearing but may be made before or after the"
+            ], 
+            [
+                "delete", 
+                696, 
+                1557
             ]
         ]
     }, 
