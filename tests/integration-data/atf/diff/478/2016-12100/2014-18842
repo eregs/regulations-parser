@@ -538,6 +538,30 @@
             [
                 [
                     "delete", 
+                    246, 
+                    257
+                ], 
+                [
+                    "insert", 
+                    246, 
+                    "denial.The"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    308, 
+                    319
+                ], 
+                [
+                    "insert", 
+                    308, 
+                    "therefor. On"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
                     682, 
                     692
                 ], 
@@ -592,7 +616,7 @@
                 [
                     "delete", 
                     775, 
-                    1002
+                    1001
                 ], 
                 [
                     "insert", 
@@ -602,8 +626,8 @@
             ], 
             [
                 "delete", 
-                1006, 
-                1572
+                1005, 
+                1380
             ]
         ]
     }, 
@@ -613,46 +637,58 @@
             [
                 [
                     "delete", 
-                    226, 
-                    237
+                    205, 
+                    214
                 ], 
                 [
                     "insert", 
-                    226, 
+                    205, 
+                    "issued. In"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    225, 
+                    236
+                ], 
+                [
+                    "insert", 
+                    225, 
                     "a notice of revocation, suspension, or imposition of a civil fine may be issued on ATF Form 4500 whenever the Director has reason to believe that a licensee has knowingly transferred a firearm to an unlicensed person and knowingly failed to comply with the requirements of"
                 ]
             ], 
             [
                 [
                     "delete", 
-                    248, 
-                    257
+                    247, 
+                    256
                 ], 
                 [
                     "insert", 
-                    248, 
+                    247, 
                     "922(t)(1) with respect to the transfer and, at the time that the transferee most recently proposed the transfer, the national instant criminal background check system was operating"
                 ]
             ], 
             [
                 "insert", 
-                262, 
+                261, 
                 "information was available to the system demonstrating that the transferee's receipt of a firearm would violate "
             ], 
             [
                 "delete", 
-                272, 
-                869
+                271, 
+                868
             ], 
             [
                 [
                     "delete", 
-                    895, 
-                    1136
+                    894, 
+                    1135
                 ], 
                 [
                     "insert", 
-                    895, 
+                    894, 
                     "law."
                 ]
             ]
@@ -664,43 +700,91 @@
             [
                 [
                     "delete", 
-                    1054, 
-                    1074
+                    331, 
+                    338
                 ], 
                 [
                     "insert", 
-                    1054, 
+                    331, 
+                    "fine. On"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    593, 
+                    602
+                ], 
+                [
+                    "insert", 
+                    593, 
+                    "held. Such"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    686, 
+                    696
+                ], 
+                [
+                    "insert", 
+                    686, 
+                    "hearing. On"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    958, 
+                    970
+                ], 
+                [
+                    "insert", 
+                    958, 
+                    "based. If the"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    1050, 
+                    1070
+                ], 
+                [
+                    "insert", 
+                    1050, 
                     "922(t)(5),"
                 ]
             ], 
             [
                 [
                     "delete", 
-                    1124, 
-                    1126
+                    1120, 
+                    1122
                 ], 
                 [
                     "insert", 
-                    1124, 
+                    1120, 
                     "and/or"
                 ]
             ], 
             [
                 [
                     "delete", 
-                    1420, 
-                    1440
+                    1416, 
+                    1436
                 ], 
                 [
                     "insert", 
-                    1420, 
+                    1416, 
                     "922(t)(5),"
                 ]
             ], 
             [
                 "delete", 
-                1576, 
-                1799
+                1572, 
+                1795
             ]
         ]
     }, 
