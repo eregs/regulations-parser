@@ -5,7 +5,7 @@ This library/tool parses federal regulations (either plain text or XML) and
 much of their associated content. It can write the results to JSON files, an
 API, or even a git repository. The parser works hand-in-hand with
 [regulations-core](https://github.com/eregs/regulations-core), an API for hosting the parsed regulations and
-[regulation-site](https://github.com/eregs/regulations-site), a front-end for the data structures generated.
+[regulations-site](https://github.com/eregs/regulations-site), a front-end for the data structures generated.
 
 This repository is part of a larger project. To read about it, please see 
 [https://eregs.github.io/](https://eregs.github.io/).
