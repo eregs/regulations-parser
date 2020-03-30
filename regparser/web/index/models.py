@@ -6,8 +6,10 @@ class DependencyNode(models.Model):
 
 
 class Dependency(models.Model):
-    target = models.ForeignKey(DependencyNode, related_name='target_of')
-    depender = models.ForeignKey(DependencyNode, related_name='depends_on')
+    target = models.ForeignKey(DependencyNode, related_name='target_of',
+        null=True, on_delete=models.SET_NULL)
+    depender = models.ForeignKey(DependencyNode, related_name='depends_on',
+        null=True, on_delete=models.SET_NULL)
 
 
 class EntryManager(models.Manager):
