@@ -36,4 +36,4 @@ def cli(debug):
     loader = MigrationLoader(connection, ignore_no_migrations=True)
     all_migrations = set(loader.disk_migrations.keys())
     if all_migrations != loader.applied_migrations:
-        management.call_command('migrate', noinput=True)
+        management.call_command('migrate')
