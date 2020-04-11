@@ -14,36 +14,37 @@ coloredlogs==5.0
 decorator==4.0.11         # via ipython, networkx, traitlets
 dj-database-url==0.4.1
 django-click==1.2.0
-django-rq==0.9.1
+django-rq==2.3.1
 django==2.2.11
-djangorestframework==3.4
+djangorestframework==3.11.0
 gitdb==0.6.4              # via gitpython
 gitpython==2.0.2
 humanfriendly==2.4        # via coloredlogs
 inflection==0.3.1
-ipdb==0.10.0
+ipdb==0.13.2
 ipython-genutils==0.2.0   # via traitlets
-ipython==5.3.0            # via ipdb
+ipython==7.12             # via ipdb
 jedi==0.10.2              # via ipython
 json-delta==2.0
-lxml==3.6.0
+lxml==4.2.5
 networkx==1.11
 pbr==3.0.0                # via stevedore
-pexpect==4.2.1            # via ipython
+pexpect==4.8.0            # via ipython
 pickleshare==0.7.4        # via ipython
-prompt-toolkit==1.0.14    # via ipython
-ptyprocess==0.5.1         # via pexpect
+prompt-toolkit==3.0.4	  # via ipython
+ptyprocess==0.6.0.        # via pexpect
 pygments==2.2.0           # via ipython
 pyparsing==2.1.4
 pytz==2017.2              # via django
-redis==2.10.5             # via rq
+redis==3.2.0 			  # via rq
 requests-cache==0.4.12
 requests==2.10.0
 roman==2.0.0
-rq==0.7.1                 # via django-rq
+rq==1.2.0				  # via django-rq
 simplegeneric==0.8.1      # via ipython
 six==1.10.0
 smmap==0.9.0              # via gitdb
 stevedore==1.13.0
 traitlets==4.3.2          # via ipython
 wcwidth==0.1.7            # via prompt-toolkit
+psycopg2-binary==2.7.4.   # add to resolve django migrations

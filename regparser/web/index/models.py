@@ -20,8 +20,9 @@ class EntryManager(models.Manager):
 
 
 class Entry(models.Model):
-    label = models.OneToOneField(DependencyNode, primary_key=True,
-        null=True, on_delete=models.SET_NULL)
+    # label = models.OneToOneField(DependencyNode, primary_key=True,
+    #     null=True, on_delete=models.SET_NULL)
+    label = models.OneToOneField(DependencyNode, default='', primary_key=True, null=False, on_delete=models.SET_DEFAULT)
     modified = models.DateTimeField(auto_now=True)
     contents = models.BinaryField()
 
