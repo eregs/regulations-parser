@@ -17,7 +17,7 @@ decorator==4.0.11
 dj-database-url==0.4.1
 django-click==1.2.0
 django-rq==0.9.1
-django==1.11
+django==1.11.17
 djangorestframework==3.4
 flake8-blind-except==0.1.1
 flake8-builtins==0.2
@@ -41,7 +41,7 @@ ipython==5.3.0
 isort==4.2.5              # via flake8-isort
 jedi==0.10.2
 json-delta==2.0
-lxml==3.6.0
+lxml==3.7.0
 mccabe==0.5.3             # via flake8
 mock==2.0.0
 networkx==1.11

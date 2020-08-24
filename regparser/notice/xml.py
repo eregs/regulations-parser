@@ -469,6 +469,8 @@ def notice_xmls_for_url(notice_url):
         if response.status_code != requests.codes.ok:
             logger.info('failed. fetching from %s', notice_url)
             response = client.get(notice_url)
+        else:
+            logger.info('SUCCESSFULLY FOUND NOTICE XML')
         yield NoticeXML(response.content, notice_url).preprocess()
 
 

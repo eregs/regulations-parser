@@ -34,9 +34,18 @@ class FinderBase(six.with_metaclass(abc.ABCMeta)):
 def fdsys_url(**params):
     """Generate a URL to an FDSYS redirect"""
     params['year'] = params.get('year', 'mostrecent')
-    params = sorted(params.items())     # consistent encoding
-    return 'http://api.fdsys.gov/link?{0}'.format(urlencode(params))
-
+    # params = sorted(params.items())     # consistent encoding
+    # return 'http://api.fdsys.gov/link?{0}'.format(urlencode(params))
+    if 'partnum' in params and 'section' in params and 'titlenum' in params:
+        return 'http://www.govinfo.gov/link/' + params['collection'] + '/' + params['titlenum'] + '/' + params['partnum'] + '?sectionnum=' + params['section'] + '&year=' + params['year']
+    elif 'section' in params and 'title' in params:
+        return 'http://www.govinfo.gov/link/' + params['collection'] + '/' + params['title'] + '/' + params['section']  + '?year=' + params['year']
+    elif 'partnum' in params and 'titlenum' in params:
+        return 'http://www.govinfo.gov/link/' + params['collection'] + '/' + params['titlenum'] + '/' + params['partnum']  + '?year=' + params['year']
+    elif 'titlenum' in params:
+        return 'http://www.govinfo.gov/link/' + params['collection'] + '/' + params['titlenum'] + '?year=' + params['year']
+    else:
+        return 'http://api.fdsys.gov/link?{0}'.format(urlencode(params))
 
 class CFRFinder(FinderBase):
     """Code of Federal Regulations. Explicitly ignore any references within

@@ -88,7 +88,9 @@ MACROS_SOURCES = [
 # provides. This setting specifies file paths to look through for local
 # versions of their XML. See also XML_REPO below, which is effectively tacked
 # on to the end of this list
-LOCAL_XML_PATHS = []
+LOCAL_XML_PATHS = [
+    # 'fr-notices'
+]
 
 
 # Sometimes appendices provide examples or model forms that include
@@ -98,7 +100,7 @@ LOCAL_XML_PATHS = []
 APPENDIX_IGNORE_SUBHEADER_LABEL = {}
 
 # Refer to a shared collection of modified FR notices
-XML_REPO_PREFIX = 'https://raw.githubusercontent.com/eregs/fr-notices/master/'
+XML_REPO_PREFIX = 'https://raw.githubusercontent.com/TimothyAndry/fr-notices/master/'
 
 # A dictionary of agency-specific external citations
 # @todo - move ATF citations to an extension
