@@ -33,7 +33,7 @@ pexpect==4.2.1            # via ipython
 pickleshare==0.7.4        # via ipython
 prompt-toolkit==1.0.14    # via ipython
 ptyprocess==0.5.1         # via pexpect
-pygments==2.2.0           # via ipython
+pygments==2.7.4           # via ipython
 pyparsing==2.1.4
 pytz==2017.2              # via django
 redis==2.10.5             # via rq
