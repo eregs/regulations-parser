@@ -1,0 +1,82 @@
+{
+    "479-11-p2710366668": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    13, 
+                    18
+                ], 
+                [
+                    "insert", 
+                    13, 
+                    "Any weapon which shoots, is designed to shoot, or can be readily restored to shoot, automatically more than one shot, without manual reloading, by a single function of the trigger. The term shall also include the frame or receiver of any such weapon, any part designed and intended solely and exclusively, or combination of parts designed and intended, for use in converting a weapon into a machine gun, and any combination of parts from which a machine gun can be assembled if such parts are in the possession or under the control of a person."
+                ]
+            ]
+        ]
+    }, 
+    "479-32": {
+        "child_ops": [
+            [
+                "delete", 
+                0, 
+                3
+            ], 
+            [
+                "insert", 
+                0, 
+                [
+                    "479-32-p1", 
+                    "479-32-p2"
+                ]
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "479-32-a": {
+        "op": "deleted"
+    }, 
+    "479-32-a-p1": {
+        "op": "deleted"
+    }, 
+    "479-32-b": {
+        "op": "deleted"
+    }, 
+    "479-32-b-p1": {
+        "op": "deleted"
+    }, 
+    "479-32-c": {
+        "op": "deleted"
+    }, 
+    "479-32-p1": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "479", 
+                "32", 
+                "p1"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "Except as provided in \u00a7\u2009479.32a, the special (occupational) tax rates effective January 1, 1988, are as follows:", 
+            "text": "Except as provided in \u00a7\u2009479.32a, the special (occupational) tax rates effective January 1, 1988, are as follows:", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "479-32-p2": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "479", 
+                "32", 
+                "p2"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "<GPOTABLE xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" CDEF=\"s25,10\" COLS=\"2\" OPTS=\"L2\">\n          <BOXHD>\n            <CHED H=\"1\">\u2003</CHED>\n            <CHED H=\"1\">Per year or fraction thereof</CHED>\n          </BOXHD>\n          <ROW>\n            <ENT I=\"01\">Class 1\u2014Importer of firearms (including an importer only of weapons classified as \u201cany other weapon\u201d)</ENT>\n            <ENT>$1,000</ENT>\n          </ROW>\n          <ROW>\n            <ENT I=\"01\">Class 2\u2014Manufacturer of firearms (including a manufacturer only of weapons classified as \u201cany other weapon\u201d)</ENT>\n            <ENT>1,000</ENT>\n          </ROW>\n          <ROW>\n            <ENT I=\"01\">Class 3\u2014Dealer in firearms (including a dealer only of weapons classified as \u201cany other weapon\u201d)</ENT>\n            <ENT>500</ENT>\n          </ROW>\n        </GPOTABLE>", 
+            "text": "||Per year or fraction thereof|\n|---|---|\n|Class 1\u2014Importer of firearms (including an importer only of weapons classified as \u201cany other weapon\u201d)|$1,000|\n|Class 2\u2014Manufacturer of firearms (including a manufacturer only of weapons classified as \u201cany other weapon\u201d)|1,000|\n|Class 3\u2014Dealer in firearms (including a dealer only of weapons classified as \u201cany other weapon\u201d)|500|", 
+            "title": null
+        }, 
+        "op": "added"
+    }
+}

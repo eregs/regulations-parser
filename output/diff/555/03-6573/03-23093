@@ -1,0 +1,454 @@
+{
+    "555-103-b-2-ii": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    569, 
+                    571
+                ], 
+                [
+                    "insert", 
+                    569, 
+                    "Except as provided in paragraph (b)(3) of this section, in"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    576, 
+                    590
+                ], 
+                [
+                    "insert", 
+                    576, 
+                    "instances the"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    635, 
+                    641
+                ], 
+                [
+                    "insert", 
+                    635, 
+                    "distributee, or the employee of the distributee"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    703, 
+                    714
+                ], 
+                [
+                    "insert", 
+                    703, 
+                    "distributee,"
+                ]
+            ]
+        ]
+    }, 
+    "555-103-b-3": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                2
+            ], 
+            [
+                "delete", 
+                2, 
+                3
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                39, 
+                "common or contract carrier. When "
+            ], 
+            [
+                [
+                    "delete", 
+                    60, 
+                    73
+                ], 
+                [
+                    "insert", 
+                    60, 
+                    "carrier will transport explosive materials from"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    76, 
+                    82
+                ], 
+                [
+                    "insert", 
+                    76, 
+                    "distributor to a distributee who is a licensee"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    86, 
+                    117
+                ], 
+                [
+                    "insert", 
+                    86, 
+                    "holder of a user permit, the distributor must take the following actions before relinquishing possession of the"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    128, 
+                    397
+                ], 
+                [
+                    "insert", 
+                    128, 
+                    "materials:"
+                ]
+            ]
+        ]
+    }, 
+    "555-103-b-3-i": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    4, 
+                    7
+                ], 
+                [
+                    "insert", 
+                    4, 
+                    "Verify the identity of the person accepting possession for the"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    35, 
+                    74
+                ], 
+                [
+                    "insert", 
+                    35, 
+                    "by examining such person's valid, unexpired driver's license issued by any State, Canada, or Mexico; and"
+                ]
+            ]
+        ]
+    }, 
+    "555-103-b-3-ii": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    5, 
+                    20
+                ], 
+                [
+                    "insert", 
+                    5, 
+                    "Record the name of the common or contract carrier (i.e., the name of the driver's employer) and the full name of the driver. This information"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    26, 
+                    32
+                ], 
+                [
+                    "insert", 
+                    26, 
+                    "be maintained in"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    37, 
+                    167
+                ], 
+                [
+                    "insert", 
+                    37, 
+                    "distributor's permanent records"
+                ]
+            ], 
+            [
+                "insert", 
+                171, 
+                "accordance with "
+            ], 
+            [
+                [
+                    "delete", 
+                    173, 
+                    328
+                ], 
+                [
+                    "insert", 
+                    173, 
+                    "555.121."
+                ]
+            ]
+        ]
+    }, 
+    "555-103-b-3-iii": {
+        "op": "deleted"
+    }, 
+    "555-105-b-6-iii": {
+        "child_ops": [
+            [
+                "insert", 
+                0, 
+                [
+                    "555-105-b-6-iii-A", 
+                    "555-105-b-6-iii-B", 
+                    "555-105-b-6-iii-C"
+                ]
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    212, 
+                    1398
+                ], 
+                [
+                    "insert", 
+                    212, 
+                    "permit:"
+                ]
+            ]
+        ]
+    }, 
+    "555-105-b-6-iii-A": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "555", 
+                "105", 
+                "b", 
+                "6", 
+                "iii", 
+                "A"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(A) The limited permittee must, prior to delivery of the explosive materials, complete the appropriate section on Form 5400.4, affix to the Form 5400.4 one of the six IPECs he has been issued, and provide the form to the distributor in person or by mail.", 
+            "text": "(A) The limited permittee must, prior to delivery of the explosive materials, complete the appropriate section on Form 5400.4, affix to the Form 5400.4 one of the six IPECs he has been issued, and provide the form to the distributor in person or by mail.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "555-105-b-6-iii-B": {
+        "node": {
+            "child_labels": [
+                "555-105-b-6-iii-B-1", 
+                "555-105-b-6-iii-B-2"
+            ], 
+            "label": [
+                "555", 
+                "105", 
+                "b", 
+                "6", 
+                "iii", 
+                "B"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(B) The distributor must, before relinquishing possession of the explosive materials to the common or contract carrier:", 
+            "text": "(B) The distributor must, before relinquishing possession of the explosive materials to the common or contract carrier:", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "555-105-b-6-iii-B-1": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "555", 
+                "105", 
+                "b", 
+                "6", 
+                "iii", 
+                "B", 
+                "1"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(<E T=\"03\">1</E>) Verify the identity of the person accepting possession for the common or contract carrier by examining such person's valid, unexpired driver's license issued by any State, Canada, or Mexico; and", 
+            "text": "(1) Verify the identity of the person accepting possession for the common or contract carrier by examining such person's valid, unexpired driver's license issued by any State, Canada, or Mexico; and", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "555-105-b-6-iii-B-2": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "555", 
+                "105", 
+                "b", 
+                "6", 
+                "iii", 
+                "B", 
+                "2"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(<E T=\"03\">2</E>) Record the name of the common or contract carrier (<E T=\"03\">i.e.,</E> the name of the driver's employer) and the full name of the driver. This information must be maintained in the distributor's permanent records in accordance with \u00a7 555.121.", 
+            "text": "(2) Record the name of the common or contract carrier (i.e., the name of the driver's employer) and the full name of the driver. This information must be maintained in the distributor's permanent records in accordance with \u00a7 555.121.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "555-105-b-6-iii-C": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "555", 
+                "105", 
+                "b", 
+                "6", 
+                "iii", 
+                "C"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(C) At the time of delivery of the explosive materials, the common or contract carrier, as agent for the distributor, must verify the identity of the person accepting delivery on behalf of the distributee, note the type and number of the identification document (as defined in \u00a7 555.11) and provide this information to the distributor. The distributor must enter this information in the appropriate section on Form 5400.4.", 
+            "text": "(C) At the time of delivery of the explosive materials, the common or contract carrier, as agent for the distributor, must verify the identity of the person accepting delivery on behalf of the distributee, note the type and number of the identification document (as defined in \u00a7 555.11) and provide this information to the distributor. The distributor must enter this information in the appropriate section on Form 5400.4.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "555-105-b-6-iv": {
+        "child_ops": [
+            [
+                "insert", 
+                0, 
+                [
+                    "555-105-b-6-iv-A", 
+                    "555-105-b-6-iv-B"
+                ]
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    189, 
+                    192
+                ], 
+                [
+                    "insert", 
+                    189, 
+                    "a"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    213, 
+                    1032
+                ], 
+                [
+                    "insert", 
+                    213, 
+                    "permit:"
+                ]
+            ]
+        ]
+    }, 
+    "555-105-b-6-iv-A": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "555", 
+                "105", 
+                "b", 
+                "6", 
+                "iv", 
+                "A"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(A) The limited permittee must, prior to delivery of the explosive materials, complete the appropriate section on Form 5400.4, affix to the Form 5400.4 one of the six IPECs he has been issued, and provide the form to the distributor in person or by mail.", 
+            "text": "(A) The limited permittee must, prior to delivery of the explosive materials, complete the appropriate section on Form 5400.4, affix to the Form 5400.4 one of the six IPECs he has been issued, and provide the form to the distributor in person or by mail.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "555-105-b-6-iv-B": {
+        "node": {
+            "child_labels": [
+                "555-105-b-6-iv-B-1", 
+                "555-105-b-6-iv-B-2"
+            ], 
+            "label": [
+                "555", 
+                "105", 
+                "b", 
+                "6", 
+                "iv", 
+                "B"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(B) Before the delivery at the distributor's premises to the common or contract carrier who will transport explosive materials to the holder of a limited permit, the distributor must:", 
+            "text": "(B) Before the delivery at the distributor's premises to the common or contract carrier who will transport explosive materials to the holder of a limited permit, the distributor must:", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "555-105-b-6-iv-B-1": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "555", 
+                "105", 
+                "b", 
+                "6", 
+                "iv", 
+                "B", 
+                "1"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(<E T=\"03\">1</E>) Verify the identity of the person accepting possession for the common or contract carrier by examining such person's valid, unexpired driver's license issued by any State, Canada, or Mexico; and", 
+            "text": "(1) Verify the identity of the person accepting possession for the common or contract carrier by examining such person's valid, unexpired driver's license issued by any State, Canada, or Mexico; and", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "555-105-b-6-iv-B-2": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "555", 
+                "105", 
+                "b", 
+                "6", 
+                "iv", 
+                "B", 
+                "2"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(<E T=\"03\">2</E>) Record the name of the common or contract carrier (<E T=\"03\">i.e.,</E> the name of the driver's employer) and the full name of the driver. This information must be maintained in the distributor's permanent records in accordance with \u00a7 555.121.", 
+            "text": "(2) Record the name of the common or contract carrier (i.e., the name of the driver's employer) and the full name of the driver. This information must be maintained in the distributor's permanent records in accordance with \u00a7 555.121.", 
+            "title": null
+        }, 
+        "op": "added"
+    }
+}

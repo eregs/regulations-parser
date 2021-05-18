@@ -19,7 +19,6 @@ def keyterm_in_text(tagged_text):
     if match:
         keyterm = match.group('keyterm')
     keyterm = keyterm.strip()
-
     for to_trim in TRIM_FROM_KEYTERM:
         if keyterm.endswith(to_trim):
             keyterm = keyterm[:-len(to_trim)].strip()

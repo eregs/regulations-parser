@@ -1,0 +1,1738 @@
+{
+    "478-11-p2710366668": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    13, 
+                    23
+                ], 
+                [
+                    "insert", 
+                    13, 
+                    "* * * For purposes of this definition, the term \u201cautomatically\u201d as it modifies \u201cshoots, is designed to shoot, or can be readily restored to shoot,\u201d means functioning as the result of a self-acting or self-regulating mechanism that allows the firing of multiple rounds through a single function of the trigger; and \u201csingle function of the trigger\u201d means a single pull of the trigger and analogous motions. The term \u201cmachine gun\u201d includes a bump-stock-type device, i.e., a device that allows a semi-automatic firearm to shoot more than one shot with a single pull of the trigger by harnessing the recoil energy of the semi-automatic firearm to"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    30, 
+                    37
+                ], 
+                [
+                    "insert", 
+                    30, 
+                    "it"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    41, 
+                    130
+                ], 
+                [
+                    "insert", 
+                    41, 
+                    "affixed so that the trigger resets and continues firing"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    139, 
+                    156
+                ], 
+                [
+                    "insert", 
+                    139, 
+                    "additional physical manipulation of the trigger"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    160, 
+                    1324
+                ], 
+                [
+                    "insert", 
+                    160, 
+                    "the"
+                ]
+            ]
+        ]
+    }, 
+    "478-116": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    147, 
+                    160
+                ], 
+                [
+                    "insert", 
+                    147, 
+                    "ammunition, or ammunition feeding device as defined in \u00a7 478.119(b)"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    231, 
+                    247
+                ], 
+                [
+                    "insert", 
+                    231, 
+                    "ammunition, or ammunition feeding device in"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    365, 
+                    378
+                ], 
+                [
+                    "insert", 
+                    365, 
+                    "ammunition, or ammunition feeding device"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    659, 
+                    672
+                ], 
+                [
+                    "insert", 
+                    659, 
+                    "ammunition, or ammunition feeding device"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    804, 
+                    817
+                ], 
+                [
+                    "insert", 
+                    804, 
+                    "ammunition, or ammunition feeding device"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    875, 
+                    891
+                ], 
+                [
+                    "insert", 
+                    875, 
+                    "ammunition, or ammunition feeding device or"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    966, 
+                    979
+                ], 
+                [
+                    "insert", 
+                    966, 
+                    "ammunition, or ammunition feeding device"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    1058, 
+                    1071
+                ], 
+                [
+                    "insert", 
+                    1058, 
+                    "ammunition, or ammunition feeding device"
+                ]
+            ]
+        ]
+    }, 
+    "478-119": {
+        "child_ops": [
+            [
+                "insert", 
+                0, 
+                [
+                    "478-119-a", 
+                    "478-119-b", 
+                    "478-119-c", 
+                    "478-119-d", 
+                    "478-119-e", 
+                    "478-119-f", 
+                    "478-119-g"
+                ]
+            ]
+        ], 
+        "op": "modified", 
+        "title": [
+            [
+                [
+                    "delete", 
+                    10, 
+                    20
+                ], 
+                [
+                    "insert", 
+                    10, 
+                    "Importation of ammunition feeding devices."
+                ]
+            ]
+        ]
+    }, 
+    "478-119-a": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "119", 
+                "a"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(a) No ammunition feeding device shall be imported or brought into the United States unless the Director has authorized the importation of such device.", 
+            "text": "(a) No ammunition feeding device shall be imported or brought into the United States unless the Director has authorized the importation of such device.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-119-b": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "119", 
+                "b"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(b) For purposes of this section, an \u201cammunition feeding device\u201d is a magazine, belt, drum, feed strip, or similar device for a firearm that has a capacity of, or that can be readily restored or converted to accept, more than 10 rounds of ammunition. The term does not include an attached tubular device designed to accept, and capable of operating only with, .22 caliber rimfire ammunition, or a fixed device for a manually operated firearm, or a fixed device for a firearm listed in 18 U.S.C. 922, appendix A.", 
+            "text": "(b) For purposes of this section, an \u201cammunition feeding device\u201d is a magazine, belt, drum, feed strip, or similar device for a firearm that has a capacity of, or that can be readily restored or converted to accept, more than 10 rounds of ammunition. The term does not include an attached tubular device designed to accept, and capable of operating only with, .22 caliber rimfire ammunition, or a fixed device for a manually operated firearm, or a fixed device for a firearm listed in 18 U.S.C. 922, appendix A.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-119-c": {
+        "node": {
+            "child_labels": [
+                "478-119-c-1", 
+                "478-119-c-2", 
+                "478-119-c-3", 
+                "478-119-c-4", 
+                "478-119-c-5", 
+                "478-119-c-6", 
+                "478-119-c-7"
+            ], 
+            "label": [
+                "478", 
+                "119", 
+                "c"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(c) An application for a permit, ATF Form 6, to import or bring an ammunition feeding device into the United States or a possession thereof under this section shall be filed, in triplicate, with the Director. The application shall contain:", 
+            "text": "(c) An application for a permit, ATF Form 6, to import or bring an ammunition feeding device into the United States or a possession thereof under this section shall be filed, in triplicate, with the Director. The application shall contain:", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-119-c-1": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "119", 
+                "c", 
+                "1"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(1) The name and address of the person importing the device,", 
+            "text": "(1) The name and address of the person importing the device,", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-119-c-2": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "119", 
+                "c", 
+                "2"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(2) A description of the device to be imported, including type and cartridge capacity, model and caliber of firearm for which the device was made, country of manufacture, and name of the manufacturer if known,", 
+            "text": "(2) A description of the device to be imported, including type and cartridge capacity, model and caliber of firearm for which the device was made, country of manufacture, and name of the manufacturer if known,", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-119-c-3": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "119", 
+                "c", 
+                "3"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(3) The unit cost of the device to be imported,", 
+            "text": "(3) The unit cost of the device to be imported,", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-119-c-4": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "119", 
+                "c", 
+                "4"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(4) The country from which to be imported,", 
+            "text": "(4) The country from which to be imported,", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-119-c-5": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "119", 
+                "c", 
+                "5"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(5) The name and address of the foreign seller and the foreign shipper,", 
+            "text": "(5) The name and address of the foreign seller and the foreign shipper,", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-119-c-6": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "119", 
+                "c", 
+                "6"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(6) Verification that such device will be marked as required by this part, and", 
+            "text": "(6) Verification that such device will be marked as required by this part, and", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-119-c-7": {
+        "node": {
+            "child_labels": [
+                "478-119-c-7-i", 
+                "478-119-c-7-ii", 
+                "478-119-c-7-iii", 
+                "478-119-c-7-iv"
+            ], 
+            "label": [
+                "478", 
+                "119", 
+                "c", 
+                "7"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(7) A statement by the importer that the device is being imported for sale to purchasers specified in \u00a7\u2009478.40a(b) or physical or reasonable documentary evidence establishing that the magazine was manufactured on or before September 13, 1994. Any one of the following examples, which are not meant to be exhaustive, may be sufficient to establish the time of manufacture:", 
+            "text": "(7) A statement by the importer that the device is being imported for sale to purchasers specified in \u00a7\u2009478.40a(b) or physical or reasonable documentary evidence establishing that the magazine was manufactured on or before September 13, 1994. Any one of the following examples, which are not meant to be exhaustive, may be sufficient to establish the time of manufacture:", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-119-c-7-i": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "119", 
+                "c", 
+                "7", 
+                "i"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(i) Permanent markings or physical characteristics which establish that the magazine was manufactured on or before September 13, 1994;", 
+            "text": "(i) Permanent markings or physical characteristics which establish that the magazine was manufactured on or before September 13, 1994;", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-119-c-7-ii": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "119", 
+                "c", 
+                "7", 
+                "ii"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(ii) A certification from the importer, under penalty of perjury, that the importer maintained continuous custody beginning on a date prior to September 14, 1994, and continuing until the date of the certification. Such certification shall also be supported by reasonable documentary evidence, such as commercial records;", 
+            "text": "(ii) A certification from the importer, under penalty of perjury, that the importer maintained continuous custody beginning on a date prior to September 14, 1994, and continuing until the date of the certification. Such certification shall also be supported by reasonable documentary evidence, such as commercial records;", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-119-c-7-iii": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "119", 
+                "c", 
+                "7", 
+                "iii"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(iii) A certification from the importer, under penalty of perjury, that the magazines sought to be imported were in the custody and control of a foreign Government on or before September 13, 1994, along with reasonable documentary evidence to support the certification; or", 
+            "text": "(iii) A certification from the importer, under penalty of perjury, that the magazines sought to be imported were in the custody and control of a foreign Government on or before September 13, 1994, along with reasonable documentary evidence to support the certification; or", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-119-c-7-iv": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "119", 
+                "c", 
+                "7", 
+                "iv"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(iv) A certification from the importer, under penalty of perjury, that the magazine was in the possession of a foreign arms supplier on or before September 13, 1994, along with reasonable documentary evidence to support the certification.", 
+            "text": "(iv) A certification from the importer, under penalty of perjury, that the magazine was in the possession of a foreign arms supplier on or before September 13, 1994, along with reasonable documentary evidence to support the certification.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-119-d": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "119", 
+                "d"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(d) The Director shall act upon applications to import ammunition feeding devices as expeditiously as possible. If the Director approves the application, such approved application shall serve as the permit to import the device described therein, and importation of such devices may continue to be made by the person importing such devices under the approved application (permit) during the period specified thereon. The Director shall furnish the approved application (permit) to the applicant and retain two copies thereof for administrative use. If the Director disapproves the application, the person importing such devices shall be notified of the basis for the disapproval.", 
+            "text": "(d) The Director shall act upon applications to import ammunition feeding devices as expeditiously as possible. If the Director approves the application, such approved application shall serve as the permit to import the device described therein, and importation of such devices may continue to be made by the person importing such devices under the approved application (permit) during the period specified thereon. The Director shall furnish the approved application (permit) to the applicant and retain two copies thereof for administrative use. If the Director disapproves the application, the person importing such devices shall be notified of the basis for the disapproval.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-119-e": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "119", 
+                "e"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(e) An ammunition feeding device imported or brought into the United States by a person importing such a device may be released from Customs custody to the person importing such a device upon showing that such person has obtained a permit from the Director for the importation of the device to be released. In obtaining the release from Customs custody of such a device authorized by this section to be imported through use of a permit, the person importing such a device shall prepare ATF Form 6A, in duplicate, and furnish the original ATF Form 6A to the Customs officer releasing the device. The Customs officer shall, after certification, forward the ATF Form 6A to the address specified on the form. The ATF Form 6A shall show the name and address of the person importing the device, the name of the manufacturer of the device, the country of manufacture, the type, model, caliber, size, and the number of devices released.", 
+            "text": "(e) An ammunition feeding device imported or brought into the United States by a person importing such a device may be released from Customs custody to the person importing such a device upon showing that such person has obtained a permit from the Director for the importation of the device to be released. In obtaining the release from Customs custody of such a device authorized by this section to be imported through use of a permit, the person importing such a device shall prepare ATF Form 6A, in duplicate, and furnish the original ATF Form 6A to the Customs officer releasing the device. The Customs officer shall, after certification, forward the ATF Form 6A to the address specified on the form. The ATF Form 6A shall show the name and address of the person importing the device, the name of the manufacturer of the device, the country of manufacture, the type, model, caliber, size, and the number of devices released.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-119-f": {
+        "node": {
+            "child_labels": [
+                "478-119-f-1", 
+                "478-119-f-2"
+            ], 
+            "label": [
+                "478", 
+                "119", 
+                "f"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(f) Within 15 days of the date of release from Customs custody, the person importing such a device shall:", 
+            "text": "(f) Within 15 days of the date of release from Customs custody, the person importing such a device shall:", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-119-f-1": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "119", 
+                "f", 
+                "1"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(1) Forward to the address specified on the form a copy of ATF Form 6A on which shall be reported any error or discrepancy appearing on the ATF Form 6A certified by Customs, and", 
+            "text": "(1) Forward to the address specified on the form a copy of ATF Form 6A on which shall be reported any error or discrepancy appearing on the ATF Form 6A certified by Customs, and", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-119-f-2": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "119", 
+                "f", 
+                "2"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(2) Pursuant to \u00a7\u2009478.92, place all required identification data on each imported device manufactured after September 13, 1994, if same did not bear such identification data at the time of its release from Customs custody.", 
+            "text": "(2) Pursuant to \u00a7\u2009478.92, place all required identification data on each imported device manufactured after September 13, 1994, if same did not bear such identification data at the time of its release from Customs custody.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-119-g": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "119", 
+                "g"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(g) The Director may authorize the conditional importation of an ammunition feeding device as provided in \u00a7\u2009478.116.", 
+            "text": "(g) The Director may authorize the conditional importation of an ammunition feeding device as provided in \u00a7\u2009478.116.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-132": {
+        "child_ops": [
+            [
+                "insert", 
+                0, 
+                [
+                    "478-132-a", 
+                    "478-132-b"
+                ]
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                0, 
+                "Licensed manufacturers, licensed importers, and licensed dealers in semiautomatic assault weapons, as well as persons who manufacture, import, or deal in large capacity ammunition feeding devices, may transfer such weapons and devices manufactured after September 13, 1994, to law enforcement officers and to employees or contractors of nuclear facilities with the following documentation:"
+            ]
+        ], 
+        "title": [
+            [
+                [
+                    "delete", 
+                    10, 
+                    20
+                ], 
+                [
+                    "insert", 
+                    10, 
+                    "Dispositions of semiautomatic assault weapons and large capacity ammunition feeding devices to law enforcement officers for official use and to employees or contractors of nuclear facilities."
+                ]
+            ]
+        ]
+    }, 
+    "478-132-a": {
+        "node": {
+            "child_labels": [
+                "478-132-a-1", 
+                "478-132-a-2"
+            ], 
+            "label": [
+                "478", 
+                "132", 
+                "a"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(a) <E T=\"03\">Law enforcement officers.</E>", 
+            "text": "(a) Law enforcement officers.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-132-a-1": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "132", 
+                "a", 
+                "1"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(1) A written statement from the purchasing officer, under penalty of perjury, stating that the weapon or device is being purchased for use in performing official duties and that the weapon or device is not being acquired for personal use or for purposes of transfer or resale; and", 
+            "text": "(1) A written statement from the purchasing officer, under penalty of perjury, stating that the weapon or device is being purchased for use in performing official duties and that the weapon or device is not being acquired for personal use or for purposes of transfer or resale; and", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-132-a-2": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "132", 
+                "a", 
+                "2"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(2) A written statement from a supervisor of the purchasing officer, on agency letterhead, under penalty of perjury, stating that the purchasing officer is acquiring the weapon or device for use in official duties, that the firearm is suitable for use in performing official duties, and that the weapon or device is not being acquired for personal use or for purposes of transfer or resale.", 
+            "text": "(2) A written statement from a supervisor of the purchasing officer, on agency letterhead, under penalty of perjury, stating that the purchasing officer is acquiring the weapon or device for use in official duties, that the firearm is suitable for use in performing official duties, and that the weapon or device is not being acquired for personal use or for purposes of transfer or resale.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-132-b": {
+        "node": {
+            "child_labels": [
+                "478-132-b-1", 
+                "478-132-b-2", 
+                "478-132-b-3"
+            ], 
+            "label": [
+                "478", 
+                "132", 
+                "b"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(b) <E T=\"03\">Employees or contractors of nuclear facilities.</E>", 
+            "text": "(b) Employees or contractors of nuclear facilities.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-132-b-1": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "132", 
+                "b", 
+                "1"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(1) Evidence that the employee is employed by a nuclear facility licensed pursuant to 42 U.S.C. 2133 or evidence that the contractor has a valid contract with such a facility.", 
+            "text": "(1) Evidence that the employee is employed by a nuclear facility licensed pursuant to 42 U.S.C. 2133 or evidence that the contractor has a valid contract with such a facility.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-132-b-2": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "132", 
+                "b", 
+                "2"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(2) A written statement from the purchasing employee or contractor under penalty of perjury, stating that the weapon or device is being purchased for one of the purposes authorized in \u00a7\u00a7\u2009478.40(b)(7) and 478.40(b)(3), i.e., on-site physical protection, on-site or off-site training, or off-site transportation of nuclear materials.", 
+            "text": "(2) A written statement from the purchasing employee or contractor under penalty of perjury, stating that the weapon or device is being purchased for one of the purposes authorized in \u00a7\u00a7\u2009478.40(b)(7) and 478.40(b)(3), i.e., on-site physical protection, on-site or off-site training, or off-site transportation of nuclear materials.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-132-b-3": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "132", 
+                "b", 
+                "3"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(3) A written statement from a supervisor of the purchasing employee or contractor, on agency or company letterhead, under penalty of perjury, stating that the purchasing employee or contractor is acquiring the weapon or device for use in official duties, and that the weapon or device is not being acquired for personal use or for purposes of transfer or resale.", 
+            "text": "(3) A written statement from a supervisor of the purchasing employee or contractor, on agency or company letterhead, under penalty of perjury, stating that the purchasing employee or contractor is acquiring the weapon or device for use in official duties, and that the weapon or device is not being acquired for personal use or for purposes of transfer or resale.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-153": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                0, 
+                "The provisions of \u00a7 478.40 with respect to the manufacture, transfer, or possession of a semiautomatic assault weapon, and \u00a7 478.40a with respect to large capacity ammunition feeding devices, shall not apply to the manufacture, transfer, or possession of such weapons or devices by a manufacturer or importer for the purposes of testing or experimentation as authorized by the Director. A person desiring such authorization shall submit a letter application, in duplicate, to the Director. Such application shall contain the name and addresses of the persons directing or controlling, directly or indirectly, the policies and management of the applicant, the nature or purpose of the testing or experimentation, a description of the weapons or devices to be manufactured or imported, and the source of the weapons or devices. The approved application shall be retained as part of the records required by subpart H of this part."
+            ]
+        ], 
+        "title": [
+            [
+                [
+                    "delete", 
+                    10, 
+                    20
+                ], 
+                [
+                    "insert", 
+                    10, 
+                    "Semiautomatic assault weapons and large capacity ammunition feeding devices manufactured or imported for the purposes of testing or experimentation."
+                ]
+            ]
+        ]
+    }, 
+    "478-171": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                581, 
+                " semiautomatic assault weapons"
+            ], 
+            [
+                "insert", 
+                744, 
+                "semiautomatic assault weapons "
+            ]
+        ]
+    }, 
+    "478-40": {
+        "child_ops": [
+            [
+                "insert", 
+                0, 
+                [
+                    "478-40-a", 
+                    "478-40-b", 
+                    "478-40-c"
+                ]
+            ]
+        ], 
+        "op": "modified", 
+        "title": [
+            [
+                [
+                    "delete", 
+                    9, 
+                    19
+                ], 
+                [
+                    "insert", 
+                    9, 
+                    "Manufacture, transfer, and possession of semiautomatic assault weapons."
+                ]
+            ]
+        ]
+    }, 
+    "478-40-a": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "40", 
+                "a"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(a) <E T=\"03\">Prohibition.</E> No person shall manufacture, transfer, or possess a semiautomatic assault weapon.", 
+            "text": "(a) Prohibition. No person shall manufacture, transfer, or possess a semiautomatic assault weapon.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-40-b": {
+        "node": {
+            "child_labels": [
+                "478-40-b-1", 
+                "478-40-b-2", 
+                "478-40-b-3", 
+                "478-40-b-4", 
+                "478-40-b-5", 
+                "478-40-b-6", 
+                "478-40-b-7", 
+                "478-40-b-8", 
+                "478-40-b-9", 
+                "478-40-b-10"
+            ], 
+            "label": [
+                "478", 
+                "40", 
+                "b"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(b) <E T=\"03\">Exceptions.</E> The provisions of paragraph (a) of this section shall not apply to:", 
+            "text": "(b) Exceptions. The provisions of paragraph (a) of this section shall not apply to:", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-40-b-1": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "40", 
+                "b", 
+                "1"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(1) The possession or transfer of any semiautomatic assault weapon otherwise lawfully possessed in the United States under Federal law on September 13, 1994;", 
+            "text": "(1) The possession or transfer of any semiautomatic assault weapon otherwise lawfully possessed in the United States under Federal law on September 13, 1994;", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-40-b-10": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "40", 
+                "b", 
+                "10"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(10) The manufacture, transfer, or possession of a semiautomatic assault weapon by a licensed manufacturer, licensed importer, or licensed dealer for the purpose of exportation in compliance with the Arms Export Control Act (22 U.S.C. 2778).", 
+            "text": "(10) The manufacture, transfer, or possession of a semiautomatic assault weapon by a licensed manufacturer, licensed importer, or licensed dealer for the purpose of exportation in compliance with the Arms Export Control Act (22 U.S.C. 2778).", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-40-b-2": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "40", 
+                "b", 
+                "2"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(2) Any of the firearms, or replicas or duplicates of the firearms, specified in 18 U.S.C. 922, appendix A, as such firearms existed on October 1, 1993;", 
+            "text": "(2) Any of the firearms, or replicas or duplicates of the firearms, specified in 18 U.S.C. 922, appendix A, as such firearms existed on October 1, 1993;", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-40-b-3": {
+        "node": {
+            "child_labels": [
+                "478-40-b-3-i", 
+                "478-40-b-3-ii", 
+                "478-40-b-3-iii"
+            ], 
+            "label": [
+                "478", 
+                "40", 
+                "b", 
+                "3"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(3) Any firearm that\u2014", 
+            "text": "(3) Any firearm that\u2014", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-40-b-3-i": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "40", 
+                "b", 
+                "3", 
+                "i"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(i) Is manually operated by bolt, pump, lever, or slide action;", 
+            "text": "(i) Is manually operated by bolt, pump, lever, or slide action;", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-40-b-3-ii": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "40", 
+                "b", 
+                "3", 
+                "ii"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(ii) Has been rendered permanently inoperable; or", 
+            "text": "(ii) Has been rendered permanently inoperable; or", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-40-b-3-iii": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "40", 
+                "b", 
+                "3", 
+                "iii"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(iii) Is an antique firearm;", 
+            "text": "(iii) Is an antique firearm;", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-40-b-4": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "40", 
+                "b", 
+                "4"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(4) Any semiautomatic rifle that cannot accept a detachable magazine that holds more than 5 rounds of ammunition;", 
+            "text": "(4) Any semiautomatic rifle that cannot accept a detachable magazine that holds more than 5 rounds of ammunition;", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-40-b-5": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "40", 
+                "b", 
+                "5"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(5) Any semiautomatic shotgun that cannot hold more than 5 rounds of ammunition in a fixed or detachable magazine;", 
+            "text": "(5) Any semiautomatic shotgun that cannot hold more than 5 rounds of ammunition in a fixed or detachable magazine;", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-40-b-6": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "40", 
+                "b", 
+                "6"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(6) The manufacture for, transfer to, or possession by the United States or a department or agency of the United States or a State or a department, agency, or political subdivision of a State, or a transfer to or possession by a law enforcement officer employed by such an entity for purposes of law enforcement;", 
+            "text": "(6) The manufacture for, transfer to, or possession by the United States or a department or agency of the United States or a State or a department, agency, or political subdivision of a State, or a transfer to or possession by a law enforcement officer employed by such an entity for purposes of law enforcement;", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-40-b-7": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "40", 
+                "b", 
+                "7"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(7) The transfer to a licensee under title I of the Atomic Energy Act of 1954 (42 U.S.C. 2011 <E T=\"03\">et seq.</E>) for purposes of establishing and maintaining an on-site physical protection system and security organization required by Federal law, or possession by an employee or contractor of such licensee on-site for such purposes or off-site for purposes of licensee-authorized training or transportation of nuclear materials;", 
+            "text": "(7) The transfer to a licensee under title I of the Atomic Energy Act of 1954 (42 U.S.C. 2011 et seq.) for purposes of establishing and maintaining an on-site physical protection system and security organization required by Federal law, or possession by an employee or contractor of such licensee on-site for such purposes or off-site for purposes of licensee-authorized training or transportation of nuclear materials;", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-40-b-8": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "40", 
+                "b", 
+                "8"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(8) The possession, by an individual who is retired from service with a law enforcement agency and is not otherwise prohibited from receiving a firearm, of a semiautomatic assault weapon transferred to the individual by the agency upon such retirement;", 
+            "text": "(8) The possession, by an individual who is retired from service with a law enforcement agency and is not otherwise prohibited from receiving a firearm, of a semiautomatic assault weapon transferred to the individual by the agency upon such retirement;", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-40-b-9": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "40", 
+                "b", 
+                "9"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(9) The manufacture, transfer, or possession of a semiautomatic assault weapon by a licensed manufacturer or licensed importer for the purposes of testing or experimentation as authorized by the Director under the provisions of \u00a7\u2009478.153; or", 
+            "text": "(9) The manufacture, transfer, or possession of a semiautomatic assault weapon by a licensed manufacturer or licensed importer for the purposes of testing or experimentation as authorized by the Director under the provisions of \u00a7\u2009478.153; or", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-40-c": {
+        "node": {
+            "child_labels": [
+                "478-40-c-1", 
+                "478-40-c-2", 
+                "478-40-c-3", 
+                "478-40-c-4", 
+                "478-40-c-5"
+            ], 
+            "label": [
+                "478", 
+                "40", 
+                "c"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(c) <E T=\"03\">Manufacture and dealing in semiautomatic assault weapons.</E> Subject to compliance with the provisions of this part, licensed manufacturers and licensed dealers in semiautomatic assault weapons may manufacture and deal in such weapons manufactured after September 13, 1994: <E T=\"03\">Provided,</E> The licensee obtains evidence that the weapons will be disposed of in accordance with paragraph (b) of this section. Examples of acceptable evidence include the following:", 
+            "text": "(c) Manufacture and dealing in semiautomatic assault weapons. Subject to compliance with the provisions of this part, licensed manufacturers and licensed dealers in semiautomatic assault weapons may manufacture and deal in such weapons manufactured after September 13, 1994: Provided, The licensee obtains evidence that the weapons will be disposed of in accordance with paragraph (b) of this section. Examples of acceptable evidence include the following:", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-40-c-1": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "40", 
+                "c", 
+                "1"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(1) Contracts between the manufacturer and dealers stating that the weapons may only be sold to law enforcement agencies, law enforcement officers, or other purchasers specified in paragraph (b) of this section;", 
+            "text": "(1) Contracts between the manufacturer and dealers stating that the weapons may only be sold to law enforcement agencies, law enforcement officers, or other purchasers specified in paragraph (b) of this section;", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-40-c-2": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "40", 
+                "c", 
+                "2"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(2) Copies of purchase orders submitted to the manufacturer or dealer by law enforcement agencies or other purchasers specified in paragraph (b) of this section;", 
+            "text": "(2) Copies of purchase orders submitted to the manufacturer or dealer by law enforcement agencies or other purchasers specified in paragraph (b) of this section;", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-40-c-3": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "40", 
+                "c", 
+                "3"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(3) Copies of letters submitted to the manufacturer or dealer by government agencies, law enforcement officers, or other purchasers specified in paragraph (b) of this section expressing an interest in purchasing the semiautomatic assault weapons;", 
+            "text": "(3) Copies of letters submitted to the manufacturer or dealer by government agencies, law enforcement officers, or other purchasers specified in paragraph (b) of this section expressing an interest in purchasing the semiautomatic assault weapons;", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-40-c-4": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "40", 
+                "c", 
+                "4"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(4) Letters from dealers to the manufacturer stating that sales will only be made to law enforcement agencies, law enforcement officers, or other purchasers specified in paragraph (b) of this section; and", 
+            "text": "(4) Letters from dealers to the manufacturer stating that sales will only be made to law enforcement agencies, law enforcement officers, or other purchasers specified in paragraph (b) of this section; and", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-40-c-5": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "40", 
+                "c", 
+                "5"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(5) Letters from law enforcement officers purchasing in accordance with paragraph (b)(6) of this section and \u00a7\u2009478.132.", 
+            "text": "(5) Letters from law enforcement officers purchasing in accordance with paragraph (b)(6) of this section and \u00a7\u2009478.132.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-40a": {
+        "node": {
+            "child_labels": [
+                "478-40a-a", 
+                "478-40a-b", 
+                "478-40a-c"
+            ], 
+            "label": [
+                "478", 
+                "40a"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "\n        ", 
+            "text": "", 
+            "title": "\u00a7 478.40a Transfer and possession of large capacity ammunition feeding devices."
+        }, 
+        "op": "added"
+    }, 
+    "478-40a-a": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "40a", 
+                "a"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(a) <E T=\"03\">Prohibition.</E> No person shall transfer or possess a large capacity ammunition feeding device.", 
+            "text": "(a) Prohibition. No person shall transfer or possess a large capacity ammunition feeding device.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-40a-b": {
+        "node": {
+            "child_labels": [
+                "478-40a-b-1", 
+                "478-40a-b-2", 
+                "478-40a-b-3", 
+                "478-40a-b-4", 
+                "478-40a-b-5", 
+                "478-40a-b-6"
+            ], 
+            "label": [
+                "478", 
+                "40a", 
+                "b"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(b) <E T=\"03\">Exceptions.</E> The provisions of paragraph (a) of this section shall not apply to:", 
+            "text": "(b) Exceptions. The provisions of paragraph (a) of this section shall not apply to:", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-40a-b-1": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "40a", 
+                "b", 
+                "1"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(1) The possession or transfer of any large capacity ammunition feeding device otherwise lawfully possessed on September 13, 1994;", 
+            "text": "(1) The possession or transfer of any large capacity ammunition feeding device otherwise lawfully possessed on September 13, 1994;", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-40a-b-2": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "40a", 
+                "b", 
+                "2"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(2) The manufacture for, transfer to, or possession by the United States or a department or agency of the United States or a State or a department, agency, or political subdivision of a State, or a transfer to or possession by a law enforcement officer employed by such an entity for purposes of law enforcement;", 
+            "text": "(2) The manufacture for, transfer to, or possession by the United States or a department or agency of the United States or a State or a department, agency, or political subdivision of a State, or a transfer to or possession by a law enforcement officer employed by such an entity for purposes of law enforcement;", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-40a-b-3": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "40a", 
+                "b", 
+                "3"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(3) The transfer to a licensee under title I of the Atomic Energy Act of 1954 for purposes of establishing and maintaining an on-site physical protection system and security organization required by Federal law, or possession by an employee or contractor of such licensee on-site for such purposes or off-site for purposes of licensee-authorized training or transportation of nuclear materials;", 
+            "text": "(3) The transfer to a licensee under title I of the Atomic Energy Act of 1954 for purposes of establishing and maintaining an on-site physical protection system and security organization required by Federal law, or possession by an employee or contractor of such licensee on-site for such purposes or off-site for purposes of licensee-authorized training or transportation of nuclear materials;", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-40a-b-4": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "40a", 
+                "b", 
+                "4"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(4) The possession, by an individual who is retired from service with a law enforcement agency and is not otherwise prohibited from receiving ammunition, of a large capacity ammunition feeding device transferred to the individual by the agency upon such retirement;", 
+            "text": "(4) The possession, by an individual who is retired from service with a law enforcement agency and is not otherwise prohibited from receiving ammunition, of a large capacity ammunition feeding device transferred to the individual by the agency upon such retirement;", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-40a-b-5": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "40a", 
+                "b", 
+                "5"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(5) The manufacture, transfer, or possession of any large capacity ammunition feeding device by a manufacturer or importer for the purposes of testing or experimentation in accordance with \u00a7\u2009478.153; or", 
+            "text": "(5) The manufacture, transfer, or possession of any large capacity ammunition feeding device by a manufacturer or importer for the purposes of testing or experimentation in accordance with \u00a7\u2009478.153; or", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-40a-b-6": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "40a", 
+                "b", 
+                "6"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(6) The manufacture, transfer, or possession of any large capacity ammunition feeding device by a manufacturer or importer for the purpose of exportation in accordance with the Arms Export Control Act (22 U.S.C. 2778).", 
+            "text": "(6) The manufacture, transfer, or possession of any large capacity ammunition feeding device by a manufacturer or importer for the purpose of exportation in accordance with the Arms Export Control Act (22 U.S.C. 2778).", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-40a-c": {
+        "node": {
+            "child_labels": [
+                "478-40a-c-1", 
+                "478-40a-c-2", 
+                "478-40a-c-3", 
+                "478-40a-c-4", 
+                "478-40a-c-5"
+            ], 
+            "label": [
+                "478", 
+                "40a", 
+                "c"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(c) <E T=\"03\">Importation, manufacture, and dealing in large capacity ammunition feeding devices.</E> Possession and transfer of large capacity ammunition feeding devices by persons who manufacture, import, or deal in such devices will be presumed to be lawful if such persons maintain evidence establishing that the devices are possessed and transferred for sale to purchasers specified in paragraph (b) of this section. Examples of acceptable evidence include the following:", 
+            "text": "(c) Importation, manufacture, and dealing in large capacity ammunition feeding devices. Possession and transfer of large capacity ammunition feeding devices by persons who manufacture, import, or deal in such devices will be presumed to be lawful if such persons maintain evidence establishing that the devices are possessed and transferred for sale to purchasers specified in paragraph (b) of this section. Examples of acceptable evidence include the following:", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-40a-c-1": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "40a", 
+                "c", 
+                "1"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(1) Contracts between persons who import or manufacture such devices and persons who deal in such devices stating that the devices may only be sold to law enforcement agencies or other purchasers specified in paragraph (b) of this section;", 
+            "text": "(1) Contracts between persons who import or manufacture such devices and persons who deal in such devices stating that the devices may only be sold to law enforcement agencies or other purchasers specified in paragraph (b) of this section;", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-40a-c-2": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "40a", 
+                "c", 
+                "2"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(2) Copies of purchase orders submitted to persons who manufacture, import, or deal in such devices by law enforcement agencies or other purchasers specified in paragraph (b) of this section;", 
+            "text": "(2) Copies of purchase orders submitted to persons who manufacture, import, or deal in such devices by law enforcement agencies or other purchasers specified in paragraph (b) of this section;", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-40a-c-3": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "40a", 
+                "c", 
+                "3"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(3) Copies of letters submitted to persons who manufacture, import, or deal in such devices by government agencies or other purchasers specified in paragraph (b) of this section expressing an interest in purchasing the devices;", 
+            "text": "(3) Copies of letters submitted to persons who manufacture, import, or deal in such devices by government agencies or other purchasers specified in paragraph (b) of this section expressing an interest in purchasing the devices;", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-40a-c-4": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "40a", 
+                "c", 
+                "4"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(4) Letters from persons who deal in such devices to persons who import or manufacture such devices stating that sales will only be made to law enforcement agencies or other purchasers specified in paragraph (b) of this section; and", 
+            "text": "(4) Letters from persons who deal in such devices to persons who import or manufacture such devices stating that sales will only be made to law enforcement agencies or other purchasers specified in paragraph (b) of this section; and", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-40a-c-5": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "40a", 
+                "c", 
+                "5"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(5) Letters from law enforcement officers purchasing in accordance with paragraph (b)(2) of this section and \u00a7\u2009478.132.", 
+            "text": "(5) Letters from law enforcement officers purchasing in accordance with paragraph (b)(2) of this section and \u00a7\u2009478.132.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-57": {
+        "child_ops": [
+            [
+                "insert", 
+                0, 
+                [
+                    "478-57-a", 
+                    "478-57-b", 
+                    "478-57-c"
+                ]
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                "delete", 
+                0, 
+                299
+            ]
+        ]
+    }, 
+    "478-57-a": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "57", 
+                "a"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(a) Where a firearm or ammunition business is either discontinued or succeeded by a new owner, the owner of the business discontinued or succeeded shall within 30 days thereof furnish to the Chief, Federal Firearms Licensing Center notification of the discontinuance or succession. (See also \u00a7\u2009478.127.)", 
+            "text": "(a) Where a firearm or ammunition business is either discontinued or succeeded by a new owner, the owner of the business discontinued or succeeded shall within 30 days thereof furnish to the Chief, Federal Firearms Licensing Center notification of the discontinuance or succession. (See also \u00a7\u2009478.127.)", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-57-b": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "57", 
+                "b"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(b) Since section 922(v), Title 18, U.S.C., makes it unlawful to transfer or possess a semiautomatic assault weapon, except as provided in the law, any licensed manufacturer, licensed importer, or licensed dealer intending to discontinue business shall, prior to going out of business, transfer in compliance with the provisions of this part any semiautomatic assault weapon manufactured or imported after September 13, 1994, to a person specified in \u00a7\u2009478.40(b), or, subject to the provisions of \u00a7\u00a7\u2009478.40(c) and 478.132, a licensed manufacturer, a licensed importer, or a licensed dealer.", 
+            "text": "(b) Since section 922(v), Title 18, U.S.C., makes it unlawful to transfer or possess a semiautomatic assault weapon, except as provided in the law, any licensed manufacturer, licensed importer, or licensed dealer intending to discontinue business shall, prior to going out of business, transfer in compliance with the provisions of this part any semiautomatic assault weapon manufactured or imported after September 13, 1994, to a person specified in \u00a7\u2009478.40(b), or, subject to the provisions of \u00a7\u00a7\u2009478.40(c) and 478.132, a licensed manufacturer, a licensed importer, or a licensed dealer.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-57-c": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "57", 
+                "c"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(c) Since section 922(w), Title 18, U.S.C., makes it unlawful to transfer or possess a large capacity ammunition feeding device, except as provided in the law, any person who manufactures, imports, or deals in such devices and who intends to discontinue business shall, prior to going out of business, transfer in compliance with the provisions of this part any large capacity ammunition feeding device manufactured after September 13, 1994, to a person specified in \u00a7\u2009478.40a(b), or, subject to the provisions of \u00a7\u00a7\u2009478.40a(c) and 478.132, a person who manufactures, imports, or deals in such devices.", 
+            "text": "(c) Since section 922(w), Title 18, U.S.C., makes it unlawful to transfer or possess a large capacity ammunition feeding device, except as provided in the law, any person who manufactures, imports, or deals in such devices and who intends to discontinue business shall, prior to going out of business, transfer in compliance with the provisions of this part any large capacity ammunition feeding device manufactured after September 13, 1994, to a person specified in \u00a7\u2009478.40a(b), or, subject to the provisions of \u00a7\u00a7\u2009478.40a(c) and 478.132, a person who manufactures, imports, or deals in such devices.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-92": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                2
+            ], 
+            [
+                "insert", 
+                2, 
+                [
+                    "478-92-c"
+                ]
+            ]
+        ], 
+        "op": "modified", 
+        "title": [
+            [
+                [
+                    "delete", 
+                    9, 
+                    35
+                ], 
+                [
+                    "insert", 
+                    9, 
+                    "How must licensed manufacturers"
+                ]
+            ], 
+            [
+                "insert", 
+                40, 
+                "licensed importers identify firearms, "
+            ], 
+            [
+                "insert", 
+                55, 
+                "ammunition, and large capacity "
+            ], 
+            [
+                [
+                    "delete", 
+                    66, 
+                    115
+                ], 
+                [
+                    "insert", 
+                    66, 
+                    "feeding devices?"
+                ]
+            ]
+        ]
+    }, 
+    "478-92-a-3": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    4, 
+                    14
+                ], 
+                [
+                    "insert", 
+                    4, 
+                    "Special markings for semiautomatic assault weapons, effective July 5, 1995. In the case of any semiautomatic assault weapon manufactured after September 13, 1994, you must mark the frame or receiver \u201cRESTRICTED LAW ENFORCEMENT/GOVERNMENT USE ONLY\u201d or, in the case of weapons manufactured for export, \u201cFOR EXPORT ONLY,\u201d in a manner not susceptible of being readily obliterated, altered, or removed. For weapons manufactured or imported on and after January 30, 2002, the engraving, casting, or stamping (impressing) of the special markings prescribed in this paragraph (a)(3) must be to a minimum depth of .003 inch."
+                ]
+            ]
+        ]
+    }, 
+    "478-92-c": {
+        "node": {
+            "child_labels": [
+                "478-92-c-1", 
+                "478-92-c-2", 
+                "478-92-c-3"
+            ], 
+            "label": [
+                "478", 
+                "92", 
+                "c"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(c) <E T=\"03\">Large capacity ammunition feeding devices manufactured after September 13, 1994.</E>", 
+            "text": "(c) Large capacity ammunition feeding devices manufactured after September 13, 1994.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-92-c-1": {
+        "node": {
+            "child_labels": [
+                "478-92-c-1-i", 
+                "478-92-c-1-ii", 
+                "478-92-c-1-iii"
+            ], 
+            "label": [
+                "478", 
+                "92", 
+                "c", 
+                "1"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(1) Each person who manufactures or imports any large capacity ammunition feeding device manufactured after September 13, 1994, shall legibly identify each such device with a serial number. Such person may use the same serial number for all large capacity ammunition feeding devices produced.", 
+            "text": "(1) Each person who manufactures or imports any large capacity ammunition feeding device manufactured after September 13, 1994, shall legibly identify each such device with a serial number. Such person may use the same serial number for all large capacity ammunition feeding devices produced.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-92-c-1-i": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "92", 
+                "c", 
+                "1", 
+                "i"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(i) Additionally, in the case of a domestically made large capacity ammunition feeding device, such device shall be marked with the name, city and State (or recognized abbreviation thereof) of the manufacturer;", 
+            "text": "(i) Additionally, in the case of a domestically made large capacity ammunition feeding device, such device shall be marked with the name, city and State (or recognized abbreviation thereof) of the manufacturer;", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-92-c-1-ii": {
+        "node": {
+            "child_labels": [
+                "478-92-c-1-ii-A", 
+                "478-92-c-1-ii-B"
+            ], 
+            "label": [
+                "478", 
+                "92", 
+                "c", 
+                "1", 
+                "ii"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(ii) And in the case of an imported large capacity ammunition feeding device, such device shall be marked:", 
+            "text": "(ii) And in the case of an imported large capacity ammunition feeding device, such device shall be marked:", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-92-c-1-ii-A": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "92", 
+                "c", 
+                "1", 
+                "ii", 
+                "A"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(A) With the name of the manufacturer, country of origin, and,", 
+            "text": "(A) With the name of the manufacturer, country of origin, and,", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-92-c-1-ii-B": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "92", 
+                "c", 
+                "1", 
+                "ii", 
+                "B"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(B) Effective July 5, 1995, the name, city and State (or recognized abbreviation thereof) of the importer.", 
+            "text": "(B) Effective July 5, 1995, the name, city and State (or recognized abbreviation thereof) of the importer.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-92-c-1-iii": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "92", 
+                "c", 
+                "1", 
+                "iii"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(iii) Further, large capacity ammunition feeding devices manufactured after September 13, 1994, shall be marked \u201cRESTRICTED LAW ENFORCEMENT/GOVERNMENT USE ONLY\u201d or, in the case of devices manufactured or imported for export, effective July 5, 1995, \u201cFOR EXPORT ONLY.\u201d", 
+            "text": "(iii) Further, large capacity ammunition feeding devices manufactured after September 13, 1994, shall be marked \u201cRESTRICTED LAW ENFORCEMENT/GOVERNMENT USE ONLY\u201d or, in the case of devices manufactured or imported for export, effective July 5, 1995, \u201cFOR EXPORT ONLY.\u201d", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-92-c-2": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "92", 
+                "c", 
+                "2"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(2) All markings required by this paragraph (c) shall be cast, stamped, or engraved on the exterior of the device. In the case of a magazine, the markings shall be placed on the magazine body.", 
+            "text": "(2) All markings required by this paragraph (c) shall be cast, stamped, or engraved on the exterior of the device. In the case of a magazine, the markings shall be placed on the magazine body.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-92-c-3": {
+        "node": {
+            "child_labels": [
+                "478-92-c-3-i", 
+                "478-92-c-3-ii"
+            ], 
+            "label": [
+                "478", 
+                "92", 
+                "c", 
+                "3"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(3) <E T=\"03\">Exceptions\u2014</E>", 
+            "text": "(3) Exceptions\u2014", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-92-c-3-i": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "92", 
+                "c", 
+                "3", 
+                "i"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(i) <E T=\"03\">Metallic links.</E> Persons who manufacture or import metallic links for use in the assembly of belted ammunition are only required to place the identification marks prescribed in paragraph (c)(1) of this section on the containers used for the packaging of the links.", 
+            "text": "(i) Metallic links. Persons who manufacture or import metallic links for use in the assembly of belted ammunition are only required to place the identification marks prescribed in paragraph (c)(1) of this section on the containers used for the packaging of the links.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-92-c-3-ii": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "92", 
+                "c", 
+                "3", 
+                "ii"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(ii) <E T=\"03\">Alternate means of identification.</E> The Director may authorize other means of identifying large capacity ammunition feeding devices upon receipt of a letter application, in duplicate, from the manufacturer or importer showing that such other identification is reasonable and will not hinder the effective administration of this part.", 
+            "text": "(ii) Alternate means of identification. The Director may authorize other means of identifying large capacity ammunition feeding devices upon receipt of a letter application, in duplicate, from the manufacturer or importer showing that such other identification is reasonable and will not hinder the effective administration of this part.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-95": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    241, 
+                    248
+                ], 
+                [
+                    "insert", 
+                    241, 
+                    "178.94."
+                ]
+            ], 
+            [
+                "insert", 
+                795, 
+                "(a) "
+            ], 
+            [
+                "insert", 
+                804, 
+                "(b) "
+            ]
+        ]
+    }, 
+    "478-Subpart-C": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                24
+            ], 
+            [
+                "insert", 
+                24, 
+                [
+                    "478-40a"
+                ]
+            ]
+        ], 
+        "op": "modified"
+    }
+}

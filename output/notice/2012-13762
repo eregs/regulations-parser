@@ -1,0 +1,388 @@
+{
+    "amendments": [
+        {
+            "authority": "5 U.S.C. 552(a); 18 U.S.C. 847, 921-931; 44 U.S.C. 3504(h).", 
+            "cfr_part": "478", 
+            "instruction": "1. The authority citation for 27 CFR part 478 is revised to read as follows:"
+        }, 
+        {
+            "cfr_part": "478", 
+            "changes": [
+                [
+                    "478-11-p242755046", 
+                    [
+                        {
+                            "action": "INSERT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "11", 
+                                    "p242755046"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "<E T=\"03\">Nonimmigrant visa.</E>A visa properly issued to an alien as an eligible nonimmigrant by a competent officer as provided in the Immigration and Nationality Act, 8 U.S.C. 1101<E T=\"03\">et seq.</E>", 
+                                "text": "Nonimmigrant visa. A visa properly issued to an alien as an eligible nonimmigrant by a competent officer as provided in the Immigration and Nationality Act, 8 U.S.C. 1101 et seq.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "2. [insert-in-order] [label:478-11-keyterm(Nonimmigrant visa)]"
+        }, 
+        {
+            "cfr_part": "478", 
+            "changes": [
+                [
+                    "478-32-a-5-ii", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "field": "[text]", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "32", 
+                                    "a", 
+                                    "5", 
+                                    "ii"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(ii) Except as provided in paragraph (f) of this section, has been admitted to the United States under a nonimmigrant visa:<E T=\"03\">Provided,</E>That the provisions of this paragraph (a)(5)(ii) do not apply to any alien who has been lawfully admitted to the United States under a nonimmigrant visa, if that alien is\u2014", 
+                                "text": "(ii) Except as provided in paragraph (f) of this section, has been admitted to the United States under a nonimmigrant visa: Provided, That the provisions of this paragraph (a)(5)(ii) do not apply to any alien who has been lawfully admitted to the United States under a nonimmigrant visa, if that alien is\u2014", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "478-32-d-5-ii", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "field": "[text]", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "32", 
+                                    "d", 
+                                    "5", 
+                                    "ii"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(ii) Except as provided in paragraph (f) of this section, has been admitted to the United States under a nonimmigrant visa:<E T=\"03\">Provided,</E>That the provisions of this paragraph (d)(5)(ii) do not apply to any alien who has been lawfully admitted to the United States under a nonimmigrant visa, if that alien is\u2014", 
+                                "text": "(ii) Except as provided in paragraph (f) of this section, has been admitted to the United States under a nonimmigrant visa: Provided, That the provisions of this paragraph (d)(5)(ii) do not apply to any alien who has been lawfully admitted to the United States under a nonimmigrant visa, if that alien is\u2014", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "478-32-f", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "32", 
+                                    "f"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(f) Pursuant to 18 U.S.C. 922(y)(3), any individual who has been admitted to the United States under a nonimmigrant visa may receive a waiver from the prohibition contained in paragraph (a)(5)(ii) of this section if the Attorney General approves a petition for the waiver.", 
+                                "text": "(f) Pursuant to 18 U.S.C. 922(y)(3), any individual who has been admitted to the United States under a nonimmigrant visa may receive a waiver from the prohibition contained in paragraph (a)(5)(ii) of this section if the Attorney General approves a petition for the waiver.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "3. Section 478.32 is amended by revising the introductory text of paragraphs (a)(5)(ii) and (d)(5)(ii), and by revising paragraph (f), to read as follows:"
+        }, 
+        {
+            "cfr_part": "478", 
+            "changes": [
+                [
+                    "478-44-a-1-iii", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "44", 
+                                    "a", 
+                                    "1", 
+                                    "iii"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(iii) If the applicant (including, in the case of a corporation, partnership, or association, any individual possessing, directly or indirectly, the power to direct or cause the direction of the management and policies of the corporation, partnership, or association) is an alien who has been admitted to the United States under a nonimmigrant visa, applicable documentation demonstrating that the alien falls within an exception specified in 18 U.S.C. 922(y)(2) (e.g., a hunting license or permit lawfully issued in the United States) or has obtained a waiver as specified in 18 U.S.C. 922(y)(3); and", 
+                                "text": "(iii) If the applicant (including, in the case of a corporation, partnership, or association, any individual possessing, directly or indirectly, the power to direct or cause the direction of the management and policies of the corporation, partnership, or association) is an alien who has been admitted to the United States under a nonimmigrant visa, applicable documentation demonstrating that the alien falls within an exception specified in 18 U.S.C. 922(y)(2) (e.g., a hunting license or permit lawfully issued in the United States) or has obtained a waiver as specified in 18 U.S.C. 922(y)(3); and", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "478-44-b", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "44", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) Any person who desires to obtain a license as a collector under the Act and this part, or who has not timely submitted an application for renewal of the previous license issued under this part, shall file an application, ATF Form 7CR (Curios and Relics), with ATF in accordance with the instructions on the form.  If the applicant (including, in the case of a corporation, partnership, or association, any individual possessing, directly or indirectly, the power to direct or cause the direction of the management and policies of the corporation, partnership, or association) is an alien who has been admitted to the United States under a nonimmigrant visa, the application must include applicable documentation demonstrating that the alien falls within an exception specified in 18 U.S.C. 922(y)(2) (e.g., a hunting license or permit lawfully issued in the United States) or has obtained a waiver as specified in 18 U.S.C. 922(y)(3).The application must be executed under the penalties of perjury and the penalties imposed by 18 U.S.C. 924. The application shall include the appropriate fee in the form of a money order or check made payable to the Bureau of Alcohol, Tobacco, Firearms, and Explosives. ATF Form 7CR (Curios and Relics) may be obtained by contacting the ATF Distribution Center (See \u00a7 478.21).", 
+                                "text": "(b) Any person who desires to obtain a license as a collector under the Act and this part, or who has not timely submitted an application for renewal of the previous license issued under this part, shall file an application, ATF Form 7CR (Curios and Relics), with ATF in accordance with the instructions on the form.  If the applicant (including, in the case of a corporation, partnership, or association, any individual possessing, directly or indirectly, the power to direct or cause the direction of the management and policies of the corporation, partnership, or association) is an alien who has been admitted to the United States under a nonimmigrant visa, the application must include applicable documentation demonstrating that the alien falls within an exception specified in 18 U.S.C. 922(y)(2) (e.g., a hunting license or permit lawfully issued in the United States) or has obtained a waiver as specified in 18 U.S.C. 922(y)(3).The application must be executed under the penalties of perjury and the penalties imposed by 18 U.S.C. 924. The application shall include the appropriate fee in the form of a money order or check made payable to the Bureau of Alcohol, Tobacco, Firearms, and Explosives. ATF Form 7CR (Curios and Relics) may be obtained by contacting the ATF Distribution Center (See \u00a7 478.21).", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "4. Section 478.44 is amended by revising paragraph (a)(1)(iii), and by revising the second sentence in paragraph (b), to read as follows:"
+        }, 
+        {
+            "cfr_part": "478", 
+            "changes": [
+                [
+                    "478-45", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "45"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n             If a licensee intends to continue the business or activity described on a license issued under this part during any portion of the ensuing year, the licensee shall, unless otherwise notified in writing by the Chief, Federal Firearms Licensing Center, execute and file with ATF prior to the expiration of the license an application for a license renewal, ATF Form 8 Part II, in accordance with the instructions on the form, and the required fee. If the applicant is an alien who has been admitted to the United States under a nonimmigrant visa, the application must include applicable documentation demonstrating that the alien falls within an exception specified in 18 U.S.C. 922(y)(2) (e.g., a hunting license or permit lawfully issued in the United States) or has obtained a waiver as specified in 18 U.S.C. 922(y)(3).The Chief, Federal Firearms Licensing Center may, in writing, require the applicant for license renewal to also file completed ATF Form 7 or ATF Form 7CR in the manner required by \u00a7 478.44. In the event the licensee does not timely file an ATF Form 8 Part II, the licensee must file an ATF Form 7 or ATF Form 7CR as required by \u00a7 478.44, and obtain the required license before continuing business or collecting activity. If an ATF Form 8 Part II is not timely received through the mails, the licensee should so notify the Chief, Federal Firearms Licensing Center.", 
+                                "text": "If a licensee intends to continue the business or activity described on a license issued under this part during any portion of the ensuing year, the licensee shall, unless otherwise notified in writing by the Chief, Federal Firearms Licensing Center, execute and file with ATF prior to the expiration of the license an application for a license renewal, ATF Form 8 Part II, in accordance with the instructions on the form, and the required fee. If the applicant is an alien who has been admitted to the United States under a nonimmigrant visa, the application must include applicable documentation demonstrating that the alien falls within an exception specified in 18 U.S.C. 922(y)(2) (e.g., a hunting license or permit lawfully issued in the United States) or has obtained a waiver as specified in 18 U.S.C. 922(y)(3).The Chief, Federal Firearms Licensing Center may, in writing, require the applicant for license renewal to also file completed ATF Form 7 or ATF Form 7CR in the manner required by \u00a7 478.44. In the event the licensee does not timely file an ATF Form 8 Part II, the licensee must file an ATF Form 7 or ATF Form 7CR as required by \u00a7 478.44, and obtain the required license before continuing business or collecting activity. If an ATF Form 8 Part II is not timely received through the mails, the licensee should so notify the Chief, Federal Firearms Licensing Center.", 
+                                "title": "\u00a7 478.45 Renewal of license."
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "5. Section 478.45 is revised as follows:"
+        }, 
+        {
+            "cfr_part": "478", 
+            "changes": [
+                [
+                    "478-99-c-5", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "field": "[text]", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "99", 
+                                    "c", 
+                                    "5"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(5) Is an alien illegally or unlawfully in the United States or, except as provided in \u00a7 478.32(f), is an alien who has been admitted to the United States under a nonimmigrant visa:<E T=\"03\">Provided,</E>That the provisions of this paragraph (c)(5) do not apply to any alien who has been lawfully admitted to the United States under a nonimmigrant visa if that alien is\u2014", 
+                                "text": "(5) Is an alien illegally or unlawfully in the United States or, except as provided in \u00a7 478.32(f), is an alien who has been admitted to the United States under a nonimmigrant visa: Provided, That the provisions of this paragraph (c)(5) do not apply to any alien who has been lawfully admitted to the United States under a nonimmigrant visa if that alien is\u2014", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "6. Section 478.99 is amended by revising the introductory text of paragraph (c)(5) to read as follows:"
+        }, 
+        {
+            "cfr_part": "478", 
+            "changes": [
+                [
+                    "478-120-a", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "120", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a)<E T=\"03\">General.</E>A nonimmigrant alien temporarily importing or bringing firearms or ammunition into the United States for lawful hunting or sporting purposes must first obtain an approved ATF Form 6NIA (5330.3D).", 
+                                "text": "(a) General. A nonimmigrant alien temporarily importing or bringing firearms or ammunition into the United States for lawful hunting or sporting purposes must first obtain an approved ATF Form 6NIA (5330.3D).", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "478-120-b-1", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "120", 
+                                    "b", 
+                                    "1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(1) Any alien lawfully admitted to the United States under a nonimmigrant visa who completes an ATF Form 6NIA to import firearms or ammunition into the United States, or any licensee who completes an ATF Form 6 to import firearms or ammunition for such nonimmigrant alien, must attach applicable documentation to the Form 6NIA or Form 6 establishing the nonimmigrant alien falls within an exception specified in 18 U.S.C. 922(y)(2) (e.g., a hunting license or permit lawfully issued in the United States) or has obtained a waiver as specified in 18 U.S.C. 922(y)(3).", 
+                                "text": "(1) Any alien lawfully admitted to the United States under a nonimmigrant visa who completes an ATF Form 6NIA to import firearms or ammunition into the United States, or any licensee who completes an ATF Form 6 to import firearms or ammunition for such nonimmigrant alien, must attach applicable documentation to the Form 6NIA or Form 6 establishing the nonimmigrant alien falls within an exception specified in 18 U.S.C. 922(y)(2) (e.g., a hunting license or permit lawfully issued in the United States) or has obtained a waiver as specified in 18 U.S.C. 922(y)(3).", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "478-120-b-2", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "120", 
+                                    "b", 
+                                    "2"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(2) Aliens admitted to the United States under a nonimmigrant visa importing or bringing firearms or ammunition into the United States must provide the United States Customs and Border Protection with applicable documentation (e.g., a hunting license or permit lawfully issued in the United States) establishing the nonimmigrant alien falls within an exception specified in 18 U.S.C. 922(y)(2) or has obtained a waiver as specified in 18 U.S.C. 922(y)(3) before the firearm or ammunition may be imported. This provision applies in all cases, whether or not a Form 6 is needed to bring the firearms or ammunition into the United States.", 
+                                "text": "(2) Aliens admitted to the United States under a nonimmigrant visa importing or bringing firearms or ammunition into the United States must provide the United States Customs and Border Protection with applicable documentation (e.g., a hunting license or permit lawfully issued in the United States) establishing the nonimmigrant alien falls within an exception specified in 18 U.S.C. 922(y)(2) or has obtained a waiver as specified in 18 U.S.C. 922(y)(3) before the firearm or ammunition may be imported. This provision applies in all cases, whether or not a Form 6 is needed to bring the firearms or ammunition into the United States.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "478-120-b", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "478-120-b-1", 
+                                    "478-120-b-2"
+                                ], 
+                                "label": [
+                                    "478", 
+                                    "120", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b)<E T=\"03\">Aliens admitted to the United States under a nonimmigrant visa.</E>", 
+                                "text": "(b) Aliens admitted to the United States under a nonimmigrant visa.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "478-120", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "478-120-a", 
+                                    "478-120-b"
+                                ], 
+                                "label": [
+                                    "478", 
+                                    "120"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "\n            ", 
+                                "text": "", 
+                                "title": "\u00a7 478.120 Firearms or ammunition imported by or for a nonimmigrant alien."
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "7. Section 478.120 is revised to read as follows:"
+        }, 
+        {
+            "cfr_part": "478", 
+            "changes": [
+                [
+                    "478-124-c-3-iii", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "124", 
+                                    "c", 
+                                    "3", 
+                                    "iii"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(iii) Must, in the case of a transferee who is an alien admitted to the United States under a nonimmigrant visa who states that he or she falls within an exception to, or has a waiver from, the prohibition in section 922(g)(5)(B) of the Act, have the transferee present applicable documentation establishing the exception or waiver, note on the Form 4473 the type of documentation provided, and attach a copy of the documentation to the Form 4473; and", 
+                                "text": "(iii) Must, in the case of a transferee who is an alien admitted to the United States under a nonimmigrant visa who states that he or she falls within an exception to, or has a waiver from, the prohibition in section 922(g)(5)(B) of the Act, have the transferee present applicable documentation establishing the exception or waiver, note on the Form 4473 the type of documentation provided, and attach a copy of the documentation to the Form 4473; and", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "8. Section 478.124 is amended by revising paragraph (c)(3)(iii) to read as follows:"
+        }
+    ], 
+    "cfr_parts": [
+        "478"
+    ], 
+    "cfr_title": 27, 
+    "dockets": [
+        "Docket No. ATF 24F", 
+        "AG Order No. 3336-2012"
+    ], 
+    "document_number": "2012-13762", 
+    "effective_on": "2012-07-09", 
+    "footnotes": {
+        "1": "The text of the regulations expressly provides that the Secretary of the Treasury or his delegate possesses the authority to require these permits. After the January 2003 transfer of ATF from the Department of the Treasury to the Department of Justice, however, references to the Secretary of the Treasury were \u201cdeemed to refer\u201d to the Attorney General. <em data-original=\"E-03\">See</em> 28 CFR 0.133(a)(4).", 
+        "2": "Memorandum for Stephen R. Rubenstein, Chief Counsel, Bureau of Alcohol, Tobacco, Firearms and Explosives, from Virginia A. Seitz, Assistant Attorney General, Office of Legal Counsel, <em data-original=\"E-03\">Re: Nonimmigrant Aliens and Firearms Disabilities Under the Gun Control Act</em> 4 (Oct. 28, 2011) (first omission in original).", 
+        "3": "Under section 217 of the INA, 8 U.S.C. 1187, 36 countries have been designated for participation in the Visa Waiver Program, and eligible nationals of those countries may seek admission to the United States without a nonimmigrant visa as temporary visitors for business or pleasure for up to 90 days, if otherwise admissible. <em data-original=\"E-03\">See</em> 8 CFR 217.2. VWP travelers are required to have a valid authorization through the Electronic System for Travel Authorization prior to travel. <em data-original=\"E-03\">See</em> 8 CFR 217.5. There is a separate visa waiver program for admission to Guam or the Commonwealth of the Northern Mariana Islands for eligible travelers from 12 designated countries and geographic areas for temporary visits for business or pleasure for up to 45 days. <em data-original=\"E-03\">See</em> 8 CFR 212.1(q). Nonimmigrant aliens may be eligible for travel to the United States without a visa under additional authorities. <em data-original=\"E-03\">See, e.g.,</em> 8 CFR 212.1; 22 CFR 41.2(<em data-original=\"E-03\">l</em>); <em data-original=\"E-03\">http://www.travel.state.gov/visa/temp/without/without_1990.html#countries.</em>", 
+        "4": "Aliens who desire to import firearms or ammunition for other than legitimate hunting or lawful sporting purposes may apply for an import permit by filing an ATF Form 6\u2014Part I.", 
+        "5": "Regulations at 28 CFR 25.6(j)(1) allow access to the National Instant Criminal Background Check System Index for purposes of providing information to federal agencies in connection with issuance of a firearms-related or explosives-related permit or license.", 
+        "6": "With respect to the concerns presented by DOD, ATF notes that nonimmigrant aliens designated as distinguished foreign visitors by the State Department, as well as foreign military personnel, are exempt, under certain circumstances, from the general prohibition on aliens possessing firearms in the United States. Foreign military personnel are exempt from the prohibition when they can verify that the firearm or ammunition they seek to possess is for their exclusive use in performance of their official duties while in the United States and that the firearm or ammunition will be removed from the United States when they leave. This is consistent with the information provided on ATF Form 6NIA (5330.3D), Application/Permit for Temporary Importation of Firearms and Ammunition by Nonimmigrant Aliens. General Information number 4 exempts certain diplomats, distinguished foreign visitors, law enforcement officers of friendly foreign governments entering the United States on official law enforcement business, and foreign military officers entering the United States on official duty."
+    }, 
+    "fr_citation": "77 FR 33625", 
+    "fr_url": "https://www.federalregister.gov/documents/2012/06/07/2012-13762/firearms-disabilities-for-certain-nonimmigrant-aliens-2001r-332p", 
+    "fr_volume": 77, 
+    "meta": {
+        "start_page": 33625
+    }, 
+    "primary_agency": "DEPARTMENT OF JUSTICE", 
+    "primary_docket": null, 
+    "publication_date": "2012-06-07", 
+    "regulation_id_numbers": [
+        "1140-AA08"
+    ], 
+    "section_by_section": [], 
+    "supporting_documents": [], 
+    "title": "Firearms Disabilities for Certain Nonimmigrant Aliens (2001R-332P)", 
+    "versions": {
+        "478": {
+            "left": "2010-13392", 
+            "right": "2012-13762"
+        }
+    }
+}

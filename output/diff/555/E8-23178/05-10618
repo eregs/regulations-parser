@@ -1,0 +1,121 @@
+{
+    "555-128": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    544, 
+                    572
+                ], 
+                [
+                    "insert", 
+                    544, 
+                    "Spring Mills Office Park, 882 T.J. Jackson Drive, Falling Waters,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    587, 
+                    593
+                ], 
+                [
+                    "insert", 
+                    587, 
+                    "25419."
+                ]
+            ]
+        ]
+    }, 
+    "555-141-a": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                9
+            ], 
+            [
+                "delete", 
+                9, 
+                10
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "555-141-a-10": {
+        "op": "deleted"
+    }, 
+    "555-141-a-10-i": {
+        "op": "deleted"
+    }, 
+    "555-141-a-10-ii": {
+        "op": "deleted"
+    }, 
+    "555-141-a-10-iii": {
+        "op": "deleted"
+    }, 
+    "555-21-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    72, 
+                    94
+                ], 
+                [
+                    "insert", 
+                    72, 
+                    "7943 Angus Court,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    117, 
+                    123
+                ], 
+                [
+                    "insert", 
+                    117, 
+                    "22153."
+                ]
+            ]
+        ]
+    }, 
+    "555-23": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    260, 
+                    282
+                ], 
+                [
+                    "insert", 
+                    260, 
+                    "Center, 7943 Angus Court, Springfield, Virginia 22153."
+                ]
+            ]
+        ]
+    }, 
+    "555-78": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    285, 
+                    286
+                ], 
+                [
+                    "insert", 
+                    285, 
+                    "  "
+                ]
+            ]
+        ]
+    }
+}

@@ -1,0 +1,1219 @@
+{
+    "555-102-b": {
+        "child_ops": [
+            [
+                "delete", 
+                0, 
+                2
+            ], 
+            [
+                "insert", 
+                0, 
+                [
+                    "555-102-b-p1"
+                ]
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "555-102-b-1": {
+        "op": "deleted"
+    }, 
+    "555-102-b-2": {
+        "op": "deleted"
+    }, 
+    "555-102-b-p1": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "555", 
+                "102", 
+                "b", 
+                "p1"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "Permittees are not authorized to engage in the business of sale or distribution of explosive materials. However, permittees may dispose of surplus stocks of explosive materials to other licensees or permittees in accordance with \u00a7\u2009555.103 and \u00a7\u2009555.105.", 
+            "text": "Permittees are not authorized to engage in the business of sale or distribution of explosive materials. However, permittees may dispose of surplus stocks of explosive materials to other licensees or permittees in accordance with \u00a7\u2009555.103 and \u00a7\u2009555.105.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "555-103-a": {
+        "child_ops": [
+            [
+                "delete", 
+                0, 
+                5
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    4, 
+                    66
+                ], 
+                [
+                    "insert", 
+                    4, 
+                    "[Reserved]"
+                ]
+            ]
+        ]
+    }, 
+    "555-103-a-1": {
+        "op": "deleted"
+    }, 
+    "555-103-a-1-i": {
+        "op": "deleted"
+    }, 
+    "555-103-a-1-ii": {
+        "op": "deleted"
+    }, 
+    "555-103-a-1-iii": {
+        "op": "deleted"
+    }, 
+    "555-103-a-1-iv": {
+        "op": "deleted"
+    }, 
+    "555-103-a-1-iv-p1": {
+        "op": "deleted"
+    }, 
+    "555-103-a-1-iv-p1-p1": {
+        "op": "deleted"
+    }, 
+    "555-103-a-1-iv-p1-p2": {
+        "op": "deleted"
+    }, 
+    "555-103-a-1-iv-p1-p3": {
+        "op": "deleted"
+    }, 
+    "555-103-a-1-iv-p1-p4": {
+        "op": "deleted"
+    }, 
+    "555-103-a-1-iv-p2": {
+        "op": "deleted"
+    }, 
+    "555-103-a-1-iv-p2-p1": {
+        "op": "deleted"
+    }, 
+    "555-103-a-1-iv-p2-p2": {
+        "op": "deleted"
+    }, 
+    "555-103-a-1-iv-p2-p3": {
+        "op": "deleted"
+    }, 
+    "555-103-a-1-iv-p2-p4": {
+        "op": "deleted"
+    }, 
+    "555-103-a-2": {
+        "op": "deleted"
+    }, 
+    "555-103-a-2-i": {
+        "op": "deleted"
+    }, 
+    "555-103-a-2-ii": {
+        "op": "deleted"
+    }, 
+    "555-103-a-3": {
+        "op": "deleted"
+    }, 
+    "555-103-a-3-i": {
+        "op": "deleted"
+    }, 
+    "555-103-a-3-ii": {
+        "op": "deleted"
+    }, 
+    "555-103-a-4": {
+        "op": "deleted"
+    }, 
+    "555-103-a-4-i": {
+        "op": "deleted"
+    }, 
+    "555-103-a-4-ii": {
+        "op": "deleted"
+    }, 
+    "555-103-a-4-iii": {
+        "op": "deleted"
+    }, 
+    "555-103-a-4-iv": {
+        "op": "deleted"
+    }, 
+    "555-103-a-5": {
+        "op": "deleted"
+    }, 
+    "555-105": {
+        "op": "modified", 
+        "title": [
+            [
+                "delete", 
+                27, 
+                60
+            ]
+        ]
+    }, 
+    "555-105-a": {
+        "child_ops": [
+            [
+                "delete", 
+                0, 
+                7
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    4, 
+                    74
+                ], 
+                [
+                    "insert", 
+                    4, 
+                    "[Reserved]"
+                ]
+            ]
+        ]
+    }, 
+    "555-105-a-1": {
+        "op": "deleted"
+    }, 
+    "555-105-a-2": {
+        "op": "deleted"
+    }, 
+    "555-105-a-3": {
+        "op": "deleted"
+    }, 
+    "555-105-a-4": {
+        "op": "deleted"
+    }, 
+    "555-105-a-5": {
+        "op": "deleted"
+    }, 
+    "555-105-a-6": {
+        "op": "deleted"
+    }, 
+    "555-105-a-7": {
+        "op": "deleted"
+    }, 
+    "555-11-p1795587076": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                177, 
+                "(http://www.atf.gov) "
+            ]
+        ]
+    }, 
+    "555-11-p2162297120": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                32, 
+                "U.S. Customs and Border Protection, any commissioned, warrant, or petty officer of "
+            ], 
+            [
+                [
+                    "delete", 
+                    36, 
+                    51
+                ], 
+                [
+                    "insert", 
+                    36, 
+                    "Coast Guard,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    59, 
+                    81
+                ], 
+                [
+                    "insert", 
+                    59, 
+                    "agent"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    85, 
+                    98
+                ], 
+                [
+                    "insert", 
+                    85, 
+                    "other person authorized by law to perform the duties"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    102, 
+                    218
+                ], 
+                [
+                    "insert", 
+                    102, 
+                    "a customs officer."
+                ]
+            ]
+        ]
+    }, 
+    "555-11-p22033228": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    45, 
+                    53
+                ], 
+                [
+                    "insert", 
+                    45, 
+                    "field division"
+                ]
+            ]
+        ]
+    }, 
+    "555-11-p2574366788": {
+        "child_ops": [
+            [
+                "delete", 
+                0, 
+                2
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                4, 
+                " The Bureau of Alcohol, Tobacco, Firearms and Explosives, Department of Justice."
+            ]
+        ]
+    }, 
+    "555-11-p2574366788-a": {
+        "op": "deleted"
+    }, 
+    "555-11-p2574366788-b": {
+        "op": "deleted"
+    }, 
+    "555-11-p2757219296": {
+        "child_ops": [
+            [
+                "delete", 
+                0, 
+                2
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                12, 
+                " An officer or employee of the Bureau of Alcohol, Tobacco, Firearms and Explosives (ATF), Department of Justice authorized to perform any function relating to the administration or enforcement of this part."
+            ]
+        ]
+    }, 
+    "555-11-p2757219296-a": {
+        "op": "deleted"
+    }, 
+    "555-11-p2757219296-b": {
+        "op": "deleted"
+    }, 
+    "555-11-p2840221760": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    56, 
+                    63
+                ], 
+                [
+                    "insert", 
+                    56, 
+                    "Tobacco, Firearms,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    68, 
+                    77
+                ], 
+                [
+                    "insert", 
+                    68, 
+                    "Explosives, Department of Justice."
+                ]
+            ]
+        ]
+    }, 
+    "555-11-p4263687456": {
+        "child_ops": [
+            [
+                "delete", 
+                0, 
+                2
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                7, 
+                " The Bureau of Alcohol, Tobacco, Firearms and Explosives, Department of Justice."
+            ]
+        ]
+    }, 
+    "555-11-p4263687456-a": {
+        "op": "deleted"
+    }, 
+    "555-11-p4263687456-b": {
+        "op": "deleted"
+    }, 
+    "555-11-p593154015": {
+        "child_ops": [
+            [
+                "delete", 
+                0, 
+                2
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                9, 
+                " The Director, Bureau of Alcohol, Tobacco, Firearms and Explosives, Department of Justice, Washington, DC."
+            ]
+        ]
+    }, 
+    "555-11-p593154015-a": {
+        "op": "deleted"
+    }, 
+    "555-11-p593154015-b": {
+        "op": "deleted"
+    }, 
+    "555-11-p670455814": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    30, 
+                    42
+                ], 
+                [
+                    "insert", 
+                    30, 
+                    "thebusiness"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    69, 
+                    81
+                ], 
+                [
+                    "insert", 
+                    69, 
+                    "materialsat"
+                ]
+            ]
+        ]
+    }, 
+    "555-125-a": {
+        "child_ops": [
+            [
+                "delete", 
+                0, 
+                5
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    4, 
+                    59
+                ], 
+                [
+                    "insert", 
+                    4, 
+                    "[Reserved]"
+                ]
+            ]
+        ]
+    }, 
+    "555-125-a-1": {
+        "op": "deleted"
+    }, 
+    "555-125-a-1-i": {
+        "op": "deleted"
+    }, 
+    "555-125-a-1-ii": {
+        "op": "deleted"
+    }, 
+    "555-125-a-1-iii": {
+        "op": "deleted"
+    }, 
+    "555-125-a-1-iv": {
+        "op": "deleted"
+    }, 
+    "555-125-a-2": {
+        "op": "deleted"
+    }, 
+    "555-125-a-2-i": {
+        "op": "deleted"
+    }, 
+    "555-125-a-2-ii": {
+        "op": "deleted"
+    }, 
+    "555-125-a-2-iii": {
+        "op": "deleted"
+    }, 
+    "555-125-a-2-iv": {
+        "op": "deleted"
+    }, 
+    "555-125-a-2-v": {
+        "op": "deleted"
+    }, 
+    "555-125-a-2-vi": {
+        "op": "deleted"
+    }, 
+    "555-125-a-3": {
+        "op": "deleted"
+    }, 
+    "555-125-a-4": {
+        "op": "deleted"
+    }, 
+    "555-125-a-5": {
+        "op": "deleted"
+    }, 
+    "555-126": {
+        "op": "modified", 
+        "title": [
+            [
+                [
+                    "delete", 
+                    10, 
+                    39
+                ], 
+                [
+                    "insert", 
+                    10, 
+                    "Limited Permittee Transaction Report"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    70, 
+                    209
+                ], 
+                [
+                    "insert", 
+                    70, 
+                    "materials."
+                ]
+            ]
+        ]
+    }, 
+    "555-126-a": {
+        "child_ops": [
+            [
+                "delete", 
+                0, 
+                6
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    4, 
+                    96
+                ], 
+                [
+                    "insert", 
+                    4, 
+                    "[Reserved]"
+                ]
+            ]
+        ]
+    }, 
+    "555-126-a-1": {
+        "op": "deleted"
+    }, 
+    "555-126-a-2": {
+        "op": "deleted"
+    }, 
+    "555-126-a-3": {
+        "op": "deleted"
+    }, 
+    "555-126-a-4": {
+        "op": "deleted"
+    }, 
+    "555-126-a-5": {
+        "op": "deleted"
+    }, 
+    "555-126-a-6": {
+        "op": "deleted"
+    }, 
+    "555-142": {
+        "op": "modified", 
+        "title": [
+            [
+                [
+                    "delete", 
+                    22, 
+                    64
+                ], 
+                [
+                    "insert", 
+                    22, 
+                    "disabilities."
+                ]
+            ]
+        ]
+    }, 
+    "555-165-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    4, 
+                    38
+                ], 
+                [
+                    "insert", 
+                    4, 
+                    "Any"
+                ]
+            ]
+        ]
+    }, 
+    "555-201-e": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    4, 
+                    395
+                ], 
+                [
+                    "insert", 
+                    4, 
+                    "[Reserved]"
+                ]
+            ]
+        ]
+    }, 
+    "555-202-a": {
+        "op": "modified", 
+        "text": [
+            [
+                "delete", 
+                174, 
+                197
+            ]
+        ]
+    }, 
+    "555-218-p2-p1": {
+        "op": "modified", 
+        "title": [
+            [
+                [
+                    "delete", 
+                    132, 
+                    148
+                ], 
+                [
+                    "insert", 
+                    132, 
+                    "Explosives\u2014June"
+                ]
+            ]
+        ]
+    }, 
+    "555-218-p2-p5": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    81, 
+                    85
+                ], 
+                [
+                    "insert", 
+                    81, 
+                    "1 and 1/2"
+                ]
+            ]
+        ]
+    }, 
+    "555-219": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                1
+            ], 
+            [
+                "insert", 
+                1, 
+                [
+                    "555-219-p2"
+                ]
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "555-219-p2": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "555", 
+                "219", 
+                "p2"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": null, 
+            "text": "", 
+            "title": "TABLE: DEPARTMENT OF DEFENSE AMMUNITION AND EXPLOSIVES STANDARDS, TABLE 5-4.1 EXTRACT; 4145.27 M, MARCH 1969"
+        }, 
+        "op": "added"
+    }, 
+    "555-220-p1": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    0, 
+                    18
+                ], 
+                [
+                    "insert", 
+                    0, 
+                    "|Donor weight (pounds)|Over|Not over|Minimum separation distance"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    22, 
+                    173
+                ], 
+                [
+                    "insert", 
+                    22, 
+                    "acceptor from donor when barricaded (ft.)|Ammonium nitrate|Blasting agent|Minimum thickness"
+                ]
+            ], 
+            [
+                "delete", 
+                177, 
+                272
+            ], 
+            [
+                [
+                    "delete", 
+                    301, 
+                    334
+                ], 
+                [
+                    "insert", 
+                    301, 
+                    "|---|---|---|---|---|---|---|"
+                ]
+            ]
+        ]
+    }, 
+    "555-220-p2-p5": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                29, 
+                "all "
+            ], 
+            [
+                "insert", 
+                46, 
+                "with respect to its separation from stores of high explosives and blasting agents. Ammonium nitrate explosive mixtures "
+            ], 
+            [
+                [
+                    "delete", 
+                    51, 
+                    57
+                ], 
+                [
+                    "insert", 
+                    51, 
+                    "are high explosives pursuant to \u00a7 555.202(a) or are defined as a blasting agent pursuant to \u00a7 555.11 are subject to"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    62, 
+                    91
+                ], 
+                [
+                    "insert", 
+                    62, 
+                    "table of distances for storage of explosive materials"
+                ]
+            ], 
+            [
+                "insert", 
+                95, 
+                "\u00a7 555.218 and to "
+            ], 
+            [
+                [
+                    "delete", 
+                    99, 
+                    109
+                ], 
+                [
+                    "insert", 
+                    99, 
+                    "table"
+                ]
+            ], 
+            [
+                "insert", 
+                113, 
+                "separation distances of "
+            ], 
+            [
+                "delete", 
+                130, 
+                193
+            ], 
+            [
+                [
+                    "delete", 
+                    197, 
+                    389
+                ], 
+                [
+                    "insert", 
+                    197, 
+                    "blasting agents  from explosives or blasting agents"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    393, 
+                    432
+                ], 
+                [
+                    "insert", 
+                    393, 
+                    "this section."
+                ]
+            ]
+        ]
+    }, 
+    "555-224-p1": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    276, 
+                    363
+                ], 
+                [
+                    "insert", 
+                    276, 
+                    "March 7, 1990, the"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    469, 
+                    491
+                ], 
+                [
+                    "insert", 
+                    469, 
+                    "sites. \\(55 FR 3717\\))[^4](This table"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    783, 
+                    870
+                ], 
+                [
+                    "insert", 
+                    783, 
+                    "March 7, 1990, the"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    976, 
+                    983
+                ], 
+                [
+                    "insert", 
+                    976, 
+                    "sites. \\(55 FR 3717\\))"
+                ]
+            ]
+        ]
+    }, 
+    "555-27": {
+        "child_ops": [
+            [
+                "delete", 
+                0, 
+                2
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                0, 
+                "[Reserved]"
+            ]
+        ], 
+        "title": [
+            [
+                [
+                    "delete", 
+                    9, 
+                    57
+                ], 
+                [
+                    "insert", 
+                    9, 
+                    "[Reserved]"
+                ]
+            ]
+        ]
+    }, 
+    "555-27-a": {
+        "op": "deleted"
+    }, 
+    "555-27-b": {
+        "op": "deleted"
+    }, 
+    "555-30-a": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    188, 
+                    202
+                ], 
+                [
+                    "insert", 
+                    188, 
+                    "1-800-461-8841"
+                ]
+            ], 
+            [
+                "delete", 
+                253, 
+                274
+            ]
+        ]
+    }, 
+    "555-30-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    221, 
+                    235
+                ], 
+                [
+                    "insert", 
+                    221, 
+                    "1-800-461-8841"
+                ]
+            ]
+        ]
+    }, 
+    "555-30-d": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    180, 
+                    194
+                ], 
+                [
+                    "insert", 
+                    180, 
+                    "1-800-461-8841"
+                ]
+            ]
+        ]
+    }, 
+    "555-33": {
+        "op": "modified", 
+        "title": [
+            [
+                [
+                    "delete", 
+                    31, 
+                    67
+                ], 
+                [
+                    "insert", 
+                    31, 
+                    "clearances."
+                ]
+            ]
+        ]
+    }, 
+    "555-41-a": {
+        "child_ops": [
+            [
+                "delete", 
+                0, 
+                3
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    4, 
+                    54
+                ], 
+                [
+                    "insert", 
+                    4, 
+                    "[Reserved]"
+                ]
+            ]
+        ]
+    }, 
+    "555-41-a-1": {
+        "op": "deleted"
+    }, 
+    "555-41-a-1-i": {
+        "op": "deleted"
+    }, 
+    "555-41-a-1-ii": {
+        "op": "deleted"
+    }, 
+    "555-41-a-2": {
+        "op": "deleted"
+    }, 
+    "555-41-a-2-i": {
+        "op": "deleted"
+    }, 
+    "555-41-a-2-ii": {
+        "op": "deleted"
+    }, 
+    "555-41-a-2-iii": {
+        "op": "deleted"
+    }, 
+    "555-41-a-2-iv": {
+        "op": "deleted"
+    }, 
+    "555-41-a-3": {
+        "op": "deleted"
+    }, 
+    "555-45-a": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    4, 
+                    989
+                ], 
+                [
+                    "insert", 
+                    4, 
+                    "[Reserved]"
+                ]
+            ]
+        ]
+    }, 
+    "555-45-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    4, 
+                    1224
+                ], 
+                [
+                    "insert", 
+                    4, 
+                    "[Reserved]"
+                ]
+            ]
+        ]
+    }, 
+    "555-49-a": {
+        "child_ops": [
+            [
+                "delete", 
+                0, 
+                5
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    4, 
+                    56
+                ], 
+                [
+                    "insert", 
+                    4, 
+                    "[Reserved]"
+                ]
+            ]
+        ]
+    }, 
+    "555-49-a-1": {
+        "op": "deleted"
+    }, 
+    "555-49-a-1-i": {
+        "op": "deleted"
+    }, 
+    "555-49-a-1-ii": {
+        "op": "deleted"
+    }, 
+    "555-49-a-2": {
+        "op": "deleted"
+    }, 
+    "555-49-a-2-i": {
+        "op": "deleted"
+    }, 
+    "555-49-a-2-ii": {
+        "op": "deleted"
+    }, 
+    "555-49-a-2-iii": {
+        "op": "deleted"
+    }, 
+    "555-49-a-2-iv": {
+        "op": "deleted"
+    }, 
+    "555-49-a-2-v": {
+        "op": "deleted"
+    }, 
+    "555-49-a-2-vi": {
+        "op": "deleted"
+    }, 
+    "555-49-a-2-vii": {
+        "op": "deleted"
+    }, 
+    "555-49-a-2-viii": {
+        "op": "deleted"
+    }, 
+    "555-49-a-3": {
+        "op": "deleted"
+    }, 
+    "555-49-a-4": {
+        "op": "deleted"
+    }, 
+    "555-49-a-5": {
+        "op": "deleted"
+    }, 
+    "555-51-a": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    4, 
+                    242
+                ], 
+                [
+                    "insert", 
+                    4, 
+                    "[Reserved]"
+                ]
+            ]
+        ]
+    }, 
+    "555-57-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    4, 
+                    20
+                ], 
+                [
+                    "insert", 
+                    4, 
+                    "Each person holding the license"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    24, 
+                    38
+                ], 
+                [
+                    "insert", 
+                    24, 
+                    "permit must report to the Chief, Federal Explosives Licensing Center, any change in responsible persons or employees authorized to possess explosive materials. Such report must be submitted within 30 days of the change and must include appropriate identifying information for each responsible person. Reports relating to newly hired employees authorized to possess explosive materials must be submitted"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    42, 
+                    65
+                ], 
+                [
+                    "insert", 
+                    42, 
+                    "ATF F 5400.28 for"
+                ]
+            ], 
+            [
+                "delete", 
+                71, 
+                530
+            ]
+        ]
+    }
+}

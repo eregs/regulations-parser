@@ -1,0 +1,94 @@
+{
+    "479-11-p2710366668": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    13, 
+                    31
+                ], 
+                [
+                    "insert", 
+                    13, 
+                    "Any weapon which shoots, is designed to shoot, or can be readily restored to shoot, automatically more than one shot, without manual reloading, by a single function"
+                ]
+            ], 
+            [
+                "delete", 
+                35, 
+                52
+            ], 
+            [
+                "insert", 
+                56, 
+                "trigger. The "
+            ], 
+            [
+                [
+                    "delete", 
+                    61, 
+                    103
+                ], 
+                [
+                    "insert", 
+                    61, 
+                    "shall also include the frame or receiver of any such weapon, any part"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    113, 
+                    122
+                ], 
+                [
+                    "insert", 
+                    113, 
+                    "and intended solely and exclusively,"
+                ]
+            ], 
+            [
+                "insert", 
+                126, 
+                "combination of parts designed and intended, for use in converting a weapon into a machine gun, and any combination of parts from which a machine gun "
+            ], 
+            [
+                [
+                    "delete", 
+                    133, 
+                    181
+                ], 
+                [
+                    "insert", 
+                    133, 
+                    "assembled if such parts are in"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    186, 
+                    192
+                ], 
+                [
+                    "insert", 
+                    186, 
+                    "possession or under the control"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    198, 
+                    794
+                ], 
+                [
+                    "insert", 
+                    198, 
+                    "person."
+                ]
+            ]
+        ]
+    }
+}

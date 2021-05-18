@@ -1,0 +1,598 @@
+{
+    "447-1": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    55, 
+                    66
+                ], 
+                [
+                    "insert", 
+                    55, 
+                    "section 38 of the"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    112, 
+                    130
+                ], 
+                [
+                    "insert", 
+                    112, 
+                    "authorizing the President to designate defense articles and defense services as part of the United States Munitions List (USML) for purposes of import and export controls. To distinguish the list of defense articles and defense services controlled in this part for purposes of permanent import from the list of defense articles and defense services controlled by the Secretary of State for purposes of export and temporary import, this part shall refer to the defense articles and defense services controlled for purposes of permanent import as the U.S. Munitions Import List (USMIL) and shall refer to the export and temporary import control list set out by the Department of State in its International Traffic in Arms Regulations as the USML. Part 447 contains the USMIL and includes procedural and administrative requirements relating to registration of importers, permits, articles in transit, import certification, delivery verification, import restrictions applicable to certain countries, exemptions, U.S. military firearms and ammunition, penalties, seizures, and forfeitures. The President's delegation of permanent import control authorities to the Attorney General provides the Attorney General the authority to assess whether controls are justified, but in designating the defense articles and defense services set out in the USMIL the Attorney General shall be guided by the views of the Secretary of State on matters affecting world peace and the external security and foreign policy of the United States. All designations and changes in designations of defense articles and defense services subject to permanent import control under this part must have the concurrence of the Secretary of State and the Secretary of Defense,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    136, 
+                    746
+                ], 
+                [
+                    "insert", 
+                    136, 
+                    "notice given to the"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    760, 
+                    795
+                ], 
+                [
+                    "insert", 
+                    760, 
+                    "Commerce."
+                ]
+            ]
+        ]
+    }, 
+    "447-11-p1448930519": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    20, 
+                    59
+                ], 
+                [
+                    "insert", 
+                    20, 
+                    "defense articles"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    100, 
+                    105
+                ], 
+                [
+                    "insert", 
+                    100, 
+                    "List (USMIL)."
+                ]
+            ]
+        ]
+    }, 
+    "447-21": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                6
+            ], 
+            [
+                "insert", 
+                6, 
+                [
+                    "447-21-p2050545867"
+                ]
+            ], 
+            [
+                "equal", 
+                6, 
+                9
+            ], 
+            [
+                "insert", 
+                9, 
+                [
+                    "447-21-p3572827857"
+                ]
+            ], 
+            [
+                "equal", 
+                9, 
+                12
+            ], 
+            [
+                "insert", 
+                12, 
+                [
+                    "447-21-p1443292809"
+                ]
+            ], 
+            [
+                "equal", 
+                12, 
+                14
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "447-21-p1": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                4, 
+                "following defense articles and defense services, designated pursuant to section 38(a) of the Arms Export Control Act, 22 U.S.C. 2778(a), and E.O. 13637 are subject to controls under this part. For purposes of this part, the list shall be known as the "
+            ], 
+            [
+                "insert", 
+                19, 
+                "Import "
+            ], 
+            [
+                [
+                    "delete", 
+                    24, 
+                    369
+                ], 
+                [
+                    "insert", 
+                    24, 
+                    "(USMIL):"
+                ]
+            ]
+        ]
+    }, 
+    "447-21-p1443292809": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "447", 
+                "21", 
+                "p1443292809"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": null, 
+            "text": "", 
+            "title": "category xvii-xix [Reserved]"
+        }, 
+        "op": "added"
+    }, 
+    "447-21-p2050545867": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "447", 
+                "21", 
+                "p2050545867"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": null, 
+            "text": "", 
+            "title": "category v [Reserved]"
+        }, 
+        "op": "added"
+    }, 
+    "447-21-p2815177088": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                1
+            ], 
+            [
+                "insert", 
+                1, 
+                [
+                    "447-21-p2815177088-b"
+                ]
+            ]
+        ], 
+        "op": "modified", 
+        "title": [
+            [
+                [
+                    "delete", 
+                    9, 
+                    35
+                ], 
+                [
+                    "insert", 
+                    9, 
+                    "viii\u2014aircraft"
+                ]
+            ]
+        ]
+    }, 
+    "447-21-p2815177088-a": {
+        "child_ops": [
+            [
+                "delete", 
+                0, 
+                2
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "447-21-p2815177088-a-p1": {
+        "op": "deleted"
+    }, 
+    "447-21-p2815177088-a-p2": {
+        "op": "deleted"
+    }, 
+    "447-21-p2815177088-a-p2-a": {
+        "op": "deleted"
+    }, 
+    "447-21-p2815177088-a-p2-b": {
+        "op": "deleted"
+    }, 
+    "447-21-p2815177088-a-p2-c": {
+        "op": "deleted"
+    }, 
+    "447-21-p2815177088-a-p2-d": {
+        "op": "deleted"
+    }, 
+    "447-21-p2815177088-a-p2-e": {
+        "op": "deleted"
+    }, 
+    "447-21-p2815177088-b": {
+        "node": {
+            "child_labels": [
+                "447-21-p2815177088-b-p1"
+            ], 
+            "label": [
+                "447", 
+                "21", 
+                "p2815177088", 
+                "b"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(b) [Reserved]", 
+            "text": "(b) [Reserved]", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "447-21-p2815177088-b-p1": {
+        "node": {
+            "child_labels": [
+                "447-21-p2815177088-b-p1-a", 
+                "447-21-p2815177088-b-p1-b", 
+                "447-21-p2815177088-b-p1-c", 
+                "447-21-p2815177088-b-p1-d", 
+                "447-21-p2815177088-b-p1-e"
+            ], 
+            "label": [
+                "447", 
+                "21", 
+                "p2815177088", 
+                "b", 
+                "p1"
+            ], 
+            "node_type": "note", 
+            "tagged_text": "In Category VIII, \u201caircraft\u201d means aircraft designed, modified, or equipped for a military purpose, including aircraft described as \u201cdemilitarized.\u201d All aircraft bearing an original military designation are included in Category VIII. However, the following aircraft are not so included so long as they have not been specifically equipped, reequipped, or modified for military operations:", 
+            "text": "In Category VIII, \u201caircraft\u201d means aircraft designed, modified, or equipped for a military purpose, including aircraft described as \u201cdemilitarized.\u201d All aircraft bearing an original military designation are included in Category VIII. However, the following aircraft are not so included so long as they have not been specifically equipped, reequipped, or modified for military operations:", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "447-21-p2815177088-b-p1-a": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "447", 
+                "21", 
+                "p2815177088", 
+                "b", 
+                "p1", 
+                "a"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(a) Cargo aircraft bearing \u201cC\u201d designations and numbered C-45 through C-118 inclusive, and C-121 through C-125 inclusive, and C-131, using reciprocating engines only.", 
+            "text": "(a) Cargo aircraft bearing \u201cC\u201d designations and numbered C-45 through C-118 inclusive, and C-121 through C-125 inclusive, and C-131, using reciprocating engines only.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "447-21-p2815177088-b-p1-b": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "447", 
+                "21", 
+                "p2815177088", 
+                "b", 
+                "p1", 
+                "b"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(b) Trainer aircraft bearing \u201cT\u201d designations and using reciprocating engines or turboprop engines with less than 600 horsepower (s.h.p.).", 
+            "text": "(b) Trainer aircraft bearing \u201cT\u201d designations and using reciprocating engines or turboprop engines with less than 600 horsepower (s.h.p.).", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "447-21-p2815177088-b-p1-c": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "447", 
+                "21", 
+                "p2815177088", 
+                "b", 
+                "p1", 
+                "c"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(c) Utility aircraft bearing \u201cU\u201d designations and using reciprocating engines only.", 
+            "text": "(c) Utility aircraft bearing \u201cU\u201d designations and using reciprocating engines only.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "447-21-p2815177088-b-p1-d": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "447", 
+                "21", 
+                "p2815177088", 
+                "b", 
+                "p1", 
+                "d"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(d) All liaison aircraft bearing an \u201cL\u201d designation.", 
+            "text": "(d) All liaison aircraft bearing an \u201cL\u201d designation.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "447-21-p2815177088-b-p1-e": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "447", 
+                "21", 
+                "p2815177088", 
+                "b", 
+                "p1", 
+                "e"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(e) All observation aircraft bearing \u201cO\u201d designations and using reciprocating engines.", 
+            "text": "(e) All observation aircraft bearing \u201cO\u201d designations and using reciprocating engines.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "447-21-p3572827857": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "447", 
+                "21", 
+                "p3572827857"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": null, 
+            "text": "", 
+            "title": "categories ix-xiii [Reserved]"
+        }, 
+        "op": "added"
+    }, 
+    "447-21-p60809944-b": {
+        "child_ops": [
+            [
+                "delete", 
+                0, 
+                1
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "447-21-p60809944-b-p1": {
+        "op": "deleted"
+    }, 
+    "447-21-p657734979": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                3
+            ], 
+            [
+                "insert", 
+                3, 
+                [
+                    "447-21-p657734979-d"
+                ]
+            ], 
+            [
+                "equal", 
+                3, 
+                6
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "447-21-p657734979-c": {
+        "child_ops": [
+            [
+                "delete", 
+                0, 
+                1
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "447-21-p657734979-c-p1": {
+        "op": "deleted"
+    }, 
+    "447-21-p657734979-d": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "447", 
+                "21", 
+                "p657734979", 
+                "d"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(d)-(e) [Reserved]", 
+            "text": "(d)-(e) [Reserved]", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "447-21-p731147738-h": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                1
+            ], 
+            [
+                "delete", 
+                1, 
+                2
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "447-21-p731147738-h-p2": {
+        "op": "deleted"
+    }, 
+    "447-21-p96906372": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                4, 
+                "defense "
+            ], 
+            [
+                "insert", 
+                12, 
+                "or defense service "
+            ], 
+            [
+                [
+                    "delete", 
+                    71, 
+                    96
+                ], 
+                [
+                    "insert", 
+                    71, 
+                    "USMIL that"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    140, 
+                    145
+                ], 
+                [
+                    "insert", 
+                    140, 
+                    "that"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    225, 
+                    227
+                ], 
+                [
+                    "insert", 
+                    225, 
+                    "as to"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    302, 
+                    318
+                ], 
+                [
+                    "insert", 
+                    302, 
+                    "Attorney General with the concurrence"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    322, 
+                    356
+                ], 
+                [
+                    "insert", 
+                    322, 
+                    "the Secretary"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    360, 
+                    371
+                ], 
+                [
+                    "insert", 
+                    360, 
+                    "State and"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    376, 
+                    387
+                ], 
+                [
+                    "insert", 
+                    376, 
+                    "Secretary"
+                ]
+            ], 
+            [
+                "delete", 
+                391, 
+                409
+            ]
+        ]
+    }, 
+    "447-43-a": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    59, 
+                    67
+                ], 
+                [
+                    "insert", 
+                    59, 
+                    "two years"
+                ]
+            ]
+        ]
+    }
+}

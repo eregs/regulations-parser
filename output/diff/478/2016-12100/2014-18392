@@ -1,0 +1,474 @@
+{
+    "478-125-e-p1": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                81, 
+                "and/or Importer|Model|Serial No.|Type|Caliber or gauge|Receipt|Date|Name "
+            ], 
+            [
+                [
+                    "delete", 
+                    85, 
+                    132
+                ], 
+                [
+                    "insert", 
+                    85, 
+                    "address"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    136, 
+                    159
+                ], 
+                [
+                    "insert", 
+                    136, 
+                    "name"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    164, 
+                    171
+                ], 
+                [
+                    "insert", 
+                    164, 
+                    "license No.|Disposition|Date|Name|Address"
+                ]
+            ], 
+            [
+                "delete", 
+                175, 
+                184
+            ], 
+            [
+                [
+                    "delete", 
+                    192, 
+                    225
+                ], 
+                [
+                    "insert", 
+                    192, 
+                    "No. if licensee,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    229, 
+                    236
+                ], 
+                [
+                    "insert", 
+                    229, 
+                    "Form 4473 Serial"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    244, 
+                    261
+                ], 
+                [
+                    "insert", 
+                    244, 
+                    "Forms"
+                ]
+            ], 
+            [
+                "delete", 
+                267, 
+                292
+            ]
+        ]
+    }, 
+    "478-125-f-2-p1": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                92, 
+                "and/or importer|Model|Serial No.|Type|Caliber or gauge|Receipt|Date|Name "
+            ], 
+            [
+                [
+                    "delete", 
+                    96, 
+                    143
+                ], 
+                [
+                    "insert", 
+                    96, 
+                    "address"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    147, 
+                    170
+                ], 
+                [
+                    "insert", 
+                    147, 
+                    "name"
+                ]
+            ], 
+            [
+                "insert", 
+                175, 
+                "license No.|Disposition|Date|Name and "
+            ], 
+            [
+                [
+                    "delete", 
+                    203, 
+                    240
+                ], 
+                [
+                    "insert", 
+                    203, 
+                    "No.|Date of birth if non-licensee|Driver's license No."
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    244, 
+                    278
+                ], 
+                [
+                    "insert", 
+                    244, 
+                    "other identification"
+                ]
+            ], 
+            [
+                "delete", 
+                282, 
+                343
+            ]
+        ]
+    }, 
+    "478-125a-a-4-p1": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                77, 
+                "and/or importer|Model|Serial No.|Type|Caliber or gauge|Disposition|Date|Name "
+            ], 
+            [
+                "delete", 
+                81, 
+                164
+            ]
+        ]
+    }, 
+    "478-39a": {
+        "child_ops": [
+            [
+                "delete", 
+                0, 
+                6
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                0, 
+                "Each licensee shall report the theft or loss of a firearm from the licensee's inventory (including any firearm which has been transferred from the licensee's inventory to a personal collection and held as a personal firearm for at least 1 year), or from the collection of a licensed collector, within 48 hours after the theft or loss is discovered. Licensees shall report thefts or losses by telephoning 1-888-930-9275 (nationwide toll free number) and by preparing ATF Form 3310.11, Federal Firearms Licensee Theft/Loss Report, in accordance with the instructions on the form. The original of the report shall be forwarded to the office specified thereon, and Copy 1 shall be retained by the licensee as part of the licensee's permanent records. Theft or loss of any firearm shall also be reported to the appropriate local authorities."
+            ]
+        ]
+    }, 
+    "478-39a-a": {
+        "op": "deleted"
+    }, 
+    "478-39a-a-1": {
+        "op": "deleted"
+    }, 
+    "478-39a-a-2": {
+        "op": "deleted"
+    }, 
+    "478-39a-b": {
+        "op": "deleted"
+    }, 
+    "478-39a-c": {
+        "op": "deleted"
+    }, 
+    "478-39a-d": {
+        "op": "deleted"
+    }, 
+    "478-39a-e": {
+        "op": "deleted"
+    }, 
+    "478-39a-f": {
+        "op": "deleted"
+    }, 
+    "478-72": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    246, 
+                    257
+                ], 
+                [
+                    "insert", 
+                    246, 
+                    "denial.The"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    308, 
+                    319
+                ], 
+                [
+                    "insert", 
+                    308, 
+                    "therefor. On"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    682, 
+                    692
+                ], 
+                [
+                    "insert", 
+                    682, 
+                    "On conclusion of the"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    701, 
+                    704
+                ], 
+                [
+                    "insert", 
+                    701, 
+                    "and consideration of all relevant facts and circumstances presented by the"
+                ]
+            ], 
+            [
+                "insert", 
+                715, 
+                "or his representative, the Director shall render his decision confirming or reversing the denial of the application. If the decision is that the denial should stand, a certified copy of the Director's findings and conclusions shall be furnished to the applicant with a final notice of denial, Form 5300.13. A copy of the application, marked \u201cDisapproved,\u201d "
+            ], 
+            [
+                [
+                    "delete", 
+                    720, 
+                    740
+                ], 
+                [
+                    "insert", 
+                    720, 
+                    "be returned"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    744, 
+                    770
+                ], 
+                [
+                    "insert", 
+                    744, 
+                    "the applicant. If the decision is that the license applied"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    775, 
+                    1001
+                ], 
+                [
+                    "insert", 
+                    775, 
+                    "should be issued, the applicant shall be so notified, in writing, and the license shall be issued as provided"
+                ]
+            ], 
+            [
+                "delete", 
+                1005, 
+                1380
+            ]
+        ]
+    }, 
+    "478-73-a": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    205, 
+                    214
+                ], 
+                [
+                    "insert", 
+                    205, 
+                    "issued. In"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    225, 
+                    236
+                ], 
+                [
+                    "insert", 
+                    225, 
+                    "a notice of revocation, suspension, or imposition of a civil fine may be issued on ATF Form 4500 whenever the Director has reason to believe that a licensee has knowingly transferred a firearm to an unlicensed person and knowingly failed to comply with the requirements of"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    247, 
+                    256
+                ], 
+                [
+                    "insert", 
+                    247, 
+                    "922(t)(1) with respect to the transfer and, at the time that the transferee most recently proposed the transfer, the national instant criminal background check system was operating"
+                ]
+            ], 
+            [
+                "insert", 
+                261, 
+                "information was available to the system demonstrating that the transferee's receipt of a firearm would violate "
+            ], 
+            [
+                "delete", 
+                271, 
+                868
+            ], 
+            [
+                [
+                    "delete", 
+                    894, 
+                    1135
+                ], 
+                [
+                    "insert", 
+                    894, 
+                    "law."
+                ]
+            ]
+        ]
+    }, 
+    "478-74": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    331, 
+                    338
+                ], 
+                [
+                    "insert", 
+                    331, 
+                    "fine. On"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    593, 
+                    602
+                ], 
+                [
+                    "insert", 
+                    593, 
+                    "held. Such"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    686, 
+                    696
+                ], 
+                [
+                    "insert", 
+                    686, 
+                    "hearing. On"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    958, 
+                    970
+                ], 
+                [
+                    "insert", 
+                    958, 
+                    "based. If the"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    1050, 
+                    1070
+                ], 
+                [
+                    "insert", 
+                    1050, 
+                    "922(t)(5),"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    1120, 
+                    1122
+                ], 
+                [
+                    "insert", 
+                    1120, 
+                    "and/or"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    1416, 
+                    1436
+                ], 
+                [
+                    "insert", 
+                    1416, 
+                    "922(t)(5),"
+                ]
+            ], 
+            [
+                "delete", 
+                1572, 
+                1795
+            ]
+        ]
+    }
+}

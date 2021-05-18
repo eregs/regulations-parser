@@ -1,0 +1,159 @@
+{
+    "amendments": [
+        {
+            "authority": "22 U.S.C. 2778, E.O. 13637, 78 FR 16129 (Mar. 8, 2013).", 
+            "cfr_part": "447", 
+            "instruction": "1. The authority citation for 27 CFR part 447 continues to read as follows:"
+        }, 
+        {
+            "cfr_part": "447", 
+            "changes": [
+                [
+                    "447-11-p2710366668", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "11", 
+                                    "p2710366668"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "<E T=\"03\">Machinegun.</E> A \u201cmachinegun\u201d, \u201cmachine pistol\u201d, \u201csubmachinegun\u201d, or \u201cautomatic rifle\u201d is a firearm which shoots, is designed to shoot, or can be readily restored to shoot, automatically more than one shot, without manual reloading, by a single function of the trigger. The term shall also include the frame or receiver of any such weapon, any part designed and intended solely and exclusively, or combination of parts designed and intended, for use in converting a weapon into a machinegun, and any combination of parts from which a machinegun can be assembled if such parts are in the possession or under the control of a person. For purposes of this definition, the term \u201cautomatically\u201d as it modifies \u201cshoots, is designed to shoot, or can be readily restored to shoot,\u201d means functioning as the result of a self-acting or self-regulating mechanism that allows the firing of multiple rounds through a single function of the trigger; and \u201csingle function of the trigger\u201d means a single pull of the trigger and analogous motions. The term \u201cmachinegun\u201d includes a bump-stock-type device, <E T=\"03\">i.e.,</E> a device that allows a semi-automatic firearm to shoot more than one shot with a single pull of the trigger by harnessing the recoil energy of the semi-automatic firearm to which it is affixed so that the trigger resets and continues firing without additional physical manipulation of the trigger by the shooter.", 
+                                "text": "Machinegun. A \u201cmachinegun\u201d, \u201cmachine pistol\u201d, \u201csubmachinegun\u201d, or \u201cautomatic rifle\u201d is a firearm which shoots, is designed to shoot, or can be readily restored to shoot, automatically more than one shot, without manual reloading, by a single function of the trigger. The term shall also include the frame or receiver of any such weapon, any part designed and intended solely and exclusively, or combination of parts designed and intended, for use in converting a weapon into a machinegun, and any combination of parts from which a machinegun can be assembled if such parts are in the possession or under the control of a person. For purposes of this definition, the term \u201cautomatically\u201d as it modifies \u201cshoots, is designed to shoot, or can be readily restored to shoot,\u201d means functioning as the result of a self-acting or self-regulating mechanism that allows the firing of multiple rounds through a single function of the trigger; and \u201csingle function of the trigger\u201d means a single pull of the trigger and analogous motions. The term \u201cmachinegun\u201d includes a bump-stock-type device, i.e., a device that allows a semi-automatic firearm to shoot more than one shot with a single pull of the trigger by harnessing the recoil energy of the semi-automatic firearm to which it is affixed so that the trigger resets and continues firing without additional physical manipulation of the trigger by the shooter.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "2. In \u00a7\u2009447.11, revise the definition of \u201cMachinegun\u201d to read as follows:"
+        }, 
+        {
+            "authority": "5 U.S.C. 552(a); 18 U.S.C. 921-931; 44 U.S.C. 3504(h).", 
+            "cfr_part": "479", 
+            "instruction": "3. The authority citation for 27 CFR part 478 continues to read as follows:"
+        }, 
+        {
+            "cfr_part": "478", 
+            "changes": [
+                [
+                    "478-11-p2710366668", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "11", 
+                                    "p2710366668"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "<E T=\"03\">Machine gun.</E> * * * For purposes of this definition, the term \u201cautomatically\u201d as it modifies \u201cshoots, is designed to shoot, or can be readily restored to shoot,\u201d means functioning as the result of a self-acting or self-regulating mechanism that allows the firing of multiple rounds through a single function of the trigger; and \u201csingle function of the trigger\u201d means a single pull of the trigger and analogous motions. The term \u201cmachine gun\u201d includes a bump-stock-type device, <E T=\"03\">i.e.,</E> a device that allows a semi-automatic firearm to shoot more than one shot with a single pull of the trigger by harnessing the recoil energy of the semi-automatic firearm to which it is affixed so that the trigger resets and continues firing without additional physical manipulation of the trigger by the shooter.", 
+                                "text": "Machine gun. * * * For purposes of this definition, the term \u201cautomatically\u201d as it modifies \u201cshoots, is designed to shoot, or can be readily restored to shoot,\u201d means functioning as the result of a self-acting or self-regulating mechanism that allows the firing of multiple rounds through a single function of the trigger; and \u201csingle function of the trigger\u201d means a single pull of the trigger and analogous motions. The term \u201cmachine gun\u201d includes a bump-stock-type device, i.e., a device that allows a semi-automatic firearm to shoot more than one shot with a single pull of the trigger by harnessing the recoil energy of the semi-automatic firearm to which it is affixed so that the trigger resets and continues firing without additional physical manipulation of the trigger by the shooter.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "4. In \u00a7\u2009478.11, revise the definition of \u201cMachine gun\u201d by adding two sentences at the end of the definition to read as follows:"
+        }, 
+        {
+            "authority": "26 U.S.C. 5812; 26 U.S.C. 5822; 26 U.S.C. 7801; 26 U.S.C. 7805.", 
+            "cfr_part": "479", 
+            "instruction": "5. The authority citation for 27 CFR part 479 continues to read as follows:"
+        }, 
+        {
+            "cfr_part": "479", 
+            "changes": [
+                [
+                    "479-11-p2710366668", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "479", 
+                                    "11", 
+                                    "p2710366668"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "<E T=\"03\">Machine gun.</E> * * * For purposes of this definition, the term \u201cautomatically\u201d as it modifies \u201cshoots, is designed to shoot, or can be readily restored to shoot,\u201d means functioning as the result of a self-acting or self-regulating mechanism that allows the firing of multiple rounds through a single function of the trigger; and \u201csingle function of the trigger\u201d means a single pull of the trigger and analogous motions. The term \u201cmachine gun\u201d includes a bump-stock-type device, <E T=\"03\">i.e.,</E> a device that allows a semi-automatic firearm to shoot more than one shot with a single pull of the trigger by harnessing the recoil energy of the semi-automatic firearm to which it is affixed so that the trigger resets and continues firing without additional physical manipulation of the trigger by the shooter.", 
+                                "text": "Machine gun. * * * For purposes of this definition, the term \u201cautomatically\u201d as it modifies \u201cshoots, is designed to shoot, or can be readily restored to shoot,\u201d means functioning as the result of a self-acting or self-regulating mechanism that allows the firing of multiple rounds through a single function of the trigger; and \u201csingle function of the trigger\u201d means a single pull of the trigger and analogous motions. The term \u201cmachine gun\u201d includes a bump-stock-type device, i.e., a device that allows a semi-automatic firearm to shoot more than one shot with a single pull of the trigger by harnessing the recoil energy of the semi-automatic firearm to which it is affixed so that the trigger resets and continues firing without additional physical manipulation of the trigger by the shooter.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "6. In \u00a7\u2009479.11, revise the definition of \u201cMachine gun\u201d by adding two sentences at the end of the definition to read as follows:"
+        }
+    ], 
+    "cfr_parts": [
+        "447", 
+        "478", 
+        "479"
+    ], 
+    "cfr_title": 27, 
+    "dockets": [
+        "Docket No. 2018R-22F", 
+        "AG Order No. 4367-2018"
+    ], 
+    "document_number": "2018-27763", 
+    "effective_on": "2019-03-26", 
+    "footnotes": {
+        "1": "Regulations implementing the relevant statutes spell the term \u201cmachine gun\u201d rather than \u201cmachinegun.\u201d <em data-original=\"E-03\">E.</em> g., 27 CFR 478.11, 479.11. For convenience, this notice uses \u201cmachinegun\u201d except when quoting a source to the contrary.", 
+        "10": "<em data-original=\"E-03\">Id.</em> at 11.", 
+        "11": "<em data-original=\"E-03\">See</em> Jared Walczak &amp; Scott Drenkard, <em data-original=\"E-03\">State and Local Tax Rates in 2017,</em> Tax Found. (Jan. 31, 2017), <em data-original=\"E-03\">https://taxfoundation.org/state-and-local-sales-tax-rates-in-2017/.</em>", 
+        "12": "U.S. Small Business Administration, Office of Advocacy, <em data-original=\"E-03\">A Guide for Government Agencies: How to Comply with the Regulatory Flexibility Act,</em> at 1 (Aug. 2017), <em data-original=\"E-03\">https://www.sba.gov/sites/default/files/advocacy/How-to-Comply-with-the-RFA-WEB.pdf.</em>", 
+        "13": "<em data-original=\"E-03\">Id.</em>", 
+        "14": "<em data-original=\"E-03\">Id.</em>", 
+        "15": "Note that many commenters assumed that each person who owns a bump-stock-type device owns one device. This overestimates the number of owners because owners of such devices may own more than one, as evidenced by the Las Vegas shooter, who allegedly owned at least 12.", 
+        "16": "<em data-original=\"E-03\">Regulations.gov</em>, <em data-original=\"E-03\">Docket ID: ATF-2018-0002-16668,</em> available at <em data-original=\"E-03\">https://www.regulations.gov/document?D=ATF-2018-0002-16668</em> (last visited Nov. 16, 2018).", 
+        "17": "Donnie A. Lucas, <em data-original=\"E-03\">Firing Up Some Simple Solutions,</em> Albany News (Dec. 22, 2011), <em data-original=\"E-03\">http://www.thealbanynews.net/archives/2443.</em>", 
+        "18": "Based on an internal survey of large retailers.", 
+        "19": "<em data-original=\"E-03\">Regulations.gov</em>, <em data-original=\"E-03\">Docket ID: ATF-2018-0001-27509, https://www.regulations.gov/document?D=ATF-2018-0001-27509</em> (last visited on Nov. 16, 2018); <em data-original=\"E-03\">Regulations.gov</em>, <em data-original=\"E-03\">Docket ID: ATF-2018-0001-0433, https://www.regulations.gov/document?D=ATF-2018-0001-0433</em> (last visited on Nov. 16, 2018); <em data-original=\"E-03\">Regulations.gov</em>, <em data-original=\"E-03\">Docket ID: ATF-2018-0001-0128, https://www.regulations.gov/document?D=ATF-2018-0001-0128</em> (last visited on Nov. 16, 2018).", 
+        "2": "NFA provisions still refer to the \u201cSecretary of the Treasury.\u201d 26 U.S.C. ch. 53. However, the Homeland Security Act of 2002, Public Law 107-296, 116 Stat. 2135, transferred the functions of ATF from the Department of the Treasury to the Department of Justice, under the general authority of the Attorney General. 26 U.S.C. 7801(a)(2); 28 U.S.C. 599A(c)(1). Thus, for ease of reference, this notice refers to the Attorney General.", 
+        "20": "For a large retailer the average sales were 4,400 = (3,800 + 5,000)/2. For a small retailer, the average sales were 8 = (5 + 10)/2.", 
+        "21": "Lucas, <em data-original=\"E-03\">supra</em> note 17.", 
+        "22": "Slide Fire AR-15 Bump Fire Stocks (archived page on Jan. 28, 2017), <em data-original=\"E-03\">https://web.archive.org/web/20170128085532/http://www.slidefire.com/products/ar-platform</em> (last visited Nov. 28, 2018).", 
+        "23": "Bump Fire Systems (archived page on Feb. 21, 2015), <em data-original=\"E-03\">https://web.archive.org/web/20150221050223/http://bumpfiresystems.com/</em> (last visited Nov. 28, 2018).", 
+        "24": "Cal. Penal Code sections 16930, 32900 (2018); 2018 Conn. Acts 18-29 (Reg. Sess.); Del. Code Ann. tit. 11, section 1444(a)(6) (2018); Fla. Stat. section 790.222 (2018); Haw. Rev. Stat. section 134-8.5 (2018); Md. Code. Ann., Crim. Law section 4-305.1 (2018); Mass. Gen. Laws ch. 140, section 121, 131 (2018); N.J. Stat. Ann. sections 2C:39-3(<em data-original=\"E-03\">l</em>), 2C:39-9(j); 11 R.I. Gen. Laws section 11-47-8(d) (2018); Vt. Stat. Ann. tit. 13, section 4022 (2018); 2018 Wash. Sess. Laws ch. 7, pp. 196-220.", 
+        "25": "Midrange: $4,500 = ($18,000/$140,000) * $35,000. Small: $74 = (8/3,800) * $35,000.", 
+        "26": "BLS Series ID CMU2010000000000D, CMU2010000000000P (Private Industry Compensation = $32.35)/(Private Industry Wages and Salaries = $22.55) = 1.43. BLS average 2016. U.S. Bureau of Labor Statistics, <em data-original=\"E-03\">https://beta.bls.gov/dataQuery/find?fq=survey:[cm]&amp;s=popularity:D.</em>", 
+        "27": "Office of Personnel Management, <em data-original=\"E-03\">Salary Table 2018-GS, https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/pdf/2018/GS_h.pdf.</em>", 
+        "3": "18 U.S.C. 921(a)(23).", 
+        "4": "Examples of recent ATF classification letters relying on the \u201csingle pull of the trigger\u201d interpretation to classify submitted devices as machineguns include the following:", 
+        "5": "The NPRM also explained that the term \u201cpull\u201d can be analogized to \u201cpush\u201d and other terms that describe activation of a trigger. For instance, ATF used the term \u201cpull\u201d in classifying the Akins Accelerator because that was the manner in which the firearm's trigger was activated with the device. But the courts have made clear that whether a trigger is operated through a \u201cpull,\u201d \u201cpush,\u201d or some other action such as a flipping a switch, does not change the analysis of the functionality of a firearm. For example, in <em data-original=\"E-03\">United States</em> v. <em data-original=\"E-03\">Fleischli,</em> 305 F.3d 643, 655-56 (7th Cir. 2002), the Seventh Circuit rejected the argument that a switch did not constitute a trigger for purposes of assessing whether a firearm was a machinegun under the NFA, because such an interpretation of the statute would lead to \u201cthe absurd result of enabling persons to avoid the NFA simply by using weapons that employ a button or switch mechanism for firing.\u201d <em data-original=\"E-03\">See also United States</em> v. <em data-original=\"E-03\">Camp,</em> 343 F.3d 743, 745 (5th Cir. 2003) (\u201c\u2009`To construe \u201ctrigger\u201d to mean only a small lever moved by a finger would be to impute to Congress the intent to restrict the term to apply only to one kind of trigger, albeit a  very common kind. The language [in 18 U.S.C. 922(o)] implies no intent to so restrict the meaning[.]'\u2009\u201d (quoting <em data-original=\"E-03\">United States</em> v. <em data-original=\"E-03\">Jokel,</em> 969 F.2d 132, 135 (5th Cir. 1992) (emphasis removed))). Examples of machineguns that operate through a trigger activated by a push include the Browning design, M2 .50 caliber, the Vickers, the Maxim, and the M134 hand-fired Minigun.", 
+        "6": "Under the AECA, the President has the authority to designate which items are controlled as defense articles for purposes of importation and exportation. 22 U.S.C. 2778(a)(1). The President has, in turn, delegated to the Attorney General the authority to promulgate regulations designating the defense articles controlled for permanent importation, including machineguns.", 
+        "7": "In the takings context, the use of the term \u201cpolice power\u201d in connection with Federal regulation does not posit the existence of a \u201cplenary police power\u201d at the Federal level. <em data-original=\"E-03\">Cf. United States</em> v. <em data-original=\"E-03\">Lopez,</em> 514 U.S. 549, 566 (1995). Rather, it refers to \u201cthe power of the federal government to engage,\u201d pursuant to one or more of its enumerated powers, \u201cin activities not unlike those engaged in by the states under their inherent sovereign powers\u201d to protect the public welfare. <em data-original=\"E-03\">Fla. Rock Indus., Inc.</em> v. <em data-original=\"E-03\">United States,</em> 18 F.3d 1560, 1568 n.17 (Fed. Cir. 1994).", 
+        "8": "OMB Circular A-4, <em data-original=\"E-03\">Regulatory Analysis,</em> at 2 (Sept. 17, 2003), <em data-original=\"E-03\">https://www.whitehouse.gov/sites/whitehouse.gov/files/omb/circulars/A4/a-4.pdf.</em>", 
+        "9": "<em data-original=\"E-03\">Id.</em> at 7."
+    }, 
+    "fr_citation": "83 FR 66514", 
+    "fr_url": "https://www.federalregister.gov/documents/2018/12/26/2018-27763/bump-stock-type-devices", 
+    "fr_volume": 83, 
+    "meta": {
+        "start_page": 66514
+    }, 
+    "primary_agency": "DEPARTMENT OF JUSTICE", 
+    "primary_docket": null, 
+    "publication_date": "2018-12-26", 
+    "regulation_id_numbers": [
+        "1140-AA52"
+    ], 
+    "section_by_section": [], 
+    "supporting_documents": [], 
+    "title": "Bump-Stock-Type Devices", 
+    "versions": {
+        "478": {
+            "left": "2016-12100", 
+            "right": "2018-27763"
+        }
+    }
+}

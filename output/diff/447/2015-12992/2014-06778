@@ -1,0 +1,237 @@
+{
+    "447-11-p4250035813": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    74, 
+                    92
+                ], 
+                [
+                    "insert", 
+                    74, 
+                    "Tobacco"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    97, 
+                    107
+                ], 
+                [
+                    "insert", 
+                    97, 
+                    "Firearms"
+                ]
+            ]
+        ]
+    }, 
+    "447-11-p4263687456": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    27, 
+                    35
+                ], 
+                [
+                    "insert", 
+                    27, 
+                    "Tobacco and"
+                ]
+            ], 
+            [
+                "delete", 
+                46, 
+                62
+            ], 
+            [
+                [
+                    "delete", 
+                    80, 
+                    88
+                ], 
+                [
+                    "insert", 
+                    80, 
+                    "the Treasury."
+                ]
+            ]
+        ]
+    }, 
+    "447-11-p593154015": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    43, 
+                    51
+                ], 
+                [
+                    "insert", 
+                    43, 
+                    "Tobacco and"
+                ]
+            ], 
+            [
+                "delete", 
+                62, 
+                78
+            ], 
+            [
+                [
+                    "delete", 
+                    96, 
+                    104
+                ], 
+                [
+                    "insert", 
+                    96, 
+                    "the Treasury,"
+                ]
+            ]
+        ]
+    }, 
+    "447-32-c": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    300, 
+                    308
+                ], 
+                [
+                    "insert", 
+                    300, 
+                    "Tobacco and"
+                ]
+            ], 
+            [
+                "delete", 
+                319, 
+                335
+            ]
+        ]
+    }, 
+    "447-35-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    53, 
+                    80
+                ], 
+                [
+                    "insert", 
+                    53, 
+                    "Center, P.O. Box 5950, Springfield, Virginia 22150-5950,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    87, 
+                    110
+                ], 
+                [
+                    "insert", 
+                    87, 
+                    "accessing the ATF Web site http://www.atf.gov/."
+                ]
+            ]
+        ]
+    }, 
+    "447-43-a": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    68, 
+                    70
+                ], 
+                [
+                    "insert", 
+                    68, 
+                    " "
+                ]
+            ]
+        ]
+    }, 
+    "447-52-b-2": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    209, 
+                    220
+                ], 
+                [
+                    "insert", 
+                    209, 
+                    "7.62\u00d725mm"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    244, 
+                    255
+                ], 
+                [
+                    "insert", 
+                    244, 
+                    "7.63\u00d725mm"
+                ]
+            ]
+        ]
+    }, 
+    "447-58": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    308, 
+                    318
+                ], 
+                [
+                    "insert", 
+                    308, 
+                    "mailing"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    353, 
+                    380
+                ], 
+                [
+                    "insert", 
+                    353, 
+                    "Center, PO Box 5950, Springfield, VA 22150-5950,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    387, 
+                    409
+                ], 
+                [
+                    "insert", 
+                    387, 
+                    "accessing the ATF Web site http://www.atf.gov/."
+                ]
+            ]
+        ]
+    }
+}

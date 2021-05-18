@@ -1,0 +1,100 @@
+{
+    "479": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                10
+            ], 
+            [
+                "delete", 
+                10, 
+                11
+            ], 
+            [
+                "insert", 
+                10, 
+                [
+                    "479-Subjgrp-ATMaF"
+                ]
+            ], 
+            [
+                "equal", 
+                11, 
+                30
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "479-21-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    72, 
+                    89
+                ], 
+                [
+                    "insert", 
+                    72, 
+                    "7664 K Fullerton Road,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    112, 
+                    118
+                ], 
+                [
+                    "insert", 
+                    112, 
+                    "22150."
+                ]
+            ]
+        ]
+    }, 
+    "479-90-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    2135, 
+                    2143
+                ], 
+                [
+                    "insert", 
+                    2135, 
+                    "transfer,"
+                ]
+            ]
+        ]
+    }, 
+    "479-Subjgrp-ATMaF": {
+        "node": {
+            "child_labels": [
+                "479-62", 
+                "479-63", 
+                "479-64", 
+                "479-65", 
+                "479-66", 
+                "479-67"
+            ], 
+            "label": [
+                "479", 
+                "Subjgrp", 
+                "ATMaF"
+            ], 
+            "node_type": "subpart", 
+            "tagged_text": null, 
+            "text": "", 
+            "title": "Application To Make a Firearm"
+        }, 
+        "op": "added"
+    }, 
+    "479-Subjgrp-AtMaF": {
+        "op": "deleted"
+    }
+}

@@ -1,0 +1,163 @@
+{
+    "amendments": [
+        {
+            "cfr_part": "555", 
+            "instruction": "Accordingly, for the reasons discussed in the preamble, 27 CFR part 555 is amended as follows:"
+        }, 
+        {
+            "authority": "18 U.S.C. 847.", 
+            "cfr_part": "555", 
+            "instruction": "1. The authority citation for 27 CFR part 555 continues to read as follows:"
+        }, 
+        {
+            "cfr_part": "555", 
+            "changes": [
+                [
+                    "555-11-p4152419405-a", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "555", 
+                                    "11", 
+                                    "p4152419405", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) Any tool or special mechanized device or gas generator system that is actuated by a propellant or which releases and directs work through a propellant charge.", 
+                                "text": "(a) Any tool or special mechanized device or gas generator system that is actuated by a propellant or which releases and directs work through a propellant charge.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "555-11-p4152419405-b-1", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "555", 
+                                    "11", 
+                                    "p4152419405", 
+                                    "b", 
+                                    "1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(1) Hobby rocket motors consisting of ammonium perchlorate composite propellant, black powder, or other similar low explosives, regardless of amount; and", 
+                                "text": "(1) Hobby rocket motors consisting of ammonium perchlorate composite propellant, black powder, or other similar low explosives, regardless of amount; and", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "555-11-p4152419405-b-2", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "555", 
+                                    "11", 
+                                    "p4152419405", 
+                                    "b", 
+                                    "2"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(2) Rocket-motor reload kits that can be used to assemble hobby rocket motors containing ammonium perchlorate composite propellant, black powder, or other similar low explosives, regardless of amount.", 
+                                "text": "(2) Rocket-motor reload kits that can be used to assemble hobby rocket motors containing ammonium perchlorate composite propellant, black powder, or other similar low explosives, regardless of amount.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "555-11-p4152419405-b", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "555-11-p4152419405-b-1", 
+                                    "555-11-p4152419405-b-2"
+                                ], 
+                                "label": [
+                                    "555", 
+                                    "11", 
+                                    "p4152419405", 
+                                    "b"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(b) The term does not include\u2014", 
+                                "text": "(b) The term does not include\u2014", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "555-11-p4152419405", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "555-11-p4152419405-a", 
+                                    "555-11-p4152419405-b"
+                                ], 
+                                "label": [
+                                    "555", 
+                                    "11", 
+                                    "p4152419405"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "<E T=\"03\">Propellant actuated device.</E>", 
+                                "text": "Propellant actuated device.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "2. Section 555.11 is amended by revising the definition for \u201cPropellant actuated device\u201d to read as follows:"
+        }
+    ], 
+    "cfr_parts": [
+        "555"
+    ], 
+    "cfr_title": 27, 
+    "dockets": [
+        "Docket No. ATF 10F", 
+        "AG Order No. 3032-2009"
+    ], 
+    "document_number": "E9-578", 
+    "effective_on": "2009-02-13", 
+    "footnotes": {}, 
+    "fr_citation": "74 FR 1878", 
+    "fr_url": "https://www.federalregister.gov/documents/2009/01/14/E9-578/commerce-in-explosives-amended-definition-of-propellant-actuated-device-2004r-3p", 
+    "fr_volume": 74, 
+    "meta": {
+        "start_page": 1878
+    }, 
+    "primary_agency": "DEPARTMENT OF JUSTICE", 
+    "primary_docket": null, 
+    "publication_date": "2009-01-14", 
+    "regulation_id_numbers": [
+        "1140-AA24"
+    ], 
+    "section_by_section": [], 
+    "supporting_documents": [], 
+    "title": "Commerce in Explosives\u2014Amended Definition of \u201cPropellant Actuated Device\u201d (2004R-3P) ", 
+    "versions": {
+        "555": {
+            "left": "E8-23178", 
+            "right": "E9-578"
+        }
+    }
+}

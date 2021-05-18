@@ -1,0 +1,2043 @@
+{
+    "555-104-c": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    94, 
+                    101
+                ], 
+                [
+                    "insert", 
+                    94, 
+                    "Firearms and"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    363, 
+                    370
+                ], 
+                [
+                    "insert", 
+                    363, 
+                    "Firearms and"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    608, 
+                    642
+                ], 
+                [
+                    "insert", 
+                    608, 
+                    "Tobacco and Firearms."
+                ]
+            ]
+        ]
+    }, 
+    "555-11": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                28
+            ], 
+            [
+                "delete", 
+                28, 
+                29
+            ], 
+            [
+                "equal", 
+                29, 
+                71
+            ], 
+            [
+                "insert", 
+                71, 
+                [
+                    "555-11-p2792822644"
+                ]
+            ], 
+            [
+                "equal", 
+                71, 
+                84
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "555-11-p2162297120": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    32, 
+                    36
+                ], 
+                [
+                    "insert", 
+                    32, 
+                    "the"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    45, 
+                    67
+                ], 
+                [
+                    "insert", 
+                    45, 
+                    "Service or"
+                ]
+            ], 
+            [
+                "delete", 
+                172, 
+                179
+            ], 
+            [
+                [
+                    "delete", 
+                    204, 
+                    222
+                ], 
+                [
+                    "insert", 
+                    204, 
+                    "an officer of the Customs Service."
+                ]
+            ]
+        ]
+    }, 
+    "555-11-p22033228": {
+        "op": "deleted"
+    }, 
+    "555-11-p2792822644": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "555", 
+                "11", 
+                "p2792822644"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "<E T=\"03\">Regional director (compliance).</E> The principal regional official responsible for administering regulations in this part.", 
+            "text": "Regional director (compliance). The principal regional official responsible for administering regulations in this part.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "555-11-p4152419405": {
+        "child_ops": [
+            [
+                "delete", 
+                0, 
+                2
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                27, 
+                " Any tool or special mechanized device or gas generator system which is actuated by a propellant or which releases and directs work through a propellant charge."
+            ]
+        ]
+    }, 
+    "555-11-p4152419405-a": {
+        "op": "deleted"
+    }, 
+    "555-11-p4152419405-b": {
+        "op": "deleted"
+    }, 
+    "555-11-p4152419405-b-1": {
+        "op": "deleted"
+    }, 
+    "555-11-p4152419405-b-2": {
+        "op": "deleted"
+    }, 
+    "555-11-p670455814": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    30, 
+                    41
+                ], 
+                [
+                    "insert", 
+                    30, 
+                    "the business"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    68, 
+                    79
+                ], 
+                [
+                    "insert", 
+                    68, 
+                    "materials at"
+                ]
+            ]
+        ]
+    }, 
+    "555-122-a-4": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    20, 
+                    49
+                ], 
+                [
+                    "insert", 
+                    20, 
+                    "regional director (compliance)"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    171, 
+                    201
+                ], 
+                [
+                    "insert", 
+                    171, 
+                    "regional director (compliance),"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    630, 
+                    660
+                ], 
+                [
+                    "insert", 
+                    630, 
+                    "regional director (compliance)."
+                ]
+            ]
+        ]
+    }, 
+    "555-122-d": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    8, 
+                    50
+                ], 
+                [
+                    "insert", 
+                    8, 
+                    "regional director (compliance)"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    433, 
+                    475
+                ], 
+                [
+                    "insert", 
+                    433, 
+                    "regional director (compliance)"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    651, 
+                    694
+                ], 
+                [
+                    "insert", 
+                    651, 
+                    "regional director (compliance)."
+                ]
+            ]
+        ]
+    }, 
+    "555-123-a-4": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    26, 
+                    55
+                ], 
+                [
+                    "insert", 
+                    26, 
+                    "regional director (compliance)"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    177, 
+                    207
+                ], 
+                [
+                    "insert", 
+                    177, 
+                    "regional director (compliance),"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    639, 
+                    669
+                ], 
+                [
+                    "insert", 
+                    639, 
+                    "regional director (compliance)."
+                ]
+            ]
+        ]
+    }, 
+    "555-123-e": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    8, 
+                    50
+                ], 
+                [
+                    "insert", 
+                    8, 
+                    "regional director (compliance)"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    452, 
+                    494
+                ], 
+                [
+                    "insert", 
+                    452, 
+                    "regional director (compliance)"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    674, 
+                    717
+                ], 
+                [
+                    "insert", 
+                    674, 
+                    "regional director (compliance)."
+                ]
+            ]
+        ]
+    }, 
+    "555-124-a-4": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    26, 
+                    55
+                ], 
+                [
+                    "insert", 
+                    26, 
+                    "regional director (compliance)"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    177, 
+                    207
+                ], 
+                [
+                    "insert", 
+                    177, 
+                    "regional director (compliance),"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    633, 
+                    663
+                ], 
+                [
+                    "insert", 
+                    633, 
+                    "regional director (compliance)."
+                ]
+            ]
+        ]
+    }, 
+    "555-124-e": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    8, 
+                    50
+                ], 
+                [
+                    "insert", 
+                    8, 
+                    "regional director (compliance)"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    409, 
+                    451
+                ], 
+                [
+                    "insert", 
+                    409, 
+                    "regional director (compliance)"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    625, 
+                    668
+                ], 
+                [
+                    "insert", 
+                    625, 
+                    "regional director (compliance)."
+                ]
+            ]
+        ]
+    }, 
+    "555-125-b-1-iv": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    27, 
+                    56
+                ], 
+                [
+                    "insert", 
+                    27, 
+                    "regional director (compliance)"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    178, 
+                    207
+                ], 
+                [
+                    "insert", 
+                    178, 
+                    "regional director (compliance)"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    642, 
+                    672
+                ], 
+                [
+                    "insert", 
+                    642, 
+                    "regional director (compliance)."
+                ]
+            ]
+        ]
+    }, 
+    "555-125-b-7": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    8, 
+                    50
+                ], 
+                [
+                    "insert", 
+                    8, 
+                    "regional director (compliance)"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    409, 
+                    451
+                ], 
+                [
+                    "insert", 
+                    409, 
+                    "regional director (compliance)"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    618, 
+                    661
+                ], 
+                [
+                    "insert", 
+                    618, 
+                    "regional director (compliance)."
+                ]
+            ]
+        ]
+    }, 
+    "555-126-b-2": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                479, 
+                " of the"
+            ]
+        ]
+    }, 
+    "555-127": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    36, 
+                    38
+                ], 
+                [
+                    "insert", 
+                    36, 
+                    "\u00a7 \u00a7"
+                ]
+            ]
+        ]
+    }, 
+    "555-128": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    544, 
+                    572
+                ], 
+                [
+                    "insert", 
+                    544, 
+                    "Spring Mills Office Park, 882 T.J. Jackson Drive, Falling Waters,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    587, 
+                    593
+                ], 
+                [
+                    "insert", 
+                    587, 
+                    "25419."
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    705, 
+                    712
+                ], 
+                [
+                    "insert", 
+                    705, 
+                    "Firearms and"
+                ]
+            ]
+        ]
+    }, 
+    "555-141-a-1": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    708, 
+                    735
+                ], 
+                [
+                    "insert", 
+                    708, 
+                    "Public Safety"
+                ]
+            ]
+        ]
+    }, 
+    "555-142-e-4": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    330, 
+                    360
+                ], 
+                [
+                    "insert", 
+                    330, 
+                    "regional director (compliance)."
+                ]
+            ]
+        ]
+    }, 
+    "555-180-d-4": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    184, 
+                    191
+                ], 
+                [
+                    "insert", 
+                    184, 
+                    "10\u2212^{4}"
+                ]
+            ]
+        ]
+    }, 
+    "555-201-b": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                506, 
+                " regional director (compliance) for transmittal to the"
+            ], 
+            [
+                "delete", 
+                517, 
+                570
+            ]
+        ]
+    }, 
+    "555-201-d": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    33, 
+                    35
+                ], 
+                [
+                    "insert", 
+                    33, 
+                    "\u00a7 \u00a7"
+                ]
+            ]
+        ]
+    }, 
+    "555-21-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    33, 
+                    42
+                ], 
+                [
+                    "insert", 
+                    33, 
+                    "mailed"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    67, 
+                    129
+                ], 
+                [
+                    "insert", 
+                    67, 
+                    "Center, 7943 Angus Court, Springfield, Virginia 22153."
+                ]
+            ]
+        ]
+    }, 
+    "555-213-b-1": {
+        "op": "modified", 
+        "text": [
+            [
+                "delete", 
+                114, 
+                126
+            ]
+        ]
+    }, 
+    "555-22-a-3-p1": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                128, 
+                " regional director (compliance), for transmittal to the Director. The application shall specifically describe the proposed alternate method or procedure and shall set forth the reasons for it. Alternate methods or procedures may not be employed until the application is approved by the Director. The permittee or licensee shall, during the period of authorization of an alternate method or procedure, comply with the terms of the approved application. Authorization of any alternate method or procedure may be withdrawn whenever, in the judgment of the"
+            ], 
+            [
+                [
+                    "delete", 
+                    139, 
+                    329
+                ], 
+                [
+                    "insert", 
+                    139, 
+                    "the effective administration of this part is hindered by the continuation of the authorization. As used in this paragraph, alternate"
+                ]
+            ], 
+            [
+                "delete", 
+                352, 
+                845
+            ]
+        ]
+    }, 
+    "555-22-b-3-p1": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    766, 
+                    795
+                ], 
+                [
+                    "insert", 
+                    766, 
+                    "regional director (compliance)"
+                ]
+            ]
+        ]
+    }, 
+    "555-220": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                1
+            ], 
+            [
+                "delete", 
+                1, 
+                2
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "555-220-p1": {
+        "child_ops": [
+            [
+                "insert", 
+                0, 
+                [
+                    "555-220-p1-p1", 
+                    "555-220-p1-p2", 
+                    "555-220-p1-p3", 
+                    "555-220-p1-p4", 
+                    "555-220-p1-p5", 
+                    "555-220-p1-p6", 
+                    "555-220-p1-p7", 
+                    "555-220-p1-p8", 
+                    "555-220-p1-p9", 
+                    "555-220-p1-p10"
+                ]
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                "delete", 
+                0, 
+                1195
+            ]
+        ]
+    }, 
+    "555-220-p1-p1": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "555", 
+                "220", 
+                "p1", 
+                "p1"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": null, 
+            "text": "", 
+            "title": "Table: Department of Defense Ammunition and Explosives Standards, Table 5-4.1 Extract; 4145.27 M, March 1969"
+        }, 
+        "op": "added"
+    }, 
+    "555-220-p1-p10": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "555", 
+                "220", 
+                "p1", 
+                "p10"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(6) For determining the distances to be maintained from inhabited buildings, passenger railways, and public highways, use the table in \u00a7 555.218.", 
+            "text": "(6) For determining the distances to be maintained from inhabited buildings, passenger railways, and public highways, use the table in \u00a7 555.218.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "555-220-p1-p2": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "555", 
+                "220", 
+                "p1", 
+                "p2"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "<GPOTABLE xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" CDEF=\"6.1,6.1,5.2,5.2,5.2\" COLS=\"5\" OPTS=\"L2\">\n          <BOXHD>\n            <CHED H=\"1\">Donor weight (pounds)</CHED>\n            <CHED H=\"2\">Over</CHED>\n            <CHED H=\"2\">Not over</CHED>\n            <CHED H=\"1\">Minimum separation distance of acceptor from donor when barricaded (ft.)</CHED>\n            <CHED H=\"2\">Ammonium nitrate</CHED>\n            <CHED H=\"2\">Blasting agent</CHED>\n            <CHED H=\"1\">Minimum thickness of artificial barricades (in.)</CHED>\n          </BOXHD>\n          <ROW>\n            <ENT I=\"01\"/>\n            <ENT>100</ENT>\n            <ENT>3</ENT>\n            <ENT>11</ENT>\n            <ENT>12</ENT>\n          </ROW>\n          <ROW>\n            <ENT I=\"01\">100</ENT>\n            <ENT>300</ENT>\n            <ENT>4</ENT>\n            <ENT>14</ENT>\n            <ENT>12</ENT>\n          </ROW>\n          <ROW>\n            <ENT I=\"01\">300</ENT>\n            <ENT>600</ENT>\n            <ENT>5</ENT>\n            <ENT>18</ENT>\n            <ENT>12</ENT>\n          </ROW>\n          <ROW>\n            <ENT I=\"01\">600</ENT>\n            <ENT>1,000</ENT>\n            <ENT>6</ENT>\n            <ENT>22</ENT>\n            <ENT>12</ENT>\n          </ROW>\n          <ROW>\n            <ENT I=\"01\">1,000</ENT>\n            <ENT>1,600</ENT>\n            <ENT>7</ENT>\n            <ENT>25</ENT>\n            <ENT>12</ENT>\n          </ROW>\n          <ROW>\n            <ENT I=\"01\">1,600</ENT>\n            <ENT>2,000</ENT>\n            <ENT>8</ENT>\n            <ENT>29</ENT>\n            <ENT>12</ENT>\n          </ROW>\n          <ROW>\n            <ENT I=\"01\">2,000</ENT>\n            <ENT>3,000</ENT>\n            <ENT>9</ENT>\n            <ENT>32</ENT>\n            <ENT>15</ENT>\n          </ROW>\n          <ROW>\n            <ENT I=\"01\">3,000</ENT>\n            <ENT>4,000</ENT>\n            <ENT>10</ENT>\n            <ENT>36</ENT>\n            <ENT>15</ENT>\n          </ROW>\n          <ROW>\n            <ENT I=\"01\">4,000</ENT>\n            <ENT>6,000</ENT>\n            <ENT>11</ENT>\n            <ENT>40</ENT>\n            <ENT>15</ENT>\n          </ROW>\n          <ROW>\n            <ENT I=\"01\">6,000</ENT>\n            <ENT>8,000</ENT>\n            <ENT>12</ENT>\n            <ENT>43</ENT>\n            <ENT>20</ENT>\n          </ROW>\n          <ROW>\n            <ENT I=\"01\">8,000</ENT>\n            <ENT>10,000</ENT>\n            <ENT>13</ENT>\n            <ENT>47</ENT>\n            <ENT>20</ENT>\n          </ROW>\n          <ROW>\n            <ENT I=\"01\">10,000</ENT>\n            <ENT>12,000</ENT>\n            <ENT>14</ENT>\n            <ENT>50</ENT>\n            <ENT>20</ENT>\n          </ROW>\n          <ROW>\n            <ENT I=\"01\">12,000</ENT>\n            <ENT>16,000</ENT>\n            <ENT>15</ENT>\n            <ENT>54</ENT>\n            <ENT>25</ENT>\n          </ROW>\n          <ROW>\n            <ENT I=\"01\">16,000</ENT>\n            <ENT>20,000</ENT>\n            <ENT>16</ENT>\n            <ENT>58</ENT>\n            <ENT>25</ENT>\n          </ROW>\n          <ROW>\n            <ENT I=\"01\">20,000</ENT>\n            <ENT>25,000</ENT>\n            <ENT>18</ENT>\n            <ENT>65</ENT>\n            <ENT>25</ENT>\n          </ROW>\n          <ROW>\n            <ENT I=\"01\">25,000</ENT>\n            <ENT>30,000</ENT>\n            <ENT>19</ENT>\n            <ENT>68</ENT>\n            <ENT>30</ENT>\n          </ROW>\n          <ROW>\n            <PRTPAGE P=\"174\"/>\n            <ENT I=\"01\">30,000</ENT>\n            <ENT>35,000</ENT>\n            <ENT>20</ENT>\n            <ENT>72</ENT>\n            <ENT>30</ENT>\n          </ROW>\n          <ROW>\n            <ENT I=\"01\">35,000</ENT>\n            <ENT>40,000</ENT>\n            <ENT>21</ENT>\n            <ENT>76</ENT>\n            <ENT>30</ENT>\n          </ROW>\n          <ROW>\n            <ENT I=\"01\">40,000</ENT>\n            <ENT>45,000</ENT>\n            <ENT>22</ENT>\n            <ENT>79</ENT>\n            <ENT>35</ENT>\n          </ROW>\n          <ROW>\n            <ENT I=\"01\">45,000</ENT>\n            <ENT>50,000</ENT>\n            <ENT>23</ENT>\n            <ENT>83</ENT>\n            <ENT>35</ENT>\n          </ROW>\n          <ROW>\n            <ENT I=\"01\">50,000</ENT>\n            <ENT>55,000</ENT>\n            <ENT>24</ENT>\n            <ENT>86</ENT>\n            <ENT>35</ENT>\n          </ROW>\n          <ROW>\n            <ENT I=\"01\">55,000</ENT>\n            <ENT>60,000</ENT>\n            <ENT>25</ENT>\n            <ENT>90</ENT>\n            <ENT>35</ENT>\n          </ROW>\n          <ROW>\n            <ENT I=\"01\">60,000</ENT>\n            <ENT>70,000</ENT>\n            <ENT>26</ENT>\n            <ENT>94</ENT>\n            <ENT>40</ENT>\n          </ROW>\n          <ROW>\n            <ENT I=\"01\">70,000</ENT>\n            <ENT>80,000</ENT>\n            <ENT>28</ENT>\n            <ENT>101</ENT>\n            <ENT>40</ENT>\n          </ROW>\n          <ROW>\n            <ENT I=\"01\">80,000</ENT>\n            <ENT>90,000</ENT>\n            <ENT>30</ENT>\n            <ENT>108</ENT>\n            <ENT>40</ENT>\n          </ROW>\n          <ROW>\n            <ENT I=\"01\">90,000</ENT>\n            <ENT>100,000</ENT>\n            <ENT>32</ENT>\n            <ENT>115</ENT>\n            <ENT>40</ENT>\n          </ROW>\n          <ROW>\n            <ENT I=\"01\">100,000</ENT>\n            <ENT>120,000</ENT>\n            <ENT>34</ENT>\n            <ENT>122</ENT>\n            <ENT>50</ENT>\n          </ROW>\n          <ROW>\n            <ENT I=\"01\">120,000</ENT>\n            <ENT>140,000</ENT>\n            <ENT>37</ENT>\n            <ENT>133</ENT>\n            <ENT>50</ENT>\n          </ROW>\n          <ROW>\n            <ENT I=\"01\">140,000</ENT>\n            <ENT>160,000</ENT>\n            <ENT>40</ENT>\n            <ENT>144</ENT>\n            <ENT>50</ENT>\n          </ROW>\n          <ROW>\n            <ENT I=\"01\">160,000</ENT>\n            <ENT>180,000</ENT>\n            <ENT>44</ENT>\n            <ENT>158</ENT>\n            <ENT>50</ENT>\n          </ROW>\n          <ROW>\n            <ENT I=\"01\">180,000</ENT>\n            <ENT>200,000</ENT>\n            <ENT>48</ENT>\n            <ENT>173</ENT>\n            <ENT>50</ENT>\n          </ROW>\n          <ROW>\n            <ENT I=\"01\">200,000</ENT>\n            <ENT>220,000</ENT>\n            <ENT>52</ENT>\n            <ENT>187</ENT>\n            <ENT>60</ENT>\n          </ROW>\n          <ROW>\n            <ENT I=\"01\">220,000</ENT>\n            <ENT>250,000</ENT>\n            <ENT>56</ENT>\n            <ENT>202</ENT>\n            <ENT>60</ENT>\n          </ROW>\n          <ROW>\n            <ENT I=\"01\">250,000</ENT>\n            <ENT>275,000</ENT>\n            <ENT>60</ENT>\n            <ENT>216</ENT>\n            <ENT>60</ENT>\n          </ROW>\n          <ROW>\n            <ENT I=\"01\">275,000</ENT>\n            <ENT>300,000</ENT>\n            <ENT>64</ENT>\n            <ENT>230</ENT>\n            <ENT>60</ENT>\n          </ROW>\n        </GPOTABLE>", 
+            "text": "|Donor weight (pounds)|Over|Not over|Minimum separation distance of acceptor from donor when barricaded (ft.)|Ammonium nitrate|Blasting agent|Minimum thickness of artificial barricades (in.)|\n|---|---|---|---|---|---|---|\n||100|3|11|12|\n|100|300|4|14|12|\n|300|600|5|18|12|\n|600|1,000|6|22|12|\n|1,000|1,600|7|25|12|\n|1,600|2,000|8|29|12|\n|2,000|3,000|9|32|15|\n|3,000|4,000|10|36|15|\n|4,000|6,000|11|40|15|\n|6,000|8,000|12|43|20|\n|8,000|10,000|13|47|20|\n|10,000|12,000|14|50|20|\n|12,000|16,000|15|54|25|\n|16,000|20,000|16|58|25|\n|20,000|25,000|18|65|25|\n|25,000|30,000|19|68|30|\n|30,000|35,000|20|72|30|\n|35,000|40,000|21|76|30|\n|40,000|45,000|22|79|35|\n|45,000|50,000|23|83|35|\n|50,000|55,000|24|86|35|\n|55,000|60,000|25|90|35|\n|60,000|70,000|26|94|40|\n|70,000|80,000|28|101|40|\n|80,000|90,000|30|108|40|\n|90,000|100,000|32|115|40|\n|100,000|120,000|34|122|50|\n|120,000|140,000|37|133|50|\n|140,000|160,000|40|144|50|\n|160,000|180,000|44|158|50|\n|180,000|200,000|48|173|50|\n|200,000|220,000|52|187|60|\n|220,000|250,000|56|202|60|\n|250,000|275,000|60|216|60|\n|275,000|300,000|64|230|60|", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "555-220-p1-p3": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "555", 
+                "220", 
+                "p1", 
+                "p3"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": null, 
+            "text": "", 
+            "title": "Table: National Fire Protection Association (NFPA) Official Standard No. 492, 1968"
+        }, 
+        "op": "added"
+    }, 
+    "555-220-p1-p4": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "555", 
+                "220", 
+                "p1", 
+                "p4"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": null, 
+            "text": "", 
+            "title": "Notes of Table of Separation Distances of Ammonium Nitrate and Blasting Agents From Explosives or Blasting Agents"
+        }, 
+        "op": "added"
+    }, 
+    "555-220-p1-p5": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "555", 
+                "220", 
+                "p1", 
+                "p5"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(1) This table specifies separation distances to prevent explosion of ammonium nitrate and ammonium nitrate-based blasting agents by propagation from nearby stores of high explosives or blasting agents referred to in the table as the \u201cdonor.\u201d Ammonium nitrate, by itself, is not considered to be a donor when applying this table. Ammonium nitrate, ammonium nitrate-fuel oil or combinations thereof are acceptors. If stores of ammonium nitrate are located within the sympathetic detonation distance of explosives or blasting agents, one-half the mass of the ammonium nitrate is to be included in the mass of the donor.", 
+            "text": "(1) This table specifies separation distances to prevent explosion of ammonium nitrate and ammonium nitrate-based blasting agents by propagation from nearby stores of high explosives or blasting agents referred to in the table as the \u201cdonor.\u201d Ammonium nitrate, by itself, is not considered to be a donor when applying this table. Ammonium nitrate, ammonium nitrate-fuel oil or combinations thereof are acceptors. If stores of ammonium nitrate are located within the sympathetic detonation distance of explosives or blasting agents, one-half the mass of the ammonium nitrate is to be included in the mass of the donor.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "555-220-p1-p6": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "555", 
+                "220", 
+                "p1", 
+                "p6"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(2) When the ammonium nitrate and/or blasting agent is not barricaded, the distances shown in the table must be multiplied by six. These distances allow for the possibility of high velocity metal fragments from mixers, hoppers, truck bodies, sheet metal structures, metal containers, and the like which may enclose the \u201cdonor.\u201d Where explosives storage is in bullet-resistant magazines or where the storage is protected by a bullet-resistant wall, distances and barricade thicknesses in excess of those prescribed in the table in \u00a7 555.218 are not required.", 
+            "text": "(2) When the ammonium nitrate and/or blasting agent is not barricaded, the distances shown in the table must be multiplied by six. These distances allow for the possibility of high velocity metal fragments from mixers, hoppers, truck bodies, sheet metal structures, metal containers, and the like which may enclose the \u201cdonor.\u201d Where explosives storage is in bullet-resistant magazines or where the storage is protected by a bullet-resistant wall, distances and barricade thicknesses in excess of those prescribed in the table in \u00a7 555.218 are not required.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "555-220-p1-p7": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "555", 
+                "220", 
+                "p1", 
+                "p7"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(3) These distances apply to ammonium nitrate that passes the insensitivity test prescribed in the definition of ammonium nitrate fertilizer issued by the Fertilizer Institute.<SU footnote=\"Definition and Test Procedures for Ammonium Nitrate Fertilizer, Fertilizer Institute 1015-18th St. N.W. Washington, DC 20036.\">1</SU><FTREF/> Ammonium nitrate failing to pass the test must be stored at separation distances in accordance with the table in \u00a7 555.218.", 
+            "text": "(3) These distances apply to ammonium nitrate that passes the insensitivity test prescribed in the definition of ammonium nitrate fertilizer issued by the Fertilizer Institute.[^1](Definition and Test Procedures for Ammonium Nitrate Fertilizer, Fertilizer Institute 1015-18th St. N.W. Washington, DC 20036.) Ammonium nitrate failing to pass the test must be stored at separation distances in accordance with the table in \u00a7 555.218.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "555-220-p1-p8": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "555", 
+                "220", 
+                "p1", 
+                "p8"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(4) These distances apply to blasting agents which pass the insensitivity test prescribed in regulations of the U.S. Department of Transportation (49 CFR part 173).", 
+            "text": "(4) These distances apply to blasting agents which pass the insensitivity test prescribed in regulations of the U.S. Department of Transportation (49 CFR part 173).", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "555-220-p1-p9": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "555", 
+                "220", 
+                "p1", 
+                "p9"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(5) Earth or sand dikes, or enclosures filled with the prescribed minimum thickness of earth or sand are acceptable artificial barricades. Natural barricades, such as hills or timber of sufficient density that the surrounding exposures which require protection cannot be seen from the \u201cdonor\u201d when the trees are bare of leaves, are also acceptable.", 
+            "text": "(5) Earth or sand dikes, or enclosures filled with the prescribed minimum thickness of earth or sand are acceptable artificial barricades. Natural barricades, such as hills or timber of sufficient density that the surrounding exposures which require protection cannot be seen from the \u201cdonor\u201d when the trees are bare of leaves, are also acceptable.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "555-220-p2": {
+        "op": "deleted"
+    }, 
+    "555-220-p2-p1": {
+        "op": "deleted"
+    }, 
+    "555-220-p2-p2": {
+        "op": "deleted"
+    }, 
+    "555-220-p2-p3": {
+        "op": "deleted"
+    }, 
+    "555-220-p2-p4": {
+        "op": "deleted"
+    }, 
+    "555-220-p2-p5": {
+        "op": "deleted"
+    }, 
+    "555-220-p2-p6": {
+        "op": "deleted"
+    }, 
+    "555-220-p2-p7": {
+        "op": "deleted"
+    }, 
+    "555-220-p2-p8": {
+        "op": "deleted"
+    }, 
+    "555-23": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    260, 
+                    282
+                ], 
+                [
+                    "insert", 
+                    260, 
+                    "Center, 7943 Angus Court, Springfield, Virginia 22153."
+                ]
+            ]
+        ]
+    }, 
+    "555-25": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    92, 
+                    121
+                ], 
+                [
+                    "insert", 
+                    92, 
+                    "regional director (compliance)"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    205, 
+                    234
+                ], 
+                [
+                    "insert", 
+                    205, 
+                    "regional director (compliance)"
+                ]
+            ]
+        ]
+    }, 
+    "555-45-c-3": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    15, 
+                    22
+                ], 
+                [
+                    "insert", 
+                    15, 
+                    "Firearms and"
+                ]
+            ]
+        ]
+    }, 
+    "555-46-a": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    246, 
+                    253
+                ], 
+                [
+                    "insert", 
+                    246, 
+                    "Firearms and"
+                ]
+            ]
+        ]
+    }, 
+    "555-49-b-1": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    15, 
+                    22
+                ], 
+                [
+                    "insert", 
+                    15, 
+                    "Firearms and"
+                ]
+            ]
+        ]
+    }, 
+    "555-49-b-2": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    15, 
+                    22
+                ], 
+                [
+                    "insert", 
+                    15, 
+                    "Firearms and"
+                ]
+            ]
+        ]
+    }, 
+    "555-49-b-3": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    15, 
+                    22
+                ], 
+                [
+                    "insert", 
+                    15, 
+                    "Firearms and"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    72, 
+                    101
+                ], 
+                [
+                    "insert", 
+                    72, 
+                    "regional director (compliance)"
+                ]
+            ]
+        ]
+    }, 
+    "555-50-a": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    291, 
+                    298
+                ], 
+                [
+                    "insert", 
+                    291, 
+                    "Firearms and"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    389, 
+                    396
+                ], 
+                [
+                    "insert", 
+                    389, 
+                    "Firearms and"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    663, 
+                    670
+                ], 
+                [
+                    "insert", 
+                    663, 
+                    "Firearms and"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    972, 
+                    979
+                ], 
+                [
+                    "insert", 
+                    972, 
+                    "Firearms and"
+                ]
+            ]
+        ]
+    }, 
+    "555-50-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    20, 
+                    56
+                ], 
+                [
+                    "insert", 
+                    20, 
+                    "Firearms and Explosives Licensing Center,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    198, 
+                    234
+                ], 
+                [
+                    "insert", 
+                    198, 
+                    "Firearms and Explosives Licensing Center,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    481, 
+                    517
+                ], 
+                [
+                    "insert", 
+                    481, 
+                    "Firearms and Explosives Licensing Center,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    721, 
+                    757
+                ], 
+                [
+                    "insert", 
+                    721, 
+                    "Firearms and Explosives Licensing Center,"
+                ]
+            ]
+        ]
+    }, 
+    "555-54-a-1": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    86, 
+                    93
+                ], 
+                [
+                    "insert", 
+                    86, 
+                    "Firearms and"
+                ]
+            ]
+        ]
+    }, 
+    "555-54-a-2": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    47, 
+                    54
+                ], 
+                [
+                    "insert", 
+                    47, 
+                    "Firearms and"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    95, 
+                    102
+                ], 
+                [
+                    "insert", 
+                    95, 
+                    "Firearms and"
+                ]
+            ]
+        ]
+    }, 
+    "555-54-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    86, 
+                    93
+                ], 
+                [
+                    "insert", 
+                    86, 
+                    "Firearms and"
+                ]
+            ]
+        ]
+    }, 
+    "555-56": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    426, 
+                    433
+                ], 
+                [
+                    "insert", 
+                    426, 
+                    "Firearms and"
+                ]
+            ]
+        ]
+    }, 
+    "555-57-a": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    512, 
+                    519
+                ], 
+                [
+                    "insert", 
+                    512, 
+                    "Firearms and"
+                ]
+            ]
+        ]
+    }, 
+    "555-57-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    134, 
+                    141
+                ], 
+                [
+                    "insert", 
+                    134, 
+                    "Firearms and"
+                ]
+            ]
+        ]
+    }, 
+    "555-57-c": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    41, 
+                    48
+                ], 
+                [
+                    "insert", 
+                    41, 
+                    "Firearms and"
+                ]
+            ]
+        ]
+    }, 
+    "555-59-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    243, 
+                    250
+                ], 
+                [
+                    "insert", 
+                    243, 
+                    "Firearms and"
+                ]
+            ]
+        ]
+    }, 
+    "555-60": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    74, 
+                    81
+                ], 
+                [
+                    "insert", 
+                    74, 
+                    "Firearms and"
+                ]
+            ]
+        ]
+    }, 
+    "555-61": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    349, 
+                    356
+                ], 
+                [
+                    "insert", 
+                    349, 
+                    "Firearms and"
+                ]
+            ]
+        ]
+    }, 
+    "555-63-a-4": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    58, 
+                    87
+                ], 
+                [
+                    "insert", 
+                    58, 
+                    "regional director (compliance)"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    155, 
+                    184
+                ], 
+                [
+                    "insert", 
+                    155, 
+                    "regional director (compliance)"
+                ]
+            ]
+        ]
+    }, 
+    "555-63-c": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    147, 
+                    176
+                ], 
+                [
+                    "insert", 
+                    147, 
+                    "regional director (compliance)"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    270, 
+                    300
+                ], 
+                [
+                    "insert", 
+                    270, 
+                    "regional director (compliance),"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    454, 
+                    483
+                ], 
+                [
+                    "insert", 
+                    454, 
+                    "regional director (compliance)"
+                ]
+            ]
+        ]
+    }, 
+    "555-63-d": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    171, 
+                    200
+                ], 
+                [
+                    "insert", 
+                    171, 
+                    "regional director (compliance)"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    392, 
+                    422
+                ], 
+                [
+                    "insert", 
+                    392, 
+                    "regional director (compliance),"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    597, 
+                    626
+                ], 
+                [
+                    "insert", 
+                    597, 
+                    "regional director (compliance)"
+                ]
+            ]
+        ]
+    }, 
+    "555-71": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    97, 
+                    126
+                ], 
+                [
+                    "insert", 
+                    97, 
+                    "regional director (compliance)"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    836, 
+                    865
+                ], 
+                [
+                    "insert", 
+                    836, 
+                    "regional director (compliance)"
+                ]
+            ]
+        ]
+    }, 
+    "555-72": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    13, 
+                    42
+                ], 
+                [
+                    "insert", 
+                    13, 
+                    "regional director (compliance)"
+                ]
+            ]
+        ]
+    }, 
+    "555-73": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    103, 
+                    132
+                ], 
+                [
+                    "insert", 
+                    103, 
+                    "regional director (compliance)"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    287, 
+                    322
+                ], 
+                [
+                    "insert", 
+                    287, 
+                    "regional director (compliance) shall"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    496, 
+                    525
+                ], 
+                [
+                    "insert", 
+                    496, 
+                    "regional director (compliance)"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    1058, 
+                    1087
+                ], 
+                [
+                    "insert", 
+                    1058, 
+                    "regional director (compliance)"
+                ]
+            ]
+        ]
+    }, 
+    "555-74": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    144, 
+                    173
+                ], 
+                [
+                    "insert", 
+                    144, 
+                    "regional director (compliance)"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    359, 
+                    388
+                ], 
+                [
+                    "insert", 
+                    359, 
+                    "regional director (compliance)"
+                ]
+            ]
+        ]
+    }, 
+    "555-75": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    179, 
+                    209
+                ], 
+                [
+                    "insert", 
+                    179, 
+                    "regional director (compliance)."
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    371, 
+                    406
+                ], 
+                [
+                    "insert", 
+                    371, 
+                    "regional director (compliance) shall"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    577, 
+                    612
+                ], 
+                [
+                    "insert", 
+                    577, 
+                    "regional director (compliance) shall"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    798, 
+                    827
+                ], 
+                [
+                    "insert", 
+                    798, 
+                    "regional director (compliance)"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    1019, 
+                    1054
+                ], 
+                [
+                    "insert", 
+                    1019, 
+                    "regional director (compliance) shall"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    1704, 
+                    1734
+                ], 
+                [
+                    "insert", 
+                    1704, 
+                    "regional director (compliance),"
+                ]
+            ]
+        ]
+    }, 
+    "555-76": {
+        "op": "modified", 
+        "title": [
+            [
+                [
+                    "delete", 
+                    19, 
+                    49
+                ], 
+                [
+                    "insert", 
+                    19, 
+                    "regional director (compliance)."
+                ]
+            ]
+        ]
+    }, 
+    "555-76-a": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    134, 
+                    163
+                ], 
+                [
+                    "insert", 
+                    134, 
+                    "regional director (compliance)"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    221, 
+                    250
+                ], 
+                [
+                    "insert", 
+                    221, 
+                    "regional director (compliance)"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    713, 
+                    743
+                ], 
+                [
+                    "insert", 
+                    713, 
+                    "regional director (compliance),"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    980, 
+                    1009
+                ], 
+                [
+                    "insert", 
+                    980, 
+                    "regional director (compliance)"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    1364, 
+                    1393
+                ], 
+                [
+                    "insert", 
+                    1364, 
+                    "regional director (compliance)"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    2071, 
+                    2100
+                ], 
+                [
+                    "insert", 
+                    2071, 
+                    "regional director (compliance)"
+                ]
+            ]
+        ]
+    }, 
+    "555-76-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    119, 
+                    148
+                ], 
+                [
+                    "insert", 
+                    119, 
+                    "regional director (compliance)"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    603, 
+                    632
+                ], 
+                [
+                    "insert", 
+                    603, 
+                    "regional director (compliance)"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    1309, 
+                    1338
+                ], 
+                [
+                    "insert", 
+                    1309, 
+                    "regional director (compliance)"
+                ]
+            ]
+        ]
+    }, 
+    "555-76-c": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    217, 
+                    246
+                ], 
+                [
+                    "insert", 
+                    217, 
+                    "regional director (compliance)"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    405, 
+                    434
+                ], 
+                [
+                    "insert", 
+                    405, 
+                    "regional director (compliance)"
+                ]
+            ]
+        ]
+    }, 
+    "555-78": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    170, 
+                    203
+                ], 
+                [
+                    "insert", 
+                    170, 
+                    "Tobacco and Firearms"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    335, 
+                    364
+                ], 
+                [
+                    "insert", 
+                    335, 
+                    "regional director (compliance)"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    607, 
+                    640
+                ], 
+                [
+                    "insert", 
+                    607, 
+                    "regional director (compliance), in"
+                ]
+            ]
+        ]
+    }, 
+    "555-79": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    302, 
+                    331
+                ], 
+                [
+                    "insert", 
+                    302, 
+                    "regional director (compliance)"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    812, 
+                    844
+                ], 
+                [
+                    "insert", 
+                    812, 
+                    "regional director (compliance) or"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    942, 
+                    971
+                ], 
+                [
+                    "insert", 
+                    942, 
+                    "regional director (compliance)"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    1229, 
+                    1265
+                ], 
+                [
+                    "insert", 
+                    1229, 
+                    "regional director (compliance) or the"
+                ]
+            ]
+        ]
+    }, 
+    "555-80": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                144, 
+                " regional director (compliance) or the"
+            ], 
+            [
+                [
+                    "delete", 
+                    155, 
+                    181
+                ], 
+                [
+                    "insert", 
+                    155, 
+                    "file a petition for a judicial review of the decision, with the U.S. Court of Appeals for the district in which he resides or has his principal place of business. The"
+                ]
+            ], 
+            [
+                "insert", 
+                192, 
+                "upon notification that a petition has been filed, shall have prepared a complete transcript of the record of the proceedings. The regional director (compliance) or the Director, as the case may be, shall certify to the correctness of the transcript of the record, forward one copy to the attorney for the Government in the review of the case, and "
+            ], 
+            [
+                [
+                    "delete", 
+                    197, 
+                    246
+                ], 
+                [
+                    "insert", 
+                    197, 
+                    "the original record of the proceedings"
+                ]
+            ], 
+            [
+                "insert", 
+                255, 
+                " original certificate in the"
+            ], 
+            [
+                "delete", 
+                269, 
+                809
+            ]
+        ]
+    }
+}

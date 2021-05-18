@@ -1,0 +1,142 @@
+{
+    "amendments": [
+        {
+            "cfr_part": "555", 
+            "instruction": "Accordingly, for the reasons discussed in the preamble, 27 CFR part 555 is amended as follows: "
+        }, 
+        {
+            "authority": "18 U.S.C. 847.", 
+            "cfr_part": "555", 
+            "instruction": "1. The authority citation for 27 CFR part 555 continues to read as follows: "
+        }, 
+        {
+            "cfr_part": "555", 
+            "changes": [
+                [
+                    "555-141-a-10-i", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "555", 
+                                    "141", 
+                                    "a", 
+                                    "10", 
+                                    "i"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(i) Consist of ammonium perchlorate composite propellant, black powder, or other similar low explosives;", 
+                                "text": "(i) Consist of ammonium perchlorate composite propellant, black powder, or other similar low explosives;", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "555-141-a-10-ii", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "555", 
+                                    "141", 
+                                    "a", 
+                                    "10", 
+                                    "ii"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(ii) Contain no more than 62.5 grams of total propellant weight; and", 
+                                "text": "(ii) Contain no more than 62.5 grams of total propellant weight; and", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "555-141-a-10-iii", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "555", 
+                                    "141", 
+                                    "a", 
+                                    "10", 
+                                    "iii"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(iii) Are designed as single-use motors or as reload kits capable of reloading no more than 62.5 grams of propellant into a reusable motor casing.", 
+                                "text": "(iii) Are designed as single-use motors or as reload kits capable of reloading no more than 62.5 grams of propellant into a reusable motor casing.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "555-141-a-10", 
+                    [
+                        {
+                            "action": "POST", 
+                            "node": {
+                                "child_labels": [
+                                    "555-141-a-10-i", 
+                                    "555-141-a-10-ii", 
+                                    "555-141-a-10-iii"
+                                ], 
+                                "label": [
+                                    "555", 
+                                    "141", 
+                                    "a", 
+                                    "10"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(10) Model rocket motors that meet all of the following criteria\u2014", 
+                                "text": "(10) Model rocket motors that meet all of the following criteria\u2014", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "2. Section 555.141 is amended by adding new paragraph (a)(10) to read as follows: "
+        }
+    ], 
+    "cfr_parts": [
+        "555"
+    ], 
+    "cfr_title": 27, 
+    "dockets": [
+        "Docket No. ATF 6F", 
+        "AG Order No. 2829-2006"
+    ], 
+    "document_number": "06-6862", 
+    "effective_on": "2006-10-10", 
+    "footnotes": {}, 
+    "fr_citation": "71 FR 46079", 
+    "fr_url": "https://www.federalregister.gov/documents/2006/08/11/06-6862/commerce-in-explosives-hobby-rocket-motors-2004r-7p", 
+    "fr_volume": 71, 
+    "meta": {
+        "start_page": 46079
+    }, 
+    "primary_agency": "DEPARTMENT OF JUSTICE ", 
+    "primary_docket": null, 
+    "publication_date": "2006-08-11", 
+    "regulation_id_numbers": [
+        "1140-AA25"
+    ], 
+    "section_by_section": [], 
+    "supporting_documents": [], 
+    "title": "Commerce in Explosives\u2014Hobby Rocket Motors (2004R-7P) ", 
+    "versions": {
+        "555": {
+            "left": "05-10618", 
+            "right": "06-6862"
+        }
+    }
+}

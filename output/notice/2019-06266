@@ -1,0 +1,45 @@
+{
+    "amendments": [
+        {
+            "authority": "18 U.S.C. 847.", 
+            "cfr_part": "555", 
+            "instruction": "1. The authority citation for 27 CFR part 555 continues to read as follows:"
+        }, 
+        {
+            "cfr_part": "555", 
+            "instruction": "2. In \u00a7\u2009555.220, revise note (3) to the table to read as follows:"
+        }
+    ], 
+    "cfr_parts": [
+        "555"
+    ], 
+    "cfr_title": 27, 
+    "dockets": [
+        "Docket No. ATF 2002R-226F", 
+        "AG Order No. 4418-2019"
+    ], 
+    "document_number": "2019-06266", 
+    "effective_on": "2019-05-31", 
+    "footnotes": {}, 
+    "fr_citation": "84 FR 12095", 
+    "fr_url": "https://www.federalregister.gov/documents/2019/04/01/2019-06266/separation-distances-of-ammonium-nitrate-and-blasting-agents-from-explosives-or-blasting-agents", 
+    "fr_volume": 84, 
+    "meta": {
+        "start_page": 12095
+    }, 
+    "primary_agency": "DEPARTMENT OF JUSTICE", 
+    "primary_docket": null, 
+    "publication_date": "2019-04-01", 
+    "regulation_id_numbers": [
+        "1140-AA27"
+    ], 
+    "section_by_section": [], 
+    "supporting_documents": [], 
+    "title": "Separation Distances of Ammonium Nitrate and Blasting Agents From Explosives or Blasting Agents", 
+    "versions": {
+        "555": {
+            "left": "2019-06912", 
+            "right": "2019-06266"
+        }
+    }
+}

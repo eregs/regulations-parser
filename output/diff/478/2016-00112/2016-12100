@@ -1,0 +1,232 @@
+{
+    "478-125-e-p1": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    81, 
+                    109
+                ], 
+                [
+                    "insert", 
+                    81, 
+                    "and importer (if any)|Model|Serial"
+                ]
+            ]
+        ]
+    }, 
+    "478-125-f-2-p1": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    92, 
+                    120
+                ], 
+                [
+                    "insert", 
+                    92, 
+                    "and importer (if any)|Model|Serial"
+                ]
+            ]
+        ]
+    }, 
+    "478-125a-a-4-p1": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    77, 
+                    105
+                ], 
+                [
+                    "insert", 
+                    77, 
+                    "and importer (if any)|Model|Serial"
+                ]
+            ]
+        ]
+    }, 
+    "478-72": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    246, 
+                    256
+                ], 
+                [
+                    "insert", 
+                    246, 
+                    "denial. The"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    307, 
+                    319
+                ], 
+                [
+                    "insert", 
+                    307, 
+                    "therefor.On"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    682, 
+                    684
+                ], 
+                [
+                    "insert", 
+                    682, 
+                    "During the hearing the applicant will have the opportunity to submit facts and arguments for review and consideration; offers of settlement will not be entertained at the hearing but may be made before or after the hearing.On"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    900, 
+                    912
+                ], 
+                [
+                    "insert", 
+                    900, 
+                    "application.A copy of the application, marked \u201cDisapproved,\u201d will be returned to the applicant."
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    941, 
+                    947
+                ], 
+                [
+                    "insert", 
+                    941, 
+                    "license applied for"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    955, 
+                    1021
+                ], 
+                [
+                    "insert", 
+                    955, 
+                    "be issued, the applicant"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    1031, 
+                    1214
+                ], 
+                [
+                    "insert", 
+                    1031, 
+                    "so notified, in writing, and the"
+                ]
+            ], 
+            [
+                "delete", 
+                1223, 
+                1267
+            ], 
+            [
+                "delete", 
+                1275, 
+                1325
+            ]
+        ]
+    }, 
+    "478-73-a": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    205, 
+                    215
+                ], 
+                [
+                    "insert", 
+                    205, 
+                    "issued.In"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    226, 
+                    227
+                ], 
+                [
+                    "insert", 
+                    226, 
+                    "pursuant to 18 U.S.C. 922(t)(5) and 18 U.S.C. 924(p), a"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    841, 
+                    845
+                ], 
+                [
+                    "insert", 
+                    841, 
+                    "law; or that a licensee has violated 18 U.S.C. 922(z)(1) by selling, delivering, or transferring any handgun to any person other than a licensee, unless the transferee was provided with a secure gun storage or safety device for that handgun."
+                ]
+            ]
+        ]
+    }, 
+    "478-74": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    331, 
+                    339
+                ], 
+                [
+                    "insert", 
+                    331, 
+                    "fine.On"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    594, 
+                    604
+                ], 
+                [
+                    "insert", 
+                    594, 
+                    "held.Such"
+                ]
+            ], 
+            [
+                "insert", 
+                687, 
+                " hearing.On conclusion of the hearing and consideration of all the relevant presentations made by the licensee or the licensee's representative, the Director shall render a decision and shall prepare a brief summary of the findings and conclusions on which the decision is based.If the decision is that the license should be revoked, or, in actions under 18 U.S.C. 922(t)(5) or 924(p), that the license should be revoked or suspended, or that a civil fine should be imposed, a certified copy of the summary shall be furnished to the licensee with the final notice of revocation, suspension, or imposition of a civil fine on ATF Form 5300.13. If the decision is that the license should not be revoked, or in actions under 18 U.S.C. 922(t)(5) or 924(p), that the license should not be revoked or suspended, and a civil fine should not be imposed, the licensee shall be notified in writing. During the hearing the licensee will have the opportunity to submit facts and arguments for review and consideration; offers of settlement will not be entertained at the hearing but may be made before or after the"
+            ], 
+            [
+                "delete", 
+                696, 
+                1560
+            ]
+        ]
+    }
+}

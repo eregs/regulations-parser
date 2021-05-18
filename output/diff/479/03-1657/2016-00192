@@ -1,0 +1,1450 @@
+{
+    "479": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                10
+            ], 
+            [
+                "delete", 
+                10, 
+                11
+            ], 
+            [
+                "insert", 
+                10, 
+                [
+                    "479-Subjgrp-ATMaF"
+                ]
+            ], 
+            [
+                "equal", 
+                11, 
+                30
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "479-11": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                8
+            ], 
+            [
+                "insert", 
+                8, 
+                [
+                    "479-11-p22033228"
+                ]
+            ], 
+            [
+                "equal", 
+                8, 
+                26
+            ], 
+            [
+                "delete", 
+                26, 
+                27
+            ], 
+            [
+                "insert", 
+                26, 
+                [
+                    "479-11-p3934219073"
+                ]
+            ], 
+            [
+                "equal", 
+                27, 
+                34
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "479-11-p2162297120": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                32, 
+                "U.S. Customs and Border Protection, any commissioned, warrant, or petty officer of "
+            ], 
+            [
+                [
+                    "delete", 
+                    36, 
+                    51
+                ], 
+                [
+                    "insert", 
+                    36, 
+                    "Coast Guard,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    59, 
+                    81
+                ], 
+                [
+                    "insert", 
+                    59, 
+                    "agent"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    85, 
+                    98
+                ], 
+                [
+                    "insert", 
+                    85, 
+                    "other person authorized by law to perform the duties"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    102, 
+                    272
+                ], 
+                [
+                    "insert", 
+                    102, 
+                    "a customs officer."
+                ]
+            ]
+        ]
+    }, 
+    "479-11-p22033228": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "479", 
+                "11", 
+                "p22033228"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "<E T=\"03\">Director, Industry Operations.</E> The principal regional official responsible for administering regulations in this part.", 
+            "text": "Director, Industry Operations. The principal regional official responsible for administering regulations in this part.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "479-11-p2757219296": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    62, 
+                    69
+                ], 
+                [
+                    "insert", 
+                    62, 
+                    "Tobacco, Firearms,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    74, 
+                    82
+                ], 
+                [
+                    "insert", 
+                    74, 
+                    "Explosives"
+                ]
+            ]
+        ]
+    }, 
+    "479-11-p2792822644": {
+        "op": "deleted"
+    }, 
+    "479-11-p3550103376": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    52, 
+                    59
+                ], 
+                [
+                    "insert", 
+                    52, 
+                    "corporation, including each responsible person associated with such an entity; an estate;"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    63, 
+                    104
+                ], 
+                [
+                    "insert", 
+                    63, 
+                    "an individual."
+                ]
+            ]
+        ]
+    }, 
+    "479-11-p3934219073": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "479", 
+                "11", 
+                "p3934219073"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "<E T=\"03\">Responsible person.</E> In the case of an unlicensed entity, including any trust, partnership, association, company (including any Limited Liability Company (LLC)), or corporation, any individual who possesses, directly or indirectly, the power or authority to direct the management and policies of the trust or entity to receive, possess, ship, transport, deliver, transfer, or otherwise dispose of a firearm for, or on behalf of, the trust or legal entity. In the case of a trust, those persons with the power or authority to direct the management and policies of the trust include any person who has the capability to exercise such power and possesses, directly or indirectly, the power or authority under any trust instrument, or under State law, to receive, possess, ship, transport, deliver, transfer, or otherwise dispose of a firearm for, or on behalf of, the trust. Examples of who may be considered a responsible person include settlors/grantors, trustees, partners, members, officers, directors, board members, or owners. An example of who may be excluded from this definition of responsible person is the beneficiary of a trust, if the beneficiary does not have the capability to exercise the powers or authorities enumerated in this section.", 
+            "text": "Responsible person. In the case of an unlicensed entity, including any trust, partnership, association, company (including any Limited Liability Company (LLC)), or corporation, any individual who possesses, directly or indirectly, the power or authority to direct the management and policies of the trust or entity to receive, possess, ship, transport, deliver, transfer, or otherwise dispose of a firearm for, or on behalf of, the trust or legal entity. In the case of a trust, those persons with the power or authority to direct the management and policies of the trust include any person who has the capability to exercise such power and possesses, directly or indirectly, the power or authority under any trust instrument, or under State law, to receive, possess, ship, transport, deliver, transfer, or otherwise dispose of a firearm for, or on behalf of, the trust. Examples of who may be considered a responsible person include settlors/grantors, trustees, partners, members, officers, directors, board members, or owners. An example of who may be excluded from this definition of responsible person is the beneficiary of a trust, if the beneficiary does not have the capability to exercise the powers or authorities enumerated in this section.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "479-11-p593154015": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                52, 
+                "Firearms, "
+            ], 
+            [
+                [
+                    "delete", 
+                    56, 
+                    65
+                ], 
+                [
+                    "insert", 
+                    56, 
+                    "Explosives,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    84, 
+                    97
+                ], 
+                [
+                    "insert", 
+                    84, 
+                    "Justice,"
+                ]
+            ]
+        ]
+    }, 
+    "479-111-a-3-p1": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    1260, 
+                    1268
+                ], 
+                [
+                    "insert", 
+                    1260, 
+                    "two years"
+                ]
+            ]
+        ]
+    }, 
+    "479-172": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    551, 
+                    581
+                ], 
+                [
+                    "insert", 
+                    551, 
+                    "Chief, National Firearms Act Branch"
+                ]
+            ]
+        ]
+    }, 
+    "479-21-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    33, 
+                    39
+                ], 
+                [
+                    "insert", 
+                    33, 
+                    "submitted"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    64, 
+                    118
+                ], 
+                [
+                    "insert", 
+                    64, 
+                    "Center (http://www.atf.gov) or made by calling (202) 648-6420."
+                ]
+            ]
+        ]
+    }, 
+    "479-22": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    54, 
+                    74
+                ], 
+                [
+                    "insert", 
+                    54, 
+                    "Tobacco, Firearms, and Explosives"
+                ]
+            ]
+        ]
+    }, 
+    "479-26-a-3": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    327, 
+                    358
+                ], 
+                [
+                    "insert", 
+                    327, 
+                    "Director, Industry Operations,"
+                ]
+            ]
+        ]
+    }, 
+    "479-26-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    1162, 
+                    1192
+                ], 
+                [
+                    "insert", 
+                    1162, 
+                    "Director, Industry Operations"
+                ]
+            ]
+        ]
+    }, 
+    "479-34-e": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    889, 
+                    915
+                ], 
+                [
+                    "insert", 
+                    889, 
+                    "(5310.12),"
+                ]
+            ]
+        ]
+    }, 
+    "479-37": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    101, 
+                    138
+                ], 
+                [
+                    "insert", 
+                    101, 
+                    "Chief, National Firearms Act Branch"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    316, 
+                    346
+                ], 
+                [
+                    "insert", 
+                    316, 
+                    "Chief, National Firearms Act Branch"
+                ]
+            ]
+        ]
+    }, 
+    "479-38": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    862, 
+                    900
+                ], 
+                [
+                    "insert", 
+                    862, 
+                    "Chief, National Firearms Act Branch for the"
+                ]
+            ]
+        ]
+    }, 
+    "479-46": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    426, 
+                    457
+                ], 
+                [
+                    "insert", 
+                    426, 
+                    "Chief, National Firearms Act Branch,"
+                ]
+            ]
+        ]
+    }, 
+    "479-47": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    332, 
+                    363
+                ], 
+                [
+                    "insert", 
+                    332, 
+                    "Chief, National Firearms Act Branch,"
+                ]
+            ]
+        ]
+    }, 
+    "479-50": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    328, 
+                    362
+                ], 
+                [
+                    "insert", 
+                    328, 
+                    "Chief, National Firearms Act Branch, to"
+                ]
+            ]
+        ]
+    }, 
+    "479-62": {
+        "child_ops": [
+            [
+                "insert", 
+                0, 
+                [
+                    "479-62-a", 
+                    "479-62-b", 
+                    "479-62-c", 
+                    "479-62-d"
+                ]
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                "delete", 
+                0, 
+                1848
+            ]
+        ]
+    }, 
+    "479-62-a": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "479", 
+                "62", 
+                "a"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(a) <E T=\"03\">General.</E> No person shall make a firearm unless the person has filed with the Director a completed application on ATF Form 1 (5320.1), Application to Make and Register a Firearm, in duplicate, executed under the penalties of perjury, to make and register the firearm and has received the approval of the Director to make the firearm, which approval shall effectuate registration of the firearm to the applicant. If the applicant is not a licensed manufacturer, importer, or dealer qualified under this part and is a partnership, company (including a Limited Liability Company (LLC)), association, trust, or corporation, all information on the Form 1 application shall be furnished for each responsible person of the applicant", 
+            "text": "(a) General. No person shall make a firearm unless the person has filed with the Director a completed application on ATF Form 1 (5320.1), Application to Make and Register a Firearm, in duplicate, executed under the penalties of perjury, to make and register the firearm and has received the approval of the Director to make the firearm, which approval shall effectuate registration of the firearm to the applicant. If the applicant is not a licensed manufacturer, importer, or dealer qualified under this part and is a partnership, company (including a Limited Liability Company (LLC)), association, trust, or corporation, all information on the Form 1 application shall be furnished for each responsible person of the applicant", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "479-62-b": {
+        "node": {
+            "child_labels": [
+                "479-62-b-1", 
+                "479-62-b-2", 
+                "479-62-b-3", 
+                "479-62-b-4", 
+                "479-62-b-5", 
+                "479-62-b-6"
+            ], 
+            "label": [
+                "479", 
+                "62", 
+                "b"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(b) <E T=\"03\">Preparation of ATF Form 1.</E> All of the information called for on Form 1 shall be provided, including:", 
+            "text": "(b) Preparation of ATF Form 1. All of the information called for on Form 1 shall be provided, including:", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "479-62-b-1": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "479", 
+                "62", 
+                "b", 
+                "1"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(1) The type of application, <E T=\"03\">i.e.,</E> tax paid or tax exempt. If the making of the firearm is taxable, the applicant shall submit a remittance in the amount of $200 with the application in accordance with the instructions on the form;", 
+            "text": "(1) The type of application, i.e., tax paid or tax exempt. If the making of the firearm is taxable, the applicant shall submit a remittance in the amount of $200 with the application in accordance with the instructions on the form;", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "479-62-b-2": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "479", 
+                "62", 
+                "b", 
+                "2"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(2) The identity of the applicant. If an individual, the applicant shall provide the applicant's name, address, and date of birth, and also comply with the identification requirements prescribed in \u00a7\u2009479.63(a). If other than an individual, the applicant shall provide its name, address, and employer identification number, if any, as well as the name and address of each responsible person. Each responsible person of the applicant also shall comply with the identification requirements prescribed in \u00a7\u2009479.63(b);", 
+            "text": "(2) The identity of the applicant. If an individual, the applicant shall provide the applicant's name, address, and date of birth, and also comply with the identification requirements prescribed in \u00a7\u2009479.63(a). If other than an individual, the applicant shall provide its name, address, and employer identification number, if any, as well as the name and address of each responsible person. Each responsible person of the applicant also shall comply with the identification requirements prescribed in \u00a7\u2009479.63(b);", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "479-62-b-3": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "479", 
+                "62", 
+                "b", 
+                "3"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(3) A description of the firearm to be made by type; caliber, gauge, or size; model; length of barrel; serial number; other marks of identification; and the name and address of the original manufacturer (if the applicant is not the original manufacturer);", 
+            "text": "(3) A description of the firearm to be made by type; caliber, gauge, or size; model; length of barrel; serial number; other marks of identification; and the name and address of the original manufacturer (if the applicant is not the original manufacturer);", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "479-62-b-4": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "479", 
+                "62", 
+                "b", 
+                "4"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(4) The applicant's Federal firearms license number (if any);", 
+            "text": "(4) The applicant's Federal firearms license number (if any);", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "479-62-b-5": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "479", 
+                "62", 
+                "b", 
+                "5"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(5) The applicant's special (occupational) tax stamp (if applicable); and", 
+            "text": "(5) The applicant's special (occupational) tax stamp (if applicable); and", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "479-62-b-6": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "479", 
+                "62", 
+                "b", 
+                "6"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(6) If the applicant (including, if other than an individual, any responsible person) is an alien admitted under a nonimmigrant visa, applicable documentation demonstrating that the nonimmigrant alien falls within an exception to 18 U.S.C. 922(g)(5)(B) under 18 U.S.C. 922(y)(2), or has obtained a waiver of that provision under 18 U.S.C. 922(y)(3).", 
+            "text": "(6) If the applicant (including, if other than an individual, any responsible person) is an alien admitted under a nonimmigrant visa, applicable documentation demonstrating that the nonimmigrant alien falls within an exception to 18 U.S.C. 922(g)(5)(B) under 18 U.S.C. 922(y)(2), or has obtained a waiver of that provision under 18 U.S.C. 922(y)(3).", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "479-62-c": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "479", 
+                "62", 
+                "c"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(c) <E T=\"03\">Notification of chief law enforcement officer.</E> Prior to the submission of the application to the Director, all applicants and responsible persons shall forward a completed copy of Form 1 or a completed copy of Form 5320.23, respectively, to the chief law enforcement officer of the locality in which the applicant or responsible person is located. The chief law enforcement officer is the local chief of police, county sheriff, head of the State police, or State or local district attorney or prosecutor. If the applicant is not a licensed manufacturer, importer, or dealer qualified under this part and is a partnership, company, association, or corporation, for purposes of this section, it is considered located at its principal office or principal place of business; if a trust, for purposes of this section, it is considered located at the primary location at which the firearm will be maintained.", 
+            "text": "(c) Notification of chief law enforcement officer. Prior to the submission of the application to the Director, all applicants and responsible persons shall forward a completed copy of Form 1 or a completed copy of Form 5320.23, respectively, to the chief law enforcement officer of the locality in which the applicant or responsible person is located. The chief law enforcement officer is the local chief of police, county sheriff, head of the State police, or State or local district attorney or prosecutor. If the applicant is not a licensed manufacturer, importer, or dealer qualified under this part and is a partnership, company, association, or corporation, for purposes of this section, it is considered located at its principal office or principal place of business; if a trust, for purposes of this section, it is considered located at the primary location at which the firearm will be maintained.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "479-62-d": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "479", 
+                "62", 
+                "d"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(d) <E T=\"03\">Approval of Form 1.</E> If the application is approved, the Director will affix a National Firearms Act stamp to the original application in the space provided therefor and properly cancel the stamp (<E T=\"03\">see</E> \u00a7\u2009479.67). The approved application will then be returned to the applicant.", 
+            "text": "(d) Approval of Form 1. If the application is approved, the Director will affix a National Firearms Act stamp to the original application in the space provided therefor and properly cancel the stamp (see \u00a7\u2009479.67). The approved application will then be returned to the applicant.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "479-63": {
+        "child_ops": [
+            [
+                "insert", 
+                0, 
+                [
+                    "479-63-a", 
+                    "479-63-b", 
+                    "479-63-c"
+                ]
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                "delete", 
+                0, 
+                1366
+            ]
+        ]
+    }, 
+    "479-63-a": {
+        "node": {
+            "child_labels": [
+                "479-63-a-1", 
+                "479-63-a-2"
+            ], 
+            "label": [
+                "479", 
+                "63", 
+                "a"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(a) If the applicant is an individual, the applicant shall:", 
+            "text": "(a) If the applicant is an individual, the applicant shall:", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "479-63-a-1": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "479", 
+                "63", 
+                "a", 
+                "1"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(1) Securely attach to each copy of the Form 1, in the space provided on the form, a 2 x 2-inch photograph of the applicant, clearly showing a full front view of the features of the applicant with head bare, with the distance from the top of the head to the point of the chin approximately 1<FR>1/4</FR> inches, and which shall have been taken within 1 year prior to the date of the application; and", 
+            "text": "(1) Securely attach to each copy of the Form 1, in the space provided on the form, a 2 x 2-inch photograph of the applicant, clearly showing a full front view of the features of the applicant with head bare, with the distance from the top of the head to the point of the chin approximately 1 1/4 inches, and which shall have been taken within 1 year prior to the date of the application; and", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "479-63-a-2": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "479", 
+                "63", 
+                "a", 
+                "2"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(2) Attach to the application two properly completed FBI Forms FD-258 (Fingerprint Card). The fingerprints must be clear for accurate classification and should be taken by someone properly equipped to take them.", 
+            "text": "(2) Attach to the application two properly completed FBI Forms FD-258 (Fingerprint Card). The fingerprints must be clear for accurate classification and should be taken by someone properly equipped to take them.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "479-63-b": {
+        "node": {
+            "child_labels": [
+                "479-63-b-1", 
+                "479-63-b-2"
+            ], 
+            "label": [
+                "479", 
+                "63", 
+                "b"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(b) If the applicant is not a licensed manufacturer, importer, or dealer qualified under this part and is a partnership, company (including a Limited Liability Company (LLC)), association, trust, or corporation, the applicant shall:", 
+            "text": "(b) If the applicant is not a licensed manufacturer, importer, or dealer qualified under this part and is a partnership, company (including a Limited Liability Company (LLC)), association, trust, or corporation, the applicant shall:", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "479-63-b-1": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "479", 
+                "63", 
+                "b", 
+                "1"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(1) Be identified on the Form 1 by the name and exact location of the place of business, including the name and number of the building and street, and the name of the county in which the business is located or, in the case of a trust, the primary location at which the firearm will be maintained. In the case of two or more locations, the address shown shall be the principal place of business (or principal office, in the case of a corporation) or, in the case of a trust, the primary location at which the firearm will be maintained;", 
+            "text": "(1) Be identified on the Form 1 by the name and exact location of the place of business, including the name and number of the building and street, and the name of the county in which the business is located or, in the case of a trust, the primary location at which the firearm will be maintained. In the case of two or more locations, the address shown shall be the principal place of business (or principal office, in the case of a corporation) or, in the case of a trust, the primary location at which the firearm will be maintained;", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "479-63-b-2": {
+        "node": {
+            "child_labels": [
+                "479-63-b-2-i", 
+                "479-63-b-2-ii", 
+                "479-63-b-2-iii", 
+                "479-63-b-2-iv"
+            ], 
+            "label": [
+                "479", 
+                "63", 
+                "b", 
+                "2"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(2) Except as provided in paragraph (c) of this section, attach to the application\u2014", 
+            "text": "(2) Except as provided in paragraph (c) of this section, attach to the application\u2014", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "479-63-b-2-i": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "479", 
+                "63", 
+                "b", 
+                "2", 
+                "i"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(i) Documentation evidencing the existence and validity of the entity, which includes complete and unredacted copies of partnership agreements, articles of incorporation, corporate registration, and declarations of trust, with any trust schedules, attachments, exhibits, and enclosures;", 
+            "text": "(i) Documentation evidencing the existence and validity of the entity, which includes complete and unredacted copies of partnership agreements, articles of incorporation, corporate registration, and declarations of trust, with any trust schedules, attachments, exhibits, and enclosures;", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "479-63-b-2-ii": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "479", 
+                "63", 
+                "b", 
+                "2", 
+                "ii"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(ii) A completed ATF Form 5320.23 for each responsible person. Form 5320.23 requires certain identifying information, including each responsible person's full name, position, home address, date of birth, and country of citizenship if other than the United States;", 
+            "text": "(ii) A completed ATF Form 5320.23 for each responsible person. Form 5320.23 requires certain identifying information, including each responsible person's full name, position, home address, date of birth, and country of citizenship if other than the United States;", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "479-63-b-2-iii": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "479", 
+                "63", 
+                "b", 
+                "2", 
+                "iii"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(iii) In the space provided on Form 5320.23, a 2 x 2-inch photograph of each responsible person, clearly showing a full front view of the features of the responsible person with head bare, with the distance from the top of the head to the point of the chin approximately 1<FR>1/4</FR> inches, and which shall have been taken within 1 year prior to the date of the application;", 
+            "text": "(iii) In the space provided on Form 5320.23, a 2 x 2-inch photograph of each responsible person, clearly showing a full front view of the features of the responsible person with head bare, with the distance from the top of the head to the point of the chin approximately 1 1/4 inches, and which shall have been taken within 1 year prior to the date of the application;", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "479-63-b-2-iv": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "479", 
+                "63", 
+                "b", 
+                "2", 
+                "iv"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(iv) Two properly completed FBI Forms FD-258 (Fingerprint Card) for each responsible person. The fingerprints must be clear for accurate classification and should be taken by someone properly equipped to take them.", 
+            "text": "(iv) Two properly completed FBI Forms FD-258 (Fingerprint Card) for each responsible person. The fingerprints must be clear for accurate classification and should be taken by someone properly equipped to take them.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "479-63-c": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "479", 
+                "63", 
+                "c"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(c) If the applicant entity has had an application approved as a maker or transferee within the preceding 24 months, and there has been no change to the documentation previously provided, the entity may provide a certification that the information has not been changed since the prior approval and shall identify the application for which the documentation had been submitted by form number, serial number, and date approved.", 
+            "text": "(c) If the applicant entity has had an application approved as a maker or transferee within the preceding 24 months, and there has been no change to the documentation previously provided, the entity may provide a certification that the information has not been changed since the prior approval and shall identify the application for which the documentation had been submitted by form number, serial number, and date approved.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "479-84": {
+        "child_ops": [
+            [
+                "insert", 
+                0, 
+                [
+                    "479-84-a", 
+                    "479-84-b", 
+                    "479-84-c", 
+                    "479-84-d"
+                ]
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                "delete", 
+                0, 
+                2031
+            ]
+        ]
+    }, 
+    "479-84-a": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "479", 
+                "84", 
+                "a"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(a) <E T=\"03\">General.</E> Except as otherwise provided in this subpart, no firearm may be transferred in the United States unless an application, Form 4 (5320.4), Application for Tax Paid Transfer and Registration of Firearm, in duplicate, executed under the penalties of perjury, to transfer the firearm and register it to the transferee has been filed with and approved by the Director. The application shall be filed by the transferor. If the transferee is not a licensed manufacturer, importer, or dealer qualified under this part and is a partnership, company (including a Limited Liability Company (LLC)), association, trust, or corporation, all information on the Form 4 application shall be furnished for each responsible person of the transferee.", 
+            "text": "(a) General. Except as otherwise provided in this subpart, no firearm may be transferred in the United States unless an application, Form 4 (5320.4), Application for Tax Paid Transfer and Registration of Firearm, in duplicate, executed under the penalties of perjury, to transfer the firearm and register it to the transferee has been filed with and approved by the Director. The application shall be filed by the transferor. If the transferee is not a licensed manufacturer, importer, or dealer qualified under this part and is a partnership, company (including a Limited Liability Company (LLC)), association, trust, or corporation, all information on the Form 4 application shall be furnished for each responsible person of the transferee.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "479-84-b": {
+        "node": {
+            "child_labels": [
+                "479-84-b-1", 
+                "479-84-b-2", 
+                "479-84-b-3", 
+                "479-84-b-4", 
+                "479-84-b-5", 
+                "479-84-b-6", 
+                "479-84-b-7", 
+                "479-84-b-8", 
+                "479-84-b-9"
+            ], 
+            "label": [
+                "479", 
+                "84", 
+                "b"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(b) <E T=\"03\">Preparation of ATF Form 4.</E> All of the information called for on Form 4 shall be provided, including:", 
+            "text": "(b) Preparation of ATF Form 4. All of the information called for on Form 4 shall be provided, including:", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "479-84-b-1": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "479", 
+                "84", 
+                "b", 
+                "1"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(1) The type of firearm being transferred. If the firearm is other than one classified as \u201cany other weapon,\u201d the applicant shall submit a remittance in the amount of $200 with the application in accordance with the instructions on the form. If the firearm is classified as \u201cany other weapon,\u201d the applicant shall submit a remittance in the amount of $5;", 
+            "text": "(1) The type of firearm being transferred. If the firearm is other than one classified as \u201cany other weapon,\u201d the applicant shall submit a remittance in the amount of $200 with the application in accordance with the instructions on the form. If the firearm is classified as \u201cany other weapon,\u201d the applicant shall submit a remittance in the amount of $5;", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "479-84-b-2": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "479", 
+                "84", 
+                "b", 
+                "2"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(2) The identity of the transferor by name and address and, if the transferor is other than a natural person, the title or legal status of the person executing the application in relation to the transferor;", 
+            "text": "(2) The identity of the transferor by name and address and, if the transferor is other than a natural person, the title or legal status of the person executing the application in relation to the transferor;", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "479-84-b-3": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "479", 
+                "84", 
+                "b", 
+                "3"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(3) The transferor's Federal firearms license number (if any);", 
+            "text": "(3) The transferor's Federal firearms license number (if any);", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "479-84-b-4": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "479", 
+                "84", 
+                "b", 
+                "4"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(4) The transferor's special (occupational) tax stamp (if any);", 
+            "text": "(4) The transferor's special (occupational) tax stamp (if any);", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "479-84-b-5": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "479", 
+                "84", 
+                "b", 
+                "5"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(5) The identity of the transferee by name and address and, if the transferee is a person not qualified as a manufacturer, importer, or dealer under this part, the transferee shall be further identified in the manner prescribed in \u00a7\u2009479.85;", 
+            "text": "(5) The identity of the transferee by name and address and, if the transferee is a person not qualified as a manufacturer, importer, or dealer under this part, the transferee shall be further identified in the manner prescribed in \u00a7\u2009479.85;", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "479-84-b-6": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "479", 
+                "84", 
+                "b", 
+                "6"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(6) The transferee's Federal firearms license number (if any);", 
+            "text": "(6) The transferee's Federal firearms license number (if any);", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "479-84-b-7": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "479", 
+                "84", 
+                "b", 
+                "7"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(7) The transferee's special (occupational) tax stamp (if applicable); and", 
+            "text": "(7) The transferee's special (occupational) tax stamp (if applicable); and", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "479-84-b-8": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "479", 
+                "84", 
+                "b", 
+                "8"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(8) A description of the firearm to be transferred by name and address of the manufacturer or importer (if known); caliber, gauge, or size; model; serial number; in the case of a short-barreled shotgun or a short-barreled rifle, the length of the barrel; in the case of a weapon made from a rifle or shotgun, the overall length of the weapon and the length of the barrel; and any other identifying marks on the firearm. In the event the firearm does not bear a serial number, the applicant shall obtain a serial number from ATF and shall stamp (impress) or otherwise conspicuously place such serial number on the firearm in a manner not susceptible of being readily obliterated, altered, or removed.", 
+            "text": "(8) A description of the firearm to be transferred by name and address of the manufacturer or importer (if known); caliber, gauge, or size; model; serial number; in the case of a short-barreled shotgun or a short-barreled rifle, the length of the barrel; in the case of a weapon made from a rifle or shotgun, the overall length of the weapon and the length of the barrel; and any other identifying marks on the firearm. In the event the firearm does not bear a serial number, the applicant shall obtain a serial number from ATF and shall stamp (impress) or otherwise conspicuously place such serial number on the firearm in a manner not susceptible of being readily obliterated, altered, or removed.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "479-84-b-9": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "479", 
+                "84", 
+                "b", 
+                "9"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(9) If the transferee (including, if other than an individual, any responsible person) is an alien admitted under a nonimmigrant visa, applicable documentation demonstrating that the nonimmigrant alien falls within an exception to 18 U.S.C. 922(g)(5)(B) under 18 U.S.C. 922(y)(2), or has obtained a waiver of that provision under 18 U.S.C. 922(y)(3).", 
+            "text": "(9) If the transferee (including, if other than an individual, any responsible person) is an alien admitted under a nonimmigrant visa, applicable documentation demonstrating that the nonimmigrant alien falls within an exception to 18 U.S.C. 922(g)(5)(B) under 18 U.S.C. 922(y)(2), or has obtained a waiver of that provision under 18 U.S.C. 922(y)(3).", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "479-84-c": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "479", 
+                "84", 
+                "c"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(c) <E T=\"03\">Notification of chief law enforcement officer.</E> Prior to the submission of the application to the Director, all transferees and responsible persons shall forward a completed copy of Form 4 or a completed copy of Form 5320.23, respectively, to the chief law enforcement officer of the locality in which the transferee or responsible person is located. The chief law enforcement officer is the local chief of police, county sheriff, head of the State police, State or local district attorney or prosecutor. If the transferee is not a licensed manufacturer, importer, or dealer qualified under this part and is a partnership, company, association, or corporation, for purposes of this section, it is considered located at its principal office or principal place of business; if the transferee is not a licensed manufacturer, importer, or dealer qualified under this part and is a trust, for purposes of this section, it is considered located at the primary location at which the firearm will be maintained.", 
+            "text": "(c) Notification of chief law enforcement officer. Prior to the submission of the application to the Director, all transferees and responsible persons shall forward a completed copy of Form 4 or a completed copy of Form 5320.23, respectively, to the chief law enforcement officer of the locality in which the transferee or responsible person is located. The chief law enforcement officer is the local chief of police, county sheriff, head of the State police, State or local district attorney or prosecutor. If the transferee is not a licensed manufacturer, importer, or dealer qualified under this part and is a partnership, company, association, or corporation, for purposes of this section, it is considered located at its principal office or principal place of business; if the transferee is not a licensed manufacturer, importer, or dealer qualified under this part and is a trust, for purposes of this section, it is considered located at the primary location at which the firearm will be maintained.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "479-84-d": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "479", 
+                "84", 
+                "d"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(d) <E T=\"03\">Approval of Form 4.</E> If the application is approved, the Director will affix a National Firearms Act stamp to the original application in the space provided therefor and properly cancel the stamp (<E T=\"03\">see</E> \u00a7\u2009479.87). The approved application will then be returned to the transferor.", 
+            "text": "(d) Approval of Form 4. If the application is approved, the Director will affix a National Firearms Act stamp to the original application in the space provided therefor and properly cancel the stamp (see \u00a7\u2009479.87). The approved application will then be returned to the transferor.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "479-85": {
+        "child_ops": [
+            [
+                "insert", 
+                0, 
+                [
+                    "479-85-a", 
+                    "479-85-b", 
+                    "479-85-c"
+                ]
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                "delete", 
+                0, 
+                1404
+            ]
+        ]
+    }, 
+    "479-85-a": {
+        "node": {
+            "child_labels": [
+                "479-85-a-1", 
+                "479-85-a-2"
+            ], 
+            "label": [
+                "479", 
+                "85", 
+                "a"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(a) If the transferee is an individual, such person shall:", 
+            "text": "(a) If the transferee is an individual, such person shall:", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "479-85-a-1": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "479", 
+                "85", 
+                "a", 
+                "1"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(1) Securely attach to each copy of the Form 4, in the space provided on the form, a 2 x 2-inch photograph of the applicant, clearly showing a full front view of the features of the applicant with head bare, with the distance from the top of the head to the point of the chin approximately 1<FR>1/4</FR> inches, and which shall have been taken within 1 year prior to the date of the application; and", 
+            "text": "(1) Securely attach to each copy of the Form 4, in the space provided on the form, a 2 x 2-inch photograph of the applicant, clearly showing a full front view of the features of the applicant with head bare, with the distance from the top of the head to the point of the chin approximately 1 1/4 inches, and which shall have been taken within 1 year prior to the date of the application; and", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "479-85-a-2": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "479", 
+                "85", 
+                "a", 
+                "2"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(2) Attach to the application two properly completed FBI Forms FD-258 (Fingerprint Card). The fingerprints must be clear for accurate classification and should be taken by someone properly equipped to take them.", 
+            "text": "(2) Attach to the application two properly completed FBI Forms FD-258 (Fingerprint Card). The fingerprints must be clear for accurate classification and should be taken by someone properly equipped to take them.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "479-85-b": {
+        "node": {
+            "child_labels": [
+                "479-85-b-1", 
+                "479-85-b-2"
+            ], 
+            "label": [
+                "479", 
+                "85", 
+                "b"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(b) If the transferee is not a licensed manufacturer, importer, or dealer qualified under this part and is a partnership, company, association, trust, or corporation, such person shall:", 
+            "text": "(b) If the transferee is not a licensed manufacturer, importer, or dealer qualified under this part and is a partnership, company, association, trust, or corporation, such person shall:", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "479-85-b-1": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "479", 
+                "85", 
+                "b", 
+                "1"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(1) Be identified on the Form 4 by the name and exact location of the place of business, including the name and number of the building and street, and the name of the county in which the business is located or, in the case of a trust, the primary location at which the firearm will be maintained. In the case of two or more locations, the address shown shall be the principal place of business (or principal office, in the case of a corporation) or, in the case of a trust, the primary location at which the firearm will be maintained;", 
+            "text": "(1) Be identified on the Form 4 by the name and exact location of the place of business, including the name and number of the building and street, and the name of the county in which the business is located or, in the case of a trust, the primary location at which the firearm will be maintained. In the case of two or more locations, the address shown shall be the principal place of business (or principal office, in the case of a corporation) or, in the case of a trust, the primary location at which the firearm will be maintained;", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "479-85-b-2": {
+        "node": {
+            "child_labels": [
+                "479-85-b-2-i", 
+                "479-85-b-2-ii", 
+                "479-85-b-2-iii", 
+                "479-85-b-2-iv"
+            ], 
+            "label": [
+                "479", 
+                "85", 
+                "b", 
+                "2"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(2) Except as provided in paragraph (c) of this section, attach to the application\u2014", 
+            "text": "(2) Except as provided in paragraph (c) of this section, attach to the application\u2014", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "479-85-b-2-i": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "479", 
+                "85", 
+                "b", 
+                "2", 
+                "i"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(i) Documentation evidencing the existence and validity of the entity, which includes complete and unredacted copies of partnership agreements, articles of incorporation, corporate registration, and declarations of trust, with any trust schedules, attachments, exhibits, and enclosures;", 
+            "text": "(i) Documentation evidencing the existence and validity of the entity, which includes complete and unredacted copies of partnership agreements, articles of incorporation, corporate registration, and declarations of trust, with any trust schedules, attachments, exhibits, and enclosures;", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "479-85-b-2-ii": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "479", 
+                "85", 
+                "b", 
+                "2", 
+                "ii"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(ii) A completed ATF Form 5320.23 for each responsible person. Form 5320.23 requires certain identifying information, including the responsible person's full name, position, home address, date of birth, and country of citizenship if other than the United States;", 
+            "text": "(ii) A completed ATF Form 5320.23 for each responsible person. Form 5320.23 requires certain identifying information, including the responsible person's full name, position, home address, date of birth, and country of citizenship if other than the United States;", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "479-85-b-2-iii": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "479", 
+                "85", 
+                "b", 
+                "2", 
+                "iii"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(iii) In the space provided on Form 5320.23, a 2 x 2-inch photograph of each responsible person, clearly showing a full front view of the features of the responsible person with head bare, with the distance from the top of the head to the point of the chin approximately 1<FR>1/4</FR> inches, and which shall have been taken within 1 year prior to the date of the application; and", 
+            "text": "(iii) In the space provided on Form 5320.23, a 2 x 2-inch photograph of each responsible person, clearly showing a full front view of the features of the responsible person with head bare, with the distance from the top of the head to the point of the chin approximately 1 1/4 inches, and which shall have been taken within 1 year prior to the date of the application; and", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "479-85-b-2-iv": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "479", 
+                "85", 
+                "b", 
+                "2", 
+                "iv"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(iv) Two properly completed FBI Forms FD-258 (Fingerprint Card) for each responsible person. The fingerprints must be clear for accurate classification and should be taken by someone properly equipped to take them.", 
+            "text": "(iv) Two properly completed FBI Forms FD-258 (Fingerprint Card) for each responsible person. The fingerprints must be clear for accurate classification and should be taken by someone properly equipped to take them.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "479-85-c": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "479", 
+                "85", 
+                "c"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(c) If the applicant entity has had an application approved as a maker or transferee within the preceding 24 months, and there has been no change to the documentation previously provided, the entity may provide a certification that the information has not been changed since the prior approval and shall identify the application for which the documentation had been submitted by form number, serial number, and date approved.", 
+            "text": "(c) If the applicant entity has had an application approved as a maker or transferee within the preceding 24 months, and there has been no change to the documentation previously provided, the entity may provide a certification that the information has not been changed since the prior approval and shall identify the application for which the documentation had been submitted by form number, serial number, and date approved.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "479-90-b": {
+        "op": "modified", 
+        "text": [
+            [
+                "delete", 
+                1087, 
+                1095
+            ], 
+            [
+                [
+                    "delete", 
+                    2135, 
+                    2143
+                ], 
+                [
+                    "insert", 
+                    2135, 
+                    "transfer,"
+                ]
+            ]
+        ]
+    }, 
+    "479-90a": {
+        "node": {
+            "child_labels": [
+                "479-90a-a", 
+                "479-90a-b", 
+                "479-90a-c"
+            ], 
+            "label": [
+                "479", 
+                "90a"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "\n          ", 
+            "text": "", 
+            "title": "\u00a7 479.90a Estates."
+        }, 
+        "op": "added"
+    }, 
+    "479-90a-a": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "479", 
+                "90a", 
+                "a"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(a) The executor, administrator, personal representative, or other person authorized under State law to dispose of property in an estate (collectively \u201cexecutor\u201d) may possess a firearm registered to a decedent during the term of probate without such possession being treated as a \u201ctransfer\u201d as defined in \u00a7\u2009479.11. No later than the close of probate, the executor must submit an application to transfer the firearm to beneficiaries or other transferees in accordance with this section. If the transfer is to a beneficiary, the executor shall file an ATF Form 5 (5320.5), Application for Tax Exempt Transfer and Registration of Firearm, to register a firearm to any beneficiary of an estate in accordance with \u00a7\u2009479.90. The executor will identify the estate as the transferor, and will sign the form on behalf of the decedent, showing the executor's title (<E T=\"03\">e.g.,</E> executor, administrator, personal representative, etc.) and the date of filing. The executor must also provide the documentation prescribed in paragraph (c) of this section.", 
+            "text": "(a) The executor, administrator, personal representative, or other person authorized under State law to dispose of property in an estate (collectively \u201cexecutor\u201d) may possess a firearm registered to a decedent during the term of probate without such possession being treated as a \u201ctransfer\u201d as defined in \u00a7\u2009479.11. No later than the close of probate, the executor must submit an application to transfer the firearm to beneficiaries or other transferees in accordance with this section. If the transfer is to a beneficiary, the executor shall file an ATF Form 5 (5320.5), Application for Tax Exempt Transfer and Registration of Firearm, to register a firearm to any beneficiary of an estate in accordance with \u00a7\u2009479.90. The executor will identify the estate as the transferor, and will sign the form on behalf of the decedent, showing the executor's title (e.g., executor, administrator, personal representative, etc.) and the date of filing. The executor must also provide the documentation prescribed in paragraph (c) of this section.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "479-90a-b": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "479", 
+                "90a", 
+                "b"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(b) If there are no beneficiaries of the estate or the beneficiaries do not wish to possess the registered firearm, the executor will dispose of the property outside the estate (<E T=\"03\">i.e.,</E> to a non-beneficiary). The executor shall file an ATF Form 4 (5320.4), Application for Tax Paid Transfer and Registration of Firearm, in accordance with \u00a7\u2009479.84. The executor, administrator, personal representative, or other authorized person must also provide documentation prescribed in paragraph (c) of this section.", 
+            "text": "(b) If there are no beneficiaries of the estate or the beneficiaries do not wish to possess the registered firearm, the executor will dispose of the property outside the estate (i.e., to a non-beneficiary). The executor shall file an ATF Form 4 (5320.4), Application for Tax Paid Transfer and Registration of Firearm, in accordance with \u00a7\u2009479.84. The executor, administrator, personal representative, or other authorized person must also provide documentation prescribed in paragraph (c) of this section.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "479-90a-c": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "479", 
+                "90a", 
+                "c"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(c) The executor, administrator, personal representative, or other person authorized under State law to dispose of property in an estate shall submit with the transfer application documentation of the person's appointment as executor, administrator, personal representative, or as an authorized person, a copy of the decedent's death certificate, a copy of the will (if any), any other evidence of the person's authority to dispose of property, and any other document relating to, or affecting the disposition of firearms from the estate.", 
+            "text": "(c) The executor, administrator, personal representative, or other person authorized under State law to dispose of property in an estate shall submit with the transfer application documentation of the person's appointment as executor, administrator, personal representative, or as an authorized person, a copy of the decedent's death certificate, a copy of the will (if any), any other evidence of the person's authority to dispose of property, and any other document relating to, or affecting the disposition of firearms from the estate.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "479-Subjgrp-ATMaF": {
+        "node": {
+            "child_labels": [
+                "479-62", 
+                "479-63", 
+                "479-64", 
+                "479-65", 
+                "479-66", 
+                "479-67"
+            ], 
+            "label": [
+                "479", 
+                "Subjgrp", 
+                "ATMaF"
+            ], 
+            "node_type": "subpart", 
+            "tagged_text": null, 
+            "text": "", 
+            "title": "Application To Make a Firearm"
+        }, 
+        "op": "added"
+    }, 
+    "479-Subjgrp-AtMaF": {
+        "op": "deleted"
+    }, 
+    "479-Subjgrp-ERtToF": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                3
+            ], 
+            [
+                "insert", 
+                3, 
+                [
+                    "479-90a"
+                ]
+            ], 
+            [
+                "equal", 
+                3, 
+                5
+            ]
+        ], 
+        "op": "modified"
+    }
+}

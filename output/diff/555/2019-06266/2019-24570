@@ -1,0 +1,439 @@
+{
+    "555-102-b": {
+        "child_ops": [
+            [
+                "delete", 
+                0, 
+                1
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    29, 
+                    36
+                ], 
+                [
+                    "insert", 
+                    29, 
+                    "stocks. Permittees are not authorized to engage in the business of sale or distribution of explosive materials. However, permittees may dispose of surplus stocks of explosive materials to other licensees or permittees in accordance with \u00a7 555.103 and \u00a7 555.105."
+                ]
+            ]
+        ]
+    }, 
+    "555-102-b-p1": {
+        "op": "deleted"
+    }, 
+    "555-11-p1795587076": {
+        "op": "modified", 
+        "text": [
+            [
+                "delete", 
+                177, 
+                198
+            ]
+        ]
+    }, 
+    "555-11-p593154015": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    91, 
+                    115
+                ], 
+                [
+                    "insert", 
+                    91, 
+                    "Justice."
+                ]
+            ]
+        ]
+    }, 
+    "555-218-p2-p5": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    81, 
+                    90
+                ], 
+                [
+                    "insert", 
+                    81, 
+                    "11/2"
+                ]
+            ]
+        ]
+    }, 
+    "555-219-p2": {
+        "child_ops": [
+            [
+                "insert", 
+                0, 
+                [
+                    "555-219-p2-p1"
+                ]
+            ]
+        ], 
+        "op": "modified", 
+        "title": [
+            [
+                "delete", 
+                0, 
+                108
+            ]
+        ]
+    }, 
+    "555-219-p2-p1": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "555", 
+                "219", 
+                "p2", 
+                "p1"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": null, 
+            "text": "", 
+            "title": "TABLE: Department of Defense Ammunition and Explosives Standards, Table 5-4.1 Extract; 4145.27 M, March 1969"
+        }, 
+        "op": "added"
+    }, 
+    "555-220-p2-p5": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    441, 
+                    443
+                ], 
+                [
+                    "insert", 
+                    441, 
+                    " "
+                ]
+            ]
+        ]
+    }, 
+    "555-224-p1": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    400, 
+                    406
+                ], 
+                [
+                    "insert", 
+                    400, 
+                    "sites"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    415, 
+                    437
+                ], 
+                [
+                    "insert", 
+                    415, 
+                    "3717\\).)[^4](This table"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    853, 
+                    859
+                ], 
+                [
+                    "insert", 
+                    853, 
+                    "sites"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    868, 
+                    875
+                ], 
+                [
+                    "insert", 
+                    868, 
+                    "3717\\).)"
+                ]
+            ]
+        ]
+    }, 
+    "555-27": {
+        "op": "modified", 
+        "text": [
+            [
+                "delete", 
+                0, 
+                10
+            ]
+        ]
+    }, 
+    "555-45": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                1
+            ], 
+            [
+                "delete", 
+                1, 
+                2
+            ], 
+            [
+                "equal", 
+                2, 
+                3
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "555-45-a": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    0, 
+                    3
+                ], 
+                [
+                    "insert", 
+                    0, 
+                    "(a)-(b)"
+                ]
+            ]
+        ]
+    }, 
+    "555-45-b": {
+        "op": "deleted"
+    }, 
+    "555-73": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    666, 
+                    671
+                ], 
+                [
+                    "insert", 
+                    666, 
+                    "771 of"
+                ]
+            ]
+        ]
+    }, 
+    "555-75": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    1353, 
+                    1358
+                ], 
+                [
+                    "insert", 
+                    1353, 
+                    "771 of"
+                ]
+            ]
+        ]
+    }, 
+    "555-78": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                41, 
+                "represent himself, or "
+            ], 
+            [
+                "insert", 
+                72, 
+                "a "
+            ], 
+            [
+                "insert", 
+                103, 
+                " any"
+            ], 
+            [
+                [
+                    "delete", 
+                    110, 
+                    127
+                ], 
+                [
+                    "insert", 
+                    110, 
+                    "person, specifically designated in a duly executed power of attorney that shall be filed in the proceeding by the applicant, licensee, or permittee. The applicant, licensee, or permittee shall file waivers, if applicable, under the Privacy Act of 1974 and 26 U.S.C. 6103(c) (confidentiality and disclosure of returns and return information). The Director of Industry Operations may be represented in proceedings under \u00a7\u00a7 555.73 and 555.75 by an attorney in the Office of Chief Counsel who is authorized"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    131, 
+                    203
+                ], 
+                [
+                    "insert", 
+                    131, 
+                    "execute and file motions, briefs and other papers in the proceeding, on behalf of the Director of Industry Operations, in the attorney's own name"
+                ]
+            ], 
+            [
+                "delete", 
+                207, 
+                657
+            ], 
+            [
+                [
+                    "delete", 
+                    675, 
+                    687
+                ], 
+                [
+                    "insert", 
+                    675, 
+                    "Government.\u201d"
+                ]
+            ]
+        ]
+    }, 
+    "555-79": {
+        "op": "modified", 
+        "text": [
+            [
+                "delete", 
+                637, 
+                641
+            ], 
+            [
+                "delete", 
+                672, 
+                676
+            ], 
+            [
+                "delete", 
+                721, 
+                725
+            ], 
+            [
+                [
+                    "delete", 
+                    1143, 
+                    1148
+                ], 
+                [
+                    "insert", 
+                    1143, 
+                    "771 of"
+                ]
+            ]
+        ]
+    }, 
+    "555-82": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    0, 
+                    14
+                ], 
+                [
+                    "insert", 
+                    0, 
+                    "Regulations governing the procedure and practice for disapproval"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    18, 
+                    27
+                ], 
+                [
+                    "insert", 
+                    18, 
+                    "applications for explosives licenses and permits and for the denial"
+                ]
+            ], 
+            [
+                "insert", 
+                31, 
+                "renewal or revocation of such licenses and permits under the Act are contained in "
+            ], 
+            [
+                [
+                    "delete", 
+                    36, 
+                    39
+                ], 
+                [
+                    "insert", 
+                    36, 
+                    "771"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    48, 
+                    439
+                ], 
+                [
+                    "insert", 
+                    48, 
+                    "chapter."
+                ]
+            ]
+        ], 
+        "title": [
+            [
+                [
+                    "delete", 
+                    9, 
+                    19
+                ], 
+                [
+                    "insert", 
+                    9, 
+                    "Rules"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    23, 
+                    48
+                ], 
+                [
+                    "insert", 
+                    23, 
+                    "practice in license and permit proceedings."
+                ]
+            ]
+        ]
+    }
+}

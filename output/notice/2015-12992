@@ -1,0 +1,35 @@
+{
+    "amendments": [], 
+    "cfr_parts": [
+        "447"
+    ], 
+    "cfr_title": 27, 
+    "dockets": [
+        "Docket No. ATF-25F", 
+        "AG Order No. 3531-2015"
+    ], 
+    "document_number": "2015-12992", 
+    "effective_on": "2015-06-29", 
+    "footnotes": {}, 
+    "fr_citation": "80 FR 30615", 
+    "fr_url": "https://www.federalregister.gov/documents/2015/05/29/2015-12992/importation-of-arms-ammunition-and-defense-articles-removal-of-certain-defense-articles-currently-on", 
+    "fr_volume": 80, 
+    "meta": {
+        "start_page": 30615
+    }, 
+    "primary_agency": "DEPARTMENT OF JUSTICE", 
+    "primary_docket": null, 
+    "publication_date": "2015-05-29", 
+    "regulation_id_numbers": [
+        "1140-AA45"
+    ], 
+    "section_by_section": [], 
+    "supporting_documents": [], 
+    "title": "Importation of Arms, Ammunition and Defense Articles\u2014Removal of Certain Defense Articles Currently on the U.S. Munitions Import List That No Longer Warrant Import Control Under the Arms Export Control Act (2011R-25P)", 
+    "versions": {
+        "447": {
+            "left": "2014-18842", 
+            "right": "2015-12992"
+        }
+    }
+}

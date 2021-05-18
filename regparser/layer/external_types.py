@@ -36,6 +36,9 @@ def fdsys_url(**params):
     params['year'] = params.get('year', 'mostrecent')
     # params = sorted(params.items())     # consistent encoding
     # return 'http://api.fdsys.gov/link?{0}'.format(urlencode(params))
+    if 'section' in params:
+        if params['section'] == '1563' and params['collection'] == 'cfr':
+            params['section'] = '1563-1'
     if 'partnum' in params and 'section' in params and 'titlenum' in params:
         return 'http://www.govinfo.gov/link/' + params['collection'] + '/' + params['titlenum'] + '/' + params['partnum'] + '?sectionnum=' + params['section'] + '&year=' + params['year']
     elif 'section' in params and 'title' in params:

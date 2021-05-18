@@ -1,0 +1,381 @@
+{
+    "478-125-e-p1": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    81, 
+                    109
+                ], 
+                [
+                    "insert", 
+                    81, 
+                    "and importer (if any)|Model|Serial"
+                ]
+            ]
+        ]
+    }, 
+    "478-125-f-2-p1": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    92, 
+                    120
+                ], 
+                [
+                    "insert", 
+                    92, 
+                    "and importer (if any)|Model|Serial"
+                ]
+            ]
+        ]
+    }, 
+    "478-125a-a-4-p1": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    77, 
+                    105
+                ], 
+                [
+                    "insert", 
+                    77, 
+                    "and importer (if any)|Model|Serial"
+                ]
+            ]
+        ]
+    }, 
+    "478-39a": {
+        "child_ops": [
+            [
+                "insert", 
+                0, 
+                [
+                    "478-39a-a", 
+                    "478-39a-b", 
+                    "478-39a-c", 
+                    "478-39a-d", 
+                    "478-39a-e", 
+                    "478-39a-f"
+                ]
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                "delete", 
+                0, 
+                836
+            ]
+        ]
+    }, 
+    "478-39a-a": {
+        "node": {
+            "child_labels": [
+                "478-39a-a-1", 
+                "478-39a-a-2"
+            ], 
+            "label": [
+                "478", 
+                "39a", 
+                "a"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(a)", 
+            "text": "(a)", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-39a-a-1": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "39a", 
+                "a", 
+                "1"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(1) Each licensee shall report the theft or loss of a firearm from the licensee's inventory (including any firearm which has been transferred from the licensee's inventory to a personal collection and held as a personal firearm for at least 1 year), or from the collection of a licensed collector, within 48 hours after the theft or loss is discovered.", 
+            "text": "(1) Each licensee shall report the theft or loss of a firearm from the licensee's inventory (including any firearm which has been transferred from the licensee's inventory to a personal collection and held as a personal firearm for at least 1 year), or from the collection of a licensed collector, within 48 hours after the theft or loss is discovered.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-39a-a-2": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "39a", 
+                "a", 
+                "2"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(2) When a firearm is stolen or lost in transit on a common or contract carrier (which for purposes of this paragraph includes the U.S. Postal Service), it is considered stolen or lost from the transferor/sender licensee's inventory for reporting purposes. Therefore, the transferor/sender of the stolen or lost firearm shall report the theft or loss of the firearm within 48 hours after the transferor/sender discovers the theft or loss.", 
+            "text": "(2) When a firearm is stolen or lost in transit on a common or contract carrier (which for purposes of this paragraph includes the U.S. Postal Service), it is considered stolen or lost from the transferor/sender licensee's inventory for reporting purposes. Therefore, the transferor/sender of the stolen or lost firearm shall report the theft or loss of the firearm within 48 hours after the transferor/sender discovers the theft or loss.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-39a-b": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "39a", 
+                "b"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(b) Each licensee shall report the theft or loss by telephoning ATF at 1-888-930-9275 (nationwide toll-free number), and by preparing and submitting to ATF a Federal Firearms Licensee Theft/Loss Report, ATF Form 3310.11, in accordance with the instructions on the form. The original of the report shall be retained by the licensee as part of the licensee's required records.", 
+            "text": "(b) Each licensee shall report the theft or loss by telephoning ATF at 1-888-930-9275 (nationwide toll-free number), and by preparing and submitting to ATF a Federal Firearms Licensee Theft/Loss Report, ATF Form 3310.11, in accordance with the instructions on the form. The original of the report shall be retained by the licensee as part of the licensee's required records.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-39a-c": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "39a", 
+                "c"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(c) When a licensee submits to ATF a Federal Firearms Licensee Theft/Loss Report, ATF Form 3310.11, for the theft or loss of a firearm registered under the National Firearms Act, this report also satisfies the notification requirement under \u00a7\u2009479.141 of this chapter.", 
+            "text": "(c) When a licensee submits to ATF a Federal Firearms Licensee Theft/Loss Report, ATF Form 3310.11, for the theft or loss of a firearm registered under the National Firearms Act, this report also satisfies the notification requirement under \u00a7\u2009479.141 of this chapter.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-39a-d": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "39a", 
+                "d"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(d) Theft or loss of any firearm shall also be reported to the appropriate local authorities. If the location of the theft or loss is known, the local law enforcement agency at that location would be the appropriate local authority. Otherwise, the report should be made to the local law enforcement authorities at the licensee's location or business premises.", 
+            "text": "(d) Theft or loss of any firearm shall also be reported to the appropriate local authorities. If the location of the theft or loss is known, the local law enforcement agency at that location would be the appropriate local authority. Otherwise, the report should be made to the local law enforcement authorities at the licensee's location or business premises.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-39a-e": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "39a", 
+                "e"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(e) Licensees shall reflect the theft or loss of a firearm as a disposition entry in the Record of Acquisition and Disposition required by subpart H of this part not later than 7 days following discovery of the theft or loss. The disposition entry shall record whether the incident is a theft or loss, the ATF-Issued Incident Number, and the Incident Number provided by the local law enforcement agency.", 
+            "text": "(e) Licensees shall reflect the theft or loss of a firearm as a disposition entry in the Record of Acquisition and Disposition required by subpart H of this part not later than 7 days following discovery of the theft or loss. The disposition entry shall record whether the incident is a theft or loss, the ATF-Issued Incident Number, and the Incident Number provided by the local law enforcement agency.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-39a-f": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "478", 
+                "39a", 
+                "f"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(f) Licensees who report the theft or loss of a firearm and later discover its whereabouts shall advise ATF at 1-888-930-9275 (nationwide toll-free number) that the firearm has been located, and shall re-enter the firearm in the Record of Acquisition and Disposition as an acquisition or disposition entry as appropriate.", 
+            "text": "(f) Licensees who report the theft or loss of a firearm and later discover its whereabouts shall advise ATF at 1-888-930-9275 (nationwide toll-free number) that the firearm has been located, and shall re-enter the firearm in the Record of Acquisition and Disposition as an acquisition or disposition entry as appropriate.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "478-72": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    246, 
+                    256
+                ], 
+                [
+                    "insert", 
+                    246, 
+                    "denial. The"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    307, 
+                    319
+                ], 
+                [
+                    "insert", 
+                    307, 
+                    "therefor.On"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    682, 
+                    684
+                ], 
+                [
+                    "insert", 
+                    682, 
+                    "During the hearing the applicant will have the opportunity to submit facts and arguments for review and consideration; offers of settlement will not be entertained at the hearing but may be made before or after the hearing.On"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    900, 
+                    912
+                ], 
+                [
+                    "insert", 
+                    900, 
+                    "application.A copy of the application, marked \u201cDisapproved,\u201d will be returned to the applicant."
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    941, 
+                    947
+                ], 
+                [
+                    "insert", 
+                    941, 
+                    "license applied for"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    955, 
+                    1021
+                ], 
+                [
+                    "insert", 
+                    955, 
+                    "be issued, the applicant"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    1031, 
+                    1214
+                ], 
+                [
+                    "insert", 
+                    1031, 
+                    "so notified, in writing, and the"
+                ]
+            ], 
+            [
+                "delete", 
+                1223, 
+                1267
+            ], 
+            [
+                "delete", 
+                1275, 
+                1325
+            ]
+        ]
+    }, 
+    "478-73-a": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    205, 
+                    215
+                ], 
+                [
+                    "insert", 
+                    205, 
+                    "issued.In"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    226, 
+                    227
+                ], 
+                [
+                    "insert", 
+                    226, 
+                    "pursuant to 18 U.S.C. 922(t)(5) and 18 U.S.C. 924(p), a"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    841, 
+                    845
+                ], 
+                [
+                    "insert", 
+                    841, 
+                    "law; or that a licensee has violated 18 U.S.C. 922(z)(1) by selling, delivering, or transferring any handgun to any person other than a licensee, unless the transferee was provided with a secure gun storage or safety device for that handgun."
+                ]
+            ]
+        ]
+    }, 
+    "478-74": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    331, 
+                    339
+                ], 
+                [
+                    "insert", 
+                    331, 
+                    "fine.On"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    594, 
+                    604
+                ], 
+                [
+                    "insert", 
+                    594, 
+                    "held.Such"
+                ]
+            ], 
+            [
+                "insert", 
+                687, 
+                " hearing.On conclusion of the hearing and consideration of all the relevant presentations made by the licensee or the licensee's representative, the Director shall render a decision and shall prepare a brief summary of the findings and conclusions on which the decision is based.If the decision is that the license should be revoked, or, in actions under 18 U.S.C. 922(t)(5) or 924(p), that the license should be revoked or suspended, or that a civil fine should be imposed, a certified copy of the summary shall be furnished to the licensee with the final notice of revocation, suspension, or imposition of a civil fine on ATF Form 5300.13. If the decision is that the license should not be revoked, or in actions under 18 U.S.C. 922(t)(5) or 924(p), that the license should not be revoked or suspended, and a civil fine should not be imposed, the licensee shall be notified in writing. During the hearing the licensee will have the opportunity to submit facts and arguments for review and consideration; offers of settlement will not be entertained at the hearing but may be made before or after the"
+            ], 
+            [
+                "delete", 
+                696, 
+                1560
+            ]
+        ]
+    }
+}

@@ -1,0 +1,302 @@
+{
+    "555-103-b-2-ii": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    569, 
+                    587
+                ], 
+                [
+                    "insert", 
+                    569, 
+                    "In all instances, the distributor must verify the identity of the person accepting possession of explosive materials on behalf of the distributee by examining an identification document (as defined"
+                ]
+            ], 
+            [
+                "delete", 
+                591, 
+                867
+            ]
+        ]
+    }, 
+    "555-103-b-3": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                2
+            ], 
+            [
+                "insert", 
+                2, 
+                [
+                    "555-103-b-3-iii"
+                ]
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                39, 
+                "a "
+            ], 
+            [
+                [
+                    "delete", 
+                    239, 
+                    243
+                ], 
+                [
+                    "insert", 
+                    239, 
+                    "obtain an executed ATF F 5400.8, Explosives Delivery Record, from"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    248, 
+                    265
+                ], 
+                [
+                    "insert", 
+                    248, 
+                    "common or contract carrier"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    315, 
+                    325
+                ], 
+                [
+                    "insert", 
+                    315, 
+                    "materials."
+                ]
+            ]
+        ]
+    }, 
+    "555-103-b-3-i": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    4, 
+                    23
+                ], 
+                [
+                    "insert", 
+                    4, 
+                    "The common or contract carrier must complete Section A"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    27, 
+                    198
+                ], 
+                [
+                    "insert", 
+                    27, 
+                    "Form 5400.8."
+                ]
+            ]
+        ]
+    }, 
+    "555-103-b-3-ii": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    5, 
+                    11
+                ], 
+                [
+                    "insert", 
+                    5, 
+                    "The distributor must verify"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    16, 
+                    20
+                ], 
+                [
+                    "insert", 
+                    16, 
+                    "identity"
+                ]
+            ], 
+            [
+                "insert", 
+                28, 
+                "person accepting possession for the "
+            ], 
+            [
+                [
+                    "delete", 
+                    55, 
+                    61
+                ], 
+                [
+                    "insert", 
+                    55, 
+                    "by examining an identification document (as defined in \u00a7 555.11) and noting in Section B of Form 5400.8"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    66, 
+                    70
+                ], 
+                [
+                    "insert", 
+                    66, 
+                    "type"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    74, 
+                    134
+                ], 
+                [
+                    "insert", 
+                    74, 
+                    "document presented. The distributor must complete all other"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    147, 
+                    234
+                ], 
+                [
+                    "insert", 
+                    147, 
+                    "required on Form 5400.8."
+                ]
+            ]
+        ]
+    }, 
+    "555-103-b-3-iii": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "555", 
+                "103", 
+                "b", 
+                "3", 
+                "iii"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(iii) The distributor must maintain Form 5400.8 in his permanent records in accordance with \u00a7 555.121.", 
+            "text": "(iii) The distributor must maintain Form 5400.8 in his permanent records in accordance with \u00a7 555.121.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "555-105-b-6-iii": {
+        "child_ops": [
+            [
+                "delete", 
+                0, 
+                3
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    212, 
+                    219
+                ], 
+                [
+                    "insert", 
+                    212, 
+                    "permit, the limited permittee will, prior to delivery of the explosive materials, complete the appropriate section on Form 5400.4, affix to the Form 5400.4 one of the six IPECs he has been issued, and provide the form to the distributor in person or by mail. Before the delivery at the distributor's premises of explosive materials to the common or contract carrier who will transport explosive materials to a limited permittee, the distributor must obtain an executed ATF Form 5400.8, Explosives Delivery Record, from the common or contract carrier before releasing the explosive materials. Form 5400.8 must contain all of the information required on the form and by this part. At the time of delivery the common or contract carrier, as agent for the distributor, must verify the identity of the person accepting delivery on behalf of the distributee, note the type and number of the identification document and provide this information to the distributor. The distributor will enter this information in the appropriate section on Form 5400.4. Form 5400.8 must be attached to the distributor's copy of the Form 5400.4 and retained in his permanent records in accordance with \u00a7 555.121."
+                ]
+            ]
+        ]
+    }, 
+    "555-105-b-6-iii-A": {
+        "op": "deleted"
+    }, 
+    "555-105-b-6-iii-B": {
+        "op": "deleted"
+    }, 
+    "555-105-b-6-iii-B-1": {
+        "op": "deleted"
+    }, 
+    "555-105-b-6-iii-B-2": {
+        "op": "deleted"
+    }, 
+    "555-105-b-6-iii-C": {
+        "op": "deleted"
+    }, 
+    "555-105-b-6-iv": {
+        "child_ops": [
+            [
+                "delete", 
+                0, 
+                2
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                188, 
+                " the holder of"
+            ], 
+            [
+                "insert", 
+                191, 
+                "limited permit, the "
+            ], 
+            [
+                "insert", 
+                200, 
+                " the limited permit will, prior to delivery of the explosive materials, complete the appropriate section on Form 5400.4, affix to the Form 5400.4 one of the six IPECs he has been issued, and provide the form to the distributor in person or by mail. Before the delivery at the distributor's premises to the common or contract carrier who will transport explosive materials to the holder of"
+            ], 
+            [
+                [
+                    "delete", 
+                    211, 
+                    218
+                ], 
+                [
+                    "insert", 
+                    211, 
+                    "permit, the distributor must obtain an executed ATF Form 5400.8, Explosives Delivery Record, from the common or contract carrier before releasing the explosive materials. Form 5400.8 must contain all of the information required on the form and by this part. Form 5400.8 must be attached to the distributor's copy of the Form 5400.4 and retained in his permanent records in accordance with \u00a7 555.121."
+                ]
+            ]
+        ]
+    }, 
+    "555-105-b-6-iv-A": {
+        "op": "deleted"
+    }, 
+    "555-105-b-6-iv-B": {
+        "op": "deleted"
+    }, 
+    "555-105-b-6-iv-B-1": {
+        "op": "deleted"
+    }, 
+    "555-105-b-6-iv-B-2": {
+        "op": "deleted"
+    }
+}

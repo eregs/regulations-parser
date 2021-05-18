@@ -1,0 +1,741 @@
+{
+    "478-11-p2710366668": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                557, 
+                " For purposes of this definition, the term \u201cautomatically\u201d as it modifies \u201cshoots, is designed to shoot, or can be readily restored to shoot,\u201d means functioning as the result of a self-acting or self-regulating mechanism that allows the firing of multiple rounds through a single function of the trigger; and \u201csingle function of the trigger\u201d means a single pull of the trigger and analogous motions. The term \u201cmachine gun\u201d includes a bump-stock-type device, i.e., a device that allows a semi-automatic firearm to shoot more than one shot with a single pull of the trigger by harnessing the recoil energy of the semi-automatic firearm to which it is affixed so that the trigger resets and continues firing without additional physical manipulation of the trigger by the shooter."
+            ]
+        ]
+    }, 
+    "478-116": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    147, 
+                    187
+                ], 
+                [
+                    "insert", 
+                    147, 
+                    "or ammunition for the purpose of examining and testing the firearm, firearm barrel, or ammunition in connection with making a determination"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    191, 
+                    214
+                ], 
+                [
+                    "insert", 
+                    191, 
+                    "to whether the importation or bringing in of such firearm, firearm barrel, or ammunition will be authorized under this part. An application on ATF Form 6"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    219, 
+                    230
+                ], 
+                [
+                    "insert", 
+                    219, 
+                    "such conditional importation shall be filed, in duplicate, with the Director. The Director may impose conditions upon any importation under this section including a requirement that the firearm, firearm barrel, or ammunition be shipped directly from Customs custody to the Director and that the person importing or bringing in the firearm, firearm barrel, or ammunition must agree to either export the firearm, firearm barrel, or ammunition or destroy same if a determination is made that the firearm, firearm barrel, or ammunition may not be imported or brought in under this part. A firearm, firearm barrel, or ammunition imported or brought into the United States or any possession thereof under the provisions"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    234, 
+                    243
+                ], 
+                [
+                    "insert", 
+                    234, 
+                    "this section shall be released from Customs custody upon the payment of customs duties, if applicable,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    248, 
+                    560
+                ], 
+                [
+                    "insert", 
+                    248, 
+                    "in the manner prescribed in the"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    573, 
+                    623
+                ], 
+                [
+                    "insert", 
+                    573, 
+                    "authorization issued by the"
+                ]
+            ], 
+            [
+                "delete", 
+                633, 
+                1596
+            ]
+        ]
+    }, 
+    "478-119": {
+        "child_ops": [
+            [
+                "delete", 
+                0, 
+                7
+            ]
+        ], 
+        "op": "modified", 
+        "title": [
+            [
+                [
+                    "delete", 
+                    10, 
+                    52
+                ], 
+                [
+                    "insert", 
+                    10, 
+                    "[Reserved]"
+                ]
+            ]
+        ]
+    }, 
+    "478-119-a": {
+        "op": "deleted"
+    }, 
+    "478-119-b": {
+        "op": "deleted"
+    }, 
+    "478-119-c": {
+        "op": "deleted"
+    }, 
+    "478-119-c-1": {
+        "op": "deleted"
+    }, 
+    "478-119-c-2": {
+        "op": "deleted"
+    }, 
+    "478-119-c-3": {
+        "op": "deleted"
+    }, 
+    "478-119-c-4": {
+        "op": "deleted"
+    }, 
+    "478-119-c-5": {
+        "op": "deleted"
+    }, 
+    "478-119-c-6": {
+        "op": "deleted"
+    }, 
+    "478-119-c-7": {
+        "op": "deleted"
+    }, 
+    "478-119-c-7-i": {
+        "op": "deleted"
+    }, 
+    "478-119-c-7-ii": {
+        "op": "deleted"
+    }, 
+    "478-119-c-7-iii": {
+        "op": "deleted"
+    }, 
+    "478-119-c-7-iv": {
+        "op": "deleted"
+    }, 
+    "478-119-d": {
+        "op": "deleted"
+    }, 
+    "478-119-e": {
+        "op": "deleted"
+    }, 
+    "478-119-f": {
+        "op": "deleted"
+    }, 
+    "478-119-f-1": {
+        "op": "deleted"
+    }, 
+    "478-119-f-2": {
+        "op": "deleted"
+    }, 
+    "478-119-g": {
+        "op": "deleted"
+    }, 
+    "478-132": {
+        "child_ops": [
+            [
+                "delete", 
+                0, 
+                2
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                "delete", 
+                0, 
+                389
+            ]
+        ], 
+        "title": [
+            [
+                [
+                    "delete", 
+                    10, 
+                    201
+                ], 
+                [
+                    "insert", 
+                    10, 
+                    "[Reserved]"
+                ]
+            ]
+        ]
+    }, 
+    "478-132-a": {
+        "op": "deleted"
+    }, 
+    "478-132-a-1": {
+        "op": "deleted"
+    }, 
+    "478-132-a-2": {
+        "op": "deleted"
+    }, 
+    "478-132-b": {
+        "op": "deleted"
+    }, 
+    "478-132-b-1": {
+        "op": "deleted"
+    }, 
+    "478-132-b-2": {
+        "op": "deleted"
+    }, 
+    "478-132-b-3": {
+        "op": "deleted"
+    }, 
+    "478-153": {
+        "op": "modified", 
+        "text": [
+            [
+                "delete", 
+                0, 
+                927
+            ]
+        ], 
+        "title": [
+            [
+                [
+                    "delete", 
+                    10, 
+                    158
+                ], 
+                [
+                    "insert", 
+                    10, 
+                    "[Reserved]"
+                ]
+            ]
+        ]
+    }, 
+    "478-171": {
+        "op": "modified", 
+        "text": [
+            [
+                "delete", 
+                578, 
+                651
+            ], 
+            [
+                [
+                    "delete", 
+                    771, 
+                    808
+                ], 
+                [
+                    "insert", 
+                    771, 
+                    "was"
+                ]
+            ]
+        ]
+    }, 
+    "478-40": {
+        "child_ops": [
+            [
+                "delete", 
+                0, 
+                3
+            ]
+        ], 
+        "op": "modified", 
+        "title": [
+            [
+                [
+                    "delete", 
+                    9, 
+                    80
+                ], 
+                [
+                    "insert", 
+                    9, 
+                    "[Reserved]"
+                ]
+            ]
+        ]
+    }, 
+    "478-40-a": {
+        "op": "deleted"
+    }, 
+    "478-40-b": {
+        "op": "deleted"
+    }, 
+    "478-40-b-1": {
+        "op": "deleted"
+    }, 
+    "478-40-b-10": {
+        "op": "deleted"
+    }, 
+    "478-40-b-2": {
+        "op": "deleted"
+    }, 
+    "478-40-b-3": {
+        "op": "deleted"
+    }, 
+    "478-40-b-3-i": {
+        "op": "deleted"
+    }, 
+    "478-40-b-3-ii": {
+        "op": "deleted"
+    }, 
+    "478-40-b-3-iii": {
+        "op": "deleted"
+    }, 
+    "478-40-b-4": {
+        "op": "deleted"
+    }, 
+    "478-40-b-5": {
+        "op": "deleted"
+    }, 
+    "478-40-b-6": {
+        "op": "deleted"
+    }, 
+    "478-40-b-7": {
+        "op": "deleted"
+    }, 
+    "478-40-b-8": {
+        "op": "deleted"
+    }, 
+    "478-40-b-9": {
+        "op": "deleted"
+    }, 
+    "478-40-c": {
+        "op": "deleted"
+    }, 
+    "478-40-c-1": {
+        "op": "deleted"
+    }, 
+    "478-40-c-2": {
+        "op": "deleted"
+    }, 
+    "478-40-c-3": {
+        "op": "deleted"
+    }, 
+    "478-40-c-4": {
+        "op": "deleted"
+    }, 
+    "478-40-c-5": {
+        "op": "deleted"
+    }, 
+    "478-40a": {
+        "op": "deleted"
+    }, 
+    "478-40a-a": {
+        "op": "deleted"
+    }, 
+    "478-40a-b": {
+        "op": "deleted"
+    }, 
+    "478-40a-b-1": {
+        "op": "deleted"
+    }, 
+    "478-40a-b-2": {
+        "op": "deleted"
+    }, 
+    "478-40a-b-3": {
+        "op": "deleted"
+    }, 
+    "478-40a-b-4": {
+        "op": "deleted"
+    }, 
+    "478-40a-b-5": {
+        "op": "deleted"
+    }, 
+    "478-40a-b-6": {
+        "op": "deleted"
+    }, 
+    "478-40a-c": {
+        "op": "deleted"
+    }, 
+    "478-40a-c-1": {
+        "op": "deleted"
+    }, 
+    "478-40a-c-2": {
+        "op": "deleted"
+    }, 
+    "478-40a-c-3": {
+        "op": "deleted"
+    }, 
+    "478-40a-c-4": {
+        "op": "deleted"
+    }, 
+    "478-40a-c-5": {
+        "op": "deleted"
+    }, 
+    "478-57": {
+        "child_ops": [
+            [
+                "delete", 
+                0, 
+                3
+            ]
+        ], 
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                0, 
+                "Where a firearm or ammunition business is either discontinued or succeeded by a new owner, the owner of the business discontinued or succeeded shall within 30 days thereof furnish to the Chief, Federal Firearms Licensing Center notification of the discontinuance or succession. (See also \u00a7 478.127.)"
+            ]
+        ]
+    }, 
+    "478-57-a": {
+        "op": "deleted"
+    }, 
+    "478-57-b": {
+        "op": "deleted"
+    }, 
+    "478-57-c": {
+        "op": "deleted"
+    }, 
+    "478-72": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    308, 
+                    319
+                ], 
+                [
+                    "insert", 
+                    308, 
+                    "therefor. On"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    579, 
+                    588
+                ], 
+                [
+                    "insert", 
+                    579, 
+                    "held. Such"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    1123, 
+                    1136
+                ], 
+                [
+                    "insert", 
+                    1123, 
+                    "application. A"
+                ]
+            ]
+        ]
+    }, 
+    "478-74": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    331, 
+                    338
+                ], 
+                [
+                    "insert", 
+                    331, 
+                    "fine. On"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    593, 
+                    602
+                ], 
+                [
+                    "insert", 
+                    593, 
+                    "held. Such"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    686, 
+                    696
+                ], 
+                [
+                    "insert", 
+                    686, 
+                    "hearing. On"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    958, 
+                    970
+                ], 
+                [
+                    "insert", 
+                    958, 
+                    "based. If the"
+                ]
+            ]
+        ]
+    }, 
+    "478-76": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    0, 
+                    2
+                ], 
+                [
+                    "insert", 
+                    0, 
+                    "Applicants or licensees may represent themselves or be represented by an attorney, a certified public accountant, or any other person, specifically designated in a duly executed power of attorney that shall be filed in the proceeding by the"
+                ]
+            ], 
+            [
+                "insert", 
+                15, 
+                " licensee. The applicant or"
+            ], 
+            [
+                "insert", 
+                25, 
+                "shall file waivers, if applicable, under the Privacy Act of 1974 and 26 U.S.C. 6103(c) (confidentiality and disclosure of returns and return information). The Director of Industry Operations "
+            ], 
+            [
+                "insert", 
+                44, 
+                "in proceedings under \u00a7\u00a7 478.72 and 478.74 "
+            ], 
+            [
+                [
+                    "delete", 
+                    50, 
+                    91
+                ], 
+                [
+                    "insert", 
+                    50, 
+                    "attorney in the Office of Chief Counsel who is authorized to execute and file motions, briefs, and"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    98, 
+                    191
+                ], 
+                [
+                    "insert", 
+                    98, 
+                    "papers in the proceeding, on behalf of the Director of Industry Operations, in the attorney's own name"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    195, 
+                    417
+                ], 
+                [
+                    "insert", 
+                    195, 
+                    "\u201cAttorney"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    422, 
+                    728
+                ], 
+                [
+                    "insert", 
+                    422, 
+                    "the"
+                ]
+            ]
+        ]
+    }, 
+    "478-92": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                2
+            ], 
+            [
+                "delete", 
+                2, 
+                3
+            ]
+        ], 
+        "op": "modified", 
+        "title": [
+            [
+                [
+                    "delete", 
+                    9, 
+                    17
+                ], 
+                [
+                    "insert", 
+                    9, 
+                    "Identification of firearms and armor piercing ammunition by"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    54, 
+                    156
+                ], 
+                [
+                    "insert", 
+                    54, 
+                    "importers."
+                ]
+            ]
+        ]
+    }, 
+    "478-92-a-3": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    4, 
+                    619
+                ], 
+                [
+                    "insert", 
+                    4, 
+                    "[Reserved]"
+                ]
+            ]
+        ]
+    }, 
+    "478-92-c": {
+        "op": "deleted"
+    }, 
+    "478-92-c-1": {
+        "op": "deleted"
+    }, 
+    "478-92-c-1-i": {
+        "op": "deleted"
+    }, 
+    "478-92-c-1-ii": {
+        "op": "deleted"
+    }, 
+    "478-92-c-1-ii-A": {
+        "op": "deleted"
+    }, 
+    "478-92-c-1-ii-B": {
+        "op": "deleted"
+    }, 
+    "478-92-c-1-iii": {
+        "op": "deleted"
+    }, 
+    "478-92-c-2": {
+        "op": "deleted"
+    }, 
+    "478-92-c-3": {
+        "op": "deleted"
+    }, 
+    "478-92-c-3-i": {
+        "op": "deleted"
+    }, 
+    "478-92-c-3-ii": {
+        "op": "deleted"
+    }, 
+    "478-95": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    241, 
+                    248
+                ], 
+                [
+                    "insert", 
+                    241, 
+                    "478.94."
+                ]
+            ], 
+            [
+                "delete", 
+                795, 
+                799
+            ], 
+            [
+                "delete", 
+                808, 
+                812
+            ]
+        ]
+    }, 
+    "478-Subpart-C": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                24
+            ], 
+            [
+                "delete", 
+                24, 
+                25
+            ]
+        ], 
+        "op": "modified"
+    }
+}

@@ -1,0 +1,107 @@
+{
+    "555-141-a": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                9
+            ], 
+            [
+                "insert", 
+                9, 
+                [
+                    "555-141-a-10"
+                ]
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "555-141-a-10": {
+        "node": {
+            "child_labels": [
+                "555-141-a-10-i", 
+                "555-141-a-10-ii", 
+                "555-141-a-10-iii"
+            ], 
+            "label": [
+                "555", 
+                "141", 
+                "a", 
+                "10"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(10) Model rocket motors that meet all of the following criteria\u2014", 
+            "text": "(10) Model rocket motors that meet all of the following criteria\u2014", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "555-141-a-10-i": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "555", 
+                "141", 
+                "a", 
+                "10", 
+                "i"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(i) Consist of ammonium perchlorate composite propellant, black powder, or other similar low explosives;", 
+            "text": "(i) Consist of ammonium perchlorate composite propellant, black powder, or other similar low explosives;", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "555-141-a-10-ii": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "555", 
+                "141", 
+                "a", 
+                "10", 
+                "ii"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(ii) Contain no more than 62.5 grams of total propellant weight; and", 
+            "text": "(ii) Contain no more than 62.5 grams of total propellant weight; and", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "555-141-a-10-iii": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "555", 
+                "141", 
+                "a", 
+                "10", 
+                "iii"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(iii) Are designed as single-use motors or as reload kits capable of reloading no more than 62.5 grams of propellant into a reusable motor casing.", 
+            "text": "(iii) Are designed as single-use motors or as reload kits capable of reloading no more than 62.5 grams of propellant into a reusable motor casing.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "555-78": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    285, 
+                    287
+                ], 
+                [
+                    "insert", 
+                    285, 
+                    " "
+                ]
+            ]
+        ]
+    }
+}

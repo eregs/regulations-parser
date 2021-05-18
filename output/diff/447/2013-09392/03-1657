@@ -1,0 +1,969 @@
+{
+    "447-1": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    55, 
+                    72
+                ], 
+                [
+                    "insert", 
+                    55, 
+                    "Section 38,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    118, 
+                    164
+                ], 
+                [
+                    "insert", 
+                    118, 
+                    "which is concerned with the importation of arms, ammunition and implements of war. This part contains the U.S. Munitions Import List and includes procedural and administrative requirements and provisions relating to registration of importers, permits,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    174, 
+                    194
+                ], 
+                [
+                    "insert", 
+                    174, 
+                    "in transit, import certification, delivery verification, import restrictions applicable to certain countries, exemptions, U.S. military firearms or ammunition, penalties, seizures, and forfeitures. All designations and changes in designation of articles subject to import control under Section 414 of the Mutual Security Act of 1954,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    198, 
+                    484
+                ], 
+                [
+                    "insert", 
+                    198, 
+                    "amended, have the concurrence of the"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    504, 
+                    1518
+                ], 
+                [
+                    "insert", 
+                    504, 
+                    "and the"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    1532, 
+                    1905
+                ], 
+                [
+                    "insert", 
+                    1532, 
+                    "Defense."
+                ]
+            ]
+        ]
+    }, 
+    "447-11-p1448930519": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    20, 
+                    36
+                ], 
+                [
+                    "insert", 
+                    20, 
+                    "arms, ammunition, and implements of war"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    77, 
+                    90
+                ], 
+                [
+                    "insert", 
+                    77, 
+                    "List."
+                ]
+            ]
+        ]
+    }, 
+    "447-11-p2275123666": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    308, 
+                    314
+                ], 
+                [
+                    "insert", 
+                    308, 
+                    "\u2014\u2014"
+                ]
+            ]
+        ]
+    }, 
+    "447-11-p2998377869": {
+        "op": "modified", 
+        "text": [
+            [
+                "insert", 
+                190, 
+                " For purposes of Category XXII, any item enumerated on the U.S. Munitions List (22 CFR Part 121)."
+            ]
+        ]
+    }, 
+    "447-21": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                6
+            ], 
+            [
+                "delete", 
+                6, 
+                7
+            ], 
+            [
+                "equal", 
+                7, 
+                10
+            ], 
+            [
+                "delete", 
+                10, 
+                11
+            ], 
+            [
+                "equal", 
+                11, 
+                14
+            ], 
+            [
+                "delete", 
+                14, 
+                15
+            ], 
+            [
+                "equal", 
+                15, 
+                17
+            ], 
+            [
+                "insert", 
+                17, 
+                [
+                    "447-21-p306685262"
+                ]
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "447-21-p1": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    4, 
+                    13
+                ], 
+                [
+                    "insert", 
+                    4, 
+                    "U.S. Munitions List compiled by the Department of State, Office of Defense Trade Controls, and published at 22 CFR 121.1, with the deletions indicated, has been adopted as an enumeration of the"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    31, 
+                    72
+                ], 
+                [
+                    "insert", 
+                    31, 
+                    "subject"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    76, 
+                    89
+                ], 
+                [
+                    "insert", 
+                    76, 
+                    "controls under this part. The expurgated list, set out below, shall, for the purposes"
+                ]
+            ], 
+            [
+                "insert", 
+                93, 
+                "this part, be known as "
+            ], 
+            [
+                "delete", 
+                97, 
+                255
+            ], 
+            [
+                [
+                    "delete", 
+                    277, 
+                    290
+                ], 
+                [
+                    "insert", 
+                    277, 
+                    "List:"
+                ]
+            ]
+        ]
+    }, 
+    "447-21-p1443292809": {
+        "op": "deleted"
+    }, 
+    "447-21-p2050545867": {
+        "op": "deleted"
+    }, 
+    "447-21-p2815177088": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                1
+            ], 
+            [
+                "delete", 
+                1, 
+                2
+            ]
+        ], 
+        "op": "modified", 
+        "title": [
+            [
+                [
+                    "delete", 
+                    9, 
+                    22
+                ], 
+                [
+                    "insert", 
+                    9, 
+                    "viii\u2014aircraft, spacecraft,"
+                ]
+            ]
+        ]
+    }, 
+    "447-21-p2815177088-a": {
+        "child_ops": [
+            [
+                "insert", 
+                0, 
+                [
+                    "447-21-p2815177088-a-p1", 
+                    "447-21-p2815177088-a-p2"
+                ]
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "447-21-p2815177088-a-p1": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "447", 
+                "21", 
+                "p2815177088", 
+                "a", 
+                "p1"
+            ], 
+            "node_type": "note", 
+            "tagged_text": "Category VIII (b) through (j) and Categories IX, X, XI, XII and XIII of \u201cMunitions List\u201d deleted as inapplicable to imports.", 
+            "text": "Category VIII (b) through (j) and Categories IX, X, XI, XII and XIII of \u201cMunitions List\u201d deleted as inapplicable to imports.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "447-21-p2815177088-a-p2": {
+        "node": {
+            "child_labels": [
+                "447-21-p2815177088-a-p2-a", 
+                "447-21-p2815177088-a-p2-b", 
+                "447-21-p2815177088-a-p2-c", 
+                "447-21-p2815177088-a-p2-d", 
+                "447-21-p2815177088-a-p2-e"
+            ], 
+            "label": [
+                "447", 
+                "21", 
+                "p2815177088", 
+                "a", 
+                "p2"
+            ], 
+            "node_type": "note", 
+            "tagged_text": "In Category VIII, \u201caircraft\u201d means aircraft designed, modified, or equipped for a military purpose, including aircraft described as \u201cdemilitarized.\u201d All aircraft bearing an original military designation are included in Category VIII. However, the following aircraft are not so included so long as they have not been specifically equipped, reequipped, or modified for military operations:", 
+            "text": "In Category VIII, \u201caircraft\u201d means aircraft designed, modified, or equipped for a military purpose, including aircraft described as \u201cdemilitarized.\u201d All aircraft bearing an original military designation are included in Category VIII. However, the following aircraft are not so included so long as they have not been specifically equipped, reequipped, or modified for military operations:", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "447-21-p2815177088-a-p2-a": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "447", 
+                "21", 
+                "p2815177088", 
+                "a", 
+                "p2", 
+                "a"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(a) Cargo aircraft bearing \u201cC\u201d designations and numbered C-45 through C-118 inclusive, and C-121 through C-125 inclusive, and C-131, using reciprocating engines only.", 
+            "text": "(a) Cargo aircraft bearing \u201cC\u201d designations and numbered C-45 through C-118 inclusive, and C-121 through C-125 inclusive, and C-131, using reciprocating engines only.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "447-21-p2815177088-a-p2-b": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "447", 
+                "21", 
+                "p2815177088", 
+                "a", 
+                "p2", 
+                "b"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(b) Trainer aircraft bearing \u201cT\u201d designations and using reciprocating engines or turboprop engines with less than 600 horsepower (s.h.p.).", 
+            "text": "(b) Trainer aircraft bearing \u201cT\u201d designations and using reciprocating engines or turboprop engines with less than 600 horsepower (s.h.p.).", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "447-21-p2815177088-a-p2-c": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "447", 
+                "21", 
+                "p2815177088", 
+                "a", 
+                "p2", 
+                "c"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(c) Utility aircraft bearing \u201cU\u201d designations and using reciprocating engines only.", 
+            "text": "(c) Utility aircraft bearing \u201cU\u201d designations and using reciprocating engines only.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "447-21-p2815177088-a-p2-d": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "447", 
+                "21", 
+                "p2815177088", 
+                "a", 
+                "p2", 
+                "d"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(d) All liaison aircraft bearing an \u201cL\u201d designation.", 
+            "text": "(d) All liaison aircraft bearing an \u201cL\u201d designation.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "447-21-p2815177088-a-p2-e": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "447", 
+                "21", 
+                "p2815177088", 
+                "a", 
+                "p2", 
+                "e"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(e) All observation aircraft bearing \u201cO\u201d designations and using reciprocating engines.", 
+            "text": "(e) All observation aircraft bearing \u201cO\u201d designations and using reciprocating engines.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "447-21-p2815177088-b": {
+        "op": "deleted"
+    }, 
+    "447-21-p2815177088-b-p1": {
+        "op": "deleted"
+    }, 
+    "447-21-p2815177088-b-p1-a": {
+        "op": "deleted"
+    }, 
+    "447-21-p2815177088-b-p1-b": {
+        "op": "deleted"
+    }, 
+    "447-21-p2815177088-b-p1-c": {
+        "op": "deleted"
+    }, 
+    "447-21-p2815177088-b-p1-d": {
+        "op": "deleted"
+    }, 
+    "447-21-p2815177088-b-p1-e": {
+        "op": "deleted"
+    }, 
+    "447-21-p306685262": {
+        "node": {
+            "child_labels": [
+                "447-21-p306685262-a", 
+                "447-21-p306685262-b"
+            ], 
+            "label": [
+                "447", 
+                "21", 
+                "p306685262"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": null, 
+            "text": "", 
+            "title": "category xxii\u2014south africa"
+        }, 
+        "op": "added"
+    }, 
+    "447-21-p306685262-a": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "447", 
+                "21", 
+                "p306685262", 
+                "a"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(a) Defense articles enumerated on the U.S. Munitions List (22 CFR Part 121).", 
+            "text": "(a) Defense articles enumerated on the U.S. Munitions List (22 CFR Part 121).", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "447-21-p306685262-b": {
+        "node": {
+            "child_labels": [
+                "447-21-p306685262-b-p1", 
+                "447-21-p306685262-b-p2"
+            ], 
+            "label": [
+                "447", 
+                "21", 
+                "p306685262", 
+                "b"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(b) Technical data relating to defense articles enumerated on the U.S. Munitions List.", 
+            "text": "(b) Technical data relating to defense articles enumerated on the U.S. Munitions List.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "447-21-p306685262-b-p1": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "447", 
+                "21", 
+                "p306685262", 
+                "b", 
+                "p1"
+            ], 
+            "node_type": "note", 
+            "tagged_text": "This category is applicable only to South Africa.", 
+            "text": "This category is applicable only to South Africa.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "447-21-p306685262-b-p2": {
+        "node": {
+            "child_labels": [
+                "447-21-p306685262-b-p2-1", 
+                "447-21-p306685262-b-p2-2", 
+                "447-21-p306685262-b-p2-3"
+            ], 
+            "label": [
+                "447", 
+                "21", 
+                "p306685262", 
+                "b", 
+                "p2"
+            ], 
+            "node_type": "note", 
+            "tagged_text": "\u201cTechnical data\u201d means, for purposes of this category:", 
+            "text": "\u201cTechnical data\u201d means, for purposes of this category:", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "447-21-p306685262-b-p2-1": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "447", 
+                "21", 
+                "p306685262", 
+                "b", 
+                "p2", 
+                "1"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(1) Classified information relating to defense articles and defense services;", 
+            "text": "(1) Classified information relating to defense articles and defense services;", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "447-21-p306685262-b-p2-2": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "447", 
+                "21", 
+                "p306685262", 
+                "b", 
+                "p2", 
+                "2"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(2) Information covered by an invention secrecy order;", 
+            "text": "(2) Information covered by an invention secrecy order;", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "447-21-p306685262-b-p2-3": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "447", 
+                "21", 
+                "p306685262", 
+                "b", 
+                "p2", 
+                "3"
+            ], 
+            "node_type": "regtext", 
+            "tagged_text": "(3) Information which is directly related to the design, engineering, development, production, processing, manufacture, use, operation, overhaul, repair, maintenance, modification, or reconstruction of defense articles. This includes, for example, information in the form of blueprints, drawings, photographs, plans, instructions, computer software and documentation. This also includes information which advances the state of the art of articles on the U.S. Munitions List. This does not include information concerning general scientific, mathematical or engineering principles.", 
+            "text": "(3) Information which is directly related to the design, engineering, development, production, processing, manufacture, use, operation, overhaul, repair, maintenance, modification, or reconstruction of defense articles. This includes, for example, information in the form of blueprints, drawings, photographs, plans, instructions, computer software and documentation. This also includes information which advances the state of the art of articles on the U.S. Munitions List. This does not include information concerning general scientific, mathematical or engineering principles.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "447-21-p3572827857": {
+        "op": "deleted"
+    }, 
+    "447-21-p60809944-b": {
+        "child_ops": [
+            [
+                "insert", 
+                0, 
+                [
+                    "447-21-p60809944-b-p1"
+                ]
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "447-21-p60809944-b-p1": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "447", 
+                "21", 
+                "p60809944", 
+                "b", 
+                "p1"
+            ], 
+            "node_type": "note", 
+            "tagged_text": "Categories XVII, XVIII, and XIX of \u201cMunitions List\u201d deleted as inapplicable to imports.", 
+            "text": "Categories XVII, XVIII, and XIX of \u201cMunitions List\u201d deleted as inapplicable to imports.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "447-21-p657734979": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                3
+            ], 
+            [
+                "delete", 
+                3, 
+                4
+            ], 
+            [
+                "equal", 
+                4, 
+                7
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "447-21-p657734979-c": {
+        "child_ops": [
+            [
+                "insert", 
+                0, 
+                [
+                    "447-21-p657734979-c-p1"
+                ]
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "447-21-p657734979-c-p1": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "447", 
+                "21", 
+                "p657734979", 
+                "c", 
+                "p1"
+            ], 
+            "node_type": "note", 
+            "tagged_text": "Category VII (d) and (e) of \u201cMunitions List\u201d deleted as inapplicable to imports.", 
+            "text": "Category VII (d) and (e) of \u201cMunitions List\u201d deleted as inapplicable to imports.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "447-21-p657734979-d": {
+        "op": "deleted"
+    }, 
+    "447-21-p731147738-c": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    556, 
+                    581
+                ], 
+                [
+                    "insert", 
+                    556, 
+                    "devices,intervalometers,"
+                ]
+            ]
+        ]
+    }, 
+    "447-21-p731147738-h": {
+        "child_ops": [
+            [
+                "equal", 
+                0, 
+                1
+            ], 
+            [
+                "insert", 
+                1, 
+                [
+                    "447-21-p731147738-h-p2"
+                ]
+            ]
+        ], 
+        "op": "modified"
+    }, 
+    "447-21-p731147738-h-p2": {
+        "node": {
+            "child_labels": [], 
+            "label": [
+                "447", 
+                "21", 
+                "p731147738", 
+                "h", 
+                "p2"
+            ], 
+            "node_type": "note", 
+            "tagged_text": "Category V of \u201cMunitions List\u201d deleted as inapplicable to imports.", 
+            "text": "Category V of \u201cMunitions List\u201d deleted as inapplicable to imports.", 
+            "title": null
+        }, 
+        "op": "added"
+    }, 
+    "447-21-p96906372": {
+        "op": "modified", 
+        "text": [
+            [
+                "delete", 
+                4, 
+                12
+            ], 
+            [
+                "insert", 
+                20, 
+                "not specifically enumerated in the other categories of the U.S. Munitions List which has substantial military applicability and which has been specifically designed "
+            ], 
+            [
+                [
+                    "delete", 
+                    23, 
+                    66
+                ], 
+                [
+                    "insert", 
+                    23, 
+                    "modified for military purposes. The decision on whether any article may be included"
+                ]
+            ], 
+            [
+                "insert", 
+                70, 
+                "this category shall be made by "
+            ], 
+            [
+                [
+                    "delete", 
+                    74, 
+                    90
+                ], 
+                [
+                    "insert", 
+                    74, 
+                    "Director, Office"
+                ]
+            ], 
+            [
+                "insert", 
+                94, 
+                "Defense Trade Controls, Department of State, with "
+            ], 
+            [
+                [
+                    "delete", 
+                    98, 
+                    311
+                ], 
+                [
+                    "insert", 
+                    98, 
+                    "concurrence of"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    316, 
+                    353
+                ], 
+                [
+                    "insert", 
+                    316, 
+                    "Department"
+                ]
+            ], 
+            [
+                "delete", 
+                357, 
+                401
+            ]
+        ]
+    }, 
+    "447-32-c": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    322, 
+                    344
+                ], 
+                [
+                    "insert", 
+                    322, 
+                    "Washington, DC 20226,"
+                ]
+            ]
+        ]
+    }, 
+    "447-35-b": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    143, 
+                    163
+                ], 
+                [
+                    "insert", 
+                    143, 
+                    "http://www.atf.treas.gov/."
+                ]
+            ]
+        ]
+    }, 
+    "447-52-a": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    199, 
+                    231
+                ], 
+                [
+                    "insert", 
+                    199, 
+                    "Cuba, Iran, Iraq, Libya, Mongolia, North Korea, Sudan, Syria, Vietnam, and some of the"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    239, 
+                    252
+                ], 
+                [
+                    "insert", 
+                    239, 
+                    "that comprised the"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    267, 
+                    322
+                ], 
+                [
+                    "insert", 
+                    267, 
+                    "Union (Armenia, Azerbaijan, Belarus, and Tajikistan). This policy applies to countries or areas with respect to which the United States maintains an arms embargo (e.g., Burma, China, the Federal Republic of Yugoslavia (Serbia and Montenegro), Haiti, Liberia, Rwanda, Somalia,"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    330, 
+                    361
+                ], 
+                [
+                    "insert", 
+                    330, 
+                    "UNITA (Angola), and Zaire). It also"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    370, 
+                    417
+                ], 
+                [
+                    "insert", 
+                    370, 
+                    "when an import would not be in furtherance of world peace and the security and foreign policy of the"
+                ]
+            ], 
+            [
+                "delete", 
+                425, 
+                702
+            ]
+        ]
+    }, 
+    "447-52-a-p1": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    222, 
+                    236
+                ], 
+                [
+                    "insert", 
+                    222, 
+                    "(202) 927-8320"
+                ]
+            ]
+        ]
+    }, 
+    "447-52-b-2": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    209, 
+                    218
+                ], 
+                [
+                    "insert", 
+                    209, 
+                    "7.62X25mm"
+                ]
+            ], 
+            [
+                [
+                    "delete", 
+                    242, 
+                    251
+                ], 
+                [
+                    "insert", 
+                    242, 
+                    "7.63X25mm"
+                ]
+            ]
+        ]
+    }, 
+    "447-58": {
+        "op": "modified", 
+        "text": [
+            [
+                [
+                    "delete", 
+                    432, 
+                    452
+                ], 
+                [
+                    "insert", 
+                    432, 
+                    "http://www.atf.treas.gov/."
+                ]
+            ]
+        ]
+    }
+}

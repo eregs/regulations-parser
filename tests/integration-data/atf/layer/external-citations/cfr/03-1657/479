@@ -368,7 +368,7 @@
                 0
             ], 
             "text": "26 CFR 1.1563", 
-            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=1&section=1563&titlenum=26&year=mostrecent"
+            "url": "http://api.fdsys.gov/link?collection=cfr&partnum=1&section=1563-1&titlenum=26&year=mostrecent"
         }, 
         {
             "citation_type": "USC", 

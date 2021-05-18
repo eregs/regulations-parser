@@ -1,0 +1,92 @@
+{
+    "amendments": [
+        {
+            "cfr_part": "447", 
+            "instruction": "Accordingly, for the reasons discussed in the preamble, 27 CFR Part 447 is amended as follows: "
+        }, 
+        {
+            "authority": "22 U.S.C. 2778.", 
+            "cfr_part": "447", 
+            "instruction": "1. The authority citation for 27 CFR Part 447 continues to read as follows: "
+        }, 
+        {
+            "cfr_part": "447", 
+            "changes": [
+                [
+                    "447-11-p2998377869", 
+                    [
+                        {
+                            "action": "DELETE"
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "2. Section 447.11 is amended by removing the last sentence in the definition of the term \u201cDefense articles\u201d. "
+        }, 
+        {
+            "cfr_part": "447", 
+            "instruction": "3. Section 447.21 is amended by removing Category XXII (South Africa) in its entirety from the U.S. Munitions Import List. "
+        }, 
+        {
+            "cfr_part": "447", 
+            "changes": [
+                [
+                    "447-52-a", 
+                    [
+                        {
+                            "action": "DELETE"
+                        }, 
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "447", 
+                                    "52", 
+                                    "a"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(a) * * * This policy applies to Afghanistan, Belarus (one of the states composing the former Soviet Union), Cuba, Iran, Iraq, Libya, Mongolia, North Korea, Sudan, Syria, and Vietnam. This policy applies to countries or areas with respect to which the United States maintains an arms embargo (e.g., Burma, China, the Democratic Republic of the Congo, Haiti, Liberia, Rwanda, Somalia, Sudan, and UNITA (Angola)).", 
+                                "text": "(a) * * * This policy applies to Afghanistan, Belarus (one of the states composing the former Soviet Union), Cuba, Iran, Iraq, Libya, Mongolia, North Korea, Sudan, Syria, and Vietnam. This policy applies to countries or areas with respect to which the United States maintains an arms embargo (e.g., Burma, China, the Democratic Republic of the Congo, Haiti, Liberia, Rwanda, Somalia, Sudan, and UNITA (Angola)).", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "4. Section 447.52 is amended by revising the second and third sentences in paragraph (a), and by removing \u201c(202) 927-8320\u201d in the \u201cNote\u201d at the end of paragraph (a) and adding in its place \u201c(304) 616-4550\u201d, to read as follows: "
+        }
+    ], 
+    "cfr_parts": [
+        "447"
+    ], 
+    "cfr_title": 27, 
+    "dockets": [
+        "Docket No. ATF-9F", 
+        "AG Order No. 2922-2007"
+    ], 
+    "document_number": "E7-24910", 
+    "effective_on": "2007-12-26", 
+    "footnotes": {}, 
+    "fr_citation": "72 FR 72936", 
+    "fr_url": "https://www.federalregister.gov/documents/2007/12/26/E7-24910/us-munitions-import-list-and-import-restrictions-applicable-to-certain-countries-2005r-5p", 
+    "fr_volume": 72, 
+    "meta": {
+        "start_page": 72936
+    }, 
+    "primary_agency": "DEPARTMENT OF JUSTICE ", 
+    "primary_docket": null, 
+    "publication_date": "2007-12-26", 
+    "regulation_id_numbers": [
+        "1140-AA29"
+    ], 
+    "section_by_section": [], 
+    "supporting_documents": [], 
+    "title": "U.S. Munitions Import List and Import Restrictions Applicable to Certain Countries (2005R-5P) ", 
+    "versions": {
+        "447": {
+            "left": "03-1657", 
+            "right": "E7-24910"
+        }
+    }
+}

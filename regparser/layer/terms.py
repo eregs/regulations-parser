@@ -213,7 +213,6 @@ class Terms(Layer):
         # longer terms first
         search_terms = sorted(search_terms, key=lambda x: len(x[0]),
                               reverse=True)
-
         matches = []
         for term, ref in search_terms:
             re_term = r'\b' + re.escape(term) + r'\b'
@@ -233,5 +232,11 @@ class Terms(Layer):
                 continue
 
             exclusions.extend(safe_offsets)
-            matches.append((term, ref, safe_offsets))
+            
+            if 'United States' in text:
+                if term == 'States' or term == 'State' or term == 'states' or term == 'state':
+                    continue
+            else:        
+                matches.append((term, ref, safe_offsets))
+        
         return matches

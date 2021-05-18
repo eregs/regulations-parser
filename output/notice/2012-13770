@@ -1,0 +1,193 @@
+{
+    "amendments": [
+        {
+            "authority": "5 U.S.C. 552(a); 18 U.S.C. 847, 921-931; 44 U.S.C. 3504(h).", 
+            "cfr_part": "478", 
+            "instruction": "1. The authority citation for 27 CFR part 478 continues to read as follows:"
+        }, 
+        {
+            "cfr_part": "478", 
+            "changes": [
+                [
+                    "478-11-p3121846411", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "11", 
+                                    "p3121846411"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "<E T=\"03\">State of residence.</E> The State in which an individual resides. An individual resides in a State if he or she is present in a State with the intention of making a home in that State. If an individual is on active duty as a member of the Armed Forces, the individual's State of residence is the State in which his or her permanent duty station is located, as stated in 18 U.S.C. 921(b). The following are examples that illustrate this definition:", 
+                                "text": "State of residence. The State in which an individual resides. An individual resides in a State if he or she is present in a State with the intention of making a home in that State. If an individual is on active duty as a member of the Armed Forces, the individual's State of residence is the State in which his or her permanent duty station is located, as stated in 18 U.S.C. 921(b). The following are examples that illustrate this definition:", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "2. Section 478.11 is amended by revising the definition of \u201cState of residence\u201d to read as follows:"
+        }, 
+        {
+            "cfr_part": "478", 
+            "instruction": "3. Section 478.124 is amended as follows:"
+        }, 
+        {
+            "cfr_part": "478", 
+            "instruction": "a. By removing and reserving paragraph (c)(3)(ii)."
+        }, 
+        {
+            "cfr_part": "478", 
+            "instruction": "b. In paragraph (d), by removing the proviso after the colon and by removing the colon and adding in its place a period."
+        }, 
+        {
+            "cfr_part": "478", 
+            "changes": [
+                [
+                    "478-124-c-3-ii", 
+                    [
+                        {
+                            "action": "DELETE"
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "c. In paragraph (e), by removing the words \u201c, except for the provisions of paragraph (c)(3)(ii)\u201d at the end of the paragraph."
+        }, 
+        {
+            "cfr_part": "478", 
+            "instruction": "d. In paragraph (f), by removing the words \u201c, and in the case of a transferee who is an alien legally in the United States, the transferee has resided in that State continuously for at least 90 days prior to the transfer of the firearm\u201d in the third sentence."
+        }, 
+        {
+            "cfr_part": "478", 
+            "changes": [
+                [
+                    "478-125-f-1", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "125", 
+                                    "f", 
+                                    "1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(1) Each licensed collector shall enter into a record each receipt and disposition of firearms curios or relics. The record required by this paragraph shall be maintained in bound form under the format prescribed below. The purchase or other acquisition of a curio or relic shall, except as provided in paragraph (g) of this section, be recorded not later than the close of the next business day following the date of such purchase or other acquisition. The record shall show the date of receipt, the name and address or the name and license number of the person from whom received, the name of the manufacturer and importer (if any), the model, serial number, type, and the caliber or gauge of the firearm curio or relic. The sale or other disposition of a curio or relic shall be recorded by the licensed collector not later than 7 days following the date of such transaction. When such disposition is made to a licensee, the commercial record of the transaction shall be retained, until the transaction is recorded, separate from other commercial documents maintained by the licensee, and be readily available for inspection. The record shall show the date of the sale or other disposition of each firearm curio or relic, the name and address of the person to whom the firearm curio or relic is transferred, or the name and license number of the person to whom transferred if such person is a licensee, and the date of birth of the transferee if other than a licensee. In addition, the licensee shall cause the transferee, if other than a licensee, to be identified in any manner customarily used in commercial transactions (e.g., a driver's license), and note on the record the method used.", 
+                                "text": "(1) Each licensed collector shall enter into a record each receipt and disposition of firearms curios or relics. The record required by this paragraph shall be maintained in bound form under the format prescribed below. The purchase or other acquisition of a curio or relic shall, except as provided in paragraph (g) of this section, be recorded not later than the close of the next business day following the date of such purchase or other acquisition. The record shall show the date of receipt, the name and address or the name and license number of the person from whom received, the name of the manufacturer and importer (if any), the model, serial number, type, and the caliber or gauge of the firearm curio or relic. The sale or other disposition of a curio or relic shall be recorded by the licensed collector not later than 7 days following the date of such transaction. When such disposition is made to a licensee, the commercial record of the transaction shall be retained, until the transaction is recorded, separate from other commercial documents maintained by the licensee, and be readily available for inspection. The record shall show the date of the sale or other disposition of each firearm curio or relic, the name and address of the person to whom the firearm curio or relic is transferred, or the name and license number of the person to whom transferred if such person is a licensee, and the date of birth of the transferee if other than a licensee. In addition, the licensee shall cause the transferee, if other than a licensee, to be identified in any manner customarily used in commercial transactions (e.g., a driver's license), and note on the record the method used.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "478-125-f-2-p1", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "125", 
+                                    "f", 
+                                    "2", 
+                                    "p1"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "<GPOTABLE CDEF=\"s20,8,8,8,8,8,12,8,12,12,12\" COLS=\"11\" OPTS=\"L2,p7,7/8,i1\">\n              <TTITLE>Firearms Collectors Acquisition and Disposition Record</TTITLE>\n              <BOXHD>\n                <CHED H=\"1\">Description of firearm</CHED>\n                <CHED H=\"2\">Manufacturer and/or importer</CHED>\n                <CHED H=\"2\">Model</CHED>\n                <CHED H=\"2\">Serial No.</CHED>\n                <CHED H=\"2\">Type</CHED>\n                <CHED H=\"2\">Caliber or gauge</CHED>\n                <CHED H=\"1\">Receipt</CHED>\n                <CHED H=\"2\">Date</CHED>\n                <CHED H=\"2\">Name and address or name and license No.</CHED>\n                <CHED H=\"1\">Disposition</CHED>\n                <CHED H=\"2\">Date</CHED>\n                <CHED H=\"2\">Name and address or name and license No.</CHED>\n                <CHED H=\"2\">Date of birth if non-licensee</CHED>\n                <CHED H=\"2\">Driver's license No. or other identification if non-licensee</CHED>\n              </BOXHD>\n              <ROW>\n                <ENT I=\"22\">\u2003 </ENT>\n              </ROW>\n            </GPOTABLE>", 
+                                "text": "|Firearms Collectors Acquisition and Disposition Record|Description of firearm|Manufacturer and/or importer|Model|Serial No.|Type|Caliber or gauge|Receipt|Date|Name and address or name and license No.|Disposition|Date|Name and address or name and license No.|Date of birth if non-licensee|Driver's license No. or other identification if non-licensee|\n|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|\n||", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "478-125-f-2", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "478-125-f-2-p1"
+                                ], 
+                                "label": [
+                                    "478", 
+                                    "125", 
+                                    "f", 
+                                    "2"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(2) The format required for the record of receipt and disposition of firearms by collectors is as follows:", 
+                                "text": "(2) The format required for the record of receipt and disposition of firearms by collectors is as follows:", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ], 
+                [
+                    "478-125-f", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [
+                                    "478-125-f-1", 
+                                    "478-125-f-2"
+                                ], 
+                                "label": [
+                                    "478", 
+                                    "125", 
+                                    "f"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(f) <E T=\"03\">Firearms receipt and disposition by licensed collectors.</E>", 
+                                "text": "(f) Firearms receipt and disposition by licensed collectors.", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "4. Section 478.125(f) is revised to read as follows:"
+        }
+    ], 
+    "cfr_parts": [
+        "478"
+    ], 
+    "cfr_title": 27, 
+    "comments_close": "2012-09-05", 
+    "dockets": [
+        "Docket No. ATF 22I", 
+        "AG Order No. 3337-2012"
+    ], 
+    "document_number": "2012-13770", 
+    "effective_on": "2012-07-09", 
+    "footnotes": {}, 
+    "fr_citation": "77 FR 33630", 
+    "fr_url": "https://www.federalregister.gov/documents/2012/06/07/2012-13770/residency-requirements-for-aliens-acquiring-firearms-2011r-23p", 
+    "fr_volume": 77, 
+    "meta": {
+        "start_page": 33630
+    }, 
+    "primary_agency": "DEPARTMENT OF JUSTICE", 
+    "primary_docket": null, 
+    "publication_date": "2012-06-07", 
+    "regulation_id_numbers": [
+        "1140-AA44"
+    ], 
+    "section_by_section": [], 
+    "supporting_documents": [], 
+    "title": "Residency Requirements for Aliens Acquiring Firearms (2011R-23P)", 
+    "versions": {
+        "478": {
+            "left": "2012-13762", 
+            "right": "2012-13770"
+        }
+    }
+}

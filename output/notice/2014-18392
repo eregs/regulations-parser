@@ -1,0 +1,81 @@
+{
+    "amendments": [
+        {
+            "authority": "5 U.S.C. 552(a); 18 U.S.C. 847, 921-931; 44 U.S.C. 3504(h).", 
+            "cfr_part": "478", 
+            "instruction": "1. The authority citation for 27 CFR Part 478 continues to read as follows:"
+        }, 
+        {
+            "cfr_part": "478", 
+            "changes": [
+                [
+                    "478-124a", 
+                    [
+                        {
+                            "action": "DELETE"
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "2. Section 478.124a is removed."
+        }, 
+        {
+            "cfr_part": "478", 
+            "changes": [
+                [
+                    "478-125-e", 
+                    [
+                        {
+                            "action": "PUT", 
+                            "node": {
+                                "child_labels": [], 
+                                "label": [
+                                    "478", 
+                                    "125", 
+                                    "e"
+                                ], 
+                                "node_type": "regtext", 
+                                "tagged_text": "(e) <E T=\"03\">Firearms receipt and disposition by dealers.</E> Each licensed dealer shall enter into a record each receipt and disposition of firearms.  * * *", 
+                                "text": "(e) Firearms receipt and disposition by dealers. Each licensed dealer shall enter into a record each receipt and disposition of firearms.  * * *", 
+                                "title": null
+                            }
+                        }
+                    ]
+                ]
+            ], 
+            "instruction": "3. Section 478.125 is amended by revising the first sentence in paragraph (e) to read as follows:"
+        }
+    ], 
+    "cfr_parts": [
+        "478"
+    ], 
+    "cfr_title": 27, 
+    "dockets": [
+        "Docket No. ATF 19F", 
+        "AG Order No. 3451-2014"
+    ], 
+    "document_number": "2014-18392", 
+    "effective_on": "2014-10-03", 
+    "footnotes": {}, 
+    "fr_citation": "79 FR 45091", 
+    "fr_url": "https://www.federalregister.gov/documents/2014/08/04/2014-18392/elimination-of-firearms-transaction-record-atf-form-4473-low-volume-2008r-21p", 
+    "fr_volume": 79, 
+    "meta": {
+        "start_page": 45091
+    }, 
+    "primary_agency": "DEPARTMENT OF JUSTICE", 
+    "primary_docket": null, 
+    "publication_date": "2014-08-04", 
+    "regulation_id_numbers": [
+        "1140-AA34"
+    ], 
+    "section_by_section": [], 
+    "supporting_documents": [], 
+    "title": "Elimination of Firearms Transaction Record, ATF Form 4473 (Low Volume) (2008R-21P)", 
+    "versions": {
+        "478": {
+            "left": "2014-18842", 
+            "right": "2014-18392"
+        }
+    }
+}
