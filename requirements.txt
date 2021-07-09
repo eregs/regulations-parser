@@ -27,7 +27,7 @@ ipython==5.3.0            # via ipdb
 jedi==0.10.2              # via ipython
 json-delta==2.0
 lxml==3.6.0
-networkx==1.11
+networkx==2.6
 pbr==3.0.0                # via stevedore
 pexpect==4.2.1            # via ipython
 pickleshare==0.7.4        # via ipython
