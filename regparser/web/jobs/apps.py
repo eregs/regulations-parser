@@ -4,4 +4,5 @@ from django.apps import AppConfig
 
 
 class JobsConfig(AppConfig):
-    name = 'jobs'
+    # Satisfies Django 3.2's  full python path to the application
+    name = 'regparser.web.jobs'

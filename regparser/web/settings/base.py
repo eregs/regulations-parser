@@ -142,3 +142,6 @@ REQUESTS_CACHE = {
 
 FILE_UPLOAD_HANDLERS = [
     "django.core.files.uploadhandler.TemporaryFileUploadHandler"]
+
+# Satisfies Django3.2 auto-created primary keys, set to AutoField
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
