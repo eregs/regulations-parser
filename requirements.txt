@@ -15,7 +15,7 @@ decorator==4.4.2         # via ipython, networkx, traitlets
 dj-database-url==0.4.1
 django-click==1.2.0
 django-rq==2.5.1
-django==3.2.10
+django==3.2.12
 djangorestframework==3.11.0
 gitdb==0.6.4              # via gitpython
 gitpython==2.0.2
