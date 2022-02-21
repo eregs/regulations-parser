@@ -18,7 +18,7 @@ django-rq==0.9.1
 django==1.11
 djangorestframework==3.4
 gitdb==0.6.4              # via gitpython
-gitpython==2.0.2
+gitpython==3.1.27
 humanfriendly==2.4        # via coloredlogs
 inflection==0.3.1
 ipdb==0.10.0
