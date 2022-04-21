@@ -30,7 +30,7 @@ flake8-string-format==0.2.3
 flake8-tuple==0.2.12
 flake8==3.2.1
 freezegun==0.3.8
-gitdb==0.6.4
+gitdb==4.0.9
 gitpython==2.0.2
 httpretty==0.8.14
 humanfriendly==2.4
@@ -44,7 +44,7 @@ json-delta==2.0
 lxml==3.6.0
 mccabe==0.5.3             # via flake8
 mock==2.0.0
-networkx==1.11
+networkx==2.6
 pbr==3.0.0
 pep8-naming==0.4.1
 pexpect==4.2.1

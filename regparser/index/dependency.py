@@ -69,7 +69,7 @@ class Graph(object):
         filename = str(filename)
         if filename not in self._graph:
             self._graph.add_node(filename)
-        return self._graph.node[filename]
+        return self._graph.nodes[filename]
 
     def dependencies(self, filename):
         """What does other nodes does this filename *directly* depend on?"""
