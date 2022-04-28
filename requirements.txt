@@ -15,9 +15,9 @@ decorator==4.4.2         # via ipython, networkx, traitlets
 dj-database-url==0.4.2
 django-click==2.3.0
 django-rq==2.5.1
-django==3.2.12
+django==3.2.13
 djangorestframework==3.11.2
-gitdb==0.6.4              # via gitpython
+gitdb==4.0.9              # via gitpython
 gitpython==3.1.27
 humanfriendly==4.9        # via coloredlogs
 inflection==0.3.1
@@ -27,7 +27,7 @@ ipython==7.16.3            # via ipdb
 jedi==0.10.2              # via ipython
 json-delta==2.0
 lxml==4.6.5
-networkx==2.3
+networkx==2.6.3
 pbr==4.0.0                # via stevedore
 pexpect==4.8.0            # via ipython
 pickleshare==0.7.4        # via ipython
@@ -43,7 +43,7 @@ roman==2.0.0
 rq==1.3.0			  # via django-rq
 simplegeneric==0.8.1      # via ipython
 six==1.11.0
-smmap==0.9.0              # via gitdb
+smmap==5.0.0              # via gitdb
 stevedore==1.13.0
 traitlets==4.3.2          # via ipython
 wcwidth==0.1.7            # via prompt-toolkit
