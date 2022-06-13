@@ -99,8 +99,8 @@ LOCAL_XML_PATHS = [
 # number, appendix, and label.
 APPENDIX_IGNORE_SUBHEADER_LABEL = {}
 
-# Refer to a shared collection of modified FR notices
-XML_REPO_PREFIX = 'https://raw.githubusercontent.com/TimothyAndry/fr-notices/master/'
+# Refer to a shared collection of modified FR notices. Remember to change [your-organization] placeholder to the organization directory in use.
+XML_REPO_PREFIX = 'https://raw.githubusercontent.com/[your-organization]/fr-notices/master/'
 
 # A dictionary of agency-specific external citations
 # @todo - move ATF citations to an extension
@@ -227,8 +227,8 @@ CUSTOM_CITATIONS = {
 # Regulations.gov settings. The demo key is rate limited by IP; sign up for
 # your own key at
 # http://regulationsgov.github.io/developers/key/
-REGS_GOV_API = 'https://api.data.gov/regulations/v3/'
-REGS_GOV_KEY = 'DEMO_KEY'
+REGS_GOV_API = 'https://api.regulations.gov/v4/documents'
+REGS_GOV_KEY = 'gpPfSsRlg4We153fby1C9gnWC4Pfmdeja5NKlS6j'
 
 # These are the host and port for the regparser Django server running the
 # administrative UI.

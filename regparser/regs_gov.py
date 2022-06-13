@@ -4,8 +4,7 @@ from collections import namedtuple
 from regparser.index.http_cache import http_client
 from regparser.web.settings.parser import REGS_GOV_API, REGS_GOV_KEY
 
-REGS_GOV_DOC_API = REGS_GOV_API + 'documents.json'
-
+REGS_GOV_DOC_API = REGS_GOV_API
 
 logger = logging.getLogger(__name__)
 RegsGovDoc = namedtuple('RegsGovDoc', ['regs_id', 'title'])

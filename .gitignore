@@ -17,3 +17,5 @@ interpparser.egg-info/
 /env
 /.idea
 /.cache
+/output
+/fr-notices
