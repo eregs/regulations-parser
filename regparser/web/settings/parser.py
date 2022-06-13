@@ -99,8 +99,8 @@ LOCAL_XML_PATHS = [
 # number, appendix, and label.
 APPENDIX_IGNORE_SUBHEADER_LABEL = {}
 
-# Refer to a shared collection of modified FR notices. Remember to change [your-organization] placeholder to the organization directory in use.
-XML_REPO_PREFIX = 'https://raw.githubusercontent.com/[your-organization]/fr-notices/master/'
+# Refer to a shared collection of modified FR notices
+XML_REPO_PREFIX = 'https://raw.githubusercontent.com/TimothyAndry/fr-notices/master/'
 
 # A dictionary of agency-specific external citations
 # @todo - move ATF citations to an extension
