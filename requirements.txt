@@ -26,7 +26,7 @@ ipython-genutils==0.2.0   # via traitlets
 ipython==7.16.3            # via ipdb
 jedi==0.10.2              # via ipython
 json-delta==2.0
-lxml==4.6.5
+lxml==4.9.1
 networkx==2.6.3
 pbr==4.0.0                # via stevedore
 pexpect==4.8.0            # via ipython
