@@ -5,6 +5,7 @@ from __future__ import unicode_literals
 
 import abc
 import functools
+import html
 import logging
 import re
 from copy import deepcopy
@@ -31,12 +32,11 @@ def replace_html_entities(xml_bin_str):
     """XML does not contain entity references for many HTML entities, yet the
     Federal Register XML sometimes contains the HTML entities. Replace them
     here, lest we throw off XML parsing"""
-    parser = HTMLParser()
     match = HTML_RE.search(xml_bin_str)
     while match:
         match_bin = match.group(0)
         match_str = match_bin.decode('utf-8')
-        replacement = parser.unescape(match_str).encode('UTF-8')
+        replacement = html.unescape(match_str).encode('UTF-8')
         logger.debug("Replacing %s with %s in retrieved XML",
                      match_str, replacement)
         xml_bin_str = xml_bin_str.replace(match_bin, replacement)

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import html
 from unittest import TestCase
 
 from six.moves.html_parser import HTMLParser
@@ -57,7 +58,7 @@ class GrammarCommonTests(TestCase):
 
     def _decode(self, txt):
         """Convert from HTML entities"""
-        return HTMLParser().unescape(txt)
+        return html.unescape(txt)
 
     def test_whitespace(self):
         """Verify that various types of whitespace are ignored"""
