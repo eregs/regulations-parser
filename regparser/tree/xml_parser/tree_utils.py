@@ -7,6 +7,7 @@ from itertools import chain
 
 from lxml import etree
 from six.moves.html_parser import HTMLParser
+import html
 
 from regparser.tree.priority_stack import PriorityStack
 
@@ -147,5 +148,5 @@ def get_node_text_tags_preserved(xml_node):
     node_text = xml_node.text or ''
     node_text += ''.join(etree.tounicode(child) for child in xml_node)
 
-    node_text = HTMLParser().unescape(node_text)
+    node_text = html.unescape(node_text)
     return node_text

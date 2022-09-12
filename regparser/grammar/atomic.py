@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 """Atomic components; probably shouldn't use these directly"""
+import html
 import string
 
 from pyparsing import Optional, ParserElement, Regex, Suppress, Word
@@ -10,7 +11,7 @@ from regparser.grammar.utils import Marker, SuffixMarker, WordBoundaries
 # Set whitespace for all parsing; include unicode whitespace chars
 ParserElement.setDefaultWhitespaceChars(
     string.whitespace +
-    HTMLParser().unescape('&ensp;&emsp;&thinsp;&zwnj;&zwj;&lrm;&rlm;'))
+    html.unescape('&ensp;&emsp;&thinsp;&zwnj;&zwj;&lrm;&rlm;'))
 
 
 lower_p = (
