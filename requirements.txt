@@ -47,3 +47,4 @@ smmap==0.9.0              # via gitdb
 stevedore==1.13.0
 traitlets==4.3.2          # via ipython
 wcwidth==0.1.7            # via prompt-toolkit
+setuptools>=65.5.1 # not directly required, pinned by Snyk to avoid a vulnerability
