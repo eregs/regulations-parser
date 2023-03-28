@@ -36,7 +36,7 @@ ptyprocess==0.5.1         # via pexpect
 pygments==2.2.0           # via ipython
 pyparsing==2.1.4
 pytz==2017.2              # via django
-redis==2.10.5             # via rq
+redis==4.3.6             # via rq
 requests-cache==0.4.12
 requests==2.10.0
 roman==2.0.0
